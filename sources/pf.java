@@ -1,120 +1,242 @@
 // default package
 
 import android.app.Activity;
-import java.io.IOException;
-import java.util.Locale;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class pf implements ed, us2 {
-    public final /* synthetic */ byte a = 2;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class pf implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ pf(kp kpVar, f86 f86Var, fr6 fr6Var, IOException iOException, boolean z) {
-        this.c = kpVar;
-        this.d = f86Var;
-        this.e = fr6Var;
-        this.f = iOException;
-        this.b = z;
+    public /* synthetic */ pf(int i, long j, ylb ylbVar, qac qacVar, Activity activity, ArrayList arrayList, HashMap hashMap) {
+        this.a = (byte) 0;
+        this.c = i;
+        this.b = j;
+        this.d = activity;
+        this.e = arrayList;
+        this.f = ylbVar;
+        this.h = qacVar;
+        this.n = hashMap;
     }
 
-    @Override // us2
-    public final void accept(Object obj) {
-        kp kpVar = (kp) this.c;
-        ((vx6) obj).w(kpVar.b, (rx6) kpVar.c, (f86) this.d, (fr6) this.e, (IOException) this.f, this.b);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        int i2;
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        boolean z = this.b;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
+        TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = null;
+        long j = this.b;
+        int i = this.c;
+        Object obj = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.n;
+        Object obj5 = this.d;
+        final byte b2 = 1;
+        final byte b3 = 0;
         switch (b) {
             case 0:
-                hn7 hn7Var = (hn7) obj4;
-                hn7 hn7Var2 = (hn7) obj3;
-                hn7 hn7Var3 = (hn7) obj2;
-                zf zfVar = (zf) obj;
-                if (z) {
-                    ij.d(hn7Var, hn7Var2, hn7Var3);
+                Activity activity = (Activity) obj5;
+                ArrayList arrayList = (ArrayList) obj3;
+                ylb ylbVar = (ylb) obj2;
+                qac qacVar = (qac) obj;
+                HashMap hashMap = (HashMap) obj4;
+                long j2 = jva.v(i, false).m().amount;
+                long j3 = this.b;
+                if (j2 < j3) {
+                    if (activity != null) {
+                        long longValue = ((Long) arrayList.get(0)).longValue();
+                        new dxa(activity, ylbVar, j3, 13, pg3.r(i, longValue), new ug(qacVar, hashMap, (byte) 0), longValue).show();
+                        break;
+                    }
+                } else {
+                    qacVar.a(hashMap);
+                    break;
                 }
-                int value = hn7Var3.getValue();
-                int value2 = hn7Var2.getValue();
-                int value3 = hn7Var.getValue();
-                vx7 vx7Var = (vx7) zfVar.c;
-                int i3 = zfVar.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) zfVar.d;
-                if (i3 == 8) {
-                    int[] iArr = vx7Var.y;
-                    iArr[0] = value;
-                    iArr[1] = value2 + 1;
-                    iArr[2] = value3;
-                }
-                editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
             case 1:
-                wt1 wt1Var = (wt1) obj4;
-                TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
-                mu1 mu1Var = wt1Var.a;
-                x0 x0Var = new x0(wt1Var, (gb2) obj3, (byte) 26);
-                if (!((boolean[]) obj2)[0]) {
-                    x0Var.a(Boolean.FALSE);
-                    break;
-                } else if (!z && (contentsettings == null || !contentsettings.sensitive_can_change)) {
-                    x0Var.a(Boolean.TRUE);
+                final w45 w45Var = (w45) obj5;
+                final s45 s45Var = (s45) obj3;
+                final lf2 lf2Var = (lf2) obj2;
+                String str = (String) obj;
+                y25 y25Var = (y25) obj4;
+                w45Var.h = false;
+                if (s45Var == null) {
+                    lf2Var.a(null, str);
                     break;
                 } else {
-                    Activity parentActivity = mu1Var.getParentActivity();
-                    i2 = ((d) mu1Var).currentAccount;
-                    ThemeActivity.G0(i2, mu1Var.getResourceProvider(), new x0(wt1Var, x0Var, (byte) 27), parentActivity);
-                    break;
+                    String str2 = s45Var.e;
+                    if (!w45Var.A(s45Var) || w45Var.i(s45Var)) {
+                        lf2Var.a(null, "Request expired or wallet changed");
+                        break;
+                    } else {
+                        w45Var.g = s45Var;
+                        if (!"sendTransaction".equals(str2) || s45Var.f == null || !oc7.r1(w45Var.a).X3.contains(w45.k(j, i).concat(".transfer"))) {
+                            if (s45Var.l >= 0 || "disconnect".equals(str2)) {
+                                y25Var.close();
+                                w45Var.e(s45Var, false, new qac() { // from class: o45
+                                    @Override // qac
+                                    public final void a(Object obj6) {
+                                        byte b4 = b2;
+                                        lf2 lf2Var2 = lf2Var;
+                                        s45 s45Var2 = s45Var;
+                                        w45 w45Var2 = w45Var;
+                                        String str3 = (String) obj6;
+                                        switch (b4) {
+                                            case 0:
+                                                w45Var2.getClass();
+                                                s45Var2.m = false;
+                                                w45Var2.u(s45Var2);
+                                                lf2Var2.a(null, str3);
+                                                break;
+                                            default:
+                                                w45Var2.u(s45Var2);
+                                                lf2Var2.a(null, str3);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+                            } else {
+                                lf2Var.a(s45Var, null);
+                                break;
+                            }
+                        } else {
+                            s45Var.m = true;
+                            w45Var.B(s45Var, y25Var, new qac() { // from class: o45
+                                @Override // qac
+                                public final void a(Object obj6) {
+                                    byte b4 = b3;
+                                    lf2 lf2Var2 = lf2Var;
+                                    s45 s45Var2 = s45Var;
+                                    w45 w45Var2 = w45Var;
+                                    String str3 = (String) obj6;
+                                    switch (b4) {
+                                        case 0:
+                                            w45Var2.getClass();
+                                            s45Var2.m = false;
+                                            w45Var2.u(s45Var2);
+                                            lf2Var2.a(null, str3);
+                                            break;
+                                        default:
+                                            w45Var2.u(s45Var2);
+                                            lf2Var2.a(null, str3);
+                                            break;
+                                    }
+                                }
+                            });
+                            break;
+                        }
+                    }
                 }
+                break;
+            case 2:
+                nm7.f(i).k(nm7.U1, (String) obj5, (TLRPC.InputFile) obj3, (TLRPC.InputEncryptedFile) obj2, (byte[]) obj, (byte[]) obj4, Long.valueOf(j));
+                break;
+            case 3:
+                oc7 oc7Var = (oc7) obj5;
+                TLRPC.Chat chat = (TLRPC.Chat) obj2;
+                Runnable[] runnableArr = (Runnable[]) obj;
+                dc7 dc7Var = (dc7) obj4;
+                if (!((boolean[]) obj3)[0]) {
+                    if (chat != null) {
+                        oc7Var.getMessagesController().V3(chat, true);
+                        runnableArr[0] = oc7Var.p0(j, i, dc7Var);
+                        break;
+                    } else if (dc7Var != null) {
+                        dc7Var.a();
+                        break;
+                    }
+                }
+                break;
             default:
-                mu1 mu1Var2 = (mu1) obj;
-                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                yv1 yv1Var = new yv1(mu1Var2, (k27) obj3, (z3a) obj4, (TL_keyboard.KeyboardButtonProto) obj2, twoStepVerificationActivity, this.b);
-                twoStepVerificationActivity.a0 = (byte) 0;
-                twoStepVerificationActivity.c0 = yv1Var;
-                mu1Var2.presentFragment(twoStepVerificationActivity);
+                oc7 oc7Var2 = (oc7) obj5;
+                TLObject tLObject = (TLObject) obj2;
+                vh6 vh6Var = (vh6) obj;
+                ArrayList arrayList2 = (ArrayList) ((HashMap) obj4).remove((String) obj3);
+                if (arrayList2 != null) {
+                    TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
+                    if (tLObject instanceof TL_account.webPagePreview) {
+                        TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
+                        oc7Var2.d4(webpagepreview.users, false);
+                        oc7Var2.X3(webpagepreview.chats, false);
+                        TLRPC.MessageMedia messageMedia = webpagepreview.media;
+                        if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
+                            tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
+                        }
+                    }
+                    if (tL_messageMediaWebPage == null) {
+                        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+                            ((k47) arrayList2.get(i2)).k.media.webpage = new TLRPC.TL_webPageEmpty();
+                            tL_messages_messages.messages.add(((k47) arrayList2.get(i2)).k);
+                        }
+                    } else {
+                        TLRPC.WebPage webPage = tL_messageMediaWebPage.webpage;
+                        if ((webPage instanceof TLRPC.TL_webPage) || (webPage instanceof TLRPC.TL_webPageEmpty)) {
+                            for (int i3 = 0; i3 < arrayList2.size(); i3++) {
+                                ((k47) arrayList2.get(i3)).k.media.webpage = tL_messageMediaWebPage.webpage;
+                                if (i3 == 0) {
+                                    fn5.R(((k47) arrayList2.get(i3)).k);
+                                }
+                                tL_messages_messages.messages.add(((k47) arrayList2.get(i3)).k);
+                            }
+                        } else {
+                            vh6Var.k(arrayList2, webPage.id);
+                        }
+                    }
+                    if (!tL_messages_messages.messages.isEmpty()) {
+                        cf7 messagesStorage = oc7Var2.getMessagesStorage();
+                        int i4 = this.c;
+                        long j4 = this.b;
+                        messagesStorage.e1(-2, 0, i4, j4, 0L, tL_messages_messages, false);
+                        oc7Var2.getNotificationCenter().k(50, Long.valueOf(j4), arrayList2);
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    public /* synthetic */ pf(wt1 wt1Var, gb2 gb2Var, boolean[] zArr, boolean z, TL_account.contentSettings contentsettings) {
-        this.c = wt1Var;
-        this.d = gb2Var;
-        this.e = zArr;
-        this.b = z;
-        this.f = contentsettings;
+    public /* synthetic */ pf(int i, String str, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, long j) {
+        this.a = (byte) 2;
+        this.c = i;
+        this.d = str;
+        this.e = inputFile;
+        this.f = inputEncryptedFile;
+        this.h = bArr;
+        this.n = bArr2;
+        this.b = j;
     }
 
-    public /* synthetic */ pf(z3a z3aVar, boolean z, k27 k27Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto, mu1 mu1Var) {
-        this.c = z3aVar;
-        this.b = z;
-        this.d = k27Var;
-        this.e = keyboardButtonProto;
-        this.f = mu1Var;
+    public /* synthetic */ pf(oc7 oc7Var, HashMap hashMap, String str, TLObject tLObject, vh6 vh6Var, long j, int i) {
+        this.a = (byte) 4;
+        this.d = oc7Var;
+        this.n = hashMap;
+        this.e = str;
+        this.f = tLObject;
+        this.h = vh6Var;
+        this.b = j;
+        this.c = i;
     }
 
-    public /* synthetic */ pf(boolean z, hn7 hn7Var, hn7 hn7Var2, hn7 hn7Var3, zf zfVar) {
-        this.b = z;
-        this.c = hn7Var;
-        this.d = hn7Var2;
-        this.e = hn7Var3;
-        this.f = zfVar;
+    public /* synthetic */ pf(Object obj, Object obj2, Object obj3, Serializable serializable, long j, int i, Object obj4, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.e = obj2;
+        this.f = obj3;
+        this.h = serializable;
+        this.b = j;
+        this.c = i;
+        this.n = obj4;
     }
 }

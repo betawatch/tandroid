@@ -1,879 +1,406 @@
 // default package
 
-import android.content.ContentProviderClient;
 import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.SurfaceTexture;
-import android.graphics.drawable.Drawable;
-import android.location.Location;
-import android.media.Rating;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import android.util.SparseIntArray;
-import android.view.TextureView;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.os.Build;
+import android.os.Environment;
+import android.text.TextUtils;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import androidx.profileinstaller.ProfileInstallReceiver;
-import java.io.EOFException;
-import java.io.Serializable;
+import android.view.Window;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.WeakHashMap;
-import java.util.concurrent.ExecutorService;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
+import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class s34 implements co7, zu9, ml4, r9, uec, xb1, nh5, b79, no7, or8, d34, ka8, i33, t58, qac, ibc, cr8, xv8 {
-    public final /* synthetic */ byte a;
-    public Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class s34 implements ts4 {
+    public static HashMap E;
+    public static final String[] e = {"/dev/socket/genyd", "/dev/socket/baseband_genyd"};
+    public static final String[] f = {"goldfish"};
+    public static final String[] h = {"/dev/socket/qemud", "/dev/qemu_pipe"};
+    public static final String[] n = {"ueventd.android_x86.rc", "x86.prop", "ueventd.ttVM_x86.rc", "init.ttVM_x86.rc", "fstab.ttVM_x86", "fstab.vbox86", "init.vbox86.rc", "ueventd.vbox86.rc"};
+    public static final String[] r = {"fstab.andy", "ueventd.andy.rc"};
+    public static final String[] s = {"fstab.nox", "init.nox.rc", "ueventd.nox.rc", "/BigNoxGameHD", "/YSLauncher"};
+    public static final String[] w = {"/Android/data/com.bluestacks.home", "/Android/data/com.bluestacks.settings"};
+    public static final i5[] x;
+    public static s34 y;
+    public boolean a;
+    public boolean b;
+    public Object c;
+    public Object d;
 
-    public s34(byte b) {
-        this.a = b;
-        switch (b) {
-            case 6:
-                break;
-            case 8:
-                this.b = new xu7(10);
-                break;
-            case 11:
-                this.b = Collections.newSetFromMap(new WeakHashMap());
-                break;
-            case 16:
-                this.b = new Bundle();
-                break;
-            default:
-                this.b = new vf6();
-                break;
-        }
+    static {
+        String str = null;
+        String str2 = "unknown";
+        String str3 = "sdk";
+        x = new i5[]{new i5("init.svc.qemud", str), new i5("init.svc.qemu-props", str), new i5("qemu.hw.mainkeys", str), new i5("qemu.sf.fake_camera", str), new i5("qemu.sf.lcd_density", str), new i5("ro.bootloader", str2), new i5("ro.bootmode", str2), new i5("ro.hardware", "goldfish"), new i5("ro.kernel.android.qemud", str), new i5("ro.kernel.qemu.gles", str), new i5("ro.kernel.qemu", "1"), new i5("ro.product.device", "generic"), new i5("ro.product.model", str3), new i5("ro.product.name", str3), new i5("ro.serialno", null)};
     }
 
-    public static void L(String str, TreeMap treeMap) {
-        String[] split = str.split(":", 2);
-        if (split.length < 2) {
-            return;
-        }
-        String trim = split[0].trim();
-        String trim2 = split[1].trim();
-        List list = (List) treeMap.get(trim);
-        if (list == null) {
-            list = new ArrayList();
-            treeMap.put(trim, list);
-        }
-        list.add(trim2);
+    public s34() {
+        this.c = new Path();
+        this.d = new Rect();
     }
 
-    public static w56 w(Looper looper, Object obj, String str) {
-        fre.i(obj, "Listener must not be null");
-        fre.i(looper, "Looper must not be null");
-        return new w56(looper, obj, str);
-    }
-
-    @Override // uec
-    public final boolean B(int i) {
-        return false;
-    }
-
-    @Override // cr8
-    public final void C() {
-        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
-    }
-
-    @Override // xb1
-    public final FrameLayout D() {
-        return (q88) this.b;
-    }
-
-    @Override // co7
-    public final void D2(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        bg4 bg4Var = (bg4) this.b;
-        Handler handler = bg4Var.B0;
-        ez3 ez3Var = bg4Var.C0;
-        handler.removeCallbacks(ez3Var);
-        TextView textView = bg4Var.H0;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-        handler.postDelayed(ez3Var, 2000L);
-    }
-
-    @Override // t58
-    public final void E(String str) {
-        ((b68) this.b).l0(str);
-    }
-
-    @Override // xb1
-    public final long F() {
-        return ((q88) this.b).getCaptionsTrimEnd();
-    }
-
-    @Override // ml4
-    public final Cursor G(Uri uri, String[] strArr, String[] strArr2) {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient == null) {
-            return null;
-        }
-        try {
-            return contentProviderClient.query(uri, strArr, "query = ?", strArr2, null, null);
-        } catch (RemoteException e) {
-            Log.w("FontsProvider", "Unable to query the content provider", e);
-            return null;
-        }
-    }
-
-    @Override // xv8
-    public final void H(yv8 yv8Var) {
-        gw8 gw8Var = (gw8) this.b;
-        FrameLayout frameLayout = gw8Var.f;
-        if (frameLayout != null) {
-            frameLayout.removeView(yv8Var);
-        }
-        if (gw8Var.G == yv8Var) {
-            gw8Var.G = null;
-        }
-        vw8 vw8Var = gw8Var.d;
-        if (vw8Var != null) {
-            vw8Var.setScanHidden(false);
-        }
-    }
-
-    @Override // xb1
-    public final long I() {
-        return ((q88) this.b).getCaptionsTrimStart();
-    }
-
-    @Override // xb1
-    public final void J(cc1 cc1Var) {
-        ((q88) this.b).a0(cc1Var);
-    }
-
-    public final SparseIntArray K(long j) {
-        return (SparseIntArray) ((vf6) this.b).f(j);
-    }
-
-    @Override // i33
-    public final void K0() {
-        u48 u48Var = ((v48) this.b).a;
-        if (u48Var != null) {
-            ((d78) u48Var).a.f0.invalidate();
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0054, code lost:
-    
-        r3.N(r9);
-        r8 = r3.b;
-        r3.O(6);
-        r9 = r3.z();
-        r10 = r9 + 10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0067, code lost:
-    
-        if (r1 == (-1)) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0071, code lost:
-    
-        if ((r17.f() + r9) <= r1) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0073, code lost:
-    
-        lad.f("Id3Peeker", "Skipping ID3 tag with tagLength=" + r10 + " greater than input length=" + r1);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x008f, code lost:
-    
-        if (r6 != null) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0091, code lost:
-    
-        r6 = new byte[r10];
-        java.lang.System.arraycopy(r3.a, r8, r6, 0, 10);
-        r17.d(r6, 10, r9, false);
-        r6 = new tj5(r18).c(r10, r6);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00a7, code lost:
-    
-        r17.a(r9, false);
-     */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00d9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final ld7 M(ja3 ja3Var, rj5 rj5Var, int i) {
-        int i2;
-        long j = ja3Var.c;
-        xu7 xu7Var = (xu7) this.b;
-        int i3 = 0;
-        ld7 ld7Var = null;
-        loop0: while (true) {
-            int i4 = 0;
-            while (true) {
-                int i5 = i4 % 10;
-                int i6 = i5 + 10;
-                if (i5 == 0 && i4 != 0) {
-                    byte[] bArr = xu7Var.a;
-                    System.arraycopy(bArr, 10, bArr, 0, 9);
-                }
-                int i7 = i4 == 0 ? 10 : 1;
-                try {
-                    ja3Var.d(xu7Var.a, i6 - i7, i7, false);
-                    xu7Var.N(i5);
-                    xu7Var.M(i6);
-                    if (xu7Var.a() < 3) {
-                        wn4.k("position=", xu7Var.b, ", limit=", xu7Var.c);
-                        return null;
-                    }
-                    int D = xu7Var.D();
-                    xu7Var.b -= 3;
-                    if (D != 4801587) {
-                        if (uad.a(xu7Var.i()) != -1) {
-                            break loop0;
+    public static boolean d() {
+        boolean z;
+        boolean z2 = false;
+        if (!Build.BOARD.toLowerCase().contains("nox") && !Build.BOOTLOADER.toLowerCase().contains("nox") && !Build.FINGERPRINT.startsWith("generic")) {
+            String str = Build.MODEL;
+            if (!str.toLowerCase().contains("google_sdk") && !str.toLowerCase().contains("droid4x") && !str.toLowerCase().contains("emulator") && !str.contains("Android SDK built for x86") && !Build.MANUFACTURER.toLowerCase().contains("genymotion")) {
+                String str2 = Build.HARDWARE;
+                if (!str2.toLowerCase().contains("goldfish") && !str2.toLowerCase().contains("vbox86") && !str2.toLowerCase().contains("android_x86") && !str2.toLowerCase().contains("nox") && !str2.toLowerCase().contains("ranchu")) {
+                    String str3 = Build.PRODUCT;
+                    if (!str3.equals("sdk") && !str3.equals("google_sdk") && !str3.equals("sdk_x86") && !str3.equals("vbox86p") && !str3.toLowerCase().contains("nox") && !Build.SERIAL.toLowerCase().contains("nox")) {
+                        z = false;
+                        if (!z) {
+                            if (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) {
+                                z2 = true;
+                            }
+                            boolean z3 = z | z2;
+                            if (!z3) {
+                                return z3 | "google_sdk".equals(Build.PRODUCT);
+                            }
                         }
-                    } else {
-                        xu7Var.O(3);
-                        int A = xu7Var.A();
-                        if (A >= 2 && A <= 4) {
-                            break;
-                        }
+                        return true;
                     }
-                    if (i4 == 0) {
-                        xu7Var.c(20);
-                    }
-                    i4++;
-                    if (i4 > i) {
-                        break loop0;
-                    }
-                } catch (EOFException unused) {
                 }
             }
-            i3 += i2;
         }
-        ja3Var.f = 0;
-        ja3Var.a(i3, false);
-        return ld7Var;
-    }
-
-    @Override // xb1
-    public final void O(long j) {
-        y54 y54Var;
-        PhotoViewer photoViewer = ((q88) this.b).j2;
-        lbc lbcVar = photoViewer.G2;
-        if (lbcVar == null || (y54Var = lbcVar.d) == null || !y54Var.c0()) {
-            return;
+        z = true;
+        if (!z) {
         }
-        photoViewer.G2.o0(j);
-    }
-
-    @Override // b79
-    public final void P() {
-        dj6 dj6Var = (dj6) this.b;
-        dj6Var.b.a.h();
-        dj6Var.x.setViewHidden(false);
-        PhotoViewer photoViewer = ((p88) dj6Var).L;
-        Drawable[] drawableArr = PhotoViewer.f9;
-        photoViewer.f2(true, true);
-    }
-
-    @Override // xb1
-    public final void Q(l34 l34Var) {
-        ((q88) this.b).s0(l34Var);
-    }
-
-    public final void R(String str, Bitmap bitmap) {
-        Integer num = (Integer) kr6.c.get(str);
-        if (num == null || num.intValue() == 2) {
-            ((Bundle) this.b).putParcelable(str, bitmap);
-        } else {
-            w26.j(tb4.y("The ", str, " key cannot be used to put a Bitmap"));
-        }
-    }
-
-    @Override // b79
-    public final void S() {
-        ((dj6) this.b).x.setViewHidden(true);
-    }
-
-    public final void T(long j, String str) {
-        Integer num = (Integer) kr6.c.get(str);
-        if (num == null || num.intValue() == 0) {
-            ((Bundle) this.b).putLong(str, j);
-        } else {
-            w26.j(tb4.y("The ", str, " key cannot be used to put a long"));
-        }
-    }
-
-    public final void U(String str, hz8 hz8Var) {
-        Rating rating;
-        float f = hz8Var.b;
-        Integer num = (Integer) kr6.c.get(str);
-        if (num != null && num.intValue() != 3) {
-            w26.j(tb4.y("The ", str, " key cannot be used to put a Rating"));
-            return;
-        }
-        Bundle bundle = (Bundle) this.b;
-        Rating rating2 = hz8Var.c;
-        if (rating2 == null) {
-            boolean b = hz8Var.b();
-            int i = hz8Var.a;
-            if (b) {
-                switch (i) {
-                    case 1:
-                        rating2 = Rating.newHeartRating(i == 1 && f == 1.0f);
-                        hz8Var.c = rating2;
-                        break;
-                    case 2:
-                        rating2 = Rating.newThumbRating(i == 2 && f == 1.0f);
-                        hz8Var.c = rating2;
-                        break;
-                    case 3:
-                    case 4:
-                    case 5:
-                        rating2 = Rating.newStarRating(i, hz8Var.a());
-                        hz8Var.c = rating2;
-                        break;
-                    case 6:
-                        if (i != 6 || !hz8Var.b()) {
-                            f = -1.0f;
-                        }
-                        rating2 = Rating.newPercentageRating(f);
-                        hz8Var.c = rating2;
-                        break;
-                    default:
-                        rating = null;
-                        break;
-                }
-                bundle.putParcelable(str, rating);
-            }
-            rating2 = Rating.newUnratedRating(i);
-            hz8Var.c = rating2;
-        }
-        rating = rating2;
-        bundle.putParcelable(str, rating);
-    }
-
-    public final void V(String str, String str2) {
-        Integer num = (Integer) kr6.c.get(str);
-        if (num == null || num.intValue() == 1) {
-            ((Bundle) this.b).putCharSequence(str, str2);
-        } else {
-            w26.j(tb4.y("The ", str, " key cannot be used to put a String"));
-        }
-    }
-
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        switch (this.a) {
-            case 17:
-                j47 j47Var = (j47) this.b;
-                io5 H0 = gl.H0(vxcVar, false);
-                j47Var.d = H0;
-                j47Var.G.setPadding(H0.a, H0.b, H0.c, H0.d);
-                j47Var.F.requestLayout();
-                break;
-            default:
-                ve8 ve8Var = (ve8) this.b;
-                io5 g = vxcVar.a.g(519);
-                ve8Var.r = g;
-                ve8Var.d.setPadding(g.a, g.b, g.c, g.d);
-                ve8Var.c.requestLayout();
-                break;
-        }
-        return vxc.b;
-    }
-
-    public final void X(CharSequence charSequence, String str) {
-        Integer num = (Integer) kr6.c.get(str);
-        if (num == null || num.intValue() == 1) {
-            ((Bundle) this.b).putCharSequence(str, charSequence);
-        } else {
-            w26.j(tb4.y("The ", str, " key cannot be used to put a CharSequence"));
-        }
-    }
-
-    public final void Y() {
-        ln8 ln8Var = (ln8) this.b;
-        ln8Var.getClass();
-        try {
-            hgd hgdVar = (hgd) ln8Var.b;
-            Parcel R = hgdVar.R();
-            int i = sgd.a;
-            R.writeInt(0);
-            hgdVar.V(R, 2);
-        } catch (RemoteException e) {
-            fvc.g(e);
-        }
-    }
-
-    public final void Z() {
-        ln8 ln8Var = (ln8) this.b;
-        ln8Var.getClass();
-        try {
-            hgd hgdVar = (hgd) ln8Var.b;
-            Parcel R = hgdVar.R();
-            int i = sgd.a;
-            R.writeInt(0);
-            hgdVar.V(R, 3);
-        } catch (RemoteException e) {
-            fvc.g(e);
-        }
-    }
-
-    @Override // uec
-    public final void a(int i, boolean z) {
-        tv4 tv4Var = (tv4) this.b;
-        if (tv4Var.l2 == i) {
-            return;
-        }
-        tv4Var.l2 = i;
-        tv4Var.d2.g();
-        tv4Var.T1.O(true);
-    }
-
-    @Override // zu9
-    public final int a0() {
-        return 0;
-    }
-
-    @Override // uec
-    public final boolean b() {
         return true;
     }
 
-    public final void b0() {
-        ln8 ln8Var = (ln8) this.b;
-        ln8Var.getClass();
-        try {
-            hgd hgdVar = (hgd) ln8Var.b;
-            Parcel R = hgdVar.R();
-            int i = sgd.a;
-            R.writeInt(0);
-            hgdVar.V(R, 1);
-        } catch (RemoteException e) {
-            fvc.g(e);
+    public static s34 m(Context context) {
+        if (context == null) {
+            u36.j("Context must not be null.");
+            return null;
         }
+        s34 s34Var = y;
+        if (s34Var != null) {
+            return s34Var;
+        }
+        Context applicationContext = context.getApplicationContext();
+        s34 s34Var2 = new s34();
+        ArrayList arrayList = new ArrayList();
+        s34Var2.d = arrayList;
+        s34Var2.c = applicationContext;
+        arrayList.add("com.google.android.launcher.layouts.genymotion");
+        arrayList.add("com.bluestacks");
+        arrayList.add("com.bignox.app");
+        arrayList.add("com.vphone.launcher");
+        y = s34Var2;
+        return s34Var2;
     }
 
-    public final void c0(ng5 ng5Var, TreeMap treeMap) {
-        String str;
-        List list = (List) treeMap.get("Sec-WebSocket-Protocol");
-        if (list == null || (str = (String) list.get(0)) == null || str.length() == 0) {
+    public final void a() {
+        if (this.a) {
             return;
         }
-        synchronized (((buc) this.b).c) {
+        this.a = true;
+        i();
+    }
+
+    public final boolean b(int i) {
+        SparseArray sparseArray = (SparseArray) this.c;
+        boolean z = this.b;
+        yv1 yv1Var = (yv1) this.d;
+        ArrayList arrayList = yv1Var.M6;
+        int i2 = i - yv1Var.D0.K;
+        if (i2 < 0 || i2 >= arrayList.size()) {
+            return false;
         }
-        throw new nq7(19, "The protocol contained in the Sec-WebSocket-Protocol header is not supported: ".concat(str), ng5Var);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ml4
-    public final void close() {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient != 0) {
-            if (contentProviderClient instanceof AutoCloseable) {
-                contentProviderClient.close();
-            } else if (contentProviderClient instanceof ExecutorService) {
-                z2.h((ExecutorService) contentProviderClient);
-            } else {
-                contentProviderClient.release();
-            }
+        k47 k47Var = (k47) arrayList.get(i2);
+        if (k47Var.U == 0) {
+            return !z ? sparseArray.get(k47Var.e1(), null) == null : sparseArray.get(k47Var.e1(), null) != null;
         }
-    }
-
-    @Override // t58
-    public final void d() {
-        b68 b68Var = (b68) this.b;
-        b68Var.a.b0();
-        b68Var.b.b0();
-    }
-
-    @Override // xv8
-    public final void e(String str) {
-        gw8 gw8Var = (gw8) this.b;
-        if (gw8Var.getParentActivity() != null) {
-            d01.t(gw8Var.getParentActivity(), str);
-        }
-    }
-
-    @Override // cr8
-    public final void f(int i, Serializable serializable) {
-        String str;
-        switch (i) {
-            case 1:
-                str = "RESULT_INSTALL_SUCCESS";
-                break;
-            case 2:
-                str = "RESULT_ALREADY_INSTALLED";
-                break;
-            case 3:
-                str = "RESULT_UNSUPPORTED_ART_VERSION";
-                break;
-            case 4:
-                str = "RESULT_NOT_WRITABLE";
-                break;
-            case 5:
-                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
-                break;
-            case 6:
-                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
-                break;
-            case 7:
-                str = "RESULT_IO_EXCEPTION";
-                break;
-            case 8:
-                str = "RESULT_PARSE_EXCEPTION";
-                break;
-            case 9:
-            default:
-                str = "";
-                break;
-            case 10:
-                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
-                break;
-            case 11:
-                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
-                break;
-        }
-        if (i == 6 || i == 7 || i == 8) {
-            Log.e("ProfileInstaller", str, (Throwable) serializable);
-        } else {
-            Log.d("ProfileInstaller", str);
-        }
-        ((ProfileInstallReceiver) this.b).setResultCode(i);
-    }
-
-    @Override // zu9
-    public final CharSequence getContentDescription() {
-        gj4 gj4Var = (gj4) this.b;
-        float f = gj4Var.b;
-        return String.valueOf(Math.round((gj4Var.a.getProgress() * (gj4Var.c - f)) + f));
-    }
-
-    @Override // i33
-    public final void h2(boolean z) {
-        u48 u48Var = ((v48) this.b).a;
-        if (u48Var != null) {
-            ((d78) u48Var).b(z);
-        }
-    }
-
-    @Override // r9
-    public final void i(Object obj) {
-        q9 q9Var = (q9) obj;
-        go4 go4Var = (go4) this.b;
-        co4 co4Var = (co4) go4Var.F.pollFirst();
-        if (co4Var == null) {
-            Log.w("FragmentManager", "No IntentSenders were started for " + this);
-            return;
-        }
-        String str = co4Var.a;
-        int i = co4Var.b;
-        bn4 n = go4Var.c.n(str);
-        if (n != null) {
-            n.x(i, q9Var.a, q9Var.b);
-            return;
-        }
-        Log.w("FragmentManager", "Intent Sender result delivered for unknown Fragment " + str);
-    }
-
-    @Override // qac
-    public final void invalidate() {
-        ((PhotoViewer) this.b).f0.invalidate();
-    }
-
-    @Override // zu9
-    public final void j(boolean z, float f) {
-        gj4 gj4Var = (gj4) this.b;
-        float f2 = gj4Var.b;
-        float A = tb4.A(gj4Var.c, f2, f, f2);
-        gj4Var.d = A;
-        if (z) {
-            qn qnVar = gj4Var.e;
-            qnVar.getClass();
-            qnVar.c(null, A);
-        }
-        gj4Var.invalidate();
-    }
-
-    @Override // ka8
-    public final TextureView j0() {
-        byte b = this.a;
-        return null;
-    }
-
-    public final void k(StringBuilder sb, Iterator it) {
-        zb3 zb3Var = (zb3) this.b;
-        if (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            sb.append(zb3.f(entry.getKey()));
-            sb.append("=");
-            sb.append(zb3.f(entry.getValue()));
-            while (it.hasNext()) {
-                sb.append((CharSequence) zb3Var.a);
-                Map.Entry entry2 = (Map.Entry) it.next();
-                sb.append(zb3.f(entry2.getKey()));
-                sb.append("=");
-                sb.append(zb3.f(entry2.getValue()));
-            }
-        }
-    }
-
-    @Override // xb1
-    public final void l(boolean z) {
-        q88 q88Var = (q88) this.b;
-        PhotoViewer photoViewer = q88Var.j2;
-        lbc lbcVar = photoViewer.G2;
-        if (lbcVar != null) {
-            if (z) {
-                if (lbcVar.c0()) {
-                    q88Var.i2 = true;
-                    photoViewer.n();
-                    photoViewer.G2.f0();
-                    return;
-                }
-                return;
-            }
-            if (q88Var.i2) {
-                q88Var.i2 = false;
-                if (photoViewer.H2 || photoViewer.S0()) {
-                    return;
-                }
-                photoViewer.G2.g0();
-            }
-        }
-    }
-
-    @Override // xb1
-    public final FrameLayout m() {
-        return ((q88) this.b).j2.f0;
-    }
-
-    @Override // or8
-    public final void n() {
-        ((nm7) this.b).b();
-    }
-
-    @Override // xb1
-    public final wjb o() {
-        return ((q88) this.b).G1;
-    }
-
-    @Override // i33
-    public final void o1(boolean z) {
-        ((v48) this.b).c.setAspectLock(z);
-    }
-
-    @Override // nh5
-    public final void onLocationChanged(Location location) {
-        if (location == null) {
-            return;
-        }
-        ((eb6) this.b).m(location);
-    }
-
-    @Override // ibc
-    public final void onStateChanged(boolean z, int i) {
-        zi8 zi8Var = (zi8) this.b;
-        lbc lbcVar = zi8Var.y;
-        if (lbcVar == null) {
-            return;
-        }
-        boolean c0 = lbcVar.c0();
-        yi8 yi8Var = zi8Var.N;
-        if (c0) {
-            gl.d3(yi8Var);
-        } else {
-            gl.r(yi8Var);
-        }
-    }
-
-    @Override // ibc
-    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // ibc
-    public final void onVideoSizeChanged(int i, int i2, int i3, float f) {
-        am9 am9Var = ((zi8) this.b).x;
-        if (am9Var != null) {
-            float f2 = i / i2;
-            if (Math.abs(am9Var.A0 - f2) >= 1.0E-4f) {
-                am9Var.A0 = f2;
-                am9Var.requestLayout();
-            }
+    public final boolean c() {
+        String str;
+        Context context = (Context) this.c;
+        rs.b(context, "android.permission.READ_PHONE_STATE");
+        if (e(1, e) || e(2, r) || e(3, s) || e(4, w)) {
+            return true;
         }
-    }
-
-    @Override // xb1
-    public final cc1 p() {
-        return ((q88) this.b).c0();
-    }
-
-    @Override // b79
-    public final void q() {
-        dj6 dj6Var = (dj6) this.b;
-        dj6Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new ni4(dj6Var, (byte) 23)).setInterpolator(s33.h);
-    }
-
-    @Override // xb1
-    public final cc1 t() {
-        mw5 mw5Var = ((q88) this.b).P0;
-        for (int i = 0; i < mw5Var.getChildCount(); i++) {
-            if (mw5Var.getChildAt(i) instanceof cc1) {
-                return (cc1) mw5Var.getChildAt(i);
-            }
-        }
-        return null;
-    }
-
-    @Override // ka8
-    public final void t0(k27 k27Var) {
-        switch (this.a) {
-            case 21:
-                ((d8b) ((y28) this.b).G1).f(false);
-                break;
-            default:
-                kp8 kp8Var = ((ProfileActivity) this.b).n0;
-                if (kp8Var != null && kp8Var.a) {
-                    kp8Var.L.e(true, 0.0f);
-                    kp8Var.invalidate();
-                    break;
+        File[] fileArr = {new File("/proc/tty/drivers"), new File("/proc/cpuinfo")};
+        for (int i = 0; i < 2; i++) {
+            File file = fileArr[i];
+            if (file.exists() && file.canRead()) {
+                byte[] bArr = new byte[1024];
+                try {
+                    FileInputStream fileInputStream = new FileInputStream(file);
+                    fileInputStream.read(bArr);
+                    fileInputStream.close();
+                } catch (Exception e2) {
+                    e2.printStackTrace();
                 }
-                break;
+                if (new String(bArr).contains(f[0])) {
+                    return true;
+                }
+            }
+        }
+        if (e(5, h)) {
+            return true;
+        }
+        if (rs.b(context, "android.permission.INTERNET") == 0) {
+            String[] strArr = {"/system/bin/netcfg"};
+            StringBuilder sb = new StringBuilder();
+            try {
+                ProcessBuilder processBuilder = new ProcessBuilder(strArr);
+                processBuilder.directory(new File("/system/bin/"));
+                processBuilder.redirectErrorStream(true);
+                InputStream inputStream = processBuilder.start().getInputStream();
+                byte[] bArr2 = new byte[1024];
+                while (inputStream.read(bArr2) != -1) {
+                    sb.append(new String(bArr2));
+                }
+                inputStream.close();
+            } catch (Exception unused) {
+            }
+            String sb2 = sb.toString();
+            if (!TextUtils.isEmpty(sb2)) {
+                for (String str2 : sb2.split("\n")) {
+                    if ((str2.contains("wlan0") || str2.contains("tunl0") || str2.contains("eth0")) && str2.contains("10.0.2.15")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        int i2 = 0;
+        for (int i3 = 0; i3 < 15; i3++) {
+            i5 i5Var = x[i3];
+            String str3 = i5Var.a;
+            try {
+                Class<?> loadClass = context.getClassLoader().loadClass("android.os.SystemProperties");
+                str = (String) loadClass.getMethod("get", String.class).invoke(loadClass, str3);
+            } catch (Exception unused2) {
+                str = null;
+            }
+            String str4 = i5Var.b;
+            if (str4 == null && str != null) {
+                i2++;
+            }
+            if (str4 != null && str.contains(str4)) {
+                i2++;
+            }
+        }
+        return i2 >= 5 && e(6, n);
+    }
+
+    public final boolean e(int i, String[] strArr) {
+        File file;
+        for (String str : strArr) {
+            if (rs.b((Context) this.c, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                file = new File(str);
+            } else if ((str.contains("/") && i == 3) || i == 4) {
+                file = new File(Environment.getExternalStorageDirectory() + str);
+            } else {
+                file = new File(str);
+            }
+            if (file.exists()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void f() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        qn4 qn4Var = (qn4) this.c;
+        if (qn4Var != null) {
+            qn4Var.run();
+        }
+        c25 c25Var = (c25) this.d;
+        if (c25Var == null || this.b) {
+            return;
+        }
+        c25Var.run();
+    }
+
+    public final void g() {
+        if (this.a) {
+            this.a = false;
+            i();
         }
     }
 
-    @Override // i33
-    public final void t2() {
-        u48 u48Var = ((v48) this.b).a;
-        if (u48Var != null) {
-            PhotoViewer photoViewer = ((d78) u48Var).a;
-            if (photoViewer.d2 == 1) {
-                photoViewer.H2 = true;
-                photoViewer.A2();
+    public final boolean h() {
+        if (this.a) {
+            return this.b;
+        }
+        boolean z = true;
+        try {
+            this.a = true;
+            boolean z2 = this.b;
+            if (!z2) {
+                z2 = d();
+                this.b = z2;
+            }
+            if (!z2) {
+                z2 = c();
+                this.b = z2;
+            }
+            if (!z2) {
+                ArrayList arrayList = (ArrayList) this.d;
+                if (!arrayList.isEmpty()) {
+                    PackageManager packageManager = ((Context) this.c).getPackageManager();
+                    int size = arrayList.size();
+                    int i = 0;
+                    while (i < size) {
+                        Object obj = arrayList.get(i);
+                        i++;
+                        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage((String) obj);
+                        if (launchIntentForPackage != null && !packageManager.queryIntentActivities(launchIntentForPackage, 65536).isEmpty()) {
+                            break;
+                        }
+                    }
+                }
+                z = false;
+                this.b = z;
+                z2 = z;
+            }
+            if (z2) {
+                return z2;
+            }
+            boolean a = vad.a();
+            this.b = a;
+            return a;
+        } catch (Exception unused) {
+            return false;
+        }
+    }
+
+    public final void i() {
+        boolean z = this.a && ((kk4) this.d).run();
+        if (z != this.b) {
+            this.b = z;
+            int i = z ? 1 : -1;
+            Window window = (Window) this.c;
+            HashMap hashMap = E;
+            if (hashMap == null) {
+                hashMap = new HashMap();
+                E = hashMap;
+            }
+            Integer num = (Integer) hashMap.get(window);
+            int max = Math.max(0, (num == null ? 0 : num.intValue()) + i);
+            HashMap hashMap2 = E;
+            if (max <= 0) {
+                hashMap2.remove(window);
+            } else {
+                hashMap2.put(window, Integer.valueOf(max));
+            }
+            if (window != null) {
+                HashMap hashMap3 = E;
+                if (hashMap3 == null || hashMap3.get(window) == null) {
+                    window.clearFlags(TLObject.FLAG_13);
+                    gm.f2();
+                } else {
+                    window.addFlags(TLObject.FLAG_13);
+                    gm.f2();
+                }
             }
         }
     }
 
-    @Override // d34
-    public final void u() {
-        x6b x6bVar = (x6b) this.b;
-        x6bVar.D0(null, true);
-        if (x6bVar.C0) {
-            t7b t7bVar = x6bVar.u2;
-            t7bVar.d1.f.d();
-            t7bVar.k0(-1, false, true);
-            x6bVar.C0 = false;
+    public final boolean k(Rect rect, boolean z, boolean z2) {
+        Rect rect2 = (Rect) this.d;
+        boolean z3 = (!rect2.isEmpty() && rect2.top == rect.top && rect2.bottom == rect.bottom && rect2.right == rect.right && rect2.left == rect.left && this.a == z2 && this.b == z && z2 && z) ? false : true;
+        this.a = z2;
+        this.b = z;
+        rect2.set(rect);
+        return z3;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:21:0x007b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void l(float f2, float f3, int i, boolean z) {
+        u69 K;
+        yv1 yv1Var = (yv1) this.d;
+        ArrayList arrayList = yv1Var.M6;
+        SparseArray[] sparseArrayArr = yv1Var.o6;
+        int i2 = i - yv1Var.D0.K;
+        if (this.b) {
+            z = !z;
         }
-        x6bVar.O0(false);
-    }
-
-    @Override // xb1
-    public final long v() {
-        return ((q88) this.b).getCaptionsVideoPosition();
-    }
-
-    @Override // b79
-    public final boolean x() {
-        return true;
-    }
-
-    @Override // ka8
-    public final void y(k27 k27Var) {
-        switch (this.a) {
-            case 21:
-                ((d8b) ((y28) this.b).G1).f(true);
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                profileActivity.a.J0(true);
-                vn8 vn8Var = profileActivity.O;
-                if (vn8Var != null && vn8Var.getCurrentListView() != null) {
-                    profileActivity.O.getCurrentListView().J0(true);
+        if (i2 < 0 || i2 >= arrayList.size()) {
+            return;
+        }
+        k47 k47Var = (k47) arrayList.get(i2);
+        if (z) {
+            if (sparseArrayArr[0].indexOfKey(k47Var.e1()) >= 0 || sparseArrayArr[1].indexOfKey(k47Var.e1()) >= 0) {
+                return;
+            }
+        } else if (sparseArrayArr[0].indexOfKey(k47Var.e1()) < 0 && sparseArrayArr[1].indexOfKey(k47Var.e1()) < 0) {
+            return;
+        }
+        if (k47Var.U == 0) {
+            if (z) {
+                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                    this.a = true;
+                    K = yv1Var.A0.K(i);
+                    if (K != null) {
+                        View view = K.a;
+                        if (view instanceof rc2) {
+                            yv1Var.Ra(view, f2, f3, false);
+                            return;
+                        }
+                    }
+                    yv1Var.D4(k47Var, false, true);
+                    yv1Var.Kc();
+                    yv1Var.Gd(false);
                 }
-                profileActivity.d1.setBackgroundColor(bm2.f(0.1f, profileActivity.X1(profileActivity.Z4.f), bkb.v0(bkb.Z6, profileActivity.A0)));
-                break;
+            }
+            this.a = false;
+            K = yv1Var.A0.K(i);
+            if (K != null) {
+            }
+            yv1Var.D4(k47Var, false, true);
+            yv1Var.Kc();
+            yv1Var.Gd(false);
         }
     }
 
-    @Override // d34
-    public final l34 z() {
-        return ((x6b) this.b).z0;
+    @Override // ts4
+    public final void onSuccess(Object obj) {
+        tw6 tw6Var = (tw6) obj;
+        tx6 tx6Var = ((ly6) this.d).j;
+        hy6 hy6Var = new hy6(this, tw6Var, this.a, this.b, (sw6) this.c, (byte) 0);
+        tx6Var.getClass();
+        hy6Var.run();
     }
 
-    @Override // ibc
-    public final void onRenderedFirstFrame() {
+    public s34(qn4 qn4Var, c25 c25Var) {
+        this.c = qn4Var;
+        this.d = c25Var;
     }
 
-    @Override // zu9
-    public final void A() {
+    public s34(Window window, kk4 kk4Var) {
+        this.a = false;
+        this.b = false;
+        this.c = window;
+        this.d = kk4Var;
     }
 
-    @Override // uec
-    public final void c() {
-    }
-
-    @Override // uec
-    public final void e0() {
-    }
-
-    @Override // b79
-    public final void r() {
-    }
-
-    @Override // b79
-    public final void s() {
-    }
-
-    @Override // uec
-    public final void N(ArrayList arrayList) {
-    }
-
-    @Override // uec
-    public final void g(float f) {
-    }
-
-    @Override // or8
-    public final void h(vm7 vm7Var) {
-    }
-
-    @Override // ibc
-    public final void onRenderedFirstFrame(tj tjVar) {
-    }
-
-    @Override // ibc
-    public final void onSeekFinished(tj tjVar) {
-    }
-
-    @Override // ibc
-    public final void onSeekStarted(tj tjVar) {
-    }
-
-    @Override // ibc
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // ibc
-    public final void onError(lbc lbcVar, Exception exc) {
-    }
-
-    public s34(Context context, Uri uri) {
-        this.a = (byte) 3;
-        this.b = context.getContentResolver().acquireUnstableContentProviderClient(uri);
-    }
-
-    public /* synthetic */ s34(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    @Override // ts4
+    public final void j(Throwable th) {
     }
 }

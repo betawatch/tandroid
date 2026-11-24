@@ -1,49 +1,199 @@
 // default package
 
-import android.os.Bundle;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.SystemClock;
+import android.support.v4.media.MediaDescriptionCompat;
+import android.util.Log;
+import j$.util.DesugarCollections;
 import j$.util.Objects;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class su6 {
-    public final mw6 a;
-    public final int b;
-    public final int c;
-    public final boolean d;
-    public final ru6 e;
-    public final Bundle f;
+public final class su6 extends AsyncTask {
+    public final Bitmap a;
+    public final Uri b;
+    public int c;
+    public long d;
+    public final /* synthetic */ wu6 e;
 
-    public su6(mw6 mw6Var, int i, int i2, boolean z, ru6 ru6Var, Bundle bundle) {
-        this.a = mw6Var;
-        this.b = i;
-        this.c = i2;
-        this.d = z;
-        this.e = ru6Var;
-        this.f = bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof su6)) {
-            return false;
+    public su6(wu6 wu6Var) {
+        this.e = wu6Var;
+        MediaDescriptionCompat mediaDescriptionCompat = wu6Var.m0;
+        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
+        if (bitmap != null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
+            bitmap = null;
         }
-        if (this == obj) {
-            return true;
+        this.a = bitmap;
+        MediaDescriptionCompat mediaDescriptionCompat2 = wu6Var.m0;
+        this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
+    }
+
+    public final BufferedInputStream a(Uri uri) {
+        InputStream openInputStream;
+        String lowerCase = uri.getScheme().toLowerCase();
+        if ("android.resource".equals(lowerCase) || "content".equals(lowerCase) || "file".equals(lowerCase)) {
+            openInputStream = this.e.s.getContentResolver().openInputStream(uri);
+        } else {
+            URLConnection openConnection = new URL(uri.toString()).openConnection();
+            short s = wu6.G0;
+            openConnection.setConnectTimeout(s);
+            openConnection.setReadTimeout(s);
+            openInputStream = openConnection.getInputStream();
         }
-        su6 su6Var = (su6) obj;
-        ru6 ru6Var = su6Var.e;
-        ru6 ru6Var2 = this.e;
-        return (ru6Var2 == null && ru6Var == null) ? this.a.equals(su6Var.a) : Objects.equals(ru6Var2, ru6Var);
+        if (openInputStream == null) {
+            return null;
+        }
+        return new BufferedInputStream(openInputStream);
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.e, this.a);
+    /* JADX WARN: Not initialized variable reg: 5, insn: 0x00a6: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:167), block:B:61:0x00a6 */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00ed  */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        BufferedInputStream bufferedInputStream;
+        InputStream inputStream2 = null;
+        Bitmap bitmap = this.a;
+        if (bitmap == null) {
+            Uri uri = this.b;
+            try {
+                if (uri != null) {
+                    try {
+                        bufferedInputStream = a(uri);
+                        try {
+                            try {
+                                if (bufferedInputStream == null) {
+                                    Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                    if (bufferedInputStream == null) {
+                                        return null;
+                                    }
+                                } else {
+                                    BitmapFactory.Options options = new BitmapFactory.Options();
+                                    options.inJustDecodeBounds = true;
+                                    BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                    if (options.outWidth != 0 && options.outHeight != 0) {
+                                        try {
+                                            bufferedInputStream.reset();
+                                        } catch (IOException unused) {
+                                            bufferedInputStream.close();
+                                            bufferedInputStream = a(uri);
+                                            if (bufferedInputStream == null) {
+                                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                                if (bufferedInputStream == null) {
+                                                    return null;
+                                                }
+                                            }
+                                        }
+                                        options.inJustDecodeBounds = false;
+                                        options.inSampleSize = Math.max(1, Integer.highestOneBit(options.outHeight / this.e.k(options.outWidth, options.outHeight)));
+                                        if (!isCancelled()) {
+                                            bitmap = BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                            try {
+                                                bufferedInputStream.close();
+                                            } catch (IOException unused2) {
+                                            }
+                                        }
+                                        bufferedInputStream.close();
+                                        return null;
+                                    }
+                                }
+                                bufferedInputStream.close();
+                                return null;
+                            } catch (IOException e) {
+                                e = e;
+                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
+                                if (bufferedInputStream != null) {
+                                    try {
+                                        bufferedInputStream.close();
+                                    } catch (IOException unused3) {
+                                    }
+                                }
+                                bitmap = null;
+                                if (bitmap == null) {
+                                }
+                                if (bitmap != null) {
+                                    ow7 ow7Var = new ow7(bitmap);
+                                    ow7Var.a = (byte) 1;
+                                    ArrayList arrayList = (ArrayList) ow7Var.a().b;
+                                    this.c = DesugarCollections.unmodifiableList(arrayList).isEmpty() ? 0 : ((pw7) DesugarCollections.unmodifiableList(arrayList).get(0)).d;
+                                }
+                                return bitmap;
+                            }
+                        } catch (IOException unused4) {
+                            return null;
+                        }
+                    } catch (IOException e2) {
+                        e = e2;
+                        bufferedInputStream = null;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (inputStream2 != null) {
+                            try {
+                                inputStream2.close();
+                            } catch (IOException unused5) {
+                            }
+                        }
+                        throw th;
+                    }
+                }
+                bitmap = null;
+            } catch (Throwable th2) {
+                th = th2;
+                inputStream2 = inputStream;
+            }
+        }
+        if (bitmap == null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't use recycled bitmap: " + bitmap);
+            return null;
+        }
+        if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
+            ow7 ow7Var2 = new ow7(bitmap);
+            ow7Var2.a = (byte) 1;
+            ArrayList arrayList2 = (ArrayList) ow7Var2.a().b;
+            this.c = DesugarCollections.unmodifiableList(arrayList2).isEmpty() ? 0 : ((pw7) DesugarCollections.unmodifiableList(arrayList2).get(0)).d;
+        }
+        return bitmap;
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("ControllerInfo {pkg=");
-        mw6 mw6Var = this.a;
-        sb.append(mw6Var.a.a);
-        sb.append(", uid=");
-        return de9.l(sb, mw6Var.a.c, "}");
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        wu6 wu6Var = this.e;
+        wu6Var.n0 = null;
+        Bitmap bitmap2 = wu6Var.o0;
+        Bitmap bitmap3 = this.a;
+        boolean equals = Objects.equals(bitmap2, bitmap3);
+        Uri uri = this.b;
+        if (equals && Objects.equals(wu6Var.p0, uri)) {
+            return;
+        }
+        wu6Var.o0 = bitmap3;
+        wu6Var.r0 = bitmap;
+        wu6Var.p0 = uri;
+        wu6Var.s0 = this.c;
+        wu6Var.q0 = true;
+        wu6Var.q(SystemClock.uptimeMillis() - this.d > 120);
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPreExecute() {
+        this.d = SystemClock.uptimeMillis();
+        wu6 wu6Var = this.e;
+        wu6Var.q0 = false;
+        wu6Var.r0 = null;
+        wu6Var.s0 = 0;
     }
 }

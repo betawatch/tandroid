@@ -1,48 +1,70 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class vm8 implements hu4 {
+    public static final vm8 a;
+    private static final y6a descriptor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class vm8 implements wc2 {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ zc2 b;
-    public final /* synthetic */ ProfileActivity c;
-
-    public vm8(ProfileActivity profileActivity, TLRPC.Chat chat, zc2 zc2Var) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = zc2Var;
+    static {
+        vm8 vm8Var = new vm8();
+        a = vm8Var;
+        if8 if8Var = new if8("com.google.firebase.sessions.ProcessData", vm8Var, 2);
+        if8Var.j("pid", false);
+        if8Var.j("uuid", false);
+        descriptor = if8Var;
     }
 
-    @Override // wc2
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.M.m(user, profileActivity.F2.megagroup ? 10 : 9, -profileActivity.f1);
+    @Override // hu4
+    public final cx5[] a() {
+        return new cx5[]{gr5.a, ebb.a};
     }
 
-    @Override // wc2
-    public final void b(int i, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User V1 = profileActivity.getMessagesController().V1(Long.valueOf(profileActivity.e1));
-        if (V1 == null || (chat = this.a) == null || profileActivity.e1 == 0) {
-            return;
-        }
-        zc2 zc2Var = this.b;
-        if (!zc2Var.R || zc2Var.getParentLayout() == null) {
-            return;
-        }
-        for (d dVar : zc2Var.getParentLayout().getFragmentStack()) {
-            if (dVar instanceof nf1) {
-                nf1 nf1Var = (nf1) dVar;
-                nf1Var.Y0();
-                gl.d3(new gm8(nf1Var, V1, chat, (byte) 1));
-                return;
+    @Override // cx5
+    public final void b(c40 c40Var, Object obj) {
+        xm8 xm8Var = (xm8) obj;
+        xm8Var.getClass();
+        y6a y6aVar = descriptor;
+        c40 a2 = c40Var.a(y6aVar);
+        int i = xm8Var.a;
+        a2.c(y6aVar, 0);
+        a2.d(i);
+        String str = xm8Var.b;
+        str.getClass();
+        a2.c(y6aVar, 1);
+        a2.k(str);
+        a2.l(y6aVar);
+    }
+
+    @Override // cx5
+    public final Object c(jif jifVar) {
+        y6a y6aVar = descriptor;
+        jif a2 = jifVar.a(y6aVar);
+        String str = null;
+        boolean z = true;
+        int i = 0;
+        int i2 = 0;
+        while (z) {
+            int b = a2.b(y6aVar);
+            if (b == -1) {
+                z = false;
+            } else if (b == 0) {
+                i2 = a2.f(y6aVar, 0);
+                i |= 1;
+            } else {
+                if (b != 1) {
+                    throw new tw5(b);
+                }
+                str = a2.n(y6aVar, 1);
+                i |= 2;
             }
         }
+        a2.o(y6aVar);
+        return new xm8(i, i2, str);
+    }
+
+    @Override // cx5
+    public final y6a d() {
+        return descriptor;
     }
 }

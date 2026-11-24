@@ -1,37 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class x1 {
-    public boolean b(gk0 gk0Var) {
-        return this instanceof kk0;
+    public boolean b(gl0 gl0Var) {
+        return this instanceof kl0;
     }
 
     public boolean c() {
-        return this instanceof geb;
+        return this instanceof ggb;
     }
 
-    public abstract gk0 e();
+    public abstract gl0 e();
 
     public boolean f() {
-        return this instanceof kk0;
+        return this instanceof kl0;
     }
 
-    public vj2 h(vo3 vo3Var) {
+    public il2 h(fq3 fq3Var) {
         char charAt;
-        int i = vo3Var.e;
-        String str = vo3Var.a;
-        if (vo3Var.g >= 4 || i >= str.length() || str.charAt(i) != '>') {
+        int i = fq3Var.e;
+        String str = fq3Var.a;
+        if (fq3Var.g >= 4 || i >= str.length() || str.charAt(i) != '>') {
             return null;
         }
-        int i2 = vo3Var.c + vo3Var.g;
+        int i2 = fq3Var.c + fq3Var.g;
         int i3 = i2 + 1;
-        String str2 = vo3Var.a;
+        String str2 = fq3Var.a;
         int i4 = i + 1;
         if (i4 < str2.length() && ((charAt = str2.charAt(i4)) == '\t' || charAt == ' ')) {
             i3 = i2 + 2;
         }
-        return new vj2(-1, i3, false);
+        return new il2(-1, i3, false);
     }
 
     public void d() {
@@ -40,6 +40,6 @@ public abstract class x1 {
     public void a(CharSequence charSequence) {
     }
 
-    public void g(qn5 qn5Var) {
+    public void g(qp5 qp5Var) {
     }
 }

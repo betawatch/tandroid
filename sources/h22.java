@@ -1,32 +1,96 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class h22 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ j22 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-    public /* synthetic */ h22(j22 j22Var, byte b) {
-        this.a = b;
-        this.b = j22Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class h22 extends View {
+    public final /* synthetic */ byte a = 0;
+    public final int b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
+
+    public h22(ViewGroup viewGroup, int i) {
+        super(viewGroup.getContext());
+        this.c = new ArrayList();
+        this.e = new pg6(this, (byte) 17);
+        this.d = viewGroup;
+        this.b = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final void a() {
+        pg6 pg6Var = (pg6) this.e;
+        ArrayList arrayList = (ArrayList) this.c;
+        boolean isEmpty = arrayList.isEmpty();
+        int i = this.b;
+        if (isEmpty && getVisibility() != 8) {
+            nm7.f(i).e.remove(pg6Var);
+            nm7.f(i).d(pg6Var);
+        } else {
+            if (arrayList.isEmpty() || getVisibility() == 0) {
+                return;
+            }
+            nm7.f(i).e.remove(pg6Var);
+            setVisibility(0);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
         byte b = this.a;
-        j22 j22Var = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                if (j22Var.f != null) {
-                    j22Var.w = yjb.k(new StringBuilder("+"), j22Var.f.phone, p38.f());
-                    j22Var.s = j22Var.f;
-                    gl.d3(new h22(j22Var, (byte) 1));
+                i15 i15Var = (i15) this.d;
+                ylb ylbVar = (ylb) obj;
+                int i = this.b;
+                i15Var.b(cmb.p1(0.5f, cmb.v0(i, ylbVar)));
+                i15Var.draw(canvas);
+                i15 i15Var2 = (i15) this.e;
+                i15Var2.b(cmb.p1(0.95f, cmb.v0(i, ylbVar)));
+                i15Var2.draw(canvas);
+                break;
+            default:
+                ArrayList arrayList = (ArrayList) obj;
+                if (!arrayList.isEmpty()) {
+                    for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                        ((n37) arrayList.get(i2)).a(canvas);
+                    }
                     break;
                 }
                 break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i, i2, i3, i4);
+                int i5 = gm.m;
+                i15 i15Var = (i15) this.d;
+                i15Var.c(gm.L(12.0f) + i5, 0);
+                i15Var.setBounds(0, 0, i, gm.L(52.0f) + i5);
+                i15 i15Var2 = (i15) this.e;
+                i15Var2.c(i5 / 3, 0);
+                i15Var2.setBounds(0, 0, i, i5);
+                break;
             default:
-                j22Var.c.l(j22Var.w, false);
+                super.onSizeChanged(i, i2, i3, i4);
                 break;
         }
+    }
+
+    public h22(int i, ylb ylbVar, Context context) {
+        super(context);
+        this.d = new i15(2);
+        this.e = new i15(2);
+        this.c = ylbVar;
+        this.b = i;
     }
 }

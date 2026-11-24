@@ -2,11 +2,11 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzhj {
-    public static final Object zza(zzhh zzhhVar, eq4 eq4Var, fw2 fw2Var) {
-        return eq4Var.invoke(new zzhk(zzhhVar), fw2Var);
+    public static final Object zza(zzhh zzhhVar, fs4 fs4Var, px2 px2Var) {
+        return fs4Var.invoke(new zzhk(zzhhVar), px2Var);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(9:0|1|(2:3|(6:5|6|7|(1:(1:10)(2:15|16))(4:17|18|19|(1:21))|11|12))|23|6|7|(0)(0)|11|12) */
@@ -15,54 +15,54 @@ public final class zzhj {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, fw2 fw2Var) {
+    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, px2 px2Var) {
         zzhi zzhiVar;
         int i;
-        if (fw2Var instanceof zzhi) {
-            zzhiVar = (zzhi) fw2Var;
+        if (px2Var instanceof zzhi) {
+            zzhiVar = (zzhi) px2Var;
             int i2 = zzhiVar.zzb;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzhiVar.zzb = i2 - TLObject.FLAG_31;
                 Object obj = zzhiVar.zza;
                 i = zzhiVar.zzb;
-                g5c g5cVar = g5c.a;
+                g7c g7cVar = g7c.a;
                 if (i != 0) {
-                    qse.b(obj);
+                    tue.b(obj);
                     zzhiVar.zzb = 1;
                     Object zza = zzhfVar.zza(zzhkVar, zzhiVar);
-                    Object obj2 = bx2.a;
+                    Object obj2 = ly2.a;
                     if (zza == obj2) {
                         return obj2;
                     }
                 } else {
                     if (i != 1) {
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        dq9.m("call to 'resume' before 'invoke' with coroutine");
                         return null;
                     }
-                    qse.b(obj);
+                    tue.b(obj);
                 }
-                return g5cVar;
+                return g7cVar;
             }
         }
-        zzhiVar = new zzhi(fw2Var);
+        zzhiVar = new zzhi(px2Var);
         Object obj3 = zzhiVar.zza;
         i = zzhiVar.zzb;
-        g5c g5cVar2 = g5c.a;
+        g7c g7cVar2 = g7c.a;
         if (i != 0) {
         }
-        return g5cVar2;
+        return g7cVar2;
     }
 
-    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, fw2 fw2Var) {
-        Object zza = zzhgVar.zza(zzgrVar.zza(), fw2Var);
-        return zza == bx2.a ? zza : g5c.a;
+    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, px2 px2Var) {
+        Object zza = zzhgVar.zza(zzgrVar.zza(), px2Var);
+        return zza == ly2.a ? zza : g7c.a;
     }
 
-    public static final Object zzd(int i, int i2, eq4 eq4Var, fw2 fw2Var) {
-        return new zzhf(i, eq4Var, new Integer(i2));
+    public static final Object zzd(int i, int i2, fs4 fs4Var, px2 px2Var) {
+        return new zzhf(i, fs4Var, new Integer(i2));
     }
 
-    public static final Object zze(zzhk zzhkVar, int i, eq4 eq4Var, fw2 fw2Var) {
-        return new zzhf(i, eq4Var, null).zza(zzhkVar, fw2Var);
+    public static final Object zze(zzhk zzhkVar, int i, fs4 fs4Var, px2 px2Var) {
+        return new zzhf(i, fs4Var, null).zza(zzhkVar, px2Var);
     }
 }

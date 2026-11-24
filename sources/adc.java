@@ -1,40 +1,53 @@
 // default package
 
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
-import java.util.WeakHashMap;
+import android.view.Choreographer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class adc implements View.OnApplyWindowInsetsListener {
-    public vxc a = null;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ no7 c;
-
-    public adc(View view, no7 no7Var) {
-        this.b = view;
-        this.c = no7Var;
+public final class adc extends zcc implements Choreographer.FrameCallback {
+    @Override // zcc
+    public final void a() {
+        long j;
+        this.b.registerDisplayListener(this, hac.q(null));
+        this.a.removeFrameCallback(this);
+        this.a.postFrameCallback(this);
+        if (this.b.getDisplay(0) != null) {
+            j = (long) (1.0E9d / r0.getRefreshRate());
+        } else {
+            ncd.f("VideoFrameReleaseHelper", "Unable to query display refresh rate");
+            j = -9223372036854775807L;
+        }
+        this.d = j;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        vxc h = vxc.h(view, windowInsets);
-        int i = Build.VERSION.SDK_INT;
-        no7 no7Var = this.c;
-        if (i < 30) {
-            bdc.a(windowInsets, this.b);
-            if (h.equals(this.a)) {
-                return no7Var.W(view, h).g();
+    @Override // zcc
+    public final void b() {
+        this.b.unregisterDisplayListener(this);
+        this.a.removeFrameCallback(this);
+        this.c = -9223372036854775807L;
+        this.d = -9223372036854775807L;
+    }
+
+    @Override // android.view.Choreographer.FrameCallback
+    public final void doFrame(long j) {
+        this.c = j;
+        this.a.removeFrameCallback(this);
+        this.a.postFrameCallbackDelayed(this, 500L);
+    }
+
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayChanged(int i) {
+        long j;
+        if (i == 0) {
+            this.a.removeFrameCallback(this);
+            this.a.postFrameCallback(this);
+            if (this.b.getDisplay(0) != null) {
+                j = (long) (1.0E9d / r5.getRefreshRate());
+            } else {
+                ncd.f("VideoFrameReleaseHelper", "Unable to query display refresh rate");
+                j = -9223372036854775807L;
             }
+            this.d = j;
         }
-        this.a = h;
-        vxc W = no7Var.W(view, h);
-        if (i >= 30) {
-            return W.g();
-        }
-        WeakHashMap weakHashMap = jdc.a;
-        zcc.c(view);
-        return W.g();
     }
 }

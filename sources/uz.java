@@ -1,79 +1,27 @@
 // default package
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.media.AudioDeviceInfo;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Handler;
-import android.provider.Settings;
-import java.util.List;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class uz implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e00 b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class uz {
-    public final Context a;
-    public final l0 b;
-    public final Handler c;
-    public final sz d;
-    public final zj e;
-    public final tz f;
-    public ska g;
-    public rz h;
-    public AudioDeviceInfo i;
-    public nz j;
-    public boolean k;
-
-    public uz(Context context, l0 l0Var, nz nzVar, AudioDeviceInfo audioDeviceInfo) {
-        Context applicationContext = context.getApplicationContext();
-        this.a = applicationContext;
-        this.b = l0Var;
-        this.j = nzVar;
-        this.i = audioDeviceInfo;
-        Handler handler = new Handler(g8c.z(), null);
-        this.c = handler;
-        this.d = new sz(this);
-        this.e = new zj(this, (byte) 2);
-        w59 w59Var = rz.e;
-        String str = Build.MANUFACTURER;
-        Uri uriFor = (str.equals("Amazon") || str.equals("Xiaomi")) ? Settings.Global.getUriFor("external_surround_sound_enabled") : null;
-        this.f = uriFor != null ? new tz(this, handler, applicationContext.getContentResolver(), uriFor) : null;
+    public /* synthetic */ uz(e00 e00Var, byte b) {
+        this.a = b;
+        this.b = e00Var;
     }
 
-    public final List a() {
-        ska skaVar;
-        if (Build.VERSION.SDK_INT >= 32 && (skaVar = this.g) != null) {
-            return skaVar.b();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        e00 e00Var = this.b;
+        switch (b) {
+            case 0:
+                e00Var.onBackPressed();
+                break;
+            default:
+                e00Var.a1();
+                break;
         }
-        km5 km5Var = mm5.b;
-        return w59.e;
-    }
-
-    public final void b(rz rzVar) {
-        if (!this.k || rzVar.equals(this.h)) {
-            return;
-        }
-        this.h = rzVar;
-        l40 l40Var = (l40) this.b.b;
-        l40Var.f();
-        rz rzVar2 = l40Var.g;
-        if (rzVar2 == null || rzVar.equals(rzVar2)) {
-            return;
-        }
-        l40Var.g = rzVar;
-        a66 a66Var = l40Var.e;
-        if (a66Var != null) {
-            a66Var.e(-1, new wz((byte) 6));
-        }
-    }
-
-    public final void c() {
-        List a = a();
-        nz nzVar = this.j;
-        AudioDeviceInfo audioDeviceInfo = this.i;
-        w59 w59Var = rz.e;
-        IntentFilter intentFilter = new IntentFilter("android.media.action.HDMI_AUDIO_PLUG");
-        Context context = this.a;
-        b(rz.b(context, context.registerReceiver(null, intentFilter), nzVar, audioDeviceInfo, a));
     }
 }

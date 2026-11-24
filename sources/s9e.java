@@ -1,59 +1,120 @@
 // default package
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class s9e {
-    public static k03 a(String str, Bundle bundle) {
-        str.getClass();
-        bundle.getClass();
-        try {
-            int hashCode = str.hashCode();
-            if (hashCode != -1678407252) {
-                if (hashCode != -543568185) {
-                    if (hashCode == -95037569 && str.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string = bundle.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
-                            string.getClass();
-                            return new b13(string, bundle);
-                        } catch (Exception unused) {
-                            throw new jp4();
-                        }
-                    }
-                } else if (str.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                    return new l03("android.credentials.TYPE_PASSWORD_CREDENTIAL", bundle);
-                }
-                throw new jp4();
+public final class s9e extends LinkedHashMap {
+    public static final s9e b;
+    public boolean a = true;
+
+    static {
+        s9e s9eVar = new s9e();
+        b = s9eVar;
+        s9eVar.a = false;
+    }
+
+    public static int b(Object obj) {
+        if (!(obj instanceof byte[])) {
+            if (!(obj instanceof fme)) {
+                return obj.hashCode();
             }
-            if (str.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                try {
-                    String string2 = bundle.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
-                    string2.getClass();
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
-                    l03 l03Var = new l03("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle2);
-                    if (string2.length() != 0) {
-                        try {
-                            new JSONObject(string2);
-                            return l03Var;
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
-                } catch (Exception unused3) {
-                    throw new jp4();
-                }
-            }
-            throw new jp4();
-        } catch (jp4 unused4) {
-            l03 l03Var2 = new l03(str, bundle);
-            if (str.length() > 0) {
-                return l03Var2;
-            }
-            w26.j("type should not be empty");
-            return null;
+            gxc.b();
+            return 0;
         }
+        byte[] bArr = (byte[]) obj;
+        int length = bArr.length;
+        Charset charset = k5e.a;
+        int i = length;
+        for (byte b2 : bArr) {
+            i = (i * 31) + b2;
+        }
+        if (i == 0) {
+            return 1;
+        }
+        return i;
+    }
+
+    public final void c() {
+        if (this.a) {
+            return;
+        }
+        gxc.b();
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        c();
+        super.clear();
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof Map)) {
+            return false;
+        }
+        Map map = (Map) obj;
+        if (this == map) {
+            return true;
+        }
+        if (size() != map.size()) {
+            return false;
+        }
+        for (Map.Entry entry : entrySet()) {
+            if (!map.containsKey(entry.getKey())) {
+                return false;
+            }
+            Object value = entry.getValue();
+            Object obj2 = map.get(entry.getKey());
+            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        int i = 0;
+        for (Map.Entry entry : entrySet()) {
+            i += b(entry.getKey()) ^ b(entry.getValue());
+        }
+        return i;
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        c();
+        Charset charset = k5e.a;
+        obj.getClass();
+        obj2.getClass();
+        return super.put(obj, obj2);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void putAll(Map map) {
+        c();
+        for (Object obj : map.keySet()) {
+            Charset charset = k5e.a;
+            obj.getClass();
+            map.get(obj).getClass();
+        }
+        super.putAll(map);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        c();
+        return super.remove(obj);
     }
 }

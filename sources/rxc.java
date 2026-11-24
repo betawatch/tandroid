@@ -1,34 +1,73 @@
 // default package
 
-import android.view.WindowInsets;
+import android.graphics.Paint;
+import android.graphics.Path;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class rxc extends qxc {
-    public static final vxc s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class rxc implements gyc {
+    public final lx2 a;
+    public final String b;
+    public final cyc c;
+    public final ylb d;
+    public final Paint e = new Paint(1);
+    public final Path f = new Path();
+    public hyc h;
+    public int n;
+    public boolean r;
 
-    static {
-        WindowInsets windowInsets;
-        windowInsets = WindowInsets.CONSUMED;
-        s = vxc.h(null, windowInsets);
+    public rxc(lx2 lx2Var, int i, TLRPC.BotInlineResult botInlineResult, ylb ylbVar) {
+        this.a = lx2Var;
+        this.d = ylbVar;
+        String w = wxc.w(i, botInlineResult);
+        this.b = w;
+        this.c = wxc.h(w);
     }
 
-    public rxc(vxc vxcVar, WindowInsets windowInsets) {
-        super(vxcVar, windowInsets);
+    public final void a(int i) {
+        cyc cycVar = this.c;
+        if (cycVar == null || i <= 0) {
+            return;
+        }
+        this.n = i;
+        cycVar.m(i);
+        if (this.r) {
+            return;
+        }
+        this.r = true;
+        cycVar.k(nyc.a(this.d, true));
+        hyc hycVar = this.h;
+        if (hycVar == null) {
+            hycVar = new hyc(this, gm.p);
+            this.h = hycVar;
+        }
+        hycVar.b(cycVar);
+        this.h.q(true);
+        wxc.u(cycVar);
     }
 
-    @Override // qxc, mxc, sxc
-    public io5 f(int i) {
-        return io5.c(this.c.getInsets(uxc.a(i)));
+    @Override // gyc
+    public final void f() {
+        this.a.invalidate();
     }
 
-    @Override // qxc, mxc, sxc
-    public io5 g(int i) {
-        return io5.c(this.c.getInsetsIgnoringVisibility(uxc.a(i)));
+    @Override // gyc
+    public final void h() {
+        lx2 lx2Var = this.a;
+        lx2Var.requestLayout();
+        lx2Var.invalidate();
     }
 
-    @Override // qxc, mxc, sxc
-    public boolean p(int i) {
-        return this.c.isVisible(uxc.a(i));
+    @Override // gyc
+    public final void b(boolean z) {
+    }
+
+    @Override // gyc
+    public final void d() {
+    }
+
+    @Override // gyc
+    public final void setCursor(String str) {
     }
 }

@@ -1,51 +1,30 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bid extends xfd {
-    public final transient f7d c;
-    public final transient Object[] d;
-    public final transient int e;
+public final class bid extends ped {
+    public final transient Object[] h;
+    public final transient boolean n;
+    public final transient boolean r;
 
-    public bid(f7d f7dVar, Object[] objArr, int i) {
-        this.c = f7dVar;
-        this.d = objArr;
-        this.e = i;
+    /* JADX WARN: Multi-variable type inference failed */
+    public bid(int i, Object[] objArr) {
+        super((byte) 1);
+        this.h = objArr;
+        this.n = i;
+        this.r = true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
-            }
-        }
-        return false;
+    @Override // java.util.List
+    public final Object get(int i) {
+        k6f.a(i, this.r ? 1 : 0);
+        Object obj = this.h[(i << 1) + (this.n ? 1 : 0)];
+        obj.getClass();
+        return obj;
     }
 
-    @Override // ned
-    public final int h(Object[] objArr) {
-        return k().h(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return k().listIterator(0);
-    }
-
-    @Override // xfd
-    public final efd n() {
-        return new uhd(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.e;
+        return this.r ? 1 : 0;
     }
 }

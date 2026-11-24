@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class HevcDecoderConfigurationRecord {
     int avgFrameRate;
@@ -39,7 +39,7 @@ public class HevcDecoderConfigurationRecord {
     int reserved5 = 31;
     List<Array> arrays = new ArrayList();
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Array {
         public boolean array_completeness;
         public List<byte[]> nalUnits;
@@ -86,7 +86,7 @@ public class HevcDecoderConfigurationRecord {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class H265NalUnitHeader {
         public int forbiddenZeroFlag;
         public int nalUnitType;
@@ -94,14 +94,14 @@ public class HevcDecoderConfigurationRecord {
         public int nuhTemporalIdPlusOne;
     }
 
-    private static jfc createSampleEntry(ArrayList<ByteBuffer> arrayList, ArrayList<ByteBuffer> arrayList2, ArrayList<ByteBuffer> arrayList3, SequenceParameterSetRbsp sequenceParameterSetRbsp) {
-        jfc jfcVar = new jfc("hvc1");
-        jfcVar.n = "HEVC Coding";
+    private static jhc createSampleEntry(ArrayList<ByteBuffer> arrayList, ArrayList<ByteBuffer> arrayList2, ArrayList<ByteBuffer> arrayList3, SequenceParameterSetRbsp sequenceParameterSetRbsp) {
+        jhc jhcVar = new jhc("hvc1");
+        jhcVar.n = "HEVC Coding";
         HevcConfigurationBox hevcConfigurationBox = new HevcConfigurationBox();
         hevcConfigurationBox.getHevcDecoderConfigurationRecord().setConfigurationVersion(1);
         if (sequenceParameterSetRbsp != null) {
-            jfcVar.f = sequenceParameterSetRbsp.pic_width_in_luma_samples;
-            jfcVar.h = sequenceParameterSetRbsp.pic_height_in_luma_samples;
+            jhcVar.f = sequenceParameterSetRbsp.pic_width_in_luma_samples;
+            jhcVar.h = sequenceParameterSetRbsp.pic_height_in_luma_samples;
             HevcDecoderConfigurationRecord hevcDecoderConfigurationRecord = hevcConfigurationBox.getHevcDecoderConfigurationRecord();
             hevcDecoderConfigurationRecord.setChromaFormat(sequenceParameterSetRbsp.chroma_format_idc);
             hevcDecoderConfigurationRecord.setGeneral_profile_idc(sequenceParameterSetRbsp.general_profile_idc);
@@ -149,13 +149,13 @@ public class HevcDecoderConfigurationRecord {
             array3.nalUnits.add(byteBuffer3.array());
         }
         hevcConfigurationBox.getArrays().addAll(Arrays.asList(array, array2, array3));
-        jfcVar.a(hevcConfigurationBox);
-        return jfcVar;
+        jhcVar.a(hevcConfigurationBox);
+        return jhcVar;
     }
 
     private static H265NalUnitHeader getNalUnitHeader(ByteBuffer byteBuffer) {
         byteBuffer.position(0);
-        int f = hle.f(byteBuffer);
+        int f = jne.f(byteBuffer);
         H265NalUnitHeader h265NalUnitHeader = new H265NalUnitHeader();
         h265NalUnitHeader.forbiddenZeroFlag = (32768 & f) >> 15;
         h265NalUnitHeader.nalUnitType = (f & 32256) >> 9;
@@ -169,7 +169,7 @@ public class HevcDecoderConfigurationRecord {
         return i >= 0 && i <= 31;
     }
 
-    public static jfc parseFromCsd(List<ByteBuffer> list) {
+    public static jhc parseFromCsd(List<ByteBuffer> list) {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -185,9 +185,9 @@ public class HevcDecoderConfigurationRecord {
                     arrayList.add(byteBuffer.duplicate());
                     byteBuffer.position(2);
                     ByteBuffer slice = byteBuffer.slice();
-                    y41 y41Var = new y41();
-                    y41Var.a = slice;
-                    sequenceParameterSetRbsp = new SequenceParameterSetRbsp(new sh2(Channels.newInputStream(y41Var)));
+                    f61 f61Var = new f61();
+                    f61Var.a = slice;
+                    sequenceParameterSetRbsp = new SequenceParameterSetRbsp(new gj2(Channels.newInputStream(f61Var)));
                     break;
                 case 34:
                     arrayList2.add(byteBuffer.duplicate());
@@ -325,58 +325,58 @@ public class HevcDecoderConfigurationRecord {
     }
 
     public void parse(ByteBuffer byteBuffer) {
-        this.configurationVersion = hle.i(byteBuffer);
-        int a = hle.a(byteBuffer.get());
-        this.general_profile_space = (a & kk7.V2) >> 6;
+        this.configurationVersion = jne.i(byteBuffer);
+        int a = jne.a(byteBuffer.get());
+        this.general_profile_space = (a & nm7.V2) >> 6;
         this.general_tier_flag = (a & 32) > 0;
         this.general_profile_idc = a & 31;
-        this.general_profile_compatibility_flags = hle.g(byteBuffer);
-        long f = hle.f(byteBuffer) << 32;
+        this.general_profile_compatibility_flags = jne.g(byteBuffer);
+        long f = jne.f(byteBuffer) << 32;
         if (f < 0) {
-            wn4.j("I don't know how to deal with UInt64! long is not sufficient and I don't want to use BigInt");
+            zo4.k("I don't know how to deal with UInt64! long is not sufficient and I don't want to use BigInt");
             return;
         }
-        long g = hle.g(byteBuffer) + f;
+        long g = jne.g(byteBuffer) + f;
         this.general_constraint_indicator_flags = g;
         this.frame_only_constraint_flag = ((g >> 44) & 8) > 0;
         this.non_packed_constraint_flag = ((g >> 44) & 4) > 0;
         this.interlaced_source_flag = ((g >> 44) & 2) > 0;
         this.progressive_source_flag = ((g >> 44) & 1) > 0;
         this.general_constraint_indicator_flags = g & 140737488355327L;
-        this.general_level_idc = hle.a(byteBuffer.get());
-        int f2 = hle.f(byteBuffer);
+        this.general_level_idc = jne.a(byteBuffer.get());
+        int f2 = jne.f(byteBuffer);
         this.reserved1 = (61440 & f2) >> 12;
         this.min_spatial_segmentation_idc = f2 & 4095;
-        int a2 = hle.a(byteBuffer.get());
-        this.reserved2 = (a2 & kk7.a4) >> 2;
+        int a2 = jne.a(byteBuffer.get());
+        this.reserved2 = (a2 & nm7.a4) >> 2;
         this.parallelismType = a2 & 3;
-        int a3 = hle.a(byteBuffer.get());
-        this.reserved3 = (a3 & kk7.a4) >> 2;
+        int a3 = jne.a(byteBuffer.get());
+        this.reserved3 = (a3 & nm7.a4) >> 2;
         this.chromaFormat = a3 & 3;
-        int a4 = hle.a(byteBuffer.get());
-        this.reserved4 = (a4 & kk7.W3) >> 3;
+        int a4 = jne.a(byteBuffer.get());
+        this.reserved4 = (a4 & nm7.W3) >> 3;
         this.bitDepthLumaMinus8 = a4 & 7;
-        int a5 = hle.a(byteBuffer.get());
-        this.reserved5 = (a5 & kk7.W3) >> 3;
+        int a5 = jne.a(byteBuffer.get());
+        this.reserved5 = (a5 & nm7.W3) >> 3;
         this.bitDepthChromaMinus8 = a5 & 7;
-        this.avgFrameRate = hle.f(byteBuffer);
-        int a6 = hle.a(byteBuffer.get());
-        this.constantFrameRate = (a6 & kk7.V2) >> 6;
+        this.avgFrameRate = jne.f(byteBuffer);
+        int a6 = jne.a(byteBuffer.get());
+        this.constantFrameRate = (a6 & nm7.V2) >> 6;
         this.numTemporalLayers = (a6 & 56) >> 3;
         this.temporalIdNested = (a6 & 4) > 0;
         this.lengthSizeMinusOne = a6 & 3;
-        int a7 = hle.a(byteBuffer.get());
+        int a7 = jne.a(byteBuffer.get());
         this.arrays = new ArrayList();
         for (int i = 0; i < a7; i++) {
             Array array = new Array();
-            int a8 = hle.a(byteBuffer.get());
+            int a8 = jne.a(byteBuffer.get());
             array.array_completeness = (a8 & 128) > 0;
             array.reserved = (a8 & 64) > 0;
             array.nal_unit_type = a8 & 63;
-            int f3 = hle.f(byteBuffer);
+            int f3 = jne.f(byteBuffer);
             array.nalUnits = new ArrayList();
             for (int i2 = 0; i2 < f3; i2++) {
-                byte[] bArr = new byte[hle.f(byteBuffer)];
+                byte[] bArr = new byte[jne.f(byteBuffer)];
                 byteBuffer.get(bArr);
                 array.nalUnits.add(bArr);
             }
@@ -547,8 +547,8 @@ public class HevcDecoderConfigurationRecord {
     }
 
     public void write(ByteBuffer byteBuffer) {
-        ile.f(this.configurationVersion, byteBuffer);
-        byteBuffer.put((byte) (((this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc) & kk7.d4));
+        kne.f(this.configurationVersion, byteBuffer);
+        byteBuffer.put((byte) (((this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc) & nm7.d4));
         byteBuffer.putInt((int) this.general_profile_compatibility_flags);
         long j = this.general_constraint_indicator_flags;
         if (this.frame_only_constraint_flag) {
@@ -563,22 +563,22 @@ public class HevcDecoderConfigurationRecord {
         if (this.progressive_source_flag) {
             j |= 17592186044416L;
         }
-        ile.d((int) ((281474976710655L & j) >> 32), byteBuffer);
+        kne.d((int) ((281474976710655L & j) >> 32), byteBuffer);
         byteBuffer.putInt((int) (j & 4294967295L));
-        byteBuffer.put((byte) (this.general_level_idc & kk7.d4));
-        ile.d((this.reserved1 << 12) + this.min_spatial_segmentation_idc, byteBuffer);
-        byteBuffer.put((byte) (((this.reserved2 << 2) + this.parallelismType) & kk7.d4));
-        byteBuffer.put((byte) (((this.reserved3 << 2) + this.chromaFormat) & kk7.d4));
-        byteBuffer.put((byte) (((this.reserved4 << 3) + this.bitDepthLumaMinus8) & kk7.d4));
-        byteBuffer.put((byte) (((this.reserved5 << 3) + this.bitDepthChromaMinus8) & kk7.d4));
-        ile.d(this.avgFrameRate, byteBuffer);
-        byteBuffer.put((byte) (((this.constantFrameRate << 6) + (this.numTemporalLayers << 3) + (this.temporalIdNested ? 4 : 0) + this.lengthSizeMinusOne) & kk7.d4));
-        byteBuffer.put((byte) (this.arrays.size() & kk7.d4));
+        byteBuffer.put((byte) (this.general_level_idc & nm7.d4));
+        kne.d((this.reserved1 << 12) + this.min_spatial_segmentation_idc, byteBuffer);
+        byteBuffer.put((byte) (((this.reserved2 << 2) + this.parallelismType) & nm7.d4));
+        byteBuffer.put((byte) (((this.reserved3 << 2) + this.chromaFormat) & nm7.d4));
+        byteBuffer.put((byte) (((this.reserved4 << 3) + this.bitDepthLumaMinus8) & nm7.d4));
+        byteBuffer.put((byte) (((this.reserved5 << 3) + this.bitDepthChromaMinus8) & nm7.d4));
+        kne.d(this.avgFrameRate, byteBuffer);
+        byteBuffer.put((byte) (((this.constantFrameRate << 6) + (this.numTemporalLayers << 3) + (this.temporalIdNested ? 4 : 0) + this.lengthSizeMinusOne) & nm7.d4));
+        byteBuffer.put((byte) (this.arrays.size() & nm7.d4));
         for (Array array : this.arrays) {
-            byteBuffer.put((byte) (((array.array_completeness ? 128 : 0) + (array.reserved ? 64 : 0) + array.nal_unit_type) & kk7.d4));
-            ile.d(array.nalUnits.size(), byteBuffer);
+            byteBuffer.put((byte) (((array.array_completeness ? 128 : 0) + (array.reserved ? 64 : 0) + array.nal_unit_type) & nm7.d4));
+            kne.d(array.nalUnits.size(), byteBuffer);
             for (byte[] bArr : array.nalUnits) {
-                ile.d(bArr.length, byteBuffer);
+                kne.d(bArr.length, byteBuffer);
                 byteBuffer.put(bArr);
             }
         }

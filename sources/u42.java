@@ -1,59 +1,52 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class u42 implements CameraView.CameraViewDelegate {
-    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
+public final /* synthetic */ class u42 implements jac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ c52 b;
 
-    public u42(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
-        this.a = chatAttachAlertPhotoLayout;
+    public /* synthetic */ u42(c52 c52Var, byte b) {
+        this.a = b;
+        this.b = c52Var;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public final void onCameraInit() {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
-        ImageView imageView = chatAttachAlertPhotoLayout.s0;
-        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.T;
-        String currentFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode();
-        String nextFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getNextFlashMode();
-        if (currentFlashMode == null || nextFlashMode == null) {
-            return;
+    @Override // jac
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        c52 c52Var = this.b;
+        switch (b) {
+            case 0:
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                String str = (String) obj2;
+                TLRPC.User user = c52Var.r;
+                if (!c52Var.L) {
+                    c52Var.J = false;
+                    if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
+                        c52Var.K = true;
+                    }
+                    if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
+                        c52Var.H = walletuseraddress.address;
+                        c52Var.I = walletuseraddress.public_key;
+                    }
+                    c52Var.w.a(c52Var.H, user);
+                    c52Var.i0();
+                    c52Var.Y();
+                    break;
+                }
+                break;
+            default:
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                if (!c52Var.L && wallettransaction != null) {
+                    c52Var.h0 = wallettransaction.fee;
+                    c52Var.j0();
+                    break;
+                }
+                break;
         }
-        if (currentFlashMode.equals(nextFlashMode)) {
-            for (int i = 0; i < 2; i++) {
-                imageViewArr[i].setVisibility(4);
-                imageViewArr[i].setAlpha(0.0f);
-                imageViewArr[i].setTranslationY(0.0f);
-            }
-        } else {
-            ChatAttachAlertPhotoLayout.r0(imageViewArr[0], chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode());
-            int i2 = 0;
-            while (i2 < 2) {
-                imageViewArr[i2].setVisibility(i2 == 0 ? 0 : 4);
-                imageViewArr[i2].setAlpha((i2 == 0 && chatAttachAlertPhotoLayout.c0) ? 1.0f : 0.0f);
-                imageViewArr[i2].setTranslationY(0.0f);
-                i2++;
-            }
-        }
-        imageView.setImageResource(chatAttachAlertPhotoLayout.Q.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
-        imageView.setVisibility(chatAttachAlertPhotoLayout.Q.hasFrontFaceCamera() ? 0 : 4);
-        if (chatAttachAlertPhotoLayout.c0) {
-            return;
-        }
-        AnimatorSet animatorSet = new AnimatorSet();
-        chatAttachAlertPhotoLayout.P = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.Q, (Property<b52, Float>) View.ALPHA, 0.0f, 1.0f));
-        chatAttachAlertPhotoLayout.P.setDuration(180L);
-        chatAttachAlertPhotoLayout.P.addListener(new bb1((Object) this, (byte) 17));
-        chatAttachAlertPhotoLayout.P.start();
     }
 }

@@ -1,37 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class hjc extends View {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hjc implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ jjc b;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ HashSet d;
+    public final /* synthetic */ AtomicInteger e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ String g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hjc(jjc jjcVar, Context context, byte b) {
-        super(context);
+    public /* synthetic */ hjc(VoIPService voIPService, long j, HashSet hashSet, AtomicInteger atomicInteger, int i, String str, byte b) {
         this.a = b;
-        this.b = jjcVar;
+        this.b = voIPService;
+        this.c = j;
+        this.d = hashSet;
+        this.e = atomicInteger;
+        this.f = i;
+        this.g = str;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        byte b = this.a;
-        jjc jjcVar = this.b;
-        switch (b) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                RectF rectF = gl.P;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                jjcVar.j(canvas, rectF, jjcVar.g0 ? -1 : jjcVar.h0, 1.0f);
+                this.b.lambda$startConferenceGroupCall$54(this.c, this.d, this.e, this.f, this.g, tLObject, tL_error);
                 break;
             default:
-                RectF rectF2 = gl.P;
-                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
-                jjcVar.e(canvas, rectF2, jjcVar.g0 ? -1 : jjcVar.h0, 1.0f);
+                this.b.lambda$startConferenceGroupCall$46(this.c, this.d, this.e, this.f, this.g, tLObject, tL_error);
                 break;
         }
     }

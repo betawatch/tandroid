@@ -1,24 +1,35 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
+import android.window.OnBackInvokedCallback;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class y16 implements View.OnClickListener {
-    public final /* synthetic */ z16 a;
+public final class y16 implements OnBackInvokedCallback {
+    public final /* synthetic */ LaunchActivity a;
 
-    public y16(z16 z16Var) {
-        this.a = z16Var;
+    public y16(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        jb jbVar = (jb) view.getParent();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(jbVar.getCurrentChannel());
-        h26 h26Var = this.a.c;
-        int i = h26.R2;
-        h26Var.o1(arrayList);
+    public final void onBackInvoked() {
+        boolean O1 = gm.O1();
+        LaunchActivity launchActivity = this.a;
+        if (O1) {
+            launchActivity.onBackPressed();
+            return;
+        }
+        if (launchActivity.d0(true)) {
+            ActionBarLayout actionBarLayout = launchActivity.p0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.j1) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.j1 = false;
+                actionBarLayout.d(false);
+            }
+        }
     }
 }

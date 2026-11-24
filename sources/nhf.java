@@ -1,57 +1,24 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Locale;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class nhf extends b4 {
-    public static final Parcelable.Creator<nhf> CREATOR = new xff((byte) 14);
-    public final vhe a;
-    public final long b;
-    public final int c;
-    public final String d;
-    public final v5e e;
-    public final boolean f;
-    public final int h;
-    public final int n;
-    public final String r;
+public enum nhf {
+    b(Void.class, null),
+    c(Integer.class, 0),
+    d(Long.class, 0L),
+    e(Float.class, Float.valueOf(0.0f)),
+    f(Double.class, Double.valueOf(0.0d)),
+    h(Boolean.class, Boolean.FALSE),
+    n(String.class, ""),
+    r(yff.class, yff.c),
+    s(Integer.class, null),
+    w(Object.class, null);
 
-    public nhf(vhe vheVar, long j, int i, String str, v5e v5eVar, boolean z, int i2, int i3, String str2) {
-        this.a = vheVar;
-        this.b = j;
-        this.c = i;
-        this.d = str;
-        this.e = v5eVar;
-        this.f = z;
-        this.h = i2;
-        this.n = i3;
-        this.r = str2;
-    }
+    public final Class a;
 
-    public final String toString() {
-        Locale locale = Locale.US;
-        return "UsageInfo[documentId=" + this.a + ", timestamp=" + this.b + ", usageType=" + this.c + ", status=" + this.n + "]";
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.k(parcel, 1, this.a, i);
-        jte.q(parcel, 2, 8);
-        parcel.writeLong(this.b);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        jte.l(parcel, 4, this.d);
-        jte.k(parcel, 5, this.e, i);
-        jte.q(parcel, 6, 4);
-        parcel.writeInt(this.f ? 1 : 0);
-        jte.q(parcel, 7, 4);
-        parcel.writeInt(this.h);
-        jte.q(parcel, 8, 4);
-        parcel.writeInt(this.n);
-        jte.l(parcel, 9, this.r);
-        jte.s(parcel, r);
+    nhf(Class cls, Serializable serializable) {
+        this.a = cls;
     }
 }

@@ -1,38 +1,22 @@
 // default package
 
-import java.util.ArrayList;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ap6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eq6 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ String d;
-
-    public /* synthetic */ ap6(eq6 eq6Var, ArrayList arrayList, String str, byte b) {
-        this.a = b;
-        this.b = eq6Var;
-        this.c = arrayList;
-        this.d = str;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        String str = this.d;
-        ArrayList arrayList = this.c;
-        eq6 eq6Var = this.b;
-        switch (b) {
-            case 0:
-                gl.d3(new ap6(eq6Var, arrayList, str, (byte) 2));
-                break;
-            case 1:
-                eq6Var.f(str, arrayList);
-                break;
-            default:
-                eq6Var.f(str, arrayList);
-                break;
+public abstract class ap6 extends Binder implements dk5 {
+    public static dk5 a(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("androidx.media3.session.IMediaController");
+        if (queryLocalInterface != null && (queryLocalInterface instanceof dk5)) {
+            return (dk5) queryLocalInterface;
+        }
+        ck5 ck5Var = new ck5();
+        ck5Var.a = iBinder;
+        return ck5Var;
     }
 }

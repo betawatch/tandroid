@@ -1,100 +1,68 @@
 // default package
 
-import android.app.Activity;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.messenger.a;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class wx8 extends View {
-    public final HashMap a;
-    public final ArrayList b;
-    public final ArrayList c;
-    public final int d;
+public final /* synthetic */ class wx8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zx8 b;
 
-    public wx8(Activity activity) {
-        super(activity);
-        this.a = new HashMap();
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = y6c.t0;
+    public /* synthetic */ wx8(zx8 zx8Var, byte b) {
+        this.a = b;
+        this.b = zx8Var;
     }
 
-    public static String b(gb2 gb2Var) {
-        k27 messageObject = gb2Var.getMessageObject();
-        if (messageObject == null) {
-            return null;
-        }
-        return messageObject.x0() + "_" + messageObject.e1();
-    }
-
-    public final boolean a() {
-        Iterator it = this.a.entrySet().iterator();
-        while (it.hasNext()) {
-            if (!((vx8) ((Map.Entry) it.next()).getValue()).P) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        super.invalidateDrawable(drawable);
-        if (drawable instanceof vx8) {
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            ((vx8) ((Map.Entry) it.next()).getValue()).d();
-        }
-        hashMap.clear();
-        this.b.clear();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            ((vx8) ((Map.Entry) it.next()).getValue()).draw(canvas);
-        }
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            vx8 vx8Var = (vx8) hashMap.remove((String) obj);
-            if (vx8Var != null) {
-                vx8Var.d();
-            }
-        }
-        arrayList.clear();
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        Iterator it = this.a.entrySet().iterator();
-        while (it.hasNext()) {
-            ((vx8) ((Map.Entry) it.next()).getValue()).setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        zx8 zx8Var = this.b;
+        switch (b) {
+            case 0:
+                zx8Var.g();
+                zx8Var.a.p(zx8Var);
+                break;
+            case 1:
+                yf0 yf0Var = zx8Var.j0;
+                if (yf0Var != null) {
+                    yf0Var.d();
+                    zx8Var.j0 = null;
+                }
+                Bitmap bitmap = zx8Var.l0;
+                if (bitmap != null) {
+                    bitmap.recycle();
+                    zx8Var.l0 = null;
+                }
+                zx8Var.g0.quitSafely();
+                break;
+            case 2:
+                try {
+                    Context context = a.b;
+                    cue cueVar = new cue();
+                    cueVar.a = 256;
+                    zx8Var.j0 = new yf0(new ldd(context, cueVar));
+                } catch (Throwable th) {
+                    fc4.g(th, true);
+                }
+                zx8Var.k0 = new ai4((byte) 24);
+                break;
+            default:
+                if (!zx8Var.W && !zx8Var.V && zx8Var.b == null && CameraView.isCameraAllowed()) {
+                    CameraController.getInstance().initCamera(null);
+                    CameraView cameraView = new CameraView(zx8Var.getContext(), false);
+                    cameraView.setUseMaxPreview(true);
+                    cameraView.setOptimizeForBarcode(true);
+                    cameraView.setAlpha(0.0f);
+                    cameraView.setDelegate(new xr8(zx8Var, cameraView, (byte) 3));
+                    zx8Var.b = cameraView;
+                    zx8Var.addView(cameraView, 0, qoe.c(-1.0f, -1));
+                    break;
+                }
+                break;
         }
     }
 }

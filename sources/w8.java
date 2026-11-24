@@ -3,9 +3,9 @@
 import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class w8 extends pm4 {
+public final class w8 extends qo4 {
     public final /* synthetic */ byte s = 1;
     public final /* synthetic */ View w;
 
@@ -15,8 +15,8 @@ public final class w8 extends pm4 {
         this.w = actionMenuItemView;
     }
 
-    @Override // pm4
-    public final vga b() {
+    @Override // qo4
+    public final xia b() {
         y8 y8Var;
         byte b = this.s;
         View view = this.w;
@@ -36,16 +36,16 @@ public final class w8 extends pm4 {
         }
     }
 
-    @Override // pm4
+    @Override // qo4
     public final boolean c() {
-        vga b;
+        xia b;
         byte b2 = this.s;
         View view = this.w;
         switch (b2) {
             case 0:
                 ActionMenuItemView actionMenuItemView = (ActionMenuItemView) view;
-                xz6 xz6Var = actionMenuItemView.w;
-                if (xz6Var == null || !xz6Var.a(actionMenuItemView.n) || (b = b()) == null || !b.a()) {
+                x17 x17Var = actionMenuItemView.w;
+                if (x17Var == null || !x17Var.a(actionMenuItemView.n) || (b = b()) == null || !b.a()) {
                 }
                 break;
             default:
@@ -55,7 +55,7 @@ public final class w8 extends pm4 {
         return true;
     }
 
-    @Override // pm4
+    @Override // qo4
     public final boolean d() {
         switch (this.s) {
             case 1:

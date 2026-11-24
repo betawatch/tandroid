@@ -1,203 +1,77 @@
 // default package
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class wi2 extends Drawable {
-    public final Paint a;
-    public long b;
-    public final RectF c;
-    public float d;
-    public boolean e;
-    public int f;
-    public int g;
+public class wi2 extends Drawable {
+    public static final l94 h = new l94();
+    public float a;
+    public final float b;
+    public long c;
+    public final float[] d;
+    public final Paint e;
+    public float f;
+    public final RectF g;
 
-    public wi2(float f) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = new RectF();
-        this.g = kk7.d4;
-        paint.setColor(-1);
-        paint.setStrokeWidth(gl.L(f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
+    public wi2(float f, float f2, int i) {
+        this.a = gm.L(18.0f);
+        this.b = gm.L(2.25f);
+        this.c = -1L;
+        this.d = new float[2];
+        Paint paint = new Paint();
+        this.e = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.f = gl.L(8.0f);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.g = new RectF();
+        this.a = f;
+        this.b = f2;
+        b(i);
     }
 
-    public int a() {
-        return bkb.w0(null, bkb.eg, false);
+    public static void a(float f, float[] fArr) {
+        float f2 = (1520.0f * f) / 5400.0f;
+        fArr[0] = Math.max(0.0f, f2 - 20.0f);
+        fArr[1] = f2;
+        for (int i = 0; i < 4; i++) {
+            l94 l94Var = h;
+            fArr[1] = (l94Var.getInterpolation((f - (i * 1350)) / 667.0f) * 250.0f) + fArr[1];
+            fArr[0] = (l94Var.getInterpolation((f - (r4 + 667)) / 667.0f) * 250.0f) + fArr[0];
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x017f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0156  */
+    public final void b(int i) {
+        this.e.setColor(i);
+    }
+
     @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        float x;
-        Paint paint;
-        float f5;
-        long currentTimeMillis = System.currentTimeMillis();
-        int a = a();
-        Paint paint2 = this.a;
-        if (a != 0) {
-            this.g = Color.alpha(a);
-            paint2.setColor(bm2.o(a, kk7.d4));
+        if (this.c < 0) {
+            this.c = SystemClock.elapsedRealtime();
         }
-        long j = this.b;
-        if (j != 0) {
-            long j2 = currentTimeMillis - j;
-            boolean z = this.e;
-            if (z || this.d != 0.0f) {
-                float f6 = ((j2 * 360) / 500.0f) + this.d;
-                this.d = f6;
-                if (z || f6 < 720.0f) {
-                    this.d = f6 - (((int) (f6 / 720.0f)) * 720);
-                } else {
-                    this.d = 0.0f;
-                }
-                invalidateSelf();
-            }
-        }
-        if (this.g == 255 || getBounds() == null || getBounds().isEmpty()) {
-            canvas2 = canvas;
-            canvas2.save();
-        } else {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, this.g, 31);
-        }
-        canvas2.translate(gl.L(24.0f) / 2, gl.L(24.0f) / 2);
-        canvas2.rotate(-45.0f);
-        float f7 = this.d;
-        if (f7 < 0.0f || f7 >= 90.0f) {
-            if (f7 >= 90.0f && f7 < 180.0f) {
-                f4 = tb4.x(f7, 90.0f, 90.0f, 1.0f);
-                f2 = 0.0f;
-                f = 0.0f;
-                f3 = 1.0f;
-            } else if (f7 < 180.0f || f7 >= 270.0f) {
-                if (f7 >= 270.0f && f7 < 360.0f) {
-                    x = (f7 - 270.0f) / 90.0f;
-                } else if (f7 >= 360.0f && f7 < 450.0f) {
-                    x = tb4.x(f7, 360.0f, 90.0f, 1.0f);
-                } else if (f7 >= 450.0f && f7 < 540.0f) {
-                    f2 = (f7 - 450.0f) / 90.0f;
-                    f4 = 0.0f;
-                    f3 = 0.0f;
-                    f = 0.0f;
-                } else if (f7 >= 540.0f && f7 < 630.0f) {
-                    f4 = (f7 - 540.0f) / 90.0f;
-                    f3 = 0.0f;
-                    f = 0.0f;
-                    f2 = 1.0f;
-                } else if (f7 < 630.0f || f7 >= 720.0f) {
-                    f = 0.0f;
-                    f2 = 1.0f;
-                    f4 = f2;
-                } else {
-                    f3 = (f7 - 630.0f) / 90.0f;
-                    f = 0.0f;
-                    f2 = 1.0f;
-                    f4 = 1.0f;
-                }
-                f = x;
-                f2 = 0.0f;
-                f4 = f2;
-            } else {
-                f3 = tb4.x(f7, 180.0f, 90.0f, 1.0f);
-                f2 = 0.0f;
-                f4 = 0.0f;
-                f = 0.0f;
-            }
-            if (f2 == 0.0f) {
-                paint = paint2;
-                canvas2.drawLine(0.0f, 0.0f, 0.0f, this.f * f2, paint);
-            } else {
-                paint = paint2;
-            }
-            if (f4 != 0.0f) {
-                canvas.drawLine((-this.f) * f4, 0.0f, 0.0f, 0.0f, paint);
-            }
-            if (f3 != 0.0f) {
-                canvas.drawLine(0.0f, (-this.f) * f3, 0.0f, 0.0f, paint);
-            }
-            if (f != 1.0f) {
-                float f8 = this.f;
-                canvas.drawLine(f8 * f, 0.0f, f8, 0.0f, paint);
-            }
-            canvas.restore();
-            int centerX = getBounds().centerX();
-            int centerY = getBounds().centerY();
-            int i = this.f;
-            float f9 = centerX - i;
-            float f10 = centerY - i;
-            float f11 = centerX + i;
-            float f12 = centerY + i;
-            RectF rectF = this.c;
-            rectF.set(f9, f10, f11, f12);
-            f5 = this.d;
-            float f13 = (f5 >= 360.0f ? f5 - 360.0f : 0.0f) - 45.0f;
-            if (f5 >= 360.0f) {
-                f5 = 720.0f - f5;
-            }
-            canvas.drawArc(rectF, f13, f5, false, paint);
-            this.b = currentTimeMillis;
-        }
-        f2 = 1.0f - (f7 / 90.0f);
-        f = 0.0f;
-        f4 = 1.0f;
-        f3 = f4;
-        if (f2 == 0.0f) {
-        }
-        if (f4 != 0.0f) {
-        }
-        if (f3 != 0.0f) {
-        }
-        if (f != 1.0f) {
-        }
-        canvas.restore();
-        int centerX2 = getBounds().centerX();
-        int centerY2 = getBounds().centerY();
-        int i2 = this.f;
-        float f92 = centerX2 - i2;
-        float f102 = centerY2 - i2;
-        float f112 = centerX2 + i2;
-        float f122 = centerY2 + i2;
-        RectF rectF2 = this.c;
-        rectF2.set(f92, f102, f112, f122);
-        f5 = this.d;
-        float f132 = (f5 >= 360.0f ? f5 - 360.0f : 0.0f) - 45.0f;
-        if (f5 >= 360.0f) {
-        }
-        canvas.drawArc(rectF2, f132, f5, false, paint);
-        this.b = currentTimeMillis;
+        float elapsedRealtime = (SystemClock.elapsedRealtime() - this.c) % 5400;
+        float[] fArr = this.d;
+        a(elapsedRealtime, fArr);
+        float f = this.f;
+        float f2 = fArr[0];
+        canvas.drawArc(this.g, f + f2, fArr[1] - f2, false, this.e);
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(24.0f);
+    public int getIntrinsicHeight() {
+        return (int) (this.a + this.b);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(24.0f);
+    public int getIntrinsicWidth() {
+        return (int) (this.a + this.b);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -207,13 +81,37 @@ public abstract class wi2 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i) {
+        this.e.setAlpha(i);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i, int i2, int i3, int i4) {
+        float f = i;
+        float f2 = i3 - i;
+        float f3 = this.b;
+        float f4 = this.a;
+        float f5 = i2;
+        float f6 = i4 - i2;
+        this.g.set(aq1.z(f2 - (f3 / 2.0f), f4, 2.0f, f), (((f6 - (f3 / 2.0f)) - f4) / 2.0f) + f5, ((((f3 / 2.0f) + f2) + f4) / 2.0f) + f, ((((f3 / 2.0f) + f6) + f4) / 2.0f) + f5);
+        super.setBounds(i, i2, i3, i4);
+        this.e.setStrokeWidth(f3);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
     }
 
-    public wi2() {
-        this(2.0f);
+    public wi2(int i) {
+        this.a = gm.L(18.0f);
+        this.b = gm.L(2.25f);
+        this.c = -1L;
+        this.d = new float[2];
+        Paint paint = new Paint();
+        this.e = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.g = new RectF();
+        b(i);
     }
 }

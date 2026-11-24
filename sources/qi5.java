@@ -1,22 +1,23 @@
 // default package
 
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public abstract class qi5 extends c5b {
+    @Override // android.view.View
+    public final void invalidate() {
+        if (pi5.c) {
+            pi5.b.add(this);
+        } else {
+            super.invalidate();
+        }
+    }
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface qi5 {
-    void a(float f);
-
-    void b(ActionBarLayout actionBarLayout, boolean z);
-
-    void e(int[] iArr);
-
-    boolean h(d dVar, ActionBarLayout actionBarLayout);
-
-    boolean j();
-
-    boolean k(ActionBarLayout actionBarLayout);
-
-    boolean l(ActionBarLayout actionBarLayout, ri5 ri5Var);
+    @Override // android.view.View
+    public final void invalidate(int i, int i2, int i3, int i4) {
+        if (pi5.c) {
+            pi5.b.add(this);
+        } else {
+            super.invalidate(i, i2, i3, i4);
+        }
+    }
 }

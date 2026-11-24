@@ -1,73 +1,29 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.opengl.EGL14;
+import android.opengl.EGLSurface;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fpc implements i8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qpc b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class fpc {
+    public final gpc a;
+    public final Surface b;
+    public volatile boolean d;
+    public volatile epc e;
+    public int f;
+    public int g;
+    public boolean i;
+    public boolean j;
+    public volatile boolean c = true;
+    public EGLSurface h = EGL14.EGL_NO_SURFACE;
+    public int k = -1;
+    public float l = -1.0f;
 
-    public /* synthetic */ fpc(qpc qpcVar, byte b) {
-        this.a = b;
-        this.b = qpcVar;
-    }
-
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
-        byte b = this.a;
-        qpc qpcVar = this.b;
-        switch (b) {
-            case 0:
-                qpcVar.p0((TL_wallet.walletUserAddress) obj);
-                break;
-            case 1:
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                if (wallettransaction != null) {
-                    qpcVar.f0 = wallettransaction.fee;
-                    qpcVar.C0();
-                    break;
-                }
-                break;
-            case 2:
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                qpcVar.r = false;
-                if (!TextUtils.equals((String) obj2, "WALLET_USER_UNAVAILABLE")) {
-                    qpcVar.e = walletuseraddress;
-                    if (walletuseraddress != null) {
-                        qpcVar.h = walletuseraddress.address;
-                    }
-                    va vaVar = qpcVar.a;
-                    if (vaVar != null) {
-                        vaVar.g3.O(true);
-                    }
-                    qpcVar.B0();
-                    qpcVar.r0();
-                    xoc xocVar = qpcVar.w;
-                    if (xocVar != null) {
-                        xocVar.a(qpcVar.h, qpcVar.f);
-                        break;
-                    }
-                } else {
-                    qpcVar.finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                qpcVar.h0 = (String) obj;
-                qpcVar.i0 = ((Boolean) obj2).booleanValue();
-                qpcVar.Q.setText(qpcVar.h0);
-                qpcVar.Q.setVisibility(TextUtils.isEmpty(qpcVar.h0) ? 8 : 0);
-                qpcVar.D0();
-                break;
-            default:
-                qpcVar.h0 = (String) obj;
-                qpcVar.i0 = ((Boolean) obj2).booleanValue();
-                qpcVar.Q.setText(qpcVar.h0);
-                qpcVar.Q.setVisibility(TextUtils.isEmpty(qpcVar.h0) ? 8 : 0);
-                qpcVar.D0();
-                break;
-        }
+    public fpc(gpc gpcVar, Surface surface, int i) {
+        this.a = gpcVar;
+        this.b = surface;
+        this.g = i;
+        this.f = i;
     }
 }

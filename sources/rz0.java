@@ -1,33 +1,47 @@
 // default package
 
-import android.media.MediaDataSource;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class rz0 extends MediaDataSource {
-    public final byte[] a;
+public final class rz0 {
+    public final int a;
+    public int b;
+    public int c;
+    public long d;
+    public final boolean e;
+    public final yw7 f;
+    public final yw7 g;
+    public int h;
+    public int i;
 
-    public rz0(byte[] bArr) {
-        this.a = bArr;
+    public rz0(yw7 yw7Var, yw7 yw7Var2, boolean z) {
+        this.g = yw7Var;
+        this.f = yw7Var2;
+        this.e = z;
+        yw7Var2.N(12);
+        this.a = yw7Var2.E();
+        yw7Var.N(12);
+        this.i = yw7Var.E();
+        zhe.a("first_chunk must be 1", yw7Var.m() == 1);
+        this.b = -1;
     }
 
-    @Override // android.media.MediaDataSource
-    public final long getSize() {
-        return this.a.length;
-    }
-
-    @Override // android.media.MediaDataSource
-    public final int readAt(long j, byte[] bArr, int i, int i2) {
-        byte[] bArr2 = this.a;
-        if (j >= bArr2.length) {
-            return -1;
+    public final boolean a() {
+        int i = this.b + 1;
+        this.b = i;
+        if (i == this.a) {
+            return false;
         }
-        int min = (int) Math.min(i2, bArr2.length - j);
-        System.arraycopy(bArr2, (int) j, bArr, i, min);
-        return min;
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+        boolean z = this.e;
+        yw7 yw7Var = this.f;
+        this.d = z ? yw7Var.G() : yw7Var.C();
+        if (this.b == this.h) {
+            yw7 yw7Var2 = this.g;
+            this.c = yw7Var2.E();
+            yw7Var2.O(4);
+            int i2 = this.i - 1;
+            this.i = i2;
+            this.h = i2 > 0 ? yw7Var2.E() - 1 : -1;
+        }
+        return true;
     }
 }

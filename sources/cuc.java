@@ -1,17 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class cuc extends Exception {
-    public final int a;
+import java.util.Arrays;
 
-    public cuc(int i, String str) {
-        super(str);
-        this.a = i;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class cuc implements wo {
+    public static final cuc a = new cuc();
+
+    public final boolean equals(Object obj) {
+        return obj instanceof cuc;
     }
 
-    public cuc(int i, String str, Throwable th) {
-        super(str, th);
-        this.a = i;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{cuc.class});
     }
 }

@@ -1,23 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class kk6 {
-    public static final kk6 i = new kk6(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0);
-    public final long a;
-    public final long b;
-    public final long c;
-    public long e;
-    public int f;
-    public boolean g;
-    public final iq d = new iq();
-    public long h = -9223372036854775807L;
+import java.util.Map;
 
-    public kk6(long j, long j2, long j3, long j4, int i2) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
-        this.e = j4;
-        this.f = i2;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public interface kk6 extends Map {
+    Object a();
 }

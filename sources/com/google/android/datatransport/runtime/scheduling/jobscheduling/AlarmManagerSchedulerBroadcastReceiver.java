@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.util.Base64;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -17,14 +17,14 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         String queryParameter2 = intent.getData().getQueryParameter("extras");
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
         int i = intent.getExtras().getInt("attemptNumber");
-        i1c.b(context);
-        mv6 a2 = ra0.a();
-        a2.j0(queryParameter);
-        a2.d = dj8.b(intValue);
+        i3c.b(context);
+        mx6 a2 = rb0.a();
+        a2.m0(queryParameter);
+        a2.d = gl8.b(intValue);
         if (queryParameter2 != null) {
             a2.c = Base64.decode(queryParameter2, 0);
         }
-        z90 z90Var = i1c.a().d;
-        ((Executor) z90Var.e).execute(new ica(z90Var, a2.o(), i, new jc((byte) 0), (byte) 12));
+        za0 za0Var = i3c.a().d;
+        ((Executor) za0Var.e).execute(new tda(za0Var, a2.u(), i, new jd((byte) 0), (byte) 13));
     }
 }

@@ -1,34 +1,24 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class x82 extends tu9 {
-    public final /* synthetic */ f92 O;
+public final class x82 extends m8 {
+    public final /* synthetic */ z82 o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x82(f92 f92Var, Context context, t1 t1Var, wjb wjbVar) {
-        super(context, t1Var, wjbVar, false);
-        this.O = f92Var;
+    public x82(z82 z82Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = z82Var;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return !this.O.M && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.O.M && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
-        rect.bottom = gl.L(60.0f) + rect.bottom;
-        return super.requestChildRectangleOnScreen(view, rect, z);
+    @Override // m8, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        yv1 yv1Var = this.o.H;
+        if (yv1Var != null) {
+            yv1Var.y6(false, true, 0.0f);
+        }
     }
 }

@@ -1,18 +1,8 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class zuc implements Comparable {
-    public final int a;
-    public final vuc b;
+import android.webkit.WebChromeClient;
 
-    public zuc(int i, vuc vucVar) {
-        this.a = i;
-        this.b = vucVar;
-    }
-
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Integer.compare(this.a, ((zuc) obj).a);
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class zuc extends WebChromeClient {
 }

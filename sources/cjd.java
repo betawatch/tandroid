@@ -1,49 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.BadParcelableException;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class cjd implements kkd {
-    public final byte a;
+public abstract class cjd {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public cjd(int i) {
-        this.a = i;
+    static {
+        cjd.class.getClassLoader();
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return kkd.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
         }
-        if (!(obj instanceof kkd)) {
-            return false;
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void b(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(hg9.j(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
-        kkd kkdVar = (kkd) obj;
-        return this.a == kkdVar.zza() && ekd.a.equals(kkdVar.zzb());
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (ekd.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + ekd.a + ')';
-    }
-
-    @Override // kkd
-    public final int zza() {
-        return this.a;
-    }
-
-    @Override // kkd
-    public final ekd zzb() {
-        return ekd.a;
     }
 }

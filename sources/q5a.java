@@ -1,35 +1,22 @@
 // default package
 
-import j$.util.Objects;
-import java.util.HashSet;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class q5a {
-    public static final q5a b = new q5a(new HashSet());
-    public static final String c;
-    public final ym5 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class q5a implements RequestDelegate {
+    public final /* synthetic */ TLRPC.TL_messages_startHistoryImport a;
+    public final /* synthetic */ r5a b;
 
-    static {
-        String str = g8c.a;
-        c = "0";
+    public q5a(r5a r5aVar, TLRPC.TL_messages_startHistoryImport tL_messages_startHistoryImport) {
+        this.b = r5aVar;
+        this.a = tL_messages_startHistoryImport;
     }
 
-    public q5a(HashSet hashSet) {
-        this.a = ym5.q(hashSet);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof q5a) {
-            return this.a.equals(((q5a) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        gm.c3(new hw9(this, tL_error, this.a, (byte) 2));
     }
 }

@@ -1,95 +1,39 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class hc0 extends View {
-    public final gc0 a;
-    public mh8 b;
-    public tgb c;
-    public Paint d;
+public final class hc0 {
+    public int a;
+    public boolean b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
 
-    public hc0(Context context, boolean z) {
-        super(context);
-        this.a = new gc0(this, z);
+    public final hc0 a() {
+        hc0 hc0Var = new hc0();
+        hc0Var.c = this.c;
+        hc0Var.d = this.d;
+        hc0Var.e = this.e;
+        hc0Var.f = this.f;
+        hc0Var.b = this.b;
+        return hc0Var;
     }
 
-    public final void a(boolean z) {
-        this.a.a(z, true);
-    }
-
-    public final void b(int i, int i2, TLObject tLObject) {
-        this.a.j(i, i2, tLObject);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.e();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.f();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.g(canvas);
-        if (this.c != null) {
-            RectF rectF = gl.P;
-            rectF.set(getWidth() - gl.L(22.0f), getHeight() - gl.L(22.0f), getWidth() - gl.L(0.0f), getHeight() - gl.L(0.0f));
-            this.b.e(rectF);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + gl.L(1.33f), this.d);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
-            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof hc0)) {
+            return false;
+        }
+        hc0 hc0Var = (hc0) obj;
+        return this.c == hc0Var.c && this.d == hc0Var.d && this.e == hc0Var.e && this.f == hc0Var.f;
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        int measuredWidth = getMeasuredWidth();
-        gc0 gc0Var = this.a;
-        gc0Var.p = measuredWidth;
-        gc0Var.o = getMeasuredHeight();
-    }
-
-    public void setAvatarsTextSize(int i) {
-        this.a.h(i);
-    }
-
-    public void setCentered(boolean z) {
-        this.a.l = z;
-    }
-
-    public void setCount(int i) {
-        this.a.i(i);
-    }
-
-    public void setDelegate(Runnable runnable) {
-        this.a.j = runnable;
-    }
-
-    public void setSize(int i) {
-        this.a.s = i;
-    }
-
-    public void setStepFactor(float f) {
-        this.a.t = f;
-    }
-
-    public void setStyle(int i) {
-        gc0 gc0Var = this.a;
-        gc0Var.k = i;
-        gc0Var.d();
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
     }
 }

@@ -1,19 +1,123 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class t2e implements zn7 {
-    public static final t2e a = new t2e();
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.text.TextUtils;
+import com.google.android.gms.common.api.Status;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class t2e extends jh0 {
+    public final /* synthetic */ byte q = 0;
+    public final /* synthetic */ byte[] r;
+    public final /* synthetic */ String s;
+    public final Object t;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t2e(z3d z3dVar, byte[] bArr, String str) {
+        super(br9.a, z3dVar);
+        this.r = bArr;
+        this.s = str;
+        this.t = new gbf(this);
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult, kh0
+    public final /* bridge */ /* synthetic */ void a(uc9 uc9Var) {
+        switch (this.q) {
+            case 0:
+                a(uc9Var);
+                break;
+            default:
+                a(uc9Var);
+                break;
         }
-        throw null;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult
+    public final /* bridge */ /* synthetic */ uc9 d(Status status) {
+        switch (this.q) {
+            case 0:
+                return new p4e(status, -1);
+            default:
+                return new k9f(status, null);
+        }
+    }
+
+    @Override // jh0
+    public final void n(zz4 zz4Var) {
+        Parcel obtain;
+        Parcel obtain2;
+        ApplicationInfo applicationInfo;
+        Bundle bundle;
+        byte b = this.q;
+        String str = this.s;
+        byte[] bArr = this.r;
+        Object obj = this.t;
+        switch (b) {
+            case 0:
+                o1e o1eVar = (o1e) ((lme) zz4Var).k();
+                hle hleVar = new hle();
+                hleVar.b = this;
+                obtain = Parcel.obtain();
+                obtain.writeInterfaceToken(o1eVar.c);
+                int i = cjd.a;
+                obtain.writeStrongBinder(hleVar);
+                obtain.writeString(str);
+                obtain.writeString((String) obj);
+                obtain.writeByteArray(bArr);
+                obtain2 = Parcel.obtain();
+                try {
+                    o1eVar.b.transact(12, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return;
+                } finally {
+                }
+            default:
+                p8d p8dVar = (p8d) zz4Var;
+                gbf gbfVar = (gbf) obj;
+                if (TextUtils.isEmpty(str)) {
+                    Context context = p8dVar.F;
+                    str = "";
+                    try {
+                        PackageManager packageManager = context.getPackageManager();
+                        if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null) {
+                            String str2 = (String) bundle.get("com.google.android.safetynet.ATTEST_API_KEY");
+                            if (str2 != null) {
+                                str = str2;
+                            }
+                        }
+                    } catch (PackageManager.NameNotFoundException unused) {
+                    }
+                }
+                iee ieeVar = (iee) p8dVar.k();
+                obtain = Parcel.obtain();
+                obtain.writeInterfaceToken("com.google.android.gms.safetynet.internal.ISafetyNetService");
+                int i2 = ajd.a;
+                if (gbfVar == null) {
+                    obtain.writeStrongBinder(null);
+                } else {
+                    obtain.writeStrongBinder(gbfVar);
+                }
+                obtain.writeByteArray(bArr);
+                obtain.writeString(str);
+                obtain2 = Parcel.obtain();
+                try {
+                    ieeVar.a.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return;
+                } finally {
+                }
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t2e(z3d z3dVar, String str, String str2, byte[] bArr) {
+        super(duc.a, z3dVar);
+        this.s = str;
+        this.t = str2;
+        this.r = bArr;
     }
 }

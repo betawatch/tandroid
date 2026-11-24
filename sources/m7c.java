@@ -1,70 +1,20 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.View;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m7c implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ s7c b;
+public final /* synthetic */ class m7c implements oac, pac {
+    public final /* synthetic */ n7c a;
 
-    public /* synthetic */ m7c(s7c s7cVar, byte b) {
-        this.a = b;
-        this.b = s7cVar;
+    @Override // pac
+    public final Object b(c6c c6cVar, View view, Integer num, Float f, Float f2) {
+        return Boolean.valueOf(this.a.c0(c6cVar, view));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        s7c s7cVar = this.b;
-        switch (b) {
-            case 0:
-                s7cVar.c1(true);
-                break;
-            case 1:
-                s7cVar.Y1.setVisibility(8);
-                break;
-            case 2:
-                s7cVar.Y0();
-                s7cVar.g1(true, false);
-                break;
-            case 3:
-                dg7 dg7Var = s7cVar.U1;
-                dg7Var.b.r(k96.M0(2131745644, null), true);
-                break;
-            case 4:
-                dg7 dg7Var2 = s7cVar.U1;
-                dg7Var2.b.r(k96.M0(2131749478, null), true);
-                break;
-            case 5:
-                s7cVar.Y0();
-                s7cVar.g1(true, false);
-                break;
-            case 6:
-                ArrayList arrayList = s7cVar.d2;
-                if (arrayList.isEmpty()) {
-                    arrayList.addAll(hq6.d0(s7cVar.a).j1);
-                    s7cVar.f1(true, true);
-                    break;
-                }
-                break;
-            case 7:
-                s7cVar.Y1.setVisibility(8);
-                break;
-            case 8:
-                s7cVar.Y0();
-                s7cVar.g1(true, false);
-                break;
-            case 9:
-                s7cVar.f1(true, true);
-                break;
-            case 10:
-                s7cVar.dismiss();
-                break;
-            default:
-                s7cVar.Y0();
-                s7cVar.g1(true, false);
-                break;
-        }
+    @Override // oac
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((c6c) obj, (View) obj2);
     }
 }

@@ -1,29 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum psb extends qsb {
+public enum psb extends rub {
     public psb() {
-        super("EndTagOpen", 8);
+        super("ScriptDataEscaped", 21);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        boolean j = zj1Var.j();
-        lqb lqbVar = qsb.a;
-        if (j) {
-            aqbVar.l(this);
-            aqbVar.h("</");
-            aqbVar.c = lqbVar;
-        } else if (zj1Var.o()) {
-            aqbVar.d(false);
-            aqbVar.c = qsb.r;
-        } else if (zj1Var.m('>')) {
-            aqbVar.m(this);
-            aqbVar.a(lqbVar);
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        if (hl1Var.j()) {
+            bsbVar.l(this);
+            bsbVar.c = rub.a;
+            return;
+        }
+        char i = hl1Var.i();
+        if (i == 0) {
+            bsbVar.m(this);
+            hl1Var.a();
+            bsbVar.f((char) 65533);
+        } else if (i == '-') {
+            bsbVar.f('-');
+            bsbVar.a(rub.M);
+        } else if (i != '<') {
+            bsbVar.h(hl1Var.g('-', '<', 0));
         } else {
-            aqbVar.m(this);
-            aqbVar.a(qsb.g0);
+            bsbVar.a(rub.O);
         }
     }
 }

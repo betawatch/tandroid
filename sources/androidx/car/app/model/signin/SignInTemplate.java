@@ -7,16 +7,16 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class SignInTemplate implements ogb {
+public final class SignInTemplate implements pib {
     private final List<Action> mActionList;
     private final ActionStrip mActionStrip;
     private final CarText mAdditionalText;
     private final Action mHeaderAction;
     private final CarText mInstructions;
     private final boolean mIsLoading;
-    private final iha mSignInMethod;
+    private final kja mSignInMethod;
     private final CarText mTitle;
 
     private SignInTemplate() {
@@ -62,10 +62,10 @@ public final class SignInTemplate implements ogb {
         return this.mInstructions;
     }
 
-    public iha getSignInMethod() {
-        iha ihaVar = this.mSignInMethod;
-        Objects.requireNonNull(ihaVar);
-        return ihaVar;
+    public kja getSignInMethod() {
+        kja kjaVar = this.mSignInMethod;
+        Objects.requireNonNull(kjaVar);
+        return kjaVar;
     }
 
     public CarText getTitle() {
@@ -84,7 +84,7 @@ public final class SignInTemplate implements ogb {
         return "SignInTemplate";
     }
 
-    public SignInTemplate(hha hhaVar) {
+    public SignInTemplate(jja jjaVar) {
         throw null;
     }
 }

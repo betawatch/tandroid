@@ -1,16 +1,116 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class rec extends gb3 {
-    public final /* synthetic */ vec F;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-    public rec(vec vecVar) {
-        this.F = vecVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class rec extends View {
+    public ShapeDrawable a;
+    public Drawable b;
+    public StaticLayout c;
+    public TextPaint d;
+    public long e;
+    public float f;
+    public float h;
+    public boolean n;
+    public int r;
+
+    public final void a(boolean z) {
+        this.n = z;
+        invalidate();
     }
 
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        this.F.invalidate();
+    public final void b() {
+        int i;
+        Drawable drawable = this.b;
+        this.d.setColor(cmb.w0(null, cmb.fg, false));
+        ShapeDrawable shapeDrawable = this.a;
+        if (shapeDrawable != null) {
+            i = cmb.gg;
+            cmb.A1(cmb.w0(null, i, false), shapeDrawable);
+        } else {
+            int L = gm.L(5.0f);
+            i = cmb.gg;
+            this.a = cmb.b0(L, cmb.w0(null, i, false));
+        }
+        int w0 = cmb.w0(null, i, false);
+        if (w0 != this.r || drawable.getColorFilter() == null) {
+            this.r = w0;
+            drawable.setColorFilter(new PorterDuffColorFilter(w0, PorterDuff.Mode.MULTIPLY));
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.b;
+        if (this.c != null) {
+            boolean z = this.n;
+            float f = this.h;
+            if (!z) {
+                if (f != 0.0f) {
+                    float f2 = f - 0.12f;
+                    this.h = f2;
+                    if (f2 < 0.0f) {
+                        this.h = 0.0f;
+                    }
+                    invalidate();
+                }
+                if (this.h == 0.0f) {
+                    return;
+                }
+            } else if (f != 1.0f) {
+                float f3 = f + 0.12f;
+                this.h = f3;
+                if (f3 > 1.0f) {
+                    this.h = 1.0f;
+                }
+                invalidate();
+            }
+            float f4 = this.h;
+            int i = (int) ((f4 > 0.5f ? 1.0f : f4 / 0.5f) * 255.0f);
+            canvas.save();
+            float f5 = this.h;
+            canvas.scale(f5, f5, this.f, getMeasuredHeight());
+            canvas.translate(this.f - (this.c.getWidth() / 2.0f), 0.0f);
+            this.a.setBounds(-gm.L(8.0f), 0, gm.L(8.0f) + this.c.getWidth(), (int) (gm.N(4.0f) + this.c.getHeight()));
+            drawable.setBounds(aq1.A(2, this.c.getWidth() / 2, drawable), (int) (gm.N(4.0f) + this.c.getHeight()), aq1.w(2, this.c.getWidth() / 2, drawable), drawable.getIntrinsicHeight() + ((int) (gm.N(4.0f) + this.c.getHeight())));
+            drawable.setAlpha(i);
+            this.a.setAlpha(i);
+            this.d.setAlpha(i);
+            drawable.draw(canvas);
+            this.a.draw(canvas);
+            canvas.translate(0.0f, gm.N(1.0f));
+            this.c.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.b.getIntrinsicHeight() + gm.L(4.0f) + this.c.getHeight(), TLObject.FLAG_30));
+    }
+
+    public void setCx(float f) {
+        this.f = f;
+        invalidate();
+    }
+
+    public void setTime(int i) {
+        long j = i;
+        if (j != this.e) {
+            this.e = j;
+            String g0 = gm.g0(i, false, false);
+            TextPaint textPaint = this.d;
+            this.c = new StaticLayout(g0, textPaint, (int) textPaint.measureText(g0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, true);
+        }
     }
 }

@@ -1,30 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ru4 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ru4 implements mya {
+    public final uac a;
+    public final TaskCompletionSource b;
 
-    static {
-        b4c.h(new ru4());
+    public ru4(uac uacVar, TaskCompletionSource taskCompletionSource) {
+        this.a = uacVar;
+        this.b = taskCompletionSource;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        kz9 kz9Var = (kz9) view;
-        TLRPC.Chat chat = (TLRPC.Chat) c4cVar.H;
-        kz9Var.h(chat.participants_count, chat);
-        kz9Var.setDivider(z);
+    @Override // mya
+    public final boolean a(Exception exc) {
+        this.b.trySetException(exc);
+        return true;
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        kz9 kz9Var = new kz9(context, false, false, wjbVar, false);
-        kz9Var.setCellBackgroundVisible(false);
-        return kz9Var;
+    @Override // mya
+    public final boolean b(gb0 gb0Var) {
+        if (gb0Var.b == 4 && !this.a.a(gb0Var)) {
+            String str = gb0Var.c;
+            if (str != null) {
+                this.b.setResult(new xa0(gb0Var.e, str, gb0Var.f));
+                return true;
+            }
+            gxc.d("Null token");
+        }
+        return false;
     }
 }

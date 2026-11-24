@@ -1,224 +1,26 @@
 // default package
 
-import android.view.ViewGroup;
+import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class tq1 implements vv2 {
-    public final /* synthetic */ mu1 a;
+public final class tq1 extends ua2 {
+    public final /* synthetic */ yv1 N;
 
-    public tq1(mu1 mu1Var) {
-        this.a = mu1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tq1(yv1 yv1Var, Activity activity, int i, TLRPC.Document document, ylb ylbVar) {
+        super(activity, i, document, ylbVar);
+        this.N = yv1Var;
     }
 
-    @Override // vv2
-    public final boolean A(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final String C(boolean z) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean E() {
-        return false;
-    }
-
-    @Override // vv2
-    public final cs5 F(ViewGroup viewGroup) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean K() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void N(TLRPC.InputStickerSet inputStickerSet, boolean z) {
-        if (inputStickerSet != null) {
-            mu1 mu1Var = this.a;
-            if (mu1Var.getParentActivity() != null) {
-                TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
-                tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
-                tL_inputStickerSetID.id = inputStickerSet.id;
-                u0b u0bVar = new u0b(mu1Var.getParentActivity(), mu1Var, tL_inputStickerSetID, null, mu1Var.a0, mu1Var.Ba);
-                boolean O7 = mu1Var.O7();
-                u0bVar.i0 = O7;
-                u0bVar.n = O7;
-                u0bVar.c2 = z;
-                mu1Var.showDialog(u0bVar);
-            }
-        }
-    }
-
-    @Override // vv2
-    public final boolean O(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final Boolean R(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean S() {
-        return true;
-    }
-
-    @Override // vv2
-    public final long a() {
-        return this.a.l6;
-    }
-
-    @Override // vv2
-    public final boolean b() {
-        return this.a.G4();
-    }
-
-    @Override // vv2
-    public final boolean c() {
-        return this.a.g4 == 1;
-    }
-
-    @Override // vv2
-    public final TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // vv2
-    public final TLRPC.PollAnswer g() {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean h() {
-        return true;
-    }
-
-    @Override // vv2
-    public final boolean i() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean j(int i) {
-        return true;
-    }
-
-    @Override // vv2
-    public final void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
-        this.a.a0.e(document, str, obj, null, true, z, i, i2);
-    }
-
-    @Override // vv2
-    public final boolean n() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean t() {
-        return true;
-    }
-
-    @Override // vv2
-    public final k27 w() {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean x() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean z() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void L() {
-    }
-
-    @Override // vv2
-    public final void M() {
-    }
-
-    @Override // vv2
-    public final void p() {
-    }
-
-    @Override // vv2
-    public final void q() {
-    }
-
-    @Override // vv2
-    public final void B(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void D(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void H(s3a s3aVar) {
-    }
-
-    @Override // vv2
-    public final void P(String str) {
-    }
-
-    @Override // vv2
-    public final void l(String str) {
-    }
-
-    @Override // vv2
-    public final void m(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void o(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void r(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void v(String str) {
-    }
-
-    @Override // vv2
-    public final void y(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void I(Object obj, Object obj2) {
-    }
-
-    @Override // vv2
-    public final void s(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // vv2
-    public final void Q(CharSequence charSequence, String str, pz1 pz1Var) {
-    }
-
-    @Override // vv2
-    public final void u(Object obj, Object obj2, boolean z, int i, int i2) {
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        float y = getY();
+        yv1 yv1Var = this.N;
+        float y2 = yv1Var.g1.getY() + y;
+        this.K = yv1Var.m1.getBackgroundSizeY();
+        this.J = y2;
     }
 }

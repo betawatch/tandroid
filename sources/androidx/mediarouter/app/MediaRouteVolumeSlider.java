@@ -9,9 +9,9 @@ import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class MediaRouteVolumeSlider extends rp {
+public class MediaRouteVolumeSlider extends rq {
     public final float b;
     public boolean c;
     public Drawable d;
@@ -20,7 +20,7 @@ public class MediaRouteVolumeSlider extends rp {
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = voe.c(context);
+        this.b = yqe.c(context);
     }
 
     public final void a(int i, int i2) {
@@ -46,10 +46,10 @@ public class MediaRouteVolumeSlider extends rp {
         super.setThumb(z ? null : this.d);
     }
 
-    @Override // rp, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    @Override // rq, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i = isEnabled() ? kk7.d4 : (int) (this.b * 255.0f);
+        int i = isEnabled() ? nm7.d4 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
         int i2 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;

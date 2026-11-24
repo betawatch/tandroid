@@ -1,23 +1,19 @@
 // default package
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.KeyEvent;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ade {
-    public static KeyEvent a(Intent intent) {
-        Bundle extras = intent.getExtras();
-        if (extras != null) {
-            try {
-                if (extras.containsKey("android.intent.extra.KEY_EVENT")) {
-                    return (KeyEvent) extras.getParcelable("android.intent.extra.KEY_EVENT");
-                }
-            } catch (RuntimeException e) {
-                lad.g("DefaultActionFactory", "Failed to get parcelable key event", e);
-            }
+public final class ade implements cq7 {
+    public static final ade a = new ade();
+
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return null;
+        throw null;
     }
 }

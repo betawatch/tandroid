@@ -1,49 +1,72 @@
 // default package
 
-import org.telegram.messenger.MediaController;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class cq6 {
-    public String a;
-    public long b;
-    public int c;
-    public long d;
-    public long e;
-    public short[] f;
-    public boolean g;
-    public float h = 0.0f;
-    public float i = 1.0f;
+public final /* synthetic */ class cq6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hs6 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
 
-    public static cq6 a(MediaController mediaController, String str, boolean z) {
-        TLRPC.TL_document tL_document = mediaController.g1;
-        if (tL_document == null) {
-            return null;
-        }
-        cq6 cq6Var = new cq6();
-        cq6Var.a = str;
-        cq6Var.b = mediaController.w1;
-        cq6Var.c = mediaController.m1;
-        cq6Var.d = mediaController.l1;
-        cq6Var.e = tL_document.id;
-        cq6Var.f = mediaController.v1;
-        cq6Var.g = z;
-        cq6Var.h = 0.0f;
-        cq6Var.i = 1.0f;
-        return cq6Var;
+    public /* synthetic */ cq6(hs6 hs6Var, ArrayList arrayList, int i, int i2, byte b) {
+        this.a = b;
+        this.b = hs6Var;
+        this.c = arrayList;
+        this.d = i;
+        this.e = i2;
     }
 
-    public final String toString() {
-        char[] cArr = new char[this.f.length];
-        int i = 0;
-        while (true) {
-            short[] sArr = this.f;
-            if (i >= sArr.length) {
-                return "@" + this.a + "\n" + this.b + "\n" + this.c + "\n" + this.d + "\n" + (this.g ? 1 : 0) + ";" + this.h + ";" + this.i + "\n" + new String(cArr);
-            }
-            cArr[i] = (char) sArr[i];
-            i++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.e;
+        int i2 = this.d;
+        ArrayList arrayList = this.c;
+        hs6 hs6Var = this.b;
+        switch (b) {
+            case 0:
+                hs6Var.y1(i2, i, arrayList, true);
+                break;
+            default:
+                try {
+                    if (arrayList != null) {
+                        hs6Var.getMessagesStorage().b.executeFast("DELETE FROM reactions").stepThis().dispose();
+                        SQLitePreparedStatement executeFast = hs6Var.getMessagesStorage().b.executeFast("REPLACE INTO reactions VALUES(?, ?, ?)");
+                        executeFast.requery();
+                        int i3 = 4;
+                        for (int i4 = 0; i4 < arrayList.size(); i4++) {
+                            i3 += ((TLRPC.TL_availableReaction) arrayList.get(i4)).getObjectSize();
+                        }
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(i3);
+                        nativeByteBuffer.writeInt32(arrayList.size());
+                        for (int i5 = 0; i5 < arrayList.size(); i5++) {
+                            ((TLRPC.TL_availableReaction) arrayList.get(i5)).serializeToStream(nativeByteBuffer);
+                        }
+                        executeFast.bindByteBuffer(1, nativeByteBuffer);
+                        executeFast.bindInteger(2, i2);
+                        executeFast.bindInteger(3, i);
+                        executeFast.step();
+                        nativeByteBuffer.reuse();
+                        executeFast.dispose();
+                        break;
+                    } else {
+                        SQLitePreparedStatement executeFast2 = hs6Var.getMessagesStorage().b.executeFast("UPDATE reactions SET date = ?");
+                        executeFast2.requery();
+                        executeFast2.bindLong(1, i);
+                        executeFast2.step();
+                        executeFast2.dispose();
+                        break;
+                    }
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                    return;
+                }
         }
     }
 }

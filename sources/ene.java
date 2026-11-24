@@ -1,19 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ene implements zn7 {
-    public static final ene a = new ene();
+import java.math.RoundingMode;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class ene {
+    public static int a(int i, int i2) {
+        long j = i + i2;
+        int i3 = (int) j;
+        if (j == ((long) i3)) {
+            return i3;
+        }
+        throw new ArithmeticException("overflow: checkedAdd(" + i + ", " + i2 + ")");
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static int b(int i, int i2) {
+        RoundingMode roundingMode = RoundingMode.CEILING;
+        roundingMode.getClass();
+        if (i2 == 0) {
+            throw new ArithmeticException("/ by zero");
         }
-        throw null;
+        int i3 = i / i2;
+        int i4 = i - (i2 * i3);
+        if (i4 == 0) {
+            return i3;
+        }
+        int i5 = ((i ^ i2) >> 31) | 1;
+        switch (dr5.a[roundingMode.ordinal()]) {
+            case 1:
+                lqe.b(i4 == 0);
+                return i3;
+            case 2:
+                return i3;
+            case 3:
+                if (i5 >= 0) {
+                    return i3;
+                }
+                break;
+            case 4:
+                break;
+            case 5:
+                if (i5 <= 0) {
+                    return i3;
+                }
+                break;
+            case 6:
+            case 7:
+            case 8:
+                int abs = Math.abs(i4);
+                int abs2 = abs - (Math.abs(i2) - abs);
+                if (abs2 == 0) {
+                    RoundingMode roundingMode2 = RoundingMode.HALF_UP;
+                    RoundingMode roundingMode3 = RoundingMode.HALF_EVEN;
+                    return i3;
+                }
+                if (abs2 <= 0) {
+                    return i3;
+                }
+                break;
+            default:
+                zo4.f();
+                return 0;
+        }
+        return i3 + i5;
     }
 }

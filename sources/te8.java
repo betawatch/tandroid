@@ -1,77 +1,91 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class te8 extends gb2 {
-    public final Path Ld;
-    public final Paint Md;
-    public final /* synthetic */ byte[] Nd;
-    public final /* synthetic */ int Od;
-    public final /* synthetic */ int Pd;
-    public final /* synthetic */ ve8 Qd;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class te8 implements yzb {
+    public final hr9 a;
+    public final mj4 b = new mj4((byte) 3, false);
+    public final pf7 c = new pf7();
+    public long d = -9223372036854775807L;
+    public final /* synthetic */ ue8 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public te8(ve8 ve8Var, Context context, int i, wjb wjbVar, byte[] bArr, int i2, int i3) {
-        super(context, i, false, null, wjbVar);
-        this.Qd = ve8Var;
-        this.Nd = bArr;
-        this.Od = i2;
-        this.Pd = i3;
-        this.Ld = new Path();
-        this.Md = new Paint(1);
+    public te8(ue8 ue8Var, mx6 mx6Var) {
+        this.e = ue8Var;
+        this.a = new hr9(mx6Var, null, null);
     }
 
-    @Override // gb2
-    public final void j1(Canvas canvas) {
-        this.S4 = 0;
-        this.T4 = this.Q4.size() - 1;
-        this.U4 = (-gl.L(7.0f)) * this.Qd.E;
-        super.j1(canvas);
-    }
-
-    @Override // gb2, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int Y1 = Y1(this.Nd);
-        float X1 = X1(Y1);
-        float W1 = W1(Y1);
-        RectF rectF = gl.P;
-        rectF.set(getPollButtonsLeft(), X1, getPollButtonsRight(), W1);
-        float f = rectF.top;
-        float L = gl.L(3.0f);
-        ve8 ve8Var = this.Qd;
-        rectF.top = gl.R1(L, ve8Var.W ? -gl.L(3.0f) : 0.0f, ve8Var.E) + f;
-        float f2 = rectF.bottom;
-        boolean z = ve8Var.W;
-        float L2 = gl.L(3.0f);
-        if (!z) {
-            L2 = gl.R1(L2, 0.0f, ve8Var.E);
+    @Override // yzb
+    public final void a(long j, int i, int i2, int i3, xzb xzbVar) {
+        long j2;
+        long j3;
+        this.a.a(j, i, i2, i3, xzbVar);
+        while (this.a.A(false)) {
+            pf7 pf7Var = this.c;
+            pf7Var.clear();
+            if (this.a.F(this.b, pf7Var, 0, false) == -4) {
+                pf7Var.d();
+            } else {
+                pf7Var = null;
+            }
+            if (pf7Var != null) {
+                long j4 = pf7Var.e;
+                nf7 a = this.e.c.a(pf7Var);
+                if (a != null) {
+                    u54 u54Var = (u54) a.a[0];
+                    String str = u54Var.a;
+                    String str2 = u54Var.b;
+                    if ("urn:mpeg:dash:event:2012".equals(str) && ("1".equals(str2) || "2".equals(str2) || "3".equals(str2))) {
+                        try {
+                            j3 = hac.W(hac.r(u54Var.e));
+                        } catch (bx7 unused) {
+                            j3 = -9223372036854775807L;
+                        }
+                        if (j3 != -9223372036854775807L) {
+                            se8 se8Var = new se8(j4, j3);
+                            Handler handler = this.e.d;
+                            handler.sendMessage(handler.obtainMessage(1, se8Var));
+                        }
+                    }
+                }
+            }
         }
-        rectF.bottom = f2 + L2;
-        Path path = this.Ld;
-        path.rewind();
-        path.addRoundRect(rectF, gl.L(8.0f), gl.L(8.0f), Path.Direction.CW);
-        Paint paint = this.Md;
-        paint.setColor(0);
-        paint.setShadowLayer(gl.L(2.0f), 0.0f, gl.L(0.66f), bkb.p1(ve8Var.E * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, gl.L(8.0f), gl.L(8.0f), paint);
-        canvas.clipPath(path);
-        d1(canvas);
-        canvas.restore();
+        hr9 hr9Var = this.a;
+        dr9 dr9Var = hr9Var.a;
+        synchronized (hr9Var) {
+            int i4 = hr9Var.s;
+            j2 = i4 == 0 ? -1L : hr9Var.j(i4);
+        }
+        dr9Var.b(j2);
     }
 
-    @Override // gb2, android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(this.Od, this.Pd);
+    @Override // yzb
+    public final void b(yw7 yw7Var, int i, int i2) {
+        this.a.b(yw7Var, i, 0);
     }
 
-    @Override // gb2, android.view.View
-    public final void setPressed(boolean z) {
+    @Override // yzb
+    public final int c(s73 s73Var, int i, boolean z) {
+        return this.a.c(s73Var, i, z);
+    }
+
+    @Override // yzb
+    public final void e(int i, yw7 yw7Var) {
+        b(yw7Var, i, 0);
+    }
+
+    @Override // yzb
+    public final int f(s73 s73Var, int i, boolean z) {
+        return c(s73Var, i, z);
+    }
+
+    @Override // yzb
+    public final void g(go4 go4Var) {
+        this.a.g(go4Var);
+    }
+
+    @Override // yzb
+    public final void d(long j) {
     }
 }

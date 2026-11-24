@@ -1,58 +1,12 @@
 // default package
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class h09 extends c49 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t09 b;
-
-    public /* synthetic */ h09(t09 t09Var, byte b) {
-        this.a = b;
-        this.b = t09Var;
-    }
-
-    @Override // c49
-    public final void e(Rect rect, View view, RecyclerView recyclerView, p49 p49Var) {
-        byte b = this.a;
-        t09 t09Var = this.b;
-        switch (b) {
-            case 0:
-                super.e(rect, view, recyclerView, p49Var);
-                if (!t09Var.n()) {
-                    int R = RecyclerView.R(view);
-                    if (R == 0) {
-                        rect.left = gl.L(6.0f);
-                    }
-                    rect.right = gl.L(4.0f);
-                    if (R == t09Var.b0.b() - 1) {
-                        if ((!t09Var.V.isEmpty() && !na7.q1(t09Var.K).E3()) || t09Var.n()) {
-                            rect.right = gl.L(2.0f);
-                            break;
-                        } else {
-                            rect.right = gl.L(6.0f);
-                            break;
-                        }
-                    }
-                } else {
-                    rect.left = 0;
-                    rect.right = 0;
-                    break;
-                }
-                break;
-            default:
-                int R2 = RecyclerView.R(view);
-                if (R2 == 0) {
-                    rect.left = gl.L(8.0f);
-                }
-                if (R2 == t09Var.b0.b() - 1) {
-                    rect.right = gl.L(8.0f);
-                    break;
-                }
-                break;
-        }
-    }
+/* loaded from: classes.dex */
+public abstract class h09 {
+    public static final int[] a = {R.attr.color, R.attr.alpha, R.attr.lStar, org.telegram.messenger.beta.R.attr.alpha, org.telegram.messenger.beta.R.attr.lStar};
+    public static final int[] b = {org.telegram.messenger.beta.R.attr.fontProviderAuthority, org.telegram.messenger.beta.R.attr.fontProviderCerts, org.telegram.messenger.beta.R.attr.fontProviderFallbackQuery, org.telegram.messenger.beta.R.attr.fontProviderFetchStrategy, org.telegram.messenger.beta.R.attr.fontProviderFetchTimeout, org.telegram.messenger.beta.R.attr.fontProviderPackage, org.telegram.messenger.beta.R.attr.fontProviderQuery, org.telegram.messenger.beta.R.attr.fontProviderSystemFontFamily};
+    public static final int[] c = {R.attr.font, R.attr.fontWeight, R.attr.fontStyle, R.attr.ttcIndex, R.attr.fontVariationSettings, org.telegram.messenger.beta.R.attr.font, org.telegram.messenger.beta.R.attr.fontStyle, org.telegram.messenger.beta.R.attr.fontVariationSettings, org.telegram.messenger.beta.R.attr.fontWeight, org.telegram.messenger.beta.R.attr.ttcIndex};
+    public static final int[] d = {R.attr.startColor, R.attr.endColor, R.attr.type, R.attr.centerX, R.attr.centerY, R.attr.gradientRadius, R.attr.tileMode, R.attr.centerColor, R.attr.startX, R.attr.startY, R.attr.endX, R.attr.endY};
+    public static final int[] e = {R.attr.color, R.attr.offset};
 }

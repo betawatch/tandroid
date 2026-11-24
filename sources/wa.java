@@ -8,48 +8,48 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class wa extends b4c {
+public final class wa extends b6c {
     public static final /* synthetic */ int b = 0;
 
     static {
-        b4c.h(new wa());
+        b6c.h(new wa());
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
         xa xaVar = (xa) view;
-        if (c4cVar.H == null) {
-            xaVar.setAsShowMore((eb) c4cVar.I);
+        if (c6cVar.H == null) {
+            xaVar.setAsShowMore((eb) c6cVar.I);
             return;
         }
-        int i = c4cVar.A;
-        String charSequence = c4cVar.m.toString();
-        View.OnClickListener onClickListener = c4cVar.E;
-        eb ebVar = (eb) c4cVar.I;
+        int i = c6cVar.A;
+        String charSequence = c6cVar.m.toString();
+        View.OnClickListener onClickListener = c6cVar.E;
+        eb ebVar = (eb) c6cVar.I;
         ImageView imageView = xaVar.a;
         imageView.setVisibility(0);
         int i2 = ebVar.G;
         int i3 = ebVar.I;
         TextView textView = xaVar.b;
         textView.setTextColor(i3);
-        int p1 = bkb.p1(0.6f, i3);
+        int p1 = cmb.p1(0.6f, i3);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(p1, mode));
         ImageView imageView2 = xaVar.c;
-        imageView2.setColorFilter(new PorterDuffColorFilter(bkb.p1(0.6f, i3), mode));
-        imageView2.setBackground(bkb.Z(0, bkb.p1(0.15f, i3), gl.L(4.0f), gl.L(4.0f)));
+        imageView2.setColorFilter(new PorterDuffColorFilter(cmb.p1(0.6f, i3), mode));
+        imageView2.setBackground(cmb.Z(0, cmb.p1(0.15f, i3), gm.L(4.0f), gm.L(4.0f)));
         imageView.setImageResource(i == 0 ? R.drawable.msg_clear_recent : R.drawable.msg_search);
         textView.setText(charSequence);
         imageView2.setOnClickListener(onClickListener);
-        xaVar.d.setColor(bkb.p1(0.1f, ebVar.I));
+        xaVar.d.setColor(cmb.p1(0.1f, ebVar.I));
         xaVar.e = z;
         xaVar.setWillNotDraw(!z);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
         return new xa(context);
     }
 }

@@ -1,10 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.widget.TextView;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class oi extends hn7 {
-    @Override // hn7
-    public final CharSequence d(int i) {
-        return k96.G(i, "Minutes", new Object[0]);
+public final class oi extends TextView {
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(gw3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
     }
 }

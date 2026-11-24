@@ -1,26 +1,13 @@
 // default package
 
-import java.util.List;
-import java.util.Map;
+import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface yu5 extends xu5 {
-    Object call(Object... objArr);
+public final class yu5 {
+    public final JsReplyProxyBoundaryInterface a;
 
-    Object callBy(Map map);
-
-    List getParameters();
-
-    dv5 getReturnType();
-
-    List getTypeParameters();
-
-    ev5 getVisibility();
-
-    boolean isAbstract();
-
-    boolean isFinal();
-
-    boolean isOpen();
+    public yu5(JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface) {
+        this.a = jsReplyProxyBoundaryInterface;
+    }
 }

@@ -1,35 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class g53 extends my7 {
-    public final /* synthetic */ byte c;
-    public final float d;
+import java.util.List;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g53(float f, byte b) {
-        super(0, Float.valueOf(Math.max(f, 0.0f)));
-        this.c = b;
-        switch (b) {
-            case 1:
-                super(2, Float.valueOf(Math.max(f, 0.0f)));
-                this.d = Math.max(f, 0.0f);
-                break;
-            default:
-                this.d = Math.max(f, 0.0f);
-                break;
-        }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class g53 {
+    public static final c61 c = new c61(new o41(2), jk7.b);
+    public static final g53 d;
+    public static final String e;
+    public static final String f;
+    public final y79 a;
+    public final long b;
+
+    static {
+        ko5 ko5Var = mo5.b;
+        d = new g53(0L, y79.e);
+        String str = hac.a;
+        e = "0";
+        f = "1";
     }
 
-    @Override // my7
-    public final String toString() {
-        byte b = this.c;
-        float f = this.d;
-        switch (b) {
-            case 0:
-                return "[Dash: length=" + f + "]";
-            default:
-                return "[Gap: length=" + f + "]";
-        }
+    public g53(long j, List list) {
+        this.a = mo5.w(c, list);
+        this.b = j;
     }
 }

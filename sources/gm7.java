@@ -1,15 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class gm7 {
-    public final long a;
-    public final long b;
-    public final boolean c;
+import android.view.View;
 
-    public gm7(long j, long j2, boolean z) {
-        this.a = j;
-        this.b = j2;
-        this.c = z;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class gm7 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ fm7 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ nm7 c;
+
+    public gm7(nm7 nm7Var, fm7 fm7Var, int i) {
+        this.c = nm7Var;
+        this.a = fm7Var;
+        this.b = i;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.c.a(this.a, this.b);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        this.c.n(this.a, this.b);
     }
 }

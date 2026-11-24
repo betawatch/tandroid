@@ -3,17 +3,17 @@
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ya extends wf2 {
+public final class ya extends jh2 {
     public final /* synthetic */ byte d;
     public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ya(or4 or4Var, Context context, f53 f53Var) {
-        super(24, f53Var, context);
+    public ya(pt4 pt4Var, Context context, r63 r63Var) {
+        super(24, r63Var, context);
         this.d = (byte) 2;
-        this.e = or4Var;
+        this.e = pt4Var;
     }
 
     @Override // android.view.View
@@ -27,18 +27,18 @@ public final class ya extends wf2 {
                 break;
             case 1:
                 super.invalidate();
-                ((ue3) viewGroup).invalidate();
+                ((hg3) viewGroup).invalidate();
                 break;
             default:
                 super.invalidate();
-                ((or4) viewGroup).invalidate();
+                ((pt4) viewGroup).invalidate();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ya(ViewGroup viewGroup, Context context, wjb wjbVar, byte b) {
-        super(21, wjbVar, context);
+    public /* synthetic */ ya(ViewGroup viewGroup, Context context, ylb ylbVar, byte b) {
+        super(21, ylbVar, context);
         this.d = b;
         this.e = viewGroup;
     }

@@ -1,35 +1,51 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class v92 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ w92 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ ba2 b;
 
-    public /* synthetic */ v92(w92 w92Var, String str, byte b) {
+    public /* synthetic */ v92(ba2 ba2Var, byte b) {
         this.a = b;
-        this.b = w92Var;
-        this.c = str;
+        this.b = ba2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        byte b = this.a;
+        ba2 ba2Var = this.b;
+        switch (b) {
             case 0:
-                w92 w92Var = this.b;
-                String str = this.c;
-                w92Var.getClass();
-                gl.d3(new v92(w92Var, str, (byte) 1));
+                ba2Var.l0();
+                break;
+            case 1:
+                ba2Var.k0();
+                break;
+            case 2:
+                ba2Var.b.dismiss();
+                ba2Var.finishFragment();
+                break;
+            case 3:
+                ba2Var.N.setChecked(ba2Var.x0.autotranslation);
                 break;
             default:
-                w92 w92Var2 = this.b;
-                String str2 = this.c;
-                w92Var2.f = null;
-                Utilities.g.c(new jn1(w92Var2, str2, new ArrayList(w92Var2.h.w), (byte) 14));
+                ba2Var.e.setImageDrawable(ba2Var.r);
+                ba2Var.c0.o(R.drawable.msg_addphoto, jb6.M0(2131752149, "ChatSetPhotoOrVideo"), true);
+                TLRPC.User user = ba2Var.D0;
+                if (user != null) {
+                    user.photo = null;
+                    ba2Var.getMessagesController().c4(ba2Var.D0, true, false);
+                }
+                ba2Var.P0 = true;
+                if (ba2Var.S0 == null) {
+                    ba2Var.S0 = new p09(R.raw.camera_outline, gm.L(50.0f), gm.L(50.0f), false, null);
+                }
+                ba2Var.c0.e.setTranslationX(-gm.L(8.0f));
+                ba2Var.c0.e.setAnimation(ba2Var.S0);
                 break;
         }
     }

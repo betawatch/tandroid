@@ -1,256 +1,95 @@
 // default package
 
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorSpace;
-import android.graphics.HardwareRenderer;
-import android.graphics.Paint;
-import android.graphics.RecordingCanvas;
-import android.graphics.Rect;
-import android.graphics.RenderNode;
-import android.hardware.HardwareBuffer;
-import android.media.Image;
-import android.media.ImageReader;
+import android.view.TextureView;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class mvc extends ovc {
-    public final RenderNode e;
-    public Bitmap f;
-    public Paint g;
-    public Rect h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class mvc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tvc b;
 
-    public mvc(int i, int i2, int i3, int i4, String str) {
-        super(i, i2, i3, i4);
-        RenderNode renderNode = new RenderNode(str);
-        this.e = renderNode;
-        renderNode.setPosition(i, i2, i3, i4);
+    public /* synthetic */ mvc(tvc tvcVar, byte b) {
+        this.a = b;
+        this.b = tvcVar;
     }
 
-    @Override // ovc
-    public final Canvas a() {
-        return this.e.beginRecording(this.c - this.a, this.d - this.b);
-    }
-
-    @Override // ovc
-    public final void b() {
-        this.e.discardDisplayList();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01af  */
-    /* JADX WARN: Removed duplicated region for block: B:54:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0151  */
-    @Override // ovc
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(Canvas canvas, float f) {
-        long j;
-        long j2;
-        Paint paint;
-        Rect rect;
-        Bitmap bitmap;
-        HardwareRenderer hardwareRenderer;
-        ImageReader imageReader;
-        Image acquireNextImage;
-        if (this.e.hasDisplayList()) {
-            if (canvas.isHardwareAccelerated()) {
-                this.e.setAlpha(f);
-                canvas.drawRenderNode(this.e);
-                return;
-            }
-            if (f > 0.0f) {
-                int i = this.c;
-                int i2 = this.a;
-                long j3 = i - i2;
-                int i3 = this.d;
-                int i4 = this.b;
-                long j4 = i3 - i4;
-                if (j3 <= 0 || j4 <= 0 || j3 > 2147483647L || j4 > 2147483647L) {
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        tvc tvcVar = this.b;
+        switch (b) {
+            case 0:
+                pvc pvcVar = tvcVar.g0;
+                ndc ndcVar = tvcVar.a;
+                if (ndcVar != null && ndcVar.c0()) {
+                    pvcVar.c((int) (ndcVar.S() / 1000));
+                    pvcVar.x = (int) (ndcVar.N() / 1000);
+                    pvcVar.invalidate();
+                    gm.d3(tvcVar.j0, 1000L);
+                    break;
                 }
-                if (this.f == null) {
-                    double d = j3;
-                    double d2 = j4;
-                    double min = Math.min(Math.min(1.0d, Math.sqrt(1.6777216E7d / (d * d2))), 8192.0d / Math.max(j3, j4));
-                    int max = (int) Math.max(1.0d, Math.floor(d * min));
-                    int max2 = (int) Math.max(1.0d, Math.floor(d2 * min));
-                    RenderNode renderNode = this.e;
-                    float f2 = max / j3;
-                    float f3 = max2 / j4;
-                    if (max <= 0 || max2 <= 0) {
-                        j = j3;
-                        j2 = j4;
+                break;
+            default:
+                pvc pvcVar2 = tvcVar.g0;
+                ImageView imageView = tvcVar.e;
+                TextureView textureView = tvcVar.d;
+                tvcVar.a0 = false;
+                Bitmap bitmap = tvcVar.h;
+                if (bitmap != null) {
+                    bitmap.recycle();
+                    tvcVar.h = null;
+                }
+                tvcVar.T = true;
+                if (imageView != null) {
+                    try {
+                        int width = textureView.getWidth();
+                        int height = textureView.getHeight();
+                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
+                        Bitmap a = ld1.a(width, height);
+                        tvcVar.h = a;
+                        textureView.getBitmap(a);
+                    } catch (Throwable th) {
+                        Bitmap bitmap2 = tvcVar.h;
+                        if (bitmap2 != null) {
+                            bitmap2.recycle();
+                            tvcVar.h = null;
+                        }
+                        fc4.g(th, true);
+                    }
+                    if (tvcVar.h != null) {
+                        imageView.setVisibility(0);
+                        imageView.setImageBitmap(tvcVar.h);
                     } else {
-                        j = j3;
-                        try {
-                            imageReader = ImageReader.newInstance(max, max2, 1, 1, 768L);
-                            try {
-                                try {
-                                    hardwareRenderer = new HardwareRenderer();
-                                    try {
-                                        hardwareRenderer.setOpaque(false);
-                                        hardwareRenderer.setSurface(imageReader.getSurface());
-                                        mk1.p();
-                                        j2 = j4;
-                                    } catch (Throwable th) {
-                                        th = th;
-                                        j2 = j4;
-                                    }
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    j2 = j4;
-                                    imageReader = imageReader;
-                                    hardwareRenderer = null;
-                                    try {
-                                        fa4.g(th, true);
-                                        if (hardwareRenderer != null) {
-                                            hardwareRenderer.destroy();
-                                        }
-                                        if (imageReader != null) {
-                                            imageReader.close();
-                                        }
-                                        bitmap = null;
-                                        this.f = bitmap;
-                                        if (bitmap == null) {
-                                        }
-                                        paint = this.g;
-                                        if (paint == null) {
-                                        }
-                                        paint.setAlpha(Math.round(Math.min(1.0f, f) * 255.0f));
-                                        if (this.f.getWidth() != j) {
-                                        }
-                                        rect = this.h;
-                                        if (rect == null) {
-                                        }
-                                        rect.set(i2, i4, i, i3);
-                                        canvas.drawBitmap(this.f, (Rect) null, this.h, this.g);
-                                    } catch (Throwable th3) {
-                                        if (hardwareRenderer != null) {
-                                            hardwareRenderer.destroy();
-                                        }
-                                        if (imageReader != null) {
-                                            imageReader.close();
-                                        }
-                                        throw th3;
-                                    }
-                                }
-                                try {
-                                    RenderNode renderNode2 = new RenderNode("widget-sandbox-software");
-                                    renderNode2.setPosition(0, 0, max, max2);
-                                    RecordingCanvas beginRecording = renderNode2.beginRecording(max, max2);
-                                    beginRecording.scale(f2, f3);
-                                    beginRecording.translate(-i2, -i4);
-                                    renderNode.setAlpha(1.0f);
-                                    beginRecording.drawRenderNode(renderNode);
-                                    renderNode2.endRecording();
-                                    hardwareRenderer.setContentRoot(renderNode2);
-                                    hardwareRenderer.createRenderRequest().setWaitForPresent(true).syncAndDraw();
-                                    acquireNextImage = imageReader.acquireNextImage();
-                                } catch (Throwable th4) {
-                                    th = th4;
-                                    imageReader = imageReader;
-                                    fa4.g(th, true);
-                                    if (hardwareRenderer != null) {
-                                    }
-                                    if (imageReader != null) {
-                                    }
-                                    bitmap = null;
-                                    this.f = bitmap;
-                                    if (bitmap == null) {
-                                    }
-                                    paint = this.g;
-                                    if (paint == null) {
-                                    }
-                                    paint.setAlpha(Math.round(Math.min(1.0f, f) * 255.0f));
-                                    if (this.f.getWidth() != j) {
-                                    }
-                                    rect = this.h;
-                                    if (rect == null) {
-                                    }
-                                    rect.set(i2, i4, i, i3);
-                                    canvas.drawBitmap(this.f, (Rect) null, this.h, this.g);
-                                }
-                            } catch (Throwable th5) {
-                                th = th5;
-                                j2 = j4;
-                            }
-                        } catch (Throwable th6) {
-                            th = th6;
-                            j2 = j4;
-                            hardwareRenderer = null;
-                            imageReader = null;
-                        }
-                        if (acquireNextImage != null) {
-                            try {
-                                HardwareBuffer hardwareBuffer = acquireNextImage.getHardwareBuffer();
-                                if (hardwareBuffer != null) {
-                                    try {
-                                        Bitmap wrapHardwareBuffer = Bitmap.wrapHardwareBuffer(hardwareBuffer, ColorSpace.get(ColorSpace.Named.SRGB));
-                                        bitmap = wrapHardwareBuffer == null ? null : wrapHardwareBuffer.copy(Bitmap.Config.ARGB_8888, false);
-                                        hardwareRenderer.destroy();
-                                        imageReader.close();
-                                        this.f = bitmap;
-                                        if (bitmap == null) {
-                                            return;
-                                        }
-                                    } finally {
-                                        hardwareBuffer.close();
-                                    }
-                                }
-                            } finally {
-                                acquireNextImage.close();
-                            }
-                        }
-                        hardwareRenderer.destroy();
-                        imageReader.close();
+                        imageView.setImageDrawable(null);
                     }
-                    bitmap = null;
-                    this.f = bitmap;
-                    if (bitmap == null) {
-                    }
-                } else {
-                    j = j3;
-                    j2 = j4;
                 }
-                paint = this.g;
-                if (paint == null) {
-                    paint = new Paint(2);
-                    this.g = paint;
+                tvcVar.V = true;
+                tvcVar.n();
+                tvcVar.o();
+                tvcVar.k();
+                tvcVar.m();
+                ViewGroup viewGroup = (ViewGroup) pvcVar2.getParent();
+                if (viewGroup != null) {
+                    viewGroup.removeView(pvcVar2);
                 }
-                paint.setAlpha(Math.round(Math.min(1.0f, f) * 255.0f));
-                if (this.f.getWidth() != j && this.f.getHeight() == j2) {
-                    canvas.drawBitmap(this.f, i2, i4, this.g);
-                    return;
+                qvc qvcVar = tvcVar.w;
+                pvc pvcVar3 = tvcVar.g0;
+                boolean z = tvcVar.V;
+                int i = tvcVar.h0;
+                int i2 = tvcVar.i0;
+                tvcVar.c.getVideoRotation();
+                TextureView f = qvcVar.f(pvcVar3, z, i, i2, tvcVar.J);
+                tvcVar.n = f;
+                f.setVisibility(4);
+                ViewGroup viewGroup2 = (ViewGroup) textureView.getParent();
+                if (viewGroup2 != null) {
+                    viewGroup2.removeView(textureView);
                 }
-                rect = this.h;
-                if (rect == null) {
-                    rect = new Rect();
-                    this.h = rect;
-                }
-                rect.set(i2, i4, i, i3);
-                canvas.drawBitmap(this.f, (Rect) null, this.h, this.g);
-            }
+                pvcVar2.d(false, false);
+                break;
         }
-    }
-
-    @Override // ovc
-    public final void d() {
-        this.e.endRecording();
-    }
-
-    @Override // ovc
-    public final boolean e() {
-        return this.e.hasDisplayList();
-    }
-
-    @Override // ovc
-    public final void f() {
-        long j = this.c - this.a;
-        long j2 = this.d - this.b;
-        this.e.setUseCompositingLayer(j > 0 && j2 > 0 && j <= 4096 && j2 <= 4096 && j * j2 <= 8388608, null);
     }
 }

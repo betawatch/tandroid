@@ -1,39 +1,33 @@
 // default package
 
-import android.content.ComponentName;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class du6 {
-    public final wt6 a;
-    public final ArrayList b = new ArrayList();
-    public final boolean c;
-    public final z24 d;
-    public am4 e;
+public final class du6 extends vv6 {
+    public final String a;
+    public final cu6 b;
 
-    public du6(wt6 wt6Var, boolean z) {
-        this.a = wt6Var;
-        this.d = (z24) wt6Var.d;
-        this.c = z;
+    public du6(String str, cu6 cu6Var) {
+        this.a = str;
+        this.b = cu6Var;
     }
 
-    public final eu6 a(String str) {
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            eu6 eu6Var = (eu6) obj;
-            if (eu6Var.b.equals(str)) {
-                return eu6Var;
-            }
+    @Override // vv6
+    public final void f(int i) {
+        cu6 cu6Var;
+        String str = this.a;
+        if (str == null || (cu6Var = this.b) == null) {
+            return;
         }
-        return null;
+        cu6Var.q(i, str);
     }
 
-    public final String toString() {
-        return "MediaRouter.RouteProviderInfo{ packageName=" + ((ComponentName) this.d.b).getPackageName() + " }";
+    @Override // vv6
+    public final void i(int i) {
+        cu6 cu6Var;
+        String str = this.a;
+        if (str == null || (cu6Var = this.b) == null) {
+            return;
+        }
+        cu6Var.r(i, str);
     }
 }

@@ -1,35 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class f80 extends iy2 {
-    public final String a;
-    public final String b;
+public final class f80 implements cq7 {
+    public static final f80 a = new f80();
+    public static final wa4 b = new wa4("projectNumber", b10.m(b10.l(fv8.class, new wy(1))));
+    public static final wa4 c = new wa4("messageId", b10.m(b10.l(fv8.class, new wy(2))));
+    public static final wa4 d = new wa4("instanceId", b10.m(b10.l(fv8.class, new wy(3))));
+    public static final wa4 e = new wa4("messageType", b10.m(b10.l(fv8.class, new wy(4))));
+    public static final wa4 f = new wa4("sdkPlatform", b10.m(b10.l(fv8.class, new wy(5))));
+    public static final wa4 g = new wa4("packageName", b10.m(b10.l(fv8.class, new wy(6))));
+    public static final wa4 h = new wa4("collapseKey", b10.m(b10.l(fv8.class, new wy(7))));
+    public static final wa4 i = new wa4("priority", b10.m(b10.l(fv8.class, new wy(8))));
+    public static final wa4 j = new wa4("ttl", b10.m(b10.l(fv8.class, new wy(9))));
+    public static final wa4 k = new wa4("topic", b10.m(b10.l(fv8.class, new wy(10))));
+    public static final wa4 l = new wa4("bulkId", b10.m(b10.l(fv8.class, new wy(11))));
+    public static final wa4 m = new wa4("event", b10.m(b10.l(fv8.class, new wy(12))));
+    public static final wa4 n = new wa4("analyticsLabel", b10.m(b10.l(fv8.class, new wy(13))));
+    public static final wa4 o = new wa4("campaignId", b10.m(b10.l(fv8.class, new wy(14))));
+    public static final wa4 p = new wa4("composerLabel", b10.m(b10.l(fv8.class, new wy(15))));
 
-    public f80(String str, String str2) {
-        this.a = str;
-        this.b = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof iy2)) {
-            return false;
-        }
-        f80 f80Var = (f80) ((iy2) obj);
-        return this.a.equals(f80Var.a) && this.b.equals(f80Var.b);
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("CustomAttribute{key=");
-        sb.append(this.a);
-        sb.append(", value=");
-        return b00.j(sb, this.b, "}");
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        gf7 gf7Var = (gf7) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.g(b, gf7Var.a);
+        dq7Var.a(c, gf7Var.b);
+        dq7Var.a(d, gf7Var.c);
+        dq7Var.a(e, gf7Var.d);
+        dq7Var.a(f, ff7.b);
+        dq7Var.a(g, gf7Var.e);
+        dq7Var.a(h, gf7Var.f);
+        dq7Var.e(i, gf7Var.g);
+        dq7Var.e(j, gf7Var.h);
+        dq7Var.a(k, gf7Var.i);
+        dq7Var.g(l, 0L);
+        dq7Var.a(m, df7.b);
+        dq7Var.a(n, gf7Var.j);
+        dq7Var.g(o, 0L);
+        dq7Var.a(p, gf7Var.k);
     }
 }

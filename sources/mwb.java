@@ -1,43 +1,13 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.regex.Pattern;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mwb {
-    public static WeakReference d;
-    public final SharedPreferences a;
-    public vk9 b;
-    public final ScheduledThreadPoolExecutor c;
-
-    public mwb(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
-        this.c = scheduledThreadPoolExecutor;
-        this.a = sharedPreferences;
-    }
-
-    public final synchronized xtb a() {
-        xtb xtbVar;
-        String w = this.b.w();
-        Pattern pattern = xtb.d;
-        xtbVar = null;
-        if (!TextUtils.isEmpty(w)) {
-            String[] split = w.split("!", -1);
-            if (split.length == 2) {
-                xtbVar = new xtb(split[0], split[1]);
-            }
-        }
-        return xtbVar;
-    }
-
-    public final synchronized void b() {
-        this.b = vk9.k(this.a, this.c);
-    }
-
-    public final synchronized void c(xtb xtbVar) {
-        this.b.z(xtbVar.c);
+public final class mwb implements RequestDelegate {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

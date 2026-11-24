@@ -1,120 +1,29 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.IdentityHashMap;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class uh9 {
-    public final TL_iv.RichText a;
-    public final IdentityHashMap b;
-    public final int c;
-    public final int d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class uh9 extends b6c {
+    public static final /* synthetic */ int b = 0;
 
-    public uh9(TL_iv.RichText richText, IdentityHashMap identityHashMap, int i, int i2) {
-        this.a = richText;
-        this.b = identityHashMap;
-        this.c = i;
-        this.d = i2;
+    static {
+        b6c.h(new uh9());
     }
 
-    public static uh9 a(rh9 rh9Var, iq iqVar) {
-        IdentityHashMap identityHashMap = new IdentityHashMap();
-        kg9 kg9Var = (kg9) iqVar.c;
-        SpannableStringBuilder o = rh9Var.o(kg9Var.a, kg9Var.b, identityHashMap);
-        Spanned spanned = (Spanned) iqVar.d;
-        int spanEnd = spanned.getSpanEnd(kg9Var);
-        int i = iqVar.b;
-        int i2 = spanEnd - i;
-        if (o.length() == i2 && TextUtils.regionMatches(o, 0, spanned, i, i2)) {
-            return new uh9(kg9Var.a, identityHashMap, o.length(), kg9Var.b);
-        }
-        fa4.d("RichQuote: laid out text doesn't match the formatted one");
-        return null;
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        ((vh9) view).g((ll0) c6cVar.H, (ig9) c6cVar.I);
     }
 
-    public final TL_iv.RichText b(int i, int i2) {
-        int max = Math.max(0, i);
-        int i3 = this.c;
-        int min = Math.min(i3, i2);
-        if (max >= min) {
-            return null;
-        }
-        TL_iv.RichText richText = this.a;
-        return (max == 0 && min == i3) ? richText : c(richText, max, min);
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        return new vh9(context, ylbVar);
     }
 
-    public final TL_iv.RichText c(TL_iv.RichText richText, int i, int i2) {
-        int[] iArr;
-        int i3;
-        int i4;
-        if (richText != null && (iArr = (int[]) this.b.get(richText)) != null && (i3 = iArr[0]) != (i4 = iArr[1]) && i4 > i && i3 < i2) {
-            if (i > i3 || i4 > i2) {
-                if (richText instanceof TL_iv.textPlain) {
-                    String str = ((TL_iv.textPlain) richText).text;
-                    if (str != null && str.length() == i4 - i3) {
-                        int max = Math.max(i, i3) - i3;
-                        int min = Math.min(i2, i4) - i3;
-                        if (max > 0 && max < str.length() && Character.isLowSurrogate(str.charAt(max))) {
-                            max--;
-                        }
-                        if (min > 0 && min < str.length() && Character.isLowSurrogate(str.charAt(min))) {
-                            min++;
-                        }
-                        TL_iv.textPlain textplain = new TL_iv.textPlain();
-                        textplain.text = str.substring(max, min);
-                        return textplain;
-                    }
-                } else {
-                    if (!(richText instanceof TL_iv.textConcat)) {
-                        if (!(richText instanceof TL_iv.textMath) && !(richText instanceof TL_iv.textCustomEmoji) && !(richText instanceof TL_iv.textDate) && !(richText instanceof TL_iv.textDiff) && !(richText instanceof TL_iv.textButton)) {
-                            TL_iv.RichText richText2 = richText.text;
-                            if (richText2 != null) {
-                                TL_iv.RichText c = c(richText2, i, i2);
-                                if (c != null) {
-                                    try {
-                                        richText = (TL_iv.RichText) TLObject.deepCopy(richText, new sc8((byte) 20));
-                                    } catch (Exception e) {
-                                        fa4.g(e, true);
-                                        richText = null;
-                                    }
-                                    if (richText != null) {
-                                        richText.text = c;
-                                    }
-                                }
-                            }
-                        }
-                        return richText;
-                    }
-                    ArrayList<TL_iv.RichText> arrayList = new ArrayList<>();
-                    ArrayList<TL_iv.RichText> arrayList2 = richText.texts;
-                    int size = arrayList2.size();
-                    int i5 = 0;
-                    while (i5 < size) {
-                        TL_iv.RichText richText3 = arrayList2.get(i5);
-                        i5++;
-                        TL_iv.RichText c2 = c(richText3, i, i2);
-                        if (c2 != null) {
-                            arrayList.add(c2);
-                        }
-                    }
-                    if (!arrayList.isEmpty()) {
-                        if (arrayList.size() == 1) {
-                            return arrayList.get(0);
-                        }
-                        TL_iv.textConcat textconcat = new TL_iv.textConcat();
-                        textconcat.texts = arrayList;
-                        return textconcat;
-                    }
-                }
-            }
-            return richText;
-        }
-        return null;
+    @Override // b6c
+    public final boolean f() {
+        return false;
     }
 }

@@ -1,27 +1,22 @@
 // default package
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class p70 implements zn7 {
+public final class p70 implements cq7 {
     public static final p70 a = new p70();
-    public static final w84 b = w84.c("appId");
-    public static final w84 c = w84.c("deviceModel");
-    public static final w84 d = w84.c("sessionSdkVersion");
-    public static final w84 e = w84.c("osVersion");
-    public static final w84 f = w84.c("logEnvironment");
-    public static final w84 g = w84.c("androidAppInfo");
+    public static final wa4 b = wa4.c("platform");
+    public static final wa4 c = wa4.c("version");
+    public static final wa4 d = wa4.c("buildVersion");
+    public static final wa4 e = wa4.c("jailbroken");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        sr srVar = (sr) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, srVar.a);
-        ao7Var.a(c, Build.MODEL);
-        ao7Var.a(d, "3.0.8");
-        ao7Var.a(e, Build.VERSION.RELEASE);
-        ao7Var.a(f, vb6.b);
-        ao7Var.a(g, srVar.b);
+        p03 p03Var = (p03) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.e(b, ((ka0) p03Var).a);
+        ka0 ka0Var = (ka0) p03Var;
+        dq7Var.a(c, ka0Var.b);
+        dq7Var.a(d, ka0Var.c);
+        dq7Var.d(e, ka0Var.d);
     }
 }

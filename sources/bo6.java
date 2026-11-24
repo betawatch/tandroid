@@ -1,72 +1,229 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
+import android.os.Environment;
+import android.os.Looper;
+import java.io.File;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class bo6 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hq6 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
 
-    public /* synthetic */ bo6(hq6 hq6Var, ArrayList arrayList, int i, int i2, byte b) {
-        this.a = b;
-        this.b = hq6Var;
-        this.c = arrayList;
-        this.d = i;
-        this.e = i2;
+    public /* synthetic */ bo6(km8 km8Var, Long l) {
+        this.a = (byte) 12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        byte b = this.a;
-        int i = this.e;
-        int i2 = this.d;
-        ArrayList arrayList = this.c;
-        hq6 hq6Var = this.b;
-        switch (b) {
+        c41 b0;
+        d Q;
+        d b02;
+        switch (this.a) {
             case 0:
-                hq6Var.y1(i2, i, arrayList, true);
-                break;
-            default:
+                MediaController.Z1 = null;
+                MediaController.N(0);
+                return;
+            case 1:
                 try {
-                    if (arrayList != null) {
-                        hq6Var.getMessagesStorage().b.executeFast("DELETE FROM reactions").stepThis().dispose();
-                        SQLitePreparedStatement executeFast = hq6Var.getMessagesStorage().b.executeFast("REPLACE INTO reactions VALUES(?, ?, ?)");
-                        executeFast.requery();
-                        int i3 = 4;
-                        for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                            i3 += ((TLRPC.TL_availableReaction) arrayList.get(i4)).getObjectSize();
-                        }
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(i3);
-                        nativeByteBuffer.writeInt32(arrayList.size());
-                        for (int i5 = 0; i5 < arrayList.size(); i5++) {
-                            ((TLRPC.TL_availableReaction) arrayList.get(i5)).serializeToStream(nativeByteBuffer);
-                        }
-                        executeFast.bindByteBuffer(1, nativeByteBuffer);
-                        executeFast.bindInteger(2, i2);
-                        executeFast.bindInteger(3, i);
-                        executeFast.step();
-                        nativeByteBuffer.reuse();
-                        executeFast.dispose();
-                        break;
-                    } else {
-                        SQLitePreparedStatement executeFast2 = hq6Var.getMessagesStorage().b.executeFast("UPDATE reactions SET date = ?");
-                        executeFast2.requery();
-                        executeFast2.bindLong(1, i);
-                        executeFast2.step();
-                        executeFast2.dispose();
-                        break;
-                    }
+                    via.n(a.b);
+                    return;
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    fc4.g(e, true);
                     return;
                 }
+            case 2:
+                cmb.E(false);
+                return;
+            case 3:
+                nm7.e().k(nm7.n5, new Object[0]);
+                return;
+            case 4:
+                c41.Y().N(jb6.M0(2131745595, null), jb6.M0(2131751042, null)).j();
+                return;
+            case 5:
+                c41.Y().N(jb6.M0(2131745595, null), jb6.M0(2131751042, null)).j();
+                return;
+            case 6:
+                nm7.e().k(nm7.h4, new Object[0]);
+                return;
+            case 7:
+                u31 t = yr7.h().t(jb6.M0(2131749510, null), null);
+                t.u = true;
+                t.j();
+                return;
+            case 8:
+                ru7.c();
+                return;
+            case 9:
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    return;
+                }
+                return;
+            case 10:
+                return;
+            case 11:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                return;
+            case 12:
+                throw null;
+            case 13:
+                throw null;
+            case 14:
+                c41.Y().N(jb6.M0(2131745595, null), jb6.M0(2131751042, null)).j();
+                return;
+            case 15:
+                yw4.f1(false, null);
+                return;
+            case 16:
+                d S = LaunchActivity.S();
+                if (S == null || (b0 = c41.b0(S)) == null) {
+                    return;
+                }
+                u31 I = b0.I(R.raw.msg_antispam, jb6.M0(2131745955, null), jb6.M0(2131745918, null));
+                I.j = 5000;
+                I.j();
+                return;
+            case 17:
+                return;
+            case 18:
+                tp9.m();
+                return;
+            case 19:
+                nm7.e().k(nm7.F2, new Object[0]);
+                return;
+            case 20:
+                return;
+            case 21:
+                d Q2 = LaunchActivity.Q();
+                if (Q2 != null) {
+                    bh0 bh0Var = new bh0();
+                    bh0Var.a = true;
+                    Q2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), bh0Var);
+                    return;
+                }
+                return;
+            case 22:
+                gda.x();
+                return;
+            case 23:
+                try {
+                    File file = new File(Environment.getExternalStorageDirectory(), "Telegram");
+                    File file2 = new File(file, "Telegram Images");
+                    file2.mkdir();
+                    File file3 = new File(file, "Telegram Video");
+                    file3.mkdir();
+                    if (e21.b) {
+                        if (file2.isDirectory()) {
+                            gm.G(new File(file2, ".nomedia"));
+                        }
+                        if (file3.isDirectory()) {
+                            gm.G(new File(file3, ".nomedia"));
+                            return;
+                        }
+                        return;
+                    }
+                    if (file2.isDirectory()) {
+                        new File(file2, ".nomedia").delete();
+                    }
+                    if (file3.isDirectory()) {
+                        new File(file3, ".nomedia").delete();
+                        return;
+                    }
+                    return;
+                } catch (Throwable th) {
+                    fc4.g(th, true);
+                    return;
+                }
+            case 24:
+                if (gda.a || (Q = LaunchActivity.Q()) == null || Q.getParentActivity() == null) {
+                    return;
+                }
+                gda.e0 = null;
+                gda.x();
+                fn5.z().e(new jd((byte) 10));
+                gda.a = true;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
+                alertDialog$Builder.a.S = jb6.M0(2131745572, null);
+                alertDialog$Builder.a.T = jb6.M0(2131745571, null);
+                alertDialog$Builder.j(jb6.M0(2131751292, null), new dq9((byte) 14));
+                he heVar = alertDialog$Builder.a;
+                heVar.setCanceledOnTouchOutside(false);
+                heVar.show();
+                return;
+            case 25:
+                return;
+            case 26:
+                d S2 = LaunchActivity.S();
+                if (S2 != null) {
+                    goc gocVar = new goc();
+                    brc brcVar = gocVar.j0;
+                    if (brcVar != null) {
+                        brcVar.b(false);
+                    }
+                    if (gocVar.g0) {
+                        gocVar.I0 = false;
+                        gocVar.f0 = 1;
+                        hs1 hs1Var = gocVar.s0;
+                        if (hs1Var != null) {
+                            hs1Var.setPosition(1);
+                        }
+                    } else {
+                        gocVar.I0 = true;
+                    }
+                    S2.presentFragment(gocVar);
+                    return;
+                }
+                return;
+            case 27:
+                d S3 = LaunchActivity.S();
+                if ((S3 instanceof jgc) && (b02 = ((jgc) S3).b0()) != null) {
+                    S3 = b02;
+                }
+                u31 Q3 = (S3 != null ? c41.b0(S3) : c41.Y()).Q(R.raw.ic_delete, 36, jb6.M0(2131750149, null));
+                Q3.u = true;
+                Q3.j();
+                return;
+            case 28:
+                xx0.E.a();
+                return;
+            default:
+                d S4 = LaunchActivity.S();
+                if (S4 != null) {
+                    S4.presentFragment(new nxa());
+                    return;
+                }
+                return;
         }
+    }
+
+    public /* synthetic */ bo6(byte b) {
+        this.a = b;
+    }
+
+    public /* synthetic */ bo6(Object obj, byte b) {
+        this.a = b;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

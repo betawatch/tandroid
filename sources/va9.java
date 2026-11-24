@@ -1,50 +1,57 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.Comparator;
+import org.telegram.tgnet.tl.TL_stars;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class va9 {
-    public static final va9 a;
-    public static final va9 b;
-    public static final va9 c;
-    public static final va9 d;
-    public static final va9 e;
-    public static final va9 f;
-    public static final /* synthetic */ va9[] h;
+public final /* synthetic */ class va9 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zb9 b;
 
-    /* JADX INFO: Fake field, exist only in values array */
-    va9 EF0;
-
-    static {
-        va9 va9Var = new va9("OTHER", 0);
-        va9 va9Var2 = new va9("ORIENTATION", 1);
-        va9 va9Var3 = new va9("BYTE_SEGMENTS", 2);
-        a = va9Var3;
-        va9 va9Var4 = new va9("ERROR_CORRECTION_LEVEL", 3);
-        b = va9Var4;
-        va9 va9Var5 = new va9("ERRORS_CORRECTED", 4);
-        c = va9Var5;
-        va9 va9Var6 = new va9("ERASURES_CORRECTED", 5);
-        va9 va9Var7 = new va9("ISSUE_NUMBER", 6);
-        va9 va9Var8 = new va9("SUGGESTED_PRICE", 7);
-        va9 va9Var9 = new va9("POSSIBLE_COUNTRY", 8);
-        va9 va9Var10 = new va9("UPC_EAN_EXTENSION", 9);
-        va9 va9Var11 = new va9("PDF417_EXTRA_METADATA", 10);
-        va9 va9Var12 = new va9("STRUCTURED_APPEND_SEQUENCE", 11);
-        d = va9Var12;
-        va9 va9Var13 = new va9("STRUCTURED_APPEND_PARITY", 12);
-        e = va9Var13;
-        va9 va9Var14 = new va9("SYMBOLOGY_IDENTIFIER", 13);
-        f = va9Var14;
-        h = new va9[]{va9Var, va9Var2, va9Var3, va9Var4, va9Var5, va9Var6, va9Var7, va9Var8, va9Var9, va9Var10, va9Var11, va9Var12, va9Var13, va9Var14};
+    public /* synthetic */ va9(zb9 zb9Var, byte b) {
+        this.a = b;
+        this.b = zb9Var;
     }
 
-    public static va9 valueOf(String str) {
-        return (va9) Enum.valueOf(va9.class, str);
-    }
-
-    public static va9[] values() {
-        return (va9[]) h.clone();
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        byte b = this.a;
+        zb9 zb9Var = this.b;
+        switch (b) {
+            case 0:
+                qb9 qb9Var = zb9Var.d;
+                Integer num = (Integer) qb9Var.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
+                Integer num2 = (Integer) qb9Var.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
+                if (num == null) {
+                    return 1;
+                }
+                if (num2 != null) {
+                    return num2.intValue() - num.intValue();
+                }
+                return -1;
+            case 1:
+                qb9 qb9Var2 = zb9Var.d;
+                Integer num3 = (Integer) qb9Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
+                Integer num4 = (Integer) qb9Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
+                if (num3 == null) {
+                    return 1;
+                }
+                if (num4 != null) {
+                    return num4.intValue() - num3.intValue();
+                }
+                return -1;
+            default:
+                qb9 qb9Var3 = zb9Var.d;
+                Integer num5 = (Integer) qb9Var3.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
+                Integer num6 = (Integer) qb9Var3.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
+                if (num5 == null) {
+                    return 1;
+                }
+                if (num6 != null) {
+                    return num6.intValue() - num5.intValue();
+                }
+                return -1;
+        }
     }
 }

@@ -1,31 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum oqb extends qsb {
-    public oqb() {
-        super("ScriptDataEscaped", 21);
+public final class oqb extends ss9 implements Runnable {
+    public final long f;
+
+    public oqb(long j, px2 px2Var) {
+        super(px2Var, px2Var.getContext());
+        this.f = j;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        if (zj1Var.j()) {
-            aqbVar.l(this);
-            aqbVar.c = qsb.a;
-            return;
-        }
-        char i = zj1Var.i();
-        if (i == 0) {
-            aqbVar.m(this);
-            zj1Var.a();
-            aqbVar.f((char) 65533);
-        } else if (i == '-') {
-            aqbVar.f('-');
-            aqbVar.a(qsb.M);
-        } else if (i != '<') {
-            aqbVar.h(zj1Var.g('-', '<', 0));
-        } else {
-            aqbVar.a(qsb.O);
-        }
+    @Override // b2, ov5
+    public final String D() {
+        return super.D() + "(timeMillis=" + this.f + ')';
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        kfe.b(this.d);
+        i(new nqb("Timed out waiting for " + this.f + " ms", this));
     }
 }

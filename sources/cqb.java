@@ -1,39 +1,45 @@
 // default package
 
-import java.util.Locale;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class cqb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lqb b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public enum cqb extends qsb {
-    public cqb() {
-        super("RcdataLessthanSign", 10);
+    public /* synthetic */ cqb(lqb lqbVar, byte b) {
+        this.a = b;
+        this.b = lqbVar;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        if (zj1Var.m('/')) {
-            aqbVar.e();
-            aqbVar.a(qsb.w);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        lqb lqbVar = this.b;
+        switch (b) {
+            case 0:
+                jqb jqbVar = lqbVar.N;
+                if (jqbVar != null) {
+                    long j = jqbVar.a;
+                    if (j > 0) {
+                        lqbVar.I = j;
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                fqb fqbVar = lqbVar.a;
+                if (fqbVar != null) {
+                    fqbVar.V1();
+                    break;
+                }
+                break;
+            default:
+                fqb fqbVar2 = lqbVar.a;
+                if (fqbVar2 != null) {
+                    fqbVar2.V();
+                    break;
+                }
+                break;
         }
-        if (zj1Var.o() && aqbVar.o != null) {
-            String str = "</" + aqbVar.o;
-            Locale locale = Locale.ENGLISH;
-            String lowerCase = str.toLowerCase(locale);
-            String upperCase = str.toUpperCase(locale);
-            if (zj1Var.p(lowerCase) <= -1 && zj1Var.p(upperCase) <= -1) {
-                vpb d = aqbVar.d(false);
-                String str2 = aqbVar.o;
-                d.e = str2;
-                d.f = str2 != null ? str2.toLowerCase(locale) : "";
-                aqbVar.i = d;
-                aqbVar.k();
-                zj1Var.q();
-                aqbVar.c = qsb.a;
-                return;
-            }
-        }
-        aqbVar.h("<");
-        aqbVar.c = qsb.c;
     }
 }

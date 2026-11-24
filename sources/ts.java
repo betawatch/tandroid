@@ -1,96 +1,59 @@
 // default package
 
-import android.view.WindowManager;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.a;
-import org.telegram.ui.o;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ts implements Runnable {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ts extends BroadcastReceiver {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ o b;
 
-    public /* synthetic */ ts(o oVar, byte b) {
+    public /* synthetic */ ts(byte b) {
         this.a = b;
-        this.b = oVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 0;
-        o oVar = this.b;
-        switch (b) {
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        switch (this.a) {
             case 0:
-                oVar.d0();
+                try {
+                    a.c = a.e.getActiveNetworkInfo();
+                } catch (Throwable unused) {
+                }
+                boolean p = a.p();
+                for (int i = 0; i < 4; i++) {
+                    ConnectionsManager.getInstance(i).checkConnection();
+                    bc4.K.c(new y8c((byte) 17, bc4.G(i), p));
+                }
                 break;
             case 1:
-                float currentProgress = 0.7f - oVar.i0.e0.getCurrentProgress();
-                if (currentProgress > 0.0f) {
-                    float f = currentProgress < 0.25f ? 0.01f : 0.02f;
-                    j26 j26Var = oVar.i0.e0;
-                    j26Var.a(true, j26Var.getCurrentProgress() + f);
-                    gl.e3(oVar.k0, 100L);
-                    break;
-                }
+                e86.h(intent);
                 break;
             case 2:
-                gl.d3(new ts(oVar, b2));
-                break;
-            case 3:
-                gl.d3(new ts(oVar, b2));
-                break;
-            case 4:
-                oVar.L.a(true);
-                break;
-            case 5:
-                oVar.L.a(true);
-                break;
-            case 6:
-                try {
-                    if (oVar.g0.getParent() != null) {
-                        ((WindowManager) oVar.M.getSystemService("window")).removeView(oVar.g0);
-                        break;
-                    }
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-                break;
-            case 7:
-                oVar.a0();
-                break;
-            case 8:
-                oVar.f0();
-                break;
-            case 9:
-                a aVar = oVar.h0;
-                if (aVar != null) {
-                    aVar.setLayerType(0, null);
-                    oVar.a0 = (byte) 0;
-                    oVar.K();
-                    break;
-                }
-                break;
-            case 10:
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    ag0 ag0Var = new ag0();
-                    ag0Var.a = true;
-                    S.showAsSheet(new tsc(new ws(oVar, (byte) 3)), ag0Var);
+                if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
+                    MediaController.w().Q(MediaController.w().v0, true);
                     break;
                 }
                 break;
             default:
-                a aVar2 = oVar.h0;
-                if (aVar2 != null && oVar.g0 != null) {
-                    aVar2.setLayerType(0, null);
-                    oVar.a0 = (byte) 0;
-                    gl.t1(oVar.M.getCurrentFocus());
-                    break;
+                if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
+                    if (e21.a) {
+                        fc4.b("screen off");
+                    }
+                    ConnectionsManager.getInstance(z8c.t0).setAppPaused(true, true);
+                    a.w = false;
+                } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
+                    if (e21.a) {
+                        fc4.b("screen on");
+                    }
+                    ConnectionsManager.getInstance(z8c.t0).setAppPaused(false, true);
+                    a.w = true;
                 }
+                nm7.e().k(nm7.O4, new Object[0]);
                 break;
         }
     }

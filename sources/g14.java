@@ -1,44 +1,29 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class g14 extends tya {
-    public final /* synthetic */ byte H3;
-    public final /* synthetic */ h14 I3;
+public final class g14 extends yp {
+    public final /* synthetic */ e34 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public g14(h14 h14Var, Context context, int i, wjb wjbVar, int i2) {
-        super(i, wjbVar, context);
-        this.I3 = h14Var;
-        this.H3 = i2;
+    public g14(e34 e34Var) {
+        this.c = e34Var;
     }
 
-    @Override // tya
-    public final boolean B1() {
-        return e66.e(8200);
-    }
-
-    @Override // tya
-    public final void H1(int i) {
-        gz3 gz3Var;
-        yz3 yz3Var;
-        super.H1(i);
-        h14 h14Var = this.I3;
-        t14 t14Var = h14Var.H;
-        g14 g14Var = h14Var.r;
-        boolean z = g14Var.getSelectedCategory() == null;
-        int i2 = t14.U2;
-        t14Var.M(z);
-        byte b = this.H3;
-        if (b == 1 && (yz3Var = t14Var.J) != null) {
-            yz3Var.n(g14Var.getSelectedCategory() == null);
-        } else if (b == 0 && (gz3Var = t14Var.C0) != null) {
-            gz3Var.p0 = g14Var.getSelectedCategory() == null;
-            gz3Var.invalidate();
+    @Override // yp
+    public final int i(int i) {
+        e34 e34Var = this.c;
+        o14 o14Var = e34Var.S;
+        f14 f14Var = e34Var.R;
+        y59 adapter = e34Var.Q.getAdapter();
+        e24 e24Var = e34Var.T;
+        if (adapter == e24Var) {
+            int d = e24Var.d(i);
+            if (d == 1 || d == 3 || d == 2 || d == 4 || d == 5) {
+                return f14Var.J;
+            }
+        } else if ((e34Var.e0 && i == 0) || i == o14Var.d || i == o14Var.c || i == o14Var.f || o14Var.r.indexOfKey(i) >= 0 || o14Var.w.indexOfKey(i) >= 0) {
+            return f14Var.J;
         }
-        h14Var.g(false);
+        return 1;
     }
 }

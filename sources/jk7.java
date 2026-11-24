@@ -1,39 +1,54 @@
 // default package
 
-import java.lang.ref.WeakReference;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class jk7 implements gk7 {
-    public final kk7 a;
-    public final WeakReference b;
-    public final int c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class jk7 extends at7 implements Serializable {
+    public static final jk7 b = new jk7(0);
+    public static final jk7 c = new jk7(1);
+    public final /* synthetic */ byte a;
 
-    public jk7(kk7 kk7Var, gk7 gk7Var) {
-        this.a = kk7Var;
-        this.b = new WeakReference(gk7Var);
-        this.c = System.identityHashCode(gk7Var);
+    public /* synthetic */ jk7(byte b2) {
+        this.a = b2;
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        gk7 gk7Var = (gk7) this.b.get();
-        if (gk7Var != null) {
-            gk7Var.didReceivedNotification(i, i2, objArr);
-        } else {
-            this.a.n(this, i);
+    @Override // at7
+    public final at7 a() {
+        switch (this.a) {
+            case 0:
+                return c;
+            default:
+                return b;
         }
     }
 
-    public final boolean equals(Object obj) {
-        gk7 gk7Var;
-        if (this != obj) {
-            return (obj instanceof jk7) && (gk7Var = (gk7) this.b.get()) != null && gk7Var == ((jk7) obj).b.get();
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Comparable comparable = (Comparable) obj;
+                Comparable comparable2 = (Comparable) obj2;
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            default:
+                Comparable comparable3 = (Comparable) obj;
+                Comparable comparable4 = (Comparable) obj2;
+                comparable3.getClass();
+                if (comparable3 == comparable4) {
+                    return 0;
+                }
+                return comparable4.compareTo(comparable3);
         }
-        return true;
     }
 
-    public final int hashCode() {
-        return this.c;
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                return "Ordering.natural()";
+            default:
+                return "Ordering.natural().reverse()";
+        }
     }
 }

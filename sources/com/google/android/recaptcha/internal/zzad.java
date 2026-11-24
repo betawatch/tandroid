@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzad implements zzar {
-    private final d06 zza;
+    private final d26 zza;
     private boolean zzb;
 
     public zzad() {
         int i = zzby.zza;
-        this.zza = cne.b(zzac.zza);
+        this.zza = fpe.b(zzac.zza);
         this.zzb = true;
     }
 
@@ -22,30 +22,30 @@ public final class zzad implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, fw2 fw2Var) {
-        return zzam.zza(this, str, fw2Var);
+    public final /* synthetic */ Object zzc(String str, px2 px2Var) {
+        return zzam.zza(this, str, px2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, fw2 fw2Var) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, px2 px2Var) {
         Object zzd;
-        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), fw2Var);
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), px2Var);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, fw2 fw2Var) {
+    public final Object zze(String str, px2 px2Var) {
         return new zzhg(new zzaa(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, fw2 fw2Var) {
+    public final Object zzf(zzxp zzxpVar, px2 px2Var) {
         return new zzhg(new zzab(zzxpVar, this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzg(Exception exc, fw2 fw2Var) {
-        return zzam.zzd(this, exc, fw2Var);
+    public final /* synthetic */ Object zzg(Exception exc, px2 px2Var) {
+        return zzam.zzd(this, exc, px2Var);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar

@@ -1,19 +1,74 @@
 // default package
 
-import android.content.res.ColorStateList;
-import android.content.res.Configuration;
-import android.content.res.Resources;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ia9 {
-    public final ColorStateList a;
-    public final Configuration b;
-    public final int c;
+public final class ia9 extends ka9 implements d73 {
+    public final rx9 f;
 
-    public ia9(ColorStateList colorStateList, Configuration configuration, Resources.Theme theme) {
-        this.a = colorStateList;
-        this.b = configuration;
-        this.c = theme == null ? 0 : theme.hashCode();
+    public ia9(go4 go4Var, mo5 mo5Var, rx9 rx9Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
+        super(go4Var, mo5Var, rx9Var, arrayList, arrayList2, arrayList3);
+        this.f = rx9Var;
+    }
+
+    @Override // d73
+    public final long J(long j, long j2) {
+        return this.f.g(j, j2);
+    }
+
+    @Override // d73
+    public final boolean T() {
+        return this.f.j();
+    }
+
+    @Override // d73
+    public final long V() {
+        return this.f.d;
+    }
+
+    @Override // d73
+    public final long X(long j) {
+        return this.f.e(j);
+    }
+
+    @Override // d73
+    public final long e(long j) {
+        return this.f.h(j);
+    }
+
+    @Override // d73
+    public final long e0(long j, long j2) {
+        return this.f.c(j, j2);
+    }
+
+    @Override // d73
+    public final long j(long j, long j2) {
+        return this.f.f(j, j2);
+    }
+
+    @Override // d73
+    public final long m(long j, long j2) {
+        return this.f.d(j, j2);
+    }
+
+    @Override // d73
+    public final long u(long j, long j2) {
+        rx9 rx9Var = this.f;
+        if (rx9Var.f != null) {
+            return -9223372036854775807L;
+        }
+        long c = rx9Var.c(j, j2) + rx9Var.d(j, j2);
+        return (rx9Var.f(c, j) + rx9Var.h(c)) - rx9Var.i;
+    }
+
+    @Override // d73
+    public final b19 w(long j) {
+        return this.f.i(this, j);
+    }
+
+    @Override // ka9
+    public final d73 b() {
+        return this;
     }
 }

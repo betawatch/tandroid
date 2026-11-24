@@ -1,13 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class rl4 {
-    public final kw3 a;
-    public boolean b = false;
-    public final la3 c = new la3();
+import java.util.ArrayList;
 
-    public rl4(kw3 kw3Var) {
-        this.a = kw3Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class rl4 implements ht3 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ f43 b;
+
+    public rl4(f43 f43Var, ArrayList arrayList) {
+        this.b = f43Var;
+        this.a = arrayList;
+    }
+
+    @Override // ht3
+    public final void a(zna znaVar, boolean z, float f, float f2) {
+        ArrayList arrayList = znaVar.k;
+        int indexOf = arrayList.indexOf(this);
+        if (indexOf >= 0) {
+            arrayList.set(indexOf, null);
+        }
+        ArrayList arrayList2 = this.a;
+        arrayList2.add(znaVar);
+        if (arrayList2.size() == 2) {
+            this.b.b();
+        }
     }
 }

@@ -1,118 +1,92 @@
 // default package
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.RecordingCanvas;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
+import android.util.SparseArray;
+import android.view.View;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class v89 implements n8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z99 b;
-    public final /* synthetic */ q5c[] c;
+public final class v89 {
+    public final RenderNode a;
+    public final m41 b;
+    public final ucb c = new ucb();
+    public long d = 0;
+    public int e;
+    public int f;
 
-    public /* synthetic */ v89(z99 z99Var, q5c[] q5cVarArr, byte b) {
-        this.a = b;
-        this.b = z99Var;
-        this.c = q5cVarArr;
+    public v89(RenderNode renderNode, m41 m41Var) {
+        this.a = renderNode;
+        this.b = m41Var;
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        byte b = this.a;
-        q5c[] q5cVarArr = this.c;
-        z99 z99Var = this.b;
-        c4c c4cVar = (c4c) obj;
-        z99Var.getClass();
-        switch (b) {
-            case 0:
-                long j = ((TL_stars.starGiftAttributePattern) c4cVar.H).document.id;
-                q99 q99Var = z99Var.d;
-                boolean contains = q99Var.l.contains(Long.valueOf(j));
-                HashSet hashSet = q99Var.l;
-                if (contains) {
-                    hashSet.remove(Long.valueOf(j));
-                } else if (hashSet.isEmpty()) {
-                    ArrayList arrayList = q99Var.h;
-                    int size = arrayList.size();
-                    int i = 0;
-                    while (i < size) {
-                        Object obj3 = arrayList.get(i);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void a() {
+        RecordingCanvas recordingCanvas;
+        int width = this.a.getWidth();
+        int height = this.a.getHeight();
+        ucb ucbVar = this.c;
+        ucbVar.a = 0L;
+        int i = 0;
+        ucbVar.b = false;
+        m41 m41Var = this.b;
+        boolean z = m41Var.b;
+        bj6 bj6Var = (bj6) m41Var.c;
+        int themedColor = bj6Var.getThemedColor(cmb.c6);
+        RectF rectF = bj6Var.U;
+        ucbVar.a(themedColor);
+        ucbVar.b(gda.f());
+        SparseArray sparseArray = bj6Var.a;
+        int size = sparseArray.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            d dVar = ((hgc) sparseArray.valueAt(i2)).a;
+            View view = dVar.fragmentView;
+            if (view != null && zgc.c(view, bj6Var.b, rectF) && rectF.right > 0.0f && rectF.left < bj6Var.fragmentView.getMeasuredWidth()) {
+                aj6 aj6Var = (aj6) dVar;
+                if ((z ? aj6Var.j() : aj6Var.z()) != null) {
+                    ucbVar.c(rectF.left);
+                    ucbVar.c(rectF.top);
+                    ucbVar.a(dVar.getClassGuid());
+                }
+            }
+        }
+        long j = ucbVar.b ? -1L : ucbVar.a;
+        boolean z2 = (this.a.hasDisplayList() && width == this.e && height == this.f && j == this.d && j != -1) ? false : true;
+        this.e = width;
+        this.f = height;
+        this.d = j;
+        if (z2) {
+            RecordingCanvas beginRecording = this.a.beginRecording();
+            View view2 = bj6Var.fragmentView;
+            SparseArray sparseArray2 = bj6Var.a;
+            RectF rectF2 = bj6Var.U;
+            int measuredWidth = view2.getMeasuredWidth();
+            int measuredHeight = bj6Var.fragmentView.getMeasuredHeight();
+            beginRecording.drawColor(bj6Var.getThemedColor(cmb.c6));
+            int size2 = sparseArray2.size();
+            while (i < size2) {
+                d dVar2 = ((hgc) sparseArray2.valueAt(i)).a;
+                View view3 = dVar2.fragmentView;
+                if (view3 != null && zgc.c(view3, bj6Var.b, rectF2) && rectF2.right > 0.0f && rectF2.left < bj6Var.fragmentView.getMeasuredWidth()) {
+                    aj6 aj6Var2 = (aj6) dVar2;
+                    nz4 j2 = z ? aj6Var2.j() : aj6Var2.z();
+                    if (j2 != null) {
+                        beginRecording.save();
+                        beginRecording.translate(rectF2.left, rectF2.top);
+                        recordingCanvas = beginRecording;
+                        j2.e(0.0f, 0.0f, measuredWidth, measuredHeight, recordingCanvas);
+                        recordingCanvas.restore();
                         i++;
-                        long j2 = ((TL_stars.starGiftAttributePattern) obj3).document.id;
-                        if (j2 != j) {
-                            hashSet.add(Long.valueOf(j2));
-                        }
+                        beginRecording = recordingCanvas;
                     }
-                } else {
-                    hashSet.add(Long.valueOf(j));
                 }
-                q99Var.m();
-                q5c q5cVar = q5cVarArr[0];
-                if (q5cVar != null) {
-                    q5cVar.g3.O(true);
-                    break;
-                }
-                break;
-            case 1:
-                int i2 = ((TL_stars.starGiftAttributeBackdrop) c4cVar.H).backdrop_id;
-                q99 q99Var2 = z99Var.d;
-                boolean contains2 = q99Var2.k.contains(Integer.valueOf(i2));
-                HashSet hashSet2 = q99Var2.k;
-                if (contains2) {
-                    hashSet2.remove(Integer.valueOf(i2));
-                } else if (hashSet2.isEmpty()) {
-                    ArrayList arrayList2 = q99Var2.g;
-                    int size2 = arrayList2.size();
-                    int i3 = 0;
-                    while (i3 < size2) {
-                        Object obj4 = arrayList2.get(i3);
-                        i3++;
-                        int i4 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                        if (i4 != i2) {
-                            hashSet2.add(Integer.valueOf(i4));
-                        }
-                    }
-                } else {
-                    hashSet2.add(Integer.valueOf(i2));
-                }
-                q99Var2.m();
-                q5c q5cVar2 = q5cVarArr[0];
-                if (q5cVar2 != null) {
-                    q5cVar2.g3.O(true);
-                    break;
-                }
-                break;
-            default:
-                long j3 = ((TL_stars.starGiftAttributeModel) c4cVar.H).document.id;
-                q99 q99Var3 = z99Var.d;
-                boolean contains3 = q99Var3.j.contains(Long.valueOf(j3));
-                HashSet hashSet3 = q99Var3.j;
-                if (contains3) {
-                    hashSet3.remove(Long.valueOf(j3));
-                } else if (hashSet3.isEmpty()) {
-                    ArrayList arrayList3 = q99Var3.f;
-                    int size3 = arrayList3.size();
-                    int i5 = 0;
-                    while (i5 < size3) {
-                        Object obj5 = arrayList3.get(i5);
-                        i5++;
-                        long j4 = ((TL_stars.starGiftAttributeModel) obj5).document.id;
-                        if (j4 != j3) {
-                            hashSet3.add(Long.valueOf(j4));
-                        }
-                    }
-                } else {
-                    hashSet3.add(Long.valueOf(j3));
-                }
-                q99Var3.m();
-                q5c q5cVar3 = q5cVarArr[0];
-                if (q5cVar3 != null) {
-                    q5cVar3.g3.O(true);
-                    break;
-                }
-                break;
+                recordingCanvas = beginRecording;
+                i++;
+                beginRecording = recordingCanvas;
+            }
+            this.a.endRecording();
         }
     }
 }

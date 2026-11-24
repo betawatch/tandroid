@@ -1,22 +1,22 @@
 package androidx.media;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class AudioAttributesCompatParcelizer {
-    public static AudioAttributesCompat read(y9c y9cVar) {
+    public static AudioAttributesCompat read(zbc zbcVar) {
         AudioAttributesCompat audioAttributesCompat = new AudioAttributesCompat();
-        aac aacVar = audioAttributesCompat.a;
-        if (y9cVar.e(1)) {
-            aacVar = y9cVar.h();
+        bcc bccVar = audioAttributesCompat.a;
+        if (zbcVar.e(1)) {
+            bccVar = zbcVar.h();
         }
-        audioAttributesCompat.a = (AudioAttributesImpl) aacVar;
+        audioAttributesCompat.a = (AudioAttributesImpl) bccVar;
         return audioAttributesCompat;
     }
 
-    public static void write(AudioAttributesCompat audioAttributesCompat, y9c y9cVar) {
-        y9cVar.getClass();
+    public static void write(AudioAttributesCompat audioAttributesCompat, zbc zbcVar) {
+        zbcVar.getClass();
         AudioAttributesImpl audioAttributesImpl = audioAttributesCompat.a;
-        y9cVar.i(1);
-        y9cVar.l(audioAttributesImpl);
+        zbcVar.i(1);
+        zbcVar.l(audioAttributesImpl);
     }
 }

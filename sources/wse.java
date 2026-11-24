@@ -1,23 +1,30 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public abstract class wse {
-    public static StaticLayout a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class wse {
+    public final mse a;
+    public final Integer b;
 
-    public static kb9 a(int i, int i2, int i3, int i4) {
-        Rect rect = new Rect(i, i2, i3, i4);
-        StaticLayout staticLayout = a;
-        if (staticLayout == null) {
-            StaticLayout staticLayout2 = new StaticLayout(" ", new TextPaint(), 1, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            a = staticLayout2;
-            staticLayout = staticLayout2;
+    public /* synthetic */ wse(xab xabVar) {
+        this.a = (mse) xabVar.b;
+        this.b = (Integer) xabVar.c;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return new kb9(staticLayout, rect);
+        if (!(obj instanceof wse)) {
+            return false;
+        }
+        wse wseVar = (wse) obj;
+        return fse.a(this.a, wseVar.a) && fse.a(this.b, wseVar.b) && fse.a(null, null) && fse.a(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
     }
 }

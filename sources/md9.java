@@ -1,199 +1,174 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.SpannableStringBuilder;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class md9 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class md9 extends View {
+    public final ri9 a;
+    public final int b;
+    public boolean c;
+    public boolean d;
+    public final ge7 e;
+    public final /* synthetic */ pd9 f;
 
-    public static void a(TL_iv.RichText richText, int i, md9 md9Var) {
-        if (richText != null) {
-            md9Var.a = yi9.l(richText).length() + md9Var.a;
-            int c = c(richText) + i;
-            if (c > md9Var.c) {
-                md9Var.c = c;
-            }
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public md9(pd9 pd9Var, Context context, TL_keyboard.PageButton pageButton, int i) {
+        super(context);
+        this.f = pd9Var;
+        this.b = i;
+        int i2 = pd9Var.n;
+        int c = b10.c(32.0f, gm.q.x, gm.L(240.0f));
+        ylb ylbVar = pd9Var.r;
+        pp8 pp8Var = new pp8(this, (byte) 27);
+        uj9 uj9Var = new uj9(i2, c, ylbVar);
+        SpannableStringBuilder l = uj9Var.l(pageButton.text, uj9.Q(16, 13));
+        TL_keyboard.InlineButtonType inlineButtonType = pageButton.type;
+        ri9 ri9Var = new ri9(uj9Var, c, l, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, pp8Var);
+        this.a = ri9Var;
+        this.e = new ge7(this, i, (byte) 13);
+        ri9Var.e = ri9Var.i();
+        setContentDescription(zk9.l(pageButton.text));
+        setClickable(true);
+        setLongClickable(true);
     }
 
-    public static void b(TL_iv.PageBlock pageBlock, int i, md9 md9Var) {
-        int i2;
-        if (pageBlock != null) {
-            if (i > md9Var.c) {
-                md9Var.c = i;
-            }
-            a(pageBlock.text, i, md9Var);
-            if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
-                a(((TL_iv.pageBlockBlockquote) pageBlock).caption, i, md9Var);
-                return;
-            }
-            if (pageBlock instanceof TL_iv.pageBlockPullquote) {
-                a(((TL_iv.pageBlockPullquote) pageBlock).caption, i, md9Var);
-                return;
-            }
-            int i3 = 0;
-            if (pageBlock instanceof TL_iv.pageBlockBlockquoteBlocks) {
-                TL_iv.pageBlockBlockquoteBlocks pageblockblockquoteblocks = (TL_iv.pageBlockBlockquoteBlocks) pageBlock;
-                a(pageblockblockquoteblocks.caption, i, md9Var);
-                md9Var.b = pageblockblockquoteblocks.blocks.size() + md9Var.b;
-                while (i3 < pageblockblockquoteblocks.blocks.size()) {
-                    b(pageblockblockquoteblocks.blocks.get(i3), i + 1, md9Var);
-                    i3++;
-                }
-                return;
-            }
-            if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
-                a(pageblockdetails.title, i, md9Var);
-                md9Var.b = pageblockdetails.blocks.size() + md9Var.b;
-                while (i3 < pageblockdetails.blocks.size()) {
-                    b(pageblockdetails.blocks.get(i3), i + 1, md9Var);
-                    i3++;
-                }
-                return;
-            }
-            if (pageBlock instanceof TL_iv.pageBlockList) {
-                TL_iv.pageBlockList pageblocklist = (TL_iv.pageBlockList) pageBlock;
-                md9Var.b = pageblocklist.items.size() + md9Var.b;
-                for (int i4 = 0; i4 < pageblocklist.items.size(); i4++) {
-                    TL_iv.PageListItem pageListItem = pageblocklist.items.get(i4);
-                    int i5 = i + 1;
-                    if (pageListItem instanceof TL_iv.TL_pageListItemText) {
-                        a(((TL_iv.TL_pageListItemText) pageListItem).text, i5, md9Var);
-                    } else if (pageListItem instanceof TL_iv.TL_pageListItemBlocks) {
-                        ArrayList<TL_iv.PageBlock> arrayList = ((TL_iv.TL_pageListItemBlocks) pageListItem).blocks;
-                        for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                            b(arrayList.get(i6), i5, md9Var);
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a(this);
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        gm.r(this.e);
+        this.a.a.f(this);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        int height = getHeight();
+        ri9 ri9Var = this.a;
+        canvas.translate(0.0f, (height - ri9Var.d()) / 2.0f);
+        ri9Var.b(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        ri9 ri9Var = this.a;
+        setMeasuredDimension(ri9Var.e, gm.L(8.0f) + ri9Var.d());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00c2  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        pd9 pd9Var;
+        nd9 nd9Var;
+        ll0 ll0Var;
+        char c;
+        int actionMasked = motionEvent.getActionMasked();
+        ge7 ge7Var = this.e;
+        ri9 ri9Var = this.a;
+        if (actionMasked == 0) {
+            this.c = true;
+            this.d = false;
+            ri9Var.n(true);
+            gm.d3(ge7Var, ViewConfiguration.getLongPressTimeout());
+            return true;
+        }
+        if (actionMasked == 1) {
+            boolean z = this.c && !this.d;
+            this.c = false;
+            ri9Var.n(false);
+            gm.r(ge7Var);
+            if (z && (nd9Var = (pd9Var = this.f).F) != null && (ll0Var = pd9Var.a) != null) {
+                ch9 ch9Var = ((ug9) nd9Var).a;
+                TL_iv.PageBlock pageBlock = ll0Var.b;
+                if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
+                    TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock;
+                    int i = this.b;
+                    if (i >= 0 && i < pageblockbuttonrow.buttons.size()) {
+                        of9 of9Var = ch9Var.R3;
+                        if (of9Var != null) {
+                            of9Var.d();
                         }
-                    }
-                }
-                return;
-            }
-            if (pageBlock instanceof TL_iv.pageBlockOrderedList) {
-                TL_iv.pageBlockOrderedList pageblockorderedlist = (TL_iv.pageBlockOrderedList) pageBlock;
-                md9Var.b = pageblockorderedlist.items.size() + md9Var.b;
-                for (int i7 = 0; i7 < pageblockorderedlist.items.size(); i7++) {
-                    TL_iv.PageListOrderedItem pageListOrderedItem = pageblockorderedlist.items.get(i7);
-                    int i8 = i + 1;
-                    if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemText) {
-                        a(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem).text, i8, md9Var);
-                    } else if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemBlocks) {
-                        ArrayList<TL_iv.PageBlock> arrayList2 = ((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem).blocks;
-                        for (int i9 = 0; i9 < arrayList2.size(); i9++) {
-                            b(arrayList2.get(i9), i8, md9Var);
-                        }
-                    }
-                }
-                return;
-            }
-            if (pageBlock instanceof TL_iv.pageBlockTable) {
-                TL_iv.pageBlockTable pageblocktable = (TL_iv.pageBlockTable) pageBlock;
-                a(pageblocktable.title, i, md9Var);
-                ArrayList<TL_iv.pageTableRow> arrayList3 = pageblocktable.rows;
-                if (arrayList3 != null) {
-                    md9Var.b = arrayList3.size() + md9Var.b;
-                    for (int i10 = 0; i10 < pageblocktable.rows.size(); i10++) {
-                        TL_iv.pageTableRow pagetablerow = pageblocktable.rows.get(i10);
-                        if (pagetablerow.cells != null) {
-                            i2 = 0;
-                            for (int i11 = 0; i11 < pagetablerow.cells.size(); i11++) {
-                                TL_iv.pageTableCell pagetablecell = pagetablerow.cells.get(i11);
-                                i2 += ffb.n(pagetablecell);
-                                a(pagetablecell.text, i + 1, md9Var);
+                        TL_keyboard.PageButton pageButton = pageblockbuttonrow.buttons.get(i);
+                        if (pageButton != null) {
+                            TL_keyboard.RichButtonStyle richButtonStyle = pageButton.style;
+                            if (richButtonStyle != null) {
+                                if (richButtonStyle.bg_primary) {
+                                    c = 2;
+                                } else if (richButtonStyle.bg_danger) {
+                                    c = 3;
+                                } else if (richButtonStyle.bg_success) {
+                                    c = 0;
+                                }
+                                if (richButtonStyle == null) {
+                                    richButtonStyle = new TL_keyboard.RichButtonStyle();
+                                }
+                                richButtonStyle.flags = 0;
+                                richButtonStyle.bg_primary = c != 1;
+                                richButtonStyle.bg_danger = c != 2;
+                                richButtonStyle.bg_success = c != 3;
+                                richButtonStyle.link = false;
+                                pageButton.style = richButtonStyle;
                             }
-                        } else {
-                            i2 = 0;
+                            c = 1;
+                            if (richButtonStyle == null) {
+                            }
+                            richButtonStyle.flags = 0;
+                            richButtonStyle.bg_primary = c != 1;
+                            richButtonStyle.bg_danger = c != 2;
+                            richButtonStyle.bg_success = c != 3;
+                            richButtonStyle.link = false;
+                            pageButton.style = richButtonStyle;
                         }
-                        if (i2 > md9Var.e) {
-                            md9Var.e = i2;
+                        ch9Var.g3.O(false);
+                        of9 of9Var2 = ch9Var.R3;
+                        if (of9Var2 != null) {
+                            of9Var2.h();
                         }
+                        ch9Var.p3.onContentChanged();
                     }
-                    return;
                 }
-                return;
             }
-            if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
-                ArrayList<TL_keyboard.PageButton> arrayList4 = ((TL_iv.pageBlockButtonRow) pageBlock).buttons;
-                if (arrayList4 != null) {
-                    int size = arrayList4.size();
-                    while (i3 < size) {
-                        TL_keyboard.PageButton pageButton = arrayList4.get(i3);
-                        i3++;
-                        TL_keyboard.PageButton pageButton2 = pageButton;
-                        if (pageButton2 != null) {
-                            a(pageButton2.text, i + 1, md9Var);
-                        }
-                    }
-                    return;
+        } else {
+            if (actionMasked != 2) {
+                if (actionMasked != 3) {
+                    return super.onTouchEvent(motionEvent);
                 }
-                return;
+                this.c = false;
+                ri9Var.n(false);
+                gm.r(ge7Var);
+                return true;
             }
-            if (pageBlock instanceof TL_iv.pageBlockCollage) {
-                TL_iv.PageCaption pageCaption = pageBlock.caption;
-                if (pageCaption != null) {
-                    a(pageCaption.text, i, md9Var);
-                    a(pageCaption.credit, i, md9Var);
-                }
-                ArrayList<TL_iv.PageBlock> arrayList5 = ((TL_iv.pageBlockCollage) pageBlock).items;
-                while (i3 < arrayList5.size()) {
-                    b(arrayList5.get(i3), i + 1, md9Var);
-                    i3++;
-                }
-                return;
+            if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
+                this.c = false;
+                ri9Var.n(false);
+                gm.r(ge7Var);
+                return true;
             }
-            if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
-                TL_iv.PageCaption pageCaption2 = pageBlock.caption;
-                if (pageCaption2 != null) {
-                    a(pageCaption2.text, i, md9Var);
-                    a(pageCaption2.credit, i, md9Var);
-                }
-                ArrayList<TL_iv.PageBlock> arrayList6 = ((TL_iv.pageBlockSlideshow) pageBlock).items;
-                while (i3 < arrayList6.size()) {
-                    b(arrayList6.get(i3), i + 1, md9Var);
-                    i3++;
-                }
-                return;
-            }
-            if (pageBlock instanceof TL_iv.pageBlockMath) {
-                String str = ((TL_iv.pageBlockMath) pageBlock).source;
-                if (str != null) {
-                    md9Var.a = str.length() + md9Var.a;
-                    return;
-                }
-                return;
-            }
-            TL_iv.PageCaption pageCaption3 = pageBlock.caption;
-            if (pageCaption3 == null) {
-                return;
-            }
-            a(pageCaption3.text, i, md9Var);
-            a(pageCaption3.credit, i, md9Var);
         }
-    }
-
-    public static int c(TL_iv.RichText richText) {
-        int i = 0;
-        if (richText == null || (richText instanceof TL_iv.textEmpty) || (richText instanceof TL_iv.textPlain) || (richText instanceof TL_iv.textCustomEmoji)) {
-            return 0;
-        }
-        if (!(richText instanceof TL_iv.textConcat)) {
-            return c(richText.text) + 1;
-        }
-        ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
-        int size = arrayList.size();
-        int i2 = 0;
-        while (i2 < size) {
-            TL_iv.RichText richText2 = arrayList.get(i2);
-            i2++;
-            i = Math.max(i, c(richText2));
-        }
-        return i;
+        return true;
     }
 }

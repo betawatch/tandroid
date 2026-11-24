@@ -1,29 +1,44 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class w6b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t7b b;
+public final class w6b extends FrameLayout {
+    public final TL_stories.MediaArea a;
+    public final gd6 b;
 
-    public /* synthetic */ w6b(t7b t7bVar, byte b) {
-        this.a = b;
-        this.b = t7bVar;
+    public w6b(Context context, gd6 gd6Var, TL_stories.MediaArea mediaArea) {
+        super(context);
+        this.a = mediaArea;
+        this.b = gd6Var;
+        addView(gd6Var);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        t7b t7bVar = this.b;
-        switch (b) {
-            case 0:
-                t7bVar.d1.m();
-                break;
-            default:
-                t7bVar.m0();
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        gd6 gd6Var = this.b;
+        gd6Var.measure(i, i2);
+        int measuredWidth = (gd6Var.getMeasuredWidth() - gd6Var.getPaddingLeft()) - gd6Var.getPaddingRight();
+        int measuredHeight = (gd6Var.getMeasuredHeight() - gd6Var.getPaddingTop()) - gd6Var.getPaddingBottom();
+        float f = measuredWidth;
+        float f2 = f / 2.0f;
+        gd6Var.setPivotX(gd6Var.getPaddingLeft() + f2);
+        float f3 = measuredHeight;
+        float f4 = f3 / 2.0f;
+        gd6Var.setPivotY(gd6Var.getPaddingTop() + f4);
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        setMeasuredDimension(size, size2);
+        float f5 = size;
+        float f6 = size2;
+        float min = Math.min(f5 / f, f6 / f3);
+        gd6Var.setTranslationX((f5 / 2.0f) - (f2 + gd6Var.getPaddingLeft()));
+        gd6Var.setTranslationY((f6 / 2.0f) - (f4 + gd6Var.getPaddingTop()));
+        gd6Var.setScaleX(min);
+        gd6Var.setScaleY(min);
     }
 }

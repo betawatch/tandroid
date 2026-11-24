@@ -24,7 +24,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -127,7 +127,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public static IconCompat e(Resources resources, String str, int i) {
         str.getClass();
         if (i == 0) {
-            w26.j("Drawable resource ID must not be 0");
+            u36.j("Drawable resource ID must not be 0");
             return null;
         }
         IconCompat iconCompat = new IconCompat(2);
@@ -136,7 +136,7 @@ public class IconCompat extends CustomVersionedParcelable {
             try {
                 iconCompat.b = resources.getResourceName(i);
             } catch (Resources.NotFoundException unused) {
-                w26.j("Icon resource cannot be found");
+                u36.j("Icon resource cannot be found");
                 return null;
             }
         } else {
@@ -161,7 +161,7 @@ public class IconCompat extends CustomVersionedParcelable {
         if (i == 5) {
             return b((Bitmap) this.b, true);
         }
-        wn4.i(this, "called getBitmap() on ");
+        zo4.j(this, "called getBitmap() on ");
         return null;
     }
 
@@ -171,12 +171,12 @@ public class IconCompat extends CustomVersionedParcelable {
             if (i == 2) {
                 return this.e;
             }
-            wn4.i(this, "called getResId() on ");
+            zo4.j(this, "called getResId() on ");
             return 0;
         }
         Object obj = this.b;
         if (Build.VERSION.SDK_INT >= 28) {
-            return fo.k(obj);
+            return fp.k(obj);
         }
         try {
             return ((Integer) obj.getClass().getMethod("getResId", null).invoke(obj, null)).intValue();
@@ -199,12 +199,12 @@ public class IconCompat extends CustomVersionedParcelable {
                 String str = this.j;
                 return (str == null || TextUtils.isEmpty(str)) ? ((String) this.b).split(":", -1)[0] : this.j;
             }
-            wn4.i(this, "called getResPackage() on ");
+            zo4.j(this, "called getResPackage() on ");
             return null;
         }
         Object obj = this.b;
         if (Build.VERSION.SDK_INT >= 28) {
-            return fo.l(obj);
+            return fp.l(obj);
         }
         try {
             return (String) obj.getClass().getMethod("getResPackage", null).invoke(obj, null);
@@ -227,7 +227,7 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         Object obj = this.b;
         if (Build.VERSION.SDK_INT >= 28) {
-            return fo.s(obj);
+            return fp.s(obj);
         }
         try {
             return ((Integer) obj.getClass().getMethod("getType", null).invoke(obj, null)).intValue();
@@ -249,12 +249,12 @@ public class IconCompat extends CustomVersionedParcelable {
             if (i == 4 || i == 6) {
                 return Uri.parse((String) this.b);
             }
-            wn4.i(this, "called getUri() on ");
+            zo4.j(this, "called getUri() on ");
             return null;
         }
         Object obj = this.b;
         if (Build.VERSION.SDK_INT >= 28) {
-            return fo.t(obj);
+            return fp.t(obj);
         }
         try {
             return (Uri) obj.getClass().getMethod("getUri", null).invoke(obj, null);
@@ -297,7 +297,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 break;
             case 0:
             default:
-                w26.j("Invalid icon");
+                u36.j("Invalid icon");
                 return null;
             case 1:
             case 5:

@@ -1,129 +1,283 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.RelativeSizeSpan;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
-import org.telegram.tgnet.TLObject;
+import android.graphics.RectF;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class xi1 extends LinearLayout {
-    public final LinearLayout a;
-    public final LinearLayout[] b;
-    public final fm[] c;
-    public final TextView[] d;
-    public final TextView e;
-    public final DecimalFormat f;
+public final /* synthetic */ class xi1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ TLRPC.PhotoSize b;
+    public final /* synthetic */ TLRPC.InputFile c;
+    public final /* synthetic */ TLRPC.InputFile d;
+    public final /* synthetic */ TLRPC.VideoSize e;
+    public final /* synthetic */ TLRPC.PhotoSize f;
+    public final /* synthetic */ double h;
+    public final /* synthetic */ String n;
+    public final /* synthetic */ vn5 r;
 
-    public xi1(Context context, wjb wjbVar) {
-        super(context);
-        this.b = new LinearLayout[2];
-        this.c = new fm[2];
-        this.d = new TextView[2];
-        setOrientation(1);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(1);
-        addView(linearLayout, nme.k(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
-        for (int i = 0; i < 2; i++) {
-            this.b[i] = new LinearLayout(context);
-            this.b[i].setOrientation(0);
-            this.a.addView(this.b[i], nme.p(-1, -2, 1.0f, kk7.D1));
-            this.c[i] = new fm(context);
-            this.c[i].setTypeface(gl.o());
-            this.c[i].setTextSize(1, 16.0f);
-            zkb.X(this.c[i], bkb.F6, wjbVar);
-            this.b[i].addView(this.c[i], nme.t(-2, -2, 80, 0, 0, 5, 0));
-            this.d[i] = new fm(context);
-            this.d[i].setTextSize(1, 11.5f);
-            zkb.X(this.d[i], bkb.x6, wjbVar);
-            this.b[i].addView(this.d[i], nme.r(-2, -2, 80));
-        }
-        TextView textView = new TextView(context);
-        this.e = textView;
-        textView.setTextSize(1, 13.0f);
-        zkb.X(textView, bkb.x6, wjbVar);
-        addView(textView, nme.t(-1, -2, 55, 22, 5, 22, 9));
-        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
-        decimalFormatSymbols.setDecimalSeparator('.');
-        DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
-        this.f = decimalFormat;
-        decimalFormat.setMinimumFractionDigits(2);
-        decimalFormat.setMaximumFractionDigits(12);
-        decimalFormat.setGroupingUsed(false);
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ xi1(d dVar, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, String str, double d, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, byte b) {
+        this.a = b;
+        this.r = (vn5) dVar;
+        this.c = inputFile;
+        this.d = inputFile2;
+        this.e = videoSize;
+        this.n = str;
+        this.h = d;
+        this.b = photoSize;
+        this.f = photoSize2;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    public void set(wi1 wi1Var) {
-        String str;
-        long j;
-        int i;
-        int indexOf;
-        this.e.setText(wi1Var.c);
-        int i2 = 0;
-        while (i2 < 2) {
-            if (i2 == 0) {
-                str = wi1Var.b;
-                j = wi1Var.e;
-            } else {
-                str = wi1Var.h;
-                j = wi1Var.j;
-            }
-            LinearLayout[] linearLayoutArr = this.b;
-            if (i2 == 0 && !wi1Var.a) {
-                linearLayoutArr[i2].setVisibility(8);
-            } else if (i2 != 1 || wi1Var.g) {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tb4.o(str, " "));
-                boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
-                TextView[] textViewArr = this.c;
-                if (equalsIgnoreCase) {
-                    String format = this.f.format(wi1Var.d / 1.0E9d);
-                    int indexOf2 = format.indexOf(46);
-                    i = i2;
-                    if (indexOf2 >= 0) {
-                        spannableStringBuilder.append((CharSequence) k96.E((long) Math.floor(wi1Var.d / 1.0E9d), ' '));
-                        spannableStringBuilder.append((CharSequence) format.substring(indexOf2));
-                    } else {
-                        spannableStringBuilder.append((CharSequence) format);
-                    }
-                    spannableStringBuilder = zi1.L(spannableStringBuilder, textViewArr[i].getPaint(), 1.05f, 0.0f, true);
-                } else {
-                    i = i2;
-                    if ("XTR".equalsIgnoreCase(str)) {
-                        if (i == 0) {
-                            spannableStringBuilder.append((CharSequence) k96.E(wi1Var.d, ' '));
-                        } else {
-                            spannableStringBuilder.append((CharSequence) jva.G0(wi1Var.i, 0.8f, ' '));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        double d = this.h;
+        String str = this.n;
+        TLRPC.VideoSize videoSize = this.e;
+        TLRPC.InputFile inputFile = this.d;
+        TLRPC.InputFile inputFile2 = this.c;
+        TLRPC.PhotoSize photoSize = this.f;
+        TLRPC.PhotoSize photoSize2 = this.b;
+        byte b2 = 1;
+        vn5 vn5Var = this.r;
+        switch (b) {
+            case 0:
+                fj1 fj1Var = (fj1) vn5Var;
+                if (inputFile2 != null || inputFile != null) {
+                    fj1Var.n0 = inputFile2;
+                    fj1Var.o0 = inputFile;
+                    fj1Var.p0 = videoSize;
+                    fj1Var.q0 = str;
+                    fj1Var.r0 = d;
+                    if (fj1Var.s0) {
+                        he heVar = fj1Var.w0;
+                        if (heVar != null) {
+                            try {
+                                heVar.dismiss();
+                                fj1Var.w0 = null;
+                            } catch (Exception e) {
+                                fc4.g(e, true);
+                            }
                         }
-                        spannableStringBuilder = jva.a1(false, spannableStringBuilder, 0.7f, null);
-                    } else {
-                        spannableStringBuilder.append((CharSequence) Long.toString(wi1Var.d));
+                        fj1Var.m0(false);
+                        fj1Var.t0 = false;
+                        fj1Var.a.performClick();
                     }
+                    fj1Var.j0(false, true);
+                    fj1Var.n.setImageDrawable(null);
+                    break;
+                } else {
+                    TLRPC.FileLocation fileLocation = photoSize2.location;
+                    fj1Var.E = fileLocation;
+                    fj1Var.F = photoSize.location;
+                    fj1Var.f.m(gn5.e(fileLocation), "50_50", fj1Var.w, null);
+                    fj1Var.j0(true, false);
+                    break;
                 }
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-                if ("TON".equalsIgnoreCase(str) && (indexOf = TextUtils.indexOf(spannableStringBuilder2, ".")) >= 0) {
-                    spannableStringBuilder2.setSpan(new RelativeSizeSpan(0.8125f), indexOf, spannableStringBuilder2.length(), 33);
+            case 1:
+                ba2 ba2Var = (ba2) vn5Var;
+                TLRPC.FileLocation fileLocation2 = photoSize2.location;
+                ba2Var.v0 = fileLocation2;
+                TLRPC.InputFile inputFile3 = this.c;
+                TLRPC.InputFile inputFile4 = this.d;
+                TLRPC.VideoSize videoSize2 = this.e;
+                if (inputFile3 != null || inputFile4 != null || videoSize2 != null) {
+                    long j = ba2Var.C0;
+                    double d2 = this.h;
+                    if (j != 0) {
+                        TLRPC.User user = ba2Var.D0;
+                        if (user != null) {
+                            user.photo = new TLRPC.TL_userProfilePhoto();
+                            TLRPC.UserProfilePhoto userProfilePhoto = ba2Var.D0.photo;
+                            userProfilePhoto.photo_id = inputFile3 != null ? inputFile3.id : inputFile4 != null ? inputFile4.id : 0L;
+                            userProfilePhoto.photo_big = photoSize.location;
+                            userProfilePhoto.photo_small = photoSize2.location;
+                            ba2Var.getMessagesController().c4(ba2Var.D0, true, false);
+                        }
+                        TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
+                        if (inputFile3 != null) {
+                            tL_photos_uploadProfilePhoto.file = inputFile3;
+                            tL_photos_uploadProfilePhoto.flags |= 1;
+                        }
+                        if (inputFile4 != null) {
+                            tL_photos_uploadProfilePhoto.video = inputFile4;
+                            int i = tL_photos_uploadProfilePhoto.flags;
+                            tL_photos_uploadProfilePhoto.video_start_ts = d2;
+                            tL_photos_uploadProfilePhoto.flags = i | 6;
+                        }
+                        if (videoSize2 != null) {
+                            tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize2;
+                            tL_photos_uploadProfilePhoto.flags |= 16;
+                        }
+                        tL_photos_uploadProfilePhoto.bot = ba2Var.getMessagesController().p1(ba2Var.D0);
+                        tL_photos_uploadProfilePhoto.flags |= 32;
+                        ba2Var.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new t92(ba2Var, b2));
+                    } else {
+                        ba2Var.getMessagesController().x(ba2Var.w0, null, inputFile3, inputFile4, videoSize2, d2, this.n, photoSize2.location, photoSize.location, null);
+                    }
+                    if (ba2Var.N0) {
+                        try {
+                            he heVar2 = ba2Var.b;
+                            if (heVar2 != null && heVar2.isShowing()) {
+                                ba2Var.b.dismiss();
+                                ba2Var.b = null;
+                            }
+                        } catch (Exception e2) {
+                            fc4.g(e2, true);
+                        }
+                        ba2Var.O0 = false;
+                        ba2Var.a.performClick();
+                    }
+                    ba2Var.s0(false, true);
+                    break;
+                } else {
+                    kc0 kc0Var = ba2Var.e;
+                    gn5 e3 = gn5.e(fileLocation2);
+                    pc0 pc0Var = ba2Var.r;
+                    Object obj = ba2Var.D0;
+                    if (obj == null) {
+                        obj = ba2Var.x0;
+                    }
+                    kc0Var.m(e3, "50_50", pc0Var, obj);
+                    ba2Var.c0.o(R.drawable.msg_addphoto, jb6.M0(2131752150, "ChatSetNewPhoto"), true);
+                    if (ba2Var.S0 == null) {
+                        ba2Var.S0 = new p09(R.raw.camera_outline, gm.L(50.0f), gm.L(50.0f), false, null);
+                    }
+                    ba2Var.c0.e.setTranslationX(-gm.L(8.0f));
+                    ba2Var.c0.e.setAnimation(ba2Var.S0);
+                    ba2Var.s0(true, false);
+                    break;
                 }
-                linearLayoutArr[i].setVisibility(0);
-                textViewArr[i].setText(spannableStringBuilder2);
-                this.d[i].setText("≈" + ci0.h().e(j, wi1Var.f));
-                i2 = i + 1;
-            } else {
-                linearLayoutArr[i2].setVisibility(8);
-            }
-            i = i2;
-            i2 = i + 1;
+                break;
+            case 2:
+                po2 po2Var = (po2) vn5Var;
+                TLRPC.FileLocation fileLocation3 = photoSize2.location;
+                po2Var.H = fileLocation3;
+                TLRPC.InputFile inputFile5 = this.c;
+                TLRPC.InputFile inputFile6 = this.d;
+                TLRPC.VideoSize videoSize3 = this.e;
+                if (inputFile5 == null && inputFile6 == null && videoSize3 == null) {
+                    po2Var.x.m(gn5.e(fileLocation3), "50_50", po2Var.F, po2Var.J);
+                    po2Var.f0(true, false);
+                } else {
+                    po2Var.getMessagesController().x(po2Var.c, null, inputFile5, inputFile6, videoSize3, this.h, this.n, photoSize2.location, photoSize.location, null);
+                    po2Var.f0(false, true);
+                }
+                po2Var.e.g3.O(true);
+                break;
+            case 3:
+                r85 r85Var = (r85) vn5Var;
+                long j2 = r85Var.e;
+                g95 g95Var = r85Var.f;
+                j5 j5Var = g95Var.n1;
+                TLRPC.InputFile inputFile7 = this.c;
+                TLRPC.InputFile inputFile8 = this.d;
+                TLRPC.VideoSize videoSize4 = this.e;
+                if (inputFile7 != null || inputFile8 != null || videoSize4 != null) {
+                    double d3 = this.h;
+                    String str2 = this.n;
+                    if (j2 <= 0) {
+                        oc7.r1(j5Var.a).x(-j2, null, inputFile7, inputFile8, videoSize4, d3, str2, photoSize2.location, photoSize.location, new qn4(r85Var, (byte) 19));
+                        break;
+                    } else {
+                        TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto2 = new TLRPC.TL_photos_uploadProfilePhoto();
+                        if (inputFile7 != null) {
+                            tL_photos_uploadProfilePhoto2.file = inputFile7;
+                            tL_photos_uploadProfilePhoto2.flags |= 1;
+                        }
+                        if (inputFile8 != null) {
+                            tL_photos_uploadProfilePhoto2.video = inputFile8;
+                            int i2 = tL_photos_uploadProfilePhoto2.flags;
+                            tL_photos_uploadProfilePhoto2.video_start_ts = d3;
+                            tL_photos_uploadProfilePhoto2.flags = i2 | 6;
+                        }
+                        if (videoSize4 != null) {
+                            tL_photos_uploadProfilePhoto2.video_emoji_markup = videoSize4;
+                            tL_photos_uploadProfilePhoto2.flags |= 16;
+                        }
+                        ConnectionsManager.getInstance(j5Var.a).sendRequest(tL_photos_uploadProfilePhoto2, new cx3(r85Var, str2, (byte) 9));
+                        break;
+                    }
+                } else {
+                    r85Var.c = photoSize2.location;
+                    TLRPC.FileLocation fileLocation4 = photoSize.location;
+                    r85Var.b = fileLocation4;
+                    gn5 e4 = gn5.e(fileLocation4);
+                    r85Var.d = e4;
+                    g95Var.l1.A(e4, gn5.e(r85Var.c));
+                    gm.V3(g95Var.J1);
+                    break;
+                }
+            case 4:
+                uc5 uc5Var = (uc5) vn5Var;
+                if (inputFile2 != null || inputFile != null || videoSize != null) {
+                    uc5Var.G = inputFile2;
+                    uc5Var.H = inputFile;
+                    uc5Var.I = videoSize;
+                    uc5Var.J = str;
+                    uc5Var.K = d;
+                    if (uc5Var.M) {
+                        uc5Var.getMessagesController().Q(uc5Var.c.getText().toString(), uc5Var.L, null, uc5Var.Q, uc5Var.T, uc5Var.V, uc5Var.U, uc5Var.X, uc5Var);
+                    }
+                    uc5Var.e0(false, true);
+                    uc5Var.f.setImageDrawable(null);
+                    break;
+                } else {
+                    TLRPC.FileLocation fileLocation5 = photoSize2.location;
+                    uc5Var.E = fileLocation5;
+                    uc5Var.F = photoSize.location;
+                    uc5Var.d.m(gn5.e(fileLocation5), "50_50", uc5Var.r, null);
+                    uc5Var.e0(true, false);
+                    break;
+                }
+            case 5:
+                RectF rectF = ProfileActivity.e7;
+                ((ProfileActivity) vn5Var).E2(this.c, this.d, this.e, this.h, this.n, this.b, this.f);
+                break;
+            default:
+                ((daa) vn5Var).f0(this.c, this.d, this.e, this.h, this.n, this.b, this.f);
+                break;
         }
+    }
+
+    public /* synthetic */ xi1(po2 po2Var, TLRPC.PhotoSize photoSize, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize2) {
+        this.a = (byte) 2;
+        this.r = po2Var;
+        this.b = photoSize;
+        this.c = inputFile;
+        this.d = inputFile2;
+        this.e = videoSize;
+        this.h = d;
+        this.n = str;
+        this.f = photoSize2;
+    }
+
+    public /* synthetic */ xi1(vn5 vn5Var, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, byte b) {
+        this.a = b;
+        this.r = vn5Var;
+        this.c = inputFile;
+        this.d = inputFile2;
+        this.e = videoSize;
+        this.h = d;
+        this.n = str;
+        this.b = photoSize;
+        this.f = photoSize2;
+    }
+
+    public /* synthetic */ xi1(ba2 ba2Var, TLRPC.PhotoSize photoSize, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, TLRPC.PhotoSize photoSize2, double d, String str) {
+        this.a = (byte) 1;
+        this.r = ba2Var;
+        this.b = photoSize;
+        this.c = inputFile;
+        this.d = inputFile2;
+        this.e = videoSize;
+        this.f = photoSize2;
+        this.h = d;
+        this.n = str;
     }
 }

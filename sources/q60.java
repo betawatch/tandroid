@@ -1,13 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class q60 implements zn7 {
+public final class q60 implements cq7 {
     public static final q60 a = new q60();
-    public static final w84 b = w84.c("identifier");
+    public static final wa4 b = wa4.c("pid");
+    public static final wa4 c = wa4.c("processName");
+    public static final wa4 d = wa4.c("reasonCode");
+    public static final wa4 e = wa4.c("importance");
+    public static final wa4 f = wa4.c("pss");
+    public static final wa4 g = wa4.c("rss");
+    public static final wa4 h = wa4.c("timestamp");
+    public static final wa4 i = wa4.c("traceFile");
+    public static final wa4 j = wa4.c("buildIdMappingForArch");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        ((ao7) obj2).a(b, ((l90) ((fz2) obj)).a);
+        sz2 sz2Var = (sz2) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.e(b, ((d90) sz2Var).a);
+        d90 d90Var = (d90) sz2Var;
+        dq7Var.a(c, d90Var.b);
+        dq7Var.e(d, d90Var.c);
+        dq7Var.e(e, d90Var.d);
+        dq7Var.g(f, d90Var.e);
+        dq7Var.g(g, d90Var.f);
+        dq7Var.g(h, d90Var.g);
+        dq7Var.a(i, d90Var.h);
+        dq7Var.a(j, d90Var.i);
     }
 }

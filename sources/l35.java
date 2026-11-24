@@ -1,136 +1,145 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.app.AlertDialog;
+import android.app.KeyguardManager;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.hardware.biometrics.BiometricPrompt;
+import android.hardware.fingerprint.FingerprintManager;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class l35 extends FrameLayout implements tjb {
-    public static final /* synthetic */ int h = 0;
-    public final fm a;
-    public final ri b;
-    public final FrameLayout.LayoutParams c;
-    public final wjb d;
-    public int e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class l35 {
+    public final CountDownLatch a = new CountDownLatch(1);
+    public volatile boolean b;
+    public String c;
+    public String d;
+    public LaunchActivity e;
     public boolean f;
+    public int g;
+    public CancellationSignal h;
+    public AlertDialog i;
 
-    public l35(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.e = 32;
-        this.d = wjbVar;
-        zkb.h(bkb.d7, wjbVar, this);
-        fm fmVar = new fm(getContext());
-        this.a = fmVar;
-        boolean z = true;
-        fmVar.setTextSize(1, 14.0f);
-        fmVar.setTypeface(gl.o());
-        int i2 = bkb.e7;
-        zkb.X(fmVar, i2, wjbVar);
-        fmVar.setGravity((k96.a0 ? 5 : 3) | 16);
-        float f = i;
-        addView(fmVar, nme.d(-1, -1.0f, (k96.a0 ? 5 : 3) | 48, f, 0.0f, f, 0.0f));
-        ri riVar = new ri(getContext(), z, z, z, (byte) 2);
-        this.b = riVar;
-        riVar.setPadding(gl.L(2.0f), 0, gl.L(2.0f), 0);
-        riVar.b(0.9f, 420L, s33.h);
-        riVar.setTextSize(gl.L(14.0f));
-        zkb.U(riVar, i2, wjbVar);
-        riVar.setGravity(k96.a0 ? 3 : 5);
-        FrameLayout.LayoutParams d = nme.d(-2, -1.0f, (k96.a0 ? 3 : 5) | 48, f, 0.0f, f, 0.0f);
-        this.c = d;
-        addView(riVar, d);
-        WeakHashMap weakHashMap = jdc.a;
-        new xcc(R.id.tag_accessibility_heading, Boolean.class, 0, 28, (byte) 2).a(this, Boolean.TRUE);
+    public final void a() {
+        if (this.f || !f()) {
+            return;
+        }
+        this.f = true;
+        e();
+        try {
+            KeyguardManager keyguardManager = (KeyguardManager) this.e.getSystemService("keyguard");
+            Intent createConfirmDeviceCredentialIntent = keyguardManager != null ? keyguardManager.createConfirmDeviceCredentialIntent(jb6.M0(2131742633, null), null) : null;
+            if (createConfirmDeviceCredentialIntent == null) {
+                c("AUTH_UNAVAILABLE");
+                return;
+            }
+            int i = cle.a;
+            int i2 = i + 1;
+            cle.a = i2;
+            this.g = i;
+            if (i2 > 22399) {
+                cle.a = 22336;
+            }
+            this.e.startActivityForResult(createConfirmDeviceCredentialIntent, i);
+        } catch (Exception e) {
+            fc4.g(e, true);
+            c("AUTH_UNAVAILABLE");
+        }
     }
 
-    public final void a(CharSequence charSequence, View.OnClickListener onClickListener) {
-        ri riVar = this.b;
-        riVar.c(charSequence, true, true);
-        riVar.setOnClickListener(onClickListener);
-        riVar.setVisibility(0);
+    public final void b() {
+        FingerprintManager fingerprintManager = (FingerprintManager) this.e.getSystemService("fingerprint");
+        if (fingerprintManager == null || !fingerprintManager.isHardwareDetected() || !fingerprintManager.hasEnrolledFingerprints()) {
+            a();
+            return;
+        }
+        this.h = new CancellationSignal();
+        final byte b = 0;
+        final byte b2 = 1;
+        this.i = new AlertDialog.Builder(this.e).setTitle(jb6.M0(2131742633, null)).setMessage(jb6.M0(2131742652, null)).setNegativeButton(jb6.M0(2131752542, null), new DialogInterface.OnClickListener(this) { // from class: i35
+            public final /* synthetic */ l35 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i) {
+                byte b3 = b;
+                l35 l35Var = this.b;
+                switch (b3) {
+                    case 0:
+                        l35Var.c("AUTH_CANCELED");
+                        break;
+                    default:
+                        l35Var.a();
+                        break;
+                }
+            }
+        }).setPositiveButton(jb6.M0(2131742628, null), new DialogInterface.OnClickListener(this) { // from class: i35
+            public final /* synthetic */ l35 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i) {
+                byte b3 = b2;
+                l35 l35Var = this.b;
+                switch (b3) {
+                    case 0:
+                        l35Var.c("AUTH_CANCELED");
+                        break;
+                    default:
+                        l35Var.a();
+                        break;
+                }
+            }
+        }).setOnCancelListener(new ct0(this, (byte) 9)).show();
+        fingerprintManager.authenticate(null, this.h, 0, new k35(this), new Handler(Looper.getMainLooper()));
     }
 
-    public final void b(CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
-        this.a.setText(charSequence);
-        ri riVar = this.b;
-        riVar.c(charSequence2, false, true);
-        riVar.setOnClickListener(onClickListener);
-        riVar.setVisibility(0);
+    public final void c(String str) {
+        CountDownLatch countDownLatch = this.a;
+        if (countDownLatch.getCount() == 0) {
+            return;
+        }
+        this.c = str;
+        countDownLatch.countDown();
     }
 
-    public CharSequence getText() {
-        return this.a.getText();
+    public final void d() {
+        this.h = new CancellationSignal();
+        new BiometricPrompt.Builder(this.e).setTitle(jb6.M0(2131742633, null)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new j35(this));
     }
 
-    public TextView getTextView() {
-        return this.a;
+    public final void e() {
+        try {
+            CancellationSignal cancellationSignal = this.h;
+            if (cancellationSignal != null) {
+                cancellationSignal.cancel();
+            }
+        } catch (Exception e) {
+            fc4.g(e, true);
+        }
+        try {
+            AlertDialog alertDialog = this.i;
+            if (alertDialog != null) {
+                alertDialog.dismiss();
+            }
+        } catch (Exception e2) {
+            fc4.g(e2, true);
+        }
+        this.i = null;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(this.e), TLObject.FLAG_30));
-    }
-
-    public void setLayerHeight(int i) {
-        this.e = i;
-        requestLayout();
-    }
-
-    public void setNoBackground(boolean z) {
-        this.f = z;
-        updateColors();
-    }
-
-    public void setRightText(CharSequence charSequence) {
-        ri riVar = this.b;
-        riVar.c(charSequence, true, true);
-        riVar.setVisibility(0);
-    }
-
-    public void setRightTextMargin(int i) {
-        float f = i;
-        int L = gl.L(f);
-        FrameLayout.LayoutParams layoutParams = this.c;
-        layoutParams.leftMargin = L;
-        layoutParams.rightMargin = gl.L(f);
-        this.b.setLayoutParams(layoutParams);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
-        ri riVar = this.b;
-        riVar.setVisibility(8);
-        riVar.setOnClickListener(null);
-    }
-
-    public void setTextColor(int i) {
-        fm fmVar = this.a;
-        wjb wjbVar = this.d;
-        zkb.X(fmVar, i, wjbVar);
-        zkb.U(this.b, i, wjbVar);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        boolean z = this.f;
-        wjb wjbVar = this.d;
-        setBackgroundColor(z ? 0 : bkb.v0(bkb.d7, wjbVar));
-        int i = bkb.e7;
-        this.a.setTextColor(bkb.v0(i, wjbVar));
-        this.b.setTextColor(bkb.v0(i, wjbVar));
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-    }
-
-    public l35(Context context, wjb wjbVar) {
-        this(16, wjbVar, context);
+    public final boolean f() {
+        return (this.b || this.a.getCount() == 0) ? false : true;
     }
 }

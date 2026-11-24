@@ -1,127 +1,176 @@
 // default package
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class wgf extends o7a {
-    public final /* synthetic */ d3 b;
+public abstract class wgf extends kff {
+    private static final Map zzb = new ConcurrentHashMap();
+    protected djf zzc;
+    private int zzd;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wgf(d3 d3Var) {
-        super((byte) 2);
-        this.b = d3Var;
+    public wgf() {
+        this.zza = 0;
+        this.zzd = -1;
+        this.zzc = djf.e;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        this.b.clear();
+    public static ehf b(ehf ehfVar) {
+        int size = ehfVar.size();
+        return ehfVar.zzg(size == 0 ? 10 : size << 1);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
+    public static Object c(Method method, wgf wgfVar, Object... objArr) {
         try {
-            return ((so2) this.b.d).entrySet().contains(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
+            return method.invoke(wgfVar, objArr);
+        } catch (IllegalAccessException e) {
+            rjb.k("Couldn't use Java reflection to implement protocol message reflection.", e);
+            return null;
+        } catch (InvocationTargetException e2) {
+            Throwable cause = e2.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
+            }
+            if (cause instanceof Error) {
+                throw ((Error) cause);
+            }
+            rjb.k("Unexpected exception thrown by generated accessor method.", cause);
+            return null;
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean isEmpty() {
-        return this.b.isEmpty();
+    public static void e(Class cls, wgf wgfVar) {
+        wgfVar.d();
+        zzb.put(cls, wgfVar);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new c3(this.b, (char) 0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        Object obj2;
-        if (!contains(obj)) {
-            return false;
+    public static wgf k(Class cls) {
+        Map map = zzb;
+        wgf wgfVar = (wgf) map.get(cls);
+        if (wgfVar == null) {
+            try {
+                Class.forName(cls.getName(), true, cls.getClassLoader());
+                wgfVar = (wgf) map.get(cls);
+            } catch (ClassNotFoundException e) {
+                wa3.h("Class initialization cannot fail.", e);
+                return null;
+            }
         }
-        Map.Entry entry = (Map.Entry) obj;
-        entry.getClass();
-        j7d j7dVar = (j7d) this.b.e;
-        Object key = entry.getKey();
-        so2 so2Var = j7dVar.c;
-        so2Var.getClass();
+        if (wgfVar != null) {
+            return wgfVar;
+        }
         try {
-            obj2 = so2Var.remove(key);
-        } catch (ClassCastException | NullPointerException unused) {
-            obj2 = null;
+            wgf wgfVar2 = (wgf) ((wgf) hjf.a.allocateInstance(cls)).h(6, null);
+            if (wgfVar2 != null) {
+                map.put(cls, wgfVar2);
+                return wgfVar2;
+            }
+            rjb.h();
+            return null;
+        } catch (InstantiationException e2) {
+            dq9.o(e2);
+            return null;
         }
-        Collection collection = (Collection) obj2;
-        if (collection == null) {
+    }
+
+    @Override // kff
+    public final int a(uif uifVar) {
+        if (g()) {
+            int e = uifVar.e(this);
+            if (e >= 0) {
+                return e;
+            }
+            dq9.m(hg9.j(e, "serialized size must be non-negative, was "));
+            return 0;
+        }
+        int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        int e2 = uifVar.e(this);
+        if (e2 >= 0) {
+            this.zzd = (this.zzd & TLObject.FLAG_31) | e2;
+            return e2;
+        }
+        dq9.m(hg9.j(e2, "serialized size must be non-negative, was "));
+        return 0;
+    }
+
+    public final void d() {
+        this.zzd &= ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        int size = collection.size();
-        collection.clear();
-        j7dVar.d -= size;
-        return true;
-    }
-
-    @Override // o7a, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean removeAll(Collection collection) {
-        try {
-            if (collection != null) {
-                return t0f.a(this, collection);
-            }
-            throw null;
-        } catch (UnsupportedOperationException unused) {
-            Iterator it = collection.iterator();
-            boolean z = false;
-            while (it.hasNext()) {
-                z |= remove(it.next());
-            }
-            return z;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
         }
+        return rif.c.a(getClass()).b(this, (wgf) obj);
     }
 
-    @Override // o7a, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean retainAll(Collection collection) {
-        int ceil;
-        try {
-            if (collection != null) {
-                return super.retainAll(collection);
-            }
-            throw null;
-        } catch (UnsupportedOperationException unused) {
-            int size = collection.size();
-            if (size >= 3) {
-                ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
-            } else {
-                if (size < 0) {
-                    w26.j(de9.k(size, "expectedSize cannot be negative but was: "));
-                    return false;
-                }
-                ceil = size + 1;
-            }
-            HashSet hashSet = new HashSet(ceil);
-            for (Object obj : collection) {
-                if (contains(obj) && (obj instanceof Map.Entry)) {
-                    hashSet.add(((Map.Entry) obj).getKey());
-                }
-            }
-            j7d j7dVar = (j7d) this.b.e;
-            d5d d5dVar = j7dVar.a;
-            if (d5dVar == null) {
-                d5dVar = new d5d(j7dVar, j7dVar.c);
-                j7dVar.a = d5dVar;
-            }
-            return d5dVar.retainAll(hashSet);
+    public final void f() {
+        this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    public final boolean g() {
+        return (this.zzd & TLObject.FLAG_31) != 0;
+    }
+
+    public abstract Object h(int i, wgf wgfVar);
+
+    public final int hashCode() {
+        if (g()) {
+            return rif.c.a(getClass()).f(this);
         }
+        int i = this.zza;
+        if (i != 0) {
+            return i;
+        }
+        int f = rif.c.a(getClass()).f(this);
+        this.zza = f;
+        return f;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return ((so2) this.b.d).size();
+    public final int i() {
+        if (g()) {
+            int e = rif.c.a(getClass()).e(this);
+            if (e >= 0) {
+                return e;
+            }
+            dq9.m(hg9.j(e, "serialized size must be non-negative, was "));
+            return 0;
+        }
+        int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        int e2 = rif.c.a(getClass()).e(this);
+        if (e2 >= 0) {
+            this.zzd = (this.zzd & TLObject.FLAG_31) | e2;
+            return e2;
+        }
+        dq9.m(hg9.j(e2, "serialized size must be non-negative, was "));
+        return 0;
+    }
+
+    public final vgf j() {
+        return (vgf) h(5, null);
+    }
+
+    public final String toString() {
+        String obj = super.toString();
+        char[] cArr = fif.a;
+        StringBuilder sb = new StringBuilder();
+        sb.append("# ");
+        sb.append(obj);
+        fif.c(this, sb, 0);
+        return sb.toString();
     }
 }

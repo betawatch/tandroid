@@ -1,49 +1,69 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ps1 extends i98 {
-    public final /* synthetic */ k27 a;
-    public final /* synthetic */ jm6 b;
-    public final /* synthetic */ qs1 c;
+public final class ps1 extends FrameLayout {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yv1 b;
 
-    public ps1(qs1 qs1Var, k27 k27Var, jm6 jm6Var) {
-        this.c = qs1Var;
-        this.a = k27Var;
-        this.b = jm6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ps1(yv1 yv1Var, Context context, byte b) {
+        super(context);
+        this.a = b;
+        this.b = yv1Var;
     }
 
-    @Override // i98, o98
-    public final void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
-        vs1 vs1Var = this.c.a;
-        k27 k27Var = this.a;
-        k27Var.q = true;
-        jm6 jm6Var = this.b;
-        if (jm6Var.h != null || jm6Var.b) {
-            mu1 mu1Var = vs1Var.R;
-            os1 os1Var = new os1(k27Var, (byte) 0);
-            ui5 parentLayout = mu1Var.getParentLayout();
-            int currentAccount = mu1Var.getCurrentAccount();
-            wl5 wl5Var = new wl5(0, true, true);
-            wl5Var.a = mu1Var;
-            wl5Var.s(jm6Var);
-            wl5Var.b = new zm(currentAccount, os1Var, parentLayout, wl5Var);
-            return;
+    @Override // android.view.ViewGroup
+    public final void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 1:
+                yv1 yv1Var = this.b;
+                if (view == yv1Var.j3) {
+                    ImageView imageView = yv1Var.h3;
+                    int i5 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
+                    ImageView imageView2 = yv1Var.i3;
+                    if (imageView2 != null && imageView2.getVisibility() != 8) {
+                        i5 += 48;
+                    }
+                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = gm.L(i5);
+                }
+                super.measureChildWithMargins(view, i, i2, i3, i4);
+                break;
+            default:
+                super.measureChildWithMargins(view, i, i2, i3, i4);
+                break;
         }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-        tL_photos_updateProfilePhoto.id = tL_inputPhoto;
-        TLRPC.Photo photo = k27Var.k.action.photo;
-        tL_inputPhoto.id = photo.id;
-        tL_inputPhoto.access_hash = photo.access_hash;
-        tL_inputPhoto.file_reference = photo.file_reference;
-        vs1Var.R.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new pl(this, k27Var, (byte) 17));
     }
 
-    @Override // i98, o98
-    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        return this.c.a.R.db.M(this.a, fileLocation, i, z, false);
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        switch (this.a) {
+            case 2:
+                super.setTranslationY(f);
+                this.b.m1.invalidate();
+                break;
+            default:
+                super.setTranslationY(f);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i);
+                this.b.ud.s(2, i == 0, getMeasuredWidth() > 0);
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
     }
 }

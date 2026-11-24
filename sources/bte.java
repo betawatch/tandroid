@@ -1,31 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bte {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final shf e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+public final class bte implements cq7 {
+    public static final bte a = new bte();
 
-    public /* synthetic */ bte(pse pseVar) {
-        this.a = pseVar.a;
-        this.b = pseVar.b;
-        this.c = pseVar.c;
-        this.d = pseVar.d;
-        this.e = (shf) pseVar.k;
-        this.f = pseVar.e;
-        this.g = pseVar.f;
-        this.h = pseVar.g;
-        this.i = pseVar.h;
-        this.j = pseVar.i;
-        this.k = pseVar.j;
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

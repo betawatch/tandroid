@@ -1,9 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import j$.util.DesugarCollections;
+import java.util.List;
+
 /* loaded from: classes.dex */
 public abstract class wod {
-    public static final void a(int i) {
-        new Integer(i);
+    public static final ypd a = new ypd();
+    public static final zpd b = new zpd();
+
+    public void a(Object obj, long j) {
+        Object unmodifiableList;
+        List list = (List) x1e.l(obj, j);
+        if (list instanceof rod) {
+            unmodifiableList = ((rod) list).g();
+        } else if (ypd.c.isAssignableFrom(list.getClass())) {
+            return;
+        } else {
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
+        }
+        x1e.d(obj, j, unmodifiableList);
     }
+
+    public abstract void b(xkd xkdVar, xkd xkdVar2, long j);
 }

@@ -1,41 +1,54 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.beta.R;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class f0c extends ScrollView {
-    public Drawable a;
-    public lm b;
-    public boolean c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class f0c {
+    public static final String f;
+    public static final String g;
+    public static final String h;
+    public static final String i;
+    public final int a;
+    public final uzb b;
+    public final boolean c;
+    public final int[] d;
+    public final boolean[] e;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float e = this.b.e(false, canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
-        if (e > 0.0f) {
-            Drawable drawable = this.a;
-            if (drawable == null) {
-                drawable = getContext().getResources().getDrawable(R.drawable.header_shadow);
-                this.a = drawable;
-            }
-            drawable.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (e * 255.0f));
-            this.a.draw(canvas);
-        }
+    static {
+        String str = hac.a;
+        f = "0";
+        g = "1";
+        h = "3";
+        i = "4";
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i, int i2, int i3, int i4) {
-        super.onNestedScroll(view, i, i2, i3, i4);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
+    public f0c(uzb uzbVar, boolean z, int[] iArr, boolean[] zArr) {
+        int i2 = uzbVar.a;
+        this.a = i2;
+        boolean z2 = false;
+        jte.f(i2 == iArr.length && i2 == zArr.length);
+        this.b = uzbVar;
+        if (z && i2 > 1) {
+            z2 = true;
         }
+        this.c = z2;
+        this.d = (int[]) iArr.clone();
+        this.e = (boolean[]) zArr.clone();
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || f0c.class != obj.getClass()) {
+            return false;
+        }
+        f0c f0cVar = (f0c) obj;
+        return this.c == f0cVar.c && this.b.equals(f0cVar.b) && Arrays.equals(this.d, f0cVar.d) && Arrays.equals(this.e, f0cVar.e);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + (((this.b.hashCode() * 31) + (this.c ? 1 : 0)) * 31)) * 31);
     }
 }

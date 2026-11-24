@@ -1,36 +1,45 @@
 // default package
 
-import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hm8 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class hm8 implements ku4, h59, jc5 {
+    public final /* synthetic */ km8 a;
 
-    public /* synthetic */ hm8(ProfileActivity profileActivity, String str, byte b) {
-        this.a = b;
-        this.b = profileActivity;
-        this.c = str;
+    public /* synthetic */ hm8(km8 km8Var) {
+        this.a = km8Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        String str = this.c;
-        ProfileActivity profileActivity = this.b;
-        switch (b) {
-            case 0:
-                RectF rectF = ProfileActivity.Z6;
-                d01.t(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().N2 + "/nft/" + str);
-                break;
-            default:
-                RectF rectF2 = ProfileActivity.Z6;
-                d01.t(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().N2 + "/nft/" + str);
-                break;
+    @Override // jc5
+    public final void a(ArrayList arrayList, boolean z, boolean z2) {
+        Iterator it = arrayList.iterator();
+        if (it.hasNext()) {
+            throw null;
         }
+        this.a.a0();
+    }
+
+    @Override // h59
+    public final boolean g(int i, View view) {
+        km8 km8Var = this.a;
+        if (i < km8Var.r || i >= km8Var.s) {
+            return false;
+        }
+        if (!km8Var.E) {
+            throw null;
+        }
+        km8Var.Z(Long.valueOf(km8Var.getMessagesController().x0.keyAt(i - km8Var.r)), view);
+        return true;
+    }
+
+    @Override // ku4
+    public final Object l(Object obj) {
+        if (((Integer) obj).intValue() == this.a.x) {
+            return Integer.valueOf(cmb.p1(0.12f, cmb.w0(null, cmb.o7, false)));
+        }
+        return null;
     }
 }

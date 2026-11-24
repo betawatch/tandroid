@@ -1,21 +1,27 @@
 // default package
 
-import android.os.Looper;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class w56 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a66 b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class w56 {
-    public final mc5 a;
-    public volatile u56 b;
-
-    public w56(Looper looper, Object obj, String str) {
-        this.a = new mc5(looper);
-        fre.i(obj, "Listener must not be null");
-        fre.f(str);
-        this.b = new u56(obj, str);
+    public /* synthetic */ w56(a66 a66Var, byte b) {
+        this.a = b;
+        this.b = a66Var;
     }
 
-    public final void a(v56 v56Var) {
-        this.a.execute(new tq4((Object) this, (Object) v56Var, (byte) 15));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        a66 a66Var = this.b;
+        switch (b) {
+            case 0:
+                a66Var.b();
+                break;
+            default:
+                a66Var.c();
+                break;
+        }
     }
 }

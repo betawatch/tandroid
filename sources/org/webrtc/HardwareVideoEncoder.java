@@ -19,7 +19,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoEncoder;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 class HardwareVideoEncoder implements VideoEncoder {
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
@@ -65,7 +65,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     private final VideoFrameDrawer videoFrameDrawer = new VideoFrameDrawer();
     private final BlockingDeque<EncodedImage.Builder> outputBuilders = new LinkedBlockingDeque();
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private static class BusyCount {
         private int count;
         private final Object countLock;
@@ -316,7 +316,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     }
 
     private VideoCodecStatus resetCodec(int i, int i2, boolean z) {
-        fa4.b("resetCodec " + i + "x" + i2);
+        fc4.b("resetCodec " + i + "x" + i2);
         this.encodeThreadChecker.checkIsOnValidThread();
         VideoCodecStatus release = release();
         if (release != VideoCodecStatus.OK) {
@@ -574,7 +574,7 @@ class HardwareVideoEncoder implements VideoEncoder {
         if (i == 21 || i == 2141391872 || i == 2141391876) {
             return true;
         }
-        w26.j(de9.k(i, "Unsupported colorFormat: "));
+        u36.j(hg9.j(i, "Unsupported colorFormat: "));
         return false;
     }
 

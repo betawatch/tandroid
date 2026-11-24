@@ -1,36 +1,38 @@
 // default package
 
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class i2b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ x2b b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class i2b implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ a8b b;
-    public final /* synthetic */ TextView c;
-    public final /* synthetic */ k2b d;
-
-    public i2b(k2b k2bVar, TextView textView, a8b a8bVar, TextView textView2) {
-        this.d = k2bVar;
-        this.a = textView;
-        this.b = a8bVar;
-        this.c = textView2;
+    public /* synthetic */ i2b(x2b x2bVar, byte b) {
+        this.a = b;
+        this.b = x2bVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        int[] iArr = new int[2];
-        TextView textView = this.a;
-        textView.getLocationOnScreen(iArr);
-        int L = gl.L(24.0f) + iArr[1];
-        int measuredHeight = this.b.getMeasuredHeight();
-        k2b k2bVar = this.d;
-        if (L > measuredHeight) {
-            textView.setLayoutParams(nme.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
-            this.c.setLayoutParams(nme.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
-            k2bVar.requestLayout();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        x2b x2bVar = this.b;
+        switch (b) {
+            case 0:
+                x2bVar.n1.f();
+                break;
+            case 1:
+                x2bVar.n1.f();
+                break;
+            case 2:
+                x2bVar.dismiss();
+                hs6.d0(x2bVar.a).h2(x2bVar.getContext(), x2bVar.M1, 1, x2bVar.F1, false, false);
+                break;
+            case 3:
+                oc7.r1(x2bVar.a).C3("stickers", x2bVar.F1, 1, null);
+                break;
+            default:
+                x2bVar.dismiss();
+                hs6.d0(x2bVar.a).h2(x2bVar.getContext(), x2bVar.M1, 1, x2bVar.F1, false, false);
+                break;
         }
-        k2bVar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 }

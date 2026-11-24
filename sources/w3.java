@@ -2,9 +2,9 @@
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class w3 extends fld {
+public final class w3 extends hnd {
     public final AtomicReferenceFieldUpdater a;
     public final AtomicReferenceFieldUpdater b;
     public final AtomicReferenceFieldUpdater c;
@@ -19,7 +19,7 @@ public final class w3 extends fld {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // fld
+    @Override // hnd
     public final boolean a(a4 a4Var, v3 v3Var, v3 v3Var2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -31,7 +31,7 @@ public final class w3 extends fld {
         return false;
     }
 
-    @Override // fld
+    @Override // hnd
     public final boolean b(a4 a4Var, Object obj, Object obj2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -43,7 +43,7 @@ public final class w3 extends fld {
         return false;
     }
 
-    @Override // fld
+    @Override // hnd
     public final boolean c(a4 a4Var, z3 z3Var, z3 z3Var2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -55,12 +55,12 @@ public final class w3 extends fld {
         return false;
     }
 
-    @Override // fld
+    @Override // hnd
     public final void d(z3 z3Var, z3 z3Var2) {
         this.b.lazySet(z3Var, z3Var2);
     }
 
-    @Override // fld
+    @Override // hnd
     public final void e(z3 z3Var, Thread thread) {
         this.a.lazySet(z3Var, thread);
     }

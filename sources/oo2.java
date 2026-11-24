@@ -1,29 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class oo2 extends qo2 {
-    public final /* synthetic */ byte f;
-    public final /* synthetic */ so2 h;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oo2(so2 so2Var, byte b) {
-        super(so2Var);
-        this.f = b;
-        this.h = so2Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class oo2 extends FrameLayout implements vlb {
+    public final bf0 a;
+
+    public oo2(Context context) {
+        super(context);
+        bf0 bf0Var = new bf0(context);
+        this.a = bf0Var;
+        bf0Var.setRoundRadius(gm.L(20.0f));
+        addView(bf0Var, qoe.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
     }
 
-    @Override // qo2
-    public final Object a(int i) {
-        byte b = this.f;
-        so2 so2Var = this.h;
-        switch (b) {
-            case 0:
-                return so2Var.g(i);
-            case 1:
-                return new ro2(so2Var, i);
-            default:
-                return so2Var.l(i);
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = cmb.R0;
+        bf0 bf0Var = this.a;
+        ur3.a(canvas, drawable, (bf0Var.getWidth() / 2.0f) + bf0Var.getLeft(), (bf0Var.getHeight() / 2.0f) + bf0Var.getTop(), bf0Var.getHeight());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(136.0f), TLObject.FLAG_30));
+    }
+
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
+    }
+
+    @Override // vlb
+    public final void updateColors() {
     }
 }

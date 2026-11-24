@@ -1,70 +1,34 @@
 // default package
 
-import j$.util.Objects;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bs8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rs8 b;
+    public final /* synthetic */ int c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class bs8 {
-    public final int a;
-    public final int b;
-    public final long c;
-    public final long d;
-
-    public bs8(int i, int i2, long j, long j2) {
-        this.a = i;
-        this.b = i2;
-        this.c = j;
-        this.d = j2;
+    public /* synthetic */ bs8(rs8 rs8Var, int i, byte b) {
+        this.a = b;
+        this.b = rs8Var;
+        this.c = i;
     }
 
-    public static bs8 a(File file) {
-        DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
-        try {
-            bs8 bs8Var = new bs8(dataInputStream.readInt(), dataInputStream.readInt(), dataInputStream.readLong(), dataInputStream.readLong());
-            dataInputStream.close();
-            return bs8Var;
-        } finally {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        rs8 rs8Var = this.b;
+        switch (b) {
+            case 0:
+                rs8Var.f.scrollBy(0, i);
+                break;
+            default:
+                va vaVar = rs8Var.f;
+                if (vaVar != null) {
+                    vaVar.setSpanCount(i);
+                    break;
+                }
+                break;
         }
-    }
-
-    public final void b(File file) {
-        file.delete();
-        DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(file));
-        try {
-            dataOutputStream.writeInt(this.a);
-            dataOutputStream.writeInt(this.b);
-            dataOutputStream.writeLong(this.c);
-            dataOutputStream.writeLong(this.d);
-            dataOutputStream.close();
-        } catch (Throwable th) {
-            try {
-                dataOutputStream.close();
-            } catch (Throwable th2) {
-                th.addSuppressed(th2);
-            }
-            throw th;
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && (obj instanceof bs8)) {
-            bs8 bs8Var = (bs8) obj;
-            if (this.b == bs8Var.b && this.c == bs8Var.c && this.a == bs8Var.a && this.d == bs8Var.d) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.b), Long.valueOf(this.c), Integer.valueOf(this.a), Long.valueOf(this.d));
     }
 }

@@ -1,41 +1,24 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class t94 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ba4 b;
-    public final /* synthetic */ String c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class t94 extends AnimatorListenerAdapter {
+    public final /* synthetic */ v94 a;
 
-    public /* synthetic */ t94(ba4 ba4Var, String str, byte b) {
-        this.a = b;
-        this.b = ba4Var;
-        this.c = str;
+    public t94(v94 v94Var) {
+        this.a = v94Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = 7;
-        switch (this.a) {
-            case 0:
-                ba4 ba4Var = this.b;
-                l94 l94Var = (l94) ba4Var.w.remove(this.c);
-                if (l94Var != null && ((ArrayList) l94Var.e1.d).remove(l94Var)) {
-                    Utilities.d.c(new b94(l94Var, b));
-                    break;
-                }
-                break;
-            default:
-                ba4 ba4Var2 = this.b;
-                l94 l94Var2 = (l94) ba4Var2.w.remove(this.c);
-                if (l94Var2 != null && ((ArrayList) l94Var2.e1.d).remove(l94Var2)) {
-                    Utilities.d.c(new b94(l94Var2, b));
-                    break;
-                }
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        v94 v94Var = this.a;
+        if (v94Var.r) {
+            v94Var.d.setVisibility(4);
+        } else {
+            v94Var.e.setVisibility(4);
         }
     }
 }

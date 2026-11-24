@@ -1,19 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class cve implements zn7 {
+public final class cve implements cq7 {
     public static final cve a = new cve();
-    public static final w84 b = new w84("errorCode", b00.m(yjb.p(gid.class, new bgd(1))));
-    public static final w84 c = new w84("durationMs", b00.m(yjb.p(gid.class, new bgd(2))));
-    public static final w84 d = new w84("subjectSegmenterOptions", b00.m(yjb.p(gid.class, new bgd(3))));
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        mbf mbfVar = (mbf) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, mbfVar.a);
-        ao7Var.a(c, mbfVar.b);
-        ao7Var.a(d, mbfVar.c);
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)), 5)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

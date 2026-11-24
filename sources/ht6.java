@@ -1,33 +1,66 @@
 // default package
 
-import android.view.View;
+import android.net.Uri;
+import android.os.Bundle;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ht6 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rt6 b;
+public final class ht6 {
+    public CharSequence A;
+    public CharSequence B;
+    public CharSequence C;
+    public Integer D;
+    public Integer E;
+    public CharSequence F;
+    public CharSequence G;
+    public CharSequence H;
+    public Integer I;
+    public Bundle J;
+    public mo5 K;
+    public CharSequence a;
+    public CharSequence b;
+    public CharSequence c;
+    public CharSequence d;
+    public CharSequence e;
+    public CharSequence f;
+    public CharSequence g;
+    public Long h;
+    public g19 i;
+    public g19 j;
+    public byte[] k;
+    public k41 l;
+    public Integer m;
+    public Uri n;
+    public Integer o;
+    public Integer p;
+    public Integer q;
+    public Boolean r;
+    public Boolean s;
+    public Integer t;
+    public Integer u;
+    public Integer v;
+    public Integer w;
+    public Integer x;
+    public Integer y;
+    public CharSequence z;
 
-    public /* synthetic */ ht6(rt6 rt6Var, byte b) {
-        this.a = b;
-        this.b = rt6Var;
+    public ht6() {
+        ko5 ko5Var = mo5.b;
+        this.K = y79.e;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        rt6 rt6Var = this.b;
-        switch (b) {
-            case 0:
-                rt6Var.dismiss();
-                break;
-            default:
-                if (rt6Var.r.g()) {
-                    rt6Var.f.getClass();
-                    gu6.j(2);
-                }
-                rt6Var.dismiss();
-                break;
+    public final void a(int i, byte[] bArr) {
+        if (this.k == null || i == 3 || !Objects.equals(this.m, 3)) {
+            this.k = (byte[]) bArr.clone();
+            this.l = null;
+            this.m = Integer.valueOf(i);
         }
+    }
+
+    public final void b(byte[] bArr, Integer num) {
+        this.k = bArr == null ? null : (byte[]) bArr.clone();
+        this.l = null;
+        this.m = num;
     }
 }

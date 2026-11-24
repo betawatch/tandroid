@@ -1,12 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class h1f {
-    public static boolean a(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
+    public static void a(int i, Object[] objArr) {
+        for (int i2 = 0; i2 < i; i2++) {
+            if (objArr[i2] == null) {
+                gxc.d(hg9.j(i2, "at index "));
+                return;
+            }
         }
-        return true;
     }
 }

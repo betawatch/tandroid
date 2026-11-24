@@ -1,32 +1,25 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gh0 extends b4 {
-    public static final Parcelable.Creator<gh0> CREATOR = new b1d((byte) 22);
-    public final boolean a;
+public final class gh0 implements fh0 {
+    public final /* synthetic */ gja a;
 
-    public gh0(boolean z) {
-        this.a = z;
+    public gh0(gja gjaVar) {
+        this.a = gjaVar;
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof gh0) && this.a == ((gh0) obj).a;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.s(parcel, r);
+    @Override // fh0
+    public final void a(ot2 ot2Var) {
+        boolean c = ot2Var.c();
+        gja gjaVar = this.a;
+        if (c) {
+            gjaVar.j(null, gjaVar.E);
+            return;
+        }
+        oo8 oo8Var = gjaVar.u;
+        if (oo8Var != null) {
+            ((g05) oo8Var.b).onConnectionFailed(ot2Var);
+        }
     }
 }

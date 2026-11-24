@@ -1,26 +1,19 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import org.telegram.messenger.a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class jme implements cq7 {
+    public static final jme a = new jme();
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class jme {
-    public static boolean a(c06 c06Var) {
-        Context context = a.b;
-        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(c06Var.a(context));
-        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && c06Var == c06.h);
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)));
     }
 
-    public static void b(c06 c06Var) {
-        Context context = a.b;
-        PackageManager packageManager = context.getPackageManager();
-        c06[] values = c06.values();
-        int length = values.length;
-        for (int i = 0; i < length; i++) {
-            c06 c06Var2 = values[i];
-            packageManager.setComponentEnabledSetting(c06Var2.a(context), c06Var2 == c06Var ? 1 : 2, 1);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

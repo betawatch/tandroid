@@ -1,39 +1,31 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class oqa implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class oqa implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ rqa b;
+    public final /* synthetic */ wsa b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ oqa(rqa rqaVar, byte b) {
+    public /* synthetic */ oqa(wsa wsaVar, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, byte b) {
         this.a = b;
-        this.b = rqaVar;
+        this.b = wsaVar;
+        this.c = tL_payments_paymentResult;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        rqa rqaVar = this.b;
+        TLRPC.TL_payments_paymentResult tL_payments_paymentResult = this.c;
+        wsa wsaVar = this.b;
         switch (b) {
             case 0:
-                rqaVar.z0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rqaVar.d(rqaVar.b0);
-                break;
-            case 1:
-                float w = b00.w((float) Math.pow((r5 * 2.0f) - 2.0f, 2.0d), 0.075f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
-                rqaVar.A0 = w;
-                FrameLayout frameLayout = rqaVar.b;
-                frameLayout.setScaleX(w);
-                frameLayout.setScaleY(rqaVar.A0);
-                rqaVar.invalidate();
+                oc7.r1(wsaVar.a).T3(tL_payments_paymentResult.updates, false);
                 break;
             default:
-                rqaVar.z0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rqaVar.d(rqaVar.b0);
+                oc7.r1(wsaVar.a).T3(tL_payments_paymentResult.updates, false);
                 break;
         }
     }

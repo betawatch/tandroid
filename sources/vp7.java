@@ -1,254 +1,133 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.SystemClock;
-import android.text.SpannableStringBuilder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.text.TextUtils;
+import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class vp7 {
-    public static final HashMap a = new HashMap();
-    public static final HashSet b = new HashSet();
-    public static final HashMap c = new HashMap();
-    public static final HashMap d = new HashMap();
+public final /* synthetic */ class vp7 implements Runnable {
+    public final /* synthetic */ ylb E;
+    public final /* synthetic */ boolean F;
+    public final /* synthetic */ String G;
+    public final /* synthetic */ qw0 H;
+    public final /* synthetic */ b61 a;
+    public final /* synthetic */ b61 b;
+    public final /* synthetic */ TLRPC.TL_urlAuthResultRequest c;
+    public final /* synthetic */ TL_wallet.inputTonConnectOauthSession[] d;
+    public final /* synthetic */ TLRPC.TL_messages_requestUrlAuth e;
+    public final /* synthetic */ String[] f;
+    public final /* synthetic */ bjb h;
+    public final /* synthetic */ boolean[] n;
+    public final /* synthetic */ boolean[] r;
+    public final /* synthetic */ int[] s;
+    public final /* synthetic */ boolean[] w;
+    public final /* synthetic */ my0 x;
+    public final /* synthetic */ String y;
 
-    public static String a(int i, long j) {
-        return i + ":" + j;
+    public /* synthetic */ vp7(b61 b61Var, b61 b61Var2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, bjb bjbVar, boolean[] zArr, boolean[] zArr2, int[] iArr, boolean[] zArr3, my0 my0Var, String str, ylb ylbVar, boolean z, String str2, qw0 qw0Var) {
+        this.a = b61Var;
+        this.b = b61Var2;
+        this.c = tL_urlAuthResultRequest;
+        this.d = inputtonconnectoauthsessionArr;
+        this.e = tL_messages_requestUrlAuth;
+        this.f = strArr;
+        this.h = bjbVar;
+        this.n = zArr;
+        this.r = zArr2;
+        this.s = iArr;
+        this.w = zArr3;
+        this.x = my0Var;
+        this.y = str;
+        this.E = ylbVar;
+        this.F = z;
+        this.G = str2;
+        this.H = qw0Var;
     }
 
-    public static boolean b(long j) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        Long valueOf = Long.valueOf(j);
-        HashMap hashMap = a;
-        Long l = (Long) hashMap.get(valueOf);
-        if (l != null && l.longValue() > elapsedRealtime) {
-            return false;
-        }
-        hashMap.put(Long.valueOf(j), Long.valueOf(elapsedRealtime + 30000));
-        c();
-        return true;
-    }
-
-    public static void c() {
-        kk7.e().k(kk7.K3, new Object[0]);
-    }
-
-    public static SpannableStringBuilder d(TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String replace = (starGift != null ? cq7.h(starGift) : "").replace(' ', (char) 160);
-        String replace2 = cq7.k(tL_messageActionStarGiftOnchainOffer.amount).replace(' ', (char) 160);
-        if (tL_messageActionStarGiftOnchainOffer.buyer) {
-            return gl.T2(k96.a0(null, null, 2131749580, replace2, replace));
-        }
-        String t = cq7.t(tL_messageActionStarGiftOnchainOffer.amount);
-        String replace3 = t == null ? null : t.replace(' ', (char) 160);
-        return gl.T2(replace3 != null ? k96.a0(null, null, 2131749591, replace2, replace3, replace) : k96.a0(null, null, 2131749590, replace2, replace));
-    }
-
-    public static void e(final int i, final int i2, final u21 u21Var, final ip7 ip7Var, final wjb wjbVar, final Context context, final TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        if (k(i, tL_messageActionStarGiftOnchainOffer.offer_id)) {
-            r(u21Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        final b61 b61Var = this.a;
+        if (b61Var.R || this.b.R) {
             return;
         }
-        if (m(i, tL_messageActionStarGiftOnchainOffer.offer_id)) {
+        final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = this.c;
+        boolean z = tL_urlAuthResultRequest.request_wallet;
+        TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = this.d;
+        byte b = 0;
+        if (z && inputtonconnectoauthsessionArr[0] == null) {
             return;
         }
-        TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String h = starGift != null ? cq7.h(starGift) : "";
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wjbVar, context);
-        String M0 = k96.M0(2131749603, null);
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = M0;
-        hdVar.U = gl.T2(k96.a0(null, null, 2131749604, cq7.k(tL_messageActionStarGiftOnchainOffer.amount), h));
-        alertDialog$Builder.g(k96.M0(2131752577, null), null);
-        alertDialog$Builder.j(k96.M0(2131749605, null), new ed() { // from class: up7
-            @Override // ed
-            public final void u(hd hdVar2, int i3) {
-                TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer2 = tL_messageActionStarGiftOnchainOffer;
-                long j = tL_messageActionStarGiftOnchainOffer2.offer_id;
-                int i4 = i;
-                boolean k = vp7.k(i4, j);
-                u21 u21Var2 = u21Var;
-                if (k) {
-                    vp7.r(u21Var2);
+        b61Var.setLoading(true);
+        final TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth = new TLRPC.TL_messages_acceptUrlAuth();
+        final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = this.e;
+        if (TLObject.hasFlag(tL_messages_requestUrlAuth.flags, 2)) {
+            tL_messages_acceptUrlAuth.flags |= 2;
+            tL_messages_acceptUrlAuth.peer = tL_messages_requestUrlAuth.peer;
+            tL_messages_acceptUrlAuth.msg_id = tL_messages_requestUrlAuth.msg_id;
+            tL_messages_acceptUrlAuth.button_id = tL_messages_requestUrlAuth.button_id;
+        }
+        if (TLObject.hasFlag(tL_messages_requestUrlAuth.flags, 4)) {
+            tL_messages_acceptUrlAuth.flags |= 4;
+            tL_messages_acceptUrlAuth.url = tL_messages_requestUrlAuth.url;
+        }
+        String str = this.f[0];
+        if (str != null) {
+            tL_messages_acceptUrlAuth.match_code = str;
+        }
+        bjb bjbVar = this.h;
+        tL_messages_acceptUrlAuth.write_allowed = bjbVar != null && bjbVar.e.h;
+        tL_messages_acceptUrlAuth.share_phone_number = this.n[0];
+        TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
+        tL_messages_acceptUrlAuth.tonconnect_session = inputtonconnectoauthsession;
+        inputtonconnectoauthsessionArr[0] = null;
+        if (this.r[0]) {
+            if (inputtonconnectoauthsession != null) {
+                Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
+                return;
+            }
+            return;
+        }
+        final int[] iArr = this.s;
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(iArr[0]);
+        kc kcVar = new kc(b);
+        final boolean[] zArr = this.w;
+        final my0 my0Var = this.x;
+        final String str2 = this.y;
+        final ylb ylbVar = this.E;
+        final boolean z2 = this.F;
+        final String str3 = this.G;
+        final qw0 qw0Var = this.H;
+        connectionsManager.sendRequestTyped(tL_messages_acceptUrlAuth, kcVar, new jac() { // from class: sp7
+            @Override // jac
+            public final void a(Object obj, Object obj2) {
+                TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                b61.this.setLoading(false);
+                TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth2 = tL_messages_acceptUrlAuth;
+                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession2 = tL_messages_acceptUrlAuth2.tonconnect_session;
+                if (inputtonconnectoauthsession2 != null) {
+                    Arrays.fill(inputtonconnectoauthsession2.challenge_answer, (byte) 0);
+                }
+                zArr[0] = true;
+                my0Var.dismiss();
+                if (tL_error == null) {
+                    xp7.b(z2, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str3, tL_urlAuthResultRequest, null, tL_messages_acceptUrlAuth2.share_phone_number, qw0Var);
                     return;
                 }
-                if (vp7.m(i4, tL_messageActionStarGiftOnchainOffer2.offer_id)) {
+                if (!"URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    xp7.a().g0(tL_error, false);
                     return;
                 }
-                String a2 = vp7.a(i4, tL_messageActionStarGiftOnchainOffer2.offer_id);
-                vp7.c.put(a2, Long.valueOf(SystemClock.elapsedRealtime() + 30000));
-                vp7.c();
-                TL_stars.declineStarGiftOnchainOffer declinestargiftonchainoffer = new TL_stars.declineStarGiftOnchainOffer();
-                declinestargiftonchainoffer.offer_msg_id = i2;
-                ConnectionsManager.getInstance(i4).sendRequestTyped(declinestargiftonchainoffer, new hc((byte) 0), new e35(a2, i4, ip7Var, context, wjbVar, u21Var2));
+                c41 a = xp7.a();
+                String M0 = jb6.M0(2131753093, null);
+                String str4 = str2;
+                a.I(R.raw.error, M0, TextUtils.isEmpty(str4) ? jb6.M0(2131753094, null) : gm.L2(cmb.v0(cmb.wj, ylbVar), jb6.a0(null, null, 2131753095, str4))).j();
             }
         });
-        alertDialog$Builder.c(-1);
-        alertDialog$Builder.o();
-    }
-
-    public static void f(Activity activity, int i, int i2, TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer, wjb wjbVar, u21 u21Var) {
-        e(i, i2, u21Var, null, wjbVar, activity, tL_messageActionStarGiftOnchainOffer);
-    }
-
-    public static void g(long j) {
-        a.remove(Long.valueOf(j));
-        b.remove(Long.valueOf(j));
-        c();
-    }
-
-    public static u21 h() {
-        d S = LaunchActivity.S();
-        return S != null ? u21.b0(S) : u21.Y();
-    }
-
-    public static boolean i(int i, TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        boolean z = tL_messageActionStarGiftOnchainOffer.buyer;
-        return z ? (!z || tL_messageActionStarGiftOnchainOffer.accepted || tL_messageActionStarGiftOnchainOffer.declined || tL_messageActionStarGiftOnchainOffer.cancelled || tL_messageActionStarGiftOnchainOffer.expired || tL_messageActionStarGiftOnchainOffer.settled || tL_messageActionStarGiftOnchainOffer.cancelling) ? false : true : n(i, tL_messageActionStarGiftOnchainOffer);
-    }
-
-    public static void j(long j, long j2) {
-        a.put(Long.valueOf(j), Long.valueOf(j2 != Long.MAX_VALUE ? SystemClock.elapsedRealtime() + j2 : Long.MAX_VALUE));
-        c();
-    }
-
-    public static boolean k(int i, long j) {
-        String a2 = a(i, j);
-        HashMap hashMap = d;
-        Long l = (Long) hashMap.get(a2);
-        if (l == null) {
-            return false;
-        }
-        if (l.longValue() > SystemClock.elapsedRealtime()) {
-            return true;
-        }
-        hashMap.remove(a(i, j));
-        return false;
-    }
-
-    public static boolean l(int i, long j) {
-        Long l = (Long) a.get(Long.valueOf(j));
-        return (l != null && l.longValue() > SystemClock.elapsedRealtime()) || k(i, j) || m(i, j);
-    }
-
-    public static boolean m(int i, long j) {
-        String a2 = a(i, j);
-        HashMap hashMap = c;
-        Long l = (Long) hashMap.get(a2);
-        if (l == null) {
-            return false;
-        }
-        if (l.longValue() > SystemClock.elapsedRealtime()) {
-            return true;
-        }
-        hashMap.remove(a(i, j));
-        return false;
-    }
-
-    public static boolean n(int i, TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        return (tL_messageActionStarGiftOnchainOffer.accepted || tL_messageActionStarGiftOnchainOffer.declined || tL_messageActionStarGiftOnchainOffer.cancelled || tL_messageActionStarGiftOnchainOffer.expired || tL_messageActionStarGiftOnchainOffer.settled || tL_messageActionStarGiftOnchainOffer.cancelling || tL_messageActionStarGiftOnchainOffer.expires_at <= ConnectionsManager.getInstance(i).getCurrentTime()) ? false : true;
-    }
-
-    public static boolean o(TLRPC.Message message) {
-        TLRPC.MessageReplyHeader messageReplyHeader;
-        return (message == null || !(message.action instanceof TLRPC.TL_messageActionStarGiftOnchainOffer) || (messageReplyHeader = message.reply_to) == null || messageReplyHeader.reply_to_msg_id == 0) ? false : true;
-    }
-
-    public static w05 p(Context context, wjb wjbVar, u21 u21Var, int i, TL_stars.TL_payments_starGiftOnchainOfferTx tL_payments_starGiftOnchainOfferTx) {
-        try {
-            return w05.b(tL_payments_starGiftOnchainOfferTx.message);
-        } catch (Exception e) {
-            fa4.g(e, true);
-            cq7.q(context, i, wjbVar, u21Var, "WALLET_UNSUPPORTED_SEND_MODE", null);
-            return null;
-        }
-    }
-
-    public static SpannableStringBuilder q(TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        ArrayList arrayList = new ArrayList();
-        TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String replace = (starGift != null ? cq7.h(starGift) : "").replace(' ', (char) 160);
-        String replace2 = cq7.k(tL_messageActionStarGiftOnchainOffer.amount).replace(' ', (char) 160);
-        boolean z = tL_messageActionStarGiftOnchainOffer.accepted || tL_messageActionStarGiftOnchainOffer.settled;
-        if (tL_messageActionStarGiftOnchainOffer.buyer) {
-            if (z) {
-                arrayList.add(gl.T2(k96.a0(null, null, 2131749588, replace2, replace)));
-            } else if (tL_messageActionStarGiftOnchainOffer.declined) {
-                arrayList.add(gl.T2(k96.a0(null, null, 2131749587, replace2, replace)));
-            } else if (tL_messageActionStarGiftOnchainOffer.cancelled) {
-                arrayList.add(gl.T2(k96.a0(null, null, 2131749584, replace2, replace)));
-            }
-            if (!z && (tL_messageActionStarGiftOnchainOffer.flags & 16) != 0) {
-                arrayList.add(gl.T2(k96.a0(null, null, 2131749585, cq7.k(tL_messageActionStarGiftOnchainOffer.buyer_refund).replace(' ', (char) 160))));
-            }
-            if (tL_messageActionStarGiftOnchainOffer.cancelled && (tL_messageActionStarGiftOnchainOffer.flags & 32) != 0) {
-                long j = tL_messageActionStarGiftOnchainOffer.fine;
-                if (j > 0) {
-                    arrayList.add(gl.T2(k96.a0(null, null, 2131749586, cq7.k(j).replace(' ', (char) 160))));
-                }
-            }
-        } else if (z) {
-            arrayList.add(k96.M0(2131749583, null));
-            arrayList.add(gl.T2(k96.a0(null, null, 2131749581, replace, replace2)));
-        } else if (tL_messageActionStarGiftOnchainOffer.declined) {
-            arrayList.add(k96.M0(2131749582, null));
-        }
-        if (arrayList.isEmpty()) {
-            return t(tL_messageActionStarGiftOnchainOffer);
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (i > 0) {
-                spannableStringBuilder.append('\n');
-            }
-            spannableStringBuilder.append((CharSequence) arrayList.get(i));
-        }
-        return spannableStringBuilder;
-    }
-
-    public static void r(u21 u21Var) {
-        if (u21Var == null) {
-            u21Var = h();
-        }
-        ir2.v(null, 2131749612, u21Var, R.raw.error, 36);
-    }
-
-    public static void s(int i, TL_stars.StarGift starGift) {
-        gl.d3(new op7(i, starGift != null ? cq7.h(starGift) : ""));
-    }
-
-    public static SpannableStringBuilder t(TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String replace = (starGift != null ? cq7.h(starGift) : "").replace(' ', (char) 160);
-        String replace2 = cq7.k(tL_messageActionStarGiftOnchainOffer.amount).replace(' ', (char) 160);
-        boolean z = tL_messageActionStarGiftOnchainOffer.accepted || tL_messageActionStarGiftOnchainOffer.settled;
-        boolean z2 = tL_messageActionStarGiftOnchainOffer.buyer;
-        if (z2) {
-            if (z) {
-                return gl.T2(k96.a0(null, null, 2131749588, replace2, replace));
-            }
-            if (tL_messageActionStarGiftOnchainOffer.declined) {
-                return gl.T2(k96.a0(null, null, 2131749587, replace2, replace));
-            }
-            if (tL_messageActionStarGiftOnchainOffer.cancelled) {
-                return gl.T2(k96.a0(null, null, 2131749584, replace2, replace));
-            }
-        } else if (z) {
-            return gl.T2(k96.a0(null, null, 2131749581, replace, replace2));
-        }
-        int i = tL_messageActionStarGiftOnchainOffer.declined ? 2131749555 : tL_messageActionStarGiftOnchainOffer.cancelled ? 2131749556 : tL_messageActionStarGiftOnchainOffer.expired ? z2 ? 2131749554 : 2131749557 : 0;
-        return i == 0 ? d(tL_messageActionStarGiftOnchainOffer) : gl.T2(k96.a0(null, null, i, replace2, replace));
     }
 }

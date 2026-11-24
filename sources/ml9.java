@@ -1,15 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ml9 {
-    public final nl9 a;
-    public final int b;
-    public final float c;
+import org.json.JSONObject;
 
-    public ml9(nl9 nl9Var, nl9 nl9Var2, int i, float f) {
-        this.a = nl9Var;
-        this.b = i;
-        this.c = f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class ml9 {
+    public static final lj4 a;
+
+    static {
+        qw5 qw5Var = new qw5();
+        m80 m80Var = m80.a;
+        qw5Var.a(ml9.class, m80Var);
+        qw5Var.a(ib0.class, m80Var);
+        a = new lj4(qw5Var);
+    }
+
+    public static ib0 a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String string = jSONObject.getString("rolloutId");
+        String string2 = jSONObject.getString("parameterKey");
+        String string3 = jSONObject.getString("parameterValue");
+        String string4 = jSONObject.getString("variantId");
+        long j = jSONObject.getLong("templateVersion");
+        if (string3.length() > 256) {
+            string3 = string3.substring(0, 256);
+        }
+        return new ib0(string, string2, string3, string4, j);
     }
 }

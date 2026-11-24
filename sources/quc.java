@@ -1,85 +1,48 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextUtils;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final class quc {
-    public int a;
-    public long b;
-    public long c;
-    public long d;
-    public String e;
-    public String f;
-    public int g;
-    public int h;
-    public long i;
-    public TLRPC.BotApp j;
-    public boolean k;
-    public String l;
-    public TLRPC.User m;
-    public byte n;
-    public boolean o;
-    public boolean p;
-    public TLObject q;
-    public long r;
+    public oh2 a;
+    public he b;
+    public TextView c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static quc b(int i, long j, long j2, String str, String str2, int i2, int i3, long j3, TLRPC.BotApp botApp, boolean z, String str3, TLRPC.User user, int i4, boolean z2, boolean z3) {
+    public static void a(Context context, qac qacVar, Runnable runnable) {
         quc qucVar = new quc();
-        qucVar.a = i;
-        qucVar.b = j;
-        qucVar.c = j2;
-        qucVar.e = str;
-        qucVar.f = str2;
-        qucVar.g = i2;
-        qucVar.h = i3;
-        qucVar.i = j3;
-        qucVar.j = botApp;
-        qucVar.k = z;
-        qucVar.l = str3;
-        qucVar.m = user;
-        qucVar.n = i4;
-        qucVar.o = z2;
-        qucVar.p = z3;
-        if (!z2 && !z3 && !TextUtils.isEmpty(str2)) {
-            try {
-                Uri parse = Uri.parse(str2);
-                qucVar.o = TextUtils.equals(parse.getQueryParameter("mode"), "compact");
-                qucVar.p = TextUtils.equals(parse.getQueryParameter("mode"), "fullscreen");
-                return qucVar;
-            } catch (Exception e) {
-                fa4.g(e, true);
-            }
-        }
-        return qucVar;
-    }
-
-    public final void a(TLObject tLObject) {
-        this.q = tLObject;
-        this.r = System.currentTimeMillis();
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof quc)) {
-            return false;
-        }
-        quc qucVar = (quc) obj;
-        if (this.a != qucVar.a || this.b != qucVar.b || this.c != qucVar.c || !TextUtils.equals(this.f, qucVar.f) || this.g != qucVar.g || this.h != qucVar.h) {
-            return false;
-        }
-        TLRPC.BotApp botApp = this.j;
-        long j = botApp == null ? 0L : botApp.id;
-        TLRPC.BotApp botApp2 = qucVar.j;
-        if (j != (botApp2 == null ? 0L : botApp2.id) || this.k != qucVar.k || !TextUtils.equals(this.l, qucVar.l)) {
-            return false;
-        }
-        TLRPC.User user = this.m;
-        long j2 = user == null ? 0L : user.id;
-        TLRPC.User user2 = qucVar.m;
-        return j2 == (user2 != null ? user2.id : 0L) && this.n == qucVar.n;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
+        String M0 = jb6.M0(2131743880, null);
+        he heVar = alertDialog$Builder.a;
+        heVar.S = M0;
+        LinearLayout i = hg9.i(context, 1);
+        TextView textView = new TextView(context);
+        textView.setLetterSpacing(0.025f);
+        anb.X(textView, cmb.i5, null);
+        textView.setTextSize(1, 14.0f);
+        i.addView(textView, qoe.t(-1, -2, 0, 24, 0, 24, 0));
+        oh2 oh2Var = new oh2(1, null, context);
+        qucVar.a = oh2Var;
+        oh2Var.getTextView().getLayoutParams().width = -1;
+        qucVar.a.getTextView().setTextSize(1, 14.0f);
+        i.addView(qucVar.a, qoe.t(-1, 48, 3, 8, 0, 8, 0));
+        boolean[] zArr = new boolean[1];
+        textView.setText(gm.S2(jb6.M0(2131752872, null)));
+        qucVar.a.e(gm.N2(jb6.M0(2131752873, null), -1, 0, new dh1(context, (byte) 28), null), "", false, false, false);
+        alertDialog$Builder.n(i);
+        alertDialog$Builder.j(jb6.M0(2131751708, null), new ai((byte) 1, qacVar, zArr));
+        alertDialog$Builder.g(jb6.M0(2131752542, null), new rjb((byte) 26));
+        qucVar.b = heVar;
+        heVar.show();
+        TextView textView2 = (TextView) qucVar.b.c(-1);
+        qucVar.c = textView2;
+        textView2.setEnabled(false);
+        qucVar.c.setAlpha(0.5f);
+        qucVar.a.setOnClickListener(new kpc(qucVar, (byte) 3));
+        qucVar.a.setBackground(cmb.f0(cmb.w0(null, cmb.h6, false), 7, -1));
+        qucVar.b.setOnDismissListener(new vg(zArr, runnable));
     }
 }

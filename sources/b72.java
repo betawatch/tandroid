@@ -1,83 +1,29 @@
 // default package
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class b72 implements v02 {
-    public final /* synthetic */ x02 a;
-    public final /* synthetic */ e72 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class b72 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v72 b;
 
-    public b72(e72 e72Var, x02 x02Var) {
-        this.b = e72Var;
-        this.a = x02Var;
+    public /* synthetic */ b72(v72 v72Var, byte b) {
+        this.a = b;
+        this.b = v72Var;
     }
 
-    @Override // v02
-    public final void B1(int i, boolean z, boolean z2, int i2, int i3, long j, boolean z3, boolean z4, long j2) {
-        ye9 ye9Var = this.b.r;
-        x02 x02Var = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = x02Var.d2;
-        if (i == 7 || i == 8) {
-            HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
-            ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
-            lk0 lk0Var = ye9Var.j4;
-            ye9Var.j4 = null;
-            int i4 = 0;
-            while (true) {
-                if (i4 >= selectedPhotosOrder.size()) {
-                    break;
-                }
-                Object obj = selectedPhotos.get(selectedPhotosOrder.get(i4));
-                if (!(obj instanceof jm6)) {
-                    i4++;
-                } else if (lk0Var != null) {
-                    ye9Var.P1(lk0Var, (jm6) obj);
-                } else {
-                    ye9Var.a2((jm6) obj);
-                }
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        v72 v72Var = this.b;
+        switch (b) {
+            case 0:
+                v72Var.F.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                v72Var.F.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        ye9Var.j4 = null;
-        x02Var.a(true);
-    }
-
-    @Override // v02
-    public final boolean V1() {
-        return false;
-    }
-
-    @Override // v02
-    public final boolean f0() {
-        return false;
-    }
-
-    @Override // v02
-    public final void z2(vq0 vq0Var) {
-        kk7.f(this.b.n).d(vq0Var);
-    }
-
-    @Override // v02
-    public final void I0() {
-    }
-
-    @Override // v02
-    public final void y0() {
-    }
-
-    @Override // v02
-    public final void P0(Object obj) {
-    }
-
-    @Override // v02
-    public final void g1(TLRPC.User user) {
-    }
-
-    @Override // v02
-    public final void R0(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2) {
     }
 }

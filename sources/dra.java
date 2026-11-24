@@ -1,62 +1,27 @@
 // default package
 
-import android.os.Bundle;
-import j$.util.Objects;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class dra extends fz8 {
-    public static final String d;
-    public static final String e;
-    public final int b;
-    public final float c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class dra extends ClickableSpan {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ wsa b;
 
-    static {
-        String str = g8c.a;
-        d = "1";
-        e = "2";
+    public dra(wsa wsaVar, long j) {
+        this.b = wsaVar;
+        this.a = j;
     }
 
-    public dra(int i, float f) {
-        boolean z = false;
-        gre.e("maxStars must be a positive integer", i > 0);
-        if (f >= 0.0f && f <= i) {
-            z = true;
-        }
-        gre.e("starRating is out of range [0, maxStars]", z);
-        this.b = i;
-        this.c = f;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.b.Y1(this.a);
     }
 
-    @Override // fz8
-    public final boolean b() {
-        return this.c != -1.0f;
-    }
-
-    @Override // fz8
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(fz8.a, 2);
-        bundle.putInt(d, this.b);
-        bundle.putFloat(e, this.c);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof dra)) {
-            return false;
-        }
-        dra draVar = (dra) obj;
-        return this.b == draVar.b && this.c == draVar.c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
-    }
-
-    public dra(int i) {
-        gre.e("maxStars must be a positive integer", i > 0);
-        this.b = i;
-        this.c = -1.0f;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(textPaint.linkColor);
     }
 }

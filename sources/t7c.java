@@ -1,32 +1,65 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class t7c extends b4 {
-    public static final Parcelable.Creator<t7c> CREATOR = new j9d((byte) 20);
-    public final boolean a;
-
-    public t7c(boolean z) {
-        this.a = z;
+public final class t7c {
+    public static s7c a(Object obj) {
+        gu4 gu4Var = (gu4) obj;
+        s7c s7cVar = gu4Var.unknownFields;
+        if (s7cVar != s7c.f) {
+            return s7cVar;
+        }
+        s7c s7cVar2 = new s7c(0, new int[8], new Object[8], true);
+        gu4Var.unknownFields = s7cVar2;
+        return s7cVar2;
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof t7c) && this.a == ((t7c) obj).a;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.s(parcel, r);
+    public static boolean b(int i, ag0 ag0Var, Object obj) {
+        nl2 nl2Var = (nl2) ag0Var.d;
+        int i2 = ag0Var.a;
+        int i3 = i2 >>> 3;
+        int i4 = i2 & 7;
+        if (i4 == 0) {
+            ag0Var.B(0);
+            ((s7c) obj).c(i3 << 3, Long.valueOf(nl2Var.n()));
+            return true;
+        }
+        if (i4 == 1) {
+            ag0Var.B(1);
+            ((s7c) obj).c((i3 << 3) | 1, Long.valueOf(nl2Var.k()));
+            return true;
+        }
+        if (i4 == 2) {
+            ((s7c) obj).c((i3 << 3) | 2, ag0Var.h());
+            return true;
+        }
+        if (i4 != 3) {
+            if (i4 == 4) {
+                return false;
+            }
+            if (i4 != 5) {
+                throw yr5.b();
+            }
+            ag0Var.B(5);
+            ((s7c) obj).c((i3 << 3) | 5, Integer.valueOf(nl2Var.j()));
+            return true;
+        }
+        s7c s7cVar = new s7c(0, new int[8], new Object[8], true);
+        int i5 = i3 << 3;
+        int i6 = i5 | 4;
+        int i7 = i + 1;
+        if (i7 >= 100) {
+            throw new yr5("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+        }
+        while (ag0Var.c() != Integer.MAX_VALUE && b(i7, ag0Var, s7cVar)) {
+        }
+        if (i6 != ag0Var.a) {
+            throw new yr5("Protocol message end-group tag did not match expected tag.");
+        }
+        if (s7cVar.e) {
+            s7cVar.e = false;
+        }
+        ((s7c) obj).c(i5 | 3, s7cVar);
+        return true;
     }
 }

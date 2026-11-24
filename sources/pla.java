@@ -1,174 +1,185 @@
 // default package
 
-import android.R;
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class pla {
-    public static HashMap n;
-    public final double a;
-    public final double b;
-    public final boolean c;
-    public final ar8 d;
-    public final ro5 e;
-    public ola f;
-    public final int g;
-    public final int h;
-    public boolean i;
-    public final ArrayList j = new ArrayList();
-    public final HashMap k = new HashMap();
-    public int l = 0;
-    public final nla m = new nla(this, 0);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class pla extends rc9 implements fs4 {
+    public Object b;
+    public Iterator c;
+    public int d;
+    public int e;
+    public byte f;
+    public /* synthetic */ Object h;
+    public final /* synthetic */ Iterator n;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public pla(int i, ar8 ar8Var, int i2, int i3) {
-        double d = 1.0d / ((int) gl.r);
-        this.a = d;
-        this.b = d * 4.0d;
-        this.c = i;
-        this.g = i2;
-        this.h = i3;
-        this.d = ar8Var;
-        ro5 ro5Var = new ro5((byte) 2, ar8Var.getContext(), this);
-        this.e = ro5Var;
-        ro5Var.setSurfaceTextureListener(new up5(this, (byte) 4));
-        ro5Var.setOpaque(false);
-        ar8Var.addView(ro5Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pla(Iterator it, px2 px2Var) {
+        super(2, px2Var);
+        this.n = it;
     }
 
-    public static pla d(int i, View view, ViewGroup viewGroup) {
-        int min;
-        if (view == null) {
-            return null;
-        }
-        HashMap hashMap = n;
-        if (hashMap == null) {
-            hashMap = new HashMap();
-            n = hashMap;
-        }
-        pla plaVar = (pla) hashMap.get(Integer.valueOf(i));
-        if (plaVar == null) {
-            int o = gba.o();
-            if (o == 1) {
-                Point point = gl.q;
-                min = Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));
-            } else if (o != 2) {
-                Point point2 = gl.q;
-                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
-            } else {
-                Point point3 = gl.q;
-                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
-            }
-            if (viewGroup == null) {
-                return null;
-            }
-            HashMap hashMap2 = n;
-            Integer valueOf = Integer.valueOf(i);
-            ar8 ar8Var = new ar8(viewGroup.getContext(), (byte) 9);
-            viewGroup.addView(ar8Var);
-            pla plaVar2 = new pla(i, ar8Var, min, min);
-            hashMap2.put(valueOf, plaVar2);
-            plaVar = plaVar2;
-        }
-        plaVar.a(view);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        pla plaVar = new pla(this.n, px2Var);
+        plaVar.h = obj;
         return plaVar;
     }
 
-    public static pla e(View view) {
-        Activity W = gl.W(view.getContext());
-        ViewGroup viewGroup = null;
-        if (W != null) {
-            View rootView = W.findViewById(R.id.content).getRootView();
-            if (rootView instanceof ViewGroup) {
-                viewGroup = (ViewGroup) rootView;
-            }
-        }
-        return d(0, view, viewGroup);
+    @Override // fs4
+    public final Object invoke(Object obj, Object obj2) {
+        return ((pla) create((q6a) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    public static void f(boolean z) {
-        ola olaVar;
-        HashMap hashMap = n;
-        if (hashMap != null) {
-            for (pla plaVar : hashMap.values()) {
-                if (!plaVar.c && (olaVar = plaVar.f) != null) {
-                    olaVar.b = z;
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        byte b;
+        int i;
+        int i2;
+        ArrayList arrayList;
+        Iterator it;
+        int i3;
+        int i4;
+        int i5;
+        gl9 gl9Var;
+        q6a q6aVar = (q6a) this.h;
+        byte b2 = this.f;
+        boolean z = true;
+        ly2 ly2Var = ly2.a;
+        if (b2 == 0) {
+            b = 1;
+            tue.b(obj);
+            i = 0;
+            i2 = 0;
+            arrayList = new ArrayList(20);
+            it = this.n;
+            i3 = 20;
+        } else {
+            if (b2 != 1) {
+                if (b2 != 2) {
+                    if (b2 == 3) {
+                        i4 = this.e;
+                        int i6 = this.d;
+                        Iterator it2 = this.c;
+                        gl9 gl9Var2 = (gl9) this.b;
+                        tue.b(obj);
+                        gl9Var2.i();
+                        while (true) {
+                            int i7 = gl9Var2.b;
+                            Object[] objArr = gl9Var2.a;
+                            if (!it2.hasNext()) {
+                                i5 = i6;
+                                gl9Var = gl9Var2;
+                                break;
+                            }
+                            Object next = it2.next();
+                            boolean z2 = z;
+                            if (gl9Var2.h() == i7) {
+                                dq9.m("ring buffer is full");
+                                return null;
+                            }
+                            int i8 = gl9Var2.c;
+                            int i9 = gl9Var2.d;
+                            objArr[(i8 + i9) % i7] = next;
+                            gl9Var2.d = i9 + 1;
+                            if (gl9Var2.h() == i7) {
+                                if (gl9Var2.d >= 20) {
+                                    ArrayList arrayList2 = new ArrayList(gl9Var2);
+                                    this.h = q6aVar;
+                                    this.b = gl9Var2;
+                                    this.c = it2;
+                                    this.d = i6;
+                                    this.e = i4;
+                                    this.f = (byte) 3;
+                                    q6aVar.c(arrayList2, this);
+                                    return ly2Var;
+                                }
+                                int i10 = i7 + (i7 >> 1) + 1;
+                                if (i10 > 20) {
+                                    i10 = 20;
+                                }
+                                gl9Var2 = new gl9(gl9Var2.d, gl9Var2.c == 0 ? Arrays.copyOf(objArr, i10) : gl9Var2.toArray(new Object[i10]));
+                            }
+                            z = z2;
+                        }
+                    } else if (b2 == 4) {
+                        i4 = this.e;
+                        i5 = this.d;
+                        gl9Var = (gl9) this.b;
+                        tue.b(obj);
+                        gl9Var.i();
+                    } else {
+                        if (b2 != 5) {
+                            dq9.m("call to 'resume' before 'invoke' with coroutine");
+                            return null;
+                        }
+                    }
+                    if (gl9Var.d > 20) {
+                        ArrayList arrayList3 = new ArrayList(gl9Var);
+                        this.h = q6aVar;
+                        this.b = gl9Var;
+                        this.c = null;
+                        this.d = i5;
+                        this.e = i4;
+                        this.f = (byte) 4;
+                        q6aVar.c(arrayList3, this);
+                        return ly2Var;
+                    }
+                    if (!gl9Var.isEmpty()) {
+                        this.h = null;
+                        this.b = null;
+                        this.c = null;
+                        this.d = i5;
+                        this.e = i4;
+                        this.f = (byte) 5;
+                        q6aVar.c(gl9Var, this);
+                        return ly2Var;
+                    }
+                    return g7c.a;
+                }
+                tue.b(obj);
+                return g7c.a;
+            }
+            b = 1;
+            i = this.e;
+            int i11 = this.d;
+            Iterator it3 = this.c;
+            tue.b(obj);
+            arrayList = new ArrayList(20);
+            it = it3;
+            i3 = i11;
+            i2 = i;
+        }
+        while (it.hasNext()) {
+            Object next2 = it.next();
+            if (i > 0) {
+                i--;
+            } else {
+                arrayList.add(next2);
+                if (arrayList.size() == 20) {
+                    this.h = q6aVar;
+                    this.b = arrayList;
+                    this.c = it;
+                    this.d = i3;
+                    this.e = i2;
+                    this.f = b;
+                    q6aVar.c(arrayList, this);
+                    return ly2Var;
                 }
             }
         }
-    }
-
-    public final void a(View view) {
-        if (this.i) {
-            return;
+        if (!arrayList.isEmpty()) {
+            this.h = null;
+            this.b = null;
+            this.c = null;
+            this.d = i3;
+            this.e = i2;
+            this.f = (byte) 2;
+            q6aVar.c(arrayList, this);
+            return ly2Var;
         }
-        ArrayList arrayList = this.j;
-        if (arrayList.contains(view)) {
-            return;
-        }
-        arrayList.add(view);
-        int i = this.l;
-        this.l = i + 1;
-        this.k.put(view, Integer.valueOf(i));
-    }
-
-    public final void b(View view) {
-        this.j.remove(view);
-        this.k.remove(view);
-        if (this.i) {
-            return;
-        }
-        nla nlaVar = this.m;
-        gl.r(nlaVar);
-        gl.e3(nlaVar, 30L);
-    }
-
-    public final void c(Canvas canvas, View view, int i, int i2, float f, boolean z) {
-        if (canvas == null || view == null) {
-            return;
-        }
-        canvas.save();
-        Integer num = (Integer) this.k.get(view);
-        if (num == null) {
-            num = 0;
-        }
-        int i3 = this.g;
-        int i4 = this.h;
-        if (i > i3 || i2 > i4) {
-            float max = Math.max(i / i3, i2 / i4);
-            canvas.scale(max, max);
-        }
-        if (num.intValue() % 4 == 1) {
-            canvas.rotate(180.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        if (num.intValue() % 4 == 2) {
-            canvas.scale(-1.0f, 1.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        if (num.intValue() % 4 == 3) {
-            canvas.scale(1.0f, -1.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        ro5 ro5Var = this.e;
-        if (z) {
-            Bitmap bitmap = ro5Var.getBitmap();
-            if (bitmap != null) {
-                Paint paint = new Paint(7);
-                paint.setColor(-1);
-                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
-                bitmap.recycle();
-            }
-        } else {
-            ro5Var.setAlpha(f);
-            ro5Var.draw(canvas);
-        }
-        canvas.restore();
+        return g7c.a;
     }
 }

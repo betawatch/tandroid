@@ -1,27 +1,15 @@
 // default package
 
-import android.media.AudioAttributes;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class wk7 {
-    public static AudioAttributes a(AudioAttributes.Builder builder) {
-        return builder.build();
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public interface wk7 {
+    void addOnLayoutChangeListener(View.OnLayoutChangeListener onLayoutChangeListener);
 
-    public static AudioAttributes.Builder b() {
-        return new AudioAttributes.Builder();
-    }
+    int getMeasuredHeight();
 
-    public static AudioAttributes.Builder c(AudioAttributes.Builder builder, int i) {
-        return builder.setContentType(i);
-    }
+    int getTop();
 
-    public static AudioAttributes.Builder d(AudioAttributes.Builder builder, int i) {
-        return builder.setLegacyStreamType(i);
-    }
-
-    public static AudioAttributes.Builder e(AudioAttributes.Builder builder, int i) {
-        return builder.setUsage(i);
-    }
+    void removeOnLayoutChangeListener(View.OnLayoutChangeListener onLayoutChangeListener);
 }

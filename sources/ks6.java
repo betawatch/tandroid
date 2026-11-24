@@ -1,70 +1,68 @@
 // default package
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.media.MediaDescription;
+import android.net.Uri;
 import android.os.Bundle;
-import org.telegram.messenger.beta.R;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class ks6 extends ze3 {
-    public boolean B0 = false;
-    public dp C0;
-    public yt6 D0;
+public final class ks6 implements Parcelable {
+    public static final Parcelable.Creator<ks6> CREATOR = new f41((byte) 26);
+    public final String a;
+    public final CharSequence b;
+    public final CharSequence c;
+    public final CharSequence d;
+    public final Bitmap e;
+    public byte[] f;
+    public final Uri h;
+    public final Bundle n;
+    public final Uri r;
+    public MediaDescription s;
 
-    public ks6() {
-        this.r0 = true;
-        Dialog dialog = this.w0;
-        if (dialog != null) {
-            dialog.setCancelable(true);
-        }
+    public ks6(String str, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Bitmap bitmap, Uri uri, Bundle bundle, Uri uri2) {
+        this.a = str;
+        this.b = charSequence;
+        this.c = charSequence2;
+        this.d = charSequence3;
+        this.e = bitmap;
+        this.h = uri;
+        this.n = bundle;
+        this.r = uri2;
     }
 
-    @Override // ze3
-    public final Dialog P() {
-        if (this.B0) {
-            gt6 gt6Var = new gt6(n());
-            this.C0 = gt6Var;
-            Q();
-            gt6Var.f(this.D0);
-        } else {
-            js6 js6Var = new js6(n());
-            this.C0 = js6Var;
-            Q();
-            js6Var.h(this.D0);
+    public final MediaDescription a() {
+        MediaDescription mediaDescription = this.s;
+        if (mediaDescription != null) {
+            return mediaDescription;
         }
-        return this.C0;
+        MediaDescription.Builder builder = new MediaDescription.Builder();
+        builder.setMediaId(this.a);
+        builder.setTitle(this.b);
+        builder.setSubtitle(this.c);
+        builder.setDescription(this.d);
+        builder.setIconBitmap(this.e);
+        builder.setIconUri(this.h);
+        builder.setExtras(this.n);
+        builder.setMediaUri(this.r);
+        MediaDescription build = builder.build();
+        this.s = build;
+        return build;
     }
 
-    public final void Q() {
-        yt6 yt6Var = this.D0;
-        if (yt6Var == null) {
-            Bundle bundle = this.f;
-            if (bundle != null) {
-                yt6Var = yt6.b(bundle.getBundle("selector"));
-                this.D0 = yt6Var;
-            }
-            if (yt6Var == null) {
-                this.D0 = yt6.c;
-            }
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    @Override // bn4, android.content.ComponentCallbacks
-    public final void onConfigurationChanged(Configuration configuration) {
-        this.V = true;
-        dp dpVar = this.C0;
-        if (dpVar == null) {
-            return;
-        }
-        if (!this.B0) {
-            js6 js6Var = (js6) dpVar;
-            js6Var.getWindow().setLayout(roe.a(js6Var.getContext()), -2);
-        } else {
-            gt6 gt6Var = (gt6) dpVar;
-            Context context = gt6Var.n;
-            gt6Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : roe.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
-        }
+    public final String toString() {
+        return ((Object) this.b) + ", " + ((Object) this.c) + ", " + ((Object) this.d);
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        a().writeToParcel(parcel, i);
     }
 }

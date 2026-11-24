@@ -1,36 +1,26 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class yw2 {
-    public static final yw2 a;
-    public static final yw2 b;
-    public static final yw2 c;
-    public static final yw2 d;
-    public static final yw2 e;
-    public static final /* synthetic */ yw2[] f;
+import android.view.ViewGroup;
 
-    static {
-        yw2 yw2Var = new yw2("CPU_ACQUIRED", 0);
-        a = yw2Var;
-        yw2 yw2Var2 = new yw2("BLOCKING", 1);
-        b = yw2Var2;
-        yw2 yw2Var3 = new yw2("PARKING", 2);
-        c = yw2Var3;
-        yw2 yw2Var4 = new yw2("DORMANT", 3);
-        d = yw2Var4;
-        yw2 yw2Var5 = new yw2("TERMINATED", 4);
-        e = yw2Var5;
-        f = new yw2[]{yw2Var, yw2Var2, yw2Var3, yw2Var4, yw2Var5};
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class yw2 extends m8 {
+    public final /* synthetic */ dx2 o;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yw2(dx2 dx2Var, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = dx2Var;
     }
 
-    public static yw2 valueOf(String str) {
-        return (yw2) Enum.valueOf(yw2.class, str);
-    }
-
-    public static yw2[] values() {
-        return (yw2[]) f.clone();
+    @Override // m8, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        hx2 hx2Var = this.o.a;
+        hx2Var.k = null;
+        hx2Var.K = false;
+        if (hx2Var.R) {
+            hx2Var.b();
+        }
     }
 }

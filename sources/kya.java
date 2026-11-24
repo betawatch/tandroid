@@ -1,380 +1,320 @@
 // default package
 
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.text.Spanned;
-import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.tgnet.TLObject;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class kya implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class kya implements im4, ss4, jm4 {
+    public static final /* synthetic */ long e = fy.a.objectFieldOffset(kya.class.getDeclaredField("_state$volatile"));
+    private volatile /* synthetic */ Object _state$volatile;
+    public lya[] a;
+    public int b;
+    public int c;
+    public int d;
 
-    public /* synthetic */ kya(wv3 wv3Var, int i) {
-        this.a = (byte) 0;
-        this.b = wv3Var;
+    public kya(Object obj) {
+        this._state$volatile = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String[] F0;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        byte b = this.a;
-        boolean z = true;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((wv3) obj).m0(0);
-                break;
-            case 1:
-                pya pyaVar = (pya) obj;
-                if (!pyaVar.x) {
-                    pyaVar.E = 0.0f;
-                    break;
-                }
-                break;
-            case 2:
-                hq6.d0(y6c.t0).d(2, null, ((kza) obj).f.document, (int) (System.currentTimeMillis() / 1000), false);
-                break;
-            case 3:
-                ((e1b) obj).b();
-                break;
-            case 4:
-                jq3 jq3Var = (jq3) obj;
-                jq3Var.c(jq3Var.b);
-                jq3Var.c = false;
-                break;
-            case 5:
-                ((l5b) obj).run();
-                break;
-            case 6:
-                k2b k2bVar = (k2b) obj;
-                k2bVar.c();
-                k2bVar.a(true);
-                break;
-            case 7:
-                ((l1b) obj).a(null);
-                break;
-            case 8:
-                ((t2b) obj).K();
-                break;
-            case 9:
-                a3b a3bVar = (a3b) obj;
-                ArrayList arrayList3 = a3bVar.c;
-                if (arrayList3 != null) {
-                    a3bVar.a.p1 = arrayList3;
-                }
-                y28 y28Var = a3bVar.a;
-                long j = a3bVar.b;
-                if (y28Var.r1 != j || y28Var.p1 != null) {
-                    y28Var.r1 = j;
-                    y28Var.h1();
-                    y28Var.f1();
-                    y28Var.c1(true);
-                    TL_stories.PeerStories peerStories = y28Var.z0.Q0;
-                    g2b g2bVar = y28Var.I1;
-                    if (peerStories == null) {
-                        TL_stories.PeerStories x = g2bVar.x(j);
-                        if (x == null) {
-                            x = g2bVar.y(j);
-                        } else {
-                            z = false;
-                        }
-                        g2bVar.U(x, z);
-                        break;
-                    } else {
-                        g2bVar.U(peerStories, true);
-                        break;
-                    }
-                }
-                break;
-            case 10:
-                ((i46) obj).e(true);
-                break;
-            case 11:
-                ((x3b) obj).requestLayout();
-                break;
-            case 12:
-                w4b w4bVar = (w4b) obj;
-                je5 je5Var = w4bVar.c;
-                if (je5Var != null) {
-                    je5Var.f(true);
-                    w4bVar.c = null;
-                }
-                w4bVar.b(false);
-                break;
-            case 13:
-                u4b u4bVar = (u4b) obj;
-                if (u4bVar.w) {
-                    u4bVar.F = true;
-                    u4bVar.G = System.currentTimeMillis();
-                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                    u4bVar.e = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 771751935, 771751935, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
-                    u4bVar.f = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 553648127, 553648127, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
-                    u4bVar.invalidate();
-                    break;
-                }
-                break;
-            case 14:
-                u41 u41Var = (u41) obj;
-                if (u41Var != null) {
-                    u41Var.setLoading(false);
-                    break;
-                }
-                break;
-            case 15:
-                ((v5b) ((gz9) obj).n).fullScroll(kk7.N1);
-                break;
-            case 16:
-                s7b s7bVar = (s7b) obj;
-                s7bVar.n0.onTouchEvent(gl.R());
-                s7bVar.m0.X(gl.R());
-                break;
-            case 17:
-                t7b t7bVar = (t7b) ((vr4) obj).m0;
-                t7bVar.t(true);
-                t7bVar.B0.setCameraThumb(t7bVar.y());
-                break;
-            case 18:
-                y6b y6bVar = (y6b) obj;
-                t7b t7bVar2 = y6bVar.c0;
-                if (!t7bVar2.R1 && !t7bVar2.Q1 && t7bVar2.C0 != null && t7bVar2.g0 == 0 && t7bVar2.n1 != null) {
-                    String M0 = k96.M0(y6bVar.isFrontface() ? 2131744473 : 2131744472, null);
-                    je5 je5Var2 = t7bVar2.n1;
-                    je5Var2.h = je5.a(M0, je5Var2.getTextPaint());
-                    t7bVar2.n1.t(M0);
-                    t7bVar2.n1.v();
-                    na7.c1().edit().putInt("storysvddualhint", na7.c1().getInt("storysvddualhint", 0) + 1).apply();
-                    break;
-                }
-                break;
-            case 19:
-                ((be0) obj).setVisibility(8);
-                break;
-            case 20:
-                m8b m8bVar = ((v7b) obj).b;
-                try {
-                    a8b a8bVar = m8bVar.s;
-                    if (a8bVar != null) {
-                        if (m8bVar.b) {
-                            gl.B2(a8bVar);
-                        } else {
-                            m8bVar.n.removeView(a8bVar);
-                        }
-                        m8bVar.s = null;
-                        m8bVar.p();
-                        break;
-                    }
-                } catch (Exception unused) {
-                    return;
-                }
-                break;
-            case 21:
-                ((a8b) obj).y0.O(true);
-                break;
-            case 22:
-                dbb dbbVar = (dbb) obj;
-                int i = dbbVar.a;
-                dbbVar.I = null;
-                bbb bbbVar = dbbVar.c;
-                if (bbbVar != null && bbbVar.getEditField() != null && dbbVar.c.getFieldText() != null) {
-                    if (!dbbVar.c.a()) {
-                        int selectionStart = dbbVar.c.getEditField().getSelectionStart();
-                        int selectionEnd = dbbVar.c.getEditField().getSelectionEnd();
-                        if (selectionStart == selectionEnd) {
-                            CharSequence fieldText = dbbVar.c.getFieldText();
-                            boolean z2 = fieldText instanceof Spanned;
-                            su3[] su3VarArr = z2 ? (su3[]) ((Spanned) fieldText).getSpans(Math.max(0, selectionEnd - 24), selectionEnd, su3.class) : null;
-                            if (su3VarArr != null && su3VarArr.length > 0 && gba.E && y6c.h(i).p()) {
-                                su3 su3Var = su3VarArr[su3VarArr.length - 1];
-                                if (su3Var != null) {
-                                    Spanned spanned = (Spanned) fieldText;
-                                    int spanStart = spanned.getSpanStart(su3Var);
-                                    int spanEnd = spanned.getSpanEnd(su3Var);
-                                    if (selectionStart == spanEnd) {
-                                        String substring = fieldText.toString().substring(spanStart, spanEnd);
-                                        dbbVar.s = true;
-                                        dbbVar.b();
-                                        dbbVar.W = su3Var;
-                                        dbbVar.c0 = null;
-                                        dbbVar.b0 = null;
-                                        String str = dbbVar.K;
-                                        if (str == null || dbbVar.J != 2 || !str.equals(substring) || dbbVar.y || (arrayList2 = dbbVar.x) == null || arrayList2.isEmpty()) {
-                                            int i2 = dbbVar.L + 1;
-                                            dbbVar.L = i2;
-                                            Runnable runnable = dbbVar.N;
-                                            if (runnable != null) {
-                                                gl.r(runnable);
-                                            }
-                                            dbbVar.N = new t79((Object) dbbVar, (Object) substring, i2, (byte) 21);
-                                            ArrayList arrayList4 = dbbVar.x;
-                                            if (arrayList4 == null || arrayList4.isEmpty()) {
-                                                gl.e3(dbbVar.N, 600L);
-                                            } else {
-                                                dbbVar.N.run();
-                                            }
-                                        } else {
-                                            dbbVar.w = false;
-                                            dbbVar.b();
-                                            zab zabVar = dbbVar.d;
-                                            if (zabVar != null) {
-                                                zabVar.setVisibility(0);
-                                                dbbVar.d.invalidate();
+    @Override // ss4
+    public final im4 D(int i, w11 w11Var) {
+        return ((((i < 0 || i >= 2) && i != -2) || w11Var != w11.b) && !((i == 0 || i == -3) && w11Var == w11.a)) ? new ij1(this, k34.a, i, w11Var, (byte) 1) : this;
+    }
+
+    public final void a(lya lyaVar) {
+        synchronized (this) {
+            int i = this.b - 1;
+            this.b = i;
+            if (i == 0) {
+                this.c = 0;
+            }
+            lyaVar.getClass();
+            lyaVar.a.set(null);
+        }
+    }
+
+    public final void b(Object obj) {
+        if (obj == null) {
+            obj = bdd.a;
+        }
+        d(null, obj);
+    }
+
+    @Override // jm4
+    public final Object c(Object obj, px2 px2Var) {
+        b(obj);
+        return g7c.a;
+    }
+
+    public final boolean d(Object obj, Object obj2) {
+        int i;
+        lya[] lyaVarArr;
+        du2 du2Var;
+        synchronized (this) {
+            Unsafe unsafe = fy.a;
+            long j = e;
+            Object objectVolatile = unsafe.getObjectVolatile(this, j);
+            if (obj != null && !rr5.a(objectVolatile, obj)) {
+                return false;
+            }
+            if (rr5.a(objectVolatile, obj2)) {
+                return true;
+            }
+            unsafe.putObjectVolatile(this, j, obj2);
+            int i2 = this.d;
+            if ((i2 & 1) != 0) {
+                this.d = i2 + 2;
+                return true;
+            }
+            int i3 = i2 + 1;
+            this.d = i3;
+            lya[] lyaVarArr2 = this.a;
+            while (true) {
+                if (lyaVarArr2 != null) {
+                    for (lya lyaVar : lyaVarArr2) {
+                        if (lyaVar != null) {
+                            AtomicReference atomicReference = lyaVar.a;
+                            while (true) {
+                                Object obj3 = atomicReference.get();
+                                if (obj3 != null && obj3 != (du2Var = ffd.b)) {
+                                    du2 du2Var2 = ffd.a;
+                                    if (obj3 != du2Var2) {
+                                        while (!atomicReference.compareAndSet(obj3, du2Var2)) {
+                                            if (atomicReference.get() != obj3) {
+                                                break;
                                             }
                                         }
-                                        zab zabVar2 = dbbVar.d;
-                                        if (zabVar2 != null) {
-                                            zabVar2.invalidate();
+                                        ((vb1) obj3).resumeWith(g7c.a);
+                                        break;
+                                    }
+                                    while (!atomicReference.compareAndSet(obj3, du2Var)) {
+                                        if (atomicReference.get() != obj3) {
                                             break;
                                         }
                                     }
                                 }
-                            } else {
-                                gm[] gmVarArr = z2 ? (gm[]) ((Spanned) fieldText).getSpans(Math.max(0, selectionEnd), selectionEnd, gm.class) : null;
-                                if ((gmVarArr == null || gmVarArr.length == 0) && selectionEnd < 52) {
-                                    dbbVar.s = true;
-                                    dbbVar.b();
-                                    dbbVar.W = null;
-                                    String substring2 = fieldText.toString().substring(0, selectionEnd);
-                                    String str2 = dbbVar.K;
-                                    if (str2 == null || dbbVar.J != 1 || !str2.equals(substring2) || dbbVar.y || (arrayList = dbbVar.x) == null || arrayList.isEmpty()) {
-                                        int i3 = dbbVar.L + 1;
-                                        dbbVar.L = i3;
-                                        long currentTimeMillis = System.currentTimeMillis();
-                                        if (dbbVar.M == null || Math.abs(currentTimeMillis - dbbVar.O) > 360) {
-                                            dbbVar.O = currentTimeMillis;
-                                            F0 = gl.F0();
-                                        } else {
-                                            dbbVar.O = currentTimeMillis;
-                                            F0 = dbbVar.M;
-                                        }
-                                        String[] strArr = F0;
-                                        String[] strArr2 = dbbVar.M;
-                                        if (strArr2 == null || !Arrays.equals(strArr, strArr2)) {
-                                            hq6.d0(i).O(strArr, false);
-                                        }
-                                        dbbVar.M = strArr;
-                                        Runnable runnable2 = dbbVar.N;
-                                        if (runnable2 != null) {
-                                            gl.r(runnable2);
-                                            dbbVar.N = null;
-                                        }
-                                        dbbVar.N = new ica((Object) dbbVar, (Object) strArr, (Object) substring2, i3, (byte) 5);
-                                        ArrayList arrayList5 = dbbVar.x;
-                                        if (arrayList5 == null || arrayList5.isEmpty()) {
-                                            gl.e3(dbbVar.N, 600L);
-                                        } else {
-                                            dbbVar.N.run();
-                                        }
-                                    } else {
-                                        dbbVar.w = false;
-                                        dbbVar.b();
-                                        dbbVar.d.setVisibility(0);
-                                        dbbVar.a0 = gl.L(10.0f);
-                                        dbbVar.d.invalidate();
-                                    }
-                                    zab zabVar3 = dbbVar.d;
-                                    if (zabVar3 != null) {
-                                        zabVar3.invalidate();
-                                        break;
-                                    }
-                                }
-                            }
-                            Runnable runnable3 = dbbVar.N;
-                            if (runnable3 != null) {
-                                gl.r(runnable3);
-                                dbbVar.N = null;
-                            }
-                            dbbVar.s = false;
-                            zab zabVar4 = dbbVar.d;
-                            if (zabVar4 != null) {
-                                zabVar4.invalidate();
-                                break;
-                            }
-                        } else {
-                            dbbVar.s = false;
-                            zab zabVar5 = dbbVar.d;
-                            if (zabVar5 != null) {
-                                zabVar5.invalidate();
-                                break;
                             }
                         }
-                    } else {
-                        dbbVar.s = false;
-                        zab zabVar6 = dbbVar.d;
-                        if (zabVar6 != null) {
-                            zabVar6.invalidate();
-                            break;
-                        }
-                    }
-                } else {
-                    dbbVar.s = false;
-                    dbbVar.w = true;
-                    zab zabVar7 = dbbVar.d;
-                    if (zabVar7 != null) {
-                        zabVar7.invalidate();
-                        break;
                     }
                 }
-                break;
-            case 23:
-                pcb pcbVar = (pcb) obj;
-                pcbVar.L = null;
-                pcbVar.b();
-                break;
-            case 24:
-                TLParseException.lambda$doThrowOrLog$0((TLParseException) obj);
-                break;
-            case 25:
-                ydb ydbVar = (ydb) obj;
-                dha dhaVar = ydbVar.V;
-                if (dhaVar != null && ydbVar.b0 != -1) {
-                    dhaVar.a();
-                    break;
+                synchronized (this) {
+                    i = this.d;
+                    if (i == i3) {
+                        this.d = i3 + 1;
+                        return true;
+                    }
+                    lyaVarArr = this.a;
                 }
-                break;
-            case 26:
-                hgb hgbVar = (hgb) obj;
-                mv6 mv6Var = hgbVar.b;
-                int i4 = y6c.t0;
-                hgbVar.c = i4;
-                hgbVar.d = gl.a1(na7.q1(i4).W3, "auto_lastSelectedDialog", 0L);
-                hgbVar.e = false;
-                hgbVar.f = false;
-                hgbVar.g.clear();
-                hgbVar.h.b();
-                hgbVar.i.b();
-                hgbVar.j.b();
-                hgbVar.k.b();
-                hgbVar.l.b();
-                try {
-                    mv6Var.o0(null);
-                    ((zu6) mv6Var.b).a.setQueueTitle(null);
-                    break;
-                } catch (Throwable unused2) {
-                    return;
-                }
-            case 27:
-                kk7.f(((ggb) obj).g.c).k(kk7.f2, 0);
-                break;
-            case 28:
-                gl.F3(((vhb) obj).s0);
-                break;
-            default:
-                rib ribVar = (rib) obj;
-                ribVar.C.invalidate();
-                ribVar.R();
-                break;
+                lyaVarArr2 = lyaVarArr;
+                i3 = i;
+            }
         }
     }
 
-    public /* synthetic */ kya(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00cd, code lost:
+    
+        if (r13.equals(r15) == false) goto L56;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x012c, code lost:
+    
+        if (r9 == r1) goto L75;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00b0, code lost:
+    
+        if (r15 != r1) goto L46;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00b2 A[Catch: all -> 0x0135, TRY_ENTER, TryCatch #0 {all -> 0x0135, blocks: (B:13:0x0034, B:15:0x00b2, B:17:0x00bc, B:19:0x00c2, B:20:0x00c6, B:23:0x00c9, B:25:0x00e9, B:27:0x00f8, B:28:0x0114, B:30:0x011a, B:33:0x0120, B:34:0x0123, B:42:0x00cf, B:45:0x00d6, B:49:0x012f, B:50:0x0134, B:54:0x0049), top: B:7:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00f8 A[Catch: all -> 0x0135, TryCatch #0 {all -> 0x0135, blocks: (B:13:0x0034, B:15:0x00b2, B:17:0x00bc, B:19:0x00c2, B:20:0x00c6, B:23:0x00c9, B:25:0x00e9, B:27:0x00f8, B:28:0x0114, B:30:0x011a, B:33:0x0120, B:34:0x0123, B:42:0x00cf, B:45:0x00d6, B:49:0x012f, B:50:0x0134, B:54:0x0049), top: B:7:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x012f A[Catch: all -> 0x0135, TryCatch #0 {all -> 0x0135, blocks: (B:13:0x0034, B:15:0x00b2, B:17:0x00bc, B:19:0x00c2, B:20:0x00c6, B:23:0x00c9, B:25:0x00e9, B:27:0x00f8, B:28:0x0114, B:30:0x011a, B:33:0x0120, B:34:0x0123, B:42:0x00cf, B:45:0x00d6, B:49:0x012f, B:50:0x0134, B:54:0x0049), top: B:7:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0024  */
+    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [lya] */
+    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v13 */
+    /* JADX WARN: Type inference failed for: r2v14 */
+    /* JADX WARN: Type inference failed for: r2v15, types: [lya] */
+    /* JADX WARN: Type inference failed for: r2v16, types: [lya] */
+    /* JADX WARN: Type inference failed for: r2v17, types: [lya] */
+    /* JADX WARN: Type inference failed for: r2v19, types: [lya] */
+    /* JADX WARN: Type inference failed for: r2v20 */
+    /* JADX WARN: Type inference failed for: r2v21 */
+    /* JADX WARN: Type inference failed for: r2v22 */
+    /* JADX WARN: Type inference failed for: r2v23 */
+    /* JADX WARN: Type inference failed for: r8v3, types: [kya] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x00f6 -> B:14:0x00b0). Please report as a decompilation issue!!! */
+    @Override // im4
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object g(jm4 jm4Var, px2 px2Var) {
+        jya jyaVar;
+        ?? r2;
+        lya lyaVar;
+        AtomicReference atomicReference;
+        kya kyaVar;
+        jm4 jm4Var2;
+        av5 av5Var;
+        Object obj;
+        Object andSet;
+        try {
+            if (px2Var instanceof jya) {
+                jyaVar = (jya) px2Var;
+                int i = jyaVar.n;
+                if ((i & TLObject.FLAG_31) != 0) {
+                    jyaVar.n = i - TLObject.FLAG_31;
+                    Object obj2 = jyaVar.f;
+                    ly2 ly2Var = ly2.a;
+                    r2 = jyaVar.n;
+                    if (r2 != 0) {
+                        tue.b(obj2);
+                        synchronized (this) {
+                            lya[] lyaVarArr = this.a;
+                            if (lyaVarArr == null) {
+                                lyaVarArr = new lya[2];
+                                this.a = lyaVarArr;
+                            } else if (this.b >= lyaVarArr.length) {
+                                Object[] copyOf = Arrays.copyOf(lyaVarArr, lyaVarArr.length << 1);
+                                this.a = (lya[]) copyOf;
+                                lyaVarArr = (lya[]) copyOf;
+                            }
+                            int i2 = this.c;
+                            do {
+                                lyaVar = lyaVarArr[i2];
+                                if (lyaVar == null) {
+                                    lyaVar = new lya();
+                                    lyaVarArr[i2] = lyaVar;
+                                }
+                                i2++;
+                                if (i2 >= lyaVarArr.length) {
+                                    i2 = 0;
+                                }
+                                atomicReference = lyaVar.a;
+                            } while (atomicReference.get() != null);
+                            atomicReference.set(ffd.a);
+                            this.c = i2;
+                            this.b++;
+                        }
+                        r2 = lyaVar;
+                    } else if (r2 == 1) {
+                        r2 = jyaVar.c;
+                        jm4Var = jyaVar.b;
+                        this = jyaVar.a;
+                        try {
+                            tue.b(obj2);
+                            r2 = r2;
+                        } catch (Throwable th) {
+                            ?? r8 = this;
+                            th = th;
+                            r8.a(r2);
+                            throw th;
+                        }
+                    } else if (r2 == 2) {
+                        obj = jyaVar.e;
+                        av5Var = jyaVar.d;
+                        lya lyaVar2 = jyaVar.c;
+                        jm4Var2 = jyaVar.b;
+                        kyaVar = jyaVar.a;
+                        tue.b(obj2);
+                        r2 = lyaVar2;
+                        AtomicReference atomicReference2 = r2.a;
+                        du2 du2Var = ffd.a;
+                        andSet = atomicReference2.getAndSet(du2Var);
+                        andSet.getClass();
+                        if (andSet != ffd.b) {
+                        }
+                        if (kyaVar != null) {
+                        }
+                    } else {
+                        if (r2 != 3) {
+                            dq9.m("call to 'resume' before 'invoke' with coroutine");
+                            return null;
+                        }
+                        obj = jyaVar.e;
+                        av5Var = jyaVar.d;
+                        r2 = jyaVar.c;
+                        jm4Var2 = jyaVar.b;
+                        kyaVar = jyaVar.a;
+                        tue.b(obj2);
+                        if (kyaVar != null) {
+                            Object objectVolatile = fy.a.getObjectVolatile(kyaVar, e);
+                            if (av5Var != null && !av5Var.isActive()) {
+                                throw av5Var.getCancellationException();
+                            }
+                            if (obj != null) {
+                                r2 = r2;
+                            }
+                            Object obj3 = objectVolatile == bdd.a ? null : objectVolatile;
+                            jyaVar.a = kyaVar;
+                            jyaVar.b = jm4Var2;
+                            jyaVar.c = r2;
+                            jyaVar.d = av5Var;
+                            jyaVar.e = objectVolatile;
+                            jyaVar.n = 2;
+                            if (jm4Var2.c(obj3, jyaVar) != ly2Var) {
+                                obj = objectVolatile;
+                                r2 = r2;
+                                AtomicReference atomicReference22 = r2.a;
+                                du2 du2Var2 = ffd.a;
+                                andSet = atomicReference22.getAndSet(du2Var2);
+                                andSet.getClass();
+                                if (andSet != ffd.b) {
+                                    jyaVar.a = kyaVar;
+                                    jyaVar.b = jm4Var2;
+                                    jyaVar.c = r2;
+                                    jyaVar.d = av5Var;
+                                    jyaVar.e = obj;
+                                    jyaVar.n = 3;
+                                    g7c g7cVar = g7c.a;
+                                    vb1 vb1Var = new vb1(1, fne.a(jyaVar));
+                                    vb1Var.s();
+                                    AtomicReference atomicReference3 = r2.a;
+                                    while (true) {
+                                        if (atomicReference3.compareAndSet(du2Var2, vb1Var)) {
+                                            break;
+                                        }
+                                        if (atomicReference3.get() != du2Var2) {
+                                            vb1Var.resumeWith(g7cVar);
+                                            break;
+                                        }
+                                    }
+                                    Object q = vb1Var.q();
+                                    if (q == ly2.a) {
+                                    }
+                                }
+                                if (kyaVar != null) {
+                                    throw new ClassCastException();
+                                }
+                            }
+                            return ly2Var;
+                        }
+                    }
+                    kyaVar = this;
+                    jm4Var2 = jm4Var;
+                    av5Var = (av5) jyaVar.getContext().get(nf5.c);
+                    obj = null;
+                    if (kyaVar != null) {
+                    }
+                }
+            }
+            if (r2 != 0) {
+            }
+            kyaVar = this;
+            jm4Var2 = jm4Var;
+            av5Var = (av5) jyaVar.getContext().get(nf5.c);
+            obj = null;
+            if (kyaVar != null) {
+            }
+        } catch (Throwable th2) {
+            th = th2;
+        }
+        jyaVar = new jya(this, px2Var);
+        Object obj22 = jyaVar.f;
+        ly2 ly2Var2 = ly2.a;
+        r2 = jyaVar.n;
     }
 }

@@ -3,37 +3,37 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$Token implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new hv6(3);
+    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new hx6(3);
     public final Parcelable b;
-    public mi5 c;
+    public lk5 c;
     public final Object a = new Object();
-    public aac d = null;
+    public bcc d = null;
 
     public MediaSessionCompat$Token(Parcelable parcelable, d dVar) {
         this.b = parcelable;
         this.c = dVar;
     }
 
-    public final mi5 a() {
-        mi5 mi5Var;
+    public final lk5 a() {
+        lk5 lk5Var;
         synchronized (this.a) {
-            mi5Var = this.c;
+            lk5Var = this.c;
         }
-        return mi5Var;
+        return lk5Var;
     }
 
-    public final void b(mi5 mi5Var) {
+    public final void b(lk5 lk5Var) {
         synchronized (this.a) {
-            this.c = mi5Var;
+            this.c = lk5Var;
         }
     }
 
-    public final void c(aac aacVar) {
+    public final void c(bcc bccVar) {
         synchronized (this.a) {
-            this.d = aacVar;
+            this.d = bccVar;
         }
     }
 

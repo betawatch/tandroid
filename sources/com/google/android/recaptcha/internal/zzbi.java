@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.TimerTask;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzbi extends TimerTask {
     final /* synthetic */ zzbo zza;
@@ -16,6 +16,6 @@ public final class zzbi extends TimerTask {
     @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
         zzbo zzboVar = this.zza;
-        ppd.b(zzbo.zzb(zzboVar).zzc(), new zzbh(zzboVar, this.zzb, null));
+        srd.b(zzbo.zzb(zzboVar).zzc(), new zzbh(zzboVar, this.zzb, null));
     }
 }

@@ -1,13 +1,85 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class sz0 {
-    public final byte[] a;
-    public final int b;
+import android.os.SystemClock;
 
-    public sz0(int i, byte[] bArr) {
-        this.a = bArr;
-        this.b = i;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class sz0 implements oq7 {
+    public long a;
+    public long b;
+    public Object c;
+    public Object d;
+
+    public sz0(long j, int i) {
+        jte.p(((mk) this.c) == null);
+        this.a = j;
+        this.b = j + i;
+    }
+
+    @Override // oq7
+    public final ix9 D() {
+        jte.p(this.a != -1);
+        return new od0((gk4) this.c, this.a, (byte) 1);
+    }
+
+    public final void a(Exception exc) {
+        boolean z;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (((Exception) this.c) == null) {
+            this.c = exc;
+        }
+        if (this.a == -9223372036854775807L) {
+            ((l50) ((cb3) this.d).r).getClass();
+            synchronized (j50.s) {
+                z = j50.u > 0;
+            }
+            if (!z) {
+                this.a = 200 + elapsedRealtime;
+            }
+        }
+        long j = this.a;
+        if (j == -9223372036854775807L || elapsedRealtime < j) {
+            this.b = elapsedRealtime + 50;
+            return;
+        }
+        Exception exc2 = (Exception) this.c;
+        if (exc2 != exc) {
+            exc2.addSuppressed(exc);
+        }
+        Exception exc3 = (Exception) this.c;
+        this.c = null;
+        this.a = -9223372036854775807L;
+        this.b = -9223372036854775807L;
+        throw exc3;
+    }
+
+    @Override // oq7
+    public final long p(vb3 vb3Var) {
+        long j = this.b;
+        if (j < 0) {
+            return -1L;
+        }
+        long j2 = -(j + 2);
+        this.b = -1L;
+        return j2;
+    }
+
+    @Override // oq7
+    public final void u0(long j) {
+        long[] jArr = (long[]) ((lx6) this.d).b;
+        this.b = jArr[hac.f(jArr, j, true)];
+    }
+
+    public sz0(cb3 cb3Var) {
+        this.d = cb3Var;
+        this.a = -9223372036854775807L;
+        this.b = -9223372036854775807L;
+    }
+
+    public sz0(String str, byte[] bArr, long j, long j2) {
+        this.c = str;
+        this.d = bArr;
+        this.a = j;
+        this.b = j2;
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 final class zzpb extends zzpc implements Serializable {
     final byte[] zza;
@@ -19,7 +19,7 @@ final class zzpb extends zzpc implements Serializable {
         if (length >= 4) {
             return (bArr[0] & 255) | ((bArr[1] & 255) << 8) | ((bArr[2] & 255) << 16) | ((bArr[3] & 255) << 24);
         }
-        sc8.j(zzmg.zza("HashCode#asInt() requires >= 4 bytes (it only has %s bytes).", Integer.valueOf(length)));
+        dq9.m(zzmg.zza("HashCode#asInt() requires >= 4 bytes (it only has %s bytes).", Integer.valueOf(length)));
         return 0;
     }
 

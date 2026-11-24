@@ -1,20 +1,42 @@
 // default package
 
-import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class tqa extends ix0 {
-    public ArrayList V1;
-    public LimitPreviewView W1;
+public final /* synthetic */ class tqa implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wsa b;
 
-    public final void Y0(long j) {
-        ArrayList arrayList = this.V1;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return;
+    public /* synthetic */ tqa(wsa wsaVar, byte b) {
+        this.a = b;
+        this.b = wsaVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        wsa wsaVar = this.b;
+        switch (b) {
+            case 0:
+                wsaVar.dismiss();
+                d S = LaunchActivity.S();
+                TL_stars.TL_starGiftUnique A1 = wsaVar.A1();
+                if (S != null && A1 != null) {
+                    nk3 nk3Var = new nk3(td4.j(4, "onlySelect", "dialogsType", true));
+                    nk3Var.E2 = new jq9(wsaVar, A1, nk3Var, (byte) 5);
+                    S.presentFragment(nk3Var);
+                    break;
+                }
+                break;
+            case 1:
+                wsaVar.a2();
+                break;
+            default:
+                wsaVar.onBackPressed();
+                break;
         }
-        this.W1.k((TL_stars.StarGiftUpgradePrice) arrayList.get(0), j, (TL_stars.StarGiftUpgradePrice) b00.f(1, arrayList));
     }
 }

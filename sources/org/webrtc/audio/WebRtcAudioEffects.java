@@ -6,7 +6,7 @@ import android.media.audiofx.NoiseSuppressor;
 import java.util.UUID;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 class WebRtcAudioEffects {
     private static final UUID AOSP_ACOUSTIC_ECHO_CANCELER = UUID.fromString("bb392ec0-8d4d-11e0-a896-0002a5d5c51b");
@@ -27,7 +27,7 @@ class WebRtcAudioEffects {
         if (z) {
             return;
         }
-        fi7.g("Expected condition to be true");
+        bh7.j("Expected condition to be true");
     }
 
     private boolean effectTypeIsVoIP(UUID uuid) {

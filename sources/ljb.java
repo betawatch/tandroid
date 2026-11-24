@@ -1,40 +1,25 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ljb {
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public final int a;
+    public final int b;
+    public final int c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ljb extends Drawable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    static {
+        String str = hac.a;
+        d = "0";
+        e = "1";
+        f = "2";
+    }
 
-    public ljb(int i, int i2) {
+    public ljb(int i, int i2, int i3) {
         this.a = i;
         this.b = i2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        int max = Math.max(bounds.width(), bounds.height()) / 2;
-        int i = this.a;
-        int i2 = this.b;
-        canvas.drawCircle((bounds.centerX() - i) + i2, bounds.centerY(), max + i + i2, bkb.z);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c = i3;
     }
 }

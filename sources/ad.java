@@ -1,69 +1,110 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_agent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ad extends FrameLayout {
-    public final TextView a;
-    public final ImageView b;
+public final class ad extends dc {
+    public final wc E;
+    public String F;
+    public final ArrayList G;
+    public String H;
+    public String I;
+    public boolean J;
+    public boolean K;
+    public int L;
+    public String M;
+    public final ArrayList N;
+    public String O;
+    public boolean P;
+    public final ArrayList Q;
+    public final b1 R;
+    public final ArrayList S;
+    public final mc y;
 
-    public ad(Context context, wjb wjbVar) {
-        super(context);
-        int i = bkb.H5;
-        Drawable f0 = bkb.f0(bkb.v0(i, wjbVar), 2, -1);
-        vkb M = zkb.M(i);
-        setBackground(f0);
-        zkb.j(this, f0, null, M, wjbVar);
-        setPadding(gl.L(23.0f), 0, gl.L(23.0f), 0);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        zkb.s(imageView, bkb.I5, wjbVar, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, nme.e(-2, 40, (k96.a0 ? 5 : 3) | 16));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        zkb.X(textView, bkb.i5, wjbVar);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, nme.e(-2, -2, (k96.a0 ? 5 : 3) | 16));
+    public ad(int i, View view, sm2 sm2Var, ylb ylbVar) {
+        super(i, view, sm2Var, ylbVar);
+        this.G = new ArrayList();
+        this.H = "";
+        this.L = -1;
+        this.N = new ArrayList();
+        this.Q = new ArrayList();
+        this.R = new b1(this, (byte) 8);
+        this.S = new ArrayList();
+        this.y = mc.c(i);
+        wc wcVar = new wc(this, view.getContext());
+        this.E = wcVar;
+        this.f.a(wcVar, qoe.o(nm7.m4, -2));
     }
 
-    public final void a(int i, CharSequence charSequence) {
-        TextView textView = this.a;
-        textView.setText(charSequence);
-        ImageView imageView = this.b;
-        if (i == 0) {
-            imageView.setVisibility(4);
-            textView.setPadding(0, 0, 0, 0);
-        } else {
-            imageView.setImageResource(i);
-            imageView.setVisibility(0);
-            textView.setPadding(k96.a0 ? 0 : gl.L(56.0f), 0, k96.a0 ? gl.L(56.0f) : 0, 0);
+    public static TL_agent.agentModel e(String str, ArrayList arrayList) {
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (TextUtils.equals(((TL_agent.agentModel) arrayList.get(i)).id, str)) {
+                return (TL_agent.agentModel) arrayList.get(i);
+            }
         }
+        return null;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(48.0f), TLObject.FLAG_30));
+    @Override // h27
+    public final int getMenuAnchorTint() {
+        int i = tc.h;
+        return cmb.p1(0.06f, cmb.v0(cmb.Ke, this.d));
     }
 
-    public void setGravity(int i) {
-        this.a.setGravity(i);
+    @Override // h27
+    public final int getMenuDimAlpha() {
+        return 51;
     }
 
-    public void setTextColor(int i) {
-        this.a.setTextColor(i);
+    public final void j(boolean z) {
+        String str;
+        wc wcVar = this.E;
+        byte b = 0;
+        if (z) {
+            gm.r(this.R);
+            if (this.L >= 0) {
+                ConnectionsManager.getInstance(this.a).cancelRequest(this.L, true);
+                this.L = -1;
+            }
+            ArrayList arrayList = this.G;
+            arrayList.clear();
+            this.I = null;
+            this.J = false;
+            this.K = false;
+            if (TextUtils.isEmpty(this.H)) {
+                ArrayList arrayList2 = this.N;
+                if (!arrayList2.isEmpty()) {
+                    arrayList.addAll(arrayList2);
+                    this.I = this.O;
+                    this.J = this.P;
+                    wcVar.c();
+                    return;
+                }
+            }
+        }
+        if (this.K || this.J || (str = this.F) == null) {
+            return;
+        }
+        this.K = true;
+        String str2 = this.H;
+        String str3 = this.I;
+        lf2 lf2Var = new lf2((Object) this, (Object) str2, (byte) 2);
+        mc mcVar = this.y;
+        mcVar.getClass();
+        TL_agent.getModels getmodels = new TL_agent.getModels();
+        getmodels.provider = str;
+        if (TextUtils.isEmpty(str2)) {
+            str2 = null;
+        }
+        getmodels.query = str2;
+        getmodels.offset = TextUtils.isEmpty(str3) ? null : str3;
+        getmodels.limit = 20;
+        this.L = ConnectionsManager.getInstance(mcVar.a).sendRequestTyped(getmodels, new kc(b), lf2Var);
+        wcVar.c();
     }
 }

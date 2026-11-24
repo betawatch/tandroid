@@ -1,76 +1,40 @@
 // default package
 
-import android.hardware.fingerprint.FingerprintManager;
-import java.lang.ref.WeakReference;
-import java.security.Signature;
-import javax.crypto.Cipher;
-import javax.crypto.Mac;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class cg4 extends FingerprintManager.AuthenticationCallback {
-    public final /* synthetic */ i4d a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class cg4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ig4 b;
 
-    public cg4(i4d i4dVar) {
-        this.a = i4dVar;
+    public /* synthetic */ cg4(ig4 ig4Var, byte b) {
+        this.a = b;
+        this.b = ig4Var;
     }
 
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationError(int i, CharSequence charSequence) {
-        ((u40) this.a.a).c.a(i, charSequence);
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationFailed() {
-        WeakReference weakReference = ((u40) this.a.a).c.a;
-        if (weakReference.get() == null || !((lj0) weakReference.get()).l) {
-            return;
-        }
-        lj0 lj0Var = (lj0) weakReference.get();
-        hh7 hh7Var = lj0Var.s;
-        if (hh7Var == null) {
-            hh7Var = new hh7();
-            lj0Var.s = hh7Var;
-        }
-        lj0.f(hh7Var, Boolean.TRUE);
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationHelp(int i, CharSequence charSequence) {
-        WeakReference weakReference = ((u40) this.a.a).c.a;
-        if (weakReference.get() != null) {
-            lj0 lj0Var = (lj0) weakReference.get();
-            hh7 hh7Var = lj0Var.r;
-            if (hh7Var == null) {
-                hh7Var = new hh7();
-                lj0Var.r = hh7Var;
-            }
-            lj0.f(hh7Var, charSequence);
-        }
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        i4d i4dVar = this.a;
-        xl3 f = dg4.f(dg4.b(authenticationResult));
-        i4dVar.getClass();
-        gj0 gj0Var = null;
-        if (f != null) {
-            Cipher cipher = (Cipher) f.c;
-            if (cipher != null) {
-                gj0Var = new gj0(cipher);
-            } else {
-                Signature signature = (Signature) f.b;
-                if (signature != null) {
-                    gj0Var = new gj0(signature);
-                } else {
-                    Mac mac = (Mac) f.d;
-                    if (mac != null) {
-                        gj0Var = new gj0(mac);
-                    }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        ig4 ig4Var = this.b;
+        switch (b) {
+            case 0:
+                if (ig4Var.C0 == animator) {
+                    ig4Var.C0 = null;
+                    break;
                 }
-            }
+                break;
+            default:
+                ig4Var.V = ig4Var.d0;
+                ig4Var.c0 = ig4Var.g0;
+                ig4Var.W = ig4Var.e0;
+                ig4Var.a0 = ig4Var.f0;
+                ig4Var.d0 = -1;
+                ig4Var.e0 = -1;
+                ig4Var.f0 = -1;
+                ig4Var.g0 = -1;
+                break;
         }
-        ((u40) i4dVar.a).c.b(new fj0(gj0Var, 2));
     }
 }

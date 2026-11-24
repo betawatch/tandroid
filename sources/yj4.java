@@ -1,40 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class yj4 extends ArrayAdapter {
-    public final /* synthetic */ ek4 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class yj4 {
+    public long a;
+    public long b;
+    public long c;
+    public long d;
+    public long e;
+    public long f;
+    public final boolean[] g = new boolean[15];
+    public int h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yj4(ek4 ek4Var, Context context) {
-        super(context, 0);
-        this.a = ek4Var;
+    public final boolean a() {
+        return this.d > 15 && this.h == 0;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        ek4 ek4Var = this.a;
-        dk4 dk4Var = ek4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i);
-        int width = ek4Var.I.getWidth();
-        if (view != null) {
-            int i2 = dk4Var.b;
-            gk4.e(view, menuItem, dk4Var.e.Q.j != null);
+    public final void b(long j) {
+        long j2 = this.d;
+        if (j2 == 0) {
+            this.a = j;
+        } else if (j2 == 1) {
+            long j3 = j - this.a;
+            this.b = j3;
+            this.f = j3;
+            this.e = 1L;
         } else {
-            gk4 gk4Var = dk4Var.e.Q;
-            Context context = dk4Var.d;
-            tj4 tj4Var = gk4.p;
-            view = gk4Var.b(context, menuItem, true, false, false);
-            int i3 = dk4Var.c;
-            view.setPadding(i3, 0, i3, 0);
+            long j4 = j - this.c;
+            int i = (int) (j2 % 15);
+            long abs = Math.abs(j4 - this.b);
+            boolean[] zArr = this.g;
+            if (abs <= 1000000) {
+                this.e++;
+                this.f += j4;
+                if (zArr[i]) {
+                    zArr[i] = false;
+                    this.h--;
+                }
+            } else if (!zArr[i]) {
+                zArr[i] = true;
+                this.h++;
+            }
         }
-        view.setMinimumWidth(width);
-        return view;
+        this.d++;
+        this.c = j;
+    }
+
+    public final void c() {
+        this.d = 0L;
+        this.e = 0L;
+        this.f = 0L;
+        this.h = 0;
+        Arrays.fill(this.g, false);
     }
 }

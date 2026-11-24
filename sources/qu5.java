@@ -1,72 +1,57 @@
 // default package
 
-import java.util.Date;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qu5 implements r24 {
-    public static final ou5 f;
-    public static final ou5 h;
-    public final HashMap a;
-    public final HashMap b;
-    public final nu5 c;
-    public boolean d;
-    public static final nu5 e = new nu5((byte) 0);
-    public static final pu5 n = new pu5();
+public final class qu5 extends x1 {
+    public final pu5 a = new pu5();
+    public final StringBuilder b = new StringBuilder();
+    public final int c;
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [ou5] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [ou5] */
-    static {
-        final byte b = 0;
-        f = new y8c() { // from class: ou5
-            @Override // q24
-            public final void a(Object obj, Object obj2) {
-                switch (b) {
-                    case 0:
-                        ((z8c) obj2).b((String) obj);
-                        break;
-                    default:
-                        ((z8c) obj2).c(((Boolean) obj).booleanValue());
-                        break;
-                }
-            }
-        };
-        final byte b2 = 1;
-        h = new y8c() { // from class: ou5
-            @Override // q24
-            public final void a(Object obj, Object obj2) {
-                switch (b2) {
-                    case 0:
-                        ((z8c) obj2).b((String) obj);
-                        break;
-                    default:
-                        ((z8c) obj2).c(((Boolean) obj).booleanValue());
-                        break;
-                }
-            }
-        };
+    public qu5(int i) {
+        this.c = i;
     }
 
-    public qu5() {
-        HashMap hashMap = new HashMap();
-        this.a = hashMap;
-        HashMap hashMap2 = new HashMap();
-        this.b = hashMap2;
-        this.c = e;
-        this.d = false;
-        hashMap2.put(String.class, f);
-        hashMap.remove(String.class);
-        hashMap2.put(Boolean.class, h);
-        hashMap.remove(Boolean.class);
-        hashMap2.put(Date.class, n);
-        hashMap.remove(Date.class);
+    @Override // x1
+    public final void a(CharSequence charSequence) {
+        StringBuilder sb = this.b;
+        sb.append(charSequence);
+        sb.append('\n');
     }
 
-    @Override // r24
-    public final r24 a(Class cls, zn7 zn7Var) {
-        this.a.put(cls, zn7Var);
-        this.b.remove(cls);
-        return this;
+    @Override // x1
+    public final void d() {
+        this.a.g = this.b.toString();
+    }
+
+    @Override // x1
+    public final gl0 e() {
+        return this.a;
+    }
+
+    @Override // x1
+    public final il2 h(fq3 fq3Var) {
+        int i;
+        int i2 = fq3Var.e;
+        String str = fq3Var.a;
+        int length = str.length();
+        if (fq3Var.g < 4) {
+            int i3 = i2;
+            while (true) {
+                if (i3 >= length) {
+                    i = length - i2;
+                    break;
+                }
+                if ('$' != str.charAt(i3)) {
+                    i = i3 - i2;
+                    break;
+                }
+                i3++;
+            }
+            int i4 = this.c;
+            if (i == i4 && ose.b(' ', str, i2 + i4, length) == length) {
+                return new il2(-1, -1, true);
+            }
+        }
+        return il2.a(fq3Var.b);
     }
 }

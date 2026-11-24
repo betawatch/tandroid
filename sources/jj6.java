@@ -1,99 +1,32 @@
 // default package
 
-import java.nio.ByteBuffer;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class jj6 {
-    public static final jj6 j = new jj6(1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public static final jj6 k = new jj6(0.0d, 1.0d, -1.0d, 0.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public static final jj6 l = new jj6(-1.0d, 0.0d, 0.0d, -1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public static final jj6 m = new jj6(0.0d, -1.0d, 1.0d, 0.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
-    public final double a;
-    public final double b;
-    public final double c;
-    public final double d;
-    public final double e;
-    public final double f;
-    public final double g;
-    public final double h;
-    public final double i;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class jj6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ak6 b;
 
-    public jj6(double d, double d2, double d3, double d4, double d5, double d6, double d7, double d8, double d9) {
-        this.a = d5;
-        this.b = d6;
-        this.c = d7;
-        this.d = d;
-        this.e = d2;
-        this.f = d3;
-        this.g = d4;
-        this.h = d8;
-        this.i = d9;
+    public /* synthetic */ jj6(ak6 ak6Var, byte b) {
+        this.a = b;
+        this.b = ak6Var;
     }
 
-    public static jj6 a(ByteBuffer byteBuffer) {
-        double d = hle.d(byteBuffer);
-        double d2 = hle.d(byteBuffer);
-        double c = hle.c(byteBuffer);
-        return new jj6(d, d2, hle.d(byteBuffer), hle.d(byteBuffer), c, hle.c(byteBuffer), hle.c(byteBuffer), hle.d(byteBuffer), hle.d(byteBuffer));
-    }
-
-    public final void b(ByteBuffer byteBuffer) {
-        ile.b(byteBuffer, this.d);
-        ile.b(byteBuffer, this.e);
-        ile.a(byteBuffer, this.a);
-        ile.b(byteBuffer, this.f);
-        ile.b(byteBuffer, this.g);
-        ile.a(byteBuffer, this.b);
-        ile.b(byteBuffer, this.h);
-        ile.b(byteBuffer, this.i);
-        ile.a(byteBuffer, this.c);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        byte b2 = 0;
+        ak6 ak6Var = this.b;
+        switch (b) {
+            case 0:
+                gm.c3(new pj6(ak6Var, tL_error, tLObject, b2));
+                break;
+            default:
+                gm.c3(new lj6(ak6Var, tL_error, b2));
+                break;
         }
-        if (obj == null || jj6.class != obj.getClass()) {
-            return false;
-        }
-        jj6 jj6Var = (jj6) obj;
-        return Double.compare(jj6Var.d, this.d) == 0 && Double.compare(jj6Var.e, this.e) == 0 && Double.compare(jj6Var.f, this.f) == 0 && Double.compare(jj6Var.g, this.g) == 0 && Double.compare(jj6Var.h, this.h) == 0 && Double.compare(jj6Var.i, this.i) == 0 && Double.compare(jj6Var.a, this.a) == 0 && Double.compare(jj6Var.b, this.b) == 0 && Double.compare(jj6Var.c, this.c) == 0;
-    }
-
-    public final int hashCode() {
-        long doubleToLongBits = Double.doubleToLongBits(this.a);
-        long doubleToLongBits2 = Double.doubleToLongBits(this.b);
-        int i = (((int) (doubleToLongBits ^ (doubleToLongBits >>> 32))) * 31) + ((int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32)));
-        long doubleToLongBits3 = Double.doubleToLongBits(this.c);
-        int i2 = (i * 31) + ((int) (doubleToLongBits3 ^ (doubleToLongBits3 >>> 32)));
-        long doubleToLongBits4 = Double.doubleToLongBits(this.d);
-        int i3 = (i2 * 31) + ((int) (doubleToLongBits4 ^ (doubleToLongBits4 >>> 32)));
-        long doubleToLongBits5 = Double.doubleToLongBits(this.e);
-        int i4 = (i3 * 31) + ((int) (doubleToLongBits5 ^ (doubleToLongBits5 >>> 32)));
-        long doubleToLongBits6 = Double.doubleToLongBits(this.f);
-        int i5 = (i4 * 31) + ((int) (doubleToLongBits6 ^ (doubleToLongBits6 >>> 32)));
-        long doubleToLongBits7 = Double.doubleToLongBits(this.g);
-        int i6 = (i5 * 31) + ((int) (doubleToLongBits7 ^ (doubleToLongBits7 >>> 32)));
-        long doubleToLongBits8 = Double.doubleToLongBits(this.h);
-        int i7 = (i6 * 31) + ((int) (doubleToLongBits8 ^ (doubleToLongBits8 >>> 32)));
-        long doubleToLongBits9 = Double.doubleToLongBits(this.i);
-        return (i7 * 31) + ((int) (doubleToLongBits9 ^ (doubleToLongBits9 >>> 32)));
-    }
-
-    public final String toString() {
-        if (equals(j)) {
-            return "Rotate 0°";
-        }
-        if (equals(k)) {
-            return "Rotate 90°";
-        }
-        if (equals(l)) {
-            return "Rotate 180°";
-        }
-        if (equals(m)) {
-            return "Rotate 270°";
-        }
-        return "Matrix{u=" + this.a + ", v=" + this.b + ", w=" + this.c + ", a=" + this.d + ", b=" + this.e + ", c=" + this.f + ", d=" + this.g + ", tx=" + this.h + ", ty=" + this.i + '}';
     }
 }

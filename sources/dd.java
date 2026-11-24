@@ -1,904 +1,502 @@
 // default package
 
-import android.content.Context;
-import android.content.DialogInterface;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Region;
 import android.graphics.Shader;
-import android.graphics.SurfaceTexture;
-import android.graphics.drawable.Drawable;
-import android.os.Message;
-import android.text.TextUtils;
-import android.view.ContextThemeWrapper;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.TextView;
-import androidx.appcompat.app.AlertController$RecycleListView;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.graphics.SweepGradient;
+import android.os.SystemClock;
+import java.util.Random;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class dd implements vv2, ibc, ca1, wj0, aka {
-    public final /* synthetic */ byte a;
-    public int b;
-    public Object c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class dd {
+    public float[] D;
+    public float[] E;
+    public float[] F;
+    public int G;
+    public long I;
+    public final by1 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public final ln e;
+    public final ln f;
+    public long g;
+    public LinearGradient r;
+    public SweepGradient s;
+    public int u;
+    public final Paint h = new Paint(1);
+    public final Path i = new Path();
+    public final Paint j = new Paint(1);
+    public final Paint k = new Paint(1);
+    public final Paint l = new Paint(1);
+    public final Paint m = new Paint(1);
+    public final Paint n = new Paint(1);
+    public final Path o = new Path();
+    public final RectF p = new RectF();
+    public final Matrix q = new Matrix();
+    public float t = -1.0f;
+    public final float[] v = new float[3];
+    public final float[] w = new float[3];
+    public final float[] x = new float[3];
+    public final float[] y = new float[3];
+    public final long[] z = new long[3];
+    public final int[] A = new int[3];
+    public final boolean[] B = new boolean[3];
+    public final Random C = new Random(5905022);
+    public float H = -1.0f;
+    public float J = Float.NaN;
+    public float K = Float.NaN;
+    public final float[] L = new float[5];
+    public final float[] M = new float[5];
+    public final float[] N = new float[5];
+    public final float[] O = new float[5];
+    public final float[] P = new float[5];
 
-    public dd(int i, byte b) {
-        this.a = b;
-        switch (b) {
-            case 9:
-                this.c = new long[i];
-                return;
-            case 12:
-                if (i > 0) {
-                    this.c = new Object[i];
-                    return;
-                } else {
-                    w26.j("The max pool size must be > 0");
-                    throw null;
-                }
-            case 17:
-                this.c = new CountDownLatch(1);
-                this.b = i;
-                return;
-            default:
-                this.c = ByteBuffer.allocate(i);
-                this.b = 0;
-                return;
+    public dd(by1 by1Var) {
+        this.a = by1Var;
+        Random random = new Random(31249L);
+        float[] fArr = {-1.0f, 1.0f, -0.6f, 0.7f, -0.85f};
+        for (int i = 0; i < 5; i++) {
+            this.L[i] = random.nextFloat() * 2.0f;
+            this.M[i] = wi8.e(random, 0.55f, 0.75f);
+            this.N[i] = fArr[i] * gm.L(random.nextInt(5) + 9);
+            this.O[i] = gm.L((random.nextFloat() * 1.4f) + 1.6f);
+            this.P[i] = gm.L(random.nextInt(6) + 6);
         }
+        this.e = new ln(by1Var, 0L, 420L, d53.h);
+        this.f = new ln(by1Var, 0L, 360L, d53.g);
+        this.i.moveTo(0.0f, -1.0f);
+        this.i.quadTo(0.2f, -0.2f, 1.0f, 0.0f);
+        this.i.quadTo(0.2f, 0.2f, 0.0f, 1.0f);
+        this.i.quadTo(-0.2f, 0.2f, -1.0f, 0.0f);
+        this.i.quadTo(-0.2f, -0.2f, 0.0f, -1.0f);
+        this.i.close();
+        Paint paint = this.k;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = this.k;
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint2.setStrokeCap(cap);
+        this.m.setStyle(style);
+        this.m.setStrokeCap(cap);
     }
 
-    @Override // vv2
-    public final boolean A(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final String C(boolean z) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean E() {
-        return false;
-    }
-
-    @Override // vv2
-    public final cs5 F(ViewGroup viewGroup) {
-        cs5 G = cs5.G(viewGroup, null, new View(((k62) this.c).getContext()));
-        final byte b = 0;
-        G.s = (short) 0;
-        G.t = false;
-        String M0 = k96.M0(2131746078, null);
-        final int i = this.b;
-        G.b(R.drawable.msg_replace, M0, new Runnable(this) { // from class: v52
-            public final /* synthetic */ dd b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b2 = b;
-                int i2 = i;
-                dd ddVar = this.b;
-                switch (b2) {
-                    case 0:
-                        ((k62) ddVar.c).d0(i2);
-                        break;
-                    default:
-                        ((k62) ddVar.c).h0(i2, null);
-                        break;
-                }
-            }
-        }, false);
-        final byte b2 = 1;
-        G.b(R.drawable.msg_delete, k96.M0(2131751586, null), new Runnable(this) { // from class: v52
-            public final /* synthetic */ dd b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b22 = b2;
-                int i2 = i;
-                dd ddVar = this.b;
-                switch (b22) {
-                    case 0:
-                        ((k62) ddVar.c).d0(i2);
-                        break;
-                    default:
-                        ((k62) ddVar.c).h0(i2, null);
-                        break;
-                }
-            }
-        }, true);
-        return G;
-    }
-
-    @Override // ca1
-    public final void G(String str) {
-        String c = d01.c(str);
-        if (TextUtils.isEmpty(c)) {
-            gl.d3(new am6((byte) 14));
-        } else {
-            na7.q1(this.b).Y1().a(c, null, new zf7((d) this.c, (byte) 21));
-        }
-    }
-
-    @Override // wj0
-    public final t56 J(jr6 jr6Var) {
-        t56 J = ((wj0) this.c).J(jr6Var);
-        if (J == null) {
-            return null;
-        }
-        return d4.o(J, new zo4(this, (byte) 3));
-    }
-
-    @Override // vv2
-    public final boolean K() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean O(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final Boolean R(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean S() {
-        return true;
-    }
-
-    public final Object T() {
-        Object[] objArr = (Object[]) this.c;
-        int i = this.b;
-        if (i <= 0) {
-            return null;
-        }
-        int i2 = i - 1;
-        Object obj = objArr[i2];
-        obj.getClass();
-        objArr[i2] = null;
-        this.b--;
-        return obj;
-    }
-
-    public final void U(int i, int i2, int i3) {
-        if (i3 == 0 || i >= i2) {
+    public final void a(float f, int i) {
+        if (this.t == f && this.u == i) {
             return;
         }
-        int i4 = this.b;
-        if (i4 >= 3) {
-            int[] iArr = (int[]) this.c;
-            if (iArr[i4 - 1] == i3 && iArr[i4 - 2] == i) {
-                iArr[i4 - 2] = i2;
-                return;
-            }
-        }
-        int i5 = i4 + 3;
-        int[] iArr2 = (int[]) this.c;
-        if (i5 > iArr2.length) {
-            iArr2 = Arrays.copyOf(iArr2, iArr2.length << 1);
-            this.c = iArr2;
-        }
-        int i6 = this.b;
-        int i7 = i6 + 1;
-        this.b = i7;
-        iArr2[i6] = i;
-        int i8 = i6 + 2;
-        this.b = i8;
-        iArr2[i7] = i2;
-        this.b = i6 + 3;
-        iArr2[i8] = i3;
+        this.t = f;
+        this.u = i;
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, f * 2.2f, 0.0f, new int[]{16777215, 16777215, 956301311, 16777215, 16777215}, new float[]{0.0f, 0.3f, 0.5f, 0.7f, 1.0f}, Shader.TileMode.REPEAT);
+        this.r = linearGradient;
+        this.j.setShader(linearGradient);
+        SweepGradient sweepGradient = new SweepGradient(0.0f, 0.0f, new int[]{9497855, 9497855, -1935871745, -421988097, -1}, new float[]{0.0f, 0.55f, 0.8f, 0.95f, 1.0f});
+        this.s = sweepGradient;
+        this.k.setShader(sweepGradient);
+        int f2 = on2.f(0.55f, i, -6297345) & 16777215;
+        this.n.setShader(new RadialGradient(0.0f, 0.0f, f + gm.L(4.0f), new int[]{f2, Integer.MIN_VALUE | f2, f2}, new float[]{(f - gm.L(1.0f)) / (gm.L(4.0f) + f), (gm.L(0.5f) + f) / (f + gm.L(4.0f)), 1.0f}, Shader.TileMode.CLAMP));
     }
 
-    public final void V(long j) {
-        int i = this.b;
-        long[] jArr = (long[]) this.c;
-        if (i == jArr.length) {
-            jArr = Arrays.copyOf(jArr, i << 1);
-            this.c = jArr;
-        }
-        int i2 = this.b;
-        this.b = i2 + 1;
-        jArr[i2] = j;
-    }
-
-    public final void W(long[] jArr) {
-        int length = this.b + jArr.length;
-        long[] jArr2 = (long[]) this.c;
-        if (length > jArr2.length) {
-            jArr2 = Arrays.copyOf(jArr2, Math.max(jArr2.length << 1, length));
-            this.c = jArr2;
-        }
-        System.arraycopy(jArr, 0, jArr2, this.b, jArr.length);
-        this.b = length;
-    }
-
-    @Override // ca1
-    public final boolean W0(String str, u91 u91Var) {
-        return false;
-    }
-
-    public final int X(int i, int i2) {
-        int i0 = i0();
-        if (i0 < 0 || i0 > i || ((i0 * i2) << 2) > ((jvc) this.c).d - this.b) {
-            throw jvc.a();
-        }
-        return i0;
-    }
-
-    public final id Y() {
-        pc pcVar = (pc) this.c;
-        ContextThemeWrapper contextThemeWrapper = (ContextThemeWrapper) pcVar.c;
-        id idVar = new id(contextThemeWrapper, this.b);
-        View view = (View) pcVar.h;
-        sc scVar = idVar.f;
-        if (view != null) {
-            scVar.r = view;
-        } else {
-            CharSequence charSequence = (CharSequence) pcVar.f;
-            if (charSequence != null) {
-                scVar.d = charSequence;
-                TextView textView = scVar.p;
-                if (textView != null) {
-                    textView.setText(charSequence);
-                }
-            }
-            Drawable drawable = (Drawable) pcVar.e;
-            if (drawable != null) {
-                scVar.n = drawable;
-                ImageView imageView = scVar.o;
-                if (imageView != null) {
-                    imageView.setVisibility(0);
-                    scVar.o.setImageDrawable(drawable);
-                }
-            }
-        }
-        CharSequence charSequence2 = (CharSequence) pcVar.g;
-        if (charSequence2 != null) {
-            kj0 kj0Var = (kj0) pcVar.j;
-            scVar.getClass();
-            Message obtainMessage = kj0Var != null ? scVar.z.obtainMessage(-2, kj0Var) : null;
-            scVar.j = charSequence2;
-            scVar.k = obtainMessage;
-        }
-        if (((ListAdapter) pcVar.l) != null) {
-            AlertController$RecycleListView alertController$RecycleListView = (AlertController$RecycleListView) ((LayoutInflater) pcVar.d).inflate(scVar.v, (ViewGroup) null);
-            int i = pcVar.a ? scVar.w : scVar.x;
-            ListAdapter listAdapter = (ListAdapter) pcVar.l;
-            if (listAdapter == null) {
-                listAdapter = new rc(contextThemeWrapper, i, android.R.id.text1, null);
-            }
-            scVar.s = listAdapter;
-            scVar.t = pcVar.b;
-            if (((DialogInterface.OnClickListener) pcVar.m) != null) {
-                alertController$RecycleListView.setOnItemClickListener(new oc(pcVar, scVar));
-            }
-            if (pcVar.a) {
-                alertController$RecycleListView.setChoiceMode(1);
-            }
-            scVar.e = alertController$RecycleListView;
-        }
-        View view2 = pcVar.i;
-        if (view2 != null) {
-            scVar.f = view2;
-            scVar.g = false;
-        }
-        idVar.setCancelable(true);
-        idVar.setCanceledOnTouchOutside(true);
-        idVar.setOnCancelListener(null);
-        idVar.setOnDismissListener(null);
-        zz6 zz6Var = (zz6) pcVar.k;
-        if (zz6Var != null) {
-            idVar.setOnKeyListener(zz6Var);
-        }
-        return idVar;
-    }
-
-    @Override // wj0
-    public final t56 Z(byte[] bArr) {
-        return d4.o(((wj0) this.c).Z(bArr), new zo4(this, (byte) 3));
-    }
-
-    @Override // ca1
-    public final String Z0() {
-        return null;
-    }
-
-    @Override // vv2
-    public final long a() {
-        return 0L;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x033a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final m2c a0(int i, ju8 ju8Var) {
-        String str = (String) ju8Var.c;
-        if (i != 2) {
-            if (i == 3 || i == 4) {
-                return new n38(new sf7(str, ju8Var.a(), "video/mp2t"));
-            }
-            if (i == 21) {
-                return new n38(new vr3());
-            }
-            if (i == 27) {
-                if (j0(4)) {
-                    return null;
-                }
-                return new n38(new ec5(new uv9(h0(ju8Var), (byte) 0), j0(1), j0(8)));
-            }
-            if (i == 36) {
-                return new n38(new gc5(new uv9(h0(ju8Var), (byte) 0)));
-            }
-            if (i == 45) {
-                return new n38(new uf7());
-            }
-            if (i == 89) {
-                return new n38(new vr3((List) ju8Var.d));
-            }
-            if (i == 172) {
-                return new n38(new f4(str, ju8Var.a(), "video/mp2t", (byte) 1));
-            }
-            if (i == 257) {
-                return new su9(new xl3("application/vnd.dvb.ait", (byte) 23));
-            }
-            if (i != 138) {
-                if (i == 139) {
-                    return new n38(new fr3(str, ju8Var.a(), 5408));
-                }
-                switch (i) {
-                    case 15:
-                        if (j0(2)) {
-                            return null;
-                        }
-                        return new n38(new lb(ju8Var.a(), str, "video/mp2t", false));
-                    case 16:
-                        return new n38(new bc5(new uv9(h0(ju8Var), (byte) 1)));
-                    case 17:
-                        if (j0(2)) {
-                            return null;
-                        }
-                        return new n38(new mx5(str, ju8Var.a()));
-                    default:
-                        switch (i) {
-                            case 128:
+    public final void b(Canvas canvas, RectF rectF, int i, int i2) {
+        float f;
+        float f2;
+        ln lnVar;
+        float f3;
+        float f4;
+        float f5;
+        boolean[] zArr;
+        int i3;
+        float f6;
+        float f7;
+        float f8;
+        float[] fArr;
+        long[] jArr;
+        float[] fArr2;
+        float[] fArr3;
+        int[] iArr;
+        float[] fArr4;
+        int i4;
+        int nextInt;
+        int i5;
+        float[] fArr5;
+        float[] fArr6;
+        long[] jArr2;
+        boolean z = this.c;
+        ln lnVar2 = this.f;
+        float d = lnVar2.d(z);
+        boolean z2 = (!this.b || this.c || this.d) ? false : true;
+        ln lnVar3 = this.e;
+        float d2 = lnVar3.d(z2);
+        float height = rectF.height() / 2.0f;
+        float centerX = rectF.centerX();
+        float centerY = rectF.centerY();
+        long uptimeMillis = SystemClock.uptimeMillis();
+        boolean z3 = (!this.b || this.c || this.d) ? false : true;
+        boolean[] zArr2 = this.B;
+        if (d2 > 0.003f) {
+            float f9 = 1.0f;
+            if (this.H != height) {
+                this.H = height;
+                Path d3 = pse.d("M6.232,35.046C22.115,28.147 32.706,23.599 38.006,21.401C53.136,15.126 56.28,14.036 58.329,14C58.78,13.992 59.788,14.104 60.441,14.632C60.992,15.078 61.143,15.68 61.216,16.103C61.289,16.526 61.379,17.489 61.307,18.241C60.487,26.831 56.939,47.675 55.134,57.295C54.371,61.366 52.867,62.731 51.411,62.865C48.247,63.155 45.844,60.78 42.78,58.777C37.985,55.643 35.276,53.692 30.621,50.634C25.242,47.1 28.729,45.157 31.795,41.983C32.597,41.152 46.537,28.51 46.807,27.363C46.841,27.22 46.872,26.685 46.554,26.403C46.235,26.12 45.765,26.217 45.426,26.294C44.945,26.402 37.284,31.451 22.444,41.438C20.27,42.927 18.3,43.652 16.536,43.614C14.591,43.572 10.849,42.518 8.067,41.616C4.655,40.51 2.448,39.938 2.684,38.06C2.807,37.082 3.99,36.077 6.232,35.046Z");
+                f4 = 0.0f;
+                Matrix matrix = new Matrix();
+                matrix.setTranslate(-36.0f, -36.0f);
+                matrix.postScale(gm.L(24.0f) / 72.0f, gm.L(24.0f) / 72.0f);
+                d3.transform(matrix);
+                int i6 = (int) height;
+                int i7 = (-i6) - 2;
+                int i8 = i6 + 2;
+                Region region = new Region(i7, i7, i8, i8);
+                Region region2 = new Region();
+                region2.setPath(d3, region);
+                this.D = new float[nm7.y2];
+                this.E = new float[nm7.y2];
+                this.F = new float[nm7.y2];
+                this.G = 0;
+                float f10 = height * 0.09f;
+                float f11 = 0.2f * height;
+                float L = gm.L(1.5f);
+                f5 = d2;
+                zArr = zArr2;
+                int i9 = 0;
+                while (true) {
+                    f2 = d;
+                    if (i9 >= 13) {
+                        break;
+                    }
+                    int i10 = 0;
+                    for (int i11 = 13; i10 < i11; i11 = 13) {
+                        float f12 = -height;
+                        float f13 = height * 2.0f;
+                        float f14 = (((i10 + 0.5f) * f13) / 13.0f) + f12;
+                        int i12 = i10;
+                        float f15 = (((i9 + 0.5f) * f13) / 13.0f) + f12;
+                        long j = uptimeMillis;
+                        double d4 = f14;
+                        boolean z4 = z3;
+                        float f16 = L;
+                        double d5 = f15;
+                        ln lnVar4 = lnVar3;
+                        float f17 = centerX;
+                        float hypot = (float) Math.hypot(d4, d5);
+                        float f18 = f11;
+                        while (true) {
+                            if (f18 < f10 - 0.01f) {
+                                i3 = i9;
+                                f6 = f14;
+                                f18 = 0.0f;
+                                f7 = f15;
                                 break;
-                            case kk7.M1 /* 129 */:
-                                return new n38(new f4(str, ju8Var.a(), "video/mp2t", (byte) 0));
-                            case kk7.N1 /* 130 */:
-                                if (!j0(64)) {
-                                    return null;
-                                }
-                                break;
-                            default:
-                                switch (i) {
-                                    case 134:
-                                        if (j0(16)) {
-                                            return null;
+                            }
+                            i3 = i9;
+                            if (hypot + f18 <= height - gm.L(2.5f)) {
+                                float f19 = f18 + f16;
+                                f8 = hypot;
+                                f6 = f14;
+                                if (!region2.contains((int) f14, (int) f15)) {
+                                    int i13 = 0;
+                                    while (true) {
+                                        f7 = f15;
+                                        if (i13 >= 12) {
+                                            break;
                                         }
-                                        return new su9(new xl3("application/x-scte35", (byte) 23));
-                                    case kk7.Q1 /* 135 */:
-                                        break;
-                                    case kk7.R1 /* 136 */:
-                                        break;
-                                    default:
-                                        return null;
+                                        double d6 = (i13 * 3.141592653589793d) / 6.0d;
+                                        int i14 = i13;
+                                        float f20 = 0.5f;
+                                        while (f20 <= 1.0f) {
+                                            double cos = Math.cos(d6);
+                                            double d7 = d6;
+                                            double d8 = f19;
+                                            double d9 = cos * d8;
+                                            double d10 = f20;
+                                            float f21 = f19;
+                                            float f22 = f20;
+                                            if (region2.contains((int) ((d9 * d10) + d4), (int) ((Math.sin(d7) * d8 * d10) + d5))) {
+                                                break;
+                                            }
+                                            f20 = f22 + 0.5f;
+                                            d6 = d7;
+                                            f19 = f21;
+                                        }
+                                        i13 = i14 + 1;
+                                        f15 = f7;
+                                    }
+                                } else {
+                                    f7 = f15;
                                 }
+                            } else {
+                                f6 = f14;
+                                f7 = f15;
+                                f8 = hypot;
+                            }
+                            f18 = td4.y(f11, f10, 4.0f, f18);
+                            hypot = f8;
+                            f14 = f6;
+                            i9 = i3;
+                            f15 = f7;
                         }
-                }
-            }
-            return new n38(new fr3(str, ju8Var.a(), TLObject.FLAG_12));
-        }
-        return new n38(new yb5(new uv9(h0(ju8Var), (byte) 1), "video/mp2t"));
-    }
-
-    @Override // vv2
-    public final boolean b() {
-        return false;
-    }
-
-    public final void b0(int i) {
-        ByteBuffer allocate = ByteBuffer.allocate(i);
-        int position = ((ByteBuffer) this.c).position();
-        ((ByteBuffer) this.c).position(0);
-        allocate.put((ByteBuffer) this.c);
-        allocate.position(position);
-        this.c = allocate;
-    }
-
-    @Override // vv2
-    public final boolean c() {
-        return false;
-    }
-
-    public final float c0() {
-        float intBitsToFloat = Float.intBitsToFloat(i0());
-        if (Float.isNaN(intBitsToFloat) || Float.isInfinite(intBitsToFloat)) {
-            return 0.0f;
-        }
-        return intBitsToFloat;
-    }
-
-    @Override // vv2
-    public final TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    public final void d0(int i, float[] fArr) {
-        for (int i2 = 0; i2 < i; i2++) {
-            fArr[i2] = c0();
-        }
-    }
-
-    @Override // vv2
-    public final boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    public final byte e0(int i) {
-        if (i < 0 || this.b <= i) {
-            throw new IndexOutOfBoundsException(String.format("Bad index: index=%d, length=%d", Integer.valueOf(i), Integer.valueOf(this.b)));
-        }
-        return ((ByteBuffer) this.c).get(i);
-    }
-
-    @Override // vv2
-    public final boolean f() {
-        return false;
-    }
-
-    public final long f0(int i) {
-        if (i >= 0 && i < this.b) {
-            return ((long[]) this.c)[i];
-        }
-        w26.h(this.b, de9.m(i, "Invalid index ", ", size is "));
-        return 0L;
-    }
-
-    @Override // vv2
-    public final TLRPC.PollAnswer g() {
-        return null;
-    }
-
-    public final boolean g0(int i) {
-        return (e0(i / 8) & (1 << (i % 8))) != 0;
-    }
-
-    @Override // vv2
-    public final boolean h() {
-        return true;
-    }
-
-    public final List h0(ju8 ju8Var) {
-        String str;
-        int i;
-        List list;
-        List list2 = (List) this.c;
-        if (j0(32)) {
-            return list2;
-        }
-        xu7 xu7Var = new xu7(ju8Var.b);
-        while (xu7Var.a() > 0) {
-            int A = xu7Var.A();
-            int A2 = xu7Var.b + xu7Var.A();
-            if (A == 134) {
-                ArrayList arrayList = new ArrayList();
-                int A3 = xu7Var.A() & 31;
-                for (int i2 = 0; i2 < A3; i2++) {
-                    String y = xu7Var.y(3, StandardCharsets.UTF_8);
-                    int A4 = xu7Var.A();
-                    boolean z = (A4 & 128) != 0;
-                    if (z) {
-                        i = A4 & 63;
-                        str = "application/cea-708";
-                    } else {
-                        str = "application/cea-608";
-                        i = 1;
+                        if (f18 > 0.0f) {
+                            float[] fArr7 = this.D;
+                            int i15 = this.G;
+                            fArr7[i15] = f6;
+                            this.E[i15] = f7;
+                            this.F[i15] = f18;
+                            this.G = i15 + 1;
+                        }
+                        i10 = i12 + 1;
+                        uptimeMillis = j;
+                        z3 = z4;
+                        L = f16;
+                        lnVar3 = lnVar4;
+                        centerX = f17;
+                        i9 = i3;
                     }
-                    byte A5 = (byte) xu7Var.A();
-                    xu7Var.O(1);
-                    if (z) {
-                        boolean z2 = (A5 & 64) != 0;
-                        byte[] bArr = wj2.a;
-                        list = Collections.singletonList(z2 ? new byte[]{1} : new byte[]{0});
-                    } else {
-                        list = null;
+                    i9++;
+                    d = f2;
+                }
+            } else {
+                f5 = d2;
+                zArr = zArr2;
+                f4 = 0.0f;
+                f2 = d;
+            }
+            lnVar = lnVar3;
+            f3 = centerX;
+            long j2 = uptimeMillis;
+            boolean z5 = z3;
+            float[] fArr8 = this.y;
+            long[] jArr3 = this.z;
+            int[] iArr2 = this.A;
+            float[] fArr9 = this.v;
+            float[] fArr10 = this.w;
+            float[] fArr11 = this.x;
+            if (z5 && this.G != 0) {
+                long j3 = this.I;
+                if (j3 == 0) {
+                    j3 = j2 + 120;
+                    this.I = j3;
+                }
+                if (j2 >= j3) {
+                    int i16 = 0;
+                    int i17 = 0;
+                    int i18 = -1;
+                    while (i16 < 3) {
+                        if (zArr[i16]) {
+                            fArr6 = fArr8;
+                            jArr2 = jArr3;
+                            if (j2 - jArr3[i16] < iArr2[i16]) {
+                                i17++;
+                                i16++;
+                                fArr8 = fArr6;
+                                jArr3 = jArr2;
+                            }
+                        } else {
+                            fArr6 = fArr8;
+                            jArr2 = jArr3;
+                        }
+                        if (i18 < 0) {
+                            i18 = i16;
+                        }
+                        i16++;
+                        fArr8 = fArr6;
+                        jArr3 = jArr2;
                     }
-                    em4 em4Var = new em4();
-                    em4Var.s = ud7.n(str);
-                    em4Var.d = y;
-                    em4Var.S = i;
-                    em4Var.v = list;
-                    arrayList.add(new fm4(em4Var));
+                    fArr = fArr8;
+                    jArr = jArr3;
+                    Random random = this.C;
+                    if (i18 < 0) {
+                        this.I = j2 + 200 + random.nextInt(nm7.W4);
+                        iArr = iArr2;
+                        f = height;
+                        fArr3 = fArr9;
+                        fArr2 = fArr10;
+                        fArr4 = fArr11;
+                        Paint paint = this.h;
+                        paint.setColor(i);
+                        i4 = 0;
+                        while (i4 < 3) {
+                            if (zArr[i4]) {
+                                float f23 = (j2 - jArr[i4]) / iArr[i4];
+                                if (f23 >= f9) {
+                                    zArr[i4] = false;
+                                } else {
+                                    float f24 = f9;
+                                    float interpolation = d53.j.getInterpolation(Math.min(f24, (f24 - f23) / 0.4f)) * d53.g.getInterpolation(Math.min(f24, f23 / 0.3f));
+                                    float A = mlb.A(interpolation, 0.75f, 0.25f, fArr4[i4] * f5);
+                                    paint.setAlpha((int) (f5 * 255.0f * interpolation));
+                                    canvas.save();
+                                    canvas.translate(f3 + fArr3[i4], fArr2[i4] + centerY);
+                                    canvas.rotate((f23 - 0.5f) * fArr[i4]);
+                                    canvas.scale(A, A);
+                                    canvas.drawPath(this.i, paint);
+                                    canvas.restore();
+                                }
+                            }
+                            i4++;
+                            f9 = 1.0f;
+                        }
+                    } else {
+                        int i19 = 0;
+                        while (true) {
+                            if (i19 >= 24) {
+                                iArr = iArr2;
+                                f = height;
+                                fArr3 = fArr9;
+                                fArr2 = fArr10;
+                                fArr4 = fArr11;
+                                break;
+                            }
+                            int nextInt2 = random.nextInt(this.G);
+                            float f25 = this.D[nextInt2];
+                            float f26 = this.E[nextInt2];
+                            float f27 = this.F[nextInt2];
+                            float f28 = this.H * 0.09f;
+                            iArr = iArr2;
+                            float max = (Math.max(f4, f27 - f28) * random.nextFloat()) + f28;
+                            if (Float.isNaN(this.J)) {
+                                f = height;
+                                fArr3 = fArr9;
+                                fArr2 = fArr10;
+                            } else {
+                                f = height;
+                                fArr3 = fArr9;
+                                fArr2 = fArr10;
+                                if (Math.hypot(f25 - this.J, f26 - this.K) < this.H * 0.45f) {
+                                    fArr5 = fArr11;
+                                    i19++;
+                                    fArr11 = fArr5;
+                                    height = f;
+                                    iArr2 = iArr;
+                                    fArr9 = fArr3;
+                                    fArr10 = fArr2;
+                                    f4 = 0.0f;
+                                }
+                            }
+                            int i20 = 0;
+                            while (i20 < 3) {
+                                if (zArr[i20]) {
+                                    fArr5 = fArr11;
+                                    if (Math.hypot(f25 - fArr3[i20], f26 - fArr2[i20]) < fArr5[i20] + max + gm.L(2.0f)) {
+                                        break;
+                                    }
+                                } else {
+                                    fArr5 = fArr11;
+                                }
+                                i20++;
+                                fArr11 = fArr5;
+                            }
+                            fArr4 = fArr11;
+                            fArr3[i18] = f25;
+                            fArr2[i18] = f26;
+                            fArr4[i18] = max;
+                            fArr[i18] = (random.nextInt(14) + 10) * (random.nextBoolean() ? 1 : -1);
+                            jArr[i18] = j2;
+                            iArr[i18] = random.nextInt(700) + 900;
+                            zArr[i18] = true;
+                            this.J = f25;
+                            this.K = f26;
+                        }
+                        if (i17 == 0) {
+                            nextInt = random.nextInt(nm7.Y3);
+                            i5 = nm7.d3;
+                        } else {
+                            nextInt = random.nextInt(600);
+                            i5 = nm7.W4;
+                        }
+                        this.I = j2 + nextInt + i5;
+                        Paint paint2 = this.h;
+                        paint2.setColor(i);
+                        i4 = 0;
+                        while (i4 < 3) {
+                        }
+                    }
                 }
-                list2 = arrayList;
             }
-            xu7Var.N(A2);
-        }
-        return list2;
-    }
-
-    @Override // vv2
-    public final boolean i() {
-        return false;
-    }
-
-    public final int i0() {
-        int i = this.b;
-        int i2 = i + 4;
-        jvc jvcVar = (jvc) this.c;
-        if (i2 > jvcVar.d) {
-            throw jvc.a();
-        }
-        int i3 = jvcVar.a.getInt(i);
-        this.b += 4;
-        return i3;
-    }
-
-    @Override // vv2
-    public final boolean j(int i) {
-        return false;
-    }
-
-    public final boolean j0(int i) {
-        return (this.b & i) != 0;
-    }
-
-    public final void k0(int i) {
-        int capacity = ((ByteBuffer) this.c).capacity();
-        int i2 = this.b;
-        if (capacity < i2 + 1) {
-            b0(i2 + 1024);
-        }
-        ((ByteBuffer) this.c).put((byte) i);
-        this.b++;
-    }
-
-    public final void l0(byte[] bArr) {
-        int capacity = ((ByteBuffer) this.c).capacity();
-        int i = this.b;
-        if (capacity < bArr.length + i) {
-            b0(i + bArr.length + 1024);
-        }
-        ((ByteBuffer) this.c).put(bArr);
-        this.b += bArr.length;
-    }
-
-    public final int m0(int[] iArr, int i) {
-        int i2 = iArr[0];
-        int i3 = 1;
-        int i4 = 0;
-        int i5 = 0;
-        while (i4 < i) {
-            if (g0(i2 + i4)) {
-                i5 += i3;
+            fArr = fArr8;
+            jArr = jArr3;
+            iArr = iArr2;
+            f = height;
+            fArr3 = fArr9;
+            fArr2 = fArr10;
+            fArr4 = fArr11;
+            Paint paint22 = this.h;
+            paint22.setColor(i);
+            i4 = 0;
+            while (i4 < 3) {
             }
-            i4++;
-            i3 <<= 1;
-        }
-        iArr[0] = iArr[0] + i;
-        return i5;
-    }
-
-    @Override // vv2
-    public final boolean n() {
-        return false;
-    }
-
-    public final long n0(ja3 ja3Var) {
-        xu7 xu7Var = (xu7) this.c;
-        int i = 0;
-        ja3Var.d(xu7Var.a, 0, 1, false);
-        int i2 = xu7Var.a[0] & 255;
-        if (i2 == 0) {
-            return Long.MIN_VALUE;
-        }
-        int i3 = 128;
-        int i4 = 0;
-        while ((i2 & i3) == 0) {
-            i3 >>= 1;
-            i4++;
-        }
-        int i5 = i2 & (~i3);
-        ja3Var.d(xu7Var.a, 1, i4, false);
-        while (i < i4) {
-            i++;
-            i5 = (i5 << 8) + (xu7Var.a[i] & 255);
-        }
-        this.b = i4 + 1 + this.b;
-        return i5;
-    }
-
-    public final void o0(Object obj) {
-        Object[] objArr = (Object[]) this.c;
-        int i = this.b;
-        for (int i2 = 0; i2 < i; i2++) {
-            if (objArr[i2] == obj) {
-                sc8.j("Already in the pool!");
-                return;
+        } else {
+            f = height;
+            f2 = d;
+            lnVar = lnVar3;
+            f3 = centerX;
+            for (int i21 = 0; i21 < 3; i21++) {
+                zArr2[i21] = false;
             }
+            this.I = 0L;
         }
-        int i3 = this.b;
-        if (i3 < objArr.length) {
-            objArr[i3] = obj;
-            this.b = i3 + 1;
+        if (f2 > 0.003f) {
+            float f29 = f;
+            a(f29, i2);
+            float d11 = d();
+            canvas.save();
+            canvas.translate(f3, centerY);
+            float f30 = d11 / 1.1f;
+            float sin = ((((f30 % 1.0f) - (((float) Math.sin((r3 * 2.0f) * 3.141592653589793d)) * 0.06f)) + ((float) Math.floor(f30))) * 360.0f) + 90.0f;
+            Matrix matrix2 = this.q;
+            matrix2.reset();
+            matrix2.setRotate(sin - 360.0f);
+            this.s.setLocalMatrix(matrix2);
+            float L2 = f29 - gm.L(2.2f);
+            float f31 = -L2;
+            RectF rectF2 = this.p;
+            rectF2.set(f31, f31, L2, L2);
+            float L3 = gm.L(2.6f);
+            Paint paint3 = this.k;
+            paint3.setStrokeWidth(L3);
+            int i22 = (int) (f2 * 255.0f);
+            paint3.setAlpha(i22);
+            canvas.drawArc(rectF2, sin - 160.0f, 160.0f, false, paint3);
+            double radians = Math.toRadians(sin);
+            float cos2 = ((float) Math.cos(radians)) * L2;
+            float sin2 = ((float) Math.sin(radians)) * L2;
+            int argb = Color.argb((int) (f2 * 110.0f), nm7.d3, nm7.T3, nm7.d4);
+            Paint paint4 = this.l;
+            paint4.setColor(argb);
+            canvas.drawCircle(cos2, sin2, gm.L(3.6f), paint4);
+            paint4.setColor(Color.argb(i22, nm7.d4, nm7.d4, nm7.d4));
+            canvas.drawCircle(cos2, sin2, gm.L(1.7f), paint4);
+            canvas.restore();
         }
-    }
-
-    @Override // ibc
-    public final void onStateChanged(boolean z, int i) {
-        gl.d3(new bt((Object) this, this.b, i, (byte) 10));
-    }
-
-    @Override // ibc
-    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
-    }
-
-    public final boolean p0(int i) {
-        if (((zl2) this.c) != null && this.b == i) {
-            return false;
-        }
-        this.b = i;
-        this.c = new zl2(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i, i}, null, Shader.TileMode.CLAMP);
-        return true;
-    }
-
-    public final byte[] q0(int i, int i2) {
-        int i3 = i2 - i;
-        if (i3 < 0 || i < 0 || this.b < i2) {
-            throw new IllegalArgumentException(String.format("Bad range: beginIndex=%d, endIndex=%d, length=%d", Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(this.b)));
-        }
-        byte[] bArr = new byte[i3];
-        if (i3 != 0) {
-            System.arraycopy(((ByteBuffer) this.c).array(), i, bArr, 0, i3);
-        }
-        return bArr;
-    }
-
-    @Override // vv2
-    public final boolean t() {
-        return true;
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 20:
-                im5 im5Var = (im5) this.c;
-                int i = im5Var.b;
-                ArrayList arrayList = new ArrayList(i);
-                for (int i2 = 0; i2 < i; i2++) {
-                    arrayList.add(g8c.f0(im5Var.b(i2)));
-                }
-                return "UnsupportedBrands{major=" + g8c.f0(this.b) + ", compatible=" + arrayList + "}";
-            default:
-                return super.toString();
+        if (d2 > 0.003f || f2 > 0.003f || lnVar.i || lnVar2.i) {
+            this.a.invalidate();
         }
     }
 
-    @Override // vv2
-    public final k27 w() {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean x() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean z() {
-        return false;
-    }
-
-    @Override // ibc
-    public final void onRenderedFirstFrame() {
-    }
-
-    @Override // vv2
-    public final void L() {
-    }
-
-    @Override // vv2
-    public final void M() {
-    }
-
-    @Override // ca1
-    public final void onDismiss() {
-    }
-
-    @Override // vv2
-    public final void p() {
-    }
-
-    @Override // vv2
-    public final void q() {
-    }
-
-    @Override // vv2
-    public final void B(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void D(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void H(s3a s3aVar) {
-    }
-
-    @Override // vv2
-    public final void P(String str) {
-    }
-
-    @Override // ca1
-    public final void Q1(vf7 vf7Var) {
-    }
-
-    @Override // vv2
-    public final void l(String str) {
-    }
-
-    @Override // vv2
-    public final void m(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void o(TLRPC.Document document) {
-    }
-
-    @Override // ibc
-    public final void onRenderedFirstFrame(tj tjVar) {
-    }
-
-    @Override // ibc
-    public final void onSeekFinished(tj tjVar) {
-    }
-
-    @Override // ibc
-    public final void onSeekStarted(tj tjVar) {
-    }
-
-    @Override // ibc
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // vv2
-    public final void r(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void v(String str) {
-    }
-
-    @Override // vv2
-    public final void y(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void I(Object obj, Object obj2) {
-    }
-
-    @Override // vv2
-    public final void N(TLRPC.InputStickerSet inputStickerSet, boolean z) {
-    }
-
-    @Override // ibc
-    public final void onError(lbc lbcVar, Exception exc) {
-    }
-
-    @Override // vv2
-    public final void s(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    public /* synthetic */ dd(int i, Object obj, byte b) {
-        this.a = b;
-        this.b = i;
-        this.c = obj;
-    }
-
-    public /* synthetic */ dd(Object obj, int i, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
-    }
-
-    public dd(ds2 ds2Var, int i) {
-        this.a = (byte) 22;
-        fre.h(ds2Var);
-        this.c = ds2Var;
-        this.b = i;
-    }
-
-    public dd(byte b) {
-        this.a = b;
-        switch (b) {
-            case 7:
-                this.c = new do3[2];
-                break;
-            case 16:
-                this.c = new xu7(8);
-                break;
-            default:
-                this.b = 0;
-                this.c = new StringBuilder();
-                break;
+    public final void c(boolean z) {
+        if (this.c == z) {
+            return;
         }
-    }
-
-    public dd(int[] iArr, int i) {
-        this.a = (byte) 20;
-        this.b = i;
-        im5 im5Var = im5.c;
-        if (iArr != null && iArr.length != 0) {
-            int[] copyOf = Arrays.copyOf(iArr, iArr.length);
-            im5Var = new im5(copyOf, copyOf.length);
+        this.c = z;
+        if (z) {
+            this.g = SystemClock.uptimeMillis();
         }
-        this.c = im5Var;
+        this.f.g = z ? 300L : 560L;
+        this.a.invalidate();
     }
 
-    @Override // vv2
-    public final void Q(CharSequence charSequence, String str, pz1 pz1Var) {
-    }
-
-    public /* synthetic */ dd(byte b, boolean z) {
-        this.a = b;
-    }
-
-    public dd(jvc jvcVar) {
-        this.a = (byte) 21;
-        this.c = jvcVar;
-        this.b = 20;
-    }
-
-    public dd(Context context, byte b) {
-        this.a = b;
-        switch (b) {
-            case 5:
-                this.c = context;
-                this.b = -1;
-                break;
-            default:
-                int e = id.e(context, 0);
-                this.c = new pc(new ContextThemeWrapper(context, id.e(context, e)));
-                this.b = e;
-                break;
-        }
-    }
-
-    @Override // ibc
-    public final void onVideoSizeChanged(int i, int i2, int i3, float f) {
-    }
-
-    @Override // vv2
-    public final void u(Object obj, Object obj2, boolean z, int i, int i2) {
-    }
-
-    @Override // vv2
-    public final void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
+    public final float d() {
+        return (SystemClock.uptimeMillis() - this.g) / 1000.0f;
     }
 }

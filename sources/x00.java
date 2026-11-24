@@ -1,145 +1,121 @@
 // default package
 
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.graphics.RectF;
-import android.net.Uri;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.ExternalActionActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProfileActivity;
+import android.util.JsonReader;
+import android.util.Log;
+import j$.util.DesugarArrays;
+import j$.util.Optional;
+import j$.util.function.Function$-CC;
+import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.function.Function;
+import java.util.regex.Pattern;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class x00 implements View.OnClickListener {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x00 implements Function {
     public final /* synthetic */ byte a;
 
     public /* synthetic */ x00(byte b) {
         this.a = b;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    public final /* synthetic */ Function andThen(Function function) {
+        byte b = this.a;
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        String lambda$poll$9;
+        long j;
+        int[] array;
         switch (this.a) {
             case 0:
-                if (!MediaController.w().B0) {
-                    if (!MediaController.w().C()) {
-                        MediaController.w().Q(MediaController.w().v0, true);
-                        break;
-                    } else {
-                        MediaController.w().R(MediaController.w().v0);
-                        break;
-                    }
-                }
-                break;
+                return Integer.valueOf(Integer.bitCount(((Integer) obj).intValue()));
             case 1:
-                break;
+                return Long.valueOf(pg3.n((TLRPC.Peer) obj));
             case 2:
-                d Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Q.presentFragment(new PremiumPreviewFragment(0, "contact"));
-                    break;
-                }
-                break;
+                return Long.valueOf(((k47) obj).Z0());
             case 3:
-                xu4.f1(false, null);
-                break;
+                lambda$poll$9 = ConferenceCall.lambda$poll$9((ConferenceCall.CallParticipant) obj);
+                return lambda$poll$9;
             case 4:
-                ArrayList arrayList = ExternalActionActivity.y;
-                break;
+                String name = ((File) obj).getName();
+                name.getClass();
+                if (name.equals("trigger-type-anomaly")) {
+                    return 8;
+                }
+                return !name.equals("trigger-type-oom") ? 0 : 7;
             case 5:
-            case 6:
-                break;
-            case 7:
-                float[] fArr = FragmentContextView.W0;
-                MediaController w = MediaController.w();
-                lbc lbcVar = w.F0;
-                if (lbcVar != null) {
-                    lbcVar.r0(false);
-                }
-                w.m0();
-                w.h();
-                k27 k27Var = w.v0;
-                if (k27Var != null) {
-                    kk7 f = kk7.f(k27Var.K1);
-                    k27 k27Var2 = w.v0;
-                    f.k(kk7.f2, Integer.valueOf(k27Var2 != null ? k27Var2.e1() : 0));
-                    break;
-                }
-                break;
-            case 8:
-                PhotoViewer.r0().b(1.0f, 0.0f, 0.0f, false);
-                break;
-            case 9:
-                String str = LaunchActivity.C1;
-                break;
-            case 10:
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    S.presentFragment(new hmc());
-                    break;
-                }
-                break;
-            case 11:
-                d S2 = LaunchActivity.S();
-                if (S2 != null) {
-                    S2.presentFragment(new hmc());
-                    break;
-                }
-                break;
-            case 12:
-                PhotoViewer.r0().b(1.0f, 0.0f, 0.0f, false);
-                break;
-            case 13:
-                RectF rectF = ProfileActivity.Z6;
+                File file = (File) obj;
                 try {
-                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
-                    break;
-                } catch (ActivityNotFoundException e) {
-                    fa4.g(e, true);
-                    return;
+                    w03 w03Var = y03.g;
+                    String f = y03.f(file);
+                    w03Var.getClass();
+                    try {
+                        JsonReader jsonReader = new JsonReader(new StringReader(f));
+                        try {
+                            i90 h = w03.h(jsonReader);
+                            jsonReader.close();
+                            return Optional.of(h);
+                        } catch (Throwable th) {
+                            try {
+                                jsonReader.close();
+                            } catch (Throwable th2) {
+                                th.addSuppressed(th2);
+                            }
+                            throw th;
+                        }
+                    } catch (IllegalStateException e) {
+                        throw new IOException(e);
+                    }
+                } catch (IOException e2) {
+                    Log.w("FirebaseCrashlytics", "Unable to read the Profiling Manager file ", e2);
+                    return Optional.empty();
                 }
+            case 6:
+                return Integer.valueOf(((k47) obj).e1());
+            case 7:
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
+                if (channelParticipant == null) {
+                    return null;
+                }
+                return channelParticipant.banned_rights;
+            case 8:
+                return Long.valueOf(pg3.n(((TLRPC.GroupCallParticipant) obj).peer));
+            case 9:
+                return Long.valueOf(pg3.n(((TLRPC.GroupCallParticipant) obj).peer));
+            case 10:
+                return ((wy2) obj).a;
+            case 11:
+                String str = (String) obj;
+                Pattern pattern = Utilities.a;
+                try {
+                    j = Long.parseLong(str);
+                } catch (Exception unused) {
+                    j = 0;
+                }
+                return Long.valueOf(j);
+            case 12:
+                array = DesugarArrays.stream(((String) obj).split(",")).mapToInt(new mn((byte) 8)).toArray();
+                return array;
+            case 13:
+                return String.valueOf((Long) obj);
             case 14:
+                return oc7.R2((int[]) obj);
             case 15:
-                break;
-            case 16:
-                ((ag2) view).c(!r5.b(), true);
-                break;
+                return ((wy2) obj).a;
             default:
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance == null) {
-                    xgc.b();
-                    break;
-                } else {
-                    sharedInstance.hangUp();
-                    break;
-                }
+                return ((u2c) obj).b;
         }
     }
 
-    public /* synthetic */ x00(Object obj, byte b) {
-        this.a = b;
-    }
-
-    private final void a(View view) {
-    }
-
-    private final void b(View view) {
-    }
-
-    private final void c(View view) {
-    }
-
-    private final void d(View view) {
-    }
-
-    private final void e(View view) {
+    public final /* synthetic */ Function compose(Function function) {
+        byte b = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

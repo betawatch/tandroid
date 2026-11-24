@@ -3,32 +3,32 @@
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ u21 b;
+    public final /* synthetic */ c41 b;
 
-    public /* synthetic */ i(u21 u21Var, byte b) {
+    public /* synthetic */ i(c41 c41Var, byte b) {
         this.a = b;
-        this.b = u21Var;
+        this.b = c41Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        u21 u21Var = this.b;
+        c41 c41Var = this.b;
         switch (b) {
             case 0:
-                new jh8(42, u21Var.c, u21Var.X()).show();
+                new kj8(42, c41Var.c, c41Var.X()).show();
                 break;
             default:
                 if (LaunchActivity.S() != null) {
-                    if (u21Var == null) {
-                        u21Var = u21.b0(LaunchActivity.S());
+                    if (c41Var == null) {
+                        c41Var = c41.b0(LaunchActivity.S());
                     }
-                    if (u21Var != null) {
-                        m21 I = u21Var.I(R.raw.msg_antispam, k96.M0(2131746029, null), k96.M0(2131745992, null));
+                    if (c41Var != null) {
+                        u31 I = c41Var.I(R.raw.msg_antispam, jb6.M0(2131745955, null), jb6.M0(2131745918, null));
                         I.j = 5000;
                         I.j();
                         break;

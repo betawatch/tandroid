@@ -1,27 +1,38 @@
 // default package
 
-import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class ix1 extends j47 {
-    public final /* synthetic */ yic E0;
-    public final /* synthetic */ ChatActivityEnterView F0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ix1 implements qac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ix1(ChatActivityEnterView chatActivityEnterView, Context context, wjb wjbVar, yic yicVar) {
-        super(context, wjbVar);
-        this.F0 = chatActivityEnterView;
-        this.E0 = yicVar;
+    public /* synthetic */ ix1(ChatActivityEnterView chatActivityEnterView, byte b) {
+        this.a = b;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // j47
-    public final void m(long j) {
-        this.F0.setEffectId(j);
-        yic yicVar = this.E0;
-        if (yicVar != null) {
-            yicVar.invalidate();
+    @Override // qac
+    public final void a(Object obj) {
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (b) {
+            case 0:
+                int i = ChatActivityEnterView.z7;
+                chatActivityEnterView.u0((Canvas) obj, false);
+                break;
+            case 1:
+                chatActivityEnterView.u1((TL_iv.RichMessage) obj);
+                break;
+            default:
+                CharSequence charSequence = (CharSequence) obj;
+                int i2 = ChatActivityEnterView.z7;
+                chatActivityEnterView.F0.setText(charSequence);
+                chatActivityEnterView.F0.setSelection(charSequence.length(), charSequence.length());
+                break;
         }
     }
 }

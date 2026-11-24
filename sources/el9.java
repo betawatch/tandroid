@@ -1,36 +1,364 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class el9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ul9 b;
-    public final /* synthetic */ Exception c;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ActionBar.d;
 
-    public /* synthetic */ el9(ul9 ul9Var, Exception exc, byte b) {
-        this.a = b;
-        this.b = ul9Var;
-        this.c = exc;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class el9 extends FrameLayout {
+    public static long R;
+    public static final /* synthetic */ int S = 0;
+    public float E;
+    public kj3 F;
+    public int G;
+    public int H;
+    public boolean I;
+    public boolean J;
+    public int K;
+    public int L;
+    public VelocityTracker M;
+    public boolean N;
+    public float O;
+    public float P;
+    public Paint Q;
+    public kj3 a;
+    public View b;
+    public bdb c;
+    public a d;
+    public float e;
+    public boolean f;
+    public ValueAnimator h;
+    public po n;
+    public boolean r;
+    public int s;
+    public boolean w;
+    public tk5 x;
+    public zna y;
+
+    public static void f(kj3 kj3Var, kj3 kj3Var2, float f) {
+        int measuredWidth;
+        if (kj3Var != null) {
+            measuredWidth = kj3Var.getFragmentView().getMeasuredWidth();
+        } else if (kj3Var2 == null) {
+            return;
+        } else {
+            measuredWidth = kj3Var2.getFragmentView().getMeasuredWidth();
+        }
+        if (kj3Var != null) {
+            if (kj3Var.getFragmentView() != null) {
+                kj3Var.getFragmentView().setAlpha(1.0f - f);
+                kj3Var.getFragmentView().setTranslationX(measuredWidth * 0.6f * f);
+            }
+            kj3Var.setPreviewOpenedProgress(1.0f - f);
+        }
+        if (kj3Var2 != null) {
+            if (kj3Var2.getFragmentView() != null) {
+                kj3Var2.getFragmentView().setAlpha(1.0f);
+                kj3Var2.getFragmentView().setTranslationX((1.0f - f) * measuredWidth);
+            }
+            kj3Var2.setPreviewReplaceProgress(f);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Exception exc = this.c;
-        ul9 ul9Var = this.b;
-        switch (b) {
-            case 0:
-                ul9Var.h(exc);
-                break;
-            case 1:
-                ul9Var.h(exc);
-                break;
-            case 2:
-                ul9Var.h(exc);
-                break;
-            default:
-                ul9Var.h(exc);
-                break;
+    public static int getRightPaddingSize() {
+        return gda.l1 ? 74 : 76;
+    }
+
+    public final void a() {
+        if (this.f) {
+            e(false);
+            b();
         }
+    }
+
+    public final void b() {
+        byte b = 0;
+        this.f = false;
+        if (gda.c()) {
+            this.n.d();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e, 0.0f);
+            this.h = ofFloat;
+            ofFloat.addUpdateListener(new bl9(this, (byte) 0));
+            this.h.addListener(new dl9(this, b));
+            this.h.setDuration(250L);
+            this.h.setInterpolator(d53.f);
+            this.h.start();
+            return;
+        }
+        this.e = 0.0f;
+        g();
+        kj3 kj3Var = this.a;
+        if (kj3Var != null) {
+            kj3Var.onPause();
+            this.a.onFragmentDestroy();
+            removeAllViews();
+            this.a = null;
+            nm7.e().k(nm7.v4, new Object[0]);
+        }
+        d(false);
+    }
+
+    public final boolean c() {
+        return this.a != null;
+    }
+
+    public abstract void d(boolean z);
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.w) {
+            f(this.F, this.a, this.E);
+            invalidate();
+        }
+        super.dispatchDraw(canvas);
+        float f = this.e;
+        a aVar = this.d;
+        float alpha = (aVar == null || aVar.getActionMode() == null) ? 0.0f : this.d.getActionMode().getAlpha();
+        a aVar2 = this.d;
+        float max = Math.max(alpha, aVar2 == null ? 0.0f : aVar2.p0) * f;
+        if (this.a == null || this.d == null || max <= 0.0f) {
+            return;
+        }
+        Paint paint = this.Q;
+        if (paint == null) {
+            paint = new Paint();
+            this.Q = paint;
+        }
+        paint.setColor(cmb.w0(null, cmb.v8, false));
+        if (max == 1.0f) {
+            canvas.save();
+        } else {
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), this.P, (int) (max * 255.0f), 31);
+        }
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.P, this.Q);
+        canvas.translate(this.d.getX(), this.d.getY());
+        canvas.save();
+        canvas.translate(this.d.getBackButton().getX(), this.d.getBackButton().getY());
+        this.d.getBackButton().draw(canvas);
+        canvas.restore();
+        if (this.d.getActionMode() != null) {
+            float alpha2 = this.d.getActionMode().getAlpha() * this.e;
+            a aVar3 = this.d;
+            if (max != alpha2) {
+                aVar3.draw(canvas);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), this.P, (int) (this.d.getActionMode().getAlpha() * 255.0f), 31);
+                this.d.getActionMode().draw(canvas);
+                canvas.restore();
+            } else {
+                aVar3.getActionMode().draw(canvas);
+            }
+        } else {
+            this.d.draw(canvas);
+        }
+        canvas.restore();
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        a aVar = this.d;
+        if (view == aVar && aVar.getActionMode() != null && this.d.getActionMode().getAlpha() == 1.0f) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    public abstract void e(boolean z);
+
+    public final void g() {
+        if (this.w || !c()) {
+            return;
+        }
+        setOpenProgress(this.e);
+        View view = this.b;
+        if (view != null) {
+            view.setTranslationX((1.0f - this.e) * (getMeasuredWidth() - gm.L(getRightPaddingSize())));
+        }
+        a aVar = this.d;
+        if (aVar != null) {
+            aVar.setTranslationX((1.0f - this.e) * gm.L(48.0f));
+        }
+        kj3 kj3Var = this.a;
+        if (kj3Var != null) {
+            kj3Var.setPreviewOpenedProgress(this.e);
+        }
+        invalidate();
+    }
+
+    public long getCurrentFragmetDialogId() {
+        return R;
+    }
+
+    public d getFragment() {
+        return this.a;
+    }
+
+    public View getFragmentView() {
+        return this.b;
+    }
+
+    public abstract boolean getOccupyStatusbar();
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int i3 = getOccupyStatusbar() ? gm.m : 0;
+        View view = this.b;
+        if (view != null) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
+            layoutParams.leftMargin = gm.L(getRightPaddingSize());
+            layoutParams.topMargin = a.getCurrentActionBarHeight() + i3 + this.s;
+        }
+        a aVar = this.d;
+        if (aVar != null) {
+            ((FrameLayout.LayoutParams) aVar.getLayoutParams()).topMargin = i3;
+        }
+        super.onMeasure(i, i2);
+        int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
+        if (this.G != measuredWidth) {
+            this.G = measuredWidth;
+            g();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        tk5 tk5Var = this.x;
+        if ((tk5Var != null && ((ActionBarLayout) tk5Var).w()) || !c() || !this.N) {
+            return false;
+        }
+        byte b = 1;
+        if (motionEvent != null) {
+            if (motionEvent.getAction() == 0) {
+                this.H = motionEvent.getPointerId(0);
+                this.I = true;
+                this.K = (int) motionEvent.getX();
+                this.L = (int) motionEvent.getY();
+                VelocityTracker velocityTracker = this.M;
+                if (velocityTracker != null) {
+                    velocityTracker.clear();
+                }
+            } else if (motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.H) {
+                if (this.M == null) {
+                    this.M = VelocityTracker.obtain();
+                }
+                int max = Math.max(0, (int) (motionEvent.getX() - this.K));
+                int abs = Math.abs(((int) motionEvent.getY()) - this.L);
+                this.M.addMovement(motionEvent);
+                if (!this.I || this.J || max < gm.Z0(true, 0.4f) || Math.abs(max) / 3 <= abs) {
+                    if (this.J) {
+                        float f = max;
+                        this.O = f;
+                        this.e = Utilities.i(1.0f - (f / getMeasuredWidth()), 1.0f, 0.0f);
+                        g();
+                    }
+                } else if (ActionBarLayout.s(this, motionEvent.getX(), motionEvent.getY()) == null) {
+                    this.I = false;
+                    this.J = true;
+                    this.K = (int) motionEvent.getX();
+                    e(false);
+                } else {
+                    this.I = false;
+                }
+            }
+            return this.J;
+        }
+        if (motionEvent != null && motionEvent.getPointerId(0) == this.H && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1 || motionEvent.getAction() == 6)) {
+            VelocityTracker velocityTracker2 = this.M;
+            if (velocityTracker2 == null) {
+                velocityTracker2 = VelocityTracker.obtain();
+                this.M = velocityTracker2;
+            }
+            velocityTracker2.computeCurrentVelocity(1000);
+            if (this.J) {
+                float f2 = this.O;
+                float xVelocity = this.M.getXVelocity();
+                float yVelocity = this.M.getYVelocity();
+                if (f2 >= getMeasuredWidth() / 3.0f || (xVelocity >= 3500.0f && xVelocity >= yVelocity)) {
+                    b();
+                } else {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e, 1.0f);
+                    this.h = ofFloat;
+                    ofFloat.addUpdateListener(new bl9(this, (byte) 1));
+                    this.h.addListener(new dl9(this, b));
+                    this.h.setDuration(250L);
+                    this.h.setInterpolator(d53.f);
+                    this.h.start();
+                }
+            }
+            this.I = false;
+            this.J = false;
+            VelocityTracker velocityTracker3 = this.M;
+            if (velocityTracker3 != null) {
+                velocityTracker3.recycle();
+                this.M = null;
+            }
+        } else if (motionEvent == null) {
+            this.I = false;
+            this.J = false;
+            VelocityTracker velocityTracker4 = this.M;
+            if (velocityTracker4 != null) {
+                velocityTracker4.recycle();
+                this.M = null;
+            }
+        }
+        return this.J;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        super.removeView(view);
+        if (view == this.b) {
+            a();
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void removeViewInLayout(View view) {
+        super.removeViewInLayout(view);
+        if (view == this.b) {
+            a();
+        }
+    }
+
+    public void setCurrentTop(int i) {
+        this.P = i;
+        View view = this.b;
+        if (view != null) {
+            view.setTranslationY((i - view.getTop()) + this.s);
+        }
+        bdb bdbVar = this.c;
+        if (bdbVar != null) {
+            bdbVar.setTranslationY(i - bdbVar.getTop());
+        }
+    }
+
+    public void setFragmentViewPadding(int i) {
+        this.s = i;
+    }
+
+    public void setTransitionPaddingBottom(int i) {
+        kj3 kj3Var = this.a;
+        if (wi8.A(kj3Var)) {
+            float f = i;
+            kj3Var.Y0 = f;
+            kj3Var.h.setTranslationY(((-f) - kj3Var.h1) - kj3Var.g1);
+        }
+    }
+
+    public void setOpenProgress(float f) {
     }
 }

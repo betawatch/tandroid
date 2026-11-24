@@ -1,28 +1,30 @@
 // default package
 
-import java.util.concurrent.Executor;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class hc implements Executor {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class hc implements TextWatcher {
+    public final /* synthetic */ jc a;
 
-    public /* synthetic */ hc(byte b) {
-        this.a = b;
+    public hc(jc jcVar) {
+        this.a = jcVar;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                gl.d3(runnable);
-                break;
-            case 1:
-                runnable.run();
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        jc jcVar = this.a;
+        jcVar.h2.setVisibility((editable == null || editable.length() == 0) ? 0 : 8);
+        jcVar.c1(false);
+        jcVar.d1();
     }
 
-    private final void a(Runnable runnable) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

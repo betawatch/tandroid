@@ -1,39 +1,96 @@
 // default package
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.os.SystemClock;
+import java.nio.charset.StandardCharsets;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class qxc extends pxc {
-    public static final vxc r;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class qxc {
+    public static final String[] m = {"t.me", "telegram.me", "telegram.dog"};
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+    public int d;
+    public int e;
+    public boolean i;
+    public boolean j;
+    public int l;
+    public long f = -4611686018427387904L;
+    public long g = -4611686018427387904L;
+    public long h = -4611686018427387904L;
+    public final long[] k = new long[10];
 
-    static {
-        WindowInsets windowInsets;
-        windowInsets = WindowInsets.CONSUMED;
-        r = vxc.h(null, windowInsets);
+    public qxc(JSONObject jSONObject) {
+        boolean z = false;
+        boolean z2 = (jSONObject == null || (jSONObject != null && jSONObject.optBoolean("preview")) || !jSONObject.optBoolean("canQuery")) ? false : true;
+        this.a = z2;
+        this.b = z2 && jSONObject.optBoolean("backgroundQuery");
+        if (z2 && jSONObject.has("wallet") && !jSONObject.isNull("wallet")) {
+            z = true;
+        }
+        this.c = z;
     }
 
-    public qxc(vxc vxcVar, WindowInsets windowInsets) {
-        super(vxcVar, windowInsets);
+    public final synchronized boolean a(boolean z) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (z) {
+            long[] jArr = this.k;
+            int i = this.l;
+            if (elapsedRealtime - jArr[i] >= 1000) {
+                jArr[i] = elapsedRealtime;
+                this.l = (i + 1) % jArr.length;
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // mxc, sxc
-    public io5 f(int i) {
-        return io5.c(this.c.getInsets(txc.a(i)));
+    public final boolean b(long j) {
+        return this.e < this.d && j - this.f <= 10000;
     }
 
-    @Override // mxc, sxc
-    public io5 g(int i) {
-        return io5.c(this.c.getInsetsIgnoringVisibility(txc.a(i)));
+    public final synchronized boolean c(boolean z) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (!z || !b(elapsedRealtime)) {
+            return false;
+        }
+        this.e = this.d;
+        return true;
     }
 
-    @Override // mxc, sxc
-    public boolean p(int i) {
-        return this.c.isVisible(txc.a(i));
+    public final synchronized boolean d(String str, boolean z, boolean z2) {
+        if (!this.a || this.i || str == null || str.getBytes(StandardCharsets.UTF_8).length > 64 || (z && !this.c)) {
+            return false;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (z2 && b(elapsedRealtime)) {
+            this.e = this.d;
+            this.h = -4611686018427387904L;
+            this.j = true;
+        } else {
+            if (!this.b || z || elapsedRealtime - this.g < 1000) {
+                return false;
+            }
+            this.g = elapsedRealtime;
+        }
+        this.i = true;
+        return true;
     }
 
-    @Override // mxc, sxc
-    public final void d(View view) {
+    public final synchronized boolean e(String str, boolean z) {
+        if (!this.c || this.i || str == null || str.length() > 262144 || !z) {
+            return false;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (b(elapsedRealtime)) {
+            this.e = this.d;
+        } else if (elapsedRealtime - this.h > 10000) {
+            return false;
+        }
+        this.h = -4611686018427387904L;
+        this.j = true;
+        this.i = true;
+        return true;
     }
 }

@@ -1,33 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum pqb extends qsb {
-    public pqb() {
-        super("ScriptDataEscapedDash", 22);
-    }
-
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        if (zj1Var.j()) {
-            aqbVar.l(this);
-            aqbVar.c = qsb.a;
-            return;
-        }
-        char d = zj1Var.d();
-        oqb oqbVar = qsb.L;
-        if (d == 0) {
-            aqbVar.m(this);
-            aqbVar.f((char) 65533);
-            aqbVar.c = oqbVar;
-        } else if (d == '-') {
-            aqbVar.f(d);
-            aqbVar.c = qsb.N;
-        } else if (d == '<') {
-            aqbVar.c = qsb.O;
-        } else {
-            aqbVar.f(d);
-            aqbVar.c = oqbVar;
-        }
+public final class pqb extends qqb {
+    @Override // qqb
+    public final String toString() {
+        return this.c;
     }
 }

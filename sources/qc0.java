@@ -1,431 +1,436 @@
 // default package
 
-import java.math.RoundingMode;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import android.view.View;
 import java.util.Arrays;
-import java.util.List;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class qc0 implements j74 {
-    public final xu7 a;
-    public final pc0 b;
-    public final boolean c;
-    public final eef d;
-    public byte e;
-    public l74 f;
-    public rc0 g;
-    public long h;
-    public ch2[] i;
-    public long j;
-    public ch2 k;
-    public int l;
-    public long m;
-    public long n;
-    public int o;
-    public boolean p;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class qc0 extends View implements pr8 {
+    public final GradientDrawable[] E;
+    public final boolean[] F;
+    public final float[] G;
+    public float H;
+    public float[] I;
+    public long J;
+    public float K;
+    public int L;
+    public float M;
+    public int N;
+    public float O;
+    public int P;
+    public tr8 Q;
+    public final TextPaint R;
+    public float S;
+    public int T;
+    public String U;
+    public final RectF a;
+    public byte b;
+    public final Rect c;
+    public final Rect d;
+    public final RectF e;
+    public final GradientDrawable f;
+    public final GradientDrawable h;
+    public final float[] n;
+    public final Paint r;
+    public final Paint s;
+    public final Paint w;
+    public final Path x;
+    public final RectF y;
 
-    public qc0(int i, eef eefVar) {
-        this.d = eefVar;
-        this.c = (i & 1) == 0;
-        this.a = new xu7(12);
-        this.b = new pc0();
-        this.f = new o5f((byte) 22);
-        this.i = new ch2[0];
-        this.m = -1L;
-        this.n = -1L;
-        this.l = -1;
-        this.h = -9223372036854775807L;
+    public qc0(Context context) {
+        super(context);
+        this.a = new RectF();
+        this.b = (byte) 1;
+        this.c = new Rect();
+        this.d = new Rect();
+        this.e = new RectF();
+        this.n = new float[]{0.0f, 1.0f};
+        this.x = new Path();
+        this.y = new RectF();
+        this.E = new GradientDrawable[2];
+        this.F = new boolean[2];
+        this.G = new float[2];
+        this.H = 0.0f;
+        this.I = null;
+        this.L = -1;
+        this.P = 1;
+        this.T = -1;
+        Paint paint = new Paint(1);
+        this.s = paint;
+        paint.setColor(1442840575);
+        Paint paint2 = new Paint(1);
+        this.w = paint2;
+        paint2.setColor(-1);
+        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{1107296256, 0});
+        this.f = gradientDrawable;
+        gradientDrawable.setShape(0);
+        GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{1107296256, 0});
+        this.h = gradientDrawable2;
+        gradientDrawable2.setShape(0);
+        int i = 0;
+        while (i < 2) {
+            this.E[i] = new GradientDrawable(i == 0 ? GradientDrawable.Orientation.LEFT_RIGHT : GradientDrawable.Orientation.RIGHT_LEFT, new int[]{838860800, 0});
+            this.E[i].setShape(0);
+            i++;
+        }
+        Paint paint3 = new Paint(1);
+        this.r = paint3;
+        paint3.setColor(-16777216);
+        paint3.setAlpha(66);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.setDuration(250L);
+        ofFloat.setInterpolator(d53.j);
+        ofFloat.addUpdateListener(new f0(this, (byte) 12));
+        ofFloat.addListener(new g0(this, (byte) 18));
+        TextPaint textPaint = new TextPaint(1);
+        this.R = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTypeface(Typeface.SANS_SERIF);
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTextSize(gm.N(15.0f));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0033 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x03ad  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0114  */
-    @Override // j74
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int b(k74 k74Var, m11 m11Var) {
+    private String getCurrentTitle() {
+        if (this.T != this.Q.getCurrentItem()) {
+            this.U = ((String) this.Q.getAdapter().d(this.Q.getCurrentItem())).toString();
+            this.T = this.Q.getCurrentItem();
+        }
+        return this.U;
+    }
+
+    @Override // pr8
+    public final void a() {
+        Arrays.fill(this.F, false);
+        postInvalidateOnAnimation();
+    }
+
+    @Override // pr8
+    public final void b(boolean z) {
+        this.F[!z ? 1 : 0] = true;
+        postInvalidateOnAnimation();
+    }
+
+    @Override // pr8
+    public final void d() {
+        invalidate();
+    }
+
+    public tr8 getProfileGalleryView() {
+        return this.Q;
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        float[] fArr;
+        float f;
+        float[] fArr2;
+        Paint paint;
         boolean z;
-        ch2 ch2Var;
+        float f2;
+        float f3;
         int i;
-        long j;
+        boolean z2;
+        float[] fArr3;
+        Paint paint2;
+        Paint paint3;
         int i2;
-        int i3;
-        ch2 ch2Var2;
-        long j2 = this.j;
-        int i4 = 0;
-        if (j2 != -1) {
-            long j3 = ((ja3) k74Var).d;
-            if (j2 < j3 || j2 > 262144 + j3) {
-                m11Var.a = j2;
-                z = true;
-                this.j = -1L;
-                if (!z) {
-                    return 1;
-                }
-                byte b = this.e;
-                int i5 = 4;
-                ch2 ch2Var3 = null;
-                pc0 pc0Var = this.b;
-                int i6 = 2;
-                xu7 xu7Var = this.a;
-                switch (b) {
-                    case 0:
-                        if (!c(k74Var)) {
-                            throw av7.a("AVI Header List not found", null);
-                        }
-                        ((ja3) k74Var).l(12, false);
-                        this.e = (byte) 1;
-                        return 0;
-                    case 1:
-                        ((ja3) k74Var).c(xu7Var.a, 0, 12, false);
-                        xu7Var.N(0);
-                        pc0Var.a = xu7Var.o();
-                        pc0Var.b = xu7Var.o();
-                        pc0Var.c = 0;
-                        if (pc0Var.a != 1414744396) {
-                            throw av7.a("LIST expected, found: " + pc0Var.a, null);
-                        }
-                        int o = xu7Var.o();
-                        pc0Var.c = o;
-                        if (o == 1819436136) {
-                            this.l = pc0Var.b;
-                            this.e = (byte) 2;
-                            return 0;
-                        }
-                        throw av7.a("hdrl expected, found: " + pc0Var.c, null);
-                    case 2:
-                        int i7 = this.l - 4;
-                        xu7 xu7Var2 = new xu7(i7);
-                        ((ja3) k74Var).c(xu7Var2.a, 0, i7, false);
-                        b56 b2 = b56.b(1819436136, xu7Var2);
-                        int i8 = b2.b;
-                        if (i8 != 1819436136) {
-                            throw av7.a("Unexpected header list type " + i8, null);
-                        }
-                        rc0 rc0Var = (rc0) b2.a(rc0.class);
-                        if (rc0Var == null) {
-                            throw av7.a("AviHeader not found", null);
-                        }
-                        this.g = rc0Var;
-                        this.h = rc0Var.c * rc0Var.a;
-                        ArrayList arrayList = new ArrayList();
-                        km5 listIterator = b2.a.listIterator(0);
-                        int i9 = 0;
-                        while (listIterator.hasNext()) {
-                            nc0 nc0Var = (nc0) listIterator.next();
-                            if (nc0Var.getType() == 1819440243) {
-                                b56 b56Var = (b56) nc0Var;
-                                int i10 = i9 + 1;
-                                sc0 sc0Var = (sc0) b56Var.a(sc0.class);
-                                s8b s8bVar = (s8b) b56Var.a(s8b.class);
-                                if (sc0Var == null) {
-                                    lad.f("AviExtractor", "Missing Stream Header");
-                                } else if (s8bVar == null) {
-                                    lad.f("AviExtractor", "Missing Stream Format");
-                                } else {
-                                    long j4 = sc0Var.c;
-                                    String str = g8c.a;
-                                    long b0 = g8c.b0(sc0Var.d, sc0Var.b * 1000000, j4, RoundingMode.DOWN);
-                                    fm4 fm4Var = s8bVar.a;
-                                    em4 a = fm4Var.a();
-                                    a.a = Integer.toString(i9);
-                                    int i11 = sc0Var.e;
-                                    if (i11 != 0) {
-                                        a.t = i11;
-                                    }
-                                    u8b u8bVar = (u8b) b56Var.a(u8b.class);
-                                    if (u8bVar != null) {
-                                        a.b = u8bVar.a;
-                                    }
-                                    int h = ud7.h(fm4Var.t);
-                                    if (h == 1 || h == i6) {
-                                        wxb T = this.f.T(i9, h);
-                                        fm4 fm4Var2 = new fm4(a);
-                                        T.g(fm4Var2);
-                                        T.d(b0);
-                                        this.h = Math.max(this.h, b0);
-                                        ch2Var = new ch2(i9, sc0Var, T, ud7.a(fm4Var2.t, fm4Var2.l));
-                                        if (ch2Var != null) {
-                                            arrayList.add(ch2Var);
-                                        }
-                                        i9 = i10;
-                                    }
-                                }
-                                ch2Var = null;
-                                if (ch2Var != null) {
-                                }
-                                i9 = i10;
-                            }
-                            i4 = 0;
-                            i6 = 2;
-                        }
-                        int i12 = i4;
-                        this.i = (ch2[]) arrayList.toArray(new ch2[i12]);
-                        this.f.B();
-                        this.e = (byte) 3;
-                        return i12;
-                    case 3:
-                        long j5 = this.m;
-                        if (j5 != -1) {
-                            i = 16;
-                            if (((ja3) k74Var).d != j5) {
-                                this.j = j5;
-                                return 0;
-                            }
-                        } else {
-                            i = 16;
-                        }
-                        ((ja3) k74Var).d(xu7Var.a, 0, 12, false);
-                        ja3 ja3Var = (ja3) k74Var;
-                        ja3Var.f = 0;
-                        xu7Var.N(0);
-                        pc0Var.a = xu7Var.o();
-                        pc0Var.b = xu7Var.o();
-                        pc0Var.c = 0;
-                        int o2 = xu7Var.o();
-                        int i13 = pc0Var.a;
-                        if (i13 == 1179011410) {
-                            ja3Var.l(12, false);
-                            return 0;
-                        }
-                        if (i13 != 1414744396 || o2 != 1769369453) {
-                            this.j = ja3Var.d + pc0Var.b + 8;
-                            return 0;
-                        }
-                        long j6 = ja3Var.d;
-                        this.m = j6;
-                        this.n = j6 + pc0Var.b + 8;
-                        if (!this.p) {
-                            rc0 rc0Var2 = this.g;
-                            rc0Var2.getClass();
-                            if ((rc0Var2.b & i) == i) {
-                                this.e = (byte) 4;
-                                this.j = this.n;
-                                return 0;
-                            }
-                            this.f.f0(new oc0(this.h));
-                            this.p = true;
-                        }
-                        this.j = ja3Var.d + 12;
-                        this.e = (byte) 6;
-                        return 0;
-                    case 4:
-                        ((ja3) k74Var).c(xu7Var.a, 0, 8, false);
-                        xu7Var.N(0);
-                        int o3 = xu7Var.o();
-                        int o4 = xu7Var.o();
-                        if (o3 != 829973609) {
-                            this.j = ((ja3) k74Var).d + o4;
-                            return 0;
-                        }
-                        this.e = (byte) 5;
-                        this.o = o4;
-                        return 0;
-                    case 5:
-                        xu7 xu7Var3 = new xu7(this.o);
-                        ((ja3) k74Var).c(xu7Var3.a, 0, this.o, false);
-                        if (xu7Var3.a() < 16) {
-                            j = 0;
-                        } else {
-                            int i14 = xu7Var3.b;
-                            xu7Var3.O(8);
-                            long o5 = xu7Var3.o();
-                            long j7 = this.m;
-                            j = o5 > j7 ? 0L : j7 + 8;
-                            xu7Var3.N(i14);
-                        }
-                        while (xu7Var3.a() >= 16) {
-                            int o6 = xu7Var3.o();
-                            int o7 = xu7Var3.o();
-                            long o8 = xu7Var3.o() + j;
-                            xu7Var3.O(i5);
-                            ch2[] ch2VarArr = this.i;
-                            int length = ch2VarArr.length;
-                            while (true) {
-                                if (i3 < length) {
-                                    ch2Var2 = ch2VarArr[i3];
-                                    i3 = (ch2Var2.c == o6 || ch2Var2.d == o6) ? 0 : i3 + 1;
-                                } else {
-                                    ch2Var2 = null;
-                                }
-                            }
-                            if (ch2Var2 != null) {
-                                boolean z2 = (o7 & 16) == 16;
-                                if (ch2Var2.m == -1) {
-                                    ch2Var2.m = o8;
-                                }
-                                if (z2 || ch2Var2.f) {
-                                    int i15 = ch2Var2.l;
-                                    int[] iArr = ch2Var2.o;
-                                    if (i15 == iArr.length) {
-                                        long[] jArr = ch2Var2.n;
-                                        ch2Var2.n = Arrays.copyOf(jArr, (jArr.length * 3) / 2);
-                                        int[] iArr2 = ch2Var2.o;
-                                        iArr = Arrays.copyOf(iArr2, (iArr2.length * 3) / 2);
-                                        ch2Var2.o = iArr;
-                                    }
-                                    long[] jArr2 = ch2Var2.n;
-                                    int i16 = ch2Var2.l;
-                                    jArr2[i16] = o8;
-                                    iArr[i16] = ch2Var2.k;
-                                    ch2Var2.l = i16 + 1;
-                                }
-                                ch2Var2.k++;
-                            }
-                            i5 = 4;
-                        }
-                        for (ch2 ch2Var4 : this.i) {
-                            ch2Var4.n = Arrays.copyOf(ch2Var4.n, ch2Var4.l);
-                            ch2Var4.o = Arrays.copyOf(ch2Var4.o, ch2Var4.l);
-                            if (ch2Var4.f && ch2Var4.a.f != 0 && (i2 = ch2Var4.l) > 0) {
-                                ch2Var4.g = i2;
-                            }
-                        }
-                        this.p = true;
-                        int length2 = this.i.length;
-                        l74 l74Var = this.f;
-                        long j8 = this.h;
-                        if (length2 == 0) {
-                            l74Var.f0(new oc0(j8));
-                        } else {
-                            l74Var.f0(new oc0(this, j8, (byte) 0));
-                        }
-                        this.e = (byte) 6;
-                        this.j = this.m;
-                        return 0;
-                    case 6:
-                        if (((ja3) k74Var).d >= this.n) {
-                            return -1;
-                        }
-                        ch2 ch2Var5 = this.k;
-                        if (ch2Var5 != null) {
-                            wxb wxbVar = ch2Var5.b;
-                            int i17 = ch2Var5.i;
-                            int f = i17 - wxbVar.f(k74Var, i17, false);
-                            ch2Var5.i = f;
-                            boolean z3 = f == 0;
-                            if (z3) {
-                                if (ch2Var5.h > 0) {
-                                    int i18 = ch2Var5.j;
-                                    wxbVar.a((ch2Var5.e * i18) / ch2Var5.g, (ch2Var5.f || Arrays.binarySearch(ch2Var5.o, i18) >= 0) ? 1 : 0, ch2Var5.h, 0, null);
-                                }
-                                ch2Var5.j++;
-                            }
-                            if (z3) {
-                                this.k = null;
-                            }
-                            return 0;
-                        }
-                        ja3 ja3Var2 = (ja3) k74Var;
-                        if ((ja3Var2.d & 1) == 1) {
-                            ja3Var2.l(1, false);
-                        }
-                        ja3Var2.d(xu7Var.a, 0, 12, false);
-                        xu7Var.N(0);
-                        int o9 = xu7Var.o();
-                        if (o9 == 1414744396) {
-                            xu7Var.N(8);
-                            ja3Var2.l(xu7Var.o() == 1769369453 ? 12 : 8, false);
-                            ja3Var2.f = 0;
-                            return 0;
-                        }
-                        int o10 = xu7Var.o();
-                        if (o9 == 1263424842) {
-                            this.j = ja3Var2.d + o10 + 8;
-                            return 0;
-                        }
-                        ja3Var2.l(8, false);
-                        ja3Var2.f = 0;
-                        for (ch2 ch2Var6 : this.i) {
-                            if (ch2Var6.c == o9 || ch2Var6.d == o9) {
-                                ch2Var3 = ch2Var6;
-                                if (ch2Var3 != null) {
-                                    this.j = ja3Var2.d + o10;
-                                    return 0;
-                                }
-                                ch2Var3.h = o10;
-                                ch2Var3.i = o10;
-                                this.k = ch2Var3;
-                                return 0;
-                            }
-                        }
-                        if (ch2Var3 != null) {
-                        }
-                        break;
-                    default:
-                        wn4.f();
-                        return 0;
-                }
-            } else {
-                ((ja3) k74Var).l((int) (j2 - j3), false);
+        float f4;
+        float f5;
+        int i3 = 0;
+        while (true) {
+            fArr = this.G;
+            f = 0.0f;
+            if (i3 >= 2) {
+                break;
             }
-        }
-        z = false;
-        this.j = -1L;
-        if (!z) {
-        }
-    }
-
-    @Override // j74
-    public final boolean c(k74 k74Var) {
-        xu7 xu7Var = this.a;
-        ((ja3) k74Var).d(xu7Var.a, 0, 12, false);
-        xu7Var.N(0);
-        if (xu7Var.o() == 1179011410) {
-            xu7Var.O(4);
-            if (xu7Var.o() == 541677121) {
-                return true;
+            float f6 = fArr[i3];
+            if (f6 > 0.0f) {
+                GradientDrawable[] gradientDrawableArr = this.E;
+                gradientDrawableArr[i3].setAlpha((int) (f6 * 255.0f));
+                gradientDrawableArr[i3].draw(canvas);
             }
+            i3++;
         }
-        return false;
-    }
-
-    @Override // j74
-    public final void d(long j, long j2) {
-        this.j = -1L;
-        this.k = null;
-        for (ch2 ch2Var : this.i) {
-            if (ch2Var.l == 0) {
-                ch2Var.j = 0;
-            } else {
-                ch2Var.j = ch2Var.o[g8c.f(ch2Var.n, j, true)];
-            }
+        this.f.draw(canvas);
+        Rect rect = this.c;
+        Paint paint4 = this.r;
+        canvas.drawRect(rect, paint4);
+        int realCount = this.Q.getRealCount();
+        this.N = this.Q.getRealPosition();
+        float[] fArr4 = this.I;
+        if (fArr4 == null || fArr4.length != realCount) {
+            float[] fArr5 = new float[realCount];
+            this.I = fArr5;
+            Arrays.fill(fArr5, 0.0f);
         }
-        if (j != 0) {
-            this.e = (byte) 6;
-        } else if (this.i.length == 0) {
-            this.e = (byte) 0;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j = elapsedRealtime - this.J;
+        if (j < 0 || j > 20) {
+            j = 17;
+        }
+        this.J = elapsedRealtime;
+        float f7 = 1.0f;
+        if (realCount <= 1 || realCount > 20) {
+            fArr2 = fArr;
+            paint = paint4;
+            z = true;
+            f2 = 180.0f;
+            f3 = 8.0f;
+            i = 20;
+            z2 = false;
         } else {
-            this.e = (byte) 3;
+            byte b = this.b;
+            if (b == 0) {
+                this.H = 0.0f;
+                this.b = (byte) 3;
+                b = 3;
+            } else if (b == 1) {
+                this.H = 0.0f;
+                this.b = (byte) 2;
+                b = 2;
+            }
+            f2 = 180.0f;
+            Paint paint5 = this.w;
+            f3 = 8.0f;
+            Paint paint6 = this.s;
+            if (b == 2) {
+                paint6.setAlpha((int) (this.H * 85.0f));
+                paint5.setAlpha((int) (this.H * 255.0f));
+            }
+            z = true;
+            int D = wi8.D((realCount - 1) << 1, getMeasuredWidth() - gm.L(10.0f), realCount);
+            int L = gm.L(8.0f);
+            int i4 = 0;
+            z2 = false;
+            while (i4 < realCount) {
+                int L2 = (D * i4) + gm.L((i4 << 1) + 5);
+                int i5 = this.L;
+                float f8 = f;
+                RectF rectF = this.e;
+                if (i4 != i5 || Math.abs(this.K - f7) <= 1.0E-4f) {
+                    fArr3 = fArr;
+                    paint2 = paint4;
+                    paint3 = paint5;
+                    float f9 = f7;
+                    i2 = 85;
+                    if (i4 == this.N) {
+                        if (this.Q.I()) {
+                            float currentItemProgress = this.Q.getCurrentItemProgress();
+                            this.M = currentItemProgress;
+                            if ((currentItemProgress > f8 || !this.Q.J()) && this.O <= f8) {
+                                f5 = currentItemProgress;
+                            } else {
+                                float f10 = this.O;
+                                int i6 = this.P;
+                                f5 = currentItemProgress;
+                                float f11 = ((i6 * j) / 500.0f) + f10;
+                                this.O = f11;
+                                if (f11 > f9) {
+                                    this.O = f9;
+                                    this.P = i6 * (-1);
+                                } else if (f11 <= f8) {
+                                    this.O = f8;
+                                    this.P = i6 * (-1);
+                                }
+                            }
+                            rectF.set(L2, L, L2 + D, gm.L(2.0f) + L);
+                            paint6.setAlpha((int) (((this.O * 48.0f) + 85.0f) * this.H));
+                            canvas.drawRoundRect(rectF, gm.L(1.0f), gm.L(1.0f), paint6);
+                            f4 = f5;
+                            z2 = true;
+                            i2 = 80;
+                        } else {
+                            this.M = f9;
+                        }
+                    }
+                    f4 = 1.0f;
+                } else {
+                    float f12 = this.K;
+                    canvas.save();
+                    float f13 = f7;
+                    float f14 = L2;
+                    fArr3 = fArr;
+                    float f15 = L;
+                    paint3 = paint5;
+                    float f16 = L2 + D;
+                    paint2 = paint4;
+                    canvas.clipRect((D * f12) + f14, f15, f16, gm.L(2.0f) + L);
+                    rectF.set(f14, f15, f16, gm.L(2.0f) + L);
+                    paint6.setAlpha((int) (this.H * 85.0f));
+                    canvas.drawRoundRect(rectF, gm.L(f13), gm.L(f13), paint6);
+                    canvas.restore();
+                    f4 = f12;
+                    i2 = 80;
+                    z2 = true;
+                }
+                float f17 = L2;
+                rectF.set(f17, L, (D * f4) + f17, gm.L(2.0f) + L);
+                if (i4 == this.N) {
+                    this.I[i4] = 0.75f;
+                } else if (this.b == 3) {
+                    paint6.setAlpha((int) (gm.U1(d53.j.getInterpolation(this.I[i4]), i2, nm7.d4) * this.H));
+                }
+                canvas.drawRoundRect(rectF, gm.L(1.0f), gm.L(1.0f), i4 == this.N ? paint3 : paint6);
+                i4++;
+                fArr = fArr3;
+                paint5 = paint3;
+                paint4 = paint2;
+                f = 0.0f;
+                f7 = 1.0f;
+            }
+            fArr2 = fArr;
+            paint = paint4;
+            byte b2 = this.b;
+            if (b2 == 2) {
+                float f18 = this.H;
+                if (f18 < 1.0f) {
+                    float f19 = (j / 180.0f) + f18;
+                    this.H = f19;
+                    if (f19 > 1.0f) {
+                        this.H = 1.0f;
+                    }
+                    z2 = true;
+                } else {
+                    this.b = (byte) 3;
+                }
+            } else if (b2 == 3) {
+                int i7 = 0;
+                while (true) {
+                    float[] fArr6 = this.I;
+                    if (i7 >= fArr6.length) {
+                        break;
+                    }
+                    if (i7 != this.N) {
+                        float f20 = fArr6[i7];
+                        if (f20 > 0.0f) {
+                            float f21 = f20 - (j / 500.0f);
+                            fArr6[i7] = f21;
+                            if (f21 <= 0.0f) {
+                                fArr6[i7] = 0.0f;
+                                if (i7 == this.L) {
+                                    this.L = -1;
+                                }
+                            }
+                            z2 = true;
+                            i7++;
+                        }
+                    }
+                    if (i7 == this.L) {
+                        this.L = -1;
+                    }
+                    i7++;
+                }
+            }
+            i = 20;
+        }
+        if (realCount > i || this.S != 0.0f) {
+            String currentTitle = getCurrentTitle();
+            TextPaint textPaint = this.R;
+            float measureText = textPaint.measureText(currentTitle);
+            float measuredWidth = getMeasuredWidth() - gm.L(f3);
+            RectF rectF2 = this.a;
+            rectF2.right = measuredWidth;
+            rectF2.left = measuredWidth - (gm.N(16.0f) + measureText);
+            float L3 = gm.L(f3);
+            rectF2.top = L3;
+            rectF2.bottom = L3 + gm.L(26.0f);
+            float N = gm.N(12.0f);
+            canvas.save();
+            boolean z3 = realCount > 20 ? z : false;
+            float f22 = this.S;
+            if (z3) {
+                if (f22 != 1.0f) {
+                    f22 += j / 150.0f;
+                    this.S = f22;
+                }
+            } else if (f22 != 0.0f) {
+                f22 -= j / 150.0f;
+                this.S = f22;
+            }
+            if (f22 >= 1.0f) {
+                this.S = 1.0f;
+            } else if (f22 <= 0.0f) {
+                this.S = 0.0f;
+            } else {
+                invalidate();
+            }
+            float f23 = this.S;
+            canvas.scale(f23, f23, rectF2.centerX(), rectF2.centerY());
+            canvas.drawRoundRect(rectF2, N, N, paint);
+            canvas.drawText(getCurrentTitle(), rectF2.centerX(), gm.N(18.5f) + rectF2.top, textPaint);
+            canvas.restore();
+        }
+        for (int i8 = 0; i8 < 2; i8++) {
+            if (this.F[i8]) {
+                float f24 = fArr2[i8];
+                if (f24 < 1.0f) {
+                    float f25 = (j / f2) + f24;
+                    fArr2[i8] = f25;
+                    if (f25 > 1.0f) {
+                        fArr2[i8] = 1.0f;
+                    }
+                    z2 = z;
+                }
+            } else {
+                float f26 = fArr2[i8];
+                if (f26 > 0.0f) {
+                    float f27 = f26 - (j / f2);
+                    fArr2[i8] = f27;
+                    if (f27 < 0.0f) {
+                        fArr2[i8] = 0.0f;
+                    }
+                    z2 = z;
+                }
+            }
+        }
+        if (z2) {
+            postInvalidateOnAnimation();
         }
     }
 
-    @Override // j74
-    public final List e() {
-        km5 km5Var = mm5.b;
-        return w59.e;
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        Path path = this.x;
+        path.reset();
+        float measuredHeight = getMeasuredHeight();
+        float measuredWidth = getMeasuredWidth();
+        RectF rectF = this.y;
+        rectF.set(0.0f, 0.0f, measuredHeight, measuredWidth);
+        path.addRoundRect(rectF, new float[]{gm.L(13.0f), gm.L(13.0f), gm.L(13.0f), gm.L(13.0f), 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CCW);
     }
 
-    @Override // j74
-    public final void f(l74 l74Var) {
-        this.e = (byte) 0;
-        if (this.c) {
-            l74Var = new xf4(l74Var, this.d);
-        }
-        this.f = l74Var;
-        this.j = -1L;
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        int currentActionBarHeight = a.getCurrentActionBarHeight();
+        Rect rect = this.c;
+        rect.set(0, 0, i, (int) (currentActionBarHeight * 0.5f));
+        Rect rect2 = this.d;
+        rect2.set(0, (int) (i2 - (gm.L(72.0f) * 0.5f)), i, i2);
+        this.f.setBounds(0, rect.bottom, i, gm.L(16.0f) + currentActionBarHeight);
+        this.h.setBounds(0, (i2 - gm.L(72.0f)) - gm.L(24.0f), i, rect2.top);
+        GradientDrawable[] gradientDrawableArr = this.E;
+        int i5 = i / 5;
+        gradientDrawableArr[0].setBounds(0, 0, i5, i2);
+        gradientDrawableArr[1].setBounds(i - i5, 0, i, i2);
     }
 
-    @Override // j74
-    public final j74 a() {
-        return this;
+    public void setProfileGalleryView(tr8 tr8Var) {
+        this.Q = tr8Var;
     }
 
-    @Override // j74
-    public final void release() {
+    public void c() {
     }
 }

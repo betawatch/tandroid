@@ -1,46 +1,44 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ha2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ la2 c;
-    public final /* synthetic */ View d;
+public final class ha2 extends c6 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ qa2 b;
 
-    public /* synthetic */ ha2(la2 la2Var, View view, float f, byte b) {
-        this.a = b;
-        this.c = la2Var;
-        this.d = view;
-        this.b = f;
+    public ha2(qa2 qa2Var, Context context) {
+        this.b = qa2Var;
+        this.a = context;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        float f = this.b;
-        View view = this.d;
-        la2 la2Var = this.c;
-        switch (b) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float measuredHeight = la2Var.G.getMeasuredHeight();
-                mu1 mu1Var = la2Var.F;
-                eq0 eq0Var = (eq0) view;
-                float measuredHeight2 = ((((measuredHeight - mu1Var.P9) - mu1Var.Ya) / 2.0f) - (eq0Var.getMeasuredHeight() / 2.0f)) + mu1Var.P9;
-                eq0Var.setTranslationY(((((float) eq0Var.getTop()) > measuredHeight2 ? measuredHeight2 - eq0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * f));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float measuredHeight3 = la2Var.G.getMeasuredHeight();
-                mu1 mu1Var2 = la2Var.F;
-                g7c g7cVar = (g7c) view;
-                float measuredHeight4 = ((((measuredHeight3 - mu1Var2.P9) - mu1Var2.Ya) / 2.0f) - (g7cVar.getMeasuredHeight() / 2.0f)) + mu1Var2.P9;
-                g7cVar.setTranslationY(((((float) g7cVar.getTop()) > measuredHeight4 ? measuredHeight4 - g7cVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * f));
-                break;
+    @Override // c6
+    public final void b(int i) {
+        qa2 qa2Var = this.b;
+        if (i == -1) {
+            qa2Var.finishFragment();
+            return;
+        }
+        if (i == 1) {
+            uja ujaVar = qa2Var.r;
+            if (ujaVar == null || !ujaVar.y.f) {
+                String K = sd2.K(qa2Var.Y, false);
+                if (!qa2Var.W || TextUtils.isEmpty(K)) {
+                    qa2Var.e0();
+                    return;
+                }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, qa2Var.getResourceProvider(), this.a);
+                String M0 = jb6.M0(qa2Var.b0 ? 2131748459 : 2131748457, null);
+                he heVar = alertDialog$Builder.a;
+                heVar.S = M0;
+                heVar.U = gm.S2(jb6.a0(null, null, qa2Var.b0 ? 2131748460 : 2131748458, kt6.p(qa2Var.getMessagesController().N2, "/", K, new StringBuilder())));
+                alertDialog$Builder.j(jb6.M0(2131751708, null), new cd1(this, (byte) 23));
+                alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                qa2Var.showDialog(heVar);
+            }
         }
     }
 }

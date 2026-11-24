@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class w6 implements View.OnKeyListener {
     public final /* synthetic */ byte a;
@@ -30,19 +30,19 @@ public final /* synthetic */ class w6 implements View.OnKeyListener {
                 }
                 break;
             case 1:
-                mu1 mu1Var = (mu1) obj;
-                mu1Var.getClass();
+                yv1 yv1Var = (yv1) obj;
+                yv1Var.getClass();
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
                 if (i == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
-                    mu1Var.xa();
+                    yv1Var.Ja();
                     break;
                 }
                 break;
             case 2:
-                i62 i62Var = (i62) obj;
+                t72 t72Var = (t72) obj;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) view;
                 if (i == 67 && keyEvent.getAction() == 0 && editTextBoldCursor2.length() == 0) {
-                    ImageView imageView = i62Var.f;
+                    ImageView imageView = t72Var.f;
                     if (imageView != null) {
                         imageView.callOnClick();
                     }
@@ -50,27 +50,27 @@ public final /* synthetic */ class w6 implements View.OnKeyListener {
                 }
                 break;
             case 3:
-                gw3 gw3Var = (gw3) obj;
-                if (i == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && gw3Var.isShowing()) {
-                    gw3Var.dismiss();
+                rx3 rx3Var = (rx3) obj;
+                if (i == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && rx3Var.isShowing()) {
+                    rx3Var.dismiss();
                     break;
                 }
                 break;
             case 4:
-                vx7 vx7Var = (vx7) obj;
-                if (i == 67 && vx7Var.Z[2].length() == 0) {
-                    vx7Var.Z[1].requestFocus();
-                    EditTextBoldCursor editTextBoldCursor3 = vx7Var.Z[1];
+                xz7 xz7Var = (xz7) obj;
+                if (i == 67 && xz7Var.Z[2].length() == 0) {
+                    xz7Var.Z[1].requestFocus();
+                    EditTextBoldCursor editTextBoldCursor3 = xz7Var.Z[1];
                     editTextBoldCursor3.setSelection(editTextBoldCursor3.length());
-                    vx7Var.Z[1].dispatchKeyEvent(keyEvent);
+                    xz7Var.Z[1].dispatchKeyEvent(keyEvent);
                     break;
                 }
                 break;
             default:
-                fe8 fe8Var = (fe8) obj;
+                hg8 hg8Var = (hg8) obj;
                 EditTextBoldCursor editTextBoldCursor4 = (EditTextBoldCursor) view;
                 if (i == 67 && keyEvent.getAction() == 0 && editTextBoldCursor4.length() == 0) {
-                    ImageView imageView2 = fe8Var.f;
+                    ImageView imageView2 = hg8Var.f;
                     if (imageView2 != null) {
                         imageView2.callOnClick();
                     }

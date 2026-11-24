@@ -1,135 +1,101 @@
 // default package
 
-import android.graphics.Typeface;
-import android.view.View;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class faa extends gb {
-    public final /* synthetic */ gaa x;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class faa extends eeb implements fs4 {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ haa c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public faa(gaa gaaVar, gaa gaaVar2) {
-        super(gaaVar2);
-        this.x = gaaVar;
+    public /* synthetic */ faa(haa haaVar, px2 px2Var, byte b) {
+        super(2, px2Var);
+        this.a = b;
+        this.c = haaVar;
     }
 
-    @Override // gb
-    public final boolean b() {
-        taa taaVar = this.x.w0;
-        if (taaVar.J || !taaVar.T1) {
-            return false;
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        byte b = this.a;
+        haa haaVar = this.c;
+        switch (b) {
+            case 0:
+                return new faa(haaVar, px2Var, (byte) 0);
+            default:
+                return new faa(haaVar, px2Var, (byte) 1);
         }
-        return !taaVar.n1.m();
     }
 
-    @Override // gb
-    public final void e(float f, float f2, boolean z) {
-        gaa gaaVar = this.x;
-        taa taaVar = gaaVar.w0;
-        int i = taa.T2;
-        for (int i2 = 0; i2 < taaVar.b.getChildCount(); i2++) {
-            View childAt = taaVar.b.getChildAt(i2);
-            if (childAt != taaVar.q1 && childAt != taaVar.v1 && childAt != taaVar.N1[1] && childAt != taaVar.x1 && childAt != taaVar.m1 && childAt != taaVar.X1 && childAt != taaVar.p1) {
-                childAt.setTranslationY(f);
-            }
+    @Override // fs4
+    public final Object invoke(Object obj, Object obj2) {
+        byte b = this.a;
+        g7c g7cVar = g7c.a;
+        ky2 ky2Var = (ky2) obj;
+        px2 px2Var = (px2) obj2;
+        switch (b) {
         }
-        v9a v9aVar = taaVar.A1;
-        taaVar.o2 = f;
-        int i3 = gaaVar.r0;
-        if (i3 != -1) {
-            if (!z) {
-                f2 = 1.0f - f2;
-            }
-            float f3 = 1.0f - f2;
-            taaVar.k2 = (int) ((gaaVar.s0 * f2) + (i3 * f3));
-            float f4 = ((i3 - r5) * f3) + f;
-            v9aVar.setTranslationY(f4);
-            if (z) {
-                taaVar.B1.setTranslationY(f4);
-            } else {
-                taaVar.B1.setTranslationY(f4 + taaVar.A1.getPaddingTop());
-            }
-        } else {
-            int i4 = gaaVar.t0;
-            if (i4 != -1) {
-                float f5 = 1.0f - f2;
-                taaVar.k2 = (int) ((gaaVar.u0 * f2) + (i4 * f5));
+        return ((faa) create(ky2Var, px2Var)).invokeSuspend(g7cVar);
+    }
+
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        byte b = this.a;
+        haa haaVar = this.c;
+        ly2 ly2Var = ly2.a;
+        switch (b) {
+            case 0:
+                boolean z = this.b;
                 if (!z) {
-                    f5 = f2;
-                }
-                if (z) {
-                    v9aVar.setTranslationY(f - ((i4 - r5) * f2));
+                    tue.b(obj);
+                    im4 data = haaVar.b.getData();
+                    final AtomicReference atomicReference = haaVar.c;
+                    jm4 jm4Var = new jm4() { // from class: eaa
+                        @Override // jm4
+                        public final Object c(Object obj2, px2 px2Var) {
+                            atomicReference.set((v7a) obj2);
+                            return g7c.a;
+                        }
+
+                        public final boolean equals(Object obj2) {
+                            if ((obj2 instanceof jm4) && (obj2 instanceof eaa)) {
+                                return new fa(atomicReference).equals(new fa(atomicReference));
+                            }
+                            return false;
+                        }
+
+                        public final int hashCode() {
+                            return ((((((((((AtomicReference.class.hashCode() + ((atomicReference != null ? r1.hashCode() : 0) * 31)) * 31) + 113762) * 31) - 869290769) * 31) + 1237) * 31) + 2) * 31) + 2;
+                        }
+                    };
+                    this.b = true;
+                    if (data.g(jm4Var, this) == ly2Var) {
+                        return ly2Var;
+                    }
                 } else {
-                    v9aVar.setTranslationY(((r5 - i4) * f5) + f);
+                    if (!z) {
+                        dq9.m("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    tue.b(obj);
                 }
-            }
+                return g7c.a;
+            default:
+                boolean z2 = this.b;
+                if (z2) {
+                    if (z2) {
+                        tue.b(obj);
+                        return obj;
+                    }
+                    dq9.m("call to 'resume' before 'invoke' with coroutine");
+                    return null;
+                }
+                tue.b(obj);
+                im4 data2 = haaVar.b.getData();
+                this.b = true;
+                Object a = lje.a(data2, this);
+                return a == ly2Var ? ly2Var : a;
         }
-        taaVar.A1.setTopGlowOffset((int) (taaVar.k2 + taaVar.o2));
-        taaVar.l1.setTranslationY(taaVar.k2 + taaVar.o2);
-        taaVar.L1.setTranslationY(taaVar.k2 + taaVar.o2);
-        taaVar.m1.invalidate();
-        taaVar.F0 = taaVar.o2;
-        taaVar.c.invalidate();
-        taaVar.T0();
-        gaaVar.invalidate();
-    }
-
-    @Override // gb
-    public final void f() {
-        taa taaVar = this.x.w0;
-        z9a z9aVar = taaVar.n1;
-        if (z9aVar == null || !z9aVar.m()) {
-            Typeface typeface = gl.a;
-        }
-        taaVar.m2 = false;
-        int i = taaVar.k2;
-        taaVar.l2 = i;
-        taaVar.A1.setTopGlowOffset(i);
-        taaVar.l1.setTranslationY(taaVar.k2);
-        taaVar.L1.setTranslationY(taaVar.k2);
-        taaVar.A1.setTranslationY(0.0f);
-        taaVar.B1.setTranslationY(0.0f);
-        taaVar.T0();
-    }
-
-    @Override // gb
-    public final void g(int i, boolean z) {
-        gaa gaaVar = this.x;
-        taa taaVar = gaaVar.w0;
-        int i2 = taaVar.l2;
-        int i3 = taaVar.k2;
-        if (i2 != i3) {
-            gaaVar.r0 = i2;
-            gaaVar.s0 = i3;
-            taaVar.m2 = true;
-            taaVar.k2 = i2;
-            i3 = i2;
-        } else {
-            gaaVar.r0 = -1;
-            i2 = -1;
-        }
-        int i4 = gaaVar.p0;
-        int i5 = gaaVar.q0;
-        if (i4 != i5) {
-            gaaVar.t0 = 0;
-            gaaVar.u0 = 0;
-            taaVar.m2 = true;
-            int i6 = i4 - i5;
-            if (z) {
-                gaaVar.u0 = i6;
-            } else {
-                gaaVar.u0 = 0 - i6;
-                i2 = gaaVar.s0;
-            }
-            taaVar.k2 = i2;
-            i3 = i2;
-        } else {
-            gaaVar.t0 = -1;
-        }
-        taaVar.A1.setTopGlowOffset((int) (taaVar.o2 + i3));
-        taaVar.l1.setTranslationY(taaVar.o2 + taaVar.k2);
-        taaVar.L1.setTranslationY(taaVar.o2 + taaVar.k2);
-        gaaVar.invalidate();
     }
 }

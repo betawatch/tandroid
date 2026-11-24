@@ -1,55 +1,67 @@
 // default package
 
-import android.util.Pair;
-import java.util.HashMap;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s61 implements m8c {
-    public final /* synthetic */ t61 a;
-    public final /* synthetic */ Pair b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+public final class s61 implements Parcelable {
+    public static final Parcelable.Creator<s61> CREATOR = new e2f(15);
+    public final jk a;
 
-    public /* synthetic */ s61(t61 t61Var, Pair pair, Object obj, int i, Object obj2) {
-        this.a = t61Var;
-        this.b = pair;
-        this.c = obj;
-        this.d = i;
-        this.e = obj2;
+    public s61(jk jkVar) {
+        this.a = jkVar;
     }
 
-    @Override // m8c
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        Boolean bool = (Boolean) obj;
-        Long l = (Long) obj3;
-        t61 t61Var = this.a;
-        t61Var.getClass();
-        boolean booleanValue = ((Boolean) obj4).booleanValue();
-        Pair pair = this.b;
-        if (booleanValue) {
-            if (t61Var.d == null) {
-                t61Var.d = new HashMap();
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            t61Var.d.put(pair, Long.valueOf(currentTimeMillis));
-            if (t61Var instanceof n97) {
-                t61Var.h(pair.hashCode(), currentTimeMillis);
-            }
-        }
-        boolean z = true;
-        if (bool.booleanValue()) {
-            Object obj5 = this.c;
-            t61Var.a(pair, obj5);
-            gl.d3(new qg((Object) t61Var, (Object) pair, obj5, z, (byte) 2));
+    /* JADX WARN: Multi-variable type inference failed */
+    public static s61 a(int i) {
+        t09 t09Var;
+        if (i == -262) {
+            t09Var = t09.b;
         } else {
-            if (obj2 != null) {
-                l.getClass();
-                t61Var.g(this.d, this.e, obj2);
-                t61Var.a(pair, obj2);
+            t09[] values = t09.values();
+            int length = values.length;
+            int i2 = 0;
+            while (true) {
+                if (i2 >= length) {
+                    for (ot3 ot3Var : ot3.values()) {
+                        if (ot3Var.a == i) {
+                            t09Var = ot3Var;
+                        }
+                    }
+                    throw new r61(td4.o(i, "Algorithm with COSE value ", " not supported"));
+                }
+                t09 t09Var2 = values[i2];
+                if (t09Var2.a == i) {
+                    t09Var = t09Var2;
+                    break;
+                }
+                i2++;
             }
-            gl.d3(new qg((Object) t61Var, (Object) pair, obj2, z, (byte) 2));
         }
+        return new s61(t09Var);
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof s61) && this.a.a() == ((s61) obj).a.a();
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    public final String toString() {
+        return kt6.o("COSEAlgorithmIdentifier{algorithm=", String.valueOf(this.a), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a.a());
     }
 }

@@ -11,58 +11,58 @@ import android.webkit.WebView;
 import java.io.InputStream;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class a implements p8c {
-    public final /* synthetic */ pob a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class a implements qac {
+    public final /* synthetic */ qqb a;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ qob c;
-    public final /* synthetic */ ctc d;
-    public final /* synthetic */ p8c e;
+    public final /* synthetic */ rqb c;
+    public final /* synthetic */ dvc d;
+    public final /* synthetic */ qac e;
 
-    public /* synthetic */ a(pob pobVar, boolean[] zArr, qob qobVar, ctc ctcVar, p8c p8cVar) {
-        this.a = pobVar;
+    public /* synthetic */ a(qqb qqbVar, boolean[] zArr, rqb rqbVar, dvc dvcVar, qac qacVar) {
+        this.a = qqbVar;
         this.b = zArr;
-        this.c = qobVar;
-        this.d = ctcVar;
-        this.e = p8cVar;
+        this.c = rqbVar;
+        this.d = dvcVar;
+        this.e = qacVar;
     }
 
-    @Override // p8c
+    @Override // qac
     public final void a(Object obj) {
-        pob pobVar = this.a;
+        qqb qqbVar = this.a;
         boolean[] zArr = this.b;
-        qob qobVar = this.c;
-        ctc ctcVar = this.d;
-        p8c p8cVar = this.e;
+        rqb rqbVar = this.c;
+        dvc dvcVar = this.d;
+        qac qacVar = this.e;
         InputStream inputStream = (InputStream) obj;
-        qob.a(pobVar);
+        rqb.a(qqbVar);
         if (zArr[0]) {
             return;
         }
-        pob d = qob.d(qobVar, "readHTML");
-        String str = ctcVar.a;
-        final yt0 yt0Var = new yt0(d, zArr, qobVar, ctcVar, p8cVar, (byte) 9);
+        qqb d = rqb.d(rqbVar, "readHTML");
+        String str = dvcVar.a;
+        final hv0 hv0Var = new hv0(d, zArr, rqbVar, dvcVar, qacVar, (byte) 9);
         if (inputStream == null) {
-            yt0Var.a(null);
+            hv0Var.a(null);
             return;
         }
         Context context = LaunchActivity.H1;
         if (context == null) {
             context = org.telegram.messenger.a.b;
         }
-        Activity W = gl.W(context);
+        Activity W = gm.W(context);
         if (W == null) {
-            yt0Var.a(null);
+            hv0Var.a(null);
             return;
         }
         View rootView = W.findViewById(R.id.content).getRootView();
         if (!(rootView instanceof ViewGroup)) {
-            yt0Var.a(null);
+            hv0Var.a(null);
             return;
         }
-        final ar8 ar8Var = new ar8(context, (byte) 22);
-        ((ViewGroup) rootView).addView(ar8Var);
+        final ct8 ct8Var = new ct8(context, (byte) 22);
+        ((ViewGroup) rootView).addView(ct8Var);
         final WebView webView = new WebView(context);
         WebSettings settings = webView.getSettings();
         settings.setAllowContentAccess(false);
@@ -74,14 +74,14 @@ public final /* synthetic */ class a implements p8c {
         settings.setDomStorageEnabled(false);
         settings.setAllowFileAccessFromFileURLs(false);
         settings.setAllowUniversalAccessFromFileURLs(false);
-        webView.setWebViewClient(new xsc(ctcVar, inputStream));
-        webView.setWebChromeClient(new ysc());
-        ar8Var.addView(webView, nme.c(-1.0f, -1));
+        webView.setWebViewClient(new yuc(dvcVar, inputStream));
+        webView.setWebChromeClient(new zuc());
+        ct8Var.addView(webView, qoe.c(-1.0f, -1));
         final boolean[] zArr2 = {false};
         webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
             @JavascriptInterface
             public void done(String str2) {
-                gl.d3(new tsa(zArr2, webView, ar8Var, str2, yt0Var, (byte) 10));
+                gm.c3(new vua(zArr2, webView, ct8Var, str2, hv0Var, (byte) 10));
             }
         }, "Instant");
         webView.loadUrl(str);

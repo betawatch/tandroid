@@ -1,8 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class txa {
-    public int a;
-    public boolean b;
+public final class txa extends bya {
+    public final /* synthetic */ boolean n0;
+    public final /* synthetic */ int o0;
+    public final /* synthetic */ eya p0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public txa(eya eyaVar, Context context, ylb ylbVar, boolean z, int i) {
+        super(context, ylbVar);
+        this.p0 = eyaVar;
+        this.n0 = z;
+        this.o0 = i;
+    }
+
+    @Override // bya
+    public final void e(int i) {
+        long j = i;
+        eya eyaVar = this.p0;
+        eyaVar.I0(j);
+        b61 b61Var = eyaVar.w1;
+        if (b61Var != null) {
+            b61Var.i(nxa.Z0(false, jb6.a0(null, null, 2131744736, jb6.E(j, ',')), eyaVar.M1), true, true);
+        }
+        if (this.n0) {
+            i96 i96Var = eyaVar.A1;
+            i96Var.g = j;
+            eyaVar.B1.set(i96Var);
+            int i2 = this.o0;
+            f(bg5.b(i2, i, 3), bg5.b(i2, i, 4), true);
+        }
+    }
+
+    @Override // bya
+    public final void setValue(int i) {
+        super.setValue(i);
+        if (this.n0) {
+            int i2 = this.o0;
+            f(bg5.b(i2, i, 3), bg5.b(i2, i, 4), true);
+        }
+    }
 }

@@ -1,11 +1,13 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.RectF;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class cb8 {
-    public Bitmap a;
-    public final RectF b = new RectF();
+    public static final cb8 e = new cb8();
+    public DecelerateInterpolator b;
+    public short a = 200;
+    public boolean c = true;
+    public boolean d = true;
 }

@@ -1,34 +1,14 @@
 // default package
 
-import java.util.Arrays;
+import android.os.IBinder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ik5 {
-    public static final ik5 b;
-    public final float a;
+public final class ik5 implements kk5 {
+    public IBinder a;
 
-    static {
-        ti4 ti4Var = new ti4();
-        ti4Var.a = 0.5f;
-        b = new ik5(ti4Var);
-    }
-
-    public ik5(ti4 ti4Var) {
-        this.a = ti4Var.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof ik5) {
-            return ik5.class.equals(ik5.class) && Float.compare(this.a, ((ik5) obj).a) == 0 && cqe.a(null, null);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{ik5.class, Float.valueOf(this.a), null});
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

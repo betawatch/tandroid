@@ -1,54 +1,47 @@
 // default package
 
-import java.io.Serializable;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class hi7 extends yq7 implements Serializable {
-    public static final hi7 b = new hi7(0);
-    public static final hi7 c = new hi7(1);
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class hi7 extends b61 {
+    public final /* synthetic */ byte m0;
+    public final /* synthetic */ mz0 n0;
 
-    public /* synthetic */ hi7(byte b2) {
-        this.a = b2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hi7(mz0 mz0Var, Context context, ylb ylbVar, byte b) {
+        super(ylbVar, context, true);
+        this.m0 = b;
+        this.n0 = mz0Var;
     }
 
-    @Override // yq7
-    public final yq7 a() {
-        switch (this.a) {
+    @Override // b61
+    public final float b(float f, float f2) {
+        boolean z;
+        byte b = this.m0;
+        mz0 mz0Var = this.n0;
+        switch (b) {
             case 0:
-                return c;
-            default:
-                return b;
-        }
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Comparable comparable = (Comparable) obj;
-                Comparable comparable2 = (Comparable) obj2;
-                comparable.getClass();
-                comparable2.getClass();
-                return comparable.compareTo(comparable2);
-            default:
-                Comparable comparable3 = (Comparable) obj;
-                Comparable comparable4 = (Comparable) obj2;
-                comparable3.getClass();
-                if (comparable3 == comparable4) {
-                    return 0;
+                ji7 ji7Var = (ji7) mz0Var;
+                z = ji7Var.i2 == 0.0f;
+                ji7Var.i2 = f;
+                if (z) {
+                    ji7Var.j2 = new ph2(ji7Var, (byte) 2);
+                    ji7Var.Z0(false);
+                    break;
                 }
-                return comparable4.compareTo(comparable3);
-        }
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 0:
-                return "Ordering.natural()";
+                break;
             default:
-                return "Ordering.natural().reverse()";
+                t9c t9cVar = (t9c) mz0Var;
+                z = t9cVar.n2 == 0.0f;
+                t9cVar.n2 = f;
+                if (z) {
+                    t9cVar.o2 = new ph2(t9cVar, (byte) 4);
+                    t9cVar.e1(false);
+                    break;
+                }
+                break;
         }
+        return f;
     }
 }

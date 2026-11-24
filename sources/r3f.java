@@ -1,36 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class r3f extends vef {
-    private static final r3f zzb;
-    private int zzd;
-    private int zze;
-
-    static {
-        r3f r3fVar = new r3f();
-        zzb = r3fVar;
-        vef.e(r3f.class, r3fVar);
+public abstract class r3f {
+    public static void a(int i, int i2) {
+        String a;
+        if (i < 0 || i >= i2) {
+            if (i < 0) {
+                a = u3f.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
+            } else {
+                if (i2 < 0) {
+                    u36.j(hg9.j(i2, "negative size: "));
+                    return;
+                }
+                a = u3f.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+            }
+            throw new IndexOutOfBoundsException(a);
+        }
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public static void b(int i, int i2) {
+        if (i < 0 || i > i2) {
+            wa3.i(d(i, i2, "index"));
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", cff.r});
+    }
+
+    public static void c(int i, int i2, int i3) {
+        if (i < 0 || i2 < i || i2 > i3) {
+            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? d(i, i3, "start index") : (i2 < 0 || i2 > i3) ? d(i2, i3, "end index") : u3f.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
         }
-        if (i2 == 3) {
-            return new r3f();
+    }
+
+    public static String d(int i, int i2, String str) {
+        if (i < 0) {
+            return u3f.a("%s (%s) must not be negative", str, Integer.valueOf(i));
         }
-        if (i2 == 4) {
-            return new v8e(zzb);
+        if (i2 >= 0) {
+            return u3f.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
         }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        u36.j(hg9.j(i2, "negative size: "));
+        return null;
     }
 }

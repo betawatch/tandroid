@@ -1,63 +1,11 @@
 // default package
 
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public interface u04 {
-    boolean A();
-
-    long a();
-
-    boolean b();
-
-    boolean c();
-
-    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z);
-
-    void e(Object obj, Object obj2);
-
-    int f();
-
-    void g(d2c d2cVar);
-
-    boolean h();
-
-    void i(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void j(int i);
-
-    boolean k();
-
-    boolean l();
-
-    void m(String str);
-
-    void n();
-
-    float o();
-
-    void p();
-
-    void q(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void r(int i);
-
-    void s(ArrayList arrayList);
-
-    void t();
-
-    void u(View view, Object obj, String str, Object obj2, boolean z, int i, int i2);
-
-    void v();
-
-    void w(long j, TLRPC.Document document, String str, boolean z);
-
-    void x(View view, TLRPC.Document document, String str, Object obj, g27 g27Var, boolean z, int i);
-
-    void y(long j);
-
-    boolean z();
+public final class u04 implements View.OnClickListener {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+    }
 }

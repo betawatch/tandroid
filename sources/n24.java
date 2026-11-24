@@ -1,68 +1,101 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class n24 {
-    public static final n24 E;
-    public static final /* synthetic */ n24[] F;
-    public static final n24 a;
-    public static final n24 b;
-    public static final n24 c;
-    public static final n24 d;
-    public static final n24 e;
-    public static final n24 f;
-    public static final n24 h;
-    public static final n24 n;
-    public static final n24 r;
-    public static final n24 s;
-    public static final n24 w;
-    public static final n24 x;
-    public static final n24 y;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import org.telegram.messenger.Utilities;
 
-    static {
-        n24 n24Var = new n24("ERROR_CORRECTION", 0);
-        a = n24Var;
-        n24 n24Var2 = new n24("CHARACTER_SET", 1);
-        b = n24Var2;
-        n24 n24Var3 = new n24("DATA_MATRIX_SHAPE", 2);
-        n24 n24Var4 = new n24("DATA_MATRIX_COMPACT", 3);
-        n24 n24Var5 = new n24("MIN_SIZE", 4);
-        n24 n24Var6 = new n24("MAX_SIZE", 5);
-        n24 n24Var7 = new n24("MARGIN", 6);
-        c = n24Var7;
-        n24 n24Var8 = new n24("PDF417_COMPACT", 7);
-        d = n24Var8;
-        n24 n24Var9 = new n24("PDF417_COMPACTION", 8);
-        e = n24Var9;
-        n24 n24Var10 = new n24("PDF417_DIMENSIONS", 9);
-        f = n24Var10;
-        n24 n24Var11 = new n24("PDF417_AUTO_ECI", 10);
-        h = n24Var11;
-        n24 n24Var12 = new n24("AZTEC_LAYERS", 11);
-        n = n24Var12;
-        n24 n24Var13 = new n24("QR_VERSION", 12);
-        r = n24Var13;
-        n24 n24Var14 = new n24("QR_MASK_PATTERN", 13);
-        s = n24Var14;
-        n24 n24Var15 = new n24("QR_COMPACT", 14);
-        w = n24Var15;
-        n24 n24Var16 = new n24("GS1_FORMAT", 15);
-        x = n24Var16;
-        n24 n24Var17 = new n24("FORCE_CODE_SET", 16);
-        y = n24Var17;
-        n24 n24Var18 = new n24("FORCE_C40", 17);
-        n24 n24Var19 = new n24("CODE128_COMPACT", 18);
-        E = n24Var19;
-        F = new n24[]{n24Var, n24Var2, n24Var3, n24Var4, n24Var5, n24Var6, n24Var7, n24Var8, n24Var9, n24Var10, n24Var11, n24Var12, n24Var13, n24Var14, n24Var15, n24Var16, n24Var17, n24Var18, n24Var19};
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class n24 extends ImageView {
+    public int a;
+    public vm b;
+    public boolean c;
+    public gn d;
+    public s14 e;
+    public final in5[] f;
+    public float h;
+    public ValueAnimator n;
+
+    public n24(Context context) {
+        super(context);
+        this.f = new in5[2];
+        setScaleType(ImageView.ScaleType.CENTER);
+        int i = cmb.h6;
+        fg0 Y = cmb.Y(cmb.w0(null, i, false), gm.L(2.0f), gm.L(2.0f));
+        wmb M = anb.M(i);
+        setBackground(Y);
+        anb.j(this, Y, null, M, null);
     }
 
-    public static n24 valueOf(String str) {
-        return (n24) Enum.valueOf(n24.class, str);
+    public final void a(cw3 cw3Var, boolean z) {
+        setImageDrawable(cw3Var);
+        this.c = z;
     }
 
-    public static n24[] values() {
-        return (n24[]) F.clone();
+    public gn getSpan() {
+        return this.d;
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isPressed()) {
+            float f = this.h;
+            if (f != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / gm.r) / 100.0f) + f;
+                this.h = min;
+                this.h = Utilities.i(min, 1.0f, 0.0f);
+                invalidate();
+            }
+        }
+        float f2 = ((1.0f - this.h) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f2, f2, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        super.onDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.view.View");
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), View.MeasureSpec.getSize(i));
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z) {
+            super.setPressed(z);
+            invalidate();
+            if (z && (valueAnimator = this.n) != null) {
+                valueAnimator.removeAllListeners();
+                this.n.cancel();
+            }
+            if (z) {
+                return;
+            }
+            float f = this.h;
+            if (f != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f, 0.0f);
+                this.n = ofFloat;
+                ofFloat.addUpdateListener(new et1(this, (byte) 25));
+                this.n.addListener(new kh2(this, (byte) 20));
+                b10.n(5.0f, this.n);
+                this.n.setDuration(350L);
+                this.n.start();
+            }
+        }
+    }
+
+    public void setSpan(gn gnVar) {
+        this.d = gnVar;
     }
 }

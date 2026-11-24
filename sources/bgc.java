@@ -1,23 +1,10 @@
 // default package
 
-import android.content.Context;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class bgc extends sk8 {
-    public final /* synthetic */ hgc W;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bgc(hgc hgcVar, Context context, float f, float f2) {
-        super(context, f, f2);
-        this.W = hgcVar;
-    }
-
-    @Override // sk8
-    public final int[] getFloatingViewLocation() {
-        int[] iArr = new int[2];
-        hgc hgcVar = this.W;
-        hgcVar.Z.getLocationOnScreen(iArr);
-        return new int[]{iArr[0], iArr[1], hgcVar.Z.getMeasuredWidth()};
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+@Retention(RetentionPolicy.RUNTIME)
+/* loaded from: classes.dex */
+public @interface bgc {
 }

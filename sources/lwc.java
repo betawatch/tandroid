@@ -1,23 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class lwc {
-    public final ovc a;
-    public final float[] b;
-    public final float[] c;
-    public final double d;
-    public final double e;
-    public final boolean f;
-    public final float[] g;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import java.lang.reflect.InvocationTargetException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-    public lwc(ovc ovcVar, float[] fArr, float[] fArr2, double d, double d2, boolean z, float[] fArr3) {
-        this.a = ovcVar;
-        this.b = fArr;
-        this.c = fArr2;
-        this.d = d;
-        this.e = d2;
-        this.f = z;
-        this.g = fArr3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class lwc extends dp {
+    public final Pattern d;
+
+    public lwc() {
+        super("ALGORITHMIC_DARKENING", "ALGORITHMIC_DARKENING");
+        this.d = Pattern.compile("\\A\\d+");
+    }
+
+    @Override // dp
+    public final boolean b() {
+        int i;
+        PackageInfo packageInfo;
+        boolean b = super.b();
+        if (!b || (i = Build.VERSION.SDK_INT) >= 29) {
+            return b;
+        }
+        boolean z = kwc.a;
+        if (i >= 26) {
+            packageInfo = nq5.c();
+        } else {
+            try {
+                packageInfo = kwc.b();
+            } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
+                packageInfo = null;
+            }
+        }
+        if (packageInfo == null) {
+            return false;
+        }
+        Matcher matcher = this.d.matcher(packageInfo.versionName);
+        return matcher.find() && Integer.parseInt(packageInfo.versionName.substring(matcher.start(), matcher.end())) >= 105;
     }
 }

@@ -1,63 +1,164 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.os.SystemClock;
-import com.google.android.gms.tasks.Task;
-import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class go5 {
-    public volatile Bitmap a;
-    public final int b;
-    public final int c;
-    public final int d;
+public abstract class go5 extends AbstractCollection implements Serializable, Collection {
+    public static final Object[] a = new Object[0];
 
-    public go5(int i, Bitmap bitmap) {
-        fre.h(bitmap);
-        this.a = bitmap;
-        this.b = bitmap.getWidth();
-        this.c = bitmap.getHeight();
-        boolean z = true;
-        if (i != 0 && i != 90 && i != 180 && i != 270) {
-            z = false;
-        }
-        fre.a("Invalid rotation. Only 0, 90, 180, 270 are supported currently.", z);
-        this.d = i;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public static go5 a(int i, Bitmap bitmap) {
-        f1f b;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        go5 go5Var = new go5(i, bitmap);
-        int height = bitmap.getHeight();
-        int width = bitmap.getWidth();
-        int allocationByteCount = bitmap.getAllocationByteCount();
-        synchronized (z1f.class) {
-            b = z1f.b(new j0f());
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public boolean contains(Object obj) {
+        return ((e89) this).e.b(obj) > 0;
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    public mo5 h() {
+        if (isEmpty()) {
+            ko5 ko5Var = mo5.b;
+            return y79.e;
         }
-        long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        ule uleVar = ule.b;
-        Task task = b.e;
-        long elapsedRealtime3 = SystemClock.elapsedRealtime();
-        HashMap hashMap = b.i;
-        if (hashMap.get(uleVar) != null && elapsedRealtime3 - ((Long) hashMap.get(uleVar)).longValue() <= 30000) {
-            return go5Var;
+        Object[] array = toArray(a);
+        ko5 ko5Var2 = mo5.b;
+        return mo5.o(array.length, array);
+    }
+
+    public int i(int i, Object[] objArr) {
+        v7c it = iterator();
+        while (it.hasNext()) {
+            objArr[i] = it.next();
+            i++;
         }
-        hashMap.put(uleVar, Long.valueOf(elapsedRealtime3));
-        jb4 jb4Var = new jb4();
-        jb4Var.c = nje.b;
-        jb4Var.b = oke.b;
-        jb4Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        jb4Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        jb4Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        jb4Var.a = Long.valueOf(elapsedRealtime2 & Long.MAX_VALUE);
-        jb4Var.g = Integer.valueOf(i & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        xke xkeVar = new xke(jb4Var);
-        rod rodVar = new rod((byte) 7);
-        rodVar.d = xkeVar;
-        yjb.c(1, new ey1(b, new aec(rodVar), task.isSuccessful() ? (String) task.getResult() : r06.c.a(b.g)));
-        return go5Var;
+        return i;
+    }
+
+    public Object[] j() {
+        return null;
+    }
+
+    public int k() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int l() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract boolean m();
+
+    /* renamed from: n */
+    public abstract v7c iterator();
+
+    @Override // java.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        if (objArr.length < size) {
+            Object[] j = j();
+            if (j != null) {
+                return Arrays.copyOfRange(j, l(), k(), objArr.getClass());
+            }
+            if (objArr.length != 0) {
+                objArr = Arrays.copyOf(objArr, 0);
+            }
+            objArr = Arrays.copyOf(objArr, size);
+        } else if (objArr.length > size) {
+            objArr[size] = null;
+        }
+        i(0, objArr);
+        return objArr;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
     }
 }

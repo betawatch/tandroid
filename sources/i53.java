@@ -1,27 +1,23 @@
 // default package
 
-import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class i53 {
-    public final fm4 a;
-    public final mm5 b;
-    public final tv9 c;
-    public final String d;
-    public final ArrayList e;
-    public final ArrayList f;
-    public final ArrayList g;
-    public final ArrayList h;
+    public final mo5 a;
+    public final long b;
+    public final long c;
+    public final long d;
 
-    public i53(fm4 fm4Var, ArrayList arrayList, tv9 tv9Var, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
-        this.a = fm4Var;
-        this.b = mm5.q(arrayList);
-        this.c = tv9Var;
-        this.d = str;
-        this.e = arrayList2;
-        this.f = arrayList3;
-        this.g = arrayList4;
-        this.h = arrayList5;
+    public i53(long j, long j2, List list) {
+        this.a = mo5.q(list);
+        this.b = j;
+        this.c = j2;
+        long j3 = -9223372036854775807L;
+        if (j != -9223372036854775807L && j2 != -9223372036854775807L) {
+            j3 = j + j2;
+        }
+        this.d = j3;
     }
 }

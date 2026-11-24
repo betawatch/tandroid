@@ -1,45 +1,90 @@
 // default package
 
-import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.net.SocketTimeoutException;
+import android.content.SharedPreferences;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class jg5 extends r63 {
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class jg5 {
+    public static final jg5 d;
+    public static final jg5 e;
+    public static final jg5 f;
+    public static final jg5 h;
+    public static final jg5 n;
+    public static final jg5 r;
+    public static final jg5 s;
+    public static final jg5 w;
+    public static final jg5 x;
+    public static final /* synthetic */ jg5[] y;
+    public final String a;
     public final byte b;
+    public final float c;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /* JADX WARN: Multi-variable type inference failed */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public jg5(IOException iOException, int i, int i2) {
-        super(iOException, i);
-        if (i == 2000 && i2 == 1) {
-            i = 2001;
-        }
-        this.b = i2;
-    }
-
-    public static jg5 a(IOException iOException, int i) {
-        String message = iOException.getMessage();
-        int i2 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !smd.c(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
-        return i2 == 2007 ? new ig5("Cleartext HTTP traffic not permitted. See https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted", iOException, 2007) : new jg5(iOException, i2, i);
-    }
-
-    public jg5(String str, int i) {
-        super(str, i == 2000 ? 2001 : i);
-        this.b = (byte) 1;
+    static {
+        jg5 jg5Var = new jg5("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
+        d = jg5Var;
+        jg5 jg5Var2 = new jg5("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
+        e = jg5Var2;
+        jg5 jg5Var3 = new jg5("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
+        f = jg5Var3;
+        jg5 jg5Var4 = new jg5("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
+        h = jg5Var4;
+        jg5 jg5Var5 = new jg5("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
+        n = jg5Var5;
+        jg5 jg5Var6 = new jg5("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
+        r = jg5Var6;
+        jg5 jg5Var7 = new jg5("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
+        s = jg5Var7;
+        jg5 jg5Var8 = new jg5("PlaybackSpeedHint", 7, "playbackspeedhint", 3, 0.2f);
+        w = jg5Var8;
+        jg5 jg5Var9 = new jg5();
+        x = jg5Var9;
+        y = new jg5[]{jg5Var, jg5Var2, jg5Var3, jg5Var4, jg5Var5, jg5Var6, jg5Var7, jg5Var8, jg5Var9};
     }
 
     public jg5() {
-        super(2008);
-        this.b = (byte) 1;
+        this.a = "hints_controller_" + this;
+        this.b = (byte) 3;
+        this.c = 1.0f;
     }
 
-    public jg5(String str, IOException iOException, int i) {
-        super(str, iOException, i == 2000 ? 2001 : i);
-        this.b = (byte) 1;
+    public static jg5 valueOf(String str) {
+        return (jg5) Enum.valueOf(jg5.class, str);
+    }
+
+    public static jg5[] values() {
+        return (jg5[]) y.clone();
+    }
+
+    public final void a() {
+        oc7.d1().edit().putInt(this.a, this.b).apply();
+    }
+
+    public final void b() {
+        SharedPreferences d1 = oc7.d1();
+        String str = this.a;
+        oc7.d1().edit().putInt(str, d1.getInt(str, 0) + 1).apply();
+    }
+
+    public final boolean c() {
+        if (oc7.d1().getInt(this.a, 0) < this.b) {
+            float f2 = this.c;
+            if (f2 >= 1.0f) {
+                return true;
+            }
+            if (f2 > 0.0f && Utilities.c.nextFloat() < f2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public jg5(String str, int i, String str2, int i2, float f2) {
+        this.a = str2;
+        this.b = i2;
+        this.c = f2;
     }
 }

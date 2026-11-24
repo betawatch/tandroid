@@ -1,33 +1,15 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class yya extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zya b;
-
-    public /* synthetic */ yya(zya zyaVar, byte b) {
-        this.a = b;
-        this.b = zyaVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        zya zyaVar = this.b;
-        switch (b) {
-            case 0:
-                zyaVar.s.setVisibility(8);
-                break;
-            case 1:
-                zyaVar.s.setVisibility(8);
-                break;
-            default:
-                zyaVar.s.setVisibility(8);
-                break;
+public final class yya extends iza {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (getTranslationY() != 0.0f) {
+            canvas.drawColor(cmb.w0(null, cmb.c6, false));
         }
+        super.onDraw(canvas);
     }
 }

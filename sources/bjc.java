@@ -1,62 +1,47 @@
 // default package
 
-import android.util.Log;
-import java.util.Locale;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final /* synthetic */ class bjc implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ gjc b;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ TLRPC.TL_error d;
 
-    public /* synthetic */ bjc(gjc gjcVar, byte b) {
-        this.a = b;
-        this.b = gjcVar;
+    public /* synthetic */ bjc(VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = (byte) 1;
+        this.b = voIPService;
+        this.c = tLObject;
+        this.d = tL_error;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        gjc gjcVar = this.b;
+        TLObject tLObject = this.c;
+        TLRPC.TL_error tL_error = this.d;
+        VoIPService voIPService = this.b;
         switch (b) {
             case 0:
-                if (gjcVar.c == 2) {
-                    if (gjcVar.y != 0) {
-                        StringBuilder sb = new StringBuilder("self-check ok: chunks=");
-                        sb.append(gjcVar.y);
-                        sb.append(" in=");
-                        sb.append(gjcVar.w);
-                        sb.append("B out=");
-                        sb.append(gjcVar.x);
-                        sb.append("B (ratio ");
-                        sb.append(gjcVar.x > 0 ? String.format(Locale.US, "%.2f", Double.valueOf(gjcVar.w / gjcVar.x)) : "-");
-                        sb.append(", expect 3.00 at 48 kHz) source=");
-                        byte b2 = gjcVar.F;
-                        ir2.x(sb, b2 == 1 ? "MediaController" : b2 == 2 ? "AudioRecorderV2" : "none", "VoiceLive");
-                        break;
-                    } else {
-                        Log.w("VoiceLive", "SELF-CHECK FAILED: no PCM from the recorder tap 1.5 s after lock (neither MediaController nor AudioCapture fed it)");
-                        break;
-                    }
-                }
+                voIPService.lambda$acceptIncomingCall$97(tL_error, tLObject);
                 break;
             case 1:
-                if (gjcVar.c == 2) {
-                    gjcVar.u();
-                    break;
-                }
-                break;
-            case 2:
-                gjcVar.t();
-                mu1 mu1Var = gjcVar.b.a.F3;
-                if (mu1Var != null) {
-                    mu1Var.presentFragment(new zka());
-                    break;
-                }
+                voIPService.lambda$startGroupCheckShortpoll$64(tLObject, tL_error);
                 break;
             default:
-                gjcVar.m("field send preview");
+                voIPService.lambda$processAcceptedCall$22(tL_error, tLObject);
                 break;
         }
+    }
+
+    public /* synthetic */ bjc(VoIPService voIPService, TLRPC.TL_error tL_error, TLObject tLObject, byte b) {
+        this.a = b;
+        this.b = voIPService;
+        this.d = tL_error;
+        this.c = tLObject;
     }
 }

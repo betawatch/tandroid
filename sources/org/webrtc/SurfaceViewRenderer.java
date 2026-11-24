@@ -11,7 +11,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -89,7 +89,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb.append(", frame size: ");
         sb.append(this.rotatedFrameWidth);
         sb.append("x");
-        ir2.w(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        ts2.v(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb.append(min2);
         sb.append(", old surface size: ");
         sb.append(this.surfaceWidth);
@@ -147,7 +147,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         if (i3 == 0 || i3 == 180) {
             i = i2;
         }
-        postOrRun(new bt((Object) this, i4, i, (byte) 16));
+        postOrRun(new cu((Object) this, i4, i, (byte) 16));
     }
 
     @Override // android.view.View

@@ -1,36 +1,84 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ns2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ i8c b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ TLRPC.TL_error d;
+public abstract class ns2 {
+    public int a = 1;
+    public Object b;
+    public Object c;
 
-    public /* synthetic */ ns2(i8c i8cVar, TLObject tLObject, TLRPC.TL_error tL_error, byte b) {
-        this.a = b;
-        this.b = i8cVar;
-        this.c = tLObject;
-        this.d = tL_error;
+    public abstract int a(View view);
+
+    public abstract int b(View view);
+
+    public abstract int c(View view);
+
+    public abstract int d(View view);
+
+    public abstract int e();
+
+    public abstract int f();
+
+    public abstract int g();
+
+    public abstract int h();
+
+    public abstract int i();
+
+    public abstract int j();
+
+    public abstract int k();
+
+    public abstract int l(View view);
+
+    public abstract int m(View view);
+
+    public final void n() {
+        this.a = 2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.TL_error tL_error = this.d;
-        TLObject tLObject = this.c;
-        i8c i8cVar = this.b;
-        switch (b) {
-            case 0:
-                i8cVar.a(tLObject, tL_error);
-                break;
-            default:
-                i8cVar.a(tLObject instanceof TLRPC.TL_payments_starsRevenueStats ? ((TLRPC.TL_payments_starsRevenueStats) tLObject).status : null, tL_error);
-                break;
+    public final void o(String str) {
+        this.b = str;
+    }
+
+    public abstract void p(int i);
+
+    public final void q(bt2 bt2Var, qs2 qs2Var) {
+        String str = (String) this.c;
+        if (str != null && !str.isEmpty()) {
+            qs2Var.b = (String) this.c;
         }
+        HashMap hashMap = bt2Var.a;
+        String str2 = qs2Var.a;
+        if (hashMap.containsKey(str2)) {
+            dq9.m(b10.h("Config key registered twice: ", str2));
+        } else if (bt2Var.b.add(qs2Var.e())) {
+            hashMap.put(str2, qs2Var);
+        } else {
+            zo4.r(qs2Var.e(), "Config storage key used twice: ");
+        }
+    }
+
+    public final void r(boolean z, Number number) {
+        if (z) {
+            return;
+        }
+        throw new IllegalStateException("Config key " + s() + ": default " + number + " is outside its range");
+    }
+
+    public final String s() {
+        String str = (String) this.b;
+        if (str != null && !str.isEmpty()) {
+            return (String) this.b;
+        }
+        dq9.m("Config key without a name");
+        return null;
+    }
+
+    public final void t(String str) {
+        this.c = str;
     }
 }

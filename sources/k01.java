@@ -1,17 +1,7 @@
 // default package
 
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class k01 extends m01 {
-    @Override // m01
-    public final int b() {
-        return -47814;
-    }
-
-    @Override // m01
-    public final int d() {
-        return R.raw.photo_pen;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public interface k01 {
+    void cancel();
 }

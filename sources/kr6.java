@@ -1,78 +1,215 @@
 // default package
 
-import android.media.MediaMetadata;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class kr6 implements Parcelable {
-    public static final Parcelable.Creator<kr6> CREATOR;
-    public static final ps c;
-    public static final String[] d;
-    public final Bundle a;
-    public MediaMetadata b;
+public final /* synthetic */ class kr6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hs6 b;
+    public final /* synthetic */ String c;
 
-    static {
-        ps psVar = new ps(0);
-        c = psVar;
-        psVar.put("android.media.metadata.TITLE", 1);
-        psVar.put("android.media.metadata.ARTIST", 1);
-        psVar.put("android.media.metadata.DURATION", 0);
-        psVar.put("android.media.metadata.ALBUM", 1);
-        psVar.put("android.media.metadata.AUTHOR", 1);
-        psVar.put("android.media.metadata.WRITER", 1);
-        psVar.put("android.media.metadata.COMPOSER", 1);
-        psVar.put("android.media.metadata.COMPILATION", 1);
-        psVar.put("android.media.metadata.DATE", 1);
-        psVar.put("android.media.metadata.YEAR", 0);
-        psVar.put("android.media.metadata.GENRE", 1);
-        psVar.put("android.media.metadata.TRACK_NUMBER", 0);
-        psVar.put("android.media.metadata.NUM_TRACKS", 0);
-        psVar.put("android.media.metadata.DISC_NUMBER", 0);
-        psVar.put("android.media.metadata.ALBUM_ARTIST", 1);
-        psVar.put("android.media.metadata.ART", 2);
-        psVar.put("android.media.metadata.ART_URI", 1);
-        psVar.put("android.media.metadata.ALBUM_ART", 2);
-        psVar.put("android.media.metadata.ALBUM_ART_URI", 1);
-        psVar.put("android.media.metadata.USER_RATING", 3);
-        psVar.put("android.media.metadata.RATING", 3);
-        psVar.put("android.media.metadata.DISPLAY_TITLE", 1);
-        psVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
-        psVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
-        psVar.put("android.media.metadata.DISPLAY_ICON", 2);
-        psVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
-        psVar.put("android.media.metadata.MEDIA_ID", 1);
-        psVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
-        psVar.put("android.media.metadata.MEDIA_URI", 1);
-        psVar.put("android.media.metadata.ADVERTISEMENT", 0);
-        psVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
-        d = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION"};
-        CREATOR = new x21((byte) 28);
+    public /* synthetic */ kr6(hs6 hs6Var, String str, byte b) {
+        this.a = b;
+        this.b = hs6Var;
+        this.c = str;
     }
 
-    public kr6(Bundle bundle) {
-        Bundle bundle2 = new Bundle(bundle);
-        this.a = bundle2;
-        ClassLoader classLoader = lv6.class.getClassLoader();
-        classLoader.getClass();
-        bundle2.setClassLoader(classLoader);
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeBundle(this.a);
-    }
-
-    public kr6(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(lv6.class.getClassLoader());
-        readBundle.getClass();
-        this.a = readBundle;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final String str = this.c;
+        final hs6 hs6Var = this.b;
+        switch (b) {
+            case 0:
+                final byte b2 = 0;
+                gm.c3(new Runnable() { // from class: jp6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        char c;
+                        ArrayList arrayList;
+                        switch (b2) {
+                            case 0:
+                                hs6 hs6Var2 = hs6Var;
+                                String str2 = str;
+                                TLObject tLObject2 = tLObject;
+                                HashMap hashMap = hs6Var2.L0;
+                                ArrayList arrayList2 = (ArrayList) hashMap.get(str2);
+                                if (arrayList2 != null) {
+                                    for (int i = 0; i < arrayList2.size(); i++) {
+                                        if (tLObject2 != null) {
+                                            ((jac) arrayList2.get(i)).a(Boolean.TRUE, (TLRPC.TL_messages_stickerSet) tLObject2);
+                                        } else {
+                                            ((jac) arrayList2.get(i)).a(Boolean.FALSE, null);
+                                        }
+                                    }
+                                }
+                                hashMap.remove(str2);
+                                break;
+                            default:
+                                hs6 hs6Var3 = hs6Var;
+                                String str3 = str;
+                                TLObject tLObject3 = tLObject;
+                                ArrayList arrayList3 = (ArrayList) hs6Var3.b0.get(str3);
+                                if (tLObject3 != null) {
+                                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
+                                    TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                                    if (stickerSet != null) {
+                                        hs6Var3.J.k(tL_messages_stickerSet, stickerSet.id);
+                                        String str4 = tL_messages_stickerSet.set.short_name;
+                                        if (str4 != null) {
+                                            hs6Var3.O.put(str4.toLowerCase(), tL_messages_stickerSet);
+                                        }
+                                    }
+                                    int size = arrayList3.size();
+                                    int i2 = 0;
+                                    while (i2 < size) {
+                                        TLRPC.Message message = (TLRPC.Message) arrayList3.get(i2);
+                                        TLRPC.Document G0 = k47.G0(message);
+                                        int size2 = tL_messages_stickerSet.documents.size();
+                                        int i3 = 0;
+                                        while (true) {
+                                            if (i3 < size2) {
+                                                TLRPC.Document document = tL_messages_stickerSet.documents.get(i3);
+                                                arrayList = arrayList3;
+                                                if (document.id == G0.id && document.dc_id == G0.dc_id) {
+                                                    message.stickerVerified = 1;
+                                                } else {
+                                                    i3++;
+                                                    arrayList3 = arrayList;
+                                                }
+                                            } else {
+                                                arrayList = arrayList3;
+                                            }
+                                        }
+                                        if (message.stickerVerified == 0) {
+                                            message.stickerVerified = 2;
+                                        }
+                                        i2++;
+                                        arrayList3 = arrayList;
+                                    }
+                                    c = 0;
+                                } else {
+                                    c = 0;
+                                    int size3 = arrayList3.size();
+                                    int i4 = 0;
+                                    while (true) {
+                                        arrayList3 = arrayList3;
+                                        if (i4 < size3) {
+                                            ((TLRPC.Message) arrayList3.get(i4)).stickerVerified = 2;
+                                            i4++;
+                                        }
+                                    }
+                                }
+                                nm7 notificationCenter = hs6Var3.getNotificationCenter();
+                                Object[] objArr = new Object[1];
+                                objArr[c] = arrayList3;
+                                notificationCenter.k(nm7.q1, objArr);
+                                cf7 messagesStorage = hs6Var3.getMessagesStorage();
+                                messagesStorage.getClass();
+                                Utilities.d.c(new p51(messagesStorage, arrayList3, (byte) 20));
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b3 = 1;
+                gm.c3(new Runnable() { // from class: jp6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        char c;
+                        ArrayList arrayList;
+                        switch (b3) {
+                            case 0:
+                                hs6 hs6Var2 = hs6Var;
+                                String str2 = str;
+                                TLObject tLObject2 = tLObject;
+                                HashMap hashMap = hs6Var2.L0;
+                                ArrayList arrayList2 = (ArrayList) hashMap.get(str2);
+                                if (arrayList2 != null) {
+                                    for (int i = 0; i < arrayList2.size(); i++) {
+                                        if (tLObject2 != null) {
+                                            ((jac) arrayList2.get(i)).a(Boolean.TRUE, (TLRPC.TL_messages_stickerSet) tLObject2);
+                                        } else {
+                                            ((jac) arrayList2.get(i)).a(Boolean.FALSE, null);
+                                        }
+                                    }
+                                }
+                                hashMap.remove(str2);
+                                break;
+                            default:
+                                hs6 hs6Var3 = hs6Var;
+                                String str3 = str;
+                                TLObject tLObject3 = tLObject;
+                                ArrayList arrayList3 = (ArrayList) hs6Var3.b0.get(str3);
+                                if (tLObject3 != null) {
+                                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
+                                    TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                                    if (stickerSet != null) {
+                                        hs6Var3.J.k(tL_messages_stickerSet, stickerSet.id);
+                                        String str4 = tL_messages_stickerSet.set.short_name;
+                                        if (str4 != null) {
+                                            hs6Var3.O.put(str4.toLowerCase(), tL_messages_stickerSet);
+                                        }
+                                    }
+                                    int size = arrayList3.size();
+                                    int i2 = 0;
+                                    while (i2 < size) {
+                                        TLRPC.Message message = (TLRPC.Message) arrayList3.get(i2);
+                                        TLRPC.Document G0 = k47.G0(message);
+                                        int size2 = tL_messages_stickerSet.documents.size();
+                                        int i3 = 0;
+                                        while (true) {
+                                            if (i3 < size2) {
+                                                TLRPC.Document document = tL_messages_stickerSet.documents.get(i3);
+                                                arrayList = arrayList3;
+                                                if (document.id == G0.id && document.dc_id == G0.dc_id) {
+                                                    message.stickerVerified = 1;
+                                                } else {
+                                                    i3++;
+                                                    arrayList3 = arrayList;
+                                                }
+                                            } else {
+                                                arrayList = arrayList3;
+                                            }
+                                        }
+                                        if (message.stickerVerified == 0) {
+                                            message.stickerVerified = 2;
+                                        }
+                                        i2++;
+                                        arrayList3 = arrayList;
+                                    }
+                                    c = 0;
+                                } else {
+                                    c = 0;
+                                    int size3 = arrayList3.size();
+                                    int i4 = 0;
+                                    while (true) {
+                                        arrayList3 = arrayList3;
+                                        if (i4 < size3) {
+                                            ((TLRPC.Message) arrayList3.get(i4)).stickerVerified = 2;
+                                            i4++;
+                                        }
+                                    }
+                                }
+                                nm7 notificationCenter = hs6Var3.getNotificationCenter();
+                                Object[] objArr = new Object[1];
+                                objArr[c] = arrayList3;
+                                notificationCenter.k(nm7.q1, objArr);
+                                cf7 messagesStorage = hs6Var3.getMessagesStorage();
+                                messagesStorage.getClass();
+                                Utilities.d.c(new p51(messagesStorage, arrayList3, (byte) 20));
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

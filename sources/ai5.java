@@ -1,6 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ai5 extends ci5 {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class ai5 {
+    public static final Map a;
+    public static final Pattern b;
+
+    static {
+        HashMap hashMap = new HashMap();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(ai5.class.getResourceAsStream("/org/commonmark/internal/util/entities.properties"), Charset.forName("UTF-8")));
+            while (true) {
+                try {
+                    String readLine = bufferedReader.readLine();
+                    if (readLine == null) {
+                        bufferedReader.close();
+                        hashMap.put("NewLine", "\n");
+                        a = hashMap;
+                        b = Pattern.compile("^&#[Xx]?");
+                        return;
+                    }
+                    if (readLine.length() != 0) {
+                        int indexOf = readLine.indexOf("=");
+                        hashMap.put(readLine.substring(0, indexOf), readLine.substring(indexOf + 1));
+                    }
+                } finally {
+                }
+            }
+        } catch (IOException e) {
+            wa3.h("Failed reading data for HTML named character references", e);
+        }
+    }
+
+    public static String a(String str) {
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            String str2 = (String) a.get(ts2.m(1, 1, str));
+            return str2 != null ? str2 : str;
+        }
+        try {
+            int parseInt = Integer.parseInt(str.substring(matcher.end(), str.length() - 1), matcher.end() == 2 ? 10 : 16);
+            return parseInt == 0 ? "�" : new String(Character.toChars(parseInt));
+        } catch (IllegalArgumentException unused) {
+            return "�";
+        }
+    }
 }

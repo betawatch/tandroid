@@ -1,43 +1,89 @@
 // default package
 
-import org.telegram.ui.DataSettingsActivity;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class i63 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ DataSettingsActivity b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class i63 extends Binder implements IInterface {
+    public final /* synthetic */ byte a = 1;
+    public final Object b;
 
-    public /* synthetic */ i63(DataSettingsActivity dataSettingsActivity, byte b) {
-        this.a = b;
-        this.b = dataSettingsActivity;
+    public i63(k1f k1fVar) {
+        attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
+        this.b = new Handler(Looper.getMainLooper());
     }
 
-    /* JADX WARN: Type inference failed for: r9v3, types: [boolean] */
-    @Override // java.lang.Runnable
-    public final void run() {
-        ?? r9;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
         byte b = this.a;
-        DataSettingsActivity dataSettingsActivity = this.b;
-        byte b2 = 1;
-        switch (b) {
+        return this;
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        byte b = 4;
+        switch (this.a) {
             case 0:
-                dataSettingsActivity.getMediaDataController().G(true);
-                break;
-            case 1:
-                dataSettingsActivity.X = true;
-                if (dataSettingsActivity.a != null && (r9 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.r0(r9 == true ? 1 : 0);
+                Handler handler = (Handler) this.b;
+                if (i == 2) {
+                    parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+                    handler.post(new sw(this, parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
+                    parcel2.writeNoException();
+                    break;
+                } else {
+                    byte b2 = 3;
+                    if (i == 3) {
+                        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+                        handler.post(new sw(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, b2));
+                        parcel2.writeNoException();
+                        break;
+                    } else if (i == 4) {
+                        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+                        handler.post(new sw(this, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, b));
+                        parcel2.writeNoException();
+                        break;
+                    } else {
+                        byte b3 = 5;
+                        if (i == 5) {
+                            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+                            handler.post(new sw(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, b3));
+                            parcel2.writeNoException();
+                            break;
+                        } else if (i == 1598968902) {
+                            parcel2.writeString("android.support.customtabs.ICustomTabsCallback");
+                            break;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            default:
+                if (i <= 16777215) {
+                    parcel.enforceInterface(getInterfaceDescriptor());
+                } else if (super.onTransact(i, parcel, parcel2, i2)) {
+                }
+                if (i == 1) {
+                    ((jbf) this.b).a((Status) qid.a(parcel, Status.CREATOR));
+                    break;
+                } else if (i == 2) {
+                    break;
+                } else if (i == 4) {
                     break;
                 }
                 break;
-            default:
-                r61.k0 = null;
-                DataSettingsActivity dataSettingsActivity2 = this.b;
-                i63 i63Var = new i63(dataSettingsActivity2, b2);
-                gl.e3(i63Var, 100L);
-                r61.c0(new p0c((Object) dataSettingsActivity2, (Object) i63Var, System.currentTimeMillis(), (byte) 1));
-                break;
         }
+        return true;
+    }
+
+    public i63(jbf jbfVar) {
+        attachInterface(this, "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearchCallbacks");
+        this.b = jbfVar;
     }
 }

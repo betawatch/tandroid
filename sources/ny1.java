@@ -1,46 +1,55 @@
 // default package
 
-import java.util.HashMap;
+import android.util.Property;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ny1 extends HashMap {
+public final class ny1 extends Property {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ny1(Object obj, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ny1(Class cls, String str, byte b) {
+        super(cls, str);
         this.a = b;
-        this.b = obj;
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    @Override // android.util.Property
     public final Object get(Object obj) {
         switch (this.a) {
             case 0:
-                byte b = ((qy1) this.b).w;
-                oy8 oy8Var = (oy8) super.get(obj);
-                if (oy8Var != null) {
-                    return oy8Var;
-                }
-                py1 py1Var = (py1) obj;
-                oy8 oy8Var2 = new oy8(py1Var.c, gl.L(b), gl.L(b));
-                put(py1Var, oy8Var2);
-                return oy8Var2;
+                return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
+            case 1:
+                return Float.valueOf(((rc2) obj).wd);
+            case 2:
+                return Float.valueOf(((vb8) obj).a);
+            case 3:
+                return Float.valueOf(((v29) obj).w);
             default:
-                return super.get(obj);
+                return Float.valueOf(((vob) obj).h);
         }
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
         switch (this.a) {
+            case 0:
+                ((View) obj).setTranslationY(((Integer) obj2).intValue());
+                break;
             case 1:
-                String str = (String) obj;
-                String str2 = (String) obj2;
-                ((ci7) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
-                return (String) super.put(str, str2);
+                ((rc2) obj).setAnimationOffsetX(((Float) obj2).floatValue());
+                break;
+            case 2:
+                ((vb8) obj).b(((Float) obj2).floatValue());
+                break;
+            case 3:
+                ((v29) obj).setTransitionProgress(((Float) obj2).floatValue());
+                break;
             default:
-                return super.put(obj, obj2);
+                vob vobVar = (vob) obj;
+                vobVar.h = ((Float) obj2).floatValue();
+                vobVar.invalidate();
+                break;
         }
     }
 }

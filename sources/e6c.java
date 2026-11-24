@@ -1,16 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class e6c extends UnsupportedOperationException {
-    public final f84 a;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
 
-    public e6c(f84 f84Var) {
-        this.a = f84Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class e6c extends URLSpan {
+    public final wkb a;
+
+    public e6c(String str, wkb wkbVar) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = wkbVar;
     }
 
-    @Override // java.lang.Throwable
-    public final String getMessage() {
-        return "Missing ".concat(String.valueOf(this.a));
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        l11.r(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        wkb wkbVar = this.a;
+        if (wkbVar != null) {
+            wkbVar.a(textPaint);
+        }
+        textPaint.setUnderlineText(true);
     }
 }

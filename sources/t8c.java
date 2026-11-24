@@ -1,25 +1,38 @@
 // default package
 
-import android.text.TextUtils;
-import java.util.regex.Pattern;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class t8c {
-    public static final Pattern b = Pattern.compile("\\AA[\\w-]{38}\\z");
-    public static t8c c;
-    public final c6e a;
+public final class t8c extends tl5 {
+    public final String b;
+    public final String c;
 
-    public t8c(c6e c6eVar) {
-        this.a = c6eVar;
+    public t8c(String str, String str2, String str3) {
+        super(str);
+        this.b = str2;
+        this.c = str3;
     }
 
-    public final boolean a(ga0 ga0Var) {
-        if (TextUtils.isEmpty(ga0Var.c)) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        long j = ga0Var.f + ga0Var.e;
-        this.a.getClass();
-        return j < (System.currentTimeMillis() / 1000) + 3600;
+        if (obj == null || t8c.class != obj.getClass()) {
+            return false;
+        }
+        t8c t8cVar = (t8c) obj;
+        return this.a.equals(t8cVar.a) && Objects.equals(this.b, t8cVar.b) && this.c.equals(t8cVar.c);
+    }
+
+    public final int hashCode() {
+        int j = ts2.j(527, 31, this.a);
+        String str = this.b;
+        return this.c.hashCode() + ((j + (str != null ? str.hashCode() : 0)) * 31);
+    }
+
+    @Override // tl5
+    public final String toString() {
+        return this.a + ": url=" + this.c;
     }
 }

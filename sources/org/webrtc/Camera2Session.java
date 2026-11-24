@@ -16,7 +16,7 @@ import java.util.List;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 class Camera2Session implements CameraSession {
     private static final String TAG = "Camera2Session";
@@ -46,7 +46,7 @@ class Camera2Session implements CameraSession {
     private static final Histogram camera2StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera2.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera2ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera2.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private static class CameraCaptureCallback extends CameraCaptureSession.CaptureCallback {
         private CameraCaptureCallback() {
         }
@@ -57,13 +57,13 @@ class Camera2Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private class CameraStateCallback extends CameraDevice.StateCallback {
         private CameraStateCallback() {
         }
 
         private String getErrorDescription(int i) {
-            return i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? de9.k(i, "Unknown camera error: ") : "Camera service has encountered a fatal error." : "Camera device has encountered a fatal error." : "Camera device could not be opened due to a device policy." : "Camera device could not be opened because there are too many other open camera devices." : "Camera device is in use already.";
+            return i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? hg9.j(i, "Unknown camera error: ") : "Camera service has encountered a fatal error." : "Camera device has encountered a fatal error." : "Camera device could not be opened due to a device policy." : "Camera device could not be opened because there are too many other open camera devices." : "Camera device is in use already.";
         }
 
         @Override // android.hardware.camera2.CameraDevice.StateCallback
@@ -109,7 +109,7 @@ class Camera2Session implements CameraSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     class CaptureSessionCallback extends CameraCaptureSession.StateCallback {
         private CaptureSessionCallback() {
         }
@@ -159,7 +159,7 @@ class Camera2Session implements CameraSession {
                 Camera2Session.this.firstFrameReported = true;
                 Camera2Session.camera2StartTimeMsHistogram.addSample((int) ((System.nanoTime() - Camera2Session.this.constructionTimeNs) / 1000000));
             }
-            VideoFrame videoFrame2 = new VideoFrame(b00.a((TextureBufferImpl) videoFrame.getBuffer(), Camera2Session.this.isCameraFrontFacing, -Camera2Session.this.cameraOrientation), Camera2Session.this.getFrameOrientation(), videoFrame.getTimestampNs());
+            VideoFrame videoFrame2 = new VideoFrame(b10.a((TextureBufferImpl) videoFrame.getBuffer(), Camera2Session.this.isCameraFrontFacing, -Camera2Session.this.cameraOrientation), Camera2Session.this.getFrameOrientation(), videoFrame.getTimestampNs());
             Camera2Session.this.events.onFrameCaptured(Camera2Session.this, videoFrame2);
             videoFrame2.release();
         }
@@ -195,7 +195,7 @@ class Camera2Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private enum SessionState {
         RUNNING,
         STOPPED
@@ -223,7 +223,7 @@ class Camera2Session implements CameraSession {
         if (Thread.currentThread() == this.cameraThreadHandler.getLooper().getThread()) {
             return;
         }
-        sc8.j("Wrong thread");
+        dq9.m("Wrong thread");
     }
 
     public static void create(CameraSession.CreateSessionCallback createSessionCallback, CameraSession.Events events, Context context, CameraManager cameraManager, SurfaceTextureHelper surfaceTextureHelper, String str, int i, int i2, int i3) {
@@ -252,7 +252,7 @@ class Camera2Session implements CameraSession {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getFrameOrientation() {
-        int orientation = t76.N != null ? 0 : this.orientationHelper.getOrientation();
+        int orientation = s96.N != null ? 0 : this.orientationHelper.getOrientation();
         OrientationHelper.cameraOrientation = orientation;
         if (this.isCameraFrontFacing) {
             orientation = 360 - orientation;

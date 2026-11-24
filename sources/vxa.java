@@ -1,39 +1,26 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.tgnet.tl.TL_stats;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class vxa extends be0 {
-    public final /* synthetic */ wjb H;
-    public final /* synthetic */ xxa I;
+public final class vxa extends yv1 {
+    public final /* synthetic */ boolean Gd;
+    public final /* synthetic */ eya Hd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vxa(xxa xxaVar, Context context, wjb wjbVar) {
-        super(context);
-        this.I = xxaVar;
-        this.H = wjbVar;
+    public vxa(eya eyaVar, Bundle bundle, boolean z) {
+        super(bundle);
+        this.Hd = eyaVar;
+        this.Gd = z;
     }
 
-    @Override // be0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        xxa xxaVar = this.I;
-        u2b u2bVar = xxaVar.r;
-        rxa rxaVar = xxaVar.w;
-        if (rxaVar == null || !(rxaVar.a instanceof TL_stats.TL_postInteractionCountersStory)) {
-            super.onDraw(canvas);
+    @Override // yv1, org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        if (this.Gd) {
             return;
         }
-        float L = gl.L(1.0f);
-        u2bVar.F.set(L, L, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
-        u2bVar.a = false;
-        u2bVar.b = false;
-        u2bVar.v = true;
-        u2bVar.o = false;
-        u2bVar.z = 1;
-        u2bVar.J = this.H;
-        x2b.h(0L, canvas, this.a, u2bVar);
+        this.Hd.show();
     }
 }

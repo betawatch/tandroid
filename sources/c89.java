@@ -1,32 +1,36 @@
 // default package
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.os.Build;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class c89 {
+public final class c89 extends mo5 {
+    public final transient Object[] c;
+    public final transient boolean d;
+    public final transient int e;
+
     /* JADX WARN: Multi-variable type inference failed */
-    public static void a(Activity activity, u06 u06Var) {
-        u06Var.getClass();
-        if (activity instanceof e16) {
-            g16 m = ((e16) activity).m();
-            if (ug8.A(m)) {
-                m.e(u06Var);
-            }
-        }
+    public c89(int i, int i2, Object[] objArr) {
+        this.c = objArr;
+        this.d = i;
+        this.e = i2;
     }
 
-    public static void b(Activity activity) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            a.Companion.getClass();
-            d89.a(activity);
-        }
-        FragmentManager fragmentManager = activity.getFragmentManager();
-        if (fragmentManager.findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag") == null) {
-            fragmentManager.beginTransaction().add(new e89(), "androidx.lifecycle.LifecycleDispatcher.report_fragment_tag").commit();
-            fragmentManager.executePendingTransactions();
-        }
+    @Override // java.util.List
+    public final Object get(int i) {
+        jte.j(i, this.e);
+        Object obj = this.c[(i << 1) + (this.d ? 1 : 0)];
+        Objects.requireNonNull(obj);
+        return obj;
+    }
+
+    @Override // go5
+    public final boolean m() {
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

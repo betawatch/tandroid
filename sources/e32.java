@@ -1,158 +1,445 @@
 // default package
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.a;
+import android.os.Bundle;
+import android.text.TextPaint;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class e32 extends p02 {
-    public final t14 n;
-    public final o39 r;
-    public final t26 s;
-    public final HorizontalScrollView w;
-    public final boolean x;
+public final class e32 extends a22 implements jm7 {
+    public int E;
+    public long F;
+    public int G;
+    public String H;
+    public boolean I;
+    public x22 J;
+    public nx0 K;
+    public r7 L;
+    public a8 M;
+    public a8 N;
+    public int O;
+    public boolean P;
+    public boolean Q;
+    public boolean R;
+    public int S;
+    public boolean T;
+    public boolean U;
+    public t22 V;
+    public boolean W;
+    public int a0;
+    public ox0 n;
+    public ValueAnimator r;
+    public boolean s;
+    public long w;
+    public long x;
+    public long y;
 
-    public e32(x02 x02Var, Context context, wjb wjbVar, boolean z) {
-        super(x02Var, wjbVar, context);
-        this.x = z;
-        this.f = true;
-        d dVar = x02Var.Z1;
-        boolean z2 = !z;
-        t14 t14Var = new t14(dVar, z2, z, false, getContext(), true, null, null, false, wjbVar, false, true);
-        this.n = t14Var;
-        t14Var.x0 = false;
-        t14Var.I(z2, z, false, false);
-        t14Var.o2 = true;
-        jz3 jz3Var = t14Var.y;
-        if (jz3Var != null) {
-            jz3Var.setVisibility(8);
-        }
-        t14Var.p2 = true;
-        ImageView imageView = t14Var.E;
-        if (imageView != null) {
-            imageView.setVisibility(8);
-        }
-        t14Var.S2 = true;
-        addView(t14Var, nme.c(-1.0f, -1));
-        HorizontalScrollView x = t14Var.x(z2 ? 1 : 0);
-        this.w = x;
-        o39 w = t14Var.w(z2 ? 1 : 0);
-        this.r = w;
-        w.j(new y(this, (byte) 20));
-        this.s = (t26) w.getLayoutManager();
-        x.setTranslationY(Math.max(0, getCurrentItemTop()));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x002b  */
     /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002d  */
-    @Override // p02
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    @Override // a22
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void C(int i, int i2) {
+    public final void B(int i, int i2) {
         int i3;
-        int L;
-        int L2;
-        o39 o39Var;
-        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = a.getCurrentActionBarHeight();
-        if (!gl.O1()) {
-            Point point = gl.q;
+        float f;
+        nx0 nx0Var = this.K;
+        if (!gm.O1()) {
+            Point point = gm.q;
             if (point.x > point.y) {
                 i3 = (int) (i2 / 3.5f);
-                L = i3 - gl.L(52.0f);
-                if (L < 0) {
-                    L = 0;
+                this.b.r0 = true;
+                if (i3 < 0) {
+                    i3 = 0;
                 }
-                L2 = gl.L(36.0f) + L;
-                o39Var = this.r;
-                if (o39Var.getPaddingTop() == L2) {
-                    o39Var.setPadding(gl.L(6.0f), L2, gl.L(6.0f), gl.L(48.0f));
+                f = i3;
+                if (nx0Var.getOffsetY() == f) {
+                    this.s = true;
+                    nx0Var.setOffsetY(f);
+                    this.s = false;
                     return;
                 }
                 return;
             }
         }
         i3 = (i2 / 5) << 1;
-        L = i3 - gl.L(52.0f);
-        if (L < 0) {
+        this.b.r0 = true;
+        if (i3 < 0) {
         }
-        L2 = gl.L(36.0f) + L;
-        o39Var = this.r;
-        if (o39Var.getPaddingTop() == L2) {
+        f = i3;
+        if (nx0Var.getOffsetY() == f) {
         }
     }
 
-    @Override // p02
-    public final void I(p02 p02Var) {
-        x02 x02Var = this.b;
+    @Override // a22
+    public final void H(a22 a22Var) {
+        ox0 ox0Var = this.n;
+        CharSequence r = m9c.r(oc7.r1(this.G).W1(Long.valueOf(this.w)));
         try {
-            x02Var.U2.getTitleTextView().setBuildFullLayout(true);
+            TextPaint textPaint = new TextPaint();
+            textPaint.setTextSize(gm.L(20.0f));
+            r = gw3.m(r, textPaint.getFontMetricsInt(), false, null, 0);
         } catch (Exception unused) {
         }
-        x02Var.U2.setTitle(k96.M0(this.x ? 2131745460 : 2131745466, null));
-        this.s.g1(0, 0);
+        i22 i22Var = this.b;
+        i22Var.U2.setTitle(r);
+        this.K.setSwipeOffsetY(0.0f);
+        if (ox0Var.getWebView() != null) {
+            ox0Var.getWebView().scrollTo(0, 0);
+        }
+        d dVar = i22Var.Z1;
+        if (dVar != null) {
+            ox0Var.setParentActivity(dVar.getParentActivity());
+        }
+        this.L.setVisibility(0);
+        if (ox0Var.S) {
+            return;
+        }
+        gm.L3(i22Var.U2.getBackButton(), R.drawable.ic_close_white);
     }
 
-    @Override // p02
-    public final void K() {
-        this.r.z0(0);
+    @Override // a22
+    public final void I() {
+        if (this.n.O) {
+            P();
+        }
+        this.K.setSwipeOffsetAnimationDisallowed(false);
+        gm.c3(new t22(this, (byte) 0));
     }
 
-    @Override // p02
+    @Override // a22
+    public final void J() {
+        nx0 nx0Var = this.K;
+        nx0Var.d(nx0Var.getTopActionBarOffsetY() + (-nx0Var.getOffsetY()));
+    }
+
+    @Override // a22
+    public final boolean M() {
+        return false;
+    }
+
+    public final boolean O() {
+        if (!this.T) {
+            this.b.dismiss();
+            return true;
+        }
+        TLRPC.User W1 = oc7.r1(this.G).W1(Long.valueOf(this.w));
+        String m = W1 != null ? bw2.m(0, W1.first_name, W1.last_name) : null;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
+        he heVar = alertDialog$Builder.a;
+        heVar.S = m;
+        heVar.U = jb6.M0(2131752870, null);
+        alertDialog$Builder.j(jb6.M0(2131752869, null), new v22(this));
+        alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+        heVar.show();
+        anb.X((TextView) heVar.c(-1), cmb.p7, this.a);
+        return false;
+    }
+
+    public final void P() {
+        i22 i22Var = this.b;
+        d dVar = i22Var.Z1;
+        byte b = 1;
+        if ((dVar instanceof yv1) && ((yv1) dVar).m1.Q() > gm.L(20.0f)) {
+            gm.t1(i22Var.Z1.getFragmentView());
+            gm.d3(new t22(this, b), 250L);
+        } else {
+            i22Var.getWindow().setSoftInputMode(20);
+            setFocusable(true);
+            i22Var.v0(true);
+        }
+    }
+
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        ox0 ox0Var = this.n;
+        if (i != nm7.z1) {
+            if (i == nm7.r4) {
+                ox0Var.n.b(cmb.v0(cmb.g5, this.a), nm7.i2);
+                return;
+            }
+            return;
+        }
+        if (this.y == ((Long) objArr[0]).longValue()) {
+            ox0Var.f();
+            this.I = true;
+            this.b.dismiss();
+        }
+    }
+
+    @Override // a22
+    public final boolean g() {
+        return this.W;
+    }
+
+    @Override // a22
+    public int getButtonsHideOffset() {
+        return gm.L(12.0f) + ((int) this.K.getTopActionBarOffsetY());
+    }
+
+    @Override // a22
     public int getCurrentItemTop() {
-        o39 o39Var = this.r;
-        if (o39Var.getChildCount() <= 0) {
-            o39Var.setTopGlowOffset(o39Var.getPaddingTop());
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = o39Var.getChildAt(0);
-        y29 y29Var = (y29) o39Var.G(childAt);
-        int top = childAt.getTop() - gl.L(36.0f);
-        int L = gl.L(7.0f);
-        if (top < gl.L(7.0f) || y29Var == null || y29Var.b() != 0) {
-            top = L;
-        }
-        o39Var.setTopGlowOffset(top);
-        return top;
+        nx0 nx0Var = this.K;
+        return (int) (nx0Var.getOffsetY() + nx0Var.getSwipeOffsetY());
     }
 
-    @Override // p02
+    @Override // a22
+    public int getCustomActionBarBackground() {
+        return this.a0;
+    }
+
+    @Override // a22
+    public int getCustomBackground() {
+        return this.S;
+    }
+
+    @Override // a22
     public int getFirstOffset() {
-        return gl.L(56.0f) + getListTopPadding();
+        return gm.L(56.0f) + getListTopPadding();
     }
 
-    @Override // p02
+    @Override // a22
     public int getListTopPadding() {
-        return this.r.getPaddingTop();
+        return (int) this.K.getOffsetY();
     }
 
-    @Override // p02
+    public String getStartCommand() {
+        return this.H;
+    }
+
+    public qw0 getWebViewContainer() {
+        return this.n;
+    }
+
+    @Override // a22
+    public final boolean h() {
+        return this.R;
+    }
+
+    @Override // a22
     public final int j() {
         return 1;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.w.setTranslationY(Math.max(0, getCurrentItemTop()));
+    @Override // a22
+    public final boolean k() {
+        if (this.n.A()) {
+            return true;
+        }
+        O();
+        return true;
     }
 
-    public void setDelegate(u04 u04Var) {
-        this.n.setDelegate(u04Var);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (this.P) {
+            setMeasuredDimension(getMeasuredWidth(), getMeasuredHeight());
+        } else {
+            super.onMeasure(i, i2);
+        }
+    }
+
+    @Override // a22
+    public final void p() {
+        nm7.f(this.G).n(this, nm7.z1);
+        nm7.e().n(this, nm7.r4);
+        r6 t = this.b.U2.t();
+        r7 r7Var = this.L;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = r7Var.b;
+        if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
+            actionBarPopupWindow$ActionBarPopupWindowLayout.d();
+        }
+        t.removeView(r7Var);
+        this.n.f();
+        this.U = true;
+        gm.r(this.V);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.s) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // a22
+    public final boolean s() {
+        O();
+        return false;
+    }
+
+    public void setAllowSwipes(boolean z) {
+        this.K.setAllowSwipes(z);
+    }
+
+    public void setCustomActionBarBackground(int i) {
+        this.W = true;
+        this.a0 = i;
+    }
+
+    public void setCustomBackground(int i) {
+        this.S = i;
+        this.R = true;
+    }
+
+    public void setDelegate(uv0 uv0Var) {
+        this.n.setDelegate(uv0Var);
+    }
+
+    public void setMeasureOffsetY(int i) {
+        this.O = i;
+        this.K.requestLayout();
+    }
+
+    public void setNeedCloseConfirmation(boolean z) {
+        this.T = z;
     }
 
     @Override // android.view.View
     public void setTranslationY(float f) {
         super.setTranslationY(f);
         this.b.b.invalidate();
-        invalidate();
+    }
+
+    @Override // a22
+    public final void t() {
+        i22 i22Var = this.b;
+        i22Var.v0(false);
+        i22Var.getWindow().setSoftInputMode(48);
+    }
+
+    @Override // a22
+    public final void u() {
+        this.L.setVisibility(8);
+        this.Q = false;
+        ox0 ox0Var = this.n;
+        boolean z = ox0Var.S;
+        i22 i22Var = this.b;
+        if (!z) {
+            gm.L3(i22Var.U2.getBackButton(), R.drawable.ic_ab_back);
+        }
+        i22Var.U2.setBackground(null);
+        if (ox0Var.U) {
+            ox0Var.f();
+            this.I = true;
+        }
+    }
+
+    @Override // a22
+    public final void w(int i) {
+        x22 x22Var = this.J;
+        ox0 ox0Var = this.n;
+        if (i == -1) {
+            if (ox0Var.A()) {
+                return;
+            }
+            O();
+            return;
+        }
+        i22 i22Var = this.b;
+        if (i == R.id.menu_open_bot) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", this.w);
+            i22Var.Z1.presentFragment(new yv1(bundle));
+            i22Var.dismiss();
+            return;
+        }
+        int i2 = 0;
+        if (i == R.id.menu_reload_page) {
+            if (ox0Var.getWebView() != null) {
+                ox0Var.getWebView().animate().cancel();
+                ox0Var.getWebView().animate().alpha(0.0f).start();
+            }
+            x22Var.setLoadProgress(0.0f);
+            x22Var.setAlpha(1.0f);
+            x22Var.setVisibility(0);
+            ox0Var.setBotUser(oc7.r1(this.G).W1(Long.valueOf(this.w)));
+            ox0Var.p(this.G, this.w);
+            nm7.f(ox0Var.N).d(new bv0(ox0Var, (byte) 1));
+            return;
+        }
+        if (i == R.id.menu_delete_bot) {
+            ArrayList<TLRPC.TL_attachMenuBot> arrayList = hs6.d0(this.G).b.bots;
+            int size = arrayList.size();
+            while (i2 < size) {
+                TLRPC.TL_attachMenuBot tL_attachMenuBot = arrayList.get(i2);
+                i2++;
+                TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
+                if (tL_attachMenuBot2.bot_id == this.w) {
+                    i22Var.f1(tL_attachMenuBot2, oc7.r1(this.G).W1(Long.valueOf(this.w)));
+                    return;
+                }
+            }
+            return;
+        }
+        if (i == R.id.menu_settings) {
+            ox0Var.getClass();
+            ox0Var.Q = System.currentTimeMillis();
+            ox0Var.v("settings_button_pressed", null);
+        } else if (i == R.id.menu_add_to_home_screen_bot) {
+            hs6.d0(this.G).z0(this.w, hs6.f2 ? 1 : 0, null);
+        } else if (i == R.id.menu_tos_bot) {
+            l11.u(getContext(), jb6.M0(2131752846, null));
+        } else if (i == R.id.menu_report_bot) {
+            da9.E0(this.G, getContext(), new c41(n21.a(getContext()), this.a), this.w);
+        }
+    }
+
+    @Override // a22
+    public final void y() {
+        this.P = false;
+        this.K.setSwipeOffsetAnimationDisallowed(false);
+        this.n.setViewPortByMeasureSuppressed(false);
+        requestLayout();
+    }
+
+    @Override // a22
+    public final void z(int i, boolean z) {
+        boolean z2;
+        ox0 ox0Var = this.n;
+        nx0 nx0Var = this.K;
+        if (z) {
+            ox0Var.setViewPortByMeasureSuppressed(true);
+            float topActionBarOffsetY = nx0Var.getTopActionBarOffsetY() + (-nx0Var.getOffsetY());
+            byte b = 0;
+            if (nx0Var.getSwipeOffsetY() != topActionBarOffsetY) {
+                nx0Var.d(topActionBarOffsetY);
+                z2 = true;
+            } else {
+                z2 = false;
+            }
+            int Q = this.b.o3.Q() + i;
+            setMeasuredDimension(getMeasuredWidth(), i);
+            this.P = true;
+            nx0Var.setSwipeOffsetAnimationDisallowed(true);
+            if (z2) {
+                return;
+            }
+            ValueAnimator valueAnimator = this.r;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.r = null;
+            }
+            if (ox0Var.getWebView() != null) {
+                int scrollY = ox0Var.getWebView().getScrollY();
+                int i2 = (Q - i) + scrollY;
+                ValueAnimator duration = ValueAnimator.ofInt(scrollY, i2).setDuration(250L);
+                this.r = duration;
+                duration.setInterpolator(wb2.V);
+                this.r.addUpdateListener(new u22(this, b));
+                this.r.addListener(new co(this, i2, (byte) 4));
+                this.r.start();
+            }
+        }
     }
 }

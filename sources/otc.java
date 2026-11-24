@@ -1,307 +1,187 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.Property;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class otc extends FrameLayout {
-    public static final /* synthetic */ int J = 0;
-    public AnimatorSet E;
-    public int F;
-    public int G;
-    public final frc H;
-    public final /* synthetic */ stc I;
-    public final ImageReceiver a;
-    public boolean b;
-    public final TextPaint c;
-    public StaticLayout d;
-    public StaticLayout e;
-    public final Paint f;
-    public final Paint h;
-    public final Paint n;
-    public int r;
-    public int s;
-    public int w;
-    public int x;
-    public boolean y;
+public final class otc extends q59 {
+    public final Context c;
+    public final /* synthetic */ WallpapersListActivity d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public otc(stc stcVar, Activity activity) {
-        super(activity);
-        this.I = stcVar;
-        this.y = true;
-        this.H = new frc(this, (byte) 4);
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(gl.L(12.0f));
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-15095832);
-        Paint paint2 = new Paint();
-        this.h = paint2;
-        paint2.setColor(-6975081);
-        Paint paint3 = new Paint(1);
-        this.n = paint3;
-        paint3.setColor(-1);
-        this.a = new ImageReceiver(this);
+    public otc(WallpapersListActivity wallpapersListActivity, Context context) {
+        this.d = wallpapersListActivity;
+        this.c = context;
     }
 
-    public final void a() {
-        frc frcVar = this.H;
-        gl.r(frcVar);
-        if (this.y && this.I.a.c0()) {
-            gl.e3(frcVar, 3000L);
-        }
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        return u69Var.f == 0;
     }
 
-    public final void b(int i) {
-        if (this.s == i || i < 0 || this.I.I) {
-            return;
-        }
-        this.s = i;
-        StaticLayout staticLayout = new StaticLayout(gl.g0(this.s, false, false), this.c, gl.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.d = staticLayout;
-        if (staticLayout.getLineCount() > 0) {
-            this.r = (int) Math.ceil(this.d.getLineWidth(0));
-        }
-        invalidate();
+    @Override // y59
+    public final int b() {
+        return this.d.a;
     }
 
-    public final void c(int i) {
-        if (this.b || i < 0 || this.I.I) {
-            return;
+    @Override // y59
+    public final int d(int i) {
+        int i2;
+        WallpapersListActivity wallpapersListActivity = this.d;
+        i2 = wallpapersListActivity.uploadImageRow;
+        if (i == i2 || i == wallpapersListActivity.h || i == wallpapersListActivity.b || i == wallpapersListActivity.e) {
+            return 0;
         }
-        this.w = i;
-        this.e = new StaticLayout(gl.g0(this.w, false, false), this.c, gl.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        invalidate();
+        return (i == wallpapersListActivity.f || i == wallpapersListActivity.n) ? 3 : 2;
     }
 
-    public final void d(boolean z, boolean z2) {
-        if (this.y == z) {
-            return;
-        }
-        this.y = z;
-        AnimatorSet animatorSet = this.E;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        boolean z3 = this.y;
-        Property property = View.ALPHA;
-        if (z3) {
-            if (z2) {
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                this.E = animatorSet2;
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<otc, Float>) property, 1.0f));
-                this.E.setDuration(150L);
-                this.E.addListener(new ntc(this, (byte) 0));
-                this.E.start();
-            } else {
-                setAlpha(1.0f);
-            }
-        } else if (z2) {
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            this.E = animatorSet3;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(this, (Property<otc, Float>) property, 0.0f));
-            this.E.setDuration(150L);
-            this.E.addListener(new ntc(this, (byte) 1));
-            this.E.start();
-        } else {
-            setAlpha(0.0f);
-        }
-        a();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int L;
-        int L2;
-        Canvas canvas2;
-        int i;
-        stc stcVar = this.I;
-        if (stcVar.Q) {
-            if (stcVar.N && stcVar.O != 0.0f) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j = currentTimeMillis - stcVar.M;
-                stcVar.M = currentTimeMillis;
-                float f = stcVar.O - (j / 150.0f);
-                stcVar.O = f;
-                if (f < 0.0f) {
-                    stcVar.O = 0.0f;
-                }
-                invalidate();
-            }
-            float f2 = stcVar.O;
-            ImageReceiver imageReceiver = this.a;
-            imageReceiver.setAlpha(f2);
-            imageReceiver.h(canvas, null);
-        }
-        if (stcVar.a.d == null || stcVar.I) {
-            return;
-        }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        if (!stcVar.V) {
-            if (this.d != null) {
-                canvas.save();
-                canvas.translate((measuredWidth - gl.L(58.0f)) - this.r, measuredHeight - gl.L((stcVar.U ? 6 : 10) + 29));
-                this.d.draw(canvas);
-                canvas.restore();
-            }
-            if (this.e != null) {
-                canvas.save();
-                canvas.translate(gl.L(18.0f), measuredHeight - gl.L((stcVar.U ? 6 : 10) + 29));
-                this.e.draw(canvas);
-                canvas.restore();
-            }
-        }
-        if (this.s != 0) {
-            int i2 = 0;
-            if (stcVar.V) {
-                L = measuredHeight - gl.L(3.0f);
-                L2 = gl.L(7.0f);
-            } else if (stcVar.U) {
-                L = measuredHeight - gl.L(29.0f);
-                i2 = gl.L(36.0f) + this.r;
-                measuredWidth = (measuredWidth - gl.L(76.0f)) - this.r;
-                L2 = gl.L(28.0f);
-            } else {
-                L = measuredHeight - gl.L(13.0f);
-                L2 = gl.L(12.0f);
-            }
-            int i3 = measuredHeight - L2;
-            boolean z = stcVar.U;
-            Paint paint = this.h;
-            if (z) {
-                canvas.drawRect(i2, L, measuredWidth, gl.L(3.0f) + L, paint);
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-            }
-            int i4 = this.b ? this.G : ((int) ((this.w / this.s) * (measuredWidth - i2))) + i2;
-            int i5 = this.x;
-            if (i5 != 0 && (i = this.s) != 0) {
-                float f3 = i2;
-                float f4 = L;
-                float A = b00.A(i5, i, measuredWidth - i2, f3);
-                float L3 = gl.L(3.0f) + L;
-                if (stcVar.U) {
-                    paint = this.n;
-                }
-                canvas2.drawRect(f3, f4, A, L3, paint);
-            }
-            float f5 = i4;
-            float L4 = gl.L(3.0f) + L;
-            Paint paint2 = this.f;
-            canvas2.drawRect(i2, L, f5, L4, paint2);
-            if (stcVar.V) {
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x014c, code lost:
+    
+        if (((int) (r6.h * 100.0f)) == ((int) (r13.V * 100.0f))) goto L89;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0122, code lost:
+    
+        if (r6.f == r13.U) goto L79;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0130, code lost:
+    
+        if (r6.a == null) goto L83;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0155  */
+    @Override // y59
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(u69 u69Var, int i) {
+        int i2;
+        long j;
+        Object obj;
+        TLRPC.WallPaper wallPaper;
+        String str;
+        rja rjaVar;
+        TLRPC.WallPaperSettings wallPaperSettings;
+        WallpapersListActivity wallpapersListActivity = this.d;
+        ArrayList arrayList = wallpapersListActivity.b0;
+        int i3 = u69Var.f;
+        View view = u69Var.a;
+        if (i3 == 0) {
+            xib xibVar = (xib) view;
+            i2 = wallpapersListActivity.uploadImageRow;
+            if (i == i2) {
+                xibVar.o(R.drawable.msg_photos, jb6.M0(2131745390, null), true);
                 return;
             }
-            canvas2.drawCircle(f5, i3, gl.L(this.b ? 7.0f : 5.0f), paint2);
+            if (i == wallpapersListActivity.b) {
+                xibVar.o(R.drawable.msg_palette, jb6.M0(2131745272, null), false);
+                return;
+            }
+            if (i == wallpapersListActivity.e) {
+                xibVar.k(jb6.M0(2131745841, null), false);
+                return;
+            } else {
+                if (i == wallpapersListActivity.h) {
+                    xibVar.o(R.drawable.msg_background, "Choose from gallery", false);
+                    xibVar.j(10);
+                    return;
+                }
+                return;
+            }
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        if (this.y) {
-            onTouchEvent(motionEvent);
-            return this.b;
-        }
-        d(true, true);
-        return true;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int measuredWidth;
-        int measuredHeight;
-        int i;
-        int i2;
-        stc stcVar = this.I;
-        lbc lbcVar = stcVar.a;
-        if (stcVar.U) {
-            i = gl.L(36.0f) + this.r;
-            measuredWidth = (getMeasuredWidth() - gl.L(76.0f)) - this.r;
-            measuredHeight = getMeasuredHeight() - gl.L(28.0f);
-        } else {
-            measuredWidth = getMeasuredWidth();
-            measuredHeight = getMeasuredHeight() - gl.L(12.0f);
-            i = 0;
-        }
-        int i3 = this.s;
-        if (i3 != 0) {
-            i2 = (int) ((this.w / i3) * (measuredWidth - i));
-        } else {
-            i2 = 0;
-        }
-        int i4 = i2 + i;
-        int action = motionEvent.getAction();
-        frc frcVar = this.H;
-        if (action == 0) {
-            if (!this.y || stcVar.V || stcVar.I) {
-                d(true, true);
-            } else if (this.s != 0) {
-                int x = (int) motionEvent.getX();
-                int y = (int) motionEvent.getY();
-                if (x >= i4 - gl.L(10.0f) && x <= gl.L(10.0f) + i4 && y >= measuredHeight - gl.L(10.0f) && y <= gl.L(10.0f) + measuredHeight) {
-                    this.b = true;
-                    this.F = x;
-                    this.G = i4;
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
+        if (i3 != 2) {
+            if (i3 == 3) {
+                njb njbVar = (njb) view;
+                if (i == wallpapersListActivity.f) {
+                    njbVar.setText(jb6.M0(2131745838, null));
+                    return;
+                } else {
+                    if (i == wallpapersListActivity.n) {
+                        njbVar.setText("Upload your own background for the channel.");
+                        return;
+                    }
+                    return;
                 }
             }
-            gl.r(frcVar);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (stcVar.x && lbcVar.c0()) {
-                gl.e3(frcVar, 3000L);
-            }
-            if (this.b) {
-                this.b = false;
-                if (stcVar.x) {
-                    int i5 = (int) (((this.G - i) / (measuredWidth - i)) * this.s);
-                    this.w = i5;
-                    lbcVar.p0(i5 * 1000, false);
+            return;
+        }
+        ssc sscVar = (ssc) view;
+        int i4 = i - wallpapersListActivity.c;
+        byte b = wallpapersListActivity.O;
+        int i5 = i4 * b;
+        sscVar.d(b, i5 == 0, i5 / b == wallpapersListActivity.d - 1);
+        for (int i6 = 0; i6 < wallpapersListActivity.O; i6++) {
+            int i7 = i5 + i6;
+            Object obj2 = i7 < arrayList.size() ? arrayList.get(i7) : null;
+            if (obj2 instanceof TLRPC.TL_wallPaper) {
+                TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
+                xlb xlbVar = cmb.I.j0;
+                obj = (wallpapersListActivity.P.equals(tL_wallPaper.slug) && (!wallpapersListActivity.P.equals(tL_wallPaper.slug) || (wallPaperSettings = tL_wallPaper.settings) == null || (wallpapersListActivity.Q == cmb.Y0(wallPaperSettings.background_color) && wallpapersListActivity.R == cmb.Y0(tL_wallPaper.settings.second_background_color) && wallpapersListActivity.S == cmb.Y0(tL_wallPaper.settings.third_background_color) && wallpapersListActivity.T == cmb.Y0(tL_wallPaper.settings.fourth_background_color) && (wallpapersListActivity.R == 0 || wallpapersListActivity.S != 0 || wallpapersListActivity.U == gm.q1(tL_wallPaper.settings.rotation, false) || !tL_wallPaper.pattern || Math.abs(cmb.S0(((float) tL_wallPaper.settings.intensity) / 100.0f) - wallpapersListActivity.V) <= 0.001f)))) ? tL_wallPaper : null;
+                j = tL_wallPaper.id;
+            } else {
+                j = 0;
+                if (obj2 instanceof mtc) {
+                    mtc mtcVar = (mtc) obj2;
+                    if (!"d".equals(mtcVar.a) || (str = wallpapersListActivity.P) == null || !str.equals(mtcVar.a)) {
+                        if (mtcVar.b == wallpapersListActivity.Q) {
+                            int i8 = mtcVar.c;
+                            int i9 = wallpapersListActivity.R;
+                            if (i8 == i9) {
+                                if (mtcVar.d == wallpapersListActivity.S) {
+                                    if (mtcVar.e == wallpapersListActivity.T) {
+                                        if (i9 != 0) {
+                                        }
+                                        if ("c".equals(wallpapersListActivity.P)) {
+                                        }
+                                        if (!"c".equals(wallpapersListActivity.P)) {
+                                            if (TextUtils.equals(wallpapersListActivity.P, mtcVar.a)) {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        obj = null;
+                        wallPaper = mtcVar.k;
+                        if (wallPaper != null) {
+                            j = wallPaper.id;
+                        }
+                    }
+                    obj = obj2;
+                    wallPaper = mtcVar.k;
+                    if (wallPaper != null) {
+                    }
+                } else {
+                    obj = ((obj2 instanceof ntc) && wallpapersListActivity.P.equals(((ntc) obj2).a)) ? obj2 : null;
                 }
             }
-        } else if (motionEvent.getAction() == 2 && this.b) {
-            int x2 = (int) motionEvent.getX();
-            int i6 = this.G - (this.F - x2);
-            this.G = i6;
-            this.F = x2;
-            if (i6 < i) {
-                this.G = i;
-                i6 = i;
-            } else if (i6 > measuredWidth) {
-                this.G = measuredWidth;
-                i6 = measuredWidth;
+            sscVar.e(obj2, wallpapersListActivity.r ? 1 : 0, i6, obj);
+            rjaVar = ((d) wallpapersListActivity).simpleActionBar;
+            if (rjaVar.x()) {
+                sscVar.c(i6, wallpapersListActivity.f0.indexOfKey(j) >= 0, !wallpapersListActivity.g0);
+            } else {
+                sscVar.c(i6, false, !wallpapersListActivity.g0);
             }
-            c((int) (((i6 - i) / (measuredWidth - i)) * this.s * 1000));
-            invalidate();
         }
-        super.onTouchEvent(motionEvent);
-        return true;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void requestDisallowInterceptTouchEvent(boolean z) {
-        super.requestDisallowInterceptTouchEvent(z);
-        a();
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        View xibVar;
+        Context context = this.c;
+        if (i == 0) {
+            xibVar = new xib(context);
+        } else if (i != 3) {
+            xibVar = new g32(this, context, (byte) 1);
+            xibVar.setTag(-33024);
+        } else {
+            xibVar = new njb(context);
+        }
+        return new b59(xibVar);
     }
 }

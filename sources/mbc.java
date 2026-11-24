@@ -1,154 +1,233 @@
 // default package
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.ui.Dictation.DictationAsr;
-import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class mbc {
-    public final d78 a;
-    public u3b b;
-    public String c;
-    public boolean d;
-    public jb4 e;
-    public hu7 f;
-    public ArrayList g;
-    public r3b h;
-    public boolean i;
-    public final xia j = new xia(this, (byte) 11);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class mbc extends nbc {
+    public final Matrix a;
+    public final ArrayList b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public final Matrix j;
+    public String k;
 
-    public mbc(d78 d78Var) {
-        this.a = d78Var;
-    }
-
-    public final void a(int i, s3b s3bVar) {
-        u3b u3bVar;
-        xl3 xl3Var;
-        s3b s3bVar2 = (s3bVar == null || DictationAsr.C(i)) ? s3bVar : null;
-        String g = s3bVar2 == null ? null : s3bVar2.g();
-        if (TextUtils.equals(g, this.c)) {
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    public mbc(mbc mbcVar, qt qtVar) {
+        kbc kbcVar;
+        this.a = new Matrix();
+        this.b = new ArrayList();
+        this.c = 0.0f;
+        this.d = 0.0f;
+        this.e = 0.0f;
+        this.f = 1.0f;
+        this.g = 1.0f;
+        this.h = 0.0f;
+        this.i = 0.0f;
+        Matrix matrix = new Matrix();
+        this.j = matrix;
+        this.k = null;
+        this.c = mbcVar.c;
+        this.d = mbcVar.d;
+        this.e = mbcVar.e;
+        this.f = mbcVar.f;
+        this.g = mbcVar.g;
+        this.h = mbcVar.h;
+        this.i = mbcVar.i;
+        String str = mbcVar.k;
+        this.k = str;
+        if (str != null) {
+            qtVar.put(str, this);
         }
-        c();
-        u3b u3bVar2 = this.b;
-        if (u3bVar2 != null) {
-            u3bVar2.c();
-            this.b = null;
-        }
-        this.c = g;
-        if (s3bVar2 != null) {
-            u3b u3bVar3 = new u3b(s3bVar2, 0L, 0L, new l3c(this, r9, (byte) 18));
-            this.b = u3bVar3;
-            u3b[] u3bVarArr = {u3bVar3};
-            if (u3bVar3.f != null && na7.c1().getBoolean("asr_video_captions", false) && (xl3Var = (u3bVar = this.b).f) != null && (DictationAsr.A((vl3) xl3Var.b) || DictationAsr.y((vl3) u3bVar.f.b))) {
-                b();
+        matrix.set(mbcVar.j);
+        ArrayList arrayList = mbcVar.b;
+        for (int i = 0; i < arrayList.size(); i++) {
+            Object obj = arrayList.get(i);
+            if (obj instanceof mbc) {
+                this.b.add(new mbc((mbc) obj, qtVar));
+            } else {
+                if (obj instanceof lbc) {
+                    lbc lbcVar = (lbc) obj;
+                    lbc lbcVar2 = new lbc(lbcVar);
+                    lbcVar2.e = 0.0f;
+                    lbcVar2.g = 1.0f;
+                    lbcVar2.h = 1.0f;
+                    lbcVar2.i = 0.0f;
+                    lbcVar2.j = 1.0f;
+                    lbcVar2.k = 0.0f;
+                    lbcVar2.l = Paint.Cap.BUTT;
+                    lbcVar2.m = Paint.Join.MITER;
+                    lbcVar2.n = 4.0f;
+                    lbcVar2.d = lbcVar.d;
+                    lbcVar2.e = lbcVar.e;
+                    lbcVar2.g = lbcVar.g;
+                    lbcVar2.f = lbcVar.f;
+                    lbcVar2.c = lbcVar.c;
+                    lbcVar2.h = lbcVar.h;
+                    lbcVar2.i = lbcVar.i;
+                    lbcVar2.j = lbcVar.j;
+                    lbcVar2.k = lbcVar.k;
+                    lbcVar2.l = lbcVar.l;
+                    lbcVar2.m = lbcVar.m;
+                    lbcVar2.n = lbcVar.n;
+                    kbcVar = lbcVar2;
+                } else {
+                    if (!(obj instanceof kbc)) {
+                        dq9.m("Unknown object in the tree!");
+                        throw null;
+                    }
+                    kbcVar = new kbc((kbc) obj);
+                }
+                this.b.add(kbcVar);
+                Object obj2 = kbcVar.b;
+                if (obj2 != null) {
+                    qtVar.put(obj2, kbcVar);
+                }
             }
         }
-        this.a.a();
     }
 
-    public final void b() {
-        u3b u3bVar;
-        d78 d78Var = this.a;
-        PhotoViewer photoViewer = d78Var.a;
-        if (this.d || (u3bVar = this.b) == null || u3bVar.f == null) {
-            return;
+    @Override // nbc
+    public final boolean a() {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i >= arrayList.size()) {
+                return false;
+            }
+            if (((nbc) arrayList.get(i)).a()) {
+                return true;
+            }
+            i++;
         }
-        this.d = true;
-        hu7 hu7Var = this.f;
-        if (hu7Var == null) {
-            hu7 hu7Var2 = new hu7(photoViewer.f0.getContext(), (byte) 1);
-            this.f = hu7Var2;
-            hu7Var2.setEnabled(false);
-            this.f.setFocusable(false);
-            this.f.setClickable(false);
-            this.f.setBackgroundColor(0);
-            this.f.setTextSize(1, 16.0f);
-            this.f.setTypeface(gl.o());
-            this.f.setGravity(17);
-            this.f.setTextAlignment(4);
-            this.f.setHorizontallyScrolling(false);
-            this.f.setMaxLines(3);
-            this.f.setBreakStrategy(0);
-            this.f.setPadding(gl.L(7.0f), gl.L(7.0f), gl.L(7.0f), gl.L(7.0f));
-            this.f.setFrameColor(2130706432);
-            this.f.setTextColor(-1);
-            this.f.setTallFrame(true);
-            this.f.setAlpha(0.0f);
-            this.f.setImportantForAccessibility(2);
-            k98 k98Var = photoViewer.f0;
-            hu7 hu7Var3 = this.f;
-            u98 u98Var = photoViewer.i3;
-            k98Var.addView(hu7Var3, u98Var != null ? k98Var.indexOfChild(u98Var) : -1, nme.d(-2, -2.0f, 49, 16.0f, 0.0f, 16.0f, 0.0f));
-        } else if (hu7Var.getParent() == null) {
-            k98 k98Var2 = photoViewer.f0;
-            hu7 hu7Var4 = this.f;
-            u98 u98Var2 = photoViewer.i3;
-            k98Var2.addView(hu7Var4, u98Var2 != null ? k98Var2.indexOfChild(u98Var2) : -1, nme.d(-2, -2.0f, 49, 16.0f, 0.0f, 16.0f, 0.0f));
+    }
+
+    @Override // nbc
+    public final boolean b(int[] iArr) {
+        int i = 0;
+        boolean z = false;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i >= arrayList.size()) {
+                return z;
+            }
+            z |= ((nbc) arrayList.get(i)).b(iArr);
+            i++;
         }
-        u3b u3bVar2 = this.b;
-        u3bVar2.n = new hza(d78Var, (byte) 27);
-        u3bVar2.d = 1;
-        TextPaint textPaint = new TextPaint(this.f.getPaint());
-        float width = (((photoViewer.f0.getWidth() > 0 ? photoViewer.f0.getWidth() : gl.q.x) - gl.L(32.0f)) - this.f.getPaddingLeft()) - this.f.getPaddingRight();
-        u3bVar2.u = new wb1(textPaint, (byte) 1);
-        u3bVar2.v = width * 0.96f;
-        Context context = this.f.getContext();
-        k98 k98Var3 = photoViewer.f0;
-        wjb wjbVar = photoViewer.w2;
-        xl3 xl3Var = u3bVar2.f;
-        jb4 jb4Var = new jb4(context, k98Var3, wjbVar, xl3Var == null ? "" : jm3.r(xl3Var.u()), new l3c(this, u3bVar2, (byte) 19));
-        this.e = jb4Var;
-        u3bVar2.h(0L, 0L, new vk9(this, jb4Var, u3bVar2));
-        hu7 hu7Var5 = this.f;
-        xia xiaVar = this.j;
-        hu7Var5.removeCallbacks(xiaVar);
-        this.f.postOnAnimation(xiaVar);
     }
 
     public final void c() {
-        u3b u3bVar = this.b;
-        if (u3bVar != null) {
-            u3bVar.i();
-        }
-        jb4 jb4Var = this.e;
-        if (jb4Var != null) {
-            jb4Var.f = null;
-            m21 m21Var = (m21) jb4Var.g;
-            if (m21Var != null) {
-                m21Var.b();
-                jb4Var.g = null;
-            }
-            this.e = null;
-        }
-        this.d = false;
-        this.g = null;
-        this.h = null;
-        hu7 hu7Var = this.f;
-        if (hu7Var != null) {
-            hu7Var.removeCallbacks(this.j);
-            this.f.animate().cancel();
-            this.f.setAlpha(0.0f);
-            this.i = false;
+        Matrix matrix = this.j;
+        matrix.reset();
+        matrix.postTranslate(-this.d, -this.e);
+        matrix.postScale(this.f, this.g);
+        matrix.postRotate(this.c, 0.0f, 0.0f);
+        matrix.postTranslate(this.h + this.d, this.i + this.e);
+    }
+
+    public String getGroupName() {
+        return this.k;
+    }
+
+    public Matrix getLocalMatrix() {
+        return this.j;
+    }
+
+    public float getPivotX() {
+        return this.d;
+    }
+
+    public float getPivotY() {
+        return this.e;
+    }
+
+    public float getRotation() {
+        return this.c;
+    }
+
+    public float getScaleX() {
+        return this.f;
+    }
+
+    public float getScaleY() {
+        return this.g;
+    }
+
+    public float getTranslateX() {
+        return this.h;
+    }
+
+    public float getTranslateY() {
+        return this.i;
+    }
+
+    public void setPivotX(float f) {
+        if (f != this.d) {
+            this.d = f;
+            c();
         }
     }
 
-    public final void d() {
-        u3b u3bVar = this.b;
-        if (u3bVar == null || u3bVar.f == null) {
-            return;
-        }
-        if (this.d) {
-            na7.c1().edit().putBoolean("asr_video_captions", false).apply();
+    public void setPivotY(float f) {
+        if (f != this.e) {
+            this.e = f;
             c();
-        } else {
-            na7.c1().edit().putBoolean("asr_video_captions", true).apply();
-            b();
         }
-        this.a.a();
+    }
+
+    public void setRotation(float f) {
+        if (f != this.c) {
+            this.c = f;
+            c();
+        }
+    }
+
+    public void setScaleX(float f) {
+        if (f != this.f) {
+            this.f = f;
+            c();
+        }
+    }
+
+    public void setScaleY(float f) {
+        if (f != this.g) {
+            this.g = f;
+            c();
+        }
+    }
+
+    public void setTranslateX(float f) {
+        if (f != this.h) {
+            this.h = f;
+            c();
+        }
+    }
+
+    public void setTranslateY(float f) {
+        if (f != this.i) {
+            this.i = f;
+            c();
+        }
+    }
+
+    public mbc() {
+        this.a = new Matrix();
+        this.b = new ArrayList();
+        this.c = 0.0f;
+        this.d = 0.0f;
+        this.e = 0.0f;
+        this.f = 1.0f;
+        this.g = 1.0f;
+        this.h = 0.0f;
+        this.i = 0.0f;
+        this.j = new Matrix();
+        this.k = null;
     }
 }

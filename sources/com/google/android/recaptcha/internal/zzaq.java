@@ -1,25 +1,25 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzaq extends ccb implements eq4 {
-    public zzaq(fw2 fw2Var) {
-        super(2, fw2Var);
+final class zzaq extends eeb implements fs4 {
+    public zzaq(px2 px2Var) {
+        super(2, px2Var);
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzaq(fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        return new zzaq(px2Var);
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaq) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzaq) create((zzhk) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
-        qse.b(obj);
-        return g5c.a;
+        tue.b(obj);
+        return g7c.a;
     }
 }

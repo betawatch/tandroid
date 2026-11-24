@@ -1,55 +1,83 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import java.util.Set;
+import android.util.Log;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import com.google.android.recaptcha.internal.zzdm;
+import com.google.android.recaptcha.internal.zzsw;
+import com.google.android.recaptcha.internal.zzsx;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class i2d extends z0d implements ey4, fy4 {
-    public static final op5 l = n2d.a;
-    public final Context c;
-    public final o59 d;
-    public final op5 e;
-    public final Set f;
-    public final ntb i;
-    public eha j;
-    public w1d k;
-
-    public i2d(Context context, o59 o59Var, ntb ntbVar) {
-        super((byte) 1);
-        this.c = context;
-        this.d = o59Var;
-        this.i = ntbVar;
-        this.f = (Set) ntbVar.a;
-        this.e = l;
+public final /* synthetic */ class i2d implements Continuation {
+    public static /* synthetic */ void a() {
+        throw new zzsw("Protocol message tag had invalid wire type.");
     }
 
-    @Override // z0d
-    public final void U(c3d c3dVar) {
-        this.d.post(new rld((Object) this, (Object) c3dVar, false, (byte) 13));
+    public static /* synthetic */ void b(int i, int i2) {
+        throw new IllegalArgumentException("Length too large: " + i + i2);
     }
 
-    @Override // ey4
-    public final void onConnected(Bundle bundle) {
-        this.j.B(this);
+    public static /* synthetic */ void c(int i, int i2, Object obj) {
+        StringBuilder sb = new StringBuilder(i);
+        sb.append(obj);
+        sb.append(i2);
+        throw new IllegalArgumentException(sb.toString());
     }
 
-    @Override // fy4
-    public final void onConnectionFailed(ds2 ds2Var) {
-        this.k.b(ds2Var);
+    public static /* synthetic */ void d(int i, int i2, Throwable th) {
+        throw new zzdm(i, i2, th);
     }
 
-    @Override // ey4
-    public final void onConnectionSuspended(int i) {
-        w1d w1dVar = this.k;
-        u1d u1dVar = (u1d) w1dVar.f.s.get(w1dVar.b);
-        if (u1dVar != null) {
-            if (u1dVar.k) {
-                u1dVar.k(new ds2(17, null, null));
-            } else {
-                u1dVar.onConnectionSuspended(i);
-            }
+    public static /* synthetic */ void e(int i, String str) {
+        throw new IllegalStateException(str + i);
+    }
+
+    public static /* synthetic */ void f(long j) {
+        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + j);
+    }
+
+    public static /* synthetic */ void g(String str) {
+        throw new w5e(str);
+    }
+
+    public static /* synthetic */ void h(Throwable th) {
+        throw new rq2(th);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ void i(int i, int i2) {
+        throw new ArrayIndexOutOfBoundsException("Failed writing " + ((char) i) + ((Object) " at index ") + i2);
+    }
+
+    public static /* synthetic */ void j(String str) {
+        throw new zzsx(str);
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public final Object then(Task task) {
+        Task forException;
+        String message;
+        task.getClass();
+        cd4 cd4Var = cd4.e;
+        boolean isSuccessful = task.isSuccessful();
+        li0 li0Var = j2d.b;
+        if (isSuccessful) {
+            li0Var.a("Successfully completed the operation", new Object[0]);
+            Task forResult = Tasks.forResult(cd4Var.invoke(task.getResult()));
+            forResult.getClass();
+            return forResult;
         }
+        Log.e(li0Var.b, li0Var.b("Failed to fetch the Verification Support Info: " + task.getException(), new Object[0]));
+        Exception exception = task.getException();
+        if (exception == null || (message = exception.getMessage()) == null || hbb.f(0, 2, message, "test_number_token is invalid") < 0) {
+            forException = Tasks.forException(new hi4(exception instanceof ap ? ((ap) exception).getStatus().a : 55501, "Failed to fetch the Verification Support Info"));
+        } else {
+            li0Var.a("Backend rejected the test number token.", new Object[0]);
+            forException = Tasks.forException(new hi4(55507, "Invalid test number ID(s) - might be empty, expired or duplicated."));
+        }
+        forException.getClass();
+        return forException;
     }
 }

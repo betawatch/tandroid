@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzpr {
     public static int zza(int i, int i2, RoundingMode roundingMode) {
@@ -50,7 +50,7 @@ public final class zzpr {
                 }
                 break;
             default:
-                wn4.f();
+                zo4.f();
                 return 0;
         }
         return i3 + i5;
@@ -58,7 +58,7 @@ public final class zzpr {
 
     public static int zzb(int i, RoundingMode roundingMode) {
         if (i <= 0) {
-            w26.j("x (0) must be > 0");
+            u36.j("x (0) must be > 0");
             return 0;
         }
         switch (zzpq.zza[roundingMode.ordinal()]) {
@@ -77,7 +77,7 @@ public final class zzpr {
                 int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i);
                 return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i) >>> 31);
             default:
-                wn4.f();
+                zo4.f();
                 return 0;
         }
         return 31 - Integer.numberOfLeadingZeros(i);

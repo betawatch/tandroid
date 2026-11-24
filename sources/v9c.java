@@ -3,45 +3,44 @@
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class v9c extends b4 {
-    public static final Parcelable.Creator<v9c> CREATOR = new hv6((byte) 23);
-    public final int a;
-    public final String b;
-    public final int c;
+public enum v9c implements Parcelable {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7("required"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF17("preferred"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF27("discouraged");
 
-    public v9c(int i, int i2, String str) {
-        str.getClass();
-        this.a = i;
-        this.b = str;
-        this.c = i2;
+    public static final Parcelable.Creator<v9c> CREATOR = new lbd((byte) 21);
+    public final String a;
+
+    v9c(String str) {
+        this.a = str;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static v9c a(String str) {
+        for (v9c v9cVar : values()) {
+            if (str.equals(v9cVar.a)) {
+                return v9cVar;
+            }
         }
-        if (!(obj instanceof v9c)) {
-            return false;
-        }
-        v9c v9cVar = (v9c) obj;
-        return this.a == v9cVar.a && rp5.a(this.b, v9cVar.b) && this.c == v9cVar.c;
+        throw new ged(kt6.o("User verification requirement ", str, " not supported"));
     }
 
-    public final int hashCode() {
-        return ir2.j(this.a * 31, 31, this.b) + this.c;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
+        return this.a;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.l(parcel, 2, this.b);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        jte.s(parcel, r);
+        parcel.writeString(this.a);
     }
 }

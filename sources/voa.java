@@ -1,473 +1,101 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class voa implements i8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vqa b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+public final class voa implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ gt7 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ TextView f;
 
-    public /* synthetic */ voa(vqa vqaVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, byte b) {
-        this.a = b;
-        this.b = vqaVar;
-        this.c = tL_starGiftUnique;
+    public voa(int i, EditTextBoldCursor editTextBoldCursor, gt7 gt7Var, int[] iArr, TextView textView) {
+        this.b = i;
+        this.c = editTextBoldCursor;
+        this.d = gt7Var;
+        this.e = iArr;
+        this.f = textView;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                final nj njVar = (nj) obj;
-                final Runnable runnable = (Runnable) obj2;
-                TL_stars.StarsAmount q = njVar.q();
-                TL_stars.updateStarGiftPrice updatestargiftprice = new TL_stars.updateStarGiftPrice();
-                final vqa vqaVar = this.b;
-                updatestargiftprice.stargift = vqaVar.u1();
-                updatestargiftprice.resell_amount = q;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(vqaVar.a);
-                final byte b = 0;
-                final TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
-                connectionsManager.sendRequest(updatestargiftprice, new RequestDelegate() { // from class: xna
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
-                        final byte b2 = 0;
-                        switch (b) {
-                            case 0:
-                                boolean z = tLObject instanceof TLRPC.Updates;
-                                final vqa vqaVar2 = vqaVar;
-                                final Runnable runnable2 = runnable;
-                                if (!z) {
-                                    if (tL_error != null) {
-                                        if (!tL_error.text.startsWith("STARGIFT_RESELL_TOO_EARLY_")) {
-                                            gl.d3(new Runnable() { // from class: eoa
-                                                @Override // java.lang.Runnable
-                                                public final void run() {
-                                                    byte b3 = b2;
-                                                    Runnable runnable3 = runnable2;
-                                                    TLRPC.TL_error tL_error2 = tL_error;
-                                                    vqa vqaVar3 = vqaVar2;
-                                                    switch (b3) {
-                                                        case 0:
-                                                            vqaVar3.j().g0(tL_error2, false);
-                                                            if (runnable3 != null) {
-                                                                runnable3.run();
-                                                                break;
-                                                            }
-                                                            break;
-                                                        default:
-                                                            vqaVar3.j().g0(tL_error2, false);
-                                                            if (runnable3 != null) {
-                                                                runnable3.run();
-                                                                break;
-                                                            }
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            break;
-                                        } else {
-                                            gl.d3(new go6(vqaVar2, Long.parseLong(tL_error.text.substring(26)), runnable2, (byte) 25));
-                                            break;
-                                        }
-                                    }
-                                } else {
-                                    na7.q1(vqaVar2.a).Q3((TLRPC.Updates) tLObject, false);
-                                    final byte b3 = 0;
-                                    final TL_stars.TL_starGiftUnique tL_starGiftUnique2 = tL_starGiftUnique;
-                                    final nj njVar2 = njVar;
-                                    gl.d3(new Runnable() { // from class: doa
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            byte b4 = b3;
-                                            oj ojVar = oj.a;
-                                            oj ojVar2 = oj.b;
-                                            Runnable runnable3 = runnable2;
-                                            nj njVar3 = njVar2;
-                                            TL_stars.TL_starGiftUnique tL_starGiftUnique3 = tL_starGiftUnique2;
-                                            vqa vqaVar3 = vqaVar2;
-                                            switch (b4) {
-                                                case 0:
-                                                    tL_starGiftUnique3.flags |= 16;
-                                                    tL_starGiftUnique3.resale_ton_only = njVar3.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                                                    tL_starGiftUnique3.resell_amount = arrayList;
-                                                    arrayList.add(njVar3.e(ojVar).q());
-                                                    tL_starGiftUnique3.resell_amount.add(njVar3.e(ojVar2).q());
-                                                    vqaVar3.a2.setResellPrice(njVar3);
-                                                    eq8 eq8Var = vqaVar3.i3;
-                                                    if (eq8Var != null) {
-                                                        eq8Var.run();
-                                                    }
-                                                    if (runnable3 != null) {
-                                                        runnable3.run();
-                                                    }
-                                                    vqaVar3.j().Q(R.raw.contact_check, 36, k96.a0(null, null, 2131750012, vqaVar3.s1())).j();
-                                                    break;
-                                                default:
-                                                    tL_starGiftUnique3.flags |= 16;
-                                                    tL_starGiftUnique3.resale_ton_only = njVar3.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                                                    tL_starGiftUnique3.resell_amount = arrayList2;
-                                                    arrayList2.add(njVar3.e(ojVar).q());
-                                                    tL_starGiftUnique3.resell_amount.add(njVar3.e(ojVar2).q());
-                                                    vqaVar3.a2.setResellPrice(njVar3);
-                                                    eq8 eq8Var2 = vqaVar3.i3;
-                                                    if (eq8Var2 != null) {
-                                                        eq8Var2.run();
-                                                    }
-                                                    if (runnable3 != null) {
-                                                        runnable3.run();
-                                                        break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    break;
-                                }
-                                break;
-                            default:
-                                boolean z2 = tLObject instanceof TLRPC.Updates;
-                                final vqa vqaVar3 = vqaVar;
-                                final Runnable runnable3 = runnable;
-                                if (!z2) {
-                                    if (tL_error != null) {
-                                        final byte b4 = 1;
-                                        gl.d3(new Runnable() { // from class: eoa
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                byte b32 = b4;
-                                                Runnable runnable32 = runnable3;
-                                                TLRPC.TL_error tL_error2 = tL_error;
-                                                vqa vqaVar32 = vqaVar3;
-                                                switch (b32) {
-                                                    case 0:
-                                                        vqaVar32.j().g0(tL_error2, false);
-                                                        if (runnable32 != null) {
-                                                            runnable32.run();
-                                                            break;
-                                                        }
-                                                        break;
-                                                    default:
-                                                        vqaVar32.j().g0(tL_error2, false);
-                                                        if (runnable32 != null) {
-                                                            runnable32.run();
-                                                            break;
-                                                        }
-                                                        break;
-                                                }
-                                            }
-                                        });
-                                        break;
-                                    }
-                                } else {
-                                    na7.q1(vqaVar3.a).Q3((TLRPC.Updates) tLObject, false);
-                                    final byte b5 = 1;
-                                    final TL_stars.TL_starGiftUnique tL_starGiftUnique3 = tL_starGiftUnique;
-                                    final nj njVar3 = njVar;
-                                    gl.d3(new Runnable() { // from class: doa
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            byte b42 = b5;
-                                            oj ojVar = oj.a;
-                                            oj ojVar2 = oj.b;
-                                            Runnable runnable32 = runnable3;
-                                            nj njVar32 = njVar3;
-                                            TL_stars.TL_starGiftUnique tL_starGiftUnique32 = tL_starGiftUnique3;
-                                            vqa vqaVar32 = vqaVar3;
-                                            switch (b42) {
-                                                case 0:
-                                                    tL_starGiftUnique32.flags |= 16;
-                                                    tL_starGiftUnique32.resale_ton_only = njVar32.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                                                    tL_starGiftUnique32.resell_amount = arrayList;
-                                                    arrayList.add(njVar32.e(ojVar).q());
-                                                    tL_starGiftUnique32.resell_amount.add(njVar32.e(ojVar2).q());
-                                                    vqaVar32.a2.setResellPrice(njVar32);
-                                                    eq8 eq8Var = vqaVar32.i3;
-                                                    if (eq8Var != null) {
-                                                        eq8Var.run();
-                                                    }
-                                                    if (runnable32 != null) {
-                                                        runnable32.run();
-                                                    }
-                                                    vqaVar32.j().Q(R.raw.contact_check, 36, k96.a0(null, null, 2131750012, vqaVar32.s1())).j();
-                                                    break;
-                                                default:
-                                                    tL_starGiftUnique32.flags |= 16;
-                                                    tL_starGiftUnique32.resale_ton_only = njVar32.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                                                    tL_starGiftUnique32.resell_amount = arrayList2;
-                                                    arrayList2.add(njVar32.e(ojVar).q());
-                                                    tL_starGiftUnique32.resell_amount.add(njVar32.e(ojVar2).q());
-                                                    vqaVar32.a2.setResellPrice(njVar32);
-                                                    eq8 eq8Var2 = vqaVar32.i3;
-                                                    if (eq8Var2 != null) {
-                                                        eq8Var2.run();
-                                                    }
-                                                    if (runnable32 != null) {
-                                                        runnable32.run();
-                                                        break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                p8c p8cVar = (p8c) obj;
-                Boolean bool = (Boolean) obj2;
-                vqa vqaVar2 = this.b;
-                x99 x99Var = vqaVar2.R2;
-                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = this.c;
-                if (x99Var == null) {
-                    x99 x99Var2 = new x99(vqaVar2.a, tL_starGiftUnique2.gift_id);
-                    vqaVar2.R2 = x99Var2;
-                    x99Var2.a();
-                }
-                HashSet hashSet = new HashSet();
-                int i = 0;
-                while (true) {
-                    spa[] spaVarArr = vqaVar2.a2.N.n;
-                    if (i >= spaVarArr.length) {
-                        y99 y99Var = new y99(vqaVar2.getContext(), tL_starGiftUnique2.title, vqaVar2.R2);
-                        y99Var.b2.addAll(hashSet);
-                        y99Var.d2.O(true);
-                        y99Var.c2 = bool.booleanValue();
-                        y99Var.Z1.set(gl.T2(k96.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
-                        y99Var.a2 = new w52(p8cVar, (byte) 4);
-                        y99Var.show();
-                        break;
-                    } else {
-                        TL_stars.StarGift starGift = spaVarArr[i].h;
-                        if ((starGift != null ? starGift : null) != null) {
-                            if (starGift == null) {
-                                starGift = null;
-                            }
-                            hashSet.add(Long.valueOf(starGift.id));
-                        }
-                        i++;
-                    }
-                }
-            default:
-                final nj njVar2 = (nj) obj;
-                final Runnable runnable2 = (Runnable) obj2;
-                TL_stars.StarsAmount q2 = njVar2.q();
-                TL_stars.updateStarGiftPrice updatestargiftprice2 = new TL_stars.updateStarGiftPrice();
-                final vqa vqaVar3 = this.b;
-                updatestargiftprice2.stargift = vqaVar3.u1();
-                updatestargiftprice2.resell_amount = q2;
-                ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(vqaVar3.a);
-                final byte b2 = 1;
-                final TL_stars.TL_starGiftUnique tL_starGiftUnique3 = this.c;
-                connectionsManager2.sendRequest(updatestargiftprice2, new RequestDelegate() { // from class: xna
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
-                        final byte b22 = 0;
-                        switch (b2) {
-                            case 0:
-                                boolean z = tLObject instanceof TLRPC.Updates;
-                                final vqa vqaVar22 = vqaVar3;
-                                final Runnable runnable22 = runnable2;
-                                if (!z) {
-                                    if (tL_error != null) {
-                                        if (!tL_error.text.startsWith("STARGIFT_RESELL_TOO_EARLY_")) {
-                                            gl.d3(new Runnable() { // from class: eoa
-                                                @Override // java.lang.Runnable
-                                                public final void run() {
-                                                    byte b32 = b22;
-                                                    Runnable runnable32 = runnable22;
-                                                    TLRPC.TL_error tL_error2 = tL_error;
-                                                    vqa vqaVar32 = vqaVar22;
-                                                    switch (b32) {
-                                                        case 0:
-                                                            vqaVar32.j().g0(tL_error2, false);
-                                                            if (runnable32 != null) {
-                                                                runnable32.run();
-                                                                break;
-                                                            }
-                                                            break;
-                                                        default:
-                                                            vqaVar32.j().g0(tL_error2, false);
-                                                            if (runnable32 != null) {
-                                                                runnable32.run();
-                                                                break;
-                                                            }
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            break;
-                                        } else {
-                                            gl.d3(new go6(vqaVar22, Long.parseLong(tL_error.text.substring(26)), runnable22, (byte) 25));
-                                            break;
-                                        }
-                                    }
-                                } else {
-                                    na7.q1(vqaVar22.a).Q3((TLRPC.Updates) tLObject, false);
-                                    final byte b3 = 0;
-                                    final TL_stars.TL_starGiftUnique tL_starGiftUnique22 = tL_starGiftUnique3;
-                                    final nj njVar22 = njVar2;
-                                    gl.d3(new Runnable() { // from class: doa
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            byte b42 = b3;
-                                            oj ojVar = oj.a;
-                                            oj ojVar2 = oj.b;
-                                            Runnable runnable32 = runnable22;
-                                            nj njVar32 = njVar22;
-                                            TL_stars.TL_starGiftUnique tL_starGiftUnique32 = tL_starGiftUnique22;
-                                            vqa vqaVar32 = vqaVar22;
-                                            switch (b42) {
-                                                case 0:
-                                                    tL_starGiftUnique32.flags |= 16;
-                                                    tL_starGiftUnique32.resale_ton_only = njVar32.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                                                    tL_starGiftUnique32.resell_amount = arrayList;
-                                                    arrayList.add(njVar32.e(ojVar).q());
-                                                    tL_starGiftUnique32.resell_amount.add(njVar32.e(ojVar2).q());
-                                                    vqaVar32.a2.setResellPrice(njVar32);
-                                                    eq8 eq8Var = vqaVar32.i3;
-                                                    if (eq8Var != null) {
-                                                        eq8Var.run();
-                                                    }
-                                                    if (runnable32 != null) {
-                                                        runnable32.run();
-                                                    }
-                                                    vqaVar32.j().Q(R.raw.contact_check, 36, k96.a0(null, null, 2131750012, vqaVar32.s1())).j();
-                                                    break;
-                                                default:
-                                                    tL_starGiftUnique32.flags |= 16;
-                                                    tL_starGiftUnique32.resale_ton_only = njVar32.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                                                    tL_starGiftUnique32.resell_amount = arrayList2;
-                                                    arrayList2.add(njVar32.e(ojVar).q());
-                                                    tL_starGiftUnique32.resell_amount.add(njVar32.e(ojVar2).q());
-                                                    vqaVar32.a2.setResellPrice(njVar32);
-                                                    eq8 eq8Var2 = vqaVar32.i3;
-                                                    if (eq8Var2 != null) {
-                                                        eq8Var2.run();
-                                                    }
-                                                    if (runnable32 != null) {
-                                                        runnable32.run();
-                                                        break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    break;
-                                }
-                                break;
-                            default:
-                                boolean z2 = tLObject instanceof TLRPC.Updates;
-                                final vqa vqaVar32 = vqaVar3;
-                                final Runnable runnable3 = runnable2;
-                                if (!z2) {
-                                    if (tL_error != null) {
-                                        final byte b4 = 1;
-                                        gl.d3(new Runnable() { // from class: eoa
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                byte b32 = b4;
-                                                Runnable runnable32 = runnable3;
-                                                TLRPC.TL_error tL_error2 = tL_error;
-                                                vqa vqaVar322 = vqaVar32;
-                                                switch (b32) {
-                                                    case 0:
-                                                        vqaVar322.j().g0(tL_error2, false);
-                                                        if (runnable32 != null) {
-                                                            runnable32.run();
-                                                            break;
-                                                        }
-                                                        break;
-                                                    default:
-                                                        vqaVar322.j().g0(tL_error2, false);
-                                                        if (runnable32 != null) {
-                                                            runnable32.run();
-                                                            break;
-                                                        }
-                                                        break;
-                                                }
-                                            }
-                                        });
-                                        break;
-                                    }
-                                } else {
-                                    na7.q1(vqaVar32.a).Q3((TLRPC.Updates) tLObject, false);
-                                    final byte b5 = 1;
-                                    final TL_stars.TL_starGiftUnique tL_starGiftUnique32 = tL_starGiftUnique3;
-                                    final nj njVar3 = njVar2;
-                                    gl.d3(new Runnable() { // from class: doa
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            byte b42 = b5;
-                                            oj ojVar = oj.a;
-                                            oj ojVar2 = oj.b;
-                                            Runnable runnable32 = runnable3;
-                                            nj njVar32 = njVar3;
-                                            TL_stars.TL_starGiftUnique tL_starGiftUnique322 = tL_starGiftUnique32;
-                                            vqa vqaVar322 = vqaVar32;
-                                            switch (b42) {
-                                                case 0:
-                                                    tL_starGiftUnique322.flags |= 16;
-                                                    tL_starGiftUnique322.resale_ton_only = njVar32.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                                                    tL_starGiftUnique322.resell_amount = arrayList;
-                                                    arrayList.add(njVar32.e(ojVar).q());
-                                                    tL_starGiftUnique322.resell_amount.add(njVar32.e(ojVar2).q());
-                                                    vqaVar322.a2.setResellPrice(njVar32);
-                                                    eq8 eq8Var = vqaVar322.i3;
-                                                    if (eq8Var != null) {
-                                                        eq8Var.run();
-                                                    }
-                                                    if (runnable32 != null) {
-                                                        runnable32.run();
-                                                    }
-                                                    vqaVar322.j().Q(R.raw.contact_check, 36, k96.a0(null, null, 2131750012, vqaVar322.s1())).j();
-                                                    break;
-                                                default:
-                                                    tL_starGiftUnique322.flags |= 16;
-                                                    tL_starGiftUnique322.resale_ton_only = njVar32.a == ojVar2;
-                                                    ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                                                    tL_starGiftUnique322.resell_amount = arrayList2;
-                                                    arrayList2.add(njVar32.e(ojVar).q());
-                                                    tL_starGiftUnique322.resell_amount.add(njVar32.e(ojVar2).q());
-                                                    vqaVar322.a2.setResellPrice(njVar32);
-                                                    eq8 eq8Var2 = vqaVar322.i3;
-                                                    if (eq8Var2 != null) {
-                                                        eq8Var2.run();
-                                                    }
-                                                    if (runnable32 != null) {
-                                                        runnable32.run();
-                                                        break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0107  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        double d;
+        if (this.a) {
+            return;
         }
+        try {
+            d = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
+            try {
+                if (d > oc7.r1(this.b).l4.N2.f() / 1.0E9d) {
+                    this.a = true;
+                    d = oc7.r1(this.b).l4.N2.f() / 1.0E9d;
+                    this.c.setText(Double.toString(d));
+                    EditTextBoldCursor editTextBoldCursor = this.c;
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    gt7 gt7Var = this.d;
+                    int[] iArr = this.e;
+                    int i = -iArr[0];
+                    iArr[0] = i;
+                    gm.A3(i, gt7Var, null);
+                } else if (d > 0.0d && d < oc7.r1(this.b).l4.M2.f() / 1.0E9d) {
+                    this.a = true;
+                    d = oc7.r1(this.b).l4.M2.f() / 1.0E9d;
+                    this.c.setText(Double.toString(d));
+                    EditTextBoldCursor editTextBoldCursor2 = this.c;
+                    editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+                    gt7 gt7Var2 = this.d;
+                    int[] iArr2 = this.e;
+                    int i2 = -iArr2[0];
+                    iArr2[0] = i2;
+                    gm.A3(i2, gt7Var2, null);
+                }
+            } catch (Exception unused) {
+                this.a = true;
+                this.c.setText(d <= 0.0d ? "" : Double.toString(d));
+                EditTextBoldCursor editTextBoldCursor3 = this.c;
+                editTextBoldCursor3.setSelection(editTextBoldCursor3.getText().length());
+                this.a = false;
+                this.d.c(this.c.isFocused(), !TextUtils.isEmpty(this.c.getText()));
+                TextView textView = this.f;
+                if (d != 0.0d) {
+                }
+            }
+        } catch (Exception unused2) {
+            d = 0.0d;
+        }
+        this.a = false;
+        this.d.c(this.c.isFocused(), !TextUtils.isEmpty(this.c.getText()));
+        TextView textView2 = this.f;
+        if (d != 0.0d) {
+            textView2.animate().alpha(0.0f).start();
+            this.f.setText("");
+            return;
+        }
+        textView2.animate().alpha(1.0f).start();
+        TextView textView3 = this.f;
+        StringBuilder sb = new StringBuilder("≈");
+        cj0.h();
+        sb.append(cj0.f("USD", 2, (long) (d * oc7.r1(this.b).l4.k.i * 100.0d), false));
+        textView3.setText(sb.toString());
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

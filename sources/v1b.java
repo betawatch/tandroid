@@ -1,36 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class v1b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ y1b b;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-    public /* synthetic */ v1b(y1b y1bVar, byte b) {
-        this.a = b;
-        this.b = y1bVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class v1b extends CharacterStyle implements UpdateAppearance {
+    public final int a;
+    public final ylb b;
+
+    public v1b(int i, ylb ylbVar) {
+        this.a = i;
+        this.b = ylbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        y1b y1bVar = this.b;
-        switch (b) {
-            case 0:
-                kk7.f(y1bVar.c).k(kk7.z5, y1bVar);
-                break;
-            case 1:
-                y1bVar.u = false;
-                y1bVar.w = true;
-                kk7.f(y1bVar.c).k(kk7.z5, y1bVar, Boolean.FALSE);
-                break;
-            case 2:
-                y1bVar.z = false;
-                break;
-            default:
-                y1bVar.k.clear();
-                y1bVar.d(true);
-                break;
-        }
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(cmb.v0(this.a, this.b));
+        textPaint.setUnderlineText(true);
     }
 }

@@ -1,283 +1,38 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class aub {
-    public final int a;
-    public final View b;
-    public final wjb c;
-    public final boolean d;
-    public tgb e;
-    public final ImageReceiver g;
-    public vl h;
-    public lm4 i;
-    public int k;
-    public int l;
-    public boolean m;
-    public boolean n;
-    public final Paint o;
-    public final Path p;
-    public final RectF q;
-    public final n41 r;
-    public Runnable s;
-    public long t;
-    public final pb0 f = new pb0((wjb) null);
-    public final Path j = new Path();
-
-    public aub(int i, View view, wjb wjbVar, boolean z) {
-        Paint paint = new Paint(1);
-        this.o = paint;
-        Path path = new Path();
-        this.p = path;
-        this.q = new RectF();
-        this.a = i;
-        this.b = view;
-        this.c = wjbVar;
-        this.d = z;
-        this.r = new n41(view);
-        this.g = new ImageReceiver(view);
-        path.rewind();
-        path.moveTo(-gl.L(1.75f), -gl.L(4.0f));
-        path.lineTo(gl.L(1.75f), 0.0f);
-        path.lineTo(-gl.L(1.75f), gl.L(4.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum aub extends rub {
+    public aub() {
+        super("BeforeDoctypePublicIdentifier", 55);
     }
 
-    public final void a() {
-        this.g.I();
-        vl vlVar = this.h;
-        if (vlVar != null) {
-            vlVar.b(this.b);
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        char d = hl1Var.d();
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
+            return;
         }
-    }
-
-    public final void b() {
-        this.g.K();
-        vl vlVar = this.h;
-        if (vlVar != null) {
-            vlVar.o(this.b);
+        if (d == '\"') {
+            bsbVar.c = rub.u0;
+            return;
         }
-    }
-
-    public final void c(Canvas canvas, int i, float f, float f2, float f3, float f4, boolean z) {
-        float f5;
-        float f6;
-        tgb tgbVar = this.e;
-        if (tgbVar != null) {
-            tgbVar.p = i - gl.L(144.66f);
-            float j = this.e.j() + gl.L(48.66f);
-            float f7 = i;
-            float f8 = (f7 - j) / 2.0f;
-            int i2 = this.l;
-            int i3 = (int) j;
-            boolean z2 = this.d;
-            Path path = this.j;
-            if (i2 == i3 && this.k == i && this.n == z && this.m == z2) {
-                f6 = j;
-                f5 = 2.0f;
-            } else {
-                path.rewind();
-                RectF rectF = gl.P;
-                f5 = 2.0f;
-                rectF.set(f8, gl.L(4.5f), f8 + j, gl.L(28.5f));
-                if (z) {
-                    path.addRoundRect(rectF, gl.L(12.0f), gl.L(12.0f), Path.Direction.CW);
-                }
-                if (z2) {
-                    float f9 = f7 / 2.0f;
-                    float f10 = 1.833f;
-                    float L = f9 - gl.L(1.833f);
-                    while (L > 0.0f) {
-                        RectF rectF2 = gl.P;
-                        rectF2.set(L - gl.L(3.66f), gl.L(15.5f), L, gl.L(17.5f));
-                        path.addRoundRect(rectF2, gl.L(1.0f), gl.L(1.0f), Path.Direction.CW);
-                        L -= gl.L(8.33f);
-                        f10 = f10;
-                        f7 = f7;
-                        j = j;
-                    }
-                    float f11 = f7;
-                    f6 = j;
-                    int L2 = gl.L(f10);
-                    while (true) {
-                        f9 += L2;
-                        if (f9 >= f11) {
-                            break;
-                        }
-                        RectF rectF3 = gl.P;
-                        rectF3.set(f9, gl.L(15.5f), gl.L(3.66f) + f9, gl.L(17.5f));
-                        path.addRoundRect(rectF3, gl.L(1.0f), gl.L(1.0f), Path.Direction.CW);
-                        L2 = gl.L(8.33f);
-                    }
-                } else {
-                    f6 = j;
-                }
-                this.l = i3;
-                this.k = i;
-                this.m = z2;
-                this.n = z;
-            }
-            canvas.save();
-            float f12 = f / f5;
-            canvas.translate(f12, f2);
-            wjb wjbVar = this.c;
-            Paint U0 = bkb.U0("paintChatActionBackground", wjbVar);
-            int alpha = U0.getAlpha();
-            U0.setAlpha((int) (alpha * f4 * f3));
-            canvas.drawPath(path, U0);
-            U0.setAlpha(alpha);
-            if (wjbVar != null ? wjbVar.g() : bkb.b1()) {
-                Paint U02 = bkb.U0("paintChatActionBackgroundDarken", wjbVar);
-                int alpha2 = U02.getAlpha();
-                U02.setAlpha((int) (alpha2 * f4 * f3));
-                canvas.drawPath(path, U02);
-                U02.setAlpha(alpha2);
-            }
-            canvas.restore();
-            float f13 = f12 + f8;
-            float f14 = f13 + f6;
-            this.q.set(f13 - gl.L(4.0f), f2 - gl.L(4.0f), gl.L(4.0f) + f14, gl.L(32.0f) + f2);
-            if (z) {
-                vl vlVar = this.h;
-                if (vlVar != null) {
-                    vlVar.setBounds((int) (gl.L(2.66f) + f13), (int) (gl.L(6.5f) + f2), (int) (gl.L(22.66f) + f13), (int) (gl.L(26.5f) + f2));
-                    this.h.setAlpha((int) (255.0f * f4));
-                    this.h.draw(canvas);
-                } else {
-                    lm4 lm4Var = this.i;
-                    if (lm4Var != null) {
-                        lm4Var.a(bkb.v0(bkb.u8, wjbVar));
-                    }
-                    float L3 = gl.L(20.0f);
-                    float L4 = gl.L(20.0f);
-                    ImageReceiver imageReceiver = this.g;
-                    imageReceiver.i0(gl.L(2.66f) + f13, gl.L(6.5f) + f2, L3, L4);
-                    imageReceiver.setAlpha(f4);
-                    imageReceiver.h(canvas, null);
-                }
-                int v0 = bkb.v0(bkb.g1(wjbVar) ? bkb.ya : bkb.Yc, wjbVar);
-                this.e.c(f13 + gl.L(27.66f), gl.L(16.5f) + f2, f4, v0, canvas);
-                canvas.save();
-                canvas.translate(f14 - gl.L(11.25f), gl.L(16.5f) + f2);
-                int p1 = bkb.p1(0.75f * f4, v0);
-                Paint paint = this.o;
-                paint.setColor(p1);
-                paint.setStrokeWidth(gl.L(1.66f));
-                canvas.drawPath(this.p, paint);
-                canvas.restore();
-            }
+        if (d == '\'') {
+            bsbVar.c = rub.v0;
+            return;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0031  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(MotionEvent motionEvent, boolean z) {
-        boolean z2;
-        int action;
-        Runnable runnable;
-        if (this.e != null) {
-            if (this.q.contains(motionEvent.getX(), motionEvent.getY() - (z ? this.b.getPaddingTop() : 0))) {
-                z2 = true;
-                action = motionEvent.getAction();
-                n41 n41Var = this.r;
-                if (action != 0) {
-                    n41Var.c(z2);
-                } else if (motionEvent.getAction() == 2) {
-                    if (n41Var.i && !z2) {
-                        n41Var.c(false);
-                    }
-                } else if (motionEvent.getAction() == 1) {
-                    if (n41Var.i && (runnable = this.s) != null) {
-                        runnable.run();
-                    }
-                    n41Var.c(false);
-                } else if (motionEvent.getAction() == 3) {
-                    n41Var.c(false);
-                }
-                return n41Var.i;
-            }
-        }
-        z2 = false;
-        action = motionEvent.getAction();
-        n41 n41Var2 = this.r;
-        if (action != 0) {
-        }
-        return n41Var2.i;
-    }
-
-    public final boolean e(k27 k27Var) {
-        vl vlVar = this.h;
-        View view = this.b;
-        tgb tgbVar = null;
-        if (vlVar != null) {
-            vlVar.o(view);
-            this.h = null;
-        }
-        this.l = 0;
-        this.t = 0L;
-        this.i = null;
-        if (k27Var == null) {
-            this.e = null;
-            this.t = 0L;
+        msb msbVar = rub.a;
+        if (d == '>') {
+            bsbVar.m(this);
+            bsbVar.j();
+            bsbVar.c = msbVar;
+        } else if (d != 65535) {
+            bsbVar.m(this);
+            bsbVar.c = rub.D0;
         } else {
-            int i = this.a;
-            boolean p0 = hc2.p0(na7.q1(i).K0(Long.valueOf(-k27.B0(k27Var.k))));
-            ImageReceiver imageReceiver = this.g;
-            if (p0) {
-                imageReceiver.q0(gl.L(10.0f));
-                long u1 = k27.u1(k27Var.k);
-                TLObject Z1 = na7.q1(i).Z1(u1);
-                this.t = u1;
-                if (Z1 == null) {
-                    this.e = null;
-                    return false;
-                }
-                pb0 pb0Var = this.f;
-                pb0Var.k(Z1);
-                imageReceiver.U(Z1, pb0Var, null);
-                tgbVar = new tgb(cf3.l(Z1), 14.0f, gl.o());
-                this.e = tgbVar;
-            } else {
-                imageReceiver.q0(0);
-                long Y1 = k27Var.Y1();
-                this.t = Y1;
-                TLRPC.TL_forumTopic f = na7.q1(i).g4.f(-k27.B0(k27Var.k), Y1);
-                if (f == null) {
-                    this.e = null;
-                    return false;
-                }
-                if (Y1 == 1) {
-                    lm4 d = mm4.d(view.getContext(), 0.75f, bkb.v0(bkb.u8, this.c), false);
-                    this.i = d;
-                    imageReceiver.g0(d);
-                } else if (f.icon_emoji_id != 0) {
-                    this.h = new vl(0, i, f.icon_emoji_id);
-                    imageReceiver.K();
-                    this.h.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                } else {
-                    imageReceiver.g0(mm4.f(f));
-                }
-                tgbVar = new tgb(f.title, 14.0f, gl.o());
-                this.e = tgbVar;
-            }
+            bsbVar.l(this);
+            bsbVar.j();
+            bsbVar.c = msbVar;
         }
-        return tgbVar != null;
     }
 }

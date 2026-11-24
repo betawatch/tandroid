@@ -7,7 +7,7 @@ import java.util.Iterator;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class f0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
@@ -38,8 +38,8 @@ public final /* synthetic */ class f0 implements ValueAnimator.AnimatorUpdateLis
             case 2:
                 a8 a8Var = (a8) obj;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a8Var.setTextColor(bm2.f(floatValue, -1, -9194260));
-                a8Var.setIconColor(bm2.f(floatValue, -1, -9194260));
+                a8Var.setTextColor(on2.f(floatValue, -1, -9194260));
+                a8Var.setIconColor(on2.f(floatValue, -1, -9194260));
                 break;
             case 3:
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj;
@@ -48,8 +48,8 @@ public final /* synthetic */ class f0 implements ValueAnimator.AnimatorUpdateLis
                 while (i < itemsCount) {
                     View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i);
                     if (!(childAt instanceof j8)) {
-                        float s = gl.s(floatValue2, actionBarPopupWindow$ActionBarPopupWindowLayout.w ? (itemsCount - 1) - i : i, itemsCount, 4.0f);
-                        childAt.setTranslationY((1.0f - s) * gl.L(-6.0f));
+                        float s = gm.s(floatValue2, actionBarPopupWindow$ActionBarPopupWindowLayout.w ? (itemsCount - 1) - i : i, itemsCount, 4.0f);
+                        childAt.setTranslationY((1.0f - s) * gm.L(-6.0f));
                         childAt.setAlpha(s * (childAt.isEnabled() ? 1.0f : 0.5f));
                     }
                     i++;
@@ -62,8 +62,8 @@ public final /* synthetic */ class f0 implements ValueAnimator.AnimatorUpdateLis
                     if (gbVar.r) {
                         floatValue3 = 1.0f - floatValue3;
                     }
-                    float A = (int) tb4.A(1.0f, floatValue3, gbVar.q, gbVar.p * floatValue3);
-                    if (!(gbVar instanceof y72)) {
+                    float A = (int) td4.A(1.0f, floatValue3, gbVar.q, gbVar.p * floatValue3);
+                    if (!(gbVar instanceof j92)) {
                         gbVar.a.setTranslationY(A);
                     }
                     gbVar.e(-A, floatValue3, gbVar.s);
@@ -71,162 +71,163 @@ public final /* synthetic */ class f0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 5:
-                gn gnVar = (gn) obj;
+                ic icVar = (ic) obj;
+                icVar.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                icVar.a();
+                icVar.requestLayout();
+                break;
+            case 6:
+                ho hoVar = (ho) obj;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gnVar.q = floatValue4;
-                s33 s33Var = gnVar.x;
-                if (s33Var != null) {
-                    floatValue4 = s33Var.getInterpolation(floatValue4);
+                hoVar.q = floatValue4;
+                d53 d53Var = hoVar.x;
+                if (d53Var != null) {
+                    floatValue4 = d53Var.getInterpolation(floatValue4);
                 }
-                gnVar.r = floatValue4;
-                gnVar.invalidateSelf();
-                Runnable runnable = gnVar.c0;
+                hoVar.r = floatValue4;
+                hoVar.invalidateSelf();
+                Runnable runnable = hoVar.c0;
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
-            case 6:
-                ((nr) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
             case 7:
-                cw cwVar = (cw) obj;
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cwVar.d.setTextColor(bm2.f(floatValue5, -16777216, -1));
-                cwVar.e.setTextColor(bm2.f(floatValue5, -16777216, -1));
-                cwVar.f.setTextColor(bm2.f(floatValue5, -16777216, -1));
+                ((ns) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 8:
-                xx xxVar = (xx) obj;
-                xxVar.a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                xxVar.invalidate();
+                cx cxVar = (cx) obj;
+                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                cxVar.d.setTextColor(on2.f(floatValue5, -16777216, -1));
+                cxVar.e.setTextColor(on2.f(floatValue5, -16777216, -1));
+                cxVar.f.setTextColor(on2.f(floatValue5, -16777216, -1));
                 break;
             case 9:
-                i20 i20Var = (i20) obj;
-                i20Var.C1.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                i20Var.F1.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                yy yyVar = (yy) obj;
+                yyVar.a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                yyVar.invalidate();
                 break;
             case 10:
-                ((mb0) obj).n0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                i30 i30Var = (i30) obj;
+                i30Var.C1.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                i30Var.F1.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 11:
-                qb0 qb0Var = (qb0) obj;
-                float S1 = gl.S1(valueAnimator.getAnimatedFraction(), qb0Var.n);
-                int i2 = (int) (255.0f * S1);
-                qb0Var.f.setAlpha(i2);
-                qb0Var.h.setAlpha(i2);
-                qb0Var.r.setAlpha((int) (66.0f * S1));
-                qb0Var.s.setAlpha((int) (85.0f * S1));
-                qb0Var.w.setAlpha(i2);
-                qb0Var.H = S1;
-                qb0Var.invalidate();
+                ((mc0) obj).o0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 12:
-                gc0 gc0Var = (gc0) obj;
-                gc0Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gc0Var.d();
+                qc0 qc0Var = (qc0) obj;
+                float S1 = gm.S1(valueAnimator.getAnimatedFraction(), qc0Var.n);
+                int i2 = (int) (255.0f * S1);
+                qc0Var.f.setAlpha(i2);
+                qc0Var.h.setAlpha(i2);
+                qc0Var.r.setAlpha((int) (66.0f * S1));
+                qc0Var.s.setAlpha((int) (85.0f * S1));
+                qc0Var.w.setAlpha(i2);
+                qc0Var.H = S1;
+                qc0Var.invalidate();
                 break;
             case 13:
-                ch0 ch0Var = (ch0) obj;
-                ch0Var.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ch0Var.invalidateSelf();
+                gd0 gd0Var = (gd0) obj;
+                gd0Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gd0Var.d();
                 break;
             case 14:
-                wl0 wl0Var = (wl0) obj;
-                wl0Var.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wl0Var.b.invalidate();
+                ci0 ci0Var = (ci0) obj;
+                ci0Var.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ci0Var.invalidateSelf();
                 break;
             case 15:
-                mm0 mm0Var = (mm0) obj;
-                mm0Var.b = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                mm0Var.invalidate();
+                wm0 wm0Var = (wm0) obj;
+                wm0Var.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wm0Var.b.invalidate();
                 break;
             case 16:
-                wo0 wo0Var = (wo0) obj;
-                wo0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wo0Var.a.run();
+                mn0 mn0Var = (mn0) obj;
+                mn0Var.b = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                mn0Var.invalidate();
                 break;
             case 17:
-                kr0 kr0Var = (kr0) obj;
-                kr0Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kr0Var.r.setTranslationY(gl.U1(kr0Var.x, -gl.L(42.0f), 0));
-                kr0Var.n.setTranslationY(gl.U1(kr0Var.x, 0, gl.L(42.0f)));
+                wp0 wp0Var = (wp0) obj;
+                wp0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wp0Var.a.run();
                 break;
             case 18:
-                ml mlVar = (ml) obj;
-                ((kb0) mlVar.L1).a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                mlVar.invalidate();
+                ks0 ks0Var = (ks0) obj;
+                ks0Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ks0Var.r.setTranslationY(gm.U1(ks0Var.x, -gm.L(42.0f), 0));
+                ks0Var.n.setTranslationY(gm.U1(ks0Var.x, 0, gm.L(42.0f)));
                 break;
             case 19:
-                qx0 qx0Var = (qx0) obj;
-                qx0Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = qx0Var.J.iterator();
+                ((rs0) obj).n0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 20:
+                mm mmVar = (mm) obj;
+                ((kc0) mmVar.L1).a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                mmVar.invalidate();
+                break;
+            case 21:
+                xy0 xy0Var = (xy0) obj;
+                xy0Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Iterator it = xy0Var.J.iterator();
                 while (it.hasNext()) {
                     ((Runnable) it.next()).run();
                 }
-                qx0Var.invalidate();
-                break;
-            case 20:
-                xx0 xx0Var = (xx0) obj;
-                xx0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xx0Var.b.invalidate();
-                break;
-            case 21:
-                n41 n41Var = (n41) obj;
-                n41Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n41Var.b();
+                xy0Var.invalidate();
                 break;
             case 22:
-                b81 b81Var = (b81) obj;
+                ez0 ez0Var = (ez0) obj;
+                ez0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ez0Var.b.invalidate();
+                break;
+            case 23:
+                u51 u51Var = (u51) obj;
+                u51Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u51Var.b();
+                break;
+            case 24:
+                k91 k91Var = (k91) obj;
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                while (i < b81Var.b.getChildCount()) {
-                    y71 y71Var = (y71) b81Var.b.getChildAt(i);
-                    int i3 = y71.E;
-                    y71Var.b(floatValue6);
+                while (i < k91Var.b.getChildCount()) {
+                    h91 h91Var = (h91) k91Var.b.getChildAt(i);
+                    int i3 = h91.E;
+                    h91Var.b(floatValue6);
                     i++;
                 }
                 break;
-            case 23:
+            case 25:
                 ((CameraView) obj).lambda$showTexture$6(valueAnimator);
                 break;
-            case 24:
-                ib1 ib1Var = (ib1) obj;
-                ib1Var.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cb1 cb1Var = ib1Var.f;
-                cb1Var.getEditText().setTranslationX(gl.U1(ib1Var.o0, ib1Var.getEditTextLeft() + gl.L(-26.0f), gl.L(2.0f)));
-                FrameLayout frameLayout = ib1Var.s;
-                frameLayout.setTranslationX(gl.U1(ib1Var.o0, -gl.L(8.0f), gl.L(2.0f)));
-                frameLayout.setTranslationY(gl.U1(ib1Var.o0, -gl.L(8.0f), 0));
-                cb1Var.getEmojiButton().setAlpha(ib1Var.o0);
-                ib1Var.r.setAlpha((float) Math.pow(ib1Var.o0, 16.0d));
-                ib1Var.u(ib1Var.o0);
-                eb1 eb1Var = ib1Var.N;
-                if (eb1Var != null) {
-                    eb1Var.setAlpha((float) Math.pow(ib1Var.o0, 4.0d));
-                }
-                cb1Var.getEditText().invalidate();
-                ib1Var.invalidate();
-                break;
-            case 25:
-                yh1 yh1Var = (yh1) obj;
-                yh1Var.b.a(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                yh1Var.b.invalidateSelf();
-                break;
             case 26:
-                jk1 jk1Var = (jk1) obj;
-                jk1Var.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jk1Var.g.a.invalidate();
+                pc1 pc1Var = (pc1) obj;
+                pc1Var.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jc1 jc1Var = pc1Var.f;
+                jc1Var.getEditText().setTranslationX(gm.U1(pc1Var.o0, pc1Var.getEditTextLeft() + gm.L(-26.0f), gm.L(2.0f)));
+                FrameLayout frameLayout = pc1Var.s;
+                frameLayout.setTranslationX(gm.U1(pc1Var.o0, -gm.L(8.0f), gm.L(2.0f)));
+                frameLayout.setTranslationY(gm.U1(pc1Var.o0, -gm.L(8.0f), 0));
+                jc1Var.getEmojiButton().setAlpha(pc1Var.o0);
+                pc1Var.r.setAlpha((float) Math.pow(pc1Var.o0, 16.0d));
+                pc1Var.u(pc1Var.o0);
+                lc1 lc1Var = pc1Var.N;
+                if (lc1Var != null) {
+                    lc1Var.setAlpha((float) Math.pow(pc1Var.o0, 4.0d));
+                }
+                jc1Var.getEditText().invalidate();
+                pc1Var.invalidate();
                 break;
             case 27:
-                ((m33) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                fj1 fj1Var = (fj1) obj;
+                fj1Var.b.a(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                fj1Var.b.invalidateSelf();
                 break;
             case 28:
-                sr1 sr1Var = (sr1) obj;
-                sr1Var.setBubbleOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                sr1Var.invalidate();
+                rl1 rl1Var = (rl1) obj;
+                rl1Var.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rl1Var.g.a.invalidate();
                 break;
             default:
-                ((ky1) obj).g0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((x43) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

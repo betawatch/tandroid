@@ -1,145 +1,71 @@
 // default package
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+import com.google.android.gms.wearable.internal.DataItemAssetParcelable;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class nrd extends ard implements List, RandomAccess {
-    public static final frd b = new frd(srd.e, 0);
+public final class nrd extends b4 {
+    public static final Parcelable.Creator<nrd> CREATOR = new urd(0);
+    public final Uri a;
+    public final HashMap b;
+    public final byte[] c;
 
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public nrd(Uri uri, Bundle bundle, byte[] bArr) {
+        this.a = uri;
+        HashMap hashMap = new HashMap();
+        ClassLoader classLoader = DataItemAssetParcelable.class.getClassLoader();
+        ite.h(classLoader);
+        bundle.setClassLoader(classLoader);
+        for (String str : bundle.keySet()) {
+            Parcelable parcelable = bundle.getParcelable(str);
+            ite.h(parcelable);
+            hashMap.put(str, (DataItemAssetParcelable) parcelable);
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (int i = 0; i < size; i++) {
-                        if (h1f.a(get(i), list.get(i))) {
-                        }
-                    }
-                    return true;
-                }
-                frd listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !h1f.a(listIterator.next(), it.next())) {
-                            break;
-                        }
-                    } else if (!it.hasNext()) {
-                        return true;
-                    }
-                }
-            }
+        this.b = hashMap;
+        this.c = bArr;
+    }
+
+    public final String toString() {
+        boolean isLoggable = Log.isLoggable("DataItem", 3);
+        StringBuilder sb = new StringBuilder("DataItemParcelable[@");
+        sb.append(Integer.toHexString(hashCode()));
+        byte[] bArr = this.c;
+        sb.append(",dataSz=".concat((bArr == null ? "null" : Integer.valueOf(bArr.length)).toString()));
+        HashMap hashMap = this.b;
+        sb.append(", numAssets=" + hashMap.size());
+        sb.append(", uri=".concat(String.valueOf(this.a)));
+        if (!isLoggable) {
+            sb.append("]");
+            return sb.toString();
         }
-        return false;
-    }
-
-    @Override // ard
-    public int h(Object[] objArr) {
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            objArr[i] = get(i);
+        sb.append("]\n  assets: ");
+        for (String str : hashMap.keySet()) {
+            sb.append("\n    " + str + ": " + String.valueOf(hashMap.get(str)));
         }
-        return size;
+        sb.append("\n  ]");
+        return sb.toString();
     }
 
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.k(parcel, 2, this.a, i);
+        Bundle bundle = new Bundle();
+        ClassLoader classLoader = DataItemAssetParcelable.class.getClassLoader();
+        ite.h(classLoader);
+        bundle.setClassLoader(classLoader);
+        for (Map.Entry entry : this.b.entrySet()) {
+            bundle.putParcelable((String) entry.getKey(), new DataItemAssetParcelable((DataItemAssetParcelable) entry.getValue()));
         }
-        return i;
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            if (obj.equals(get(i))) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: m */
-    public nrd subList(int i, int i2) {
-        i1f.b(i, i2, size());
-        int i3 = i2 - i;
-        return i3 == size() ? this : i3 == 0 ? srd.e : new grd(this, i, i3);
-    }
-
-    @Override // java.util.List
-    /* renamed from: n, reason: merged with bridge method [inline-methods] */
-    public final frd listIterator(int i) {
-        int size = size();
-        if (i >= 0 && i <= size) {
-            return isEmpty() ? b : new frd(this, i);
-        }
-        k93.i(i1f.c(i, size, "index"));
-        return null;
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
-        throw new UnsupportedOperationException();
+        mve.b(parcel, 4, bundle);
+        mve.c(parcel, 5, this.c);
+        mve.s(parcel, r);
     }
 }

@@ -1,56 +1,28 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tn0 implements p8c {
+public final /* synthetic */ class tn0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ao0 b;
+    public final /* synthetic */ AtomicBoolean b;
 
-    public /* synthetic */ tn0(ao0 ao0Var, byte b) {
+    public /* synthetic */ tn0(AtomicBoolean atomicBoolean, byte b) {
         this.a = b;
-        this.b = ao0Var;
+        this.b = atomicBoolean;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        byte b2 = 1;
-        ao0 ao0Var = this.b;
+        AtomicBoolean atomicBoolean = this.b;
         switch (b) {
             case 0:
-                ao0Var.dismiss();
-                gl.e3(new rn0(ao0Var, (byte) 2), 220L);
-                break;
-            case 1:
-                ao0Var.l2.b(false);
-                ym0.j(ao0Var.getContext(), (TLRPC.TL_error) obj);
-                break;
-            case 2:
-                ao0Var.i2 = ao0Var.T1.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
-                ao0Var.f1(true, true);
-                ao0Var.e1(true);
-                break;
-            case 3:
-                ao0Var.dismiss();
-                gl.e3(new rn0(ao0Var, b2), 220L);
-                break;
-            case 4:
-                ao0Var.l2.b(false);
-                ym0.j(ao0Var.getContext(), (TLRPC.TL_error) obj);
-                break;
-            case 5:
-                ArrayList arrayList = ao0Var.a2;
-                arrayList.clear();
-                arrayList.addAll((List) obj);
-                ao0Var.f1(true, true);
+                atomicBoolean.set(true);
                 break;
             default:
-                ao0Var.l2.b(false);
-                ym0.j(ao0Var.getContext(), (TLRPC.TL_error) obj);
+                atomicBoolean.set(true);
                 break;
         }
     }

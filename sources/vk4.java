@@ -1,24 +1,9 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vk4 extends gw2 {
-    public /* synthetic */ Object a;
-    public int b;
-    public final /* synthetic */ wk4 c;
-    public rk4 d;
+public abstract class vk4 {
+    public abstract float a(Object obj);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vk4(wk4 wk4Var, fw2 fw2Var) {
-        super(fw2Var);
-        this.c = wk4Var;
-    }
-
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.b |= TLObject.FLAG_31;
-        return this.c.h(null, this);
-    }
+    public abstract void b(Object obj, float f);
 }

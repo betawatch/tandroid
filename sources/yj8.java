@@ -1,783 +1,493 @@
 // default package
 
+import android.animation.ValueAnimator;
+import android.app.Dialog;
 import android.content.Context;
-import android.text.SpannableString;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Locale;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.PrivacySettingsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class yj8 extends n39 {
-    public final Context c;
-    public final /* synthetic */ PrivacyControlActivity d;
+public class yj8 extends mz0 implements jm7 {
+    public final int[] A2;
+    public float B2;
+    public boolean C2;
+    public ValueAnimator D2;
+    public boolean E2;
+    public boolean F2;
+    public FrameLayout G2;
+    public final FrameLayout H2;
+    public FrameLayout I2;
+    public l66[] J2;
+    public l66 K2;
+    public final ArrayList S1;
+    public int T1;
+    public final TLRPC.User U1;
+    public final nw4 V1;
+    public final TL_stars.StarGift W1;
+    public boolean X1;
+    public final lj8 Y1;
+    public int Z1;
+    public int a2;
+    public int b2;
+    public int c2;
+    public int d2;
+    public int e2;
+    public int f2;
+    public int g2;
+    public int h2;
+    public int i2;
+    public final uj4 j2;
+    public final nj8 k2;
+    public ub l2;
+    public w94 m2;
+    public qmb n2;
+    public final d o2;
+    public Integer p2;
+    public float q2;
+    public float r2;
+    public float s2;
+    public float t2;
+    public float u2;
+    public View v2;
+    public View w2;
+    public TLRPC.InputStickerSet x2;
+    public TLRPC.TL_emojiStatusCollectible y2;
+    public boolean z2;
 
-    public yj8(PrivacyControlActivity privacyControlActivity, Context context) {
-        this.d = privacyControlActivity;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yj8(d dVar, int i, TLRPC.User user, nw4 nw4Var, TL_stars.StarGift starGift, ylb ylbVar) {
+        super(dVar, false, false, ylbVar);
+        byte b = 0;
+        ArrayList arrayList = new ArrayList();
+        this.S1 = arrayList;
+        this.A2 = new int[2];
+        this.B2 = 0.0f;
+        J();
+        this.o2 = dVar;
+        this.u1 = 0.26f;
+        this.U1 = user;
+        this.T1 = i;
+        this.V1 = nw4Var;
+        this.W1 = starGift;
+        this.Y1 = new lj8(getContext(), null);
+        PremiumPreviewFragment.r0(i, arrayList);
+        if (nw4Var != null || z8c.h(i).p()) {
+            this.G2.setVisibility(8);
+        }
+        nj8 nj8Var = new nj8(cmb.Bk, cmb.Ck, cmb.Dk, cmb.Ek, null);
+        this.k2 = nj8Var;
+        nj8Var.m = true;
+        nj8Var.o = 1.0f;
+        nj8Var.p = 0.0f;
+        nj8Var.q = 0.0f;
+        nj8Var.b = 0.0f;
+        nj8Var.c = 0.0f;
+        f1();
+        this.n1.setPadding(gm.L(6.0f), 0, gm.L(6.0f), 0);
+        this.n1.setOnItemClickListener(new tj8(this, i, dVar, b));
+        hs6.d0(i).p1();
+        PremiumPreviewFragment.w0("profile");
+        uj4 uj4Var = new uj4(getContext());
+        this.j2 = uj4Var;
+        this.c.addView(uj4Var, qoe.c(-1.0f, -1));
+        FrameLayout frameLayout = new FrameLayout(getContext());
+        this.H2 = frameLayout;
+        this.b.addView(frameLayout, qoe.e(-1, nm7.V1, 87));
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        int b = s49Var.b();
-        PrivacyControlActivity privacyControlActivity = this.d;
-        if (b == privacyControlActivity.d0) {
-            i7 = ((d) privacyControlActivity).currentAccount;
-            if (!qu2.r(i7).t(3)) {
-                return true;
+    @Override // mz0
+    public final void N0(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        int i3 = 0;
+        int i4 = 0;
+        while (true) {
+            ArrayList arrayList = this.S1;
+            if (i3 >= arrayList.size()) {
+                this.Z1 = i4;
+                this.c.getLocationOnScreen(this.A2);
+                return;
+            }
+            hk8 hk8Var = (hk8) arrayList.get(i3);
+            lj8 lj8Var = this.Y1;
+            lj8Var.a(hk8Var, false);
+            lj8Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+            ((hk8) arrayList.get(i3)).e = i4;
+            i4 += lj8Var.getMeasuredHeight();
+            i3++;
+        }
+    }
+
+    @Override // mz0
+    public final void P0(ela elaVar) {
+        this.T1 = z8c.t0;
+        cj8 cj8Var = new cj8(this.J0, getContext(), false);
+        cj8Var.b(PremiumPreviewFragment.s0(this.T1, null), new m67(this, (byte) 26), false);
+        this.G2 = new FrameLayout(getContext());
+        View view = new View(getContext());
+        anb.h(cmb.c7, this.J0, view);
+        this.G2.addView(view, qoe.c(1.0f, -1));
+        view.getLayoutParams().height = 1;
+        gm.T3(view, true, 1.0f, true, false);
+        if (z8c.h(this.T1).p() || (this instanceof ok8)) {
+            return;
+        }
+        this.G2.addView(cj8Var, qoe.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        anb.h(cmb.g5, this.J0, this.G2);
+        elaVar.addView(this.G2, qoe.e(-1, 68, 80));
+    }
+
+    @Override // my0
+    public final void W(Canvas canvas) {
+        View view = this.w2;
+        if (view != null) {
+            view.setVisibility(this.C2 ? 4 : 0);
+        }
+        if (this.v2 == null || !this.C2) {
+            return;
+        }
+        View view2 = this.w2;
+        View view3 = view2 == null ? this.m2 : view2;
+        if (view3 == view2) {
+            view2.setVisibility(0);
+        }
+        canvas.save();
+        float[] fArr = {this.q2, this.r2};
+        this.v2.getMatrix().mapPoints(fArr);
+        View view4 = this.v2;
+        Drawable rightDrawable = view4 instanceof lka ? ((lka) view4).getRightDrawable() : view4 instanceof rc2 ? ((rc2) view4).Ca : null;
+        if (rightDrawable == null) {
+            canvas.restore();
+            return;
+        }
+        int[] iArr = this.A2;
+        float f = (-iArr[0]) + this.s2 + fArr[0];
+        float f2 = (-iArr[1]) + this.t2 + fArr[1];
+        if (gm.O1()) {
+            ViewGroup view5 = this.o2.getParentLayout().getView();
+            f += view5.getX() + view5.getPaddingLeft();
+            f2 += view5.getY() + view5.getPaddingTop();
+        }
+        float intrinsicWidth = this.u2 * rightDrawable.getIntrinsicWidth();
+        float measuredHeight = view3.getMeasuredHeight() * 0.8f;
+        float f3 = measuredHeight / intrinsicWidth;
+        float f4 = intrinsicWidth / measuredHeight;
+        float measuredWidth = view3.getMeasuredWidth() / 2.0f;
+        for (View view6 = view3; view6 != this.c && view6 != null; view6 = (View) view6.getParent()) {
+            measuredWidth += view6.getX();
+        }
+        float measuredHeight2 = (view3.getMeasuredHeight() / 2.0f) + ((View) view3.getParent().getParent()).getY() + ((View) view3.getParent()).getY() + view3.getY() + 0.0f;
+        float R1 = gm.R1(f, measuredWidth, d53.h.getInterpolation(this.B2));
+        float R12 = gm.R1(f2, measuredHeight2, this.B2);
+        float f5 = this.u2;
+        float f6 = this.B2;
+        float f7 = (f3 * f6) + ((1.0f - f6) * f5);
+        canvas.save();
+        canvas.scale(f7, f7, R1, R12);
+        int i = (int) R1;
+        int i2 = (int) R12;
+        rightDrawable.setBounds(aq1.A(2, i, rightDrawable), aq1.y(2, i2, rightDrawable), aq1.w(2, i, rightDrawable), aq1.i(2, i2, rightDrawable));
+        rightDrawable.setAlpha((int) ((1.0f - Utilities.i(this.B2, 1.0f, 0.0f)) * 255.0f));
+        rightDrawable.draw(canvas);
+        rightDrawable.setAlpha(0);
+        canvas.restore();
+        float R13 = gm.R1(f4, 1.0f, this.B2);
+        canvas.scale(R13, R13, R1, R12);
+        hg9.m(view3.getMeasuredHeight(), 2.0f, R12, R1 - (view3.getMeasuredWidth() / 2.0f), canvas);
+        view3.draw(canvas);
+        canvas.restore();
+    }
+
+    public void Z0(qmb qmbVar) {
+        qmbVar.addView(this.w2, qoe.q(nm7.V1, nm7.V1, 1.0f, 17, 10, 10, 10, 10));
+    }
+
+    public int a1() {
+        return 0;
+    }
+
+    public View c1(Context context, int i) {
+        return null;
+    }
+
+    public final SpannableStringBuilder d1(String str) {
+        Integer num = this.p2;
+        return num == null ? gm.M2(str, cmb.t6, this.J0, null, false) : gm.K2(str, num.intValue(), null);
+    }
+
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        TLRPC.InputStickerSet inputStickerSet;
+        if (i == nm7.B0 && (inputStickerSet = this.x2) != null && inputStickerSet.id == ((Long) objArr[0]).longValue()) {
+            e1(true);
+        }
+    }
+
+    @Override // my0, android.app.Dialog, android.content.DialogInterface, ah0
+    public final void dismiss() {
+        super.dismiss();
+        nm7.e().k(nm7.k1, 4);
+        ValueAnimator valueAnimator = this.D2;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        uj4 uj4Var = this.j2;
+        if (uj4Var.c) {
+            uj4Var.animate().alpha(0.0f).setDuration(150L).start();
+        }
+    }
+
+    public void e1(boolean z) {
+        TLRPC.Document document;
+        SpannableStringBuilder spannableStringBuilder;
+        l66[] l66VarArr = this.J2;
+        if (l66VarArr == null || this.K2 == null) {
+            return;
+        }
+        TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = this.y2;
+        byte b = 2;
+        byte b2 = 1;
+        TLRPC.User user = this.U1;
+        byte b3 = 0;
+        if (tL_emojiStatusCollectible != null) {
+            String str = tL_emojiStatusCollectible.title;
+            int lastIndexOf = str.lastIndexOf(32);
+            if (lastIndexOf >= 0) {
+                str = str.substring(0, lastIndexOf);
+            }
+            this.J2[0].setText(gm.N2(jb6.a0(null, null, 2131743904, pg3.t(user), str), -1, 0, new rj8(this, b3), null));
+            this.K2.setText(gm.S2(jb6.M0(2131743902, null)));
+        } else if (this.x2 != null) {
+            CharSequence d1 = d1(jb6.a0(null, null, 2131743901, bw2.m(0, user.first_name, user.last_name), "<STICKERSET>"));
+            try {
+                d1 = gw3.m(d1, this.J2[0].getPaint().getFontMetricsInt(), false, null, 0);
+            } catch (Exception unused) {
+            }
+            SpannableStringBuilder spannableStringBuilder2 = d1 instanceof SpannableStringBuilder ? (SpannableStringBuilder) d1 : new SpannableStringBuilder(d1);
+            int indexOf = d1.toString().indexOf("<STICKERSET>");
+            if (indexOf >= 0) {
+                TLRPC.TL_messages_stickerSet n0 = hs6.d0(this.T1).n0(this.x2, false);
+                if (n0 == null || n0.documents.isEmpty()) {
+                    document = null;
+                } else {
+                    document = n0.documents.get(0);
+                    if (n0.set != null) {
+                        int i = 0;
+                        while (true) {
+                            if (i >= n0.documents.size()) {
+                                break;
+                            }
+                            if (n0.documents.get(i).id == n0.set.thumb_document_id) {
+                                document = n0.documents.get(i);
+                                break;
+                            }
+                            i++;
+                        }
+                    }
+                }
+                if (document != null) {
+                    spannableStringBuilder = new SpannableStringBuilder("x");
+                    spannableStringBuilder.setSpan(new gn(document, this.J2[0].getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
+                    if (n0 != null && n0.set != null) {
+                        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) n0.set.title);
+                    }
+                } else {
+                    spannableStringBuilder = new SpannableStringBuilder("xxxxxx");
+                    spannableStringBuilder.setSpan(new ta6(gm.L(100.0f), this.J2[0]), 0, spannableStringBuilder.length(), 33);
+                }
+                spannableStringBuilder2.replace(indexOf, indexOf + 12, (CharSequence) spannableStringBuilder);
+                spannableStringBuilder2.setSpan(new z31(this, (byte) 9), indexOf, spannableStringBuilder.length() + indexOf, 33);
+                this.J2[1].setOnLinkPressListener(new sj8(this, b3));
+                l66[] l66VarArr2 = this.J2;
+                if (document == null) {
+                    l66VarArr2[0].setText(spannableStringBuilder2, (TextView.BufferType) null);
+                } else if (l66VarArr2 != null) {
+                    l66VarArr2[1].setText(spannableStringBuilder2);
+                    if (this.J2[1].getVisibility() != 0) {
+                        l66[] l66VarArr3 = this.J2;
+                        if (z) {
+                            l66VarArr3[1].setAlpha(0.0f);
+                            this.J2[1].setVisibility(0);
+                            ViewPropertyAnimator alpha = this.J2[1].animate().alpha(1.0f);
+                            d53 d53Var = d53.f;
+                            wi8.t(alpha, d53Var, 200L);
+                            this.J2[0].animate().alpha(0.0f).setInterpolator(d53Var).setDuration(200L).withEndAction(new rj8(this, b)).start();
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                            ofFloat.addUpdateListener(new uj8(this, b2));
+                            ofFloat.setInterpolator(d53Var);
+                            ofFloat.setDuration(200L);
+                            ofFloat.start();
+                        } else {
+                            l66VarArr3[1].setAlpha(1.0f);
+                            this.J2[1].setVisibility(0);
+                            this.J2[0].setAlpha(0.0f);
+                            this.J2[0].setVisibility(8);
+                        }
+                    }
+                }
+            }
+            this.K2.setText(gm.S2(jb6.M0(2131743902, null)));
+        } else if (this.z2) {
+            l66VarArr[0].setText(gm.S2(jb6.a0(null, null, 2131743903, bw2.m(0, user.first_name, user.last_name))));
+            this.K2.setText(gm.S2(jb6.a0(null, null, 2131743902, bw2.m(0, user.first_name, user.last_name))));
+        } else {
+            nw4 nw4Var = this.V1;
+            if (nw4Var == null) {
+                TL_stars.StarGift starGift = this.W1;
+                if (starGift != null) {
+                    l66VarArr[0].setText(jb6.M0(2131750001, null));
+                    this.J2[0].setTextSize(1, 20.0f);
+                    boolean z2 = starGift.limited_per_user;
+                    l66 l66Var = this.K2;
+                    if (z2) {
+                        l66Var.setText(gm.S2(jb6.H(',', "Gift2PremiumSubtitleMany", starGift.per_user_total)));
+                    } else {
+                        l66Var.setText(gm.S2(jb6.M0(2131750005, null)));
+                    }
+                    this.K2.setTextSize(1, 14.0f);
+                } else if (user == null) {
+                    l66VarArr[0].setText(jb6.M0(2131743916, null));
+                    this.K2.setText(gm.S2(jb6.M0(2131743914, null)));
+                } else {
+                    l66VarArr[0].setText(d1(jb6.a0(null, null, 2131743910, bw2.m(0, user.first_name, user.last_name))));
+                    this.K2.setText(gm.S2(jb6.M0(2131743911, null)));
+                }
+            } else if (this.X1) {
+                l66VarArr[0].setText(d1(jb6.a0(null, null, 2131743905, user != null ? user.first_name : "", jb6.G(nw4Var.d(), "GiftMonths", new Object[0]))));
+                this.K2.setText(d1(jb6.a0(null, null, 2131743906, user != null ? user.first_name : "")));
+            } else if (user == null || TextUtils.isEmpty(user.first_name) || user.id == 777000) {
+                this.J2[0].setText(d1(jb6.a0(null, null, 2131743907, jb6.G(nw4Var.d(), "GiftMonths", new Object[0]))));
+                this.K2.setText(gm.S2(jb6.M0(2131743909, null)));
+            } else {
+                this.J2[0].setText(d1(jb6.a0(null, null, 2131743908, user.first_name, jb6.G(nw4Var.d(), "GiftMonths", new Object[0]))));
+                this.K2.setText(gm.S2(jb6.M0(2131743909, null)));
             }
         }
-        i = privacyControlActivity.currentPhotoForRestRow;
-        if (b == i || b == privacyControlActivity.b0) {
-            return true;
+        try {
+            l66 l66Var2 = this.J2[0];
+            l66Var2.setText(gw3.m(l66Var2.getText(), this.J2[0].getPaint().getFontMetricsInt(), false, null, 0));
+        } catch (Exception unused2) {
         }
-        i2 = privacyControlActivity.photoForRestRow;
-        if (b == i2) {
-            return true;
+    }
+
+    public void f1() {
+        int i = this.a2;
+        int i2 = i + 1;
+        this.a2 = i2;
+        this.b2 = i;
+        this.e2 = i2;
+        int size = this.S1.size() + i2;
+        this.f2 = size;
+        this.a2 = size + 1;
+        this.g2 = size;
+        if (z8c.h(this.T1).p() || this.V1 != null) {
+            return;
         }
-        i3 = privacyControlActivity.readRow;
-        if (b == i3) {
-            return true;
-        }
-        i4 = privacyControlActivity.showGiftIconRow;
-        if (b == i4 || b == privacyControlActivity.g0 || b == privacyControlActivity.p0 || b == privacyControlActivity.q0 || b == privacyControlActivity.r0 || b == privacyControlActivity.o0 || b == privacyControlActivity.n0) {
-            return true;
-        }
-        if (privacyControlActivity.E == 12 && privacyControlActivity.x0()) {
+        int i3 = this.a2;
+        this.a2 = i3 + 1;
+        this.h2 = i3;
+    }
+
+    @Override // my0
+    public final boolean j0() {
+        Drawable drawable;
+        byte b = 0;
+        if (this.v2 == null) {
             return false;
         }
-        i5 = privacyControlActivity.nobodyRow;
-        if (b == i5 || b == privacyControlActivity.Q || b == privacyControlActivity.i0) {
-            return true;
-        }
-        i6 = privacyControlActivity.everybodyRow;
-        return b == i6 || b == privacyControlActivity.V || b == privacyControlActivity.U;
-    }
-
-    public final int E(ArrayList arrayList) {
-        int i = 0;
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            long longValue = ((Long) arrayList.get(i2)).longValue();
-            if (longValue > 0) {
-                i++;
-            } else {
-                TLRPC.Chat K0 = this.d.getMessagesController().K0(Long.valueOf(-longValue));
-                if (K0 != null) {
-                    i += K0.participants_count;
-                }
-            }
-        }
-        return i;
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.d.t0;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        int i8;
-        int i9;
-        int i10;
-        PrivacyControlActivity privacyControlActivity = this.d;
-        if (i == privacyControlActivity.U || i == privacyControlActivity.V || i == privacyControlActivity.d0 || i == privacyControlActivity.g0) {
-            return 0;
-        }
-        if (i == privacyControlActivity.W || i == privacyControlActivity.R || i == privacyControlActivity.S || i == privacyControlActivity.l0 || i == privacyControlActivity.e0 || i == privacyControlActivity.b0 || i == privacyControlActivity.f0 || i == privacyControlActivity.h0) {
-            return 1;
-        }
-        i2 = privacyControlActivity.setBirthdayRow;
-        if (i == i2 || i == privacyControlActivity.m0 || i == privacyControlActivity.s0) {
-            return 1;
-        }
-        if (i == privacyControlActivity.P || i == privacyControlActivity.j0 || i == privacyControlActivity.T || i == privacyControlActivity.c0 || i == privacyControlActivity.X) {
-            return 2;
-        }
-        i3 = privacyControlActivity.giftTypesHeaderRow;
-        if (i == i3) {
-            return 2;
-        }
-        i4 = privacyControlActivity.everybodyRow;
-        if (i == i4 || i == privacyControlActivity.Q) {
-            return 3;
-        }
-        i5 = privacyControlActivity.nobodyRow;
-        if (i == i5 || i == privacyControlActivity.i0 || i == privacyControlActivity.Y || i == privacyControlActivity.Z) {
-            return 3;
-        }
-        if (i == privacyControlActivity.O) {
-            return 4;
-        }
-        if (i == privacyControlActivity.a0) {
-            return 5;
-        }
-        i6 = privacyControlActivity.photoForRestRow;
-        if (i == i6) {
-            return 6;
-        }
-        i7 = privacyControlActivity.currentPhotoForRestRow;
-        if (i == i7) {
-            return 7;
-        }
-        i8 = privacyControlActivity.readRow;
-        if (i == i8) {
-            return 8;
-        }
-        i9 = privacyControlActivity.showGiftIconRow;
-        if (i == i9 || i == privacyControlActivity.p0 || i == privacyControlActivity.q0 || i == privacyControlActivity.r0 || i == privacyControlActivity.n0 || i == privacyControlActivity.o0) {
-            return 8;
-        }
-        i10 = privacyControlActivity.priceRow;
-        if (i == i10) {
-            return 9;
-        }
-        return i == privacyControlActivity.k0 ? 10 : 0;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x0235, code lost:
-    
-        if (r16.d.getUserConfig().p() == false) goto L112;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x031b, code lost:
-    
-        if (r16.d.getUserConfig().p() == false) goto L166;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0252  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0274  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0338  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x034c  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0365  */
-    /* JADX WARN: Removed duplicated region for block: B:88:? A[RETURN, SYNTHETIC] */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        int i8;
-        int i9;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15 = s49Var.f;
-        final byte b = 1;
-        r14 = 0;
-        int i16 = 0;
-        r14 = 0;
-        int i17 = 0;
-        r14 = 0;
-        int i18 = 0;
-        r14 = 0;
-        int i19 = 0;
-        r14 = 0;
-        int i20 = 0;
-        if (i15 == 0) {
-            uib uibVar = (uib) s49Var.a;
-            zkb.X(uibVar.getTextView(), bkb.F6, this.d.getResourceProvider());
-            PrivacyControlActivity privacyControlActivity = this.d;
-            if (i == privacyControlActivity.U) {
-                String G = privacyControlActivity.I.size() != 0 ? k96.G(E(this.d.I), "Users", new Object[0]) : k96.M0(2131751149, null);
-                PrivacyControlActivity privacyControlActivity2 = this.d;
-                if (privacyControlActivity2.F[privacyControlActivity2.K == 2 ? (char) 0 : (char) 1]) {
-                    ArrayList arrayList = privacyControlActivity2.I;
-                    G = (arrayList == null || arrayList.isEmpty()) ? k96.a0(null, null, 2131746589, new Object[0]) : k96.a0(null, null, 2131746588, G);
-                }
-                PrivacyControlActivity privacyControlActivity3 = this.d;
-                if (privacyControlActivity3.E != 10) {
-                    boolean[] zArr = privacyControlActivity3.G;
-                    byte b2 = privacyControlActivity3.K;
-                    if (zArr[b2] && b2 != 0) {
-                        ArrayList arrayList2 = privacyControlActivity3.I;
-                        G = (arrayList2 == null || arrayList2.isEmpty()) ? k96.a0(null, null, 2131746576, new Object[0]) : k96.a0(null, null, 2131746575, G);
-                    }
-                }
-                int i21 = this.d.E;
-                if (i21 == 10) {
-                    uibVar.c(k96.M0(2131746558, null), G, false, false);
-                } else if (i21 == 0 || i21 == 4 || i21 == 9 || i21 == 14) {
-                    uibVar.c(k96.M0(2131754265, null), G, false, this.d.V != -1);
-                } else {
-                    uibVar.c(k96.M0(2131754266, null), G, false, this.d.V != -1);
-                }
-                if (this.d.E == 12) {
-                    uibVar.setEnabled(!r0.x0());
-                    return;
-                }
-                return;
-            }
-            if (i != privacyControlActivity.V) {
-                if (i == privacyControlActivity.d0) {
-                    i2 = ((d) privacyControlActivity).currentAccount;
-                    uibVar.c(k96.M0(2131746608, null), qu2.r(i2).t(3) ? k96.M0(2131748587, null) : PrivacySettingsActivity.z0(this.d.getAccountInstance(), 3), false, false);
-                    return;
-                } else {
-                    if (i == privacyControlActivity.g0) {
-                        uibVar.b(k96.M0(privacyControlActivity.getUserConfig().p() ? 2131746622 : 2131746623, null), false);
-                        zkb.X(uibVar.getTextView(), bkb.m6, this.d.getResourceProvider());
-                        return;
-                    }
-                    return;
-                }
-            }
-            String G2 = privacyControlActivity.J.size() != 0 ? k96.G(E(this.d.J), "Users", new Object[0]) : k96.M0(2131751149, null);
-            PrivacyControlActivity privacyControlActivity4 = this.d;
-            boolean[] zArr2 = privacyControlActivity4.G;
-            byte b3 = privacyControlActivity4.K;
-            if (zArr2[b3] && b3 == 0) {
-                ArrayList arrayList3 = privacyControlActivity4.J;
-                G2 = (arrayList3 == null || arrayList3.isEmpty()) ? k96.a0(null, null, 2131746576, new Object[0]) : k96.a0(null, null, 2131746575, G2);
-            }
-            int i22 = this.d.E;
-            if (i22 == 0 || i22 == 4 || i22 == 9 || i22 == 14) {
-                uibVar.c(k96.M0(2131748099, null), G2, false, false);
-            } else {
-                uibVar.c(k96.M0(2131748100, null), G2, false, false);
-            }
-            if (this.d.E == 12) {
-                uibVar.setEnabled(!r0.x0());
-                return;
-            }
-            return;
-        }
-        if (i15 == 1) {
-            mhb mhbVar = (mhb) s49Var.a;
-            PrivacyControlActivity privacyControlActivity5 = this.d;
-            if (i == privacyControlActivity5.S) {
-                mhbVar.setText(k96.M0(2131746559, null));
-            } else {
-                if (i == privacyControlActivity5.R) {
-                    int i23 = privacyControlActivity5.E;
-                    if (i23 == 10) {
-                        String M0 = k96.M0(2131746617, null);
-                        final byte b4 = r14 ? (byte) 1 : (byte) 0;
-                        mhbVar.setText(gl.O2(M0, -1, 0, new Runnable(this) { // from class: wj8
-                            public final /* synthetic */ yj8 b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b5 = b4;
-                                yj8 yj8Var = this.b;
-                                switch (b5) {
-                                    case 0:
-                                        yj8Var.d.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                                        break;
-                                    default:
-                                        PrivacyControlActivity privacyControlActivity6 = yj8Var.d;
-                                        privacyControlActivity6.showDialog((fx0) ij.l(privacyControlActivity6.getParentActivity(), k96.M0(2131751226, null), k96.M0(2131751231, null), null, new xj8(yj8Var, (byte) 1), null, false, false, privacyControlActivity6.getResourceProvider()).a);
-                                        break;
-                                }
-                            }
-                        }, null));
-                    } else if (i23 == 8) {
-                        mhbVar.setText(k96.M0(2131746566, null));
-                    }
-                }
-                i3 = privacyControlActivity5.setBirthdayRow;
-                if (i == i3) {
-                    mhbVar.setText(gl.E2(gl.O2(k96.M0(2131746666, null), -1, 0, new Runnable(this) { // from class: wj8
-                        public final /* synthetic */ yj8 b;
-
-                        {
-                            this.b = this;
-                        }
-
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            byte b5 = b;
-                            yj8 yj8Var = this.b;
-                            switch (b5) {
-                                case 0:
-                                    yj8Var.d.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                                    break;
-                                default:
-                                    PrivacyControlActivity privacyControlActivity6 = yj8Var.d;
-                                    privacyControlActivity6.showDialog((fx0) ij.l(privacyControlActivity6.getParentActivity(), k96.M0(2131751226, null), k96.M0(2131751231, null), null, new xj8(yj8Var, (byte) 1), null, false, false, privacyControlActivity6.getResourceProvider()).a);
-                                    break;
-                            }
-                        }
-                    }, null), true));
-                } else {
-                    PrivacyControlActivity privacyControlActivity6 = this.d;
-                    if (i == privacyControlActivity6.R) {
-                        int i24 = privacyControlActivity6.E;
-                        if (i24 == 6) {
-                            if (privacyControlActivity6.K == 1 && privacyControlActivity6.L == 1) {
-                                mhbVar.setText(k96.M0(2131746596, null));
-                            } else {
-                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                                Locale locale = Locale.ENGLISH;
-                                String concat = "https://t.me/+".concat(this.d.getUserConfig().d());
-                                SpannableString spannableString = new SpannableString(concat);
-                                spannableString.setSpan(new q1(this, concat, (byte) 7), 0, concat.length(), 33);
-                                spannableStringBuilder.append((CharSequence) k96.M0(2131746598, null)).append((CharSequence) "\n\n").append((CharSequence) k96.M0(2131746595, null)).append((CharSequence) "\n").append((CharSequence) spannableString);
-                                mhbVar.setText(spannableStringBuilder);
-                            }
-                        } else if (i24 == 5) {
-                            mhbVar.setText(k96.M0(2131746643, null));
-                        } else if (i24 == 4) {
-                            mhbVar.setText(k96.M0(2131746585, null));
-                        } else if (i24 == 9) {
-                            mhbVar.setText(k96.M0(2131746674, null));
-                        } else if (i24 == 14) {
-                            mhbVar.setText(k96.M0(2131746611, null));
-                        } else if (i24 == 11) {
-                            mhbVar.setText(k96.M0(2131746668, null));
-                        } else if (i24 == 12) {
-                            mhbVar.setText(k96.M0(2131746637, null));
-                        } else if (i24 == 3) {
-                            mhbVar.setText(k96.M0(2131746657, null));
-                        } else if (i24 == 2) {
-                            mhbVar.setText(k96.M0(2131742616, null));
-                        } else if (i24 == 1) {
-                            mhbVar.setText(k96.M0(2131742618, null));
-                        } else {
-                            mhbVar.setText(k96.M0(2131751673, null));
-                        }
-                    } else if (i == privacyControlActivity6.W) {
-                        int i25 = privacyControlActivity6.E;
-                        if (i25 == 6) {
-                            mhbVar.setText(k96.M0(2131746597, null));
-                        } else if (i25 == 5) {
-                            mhbVar.setText(k96.M0(2131746642, null));
-                        } else if (i25 == 4) {
-                            byte b5 = privacyControlActivity6.K;
-                            if (b5 == 2) {
-                                mhbVar.setText(gl.T2(k96.M0(2131746582, null)));
-                            } else if (b5 == 0) {
-                                mhbVar.setText(gl.T2(k96.M0(2131746584, null)));
-                            } else {
-                                mhbVar.setText(k96.M0(2131746583, null));
-                            }
-                        } else if (i25 == 3) {
-                            mhbVar.setText(k96.M0(2131751671, null));
-                        } else if (i25 == 9) {
-                            mhbVar.setText(k96.M0(2131746675, null));
-                        } else if (i25 == 14) {
-                            mhbVar.setText(k96.M0(2131746612, null));
-                        } else if (i25 == 11) {
-                            mhbVar.setText(k96.M0(2131746667, null));
-                        } else if (i25 == 2) {
-                            mhbVar.setText(k96.M0(2131751674, null));
-                        } else if (i25 == 1) {
-                            mhbVar.setText(k96.M0(2131751669, null));
-                        } else if (i25 == 12) {
-                            mhbVar.setText(k96.M0(2131751670, null));
-                        } else if (i25 == 8) {
-                            mhbVar.setText(k96.M0(2131746565, null));
-                        } else if (i25 == 10) {
-                            mhbVar.setText(k96.M0(2131746556, null));
-                        } else {
-                            mhbVar.setText(k96.M0(2131751668, null));
-                        }
-                    } else if (i == privacyControlActivity6.b0) {
-                        mhbVar.setText(k96.M0(2131747073, null));
-                    } else if (i == privacyControlActivity6.f0) {
-                        mhbVar.setText(k96.M0(2131749120, null));
-                    } else if (i == privacyControlActivity6.h0) {
-                        mhbVar.setText(k96.M0(privacyControlActivity6.getUserConfig().p() ? 2131746620 : 2131746621, null));
-                    } else if (i == privacyControlActivity6.l0) {
-                        float f = privacyControlActivity6.getMessagesController().k4.I1.f() / 1000.0f;
-                        PrivacyControlActivity privacyControlActivity7 = this.d;
-                        mhbVar.setText(k96.a0(null, null, 2131746554, bc.I0(this.d.getMessagesController().k4.I1.f()), String.valueOf(((int) (((privacyControlActivity7.N * f) / 1000.0d) * privacyControlActivity7.getMessagesController().k4.s3.i)) / 100.0d)));
-                    } else if (i == privacyControlActivity6.m0) {
-                        SpannableString spannableString2 = new SpannableString("g");
-                        cm2 cm2Var = new cm2(R.drawable.msg_input_gift, 0);
-                        cm2Var.I = 0.583f;
-                        cm2Var.J = 0.583f;
-                        spannableString2.setSpan(cm2Var, 0, 1, 33);
-                        mhbVar.setText(k96.V(null, null, 2131746635, spannableString2));
-                    } else if (i == privacyControlActivity6.s0) {
-                        mhbVar.setText(k96.M0(2131746631, null));
-                    }
-                }
-            }
-            zkb.h(bkb.Z6, null, mhbVar);
-            return;
-        }
-        if (i15 == 2) {
-            ld5 ld5Var = (ld5) s49Var.a;
-            PrivacyControlActivity privacyControlActivity8 = this.d;
-            if (i != privacyControlActivity8.P) {
-                if (i == privacyControlActivity8.T) {
-                    if (privacyControlActivity8.E == 10) {
-                        ld5Var.setText(k96.M0(2131746557, null));
-                        return;
-                    } else {
-                        ld5Var.setText(k96.M0(2131754428, null));
-                        return;
-                    }
-                }
-                if (i == privacyControlActivity8.c0) {
-                    ld5Var.setText(k96.M0(2131746607, null));
-                    return;
-                }
-                if (i == privacyControlActivity8.X) {
-                    ld5Var.setText(k96.M0(2131746593, null));
-                    return;
-                }
-                if (i == privacyControlActivity8.j0) {
-                    ld5Var.setText(k96.M0(2131746555, null));
-                    return;
-                }
-                i4 = privacyControlActivity8.giftTypesHeaderRow;
-                if (i == i4) {
-                    ld5Var.setText(k96.M0(2131746632, null));
-                    return;
-                }
-                return;
-            }
-            int i26 = privacyControlActivity8.E;
-            if (i26 == 6) {
-                ld5Var.setText(k96.M0(2131746594, null));
-                return;
-            }
-            if (i26 == 5) {
-                ld5Var.setText(k96.M0(2131746639, null));
-                return;
-            }
-            if (i26 == 4) {
-                ld5Var.setText(k96.M0(2131746581, null));
-                return;
-            }
-            if (i26 == 9) {
-                ld5Var.setText(k96.M0(2131746673, null));
-                return;
-            }
-            if (i26 == 14) {
-                ld5Var.setText(k96.M0(2131746610, null));
-                return;
-            }
-            if (i26 == 3) {
-                ld5Var.setText(k96.M0(2131747561, null));
-                return;
-            }
-            if (i26 == 2) {
-                ld5Var.setText(k96.M0(2131742617, null));
-                return;
-            }
-            if (i26 == 1) {
-                ld5Var.setText(k96.M0(2131742619, null));
-                return;
-            }
-            if (i26 == 8) {
-                ld5Var.setText(k96.M0(2131746563, null));
-                return;
-            }
-            if (i26 == 10) {
-                ld5Var.setText(k96.M0(2131746616, null));
-                return;
-            }
-            if (i26 == 11) {
-                ld5Var.setText(k96.M0(2131746663, null));
-                return;
-            } else if (i26 == 12) {
-                ld5Var.setText(k96.M0(2131746634, null));
-                return;
-            } else {
-                ld5Var.setText(k96.M0(2131748820, null));
-                return;
-            }
-        }
-        if (i15 != 3) {
-            if (i15 != 8) {
-                if (i15 == 9) {
-                    ija ijaVar = (ija) s49Var.a;
-                    i14 = this.d.priceRow;
-                    if (i == i14) {
-                        int[] a = ija.a(new int[]{1, 10, 50, 100, kk7.d3, kk7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) this.d.getMessagesController().k4.H1.f());
-                        k88 k88Var = new k88(this, (byte) 8);
-                        hja hjaVar = new hja();
-                        hjaVar.c = a;
-                        hjaVar.d = (byte) 20;
-                        hjaVar.e = k88Var;
-                        PrivacyControlActivity privacyControlActivity9 = this.d;
-                        ijaVar.d((int) Utilities.k(privacyControlActivity9.N, privacyControlActivity9.getMessagesController().k4.H1.f(), 1L), hjaVar, new xj8(this, r14 ? (byte) 1 : (byte) 0));
-                        return;
-                    }
-                    return;
-                }
-                return;
-            }
-            ahb ahbVar = (ahb) s49Var.a;
-            ahbVar.setCheckBoxIcon(0);
-            i12 = this.d.readRow;
-            if (i == i12) {
-                ahbVar.f(k96.M0(2131749121, null), this.d.D0, false);
-                return;
-            }
-            i13 = this.d.showGiftIconRow;
-            if (i == i13) {
-                ahbVar.f(k96.M0(2131746636, null), this.d.F0, false);
-                return;
-            }
-            PrivacyControlActivity privacyControlActivity10 = this.d;
-            if (i == privacyControlActivity10.n0) {
-                ahbVar.f(k96.M0(2131746627, null), this.d.H0, true);
-                if (!this.d.getUserConfig().p() && this.d.H0) {
-                    i16 = R.drawable.permission_locked;
-                }
-                ahbVar.setCheckBoxIcon(i16);
-                return;
-            }
-            if (i == privacyControlActivity10.o0) {
-                ahbVar.f(k96.M0(2131746630, null), this.d.J0, true);
-                if (!this.d.getUserConfig().p() && this.d.J0) {
-                    i17 = R.drawable.permission_locked;
-                }
-                ahbVar.setCheckBoxIcon(i17);
-                return;
-            }
-            if (i == privacyControlActivity10.p0) {
-                ahbVar.f(k96.M0(2131746628, null), this.d.L0, true);
-                if (!this.d.getUserConfig().p() && this.d.L0) {
-                    i18 = R.drawable.permission_locked;
-                }
-                ahbVar.setCheckBoxIcon(i18);
-                return;
-            }
-            if (i == privacyControlActivity10.q0) {
-                ahbVar.f(k96.M0(2131746633, null), this.d.N0, true);
-                if (!this.d.getUserConfig().p() && this.d.N0) {
-                    i19 = R.drawable.permission_locked;
-                }
-                ahbVar.setCheckBoxIcon(i19);
-                return;
-            }
-            if (i == privacyControlActivity10.r0) {
-                ahbVar.f(k96.M0(2131746629, null), this.d.P0, false);
-                if (!this.d.getUserConfig().p() && this.d.P0) {
-                    i20 = R.drawable.permission_locked;
-                }
-                ahbVar.setCheckBoxIcon(i20);
-                return;
-            }
-            return;
-        }
-        vy8 vy8Var = (vy8) s49Var.a;
-        vy8Var.setRadioIcon(null);
-        i5 = this.d.everybodyRow;
-        if (i != i5) {
-            PrivacyControlActivity privacyControlActivity11 = this.d;
-            if (i != privacyControlActivity11.Q) {
-                i11 = privacyControlActivity11.nobodyRow;
-                if (i != i11) {
-                    PrivacyControlActivity privacyControlActivity12 = this.d;
-                    if (i != privacyControlActivity12.i0) {
-                        if (i == privacyControlActivity12.Z) {
-                            vy8Var.c(k96.M0(2131748837, null), this.d.L == 1, false);
-                        } else if (i == privacyControlActivity12.Y) {
-                            vy8Var.c(k96.M0(2131748827, null), this.d.L == 0, true);
-                        }
-                        if (this.d.E != 12) {
-                            vy8Var.b(null, !r0.x0());
-                            return;
-                        }
-                        return;
-                    }
-                }
-            }
-        }
-        i6 = this.d.everybodyRow;
-        PrivacyControlActivity privacyControlActivity13 = this.d;
-        if (i == i6) {
-            if (privacyControlActivity13.E == 3) {
-                vy8Var.c(k96.M0(2131747560, null), this.d.K == 0, true);
-            } else {
-                vy8Var.c(k96.M0(2131748827, null), this.d.K == 0, true);
-            }
-        } else if (i == privacyControlActivity13.Q) {
-            if (privacyControlActivity13.E != 8 || privacyControlActivity13.getUserConfig().p()) {
-                PrivacyControlActivity privacyControlActivity14 = this.d;
-                if (privacyControlActivity14.E == 10) {
-                    if (!privacyControlActivity14.getMessagesController().k4.n2.f) {
-                    }
-                }
-                i7 = this.d.E;
-                if (i7 != 3) {
-                    String M02 = k96.M0(2131747565, null);
-                    PrivacyControlActivity privacyControlActivity15 = this.d;
-                    boolean z = privacyControlActivity15.K == 2;
-                    i10 = privacyControlActivity15.nobodyRow;
-                    vy8Var.c(M02, z, (i10 == -1 && this.d.i0 == -1) ? false : true);
-                } else if (i7 == 10) {
-                    String M03 = k96.M0(2131746618, null);
-                    PrivacyControlActivity privacyControlActivity16 = this.d;
-                    boolean z2 = privacyControlActivity16.K == 2;
-                    i9 = privacyControlActivity16.nobodyRow;
-                    vy8Var.c(M03, z2, (i9 == -1 && this.d.i0 == -1) ? false : true);
-                } else {
-                    String M04 = k96.M0(2131748837, null);
-                    PrivacyControlActivity privacyControlActivity17 = this.d;
-                    boolean z3 = privacyControlActivity17.K == 2;
-                    i8 = privacyControlActivity17.nobodyRow;
-                    vy8Var.c(M04, z3, (i8 == -1 && this.d.i0 == -1) ? false : true);
-                }
-            }
-            vy8Var.setRadioIcon(this.d.getParentActivity().getResources().getDrawable(R.drawable.mini_switch_lock).mutate());
-            i7 = this.d.E;
-            if (i7 != 3) {
-            }
+        byte b2 = 2;
+        this.D2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.B2 = 0.0f;
+        this.C2 = true;
+        this.n2.invalidate();
+        View view = this.v2;
+        if (view instanceof lka) {
+            drawable = ((lka) view).getRightDrawable();
+        } else if (view instanceof rc2) {
+            rc2 rc2Var = (rc2) view;
+            tm tmVar = rc2Var.Ca;
+            rc2Var.r2();
+            drawable = tmVar;
         } else {
-            int i27 = privacyControlActivity13.i0;
-            int i28 = privacyControlActivity13.E;
-            if (i == i27) {
-                if (i28 == 10 && !privacyControlActivity13.getUserConfig().p()) {
-                    vy8Var.setRadioIcon(this.d.getParentActivity().getResources().getDrawable(R.drawable.mini_switch_lock).mutate());
-                }
-                vy8Var.c(k96.M0(2131746560, null), this.d.K == 3, false);
-            } else {
-                if (i28 != 8 || privacyControlActivity13.getUserConfig().p()) {
-                    PrivacyControlActivity privacyControlActivity18 = this.d;
-                    if (privacyControlActivity18.E == 10) {
-                        if (!privacyControlActivity18.getMessagesController().k4.n2.f) {
-                        }
-                    }
-                    if (this.d.E != 3) {
-                        vy8Var.c(k96.M0(2131747558, null), this.d.K == 1, false);
-                    } else {
-                        vy8Var.c(k96.M0(2131748824, null), this.d.K == 1, false);
-                    }
-                }
-                vy8Var.setRadioIcon(this.d.getParentActivity().getResources().getDrawable(R.drawable.mini_switch_lock).mutate());
-                if (this.d.E != 3) {
-                }
-            }
+            drawable = null;
         }
-        if (this.d.E != 12) {
+        if (drawable != null) {
+            drawable.setAlpha(0);
+        }
+        View view2 = this.v2;
+        if (view2 instanceof rc2) {
+            ((rc2) view2).r2();
+        } else {
+            view2.invalidate();
+        }
+        w94 w94Var = this.m2;
+        if (w94Var != null) {
+            w94Var.m(100L);
+        }
+        this.D2.addUpdateListener(new uj8(this, b));
+        this.D2.addListener(new ic8(this, drawable, b2));
+        this.D2.setDuration(600L);
+        this.D2.setInterpolator(d53.h);
+        this.D2.start();
+        return false;
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        nm7.f(z8c.t0).b(this, nm7.B0);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        nm7.f(z8c.t0).n(this, nm7.B0);
+    }
+
+    @Override // my0, android.app.Dialog
+    public final void show() {
+        super.show();
+        byte b = 1;
+        nm7.e().k(nm7.j1, 4);
+        if (this.E2) {
+            gm.d3(new rj8(this, b), 200L);
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        int i2;
-        int i3;
-        wjb wjbVar;
-        wjb wjbVar2;
-        wjb wjbVar3;
-        View view;
-        Context context = this.c;
-        PrivacyControlActivity privacyControlActivity = this.d;
-        switch (i) {
-            case 0:
-                uib uibVar = new uib(context);
-                uibVar.setCanDisable(true);
-                view = uibVar;
-                break;
-            case 1:
-                view = new mhb(context);
-                break;
-            case 2:
-                view = new ld5(context);
-                break;
-            case 3:
-                view = new vy8(context, null);
-                break;
-            case 4:
-                view = privacyControlActivity.d;
-                break;
-            case 5:
-            default:
-                view = new b9a(context, (de9) null);
-                break;
-            case 6:
-                wgb wgbVar = new wgb(privacyControlActivity.getParentActivity());
-                privacyControlActivity.w0 = wgbVar;
-                if (privacyControlActivity.z0 == null) {
-                    wgbVar.o(R.drawable.msg_addphoto, k96.a0(null, null, 2131745325, new Object[0]), false);
-                } else {
-                    wgbVar.o(R.drawable.msg_addphoto, k96.a0("UpdatePhotoForRest", null, 2131743578, new Object[0]), true);
-                }
-                privacyControlActivity.w0.setBackgroundDrawable(bkb.L0(false));
-                privacyControlActivity.w0.g(bkb.u6, bkb.t6);
-                privacyControlActivity.v0 = new oy8(R.raw.camera_outline, gl.L(50.0f), gl.L(50.0f), false, null);
-                privacyControlActivity.w0.e.setTranslationX(-gl.L(8.0f));
-                privacyControlActivity.w0.e.setAnimation(privacyControlActivity.v0);
-                view = privacyControlActivity.w0;
-                break;
-            case 7:
-                privacyControlActivity.x0 = new be0(privacyControlActivity.getParentActivity());
-                privacyControlActivity.y0 = new gt2(this, privacyControlActivity.getParentActivity());
-                TLRPC.PhotoSize photoSize = privacyControlActivity.z0;
-                if (photoSize != null) {
-                    TLRPC.Photo photo = privacyControlActivity.A0;
-                    be0 be0Var = privacyControlActivity.x0;
-                    if (photo != null) {
-                        gl5 i4 = gl5.i(photoSize, photo);
-                        i3 = ((d) privacyControlActivity).currentAccount;
-                        be0Var.m(i4, "50_50", null, y6c.h(i3).f());
-                    } else {
-                        gl5 e = gl5.e(photoSize.location);
-                        i2 = ((d) privacyControlActivity).currentAccount;
-                        be0Var.m(e, "50_50", null, y6c.h(i2).f());
-                    }
-                }
-                privacyControlActivity.y0.addView(privacyControlActivity.x0, nme.d(30, 30.0f, 16, 21.0f, 0.0f, 21.0f, 0.0f));
-                privacyControlActivity.y0.k(k96.M0(2131746096, null), false);
-                privacyControlActivity.y0.getImageView().setVisibility(0);
-                privacyControlActivity.y0.setBackgroundDrawable(bkb.L0(false));
-                gt2 gt2Var = privacyControlActivity.y0;
-                int i5 = bkb.o7;
-                gt2Var.g(i5, i5);
-                view = privacyControlActivity.y0;
-                break;
-            case 8:
-                wjbVar = ((d) privacyControlActivity).resourceProvider;
-                view = new ahb(context, wjbVar);
-                break;
-            case 9:
-                wjbVar2 = ((d) privacyControlActivity).resourceProvider;
-                view = new ija(context, wjbVar2);
-                break;
-            case 10:
-                FrameLayout frameLayout = new FrameLayout(context);
-                wjbVar3 = ((d) privacyControlActivity).resourceProvider;
-                u41 u41Var = new u41(wjbVar3, context, true);
-                u41Var.setRoundRadius(24);
-                cm2 cm2Var = new cm2(R.drawable.msg_mini_lock3, 0);
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k96.M0(2131746561, null));
-                spannableStringBuilder.append((CharSequence) " l");
-                spannableStringBuilder.setSpan(cm2Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                u41Var.i(spannableStringBuilder, false, true);
-                u41Var.setOnClickListener(new fr7(this, (byte) 28));
-                frameLayout.addView(u41Var, nme.d(-1, 48.0f, kk7.D1, 18.0f, 0.0f, 18.0f, 16.0f));
-                view = frameLayout;
-                break;
+    @Override // my0, ah0
+    public final boolean t(Dialog dialog) {
+        w94 w94Var = this.m2;
+        if (w94Var != null) {
+            w94Var.setDialogVisible(true);
         }
-        return new y29(view);
+        this.l2.setPaused(true);
+        dialog.setOnDismissListener(new qj8(this, (byte) 0));
+        dialog.show();
+        return true;
+    }
+
+    public void b1(View view) {
+    }
+
+    public void Y0(int i, View view) {
+    }
+
+    public yj8(d dVar, int i, TLRPC.User user, ylb ylbVar) {
+        this(dVar, i, user, null, null, ylbVar);
     }
 }

@@ -5,17 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.ITabCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class TabCallbackDelegateImpl implements aeb {
+public class TabCallbackDelegateImpl implements agb {
     private final ITabCallback mStubCallback;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     static class TabCallbackStub extends ITabCallback.Stub {
-        private final deb mCallback;
+        private final dgb mCallback;
 
-        public TabCallbackStub(deb debVar) {
+        public TabCallbackStub(dgb dgbVar) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -29,21 +29,21 @@ public class TabCallbackDelegateImpl implements aeb {
         }
     }
 
-    private TabCallbackDelegateImpl(deb debVar) {
-        this.mStubCallback = new TabCallbackStub(debVar);
+    private TabCallbackDelegateImpl(dgb dgbVar) {
+        this.mStubCallback = new TabCallbackStub(dgbVar);
     }
 
-    public static aeb create(deb debVar) {
-        return new TabCallbackDelegateImpl(debVar);
+    public static agb create(dgb dgbVar) {
+        return new TabCallbackDelegateImpl(dgbVar);
     }
 
-    public void sendTabSelected(String str, cp7 cp7Var) {
+    public void sendTabSelected(String str, fr7 fr7Var) {
         try {
             ITabCallback iTabCallback = this.mStubCallback;
             Objects.requireNonNull(iTabCallback);
             iTabCallback.onTabSelected(str, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            rjb.m(e);
         }
     }
 

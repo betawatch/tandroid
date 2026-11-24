@@ -1,76 +1,88 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class soa implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ vqa b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ boolean f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class soa implements hf3 {
+    public final char a;
+    public int b = 0;
+    public final LinkedList c = new LinkedList();
 
-    public /* synthetic */ soa(vqa vqaVar, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z, TLRPC.TL_error tL_error) {
-        this.b = vqaVar;
-        this.e = tLObject;
-        this.d = twoStepVerificationActivity;
-        this.f = z;
-        this.c = tL_error;
+    public soa(char c) {
+        this.a = c;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 0;
-        boolean z = this.f;
-        TLObject tLObject = this.e;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        vqa vqaVar = this.b;
-        switch (b) {
-            case 0:
-                if (!(tLObject instanceof TL_account.tmpPassword)) {
-                    vqaVar.P1(tL_error, twoStepVerificationActivity, z);
-                    break;
-                } else {
-                    TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
-                    y6c.h(vqaVar.a).y = tmppassword;
-                    y6c.h(vqaVar.a).u(false);
-                    vqaVar.C1(tmppassword.tmp_password, twoStepVerificationActivity, z, null);
+    @Override // hf3
+    public final void a(vib vibVar, vib vibVar2, int i) {
+        hf3 hf3Var;
+        LinkedList linkedList = this.c;
+        Iterator it = linkedList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                hf3Var = (hf3) linkedList.getFirst();
+                break;
+            } else {
+                hf3Var = (hf3) it.next();
+                if (hf3Var.c() <= i) {
                     break;
                 }
-            default:
-                if (tL_error == null && twoStepVerificationActivity != null) {
-                    TL_account.Password password = (TL_account.Password) tLObject;
-                    twoStepVerificationActivity.J = password;
-                    TwoStepVerificationActivity.e0(password);
-                    TLRPC.TL_inputCheckPasswordSRP d0 = twoStepVerificationActivity.d0();
-                    TL_account.getTmpPassword gettmppassword = new TL_account.getTmpPassword();
-                    gettmppassword.password = d0;
-                    gettmppassword.period = 600;
-                    ConnectionsManager.getInstance(vqaVar.a).sendRequest(gettmppassword, new poa(vqaVar, twoStepVerificationActivity, z, b2));
-                    break;
-                } else {
-                    if (twoStepVerificationActivity != null) {
-                        twoStepVerificationActivity.s0();
-                    }
-                    u21.c0(tL_error != null ? tL_error.text : "NULL_ERROR");
-                    break;
-                }
+            }
         }
+        hf3Var.a(vibVar, vibVar2, i);
     }
 
-    public /* synthetic */ soa(vqa vqaVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject, boolean z) {
-        this.b = vqaVar;
-        this.c = tL_error;
-        this.d = twoStepVerificationActivity;
-        this.e = tLObject;
-        this.f = z;
+    @Override // hf3
+    public final char b() {
+        return this.a;
+    }
+
+    @Override // hf3
+    public final int c() {
+        return this.b;
+    }
+
+    @Override // hf3
+    public final int d(gf3 gf3Var, gf3 gf3Var2) {
+        hf3 hf3Var;
+        int i = gf3Var.g;
+        LinkedList linkedList = this.c;
+        Iterator it = linkedList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                hf3Var = (hf3) linkedList.getFirst();
+                break;
+            }
+            hf3Var = (hf3) it.next();
+            if (hf3Var.c() <= i) {
+                break;
+            }
+        }
+        return hf3Var.d(gf3Var, gf3Var2);
+    }
+
+    @Override // hf3
+    public final char e() {
+        return this.a;
+    }
+
+    public final void f(hf3 hf3Var) {
+        int c = hf3Var.c();
+        LinkedList linkedList = this.c;
+        ListIterator listIterator = linkedList.listIterator();
+        while (listIterator.hasNext()) {
+            int c2 = ((hf3) listIterator.next()).c();
+            if (c > c2) {
+                listIterator.previous();
+                listIterator.add(hf3Var);
+                return;
+            } else if (c == c2) {
+                throw new IllegalArgumentException("Cannot add two delimiter processors for char '" + this.a + "' and minimum length " + c);
+            }
+        }
+        linkedList.add(hf3Var);
+        this.b = c;
     }
 }

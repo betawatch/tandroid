@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -20,29 +20,29 @@ public final class g extends AnimatorListenerAdapter {
         if (animator.equals(chatActivityEnterView.j3)) {
             chatActivityEnterView.j3 = null;
         }
-        chatActivityEnterView.U0();
+        chatActivityEnterView.V0();
         chatActivityEnterView.a2.setAlpha(1.0f);
         chatActivityEnterView.a2.setTranslationX(0.0f);
         l lVar = chatActivityEnterView.E2;
-        if (lVar != null && gba.N < 3) {
+        if (lVar != null && gda.N < 3) {
             ChatActivityEnterView chatActivityEnterView2 = lVar.Q0;
             chatActivityEnterView2.T4 = true;
             chatActivityEnterView2.U4 = System.currentTimeMillis();
         }
-        ex1 ex1Var = chatActivityEnterView.F0;
-        if (ex1Var != null) {
-            ex1Var.setAlpha(chatActivityEnterView.g0() ? 1.0f : 0.0f);
+        sy1 sy1Var = chatActivityEnterView.F0;
+        if (sy1Var != null) {
+            sy1Var.setAlpha(chatActivityEnterView.g0() ? 1.0f : 0.0f);
         }
         if (this.a) {
-            i29 i29Var = chatActivityEnterView.i1;
-            if (i29Var != null) {
-                i29Var.setVisibility(8);
+            l49 l49Var = chatActivityEnterView.i1;
+            if (l49Var != null) {
+                l49Var.setVisibility(8);
             }
-            cw1 cw1Var = chatActivityEnterView.f1;
-            if (cw1Var != null) {
-                cw1Var.setVisibility(8);
+            px1 px1Var = chatActivityEnterView.f1;
+            if (px1Var != null) {
+                px1Var.setVisibility(8);
             }
-            chatActivityEnterView.U0();
+            chatActivityEnterView.V0();
         }
     }
 }

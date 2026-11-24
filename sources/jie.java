@@ -1,43 +1,73 @@
 // default package
 
-import java.util.concurrent.Future;
+import android.app.KeyguardManager;
+import android.graphics.Typeface;
+import android.security.keystore.KeyPermanentlyInvalidatedException;
+import java.security.KeyPairGenerator;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import javax.crypto.Cipher;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class jie {
-    public static Object a(Future future) {
-        Object obj;
-        boolean z = false;
-        if (!future.isDone()) {
-            sc8.j(nue.a("Future was expected to be done: %s", future));
+    public static KeyStore a;
+    public static KeyPairGenerator b;
+    public static Boolean c;
+
+    public static boolean a() {
+        Boolean bool = c;
+        if (bool != null) {
+            return bool.booleanValue();
+        }
+        try {
+            Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding").init(2, a.getKey("tmessages_passcode", null));
+            c = Boolean.FALSE;
+            return false;
+        } catch (KeyPermanentlyInvalidatedException unused) {
+            c = Boolean.TRUE;
+            return true;
+        } catch (Exception e) {
+            fc4.g(e, true);
+            c = Boolean.FALSE;
+            return false;
+        }
+    }
+
+    public static void b(boolean z) {
+        if (d()) {
+            return;
+        }
+        Typeface typeface = gm.a;
+        if (((KeyguardManager) a.b.getSystemService("keyguard")).isKeyguardSecure() && gi4.b(a.b) && gi4.a(a.b)) {
+            Utilities.e.c(new zh4((byte) 0, z));
+        }
+    }
+
+    public static KeyStore c() {
+        KeyStore keyStore = a;
+        if (keyStore != null) {
+            return keyStore;
+        }
+        try {
+            KeyStore keyStore2 = KeyStore.getInstance("AndroidKeyStore");
+            a = keyStore2;
+            keyStore2.load(null);
+            return a;
+        } catch (Exception e) {
+            fc4.g(e, true);
             return null;
         }
-        while (true) {
-            try {
-                obj = future.get();
-                break;
-            } catch (InterruptedException unused) {
-                z = true;
-            } catch (Throwable th) {
-                if (z) {
-                    Thread.currentThread().interrupt();
-                }
-                throw th;
-            }
-        }
-        if (z) {
-            Thread.currentThread().interrupt();
-        }
-        return obj;
     }
 
-    public static zl5 b(RuntimeException runtimeException) {
-        zl5 zl5Var = new zl5();
-        zl5Var.m(runtimeException);
-        return zl5Var;
-    }
-
-    public static am5 c(Object obj) {
-        return obj == null ? am5.b : new am5(obj);
+    public static boolean d() {
+        try {
+            return c().containsAlias("tmessages_passcode");
+        } catch (KeyStoreException e) {
+            fc4.g(e, true);
+            return false;
+        }
     }
 }

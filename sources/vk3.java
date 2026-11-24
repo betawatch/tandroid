@@ -1,21 +1,74 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class vk3 extends ue3 {
-    public final /* synthetic */ byte b5;
+public final class vk3 extends njb {
+    public long E;
+    public int F;
+    public int G;
+    public final /* synthetic */ zk3 H;
+    public boolean x;
+    public float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vk3(byte b, Context context, boolean z) {
-        super(context, z);
-        this.b5 = b;
+    public vk3(zk3 zk3Var, Context context) {
+        super(context);
+        this.H = zk3Var;
     }
 
-    @Override // ue3
-    public final boolean Z() {
-        byte b = this.b5;
-        return false;
+    @Override // njb
+    public final void a() {
+        zk3 zk3Var = this.H;
+        Drawable drawable = zk3Var.P;
+        if (drawable != null) {
+            Rect bounds = drawable.getBounds();
+            Drawable drawable2 = zk3Var.P;
+            int i = this.F;
+            drawable2.setBounds(i, this.G, bounds.width() + i, bounds.height() + this.G);
+        }
+    }
+
+    @Override // njb
+    public final void b() {
+        zk3 zk3Var = this.H;
+        Drawable drawable = zk3Var.P;
+        if (drawable != null) {
+            Rect bounds = drawable.getBounds();
+            int L = (int) (this.y * gm.L(3.0f));
+            int i = bounds.left;
+            this.F = i;
+            int i2 = bounds.top;
+            this.G = i2;
+            zk3Var.P.setBounds(i + L, gm.L(1.0f) + i2, bounds.width() + this.F + L, bounds.height() + gm.L(1.0f) + this.G);
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long j = elapsedRealtime - this.E;
+            if (j > 17) {
+                j = 17;
+            }
+            this.E = elapsedRealtime;
+            boolean z = this.x;
+            float f = this.y;
+            if (z) {
+                float f2 = f - (j / 664.0f);
+                this.y = f2;
+                if (f2 <= 0.0f) {
+                    this.x = false;
+                    this.y = 0.0f;
+                }
+            } else {
+                float f3 = (j / 664.0f) + f;
+                this.y = f3;
+                if (f3 >= 1.0f) {
+                    this.x = true;
+                    this.y = 1.0f;
+                }
+            }
+            getTextView().invalidate();
+        }
     }
 }

@@ -1,61 +1,56 @@
 // default package
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ImageSpan;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class p37 {
-    public SpannableStringBuilder a;
-    public int b;
-    public Drawable c;
-    public float d;
-    public final int e;
-    public final int f;
-    public int g = -1;
-    public int h = -1;
-    public float i = 4.66f;
+public final class p37 extends cm1 {
+    public final TextPaint A2;
+    public final /* synthetic */ r37 B2;
+    public final wm0 z2;
 
-    public p37(int i, int i2) {
-        this.e = i;
-        this.f = i2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p37(r37 r37Var, Context context, t37 t37Var) {
+        super(t37Var, context, false);
+        this.B2 = r37Var;
+        this.z2 = new wm0(r37Var.d, this, 10, false);
+        TextPaint textPaint = new TextPaint(1);
+        this.A2 = textPaint;
+        textPaint.setTypeface(gm.o());
+        textPaint.setTextSize(gm.L(Math.max(16, gda.S0) - 2));
+        textPaint.setColor(-1);
     }
 
-    public final CharSequence a(Context context, wjb wjbVar) {
-        SpannableStringBuilder spannableStringBuilder = this.a;
-        int i = this.f;
-        if (spannableStringBuilder != null && this.c != null && gl.p == this.d) {
-            if (this.b != bkb.v0(i, wjbVar)) {
-                Drawable drawable = this.c;
-                int v0 = bkb.v0(i, wjbVar);
-                this.b = v0;
-                drawable.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.SRC_IN));
+    @Override // cm1
+    public final Paint O(String str) {
+        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
+            return this.A2;
+        }
+        if ("paintChatActionBackground".equals(str)) {
+            pv7 pv7Var = this.B2.h;
+            pv7Var.x0 = true;
+            boolean z = pv7Var.D0;
+            wm0 wm0Var = this.z2;
+            if (wm0Var.r != z) {
+                wm0Var.r = z;
+                if (wm0Var.i == 10) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    colorMatrix.setSaturation(1.6f);
+                    gm.l2(colorMatrix, wm0Var.r ? 0.97f : 0.92f);
+                    gm.h(colorMatrix, wm0Var.r ? 0.12f : -0.06f);
+                    wm0Var.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    wm0Var.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                }
             }
-            return this.a;
+            Paint c = wm0Var.c(1.0f);
+            if (c != null) {
+                return c;
+            }
         }
-        if (context == null) {
-            return null;
-        }
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("v ");
-        this.d = gl.p;
-        Drawable mutate = context.getResources().getDrawable(this.e).mutate();
-        this.c = mutate;
-        int v02 = bkb.v0(i, wjbVar);
-        this.b = v02;
-        mutate.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
-        int i2 = this.g;
-        int intrinsicWidth = i2 <= 0 ? this.c.getIntrinsicWidth() : gl.L(i2);
-        int i3 = this.h;
-        int intrinsicHeight = i3 <= 0 ? this.c.getIntrinsicHeight() : gl.L(i3);
-        int L = gl.L(this.i);
-        this.c.setBounds(0, L, intrinsicWidth, intrinsicHeight + L);
-        spannableStringBuilder2.setSpan(new ImageSpan(this.c, 2), 0, 1, 33);
-        spannableStringBuilder2.setSpan(new se3(gl.L(2.0f)), 1, 2, 33);
-        this.a = spannableStringBuilder2;
-        return spannableStringBuilder2;
+        return super.O(str);
     }
 }

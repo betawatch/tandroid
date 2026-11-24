@@ -1,41 +1,49 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public class veb {
-    public int a;
-    public int b;
-    public int c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class veb extends g2 {
+    public static final /* synthetic */ ai4 f;
+    public static final /* synthetic */ ai4 h;
+    public long[] e;
 
-    public veb() {
-        c();
+    static {
+        i94 i94Var = new i94(veb.class, "SyncSampleBox.java");
+        i94Var.e(i94Var.d("getSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "[J"));
+        f = i94Var.e(i94Var.d("toString", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "java.lang.String"));
+        h = i94Var.e(i94Var.d("setSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "[J", "sampleNumber", "void"));
     }
 
-    public int a(efb efbVar, xeb xebVar, qeb qebVar, int i, boolean z) {
-        return this.a - qebVar.a(xebVar, i);
-    }
-
-    public void b(int i, int i2) {
-        this.a = Math.max(this.a, i);
-        this.b = Math.max(this.b, i2);
-    }
-
-    public void c() {
-        this.a = TLObject.FLAG_31;
-        this.b = TLObject.FLAG_31;
-        this.c = 2;
-    }
-
-    public int d(boolean z) {
-        if (!z) {
-            int i = this.c;
-            qeb qebVar = efb.T;
-            if ((i & 2) != 0) {
-                return 100000;
-            }
+    @Override // g2, y1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a = psd.a(jne.g(byteBuffer));
+        this.e = new long[a];
+        for (int i = 0; i < a; i++) {
+            this.e[i] = jne.g(byteBuffer);
         }
-        return this.a + this.b;
+    }
+
+    @Override // g2, y1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.length);
+        for (long j : this.e) {
+            byteBuffer.putInt((int) j);
+        }
+    }
+
+    @Override // y1
+    public final long getContentSize() {
+        return (this.e.length << 2) + 8;
+    }
+
+    public final String toString() {
+        xvc b = i94.b(f, this, this);
+        pa9.a().getClass();
+        pa9.b(b);
+        return hg9.k(new StringBuilder("SyncSampleBox[entryCount="), this.e.length, "]");
     }
 }

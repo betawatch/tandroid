@@ -1,19 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zrd implements zn7 {
-    public static final zrd a = new zrd();
-
-    static {
-        yjb.y(yjb.n(g7d.class, new d6d(1)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class zrd {
+    public static Object a(Bundle bundle) {
+        if (Build.VERSION.SDK_INT >= 34) {
+            return s4.g(bundle);
         }
-        throw null;
+        Parcelable parcelable = bundle.getParcelable("RESULT_DATA");
+        if (Intent.class.isInstance(parcelable)) {
+            return parcelable;
+        }
+        return null;
     }
 }

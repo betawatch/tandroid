@@ -1,10 +1,19 @@
 // default package
 
-import java.io.Closeable;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class jze implements Closeable {
-    public static final /* synthetic */ int a = 0;
-    public static final /* synthetic */ int b = 0;
+public final class jze implements cq7 {
+    public static final jze a = new jze();
+
+    static {
+        mlb.z(mlb.q(ikd.class, new cid(1)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

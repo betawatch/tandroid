@@ -1,198 +1,145 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import android.graphics.drawable.ShapeDrawable;
+import android.view.MotionEvent;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class gf0 extends FrameLayout {
-    public final wjb a;
-    public final pb0 b;
-    public final be0 c;
-    public final df0 d;
-    public final jia e;
-    public final RadioButton f;
-    public final Paint h;
-    public boolean n;
-    public final View r;
+public final class gf0 extends LinearLayout implements jm7 {
+    public final int a;
+    public final ylb b;
+    public final TextView c;
+    public final l66 d;
+    public ok e;
+    public final pn2[] f;
+    public boolean h;
 
-    public gf0(Context context, wjb wjbVar) {
+    public gf0(Context context, int i, ok okVar, ylb ylbVar) {
         super(context);
-        pb0 pb0Var = new pb0((wjb) null);
-        this.b = pb0Var;
-        this.h = new Paint(1);
-        this.a = wjbVar;
-        View view = new View(context);
-        this.r = view;
-        addView(view, nme.o(-1, -1));
-        zkb.h(bkb.g5, wjbVar, view);
-        pb0Var.r = gl.L(40.0f);
-        be0 be0Var = new be0(context);
-        this.c = be0Var;
-        be0Var.setRoundRadius(gl.L(20.0f));
-        addView(be0Var);
-        df0 df0Var = new df0(context, (byte) 0);
-        this.d = df0Var;
-        kk7.i(df0Var);
-        kk7.i(be0Var);
-        df0Var.setTextSize(16);
-        int i = bkb.i5;
-        zkb.W(df0Var, i, wjbVar);
-        df0Var.setGravity(k96.a0 ? 5 : 3);
-        addView(df0Var);
-        jia jiaVar = new jia(context);
-        this.e = jiaVar;
-        jiaVar.setTextSize(14);
-        zkb.W(jiaVar, i, wjbVar);
-        jiaVar.setGravity(k96.a0 ? 5 : 3);
-        addView(jiaVar);
-        RadioButton radioButton = new RadioButton(context);
-        this.f = radioButton;
-        radioButton.setSize(gl.L(20.0f));
-        zkb.O(radioButton, bkb.i7, bkb.D5, wjbVar);
-        addView(radioButton);
-        d();
-        if (b()) {
+        this.f = new pn2[1];
+        this.a = i;
+        this.b = ylbVar;
+        this.e = okVar;
+        setOrientation(1);
+        setPadding(gm.L(18.0f), gm.L(9.0f), gm.L(18.0f), gm.L(9.0f));
+        int L = gm.L(24.0f);
+        int i2 = cmb.vj;
+        Drawable b0 = cmb.b0(L, cmb.v0(i2, ylbVar));
+        wmb M = anb.M(i2);
+        setBackground(b0);
+        anb.j(this, b0, M, null, ylbVar);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 13.0f);
+        anb.X(textView, cmb.xj, ylbVar);
+        textView.setGravity(17);
+        addView(textView, qoe.q(-2, -2, 0.0f, 17, 0, 0, 0, 0));
+        l66 l66Var = new l66(context, ylbVar);
+        this.d = l66Var;
+        l66Var.setTextSize(1, 12.0f);
+        l66Var.setText(gm.E2(gm.N2(jb6.M0(2131750048, null), -1, 0, new ff0(context, ylbVar, (byte) 0), null), true, gm.L(2.6666667f), gm.L(1.0f)));
+        l66Var.setGravity(17);
+        addView(l66Var, qoe.q(-2, -2, 0.0f, 17, 0, 1, 0, 0));
+        b();
+    }
+
+    public final void a() {
+        this.h = true;
+        this.e = ok.b;
+        setPadding(gm.L(14.0f), gm.L(7.0f), gm.L(12.0f), gm.L(7.0f));
+        int L = gm.L(18.0f);
+        int i = cmb.g5;
+        ylb ylbVar = this.b;
+        ShapeDrawable b0 = cmb.b0(L, cmb.v0(i, ylbVar));
+        wmb M = anb.M(i);
+        setBackground(b0);
+        anb.j(this, b0, M, null, ylbVar);
+        setElevation(gm.L(2.0f));
+        int i2 = cmb.F6;
+        TextView textView = this.c;
+        anb.X(textView, i2, ylbVar);
+        textView.setTextSize(1, 14.0f);
+        this.d.setVisibility(8);
+        int i3 = this.a;
+        if (c.C(i3).z() == 0) {
+            c.C(i3).J();
+        }
+        b();
+    }
+
+    public final void b() {
+        ok okVar = ok.b;
+        boolean z = this.h;
+        int i = this.a;
+        nk j = z ? nk.j(c.C(i).z(), okVar) : jva.u(i, this.e).p();
+        if (this.h) {
+            this.c.setText(gm.E2(nxa.b1(true, jb6.a0(null, null, 2131749559, "⭐️ ".concat(j.o(2).d())), 0.85f, this.f), true, gm.L(2.0f), gm.L(0.5f)));
             return;
         }
-        radioButton.setVisibility(8);
-    }
-
-    public int a() {
-        return 0;
-    }
-
-    public boolean b() {
-        return false;
-    }
-
-    public void c(boolean z, boolean z2) {
-        RadioButton radioButton = this.f;
-        if (radioButton.getVisibility() == 0) {
-            radioButton.a(z, true);
+        ok okVar2 = this.e;
+        if (okVar2 == ok.a) {
+            this.c.setText(nxa.b1(false, jb6.a0(null, null, 2131750049, jb6.E(j.a(), ',')), 0.6f, null));
+            l66 l66Var = this.d;
+            int i2 = cmb.wj;
+            anb.X(l66Var, i2, this.b);
+            anb.G(this.d, i2, this.b);
+            this.d.setText(gm.E2(gm.N2(jb6.M0(2131750048, null), -1, 0, new f00(this, (byte) 9), null), true, gm.L(2.6666667f), gm.L(1.0f)));
+            return;
+        }
+        if (okVar2 == okVar) {
+            this.c.setText(nxa.b1(true, gm.S2(jb6.a0(null, null, 2131750047, j.b())), 0.6f, this.f));
+            this.f[0].a(cmb.wj);
+            StringBuilder sb = new StringBuilder(10);
+            sb.append('~');
+            cj0.h();
+            sb.append(cj0.f("USD", 2, (long) (j.c() * oc7.r1(this.a).l4.k.i * 100.0d), false));
+            l66 l66Var2 = this.d;
+            int i3 = cmb.xj;
+            int i4 = cmb.vj;
+            zmb zmbVar = anb.a;
+            anb.m(l66Var2, i3, i4, 3, 0.33f, this.b);
+            anb.n(this.d, 2, i3, i4, 3, 0.33f, this.b);
+            this.d.setText(sb);
         }
     }
 
-    public void d() {
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        this.c.setLayoutParams(nme.d(40, 40.0f, (k96.a0 ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
-        boolean z = k96.a0;
-        int i = (z ? 5 : 3) | 16;
-        if (z) {
-            f = 20.0f;
-        } else {
-            f = b() ? 105 : 70;
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == nm7.A3 || (i == nm7.e4 && this.h)) {
+            b();
         }
-        if (k96.a0) {
-            f2 = b() ? 105 : 70;
-        } else {
-            f2 = 20.0f;
-        }
-        this.d.setLayoutParams(nme.d(-1, -2.0f, i, f, 0.0f, f2, 0.0f));
-        boolean z2 = k96.a0;
-        int i2 = (z2 ? 5 : 3) | 16;
-        if (z2) {
-            f3 = 20.0f;
-        } else {
-            f3 = b() ? 105 : 70;
-        }
-        if (k96.a0) {
-            f4 = b() ? 105 : 70;
-        } else {
-            f4 = 20.0f;
-        }
-        this.e.setLayoutParams(nme.d(-1, -2.0f, i2, f3, 0.0f, f4, 0.0f));
-        boolean z3 = k96.a0;
-        this.f.setLayoutParams(nme.d(22, 22.0f, (z3 ? 5 : 3) | 16, z3 ? 15.0f : 20.0f, 0.0f, z3 ? 20.0f : 15.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.n) {
-            int v0 = bkb.v0(bkb.c7, this.a);
-            Paint paint = this.h;
-            paint.setColor(v0);
-            int i = b() ? kk7.p1 : 70;
-            if (this.c.getVisibility() == 8) {
-                i -= 40;
-            }
-            int a = a() + i;
-            if (k96.a0) {
-                canvas.drawRect(0.0f, getHeight() - 1, getWidth() - gl.L(a), getHeight(), paint);
-            } else {
-                canvas.drawRect(gl.L(a), getHeight() - 1, getWidth(), getHeight(), paint);
-            }
-        }
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return isEnabled() && super.dispatchTouchEvent(motionEvent);
     }
 
-    public final SpannableStringBuilder e(CharSequence charSequence) {
-        SpannableString spannableString = new SpannableString(">");
-        Drawable drawable = getContext().getResources().getDrawable(R.drawable.attach_arrow_right);
-        cm2 cm2Var = new cm2(2, drawable);
-        drawable.setBounds(0, gl.L(1.0f), gl.L(11.0f), gl.L(12.0f));
-        spannableString.setSpan(cm2Var, 0, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append(charSequence).append((CharSequence) " ").append((CharSequence) spannableString);
-        return spannableStringBuilder;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        b();
+        int i = this.a;
+        nm7.f(i).b(this, nm7.A3);
+        nm7.f(i).b(this, nm7.E3);
+        nm7.f(i).b(this, nm7.e4);
     }
 
-    public int getFullHeight() {
-        return 56;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i = this.a;
+        nm7.f(i).n(this, nm7.A3);
+        nm7.f(i).n(this, nm7.E3);
+        nm7.f(i).n(this, nm7.e4);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(getFullHeight()), TLObject.FLAG_30));
-    }
-
-    public void setCellBackgroundVisible(boolean z) {
-        this.r.setVisibility(z ? 0 : 8);
-    }
-
-    public void setDivider(boolean z) {
-        this.n = z;
-        invalidate();
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        jia jiaVar = this.e;
-        df0 df0Var = this.d;
-        if (isEmpty) {
-            df0Var.setTranslationY(0.0f);
-            jiaVar.setVisibility(8);
-        } else {
-            df0Var.setTranslationY(gl.L(-9.0f));
-            jiaVar.setTranslationY(gl.L(12.0f));
-            jiaVar.l(charSequence, false);
-            jiaVar.setVisibility(0);
-        }
-        if (this.c.getVisibility() == 8) {
-            if (k96.a0) {
-                df0Var.setTranslationX(gl.L(40.0f));
-                jiaVar.setTranslationX(gl.L(40.0f));
-            } else {
-                df0Var.setTranslationX(gl.L(-40.0f));
-                jiaVar.setTranslationX(gl.L(-40.0f));
-            }
-        }
-    }
-
-    public void setSubtitleColorKey(int i) {
-        zkb.W(this.e, i, this.a);
+    public gf0(int i, ylb ylbVar, Context context) {
+        this(context, i, ok.a, ylbVar);
     }
 }

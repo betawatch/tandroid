@@ -1,69 +1,63 @@
 // default package
 
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class e17 extends FrameLayout implements tjb {
-    public TLRPC.User a;
-    public l46 b;
-    public pi4 c;
-    public boolean d;
-    public int e;
+public final class e17 implements Comparator {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ ArrayList b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        l46 l46Var = this.b;
-        pi4 pi4Var = this.c;
-        View view = (View) getParent();
-        if (view != null && view.getWidth() > 0) {
-            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
-        }
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(gl.L(36.0f), TLObject.FLAG_30);
-        this.d = true;
-        boolean z = pi4Var.getVisibility() == 0;
-        l46Var.setVisibility(8);
-        if (z) {
-            pi4Var.setVisibility(8);
-        }
-        super.onMeasure(i, makeMeasureSpec);
-        if (z) {
-            pi4Var.getLayoutParams().width = getMeasuredWidth();
-            pi4Var.setVisibility(0);
-        }
-        l46Var.setVisibility(0);
-        l46Var.getLayoutParams().width = getMeasuredWidth() - gl.L(24.0f);
-        this.d = false;
-        super.onMeasure(i, makeMeasureSpec);
+    public e17(ArrayList arrayList, ArrayList arrayList2) {
+        this.a = arrayList;
+        this.b = arrayList2;
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.d) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            int w0 = bkb.w0(null, bkb.H5, false);
-            if (w0 != this.e) {
-                this.e = w0;
-                bkb.F1(getBackground(), w0, true);
+    public final int a(j17 j17Var) {
+        TLRPC.Document document = j17Var.a;
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i2 >= arrayList.size()) {
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    if (i >= Math.min(20, arrayList2.size())) {
+                        return -1;
+                    }
+                    if (((TLRPC.Document) arrayList2.get(i)).id == document.id) {
+                        return (arrayList2.size() - i) + 1000000;
+                    }
+                    i++;
+                }
+            } else {
+                if (((TLRPC.Document) arrayList.get(i2)).id == document.id) {
+                    return i2 + 2000000;
+                }
+                i2++;
             }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        j17 j17Var = (j17) obj;
+        j17 j17Var2 = (j17) obj2;
+        boolean K2 = k47.K2(j17Var.a, true);
+        if (K2 == k47.K2(j17Var2.a, true)) {
+            int a = a(j17Var);
+            int a2 = a(j17Var2);
+            if (a > a2) {
+                return -1;
+            }
+            if (a >= a2) {
+                return 0;
+            }
+        } else if (K2) {
+            return -1;
+        }
+        return 1;
     }
 }

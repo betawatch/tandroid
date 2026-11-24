@@ -1,149 +1,71 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.widget.FrameLayout;
-import java.util.HashMap;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qy9 extends fy0 implements gk7 {
-    public final w64 S1;
-    public final u41 T1;
-    public final y1b U1;
-    public final HashMap V1;
-    public final int W1;
-    public int X1;
-    public l5c Y1;
+public final class qy9 extends FrameLayout {
+    public final Path a;
+    public final Paint b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ylb e;
+    public final /* synthetic */ Integer f;
+    public final /* synthetic */ vz9 h;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public qy9(d dVar, long j, int i, gq7 gq7Var) {
-        super(r2, dVar, new ey0(r3));
-        Activity parentActivity = dVar.getParentActivity();
-        ey0 ey0Var = new ey0();
-        ey0Var.a = false;
-        ey0Var.c = false;
-        ey0Var.f = 2;
-        ey0Var.g = dVar.getResourceProvider();
-        this.V1 = new HashMap();
-        this.W1 = i;
-        y1b z = na7.q1(dVar.getCurrentAccount()).M1().z(1, -1, j, true);
-        this.U1 = z;
-        z.p(30, false);
-        this.E1 = gl.L(12.0f);
-        K();
-        T0();
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        zkb.h(bkb.g5, this.J0, frameLayout);
-        int i2 = this.u0;
-        frameLayout.setPadding(i2, 0, i2, 0);
-        this.b.addView(frameLayout, nme.d(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
-        View view = new View(getContext());
-        zkb.h(bkb.c7, this.J0, view);
-        frameLayout.addView(view, nme.a(-1.0f, 1.0f / gl.p, 55));
-        u41 u41Var = new u41(this.J0, getContext(), true);
-        this.T1 = u41Var;
-        u41Var.i(k96.M0(2131744561, null), false, true);
-        u41Var.setEnabled(false);
-        byte b = 6;
-        u41Var.setOnClickListener(new b99(this, gq7Var, b));
-        frameLayout.addView(u41Var, nme.d(-1, 48.0f, kk7.D1, 10.0f, (1.0f / gl.p) + 10.0f, 10.0f, 10.0f));
-        getContext();
-        w64 w64Var = new w64(i, false);
-        this.S1 = w64Var;
-        w64Var.O = new nq1(this, (byte) 16);
-        o39 o39Var = this.n1;
-        int i3 = this.u0;
-        o39Var.setPadding(i3, 0, i3, 0);
-        this.n1.setSelectorType(9);
-        this.n1.setSelectorDrawableColor(0);
-        this.n1.setLayoutManager(w64Var);
-        this.n1.setOnItemClickListener(new f09(this, b));
-        this.n1.setOnItemLongClickListener(new wh9(this, (byte) 11));
-        this.n1.setOnScrollListener(new n58(this, (byte) 17));
-        this.Y1.O(true);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qy9(vz9 vz9Var, Context context, boolean z, boolean z2, ylb ylbVar, Integer num) {
+        super(context);
+        this.h = vz9Var;
+        this.c = z;
+        this.d = z2;
+        this.e = ylbVar;
+        this.f = num;
+        this.a = new Path();
+        this.b = new Paint(1);
     }
 
-    @Override // fy0
-    public final n39 G0(o39 o39Var) {
-        l5c l5cVar = new l5c(o39Var, getContext(), this.a, 0, false, new tf8(this, (byte) 19), this.J0);
-        this.Y1 = l5cVar;
-        l5cVar.r = false;
-        return l5cVar;
-    }
-
-    @Override // fy0
-    public final CharSequence J0() {
-        return k96.M0(2131744561, null);
-    }
-
-    public final void Y0() {
-        w64 w64Var = this.S1;
-        int K0 = w64Var.K0();
-        int abs = K0 == -1 ? 0 : Math.abs(w64Var.M0() - K0) + 1;
-        y1b y1bVar = this.U1;
-        if (y1bVar != null) {
-            int i = K0 + abs;
-            int i2 = y1bVar.i();
-            int i3 = this.W1;
-            if (i > i2 - i3) {
-                y1bVar.p(Math.min(100, Math.max(1, i3 / 2) * i3 * i3), false);
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        RectF rectF;
+        vz9 vz9Var = this.h;
+        if (!vz9Var.R0) {
+            super.dispatchDraw(canvas);
+            return;
         }
-    }
-
-    public final boolean Z0(int i, View view) {
-        c4c G;
-        l5c l5cVar = this.Y1;
-        if (l5cVar == null || i == 0 || (G = l5cVar.G(i - 1)) == null) {
-            return false;
+        if (!this.c) {
+            super.dispatchDraw(canvas);
+            return;
         }
-        Object obj = G.H;
-        if (obj instanceof k27) {
-            k27 k27Var = (k27) obj;
-            int e1 = k27Var.e1();
-            Integer valueOf = Integer.valueOf(e1);
-            HashMap hashMap = this.V1;
-            if (hashMap.containsKey(valueOf)) {
-                hashMap.remove(Integer.valueOf(e1));
-                G.e = false;
-                ((qfa) view).i(false, true);
-            } else {
-                hashMap.put(Integer.valueOf(e1), k27Var.l);
-                G.e = true;
-                ((qfa) view).i(true, true);
-            }
-            boolean z = !hashMap.isEmpty();
-            u41 u41Var = this.T1;
-            u41Var.setEnabled(z);
-            u41Var.c(hashMap.size(), true);
+        canvas.save();
+        boolean z = this.d;
+        Paint paint = this.b;
+        if (z) {
+            cmb.m(paint);
         }
-        return true;
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.z5 && ((y1b) objArr[0]) == this.U1) {
-            this.Y1.O(false);
-            Y0();
+        paint.setColor(cmb.v0(cmb.F8, this.e));
+        paint.setAlpha((int) (getAlpha() * 255.0f));
+        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + gm.L(20.0f);
+        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
+        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
+        if (vz9Var.m()) {
+            rectF = gm.P;
+            rectF.set((width - (vz9Var.b1 * width)) + getPaddingLeft(), td4.A(1.0f, vz9Var.c1, height, getPaddingTop()), ((width2 - width) * vz9Var.b1) + getPaddingLeft() + width, getPaddingTop() + height);
+        } else {
+            rectF = gm.P;
+            rectF.set((width - (vz9Var.b1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * vz9Var.b1) + getPaddingLeft() + width, (height * vz9Var.c1) + getPaddingTop());
         }
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.X1 = this.U1.o();
-        kk7.f(this.a).b(this, kk7.z5);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.U1.z(this.X1);
-        kk7.f(this.a).n(this, kk7.z5);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, gm.L(12.0f), gm.L(12.0f), Path.Direction.CW);
+        canvas.drawPath(path, paint);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

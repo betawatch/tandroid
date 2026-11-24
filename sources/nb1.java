@@ -1,47 +1,43 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final /* synthetic */ class nb1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ j7b b;
+    public final /* synthetic */ CameraView b;
 
-    public /* synthetic */ nb1(j7b j7bVar, byte b) {
+    public /* synthetic */ nb1(CameraView cameraView, byte b) {
         this.a = b;
-        this.b = j7bVar;
+        this.b = cameraView;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        j7b j7bVar = this.b;
+        CameraView cameraView = this.b;
         switch (b) {
             case 0:
-                j7bVar.n();
+                cameraView.lambda$resetCamera$4();
                 break;
             case 1:
-                j7bVar.K0 = false;
-                j7bVar.L0 = TLObject.FLAG_31;
-                j7bVar.invalidate();
-                j7bVar.S0.setVisibility(0);
-                j7bVar.T0.setVisibility(0);
+                cameraView.lambda$new$7();
+                break;
+            case 2:
+                cameraView.lambda$toggleDual$2();
+                break;
+            case 3:
+                cameraView.lambda$switchCamera$3();
+                break;
+            case 4:
+                cameraView.lambda$onSurfaceTextureDestroyed$5();
+                break;
+            case 5:
+                cameraView.onSurfaceTextureUpdatedInternal();
                 break;
             default:
-                t7b t7bVar = j7bVar.S1;
-                i7b i7bVar = t7bVar.Y0;
-                if (i7bVar != null) {
-                    i7bVar.P = false;
-                    i7bVar.b();
-                    i7b i7bVar2 = t7bVar.Y0;
-                    i7bVar2.m(0L);
-                    kob kobVar = i7bVar2.G;
-                    if (kobVar != null) {
-                        kobVar.setProgress(0L);
-                        break;
-                    }
-                }
+                cameraView.lambda$enableDualInternal$0();
                 break;
         }
     }

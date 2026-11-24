@@ -1,18 +1,19 @@
 // default package
 
-import java.util.Calendar;
-import java.util.Locale;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class uce implements cq7 {
+    public static final uce a = new uce();
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class uce {
-    public static int a(int i) {
-        if (i >= 100 || i < 0) {
-            return i;
+    static {
+        mlb.z(mlb.r(mmd.class, new eld(1)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (ize.G == null) {
-            ize.G = new ize((byte) 15);
-        }
-        return Integer.parseInt(String.format(Locale.US, "%s%02d", ir2.n(2, 0, String.valueOf(Calendar.getInstance().get(1))), Integer.valueOf(i)));
+        throw null;
     }
 }

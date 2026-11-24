@@ -5,15 +5,15 @@ import androidx.car.app.model.CarColor;
 import androidx.car.app.model.Toggle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class NavigationTemplate implements ogb {
+public final class NavigationTemplate implements pib {
     private final ActionStrip mActionStrip;
     private final CarColor mBackgroundColor;
     private final TravelEstimate mDestinationTravelEstimate;
     private final ActionStrip mMapActionStrip;
-    private final mi7 mNavigationInfo;
-    private final pu7 mPanModeDelegate;
+    private final ok7 mNavigationInfo;
+    private final qw7 mPanModeDelegate;
     private final Toggle mPanModeToggle;
 
     private NavigationTemplate() {
@@ -60,11 +60,11 @@ public final class NavigationTemplate implements ogb {
         return this.mMapActionStrip;
     }
 
-    public mi7 getNavigationInfo() {
+    public ok7 getNavigationInfo() {
         return this.mNavigationInfo;
     }
 
-    public pu7 getPanModeDelegate() {
+    public qw7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -81,7 +81,7 @@ public final class NavigationTemplate implements ogb {
         return "NavigationTemplate";
     }
 
-    public NavigationTemplate(li7 li7Var) {
+    public NavigationTemplate(nk7 nk7Var) {
         throw null;
     }
 }

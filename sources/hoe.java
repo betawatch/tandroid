@@ -1,36 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.graphics.Bitmap;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class hoe {
-    public static int a(rj0 rj0Var, boolean z) {
-        int i = rj0Var.b;
-        int i2 = rj0Var.c;
-        if (!z) {
-            i2 = i;
-            i = i2;
-        }
-        byte[][] bArr = (byte[][]) rj0Var.d;
-        int i3 = 0;
-        for (int i4 = 0; i4 < i2; i4++) {
-            byte b = -1;
-            int i5 = 0;
-            for (int i6 = 0; i6 < i; i6++) {
-                byte b2 = z ? bArr[i4][i6] : bArr[i6][i4];
-                if (b2 == b) {
-                    i5++;
-                } else {
-                    if (i5 >= 5) {
-                        i3 += i5 - 2;
-                    }
-                    i5 = 1;
-                    b = b2;
-                }
-            }
-            if (i5 >= 5) {
-                i3 = (i5 - 2) + i3;
-            }
-        }
-        return i3;
+public final class hoe implements z6d {
+    public Object a;
+
+    public final void a(int i, Object obj, uif uifVar) {
+        igf igfVar = (igf) this.a;
+        igfVar.i(i, 3);
+        uifVar.d((kff) obj, igfVar.a);
+        igfVar.i(i, 4);
+    }
+
+    public final void b(int i, Object obj, uif uifVar) {
+        kff kffVar = (kff) obj;
+        igf igfVar = (igf) this.a;
+        igfVar.j((i << 3) | 2);
+        igfVar.j(kffVar.a(uifVar));
+        uifVar.d(kffVar, igfVar.a);
+    }
+
+    @Override // z6d
+    public final void d(Bitmap bitmap) {
+        ((lif) this.a).e(3, bitmap);
     }
 }

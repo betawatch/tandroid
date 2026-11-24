@@ -1,25 +1,36 @@
 // default package
 
-import java.util.Set;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g1c implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jac b;
+    public final /* synthetic */ String c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class g1c implements f1c {
-    public final Set a;
-    public final ra0 b;
-    public final i1c c;
-
-    public g1c(Set set, ra0 ra0Var, i1c i1cVar) {
-        this.a = set;
-        this.b = ra0Var;
-        this.c = i1cVar;
+    public /* synthetic */ g1c(jac jacVar, String str, byte b) {
+        this.a = b;
+        this.b = jacVar;
+        this.c = str;
     }
 
-    public final h1c a(String str, s24 s24Var, yyb yybVar) {
-        Set set = this.a;
-        if (set.contains(s24Var)) {
-            return new h1c(this.b, str, s24Var, yybVar, this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.c;
+        jac jacVar = this.b;
+        switch (b) {
+            case 0:
+                jacVar.a(str, Boolean.FALSE);
+                break;
+            case 1:
+                jacVar.a(null, str);
+                break;
+            case 2:
+                jacVar.a(null, str);
+                break;
+            default:
+                jacVar.a(null, str);
+                break;
         }
-        throw new IllegalArgumentException(String.format("%s is not supported byt this factory. Supported encodings are: %s.", s24Var, set));
     }
 }

@@ -1,41 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qne implements due {
-    public static final qne b = new qne(0);
-    public final /* synthetic */ byte a;
+public final class qne implements cq7 {
+    public static final qne a = new qne();
 
-    public /* synthetic */ qne(byte b2) {
-        this.a = b2;
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)));
     }
 
-    @Override // due
-    public final boolean zza(Class cls) {
-        switch (this.a) {
-            case 0:
-                return nne.class.isAssignableFrom(cls);
-            default:
-                return false;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-    }
-
-    @Override // due
-    public final swe zzb(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!nne.class.isAssignableFrom(cls)) {
-                    String name = cls.getName();
-                    throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
-                }
-                try {
-                    return (swe) nne.f(cls.asSubclass(nne.class)).d(3);
-                } catch (Exception e) {
-                    String name2 = cls.getName();
-                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
-                }
-            default:
-                throw new IllegalStateException("This should never be called.");
-        }
+        throw null;
     }
 }

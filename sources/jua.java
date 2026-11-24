@@ -1,31 +1,40 @@
 // default package
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jua extends ClickableSpan {
-    public final /* synthetic */ fx0[] a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ boolean c;
+public final /* synthetic */ class jua implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jva b;
 
-    public jua(fx0[] fx0VarArr, Context context, boolean z) {
-        this.a = fx0VarArr;
-        this.b = context;
-        this.c = z;
+    public /* synthetic */ jua(jva jvaVar, byte b) {
+        this.a = b;
+        this.b = jvaVar;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        d01.t(this.b, k96.M0(this.c ? 2131744690 : 2131744687, null));
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        jva jvaVar = this.b;
+        switch (b) {
+            case 0:
+                gm.c3(new nua(jvaVar, tLObject, (byte) 0));
+                break;
+            case 1:
+                gm.c3(new nua(jvaVar, tLObject, (byte) 1));
+                break;
+            case 2:
+                gm.c3(new nua(jvaVar, tLObject, (byte) 2));
+                break;
+            case 3:
+                gm.c3(new nua(jvaVar, tLObject, (byte) 3));
+                break;
+            default:
+                gm.c3(new nua(jvaVar, tLObject, (byte) 4));
+                break;
+        }
     }
 }

@@ -1,29 +1,37 @@
 // default package
 
+import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class c3d extends b4 {
-    public static final Parcelable.Creator<c3d> CREATOR = new b1d((byte) 12);
+public final class c3d extends b4 implements uc9 {
+    public static final Parcelable.Creator<c3d> CREATOR = new d3d((byte) 2);
     public final int a;
-    public final ds2 b;
-    public final l3d c;
+    public final int b;
+    public final Intent c;
 
-    public c3d(int i, ds2 ds2Var, l3d l3dVar) {
+    public c3d(int i, int i2, Intent intent) {
         this.a = i;
-        this.b = ds2Var;
-        this.c = l3dVar;
+        this.b = i2;
+        this.c = intent;
+    }
+
+    @Override // uc9
+    public final Status a() {
+        return this.b == 0 ? Status.e : Status.r;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        jte.k(parcel, 2, this.b, i);
-        jte.k(parcel, 3, this.c, i);
-        jte.s(parcel, r);
+        mve.q(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        mve.k(parcel, 3, this.c, i);
+        mve.s(parcel, r);
     }
 }

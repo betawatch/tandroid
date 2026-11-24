@@ -1,82 +1,31 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nwa implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ uxa b;
-    public final /* synthetic */ ArrayList c;
+public final class nwa extends ClickableSpan {
+    public final /* synthetic */ my0[] a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ nwa(uxa uxaVar, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.b = uxaVar;
-        this.c = arrayList;
+    public nwa(my0[] my0VarArr, Context context, boolean z) {
+        this.a = my0VarArr;
+        this.b = context;
+        this.c = z;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z;
-        byte b = this.a;
-        int i = 0;
-        ArrayList arrayList = this.c;
-        uxa uxaVar = this.b;
-        switch (b) {
-            case 0:
-                y1b y1bVar = uxaVar.D0;
-                y1bVar.getClass();
-                int size = arrayList.size();
-                int i2 = 0;
-                while (true) {
-                    if (i2 < size) {
-                        Object obj = arrayList.get(i2);
-                        i2++;
-                        if (!y1bVar.j.containsKey((Integer) obj)) {
-                            z = true;
-                        }
-                    } else {
-                        z = false;
-                    }
-                }
-                if (!y1bVar.q(0, arrayList, z)) {
-                    uxaVar.l0();
-                    uxaVar.q0();
-                    break;
-                }
-                break;
-            default:
-                ArrayList arrayList2 = uxaVar.w0;
-                ArrayList arrayList3 = uxaVar.v0;
-                uxaVar.A0 = false;
-                if (!arrayList.isEmpty()) {
-                    int size2 = arrayList.size();
-                    for (int i3 = 0; i3 < size2; i3++) {
-                        k27 k27Var = (k27) arrayList.get(i3);
-                        int i4 = uxaVar.t0.get(k27Var.e1(), -1);
-                        if (i4 >= 0 && ((rxa) arrayList3.get(i4)).b() == k27Var.e1()) {
-                            ((rxa) arrayList3.get(i4)).b = k27Var;
-                        }
-                    }
-                    arrayList2.clear();
-                    int size3 = arrayList3.size();
-                    while (true) {
-                        if (i < size3) {
-                            rxa rxaVar = (rxa) arrayList3.get(i);
-                            if (rxaVar.b == null) {
-                                uxaVar.s0 = rxaVar.b();
-                            } else {
-                                arrayList2.add(rxaVar);
-                                i++;
-                            }
-                        }
-                    }
-                    uxaVar.q0();
-                    uxaVar.T.setItemAnimator(null);
-                    uxaVar.C0.e();
-                    break;
-                }
-                break;
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        l11.u(this.b, jb6.M0(this.c ? 2131744616 : 2131744613, null));
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

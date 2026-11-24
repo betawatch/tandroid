@@ -1,17 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class zcd {
-    public static final Object a = new Object();
+public final class zcd extends sfd {
+    public static final zcd a = new zcd();
 
-    public static final Object a(qka qkaVar, int i) {
-        Object obj;
-        qkaVar.getClass();
-        int a2 = yp3.a(qkaVar.c, i, qkaVar.a);
-        if (a2 < 0 || (obj = qkaVar.b[a2]) == a) {
-            return null;
-        }
-        return obj;
+    public final boolean equals(Object obj) {
+        return obj == this;
+    }
+
+    public final int hashCode() {
+        return 2040732332;
+    }
+
+    public final String toString() {
+        return "Optional.absent()";
     }
 }

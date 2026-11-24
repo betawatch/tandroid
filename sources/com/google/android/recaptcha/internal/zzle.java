@@ -8,7 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzle extends WebViewClient {
     final /* synthetic */ zzly zza;
@@ -45,7 +45,7 @@ public final class zzle extends WebViewClient {
         zzcg zzcgVar = new zzcg(zzceVar, zzcdVar, null, null, 12, null);
         zzlyVar.zzz().hashCode();
         zzcgVar.getMessage();
-        ((cp2) zzlyVar.zzz()).P(zzcgVar);
+        ((nq2) zzlyVar.zzz()).P(zzcgVar);
     }
 
     @Override // android.webkit.WebViewClient
@@ -60,7 +60,7 @@ public final class zzle extends WebViewClient {
         zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzQ, null, null, 12, null);
         zzlyVar.zzz().hashCode();
         parse.toString();
-        ((cp2) zzlyVar.zzz()).P(zzcgVar);
+        ((nq2) zzlyVar.zzz()).P(zzcgVar);
         return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
     }
 }

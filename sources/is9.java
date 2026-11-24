@@ -1,50 +1,43 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class is9 {
-    public static ArrayList d;
-    public final String a;
-    public final String b;
-    public final String c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class is9 implements qac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ms9 b;
 
-    public is9(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+    public /* synthetic */ is9(ms9 ms9Var, byte b) {
+        this.a = b;
+        this.b = ms9Var;
     }
 
-    public static is9 a() {
-        ArrayList b = b();
-        return b.isEmpty() ? new is9("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (is9) b.get(Utilities.j(gba.m0, b.size() - 1, 0));
-    }
-
-    public static ArrayList b() {
-        if (d == null) {
-            d = new ArrayList();
-            int i = 1;
-            while (true) {
-                String c = c(k96.N0("SearchEngine" + i + "Name"));
-                if (c == null) {
+    @Override // qac
+    public final void a(Object obj) {
+        byte b = this.a;
+        ms9 ms9Var = this.b;
+        switch (b) {
+            case 0:
+                ls9 ls9Var = (ls9) obj;
+                ms9Var.I = null;
+                ms9Var.F = ls9Var;
+                ms9Var.E = ls9Var != null;
+                ms9Var.a();
+                ms9Var.invalidate();
+                f8b f8bVar = ms9Var.b;
+                if (f8bVar != null) {
+                    f8bVar.run();
                     break;
                 }
-                String c2 = c(k96.N0("SearchEngine" + i + "SearchURL"));
-                String c3 = c(k96.N0("SearchEngine" + i + "AutocompleteURL"));
-                c(k96.N0("SearchEngine" + i + "PrivacyPolicyURL"));
-                d.add(new is9(c, c2, c3));
-                i++;
-            }
+                break;
+            default:
+                d dVar = (d) obj;
+                ls9 ls9Var2 = ms9Var.F;
+                if (ls9Var2 != null || dVar == null) {
+                    ls9Var2.c(dVar);
+                    break;
+                }
         }
-        return d;
-    }
-
-    public static String c(String str) {
-        if (str.startsWith("LOC_ERR") || "reserved".equals(str)) {
-            return null;
-        }
-        return str;
     }
 }

@@ -1,42 +1,142 @@
 // default package
 
-import java.util.regex.Pattern;
+import android.os.Bundle;
+import android.view.View;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class zd0 extends tn5 {
-    public static final Pattern e = Pattern.compile("`+");
-    public static final Pattern f = Pattern.compile("^`+");
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class zd0 implements oac, ee {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ be0 b;
 
-    @Override // tn5
-    public final tg6 b() {
-        String a;
-        String a2 = a(f);
-        if (a2 == null) {
-            return null;
-        }
-        int i = this.d;
-        do {
-            a = a(e);
-            if (a == null) {
-                this.d = i;
-                return e(a2);
-            }
-        } while (!a.equals(a2));
-        cj2 cj2Var = new cj2((byte) 0);
-        String replace = this.c.substring(i, this.d - a2.length()).replace('\n', ' ');
-        if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
-            int length = replace.length();
-            if (lqe.b(' ', replace, 0, length) != length) {
-                replace = ir2.n(1, 1, replace);
-            }
-        }
-        cj2Var.h = replace;
-        return cj2Var;
+    public /* synthetic */ zd0(be0 be0Var, byte b) {
+        this.a = b;
+        this.b = be0Var;
     }
 
-    @Override // tn5
-    public final char c() {
-        return '`';
+    @Override // oac
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        c6c c6cVar = (c6c) obj;
+        final View view = (View) obj2;
+        final be0 be0Var = this.b;
+        if (be0Var.c.h(c6cVar)) {
+            return;
+        }
+        int i = c6cVar.d;
+        if (i == 2 || c6cVar.a == 17) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", be0Var.getUserConfig().e());
+            bundle.putInt("chatMode", 5);
+            bundle.putString("quick_reply", "away");
+            be0Var.presentFragment(new yv1(bundle));
+            return;
+        }
+        final byte b = 1;
+        if (i == 1) {
+            be0Var.r = !be0Var.r;
+            be0Var.b.g3.O(true);
+            be0Var.Z(true);
+            return;
+        }
+        if (i == 6) {
+            t51 t51Var = be0Var.c;
+            be0Var.s = true;
+            t51Var.h = true;
+            be0Var.b.g3.O(true);
+            be0Var.Z(true);
+            return;
+        }
+        final byte b2 = 0;
+        if (i == 7) {
+            t51 t51Var2 = be0Var.c;
+            be0Var.s = false;
+            t51Var2.h = false;
+            be0Var.b.g3.O(true);
+            be0Var.Z(true);
+            return;
+        }
+        if (i == 3) {
+            be0Var.x = (byte) 0;
+            be0Var.b.g3.O(true);
+            be0Var.Z(true);
+            return;
+        }
+        if (i == 4) {
+            be0Var.x = (byte) 1;
+            be0Var.b.g3.O(true);
+            be0Var.Z(true);
+            return;
+        }
+        if (i == 5) {
+            be0Var.x = (byte) 2;
+            be0Var.b.g3.O(true);
+            be0Var.Z(true);
+        } else {
+            if (i == 8) {
+                ik.x(be0Var.getParentActivity(), jb6.M0(2131752776, null), jb6.M0(2131752778, null), be0Var.F, new gk() { // from class: ae0
+                    @Override // gk
+                    public final void y(int i2, int i3, boolean z) {
+                        byte b3 = b2;
+                        View view2 = view;
+                        be0 be0Var2 = be0Var;
+                        switch (b3) {
+                            case 0:
+                                be0Var2.F = i2;
+                                ((xib) view2).w(jb6.Q(i2), true);
+                                be0Var2.Z(true);
+                                break;
+                            default:
+                                be0Var2.G = i2;
+                                ((xib) view2).w(jb6.Q(i2), true);
+                                be0Var2.Z(true);
+                                break;
+                        }
+                    }
+                });
+                return;
+            }
+            if (i == 9) {
+                ik.x(be0Var.getParentActivity(), jb6.M0(2131752779, null), jb6.M0(2131752778, null), be0Var.G, new gk() { // from class: ae0
+                    @Override // gk
+                    public final void y(int i2, int i3, boolean z) {
+                        byte b3 = b;
+                        View view2 = view;
+                        be0 be0Var2 = be0Var;
+                        switch (b3) {
+                            case 0:
+                                be0Var2.F = i2;
+                                ((xib) view2).w(jb6.Q(i2), true);
+                                be0Var2.Z(true);
+                                break;
+                            default:
+                                be0Var2.G = i2;
+                                ((xib) view2).w(jb6.Q(i2), true);
+                                be0Var2.Z(true);
+                                break;
+                        }
+                    }
+                });
+            } else if (i == 10) {
+                boolean z = !be0Var.w;
+                be0Var.w = z;
+                ((bjb) view).setChecked(z);
+                be0Var.Z(true);
+            }
+        }
+    }
+
+    @Override // ee
+    public final void r(he heVar, int i) {
+        byte b = this.a;
+        be0 be0Var = this.b;
+        switch (b) {
+            case 1:
+                be0Var.c0();
+                break;
+            default:
+                be0Var.finishFragment();
+                break;
+        }
     }
 }

@@ -28,9 +28,9 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7 {
+public class SessionsActivity extends org.telegram.ui.ActionBar.d implements jm7 {
     public int E;
     public int F;
     public int G;
@@ -51,16 +51,16 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
     public int V;
     public boolean W;
     public boolean X;
-    public bk8 Y;
-    public g7a a;
-    public ns9 b;
-    public g24 c;
+    public em8 Y;
+    public h9a a;
+    public pu9 b;
+    public r34 c;
     public final ArrayList d;
     public final ArrayList e;
     public ArrayList f;
     public TLRPC.TL_authorization h;
     public boolean n;
-    public c7a r;
+    public d9a r;
     public int s;
     private int terminateAllSessionsRow;
     private int ttlRow;
@@ -81,100 +81,100 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
     @Override // org.telegram.ui.ActionBar.d
     public final void addThemeColorKeys(HashSet hashSet) {
         super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(bkb.xj));
-        hashSet.add(Integer.valueOf(bkb.o7));
-        hashSet.add(Integer.valueOf(bkb.vj));
-        hashSet.add(Integer.valueOf(bkb.z6));
-        hashSet.add(Integer.valueOf(bkb.F6));
-        hashSet.add(Integer.valueOf(bkb.K6));
-        hashSet.add(Integer.valueOf(bkb.A6));
-        hashSet.add(Integer.valueOf(bkb.a7));
-        hashSet.add(Integer.valueOf(bkb.c7));
-        hashSet.add(Integer.valueOf(bkb.h6));
-        hashSet.add(Integer.valueOf(bkb.s8));
-        hashSet.add(Integer.valueOf(bkb.z8));
-        hashSet.add(Integer.valueOf(bkb.u8));
-        hashSet.add(Integer.valueOf(bkb.r8));
+        hashSet.add(Integer.valueOf(cmb.xj));
+        hashSet.add(Integer.valueOf(cmb.o7));
+        hashSet.add(Integer.valueOf(cmb.vj));
+        hashSet.add(Integer.valueOf(cmb.z6));
+        hashSet.add(Integer.valueOf(cmb.F6));
+        hashSet.add(Integer.valueOf(cmb.K6));
+        hashSet.add(Integer.valueOf(cmb.A6));
+        hashSet.add(Integer.valueOf(cmb.a7));
+        hashSet.add(Integer.valueOf(cmb.c7));
+        hashSet.add(Integer.valueOf(cmb.h6));
+        hashSet.add(Integer.valueOf(cmb.s8));
+        hashSet.add(Integer.valueOf(cmb.z8));
+        hashSet.add(Integer.valueOf(cmb.u8));
+        hashSet.add(Integer.valueOf(cmb.r8));
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final View createView(Context context) {
         int i = 1;
         setHasOwnBackground(true);
-        new pi4(context, null).setIsSingleCell(true);
+        new tk4(context, null).setIsSingleCell(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        pha phaVar = this.simpleActionBar;
+        rja rjaVar = this.simpleActionBar;
         boolean z = this.w;
         if (z) {
-            phaVar.setTitle(k96.M0(2131742648, null));
+            rjaVar.setTitle(jb6.M0(2131742574, null));
         } else {
-            phaVar.setTitle(k96.M0(2131751443, null));
+            rjaVar.setTitle(jb6.M0(2131751392, null));
         }
-        this.simpleActionBar.setActionBarMenuOnItemClick(new kk8(this, (byte) 12));
-        ui5 ui5Var = this.parentLayout;
-        if (ui5Var != null && ((ActionBarLayout) ui5Var).U0) {
+        this.simpleActionBar.setActionBarMenuOnItemClick(new im8(this, (byte) 13));
+        tk5 tk5Var = this.parentLayout;
+        if (tk5Var != null && ((ActionBarLayout) tk5Var).U0) {
             this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
-        this.a = new g7a(this, context);
+        this.a = new h9a(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        g24 g24Var = new g24(context, null);
-        this.c = g24Var;
-        g24Var.b();
-        ns9 ns9Var = new ns9((byte) 2, context, this);
-        this.b = ns9Var;
-        ns9Var.r1();
-        this.b.setLayoutManager(new zr((byte) 16, i, false));
+        r34 r34Var = new r34(context, null);
+        this.c = r34Var;
+        r34Var.b();
+        pu9 pu9Var = new pu9((byte) 2, context, this);
+        this.b = pu9Var;
+        pu9Var.r1();
+        this.b.setLayoutManager(new zs((byte) 16, i, false));
         this.b.setSectionsDrawBackground(true);
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setEmptyView(this.c);
-        ns9 ns9Var2 = this.b;
-        ns9Var2.X1 = true;
-        ns9Var2.Y1 = false;
-        frameLayout.addView(ns9Var2, nme.c(-1.0f, -1));
-        frameLayout.addView(this.c, nme.e(-1, -1, 17));
+        pu9 pu9Var2 = this.b;
+        pu9Var2.X1 = true;
+        pu9Var2.Y1 = false;
+        frameLayout.addView(pu9Var2, qoe.c(-1.0f, -1));
+        frameLayout.addView(this.c, qoe.e(-1, -1, 17));
         this.b.setAdapter(this.a);
-        gb3 gb3Var = new gb3();
-        gb3Var.n(350L);
-        gb3Var.o(s33.h);
-        gb3Var.C = false;
-        this.b.setItemAnimator(gb3Var);
-        this.b.setOnItemClickListener(new f09(this, (byte) 7));
+        sc3 sc3Var = new sc3();
+        sc3Var.n(350L);
+        sc3Var.o(d53.h);
+        sc3Var.C = false;
+        this.b.setItemAnimator(sc3Var);
+        this.b.setOnItemClickListener(new s19(this, (byte) 8));
         if (!z) {
-            c7a c7aVar = new c7a(this, context);
-            this.r = c7aVar;
-            frameLayout.addView(c7aVar, nme.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
+            d9a d9aVar = new d9a(this, context);
+            this.r = d9aVar;
+            frameLayout.addView(d9aVar, qoe.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         }
-        q0();
+        r0();
         return this.fragmentView;
     }
 
-    @Override // gk7
+    @Override // jm7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.t0) {
-            o0(true);
+        if (i == nm7.u0) {
+            p0(true);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
+    public final r59 getListViewForSimpleGlass() {
         return this.b;
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new blb(this.b, 16, new Class[]{uib.class, ld5.class, o5a.class}, (Paint) null, (Drawable[]) null, (alb) null, bkb.c6));
-        arrayList.add(new blb(this.c, 2048, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, bkb.g6));
-        int i = bkb.o7;
-        arrayList.add(new blb(this.b, 262148, new Class[]{uib.class}, new String[]{"textView"}, (Drawable[]) null, (alb) null, i));
-        arrayList.add(new blb(this.b, 262148, new Class[]{uib.class}, new String[]{"textView"}, (Drawable[]) null, (alb) null, bkb.p6));
-        arrayList.add(new blb(this.b, 262144, new Class[]{o5a.class}, new String[]{"onlineTextView"}, (Drawable[]) null, (alb) null, bkb.H6));
-        arrayList.add(new blb(this.r, 0, new Class[]{UndoView.class}, new String[]{"undoImageView"}, (Drawable[]) null, (alb) null, i));
+        arrayList.add(new cnb(this.b, 16, new Class[]{vkb.class, jf5.class, q7a.class}, (Paint) null, (Drawable[]) null, (bnb) null, cmb.c6));
+        arrayList.add(new cnb(this.c, 2048, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.g6));
+        int i = cmb.o7;
+        arrayList.add(new cnb(this.b, 262148, new Class[]{vkb.class}, new String[]{"textView"}, (Drawable[]) null, (bnb) null, i));
+        arrayList.add(new cnb(this.b, 262148, new Class[]{vkb.class}, new String[]{"textView"}, (Drawable[]) null, (bnb) null, cmb.p6));
+        arrayList.add(new cnb(this.b, 262144, new Class[]{q7a.class}, new String[]{"onlineTextView"}, (Drawable[]) null, (bnb) null, cmb.H6));
+        arrayList.add(new cnb(this.r, 0, new Class[]{UndoView.class}, new String[]{"undoImageView"}, (Drawable[]) null, (bnb) null, i));
         return arrayList;
     }
 
-    public final int h0() {
+    public final int i0() {
         ArrayList arrayList = this.d;
         if (arrayList.size() == 0 && this.n) {
             return 0;
@@ -182,34 +182,34 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
         return arrayList.size() + (!this.w ? 1 : 0);
     }
 
-    public final /* synthetic */ void i0() {
-        if (!this.w) {
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new w6a(this, (byte) 2));
-        } else {
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.resetWebAuthorizations(), new w6a(this, (byte) 3));
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.d
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    public final void j0(int i, boolean[] zArr) {
+    public final /* synthetic */ void j0() {
+        if (!this.w) {
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new y8a(this, (byte) 2));
+        } else {
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.resetWebAuthorizations(), new y8a(this, (byte) 3));
+        }
+    }
+
+    public final void k0(int i, boolean[] zArr) {
         TLRPC.TL_authorization tL_authorization;
         if (getParentActivity() != null) {
-            hd hdVar = new hd(3, null, getParentActivity());
-            hdVar.j0 = false;
-            hdVar.show();
+            he heVar = new he(3, null, getParentActivity());
+            heVar.j0 = false;
+            heVar.show();
             int i2 = this.K;
             ArrayList arrayList = this.d;
             if (this.w) {
                 TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) arrayList.get(i - i2);
                 TL_account.resetWebAuthorization resetwebauthorization = new TL_account.resetWebAuthorization();
                 resetwebauthorization.hash = tL_webAuthorization.hash;
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(resetwebauthorization, new ck8((Object) this, (Object) hdVar, (Object) tL_webAuthorization, (byte) 12));
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(resetwebauthorization, new fm8((Object) this, (Object) heVar, (Object) tL_webAuthorization, (byte) 12));
                 if (zArr[0]) {
-                    na7.q1(this.currentAccount).t(tL_webAuthorization.bot_id);
+                    oc7.r1(this.currentAccount).t(tL_webAuthorization.bot_id);
                     return;
                 }
                 return;
@@ -221,11 +221,11 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
             }
             TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
             resetauthorization.hash = tL_authorization.hash;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(resetauthorization, new ck8((Object) this, (Object) hdVar, (Object) tL_authorization, (byte) 11));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(resetauthorization, new fm8((Object) this, (Object) heVar, (Object) tL_authorization, (byte) 11));
         }
     }
 
-    public final void k0(int i) {
+    public final void l0(int i) {
         CharSequence charSequence;
         TLRPC.TL_authorization tL_authorization;
         boolean z;
@@ -241,29 +241,29 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                 int i4 = this.s;
                 int i5 = i4 <= 7 ? 0 : i4 <= 93 ? 1 : i4 <= 183 ? 2 : 3;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                String M02 = k96.M0(2131745361, null);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.S = M02;
-                String[] strArr = {k96.G(1, "Weeks", new Object[0]), k96.G(3, "Months", new Object[0]), k96.G(6, "Months", new Object[0]), k96.G(1, "Years", new Object[0])};
+                String M02 = jb6.M0(2131745287, null);
+                he heVar = alertDialog$Builder.a;
+                heVar.S = M02;
+                String[] strArr = {jb6.G(1, "Weeks", new Object[0]), jb6.G(3, "Months", new Object[0]), jb6.G(6, "Months", new Object[0]), jb6.G(1, "Years", new Object[0])};
                 LinearLayout linearLayout = new LinearLayout(getParentActivity());
                 linearLayout.setOrientation(1);
                 alertDialog$Builder.n(linearLayout);
                 int i6 = 0;
                 while (i6 < 4) {
-                    wy8 wy8Var = new wy8(getParentActivity(), null);
+                    x09 x09Var = new x09(getParentActivity(), null);
                     float f2 = f;
-                    wy8Var.setPadding(gl.L(f), 0, gl.L(f2), 0);
-                    wy8Var.setTag(Integer.valueOf(i6));
-                    wy8Var.a(bkb.w0(null, bkb.f7, false), bkb.w0(null, bkb.D5, false));
-                    wy8Var.b(strArr[i6], i5 == i6);
-                    linearLayout.addView(wy8Var);
-                    wy8Var.setBackground(bkb.f0(bkb.w0(null, bkb.h6, false), 2, -1));
-                    wy8Var.setOnClickListener(new b99(this, alertDialog$Builder, (byte) 8));
+                    x09Var.setPadding(gm.L(f), 0, gm.L(f2), 0);
+                    x09Var.setTag(Integer.valueOf(i6));
+                    x09Var.a(cmb.w0(null, cmb.f7, false), cmb.w0(null, cmb.D5, false));
+                    x09Var.b(strArr[i6], i5 == i6);
+                    linearLayout.addView(x09Var);
+                    x09Var.setBackground(cmb.f0(cmb.w0(null, cmb.h6, false), 2, -1));
+                    x09Var.setOnClickListener(new r39(this, alertDialog$Builder, (byte) 9));
                     i6++;
                     f = f2;
                 }
-                alertDialog$Builder.g(k96.M0(2131752577, null), null);
-                showDialog(hdVar);
+                alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                showDialog(heVar);
                 return;
             }
             return;
@@ -275,22 +275,22 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                 ArrayList arrayList2 = this.f;
                 if (arrayList2 == null || arrayList2.isEmpty()) {
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
-                    hd hdVar2 = alertDialog$Builder2.a;
+                    he heVar2 = alertDialog$Builder2.a;
                     if (z3) {
-                        hdVar2.U = k96.M0(2131754059, null);
-                        hdVar2.S = k96.M0(2131743958, null);
-                        M0 = k96.M0(2131751379, null);
+                        heVar2.U = jb6.M0(2131754027, null);
+                        heVar2.S = jb6.M0(2131743884, null);
+                        M0 = jb6.M0(2131751328, null);
                     } else {
-                        hdVar2.U = k96.M0(2131754069, null);
-                        hdVar2.S = k96.M0(2131754068, null);
-                        M0 = k96.M0(2131743968, null);
+                        heVar2.U = jb6.M0(2131754037, null);
+                        heVar2.S = jb6.M0(2131754036, null);
+                        M0 = jb6.M0(2131743894, null);
                     }
-                    alertDialog$Builder2.j(M0, new b7a(this, b));
-                    alertDialog$Builder2.g(k96.M0(2131752577, null), null);
-                    showDialog(hdVar2);
-                    TextView textView = (TextView) hdVar2.c(-1);
+                    alertDialog$Builder2.j(M0, new c9a(this, b));
+                    alertDialog$Builder2.g(jb6.M0(2131752542, null), null);
+                    showDialog(heVar2);
+                    TextView textView = (TextView) heVar2.c(-1);
                     if (textView != null) {
-                        zkb.X(textView, bkb.p7, null);
+                        anb.X(textView, cmb.p7, null);
                         return;
                     }
                     return;
@@ -302,33 +302,33 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                 while (i8 < size) {
                     Object obj = arrayList3.get(i8);
                     i8++;
-                    TLRPC.User V1 = na7.q1(this.currentAccount).V1(Long.valueOf(((TL_account.TL_connectedBot) obj).bot_id));
-                    if (V1 != null) {
-                        String o = l7c.o(V1);
-                        if (TextUtils.isEmpty(o)) {
-                            spannableStringBuilder.append((CharSequence) l7c.q(V1));
+                    TLRPC.User W1 = oc7.r1(this.currentAccount).W1(Long.valueOf(((TL_account.TL_connectedBot) obj).bot_id));
+                    if (W1 != null) {
+                        String p = m9c.p(W1);
+                        if (TextUtils.isEmpty(p)) {
+                            spannableStringBuilder.append((CharSequence) m9c.r(W1));
                         } else {
                             if (spannableStringBuilder.length() > 0) {
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
-                            SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) o);
-                            append.setSpan(new g4c(b00.h("https://t.me/", o), (vib) null), 0, append.length(), 33);
+                            SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) p);
+                            append.setSpan(new g6c(b10.h("https://t.me/", p), (wkb) null), 0, append.length(), 33);
                             spannableStringBuilder.append((CharSequence) append);
                         }
                     }
                 }
-                ij.f0(getParentActivity(), k96.M0(2131754068, null), k96.M0(2131754069, null), k96.V(null, null, 2131754268, spannableStringBuilder), k96.M0(2131743968, null), new a7a(this, b), this.resourceProvider, false);
+                ik.f0(getParentActivity(), jb6.M0(2131754036, null), jb6.M0(2131754037, null), jb6.V(null, null, 2131754236, spannableStringBuilder), jb6.M0(2131743894, null), new b9a(this, b), this.resourceProvider, false);
                 return;
             }
             return;
         }
-        byte b2 = 14;
+        byte b2 = 16;
         if (i >= this.M && i < this.N) {
             if (getParentActivity() == null || (arrayList = this.f) == null || arrayList.isEmpty()) {
                 return;
             }
             int i9 = i - this.M;
-            new mf2(getParentActivity(), (TL_account.TL_connectedBot) this.f.get(i9), new on7(this, i9, b2), this.resourceProvider).show();
+            new yg2(getParentActivity(), (TL_account.TL_connectedBot) this.f.get(i9), new ge7(this, i9, b2), this.resourceProvider).show();
             return;
         }
         if (((i < this.K || i >= this.L) && ((i < this.G || i >= this.H) && i != this.y)) || getParentActivity() == null) {
@@ -338,35 +338,35 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
         if (z3) {
             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getParentActivity());
             boolean[] zArr = new boolean[1];
-            hd hdVar3 = alertDialog$Builder3.a;
+            he heVar3 = alertDialog$Builder3.a;
             if (z3) {
                 TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) arrayList4.get(i - this.K);
-                hdVar3.U = k96.a0("TerminateWebSessionText", null, 2131743960, tL_webAuthorization.domain);
-                hdVar3.S = k96.M0(2131743959, null);
-                CharSequence M03 = k96.M0(2131751379, null);
+                heVar3.U = jb6.a0("TerminateWebSessionText", null, 2131743886, tL_webAuthorization.domain);
+                heVar3.S = jb6.M0(2131743885, null);
+                CharSequence M03 = jb6.M0(2131751328, null);
                 FrameLayout frameLayout = new FrameLayout(getParentActivity());
-                TLRPC.User V12 = na7.q1(this.currentAccount).V1(Long.valueOf(tL_webAuthorization.bot_id));
-                String k = V12 != null ? l7c.k(V12, true) : "";
-                ag2 ag2Var = new ag2(getParentActivity(), 1);
-                ag2Var.setBackgroundDrawable(bkb.L0(false));
-                ag2Var.e(k96.a0("TerminateWebSessionStop", null, 2131743961, k), "", false, false, false);
-                ag2Var.setPadding(k96.a0 ? gl.L(16.0f) : gl.L(8.0f), 0, k96.a0 ? gl.L(8.0f) : gl.L(16.0f), 0);
-                frameLayout.addView(ag2Var, nme.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-                ag2Var.setOnClickListener(new ge(zArr, (byte) 13));
-                hdVar3.H = (byte) 16;
+                TLRPC.User W12 = oc7.r1(this.currentAccount).W1(Long.valueOf(tL_webAuthorization.bot_id));
+                String k = W12 != null ? m9c.k(W12, true) : "";
+                oh2 oh2Var = new oh2(getParentActivity(), 1);
+                oh2Var.setBackgroundDrawable(cmb.L0(false));
+                oh2Var.e(jb6.a0("TerminateWebSessionStop", null, 2131743887, k), "", false, false, false);
+                oh2Var.setPadding(jb6.a0 ? gm.L(16.0f) : gm.L(8.0f), 0, jb6.a0 ? gm.L(8.0f) : gm.L(16.0f), 0);
+                frameLayout.addView(oh2Var, qoe.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+                oh2Var.setOnClickListener(new gf(zArr, (byte) 13));
+                heVar3.H = (byte) 16;
                 alertDialog$Builder3.n(frameLayout);
                 charSequence = M03;
             } else {
-                hdVar3.U = k96.M0(2131743963, null);
-                hdVar3.S = k96.M0(2131754070, null);
-                charSequence = k96.M0(2131743968, null);
+                heVar3.U = jb6.M0(2131743889, null);
+                heVar3.S = jb6.M0(2131754038, null);
+                charSequence = jb6.M0(2131743894, null);
             }
-            alertDialog$Builder3.j(charSequence, new zf(this, i, zArr, b2));
-            alertDialog$Builder3.g(k96.M0(2131752577, null), null);
-            showDialog(hdVar3);
-            TextView textView2 = (TextView) hdVar3.c(-1);
+            alertDialog$Builder3.j(charSequence, new yg((Object) this, i, (Object) zArr, (byte) 15));
+            alertDialog$Builder3.g(jb6.M0(2131752542, null), null);
+            showDialog(heVar3);
+            TextView textView2 = (TextView) heVar3.c(-1);
             if (textView2 != null) {
-                zkb.X(textView2, bkb.p7, null);
+                anb.X(textView2, cmb.p7, null);
                 return;
             }
             return;
@@ -380,32 +380,32 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
             z = false;
         }
         if (tL_authorization != null) {
-            d7a d7aVar = new d7a(this);
-            n5a n5aVar = new n5a(getParentActivity(), false);
-            n5aVar.S0 = true;
+            e9a e9aVar = new e9a(this);
+            p7a p7aVar = new p7a(getParentActivity(), false);
+            p7aVar.S0 = true;
             Activity parentActivity = getParentActivity();
-            n5aVar.l1 = tL_authorization;
-            n5aVar.m1 = this;
-            n5aVar.K();
+            p7aVar.l1 = tL_authorization;
+            p7aVar.m1 = this;
+            p7aVar.J();
             LinearLayout linearLayout2 = new LinearLayout(parentActivity);
             linearLayout2.setOrientation(1);
-            linearLayout2.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
-            ry8 ry8Var = new ry8(parentActivity);
-            n5aVar.n1 = ry8Var;
-            ry8Var.setOnClickListener(new f5a(n5aVar));
-            ry8Var.setScaleType(ImageView.ScaleType.CENTER);
-            linearLayout2.addView(ry8Var, nme.t(70, 70, 1, 0, 16, 0, 0));
+            linearLayout2.setPadding(gm.L(4.0f), 0, gm.L(4.0f), 0);
+            s09 s09Var = new s09(parentActivity);
+            p7aVar.n1 = s09Var;
+            s09Var.setOnClickListener(new h7a(p7aVar));
+            s09Var.setScaleType(ImageView.ScaleType.CENTER);
+            linearLayout2.addView(s09Var, qoe.t(70, 70, 1, 0, 16, 0, 0));
             TextView textView3 = new TextView(parentActivity);
-            ir2.t(textView3, 2, 20.0f);
-            zkb.X(textView3, bkb.F6, null);
+            ts2.s(textView3, 2, 20.0f);
+            anb.X(textView3, cmb.F6, null);
             textView3.setGravity(17);
-            linearLayout2.addView(textView3, nme.t(-1, -2, 1, 21, 12, 21, 0));
+            linearLayout2.addView(textView3, qoe.t(-1, -2, 1, 21, 12, 21, 0));
             TextView textView4 = new TextView(parentActivity);
-            zkb.X(textView4, bkb.x6, null);
+            anb.X(textView4, cmb.x6, null);
             textView4.setTextSize(2, 13.0f);
             textView4.setGravity(17);
-            linearLayout2.addView(textView4, nme.t(-1, -2, 1, 21, 4, 21, 21));
-            textView4.setText((tL_authorization.flags & 1) != 0 ? k96.M0(2131747633, null) : k96.x(tL_authorization.date_active, true));
+            linearLayout2.addView(textView4, qoe.t(-1, -2, 1, 21, 4, 21, 21));
+            textView4.setText((tL_authorization.flags & 1) != 0 ? jb6.M0(2131747559, null) : jb6.x(tL_authorization.date_active, true));
             StringBuilder sb = new StringBuilder();
             if (tL_authorization.device_model.length() != 0) {
                 sb.append(tL_authorization.device_model);
@@ -428,226 +428,314 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
             }
             String lowerCase2 = tL_authorization.device_model.toLowerCase();
             if (lowerCase2.contains("safari")) {
-                i3 = bkb.T7;
+                i3 = cmb.T7;
                 i2 = R.raw.safari_30;
             } else if (lowerCase2.contains("edge")) {
-                i3 = bkb.T7;
+                i3 = cmb.T7;
                 i2 = R.raw.edge_30;
             } else if (lowerCase2.contains("chrome")) {
-                i3 = bkb.T7;
+                i3 = cmb.T7;
                 i2 = R.raw.chrome_30;
             } else if (lowerCase2.contains("firefox")) {
-                i3 = bkb.N7;
+                i3 = cmb.N7;
                 i2 = R.raw.firefox_30;
             } else if (lowerCase2.contains("opera") || lowerCase2.contains("firefox") || lowerCase2.contains("vivaldi")) {
                 i2 = lowerCase2.contains("opera") ? R.drawable.device_web_opera : lowerCase2.contains("firefox") ? R.drawable.device_web_firefox : R.drawable.device_web_other;
-                i3 = bkb.T7;
+                i3 = cmb.T7;
                 b = 0;
             } else {
                 if (lowerCase.contains("ubuntu")) {
-                    i3 = bkb.S7;
+                    i3 = cmb.S7;
                     i2 = R.raw.ubuntu_30;
                 } else if (lowerCase.contains("linux")) {
-                    i3 = bkb.S7;
+                    i3 = cmb.S7;
                     i2 = R.raw.linux_30;
                 } else if (lowerCase.contains("ios")) {
                     i2 = lowerCase2.contains("ipad") ? R.raw.ipad_30 : R.raw.iphone_30;
-                    i3 = bkb.S7;
+                    i3 = cmb.S7;
                 } else {
                     if (lowerCase.contains("windows")) {
-                        i3 = bkb.R7;
+                        i3 = cmb.R7;
                     } else if (lowerCase.contains("macos")) {
-                        i3 = bkb.R7;
+                        i3 = cmb.R7;
                         i2 = R.raw.mac_30;
                     } else if (lowerCase.contains("android")) {
-                        i3 = bkb.Q7;
+                        i3 = cmb.Q7;
                         i2 = R.raw.android_30;
                     } else if (tL_authorization.app_name.toLowerCase().contains("desktop")) {
-                        i3 = bkb.R7;
+                        i3 = cmb.R7;
                     } else {
-                        i3 = bkb.T7;
+                        i3 = cmb.T7;
                         i2 = R.raw.chrome_30;
                     }
                     i2 = R.raw.windows_30;
                 }
                 b = 1;
             }
-            ShapeDrawable K = bkb.K(gl.L(42.0f), bkb.w0(null, i3, false));
-            vkb M = zkb.M(i3);
-            ry8Var.setBackground(K);
-            zkb.j(ry8Var, K, M, null, null);
+            ShapeDrawable K = cmb.K(gm.L(42.0f), cmb.w0(null, i3, false));
+            wmb M = anb.M(i3);
+            s09Var.setBackground(K);
+            anb.j(s09Var, K, M, null, null);
             if (b != 0) {
-                ry8Var.f(i2, 50, 50, new int[]{0, bkb.w0(null, i3, false)});
+                s09Var.f(i2, 50, 50, new int[]{0, cmb.w0(null, i3, false)});
             } else {
-                ry8Var.setImageDrawable(n5aVar.getContext().getDrawable(i2));
+                s09Var.setImageDrawable(p7aVar.getContext().getDrawable(i2));
             }
-            ly1 ly1Var = new ly1(parentActivity, false);
+            yz1 yz1Var = new yz1(parentActivity, false);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(tL_authorization.app_name);
             sb2.append(" ");
             sb2.append(tL_authorization.app_version);
-            ((TextView) ly1Var.d).setText(sb2);
+            ((TextView) yz1Var.d).setText(sb2);
             Drawable mutate = parentActivity.getDrawable(R.drawable.menu_devices).mutate();
-            View view = ly1Var.c;
-            int i11 = bkb.l6;
+            View view = yz1Var.c;
+            int i11 = cmb.l6;
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            zkb.x((ImageView) view, mutate, i11, null, mode);
+            anb.x((ImageView) view, mutate, i11, null, mode);
             ((ImageView) view).setImageDrawable(mutate);
-            ((TextView) ly1Var.e).setText(k96.M0(2131754219, null));
-            linearLayout2.addView(ly1Var);
+            ((TextView) yz1Var.e).setText(jb6.M0(2131754187, null));
+            linearLayout2.addView(yz1Var);
             if (tL_authorization.country.length() != 0) {
-                ly1 ly1Var2 = new ly1(parentActivity, false);
-                ((TextView) ly1Var2.d).setText(tL_authorization.country);
+                yz1 yz1Var2 = new yz1(parentActivity, false);
+                ((TextView) yz1Var2.d).setText(tL_authorization.country);
                 Drawable mutate2 = parentActivity.getDrawable(R.drawable.msg_location).mutate();
-                View view2 = ly1Var2.c;
-                zkb.x((ImageView) view2, mutate2, i11, null, mode);
+                View view2 = yz1Var2.c;
+                anb.x((ImageView) view2, mutate2, i11, null, mode);
                 ((ImageView) view2).setImageDrawable(mutate2);
-                ((TextView) ly1Var2.e).setText(k96.M0(2131748565, null));
-                ly1Var2.setOnClickListener(new g5a(n5aVar, tL_authorization));
-                ly1Var2.setOnLongClickListener(new h5a(n5aVar, tL_authorization));
-                int i12 = bkb.h6;
-                ff0 f0 = bkb.f0(bkb.w0(null, i12, false), 2, -1);
-                vkb M2 = zkb.M(i12);
-                ly1Var2.setBackground(f0);
-                zkb.j(ly1Var2, f0, null, M2, null);
-                linearLayout2.addView(ly1Var2);
-                ly1Var.b = true;
-                ly1Var = ly1Var2;
+                ((TextView) yz1Var2.e).setText(jb6.M0(2131748514, null));
+                yz1Var2.setOnClickListener(new i7a(p7aVar, tL_authorization));
+                yz1Var2.setOnLongClickListener(new j7a(p7aVar, tL_authorization));
+                int i12 = cmb.h6;
+                fg0 f0 = cmb.f0(cmb.w0(null, i12, false), 2, -1);
+                wmb M2 = anb.M(i12);
+                yz1Var2.setBackground(f0);
+                anb.j(yz1Var2, f0, null, M2, null);
+                linearLayout2.addView(yz1Var2);
+                yz1Var.b = true;
+                yz1Var = yz1Var2;
             }
             if (tL_authorization.ip.length() != 0) {
-                ly1 ly1Var3 = new ly1(parentActivity, false);
-                ((TextView) ly1Var3.d).setText(tL_authorization.ip);
+                yz1 yz1Var3 = new yz1(parentActivity, false);
+                ((TextView) yz1Var3.d).setText(tL_authorization.ip);
                 Drawable mutate3 = parentActivity.getDrawable(R.drawable.msg_language).mutate();
-                View view3 = ly1Var3.c;
-                zkb.x((ImageView) view3, mutate3, i11, null, mode);
+                View view3 = yz1Var3.c;
+                anb.x((ImageView) view3, mutate3, i11, null, mode);
                 ((ImageView) view3).setImageDrawable(mutate3);
-                ((TextView) ly1Var3.e).setText(k96.M0(2131748910, null));
-                ly1Var3.setOnClickListener(new i5a(n5aVar, tL_authorization));
-                ly1Var3.setOnLongClickListener(new j5a(n5aVar, tL_authorization));
-                int i13 = bkb.h6;
-                ff0 f02 = bkb.f0(bkb.w0(null, i13, false), 2, -1);
-                vkb M3 = zkb.M(i13);
-                ly1Var3.setBackground(f02);
-                zkb.j(ly1Var3, f02, null, M3, null);
-                linearLayout2.addView(ly1Var3);
+                ((TextView) yz1Var3.e).setText(jb6.M0(2131748859, null));
+                yz1Var3.setOnClickListener(new k7a(p7aVar, tL_authorization));
+                yz1Var3.setOnLongClickListener(new l7a(p7aVar, tL_authorization));
+                int i13 = cmb.h6;
+                fg0 f02 = cmb.f0(cmb.w0(null, i13, false), 2, -1);
+                wmb M3 = anb.M(i13);
+                yz1Var3.setBackground(f02);
+                anb.j(yz1Var3, f02, null, M3, null);
+                linearLayout2.addView(yz1Var3);
                 z2 = true;
-                ly1Var.b = true;
-                ly1Var = ly1Var3;
+                yz1Var.b = true;
+                yz1Var = yz1Var3;
             } else {
                 z2 = true;
             }
             int i14 = tL_authorization.api_id;
             if (i14 != 2040 && i14 != 2496) {
-                ly1 ly1Var4 = new ly1(parentActivity, z2);
-                ((TextView) ly1Var4.d).setText(k96.M0(2131754712, null));
+                yz1 yz1Var4 = new yz1(parentActivity, z2);
+                ((TextView) yz1Var4.d).setText(jb6.M0(2131754712, null));
                 Drawable mutate4 = parentActivity.getDrawable(R.drawable.msg_secret).mutate();
-                View view4 = ly1Var4.c;
-                zkb.x((ImageView) view4, mutate4, i11, null, mode);
+                View view4 = yz1Var4.c;
+                anb.x((ImageView) view4, mutate4, i11, null, mode);
                 ((ImageView) view4).setImageDrawable(mutate4);
-                ((Switch) ly1Var4.f).c(!tL_authorization.encrypted_requests_disabled, false);
-                int i15 = bkb.h6;
-                ff0 f03 = bkb.f0(bkb.w0(null, i15, false), 7, -1);
-                vkb M4 = zkb.M(i15);
-                ly1Var4.setBackground(f03);
-                zkb.j(ly1Var4, f03, null, M4, null);
-                ly1Var4.setOnClickListener(new k5a(n5aVar, ly1Var4, tL_authorization));
-                ly1Var.b = true;
-                ((TextView) ly1Var4.e).setText(k96.M0(2131754711, null));
-                linearLayout2.addView(ly1Var4);
-                ly1Var = ly1Var4;
+                ((Switch) yz1Var4.f).c(!tL_authorization.encrypted_requests_disabled, false);
+                int i15 = cmb.h6;
+                fg0 f03 = cmb.f0(cmb.w0(null, i15, false), 7, -1);
+                wmb M4 = anb.M(i15);
+                yz1Var4.setBackground(f03);
+                anb.j(yz1Var4, f03, null, M4, null);
+                yz1Var4.setOnClickListener(new m7a(p7aVar, yz1Var4, tL_authorization));
+                yz1Var.b = true;
+                ((TextView) yz1Var4.e).setText(jb6.M0(2131754711, null));
+                linearLayout2.addView(yz1Var4);
+                yz1Var = yz1Var4;
             }
             if (tL_authorization.api_id != 22) {
-                ly1 ly1Var5 = new ly1(parentActivity, true);
-                ((TextView) ly1Var5.d).setText(k96.M0(2131754714, null));
+                yz1 yz1Var5 = new yz1(parentActivity, true);
+                ((TextView) yz1Var5.d).setText(jb6.M0(2131754714, null));
                 Drawable mutate5 = parentActivity.getDrawable(R.drawable.msg_calls).mutate();
-                View view5 = ly1Var5.c;
-                zkb.x((ImageView) view5, mutate5, i11, null, mode);
+                View view5 = yz1Var5.c;
+                anb.x((ImageView) view5, mutate5, i11, null, mode);
                 ((ImageView) view5).setImageDrawable(mutate5);
-                ((Switch) ly1Var5.f).c(!tL_authorization.call_requests_disabled, false);
-                int i16 = bkb.h6;
-                ff0 f04 = bkb.f0(bkb.w0(null, i16, false), 7, -1);
-                vkb M5 = zkb.M(i16);
-                ly1Var5.setBackground(f04);
-                zkb.j(ly1Var5, f04, null, M5, null);
-                ly1Var5.setOnClickListener(new l5a(n5aVar, ly1Var5, tL_authorization));
-                ly1Var.b = true;
-                ((TextView) ly1Var5.e).setText(k96.M0(2131754713, null));
-                linearLayout2.addView(ly1Var5);
+                ((Switch) yz1Var5.f).c(!tL_authorization.call_requests_disabled, false);
+                int i16 = cmb.h6;
+                fg0 f04 = cmb.f0(cmb.w0(null, i16, false), 7, -1);
+                wmb M5 = anb.M(i16);
+                yz1Var5.setBackground(f04);
+                anb.j(yz1Var5, f04, null, M5, null);
+                yz1Var5.setOnClickListener(new n7a(p7aVar, yz1Var5, tL_authorization));
+                yz1Var.b = true;
+                ((TextView) yz1Var5.e).setText(jb6.M0(2131754713, null));
+                linearLayout2.addView(yz1Var5);
             }
             if (!z) {
                 TextView textView5 = new TextView(parentActivity);
-                textView5.setPadding(gl.L(34.0f), 0, gl.L(34.0f), 0);
+                textView5.setPadding(gm.L(34.0f), 0, gm.L(34.0f), 0);
                 textView5.setGravity(17);
                 textView5.setTextSize(1, 14.0f);
-                textView5.setTypeface(gl.o());
-                textView5.setText(k96.M0(2131743964, null));
-                zkb.X(textView5, bkb.Ii, null);
-                int L = gl.L(24.0f);
-                int i17 = bkb.ja;
-                int w0 = bkb.w0(null, i17, false);
-                int i18 = bkb.c6;
-                int o2 = bm2.o(bkb.w0(null, i18, false), 120);
-                ff0 i0 = bkb.i0(L, L, L, L, w0, o2, o2);
-                vkb M6 = zkb.M(i17);
-                vkb g = zkb.g(i18, 120);
+                textView5.setTypeface(gm.o());
+                textView5.setText(jb6.M0(2131743890, null));
+                anb.X(textView5, cmb.Ii, null);
+                int L = gm.L(24.0f);
+                int i17 = cmb.ja;
+                int w0 = cmb.w0(null, i17, false);
+                int i18 = cmb.c6;
+                int p2 = on2.p(cmb.w0(null, i18, false), nm7.E1);
+                fg0 i0 = cmb.i0(L, L, L, L, w0, p2, p2);
+                wmb M6 = anb.M(i17);
+                wmb g = anb.g(i18, nm7.E1);
                 textView5.setBackground(i0);
-                zkb.j(textView5, i0, M6, g, null);
-                linearLayout2.addView(textView5, nme.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
-                textView5.setOnClickListener(new m5a(n5aVar, d7aVar, tL_authorization, this));
+                anb.j(textView5, i0, M6, g, null);
+                linearLayout2.addView(textView5, qoe.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+                textView5.setOnClickListener(new o7a(p7aVar, e9aVar, tL_authorization, this));
             }
             ScrollView scrollView = new ScrollView(parentActivity);
             scrollView.addView(linearLayout2);
-            n5aVar.O = scrollView;
-            n5aVar.show();
+            p7aVar.O = scrollView;
+            p7aVar.show();
         }
     }
 
-    public final /* synthetic */ void l0() {
-        p31.a(this.currentAccount).b();
+    public final /* synthetic */ void m0() {
+        x41.a(this.currentAccount).b();
     }
 
-    public final /* synthetic */ void m0(Boolean bool) {
+    public final /* synthetic */ void n0(Boolean bool) {
         ArrayList arrayList;
         byte b = 1;
         if (bool != null && bool.booleanValue() && (arrayList = this.f) != null && !arrayList.isEmpty()) {
             TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
-            updateconnectedbot.bot = na7.q1(this.currentAccount).m1(((TL_account.TL_connectedBot) this.f.get(0)).bot_id);
+            updateconnectedbot.bot = oc7.r1(this.currentAccount).n1(((TL_account.TL_connectedBot) this.f.get(0)).bot_id);
             updateconnectedbot.deleted = true;
             updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(updateconnectedbot, new w6a(this, (byte) 0));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(updateconnectedbot, new y8a(this, (byte) 0));
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new w6a(this, b));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new y8a(this, b));
     }
 
-    public final /* synthetic */ void n0(TLObject tLObject, TLRPC.TL_error tL_error, boolean z) {
+    public final /* synthetic */ void o0(TLObject tLObject, TLRPC.TL_error tL_error, boolean z) {
         this.n = false;
         if (tL_error == null) {
             ArrayList arrayList = this.d;
             arrayList.clear();
             TL_account.webAuthorizations webauthorizations = (TL_account.webAuthorizations) tLObject;
-            na7.q1(this.currentAccount).a4(webauthorizations.users, false);
+            oc7.r1(this.currentAccount).d4(webauthorizations.users, false);
             arrayList.addAll(webauthorizations.authorizations);
-            q0();
+            r0();
         }
-        g7a g7aVar = this.a;
-        if (g7aVar != null) {
-            g7aVar.f();
+        h9a h9aVar = this.a;
+        if (h9aVar != null) {
+            h9aVar.f();
         }
-        bk8 bk8Var = this.Y;
-        if (bk8Var != null) {
-            bk8Var.a();
+        em8 em8Var = this.Y;
+        if (em8Var != null) {
+            em8Var.a();
         }
         int i = this.V;
         if (i > 0) {
             int i2 = i - 1;
             this.V = i2;
             if (i2 > 0) {
-                gl.e3(new x6a(this, z, (byte) 0), 2500L);
+                gm.d3(new z8a(this, z, (byte) 0), 2500L);
             }
         }
     }
 
-    public final void o0(final boolean z) {
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onBecomeFullyHidden() {
+        d9a d9aVar = this.r;
+        if (d9aVar != null) {
+            d9aVar.d(0, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onFragmentCreate() {
+        super.onFragmentCreate();
+        r0();
+        byte b = 0;
+        p0(false);
+        if (!this.w) {
+            x41.a(this.currentAccount).c(new b9a(this, b));
+        }
+        nm7.f(this.currentAccount).b(this, nm7.u0);
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        nm7.f(this.currentAccount).n(this, nm7.u0);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onInsets(int i, int i2, int i3, int i4) {
+        d9a d9aVar = this.r;
+        if (d9aVar != null) {
+            d9aVar.setTranslationY(-i4);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onPause() {
+        super.onPause();
+        d9a d9aVar = this.r;
+        if (d9aVar != null) {
+            d9aVar.d(0, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onRequestPermissionsResultFragment(int i, String[] strArr, int[] iArr) {
+        if (getParentActivity() == null || i != 34) {
+            return;
+        }
+        byte b = 0;
+        if (iArr.length > 0 && iArr[0] == 0) {
+            lb1.j0(getParentActivity(), 2, new g9a(this));
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.U = gm.S2(jb6.M0(2131746236, null));
+        alertDialog$Builder.j(jb6.M0(2131747033, null), new c9a(this, b));
+        alertDialog$Builder.g(jb6.M0(2131751709, null), null);
+        int i2 = cmb.K5;
+        alertDialog$Builder.l(R.raw.permission_request_camera, 72, cmb.w0(null, i2, false), null);
+        alertDialog$Builder.m(i2, null);
+        alertDialog$Builder.o();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onResume() {
+        super.onResume();
+        h9a h9aVar = this.a;
+        if (h9aVar != null) {
+            h9aVar.f();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
+        super.onTransitionAnimationEnd(z, z2);
+        if (!z || z2) {
+            return;
+        }
+        this.X = true;
+        for (int i = 0; i < this.b.getChildCount(); i++) {
+            View childAt = this.b.getChildAt(i);
+            if (childAt instanceof i9a) {
+                ((i9a) childAt).b.invalidate();
+            }
+        }
+    }
+
+    public final void p0(final boolean z) {
         if (this.n) {
             return;
         }
@@ -656,7 +744,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
         }
         if (this.w) {
             final byte b = 1;
-            ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getWebAuthorizations(), new RequestDelegate(this) { // from class: u6a
+            ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getWebAuthorizations(), new RequestDelegate(this) { // from class: w8a
                 public final /* synthetic */ SessionsActivity b;
 
                 {
@@ -670,7 +758,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                             final byte b2 = 0;
                             final SessionsActivity sessionsActivity = this.b;
                             final boolean z2 = z;
-                            gl.d3(new Runnable() { // from class: v6a
+                            gm.c3(new Runnable() { // from class: x8a
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     byte b3 = b2;
@@ -699,32 +787,32 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                                                     }
                                                 }
                                                 sessionsActivity2.s = authorizationsVar.authorization_ttl_days;
-                                                sessionsActivity2.q0();
-                                                bk8 bk8Var = sessionsActivity2.Y;
-                                                if (bk8Var != null) {
-                                                    bk8Var.a();
+                                                sessionsActivity2.r0();
+                                                em8 em8Var = sessionsActivity2.Y;
+                                                if (em8Var != null) {
+                                                    em8Var.a();
                                                 }
                                             }
-                                            g7a g7aVar = sessionsActivity2.a;
-                                            if (g7aVar != null) {
-                                                g7aVar.f();
+                                            h9a h9aVar = sessionsActivity2.a;
+                                            if (h9aVar != null) {
+                                                h9aVar.f();
                                             }
-                                            bk8 bk8Var2 = sessionsActivity2.Y;
-                                            if (bk8Var2 != null) {
-                                                bk8Var2.a();
+                                            em8 em8Var2 = sessionsActivity2.Y;
+                                            if (em8Var2 != null) {
+                                                em8Var2.a();
                                             }
                                             int i2 = sessionsActivity2.V;
                                             if (i2 > 0) {
                                                 int i3 = i2 - 1;
                                                 sessionsActivity2.V = i3;
                                                 if (i3 > 0) {
-                                                    gl.e3(new x6a(sessionsActivity2, z3, (byte) 1), 2500L);
+                                                    gm.d3(new z8a(sessionsActivity2, z3, (byte) 1), 2500L);
                                                     break;
                                                 }
                                             }
                                             break;
                                         default:
-                                            sessionsActivity2.n0(tLObject2, tL_error2, z3);
+                                            sessionsActivity2.o0(tLObject2, tL_error2, z3);
                                             break;
                                     }
                                 }
@@ -734,7 +822,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                             final byte b3 = 1;
                             final SessionsActivity sessionsActivity2 = this.b;
                             final boolean z3 = z;
-                            gl.d3(new Runnable() { // from class: v6a
+                            gm.c3(new Runnable() { // from class: x8a
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     byte b32 = b3;
@@ -763,32 +851,32 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                                                     }
                                                 }
                                                 sessionsActivity22.s = authorizationsVar.authorization_ttl_days;
-                                                sessionsActivity22.q0();
-                                                bk8 bk8Var = sessionsActivity22.Y;
-                                                if (bk8Var != null) {
-                                                    bk8Var.a();
+                                                sessionsActivity22.r0();
+                                                em8 em8Var = sessionsActivity22.Y;
+                                                if (em8Var != null) {
+                                                    em8Var.a();
                                                 }
                                             }
-                                            g7a g7aVar = sessionsActivity22.a;
-                                            if (g7aVar != null) {
-                                                g7aVar.f();
+                                            h9a h9aVar = sessionsActivity22.a;
+                                            if (h9aVar != null) {
+                                                h9aVar.f();
                                             }
-                                            bk8 bk8Var2 = sessionsActivity22.Y;
-                                            if (bk8Var2 != null) {
-                                                bk8Var2.a();
+                                            em8 em8Var2 = sessionsActivity22.Y;
+                                            if (em8Var2 != null) {
+                                                em8Var2.a();
                                             }
                                             int i2 = sessionsActivity22.V;
                                             if (i2 > 0) {
                                                 int i3 = i2 - 1;
                                                 sessionsActivity22.V = i3;
                                                 if (i3 > 0) {
-                                                    gl.e3(new x6a(sessionsActivity22, z32, (byte) 1), 2500L);
+                                                    gm.d3(new z8a(sessionsActivity22, z32, (byte) 1), 2500L);
                                                     break;
                                                 }
                                             }
                                             break;
                                         default:
-                                            sessionsActivity22.n0(tLObject2, tL_error2, z32);
+                                            sessionsActivity22.o0(tLObject2, tL_error2, z32);
                                             break;
                                     }
                                 }
@@ -800,7 +888,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
             return;
         }
         final byte b2 = 0;
-        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getAuthorizations(), new RequestDelegate(this) { // from class: u6a
+        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getAuthorizations(), new RequestDelegate(this) { // from class: w8a
             public final /* synthetic */ SessionsActivity b;
 
             {
@@ -814,7 +902,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                         final byte b22 = 0;
                         final SessionsActivity sessionsActivity = this.b;
                         final boolean z2 = z;
-                        gl.d3(new Runnable() { // from class: v6a
+                        gm.c3(new Runnable() { // from class: x8a
                             @Override // java.lang.Runnable
                             public final void run() {
                                 byte b32 = b22;
@@ -843,32 +931,32 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                                                 }
                                             }
                                             sessionsActivity22.s = authorizationsVar.authorization_ttl_days;
-                                            sessionsActivity22.q0();
-                                            bk8 bk8Var = sessionsActivity22.Y;
-                                            if (bk8Var != null) {
-                                                bk8Var.a();
+                                            sessionsActivity22.r0();
+                                            em8 em8Var = sessionsActivity22.Y;
+                                            if (em8Var != null) {
+                                                em8Var.a();
                                             }
                                         }
-                                        g7a g7aVar = sessionsActivity22.a;
-                                        if (g7aVar != null) {
-                                            g7aVar.f();
+                                        h9a h9aVar = sessionsActivity22.a;
+                                        if (h9aVar != null) {
+                                            h9aVar.f();
                                         }
-                                        bk8 bk8Var2 = sessionsActivity22.Y;
-                                        if (bk8Var2 != null) {
-                                            bk8Var2.a();
+                                        em8 em8Var2 = sessionsActivity22.Y;
+                                        if (em8Var2 != null) {
+                                            em8Var2.a();
                                         }
                                         int i2 = sessionsActivity22.V;
                                         if (i2 > 0) {
                                             int i3 = i2 - 1;
                                             sessionsActivity22.V = i3;
                                             if (i3 > 0) {
-                                                gl.e3(new x6a(sessionsActivity22, z32, (byte) 1), 2500L);
+                                                gm.d3(new z8a(sessionsActivity22, z32, (byte) 1), 2500L);
                                                 break;
                                             }
                                         }
                                         break;
                                     default:
-                                        sessionsActivity22.n0(tLObject2, tL_error2, z32);
+                                        sessionsActivity22.o0(tLObject2, tL_error2, z32);
                                         break;
                                 }
                             }
@@ -878,7 +966,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                         final byte b3 = 1;
                         final SessionsActivity sessionsActivity2 = this.b;
                         final boolean z3 = z;
-                        gl.d3(new Runnable() { // from class: v6a
+                        gm.c3(new Runnable() { // from class: x8a
                             @Override // java.lang.Runnable
                             public final void run() {
                                 byte b32 = b3;
@@ -907,32 +995,32 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
                                                 }
                                             }
                                             sessionsActivity22.s = authorizationsVar.authorization_ttl_days;
-                                            sessionsActivity22.q0();
-                                            bk8 bk8Var = sessionsActivity22.Y;
-                                            if (bk8Var != null) {
-                                                bk8Var.a();
+                                            sessionsActivity22.r0();
+                                            em8 em8Var = sessionsActivity22.Y;
+                                            if (em8Var != null) {
+                                                em8Var.a();
                                             }
                                         }
-                                        g7a g7aVar = sessionsActivity22.a;
-                                        if (g7aVar != null) {
-                                            g7aVar.f();
+                                        h9a h9aVar = sessionsActivity22.a;
+                                        if (h9aVar != null) {
+                                            h9aVar.f();
                                         }
-                                        bk8 bk8Var2 = sessionsActivity22.Y;
-                                        if (bk8Var2 != null) {
-                                            bk8Var2.a();
+                                        em8 em8Var2 = sessionsActivity22.Y;
+                                        if (em8Var2 != null) {
+                                            em8Var2.a();
                                         }
                                         int i2 = sessionsActivity22.V;
                                         if (i2 > 0) {
                                             int i3 = i2 - 1;
                                             sessionsActivity22.V = i3;
                                             if (i3 > 0) {
-                                                gl.e3(new x6a(sessionsActivity22, z32, (byte) 1), 2500L);
+                                                gm.d3(new z8a(sessionsActivity22, z32, (byte) 1), 2500L);
                                                 break;
                                             }
                                         }
                                         break;
                                     default:
-                                        sessionsActivity22.n0(tLObject2, tL_error2, z32);
+                                        sessionsActivity22.o0(tLObject2, tL_error2, z32);
                                         break;
                                 }
                             }
@@ -943,99 +1031,11 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
         }), this.classGuid);
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onBecomeFullyHidden() {
-        c7a c7aVar = this.r;
-        if (c7aVar != null) {
-            c7aVar.d(0, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        super.onFragmentCreate();
-        q0();
-        byte b = 0;
-        o0(false);
-        if (!this.w) {
-            p31.a(this.currentAccount).c(new a7a(this, b));
-        }
-        kk7.f(this.currentAccount).b(this, kk7.t0);
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        kk7.f(this.currentAccount).n(this, kk7.t0);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onInsets(int i, int i2, int i3, int i4) {
-        c7a c7aVar = this.r;
-        if (c7aVar != null) {
-            c7aVar.setTranslationY(-i4);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onPause() {
-        super.onPause();
-        c7a c7aVar = this.r;
-        if (c7aVar != null) {
-            c7aVar.d(0, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onRequestPermissionsResultFragment(int i, String[] strArr, int[] iArr) {
-        if (getParentActivity() == null || i != 34) {
-            return;
-        }
-        byte b = 0;
-        if (iArr.length > 0 && iArr[0] == 0) {
-            da1.i0(getParentActivity(), 2, new f7a(this));
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.U = gl.T2(k96.M0(2131746310, null));
-        alertDialog$Builder.j(k96.M0(2131747107, null), new b7a(this, b));
-        alertDialog$Builder.g(k96.M0(2131751760, null), null);
-        int i2 = bkb.K5;
-        alertDialog$Builder.l(R.raw.permission_request_camera, 72, bkb.w0(null, i2, false), null);
-        alertDialog$Builder.m(i2, null);
-        alertDialog$Builder.o();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onResume() {
-        super.onResume();
-        g7a g7aVar = this.a;
-        if (g7aVar != null) {
-            g7aVar.f();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
-        super.onTransitionAnimationEnd(z, z2);
-        if (!z || z2) {
-            return;
-        }
-        this.X = true;
-        for (int i = 0; i < this.b.getChildCount(); i++) {
-            View childAt = this.b.getChildAt(i);
-            if (childAt instanceof h7a) {
-                ((h7a) childAt).b.invalidate();
-            }
-        }
-    }
-
-    public final void p0() {
+    public final void q0() {
         this.W = true;
     }
 
-    public final void q0() {
+    public final void r0() {
         this.S = 0;
         this.x = -1;
         this.y = -1;
@@ -1057,7 +1057,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.d implements gk7
         this.T = -1;
         this.ttlRow = -1;
         this.U = -1;
-        if (!this.w && getMessagesController().k4.J0.f) {
+        if (!this.w && getMessagesController().l4.J0.f) {
             int i = this.S;
             this.Q = i;
             this.S = i + 2;

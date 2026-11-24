@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class PlaceMarker {
     private static final int MAX_LABEL_LENGTH = 3;
@@ -61,10 +61,10 @@ public final class PlaceMarker {
             CarText carText = this.mLabel;
             shortString = carText != null ? CarText.toShortString(carText) : super.toString();
         }
-        return b00.j(sb, shortString, "]");
+        return b10.j(sb, shortString, "]");
     }
 
-    public PlaceMarker(mb8 mb8Var) {
+    public PlaceMarker(pd8 pd8Var) {
         throw null;
     }
 }

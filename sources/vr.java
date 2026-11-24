@@ -1,20 +1,27 @@
 // default package
 
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import org.telegram.messenger.a;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.util.Log;
+import android.widget.TextView;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vr extends ConnectivityManager.NetworkCallback {
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onAvailable(Network network) {
-        a.r = -1;
-    }
-
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
-        a.r = -1;
+public abstract class vr {
+    public static StaticLayout a(CharSequence charSequence, Layout.Alignment alignment, int i, int i2, TextView textView, TextPaint textPaint, yr yrVar) {
+        StaticLayout.Builder obtain = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i);
+        StaticLayout.Builder hyphenationFrequency = obtain.setAlignment(alignment).setLineSpacing(textView.getLineSpacingExtra(), textView.getLineSpacingMultiplier()).setIncludePad(textView.getIncludeFontPadding()).setBreakStrategy(textView.getBreakStrategy()).setHyphenationFrequency(textView.getHyphenationFrequency());
+        if (i2 == -1) {
+            i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        hyphenationFrequency.setMaxLines(i2);
+        try {
+            yrVar.a(obtain, textView);
+        } catch (ClassCastException unused) {
+            Log.w("ACTVAutoSizeHelper", "Failed to obtain TextDirectionHeuristic, auto size may be incorrect");
+        }
+        return obtain.build();
     }
 }

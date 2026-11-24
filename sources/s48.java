@@ -1,51 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class s48 extends qn {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ v48 c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class s48 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a8b b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s48(v48 v48Var, byte b) {
-        super("thumbAnimationProgress", (byte) 0);
-        this.b = b;
+    public /* synthetic */ s48(a8b a8bVar, byte b) {
+        this.a = b;
+        this.b = a8bVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        a8b a8bVar = this.b;
         switch (b) {
+            case 0:
+                a8bVar.dismiss();
+                break;
             case 1:
-                this.c = v48Var;
-                super("thumbImageVisibleProgress", (byte) 0);
+                a8bVar.dismiss();
                 break;
             default:
-                this.c = v48Var;
+                a8bVar.onBackPressed();
                 break;
-        }
-    }
-
-    @Override // qn
-    public final void c(Object obj, float f) {
-        byte b = this.b;
-        v48 v48Var = this.c;
-        switch (b) {
-            case 0:
-                v48Var.r = f;
-                ((v48) obj).invalidate();
-                break;
-            default:
-                v48Var.n = f;
-                ((v48) obj).invalidate();
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        byte b = this.b;
-        v48 v48Var = this.c;
-        switch (b) {
-            case 0:
-                return Float.valueOf(v48Var.r);
-            default:
-                return Float.valueOf(v48Var.n);
         }
     }
 }

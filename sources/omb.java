@@ -1,96 +1,59 @@
 // default package
 
 import android.content.Context;
-import android.graphics.BlendMode;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class omb extends n39 {
-    public final Context c;
-    public final /* synthetic */ qmb d;
+public final class omb extends View {
+    public static final /* synthetic */ int c = 0;
+    public final Paint a;
+    public int[] b;
 
-    public omb(qmb qmbVar, Context context) {
-        this.d = qmbVar;
-        this.c = context;
+    public omb(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new int[7];
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return false;
-    }
-
-    @Override // w39
-    public final int b() {
-        ArrayList arrayList = this.d.W0;
-        if (arrayList != null) {
-            return arrayList.size();
-        }
-        return 0;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        return 0;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        BlendMode blendMode;
-        ly7 ly7Var = (ly7) s49Var.a;
-        qmb qmbVar = this.d;
-        ly7Var.setPattern((TLRPC.TL_wallPaper) qmbVar.W0.get(i));
-        ly7Var.getImageReceiver().p1 = new PorterDuffColorFilter(qmbVar.l1, qmbVar.u1);
-        if (Build.VERSION.SDK_INT >= 29) {
-            int i2 = 0;
-            if (qmbVar.b == 1) {
-                int C0 = bkb.C0(bkb.Fe);
-                long j = qmbVar.w.l;
-                int i3 = (int) j;
-                if (i3 != 0) {
-                    i2 = i3;
-                } else if (j == 0) {
-                    i2 = C0;
-                }
-            } else if (qmbVar.D1 instanceof krc) {
-                i2 = qmbVar.e1;
-            }
-            if (i2 == 0 || qmbVar.n1 < 0.0f) {
-                ly7Var.getImageReceiver().P(null);
-                return;
-            }
-            ImageReceiver imageReceiver = qmbVar.z0.getImageReceiver();
-            blendMode = BlendMode.SOFT_LIGHT;
-            imageReceiver.P(blendMode);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth() * 0.5f;
+        float measuredHeight = getMeasuredHeight() * 0.5f;
+        float L = gm.L(5.0f);
+        float L2 = gm.L(20.0f) - L;
+        Paint.Style style = Paint.Style.FILL;
+        Paint paint = this.a;
+        paint.setStyle(style);
+        int i = 0;
+        paint.setColor(this.b[0]);
+        canvas.drawCircle(measuredWidth, measuredHeight, L, paint);
+        double d = 0.0d;
+        while (i < 6) {
+            float sin = (((float) Math.sin(d)) * L2) + measuredWidth;
+            float cos = measuredHeight - (((float) Math.cos(d)) * L2);
+            i++;
+            paint.setColor(this.b[i]);
+            canvas.drawCircle(sin, cos, L, paint);
+            d += 1.0471975511965976d;
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        int i2 = this.d.J1;
-        nmb nmbVar = new nmb(this);
-        ly7 ly7Var = new ly7(this.c);
-        ly7Var.H = new RectF();
-        int i3 = y6c.t0;
-        ly7Var.K = i3;
-        ly7Var.setRoundRadius(gl.L(6.0f));
-        ly7Var.V = i2;
-        ly7Var.U = nmbVar;
-        RadialProgress2 radialProgress2 = new RadialProgress2(ly7Var, null);
-        ly7Var.I = radialProgress2;
-        radialProgress2.p(gl.L(30.0f), gl.L(30.0f), gl.L(70.0f), gl.L(70.0f));
-        ly7Var.R = new Paint(3);
-        ly7Var.T = up3.q(i3).k();
-        ly7Var.setOutlineProvider(new xi((byte) 7));
-        ly7Var.setClipToOutline(true);
-        return new y29(ly7Var);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setText(jb6.M0(2131751952, "ColorPickerMainColor"));
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gm.L(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(62.0f), TLObject.FLAG_30));
     }
 }

@@ -1,67 +1,78 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.SecretMediaViewer;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class fu9 extends Fade {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ SecretMediaViewer d;
+public final class fu9 extends age {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ ArrayList i;
+    public final /* synthetic */ ju9 j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fu9(SecretMediaViewer secretMediaViewer, boolean z, boolean z2, byte b) {
-        super(1);
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.d = secretMediaViewer;
-                this.b = z;
-                this.c = z2;
-                super(2);
-                break;
-            default:
-                this.d = secretMediaViewer;
-                this.b = z;
-                this.c = z2;
-                break;
-        }
+    public fu9(ju9 ju9Var, int i, int i2, int i3, int i4, int i5, ArrayList arrayList, int i6, int i7, ArrayList arrayList2) {
+        this.j = ju9Var;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+        this.f = arrayList;
+        this.g = i6;
+        this.h = i7;
+        this.i = arrayList2;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public final Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.Y) {
-                    onAppear.addListener(new ng9((Object) this, (byte) 5));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new x89(this, (byte) 12));
-                }
-                return onAppear;
-            default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-        }
+    @Override // age
+    public final boolean a(int i, int i2) {
+        return b(i, i2);
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public final Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.Y) {
-                    onDisappear.addListener(new ng9((Object) this, (byte) 6));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new x89(this, (byte) 13));
-                }
-                return onDisappear;
-            default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+    @Override // age
+    public final boolean b(int i, int i2) {
+        k47 k47Var;
+        ju9 ju9Var = this.j;
+        if (i >= 0 && i2 >= 0) {
+            if (i == this.b && i2 == ju9Var.s) {
+                return true;
+            }
+            if (i == this.c && i2 == ju9Var.y) {
+                return true;
+            }
         }
+        k47 k47Var2 = null;
+        int i3 = this.d;
+        if (i < i3 || i >= this.e) {
+            int i4 = this.g;
+            k47Var = (i < i4 || i >= this.h) ? null : (k47) this.i.get(i - i4);
+        } else {
+            k47Var = (k47) this.f.get(i - i3);
+        }
+        int i5 = ju9Var.w;
+        if (i2 < i5 || i2 >= ju9Var.x) {
+            int i6 = ju9Var.E;
+            if (i2 >= i6 && i2 < ju9Var.F) {
+                k47Var2 = (k47) ju9Var.f.get(i2 - i6);
+            }
+        } else {
+            k47Var2 = (k47) ju9Var.e.get(i2 - i5);
+        }
+        return (k47Var2 == null || k47Var == null || k47Var2.F0() == null || k47Var.F0() == null || k47Var2.F0().id != k47Var.F0().id) ? false : true;
+    }
+
+    @Override // age
+    public final int c() {
+        return this.j.r;
+    }
+
+    @Override // age
+    public final int d() {
+        return this.a;
     }
 }

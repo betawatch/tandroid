@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.util.Property;
 import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class t extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -24,8 +24,8 @@ public final class t extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         PhotoViewer photoViewer = this.b;
-        h98 h98Var = photoViewer.X4;
-        photoViewer.q6 = null;
+        ib8 ib8Var = photoViewer.W4;
+        photoViewer.p6 = null;
         photoViewer.Q0.setVisibility(8);
         photoViewer.T0.setVisibility(8);
         photoViewer.o0.setVisibility(8);
@@ -34,7 +34,7 @@ public final class t extends AnimatorListenerAdapter {
         photoViewer.h1.setVisibility(8);
         photoViewer.p1.setVisibility(8);
         photoViewer.p1.setAlpha(0.0f);
-        photoViewer.p1.setTranslationY(-gl.L(10.0f));
+        photoViewer.p1.setTranslationY(-gm.L(10.0f));
         photoViewer.P0.setRotationX(0.0f);
         photoViewer.p1.setEnabled(false);
         photoViewer.L = false;
@@ -42,54 +42,54 @@ public final class t extends AnimatorListenerAdapter {
             photoViewer.R1.setVisibility(4);
         }
         int i = photoViewer.d2;
-        if (i == 0 || i == 4 || ((i == 2 || i == 5) && photoViewer.g7.size() > 1)) {
+        if (i == 0 || i == 4 || ((i == 2 || i == 5) && photoViewer.f7.size() > 1)) {
             photoViewer.O0.setVisibility(8);
             photoViewer.P0.setVisibility(8);
-            photoViewer.C2();
+            photoViewer.D2();
         }
         if (photoViewer.d2 == 11) {
-            photoViewer.i6 = photoViewer.Y5;
             photoViewer.h6 = photoViewer.X5;
+            photoViewer.g6 = photoViewer.W5;
+            photoViewer.i6 = photoViewer.Z5;
             photoViewer.j6 = photoViewer.a6;
-            photoViewer.k6 = photoViewer.b6;
-            photoViewer.f6 = 0.0f;
+            photoViewer.e6 = 0.0f;
         }
-        Bitmap n = photoViewer.C4.n();
+        Bitmap n = photoViewer.B4.n();
         if (n != null || photoViewer.s1) {
-            photoViewer.D1.b(n, photoViewer.C4.V, photoViewer.d2 != 1, false, photoViewer.E1, photoViewer.s1 ? (kac) photoViewer.C2 : null, h98Var.c);
+            photoViewer.D1.b(n, photoViewer.B4.V, photoViewer.d2 != 1, false, photoViewer.E1, photoViewer.s1 ? (ncc) photoViewer.C2 : null, ib8Var.c);
             photoViewer.D1.a();
-            int q = photoViewer.C4.q();
-            int o = photoViewer.C4.o();
-            zl6 zl6Var = h98Var.c;
-            if (zl6Var != null) {
-                int i2 = zl6Var.k;
+            int q = photoViewer.B4.q();
+            int o = photoViewer.B4.o();
+            ao6 ao6Var = ib8Var.c;
+            if (ao6Var != null) {
+                int i2 = ao6Var.k;
                 if (i2 == 90 || i2 == 270) {
                     o = q;
                     q = o;
                 }
-                q = (int) (q * zl6Var.e);
-                o = (int) (o * zl6Var.f);
+                q = (int) (q * ao6Var.e);
+                o = (int) (o * ao6Var.f);
             }
             float f = q;
             float f2 = o;
-            float min = Math.min(photoViewer.i0(photoViewer.u4) / f, photoViewer.g0() / f2);
+            float min = Math.min(photoViewer.i0(photoViewer.t4) / f, photoViewer.g0() / f2);
             float min2 = Math.min(photoViewer.i0(1) / f, photoViewer.f0(1, false) / f2);
             if (photoViewer.d2 == 1) {
                 float min3 = Math.min(photoViewer.i0(1), photoViewer.f0(1, false));
                 min2 = Math.max(min3 / f, min3 / f2);
             }
-            photoViewer.e6 = min2 / min;
+            photoViewer.d6 = min2 / min;
             Rect rect = photoViewer.t2;
-            photoViewer.c6 = (rect.left / 2) - (rect.right / 2);
-            photoViewer.d6 = (-gl.L(56.0f)) + (!photoViewer.s ? gl.m / 2 : 0);
-            photoViewer.n6 = System.currentTimeMillis();
-            photoViewer.R6 = true;
+            photoViewer.b6 = (rect.left / 2) - (rect.right / 2);
+            photoViewer.c6 = (-gm.L(56.0f)) + (!photoViewer.s ? gm.m / 2 : 0);
+            photoViewer.m6 = System.currentTimeMillis();
+            photoViewer.Q6 = true;
         }
         AnimatorSet animatorSet = new AnimatorSet();
-        photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.V0, (Property<z92, Float>) View.TRANSLATION_Y, gl.L(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, rn.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.D1, (Property<v48, Float>) View.ALPHA, 0.0f, 1.0f));
-        photoViewer.p6.setDuration(200L);
-        photoViewer.p6.addListener(new l48(this, (byte) 5));
-        photoViewer.p6.start();
+        photoViewer.o6 = animatorSet;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.V0, (Property<kb2, Float>) View.TRANSLATION_Y, gm.L(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, so.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.D1, (Property<x68, Float>) View.ALPHA, 0.0f, 1.0f));
+        photoViewer.o6.setDuration(200L);
+        photoViewer.o6.addListener(new s38(this, (byte) 7));
+        photoViewer.o6.start();
     }
 }

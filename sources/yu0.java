@@ -1,66 +1,83 @@
 // default package
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Build;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.json.JSONObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class yu0 extends WebViewClient {
-    public final /* synthetic */ WebView a;
-    public final /* synthetic */ zu0 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class yu0 implements jac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qw0 b;
+    public final /* synthetic */ ow0 c;
 
-    public yu0(zu0 zu0Var, WebView webView) {
-        this.b = zu0Var;
-        this.a = webView;
+    public /* synthetic */ yu0(qw0 qw0Var, ow0 ow0Var, byte b) {
+        this.a = b;
+        this.b = qw0Var;
+        this.c = ow0Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        int i = Build.VERSION.SDK_INT;
-        cv0 cv0Var = this.b.e;
-        if (i >= 26) {
-            StringBuilder sb = new StringBuilder("newWebView.onRenderProcessGone priority=");
-            sb.append(renderProcessGoneDetail == null ? null : Integer.valueOf(renderProcessGoneDetail.rendererPriorityAtExit()));
-            sb.append(" didCrash=");
-            sb.append(renderProcessGoneDetail == null ? null : Boolean.valueOf(renderProcessGoneDetail.didCrash()));
-            cv0Var.b(sb.toString());
-        } else {
-            cv0Var.b("newWebView.onRenderProcessGone");
+    @Override // jac
+    public final void a(Object obj, Object obj2) {
+        uv0 uv0Var;
+        byte b = this.a;
+        ow0 ow0Var = this.c;
+        qw0 qw0Var = this.b;
+        switch (b) {
+            case 0:
+                String str = (String) obj2;
+                qw0Var.u(ow0Var, "emoji_status_access_requested", qw0.x(str, "status"));
+                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str) && (uv0Var = qw0Var.c) != null) {
+                    uv0Var.a();
+                    break;
+                }
+                break;
+            case 1:
+                Boolean bool = (Boolean) obj;
+                Boolean bool2 = (Boolean) obj2;
+                if (qw0Var.c != null && bool.booleanValue()) {
+                    qw0Var.c.w(bool2.booleanValue());
+                }
+                qw0Var.l0.i(new zu0(qw0Var, ow0Var, (byte) 1));
+                break;
+            case 2:
+                if (((Boolean) obj).booleanValue()) {
+                    up0 up0Var = qw0Var.k0;
+                    up0Var.e = true;
+                    up0Var.i();
+                }
+                qw0Var.s(ow0Var);
+                break;
+            case 3:
+                Boolean bool3 = (Boolean) obj;
+                String str2 = (String) obj2;
+                if (bool3.booleanValue()) {
+                    qw0Var.k0.e = true;
+                }
+                try {
+                    JSONObject jSONObject = new JSONObject();
+                    jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
+                    jSONObject.put("token", str2);
+                    qw0Var.u(ow0Var, "biometry_auth_requested", jSONObject);
+                    break;
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                    return;
+                }
+            default:
+                String str3 = (String) obj;
+                TLRPC.Document document = (TLRPC.Document) obj2;
+                if (str3 != null) {
+                    qw0Var.u(ow0Var, "emoji_status_failed", qw0.x(str3, "error"));
+                    break;
+                } else {
+                    qw0Var.u(ow0Var, "emoji_status_set", null);
+                    uv0 uv0Var2 = qw0Var.c;
+                    if (uv0Var2 != null) {
+                        uv0Var2.d(document);
+                        break;
+                    }
+                }
+                break;
         }
-        try {
-            if (!gl.K1(cv0Var.getContext())) {
-                return true;
-            }
-            Context context = cv0Var.getContext();
-            hv0 hv0Var = cv0Var.R;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, hv0Var == null ? null : hv0Var.e, context);
-            hd hdVar = alertDialog$Builder.a;
-            hdVar.S = k96.M0(2131752092, null);
-            hdVar.U = gl.O2(k96.M0(2131752093, null), -1, 0, new oz(this, (byte) 29), null);
-            alertDialog$Builder.j(k96.M0(2131747638, null), null);
-            hdVar.setOnDismissListener(new n1(this, (byte) 8));
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return false;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        hv0 hv0Var = this.b.e.R;
-        if (hv0Var != null) {
-            Uri parse = Uri.parse(str);
-            boolean z = hv0.R0;
-            hv0Var.E(parse, null, !hv0Var.p0, false, false);
-            this.a.destroy();
-        }
-        return true;
     }
 }

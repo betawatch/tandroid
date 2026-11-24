@@ -1,95 +1,73 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.util.Pair;
-import java.util.List;
-import java.util.Random;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gu1 implements ResultCallback, ed {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class gu1 extends ro {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ fu1 c;
 
-    public /* synthetic */ gu1(ku1 ku1Var, jy3 jy3Var, boolean z, ye7 ye7Var, int i) {
-        this.c = ku1Var;
-        this.d = jy3Var;
-        this.b = z;
-        this.e = ye7Var;
-        this.a = i;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        ku1 ku1Var = (ku1) this.c;
-        jy3 jy3Var = (jy3) this.d;
-        ye7 ye7Var = (ye7) this.e;
-        Pair pair = (Pair) obj;
-        if (pair != null) {
-            long longValue = ((Long) pair.first).longValue();
-            Bitmap bitmap = ((mqc) pair.second).a;
-            jy3 jy3Var2 = ku1Var.f;
-            if (jy3Var2 == null || longValue != jy3Var2.h(ku1Var.q ? 1 : 0) || bitmap == null) {
-                return;
-            }
-            ValueAnimator valueAnimator = ku1Var.i;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            int i = jy3Var.j(this.b ? 1 : 0).settings.intensity;
-            List list = ((mqc) pair.second).b;
-            ye7Var.R = list;
-            long j = ku1Var.G.ob;
-            if (list != null) {
-                ye7Var.S = new Random(j).nextInt(ye7Var.R.size());
-            }
-            ye7Var.r(i, bitmap);
-            ye7Var.s(this.a);
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ku1Var.i = ofFloat;
-            ofFloat.addUpdateListener(new fu1(ye7Var, (byte) 2));
-            ku1Var.i.setDuration(250L);
-            ku1Var.i.start();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gu1(fu1 fu1Var, byte b) {
+        super("p2", (byte) 0);
+        this.b = b;
+        switch (b) {
+            case 1:
+                this.c = fu1Var;
+                super("progress", (byte) 0);
+                break;
+            case 2:
+                this.c = fu1Var;
+                super("alpha", (byte) 0);
+                break;
+            default:
+                this.c = fu1Var;
+                break;
         }
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        v74 v74Var = (v74) this.c;
-        r74 r74Var = (r74) this.d;
-        k27 k27Var = (k27) this.e;
-        if (r74Var.getText().toString().length() > this.a) {
-            gl.A3(r74Var);
-            return;
+    @Override // ro
+    public final void c(Object obj, float f) {
+        byte b = this.b;
+        fu1 fu1Var = this.c;
+        switch (b) {
+            case 0:
+                ((g47) obj).e = f;
+                View view = fu1Var.c.R.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                ((g47) obj).g = f;
+                View view2 = fu1Var.c.R.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((g47) obj).f = f;
+                View view3 = fu1Var.c.R.fragmentView;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
+                break;
         }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        CharSequence[] charSequenceArr = {r74Var.getText()};
-        tL_textWithEntities.entities = hq6.d0(v74Var.a).Y(charSequenceArr, true, true);
-        CharSequence charSequence = charSequenceArr[0];
-        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
-        v74Var.a(k27Var, tL_textWithEntities, this.b);
-        hdVar.dismiss();
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-    }
-
-    public /* synthetic */ gu1(v74 v74Var, r74 r74Var, int i, k27 k27Var, boolean z) {
-        this.c = v74Var;
-        this.d = r74Var;
-        this.a = i;
-        this.e = k27Var;
-        this.b = z;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(Throwable th) {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(((g47) obj).e);
+            case 1:
+                return Float.valueOf(((g47) obj).g);
+            default:
+                return Float.valueOf(((g47) obj).f);
+        }
     }
 }

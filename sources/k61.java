@@ -1,43 +1,47 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class k61 extends m61 {
+    public final int e;
+    public final int f;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class k61 extends View implements tjb {
-    public Paint a;
-    public Paint b;
-    public float c;
-    public lm d;
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        RectF rectF = gl.P;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, gl.L(3.0f), gl.L(3.0f), this.b);
-        rectF.set(0.0f, 0.0f, this.d.e(false, this.c) * getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, gl.L(3.0f), gl.L(3.0f), this.a);
+    public k61(byte[] bArr, int i, int i2) {
+        super(bArr);
+        m61.i(i, i + i2, bArr.length);
+        this.e = i;
+        this.f = i2;
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            Paint paint = this.a;
-            int i = bkb.M6;
-            paint.setColor(bkb.w0(null, i, false));
-            this.b.setColor(bkb.p1(0.2f, bkb.w0(null, i, false)));
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // m61
+    public final byte h(int i) {
+        int i2 = this.f;
+        if (((i2 - (i + 1)) | i) >= 0) {
+            return this.b[this.e + i];
         }
+        if (i < 0) {
+            throw new ArrayIndexOutOfBoundsException(hg9.j(i, "Index < 0: "));
+        }
+        throw new ArrayIndexOutOfBoundsException(b10.g(i, i2, "Index > length: ", ", "));
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // m61
+    public final void k(int i, byte[] bArr) {
+        System.arraycopy(this.b, this.e, bArr, 0, i);
+    }
+
+    @Override // m61
+    public final int l() {
+        return this.e;
+    }
+
+    @Override // m61
+    public final byte m(int i) {
+        return this.b[this.e + i];
+    }
+
+    @Override // m61
+    public final int size() {
+        return this.f;
     }
 }

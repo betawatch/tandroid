@@ -1,11 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class dh8 extends qi8 {
-    @Override // qi8, qr7
-    public final void setOffset(float f) {
-        setAutoPlayEnabled(f == 0.0f);
-        super.setOffset(f);
+public final class dh8 extends gh8 {
+    public final /* synthetic */ eh8 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dh8(eh8 eh8Var, Context context) {
+        super(eh8Var.s, context);
+        this.e = eh8Var;
     }
 }

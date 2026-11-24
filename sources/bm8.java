@@ -1,839 +1,783 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.RectF;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.text.TextUtils;
+import android.content.Context;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.utils.e;
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.SQLite.SQLiteCursor;
+import java.util.Locale;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_fragment;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.SessionsActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.PrivacyControlActivity;
+import org.telegram.ui.PrivacySettingsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bm8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class bm8 extends q59 {
+    public final Context c;
+    public final /* synthetic */ PrivacyControlActivity d;
 
-    public /* synthetic */ bm8(t3a t3aVar, TLRPC.TL_error tL_error, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet, TLObject tLObject) {
-        this.a = (byte) 17;
-        this.c = t3aVar;
-        this.e = tL_error;
-        this.d = tL_stickers_createStickerSet;
-        this.b = tLObject;
+    public bm8(PrivacyControlActivity privacyControlActivity, Context context) {
+        this.d = privacyControlActivity;
+        this.c = context;
     }
 
-    private final void a() {
-        vqa vqaVar = (vqa) this.c;
-        k27 k27Var = (k27) this.b;
-        ArrayList arrayList = (ArrayList) this.d;
-        TL_stars.StarGift starGift = (TL_stars.StarGift) this.e;
-        vqaVar.j3 = true;
-        vqaVar.l2(k27Var, null);
-        vqaVar.z2(0, true, null);
-        qh4 qh4Var = vqaVar.V1;
-        if (qh4Var != null) {
-            qh4Var.c(true);
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int b = u69Var.b();
+        PrivacyControlActivity privacyControlActivity = this.d;
+        if (b == privacyControlActivity.d0) {
+            i7 = ((d) privacyControlActivity).currentAccount;
+            if (!bw2.r(i7).t(3)) {
+                return true;
+            }
         }
-        gta.v(vqaVar.a, false).L();
-        xsa D = gta.v(vqaVar.a, false).D(y6c.h(vqaVar.a).e(), false);
-        if (D != null) {
-            D.l(arrayList, starGift);
+        i = privacyControlActivity.currentPhotoForRestRow;
+        if (b == i || b == privacyControlActivity.b0) {
+            return true;
         }
+        i2 = privacyControlActivity.photoForRestRow;
+        if (b == i2) {
+            return true;
+        }
+        i3 = privacyControlActivity.readRow;
+        if (b == i3) {
+            return true;
+        }
+        i4 = privacyControlActivity.showGiftIconRow;
+        if (b == i4 || b == privacyControlActivity.g0 || b == privacyControlActivity.p0 || b == privacyControlActivity.q0 || b == privacyControlActivity.r0 || b == privacyControlActivity.o0 || b == privacyControlActivity.n0) {
+            return true;
+        }
+        if (privacyControlActivity.E == 12 && privacyControlActivity.y0()) {
+            return false;
+        }
+        i5 = privacyControlActivity.nobodyRow;
+        if (b == i5 || b == privacyControlActivity.Q || b == privacyControlActivity.i0) {
+            return true;
+        }
+        i6 = privacyControlActivity.everybodyRow;
+        return b == i6 || b == privacyControlActivity.V || b == privacyControlActivity.U;
     }
 
-    private final void b() {
-        vqa vqaVar = (vqa) this.c;
-        TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
-        TLObject tLObject = (TLObject) this.b;
-        TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) this.d;
-        if (tL_error != null || !(tLObject instanceof TLRPC.Updates)) {
-            vqaVar.j().g0(tL_error, false);
-            return;
+    public final int E(ArrayList arrayList) {
+        int i = 0;
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            long longValue = ((Long) arrayList.get(i2)).longValue();
+            if (longValue > 0) {
+                i++;
+            } else {
+                TLRPC.Chat L0 = this.d.getMessagesController().L0(Long.valueOf(-longValue));
+                if (L0 != null) {
+                    i += L0.participants_count;
+                }
+            }
         }
-        vqaVar.m2 = true;
-        vqaVar.q3 = null;
-        vqaVar.c1(inputSavedStarGift, (TLRPC.Updates) tLObject, new nna(vqaVar, (byte) 14));
-        Utilities.d.c(new t7a((Object) vqaVar, (Object) tLObject, (byte) 17));
+        return i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:356:0x098b, code lost:
+    @Override // y59
+    public final int b() {
+        return this.d.t0;
+    }
+
+    @Override // y59
+    public final int d(int i) {
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        int i10;
+        PrivacyControlActivity privacyControlActivity = this.d;
+        if (i == privacyControlActivity.U || i == privacyControlActivity.V || i == privacyControlActivity.d0 || i == privacyControlActivity.g0) {
+            return 0;
+        }
+        if (i == privacyControlActivity.W || i == privacyControlActivity.R || i == privacyControlActivity.S || i == privacyControlActivity.l0 || i == privacyControlActivity.e0 || i == privacyControlActivity.b0 || i == privacyControlActivity.f0 || i == privacyControlActivity.h0) {
+            return 1;
+        }
+        i2 = privacyControlActivity.setBirthdayRow;
+        if (i == i2 || i == privacyControlActivity.m0 || i == privacyControlActivity.s0) {
+            return 1;
+        }
+        if (i == privacyControlActivity.P || i == privacyControlActivity.j0 || i == privacyControlActivity.T || i == privacyControlActivity.c0 || i == privacyControlActivity.X) {
+            return 2;
+        }
+        i3 = privacyControlActivity.giftTypesHeaderRow;
+        if (i == i3) {
+            return 2;
+        }
+        i4 = privacyControlActivity.everybodyRow;
+        if (i == i4 || i == privacyControlActivity.Q) {
+            return 3;
+        }
+        i5 = privacyControlActivity.nobodyRow;
+        if (i == i5 || i == privacyControlActivity.i0 || i == privacyControlActivity.Y || i == privacyControlActivity.Z) {
+            return 3;
+        }
+        if (i == privacyControlActivity.O) {
+            return 4;
+        }
+        if (i == privacyControlActivity.a0) {
+            return 5;
+        }
+        i6 = privacyControlActivity.photoForRestRow;
+        if (i == i6) {
+            return 6;
+        }
+        i7 = privacyControlActivity.currentPhotoForRestRow;
+        if (i == i7) {
+            return 7;
+        }
+        i8 = privacyControlActivity.readRow;
+        if (i == i8) {
+            return 8;
+        }
+        i9 = privacyControlActivity.showGiftIconRow;
+        if (i == i9 || i == privacyControlActivity.p0 || i == privacyControlActivity.q0 || i == privacyControlActivity.r0 || i == privacyControlActivity.n0 || i == privacyControlActivity.o0) {
+            return 8;
+        }
+        i10 = privacyControlActivity.priceRow;
+        if (i == i10) {
+            return 9;
+        }
+        return i == privacyControlActivity.k0 ? 10 : 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x0235, code lost:
     
-        if (r7 == null) goto L297;
+        if (r16.d.getUserConfig().p() == false) goto L112;
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x031b, code lost:
+    
+        if (r16.d.getUserConfig().p() == false) goto L166;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0274  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0338  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x034c  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0365  */
+    /* JADX WARN: Removed duplicated region for block: B:88:? A[RETURN, SYNTHETIC] */
+    @Override // y59
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        int indexOf;
-        int a;
-        String str = null;
-        r7 = null;
-        SQLiteCursor sQLiteCursor = null;
-        str = null;
-        char c = 1;
-        r9 = true;
-        boolean z = true;
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = (ProfileActivity) this.c;
-                TLObject tLObject = (TLObject) this.b;
-                TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
-                RectF rectF = ProfileActivity.Z6;
-                if (tLObject instanceof TL_fragment.TL_collectibleInfo) {
-                    xo4.a(profileActivity.getParentActivity(), 0, tL_username.username, profileActivity.e1 != 0 ? profileActivity.getMessagesController().V1(Long.valueOf(profileActivity.e1)) : profileActivity.getMessagesController().K0(Long.valueOf(profileActivity.f1)), (TL_fragment.TL_collectibleInfo) tLObject, profileActivity.A0);
-                    return;
+    public final void t(u69 u69Var, int i) {
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15 = u69Var.f;
+        final byte b = 1;
+        r14 = 0;
+        int i16 = 0;
+        r14 = 0;
+        int i17 = 0;
+        r14 = 0;
+        int i18 = 0;
+        r14 = 0;
+        int i19 = 0;
+        r14 = 0;
+        int i20 = 0;
+        if (i15 == 0) {
+            vkb vkbVar = (vkb) u69Var.a;
+            anb.X(vkbVar.getTextView(), cmb.F6, this.d.getResourceProvider());
+            PrivacyControlActivity privacyControlActivity = this.d;
+            if (i == privacyControlActivity.U) {
+                String G = privacyControlActivity.I.size() != 0 ? jb6.G(E(this.d.I), "Users", new Object[0]) : jb6.M0(2131751098, null);
+                PrivacyControlActivity privacyControlActivity2 = this.d;
+                if (privacyControlActivity2.F[privacyControlActivity2.K == 2 ? (char) 0 : (char) 1]) {
+                    ArrayList arrayList = privacyControlActivity2.I;
+                    G = (arrayList == null || arrayList.isEmpty()) ? jb6.a0(null, null, 2131746515, new Object[0]) : jb6.a0(null, null, 2131746514, G);
+                }
+                PrivacyControlActivity privacyControlActivity3 = this.d;
+                if (privacyControlActivity3.E != 10) {
+                    boolean[] zArr = privacyControlActivity3.G;
+                    byte b2 = privacyControlActivity3.K;
+                    if (zArr[b2] && b2 != 0) {
+                        ArrayList arrayList2 = privacyControlActivity3.I;
+                        G = (arrayList2 == null || arrayList2.isEmpty()) ? jb6.a0(null, null, 2131746502, new Object[0]) : jb6.a0(null, null, 2131746501, G);
+                    }
+                }
+                int i21 = this.d.E;
+                if (i21 == 10) {
+                    vkbVar.c(jb6.M0(2131746484, null), G, false, false);
+                } else if (i21 == 0 || i21 == 4 || i21 == 9 || i21 == 14) {
+                    vkbVar.c(jb6.M0(2131754233, null), G, false, this.d.V != -1);
                 } else {
-                    u21.e0(tL_error);
+                    vkbVar.c(jb6.M0(2131754234, null), G, false, this.d.V != -1);
+                }
+                if (this.d.E == 12) {
+                    vkbVar.setEnabled(!r0.y0());
                     return;
                 }
-            case 1:
-                rn8 rn8Var = (rn8) this.c;
-                TLObject tLObject2 = (TLObject) this.b;
-                y6c y6cVar = (y6c) this.d;
-                TLRPC.Photo photo = (TLRPC.Photo) this.e;
-                ProfileActivity profileActivity2 = rn8Var.b;
-                profileActivity2.o0.d1--;
-                if (tLObject2 instanceof TLRPC.TL_photos_photo) {
-                    TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject2;
-                    profileActivity2.getMessagesController().a4(tL_photos_photo.users, false);
-                    TLRPC.User V1 = profileActivity2.getMessagesController().V1(Long.valueOf(y6cVar.n));
-                    TLRPC.Photo photo2 = tL_photos_photo.photo;
-                    if (photo2 instanceof TLRPC.TL_photo) {
-                        ArrayList arrayList = profileActivity2.o0.W0;
-                        if (!arrayList.isEmpty() && (indexOf = arrayList.indexOf(photo)) >= 0) {
-                            arrayList.set(indexOf, photo2);
+                return;
+            }
+            if (i != privacyControlActivity.V) {
+                if (i == privacyControlActivity.d0) {
+                    i2 = ((d) privacyControlActivity).currentAccount;
+                    vkbVar.c(jb6.M0(2131746534, null), bw2.r(i2).t(3) ? jb6.M0(2131748536, null) : PrivacySettingsActivity.A0(this.d.getAccountInstance(), 3), false, false);
+                    return;
+                } else {
+                    if (i == privacyControlActivity.g0) {
+                        vkbVar.b(jb6.M0(privacyControlActivity.getUserConfig().p() ? 2131746548 : 2131746549, null), false);
+                        anb.X(vkbVar.getTextView(), cmb.m6, this.d.getResourceProvider());
+                        return;
+                    }
+                    return;
+                }
+            }
+            String G2 = privacyControlActivity.J.size() != 0 ? jb6.G(E(this.d.J), "Users", new Object[0]) : jb6.M0(2131751098, null);
+            PrivacyControlActivity privacyControlActivity4 = this.d;
+            boolean[] zArr2 = privacyControlActivity4.G;
+            byte b3 = privacyControlActivity4.K;
+            if (zArr2[b3] && b3 == 0) {
+                ArrayList arrayList3 = privacyControlActivity4.J;
+                G2 = (arrayList3 == null || arrayList3.isEmpty()) ? jb6.a0(null, null, 2131746502, new Object[0]) : jb6.a0(null, null, 2131746501, G2);
+            }
+            int i22 = this.d.E;
+            if (i22 == 0 || i22 == 4 || i22 == 9 || i22 == 14) {
+                vkbVar.c(jb6.M0(2131748048, null), G2, false, false);
+            } else {
+                vkbVar.c(jb6.M0(2131748049, null), G2, false, false);
+            }
+            if (this.d.E == 12) {
+                vkbVar.setEnabled(!r0.y0());
+                return;
+            }
+            return;
+        }
+        if (i15 == 1) {
+            njb njbVar = (njb) u69Var.a;
+            PrivacyControlActivity privacyControlActivity5 = this.d;
+            if (i == privacyControlActivity5.S) {
+                njbVar.setText(jb6.M0(2131746485, null));
+            } else {
+                if (i == privacyControlActivity5.R) {
+                    int i23 = privacyControlActivity5.E;
+                    if (i23 == 10) {
+                        String M0 = jb6.M0(2131746543, null);
+                        final byte b4 = r14 ? (byte) 1 : (byte) 0;
+                        njbVar.setText(gm.N2(M0, -1, 0, new Runnable(this) { // from class: zl8
+                            public final /* synthetic */ bm8 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                byte b5 = b4;
+                                bm8 bm8Var = this.b;
+                                switch (b5) {
+                                    case 0:
+                                        bm8Var.d.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                                        break;
+                                    default:
+                                        PrivacyControlActivity privacyControlActivity6 = bm8Var.d;
+                                        privacyControlActivity6.showDialog((my0) ik.l(privacyControlActivity6.getParentActivity(), jb6.M0(2131751175, null), jb6.M0(2131751180, null), null, new am8(bm8Var, (byte) 1), null, false, false, privacyControlActivity6.getResourceProvider()).b);
+                                        break;
+                                }
+                            }
+                        }, null));
+                    } else if (i23 == 8) {
+                        njbVar.setText(jb6.M0(2131746492, null));
+                    }
+                }
+                i3 = privacyControlActivity5.setBirthdayRow;
+                if (i == i3) {
+                    njbVar.setText(gm.D2(gm.N2(jb6.M0(2131746592, null), -1, 0, new Runnable(this) { // from class: zl8
+                        public final /* synthetic */ bm8 b;
+
+                        {
+                            this.b = this;
                         }
-                        if (V1 != null) {
-                            V1.photo.photo_id = tL_photos_photo.photo.id;
-                            y6cVar.v(V1);
-                            y6cVar.u(true);
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b5 = b;
+                            bm8 bm8Var = this.b;
+                            switch (b5) {
+                                case 0:
+                                    bm8Var.d.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                                    break;
+                                default:
+                                    PrivacyControlActivity privacyControlActivity6 = bm8Var.d;
+                                    privacyControlActivity6.showDialog((my0) ik.l(privacyControlActivity6.getParentActivity(), jb6.M0(2131751175, null), jb6.M0(2131751180, null), null, new am8(bm8Var, (byte) 1), null, false, false, privacyControlActivity6.getResourceProvider()).b);
+                                    break;
+                            }
+                        }
+                    }, null), true));
+                } else {
+                    PrivacyControlActivity privacyControlActivity6 = this.d;
+                    if (i == privacyControlActivity6.R) {
+                        int i24 = privacyControlActivity6.E;
+                        if (i24 == 6) {
+                            if (privacyControlActivity6.K == 1 && privacyControlActivity6.L == 1) {
+                                njbVar.setText(jb6.M0(2131746522, null));
+                            } else {
+                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                                Locale locale = Locale.ENGLISH;
+                                String concat = "https://t.me/+".concat(this.d.getUserConfig().d());
+                                SpannableString spannableString = new SpannableString(concat);
+                                spannableString.setSpan(new q1(this, concat, (byte) 7), 0, concat.length(), 33);
+                                spannableStringBuilder.append((CharSequence) jb6.M0(2131746524, null)).append((CharSequence) "\n\n").append((CharSequence) jb6.M0(2131746521, null)).append((CharSequence) "\n").append((CharSequence) spannableString);
+                                njbVar.setText(spannableStringBuilder);
+                            }
+                        } else if (i24 == 5) {
+                            njbVar.setText(jb6.M0(2131746569, null));
+                        } else if (i24 == 4) {
+                            njbVar.setText(jb6.M0(2131746511, null));
+                        } else if (i24 == 9) {
+                            njbVar.setText(jb6.M0(2131746600, null));
+                        } else if (i24 == 14) {
+                            njbVar.setText(jb6.M0(2131746537, null));
+                        } else if (i24 == 11) {
+                            njbVar.setText(jb6.M0(2131746594, null));
+                        } else if (i24 == 12) {
+                            njbVar.setText(jb6.M0(2131746563, null));
+                        } else if (i24 == 3) {
+                            njbVar.setText(jb6.M0(2131746583, null));
+                        } else if (i24 == 2) {
+                            njbVar.setText(jb6.M0(2131742542, null));
+                        } else if (i24 == 1) {
+                            njbVar.setText(jb6.M0(2131742544, null));
+                        } else {
+                            njbVar.setText(jb6.M0(2131751622, null));
+                        }
+                    } else if (i == privacyControlActivity6.W) {
+                        int i25 = privacyControlActivity6.E;
+                        if (i25 == 6) {
+                            njbVar.setText(jb6.M0(2131746523, null));
+                        } else if (i25 == 5) {
+                            njbVar.setText(jb6.M0(2131746568, null));
+                        } else if (i25 == 4) {
+                            byte b5 = privacyControlActivity6.K;
+                            if (b5 == 2) {
+                                njbVar.setText(gm.S2(jb6.M0(2131746508, null)));
+                            } else if (b5 == 0) {
+                                njbVar.setText(gm.S2(jb6.M0(2131746510, null)));
+                            } else {
+                                njbVar.setText(jb6.M0(2131746509, null));
+                            }
+                        } else if (i25 == 3) {
+                            njbVar.setText(jb6.M0(2131751620, null));
+                        } else if (i25 == 9) {
+                            njbVar.setText(jb6.M0(2131746601, null));
+                        } else if (i25 == 14) {
+                            njbVar.setText(jb6.M0(2131746538, null));
+                        } else if (i25 == 11) {
+                            njbVar.setText(jb6.M0(2131746593, null));
+                        } else if (i25 == 2) {
+                            njbVar.setText(jb6.M0(2131751623, null));
+                        } else if (i25 == 1) {
+                            njbVar.setText(jb6.M0(2131751618, null));
+                        } else if (i25 == 12) {
+                            njbVar.setText(jb6.M0(2131751619, null));
+                        } else if (i25 == 8) {
+                            njbVar.setText(jb6.M0(2131746491, null));
+                        } else if (i25 == 10) {
+                            njbVar.setText(jb6.M0(2131746482, null));
+                        } else {
+                            njbVar.setText(jb6.M0(2131751617, null));
+                        }
+                    } else if (i == privacyControlActivity6.b0) {
+                        njbVar.setText(jb6.M0(2131746999, null));
+                    } else if (i == privacyControlActivity6.f0) {
+                        njbVar.setText(jb6.M0(2131749069, null));
+                    } else if (i == privacyControlActivity6.h0) {
+                        njbVar.setText(jb6.M0(privacyControlActivity6.getUserConfig().p() ? 2131746546 : 2131746547, null));
+                    } else if (i == privacyControlActivity6.l0) {
+                        float f = privacyControlActivity6.getMessagesController().l4.I1.f() / 1000.0f;
+                        PrivacyControlActivity privacyControlActivity7 = this.d;
+                        njbVar.setText(jb6.a0(null, null, 2131746480, bc.J0(this.d.getMessagesController().l4.I1.f()), String.valueOf(((int) (((privacyControlActivity7.N * f) / 1000.0d) * privacyControlActivity7.getMessagesController().l4.s3.i)) / 100.0d)));
+                    } else if (i == privacyControlActivity6.m0) {
+                        SpannableString spannableString2 = new SpannableString("g");
+                        pn2 pn2Var = new pn2(R.drawable.msg_input_gift, 0);
+                        pn2Var.I = 0.583f;
+                        pn2Var.J = 0.583f;
+                        spannableString2.setSpan(pn2Var, 0, 1, 33);
+                        njbVar.setText(jb6.V(null, null, 2131746561, spannableString2));
+                    } else if (i == privacyControlActivity6.s0) {
+                        njbVar.setText(jb6.M0(2131746557, null));
+                    }
+                }
+            }
+            anb.h(cmb.Z6, null, njbVar);
+            return;
+        }
+        if (i15 == 2) {
+            jf5 jf5Var = (jf5) u69Var.a;
+            PrivacyControlActivity privacyControlActivity8 = this.d;
+            if (i != privacyControlActivity8.P) {
+                if (i == privacyControlActivity8.T) {
+                    if (privacyControlActivity8.E == 10) {
+                        jf5Var.setText(jb6.M0(2131746483, null));
+                        return;
+                    } else {
+                        jf5Var.setText(jb6.M0(2131754428, null));
+                        return;
+                    }
+                }
+                if (i == privacyControlActivity8.c0) {
+                    jf5Var.setText(jb6.M0(2131746533, null));
+                    return;
+                }
+                if (i == privacyControlActivity8.X) {
+                    jf5Var.setText(jb6.M0(2131746519, null));
+                    return;
+                }
+                if (i == privacyControlActivity8.j0) {
+                    jf5Var.setText(jb6.M0(2131746481, null));
+                    return;
+                }
+                i4 = privacyControlActivity8.giftTypesHeaderRow;
+                if (i == i4) {
+                    jf5Var.setText(jb6.M0(2131746558, null));
+                    return;
+                }
+                return;
+            }
+            int i26 = privacyControlActivity8.E;
+            if (i26 == 6) {
+                jf5Var.setText(jb6.M0(2131746520, null));
+                return;
+            }
+            if (i26 == 5) {
+                jf5Var.setText(jb6.M0(2131746565, null));
+                return;
+            }
+            if (i26 == 4) {
+                jf5Var.setText(jb6.M0(2131746507, null));
+                return;
+            }
+            if (i26 == 9) {
+                jf5Var.setText(jb6.M0(2131746599, null));
+                return;
+            }
+            if (i26 == 14) {
+                jf5Var.setText(jb6.M0(2131746536, null));
+                return;
+            }
+            if (i26 == 3) {
+                jf5Var.setText(jb6.M0(2131747487, null));
+                return;
+            }
+            if (i26 == 2) {
+                jf5Var.setText(jb6.M0(2131742543, null));
+                return;
+            }
+            if (i26 == 1) {
+                jf5Var.setText(jb6.M0(2131742545, null));
+                return;
+            }
+            if (i26 == 8) {
+                jf5Var.setText(jb6.M0(2131746489, null));
+                return;
+            }
+            if (i26 == 10) {
+                jf5Var.setText(jb6.M0(2131746542, null));
+                return;
+            }
+            if (i26 == 11) {
+                jf5Var.setText(jb6.M0(2131746589, null));
+                return;
+            } else if (i26 == 12) {
+                jf5Var.setText(jb6.M0(2131746560, null));
+                return;
+            } else {
+                jf5Var.setText(jb6.M0(2131748769, null));
+                return;
+            }
+        }
+        if (i15 != 3) {
+            if (i15 != 8) {
+                if (i15 == 9) {
+                    jla jlaVar = (jla) u69Var.a;
+                    i14 = this.d.priceRow;
+                    if (i == i14) {
+                        int[] a = jla.a(new int[]{1, 10, 50, 100, nm7.d3, nm7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) this.d.getMessagesController().l4.H1.f());
+                        h68 h68Var = new h68(this, (byte) 12);
+                        ila ilaVar = new ila();
+                        ilaVar.c = a;
+                        ilaVar.d = (byte) 20;
+                        ilaVar.e = h68Var;
+                        PrivacyControlActivity privacyControlActivity9 = this.d;
+                        jlaVar.d((int) Utilities.k(privacyControlActivity9.N, privacyControlActivity9.getMessagesController().l4.H1.f(), 1L), ilaVar, new am8(this, r14 ? (byte) 1 : (byte) 0));
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+            bjb bjbVar = (bjb) u69Var.a;
+            bjbVar.setCheckBoxIcon(0);
+            i12 = this.d.readRow;
+            if (i == i12) {
+                bjbVar.f(jb6.M0(2131749070, null), this.d.D0, false);
+                return;
+            }
+            i13 = this.d.showGiftIconRow;
+            if (i == i13) {
+                bjbVar.f(jb6.M0(2131746562, null), this.d.F0, false);
+                return;
+            }
+            PrivacyControlActivity privacyControlActivity10 = this.d;
+            if (i == privacyControlActivity10.n0) {
+                bjbVar.f(jb6.M0(2131746553, null), this.d.H0, true);
+                if (!this.d.getUserConfig().p() && this.d.H0) {
+                    i16 = R.drawable.permission_locked;
+                }
+                bjbVar.setCheckBoxIcon(i16);
+                return;
+            }
+            if (i == privacyControlActivity10.o0) {
+                bjbVar.f(jb6.M0(2131746556, null), this.d.J0, true);
+                if (!this.d.getUserConfig().p() && this.d.J0) {
+                    i17 = R.drawable.permission_locked;
+                }
+                bjbVar.setCheckBoxIcon(i17);
+                return;
+            }
+            if (i == privacyControlActivity10.p0) {
+                bjbVar.f(jb6.M0(2131746554, null), this.d.L0, true);
+                if (!this.d.getUserConfig().p() && this.d.L0) {
+                    i18 = R.drawable.permission_locked;
+                }
+                bjbVar.setCheckBoxIcon(i18);
+                return;
+            }
+            if (i == privacyControlActivity10.q0) {
+                bjbVar.f(jb6.M0(2131746559, null), this.d.N0, true);
+                if (!this.d.getUserConfig().p() && this.d.N0) {
+                    i19 = R.drawable.permission_locked;
+                }
+                bjbVar.setCheckBoxIcon(i19);
+                return;
+            }
+            if (i == privacyControlActivity10.r0) {
+                bjbVar.f(jb6.M0(2131746555, null), this.d.P0, false);
+                if (!this.d.getUserConfig().p() && this.d.P0) {
+                    i20 = R.drawable.permission_locked;
+                }
+                bjbVar.setCheckBoxIcon(i20);
+                return;
+            }
+            return;
+        }
+        w09 w09Var = (w09) u69Var.a;
+        w09Var.setRadioIcon(null);
+        i5 = this.d.everybodyRow;
+        if (i != i5) {
+            PrivacyControlActivity privacyControlActivity11 = this.d;
+            if (i != privacyControlActivity11.Q) {
+                i11 = privacyControlActivity11.nobodyRow;
+                if (i != i11) {
+                    PrivacyControlActivity privacyControlActivity12 = this.d;
+                    if (i != privacyControlActivity12.i0) {
+                        if (i == privacyControlActivity12.Z) {
+                            w09Var.c(jb6.M0(2131748786, null), this.d.L == 1, false);
+                        } else if (i == privacyControlActivity12.Y) {
+                            w09Var.c(jb6.M0(2131748776, null), this.d.L == 0, true);
+                        }
+                        if (this.d.E != 12) {
+                            w09Var.b(null, !r0.y0());
                             return;
                         }
                         return;
                     }
-                    return;
                 }
-                return;
-            case 2:
-                co8 co8Var = (co8) this.c;
-                TLObject tLObject3 = (TLObject) this.b;
-                TLRPC.TL_username tL_username2 = (TLRPC.TL_username) this.d;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.e;
-                ProfileActivity profileActivity3 = co8Var.c.e;
-                profileActivity3.v3(null);
-                if (!(tLObject3 instanceof TL_fragment.TL_collectibleInfo)) {
-                    u21.e0(tL_error2);
-                    return;
+            }
+        }
+        i6 = this.d.everybodyRow;
+        PrivacyControlActivity privacyControlActivity13 = this.d;
+        if (i == i6) {
+            if (privacyControlActivity13.E == 3) {
+                w09Var.c(jb6.M0(2131747486, null), this.d.K == 0, true);
+            } else {
+                w09Var.c(jb6.M0(2131748776, null), this.d.K == 0, true);
+            }
+        } else if (i == privacyControlActivity13.Q) {
+            if (privacyControlActivity13.E != 8 || privacyControlActivity13.getUserConfig().p()) {
+                PrivacyControlActivity privacyControlActivity14 = this.d;
+                if (privacyControlActivity14.E == 10) {
+                    if (!privacyControlActivity14.getMessagesController().l4.n2.f) {
+                    }
                 }
-                TLObject V12 = profileActivity3.e1 != 0 ? profileActivity3.getMessagesController().V1(Long.valueOf(profileActivity3.e1)) : profileActivity3.getMessagesController().K0(Long.valueOf(profileActivity3.f1));
-                if (profileActivity3.getParentActivity() != null) {
-                    xo4.a(profileActivity3.getParentActivity(), 0, tL_username2.username, V12, (TL_fragment.TL_collectibleInfo) tLObject3, profileActivity3.A0);
-                    return;
-                }
-                return;
-            case 3:
-                final pq8 pq8Var = (pq8) this.c;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.b;
-                nv4 nv4Var = (nv4) this.d;
-                final View view = (View) this.e;
-                lca lcaVar = pq8Var.a;
-                if (savedStarGift.unsaved) {
-                    savedStarGift.unsaved = false;
-                    nv4Var.i(savedStarGift, true, false);
-                    TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                    savestargift.stargift = pq8Var.e.h(savedStarGift);
-                    savestargift.unsave = savedStarGift.unsaved;
-                    ConnectionsManager.getInstance(pq8Var.b).sendRequest(savestargift, null, 64);
-                }
-                boolean z2 = savedStarGift.pinned_to_top;
-                final boolean z3 = !z2;
-                if (pq8Var.e.q(savedStarGift, z3, false)) {
-                    new sq8(pq8Var.getContext(), lcaVar.c, savedStarGift, pq8Var.c, new h8c() { // from class: iq8
-                        @Override // h8c
-                        public final Object run() {
-                            ((nv4) view).d(z3, true);
-                            pq8 pq8Var2 = pq8.this;
-                            pq8Var2.f.w0(0);
-                            return u21.b0(pq8Var2.a.a);
-                        }
-                    }).show();
-                    return;
-                }
-                if (z2) {
-                    ir2.v(null, 2131749864, u21.b0(lcaVar.a), R.raw.ic_unpin, 36);
+                i7 = this.d.E;
+                if (i7 != 3) {
+                    String M02 = jb6.M0(2131747491, null);
+                    PrivacyControlActivity privacyControlActivity15 = this.d;
+                    boolean z = privacyControlActivity15.K == 2;
+                    i10 = privacyControlActivity15.nobodyRow;
+                    w09Var.c(M02, z, (i10 == -1 && this.d.i0 == -1) ? false : true);
+                } else if (i7 == 10) {
+                    String M03 = jb6.M0(2131746544, null);
+                    PrivacyControlActivity privacyControlActivity16 = this.d;
+                    boolean z2 = privacyControlActivity16.K == 2;
+                    i9 = privacyControlActivity16.nobodyRow;
+                    w09Var.c(M03, z2, (i9 == -1 && this.d.i0 == -1) ? false : true);
                 } else {
-                    u21.b0(lcaVar.a).I(R.raw.ic_pin, k96.M0(2131750060, null), k96.M0(2131750061, null)).j();
+                    String M04 = jb6.M0(2131748786, null);
+                    PrivacyControlActivity privacyControlActivity17 = this.d;
+                    boolean z3 = privacyControlActivity17.K == 2;
+                    i8 = privacyControlActivity17.nobodyRow;
+                    w09Var.c(M04, z3, (i8 == -1 && this.d.i0 == -1) ? false : true);
                 }
-                ((nv4) view).d(z3, true);
-                pq8Var.f.w0(0);
-                return;
-            case 4:
-                n5c n5cVar = (n5c) this.c;
-                yv8 yv8Var = (yv8) this.b;
-                q8c q8cVar = (q8c) this.d;
-                p8c p8cVar = (p8c) this.e;
-                if (yv8.d(n5cVar.getParentActivity())) {
-                    yv8Var.e();
-                    g48 g48Var = new g48(10, false, false, null);
-                    g48Var.H = (byte) 1;
-                    g48Var.I = false;
-                    g48Var.y = false;
-                    g48Var.W = new xl3((Object) q8cVar, (Object) n5cVar, (Object) p8cVar, (byte) 25);
-                    n5cVar.presentFragment(g48Var);
-                    return;
+            }
+            w09Var.setRadioIcon(this.d.getParentActivity().getResources().getDrawable(R.drawable.mini_switch_lock).mutate());
+            i7 = this.d.E;
+            if (i7 != 3) {
+            }
+        } else {
+            int i27 = privacyControlActivity13.i0;
+            int i28 = privacyControlActivity13.E;
+            if (i == i27) {
+                if (i28 == 10 && !privacyControlActivity13.getUserConfig().p()) {
+                    w09Var.setRadioIcon(this.d.getParentActivity().getResources().getDrawable(R.drawable.mini_switch_lock).mutate());
                 }
-                return;
-            case 5:
-                String str2 = (String) this.c;
-                q8c q8cVar2 = (q8c) this.b;
-                d dVar = (d) this.d;
-                p8c p8cVar2 = (p8c) this.e;
-                try {
-                    Point b1 = gl.b1();
-                    Bitmap G = fl5.G(str2, null, b1.x, b1.y, true);
-                    if (G != null) {
-                        str = yv8.l(G, q8cVar2);
-                        G.recycle();
-                    }
-                } catch (Throwable th) {
-                    fa4.g(th, true);
-                }
-                gl.d3(new wv8(dVar, str, p8cVar2));
-                return;
-            case 6:
-                ox8 ox8Var = (ox8) this.c;
-                ad7 ad7Var = (ad7) this.b;
-                nx8 nx8Var = (nx8) this.d;
-                TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
-                ArrayList arrayList2 = new ArrayList();
-                try {
-                    try {
-                        sQLiteCursor = ad7Var.b.queryFinalized("SELECT id FROM quick_replies_messages WHERE topic_id = ?", Integer.valueOf(nx8Var.a));
-                        while (sQLiteCursor.next()) {
-                            arrayList2.add(Integer.valueOf(sQLiteCursor.intValue(0)));
-                        }
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                        break;
-                    }
-                    sQLiteCursor.dispose();
-                    gl.d3(new bm8((Object) ox8Var, (Object) arrayList2, (Object) nx8Var, (Object) tL_messages_sendQuickReplyMessages, (byte) 7));
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th2;
-                }
-            case 7:
-                ox8 ox8Var2 = (ox8) this.c;
-                ArrayList<Integer> arrayList3 = (ArrayList) this.b;
-                nx8 nx8Var2 = (nx8) this.d;
-                TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages2 = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
-                int i = ox8Var2.a;
-                if (arrayList3.isEmpty() || arrayList3.size() < nx8Var2.a()) {
-                    TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
-                    tL_messages_getQuickReplyMessages.shortcut_id = nx8Var2.a;
-                    ConnectionsManager.getInstance(i).sendRequest(tL_messages_getQuickReplyMessages, new ck8((Object) ox8Var2, (Object) arrayList3, (Object) tL_messages_sendQuickReplyMessages2, (byte) 5));
-                    return;
-                } else {
-                    tL_messages_sendQuickReplyMessages2.id = arrayList3;
-                    for (int i2 = 0; i2 < arrayList3.size(); i2++) {
-                        tL_messages_sendQuickReplyMessages2.random_id.add(Long.valueOf(Utilities.b.nextLong()));
-                    }
-                    ConnectionsManager.getInstance(i).sendRequest(tL_messages_sendQuickReplyMessages2, null);
-                    return;
-                }
-            case 8:
-                w06 w06Var = (w06) this.c;
-                IOnDoneCallback iOnDoneCallback = (IOnDoneCallback) this.b;
-                String str3 = (String) this.d;
-                q69 q69Var = (q69) this.e;
-                if (w06Var != null && ((g16) w06Var).b.compareTo(v06.c) >= 0) {
-                    e.c(iOnDoneCallback, str3, q69Var);
-                    return;
-                }
-                e.f(iOnDoneCallback, str3, new IllegalStateException("Lifecycle is not at least created when dispatching " + q69Var));
-                return;
-            case 9:
-                z99 z99Var = (z99) this.c;
-                cs5 cs5Var = (cs5) this.b;
-                wf2 wf2Var = (wf2) this.d;
-                a8[] a8VarArr = (a8[]) this.e;
-                cs5Var.q0 = true;
-                q99 q99Var = z99Var.d;
-                wf2Var.a(q99Var.k(), true);
-                a8 a8Var = a8VarArr[1];
-                if (a8Var != null) {
-                    a8Var.setChecked(q99Var.r);
-                }
-                a8 a8Var2 = a8VarArr[2];
-                if (a8Var2 != null) {
-                    a8Var2.setChecked(q99Var.s);
-                }
-                a8 a8Var3 = a8VarArr[3];
-                if (a8Var3 != null) {
-                    a8Var3.setChecked(q99Var.t);
-                    return;
-                }
-                return;
-            case 10:
-                jk9 jk9Var = (jk9) this.c;
-                nl9 nl9Var = (nl9) this.b;
-                nl9 nl9Var2 = (nl9) this.d;
-                Handler handler = (Handler) this.e;
-                if (jk9Var.r0 && jk9Var.W == 0 && jk9Var.T) {
-                    jk9Var.N.f(jk9Var.L, jk9Var.D, false);
-                    jk9Var.U = false;
-                    jk9Var.V = false;
-                    jk9Var.c0 = 0.0f;
-                    jk9Var.W = (byte) 1;
-                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-                    jk9Var.X = elapsedRealtimeNanos;
-                    jk9Var.Y = elapsedRealtimeNanos;
-                    jk9Var.d0 = nl9Var;
-                    jk9Var.e0 = nl9Var2;
-                    String[] strArr = xl9.a;
-                    synchronized (xl9.class) {
-                        xl9.b();
-                        if (nl9Var == nl9Var2) {
-                            throw new IllegalArgumentException("Camera switch direction must change");
-                        }
-                        a = xl9.a(nl9Var == nl9.b ? 0 : 1);
-                    }
-                    jk9Var.b0 = a;
-                    jk9Var.Z = ((Math.max(210, Math.min(kk7.W4, 300 - ((Math.max(0, a - 400) * 3) / 20))) * 45) / 100) * 1000000;
-                    jk9Var.a0 = (r4 - r5) * 1000000;
-                    jk9Var.i.b("synthetic camera switch started: from=" + nl9Var + ", to=" + nl9Var2 + ", expectedWaitMs=" + jk9Var.b0 + ", targetBlurRadiusPx=" + (((jk9Var.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((jk9Var.Z + jk9Var.a0) / 1000000));
-                    jk9Var.Q = -1L;
-                    handler.removeCallbacks(jk9Var.y0);
-                    handler.post(jk9Var.y0);
-                    return;
-                }
-                return;
-            case 11:
-                vp9 vp9Var = (vp9) this.c;
-                tp9 tp9Var = vp9Var.n;
-                TLObject tLObject4 = (TLObject) this.b;
-                ArrayList arrayList4 = (ArrayList) this.d;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.e;
-                ArrayList arrayList5 = vp9Var.i;
-                ArrayList arrayList6 = vp9Var.c;
-                int i3 = vp9Var.a;
-                boolean z4 = vp9Var.b;
-                if (tLObject4 instanceof TLRPC.TL_messages_savedDialogs) {
-                    vp9Var.e = true;
-                    TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) tLObject4;
-                    na7.q1(i3).a4(tL_messages_savedDialogs.users, false);
-                    na7.q1(i3).U3(tL_messages_savedDialogs.chats, false);
-                    ad7.Y(i3).j1(tL_messages_savedDialogs.users, tL_messages_savedDialogs.chats, true, true);
-                    ad7.Y(i3).g1(tL_messages_savedDialogs.messages, false, true, false, 0, false, 3, 0L);
-                    for (int i4 = 0; i4 < tL_messages_savedDialogs.dialogs.size(); i4++) {
-                        up9 b = up9.b(i3, tL_messages_savedDialogs.dialogs.get(i4), tL_messages_savedDialogs.messages);
-                        int i5 = 0;
-                        while (true) {
-                            if (i5 < arrayList6.size()) {
-                                if (((up9) arrayList6.get(i5)).a == b.a) {
-                                    b.e = ((up9) arrayList6.get(i5)).e;
-                                    ((up9) arrayList6.get(i5)).b = b.b;
-                                } else {
-                                    i5++;
-                                }
-                            }
-                        }
-                        int i6 = 0;
-                        while (true) {
-                            if (i6 >= arrayList5.size()) {
-                                arrayList5.add(b);
-                                if (b.d()) {
-                                    vp9Var.h++;
-                                }
-                            } else if (((up9) arrayList5.get(i6)).a != b.a) {
-                                i6++;
-                            }
+                w09Var.c(jb6.M0(2131746486, null), this.d.K == 3, false);
+            } else {
+                if (i28 != 8 || privacyControlActivity13.getUserConfig().p()) {
+                    PrivacyControlActivity privacyControlActivity18 = this.d;
+                    if (privacyControlActivity18.E == 10) {
+                        if (!privacyControlActivity18.getMessagesController().l4.n2.f) {
                         }
                     }
-                    vp9Var.f = true;
-                    vp9Var.g = tL_messages_savedDialogs.dialogs.size();
-                    vp9Var.l();
-                    gl.r(tp9Var);
-                    gl.e3(tp9Var, 450L);
-                    vp9Var.b = false;
-                } else if (tLObject4 instanceof TLRPC.TL_messages_savedDialogsSlice) {
-                    vp9Var.e = true;
-                    TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice = (TLRPC.TL_messages_savedDialogsSlice) tLObject4;
-                    na7.q1(i3).a4(tL_messages_savedDialogsSlice.users, false);
-                    na7.q1(i3).U3(tL_messages_savedDialogsSlice.chats, false);
-                    ad7.Y(i3).j1(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
-                    ad7.Y(i3).g1(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 3, 0L);
-                    for (int i7 = 0; i7 < tL_messages_savedDialogsSlice.dialogs.size(); i7++) {
-                        up9 b2 = up9.b(i3, tL_messages_savedDialogsSlice.dialogs.get(i7), tL_messages_savedDialogsSlice.messages);
-                        int i8 = 0;
-                        while (true) {
-                            if (i8 < arrayList6.size()) {
-                                if (((up9) arrayList6.get(i8)).a == b2.a) {
-                                    b2.e = ((up9) arrayList6.get(i8)).e;
-                                    ((up9) arrayList6.get(i8)).b = b2.b;
-                                } else {
-                                    i8++;
-                                }
-                            }
-                        }
-                        int i9 = 0;
-                        while (true) {
-                            if (i9 >= arrayList5.size()) {
-                                arrayList5.add(b2);
-                                if (b2.d()) {
-                                    vp9Var.h++;
-                                }
-                            } else if (((up9) arrayList5.get(i9)).a != b2.a) {
-                                i9++;
-                            }
-                        }
-                    }
-                    vp9Var.g = tL_messages_savedDialogsSlice.count;
-                    ArrayList arrayList7 = vp9Var.j;
-                    int i10 = 0;
-                    for (int i11 = 0; i11 < arrayList7.size(); i11++) {
-                        if (((up9) arrayList7.get(i11)).b) {
-                            i10++;
-                        }
-                    }
-                    if (arrayList5.size() + i10 < vp9Var.g && tL_messages_savedDialogsSlice.dialogs.size() != 0) {
-                        z = false;
-                    }
-                    vp9Var.f = z;
-                    vp9Var.l();
-                    gl.r(tp9Var);
-                    gl.e3(tp9Var, 450L);
-                    vp9Var.b = false;
-                } else if (tLObject4 instanceof TLRPC.TL_messages_savedDialogsNotModified) {
-                    vp9Var.e = true;
-                    arrayList5.addAll(arrayList4);
-                    vp9Var.g = ((TLRPC.TL_messages_savedDialogsNotModified) tLObject4).count;
-                    vp9Var.h = 0;
-                    for (int i12 = 0; i12 < arrayList4.size(); i12++) {
-                        if (((up9) arrayList4.get(i12)).d()) {
-                            vp9Var.h++;
-                        }
-                    }
-                    boolean z5 = vp9Var.f;
-                    boolean z6 = arrayList5.size() >= vp9Var.g;
-                    vp9Var.f = z6;
-                    vp9Var.b = false;
-                    if (z6 && !z5) {
-                        vp9Var.l();
-                    }
-                } else if (tL_error3 != null) {
-                    vp9Var.e = true;
-                    if ("SAVED_DIALOGS_UNSUPPORTED".equals(tL_error3.text)) {
-                        vp9Var.b = true;
-                    }
-                }
-                if (vp9Var.b != z4) {
-                    na7.q1(i3).X3.edit().putBoolean("savedMessagesUnsupported", vp9Var.b).apply();
-                }
-                vp9Var.d = false;
-                return;
-            case 12:
-                mt9 mt9Var = (mt9) this.c;
-                cj3 cj3Var = (cj3) this.b;
-                Activity activity = (Activity) this.d;
-                cs5 cs5Var2 = (cs5) this.e;
-                cj3Var.showDialog(new wb5(activity, cj3Var.getResourceProvider(), new tj9(mt9Var, cj3Var, (byte) 14)));
-                cs5Var2.u();
-                return;
-            case 13:
-                mt9 mt9Var2 = (mt9) this.c;
-                cj3 cj3Var2 = (cj3) this.b;
-                TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) this.d;
-                cs5 cs5Var3 = (cs5) this.e;
-                byte[] bArr = tL_sponsoredPeer.random_id;
-                wjb resourceProvider = cj3Var2.getResourceProvider();
-                tj9 tj9Var = new tj9(mt9Var2, tL_sponsoredPeer, (byte) 13);
-                int i13 = b89.v1;
-                int currentAccount = cj3Var2.getCurrentAccount();
-                Activity parentActivity = cj3Var2.getParentActivity();
-                if (parentActivity != null) {
-                    TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
-                    tL_messages_reportSponsoredMessage.random_id = bArr;
-                    tL_messages_reportSponsoredMessage.option = new byte[0];
-                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new ot(parentActivity, resourceProvider, bArr, cj3Var2, tj9Var, currentAccount));
-                }
-                cs5Var3.u();
-                return;
-            case 14:
-                z3a z3aVar = (z3a) this.c;
-                TLObject tLObject5 = (TLObject) this.b;
-                k3a k3aVar = (k3a) this.d;
-                String str4 = (String) this.e;
-                if (tLObject5 != null) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject5;
-                    hq6 mediaDataController = z3aVar.getMediaDataController();
-                    mediaDataController.getClass();
-                    TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-                    if (stickerSet != null) {
-                        mediaDataController.J.k(tL_messages_stickerSet, stickerSet.id);
-                        String str5 = tL_messages_stickerSet.set.short_name;
-                        if (str5 != null) {
-                            mediaDataController.O.put(str5.toLowerCase(), tL_messages_stickerSet);
-                        }
-                    }
-                    TLRPC.TL_documentAttributeSticker_layer55 tL_documentAttributeSticker_layer55 = (TLRPC.TL_documentAttributeSticker_layer55) k3aVar.h;
-                    TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
-                    tL_documentAttributeSticker_layer55.stickerset = tL_inputStickerSetShortName;
-                    tL_inputStickerSetShortName.short_name = tL_messages_stickerSet.set.short_name;
-                } else {
-                    c = 0;
-                }
-                ArrayList arrayList8 = (ArrayList) z3aVar.a.remove(str4);
-                if (arrayList8 == null || arrayList8.isEmpty()) {
-                    return;
-                }
-                if (c != 0) {
-                    z3aVar.getMessagesStorage().o1(((k3a) arrayList8.get(0)).m.k, null, null, false);
-                }
-                bu9 secretChatHelper = z3aVar.getSecretChatHelper();
-                TLRPC.DecryptedMessage decryptedMessage = (TLRPC.DecryptedMessage) k3aVar.d;
-                k27 k27Var = k3aVar.m;
-                secretChatHelper.j(decryptedMessage, k27Var.k, k3aVar.n, null, null, k27Var);
-                return;
-            case 15:
-                z3a z3aVar2 = (z3a) this.c;
-                k3a k3aVar2 = (k3a) this.b;
-                File file = (File) this.d;
-                k27 k27Var2 = (k27) this.e;
-                TLRPC.Document F0 = k3aVar2.m.F0();
-                if (F0.thumbs.isEmpty() || (F0.thumbs.get(0).location instanceof TLRPC.TL_fileLocationUnavailable)) {
-                    try {
-                        Bitmap G2 = fl5.G(file.getAbsolutePath(), null, 90.0f, 90.0f, true);
-                        if (G2 != null) {
-                            F0.thumbs.clear();
-                            F0.thumbs.add(fl5.U(G2, 90.0f, 90.0f, 55, k3aVar2.d != null));
-                            G2.recycle();
-                        }
-                    } catch (Exception e2) {
-                        F0.thumbs.clear();
-                        fa4.g(e2, true);
-                    }
-                }
-                gl.d3(new ex7((Object) z3aVar2, (Object) k3aVar2, (Object) file, (Object) F0, (Object) k27Var2, (byte) 22));
-                return;
-            case 16:
-                m3a m3aVar = (m3a) this.c;
-                TLObject tLObject6 = (TLObject) this.b;
-                TLRPC.TL_messages_initHistoryImport tL_messages_initHistoryImport = (TLRPC.TL_messages_initHistoryImport) this.d;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.e;
-                boolean z7 = tLObject6 instanceof TLRPC.TL_messages_historyImport;
-                p3a p3aVar = m3aVar.b;
-                z3a z3aVar3 = p3aVar.q;
-                if (!z7) {
-                    z3aVar3.E.l(p3aVar.j);
-                    z3aVar3.getNotificationCenter().k(kk7.u1, Long.valueOf(p3aVar.j), tL_messages_initHistoryImport, tL_error4);
-                    return;
-                }
-                p3aVar.k = ((TLRPC.TL_messages_historyImport) tLObject6).id;
-                ArrayList arrayList9 = p3aVar.f;
-                HashSet hashSet = p3aVar.c;
-                hashSet.remove(p3aVar.a);
-                z3aVar3.getNotificationCenter().k(kk7.u1, Long.valueOf(p3aVar.j));
-                if (hashSet.isEmpty()) {
-                    TLRPC.TL_messages_startHistoryImport tL_messages_startHistoryImport = new TLRPC.TL_messages_startHistoryImport();
-                    tL_messages_startHistoryImport.peer = p3aVar.g;
-                    tL_messages_startHistoryImport.import_id = p3aVar.k;
-                    z3aVar3.getConnectionsManager().sendRequest(tL_messages_startHistoryImport, new o3a(p3aVar, tL_messages_startHistoryImport));
-                }
-                p3aVar.n = SystemClock.elapsedRealtime();
-                int size = arrayList9.size();
-                for (int i14 = 0; i14 < size; i14++) {
-                    z3aVar3.getFileLoader().h0(false, 67108864, (String) arrayList9.get(i14), true);
-                }
-                return;
-            case 17:
-                t3a t3aVar = (t3a) this.c;
-                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) this.e;
-                TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet = (TLRPC.TL_stickers_createStickerSet) this.d;
-                TLObject tLObject7 = (TLObject) this.b;
-                u3a u3aVar = t3aVar.b;
-                z3a z3aVar4 = u3aVar.o;
-                z3aVar4.G.remove(u3aVar.e);
-                if (tL_error5 == null) {
-                    z3aVar4.getNotificationCenter().k(kk7.v1, u3aVar.e);
-                } else {
-                    z3aVar4.getNotificationCenter().k(kk7.v1, u3aVar.e, tL_stickers_createStickerSet, tL_error5);
-                }
-                if (tLObject7 instanceof TLRPC.TL_messages_stickerSet) {
-                    if (z3aVar4.getNotificationCenter().a.indexOfKey(kk7.w1) >= 0) {
-                        z3aVar4.getNotificationCenter().k(kk7.w1, tLObject7);
-                        return;
+                    if (this.d.E != 3) {
+                        w09Var.c(jb6.M0(2131747484, null), this.d.K == 1, false);
                     } else {
-                        z3aVar4.getMediaDataController().h2(null, tLObject7, 2, null, false, false);
-                        return;
+                        w09Var.c(jb6.M0(2131748773, null), this.d.K == 1, false);
                     }
                 }
-                return;
-            case 18:
-                SessionsActivity sessionsActivity = (SessionsActivity) this.c;
-                hd hdVar = (hd) this.b;
-                TLRPC.TL_error tL_error6 = (TLRPC.TL_error) this.e;
-                TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) this.d;
-                sessionsActivity.getClass();
-                try {
-                    hdVar.dismiss();
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
+                w09Var.setRadioIcon(this.d.getParentActivity().getResources().getDrawable(R.drawable.mini_switch_lock).mutate());
+                if (this.d.E != 3) {
                 }
-                if (tL_error6 == null) {
-                    sessionsActivity.d.remove(tL_webAuthorization);
-                    sessionsActivity.q0();
-                    g7a g7aVar = sessionsActivity.a;
-                    if (g7aVar != null) {
-                        g7aVar.f();
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 19:
-                SessionsActivity sessionsActivity2 = (SessionsActivity) this.c;
-                hd hdVar2 = (hd) this.b;
-                TLRPC.TL_error tL_error7 = (TLRPC.TL_error) this.e;
-                TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) this.d;
-                sessionsActivity2.getClass();
-                try {
-                    hdVar2.dismiss();
-                } catch (Exception e4) {
-                    fa4.g(e4, true);
-                }
-                if (tL_error7 == null) {
-                    sessionsActivity2.d.remove(tL_authorization);
-                    sessionsActivity2.e.remove(tL_authorization);
-                    sessionsActivity2.q0();
-                    g7a g7aVar2 = sessionsActivity2.a;
-                    if (g7aVar2 != null) {
-                        g7aVar2.f();
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 20:
-                f7a f7aVar = (f7a) this.c;
-                TLObject tLObject8 = (TLObject) this.b;
-                TLRPC.TL_error tL_error8 = (TLRPC.TL_error) this.e;
-                u91 u91Var = (u91) this.d;
-                f7aVar.a = tLObject8;
-                f7aVar.b = tL_error8;
-                u91Var.run();
-                return;
-            case 21:
-                ((d8a) this.c).d0((TLRPC.TL_error) this.e, (TLObject) this.b, (String) this.d);
-                return;
-            case 22:
-                TLObject tLObject9 = (TLObject) this.b;
-                boolean[] zArr = (boolean[]) this.c;
-                pt0 pt0Var = (pt0) this.d;
-                TLRPC.UserFull userFull = (TLRPC.UserFull) this.e;
-                if (!(tLObject9 instanceof TLRPC.TL_boolTrue)) {
-                    if (zArr[0]) {
-                        return;
-                    }
-                    zArr[0] = true;
-                    pt0Var.a(Boolean.TRUE, "cancelled");
-                    return;
-                }
-                userFull.bot_can_manage_emoji_status = true;
-                if (zArr[0]) {
-                    return;
-                }
-                zArr[0] = true;
-                pt0Var.a(Boolean.TRUE, "allowed");
-                return;
-            case 23:
-                taa taaVar = (taa) this.c;
-                AtomicReference atomicReference = (AtomicReference) this.b;
-                caa caaVar = (caa) this.d;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                atomicReference.set(null);
-                caaVar.didReceivedNotification(kk7.s5, taaVar.a, Long.valueOf(-dialog.id));
-                return;
-            case 24:
-                vqa vqaVar = (vqa) this.c;
-                boolean[] zArr2 = (boolean[]) this.b;
-                TL_stars.StarGiftAttribute starGiftAttribute = (TL_stars.StarGiftAttribute) this.d;
-                q41[] q41VarArr = (q41[]) this.e;
-                if (zArr2[0]) {
-                    return;
-                }
-                zArr2[0] = true;
-                TL_stars.StarGift r1 = vqaVar.r1();
-                kt4.c(vqaVar.a).j(r1.gift_id, new yt0(vqaVar, r1, starGiftAttribute, q41VarArr, zArr2, (byte) 8));
-                return;
-            case 25:
-                vqa vqaVar2 = (vqa) this.c;
-                TLObject tLObject10 = (TLObject) this.b;
-                TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.d;
-                String str6 = (String) this.e;
-                if (tLObject10 instanceof TL_stars.TL_payments_uniqueStarGift) {
-                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject10;
-                    if ((tL_payments_uniqueStarGift.gift instanceof TL_stars.TL_starGiftUnique) && !vqaVar2.J && vqaVar2.a3 == nftitem && TextUtils.equals(vqaVar2.D2, str6)) {
-                        na7.q1(vqaVar2.a).a4(tL_payments_uniqueStarGift.users, false);
-                        na7.q1(vqaVar2.a).U3(tL_payments_uniqueStarGift.chats, false);
-                        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_payments_uniqueStarGift.gift;
-                        nftitem.gift = tL_starGiftUnique;
-                        vqaVar2.m2(str6, tL_starGiftUnique, vqaVar2.B2);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 26:
-                vqa vqaVar3 = (vqa) this.c;
-                TLObject tLObject11 = (TLObject) this.b;
-                q3a q3aVar = (q3a) this.d;
-                TLRPC.TL_error tL_error9 = (TLRPC.TL_error) this.e;
-                if (!(tLObject11 instanceof TLRPC.TL_messages_chatFull)) {
-                    m21 Z = vqaVar3.j().Z(tL_error9);
-                    Z.t = true;
-                    Z.j();
-                    return;
-                }
-                TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject11;
-                na7.q1(vqaVar3.a).a4(tL_messages_chatFull.users, false);
-                na7.q1(vqaVar3.a).U3(tL_messages_chatFull.chats, false);
-                na7.q1(vqaVar3.a).T3(tL_messages_chatFull.full_chat);
-                if (tL_messages_chatFull.full_chat.stargifts_available) {
-                    q3aVar.run();
-                    return;
-                }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vqaVar3.J0, vqaVar3.getContext());
-                alertDialog$Builder.a.S = k96.M0(2131750246, null);
-                alertDialog$Builder.a.U = k96.M0(2131750247, null);
-                b00.t(null, 2131747638, alertDialog$Builder, null);
-                return;
-            case 27:
-                a();
-                return;
-            case 28:
-                b();
-                return;
-            default:
-                upa upaVar = (upa) this.c;
-                TL_stars.StarGift starGift = (TL_stars.StarGift) this.b;
-                ArrayList arrayList10 = (ArrayList) this.d;
-                Runnable runnable = (Runnable) this.e;
-                hn hnVar = upaVar.I;
-                upaVar.i0 = false;
-                if (starGift != null) {
-                    gl.d3(runnable);
-                    return;
-                }
-                ry8 ry8Var = upaVar.m0;
-                if (ry8Var != null) {
-                    ry8Var.d();
-                    gl.e3(new am6((byte) 28), 750L);
-                }
-                upaVar.R.animate().alpha(0.0f).start();
-                upaVar.T.animate().alpha(1.0f).start();
-                upaVar.H.animate().alpha(1.0f).start();
-                upaVar.S.animate().alpha(0.0f).start();
-                upaVar.Q.animate().alpha(1.0f).start();
-                upaVar.N.setText(gl.T2(k96.G(arrayList10.size(), "GiftCraftFailedText", new Object[0])));
-                hnVar.setText(k96.M0(2131749779, null));
-                hnVar.setTranslationY(gl.L(6.0f));
-                upaVar.J.setAlpha(0.0f);
-                if (upaVar.P != null) {
-                    int i15 = 0;
-                    while (true) {
-                        nv4[] nv4VarArr = upaVar.P;
-                        if (i15 < nv4VarArr.length) {
-                            gl.B2(nv4VarArr[i15]);
-                            i15++;
-                        } else {
-                            upaVar.P = null;
-                        }
-                    }
-                }
-                upaVar.P = new nv4[arrayList10.size()];
-                int i16 = 0;
-                while (i16 < arrayList10.size()) {
-                    TL_stars.StarGift starGift2 = (TL_stars.StarGift) arrayList10.get(i16);
-                    nv4 nv4Var2 = new nv4(upaVar.a0, upaVar.a, upaVar.getContext());
-                    nv4Var2.h(starGift2, false, false, false, false, true);
-                    nv4Var2.y.setVisibility(8);
-                    nv4Var2.setRibbonColor(-3065286);
-                    be0 be0Var = nv4Var2.E;
-                    FrameLayout.LayoutParams e5 = nme.e(42, 42, 17);
-                    nv4Var2.F = e5;
-                    be0Var.setLayoutParams(e5);
-                    int i17 = i16 + 1;
-                    Object[] objArr = i17 >= arrayList10.size();
-                    LinearLayout linearLayout = upaVar.O;
-                    upaVar.P[i16] = nv4Var2;
-                    linearLayout.addView(nv4Var2, nme.q(74, 74, 0.0f, 51, 0, 0, objArr != false ? 0 : 6, 0));
-                    i16 = i17;
-                }
-                return;
+            }
+        }
+        if (this.d.E != 12) {
         }
     }
 
-    public /* synthetic */ bm8(gk7 gk7Var, TLRPC.TL_error tL_error, TLObject tLObject, Object obj, byte b) {
-        this.a = b;
-        this.c = gk7Var;
-        this.e = tL_error;
-        this.b = tLObject;
-        this.d = obj;
-    }
-
-    public /* synthetic */ bm8(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = obj2;
-        this.d = obj3;
-        this.e = obj4;
-    }
-
-    public /* synthetic */ bm8(Object obj, Object obj2, TLRPC.TL_error tL_error, Object obj3, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = obj2;
-        this.e = tL_error;
-        this.d = obj3;
-    }
-
-    public /* synthetic */ bm8(TLObject tLObject, boolean[] zArr, pt0 pt0Var, TLRPC.UserFull userFull) {
-        this.a = (byte) 22;
-        this.b = tLObject;
-        this.c = zArr;
-        this.d = pt0Var;
-        this.e = userFull;
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        int i2;
+        int i3;
+        ylb ylbVar;
+        ylb ylbVar2;
+        ylb ylbVar3;
+        View view;
+        Context context = this.c;
+        PrivacyControlActivity privacyControlActivity = this.d;
+        switch (i) {
+            case 0:
+                vkb vkbVar = new vkb(context);
+                vkbVar.setCanDisable(true);
+                view = vkbVar;
+                break;
+            case 1:
+                view = new njb(context);
+                break;
+            case 2:
+                view = new jf5(context);
+                break;
+            case 3:
+                view = new w09(context, null);
+                break;
+            case 4:
+                view = privacyControlActivity.d;
+                break;
+            case 5:
+            default:
+                view = new bba(context, (hg9) null);
+                break;
+            case 6:
+                xib xibVar = new xib(privacyControlActivity.getParentActivity());
+                privacyControlActivity.w0 = xibVar;
+                if (privacyControlActivity.z0 == null) {
+                    xibVar.o(R.drawable.msg_addphoto, jb6.a0(null, null, 2131745251, new Object[0]), false);
+                } else {
+                    xibVar.o(R.drawable.msg_addphoto, jb6.a0("UpdatePhotoForRest", null, 2131743504, new Object[0]), true);
+                }
+                privacyControlActivity.w0.setBackgroundDrawable(cmb.L0(false));
+                privacyControlActivity.w0.g(cmb.u6, cmb.t6);
+                privacyControlActivity.v0 = new p09(R.raw.camera_outline, gm.L(50.0f), gm.L(50.0f), false, null);
+                privacyControlActivity.w0.e.setTranslationX(-gm.L(8.0f));
+                privacyControlActivity.w0.e.setAnimation(privacyControlActivity.v0);
+                view = privacyControlActivity.w0;
+                break;
+            case 7:
+                privacyControlActivity.x0 = new bf0(privacyControlActivity.getParentActivity());
+                privacyControlActivity.y0 = new ru2(this, privacyControlActivity.getParentActivity());
+                TLRPC.PhotoSize photoSize = privacyControlActivity.z0;
+                if (photoSize != null) {
+                    TLRPC.Photo photo = privacyControlActivity.A0;
+                    bf0 bf0Var = privacyControlActivity.x0;
+                    if (photo != null) {
+                        gn5 i4 = gn5.i(photoSize, photo);
+                        i3 = ((d) privacyControlActivity).currentAccount;
+                        bf0Var.m(i4, "50_50", null, z8c.h(i3).f());
+                    } else {
+                        gn5 e = gn5.e(photoSize.location);
+                        i2 = ((d) privacyControlActivity).currentAccount;
+                        bf0Var.m(e, "50_50", null, z8c.h(i2).f());
+                    }
+                }
+                privacyControlActivity.y0.addView(privacyControlActivity.x0, qoe.d(30, 30.0f, 16, 21.0f, 0.0f, 21.0f, 0.0f));
+                privacyControlActivity.y0.k(jb6.M0(2131746022, null), false);
+                privacyControlActivity.y0.getImageView().setVisibility(0);
+                privacyControlActivity.y0.setBackgroundDrawable(cmb.L0(false));
+                ru2 ru2Var = privacyControlActivity.y0;
+                int i5 = cmb.o7;
+                ru2Var.g(i5, i5);
+                view = privacyControlActivity.y0;
+                break;
+            case 8:
+                ylbVar = ((d) privacyControlActivity).resourceProvider;
+                view = new bjb(context, ylbVar);
+                break;
+            case 9:
+                ylbVar2 = ((d) privacyControlActivity).resourceProvider;
+                view = new jla(context, ylbVar2);
+                break;
+            case 10:
+                FrameLayout frameLayout = new FrameLayout(context);
+                ylbVar3 = ((d) privacyControlActivity).resourceProvider;
+                b61 b61Var = new b61(ylbVar3, context, true);
+                b61Var.setRoundRadius(24);
+                pn2 pn2Var = new pn2(R.drawable.msg_mini_lock3, 0);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jb6.M0(2131746487, null));
+                spannableStringBuilder.append((CharSequence) " l");
+                spannableStringBuilder.setSpan(pn2Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                b61Var.i(spannableStringBuilder, false, true);
+                b61Var.setOnClickListener(new wk8(this, (byte) 1));
+                frameLayout.addView(b61Var, qoe.d(-1, 48.0f, nm7.D1, 18.0f, 0.0f, 18.0f, 16.0f));
+                view = frameLayout;
+                break;
+        }
+        return new b59(view);
     }
 }

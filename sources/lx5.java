@@ -1,62 +1,39 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import org.telegram.messenger.a;
-import ru.noties.jlatexmath.JLatexMathAndroid;
-import ru.noties.jlatexmath.JLatexMathDrawable;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class lx5 {
-    public static volatile boolean e = false;
-    public final Bitmap a;
-    public final int b;
-    public final int c;
-    public final int d;
+public final class lx5 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ mx5 c;
 
-    public lx5(Bitmap bitmap, int i, int i2, int i3) {
-        this.a = bitmap;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
+    public lx5(mx5 mx5Var, boolean z, View view) {
+        this.c = mx5Var;
+        this.a = z;
+        this.b = view;
     }
 
-    public static lx5 a(String str, float f, boolean z) {
-        if (str != null && !str.isEmpty()) {
-            try {
-                if (!e) {
-                    synchronized (lx5.class) {
-                        try {
-                            if (!e) {
-                                JLatexMathAndroid.init(a.b);
-                                e = true;
-                            }
-                        } finally {
-                        }
-                    }
-                }
-                JLatexMathDrawable build = JLatexMathDrawable.builder(str).textSize(f).build();
-                int intrinsicWidth = build.getIntrinsicWidth();
-                int intrinsicHeight = build.getIntrinsicHeight();
-                if (intrinsicWidth > 0 && intrinsicHeight > 0) {
-                    Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ALPHA_8);
-                    int i = 0;
-                    build.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
-                    build.draw(new Canvas(createBitmap));
-                    if (z) {
-                        try {
-                            i = build.icon().getIconDepth();
-                        } catch (Throwable th) {
-                            fa4.g(th, true);
-                        }
-                    }
-                    return new lx5(createBitmap, intrinsicWidth, intrinsicHeight, i);
-                }
-            } catch (Throwable th2) {
-                fa4.g(th2, true);
-            }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        boolean z = this.a;
+        mx5 mx5Var = this.c;
+        if (z) {
+            mx5Var.b = view.getRootView();
         }
-        return null;
+        View view2 = this.b;
+        view2.getViewTreeObserver().addOnGlobalLayoutListener(mx5Var.j);
+        view2.addOnLayoutChangeListener(mx5Var.i);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        View view2 = this.b;
+        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
+        mx5 mx5Var = this.c;
+        viewTreeObserver.removeOnGlobalLayoutListener(mx5Var.j);
+        view2.removeOnLayoutChangeListener(mx5Var.i);
     }
 }

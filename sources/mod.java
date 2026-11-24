@@ -1,12 +1,19 @@
 // default package
 
-import android.graphics.Canvas;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class mod implements cq7 {
+    public static final mod a = new mod();
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class mod {
-    public abstract void b(Canvas canvas, gx4 gx4Var);
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)));
+    }
 
-    public void a() {
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

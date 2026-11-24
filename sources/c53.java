@@ -1,19 +1,16 @@
 // default package
 
-import java.io.Closeable;
+import android.hardware.biometrics.BiometricPrompt;
+import android.security.identity.IdentityCredential;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class c53 implements Closeable {
-    public lt8 a;
-    public pj4 b;
-    public lt8 c;
-    public g29 d;
-    public lt8 e;
-    public lt8 f;
+public abstract class c53 {
+    public static BiometricPrompt.CryptoObject a(IdentityCredential identityCredential) {
+        return new BiometricPrompt.CryptoObject(identityCredential);
+    }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        ((lo9) this.e.get()).close();
+    public static IdentityCredential b(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getIdentityCredential();
     }
 }

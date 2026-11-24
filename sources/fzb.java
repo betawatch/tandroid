@@ -1,35 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fzb implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ i8c b;
-    public final /* synthetic */ String c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ fzb(i8c i8cVar, String str, byte b) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fzb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hzb b;
+
+    public /* synthetic */ fzb(hzb hzbVar, byte b) {
         this.a = b;
-        this.b = i8cVar;
-        this.c = str;
+        this.b = hzbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        String str = this.c;
-        i8c i8cVar = this.b;
+        hzb hzbVar = this.b;
         switch (b) {
             case 0:
-                i8cVar.a(str, Boolean.FALSE);
-                break;
-            case 1:
-                i8cVar.a(null, str);
-                break;
-            case 2:
-                i8cVar.a(null, str);
+                yc ycVar = hzbVar.f;
+                ycVar.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ycVar.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ycVar.invalidate();
                 break;
             default:
-                i8cVar.a(null, str);
+                hzbVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                hzbVar.h();
                 break;
         }
     }

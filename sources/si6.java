@@ -1,16 +1,11 @@
 // default package
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class si6 {
-    public final fg5 a;
-    public final int b;
-    public final ArrayList c = new ArrayList();
+public final class si6 extends h61 {
+    public int d;
 
-    public si6(fg5 fg5Var, int i) {
-        this.a = fg5Var;
-        this.b = i;
+    public final String toString() {
+        return kt6.q(new StringBuilder("mp3[pos="), this.b, "]");
     }
 }

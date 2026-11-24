@@ -1,391 +1,809 @@
 // default package
 
-import android.media.ResourceBusyException;
-import android.media.UnsupportedSchemeException;
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ConfigurationInfo;
+import android.media.MediaCodecInfo;
+import android.media.MediaCodecList;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import j$.util.Objects;
+import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.WebStorage;
+import android.webkit.WebView;
+import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
-import java.util.List;
 import java.util.Set;
-import java.util.UUID;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class da3 implements yq3 {
-    public final Set E;
-    public int F;
-    public i54 G;
-    public aa3 H;
-    public aa3 I;
-    public Looper J;
-    public Handler K;
-    public byte[] L;
-    public uc8 M;
-    public volatile c1 N;
-    public final UUID a;
-    public final wn4 b;
-    public final xf4 c;
-    public final HashMap d;
-    public final boolean e;
-    public final int[] f;
-    public final boolean h;
-    public final lv6 n;
-    public final i2f r;
-    public final qx4 s;
-    public final int w;
-    public final ArrayList x;
-    public final Set y;
-
-    public da3(UUID uuid, xf4 xf4Var, HashMap hashMap, boolean z, int[] iArr, boolean z2, i2f i2fVar) {
-        uuid.getClass();
-        gre.e("Use C.CLEARKEY_UUID instead", !g51.c.equals(uuid));
-        this.a = uuid;
-        this.b = mp4.d;
-        this.c = xf4Var;
-        this.d = hashMap;
-        this.e = z;
-        this.f = iArr;
-        this.h = z2;
-        this.r = i2fVar;
-        this.n = new lv6((byte) 19);
-        this.s = new qx4(this);
-        this.x = new ArrayList();
-        this.y = Collections.newSetFromMap(new IdentityHashMap());
-        this.E = Collections.newSetFromMap(new IdentityHashMap());
-        this.w = 300000;
-    }
-
-    public static boolean c(aa3 aa3Var) {
-        aa3Var.p();
-        if (aa3Var.p != 1) {
-            return false;
-        }
-        rq3 g = aa3Var.g();
-        g.getClass();
-        Throwable cause = g.getCause();
-        return (cause instanceof ResourceBusyException) || ree.c(cause);
-    }
-
-    public static ArrayList h(qq3 qq3Var, UUID uuid, boolean z) {
-        ArrayList arrayList = new ArrayList(qq3Var.d);
-        for (int i = 0; i < qq3Var.d; i++) {
-            pq3 pq3Var = qq3Var.a[i];
-            if ((pq3Var.a(uuid) || (g51.d.equals(uuid) && pq3Var.a(g51.c))) && (pq3Var.e != null || z)) {
-                arrayList.add(pq3Var);
-            }
-        }
-        return arrayList;
-    }
-
-    @Override // yq3
-    public final void a() {
-        i54 cffVar;
-        j(true);
-        int i = this.F;
-        this.F = i + 1;
-        if (i != 0) {
-            return;
-        }
-        if (this.G == null) {
-            UUID uuid = this.a;
-            this.b.getClass();
-            try {
-                try {
-                    cffVar = new mp4(uuid);
-                } catch (g6c unused) {
-                    lad.c("FrameworkMediaDrm", "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
-                    cffVar = new cff((byte) 18);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class da3 extends n7c {
+    public static void d0(String str, StringBuilder sb) {
+        String[] supportedTypes;
+        try {
+            int codecCount = MediaCodecList.getCodecCount();
+            ArrayList arrayList = new ArrayList();
+            ArrayList arrayList2 = new ArrayList();
+            for (int i = 0; i < codecCount; i++) {
+                MediaCodecInfo codecInfoAt = MediaCodecList.getCodecInfoAt(i);
+                if (codecInfoAt != null && (supportedTypes = codecInfoAt.getSupportedTypes()) != null) {
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 >= supportedTypes.length) {
+                            break;
+                        } else if (supportedTypes[i2].equals(str)) {
+                            (codecInfoAt.isEncoder() ? arrayList2 : arrayList).add(Integer.valueOf(i));
+                        } else {
+                            i2++;
+                        }
+                    }
                 }
-                this.G = cffVar;
-                cffVar.n(new lj9(this, (byte) 27));
-                return;
-            } catch (UnsupportedSchemeException e) {
-                throw new g6c(e);
-            } catch (Exception e2) {
-                throw new g6c(e2);
             }
-        }
-        if (this.w == -9223372036854775807L) {
-            return;
-        }
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList = this.x;
-            if (i2 >= arrayList.size()) {
+            if (arrayList.isEmpty() && arrayList2.isEmpty()) {
                 return;
             }
-            ((aa3) arrayList.get(i2)).d(null);
-            i2++;
+            sb.append("\n");
+            sb.append(arrayList.size());
+            sb.append("+");
+            sb.append(arrayList2.size());
+            sb.append(" ");
+            sb.append(str.substring(6));
+            sb.append(" codecs:\n");
+            for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                if (i3 > 0) {
+                    sb.append("\n");
+                }
+                MediaCodecInfo codecInfoAt2 = MediaCodecList.getCodecInfoAt(((Integer) arrayList.get(i3)).intValue());
+                sb.append("{d} ");
+                sb.append(codecInfoAt2.getName());
+                sb.append(" (");
+                if (Build.VERSION.SDK_INT >= 29) {
+                    if (codecInfoAt2.isHardwareAccelerated()) {
+                        sb.append("gpu");
+                    }
+                    if (codecInfoAt2.isSoftwareOnly()) {
+                        sb.append("cpu");
+                    }
+                    if (codecInfoAt2.isVendor()) {
+                        sb.append(", v");
+                    }
+                }
+                MediaCodecInfo.CodecCapabilities capabilitiesForType = codecInfoAt2.getCapabilitiesForType(str);
+                sb.append("; mi=");
+                sb.append(capabilitiesForType.getMaxSupportedInstances());
+                sb.append(")");
+            }
+            for (int i4 = 0; i4 < arrayList2.size(); i4++) {
+                if (i4 > 0 || !arrayList.isEmpty()) {
+                    sb.append("\n");
+                }
+                MediaCodecInfo codecInfoAt3 = MediaCodecList.getCodecInfoAt(((Integer) arrayList2.get(i4)).intValue());
+                sb.append("{e} ");
+                sb.append(codecInfoAt3.getName());
+                sb.append(" (");
+                if (Build.VERSION.SDK_INT >= 29) {
+                    if (codecInfoAt3.isHardwareAccelerated()) {
+                        sb.append("gpu");
+                    }
+                    if (codecInfoAt3.isSoftwareOnly()) {
+                        sb.append("cpu");
+                    }
+                    if (codecInfoAt3.isVendor()) {
+                        sb.append(", v");
+                    }
+                }
+                MediaCodecInfo.CodecCapabilities capabilitiesForType2 = codecInfoAt3.getCapabilitiesForType(str);
+                sb.append("; mi=");
+                sb.append(capabilitiesForType2.getMaxSupportedInstances());
+                sb.append(")");
+            }
+            sb.append("\n");
+        } catch (Exception unused) {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0028, code lost:
-    
-        if (kp4.c == false) goto L11;
-     */
+    @Override // n7c
+    public final void Z(ArrayList arrayList, l7c l7cVar) {
+        arrayList.add(c6c.u("Contacts and chats"));
+        arrayList.add(c6c.e(1, jb6.M0(2131751566, null)));
+        arrayList.add(c6c.e(2, jb6.M0(2131751560, null)));
+        arrayList.add(c6c.e(3, jb6.M0(2131751559, null)));
+        arrayList.add(c6c.e(4, jb6.M0(2131751558, null)));
+        arrayList.add(c6c.e(5, jb6.M0(2131751561, null)));
+        arrayList.add(c6c.C(null));
+        arrayList.add(c6c.u("Data"));
+        arrayList.add(c6c.e(8, jb6.M0(2131751580, null)));
+        arrayList.add(c6c.e(45, "Forget all hints"));
+        arrayList.add(c6c.e(35, "Reload app config"));
+        boolean z = e21.a;
+        arrayList.add(c6c.e(29, "Clear Mini Apps Permissions and Files"));
+        arrayList.add(c6c.C(null));
+        arrayList.add(c6c.u("App"));
+        a.t();
+        a.m();
+        arrayList.add(c6c.e(10, jb6.M0(2131751581, null)));
+        arrayList.add(c6c.e(37, "Make Memory Dump"));
+        c6c i = c6c.i(42, "Experimental settings");
+        in0 in0Var = yed.a;
+        in0Var.a();
+        i.L(in0Var.d);
+        arrayList.add(i);
+        arrayList.add(c6c.C(null));
+        arrayList.add(c6c.u("Interface"));
+        gm.P1();
+        int i2 = Build.VERSION.SDK_INT;
+        if (i2 >= 28) {
+            c6c i3 = c6c.i(34, jb6.M0(2131751557, null));
+            i3.L(gda.R0);
+            arrayList.add(i3);
+        }
+        if (gda.e() && i2 >= 31) {
+            c6c i4 = c6c.i(31, "New GPU blur");
+            i4.L(gda.X);
+            arrayList.add(i4);
+        }
+        c6c i5 = c6c.i(36, "Force Forum Tabs");
+        i5.L(gda.m);
+        arrayList.add(i5);
+        c6c i6 = c6c.i(39, "Frame metrics");
+        i6.L(gda.o);
+        arrayList.add(i6);
+        c6c i7 = c6c.i(46, jb6.M0(2131751769, null));
+        i7.L(gda.D0);
+        arrayList.add(i7);
+        arrayList.add(c6c.C(null));
+        arrayList.add(c6c.u("Camera and media"));
+        c6c i8 = c6c.i(7, jb6.M0(2131751569, null));
+        i8.L(gda.v0);
+        arrayList.add(i8);
+        c6c i9 = c6c.i(23, jb6.M0(2131751571, null));
+        i9.L(ss3.o(getParentActivity()));
+        arrayList.add(i9);
+        c6c i10 = c6c.i(24, "SurfaceView in stories");
+        i10.L(gda.Y);
+        arrayList.add(i10);
+        c6c i11 = c6c.i(33, "Video qualities debug");
+        i11.L(gda.N0);
+        arrayList.add(i11);
+        arrayList.add(c6c.C(null));
+        arrayList.add(c6c.u("Calls"));
+        arrayList.add(c6c.e(9, jb6.M0(2131751582, null)));
+        arrayList.add(c6c.C(null));
+        arrayList.add(c6c.u("WebView"));
+        arrayList.add(c6c.e(15, jb6.M0(2131751578, null)));
+        c6c i12 = c6c.i(16, jb6.M0(2131751567, null));
+        i12.L(gda.F0);
+        arrayList.add(i12);
+        c6c i13 = c6c.i(32, "Adaptive browser colors");
+        i13.L(gda.s0);
+        arrayList.add(i13);
+        c6c i14 = c6c.i(26, "Invoice Payment");
+        i14.L(gda.a0);
+        arrayList.add(i14);
+        arrayList.add(c6c.C(null));
+    }
+
+    @Override // n7c
+    public final CharSequence a0() {
+        return jb6.M0(2131751583, null);
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:10:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0900  */
+    @Override // n7c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final sq3 b(Looper looper, vq3 vq3Var, fm4 fm4Var, boolean z) {
-        ArrayList arrayList;
-        if (this.N == null) {
-            this.N = new c1(this, looper, (byte) 3);
-        }
-        qq3 qq3Var = fm4Var.x;
+    public final void b0(c6c c6cVar, View view) {
+        boolean z;
+        Long l;
+        byte b = 2;
         int i = 0;
-        aa3 aa3Var = null;
-        if (qq3Var == null) {
-            int h = ud7.h(fm4Var.t);
-            i54 i54Var = this.G;
-            i54Var.getClass();
-            if (i54Var.v() == 2) {
-                HashSet hashSet = cr6.a;
-            }
-            int[] iArr = this.f;
-            while (true) {
-                if (i >= iArr.length) {
-                    i = -1;
-                    break;
+        byte b2 = 1;
+        switch (c6cVar.d) {
+            case 1:
+                z = true;
+                getUserConfig().V = true;
+                getUserConfig().u(false);
+                getContactsController().l();
+                if (c6cVar.a == 4) {
+                    this.a.g3.O(z);
+                    return;
                 }
-                if (iArr[i] == h) {
-                    break;
+                return;
+            case 2:
+                getContactsController().A(0L, false);
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                i++;
-            }
-            if (i != -1 && i54Var.v() != 1) {
-                aa3 aa3Var2 = this.H;
-                if (aa3Var2 == null) {
-                    km5 km5Var = mm5.b;
-                    aa3 g = g(w59.e, true, null, z);
-                    this.x.add(g);
-                    this.H = g;
-                } else {
-                    aa3Var2.d(null);
+                break;
+            case 3:
+                getContactsController().K();
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                return this.H;
-            }
-            return null;
-        }
-        if (this.L == null) {
-            arrayList = h(qq3Var, this.a, false);
-            if (arrayList.isEmpty()) {
-                ba3 ba3Var = new ba3("Media does not support uuid: " + this.a);
-                lad.d("DefaultDrmSessionMgr", "DRM error", ba3Var);
-                if (vq3Var != null) {
-                    vq3Var.d(ba3Var);
+                break;
+            case 4:
+                getMessagesController().y0();
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                return new y34(new rq3(6003, ba3Var));
-            }
-        } else {
-            arrayList = null;
-        }
-        if (this.e) {
-            ArrayList arrayList2 = this.x;
-            int size = arrayList2.size();
-            int i2 = 0;
-            while (true) {
-                if (i2 >= size) {
-                    break;
+                break;
+            case 5:
+                cf7 messagesStorage = getMessagesStorage();
+                messagesStorage.a.c(new xc7(messagesStorage, -1, b));
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                Object obj = arrayList2.get(i2);
-                i2++;
-                aa3 aa3Var3 = (aa3) obj;
-                if (Objects.equals(aa3Var3.a, arrayList)) {
-                    aa3Var = aa3Var3;
-                    break;
-                }
-            }
-        } else {
-            aa3Var = this.I;
-        }
-        if (aa3Var != null) {
-            aa3Var.d(vq3Var);
-            return aa3Var;
-        }
-        aa3 g2 = g(arrayList, false, vq3Var, z);
-        if (!this.e) {
-            this.I = g2;
-        }
-        this.x.add(g2);
-        return g2;
-    }
-
-    @Override // yq3
-    public final sq3 d(vq3 vq3Var, fm4 fm4Var) {
-        j(false);
-        gre.p(this.F > 0);
-        this.J.getClass();
-        return b(this.J, vq3Var, fm4Var, true);
-    }
-
-    public final aa3 e(List list, boolean z, vq3 vq3Var) {
-        this.G.getClass();
-        boolean z2 = this.h | z;
-        i54 i54Var = this.G;
-        byte[] bArr = this.L;
-        Looper looper = this.J;
-        looper.getClass();
-        uc8 uc8Var = this.M;
-        uc8Var.getClass();
-        aa3 aa3Var = new aa3(this.a, i54Var, this.n, this.s, list, z2, z, bArr, this.d, this.c, looper, this.r, uc8Var);
-        aa3Var.d(vq3Var);
-        if (this.w != -9223372036854775807L) {
-            aa3Var.d(null);
-        }
-        return aa3Var;
-    }
-
-    @Override // yq3
-    public final xq3 f(vq3 vq3Var, fm4 fm4Var) {
-        gre.p(this.F > 0);
-        this.J.getClass();
-        ca3 ca3Var = new ca3(this, vq3Var);
-        Handler handler = this.K;
-        handler.getClass();
-        handler.post(new gu2(ca3Var, fm4Var, (byte) 27));
-        return ca3Var;
-    }
-
-    public final aa3 g(List list, boolean z, vq3 vq3Var, boolean z2) {
-        aa3 e = e(list, z, vq3Var);
-        boolean c = c(e);
-        int i = this.w;
-        Set set = this.E;
-        if (c && !set.isEmpty()) {
-            v5c it = ym5.q(set).iterator();
-            while (it.hasNext()) {
-                ((sq3) it.next()).c(null);
-            }
-            e.c(vq3Var);
-            if (i != -9223372036854775807L) {
-                e.c(null);
-            }
-            e = e(list, z, vq3Var);
-        }
-        if (c(e) && z2) {
-            Set set2 = this.y;
-            if (!set2.isEmpty()) {
-                v5c it2 = ym5.q(set2).iterator();
-                while (it2.hasNext()) {
-                    ((ca3) it2.next()).release();
-                }
-                if (!set.isEmpty()) {
-                    v5c it3 = ym5.q(set).iterator();
-                    while (it3.hasNext()) {
-                        ((sq3) it3.next()).c(null);
+                break;
+            case 6:
+                e21.a = !e21.a;
+                a.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", e21.a).commit();
+                if (e21.a) {
+                    wi8.q(a.s, new StringBuilder("app start time = "));
+                    try {
+                        fc4.b("buildVersion = " + a.b.getPackageManager().getPackageInfo(a.b.getPackageName(), 0).versionCode);
+                    } catch (Exception e) {
+                        z = true;
+                        fc4.g(e, true);
                     }
                 }
-                e.c(vq3Var);
-                if (i != -9223372036854775807L) {
-                    e.c(null);
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                return e(list, z, vq3Var);
-            }
-        }
-        return e;
-    }
-
-    public final void i() {
-        if (this.G != null && this.F == 0 && this.x.isEmpty() && this.y.isEmpty()) {
-            i54 i54Var = this.G;
-            i54Var.getClass();
-            i54Var.release();
-            this.G = null;
-        }
-    }
-
-    public final void j(boolean z) {
-        if (z && this.J == null) {
-            lad.g("DefaultDrmSessionMgr", "DefaultDrmSessionManager accessed before setPlayer(), possibly on the wrong thread.", new IllegalStateException());
-            return;
-        }
-        Thread currentThread = Thread.currentThread();
-        Looper looper = this.J;
-        looper.getClass();
-        if (currentThread != looper.getThread()) {
-            lad.g("DefaultDrmSessionMgr", "DefaultDrmSessionManager accessed on the wrong thread.\nCurrent thread: " + Thread.currentThread().getName() + "\nExpected thread: " + this.J.getThread().getName(), new IllegalStateException());
-        }
-    }
-
-    @Override // yq3
-    public final void release() {
-        j(true);
-        int i = this.F - 1;
-        this.F = i;
-        if (i != 0) {
-            return;
-        }
-        if (this.w != -9223372036854775807L) {
-            ArrayList arrayList = new ArrayList(this.x);
-            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                ((aa3) arrayList.get(i2)).c(null);
-            }
-        }
-        v5c it = ym5.q(this.y).iterator();
-        while (it.hasNext()) {
-            ((ca3) it.next()).release();
-        }
-        i();
-    }
-
-    @Override // yq3
-    public final void u(Looper looper, uc8 uc8Var) {
-        synchronized (this) {
-            Looper looper2 = this.J;
-            if (looper2 == null) {
-                this.J = looper;
-                this.K = new Handler(looper);
-            } else {
-                gre.p(looper2 == looper);
-                this.K.getClass();
-            }
-        }
-        this.M = uc8Var;
-    }
-
-    @Override // yq3
-    public final int w(fm4 fm4Var) {
-        j(false);
-        i54 i54Var = this.G;
-        i54Var.getClass();
-        int v = i54Var.v();
-        qq3 qq3Var = fm4Var.x;
-        if (qq3Var == null) {
-            int h = ud7.h(fm4Var.t);
-            int i = 0;
-            while (true) {
-                int[] iArr = this.f;
-                if (i >= iArr.length) {
-                    i = -1;
-                    break;
+                break;
+            case 7:
+                gda.v0 = !gda.v0;
+                SharedPreferences.Editor edit = oc7.d1().edit();
+                edit.putBoolean("inappCamera", gda.v0);
+                edit.apply();
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                if (iArr[i] == h) {
-                    break;
+                break;
+            case 8:
+                cf7 messagesStorage2 = getMessagesStorage();
+                messagesStorage2.a.c(new xd7(messagesStorage2, (byte) 11));
+                uf2 e2 = uf2.e(this.currentAccount);
+                e2.c = 0L;
+                e2.d = 0L;
+                e2.f().edit().clear().apply();
+                getMessagesController().X3.edit().remove("peerColors").remove("profilePeerColors").apply();
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                i++;
-            }
-            if (i == -1) {
-                return 0;
-            }
-        } else if (this.L == null) {
-            UUID uuid = this.a;
-            if (h(qq3Var, uuid, true).isEmpty()) {
-                if (qq3Var.d == 1 && qq3Var.a[0].a(g51.c)) {
-                    lad.f("DefaultDrmSessionMgr", "DrmInitData only contains common PSSH SchemeData. Assuming support for: " + uuid);
+                break;
+            case 9:
+                sic.i(getParentActivity());
+                z = true;
+                if (c6cVar.a == 4) {
                 }
-                return 1;
-            }
-            String str = qq3Var.c;
-            if (str != null && !"cenc".equals(str) && (!"cbcs".equals(str) ? "cbc1".equals(str) || "cens".equals(str) : Build.VERSION.SDK_INT < 25)) {
-                return 1;
-            }
+                break;
+            case 10:
+                z = true;
+                ((LaunchActivity) getParentActivity()).A(true);
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 11:
+                z = true;
+                gda.U = !gda.U;
+                SharedPreferences.Editor edit2 = oc7.d1().edit();
+                edit2.putBoolean("disableVoiceAudioEffects", gda.U);
+                edit2.apply();
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 12:
+                gda.f1 = null;
+                gda.x();
+                nm7.e().k(nm7.U4, new Object[0]);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 13:
+                Set set = getMessagesController().u3;
+                set.add("VALIDATE_PHONE_NUMBER");
+                set.add("VALIDATE_PASSWORD");
+                getNotificationCenter().k(nm7.s1, new Object[0]);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 14:
+                a.b.deleteDatabase("webview.db");
+                a.b.deleteDatabase("webviewCache.db");
+                WebStorage.getInstance().deleteAllData();
+                try {
+                    WebView webView = new WebView(a.b);
+                    webView.clearHistory();
+                    webView.destroy();
+                } catch (Exception unused) {
+                }
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 15:
+                CookieManager cookieManager = CookieManager.getInstance();
+                cookieManager.removeAllCookies(null);
+                cookieManager.flush();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 16:
+                gda.J();
+                Toast.makeText(getParentActivity(), jb6.M0(gda.F0 ? 2131751555 : 2131751556, null), 0).show();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 17:
+                gda.V = !gda.V;
+                SharedPreferences.Editor edit3 = oc7.d1().edit();
+                edit3.putBoolean("forceDisableTabletMode", gda.V);
+                edit3.apply();
+                Activity parentActivity = getParentActivity();
+                if (parentActivity != null) {
+                    Intent launchIntentForPackage = parentActivity.getPackageManager().getLaunchIntentForPackage(parentActivity.getPackageName());
+                    parentActivity.finishAffinity();
+                    parentActivity.startActivity(launchIntentForPackage);
+                }
+                System.exit(0);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 18:
+                vie.a((LaunchActivity) getParentActivity(), !gda.t1, true);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 19:
+                getMessagesController().W2(true);
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PHONE_NUMBER";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new aa3(this, (byte) 0));
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 20:
+                int i2 = ConnectionsManager.CPU_COUNT;
+                int memoryClass = ((ActivityManager) a.b.getSystemService("activity")).getMemoryClass();
+                StringBuilder sb = new StringBuilder();
+                long j = 0;
+                long j2 = 0;
+                long j3 = 0;
+                long j4 = 0;
+                long j5 = 0;
+                long j6 = 0;
+                long j7 = 0;
+                long j8 = 0;
+                for (int i3 = 0; i3 < i2; i3++) {
+                    Long h1 = gm.h1("/sys/devices/system/cpu/cpu" + i3 + "/cpufreq/cpuinfo_min_freq");
+                    Long h12 = gm.h1("/sys/devices/system/cpu/cpu" + i3 + "/cpufreq/cpuinfo_cur_freq");
+                    Long h13 = gm.h1("/sys/devices/system/cpu/cpu" + i3 + "/cpufreq/cpuinfo_max_freq");
+                    Long h14 = gm.h1("/sys/devices/system/cpu/cpu" + i3 + "/cpu_capacity");
+                    sb.append("#");
+                    sb.append(i3);
+                    sb.append(" ");
+                    if (h1 != null) {
+                        sb.append("min=");
+                        l = h12;
+                        sb.append(h1.longValue() / 1000);
+                        sb.append(" ");
+                        j = (h1.longValue() / 1000) + j;
+                        j2++;
+                    } else {
+                        l = h12;
+                    }
+                    if (l != null) {
+                        sb.append("cur=");
+                        sb.append(l.longValue() / 1000);
+                        sb.append(" ");
+                        j3 = (l.longValue() / 1000) + j3;
+                        j4++;
+                    }
+                    if (h13 != null) {
+                        sb.append("max=");
+                        sb.append(h13.longValue() / 1000);
+                        sb.append(" ");
+                        j5 = (h13.longValue() / 1000) + j5;
+                        j6++;
+                    }
+                    if (h14 != null) {
+                        sb.append("cpc=");
+                        sb.append(h14);
+                        sb.append(" ");
+                        j7 = h14.longValue() + j7;
+                        j8++;
+                    }
+                    sb.append("\n");
+                }
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(Build.MANUFACTURER);
+                sb2.append(", ");
+                sb2.append(Build.MODEL);
+                sb2.append(" (");
+                sb2.append(Build.PRODUCT);
+                sb2.append(", ");
+                sb2.append(Build.DEVICE);
+                sb2.append(")  (android ");
+                int i4 = Build.VERSION.SDK_INT;
+                sb2.append(i4);
+                sb2.append(")\n");
+                if (i4 >= 31) {
+                    sb2.append("SoC: ");
+                    sb2.append(Build.SOC_MANUFACTURER);
+                    sb2.append(", ");
+                    sb2.append(Build.SOC_MODEL);
+                    sb2.append("\n");
+                }
+                String i1 = gm.i1("/sys/kernel/gpu/gpu_model");
+                if (i1 != null) {
+                    sb2.append("GPU: ");
+                    sb2.append(i1);
+                    Long h15 = gm.h1("/sys/kernel/gpu/gpu_min_clock");
+                    Long h16 = gm.h1("/sys/kernel/gpu/gpu_mm_min_clock");
+                    Long h17 = gm.h1("/sys/kernel/gpu/gpu_max_clock");
+                    if (h15 != null) {
+                        sb2.append(", min=");
+                        sb2.append(h15.longValue() / 1000);
+                    }
+                    if (h16 != null) {
+                        sb2.append(", mmin=");
+                        sb2.append(h16.longValue() / 1000);
+                    }
+                    if (h17 != null) {
+                        sb2.append(", max=");
+                        sb2.append(h17.longValue() / 1000);
+                    }
+                    sb2.append("\n");
+                }
+                ConfigurationInfo deviceConfigurationInfo = ((ActivityManager) a.b.getSystemService("activity")).getDeviceConfigurationInfo();
+                sb2.append("GLES Version: ");
+                sb2.append(deviceConfigurationInfo.getGlEsVersion());
+                sb2.append("\nMemory: class=");
+                sb2.append(gm.i0(memoryClass << 20, false, false));
+                ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+                ((ActivityManager) a.b.getSystemService("activity")).getMemoryInfo(memoryInfo);
+                sb2.append(", total=");
+                sb2.append(gm.i0(memoryInfo.totalMem, false, false));
+                sb2.append(", avail=");
+                sb2.append(gm.i0(memoryInfo.availMem, false, false));
+                sb2.append(", low?=");
+                sb2.append(memoryInfo.lowMemory);
+                sb2.append(" (threshold=");
+                sb2.append(gm.i0(memoryInfo.threshold, false, false));
+                sb2.append(")\nCurrent class: ");
+                sb2.append(gda.w(gda.o()));
+                sb2.append(", measured: ");
+                sb2.append(gda.w(gda.u()));
+                if (i4 >= 31) {
+                    sb2.append(", suggest=");
+                    sb2.append(Build.VERSION.MEDIA_PERFORMANCE_CLASS);
+                }
+                sb2.append("\n");
+                sb2.append(i2);
+                sb2.append(" CPUs");
+                if (j2 > 0) {
+                    sb2.append(", avgMinFreq=");
+                    sb2.append(j / j2);
+                }
+                if (j4 > 0) {
+                    sb2.append(", avgCurFreq=");
+                    sb2.append(j3 / j4);
+                }
+                if (j6 > 0) {
+                    sb2.append(", avgMaxFreq=");
+                    sb2.append(j5 / j6);
+                }
+                if (j8 > 0) {
+                    sb2.append(", avgCapacity=");
+                    sb2.append(j7 / j8);
+                }
+                sb2.append("\n");
+                sb2.append((CharSequence) sb);
+                d0("video/avc", sb2);
+                d0("video/hevc", sb2);
+                d0("video/x-vnd.on2.vp8", sb2);
+                d0("video/x-vnd.on2.vp9", sb2);
+                showDialog(new ca3(this, getParentActivity(), sb2.toString()));
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 21:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getResourceProvider(), getParentActivity());
+                alertDialog$Builder.a.S = "Force performance class";
+                int o = gda.o();
+                int u = gda.u();
+                alertDialog$Builder.e(new CharSequence[]{gm.S2((o == 2 ? "**HIGH**" : "HIGH").concat(u == 2 ? " (measured)" : "")), gm.S2((o == 1 ? "**AVERAGE**" : "AVERAGE").concat(u == 1 ? " (measured)" : "")), gm.S2((o == 0 ? "**LOW**" : "LOW").concat(u == 0 ? " (measured)" : ""))}, new ba3(u, (byte) 0));
+                wi8.y(null, 2131752542, alertDialog$Builder, null);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 22:
+            case 28:
+            case 40:
+            default:
+                return;
+            case 23:
+                boolean o2 = ss3.o(getParentActivity());
+                oc7.d1().edit().putBoolean("dual_available", !o2).apply();
+                try {
+                    Toast.makeText(getParentActivity(), jb6.M0(!o2 ? 2131751570 : 2131751572, null), 0).show();
+                } catch (Exception unused2) {
+                }
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 24:
+                gda.M();
+                while (i < getParentLayout().getFragmentStack().size()) {
+                    ((d) getParentLayout().getFragmentStack().get(i)).clearSheets();
+                    i++;
+                }
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 25:
+                gda.L();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 26:
+                gda.K();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 27:
+                getMediaDataController().G0(false, true, null);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 29:
+                up0.a();
+                tr0.b();
+                mq0.a();
+                yaa.c();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case nm7.S /* 30 */:
+                p50.a();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 31:
+                gda.O();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 32:
+                gda.I();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 33:
+                gda.N0 = !gda.N0;
+                SharedPreferences.Editor edit4 = oc7.d1().edit();
+                edit4.putBoolean("debugVideoQualities", gda.N0);
+                edit4.apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 34:
+                gda.R0 = !gda.R0;
+                gm.a = null;
+                SharedPreferences.Editor edit5 = oc7.d1().edit();
+                edit5.putBoolean("useSystemBoldFont", gda.R0);
+                edit5.apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 35:
+                oc7.r1(this.currentAccount).W2(true);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 36:
+                gda.m = !gda.m;
+                SharedPreferences.Editor edit6 = oc7.d1().edit();
+                edit6.putBoolean("forceForumTabs", gda.m);
+                edit6.apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 37:
+                fc4.j();
+                fc4.c(true);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 38:
+                gda.n = !gda.n;
+                SharedPreferences.Editor edit7 = oc7.d1().edit();
+                edit7.putBoolean("fastWallpaperDisabled", gda.n);
+                edit7.apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 39:
+                gda.o = !gda.o;
+                SharedPreferences.Editor edit8 = oc7.d1().edit();
+                edit8.putBoolean("frameMetricsEnabled", gda.o);
+                edit8.apply();
+                LaunchActivity launchActivity = LaunchActivity.H1;
+                if (launchActivity != null) {
+                    launchActivity.C();
+                }
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 41:
+                SharedPreferences.Editor edit9 = a.b.getSharedPreferences("mainconfig", 0).edit();
+                boolean z2 = !gda.c1;
+                gda.c1 = z2;
+                edit9.putBoolean("debugViewMetrics", z2).apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 42:
+                in0 in0Var = yed.a;
+                synchronized (in0Var) {
+                    if (!in0Var.b) {
+                        SharedPreferences sharedPreferences = jaa.a;
+                        in0Var.c = sharedPreferences.contains("experimental_settings_allowed");
+                        in0Var.d = sharedPreferences.getBoolean("experimental_settings_allowed", true);
+                        in0Var.b = true;
+                    }
+                    boolean z3 = !in0Var.d;
+                    in0Var.d = z3;
+                    in0Var.c = true;
+                    in0Var.b = true;
+                    jaa.a.edit().putBoolean("experimental_settings_allowed", z3).apply();
+                }
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 43:
+                while (i < 4) {
+                    if (z8c.h(i).o()) {
+                        cf7 Y = cf7.Y(i);
+                        Y.a.c(new xd7(Y, b2));
+                    }
+                    i++;
+                }
+                c41.b0(this).Q(R.raw.done, 36, "Widget heights cleared").j();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 44:
+                gda.G0 = !gda.G0;
+                oc7.d1().edit().putBoolean("widgetStaticLayers", gda.G0).apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 45:
+                gda.C(false);
+                kt6.i(kt6.i(kt6.i(kt6.i(kt6.i(kt6.i(kt6.i(kt6.i(kt6.i(kt6.i(oc7.d1().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("searchpostsnew"), "speedhint", "gifhint", "reminderhint", "soundHint"), "themehint", "bganimationhint", "filterhint", "n_0"), "storyprvhint", "storyhint", "storyhint2", "storydualhint"), "storysvddualhint", "stories_camera", "dualcam", "dualmatrix"), "dual_available", "archivehint", "askNotificationsAfter", "askNotificationsDuration"), "viewoncehint", "voicepausehint", "taptostorysoundhint", "nothanos"), "voiceoncehint", "savedhint", "savedsearchhint", "savedsearchtaghint"), "newppsms", "monetizationadshint", "seekSpeedHintShowed", "unsupport_video/av01"), "statusgiftpage", "multistorieshint", "trimvoicehint", "taptostoryhighlighthint"), "proxycheckstatusip", "callmiconstart", "showchattagsinfo", "language_showed2").remove("aihintshown").remove("savedmsgschatshint").remove("walletcardstickerhint").apply();
+                sle.a();
+                ewe.a(this.currentAccount);
+                oc7.r1(this.currentAccount).Y3.edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
+                oc7.e1().edit().remove("disable_sharing_learn").remove("askedAboutFSILockscreen").apply();
+                gda.I = 0;
+                gda.N = 0;
+                gda.Q = false;
+                gda.O = false;
+                gda.P = false;
+                gda.Y0 = 3;
+                gda.Z0 = 3;
+                gda.a1 = 3;
+                gda.r1 = 3;
+                gda.b0 = 2;
+                gda.Q(2);
+                gda.G(false);
+                gda.F(false);
+                gda.B(false);
+                getNotificationCenter().k(nm7.s1, new Object[0]);
+                qc9.a0();
+                m58.e(this.currentAccount).a();
+                SharedPreferences sharedPreferences2 = getMessagesController().X3;
+                SharedPreferences.Editor edit10 = sharedPreferences2.edit();
+                edit10.remove("boostingappearance").remove("bizbothint").remove("movecaptionhint");
+                for (String str : sharedPreferences2.getAll().keySet()) {
+                    if (str.contains("show_gift_for_") || str.contains("bdayhint_") || str.contains("bdayanim_") || str.startsWith("ask_paid_message_") || str.startsWith("topicssidetabs")) {
+                        edit10.remove(str);
+                    }
+                }
+                edit10.apply();
+                SharedPreferences.Editor edit11 = oc7.r1(this.currentAccount).W3.edit();
+                for (String str2 : oc7.r1(this.currentAccount).W3.getAll().keySet()) {
+                    if (str2.startsWith("dialog_bar_botver")) {
+                        edit11.remove(str2);
+                    }
+                }
+                edit11.apply();
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
+            case 46:
+                gda.D0 = !gda.D0;
+                SharedPreferences.Editor edit12 = oc7.d1().edit();
+                edit12.putBoolean("compactMode", gda.D0);
+                edit12.apply();
+                cmb.j(false, false);
+                z = true;
+                if (c6cVar.a == 4) {
+                }
+                break;
         }
-        return v;
+    }
+
+    @Override // n7c
+    public final boolean c0(c6c c6cVar, View view) {
+        return false;
+    }
+
+    @Override // n7c, org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.fragmentView = super.createView(context);
+        this.a.r1();
+        this.a.setSectionsDrawBackground(true);
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final r59 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

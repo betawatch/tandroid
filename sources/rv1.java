@@ -1,35 +1,32 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rv1 implements View.OnLongClickListener {
+public final /* synthetic */ class rv1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ ah7 b;
 
-    public /* synthetic */ rv1(ChatActivityEnterView chatActivityEnterView, byte b) {
+    public /* synthetic */ rv1(ah7 ah7Var, byte b) {
         this.a = b;
-        this.b = chatActivityEnterView;
+        this.b = ah7Var;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
+        ah7 ah7Var = this.b;
         switch (b) {
             case 0:
-                int i = ChatActivityEnterView.r7;
+                ah7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                ah7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                int i2 = ChatActivityEnterView.r7;
-                ex1 ex1Var = chatActivityEnterView.F0;
-                if (ex1Var != null && ex1Var.length() > 0) {
-                    break;
-                }
+                ah7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
-        return chatActivityEnterView.f1(view);
     }
 }

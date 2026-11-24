@@ -1,52 +1,26 @@
 // default package
 
-import android.os.Parcel;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.Arrays;
-
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gcd implements pcd, zef, f69 {
-    public static final r7e a(Object obj, Object obj2) {
-        r7e r7eVar = (r7e) obj;
-        r7e r7eVar2 = (r7e) obj2;
-        if (!r7eVar2.isEmpty()) {
-            if (!r7eVar.a) {
-                if (r7eVar.isEmpty()) {
-                    r7eVar = new r7e();
-                } else {
-                    r7e r7eVar3 = new r7e(r7eVar);
-                    r7eVar3.a = true;
-                    r7eVar = r7eVar3;
-                }
-            }
-            r7eVar.c();
-            if (!r7eVar2.isEmpty()) {
-                r7eVar.putAll(r7eVar2);
-            }
-        }
-        return r7eVar;
-    }
+public abstract class gcd {
+    public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
-    @Override // f69
-    public final void accept(Object obj, Object obj2) {
-        mce mceVar = (mce) ((ahf) obj).k();
-        vyd vydVar = new vyd((TaskCompletionSource) obj2, (byte) 2);
-        Parcel obtain = Parcel.obtain();
-        obtain.writeInterfaceToken("com.google.android.gms.auth.api.phone.internal.ISmsRetrieverApiService");
-        int i = jhd.a;
-        obtain.writeStrongBinder(vydVar);
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            mceVar.a.transact(1, obtain, obtain2, 0);
-            obtain2.readException();
-        } finally {
-            obtain.recycle();
-            obtain2.recycle();
+    public static String a(int i, byte[] bArr) {
+        int length = bArr.length;
+        char[] cArr = new char[(length << 1) + (i > 0 ? length / i : 0)];
+        int i2 = 0;
+        for (int i3 = 0; i3 < length; i3++) {
+            if (i > 0 && i3 % i == 0 && i2 > 0) {
+                cArr[i2] = '-';
+                i2++;
+            }
+            int i4 = i2 + 1;
+            byte b = bArr[i3];
+            char[] cArr2 = a;
+            cArr[i2] = cArr2[(b & 240) >>> 4];
+            i2 += 2;
+            cArr[i4] = cArr2[b & 15];
         }
-    }
-
-    @Override // pcd
-    public final byte[] c(int i, int i2, byte[] bArr) {
-        return Arrays.copyOfRange(bArr, i, i2 + i);
+        return new String(cArr);
     }
 }

@@ -1,205 +1,66 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.List;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class z63 extends ccb implements qp4 {
-    public Object a;
-    public Serializable b;
-    public Object c;
-    public Object d;
-    public Iterator e;
-    public int f;
-    public byte h;
-    public final /* synthetic */ v73 n;
-    public final /* synthetic */ c5a r;
+public final class z63 implements ga6 {
+    public final /* synthetic */ c73 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z63(v73 v73Var, c5a c5aVar, fw2 fw2Var) {
-        super(1, fw2Var);
-        this.n = v73Var;
-        this.r = c5aVar;
+    public /* synthetic */ z63(c73 c73Var) {
+        this.a = c73Var;
     }
 
-    @Override // of0
-    public final fw2 create(fw2 fw2Var) {
-        return new z63(this.n, this.r, fw2Var);
+    public final void a() {
+        long j;
+        c73 c73Var = this.a;
+        synchronized (afd.b) {
+            j = afd.c ? afd.d : -9223372036854775807L;
+        }
+        c73Var.N = j;
+        c73Var.z(true);
     }
 
-    @Override // qp4
-    public final Object invoke(Object obj) {
-        return ((z63) create((fw2) obj)).invokeSuspend(g5c.a);
+    @Override // ga6
+    public final ha6 f2(ja6 ja6Var, long j, long j2, IOException iOException, int i) {
+        dx7 dx7Var = (dx7) ja6Var;
+        c73 c73Var = this.a;
+        kq kqVar = c73Var.r;
+        da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
+        c0b c0bVar = dx7Var.d;
+        da6Var.d = c0bVar.c;
+        da6Var.e = c0bVar.d;
+        da6Var.f = j2;
+        da6Var.g = c0bVar.b;
+        kqVar.s(new ea6(da6Var), dx7Var.c, iOException, true);
+        c73Var.n.getClass();
+        c73Var.y(iOException);
+        return mx6.y;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00e5  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00d8  */
-    @Override // of0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        lh7 nh7Var;
-        z49 z49Var;
-        c59 c59Var;
-        c59 c59Var2;
-        Iterator it;
-        lh7 lh7Var;
-        z49 z49Var2;
-        c59 c59Var3;
-        y63 y63Var;
-        nh7 nh7Var2;
-        c59 c59Var4;
-        z49 z49Var3;
-        Object obj2;
-        int hashCode;
-        Object b;
-        Object obj3;
-        byte b2 = this.h;
-        c5a c5aVar = this.r;
-        v73 v73Var = this.n;
-        bx2 bx2Var = bx2.a;
-        if (b2 == 0) {
-            qse.b(obj);
-            nh7Var = new nh7();
-            z49Var = new z49();
-            c59Var = new c59();
-            this.a = nh7Var;
-            this.b = z49Var;
-            this.c = c59Var;
-            this.d = c59Var;
-            this.h = (byte) 1;
-            obj = v73Var.h(true, this);
-            if (obj != bx2Var) {
-                c59Var2 = c59Var;
-            }
-            return bx2Var;
-        }
-        if (b2 != 1) {
-            if (b2 != 2) {
-                if (b2 != 3) {
-                    if (b2 != 4) {
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
-                        return null;
-                    }
-                    hashCode = this.f;
-                    obj3 = this.a;
-                    qse.b(obj);
-                    return new s53(hashCode, ((Number) obj).intValue(), obj3);
-                }
-                Object obj4 = (lh7) this.c;
-                c59Var4 = (c59) this.b;
-                z49Var3 = (z49) this.a;
-                qse.b(obj);
-                obj2 = obj4;
-                try {
-                    z49Var3.a = true;
-                    ((nh7) obj2).f(null);
-                    Object obj5 = c59Var4.a;
-                    hashCode = obj5 == null ? obj5.hashCode() : 0;
-                    kp5 c = v73Var.c();
-                    this.a = obj5;
-                    this.b = null;
-                    this.c = null;
-                    this.f = hashCode;
-                    this.h = (byte) 4;
-                    b = c.b(this);
-                    if (b != bx2Var) {
-                        obj = b;
-                        obj3 = obj5;
-                        return new s53(hashCode, ((Number) obj).intValue(), obj3);
-                    }
-                    return bx2Var;
-                } catch (Throwable th) {
-                    ((nh7) obj2).f(null);
-                    throw th;
-                }
-            }
-            it = this.e;
-            y63Var = (y63) this.d;
-            c59Var3 = (c59) this.c;
-            z49Var2 = (z49) this.b;
-            lh7Var = (lh7) this.a;
-            qse.b(obj);
-            while (it.hasNext()) {
-                eq4 eq4Var = (eq4) it.next();
-                this.a = lh7Var;
-                this.b = z49Var2;
-                this.c = c59Var3;
-                this.d = y63Var;
-                this.e = it;
-                this.h = (byte) 2;
-                if (eq4Var.invoke(y63Var, this) == bx2Var) {
-                    break;
-                }
-            }
-            c59Var2 = c59Var3;
-            z49Var = z49Var2;
-            nh7Var = lh7Var;
-            c5aVar.d = null;
-            this.a = z49Var;
-            this.b = c59Var2;
-            this.c = nh7Var;
-            this.d = null;
-            this.e = null;
-            this.h = (byte) 3;
-            nh7Var2 = (nh7) nh7Var;
-            if (nh7Var2.d(this) != bx2Var) {
-                c59Var4 = c59Var2;
-                z49Var3 = z49Var;
-                obj2 = nh7Var2;
-                z49Var3.a = true;
-                ((nh7) obj2).f(null);
-                Object obj52 = c59Var4.a;
-                if (obj52 == null) {
-                }
-                kp5 c2 = v73Var.c();
-                this.a = obj52;
-                this.b = null;
-                this.c = null;
-                this.f = hashCode;
-                this.h = (byte) 4;
-                b = c2.b(this);
-                if (b != bx2Var) {
-                }
-            }
-            return bx2Var;
-        }
-        c59Var = (c59) this.d;
-        c59Var2 = (c59) this.c;
-        z49Var = (z49) this.b;
-        nh7Var = (lh7) this.a;
-        qse.b(obj);
-        c59Var.a = ((s53) obj).b;
-        y63 y63Var2 = new y63(nh7Var, z49Var, c59Var2, v73Var);
-        List list = (List) c5aVar.d;
-        if (list != null) {
-            it = list.iterator();
-            lh7Var = nh7Var;
-            z49Var2 = z49Var;
-            c59Var3 = c59Var2;
-            y63Var = y63Var2;
-            while (it.hasNext()) {
-            }
-            c59Var2 = c59Var3;
-            z49Var = z49Var2;
-            nh7Var = lh7Var;
-        }
-        c5aVar.d = null;
-        this.a = z49Var;
-        this.b = c59Var2;
-        this.c = nh7Var;
-        this.d = null;
-        this.e = null;
-        this.h = (byte) 3;
-        nh7Var2 = (nh7) nh7Var;
-        if (nh7Var2.d(this) != bx2Var) {
-        }
-        return bx2Var;
+    @Override // ga6
+    public final void g0(ja6 ja6Var, long j, long j2) {
+        dx7 dx7Var = (dx7) ja6Var;
+        c73 c73Var = this.a;
+        da6 da6Var = new da6(dx7Var.a, dx7Var.b, j);
+        c0b c0bVar = dx7Var.d;
+        da6Var.d = c0bVar.c;
+        da6Var.e = c0bVar.d;
+        da6Var.f = j2;
+        da6Var.g = c0bVar.b;
+        ea6 ea6Var = new ea6(da6Var);
+        c73Var.n.getClass();
+        c73Var.r.p(ea6Var, dx7Var.c);
+        c73Var.N = ((Long) dx7Var.f).longValue() - j;
+        c73Var.z(true);
+    }
+
+    @Override // ga6
+    public final void w(ja6 ja6Var, long j, long j2, boolean z) {
+        this.a.x((dx7) ja6Var, j, j2);
+    }
+
+    @Override // ga6
+    public final void W0(ja6 ja6Var, long j, long j2, int i) {
     }
 }

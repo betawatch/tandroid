@@ -1,44 +1,46 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class w82 extends c6 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ f92 b;
+public final class w82 implements y70 {
+    public final /* synthetic */ m8[] a;
+    public final /* synthetic */ z82 b;
 
-    public w82(f92 f92Var, Context context) {
-        this.b = f92Var;
-        this.a = context;
+    public w82(z82 z82Var, m8[] m8VarArr) {
+        this.b = z82Var;
+        this.a = m8VarArr;
     }
 
-    @Override // c6
-    public final void b(int i) {
-        f92 f92Var = this.b;
-        if (i == -1) {
-            f92Var.finishFragment();
-            return;
+    @Override // y70
+    public final void dismiss() {
+        m8 m8Var = this.a[0];
+        if (m8Var != null) {
+            m8Var.dismiss();
         }
-        if (i == 1) {
-            sha shaVar = f92Var.r;
-            if (shaVar == null || !shaVar.y.f) {
-                String K = hc2.K(f92Var.Y, false);
-                if (!f92Var.W || TextUtils.isEmpty(K)) {
-                    f92Var.d0();
-                    return;
-                }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f92Var.getResourceProvider(), this.a);
-                String M0 = k96.M0(f92Var.b0 ? 2131748510 : 2131748508, null);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.S = M0;
-                hdVar.U = gl.T2(k96.a0(null, null, f92Var.b0 ? 2131748511 : 2131748509, ls6.o(f92Var.getMessagesController().N2, "/", K, new StringBuilder())));
-                alertDialog$Builder.j(k96.M0(2131751759, null), new rh1(this, (byte) 20));
-                alertDialog$Builder.g(k96.M0(2131752577, null), null);
-                f92Var.showDialog(hdVar);
+    }
+
+    @Override // y70
+    public final void l(int i, int i2) {
+        yv1 yv1Var = this.b.H;
+        if (yv1Var != null) {
+            yv1Var.getMessagesController().P4(i, yv1Var.a());
+            TLRPC.ChatFull chatFull = yv1Var.r8;
+            TLRPC.UserFull userFull = yv1Var.s8;
+            if (userFull == null && chatFull == null) {
+                return;
+            }
+            yv1Var.i6();
+            UndoView undoView = yv1Var.N3;
+            if (undoView != null) {
+                undoView.k(yv1Var.a(), i2, yv1Var.h(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
             }
         }
+    }
+
+    @Override // y70
+    public final void n() {
     }
 }

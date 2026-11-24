@@ -1,12 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class cqe {
-    public static boolean a(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
+    public static long[] a(long[]... jArr) {
+        long j = 0;
+        for (long[] jArr2 : jArr) {
+            j += jArr2.length;
         }
-        return true;
+        int i = (int) j;
+        jte.d(j, "the total number of elements (%s) in the arrays must fit in an int", j == ((long) i));
+        long[] jArr3 = new long[i];
+        int i2 = 0;
+        for (long[] jArr4 : jArr) {
+            System.arraycopy(jArr4, 0, jArr3, i2, jArr4.length);
+            i2 += jArr4.length;
+        }
+        return jArr3;
+    }
+
+    public static int b(long j) {
+        return (int) (j ^ (j >>> 32));
     }
 }

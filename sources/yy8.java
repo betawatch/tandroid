@@ -1,12 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class yy8 {
-    public static final r3 a;
+public final class yy8 {
+    public final Class a;
+    public final Class b;
 
-    static {
-        Integer num = ps5.a;
-        a = (num == null || num.intValue() >= 34) ? new wb8() : new b84();
+    public yy8(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
+    }
+
+    public static yy8 a(Class cls) {
+        return new yy8(xy8.class, cls);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || yy8.class != obj.getClass()) {
+            return false;
+        }
+        yy8 yy8Var = (yy8) obj;
+        if (this.b.equals(yy8Var.b)) {
+            return this.a.equals(yy8Var.a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() + (this.b.hashCode() * 31);
+    }
+
+    public final String toString() {
+        Class cls = this.b;
+        Class cls2 = this.a;
+        if (cls2 == xy8.class) {
+            return cls.getName();
+        }
+        return "@" + cls2.getName() + " " + cls.getName();
     }
 }

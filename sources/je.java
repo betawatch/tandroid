@@ -1,34 +1,57 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class je implements Runnable {
+public final /* synthetic */ class je implements qq7, eja {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hj b;
-    public final /* synthetic */ hd c;
-    public final /* synthetic */ d d;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ je(hj hjVar, hd hdVar, d dVar, byte b) {
+    public /* synthetic */ je(FrameLayout frameLayout, byte b) {
         this.a = b;
-        this.b = hjVar;
-        this.c = hdVar;
-        this.d = dVar;
+        this.b = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // qq7
+    public final wzc C0(View view, wzc wzcVar) {
+        Rect rect = new Rect();
+        int i = Build.VERSION.SDK_INT;
+        tzc tzcVar = wzcVar.a;
+        if (i >= 30) {
+            iq5 f = tzcVar.f(527);
+            rect.set(f.a, f.b, f.c, f.d);
+        } else {
+            rect.set(tzcVar.i().a, tzcVar.i().b, tzcVar.i().c, tzcVar.i().d);
+        }
+        int i2 = rect.left;
+        int i3 = rect.top;
+        int i4 = rect.right;
+        int i5 = rect.bottom + gm.n;
+        FrameLayout frameLayout = this.b;
+        frameLayout.setPadding(i2, i3, i4, i5);
+        frameLayout.requestLayout();
+        return wzcVar;
+    }
+
+    @Override // eja
+    public final void c(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
         byte b = this.a;
-        d dVar = this.d;
-        hd hdVar = this.c;
-        hj hjVar = this.b;
+        FrameLayout frameLayout = this.b;
         switch (b) {
-            case 0:
-                gl.d3(new je(hjVar, hdVar, dVar, (byte) 1));
+            case 1:
+                r59 r59Var = (r59) recyclerView;
+                tl0.a(r59Var, canvas, rectF, r59Var, frameLayout);
                 break;
             default:
-                ij.b0(hjVar, hdVar, dVar);
+                r59 r59Var2 = (r59) recyclerView;
+                tl0.a(r59Var2, canvas, rectF, r59Var2, frameLayout);
                 break;
         }
     }

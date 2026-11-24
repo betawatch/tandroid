@@ -1,32 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class du7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gu7 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 
-    public /* synthetic */ du7(gu7 gu7Var, byte b) {
-        this.a = b;
-        this.b = gu7Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class du7 extends View {
+    public final Paint a;
+    public float b;
+
+    public du7(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(gm.L(2.0f));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        gu7 gu7Var = this.b;
-        switch (b) {
-            case 0:
-                gu7Var.c = null;
-                u39 u39Var = gu7Var.a;
-                if (u39Var != null) {
-                    u39Var.i0();
-                    break;
-                }
-                break;
-            default:
-                gu7Var.b();
-                break;
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint = this.a;
+        canvas.drawLine((getWidth() / 2.0f) + gm.L(gm.R1(-6.7f, -7.0f, this.b)), (getHeight() / 2.0f) + gm.L(gm.R1(0.71f, 0.0f, this.b)), (getWidth() / 2.0f) + gm.L(gm.R1(-2.45f, 7.0f, this.b)), (getHeight() / 2.0f) + gm.L(gm.R1(4.79f, 0.0f, this.b)), paint);
+        canvas.drawLine((getWidth() / 2.0f) + gm.L(gm.R1(-2.45f, 0.0f, this.b)), (getHeight() / 2.0f) + gm.L(gm.R1(4.79f, 7.0f, this.b)), (getWidth() / 2.0f) + gm.L(gm.R1(6.59f, 0.0f, this.b)), (getHeight() / 2.0f) + gm.L(gm.R1(-4.27f, -7.0f, this.b)), paint);
+    }
+
+    public void setProgress(float f) {
+        this.b = f;
+        invalidate();
     }
 }

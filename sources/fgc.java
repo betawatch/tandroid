@@ -1,53 +1,35 @@
 // default package
 
-import android.content.Intent;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class fgc implements m4 {
-    public final /* synthetic */ hgc a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class fgc extends w1 {
+    public static final Parcelable.Creator<fgc> CREATOR = new v1((byte) 4);
+    public int c;
+    public Parcelable d;
+    public final ClassLoader e;
 
-    public fgc(hgc hgcVar) {
-        this.a = hgcVar;
+    public fgc(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        classLoader = classLoader == null ? fgc.class.getClassLoader() : classLoader;
+        this.c = parcel.readInt();
+        this.d = parcel.readParcelable(classLoader);
+        this.e = classLoader;
     }
 
-    public final void a() {
-        hgc hgcVar = this.a;
-        if (hgcVar.p0 != 17) {
-            if (hgcVar.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                hgcVar.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
-                return;
-            } else {
-                if (VoIPService.getSharedState() != null) {
-                    hgcVar.i(new kbc(this, (byte) 9));
-                    return;
-                }
-                return;
-            }
-        }
-        Intent intent = new Intent(hgcVar.b, (Class<?>) VoIPService.class);
-        intent.putExtra("user_id", hgcVar.d.id);
-        intent.putExtra("is_outgoing", true);
-        intent.putExtra("start_incall_activity", false);
-        intent.putExtra("video_call", hgcVar.U0);
-        intent.putExtra("can_video_call", hgcVar.U0);
-        intent.putExtra("account", hgcVar.a);
-        try {
-            hgcVar.b.startService(intent);
-        } catch (Throwable th) {
-            fa4.g(th, true);
-        }
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("FragmentPager.SavedState{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(" position=");
+        return hg9.k(sb, this.c, "}");
     }
 
-    public final void b() {
-        hgc hgcVar = this.a;
-        if (hgcVar.p0 == 17) {
-            hgcVar.u0.b();
-        } else if (VoIPService.getSharedState() != null) {
-            VoIPService.getSharedState().declineIncomingCall();
-        } else {
-            hgcVar.u0.b();
-        }
+    @Override // w1, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeInt(this.c);
+        parcel.writeParcelable(this.d, i);
     }
 }

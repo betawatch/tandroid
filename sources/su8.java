@@ -1,56 +1,83 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class su8 extends b4 {
-    public static final Parcelable.Creator<su8> CREATOR = new j9d(2);
-    public final qae a;
-    public final String b;
-    public final String c;
-    public final String d;
+public final class su8 implements jr9 {
+    public final int a;
+    public final boolean b;
+    public final /* synthetic */ uu8 c;
 
-    public su8(String str, byte[] bArr, String str2, String str3) {
-        fre.h(bArr);
-        this.a = qae.o(bArr.length, bArr);
-        fre.h(str);
-        this.b = str;
-        this.c = str2;
-        fre.h(str3);
-        this.d = str3;
+    public su8(uu8 uu8Var, int i, boolean z) {
+        this.c = uu8Var;
+        this.a = i;
+        this.b = z;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof su8)) {
-            return false;
+    @Override // jr9
+    public final int a() {
+        return this.b ? 4 : 0;
+    }
+
+    @Override // jr9
+    public final void d() {
+        int i = this.a;
+        uu8 uu8Var = this.c;
+        uu8Var.M[i].C();
+        mx6 mx6Var = uu8Var.y;
+        int v3 = uu8Var.d.v3(uu8Var.W);
+        IOException iOException = (IOException) mx6Var.d;
+        if (iOException != null) {
+            throw iOException;
         }
-        su8 su8Var = (su8) obj;
-        return cqe.a(this.a, su8Var.a) && cqe.a(this.b, su8Var.b) && cqe.a(this.c, su8Var.c) && cqe.a(this.d, su8Var.d);
+        ia6 ia6Var = (ia6) mx6Var.c;
+        if (ia6Var != null) {
+            if (v3 == Integer.MIN_VALUE) {
+                v3 = ia6Var.a;
+            }
+            IOException iOException2 = ia6Var.e;
+            if (iOException2 != null && ia6Var.f > v3) {
+                throw iOException2;
+            }
+        }
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d});
+    @Override // jr9
+    public final boolean i() {
+        uu8 uu8Var = this.c;
+        return !uu8Var.C() && uu8Var.M[this.a].A(uu8Var.j0);
     }
 
-    public final String toString() {
-        StringBuilder p = ug8.p("PublicKeyCredentialUserEntity{\n id=", und.b(this.a.p()), ", \n name='");
-        p.append(this.b);
-        p.append("', \n icon='");
-        p.append(this.c);
-        p.append("', \n displayName='");
-        return b00.j(p, this.d, "'}");
+    @Override // jr9
+    public final int m(long j) {
+        uu8 uu8Var = this.c;
+        if (uu8Var.C()) {
+            return 0;
+        }
+        int i = this.a;
+        uu8Var.v(i);
+        hr9 hr9Var = uu8Var.M[i];
+        int x = hr9Var.x(j, uu8Var.j0);
+        hr9Var.L(x);
+        if (x == 0) {
+            uu8Var.x(i);
+        }
+        return x;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.c(parcel, 2, this.a.p());
-        jte.l(parcel, 3, this.b);
-        jte.l(parcel, 4, this.c);
-        jte.l(parcel, 5, this.d);
-        jte.s(parcel, r);
+    @Override // jr9
+    public final int p(mj4 mj4Var, la3 la3Var, int i) {
+        uu8 uu8Var = this.c;
+        if (uu8Var.C()) {
+            return -3;
+        }
+        int i2 = this.a;
+        uu8Var.v(i2);
+        int F = uu8Var.M[i2].F(mj4Var, la3Var, i, uu8Var.j0);
+        if (F == -3) {
+            uu8Var.x(i2);
+        }
+        return F;
     }
 }

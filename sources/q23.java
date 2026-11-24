@@ -1,50 +1,41 @@
 // default package
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class q23 extends j33 {
-    public final /* synthetic */ byte Q;
-    public final /* synthetic */ FrameLayout R;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class q23 extends b6c {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q23(FrameLayout frameLayout, Context context, byte b) {
-        super(context);
-        this.Q = b;
-        this.R = frameLayout;
+    static {
+        b6c.h(new q23());
     }
 
-    @Override // j33
-    public final int getCurrentHeight() {
-        int currentHeight;
-        int currentHeight2;
-        byte b = this.Q;
-        FrameLayout frameLayout = this.R;
-        switch (b) {
-            case 0:
-                currentHeight = ((t23) frameLayout).getCurrentHeight();
-                return currentHeight;
-            default:
-                currentHeight2 = ((y23) frameLayout).getCurrentHeight();
-                return currentHeight2;
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        hjb hjbVar = (hjb) view;
+        hjbVar.c(c6cVar.m, c6cVar.o, !c6cVar.j);
+        xna xnaVar = hjbVar.a;
+        if (c6cVar.m instanceof SpannableStringBuilder) {
+            xnaVar.setTextSize(1, 13.0f);
+            xnaVar.setTranslationY(gm.L(2.0f));
+            xnaVar.setTypeface(gm.n1("fonts/rmono.ttf"));
         }
     }
 
-    @Override // j33
-    public final int getCurrentWidth() {
-        int currentWidth;
-        int currentWidth2;
-        byte b = this.Q;
-        FrameLayout frameLayout = this.R;
-        switch (b) {
-            case 0:
-                currentWidth = ((t23) frameLayout).getCurrentWidth();
-                return currentWidth;
-            default:
-                currentWidth2 = ((y23) frameLayout).getCurrentWidth();
-                return currentWidth2;
-        }
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        hjb hjbVar = new hjb(ylbVar, context, true);
+        anb.h(cmb.c6, ylbVar, hjbVar);
+        Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
+        anb.x(hjbVar, mutate, cmb.K6, ylbVar, PorterDuff.Mode.MULTIPLY);
+        hjbVar.setImage(mutate);
+        hjbVar.setImageClickListener(new rc1(this, context, hjbVar));
+        return hjbVar;
     }
 }

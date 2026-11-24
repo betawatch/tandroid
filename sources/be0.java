@@ -1,332 +1,353 @@
 // default package
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class be0 extends View {
-    public tgb E;
-    public Path F;
-    public ColorMatrixColorFilter G;
-    public ImageReceiver a;
-    public ImageReceiver b;
-    public int c;
-    public int d;
-    public vl e;
-    public ColorFilter f;
-    public pb0 h;
-    public boolean n;
+public final class be0 extends d implements jm7 {
+    public int E;
+    public int F;
+    public int G;
+    public uja a;
+    public q7c b;
+    public t51 c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public TL_account.TL_businessAwayMessage h;
+    public byte n;
     public boolean r;
     public boolean s;
     public boolean w;
-    public boolean x;
-    public ValueAnimator y;
+    public byte x;
+    public int y;
 
-    public be0(Context context) {
-        super(context);
-        this.c = -1;
-        this.d = -1;
-        this.x = true;
-        ImageReceiver c = c();
-        this.a = c;
-        c.o1 = 0.0f;
-        c.A1 = true;
-        c.h1 = new l0(this, (byte) 27);
-    }
-
-    public final void a() {
-        Bitmap n;
-        if (!this.r || this.b.n() != null || this.a.n() == null || (n = this.a.n()) == null || n.isRecycled()) {
+    public final void Z(boolean z) {
+        if (this.a == null) {
             return;
         }
-        this.b.f0(Utilities.D(n, false));
-        invalidate();
+        this.a.a(b0(), z);
     }
 
-    public final void b() {
-        this.a.f();
-    }
-
-    public ImageReceiver c() {
-        return new ImageReceiver(this);
-    }
-
-    public final void e() {
+    public final void a0(ArrayList arrayList, l7c l7cVar) {
+        String M0 = jb6.M0(2131752791, null);
+        String M02 = jb6.M0(2131752788, null);
+        c6c c6cVar = new c6c(2);
+        c6cVar.m = M0;
+        c6cVar.p = M02;
+        c6cVar.n = "RestrictedEmoji";
+        c6cVar.o = "💤";
+        arrayList.add(c6cVar);
+        c6c i = c6c.i(1, jb6.M0(2131752774, null));
+        i.L(this.r);
+        arrayList.add(i);
+        arrayList.add(c6c.C(null));
         if (this.r) {
-            if (this.b.n() != null && !this.b.n().isRecycled()) {
-                this.b.n().recycle();
-            }
-            this.b.g0(null);
-            a();
-        }
-    }
-
-    public final void f(TLObject tLObject, pb0 pb0Var) {
-        this.a.U(tLObject, pb0Var, null);
-        e();
-    }
-
-    public final void g(int i, long j, gl5 gl5Var, gl5 gl5Var2, Object obj, String str, String str2, String str3) {
-        this.a.Z(gl5Var, str, gl5Var2, str2, null, j, str3, obj, i);
-        e();
-    }
-
-    public vl getAnimatedEmojiDrawable() {
-        return this.e;
-    }
-
-    public pb0 getAvatarDrawable() {
-        pb0 pb0Var = this.h;
-        if (pb0Var != null) {
-            return pb0Var;
-        }
-        pb0 pb0Var2 = new pb0((wjb) null);
-        this.h = pb0Var2;
-        return pb0Var2;
-    }
-
-    public ImageReceiver getImageReceiver() {
-        return this.a;
-    }
-
-    public int[] getRoundRadius() {
-        return this.a.X0;
-    }
-
-    public final void h(gl5 gl5Var, String str, gl5 gl5Var2, String str2, int i, Object obj) {
-        k(gl5Var, str, gl5Var2, str2, null, null, i, obj);
-    }
-
-    public final void j(gl5 gl5Var, String str, gl5 gl5Var2, String str2, Drawable drawable, Object obj) {
-        this.a.Y(gl5Var, str, gl5Var2, str2, null, null, drawable, 0L, null, obj, 1);
-        e();
-    }
-
-    public final void k(gl5 gl5Var, String str, gl5 gl5Var2, String str2, Drawable drawable, String str3, int i, Object obj) {
-        this.a.Z(gl5Var, str, gl5Var2, str2, drawable, i, str3, obj, 0);
-        e();
-    }
-
-    public final void m(gl5 gl5Var, String str, Drawable drawable, Object obj) {
-        k(gl5Var, str, null, null, drawable, null, 0, obj);
-    }
-
-    public final void n(gl5 gl5Var, String str, String str2, Drawable drawable, Object obj) {
-        k(gl5Var, str, null, null, drawable, str2, 0, obj);
-    }
-
-    public final void o(String str, String str2, Drawable drawable) {
-        k(gl5.g(str), str2, null, null, drawable, null, 0, null);
-    }
-
-    @Override // android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.n = true;
-        if (this.x) {
-            this.a.I();
-        }
-        if (this.s) {
-            this.b.I();
-        }
-        vl vlVar = this.e;
-        if (vlVar != null) {
-            vlVar.b(this);
-        }
-    }
-
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.n = false;
-        if (this.x) {
-            this.a.K();
-        }
-        if (this.s) {
-            this.b.K();
-        }
-        vl vlVar = this.e;
-        if (vlVar != null) {
-            vlVar.o(this);
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        int i;
-        ColorFilter colorFilter;
-        vl vlVar = this.e;
-        ImageReceiver imageReceiver = vlVar != null ? vlVar.k : this.a;
-        if (imageReceiver != null) {
-            if (vlVar != null && (colorFilter = this.f) != null) {
-                vlVar.setColorFilter(colorFilter);
-            }
-            int i2 = this.c;
-            if (i2 == -1 || (i = this.d) == -1) {
-                imageReceiver.i0(0.0f, 0.0f, getWidth(), getHeight());
-                if (this.s) {
-                    this.b.i0(0.0f, 0.0f, getWidth(), getHeight());
-                }
-            } else if (this.w) {
-                imageReceiver.i0(0.0f, 0.0f, i2, i);
-                if (this.s) {
-                    this.b.i0(0.0f, 0.0f, this.c, this.d);
-                }
+            oz8 d = pz8.f(this.currentAccount).d("away");
+            if (d != null) {
+                c6c c6cVar2 = new c6c(17);
+                c6cVar2.H = d;
+                arrayList.add(c6cVar2);
             } else {
-                float width = (getWidth() - this.c) / 2;
-                int height = getHeight();
-                imageReceiver.i0(width, (height - r3) / 2, this.c, this.d);
-                if (this.s) {
-                    ImageReceiver imageReceiver2 = this.b;
-                    float width2 = (getWidth() - this.c) / 2;
-                    int height2 = getHeight();
-                    imageReceiver2.i0(width2, (height2 - r4) / 2, this.c, this.d);
+                c6c c = c6c.c(2, R.drawable.msg2_chats_add, jb6.M0(2131752790, null));
+                c.r = true;
+                arrayList.add(c);
+            }
+            arrayList.add(c6c.C(null));
+            arrayList.add(c6c.u(jb6.M0(2131752783, null)));
+            c6c x = c6c.x(3, jb6.M0(2131752782, null));
+            x.L(this.x == 0);
+            arrayList.add(x);
+            if (this.d) {
+                c6c x2 = c6c.x(4, jb6.M0(2131752775, null));
+                x2.L(this.x == 1);
+                arrayList.add(x2);
+            }
+            c6c x3 = c6c.x(5, jb6.M0(2131752781, null));
+            x3.L(this.x == 2);
+            arrayList.add(x3);
+            if (this.x == 2) {
+                arrayList.add(c6c.C(null));
+                arrayList.add(c6c.u(jb6.M0(2131752783, null)));
+                arrayList.add(c6c.f(jb6.M0(2131752777, null), jb6.Q(this.F), 8));
+                arrayList.add(c6c.f(jb6.M0(2131752780, null), jb6.Q(this.G), 9));
+            }
+            arrayList.add(c6c.C(null));
+            c6c i2 = c6c.i(10, jb6.M0(2131752785, null));
+            i2.L(this.w);
+            arrayList.add(i2);
+            arrayList.add(c6c.C(jb6.M0(2131752784, null)));
+            arrayList.add(c6c.u(jb6.M0(2131752641, null)));
+            c6c x4 = c6c.x(6, jb6.M0(2131752734, null));
+            x4.L(this.s);
+            arrayList.add(x4);
+            c6c x5 = c6c.x(7, jb6.M0(2131752729, null));
+            x5.L(!this.s);
+            arrayList.add(x5);
+            arrayList.add(c6c.C(null));
+            this.c.a(arrayList, l7cVar, true);
+            arrayList.add(c6c.C(null));
+        }
+    }
+
+    public final boolean b0() {
+        t51 t51Var;
+        if (this.e) {
+            boolean z = this.r;
+            TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.h;
+            if (z == (tL_businessAwayMessage != null)) {
+                if (z && tL_businessAwayMessage != null) {
+                    if (tL_businessAwayMessage.recipients.exclude_selected == this.s && ((t51Var = this.c) == null || !t51Var.g())) {
+                        byte b = this.n;
+                        byte b2 = this.x;
+                        if (b != b2 || this.h.offline_only != this.w || (b2 == 2 && (this.y != this.F || this.E != this.G))) {
+                        }
+                    }
                 }
             }
-            imageReceiver.h(canvas, null);
-            if (this.s) {
-                this.b.h(canvas, null);
+            return true;
+        }
+        return false;
+    }
+
+    public final void c0() {
+        if (this.a.y.f) {
+            return;
+        }
+        if (!b0()) {
+            finishFragment();
+            return;
+        }
+        oz8 d = pz8.f(this.currentAccount).d("away");
+        byte b = 2;
+        if (this.r) {
+            if (d == null) {
+                xx0.E.a();
+                View B1 = this.b.B1(2);
+                int i = -this.f;
+                this.f = i;
+                gm.A3(i, B1, null);
+                q7c q7cVar = this.b;
+                q7cVar.z0(q7cVar.A1(2));
+                return;
+            }
+            if (!this.c.k(this.b)) {
+                return;
             }
         }
-    }
-
-    public final void p(gl5 gl5Var, String str, Drawable drawable, Object obj) {
-        k(gl5Var, str, null, null, drawable, null, 0, obj);
-    }
-
-    public final void q() {
-        this.a.o0(0, 0, true);
-    }
-
-    public final void r(int i, int i2, boolean z) {
-        this.a.o0(i, i2, true);
-    }
-
-    public final void s(int i, int i2, int i3, int i4) {
-        this.a.r0(i, i2, i3, i4);
-        if (this.s) {
-            this.b.r0(i, i2, i3, i4);
+        this.a.b(true);
+        TLRPC.UserFull X1 = getMessagesController().X1(getUserConfig().e());
+        TL_account.updateBusinessAwayMessage updatebusinessawaymessage = new TL_account.updateBusinessAwayMessage();
+        if (this.r) {
+            TL_account.TL_inputBusinessAwayMessage tL_inputBusinessAwayMessage = new TL_account.TL_inputBusinessAwayMessage();
+            updatebusinessawaymessage.message = tL_inputBusinessAwayMessage;
+            tL_inputBusinessAwayMessage.offline_only = this.w;
+            tL_inputBusinessAwayMessage.shortcut_id = d.a;
+            tL_inputBusinessAwayMessage.recipients = this.c.e();
+            byte b2 = this.x;
+            if (b2 == 0) {
+                updatebusinessawaymessage.message.schedule = new TL_account.TL_businessAwayMessageScheduleAlways();
+            } else if (b2 == 1) {
+                updatebusinessawaymessage.message.schedule = new TL_account.TL_businessAwayMessageScheduleOutsideWorkHours();
+            } else if (b2 == 2) {
+                TL_account.TL_businessAwayMessageScheduleCustom tL_businessAwayMessageScheduleCustom = new TL_account.TL_businessAwayMessageScheduleCustom();
+                tL_businessAwayMessageScheduleCustom.start_date = this.F;
+                tL_businessAwayMessageScheduleCustom.end_date = this.G;
+                updatebusinessawaymessage.message.schedule = tL_businessAwayMessageScheduleCustom;
+            }
+            updatebusinessawaymessage.flags |= 1;
+            if (X1 != null) {
+                X1.flags2 |= 8;
+                TL_account.TL_businessAwayMessage tL_businessAwayMessage = new TL_account.TL_businessAwayMessage();
+                X1.business_away_message = tL_businessAwayMessage;
+                tL_businessAwayMessage.offline_only = this.w;
+                tL_businessAwayMessage.shortcut_id = d.a;
+                tL_businessAwayMessage.recipients = this.c.f();
+                X1.business_away_message.schedule = updatebusinessawaymessage.message.schedule;
+            }
+        } else if (X1 != null) {
+            X1.flags2 &= -9;
+            X1.business_away_message = null;
         }
-        invalidate();
+        getConnectionsManager().sendRequest(updatebusinessawaymessage, new tg(this, b));
+        getMessagesStorage().g2(X1, false);
     }
 
-    public void setAnimatedEmojiDrawable(vl vlVar) {
-        vl vlVar2 = this.e;
-        if (vlVar2 == vlVar) {
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(jb6.M0(2131752791, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new r8(this, (byte) 6));
+        this.a = this.simpleActionBar.s(jb6.M0(2131745680, null));
+        byte b = 0;
+        Z(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        t51 t51Var = new t51(this, new f00(this, (byte) 8));
+        this.c = t51Var;
+        t51Var.h = this.s;
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.h;
+        t51Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
+        q7c q7cVar = new q7c(this, new f(this, (byte) 14), new zd0(this, b), null);
+        this.b = q7cVar;
+        q7cVar.r1();
+        this.b.setSectionsDrawBackground(true);
+        q7c q7cVar2 = this.b;
+        q7cVar2.g3.r = false;
+        frameLayout.addView(q7cVar2, qoe.c(-1.0f, -1));
+        d0();
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00b6  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d0() {
+        q7c q7cVar;
+        l7c l7cVar;
+        if (this.e) {
             return;
         }
-        if (this.n && vlVar2 != null) {
-            vlVar2.o(this);
-        }
-        this.e = vlVar;
-        if (this.n && vlVar != null) {
-            vlVar.b(this);
-        }
-        invalidate();
-    }
-
-    public void setAspectFit(boolean z) {
-        this.a.S0 = z;
-    }
-
-    public void setBlurAllowed(boolean z) {
-        if (this.n) {
-            sc8.j("You should call setBlurAllowed(...) only when detached!");
+        TLRPC.UserFull X1 = getMessagesController().X1(getUserConfig().e());
+        if (X1 == null) {
+            getMessagesController().k3(getClassGuid(), getUserConfig().f(), true);
             return;
         }
-        this.s = z;
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage = X1.business_away_message;
+        this.h = tL_businessAwayMessage;
+        this.d = X1.business_work_hours != null;
+        this.r = tL_businessAwayMessage != null;
+        this.s = tL_businessAwayMessage != null ? tL_businessAwayMessage.recipients.exclude_selected : true;
+        this.w = tL_businessAwayMessage != null ? tL_businessAwayMessage.offline_only : true;
+        t51 t51Var = this.c;
+        if (t51Var != null) {
+            t51Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
+        }
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage2 = this.h;
+        if (tL_businessAwayMessage2 != null) {
+            TL_account.BusinessAwayMessageSchedule businessAwayMessageSchedule = tL_businessAwayMessage2.schedule;
+            if (businessAwayMessageSchedule instanceof TL_account.TL_businessAwayMessageScheduleCustom) {
+                this.n = (byte) 2;
+                this.x = (byte) 2;
+                TL_account.TL_businessAwayMessageScheduleCustom tL_businessAwayMessageScheduleCustom = (TL_account.TL_businessAwayMessageScheduleCustom) businessAwayMessageSchedule;
+                int i = tL_businessAwayMessageScheduleCustom.start_date;
+                this.y = i;
+                this.F = i;
+                int i2 = tL_businessAwayMessageScheduleCustom.end_date;
+                this.E = i2;
+                this.G = i2;
+                q7cVar = this.b;
+                if (q7cVar != null && (l7cVar = q7cVar.g3) != null) {
+                    l7cVar.O(true);
+                }
+                Z(true);
+                this.e = true;
+            }
+        }
+        this.F = getConnectionsManager().getCurrentTime();
+        this.G = getConnectionsManager().getCurrentTime() + 86400;
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage3 = this.h;
+        if (tL_businessAwayMessage3 != null) {
+            TL_account.BusinessAwayMessageSchedule businessAwayMessageSchedule2 = tL_businessAwayMessage3.schedule;
+            if (businessAwayMessageSchedule2 instanceof TL_account.TL_businessAwayMessageScheduleAlways) {
+                this.n = (byte) 0;
+                this.x = (byte) 0;
+            } else if (businessAwayMessageSchedule2 instanceof TL_account.TL_businessAwayMessageScheduleOutsideWorkHours) {
+                this.n = (byte) 1;
+                this.x = (byte) 1;
+            }
+            q7cVar = this.b;
+            if (q7cVar != null) {
+                l7cVar.O(true);
+            }
+            Z(true);
+            this.e = true;
+        }
+        this.n = (byte) 0;
+        this.x = (byte) 0;
+        q7cVar = this.b;
+        if (q7cVar != null) {
+        }
+        Z(true);
+        this.e = true;
+    }
+
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        l7c l7cVar;
+        if (i != nm7.F1) {
+            if (i == nm7.E0) {
+                d0();
+            }
+        } else {
+            q7c q7cVar = this.b;
+            if (q7cVar != null && (l7cVar = q7cVar.g3) != null) {
+                l7cVar.O(true);
+            }
+            Z(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final r59 getListViewForSimpleGlass() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onBackPressed(boolean z) {
+        if (!b0()) {
+            return super.onBackPressed(z);
+        }
         if (z) {
-            this.b = new ImageReceiver(null);
-        }
-    }
-
-    public void setBlurredText(CharSequence charSequence) {
-        if (TextUtils.isEmpty(charSequence)) {
-            this.E = null;
-            return;
-        }
-        this.E = new tgb(charSequence, 16.5f, gl.o());
-        if (this.G == null) {
-            ColorMatrix colorMatrix = new ColorMatrix();
-            colorMatrix.setSaturation(1.2f);
-            gl.h(colorMatrix, -0.2f);
-            this.G = new ColorMatrixColorFilter(colorMatrix);
-        }
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.a.p1 = colorFilter;
-    }
-
-    public void setEmojiColorFilter(ColorFilter colorFilter) {
-        this.f = colorFilter;
-        invalidate();
-    }
-
-    public void setHasBlur(boolean z) {
-        if (z && !this.s) {
-            sc8.j("You should call setBlurAllowed(...) before calling setHasBlur(true)!");
-            return;
-        }
-        this.r = z;
-        if (!z) {
-            if (this.b.n() != null && !this.b.n().isRecycled()) {
-                this.b.n().recycle();
+            if (!this.r) {
+                c0();
+                return false;
             }
-            this.b.g0(null);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+            String M0 = jb6.M0(2131743522, null);
+            he heVar = alertDialog$Builder.a;
+            heVar.S = M0;
+            heVar.U = jb6.M0(2131752773, null);
+            alertDialog$Builder.j(jb6.M0(2131754181, null), new zd0(this, (byte) 1));
+            alertDialog$Builder.g(jb6.M0(2131747313, null), new zd0(this, (byte) 2));
+            showDialog(heVar);
         }
-        a();
+        return false;
     }
 
-    public void setImageBitmap(Bitmap bitmap) {
-        this.a.f0(bitmap);
-        e();
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean onFragmentCreate() {
+        getNotificationCenter().b(this, nm7.F1);
+        getNotificationCenter().b(this, nm7.E0);
+        pz8.f(this.currentAccount).h();
+        d0();
+        return super.onFragmentCreate();
     }
 
-    public void setImageDrawable(Drawable drawable) {
-        this.a.g0(drawable);
-        e();
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        getNotificationCenter().n(this, nm7.F1);
+        getNotificationCenter().n(this, nm7.E0);
+        super.onFragmentDestroy();
     }
 
-    public void setImageResource(int i) {
-        this.a.g0(getResources().getDrawable(i));
-        invalidate();
-        e();
-    }
-
-    public void setLayerNum(int i) {
-        this.a.m0(i);
-    }
-
-    public void setRoundRadius(int i) {
-        this.a.q0(i);
-        if (this.s) {
-            this.b.q0(i);
-        }
-        invalidate();
-    }
-
-    public final void t(int i, int i2) {
-        this.c = i;
-        this.d = i2;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a.t() || drawable == this.a.T || super.verifyDrawable(drawable);
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

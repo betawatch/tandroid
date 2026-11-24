@@ -1,53 +1,32 @@
 // default package
 
-import j$.util.Objects;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class b8d extends r6d {
-    public static final b8d w = new b8d(0, new Object[0]);
-    public final transient Object[] r;
-    public final transient int s;
+public final class b8d extends b4 {
+    public static final Parcelable.Creator<b8d> CREATOR = new v6d((byte) 14);
+    public final boolean a;
 
-    public b8d(int i, Object[] objArr) {
-        super((byte) 2);
-        this.r = objArr;
-        this.s = i;
+    public b8d(boolean z) {
+        this.a = z;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        k4f.a(i, this.s);
-        Object obj = this.r[i];
-        Objects.requireNonNull(obj);
-        return obj;
+    public final boolean equals(Object obj) {
+        return (obj instanceof b8d) && this.a == ((b8d) obj).a;
     }
 
-    @Override // r6d, kzc
-    public final int p(Object[] objArr) {
-        Object[] objArr2 = this.r;
-        int i = this.s;
-        System.arraycopy(objArr2, 0, objArr, 0, i);
-        return i;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
     }
 
-    @Override // kzc
-    public final int q() {
-        return this.s;
-    }
-
-    @Override // kzc
-    public final int s() {
-        return 0;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.s;
-    }
-
-    @Override // kzc
-    public final Object[] v() {
-        return this.r;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        mve.s(parcel, r);
     }
 }

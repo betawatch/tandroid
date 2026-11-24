@@ -1,32 +1,59 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class iu0 extends mu1 {
-    public boolean vd;
-    public final /* synthetic */ TLRPC.User wd;
-    public final /* synthetic */ long xd;
-    public final /* synthetic */ hv0 yd;
+public final class iu0 {
+    public final int a;
+    public final long b;
+    public int c;
+    public boolean d;
+    public long f;
+    public boolean h;
+    public boolean i;
+    public String j;
+    public final ArrayList e = new ArrayList();
+    public int g = 1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iu0(hv0 hv0Var, Bundle bundle, TLRPC.User user, long j) {
-        super(bundle);
-        this.yd = hv0Var;
-        this.wd = user;
-        this.xd = j;
+    public iu0(int i, long j) {
+        this.h = false;
+        this.i = false;
+        this.j = null;
+        this.a = i;
+        this.b = j;
+        if (System.currentTimeMillis() - this.f > 900000) {
+            this.c = 0;
+            this.d = false;
+            this.i = false;
+            this.f = 0L;
+            this.j = null;
+            this.h = false;
+            a();
+        }
     }
 
-    @Override // mu1, org.telegram.ui.ActionBar.d
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.vd) {
+    public final void a() {
+        if (this.h || this.i || this.d) {
             return;
         }
-        this.vd = true;
-        u21.b0(this).I(R.raw.contact_check, k96.a0(null, null, 2131751727, l7c.q(this.wd)), gl.O2(k96.a0(null, null, 2131751728, l7c.q(this.yd.V)), -1, 0, new et(this, this.xd, (byte) 3), null)).j();
+        this.f = System.currentTimeMillis();
+        this.h = true;
+        TL_payments.getSuggestedStarRefBots getsuggestedstarrefbots = new TL_payments.getSuggestedStarRefBots();
+        int i = this.a;
+        getsuggestedstarrefbots.peer = oc7.r1(i).i1(this.b);
+        getsuggestedstarrefbots.limit = 20;
+        int i2 = this.g;
+        getsuggestedstarrefbots.order_by_date = i2 == 3;
+        getsuggestedstarrefbots.order_by_revenue = i2 == 2;
+        if (TextUtils.isEmpty(this.j)) {
+            getsuggestedstarrefbots.offset = "";
+        } else {
+            getsuggestedstarrefbots.offset = this.j;
+        }
+        ConnectionsManager.getInstance(i).sendRequest(getsuggestedstarrefbots, new tg(this, (byte) 7));
     }
 }

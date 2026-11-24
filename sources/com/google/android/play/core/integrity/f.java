@@ -3,7 +3,7 @@ package com.google.android.play.core.integrity;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.Set;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 final class f extends StandardIntegrityManager.StandardIntegrityTokenRequest.Builder {
     private String a;
@@ -16,7 +16,7 @@ final class f extends StandardIntegrityManager.StandardIntegrityTokenRequest.Bui
         if (set != null) {
             return new h(this.a, set, gVar);
         }
-        sc8.j("Missing required properties: verdictOptOut");
+        dq9.m("Missing required properties: verdictOptOut");
         return null;
     }
 
@@ -32,7 +32,7 @@ final class f extends StandardIntegrityManager.StandardIntegrityTokenRequest.Bui
             this.b = set;
             return this;
         }
-        fvc.f("Null verdictOptOut");
+        gxc.d("Null verdictOptOut");
         return null;
     }
 }

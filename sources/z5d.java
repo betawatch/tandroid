@@ -1,32 +1,37 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class z5d extends b4 {
-    public static final Parcelable.Creator<z5d> CREATOR = new t4d((byte) 14);
+public final class z5d implements wo {
+    public static final z5d c;
     public final boolean a;
+    public final String b;
 
-    public z5d(boolean z) {
-        this.a = z;
+    static {
+        rhb rhbVar = new rhb((byte) 9, false);
+        rhbVar.b = Boolean.FALSE;
+        c = new z5d(rhbVar);
+    }
+
+    public z5d(rhb rhbVar) {
+        this.a = ((Boolean) rhbVar.b).booleanValue();
+        this.b = (String) rhbVar.c;
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof z5d) && this.a == ((z5d) obj).a;
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof z5d)) {
+            return false;
+        }
+        z5d z5dVar = (z5d) obj;
+        return fse.a(null, null) && this.a == z5dVar.a && fse.a(this.b, z5dVar.b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.s(parcel, r);
+        return Arrays.hashCode(new Object[]{null, Boolean.valueOf(this.a), this.b});
     }
 }

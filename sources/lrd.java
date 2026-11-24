@@ -1,27 +1,47 @@
 // default package
 
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.os.Parcelable;
+import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class lrd extends b4 {
-    public static final Parcelable.Creator<lrd> CREATOR = new rpd((byte) 5);
-    public final int a;
-    public final ParcelFileDescriptor b;
-
-    public lrd(int i, ParcelFileDescriptor parcelFileDescriptor) {
-        this.a = i;
-        this.b = parcelFileDescriptor;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.k(parcel, 3, this.b, i);
-        jte.s(parcel, r);
+public abstract class lrd {
+    public static Object a(fs4 fs4Var) {
+        Thread currentThread = Thread.currentThread();
+        jk2 jk2Var = jk2.b;
+        o54 a = epb.a();
+        cy2 a2 = t1e.a(k34.a, a, true);
+        jd3 jd3Var = up3.a;
+        if (a2 != jd3Var && a2.get(jk2Var) == null) {
+            a2 = a2.plus(jd3Var);
+        }
+        ol0 ol0Var = new ol0(a2, currentThread, a);
+        ol0Var.R(ny2.a, ol0Var, fs4Var);
+        o54 o54Var = ol0Var.f;
+        if (o54Var != null) {
+            int i = o54.f;
+            o54Var.g(false);
+        }
+        while (!Thread.interrupted()) {
+            try {
+                long h = o54Var != null ? o54Var.h() : Long.MAX_VALUE;
+                if (!(ol0Var.v() instanceof ep5)) {
+                    Object a3 = hcd.a(ol0Var.v());
+                    qq2 qq2Var = a3 instanceof qq2 ? (qq2) a3 : null;
+                    if (qq2Var == null) {
+                        return a3;
+                    }
+                    throw qq2Var.a;
+                }
+                LockSupport.parkNanos(ol0Var, h);
+            } finally {
+                if (o54Var != null) {
+                    int i2 = o54.f;
+                    o54Var.f(false);
+                }
+            }
+        }
+        InterruptedException interruptedException = new InterruptedException();
+        ol0Var.i(interruptedException);
+        throw interruptedException;
     }
 }

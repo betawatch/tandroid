@@ -1,62 +1,11 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class yca {
+    public final String a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class yca extends mu1 {
-    public boolean vd;
-    public final /* synthetic */ int wd;
-    public final /* synthetic */ nfa xd;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yca(nfa nfaVar, Bundle bundle, int i) {
-        super(bundle);
-        this.xd = nfaVar;
-        this.wd = i;
-        this.vd = true;
-    }
-
-    @Override // mu1, org.telegram.ui.ActionBar.d
-    public final void onTransitionAnimationStart(boolean z, boolean z2) {
-        nfa nfaVar = this.xd;
-        zea zeaVar = nfaVar.V;
-        if (this.vd) {
-            if (this.k0 != null) {
-                pa("");
-                this.k0.P(zeaVar.x, false);
-            }
-            lr1 lr1Var = this.D1;
-            if (lr1Var != null) {
-                lr1Var.e(zeaVar.y, false);
-            }
-            hq6 mediaDataController = nfaVar.y1.getMediaDataController();
-            int classGuid = getClassGuid();
-            h19 h19Var = zeaVar.y;
-            String str = zeaVar.x;
-            ArrayList arrayList = zeaVar.n;
-            ArrayList arrayList2 = zeaVar.h;
-            int i = zeaVar.w;
-            boolean z3 = zeaVar.s;
-            mediaDataController.R0 = h19Var;
-            mediaDataController.e1 = str;
-            boolean[] zArr = mediaDataController.Y0;
-            zArr[0] = z3;
-            zArr[1] = true;
-            ArrayList arrayList3 = mediaDataController.a1;
-            arrayList3.clear();
-            arrayList3.addAll(arrayList2);
-            mediaDataController.b1.clear();
-            mediaDataController.b1.addAll(arrayList);
-            mediaDataController.m2();
-            int[] iArr = mediaDataController.X0;
-            iArr[0] = i;
-            iArr[1] = 0;
-            mediaDataController.f1 = this.wd;
-            mediaDataController.getNotificationCenter().k(kk7.G0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.e0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.f1), Integer.valueOf(mediaDataController.k0()), Boolean.TRUE);
-            this.vd = false;
-        }
-        super.onTransitionAnimationStart(z, z2);
+    public yca(String str) {
+        this.a = str;
     }
 }

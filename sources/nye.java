@@ -1,25 +1,10 @@
 // default package
 
-import android.app.AppOpsManager;
-import android.os.Process;
-import android.text.TextUtils;
-import org.telegram.messenger.a;
+import android.os.Binder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class nye {
-    public static boolean a() {
-        try {
-            AppOpsManager appOpsManager = (AppOpsManager) a.b.getSystemService("appops");
-            Class cls = Integer.TYPE;
-            return ((Integer) AppOpsManager.class.getMethod("checkOpNoThrow", cls, cls, String.class).invoke(appOpsManager, 10020, Integer.valueOf(Process.myUid()), a.b.getPackageName())).intValue() == 0;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return true;
-        }
-    }
-
-    public static boolean b() {
-        return !TextUtils.isEmpty(gl.j1("ro.miui.ui.version.name"));
-    }
+public abstract class nye extends Binder implements tje, IInterface {
+    public static final /* synthetic */ int a = 0;
 }

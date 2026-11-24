@@ -1,23 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final class iw8 {
-    public final String a;
-    public final String b;
-    public final boolean c;
-    public final boolean d;
-    public final boolean e;
-    public final long f;
-    public final boolean g;
+    public final rv3 a;
+    public final vqb b;
+    public final ye1 c = new ye1(64, new byte[64]);
+    public boolean d;
+    public boolean e;
+    public boolean f;
 
-    public iw8(String str, String str2, boolean z, boolean z2, boolean z3, long j, boolean z4) {
-        this.a = str;
-        this.b = str2;
-        this.c = z;
-        this.d = z2;
-        this.e = z3;
-        this.f = j;
-        this.g = z4;
+    public iw8(rv3 rv3Var, vqb vqbVar) {
+        this.a = rv3Var;
+        this.b = vqbVar;
     }
 }

@@ -1,182 +1,110 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class jj8 implements AutoCloseable {
-    public long e;
-    public boolean f;
-    public hj2 h;
-    public Throwable n;
-    public volatile Set r;
-    public final Object a = new Object();
-    public final LinkedHashMap c = new LinkedHashMap(16, 0.75f, true);
-    public final HashMap d = new HashMap();
-    public final ExecutorService b = Executors.newSingleThreadExecutor(new x20((byte) 4));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class jj8 extends LinearLayout {
+    public int a;
+    public final TextView b;
+    public final l66 c;
+    public LinearLayout d;
+    public final rt7 e;
+    public final ViewGroup f;
+    public boolean h;
+    public final /* synthetic */ kj8 n;
 
-    public jj8(k32 k32Var, k32 k32Var2) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r12v0, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, jj8] */
+    /* JADX WARN: Type inference failed for: r15v10, types: [sk8] */
+    /* JADX WARN: Type inference failed for: r15v9, types: [zi8] */
+    /* JADX WARN: Type inference failed for: r3v5, types: [bec] */
+    public jj8(kj8 kj8Var, Context context, int i) {
+        super(context);
+        lh0 lh0Var;
+        this.n = kj8Var;
+        byte b = 1;
+        setOrientation(1);
+        hk8 hk8Var = (hk8) kj8Var.n1.get(i);
+        byte b2 = hk8Var.a;
+        byte b3 = 0;
+        if (b2 == 0) {
+            lh0 kq3Var = new kq3(context, kj8Var.J0);
+            kq3Var.b.setOnScrollListener(new ej8(kj8Var, b));
+            lh0Var = kq3Var;
+        } else if (b2 == 14 || b2 == 28) {
+            lh0 aa4Var = new aa4(b2 == 28 ? 1 : 0, kj8Var.J0, context);
+            aa4Var.b.setOnScrollListener(new ej8(kj8Var, b3));
+            lh0Var = aa4Var;
+        } else {
+            lh0Var = b2 == 5 ? new fj8(context, kj8Var.a) : b2 == 10 ? new zi8(context, kj8Var.J0) : new bec(context, kj8Var.w1, kj8Var.a, hk8Var.a, kj8Var.J0);
+        }
+        this.f = lh0Var;
+        addView(lh0Var);
+        this.e = lh0Var;
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setGravity(1);
+        int i2 = cmb.i5;
+        td4.x(textView, i2, kj8Var.J0, 1, 20.0f);
+        addView(textView, qoe.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
+        l66 l66Var = new l66(context, null);
+        this.c = l66Var;
+        l66Var.setGravity(1);
+        l66Var.setTextSize(1, 15.0f);
+        anb.X(l66Var, i2, kj8Var.J0);
+        if (!kj8Var.y1) {
+            l66Var.setLines(2);
+        }
+        addView(l66Var, qoe.t(-1, -2, 1, 21, 10, 21, 16));
+        setImportantForAccessibility(2);
+        setClipChildren(false);
     }
 
-    public static String b(String str) {
-        String lowerCase;
-        if (str == null) {
-            return "";
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        if (view != this.f) {
+            return super.drawChild(canvas, view, j);
         }
-        lowerCase = str.trim().toLowerCase(Locale.ROOT);
-        lowerCase.getClass();
-        switch (lowerCase) {
-            case "c#":
-                return "csharp";
-            case "fc":
-                return "func";
-            case "c++":
-                return "cpp";
-            case "fif":
-                return "fift";
-            case "tl-b":
-                return "tlb";
-            default:
-                return lowerCase;
+        if (view instanceof lh0) {
+            setTranslationY(0.0f);
+            return super.drawChild(canvas, view, j);
         }
+        setTranslationY(this.n.F1);
+        canvas.save();
+        canvas.clipRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j);
+        canvas.restore();
+        return drawChild;
     }
 
-    public final boolean a() {
-        synchronized (this.a) {
-            if (this.f) {
-                return false;
-            }
-            if (this.h != null) {
-                return true;
-            }
-            if (this.n == null) {
-                try {
-                    try {
-                        hj2 c = k32.c();
-                        try {
-                            LinkedHashSet linkedHashSet = new LinkedHashSet();
-                            Collections.addAll(linkedHashSet, c.a.a());
-                            if (linkedHashSet.contains("func")) {
-                                linkedHashSet.add("fc");
-                            }
-                            if (linkedHashSet.contains("fift")) {
-                                linkedHashSet.add("fif");
-                            }
-                            if (linkedHashSet.contains("tlb")) {
-                                linkedHashSet.add("tl-b");
-                            }
-                            this.r = DesugarCollections.unmodifiableSet(linkedHashSet);
-                            this.h = c;
-                            return true;
-                        } catch (Error | RuntimeException e) {
-                            c.close();
-                            throw e;
-                        }
-                    } catch (Exception e2) {
-                        e = e2;
-                        this.n = e;
-                        try {
-                            fa4.g(e, true);
-                        } catch (LinkageError | RuntimeException unused) {
-                        }
-                        return false;
-                    }
-                } catch (LinkageError e3) {
-                    e = e3;
-                    this.n = e;
-                    fa4.g(e, true);
-                    return false;
-                } catch (OutOfMemoryError e4) {
-                    e = e4;
-                    this.n = e;
-                    fa4.g(e, true);
-                    return false;
-                }
-            }
-            return false;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        TextView textView = this.b;
+        textView.setVisibility(0);
+        ViewGroup viewGroup = this.f;
+        boolean z = viewGroup instanceof lh0;
+        kj8 kj8Var = this.n;
+        if (z) {
+            ((lh0) viewGroup).setTopOffset(kj8Var.F1);
         }
-    }
-
-    public final void c(hj8 hj8Var, wk4 wk4Var) {
-        fj8 fj8Var = new fj8(hj8Var, wk4Var);
-        long j = fj8Var.b;
-        if (j > 8388608) {
-            return;
-        }
-        LinkedHashMap linkedHashMap = this.c;
-        linkedHashMap.put(hj8Var, fj8Var);
-        this.e += j;
-        while (true) {
-            if (linkedHashMap.size() <= 256 && this.e <= 8388608) {
-                return;
-            }
-            Map.Entry entry = (Map.Entry) linkedHashMap.entrySet().iterator().next();
-            this.e -= ((fj8) entry.getValue()).b;
-            linkedHashMap.remove(entry.getKey());
-        }
-    }
-
-    @Override // java.lang.AutoCloseable
-    public final void close() {
-        synchronized (this.a) {
-            if (this.f) {
-                return;
-            }
-            this.f = true;
-            Iterator it = this.d.values().iterator();
-            while (true) {
-                int i = 0;
-                if (!it.hasNext()) {
-                    this.d.clear();
-                    this.c.clear();
-                    this.e = 0L;
-                    this.b.execute(new ej8(this, (byte) 0));
-                    this.b.shutdown();
-                    return;
-                }
-                ArrayList arrayList = (ArrayList) it.next();
-                int size = arrayList.size();
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
-                    ((ij8) obj).a = null;
-                }
-            }
-        }
-    }
-
-    public final ij8 d(String str, String str2, gj8 gj8Var) {
-        if (str == null) {
-            throw null;
-        }
-        hj8 hj8Var = new hj8(str, b(str2));
-        ij8 ij8Var = new ij8();
-        ij8Var.a = gj8Var;
-        synchronized (this.a) {
-            if (this.f) {
-                throw new IllegalStateException("Service is closed");
-            }
-            ArrayList arrayList = (ArrayList) this.d.get(hj8Var);
-            if (arrayList != null) {
-                arrayList.add(ij8Var);
-                return ij8Var;
-            }
-            ArrayList arrayList2 = new ArrayList();
-            arrayList2.add(ij8Var);
-            this.d.put(hj8Var, arrayList2);
-            this.b.execute(new h18(this, hj8Var, (byte) 23));
-            return ij8Var;
+        viewGroup.getLayoutParams().height = kj8Var.t1;
+        l66 l66Var = this.c;
+        l66Var.setVisibility(0);
+        ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
+        super.onMeasure(i, i2);
+        if (this.h) {
+            viewGroup.getLayoutParams().height = getMeasuredHeight() - gm.L(16.0f);
+            ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = gm.L(16.0f);
+            textView.setVisibility(8);
+            l66Var.setVisibility(8);
+            super.onMeasure(i, i2);
         }
     }
 }

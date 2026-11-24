@@ -1,48 +1,32 @@
 // default package
 
-import android.os.Handler;
-import android.os.Message;
-import java.util.TreeMap;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class rc8 implements Handler.Callback {
-    public final mv6 a;
-    public final lj9 b;
-    public h53 f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
-    public final TreeMap e = new TreeMap();
-    public final Handler d = g8c.q(this);
-    public final qr c = new qr((byte) 1);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rc8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tc8 b;
 
-    public rc8(h53 h53Var, lj9 lj9Var, mv6 mv6Var) {
-        this.f = h53Var;
-        this.b = lj9Var;
-        this.a = mv6Var;
+    public /* synthetic */ rc8(tc8 tc8Var, byte b) {
+        this.a = b;
+        this.b = tc8Var;
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        if (!this.r) {
-            if (message.what != 1) {
-                return false;
-            }
-            pc8 pc8Var = (pc8) message.obj;
-            long j = pc8Var.a;
-            long j2 = pc8Var.b;
-            Long valueOf = Long.valueOf(j2);
-            TreeMap treeMap = this.e;
-            Long l = (Long) treeMap.get(valueOf);
-            if (l == null) {
-                treeMap.put(Long.valueOf(j2), Long.valueOf(j));
-                return true;
-            }
-            if (l.longValue() > j) {
-                treeMap.put(Long.valueOf(j2), Long.valueOf(j));
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        tc8 tc8Var = this.b;
+        switch (b) {
+            case 0:
+                tc8Var.getClass();
+                tc8Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tc8Var.invalidate();
+                break;
+            default:
+                tc8Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tc8Var.invalidate();
+                break;
         }
-        return true;
     }
 }

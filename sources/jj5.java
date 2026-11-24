@@ -2,32 +2,7 @@
 
 import android.os.IInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public interface jj5 extends IInterface {
-    void A(int i, int i2, int i3, int[] iArr);
-
-    void C(int i, byte[] bArr);
-
-    void F(int i, int i2, byte[] bArr);
-
-    void J(byte[] bArr);
-
-    void K(int i, float f);
-
-    void O(int i);
-
-    void m(int i, int i2, int i3, byte[] bArr);
-
-    byte[] n(int i, int i2, int i3, int i4, int i5);
-
-    void o(int i);
-
-    void p(byte[] bArr, byte[] bArr2, double d, int i, int i2, float f, float f2, int i3, int i4);
-
-    float[] q(int i, byte[] bArr, float f, int i2, boolean z, byte[] bArr2);
-
-    void x(byte[] bArr);
-
-    float z(int i, byte[] bArr);
 }

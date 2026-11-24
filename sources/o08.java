@@ -1,52 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class o08 extends tmb {
-    public final /* synthetic */ byte I = 1;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public class o08 extends b4 {
+    public static final Parcelable.Creator<o08> CREATOR = new sje(7);
+    public final int a;
+    public final Float b;
 
-    public /* synthetic */ o08(Context context, ui5 ui5Var, int i) {
-        super(context, ui5Var, i);
-    }
-
-    public final /* synthetic */ void b(Canvas canvas) {
-        super.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.I) {
-            case 0:
-                if (!canvas.isHardwareAccelerated()) {
-                    zdc.a(canvas, this, new zf7(this, (byte) 10));
-                    break;
-                } else {
-                    super.draw(canvas);
-                    break;
-                }
-            default:
-                super.draw(canvas);
-                break;
+    public o08(int i, Float f) {
+        boolean z = true;
+        if (i != 1 && (f == null || f.floatValue() < 0.0f)) {
+            z = false;
         }
+        ite.a("Invalid PatternItem: type=" + i + " length=" + f, z);
+        this.a = i;
+        this.b = f;
     }
 
-    @Override // tmb, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.I) {
-            case 1:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        if (!(obj instanceof o08)) {
+            return false;
+        }
+        o08 o08Var = (o08) obj;
+        return this.a == o08Var.a && fse.a(this.b, o08Var.b);
     }
 
-    public /* synthetic */ o08(Context context, ui5 ui5Var, int i, long j, wjb wjbVar) {
-        super(context, ui5Var, i, j, wjbVar);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), this.b});
+    }
+
+    public String toString() {
+        return "[PatternItem: type=" + this.a + " length=" + this.b + "]";
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        mve.e(parcel, 3, this.b);
+        mve.s(parcel, r);
     }
 }

@@ -1,23 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class wce implements zn7 {
-    public static final wce a = new wce();
-    public static final w84 b = new w84("detectorOptions", b00.m(yjb.q(kkd.class, new cjd(1))));
-    public static final w84 c = new w84("errorCodes", b00.m(yjb.q(kkd.class, new cjd(2))));
-    public static final w84 d = new w84("totalInitializationMs", b00.m(yjb.q(kkd.class, new cjd(3))));
-    public static final w84 e = new w84("loggingInitializationMs", b00.m(yjb.q(kkd.class, new cjd(4))));
-    public static final w84 f = new w84("otherErrors", b00.m(yjb.q(kkd.class, new cjd(5))));
+public final class wce {
+    public final utd a;
+    public final String b;
+    public final Object[] c;
+    public final int d;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        bxe bxeVar = (bxe) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, bxeVar.a);
-        ao7Var.a(c, bxeVar.b);
-        ao7Var.a(d, null);
-        ao7Var.a(e, null);
-        ao7Var.a(f, null);
+    public wce(utd utdVar, String str, Object[] objArr) {
+        this.a = utdVar;
+        this.b = str;
+        this.c = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.d = charAt;
+            return;
+        }
+        int i = charAt & 8191;
+        int i2 = 1;
+        int i3 = 13;
+        while (true) {
+            int i4 = i2 + 1;
+            char charAt2 = str.charAt(i2);
+            if (charAt2 < 55296) {
+                this.d = i | (charAt2 << i3);
+                return;
+            } else {
+                i |= (charAt2 & 8191) << i3;
+                i3 += 13;
+                i2 = i4;
+            }
+        }
+    }
+
+    public final int a() {
+        int i = this.d;
+        if ((i & 1) != 0) {
+            return 1;
+        }
+        return (i & 4) == 4 ? 3 : 2;
     }
 }

@@ -1,25 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class sj7 implements no3, fg2 {
-    public static final sj7 a = new sj7();
+public final class sj7 {
+    public final int a;
+    public final int b;
 
-    @Override // fg2
-    public final boolean a(Throwable th) {
-        return false;
-    }
-
-    @Override // fg2
-    public final bt5 getParent() {
-        return null;
-    }
-
-    public final String toString() {
-        return "NonDisposableHandle";
-    }
-
-    @Override // no3
-    public final void dispose() {
+    public sj7(int i, int i2) {
+        this.a = i;
+        this.b = i2;
     }
 }

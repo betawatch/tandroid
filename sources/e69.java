@@ -1,21 +1,21 @@
 // default package
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class e69 implements Executor {
-    public final /* synthetic */ ExecutorService a;
-    public final /* synthetic */ w26 b;
-
-    public e69(ExecutorService executorService, w26 w26Var) {
-        this.a = executorService;
-        this.b = w26Var;
+public abstract class e69 {
+    public void d(Rect rect, View view, RecyclerView recyclerView, r69 r69Var) {
+        ((g69) view.getLayoutParams()).b();
+        rect.set(0, 0, 0, 0);
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.execute(runnable);
+    public void e(Canvas canvas, RecyclerView recyclerView) {
+    }
+
+    public void f(Canvas canvas, RecyclerView recyclerView) {
     }
 }

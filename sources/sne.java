@@ -1,133 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class sne {
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0077 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0076 A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int a(int i, CharSequence charSequence) {
-        char charAt;
-        if (i >= charSequence.length()) {
-            return -1;
-        }
-        if (charSequence.charAt(i) == '<') {
-            while (true) {
-                i++;
-                if (i >= charSequence.length() || (charAt = charSequence.charAt(i)) == '\n' || charAt == '<') {
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
+    public static final Class a(cj2 cj2Var) {
+        Class a = cj2Var.a();
+        if (a.isPrimitive()) {
+            String name = a.getName();
+            switch (name.hashCode()) {
+                case -1325958191:
+                    if (name.equals("double")) {
+                        return Double.class;
+                    }
                     break;
-                }
-                if (charAt == '>') {
-                    return i + 1;
-                }
-                if (charAt == '\\') {
-                    int i2 = i + 1;
-                    if (lqe.a(i2, charSequence)) {
-                        i = i2;
+                case 104431:
+                    if (name.equals("int")) {
+                        return Integer.class;
                     }
-                }
-            }
-            return -1;
-        }
-        int i3 = 0;
-        int i4 = i;
-        while (i4 < charSequence.length()) {
-            char charAt2 = charSequence.charAt(i4);
-            if (charAt2 == 0 || charAt2 == ' ') {
-                if (i4 != i) {
-                    return i4;
-                }
-                return -1;
-            }
-            if (charAt2 == '\\') {
-                int i5 = i4 + 1;
-                if (lqe.a(i5, charSequence)) {
-                    i4 = i5;
-                }
-            } else if (charAt2 == '(') {
-                i3++;
-                if (i3 > 32) {
-                    return -1;
-                }
-            } else if (charAt2 != ')') {
-                if (Character.isISOControl(charAt2)) {
-                    if (i4 != i) {
+                    break;
+                case 3039496:
+                    if (name.equals("byte")) {
+                        return Byte.class;
                     }
-                }
-            } else {
-                if (i3 == 0) {
-                    return i4;
-                }
-                i3--;
-            }
-            i4++;
-        }
-        return charSequence.length();
-    }
-
-    public static int b(int i, CharSequence charSequence) {
-        while (i < charSequence.length()) {
-            switch (charSequence.charAt(i)) {
-                case kk7.b1 /* 91 */:
-                    return -1;
-                case kk7.c1 /* 92 */:
-                    int i2 = i + 1;
-                    if (!lqe.a(i2, charSequence)) {
-                        break;
-                    } else {
-                        i = i2;
-                        break;
+                    break;
+                case 3052374:
+                    if (name.equals("char")) {
+                        return Character.class;
                     }
-                case kk7.d1 /* 93 */:
-                    return i;
+                    break;
+                case 3327612:
+                    if (name.equals("long")) {
+                        return Long.class;
+                    }
+                    break;
+                case 3625364:
+                    if (name.equals("void")) {
+                        return Void.class;
+                    }
+                    break;
+                case 64711720:
+                    if (name.equals("boolean")) {
+                        return Boolean.class;
+                    }
+                    break;
+                case 97526364:
+                    if (name.equals("float")) {
+                        return Float.class;
+                    }
+                    break;
+                case 109413500:
+                    if (name.equals("short")) {
+                        return Short.class;
+                    }
+                    break;
             }
-            i++;
         }
-        return charSequence.length();
-    }
-
-    public static int c(int i, CharSequence charSequence) {
-        if (i >= charSequence.length()) {
-            return -1;
-        }
-        char charAt = charSequence.charAt(i);
-        char c = '\"';
-        if (charAt != '\"') {
-            c = '\'';
-            if (charAt != '\'') {
-                if (charAt != '(') {
-                    return -1;
-                }
-                c = ')';
-            }
-        }
-        int d = d(charSequence, i + 1, c);
-        if (d != -1 && d < charSequence.length() && charSequence.charAt(d) == c) {
-            return d + 1;
-        }
-        return -1;
-    }
-
-    public static int d(CharSequence charSequence, int i, char c) {
-        while (i < charSequence.length()) {
-            char charAt = charSequence.charAt(i);
-            if (charAt == '\\') {
-                int i2 = i + 1;
-                if (lqe.a(i2, charSequence)) {
-                    i = i2;
-                    i++;
-                }
-            }
-            if (charAt == c) {
-                return i;
-            }
-            if (c == ')' && charAt == '(') {
-                return -1;
-            }
-            i++;
-        }
-        return charSequence.length();
+        return a;
     }
 }

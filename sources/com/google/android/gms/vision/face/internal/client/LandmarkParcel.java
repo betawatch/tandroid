@@ -3,10 +3,10 @@ package com.google.android.gms.vision.face.internal.client;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class LandmarkParcel extends b4 {
-    public static final Parcelable.Creator<LandmarkParcel> CREATOR = new rhe((byte) 28);
+    public static final Parcelable.Creator<LandmarkParcel> CREATOR = new sje((byte) 28);
     public final int a;
     public final float b;
     public final float c;
@@ -21,15 +21,15 @@ public final class LandmarkParcel extends b4 {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        jte.q(parcel, 2, 4);
+        mve.q(parcel, 2, 4);
         parcel.writeFloat(this.b);
-        jte.q(parcel, 3, 4);
+        mve.q(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        jte.q(parcel, 4, 4);
+        mve.q(parcel, 4, 4);
         parcel.writeInt(this.d);
-        jte.s(parcel, r);
+        mve.s(parcel, r);
     }
 }

@@ -1,560 +1,236 @@
 // default package
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
-import java.io.File;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MediaController;
-import org.telegram.utils.recorder.audio.b;
-import org.telegram.utils.recorder.audio.d;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class h30 {
-    public static final vi2 H = new vi2((byte) 14);
-    public static final AtomicLong I = new AtomicLong(1);
-    public y54 A;
-    public byte[] B;
-    public m20 C;
-    public final y20 D;
-    public final y20 E;
-    public final b30 F;
-    public final Context a;
-    public final File b;
-    public final short c;
-    public final e30 d;
-    public final boolean e;
-    public final lv6 f;
-    public final tg2 g;
-    public final q20 h;
-    public d n;
-    public long o;
-    public long p;
-    public long q;
-    public long r;
-    public long s;
-    public boolean u;
-    public boolean v;
-    public boolean w;
-    public boolean x;
-    public boolean y;
-    public volatile f30 z;
-    public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new x20((byte) 0));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new x20((byte) 1));
-    public final Object l = new Object();
-    public final ArrayList m = new ArrayList();
-    public int G = 1;
-    public long t = 1;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class h30 extends q59 {
+    public final Activity c;
+    public ArrayList d = new ArrayList();
+    public String e;
+    public f30 f;
+    public boolean h;
+    public final /* synthetic */ i30 n;
 
-    /* JADX WARN: Type inference failed for: r6v3, types: [y20] */
-    /* JADX WARN: Type inference failed for: r6v4, types: [y20] */
-    public h30(c30 c30Var) {
-        final byte b = 0;
-        final byte b2 = 1;
-        this.F = new b30(this, b);
-        q();
-        Context context = (Context) c30Var.b;
-        Context applicationContext = context.getApplicationContext();
-        context = applicationContext != null ? applicationContext : context;
-        this.a = context;
-        File file = (File) c30Var.c;
-        this.b = file == null ? context.getCacheDir() : file;
-        this.c = (short) 700;
-        e30 e30Var = (e30) c30Var.d;
-        this.d = e30Var;
-        this.e = c30Var.a;
-        this.f = (lv6) c30Var.e;
-        this.g = (tg2) c30Var.f;
-        q20 q20Var = new q20((d30) c30Var.g);
-        this.h = q20Var;
-        this.D = new Runnable(this) { // from class: y20
-            public final /* synthetic */ h30 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                y54 y54Var;
-                byte b3 = b;
-                h30 h30Var = this.b;
-                switch (b3) {
-                    case 0:
-                        if (h30Var.G == 3 && !h30Var.w) {
-                            h30Var.w = true;
-                            h30Var.h.b("maximum duration reached: durationMs=" + h30Var.j());
-                            h30Var.f.getClass();
-                            h30Var.n();
-                            break;
-                        }
-                        break;
-                    default:
-                        if (h30Var.G == 5 && (y54Var = h30Var.A) != null && h30Var.u) {
-                            long m = y54Var.m();
-                            long j = h30Var.r;
-                            if (m < j || m >= h30Var.s) {
-                                h30Var.A.k1(j);
-                            }
-                            lv6 lv6Var = h30Var.f;
-                            h30Var.j();
-                            lv6Var.getClass();
-                            h30Var.i.postDelayed(h30Var.E, 32L);
-                            break;
-                        }
-                        break;
-                }
-            }
-        };
-        this.E = new Runnable(this) { // from class: y20
-            public final /* synthetic */ h30 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                y54 y54Var;
-                byte b3 = b2;
-                h30 h30Var = this.b;
-                switch (b3) {
-                    case 0:
-                        if (h30Var.G == 3 && !h30Var.w) {
-                            h30Var.w = true;
-                            h30Var.h.b("maximum duration reached: durationMs=" + h30Var.j());
-                            h30Var.f.getClass();
-                            h30Var.n();
-                            break;
-                        }
-                        break;
-                    default:
-                        if (h30Var.G == 5 && (y54Var = h30Var.A) != null && h30Var.u) {
-                            long m = y54Var.m();
-                            long j = h30Var.r;
-                            if (m < j || m >= h30Var.s) {
-                                h30Var.A.k1(j);
-                            }
-                            lv6 lv6Var = h30Var.f;
-                            h30Var.j();
-                            lv6Var.getClass();
-                            h30Var.i.postDelayed(h30Var.E, 32L);
-                            break;
-                        }
-                        break;
-                }
-            }
-        };
-        q20Var.b("session created: device=" + Build.MANUFACTURER + " " + Build.MODEL + ", sdk=" + Build.VERSION.SDK_INT + ", sampleRate=48000, noiseSuppression=" + e30Var + ", minimumDurationMs=700, maximumDurationMs=0");
+    public h30(i30 i30Var, Activity activity) {
+        this.n = i30Var;
+        this.c = activity;
     }
 
-    public static void q() {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            return;
-        }
-        sc8.j("AudioRecordingSession must be used on the main thread");
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        return (this.n.o2 && u69Var.b() == 0) ? false : true;
     }
 
-    public static long r(long j) {
-        return (j * 1000) / 48000;
-    }
-
-    public final void a(f30 f30Var, long j) {
-        if (j <= 0) {
-            return;
+    public final void E(String str) {
+        if (this.f != null) {
+            Utilities.g.a(this.f);
+            this.f = null;
         }
-        synchronized (this.l) {
-            if (f30Var.d && !f30Var.e) {
-                long j2 = f30Var.c;
-                if (j > j2) {
-                    f30Var.c = j;
-                    this.k.execute(new v20(this, f30Var, j2, j - j2, (byte) 1));
-                }
-            }
-        }
-    }
-
-    public final void b() {
-        q();
-        int i = this.G;
-        if (i == 10 || i == 8) {
-            return;
-        }
-        this.h.b("cancel requested: state=".concat(b00.B(this.G)));
-        y20 y20Var = this.D;
-        Handler handler = this.i;
-        handler.removeCallbacks(y20Var);
-        handler.removeCallbacks(this.E);
-        p();
-        k(2);
-        s(10);
-        d dVar = this.n;
-        if (dVar != null) {
-            dVar.e();
+        if (str == null) {
+            this.e = null;
+            this.d.clear();
+            f();
         } else {
-            c();
-            t();
+            mp3 mp3Var = Utilities.g;
+            f30 f30Var = new f30(this, str, (byte) 0);
+            this.f = f30Var;
+            mp3Var.d(f30Var, 300L);
         }
     }
 
-    public final void c() {
-        if (this.x) {
-            return;
-        }
-        this.x = true;
-        m20 m20Var = this.C;
-        z20 z20Var = new z20(this, m20Var == null ? null : (File) m20Var.b, (byte) 0);
-        try {
-            this.j.execute(z20Var);
-        } catch (RejectedExecutionException unused) {
-            z20Var.run();
-        }
-    }
-
-    public final f30 d() {
-        File f = f();
-        long j = this.t;
-        this.t = 1 + j;
-        f30 f30Var = new f30(j, f);
-        synchronized (this.l) {
-            this.z = f30Var;
-            this.k.execute(new nn6((Object) this, (Object) f30Var, (Object) f, (byte) 12));
-        }
-        q20 q20Var = this.h;
-        StringBuilder o = ug8.o(j, "output generation started: id=", ", file=");
-        o.append(f.getName());
-        q20Var.b(o.toString());
-        return f30Var;
-    }
-
-    public final g30 e() {
-        return new g30(this.G);
-    }
-
-    public final File f() {
-        File file = new File(this.b, "audio_recording_voice_" + System.currentTimeMillis() + "_" + I.getAndIncrement() + ".ogg");
-        synchronized (this.m) {
-            this.m.add(file);
-        }
-        return file;
-    }
-
-    public final void g(Exception exc) {
-        int i = this.G;
-        if (i == 9 || i == 10 || i == 8) {
-            return;
-        }
-        this.h.a("fatal error in state=".concat(b00.B(this.G)), exc);
-        Handler handler = this.i;
-        handler.removeCallbacks(this.D);
-        handler.removeCallbacks(this.E);
-        p();
-        k(3);
-        s(9);
-        f30 f30Var = this.z;
-        if (f30Var != null) {
-            this.k.execute(new v20(this, f30Var, exc));
-        }
-        MediaController mediaController = ((ml6) this.f.b).a;
-        String[] strArr = MediaController.W1;
-        fa4.e("AudioRecorderV2 failed", exc);
-        kk7.f(mediaController.i1).k(kk7.l2, Integer.valueOf(mediaController.h1));
-        mediaController.s(false);
-        d dVar = this.n;
-        if (dVar != null) {
-            dVar.e();
+    @Override // y59
+    public final int b() {
+        int size;
+        i30 i30Var = this.n;
+        boolean z = i30Var.o2;
+        if (i30Var.p1) {
+            size = this.d.size();
         } else {
-            c();
-            t();
+            if (i30Var.q2.size() <= 1) {
+                return 0;
+            }
+            size = i30Var.q2.size();
         }
-        l("error");
+        return size + (z ? 1 : 0);
     }
 
-    public final void h() {
-        q();
-        int i = this.G;
-        if (i == 3 || i == 5) {
-            this.h.b("finish requested: state=" + b00.B(this.G) + ", durationMs=" + j() + ", trim=" + this.r + ".." + this.s);
-            if (this.G == 3) {
-                this.v = true;
-                this.i.removeCallbacks(this.D);
-                s(7);
-                this.n.e();
-                return;
-            }
-            p();
-            s(7);
-            final f30 f30Var = this.z;
-            if (f30Var == null) {
-                g(new IllegalStateException("Output generation is missing"));
-                return;
-            }
-            long r = r(this.p);
-            final long j = this.r;
-            if (j == 0 && this.s == r) {
-                i();
-                return;
-            }
-            final long j2 = this.s;
-            k(1);
-            final f30 d = d();
-            this.j.execute(new Runnable() { // from class: org.telegram.utils.recorder.audio.e
-                /* JADX WARN: Multi-variable type inference failed */
-                @Override // java.lang.Runnable
-                public final void run() {
-                    String str;
-                    f30 f30Var2 = f30Var;
-                    f30 f30Var3 = d;
-                    long j3 = j;
-                    long j4 = j2;
-                    h30 h30Var = h30.this;
-                    Handler handler = h30Var.i;
-                    long elapsedRealtime = SystemClock.elapsedRealtime();
-                    try {
-                        String absolutePath = f30Var2.b.getAbsolutePath();
-                        File file = f30Var3.b;
-                        str = file.getAbsolutePath();
-                        try {
-                            if (!AudioRecorderNative.b(absolutePath, str, j3, j4)) {
-                                throw new IllegalStateException("Unable to trim final Opus output");
-                            }
-                            h30Var.h.b("final trim completed: source=" + f30Var2.b.getName() + ", output=" + file.getName() + ", trim=" + j3 + ".." + j4 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
-                            h30Var.a(f30Var3, file.length());
-                            handler.post(new w20(h30Var, j4, j3, (byte) 0));
-                        } catch (Throwable th) {
-                            th = th;
-                            handler.post(new ee2(str, th, (byte) 29));
-                        }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        str = h30Var;
+    @Override // y59
+    public final int d(int i) {
+        return (this.n.o2 && i == 0) ? 1 : 0;
+    }
+
+    @Override // y59
+    public final void f() {
+        super.f();
+        i30 i30Var = this.n;
+        View view = i30Var.o1;
+        p20 p20Var = i30Var.r1;
+        final byte b = 1;
+        if ((i30Var.q2.size() > 1) != this.h) {
+            boolean z = i30Var.q2.size() > 1;
+            this.h = z;
+            if (z) {
+                p20Var.setVisibility(0);
+                p20Var.setTranslationY(gm.q.y);
+                p20Var.animate().translationY(0.0f).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: e30
+                    public final /* synthetic */ h30 b;
+
+                    {
+                        this.b = this;
                     }
-                }
-            });
-        }
-    }
 
-    public final void i() {
-        if (this.G != 7) {
-            return;
-        }
-        f30 f30Var = this.z;
-        if (f30Var == null) {
-            g(new IllegalStateException("Output generation is missing"));
-            return;
-        }
-        long j = j();
-        if (j >= this.c) {
-            this.j.execute(new b(this, f30Var, j));
-            return;
-        }
-        this.h.b("recording rejected as too short: durationMs=" + j);
-        MediaController mediaController = ((ml6) this.f.b).a;
-        kk7.f(mediaController.i1).k(kk7.s2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j));
-        mediaController.s(false);
-        k(2);
-        s(10);
-        c();
-        t();
-        l("too_short");
-    }
-
-    public final long j() {
-        q();
-        return r(this.p + this.q);
-    }
-
-    public final void k(int i) {
-        synchronized (this.l) {
-            f30 f30Var = this.z;
-            if (f30Var == null || !f30Var.d || f30Var.e) {
-                return;
-            }
-            f30Var.d = false;
-            this.k.execute(new v20(this, f30Var, i));
-            q20 q20Var = this.h;
-            StringBuilder sb = new StringBuilder("output generation invalidated: id=");
-            sb.append(f30Var.a);
-            sb.append(", reason=");
-            sb.append(i != 1 ? i != 2 ? i != 3 ? "null" : "ERROR" : "CANCELLED" : "REBUILT");
-            q20Var.b(sb.toString());
-        }
-    }
-
-    public final void l(String str) {
-        if (this.y) {
-            return;
-        }
-        this.y = true;
-        StringBuilder p = ug8.p("session summary: terminal=", str, ", durationMs=");
-        p.append(r(this.p + this.q));
-        p.append(", generations=");
-        p.append(this.t - 1);
-        this.h.b(p.toString());
-    }
-
-    public final void m() {
-        g30 e = e();
-        lv6 lv6Var = this.f;
-        MediaController mediaController = ((ml6) lv6Var.b).a;
-        int i = e.a;
-        u20 u20Var = (u20) lv6Var.c;
-        int i2 = u20Var.b;
-        u20Var.b = i;
-        if (i == 3) {
-            if (!u20Var.a) {
-                if (i2 == 2) {
-                    System.currentTimeMillis();
-                    String[] strArr = MediaController.W1;
-                    if (!mediaController.J1) {
-                        kk7.f(mediaController.i1).k(kk7.k2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
-                    }
-                } else if (i2 == 6) {
-                    mediaController.X(true);
-                    kk7.f(mediaController.i1).k(kk7.o2, new Object[0]);
-                }
-            }
-            if (u20Var.a) {
-                if (i == 3 || i == 5) {
-                    u20Var.a = false;
-                    ((h30) u20Var.e).h();
-                }
-            }
-        }
-    }
-
-    public final boolean n() {
-        q();
-        if (this.G != 3 || this.n == null) {
-            return false;
-        }
-        this.h.b("pause requested: durationMs=" + j());
-        this.i.removeCallbacks(this.D);
-        s(4);
-        this.n.e();
-        return true;
-    }
-
-    public final void o() {
-        q();
-        int i = this.G;
-        if (i == 10) {
-            return;
-        }
-        if (i != 8) {
-            b();
-            return;
-        }
-        p();
-        c();
-        s(10);
-        l("released");
-    }
-
-    public final void p() {
-        this.i.removeCallbacks(this.E);
-        this.u = false;
-        y54 y54Var = this.A;
-        if (y54Var != null) {
-            y54Var.p0(this.F);
-            this.A.g1();
-            this.A = null;
-        }
-    }
-
-    public final void s(int i) {
-        int i2 = this.G;
-        if (i2 == i) {
-            return;
-        }
-        this.G = i;
-        this.h.b("state: " + b00.B(i2) + " -> " + b00.B(i) + ", durationMs=" + r(this.p + this.q));
-        m();
-    }
-
-    public final void t() {
-        this.j.shutdown();
-        this.k.shutdown();
-    }
-
-    public final void u(long j, long j2, File file) {
-        long j3 = this.o + 1;
-        this.o = j3;
-        f30 f30Var = this.z;
-        if (f30Var == null) {
-            g(new IllegalStateException("Output generation is missing"));
-            return;
-        }
-        File file2 = f30Var.b;
-        e30 e30Var = this.d;
-        q20 q20Var = this.h;
-        m20 m20Var = new m20();
-        m20Var.c = this;
-        m20Var.a = j3;
-        m20Var.b = f30Var;
-        final d dVar = new d(file2, file, j, j2, e30Var, q20Var, m20Var);
-        this.n = dVar;
-        this.q = 0L;
-        dVar.k.post(new Runnable() { // from class: org.telegram.utils.recorder.audio.a
-            @Override // java.lang.Runnable
-            public final void run() {
-                String str;
-                d dVar2 = d.this;
-                File file3 = dVar2.b;
-                q20 q20Var2 = dVar2.f;
-                try {
-                    long elapsedRealtime = SystemClock.elapsedRealtime();
-                    AudioRecorderNative a = AudioRecorderNative.a(dVar2.c, dVar2.d, dVar2.a, dVar2.b);
-                    dVar2.t = a;
-                    if (a == null) {
-                        throw new IllegalStateException("Unable to initialize native Opus recorder");
-                    }
-                    if (dVar2.e == e30.b) {
-                        AudioNoiseSuppressor a2 = AudioNoiseSuppressor.a();
-                        dVar2.u = a2;
-                        if (a2 == null) {
-                            q20Var2.b("RNNoise unavailable; recording unprocessed PCM");
-                        } else {
-                            q20Var2.b("RNNoise started: sampleRate=48000, captureFrameSamples=960");
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        byte b2 = r2;
+                        h30 h30Var = this.b;
+                        switch (b2) {
+                            case 0:
+                                h30Var.n.b.invalidate();
+                                break;
+                            default:
+                                h30Var.n.b.invalidate();
+                                break;
                         }
                     }
-                    long d = dVar2.t.d();
-                    StringBuilder sb = new StringBuilder("Opus encoder started: prefix=");
-                    if (file3 == null) {
-                        str = "none";
-                    } else {
-                        str = file3.getName() + " " + dVar2.c + ".." + dVar2.d;
+                }).setDuration(420L).setInterpolator(d53.h).start();
+            } else {
+                p20Var.animate().translationY(gm.q.y).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: e30
+                    public final /* synthetic */ h30 b;
+
+                    {
+                        this.b = this;
                     }
-                    sb.append(str);
-                    sb.append(", initialBytes=");
-                    sb.append(d);
-                    sb.append(", queuedChunks=");
-                    sb.append(dVar2.m.get());
-                    sb.append(", elapsedMs=");
-                    sb.append(SystemClock.elapsedRealtime() - elapsedRealtime);
-                    q20Var2.b(sb.toString());
-                    dVar2.x = SystemClock.elapsedRealtime();
-                    if (d > 0) {
-                        m20 m20Var2 = dVar2.g;
-                        ((h30) m20Var2.c).a((f30) m20Var2.b, d);
+
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        byte b2 = b;
+                        h30 h30Var = this.b;
+                        switch (b2) {
+                            case 0:
+                                h30Var.n.b.invalidate();
+                                break;
+                            default:
+                                h30Var.n.b.invalidate();
+                                break;
+                        }
                     }
-                } catch (Throwable th) {
-                    if (dVar2.v == null) {
-                        dVar2.f.a("encoding failed", th);
-                        dVar2.v = d.a(th);
-                        dVar2.n = true;
-                    }
-                }
+                }).setDuration(420L).setInterpolator(d53.h).withEndAction(new f00(this, (byte) 4)).start();
             }
-        });
-        dVar.i.post(new vz(dVar, (byte) 0));
+        }
+        int size = i30Var.q2.size();
+        k20 k20Var = i30Var.x1;
+        if (size > 1) {
+            anb.h(cmb.Hj, i30Var.J0, k20Var);
+            view.setVisibility(0);
+            p20Var.setPadding(0, p20Var.getPaddingTop(), 0, gm.L(231.0f));
+        } else {
+            anb.h(cmb.Hj, i30Var.J0, k20Var);
+            view.setVisibility(0);
+            p20Var.setPadding(0, p20Var.getPaddingTop(), 0, 0);
+        }
+        i30Var.u1.setVisibility((i30Var.q1 && i30Var.t1.b() == 0) ? (byte) 0 : (byte) 8);
+        i30Var.T0();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0024, code lost:
+    
+        if ((r11 + 1) < r9.d.size()) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0061, code lost:
+    
+        r11 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x005f, code lost:
+    
+        r11 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x005d, code lost:
+    
+        if (((r0.q2.size() - r11) - 2) >= 0) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x0043, code lost:
+    
+        if ((r11 + 1) < r0.q2.size()) goto L24;
+     */
+    @Override // y59
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(u69 u69Var, int i) {
+        k47 k47Var;
+        boolean z;
+        i30 i30Var = this.n;
+        if (i30Var.o2) {
+            if (i == 0) {
+                return;
+            } else {
+                i--;
+            }
+        }
+        j30 j30Var = (j30) u69Var.a;
+        byte b = 1;
+        if (i30Var.p1) {
+            k47Var = (k47) this.d.get(i);
+        } else if (i30Var.p2 == null ? !gda.K0 : gda.K0) {
+            ArrayList arrayList = i30Var.q2;
+            k47Var = (k47) arrayList.get((arrayList.size() - i) - 1);
+        } else {
+            k47Var = (k47) i30Var.q2.get(i);
+        }
+        if (k47Var != null) {
+            k47Var.J5(this.e, true);
+        }
+        f8 f8Var = i30Var.I0() ? new f8(this, j30Var, b) : null;
+        anb.h(cmb.g5, i30Var.J0, j30Var);
+        boolean I0 = i30Var.I0();
+        b0 b0Var = (i30Var.I0() || i30Var.s2 || k47Var.e1() <= 0) ? null : new b0(this, j30Var, k47Var, (byte) 10);
+        RadialProgress2 radialProgress2 = j30Var.I;
+        ImageView imageView = j30Var.w;
+        j30Var.x = k47Var;
+        if (j30Var.y != z) {
+            j30Var.invalidate();
+        }
+        j30Var.y = z;
+        imageView.setImageResource(I0 ? R.drawable.list_reorder : R.drawable.ic_ab_other);
+        imageView.setVisibility((I0 || b0Var != null) ? 0 : 8);
+        imageView.setOnClickListener(b0Var);
+        imageView.setOnTouchListener(f8Var);
+        TLRPC.Document F0 = k47Var.F0();
+        TLRPC.PhotoSize w = F0 != null ? bc4.w(F0.thumbs, 90, false, null, false) : null;
+        if ((w instanceof TLRPC.TL_photoSize) || (w instanceof TLRPC.TL_photoSizeProgressive)) {
+            radialProgress2.i(w, F0, k47Var);
+        } else {
+            String u0 = k47Var.u0(true);
+            if (TextUtils.isEmpty(u0)) {
+                radialProgress2.i(null, null, null);
+            } else {
+                radialProgress2.h(u0);
+            }
+        }
+        j30Var.requestLayout();
+        j30Var.b(false, false);
+    }
+
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        Activity activity = this.c;
+        if (i != 1) {
+            return new b59(new j30(MediaController.w().D0 == null ? 0 : 1, this.n.J0, activity));
+        }
+        o72 o72Var = new o72(activity, (byte) 3);
+        o72Var.setTag(-33024);
+        return new b59(o72Var);
     }
 }

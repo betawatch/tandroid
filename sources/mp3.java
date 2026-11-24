@@ -1,32 +1,100 @@
 // default package
 
-import android.view.ViewGroup;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Process;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class mp3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ np3 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class mp3 extends Thread {
+    public volatile Handler a;
+    public final Object b = new Object();
+    public ArrayList c = new ArrayList();
+    public final CountDownLatch d = new CountDownLatch(1);
+    public final int e = -1000;
 
-    public /* synthetic */ mp3(np3 np3Var, byte b) {
-        this.a = b;
-        this.b = np3Var;
+    public mp3(String str) {
+        setName(str);
+        start();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        np3 np3Var = this.b;
-        switch (b) {
-            case 0:
-                if (np3Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) np3Var.getParent()).removeView(np3Var);
-                    break;
-                }
-                break;
-            default:
-                np3Var.a();
-                break;
+    public final void a(Runnable runnable) {
+        Handler handler = this.a;
+        if (handler != null) {
+            handler.removeCallbacks(runnable);
+            return;
         }
+        synchronized (this.b) {
+            ArrayList arrayList = this.c;
+            if (arrayList == null) {
+                this.a.removeCallbacks(runnable);
+                return;
+            }
+            for (int size = arrayList.size() - 1; size >= 0; size--) {
+                if (((lp3) this.c.get(size)).b == runnable) {
+                    this.c.remove(size);
+                }
+            }
+        }
+    }
+
+    public final Handler b() {
+        try {
+            this.d.await();
+        } catch (Exception e) {
+            fc4.g(e, false);
+        }
+        return this.a;
+    }
+
+    public final void c(Runnable runnable) {
+        SystemClock.elapsedRealtime();
+        d(runnable, 0L);
+    }
+
+    public final boolean d(Runnable runnable, long j) {
+        Handler handler = this.a;
+        if (handler != null) {
+            return j <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j);
+        }
+        long max = Math.max(0L, j) + SystemClock.uptimeMillis();
+        synchronized (this.b) {
+            ArrayList arrayList = this.c;
+            if (arrayList == null) {
+                return this.a.postAtTime(runnable, max);
+            }
+            arrayList.add(new lp3(0, max, runnable));
+            return true;
+        }
+    }
+
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        Looper.prepare();
+        Handler handler = new Handler(Looper.myLooper(), new kp3());
+        synchronized (this.b) {
+            for (int i = 0; i < this.c.size(); i++) {
+                lp3 lp3Var = (lp3) this.c.get(i);
+                boolean z = lp3Var.a;
+                if (!z) {
+                    handler.postAtTime(lp3Var.b, lp3Var.c);
+                } else if (z) {
+                    handler.postAtFrontOfQueue(lp3Var.b);
+                } else {
+                    handler.sendMessageAtTime(null, lp3Var.c);
+                }
+            }
+            this.c = null;
+            this.a = handler;
+        }
+        this.d.countDown();
+        int i2 = this.e;
+        if (i2 != -1000) {
+            Process.setThreadPriority(i2);
+        }
+        Looper.loop();
     }
 }

@@ -1,101 +1,71 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o28 implements m8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ s28 b;
-    public final /* synthetic */ w28 c;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.d;
 
-    public /* synthetic */ o28(s28 s28Var, w28 w28Var, byte b) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class o28 implements qac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ p28 b;
+
+    public /* synthetic */ o28(p28 p28Var, byte b) {
         this.a = b;
-        this.b = s28Var;
-        this.c = w28Var;
+        this.b = p28Var;
     }
 
-    @Override // m8c
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
+    @Override // qac
+    public final void a(Object obj) {
+        int i;
+        b38 b38Var;
+        w28 w28Var;
         byte b = this.a;
-        w28 w28Var = this.c;
-        s28 s28Var = this.b;
+        p28 p28Var = this.b;
         switch (b) {
             case 0:
-                Long l = (Long) obj;
-                Runnable runnable = (Runnable) obj2;
-                Boolean bool = (Boolean) obj3;
-                long currentTimeMillis = System.currentTimeMillis();
-                y28 y28Var = s28Var.x;
-                c30 c30Var = y28Var.C2;
-                l8b l8bVar = (l8b) c30Var.c;
-                if (l8bVar != null) {
-                    l8bVar.firstFrameRendered = false;
-                    c30Var.a = false;
-                    l8bVar.setOnReadyListener(new k18(runnable, currentTimeMillis, (byte) 1));
-                    ((d8b) y28Var.G1).g(false);
-                    ry8 ry8Var = y28Var.p0;
-                    if (ry8Var != null) {
-                        ry8Var.setAnimation(w28Var.u);
+                Integer num = (Integer) obj;
+                w28 w28Var2 = p28Var.e;
+                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) w28Var2.N.get(num);
+                w28Var2.L = starGift;
+                d38 d38Var = w28Var2.q0;
+                qb9 qb9Var = w28Var2.K;
+                if (starGift == null) {
+                    if (qb9Var != null) {
+                        qb9Var.i();
+                        w28Var2.K = null;
                     }
-                    if (y28Var.H2 > 0 && l.longValue() > y28Var.H2 - 1400) {
-                        l = 0L;
-                    }
-                    y28Var.O0(l.longValue(), true);
-                    y28Var.J3 = false;
-                    gl.e3(runnable, 400L);
-                    if (bool.booleanValue()) {
-                        y28Var.c1(false);
-                        break;
-                    }
-                } else {
-                    ((d8b) y28Var.G1).g(false);
-                    y28Var.setActive(true);
-                    y28Var.J3 = false;
-                    y28Var.Y0 = new ks2(runnable, (byte) 5);
-                    if (bool.booleanValue()) {
-                        y28Var.c1(false);
-                    }
-                    gl.e3(runnable, 400L);
+                } else if (qb9Var == null || qb9Var.b != starGift.id) {
+                    i = ((d) d38Var).currentAccount;
+                    qb9 qb9Var2 = new qb9(i, w28Var2.L.id, new o28(p28Var, (byte) 2));
+                    qb9Var2.w = true;
+                    w28Var2.K = qb9Var2;
+                    qb9Var2.l(false);
+                }
+                w28Var2.e();
+                (d38Var.J.getCurrentPosition() == 1 ? d38Var.n : d38Var.h).d();
+                break;
+            case 1:
+                w28 w28Var3 = p28Var.e;
+                w28Var3.h = ((Integer) obj).intValue();
+                w28Var3.r = null;
+                w28Var3.s = null;
+                w28Var3.J = null;
+                w28Var3.j(true);
+                w28Var3.i();
+                w28Var3.f(true);
+                v28 v28Var = w28Var3.E;
+                if (v28Var != null) {
+                    v28Var.invalidate();
+                }
+                d38 d38Var2 = w28Var3.q0;
+                w28 w28Var4 = d38Var2.n;
+                if (w28Var4 != null && (b38Var = w28Var4.a) != null && (w28Var = d38Var2.h) != null) {
+                    b38Var.a(w28Var.h);
                     break;
                 }
                 break;
             default:
-                Long l2 = (Long) obj;
-                Runnable runnable2 = (Runnable) obj2;
-                Boolean bool2 = (Boolean) obj3;
-                long currentTimeMillis2 = System.currentTimeMillis();
-                y28 y28Var2 = s28Var.x;
-                c30 c30Var2 = y28Var2.C2;
-                l8b l8bVar2 = (l8b) c30Var2.c;
-                if (l8bVar2 != null) {
-                    l8bVar2.firstFrameRendered = false;
-                    c30Var2.a = false;
-                    l8bVar2.setOnReadyListener(new k18(runnable2, currentTimeMillis2, (byte) 2));
-                    ((d8b) y28Var2.G1).g(false);
-                    ry8 ry8Var2 = y28Var2.p0;
-                    if (ry8Var2 != null) {
-                        ry8Var2.setAnimation(w28Var.u);
-                    }
-                    if (y28Var2.H2 > 0 && l2.longValue() > y28Var2.H2 - 1400) {
-                        l2 = 0L;
-                    }
-                    y28Var2.O0(l2.longValue(), true);
-                    y28Var2.J3 = false;
-                    gl.e3(runnable2, 400L);
-                    if (bool2.booleanValue()) {
-                        y28Var2.c1(false);
-                        break;
-                    }
-                } else {
-                    ((d8b) y28Var2.G1).g(false);
-                    y28Var2.setActive(true);
-                    y28Var2.J3 = false;
-                    y28Var2.Y0 = new ks2(runnable2, (byte) 6);
-                    if (bool2.booleanValue()) {
-                        y28Var2.c1(false);
-                    }
-                    gl.e3(runnable2, 400L);
-                    break;
-                }
+                p28Var.e.d();
                 break;
         }
     }

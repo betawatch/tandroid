@@ -1,63 +1,19 @@
 // default package
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zmd extends mid {
-    public final transient Object s;
+public final class zmd implements cq7 {
+    public static final zmd a = new zmd();
 
-    public zmd(Object obj) {
-        super((byte) 4);
-        this.s = obj;
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)), 4)), 5)));
     }
 
-    @Override // mid
-    public final xhd A() {
-        Object[] objArr = {this.s};
-        for (int i = 0; i < 1; i++) {
-            dgd dgdVar = xhd.n;
-            if (objArr[i] == null) {
-                fvc.f(de9.k(i, "at index "));
-                return null;
-            }
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return xhd.A(1, objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.s.equals(obj);
-    }
-
-    @Override // mid, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.s.hashCode();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new gkd(this.s);
-    }
-
-    @Override // kzc
-    public final int p(Object[] objArr) {
-        objArr[0] = this.s;
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection
-    public final String toString() {
-        return tb4.y("[", this.s.toString(), "]");
-    }
-
-    @Override // kzc
-    public final v5c u() {
-        return new gkd(this.s);
+        throw null;
     }
 }

@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 final class AudioRecorderNative {
     public long a;
@@ -57,7 +57,7 @@ final class AudioRecorderNative {
         if (!this.b.get()) {
             return nFlush(this.a);
         }
-        sc8.j("Native audio recorder is already released");
+        dq9.m("Native audio recorder is already released");
         return 0L;
     }
 
@@ -83,7 +83,7 @@ final class AudioRecorderNative {
         if (!this.b.get()) {
             return nWriteFrame(this.a, byteBuffer, i);
         }
-        sc8.j("Native audio recorder is already released");
+        dq9.m("Native audio recorder is already released");
         return 0;
     }
 }

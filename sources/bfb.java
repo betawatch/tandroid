@@ -1,41 +1,14 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final class bfb {
-    public static final bfb e = new bfb(false, new yeb(TLObject.FLAG_31, -2147483647), efb.T, 0.0f);
-    public final boolean a;
-    public final yeb b;
-    public final qeb c;
-    public final float d;
+    public static final bfb a = new bfb();
 
-    public bfb(boolean z, yeb yebVar, qeb qebVar, float f) {
-        this.a = z;
-        this.b = yebVar;
-        this.c = qebVar;
-        this.d = f;
-    }
-
-    public final qeb a(boolean z) {
-        qeb qebVar = efb.T;
-        qeb qebVar2 = this.c;
-        return qebVar2 != qebVar ? qebVar2 : this.d == 0.0f ? z ? efb.U : efb.V : efb.W;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || bfb.class != obj.getClass()) {
-            return false;
-        }
-        bfb bfbVar = (bfb) obj;
-        return this.c.equals(bfbVar.c) && this.b.equals(bfbVar.b);
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + (this.b.hashCode() * 31);
+    public final dfb a(Looper looper, Handler.Callback callback) {
+        return new dfb(new Handler(looper, callback));
     }
 }

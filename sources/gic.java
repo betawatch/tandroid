@@ -1,47 +1,54 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Intent;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gic implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hic b;
+public final class gic implements m4 {
+    public final /* synthetic */ iic a;
 
-    public /* synthetic */ gic(hic hicVar, byte b) {
-        this.a = b;
-        this.b = hicVar;
+    public gic(iic iicVar) {
+        this.a = iicVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        hic hicVar = this.b;
-        switch (b) {
-            case 0:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                hicVar.d = intValue;
-                hicVar.e = intValue;
-                hicVar.f = intValue;
-                hicVar.h = intValue;
-                hicVar.n = intValue;
-                hicVar.invalidate();
-                break;
-            default:
-                hicVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hicVar.d = gl.U1(floatValue, hicVar.G, gl.L(56.0f));
-                hicVar.e = gl.U1(floatValue, hicVar.G, gl.L(36.0f));
-                hicVar.f = gl.U1(floatValue, hicVar.G, gl.L(60.0f));
-                hicVar.h = gl.U1(floatValue, hicVar.G, gl.L(36.0f));
-                hicVar.n = gl.U1(floatValue, hicVar.G, gl.L(64.0f));
-                hicVar.r = gl.U1(floatValue, 0, gl.L(50.0f));
-                hicVar.s = gl.U1(floatValue, 0, gl.L(20.0f));
-                hicVar.w = gl.U1(floatValue, 0, 0);
-                hicVar.x = gl.U1(floatValue, 0, gl.L(-20.0f));
-                hicVar.y = gl.U1(floatValue, 0, gl.L(-40.0f));
-                hicVar.invalidate();
-                break;
+    public final void a() {
+        iic iicVar = this.a;
+        byte b = 17;
+        if (iicVar.p0 != 17) {
+            if (iicVar.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                iicVar.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    iicVar.i(new f8c(this, b));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(iicVar.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", iicVar.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", iicVar.U0);
+        intent.putExtra("can_video_call", iicVar.U0);
+        intent.putExtra("account", iicVar.a);
+        try {
+            iicVar.b.startService(intent);
+        } catch (Throwable th) {
+            fc4.g(th, true);
+        }
+    }
+
+    public final void b() {
+        iic iicVar = this.a;
+        if (iicVar.p0 == 17) {
+            iicVar.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            iicVar.u0.b();
         }
     }
 }

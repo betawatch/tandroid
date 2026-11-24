@@ -1,53 +1,19 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class hfe extends sfe {
-    public final String a;
+public final class hfe implements cq7 {
+    public static final hfe a = new hfe();
 
-    public hfe(String str) {
-        this.a = str;
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)), 3)), 4)));
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        sfe sfeVar = (sfe) obj;
-        int zza = sfeVar.zza();
-        int c = sfe.c((byte) 96);
-        if (c != zza) {
-            return c - sfeVar.zza();
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        String str = ((hfe) sfeVar).a;
-        int length = str.length();
-        String str2 = this.a;
-        if (str2.length() == length) {
-            return str2.compareTo(str);
-        }
-        return str2.length() - str.length();
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || hfe.class != obj.getClass()) {
-            return false;
-        }
-        return this.a.equals(((hfe) obj).a);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(sfe.c((byte) 96)), this.a});
-    }
-
-    public final String toString() {
-        return b00.j(new StringBuilder("\""), this.a, "\"");
-    }
-
-    @Override // sfe
-    public final int zza() {
-        return sfe.c((byte) 96);
+        throw null;
     }
 }

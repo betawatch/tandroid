@@ -1,14 +1,19 @@
 // default package
 
-import android.graphics.Path;
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final class vj7 {
-    public byte a;
-    public boolean b;
-    public boolean c;
-    public Path d;
-    public RectF e;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+
+    public vj7(int i, int i2, int i3, int i4, int i5) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+    }
 }

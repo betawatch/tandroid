@@ -1,16 +1,108 @@
 // default package
 
-import android.graphics.Canvas;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class zzb extends wla {
-    @Override // wla, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        ama.a(canvas, getLayout());
-        canvas.restore();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class zzb {
+    public final qzb a;
+    public final int b;
+    public final long[] c;
+    public final int[] d;
+    public final int e;
+    public final long[] f;
+    public final int[] g;
+    public final int[] h;
+    public final long i;
+    public final boolean j;
+
+    public zzb(qzb qzbVar, long[] jArr, int[] iArr, int i, long[] jArr2, int[] iArr2, int[] iArr3, boolean z, long j, int i2) {
+        jte.f(iArr.length == jArr2.length);
+        jte.f(jArr.length == jArr2.length);
+        jte.f(iArr2.length == jArr2.length);
+        this.a = qzbVar;
+        this.c = jArr;
+        this.d = iArr;
+        this.e = i;
+        this.f = jArr2;
+        this.g = iArr2;
+        this.h = iArr3;
+        this.j = z;
+        this.i = j;
+        this.b = i2;
+        if (iArr2.length > 0) {
+            int length = iArr2.length - 1;
+            iArr2[length] = iArr2[length] | TLObject.FLAG_29;
+        }
+    }
+
+    public final int a(long j) {
+        long[] jArr = this.f;
+        if (jArr.length <= 0) {
+            return -1;
+        }
+        int i = 0;
+        if (this.j) {
+            return hac.f(jArr, j, false);
+        }
+        int[] iArr = this.h;
+        int length = iArr.length - 1;
+        int i2 = -1;
+        while (i <= length) {
+            int g = wi8.g(length, i, 2, i);
+            if (jArr[iArr[g]] <= j) {
+                i = g + 1;
+                i2 = g;
+            } else {
+                length = g - 1;
+            }
+        }
+        if (i2 == -1) {
+            return -1;
+        }
+        long j2 = jArr[iArr[i2]];
+        if (j2 == j) {
+            while (i2 > 0 && jArr[iArr[i2 - 1]] == j2) {
+                i2--;
+            }
+        }
+        return iArr[i2];
+    }
+
+    public final int b(long j) {
+        long[] jArr = this.f;
+        if (jArr.length <= 0) {
+            return -1;
+        }
+        if (this.j) {
+            return hac.b(jArr, j, true);
+        }
+        int[] iArr = this.h;
+        int length = iArr.length - 1;
+        int i = 0;
+        int i2 = -1;
+        while (i <= length) {
+            int g = wi8.g(length, i, 2, i);
+            if (jArr[iArr[g]] >= j) {
+                length = g - 1;
+                i2 = g;
+            } else {
+                i = g + 1;
+            }
+        }
+        if (i2 == -1) {
+            return -1;
+        }
+        long j2 = jArr[iArr[i2]];
+        if (j2 == j) {
+            while (i2 < iArr.length - 1) {
+                int i3 = i2 + 1;
+                if (jArr[iArr[i3]] != j2) {
+                    break;
+                }
+                i2 = i3;
+            }
+        }
+        return iArr[i2];
     }
 }

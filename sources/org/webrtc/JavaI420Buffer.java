@@ -3,7 +3,7 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -43,15 +43,15 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         ByteBuffer slice2 = nativeAllocateByteBuffer.slice();
         nativeAllocateByteBuffer.position(i7);
         nativeAllocateByteBuffer.limit(i7 + i6);
-        return new JavaI420Buffer(i, i2, slice, i, slice2, i4, nativeAllocateByteBuffer.slice(), i4, new ys5(nativeAllocateByteBuffer, (byte) 0));
+        return new JavaI420Buffer(i, i2, slice, i, slice2, i4, nativeAllocateByteBuffer.slice(), i4, new xu5(nativeAllocateByteBuffer, (byte) 0));
     }
 
     private static void checkCapacity(ByteBuffer byteBuffer, int i, int i2, int i3) {
-        int h = oo1.h(i2, 1, i3, i);
+        int h = aq1.h(i2, 1, i3, i);
         if (byteBuffer.capacity() >= h) {
             return;
         }
-        fvc.e(byteBuffer.capacity(), de9.m(h, "Buffer must be at least ", " bytes, but was "));
+        gxc.c(byteBuffer.capacity(), hg9.l(h, "Buffer must be at least ", " bytes, but was "));
     }
 
     public static VideoFrame.Buffer cropAndScaleI420(VideoFrame.I420Buffer i420Buffer, int i, int i2, int i3, int i4, int i5, int i6) {
@@ -69,18 +69,18 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         dataU.position((i420Buffer.getStrideU() * i8) + i7);
         dataV.position((i420Buffer.getStrideV() * i8) + i7);
         i420Buffer.retain();
-        return wrap(i5, i6, dataY.slice(), i420Buffer.getStrideY(), dataU.slice(), i420Buffer.getStrideU(), dataV.slice(), i420Buffer.getStrideV(), new tp5(i420Buffer, (byte) 4));
+        return wrap(i5, i6, dataY.slice(), i420Buffer.getStrideY(), dataU.slice(), i420Buffer.getStrideU(), dataV.slice(), i420Buffer.getStrideV(), new kg5(i420Buffer, (byte) 11));
     }
 
     private static native void nativeCropAndScaleI420(ByteBuffer byteBuffer, int i, ByteBuffer byteBuffer2, int i2, ByteBuffer byteBuffer3, int i3, int i4, int i5, int i6, int i7, ByteBuffer byteBuffer4, int i8, ByteBuffer byteBuffer5, int i9, ByteBuffer byteBuffer6, int i10, int i11, int i12);
 
     public static JavaI420Buffer wrap(int i, int i2, ByteBuffer byteBuffer, int i3, ByteBuffer byteBuffer2, int i4, ByteBuffer byteBuffer3, int i5, Runnable runnable) {
         if (byteBuffer == null || byteBuffer2 == null || byteBuffer3 == null) {
-            w26.j("Data buffers cannot be null.");
+            u36.j("Data buffers cannot be null.");
             return null;
         }
         if (!byteBuffer.isDirect() || !byteBuffer2.isDirect() || !byteBuffer3.isDirect()) {
-            w26.j("Data buffers must be direct byte buffers.");
+            u36.j("Data buffers must be direct byte buffers.");
             return null;
         }
         ByteBuffer slice = byteBuffer.slice();

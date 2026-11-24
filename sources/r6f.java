@@ -1,38 +1,59 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class r6f extends vef {
+public final class r6f extends wgf {
     private static final r6f zzb;
     private int zzd;
-    private boolean zze;
+    private int zze;
     private int zzf;
     private int zzg;
     private int zzh;
-    private k8f zzi;
-    private int zzj;
-    private boolean zzk;
 
     static {
         r6f r6fVar = new r6f();
         zzb = r6fVar;
-        vef.e(r6f.class, r6fVar);
+        wgf.e(r6f.class, r6fVar);
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
+    public static p6f l() {
+        return (p6f) zzb.j();
+    }
+
+    public static /* synthetic */ void m(r6f r6fVar, int i) {
+        r6fVar.zzd |= 2;
+        r6fVar.zzf = i;
+    }
+
+    public static /* synthetic */ void n(r6f r6fVar, int i) {
+        r6fVar.zzd |= 4;
+        r6fVar.zzg = i;
+    }
+
+    public static /* synthetic */ void o(r6f r6fVar, int i) {
+        r6fVar.zzd |= 8;
+        r6fVar.zzh = i;
+    }
+
+    public static /* synthetic */ void p(r6f r6fVar, int i) {
+        r6fVar.zze = i - 1;
+        r6fVar.zzd |= 1;
+    }
+
+    @Override // wgf
+    public final Object h(int i, wgf wgfVar) {
         int i2 = i - 1;
         if (i2 == 0) {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001ဇ\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005ဉ\u0004\u0006᠌\u0005\u0007ဇ\u0006", new Object[]{"zzd", "zze", "zzf", vi2.r, "zzg", c6e.n, "zzh", o5f.n, "zzi", "zzj", ie7.r, "zzk"});
+            return new tif(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002\u0004င\u0003", new Object[]{"zzd", "zze", nf5.x, "zzf", "zzg", "zzh"});
         }
         if (i2 == 3) {
             return new r6f();
         }
         if (i2 == 4) {
-            return new v8e(zzb);
+            return new p6f(zzb);
         }
         if (i2 != 5) {
             return null;

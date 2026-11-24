@@ -1,17 +1,19 @@
 // default package
 
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum h7e {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(4);
+public final class h7e implements cq7 {
+    public static final h7e a = new h7e();
 
-    public final byte a;
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)), 3)), 4)), 5)), 6)));
+    }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    h7e(int i) {
-        this.a = i;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

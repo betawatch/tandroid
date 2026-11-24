@@ -1,79 +1,42 @@
 // default package
 
-import android.graphics.RectF;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.PrivacySettingsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class dm8 implements p8c {
+public final /* synthetic */ class dm8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ PrivacySettingsActivity b;
 
-    public /* synthetic */ dm8(ProfileActivity profileActivity, byte b) {
+    public /* synthetic */ dm8(PrivacySettingsActivity privacySettingsActivity, byte b) {
         this.a = b;
-        this.b = profileActivity;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        ProfileActivity profileActivity = this.b;
+        PrivacySettingsActivity privacySettingsActivity = this.b;
         switch (b) {
             case 0:
-                View view = (View) obj;
-                RectF rectF = ProfileActivity.Z6;
-                if (view instanceof ghb) {
-                    ghb ghbVar = (ghb) view;
-                    ghbVar.a.setLoading(profileActivity.o5);
-                    ghbVar.b.setLoading(profileActivity.o5);
-                    break;
-                }
+                privacySettingsActivity.a.f();
+                privacySettingsActivity.S = true;
                 break;
             case 1:
-                RectF rectF2 = ProfileActivity.Z6;
-                profileActivity.v2((Boolean) obj);
-                break;
-            case 2:
-                RectF rectF3 = ProfileActivity.Z6;
-                profileActivity.getClass();
-                ArrayList arrayList = new ArrayList(1);
-                arrayList.add((TLRPC.InputStickerSet) obj);
-                profileActivity.showDialog(new qx3(profileActivity, profileActivity.getParentActivity(), profileActivity.A0, arrayList));
+                privacySettingsActivity.c.dismiss();
                 break;
             default:
-                View view2 = (View) obj;
-                RectF rectF4 = ProfileActivity.Z6;
-                if (view2 instanceof ld5) {
-                    ((ld5) view2).setTextColor(bkb.v0(bkb.K6, profileActivity.A0));
-                } else if (view2 instanceof ghb) {
-                    ((ghb) view2).updateColors();
-                } else if (view2 instanceof wgb) {
-                    ((wgb) view2).updateColors();
-                } else if (view2 instanceof s1) {
-                    ((s1) view2).updateColors();
-                } else if (view2 instanceof vl7) {
-                    ((vl7) view2).getCheckBox().invalidate();
-                } else if (view2 instanceof br8) {
-                    br8 br8Var = (br8) view2;
-                    ii2 ii2Var = br8Var.r;
-                    int L = gl.L(8.0f);
-                    int i = bkb.n6;
-                    wjb wjbVar = br8Var.a;
-                    int p1 = bkb.p1(0.1f, bkb.v0(i, wjbVar));
-                    int p12 = bkb.p1(0.22f, bkb.v0(i, wjbVar));
-                    ii2Var.setBackground(bkb.i0(L, L, L, L, p1, p12, p12));
-                    ii2Var.setTextColor(bkb.v0(i, wjbVar));
-                } else if (view2 instanceof ip8) {
-                    ((ip8) view2).updateColors();
+                privacySettingsActivity.getClass();
+                b31 b31Var = new b31(privacySettingsActivity.getParentActivity(), null);
+                b31Var.d(R.raw.email_check_inbox, new String[0]);
+                b31Var.b.setText(jb6.M0(2131742474, null));
+                u31.g(privacySettingsActivity, b31Var, 1500).j();
+                try {
+                    privacySettingsActivity.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
                 }
-                ko8 ko8Var = profileActivity.d;
-                profileActivity.a.getClass();
-                ko8Var.d(RecyclerView.R(view2));
-                profileActivity.d.getClass();
+                privacySettingsActivity.E0();
                 break;
         }
     }

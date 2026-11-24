@@ -1,30 +1,19 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.io.File;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ntc extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ otc b;
+public final class ntc {
+    public String a;
+    public int b;
+    public int c;
+    public File d;
+    public final File e;
 
-    public /* synthetic */ ntc(otc otcVar, byte b) {
-        this.a = b;
-        this.b = otcVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        otc otcVar = this.b;
-        switch (b) {
-            case 0:
-                otcVar.E = null;
-                break;
-            default:
-                otcVar.E = null;
-                break;
-        }
+    public ntc(File file, File file2, String str) {
+        this.a = str;
+        this.d = file;
+        this.e = file2;
     }
 }

@@ -1,41 +1,47 @@
 // default package
 
-import android.content.Context;
-import j$.util.DesugarCollections;
-import java.util.List;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class e7d {
-    public final Context a;
-    public final String b;
-    public final r5d c;
-    public final dd1 d;
-    public final ocd e;
+public final class e7d extends kjf {
+    public final transient h9d h;
+    public final transient Object[] n;
+    public final transient boolean r;
 
-    public e7d(Context context, dd1 dd1Var, ocd ocdVar) {
-        String r;
-        boolean isEmpty = DesugarCollections.unmodifiableList(dd1Var.b).isEmpty();
-        String str = dd1Var.a;
-        if (isEmpty) {
-            r = lqd.a(str);
-        } else {
-            List unmodifiableList = DesugarCollections.unmodifiableList(dd1Var.b);
-            if (str == null) {
-                w26.j("applicationId cannot be null");
-                throw null;
+    public e7d(h9d h9dVar, Object[] objArr) {
+        super((byte) 3);
+        this.h = h9dVar;
+        this.n = objArr;
+        this.r = true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.h.get(key))) {
+                return true;
             }
-            if (unmodifiableList == null) {
-                w26.j("namespaces cannot be null");
-                throw null;
-            }
-            r = v8b.r(new v8b(str, unmodifiableList));
         }
-        this.c = new r5d(this);
-        this.a = context.getApplicationContext();
-        fre.f(r);
-        this.b = r;
-        this.d = dd1Var;
-        this.e = ocdVar;
+        return false;
+    }
+
+    @Override // zad
+    public final int h(Object[] objArr) {
+        return l().h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return l().listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.r ? 1 : 0;
     }
 }

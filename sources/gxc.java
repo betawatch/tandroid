@@ -1,18 +1,18 @@
 // default package
 
-import android.os.Build;
-import android.view.animation.Interpolator;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gxc {
-    public fxc a;
+public final /* synthetic */ class gxc {
+    public static /* synthetic */ void b() {
+        throw new UnsupportedOperationException();
+    }
 
-    public gxc(int i, Interpolator interpolator, long j) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            this.a = new exc(bc3.b(i, interpolator, j));
-        } else {
-            this.a = new cxc(i, interpolator, j);
-        }
+    public static /* synthetic */ void c(int i, StringBuilder sb) {
+        sb.append(i);
+        throw new IllegalArgumentException(sb.toString());
+    }
+
+    public static /* synthetic */ void d(String str) {
+        throw new NullPointerException(str);
     }
 }

@@ -1,21 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public abstract class odd {
-    public static final Object a = new Object();
-    public static int b;
-    public static boolean c;
+import java.util.concurrent.Callable;
 
-    public static void a() {
-        synchronized (a) {
-            if (c) {
-                return;
-            }
-            c = true;
-            Thread thread = new Thread(new cza((byte) 18), "widget-engine-memory");
-            thread.setDaemon(true);
-            thread.start();
-        }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class odd implements Callable {
+    public static final /* synthetic */ odd a = new odd();
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        s13 s13Var = hg7.e;
+        return null;
     }
 }

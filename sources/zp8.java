@@ -1,33 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class zp8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pq8 b;
-    public final /* synthetic */ int c;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.ProfileActivity;
 
-    public /* synthetic */ zp8(pq8 pq8Var, int i, byte b) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class zp8 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lq8 b;
+
+    public /* synthetic */ zp8(lq8 lq8Var, byte b) {
         this.a = b;
-        this.b = pq8Var;
-        this.c = i;
+        this.b = lq8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        int i = this.c;
-        pq8 pq8Var = this.b;
+        lq8 lq8Var = this.b;
         switch (b) {
             case 0:
-                pq8Var.f.scrollBy(0, i);
+                ProfileActivity profileActivity = lq8Var.e;
+                RectF rectF = ProfileActivity.e7;
+                profileActivity.c3();
                 break;
-            default:
-                va vaVar = pq8Var.f;
-                if (vaVar != null) {
-                    vaVar.setSpanCount(i);
+            case 1:
+                ProfileActivity profileActivity2 = lq8Var.e;
+                profileActivity2.X4 = !profileActivity2.X4;
+                if (!profileActivity2.W4) {
+                    profileActivity2.W4 = true;
+                }
+                profileActivity2.m3();
+                view.requestLayout();
+                profileActivity2.d.g(profileActivity2.P3);
+                int i = profileActivity2.w6;
+                if (i >= 0) {
+                    profileActivity2.c.g1(i, profileActivity2.x6 - profileActivity2.a.getPaddingTop());
                     break;
                 }
+                break;
+            default:
+                ProfileActivity profileActivity3 = lq8Var.e;
+                profileActivity3.getMessagesController().B3(profileActivity3, profileActivity3.getMessagesController().W1(Long.valueOf(profileActivity3.e1)), null, profileActivity3.getClassGuid(), null, false, false);
                 break;
         }
     }

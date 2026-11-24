@@ -1,16 +1,74 @@
 // default package
 
-import org.telegram.ui.Components.NumberTextView;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class qt9 extends NumberTextView {
-    public static final /* synthetic */ int x = 0;
-    public int w;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class qt9 implements ServiceConnection {
+    public cl5 a;
+    public final /* synthetic */ rt9 b;
 
-    @Override // org.telegram.ui.Components.NumberTextView
-    public final void setTextColor(int i) {
-        super.setTextColor(i);
-        this.w = i;
+    public qt9(rt9 rt9Var) {
+        this.b = rt9Var;
+    }
+
+    public final boolean a() {
+        return this.a != null;
+    }
+
+    public final boolean b(Intent intent, Bundle bundle) {
+        cl5 cl5Var = this.a;
+        if (cl5Var != null) {
+            al5 al5Var = (al5) cl5Var;
+            Parcel obtain = Parcel.obtain();
+            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
+            int i = kl2.a;
+            if (intent == null) {
+                obtain.writeInt(0);
+            } else {
+                obtain.writeInt(1);
+                intent.writeToParcel(obtain, 0);
+            }
+            obtain.writeInt(1);
+            bundle.writeToParcel(obtain, 0);
+            Parcel a = al5Var.a(obtain, 1);
+            boolean z = a.readInt() != 0;
+            a.recycle();
+            if (z) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        cl5 al5Var;
+        if (this.b.a) {
+            Log.d("SAVerificationClientS", "onServiceConnected");
+        }
+        int i = bl5.a;
+        if (iBinder == null) {
+            al5Var = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
+            al5Var = queryLocalInterface instanceof cl5 ? (cl5) queryLocalInterface : new al5(iBinder);
+        }
+        this.a = al5Var;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        this.a = null;
+        if (this.b.a) {
+            Log.d("SAVerificationClientS", "onServiceDisconnected");
+        }
     }
 }

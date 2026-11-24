@@ -1,25 +1,20 @@
 // default package
 
-import android.graphics.SurfaceTexture;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public interface ibc {
-    void onError(lbc lbcVar, Exception exc);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ibc extends ImageReceiver {
+    public final /* synthetic */ jbc K1;
 
-    void onRenderedFirstFrame();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ibc(jbc jbcVar) {
+        super(null);
+        this.K1 = jbcVar;
+    }
 
-    void onRenderedFirstFrame(tj tjVar);
-
-    void onSeekFinished(tj tjVar);
-
-    void onSeekStarted(tj tjVar);
-
-    void onStateChanged(boolean z, int i);
-
-    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
-
-    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
-
-    void onVideoSizeChanged(int i, int i2, int i3, float f);
+    @Override // org.telegram.messenger.ImageReceiver, dn
+    public final void invalidate() {
+        this.K1.invalidate();
+    }
 }

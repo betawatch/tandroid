@@ -1,21 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class r5e implements zn7 {
-    public static final r5e a = new r5e();
-    public static final w84 b = new w84("imageFormat", b00.m(yjb.q(kkd.class, new cjd(1))));
-    public static final w84 c = new w84("originalImageSize", b00.m(yjb.q(kkd.class, new cjd(2))));
-    public static final w84 d = new w84("compressedImageSize", b00.m(yjb.q(kkd.class, new cjd(3))));
-    public static final w84 e = new w84("isOdmlImage", b00.m(yjb.q(kkd.class, new cjd(4))));
+public final class r5e extends x5e {
+    public final transient int r;
+    public final transient int s;
+    public final /* synthetic */ x5e w;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        tqe tqeVar = (tqe) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, tqeVar.a);
-        ao7Var.a(c, tqeVar.b);
-        ao7Var.a(d, null);
-        ao7Var.a(e, null);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r5e(x5e x5eVar, int i, int i2) {
+        super((byte) 5);
+        this.w = x5eVar;
+        this.r = i;
+        this.s = i2;
+    }
+
+    @Override // java.util.List
+    public final Object get(int i) {
+        r3f.a(i, this.s);
+        return this.w.get(i + this.r);
+    }
+
+    @Override // l1d
+    public final int q() {
+        return this.w.s() + this.r + this.s;
+    }
+
+    @Override // l1d
+    public final int s() {
+        return this.w.s() + this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s;
+    }
+
+    @Override // l1d
+    public final Object[] x() {
+        return this.w.x();
+    }
+
+    @Override // x5e, java.util.List
+    /* renamed from: y, reason: merged with bridge method [inline-methods] */
+    public final x5e subList(int i, int i2) {
+        r3f.c(i, i2, this.s);
+        int i3 = this.r;
+        return this.w.subList(i + i3, i2 + i3);
     }
 }

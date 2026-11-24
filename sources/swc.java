@@ -1,15 +1,29 @@
 // default package
 
-import android.view.View;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class swc extends c6 {
+    public final /* synthetic */ uwc a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public interface swc {
-    void P();
+    public swc(uwc uwcVar) {
+        this.a = uwcVar;
+    }
 
-    View R();
-
-    void o(vxc vxcVar);
-
-    void w();
+    @Override // c6
+    public final void b(int i) {
+        uwc uwcVar = this.a;
+        k47 k47Var = uwcVar.n;
+        if (i == -1) {
+            uwcVar.finishFragment();
+            return;
+        }
+        if (i != 1) {
+            if (i == 2) {
+                uwc.a0(uwcVar.d, k47Var, uwcVar.getParentActivity(), uwcVar.r, uwcVar.e);
+            }
+        } else if (k47Var != null) {
+            k47Var.k.with_my_score = false;
+            uwcVar.showDialog(tca.G0(uwcVar.getParentActivity(), k47Var, null, false, uwcVar.h));
+        }
+    }
 }

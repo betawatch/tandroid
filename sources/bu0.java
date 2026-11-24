@@ -1,89 +1,102 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.HashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bu0 implements fg7, wi3 {
-    public final /* synthetic */ hv0 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer d;
-    public final /* synthetic */ ev0 e;
+public final /* synthetic */ class bu0 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ku0 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ bu0(hv0 hv0Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, ev0 ev0Var) {
-        this.a = hv0Var;
-        this.b = zArr;
-        this.c = str;
-        this.d = tL_buttonTypeRequestPeer;
-        this.e = ev0Var;
+    public /* synthetic */ bu0(ku0 ku0Var, long j, byte b) {
+        this.a = b;
+        this.b = ku0Var;
+        this.c = j;
     }
 
-    @Override // wi3
-    public final boolean F() {
-        return false;
-    }
-
-    @Override // fg7
-    public final void a(ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final byte b = 1;
+                final ku0 ku0Var = this.b;
+                final long j = this.c;
+                gm.c3(new Runnable() { // from class: gu0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b2 = b;
+                        long j2 = j;
+                        TLObject tLObject2 = tLObject;
+                        ku0 ku0Var2 = ku0Var;
+                        switch (b2) {
+                            case 0:
+                                boolean z = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                HashMap hashMap = ku0Var2.e;
+                                if (z) {
+                                    hashMap.put(Long.valueOf(j2), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap.put(Long.valueOf(j2), null);
+                                }
+                                ku0Var2.d.put(Long.valueOf(j2), Long.valueOf(System.currentTimeMillis()));
+                                nm7.f(ku0Var2.a).k(nm7.E3, Long.valueOf(j2));
+                                break;
+                            default:
+                                boolean z2 = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                HashMap hashMap2 = ku0Var2.c;
+                                if (z2) {
+                                    hashMap2.put(Long.valueOf(j2), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap2.put(Long.valueOf(j2), null);
+                                }
+                                ku0Var2.b.put(Long.valueOf(j2), Long.valueOf(System.currentTimeMillis()));
+                                nm7.f(ku0Var2.a).k(nm7.E3, Long.valueOf(j2));
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b2 = 0;
+                final ku0 ku0Var2 = this.b;
+                final long j2 = this.c;
+                gm.c3(new Runnable() { // from class: gu0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b22 = b2;
+                        long j22 = j2;
+                        TLObject tLObject2 = tLObject;
+                        ku0 ku0Var22 = ku0Var2;
+                        switch (b22) {
+                            case 0:
+                                boolean z = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                HashMap hashMap = ku0Var22.e;
+                                if (z) {
+                                    hashMap.put(Long.valueOf(j22), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap.put(Long.valueOf(j22), null);
+                                }
+                                ku0Var22.d.put(Long.valueOf(j22), Long.valueOf(System.currentTimeMillis()));
+                                nm7.f(ku0Var22.a).k(nm7.E3, Long.valueOf(j22));
+                                break;
+                            default:
+                                boolean z2 = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                HashMap hashMap2 = ku0Var22.c;
+                                if (z2) {
+                                    hashMap2.put(Long.valueOf(j22), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap2.put(Long.valueOf(j22), null);
+                                }
+                                ku0Var22.b.put(Long.valueOf(j22), Long.valueOf(System.currentTimeMillis()));
+                                nm7.f(ku0Var22.a).k(nm7.E3, Long.valueOf(j22));
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        this.b[0] = true;
-        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        hv0 hv0Var = this.a;
-        na7.q1(hv0Var.N);
-        tL_messages_sendBotRequestedPeer.peer = na7.l1(hv0Var.V);
-        String str = this.c;
-        tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-        tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(na7.q1(hv0Var.N).h1(((Long) obj).longValue()));
-        }
-        ConnectionsManager.getInstance(hv0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new hc((byte) 0), new ut0(hv0Var, this.e, str, (byte) 2));
-    }
-
-    @Override // wi3
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
-        byte b = 1;
-        if (!arrayList.isEmpty()) {
-            this.b[0] = true;
-            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-            hv0 hv0Var = this.a;
-            na7.q1(hv0Var.N);
-            tL_messages_sendBotRequestedPeer.peer = na7.l1(hv0Var.V);
-            String str = this.c;
-            tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-            tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
-            HashSet hashSet = new HashSet();
-            int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
-                hashSet.add(Long.valueOf(((zc7) obj).a));
-            }
-            Iterator it = hashSet.iterator();
-            while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(na7.q1(hv0Var.N).h1(((Long) it.next()).longValue()));
-            }
-            ConnectionsManager.getInstance(hv0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new hc((byte) 0), new ut0(hv0Var, this.e, str, b));
-        }
-        cj3Var.finishFragment();
-        return true;
-    }
-
-    @Override // wi3
-    public final boolean t(cj3 cj3Var) {
-        return false;
     }
 }

@@ -1,40 +1,19 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class syd extends b4 {
-    public static final Parcelable.Creator<syd> CREATOR = new rpd((byte) 17);
-    public int a;
-    public int b;
-    public int c;
-    public boolean d;
-    public boolean e;
-    public float f;
+public final class syd implements cq7 {
+    public static final syd a = new syd();
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        int i2 = this.a;
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(i2);
-        int i3 = this.b;
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(i3);
-        int i4 = this.c;
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(i4);
-        boolean z = this.d;
-        jte.q(parcel, 5, 4);
-        parcel.writeInt(z ? 1 : 0);
-        boolean z2 = this.e;
-        jte.q(parcel, 6, 4);
-        parcel.writeInt(z2 ? 1 : 0);
-        float f = this.f;
-        jte.q(parcel, 7, 4);
-        parcel.writeFloat(f);
-        jte.s(parcel, r);
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

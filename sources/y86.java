@@ -1,32 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y86 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sx5 b;
-    public final /* synthetic */ h96 c;
+import android.view.View;
 
-    public /* synthetic */ y86(sx5 sx5Var, h96 h96Var, byte b) {
-        this.a = b;
-        this.b = sx5Var;
-        this.c = h96Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class y86 extends sc3 {
+    public final /* synthetic */ n38 F;
+
+    public y86(n38 n38Var) {
+        this.F = n38Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        h96 h96Var = this.c;
-        sx5 sx5Var = this.b;
-        switch (b) {
-            case 0:
-                sx5Var.run();
-                h96Var.a();
-                break;
-            default:
-                sx5Var.run();
-                h96Var.a();
-                break;
-        }
+    @Override // sc3
+    public final float A(View view) {
+        return 0.5f;
+    }
+
+    @Override // sc3
+    public final void M() {
+        this.F.c.invalidate();
+    }
+
+    @Override // sc3
+    public final void P(u69 u69Var) {
+        this.F.c.invalidate();
     }
 }

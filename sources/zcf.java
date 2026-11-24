@@ -1,29 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zcf extends vbf implements Runnable {
-    public final Runnable n;
+public final class zcf {
+    public final o7f a;
+    public final pef b;
 
-    public zcf(Runnable runnable) {
-        runnable.getClass();
-        this.n = runnable;
-    }
-
-    @Override // vbf
-    public final String a() {
-        return tb4.y("task=[", this.n.toString(), "]");
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            this.n.run();
-        } catch (Error | RuntimeException e) {
-            if (vbf.f.f(this, null, new obf(e))) {
-                vbf.g(this);
-            }
-            throw e;
-        }
+    public /* synthetic */ zcf(xab xabVar) {
+        this.a = (o7f) xabVar.b;
+        this.b = (pef) xabVar.c;
     }
 }

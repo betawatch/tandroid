@@ -1,32 +1,27 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class fya {
-    public final String a;
-    public final String b;
-    public final gya c;
+public final class fya extends so4 {
+    public final /* synthetic */ ix9 b;
+    public final /* synthetic */ vh2 c;
 
-    public fya(String str, String str2, gya gyaVar) {
-        this.a = str;
-        this.b = str2;
-        this.c = gyaVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fya(vh2 vh2Var, ix9 ix9Var, ix9 ix9Var2) {
+        super(ix9Var);
+        this.c = vh2Var;
+        this.b = ix9Var2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof fya)) {
-            return false;
-        }
-        fya fyaVar = (fya) obj;
-        return this.a.equals(fyaVar.a) && this.b.equals(fyaVar.b) && this.c.equals(fyaVar.c);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c);
+    @Override // so4, ix9
+    public final hx9 f(long j) {
+        hx9 f = this.b.f(j);
+        kx9 kx9Var = f.a;
+        long j2 = kx9Var.a;
+        long j3 = kx9Var.b;
+        long j4 = this.c.b;
+        kx9 kx9Var2 = new kx9(j2, j3 + j4);
+        kx9 kx9Var3 = f.b;
+        return new hx9(kx9Var2, new kx9(kx9Var3.a, kx9Var3.b + j4));
     }
 }

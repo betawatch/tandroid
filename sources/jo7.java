@@ -1,82 +1,15 @@
 // default package
 
-import java.io.EOFException;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class jo7 {
-    public final ko7 a = new ko7();
-    public final xu7 b = new xu7(0, new byte[65025]);
-    public int c = -1;
-    public int d;
-    public boolean e;
+    public final long a;
+    public final long b;
+    public final boolean c;
 
-    public final int a(int i) {
-        int i2;
-        int i3 = 0;
-        this.d = 0;
-        do {
-            int i4 = this.d;
-            int i5 = i + i4;
-            ko7 ko7Var = this.a;
-            if (i5 >= ko7Var.c) {
-                break;
-            }
-            int[] iArr = ko7Var.f;
-            this.d = i4 + 1;
-            i2 = iArr[i5];
-            i3 += i2;
-        } while (i2 == 255);
-        return i3;
-    }
-
-    public final boolean b(ja3 ja3Var) {
-        int i;
-        gre.p(ja3Var != null);
-        boolean z = this.e;
-        xu7 xu7Var = this.b;
-        if (z) {
-            this.e = false;
-            xu7Var.K(0);
-        }
-        while (!this.e) {
-            int i2 = this.c;
-            ko7 ko7Var = this.a;
-            if (i2 < 0) {
-                if (ko7Var.b(ja3Var, -1L) && ko7Var.a(ja3Var, true)) {
-                    int i3 = ko7Var.d;
-                    if ((ko7Var.a & 1) == 1 && xu7Var.c == 0) {
-                        i3 += a(0);
-                        i = this.d;
-                    } else {
-                        i = 0;
-                    }
-                    try {
-                        ja3Var.l(i3, false);
-                        this.c = i;
-                        i2 = i;
-                    } catch (EOFException unused) {
-                        return false;
-                    }
-                }
-                return false;
-            }
-            int a = a(i2);
-            int i4 = this.c + this.d;
-            if (a > 0) {
-                xu7Var.c(xu7Var.c + a);
-                try {
-                    ja3Var.c(xu7Var.a, xu7Var.c, a, false);
-                    xu7Var.M(xu7Var.c + a);
-                    this.e = ko7Var.f[i4 + (-1)] != 255;
-                } catch (EOFException unused2) {
-                }
-            }
-            if (i4 == ko7Var.c) {
-                i4 = -1;
-            }
-            this.c = i4;
-        }
-        return true;
+    public jo7(long j, long j2, boolean z) {
+        this.a = j;
+        this.b = j2;
+        this.c = z;
     }
 }

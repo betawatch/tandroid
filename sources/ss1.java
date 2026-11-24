@@ -1,22 +1,24 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ss1 extends oo0 {
-    public final /* synthetic */ vs1 f;
+public final class ss1 extends cw6 {
+    public final /* synthetic */ yv1 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ss1(vs1 vs1Var, Context context, int i, wjb wjbVar) {
-        super(i, wjbVar, context);
-        this.f = vs1Var;
+    public ss1(yv1 yv1Var, vr1 vr1Var, yr1 yr1Var) {
+        super(vr1Var, yr1Var);
+        this.x = yv1Var;
     }
 
-    @Override // oo0
-    public final int getSideMenuWidth() {
-        mu1 mu1Var = this.f.R;
-        int i = mu1.md;
-        return mu1Var.e7();
+    public final void m(int i) {
+        if (this.x.nb) {
+            if (i == 0) {
+                i = 1;
+            } else if (i == 1) {
+                i = 0;
+            }
+        }
+        this.b = i;
     }
 }

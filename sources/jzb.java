@@ -1,24 +1,32 @@
 // default package
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jzb extends rzb {
-    public final /* synthetic */ cib T1;
+public final /* synthetic */ class jzb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lzb b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jzb(Context context, String str, String str2, CharSequence charSequence, cib cibVar) {
-        super(context, str, str2, charSequence, null, 0, false, null);
-        this.T1 = cibVar;
+    public /* synthetic */ jzb(lzb lzbVar, byte b) {
+        this.a = b;
+        this.b = lzbVar;
     }
 
-    @Override // rzb, fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        cib cibVar = this.T1;
-        if (cibVar != null) {
-            cibVar.run();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        lzb lzbVar = this.b;
+        switch (b) {
+            case 0:
+                lzbVar.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lzbVar.h();
+                lzbVar.g();
+                break;
+            default:
+                lzbVar.M = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                lzbVar.h.invalidate();
+                break;
         }
     }
 }

@@ -1,29 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum oke implements w6d {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF39(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF47(5);
+public final class oke {
+    public static final mq5 a;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    oke(int i) {
-        this.a = i;
-    }
-
-    @Override // w6d
-    public final int zza() {
-        return this.a;
+    static {
+        int i = okd.r;
+        Object[] objArr = vnd.F;
+        new cpd("FIDO");
+        a = new mq5(Boolean.FALSE);
     }
 }

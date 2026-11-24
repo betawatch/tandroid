@@ -1,98 +1,55 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bu2 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qu2 b;
+public final class bu2 extends au2 implements nx9 {
+    public final long i;
+    public final long j;
 
-    public /* synthetic */ bu2(qu2 qu2Var, byte b) {
-        this.a = b;
-        this.b = qu2Var;
+    public bu2(long j, long j2, int i, int i2, boolean z, boolean z2, long j3) {
+        super(j, j2, i, i2, z, z2);
+        this.i = j3;
+        this.j = j == -1 ? -1L : j;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        final byte b2 = 1;
-        final qu2 qu2Var = this.b;
-        switch (b) {
-            case 0:
-                if (tLObject != null) {
-                    TLRPC.TL_help_inviteText tL_help_inviteText = (TLRPC.TL_help_inviteText) tLObject;
-                    if (tL_help_inviteText.message.length() != 0) {
-                        gl.d3(new ee2(qu2Var, tL_help_inviteText, b2));
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                final byte b3 = 0;
-                gl.d3(new Runnable() { // from class: vt2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b4 = b3;
-                        TLObject tLObject2 = tLObject;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        qu2 qu2Var2 = qu2Var;
-                        switch (b4) {
-                            case 0:
-                                if (tL_error2 == null) {
-                                    qu2Var2.Y = (TLRPC.GlobalPrivacySettings) tLObject2;
-                                    qu2Var2.G = (byte) 2;
-                                } else {
-                                    qu2Var2.G = (byte) 0;
-                                }
-                                qu2Var2.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                            default:
-                                if (tL_error2 == null) {
-                                    qu2Var2.I = ((TLRPC.TL_accountDaysTTL) tLObject2).days;
-                                    qu2Var2.H = (byte) 2;
-                                } else {
-                                    qu2Var2.H = (byte) 0;
-                                }
-                                qu2Var2.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                gl.d3(new Runnable() { // from class: vt2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b4 = b2;
-                        TLObject tLObject2 = tLObject;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        qu2 qu2Var2 = qu2Var;
-                        switch (b4) {
-                            case 0:
-                                if (tL_error2 == null) {
-                                    qu2Var2.Y = (TLRPC.GlobalPrivacySettings) tLObject2;
-                                    qu2Var2.G = (byte) 2;
-                                } else {
-                                    qu2Var2.G = (byte) 0;
-                                }
-                                qu2Var2.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                            default:
-                                if (tL_error2 == null) {
-                                    qu2Var2.I = ((TLRPC.TL_accountDaysTTL) tLObject2).days;
-                                    qu2Var2.H = (byte) 2;
-                                } else {
-                                    qu2Var2.H = (byte) 0;
-                                }
-                                qu2Var2.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // nx9
+    public final long a() {
+        return this.j;
+    }
+
+    @Override // nx9
+    public final long b() {
+        return this.b;
+    }
+
+    @Override // nx9
+    public final long e(long j) {
+        return ((Math.max(0L, j - this.b) << 3) * 1000000) / this.e;
+    }
+
+    @Override // au2, ix9
+    public final hx9 f(long j) {
+        long j2 = this.i;
+        if (j2 != -9223372036854775807L && j >= j2) {
+            long j3 = this.j;
+            if (j3 != -1) {
+                long j4 = this.c;
+                long j5 = this.b;
+                kx9 kx9Var = new kx9(Math.max(0L, j2 - (((Math.max(0L, (j4 + j5) - j5) << 3) * 1000000) / this.e)), Math.max(j5, j3 - j4));
+                return new hx9(kx9Var, kx9Var);
+            }
         }
+        return super.f(j);
+    }
+
+    @Override // nx9
+    public final int g() {
+        return this.e;
+    }
+
+    @Override // au2, ix9
+    public final long h() {
+        long j = this.i;
+        return j != -9223372036854775807L ? j : this.f;
     }
 }

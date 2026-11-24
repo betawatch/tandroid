@@ -1,35 +1,64 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ta4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ab4 b;
-    public final /* synthetic */ TLRPC.TL_messages_sendMedia c;
-    public final /* synthetic */ Object[] d;
+public final class ta4 extends x1 {
+    public final sa4 a;
+    public String b;
+    public final StringBuilder c;
 
-    public /* synthetic */ ta4(ab4 ab4Var, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr, byte b) {
-        this.a = b;
-        this.b = ab4Var;
-        this.c = tL_messages_sendMedia;
-        this.d = objArr;
+    public ta4(char c, int i, int i2) {
+        sa4 sa4Var = new sa4();
+        this.a = sa4Var;
+        this.c = new StringBuilder();
+        sa4Var.g = c;
+        sa4Var.h = i;
+        sa4Var.i = i2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Object[] objArr = this.d;
-        ab4 ab4Var = this.b;
-        switch (b) {
-            case 0:
-                ab4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (k3a) objArr[4], ((Boolean) objArr[5]).booleanValue());
-                break;
-            default:
-                ab4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (k3a) objArr[4], ((Boolean) objArr[5]).booleanValue());
-                break;
+    @Override // x1
+    public final void a(CharSequence charSequence) {
+        if (this.b == null) {
+            this.b = charSequence.toString();
+            return;
         }
+        StringBuilder sb = this.c;
+        sb.append(charSequence);
+        sb.append('\n');
+    }
+
+    @Override // x1
+    public final void d() {
+        String a = j54.a(this.b.trim());
+        sa4 sa4Var = this.a;
+        sa4Var.j = a;
+        sa4Var.k = this.c.toString();
+    }
+
+    @Override // x1
+    public final gl0 e() {
+        return this.a;
+    }
+
+    @Override // x1
+    public final il2 h(fq3 fq3Var) {
+        int i = fq3Var.e;
+        int i2 = fq3Var.b;
+        String str = fq3Var.a;
+        int i3 = fq3Var.g;
+        sa4 sa4Var = this.a;
+        if (i3 < 4) {
+            char c = sa4Var.g;
+            int i4 = sa4Var.h;
+            int b = ose.b(c, str, i, str.length()) - i;
+            if (b >= i4 && ose.c(i + b, str.length(), str) == str.length()) {
+                return new il2(-1, -1, true);
+            }
+        }
+        int length = str.length();
+        for (int i5 = sa4Var.i; i5 > 0 && i2 < length && str.charAt(i2) == ' '; i5--) {
+            i2++;
+        }
+        return il2.a(i2);
     }
 }

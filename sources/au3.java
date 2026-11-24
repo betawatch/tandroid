@@ -1,56 +1,28 @@
 // default package
 
 import android.os.Build;
-import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.view.inputmethod.EditorInfo;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class au3 {
-    public static final String[] a = new String[0];
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class au3 extends c69 {
+    public final zt3[] a = new zt3[4];
+    public final ArrayList b = new ArrayList();
 
-    public static String[] a(EditorInfo editorInfo) {
-        if (Build.VERSION.SDK_INT >= 25) {
-            String[] strArr = editorInfo.contentMimeTypes;
-            if (strArr != null) {
-                return strArr;
-            }
-        } else {
-            Bundle bundle = editorInfo.extras;
-            if (bundle != null) {
-                String[] stringArray = bundle.getStringArray("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES");
-                if (stringArray == null) {
-                    stringArray = editorInfo.extras.getStringArray("android.support.v13.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES");
-                }
-                if (stringArray != null) {
-                    return stringArray;
-                }
-            }
-        }
-        return a;
+    @Override // c69
+    public final EdgeEffect a(RecyclerView recyclerView, int i) {
+        zt3 zt3Var = new zt3(recyclerView, i, new yt3(this, (byte) 0));
+        this.a[i] = zt3Var;
+        return zt3Var;
     }
 
-    public static void b(EditorInfo editorInfo, String[] strArr) {
-        if (Build.VERSION.SDK_INT >= 25) {
-            editorInfo.contentMimeTypes = strArr;
-            return;
+    public final float b(int i) {
+        zt3 zt3Var = this.a[i];
+        if (Build.VERSION.SDK_INT < 31 || zt3Var == null || zt3Var.isFinished()) {
+            return 0.0f;
         }
-        Bundle bundle = editorInfo.extras;
-        if (bundle == null) {
-            bundle = new Bundle();
-            editorInfo.extras = bundle;
-        }
-        bundle.putStringArray("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES", strArr);
-        editorInfo.extras.putStringArray("android.support.v13.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES", strArr);
-    }
-
-    public static void c(EditorInfo editorInfo, CharSequence charSequence, int i, int i2) {
-        if (editorInfo.extras == null) {
-            editorInfo.extras = new Bundle();
-        }
-        editorInfo.extras.putCharSequence("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SURROUNDING_TEXT", charSequence != null ? new SpannableStringBuilder(charSequence) : null);
-        editorInfo.extras.putInt("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SELECTION_HEAD", i);
-        editorInfo.extras.putInt("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SELECTION_END", i2);
+        return zt3Var.getDistance();
     }
 }

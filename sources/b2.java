@@ -1,99 +1,99 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class b2 extends pt5 implements fw2, ax2 {
-    public final sw2 d;
+public abstract class b2 extends ov5 implements px2, ky2 {
+    public final cy2 d;
 
-    public b2(sw2 sw2Var, boolean z) {
+    public b2(cy2 cy2Var, boolean z) {
         super(z);
-        y((bt5) sw2Var.get(pd5.c));
-        this.d = sw2Var.plus(this);
+        y((av5) cy2Var.get(nf5.c));
+        this.d = cy2Var.plus(this);
     }
 
-    @Override // pt5
+    @Override // ov5
     public String D() {
         return super.D();
     }
 
-    @Override // pt5
+    @Override // ov5
     public final void G(Object obj) {
-        if (!(obj instanceof fp2)) {
+        if (!(obj instanceof qq2)) {
             Q(obj);
         } else {
-            fp2 fp2Var = (fp2) obj;
-            P(fp2Var.a, ex.a.getIntVolatile(fp2Var, fp2.b) != 0);
+            qq2 qq2Var = (qq2) obj;
+            P(qq2Var.a, fy.a.getIntVolatile(qq2Var, qq2.b) != 0);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void R(dx2 dx2Var, b2 b2Var, eq4 eq4Var) {
-        int ordinal = dx2Var.ordinal();
-        g5c g5cVar = g5c.a;
+    public final void R(ny2 ny2Var, b2 b2Var, fs4 fs4Var) {
+        int ordinal = ny2Var.ordinal();
+        g7c g7cVar = g7c.a;
         if (ordinal == 0) {
             try {
-                r3c.c(dle.a(((of0) eq4Var).create(b2Var, this)), g5cVar);
+                r5c.c(fne.a(((og0) fs4Var).create(b2Var, this)), g7cVar);
                 return;
             } finally {
-                resumeWith(new sa9(th));
+                resumeWith(new sc9(th));
             }
         }
         if (ordinal != 1) {
             if (ordinal == 2) {
-                dle.a(((of0) eq4Var).create(b2Var, this)).resumeWith(g5cVar);
+                fne.a(((og0) fs4Var).create(b2Var, this)).resumeWith(g7cVar);
                 return;
             }
             if (ordinal != 3) {
-                throw new gp2();
+                throw new rq2();
             }
             try {
-                sw2 sw2Var = this.d;
-                Object c = edd.c(sw2Var, null);
+                cy2 cy2Var = this.d;
+                Object c = gfd.c(cy2Var, null);
                 try {
-                    r3c.a(2, eq4Var);
-                    Object invoke = eq4Var.invoke(b2Var, this);
-                    if (invoke != bx2.a) {
+                    r5c.a(2, fs4Var);
+                    Object invoke = fs4Var.invoke(b2Var, this);
+                    if (invoke != ly2.a) {
                         resumeWith(invoke);
                     }
                 } finally {
-                    edd.a(sw2Var, c);
+                    gfd.a(cy2Var, c);
                 }
             } catch (Throwable th) {
             }
         }
     }
 
-    @Override // ax2
-    public final sw2 c() {
+    @Override // ky2
+    public final cy2 c() {
         return this.d;
     }
 
-    @Override // fw2
-    public final sw2 getContext() {
+    @Override // px2
+    public final cy2 getContext() {
         return this.d;
     }
 
-    @Override // pt5
+    @Override // ov5
     public final String l() {
         return getClass().getSimpleName().concat(" was cancelled");
     }
 
-    @Override // fw2
+    @Override // px2
     public final void resumeWith(Object obj) {
-        Throwable a = ta9.a(obj);
+        Throwable a = tc9.a(obj);
         if (a != null) {
-            obj = new fp2(a, false);
+            obj = new qq2(a, false);
         }
         Object C = C(obj);
-        if (C == fad.b) {
+        if (C == hcd.b) {
             return;
         }
         g(C);
     }
 
-    @Override // pt5
-    public final void x(gp2 gp2Var) {
-        c9e.a(this.d, gp2Var);
+    @Override // ov5
+    public final void x(rq2 rq2Var) {
+        dbe.a(this.d, rq2Var);
     }
 
     public void Q(Object obj) {

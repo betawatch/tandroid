@@ -1,27 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class l0c implements zw5, yw5 {
-    public final /* synthetic */ b1c a;
-    public final /* synthetic */ k27 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
-    public /* synthetic */ l0c(b1c b1cVar, k27 k27Var, long j, int i) {
-        this.a = b1cVar;
-        this.b = k27Var;
-        this.c = j;
-        this.d = i;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class l0c {
+    public final HashSet a = new HashSet();
+    public final HashMap b = new HashMap();
+
+    public static String c(int i, String str) {
+        if (str.length() <= (i << 1) + 1) {
+            return str;
+        }
+        return str.substring(0, i) + "…" + str.substring(str.length() - i);
     }
 
-    @Override // zw5
-    public final void a(String str) {
-        gl.d3(new i0c(this.a, str, this.b, this.c, this.d, (byte) 1));
+    public final String a(String str) {
+        if (str == null) {
+            return null;
+        }
+        String str2 = (String) this.b.get(str);
+        return str2 == null ? str : str2;
     }
 
-    @Override // yw5
-    public final void n(Exception exc) {
-        gl.d3(new o57((Object) this.a, (Object) this.b, this.c, this.d, (byte) 20));
+    public final void b(int i, ArrayList arrayList) {
+        HashMap hashMap = new HashMap();
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            String str = (String) obj;
+            String c = c(i, str);
+            ArrayList arrayList2 = (ArrayList) hashMap.get(c);
+            if (arrayList2 == null) {
+                arrayList2 = new ArrayList();
+                hashMap.put(c, arrayList2);
+            }
+            arrayList2.add(str);
+        }
+        for (ArrayList arrayList3 : hashMap.values()) {
+            if (arrayList3.size() == 1) {
+                String str2 = (String) arrayList3.get(0);
+                this.b.put(str2, c(i, str2));
+            } else {
+                b(i + 1, arrayList3);
+            }
+        }
     }
 }

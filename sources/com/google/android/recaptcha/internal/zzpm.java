@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 final class zzpm extends zzpo {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -21,7 +21,7 @@ final class zzpm extends zzpo {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(de9.k(zze.length(), "Invalid input length "));
+            throw new zzpn(hg9.j(zze.length(), "Invalid input length "));
         }
         int i = 0;
         int i2 = 0;
@@ -34,11 +34,11 @@ final class zzpm extends zzpo {
                 int i5 = i + 3;
                 int zzb2 = zzb | (zzpkVar.zzb(zze.charAt(i4)) << 6);
                 int i6 = i2 + 2;
-                bArr[i3] = (byte) ((zzb2 >>> 8) & kk7.d4);
+                bArr[i3] = (byte) ((zzb2 >>> 8) & nm7.d4);
                 if (i5 < zze.length()) {
                     i += 4;
                     i2 += 3;
-                    bArr[i6] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i5))) & kk7.d4);
+                    bArr[i6] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i5))) & nm7.d4);
                 } else {
                     i2 = i6;
                     i = i5;

@@ -1,21 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class xx3 extends oh8 {
-    @Override // android.view.View
-    public final void invalidate() {
-        if (pg5.b(this)) {
-            return;
-        }
-        super.invalidate();
-    }
+import androidx.emoji2.text.EmojiCompatInitializer;
 
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        if (pg5.b(this)) {
-            return;
-        }
-        super.invalidate(i, i2, i3, i4);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class xx3 implements d36 {
+    public final /* synthetic */ w26 a;
+
+    public xx3(EmojiCompatInitializer emojiCompatInitializer, w26 w26Var) {
+        this.a = w26Var;
     }
 }

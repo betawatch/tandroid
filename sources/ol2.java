@@ -1,41 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import java.io.IOException;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ol2 extends za8 {
-    public final /* synthetic */ yl2 E;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ol2 extends IOException {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ol2(int i, int i2) {
+        super(r0.toString());
+        StringBuilder sb = new StringBuilder(nm7.s1);
+        sb.append("CodedOutputStream was writing to a flat byte array and ran out of space (pos ");
+        sb.append(i);
+        sb.append(" limit ");
+        sb.append(i2);
+        sb.append(").");
+    }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ol2(yl2 yl2Var, Context context, Bitmap bitmap) {
-        super(context);
-        this.E = yl2Var;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        Paint paint3 = new Paint(1);
-        this.d = paint3;
-        this.e = 0.5f;
-        this.f = 0.5f;
-        this.h = new Path();
-        this.n = new Rect();
-        this.r = new RectF();
-        this.a = bitmap;
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(gl.L(4.0f));
-        paint.setColor(-1);
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(gl.L(1.0f));
-        paint2.setColor(-1711276033);
-        paint3.setStyle(style);
-        paint3.setStrokeWidth(gl.L(12.0f));
+    public /* synthetic */ ol2(IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ol2(long j, long j2, int i, IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), indexOutOfBoundsException);
+        Locale locale = Locale.US;
+        StringBuilder o = wi8.o(j, "Pos: ", ", limit: ");
+        o.append(j2);
+        o.append(", len: ");
+        o.append(i);
+    }
+
+    public ol2(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str), indexOutOfBoundsException);
     }
 }

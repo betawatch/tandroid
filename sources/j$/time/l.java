@@ -5,7 +5,7 @@ import j$.time.temporal.Temporal;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes4.dex */
 public final class l implements j$.time.temporal.l, j$.time.temporal.m {
     public static final l APRIL;
@@ -102,25 +102,25 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m {
             case 2:
                 return (z ? 1 : 0) + 91;
             case 3:
-                return (z ? 1 : 0) + kk7.h2;
+                return (z ? 1 : 0) + nm7.h2;
             case 4:
-                return (z ? 1 : 0) + kk7.S3;
+                return (z ? 1 : 0) + nm7.S3;
             case 5:
-                return (z ? 1 : 0) + kk7.b5;
+                return (z ? 1 : 0) + nm7.b5;
             case 6:
                 return 1;
             case 7:
                 return (z ? 1 : 0) + 60;
             case 8:
-                return (z ? 1 : 0) + kk7.E1;
+                return (z ? 1 : 0) + 121;
             case 9:
-                return (z ? 1 : 0) + kk7.L2;
+                return (z ? 1 : 0) + nm7.L2;
             case 10:
-                return (z ? 1 : 0) + kk7.p3;
+                return (z ? 1 : 0) + nm7.p3;
             case 11:
-                return (z ? 1 : 0) + kk7.w4;
+                return (z ? 1 : 0) + nm7.w4;
             default:
-                return (z ? 1 : 0) + kk7.F5;
+                return (z ? 1 : 0) + nm7.F5;
         }
     }
 

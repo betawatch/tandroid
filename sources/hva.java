@@ -1,108 +1,199 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class hva extends oec {
-    public final Context a;
-    public final int b;
-    public final boolean c;
-    public final int d;
-    public final wjb e;
-    public final long f;
-    public s39 g;
-    public qw4 h;
-    public final ArrayList i = new ArrayList();
+public final class hva {
+    public final cva a;
+    public final k47 b;
+    public final yv1 c;
+    public final u31 d;
+    public final o31 e;
+    public final iva f;
+    public final boolean g;
+    public long h;
+    public long k;
+    public boolean l;
+    public boolean m;
+    public kta o;
+    public final fva p;
+    public final /* synthetic */ jva q;
+    public boolean i = false;
+    public boolean j = false;
+    public Long n = null;
 
-    public hva(Context context, int i, boolean z, long j, int i2, wjb wjbVar) {
-        this.a = context;
-        this.b = i;
-        this.c = z;
-        this.d = i2;
-        this.e = wjbVar;
-        this.f = j;
-        i();
-    }
-
-    @Override // oec
-    public final void b(View view, int i, int i2) {
-        s39 s39Var = this.g;
-        if (s39Var != null) {
-            s39Var.L(view);
+    public hva(jva jvaVar, cva cvaVar, k47 k47Var, yv1 yv1Var, boolean z) {
+        this.q = jvaVar;
+        boolean z2 = false;
+        z2 = false;
+        fva fvaVar = new fva(this, z2 ? (byte) 1 : (byte) 0);
+        this.p = fvaVar;
+        this.a = cvaVar;
+        this.b = k47Var;
+        this.c = yv1Var;
+        Context q = jva.q(yv1Var);
+        o31 o31Var = new o31(q, yv1Var.Ba);
+        this.e = o31Var;
+        o31Var.a.f(R.raw.stars_topup, 32, 32, null);
+        o31Var.b.setText(d());
+        s31 s31Var = new s31(yv1Var.Ba, q, true, false);
+        s31Var.e(jb6.M0(2131744712, null));
+        s31Var.b = new fva(this, (byte) 1);
+        iva ivaVar = new iva(q, yv1Var.Ba);
+        this.f = ivaVar;
+        ivaVar.b = 5000L;
+        int i = cmb.wj;
+        wv1 wv1Var = yv1Var.Ba;
+        dq9 dq9Var = new dq9((byte) 27);
+        dq9 dq9Var2 = new dq9((byte) 28);
+        int P = anb.P(i, -1, 0, 0.0f, wv1Var);
+        dq9Var2.e(P, ivaVar);
+        umb w = anb.w(101, ivaVar);
+        w.c(i, -1, 0, 0.0f, wv1Var);
+        w.n = dq9Var;
+        w.o = dq9Var2;
+        w.m = false;
+        w.g = P;
+        s31Var.addView(ivaVar, qoe.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        s31Var.e.setPadding(gm.L(12.0f), gm.L(8.0f), gm.L(30.0f), gm.L(8.0f));
+        o31Var.setButton(s31Var);
+        u31 b = c41.b0(yv1Var).b(o31Var, -1);
+        this.d = b;
+        b.s = false;
+        if (z) {
+            b.k(true);
+            this.m = true;
         }
-    }
-
-    @Override // oec
-    public final View d(int i) {
-        gva gvaVar = new gva(this.a, this.c, this.f, i, this.b, this.d, this.e);
-        if (this.g != null) {
-            gvaVar.setClipChildren(false);
-            gvaVar.setClipToPadding(false);
-            q5c q5cVar = gvaVar.a;
-            q5cVar.setClipToPadding(false);
-            q5cVar.s1(gl.L(12.0f), gl.L(16.0f), false);
-            q5cVar.g3.r = false;
-            q5cVar.setCaptureSectionsDecoratorAllowed(true);
-            q5cVar.setOverScrollMode(0);
-            qw4 qw4Var = this.h;
-            if (qw4Var != null) {
-                qw4Var.b(q5cVar);
+        b.w = fvaVar;
+        this.h = 0L;
+        System.currentTimeMillis();
+        if (k47Var.k.reactions != null) {
+            int i2 = 0;
+            while (true) {
+                if (i2 >= k47Var.k.reactions.results.size()) {
+                    break;
+                }
+                if (k47Var.k.reactions.results.get(i2).reaction instanceof TLRPC.TL_reactionPaid) {
+                    z2 = k47Var.k.reactions.results.get(i2).chosen;
+                    break;
+                }
+                i2++;
             }
         }
-        return gvaVar;
+        this.g = z2;
     }
 
-    @Override // oec
-    public final int e() {
-        return this.i.size();
-    }
-
-    @Override // oec
-    public final CharSequence g(int i) {
-        int h = h(i);
-        return h != 0 ? h != 1 ? h != 2 ? "" : k96.M0(2131744681, null) : k96.M0(2131744682, null) : k96.M0(2131744683, null);
-    }
-
-    @Override // oec
-    public final int h(int i) {
-        if (i < 0) {
-            return 0;
+    public final void a() {
+        jva jvaVar = this.q;
+        int i = jvaVar.a;
+        gm.r(this.p);
+        this.j = true;
+        this.d.b();
+        kta ktaVar = this.o;
+        if (ktaVar != null) {
+            ktaVar.c();
         }
-        ArrayList arrayList = this.i;
-        if (i < arrayList.size()) {
-            return ((c4c) arrayList.get(i)).A;
+        int i2 = (int) (-this.h);
+        boolean z = this.g;
+        long c = c();
+        k47 k47Var = this.b;
+        k47Var.f(i2, c, z);
+        jvaVar.g -= this.h;
+        nm7.f(i).k(nm7.A3, new Object[0]);
+        nm7.f(i).k(nm7.o1, Long.valueOf(k47.B0(k47Var.k)), Integer.valueOf(k47Var.e1()), k47Var.k.reactions);
+        if (jvaVar.B == this) {
+            jvaVar.B = null;
         }
-        return 0;
     }
 
-    public final void i() {
-        ArrayList arrayList = this.i;
-        arrayList.clear();
-        long j = this.f;
-        int i = this.b;
-        if (j == 0) {
-            gta v = gta.v(i, this.c);
-            arrayList.add(c4c.D(0));
-            if (v.K(1)) {
-                arrayList.add(c4c.D(1));
+    public final void b() {
+        k47 k47Var;
+        String str;
+        int i = nm7.A3;
+        gm.r(this.p);
+        byte b = 0;
+        if (!this.l) {
+            this.j = true;
+            this.b.f((int) (-this.h), c(), this.g);
+            jva jvaVar = this.q;
+            jvaVar.g -= this.h;
+            nm7.f(jvaVar.a).k(i, new Object[0]);
+        } else if (!this.i && !this.j) {
+            jva v = jva.v(this.q.a, false);
+            oc7 r1 = oc7.r1(this.q.a);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.q.a);
+            long j = this.h;
+            if (!v.e || v.n(null, false, false).amount >= j) {
+                this.i = true;
+                TLRPC.TL_messages_sendPaidReaction tL_messages_sendPaidReaction = new TLRPC.TL_messages_sendPaidReaction();
+                tL_messages_sendPaidReaction.peer = r1.i1(this.a.a);
+                tL_messages_sendPaidReaction.msg_id = this.a.b;
+                tL_messages_sendPaidReaction.random_id = (Utilities.b.nextLong() & 4294967295L) | (connectionsManager.getCurrentTime() << 32);
+                tL_messages_sendPaidReaction.count = (int) this.h;
+                tL_messages_sendPaidReaction.flags |= 1;
+                long c = c();
+                if (c == 0 || c == z8c.h(this.q.a).e()) {
+                    tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyDefault();
+                } else if (c == 2666000) {
+                    tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyAnonymous();
+                } else {
+                    TL_stars.paidReactionPrivacyPeer paidreactionprivacypeer = new TL_stars.paidReactionPrivacyPeer();
+                    tL_messages_sendPaidReaction.privacy = paidreactionprivacypeer;
+                    paidreactionprivacypeer.peer = r1.i1(c);
+                }
+                this.q.L();
+                connectionsManager.sendRequest(tL_messages_sendPaidReaction, new jb7(this, r1, j));
+            } else {
+                this.j = true;
+                this.b.f((int) (-this.h), c(), this.g);
+                jva jvaVar2 = this.q;
+                jvaVar2.g = 0L;
+                nm7.f(jvaVar2.a).k(i, new Object[0]);
+                nm7.f(this.q.a).k(nm7.o1, Long.valueOf(k47.B0(this.b.k)), Integer.valueOf(this.b.e1()), this.b.k.reactions);
+                long j2 = this.a.a;
+                yv1 yv1Var = this.c;
+                if (j2 >= 0) {
+                    str = m9c.l(yv1Var.getMessagesController().W1(Long.valueOf(this.a.a)));
+                } else {
+                    TLRPC.Chat L0 = yv1Var.getMessagesController().L0(Long.valueOf(-this.a.a));
+                    str = L0 == null ? "" : L0.title;
+                }
+                String str2 = str;
+                Context parentActivity = this.c.getParentActivity();
+                if (parentActivity == null) {
+                    parentActivity = LaunchActivity.H1;
+                }
+                if (parentActivity == null) {
+                    parentActivity = a.b;
+                }
+                new dxa(parentActivity, this.c.getResourceProvider(), j, 5, str2, new gva(this, j, b), 0L).show();
             }
-            if (v.K(2)) {
-                arrayList.add(c4c.D(2));
-                return;
-            }
-            return;
         }
-        ct0 g = ct0.g(i);
-        arrayList.add(c4c.D(0));
-        if (!g.k(j).a[1].isEmpty()) {
-            arrayList.add(c4c.D(1));
+        this.d.b();
+        kta ktaVar = this.o;
+        if (ktaVar != null && (k47Var = this.b) != null && k47Var.e1() == ktaVar.c) {
+            this.o.c();
         }
-        if (g.k(j).a[2].isEmpty()) {
-            return;
+        jva jvaVar3 = this.q;
+        if (jvaVar3.B == this) {
+            jvaVar3.B = null;
         }
-        arrayList.add(c4c.D(2));
+    }
+
+    public final long c() {
+        Long l = this.n;
+        return l != null ? l.longValue() : this.q.x(this.b);
+    }
+
+    public final String d() {
+        return c() == 2666000 ? jb6.M0(2131744718, null) : (c() == 0 || c() == z8c.h(this.q.a).e()) ? jb6.M0(2131744714, null) : jb6.a0(null, null, 2131744713, pg3.s(c()));
     }
 }

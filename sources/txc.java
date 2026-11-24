@@ -1,35 +1,116 @@
 // default package
 
-import android.view.WindowInsets;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class txc {
-    public static int a(int i) {
-        int statusBars;
-        int i2 = 0;
-        for (int i3 = 1; i3 <= 512; i3 <<= 1) {
-            if ((i & i3) != 0) {
-                if (i3 == 1) {
-                    statusBars = WindowInsets.Type.statusBars();
-                } else if (i3 == 2) {
-                    statusBars = WindowInsets.Type.navigationBars();
-                } else if (i3 == 4) {
-                    statusBars = WindowInsets.Type.captionBar();
-                } else if (i3 == 8) {
-                    statusBars = WindowInsets.Type.ime();
-                } else if (i3 == 16) {
-                    statusBars = WindowInsets.Type.systemGestures();
-                } else if (i3 == 32) {
-                    statusBars = WindowInsets.Type.mandatorySystemGestures();
-                } else if (i3 == 64) {
-                    statusBars = WindowInsets.Type.tappableElement();
-                } else if (i3 == 128) {
-                    statusBars = WindowInsets.Type.displayCutout();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class txc {
+    public long A;
+    public boolean B;
+    public boolean C;
+    public int D;
+    public int E;
+    public int F;
+    public int G;
+    public double H;
+    public double I;
+    public double J;
+    public long K;
+    public boolean L;
+    public int M;
+    public boolean N;
+    public final Runnable O;
+    public final String a;
+    public final int b;
+    public final long c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final byte[] g;
+    public final boolean h;
+    public final boolean i;
+    public final boolean j;
+    public final boolean k;
+    public final long l;
+    public final String m;
+    public final long n;
+    public final boolean o;
+    public ss0 p;
+    public String q;
+    public String r;
+    public long s;
+    public TLRPC.TL_messageMediaWidget t;
+    public String u;
+    public cyc v;
+    public al9 w;
+    public final ArrayList x;
+    public al9 y;
+    public int z;
+
+    public txc(String str, int i, long j, int i2, long j2, TLRPC.TL_messageMediaWidget tL_messageMediaWidget, boolean z) {
+        this.x = new ArrayList();
+        this.O = new cpc(this, (byte) 14);
+        this.a = str;
+        this.b = i;
+        this.c = j;
+        this.d = i2;
+        this.n = j2;
+        this.e = Math.max(0, tL_messageMediaWidget.width);
+        this.f = Math.max(0, tL_messageMediaWidget.height);
+        this.g = tL_messageMediaWidget.payload;
+        this.k = z;
+        boolean z2 = !z && tL_messageMediaWidget.is_copy;
+        this.h = z2;
+        this.i = !z && tL_messageMediaWidget.can_query && i2 > 0;
+        this.j = !z && tL_messageMediaWidget.background_query && i2 > 0;
+        this.l = tL_messageMediaWidget.widget_id;
+        String str2 = null;
+        if (!z && !z2) {
+            if (pg3.D(j)) {
+                str2 = "private";
+            } else {
+                TLRPC.Chat L0 = oc7.r1(i).L0(Long.valueOf(-j));
+                if (L0 != null) {
+                    str2 = !sd2.T(L0) ? "group" : L0.megagroup ? "supergroup" : "channel";
                 }
-                i2 |= statusBars;
             }
         }
-        return i2;
+        this.m = str2;
+        this.t = tL_messageMediaWidget;
+        this.q = wxc.D(tL_messageMediaWidget.chat_data);
+        this.r = wxc.D(tL_messageMediaWidget.public_data);
+        this.s = tL_messageMediaWidget.public_data_hash;
+        this.o = false;
+    }
+
+    public final String a() {
+        long j = this.c;
+        return wxc.C(this.b, this.d, j);
+    }
+
+    public txc(String str, int i, long j, TL_bots.TL_botProfileWidget tL_botProfileWidget) {
+        this.x = new ArrayList();
+        this.O = new cpc(this, (byte) 14);
+        this.a = str;
+        this.b = i;
+        this.c = j;
+        this.d = 0;
+        this.n = j;
+        this.e = 0;
+        this.f = 0;
+        this.g = tL_botProfileWidget.payload;
+        this.k = false;
+        this.h = false;
+        this.i = tL_botProfileWidget.can_query;
+        this.j = tL_botProfileWidget.background_query;
+        this.l = 0L;
+        this.m = null;
+        this.t = null;
+        this.q = wxc.D(tL_botProfileWidget.chat_data);
+        this.r = wxc.D(tL_botProfileWidget.public_data);
+        this.s = tL_botProfileWidget.public_data_hash;
+        this.o = true;
     }
 }

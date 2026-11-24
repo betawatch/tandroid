@@ -1,49 +1,45 @@
 // default package
 
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nfd {
-    public byte a;
-    public Object b;
+public abstract class nfd {
+    public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
+    public static final byte[] b = {0, 0, 33, 7, -45, 17, -122, 68, -56, -63, -54, 0, 0, 0};
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ nfd(int i, Object obj) {
-        this.a = i;
-        this.b = obj;
+    public static boolean a(vb3 vb3Var) {
+        yw7 yw7Var = new yw7(8);
+        int i = vtc.a(vb3Var, yw7Var).a;
+        if (i != 1380533830 && i != 1380333108) {
+            return false;
+        }
+        vb3Var.d(yw7Var.a, 0, 4, false);
+        yw7Var.N(0);
+        int m = yw7Var.m();
+        if (m == 1463899717) {
+            return true;
+        }
+        ncd.c("WavHeaderReader", "Unsupported form type: " + m);
+        return false;
     }
 
-    public final String a(h7f h7fVar) {
-        lid lidVar = (lid) this.b;
-        byte b = this.a;
-        try {
-            if (lidVar.E == null) {
-                throw null;
+    public static vtc b(int i, vb3 vb3Var, yw7 yw7Var) {
+        vtc a2 = vtc.a(vb3Var, yw7Var);
+        while (true) {
+            int i2 = a2.a;
+            if (i2 == i) {
+                return a2;
             }
-            z9d z9dVar = lidVar.E;
-            String packageName = lidVar.C.getPackageName();
-            String str = b != 2 ? b != 3 ? b != 4 ? b != 5 ? b != 6 ? "QUERY_PRODUCT_DETAILS_ASYNC" : "START_CONNECTION" : "IS_FEATURE_SUPPORTED" : "CONSUME_ASYNC" : "ACKNOWLEDGE_PURCHASE" : "LAUNCH_BILLING_FLOW";
-            vhd vhdVar = new vhd(h7fVar);
-            d9d d9dVar = (d9d) z9dVar;
-            Parcel X = d9dVar.X();
-            X.writeString(packageName);
-            X.writeString(str);
-            int i = b9d.a;
-            X.writeStrongBinder(vhdVar);
-            try {
-                d9dVar.b.transact(1, X, null, 1);
-                X.recycle();
-                return "billingOverrideService.getBillingOverride";
-            } catch (Throwable th) {
-                X.recycle();
-                throw th;
+            b10.o(i2, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            long j = a2.b;
+            long j2 = 8 + j;
+            if (j % 2 != 0) {
+                j2 = 9 + j;
             }
-        } catch (Exception e) {
-            lidVar.E(95, 28, qjd.p);
-            xgd.i("BillingClientTesting", "An error occurred while retrieving billing override.", e);
-            h7fVar.a(0);
-            return "billingOverrideService.getBillingOverride";
+            if (j2 > 2147483647L) {
+                throw bx7.d("Chunk is too large (~2GB+) to skip; id: " + i2);
+            }
+            vb3Var.m((int) j2, false);
+            a2 = vtc.a(vb3Var, yw7Var);
         }
     }
 }

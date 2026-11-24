@@ -1,55 +1,45 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Build;
+import android.util.Log;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class syb implements ul3 {
-    public final /* synthetic */ Integer a;
-    public final /* synthetic */ k27 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class syb extends BroadcastReceiver {
+    public tyb a;
+    public final /* synthetic */ tyb b;
 
-    public syb(Integer num, k27 k27Var, int i, long j, long j2) {
-        this.a = num;
-        this.b = k27Var;
-        this.c = i;
-        this.d = j;
-        this.e = j2;
+    public syb(tyb tybVar, tyb tybVar2) {
+        this.b = tybVar;
+        this.a = tybVar2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ul3
-    public final void a(String str, int[] iArr, boolean z) {
-        if (z) {
-            HashMap hashMap = uyb.S;
-            Integer num = this.a;
-            hashMap.remove(num);
-            uyb.R.remove(num);
+    public final void a() {
+        if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
+            Log.d("FirebaseMessaging", "Connectivity change received registered");
         }
-        k27 k27Var = this.b;
-        if (str == null) {
-            uyb.n(k27Var);
+        this.b.a.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final synchronized void onReceive(Context context, Intent intent) {
+        tyb tybVar = this.a;
+        if (tybVar == null) {
             return;
         }
-        TLRPC.Message message = k27Var.k;
-        if (z) {
-            gl.e3(new qe(k27Var, message, str, iArr, this.c, this.d, (byte) 6), Math.max(0L, 350 - (SystemClock.elapsedRealtime() - this.e)));
-            return;
+        if (tybVar.d()) {
+            if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
+                Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
+            }
+            tyb tybVar2 = this.a;
+            tybVar2.d.e.schedule(tybVar2, 0L, TimeUnit.SECONDS);
+            context.unregisterReceiver(this);
+            this.a = null;
         }
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        message.voiceTranscription = str;
-        message.voiceTranscriptionWords = iArr;
-        message.voiceTranscriptionLocal = true;
-        message.voiceTranscriptionFinal = false;
-        message.voiceTranscriptionOpen = true;
-        uyb.q(k27Var);
-        kk7.f(this.c).k(kk7.z1, k27Var, null, null, Boolean.TRUE, Boolean.FALSE);
     }
 }

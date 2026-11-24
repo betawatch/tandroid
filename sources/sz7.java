@@ -1,16 +1,25 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.TimerTask;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public interface sz7 {
-    void a(TL_account.Password password);
+public final class sz7 extends TimerTask {
+    public final /* synthetic */ tz7 a;
 
-    void b();
+    public sz7(tz7 tz7Var) {
+        this.a = tz7Var;
+    }
 
-    boolean c(String str, String str2, boolean z, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard);
-
-    void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo);
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        tz7 tz7Var = this.a;
+        if (tz7Var.w == null) {
+            return;
+        }
+        double currentTimeMillis = System.currentTimeMillis();
+        tz7Var.E = (int) (tz7Var.E - (currentTimeMillis - tz7Var.G));
+        tz7Var.G = currentTimeMillis;
+        gm.c3(new kl7(this, (byte) 17));
+    }
 }

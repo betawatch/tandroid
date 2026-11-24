@@ -1,127 +1,53 @@
 // default package
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import org.telegram.messenger.Utilities;
+import android.os.Build;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class b21 extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ q11 a;
-    public final /* synthetic */ c11 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class b21 {
+    public static final /* synthetic */ int a = 0;
 
-    public b21(c11 c11Var, q11 q11Var) {
-        this.b = c11Var;
-        this.a = q11Var;
+    static {
+        if (Build.VERSION.SDK_INT >= 30) {
+            via.f(30);
+            via.f(31);
+            via.f(33);
+            via.f(1000000);
+        }
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        c11 c11Var = this.b;
-        if (c11Var.s) {
-            return false;
-        }
-        q11 q11Var = this.a;
-        c11Var.w = q11.access$1600(q11Var, true);
-        c11Var.x = q11.access$1600(q11Var, false);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        final byte b = 0;
-        if (Math.abs(f) <= 2000.0f) {
-            return false;
-        }
-        final byte b2 = 1;
-        c11 c11Var = this.b;
-        boolean z = (f < 0.0f && c11Var.w) || (f > 0.0f && c11Var.x);
-        float signum = Math.signum(f);
-        q11 q11Var = this.a;
-        yla ylaVar = new yla(q11Var, yla.o, signum * q11Var.getWidth() * 2.0f);
-        if (!z) {
-            ylaVar.a(new xr3(this) { // from class: z11
-                public final /* synthetic */ b21 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // xr3
-                public final void a(yla ylaVar2, boolean z2, float f3, float f4) {
-                    byte b3 = b;
-                    b21 b21Var = this.b;
-                    switch (b3) {
-                        case 0:
-                            b21Var.b.E.b();
-                            break;
-                        default:
-                            b21Var.b.E.b();
-                            break;
-                    }
-                }
-            });
-            ylaVar.b(new h10(q11Var, (byte) 2));
-        }
-        ylaVar.m.a(1.0f);
-        ylaVar.m.b(100.0f);
-        ylaVar.a = f;
-        ylaVar.h();
-        if (z) {
-            yla ylaVar2 = new yla((Object) q11Var, (ri4) yla.v, 0.0f);
-            ylaVar2.a(new xr3(this) { // from class: z11
-                public final /* synthetic */ b21 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // xr3
-                public final void a(yla ylaVar22, boolean z2, float f3, float f4) {
-                    byte b3 = b2;
-                    b21 b21Var = this.b;
-                    switch (b3) {
-                        case 0:
-                            b21Var.b.E.b();
-                            break;
-                        default:
-                            b21Var.b.E.b();
-                            break;
-                    }
-                }
-            });
-            ylaVar2.b(new a21());
-            ylaVar.m.a(1.0f);
-            ylaVar.m.b(10.0f);
-            ylaVar.a = f;
-            ylaVar2.h();
-        }
-        c11Var.s = true;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        c11 c11Var = this.b;
-        float f3 = c11Var.h + f;
-        c11Var.h = f3;
-        float f4 = c11Var.n + f2;
-        c11Var.n = f4;
-        if (Utilities.t(0.0f, 0.0f, f3, f4) > gl.e) {
-            c11Var.r = true;
-        }
-        if (!c11Var.d) {
-            return false;
-        }
-        float f5 = c11Var.f - f;
-        c11Var.f = f5;
-        q11 q11Var = this.a;
-        q11Var.setTranslationX(f5);
-        float f6 = c11Var.f;
-        if (f6 != 0.0f && ((f6 >= 0.0f || !c11Var.w) && (f6 <= 0.0f || !c11Var.x))) {
+    public static final boolean a() {
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 33) {
             return true;
         }
-        q11Var.setAlpha(1.0f - (Math.abs(f6) / q11Var.getWidth()));
-        return true;
+        if (i >= 32) {
+            String str = Build.VERSION.CODENAME;
+            str.getClass();
+            if (!"REL".equals(str)) {
+                Locale locale = Locale.ROOT;
+                String upperCase = str.toUpperCase(locale);
+                upperCase.getClass();
+                Integer num = upperCase.equals("BAKLAVA") ? r1 : null;
+                String upperCase2 = "Tiramisu".toUpperCase(locale);
+                upperCase2.getClass();
+                r1 = upperCase2.equals("BAKLAVA") ? 0 : null;
+                if (num != null) {
+                    if (r1 == null || num.intValue() >= r1.intValue()) {
+                        return true;
+                    }
+                } else if (r1 == null) {
+                    String upperCase3 = str.toUpperCase(locale);
+                    upperCase3.getClass();
+                    String upperCase4 = "Tiramisu".toUpperCase(locale);
+                    upperCase4.getClass();
+                    if (upperCase3.compareTo(upperCase4) >= 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

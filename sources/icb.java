@@ -1,709 +1,313 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.TextUtils;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import org.xml.sax.Attributes;
-import org.xml.sax.helpers.DefaultHandler;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class icb extends DefaultHandler {
-    public final HashMap E;
-    public boolean F;
-    public boolean G;
-    public StringBuilder H;
-    public boolean I;
-    public int J;
-    public ArrayList K;
-    public Canvas a;
-    public Bitmap b;
-    public final kcb c;
-    public final int d;
-    public final int e;
-    public float f;
-    public final Paint h;
-    public final RectF n;
-    public final RectF r;
-    public final Integer s;
-    public final float w;
-    public final int x;
-    public boolean y;
+public final class icb implements vcb {
+    public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
+    public static final Pattern e = Pattern.compile("\\{\\\\.*?\\}");
+    public final StringBuilder a = new StringBuilder();
+    public final ArrayList b = new ArrayList();
+    public final yw7 c = new yw7();
 
-    public icb(int i, int i2, Integer num, boolean z, float f, int i3) {
-        this.f = 1.0f;
-        this.h = new Paint(1);
-        this.n = new RectF();
-        this.r = new RectF();
-        this.w = 1.0f;
-        this.y = false;
-        this.E = new HashMap();
-        this.I = false;
-        this.J = 0;
-        this.w = f;
-        this.d = i;
-        this.e = i2;
-        this.s = num;
-        this.x = i3;
-        if (z) {
-            this.c = new kcb();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0031  */
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x006e, code lost:
+    
+        r1 = 2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0089, code lost:
+    
+        if (r22.equals("{\\an9}") != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0099, code lost:
+    
+        r3 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0090, code lost:
+    
+        if (r22.equals("{\\an8}") != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0097, code lost:
+    
+        if (r22.equals("{\\an7}") != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00ab, code lost:
+    
+        if (r22.equals("{\\an3}") != false) goto L54;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00bb, code lost:
+    
+        r3 = 2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00b2, code lost:
+    
+        if (r22.equals("{\\an2}") != false) goto L54;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00b9, code lost:
+    
+        if (r22.equals("{\\an1}") != false) goto L54;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0053, code lost:
+    
+        if (r22.equals("{\\an7}") != false) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x007a, code lost:
+    
+        r1 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x005a, code lost:
+    
+        if (r22.equals("{\\an6}") != false) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0065, code lost:
+    
+        if (r22.equals("{\\an4}") != false) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x006c, code lost:
+    
+        if (r22.equals("{\\an3}") != false) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0078, code lost:
+    
+        if (r22.equals("{\\an1}") != false) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0048, code lost:
+    
+        if (r22.equals("{\\an9}") != false) goto L25;
+     */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(v8b v8bVar, Integer num, boolean z) {
-        Float valueOf;
-        Paint paint = this.h;
-        Integer num2 = this.s;
-        if (num2 != null) {
-            paint.setColor(num2.intValue());
+    public static f53 a(Spanned spanned, String str) {
+        int i;
+        int i2;
+        float f;
+        if (str == null) {
+            return new f53(spanned, null, null, null, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
+        }
+        switch (str.hashCode()) {
+            case -685620710:
+                break;
+            case -685620679:
+                str.equals("{\\an2}");
+                i = 1;
+                break;
+            case -685620648:
+                break;
+            case -685620617:
+                break;
+            case -685620586:
+                str.equals("{\\an5}");
+                i = 1;
+                break;
+            case -685620555:
+                break;
+            case -685620524:
+                break;
+            case -685620493:
+                str.equals("{\\an8}");
+                i = 1;
+                break;
+            case -685620462:
+                break;
+            default:
+                i = 1;
+                break;
+        }
+        switch (str.hashCode()) {
+            case -685620710:
+                break;
+            case -685620679:
+                break;
+            case -685620648:
+                break;
+            case -685620617:
+                str.equals("{\\an4}");
+                i2 = 1;
+                break;
+            case -685620586:
+                str.equals("{\\an5}");
+                i2 = 1;
+                break;
+            case -685620555:
+                str.equals("{\\an6}");
+                i2 = 1;
+                break;
+            case -685620524:
+                break;
+            case -685620493:
+                break;
+            case -685620462:
+                break;
+            default:
+                i2 = 1;
+                break;
+        }
+        float f2 = 0.92f;
+        if (i == 0) {
+            f = 0.08f;
+        } else if (i == 1) {
+            f = 0.5f;
         } else {
-            paint.setColor((num.intValue() & 16777215) | (-16777216));
-        }
-        String j = v8bVar.j("opacity");
-        Float f = null;
-        if (j != null) {
-            try {
-                valueOf = Float.valueOf(Float.parseFloat(j));
-            } catch (NumberFormatException unused) {
+            if (i != 2) {
+                i98.g();
+                return null;
             }
-            if (valueOf == null) {
-                String j2 = v8bVar.j(z ? "fill-opacity" : "stroke-opacity");
-                if (j2 != null) {
-                    try {
-                        f = Float.valueOf(Float.parseFloat(j2));
-                    } catch (NumberFormatException unused2) {
-                    }
-                }
-                valueOf = f;
-            }
-            if (valueOf != null) {
-                paint.setAlpha(kk7.d4);
-                return;
-            } else {
-                paint.setAlpha((int) (valueOf.floatValue() * 255.0f));
-                return;
-            }
+            f = 0.92f;
         }
-        valueOf = null;
-        if (valueOf == null) {
+        if (i2 == 0) {
+            f2 = 0.08f;
+        } else if (i2 == 1) {
+            f2 = 0.5f;
+        } else if (i2 != 2) {
+            i98.g();
+            return null;
         }
-        if (valueOf != null) {
-        }
+        return new f53(spanned, null, null, null, f2, 0, i2, f, i, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
     }
 
-    public final boolean b(v8b v8bVar) {
-        if (!"none".equals(v8bVar.j("display"))) {
-            String j = v8bVar.j("fill");
-            if (j != null && j.startsWith("url(#")) {
-                j.substring(5, j.length() - 1);
-                return false;
-            }
-            Integer k = v8bVar.k("fill");
-            Paint paint = this.h;
-            if (k != null) {
-                a(v8bVar, k, true);
-                paint.setStyle(Paint.Style.FILL);
-                return true;
-            }
-            if (v8bVar.j("fill") == null && v8bVar.j("stroke") == null) {
-                paint.setStyle(Paint.Style.FILL);
-                Integer num = this.s;
-                if (num != null) {
-                    paint.setColor(num.intValue());
-                    return true;
-                }
-                paint.setColor(-16777216);
-                return true;
-            }
+    public static long b(Matcher matcher, int i) {
+        String group = matcher.group(i + 1);
+        long parseLong = group != null ? Long.parseLong(group) * 3600000 : 0L;
+        String group2 = matcher.group(i + 2);
+        group2.getClass();
+        long parseLong2 = (Long.parseLong(group2) * 60000) + parseLong;
+        String group3 = matcher.group(i + 3);
+        group3.getClass();
+        long parseLong3 = (Long.parseLong(group3) * 1000) + parseLong2;
+        String group4 = matcher.group(i + 4);
+        if (group4 != null) {
+            parseLong3 += Long.parseLong(group4);
         }
-        return false;
+        return parseLong3 * 1000;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0030  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c(v8b v8bVar) {
-        Integer k;
-        Float valueOf;
-        String j;
-        String j2;
-        if ("none".equals(v8bVar.j("display")) || (k = v8bVar.k("stroke")) == null) {
-            return false;
-        }
-        a(v8bVar, k, false);
-        String j3 = v8bVar.j("stroke-width");
-        if (j3 != null) {
-            try {
-                valueOf = Float.valueOf(Float.parseFloat(j3));
-            } catch (NumberFormatException unused) {
-            }
-            Paint paint = this.h;
-            if (valueOf != null) {
-                paint.setStrokeWidth(valueOf.floatValue());
-            }
-            j = v8bVar.j("stroke-linecap");
-            if (!"round".equals(j)) {
-                paint.setStrokeCap(Paint.Cap.ROUND);
-            } else if ("square".equals(j)) {
-                paint.setStrokeCap(Paint.Cap.SQUARE);
-            } else if ("butt".equals(j)) {
-                paint.setStrokeCap(Paint.Cap.BUTT);
-            }
-            j2 = v8bVar.j("stroke-linejoin");
-            if (!"miter".equals(j2)) {
-                paint.setStrokeJoin(Paint.Join.MITER);
-            } else if ("round".equals(j2)) {
-                paint.setStrokeJoin(Paint.Join.ROUND);
-            } else if ("bevel".equals(j2)) {
-                paint.setStrokeJoin(Paint.Join.BEVEL);
-            }
-            paint.setStyle(Paint.Style.STROKE);
-            return true;
-        }
-        valueOf = null;
-        Paint paint2 = this.h;
-        if (valueOf != null) {
-        }
-        j = v8bVar.j("stroke-linecap");
-        if (!"round".equals(j)) {
-        }
-        j2 = v8bVar.j("stroke-linejoin");
-        if (!"miter".equals(j2)) {
-        }
-        paint2.setStyle(Paint.Style.STROKE);
-        return true;
+    @Override // vcb
+    public final /* synthetic */ lcb g(int i, int i2, byte[] bArr) {
+        return hg9.c(this, bArr, i2);
     }
 
-    @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
-    public final void characters(char[] cArr, int i, int i2) {
-        StringBuilder sb = this.H;
-        if (sb != null) {
-            sb.append(cArr, i, i2);
+    @Override // vcb
+    public final void p(byte[] bArr, int i, int i2, ucb ucbVar, fu2 fu2Var) {
+        String n;
+        String str;
+        icb icbVar = this;
+        long j = ucbVar.a;
+        yw7 yw7Var = icbVar.c;
+        yw7Var.L(i + i2, bArr);
+        yw7Var.N(i);
+        Charset J = yw7Var.J();
+        if (J == null) {
+            J = StandardCharsets.UTF_8;
         }
-    }
-
-    public final Bitmap d() {
-        return this.b;
-    }
-
-    public final List e() {
-        return this.K;
-    }
-
-    @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
-    public final void endElement(String str, String str2, String str3) {
-        int indexOf;
-        if (this.I) {
-            int i = this.J - 1;
-            this.J = i;
-            if (i == 0) {
-                this.I = false;
-            }
-            return;
-        }
-        str2.getClass();
-        switch (str2) {
-            case "g":
-            case "defs":
-            case "clipPath":
-                this.G = false;
+        long j2 = -9223372036854775807L;
+        ArrayList arrayList = (j == -9223372036854775807L || !ucbVar.b) ? null : new ArrayList();
+        while (true) {
+            String n2 = yw7Var.n(J);
+            if (n2 == null) {
                 break;
-            case "style":
-                StringBuilder sb = this.H;
-                if (sb != null) {
-                    String[] split = sb.toString().split("\\}");
-                    for (int i2 = 0; i2 < split.length; i2++) {
-                        String replace = split[i2].trim().replace("\t", "").replace("\n", "");
-                        split[i2] = replace;
-                        if (replace.length() != 0 && split[i2].charAt(0) == '.' && (indexOf = split[i2].indexOf(kk7.G1)) >= 0) {
-                            this.E.put(split[i2].substring(1, indexOf).trim(), new jcb(split[i2].substring(indexOf + 1)));
-                        }
-                    }
-                    this.H = null;
+            }
+            if (!n2.isEmpty()) {
+                try {
+                    Integer.parseInt(n2);
+                    n = yw7Var.n(J);
+                } catch (NumberFormatException unused) {
+                    ncd.f("SubripParser", "Skipping invalid index: ".concat(n2));
+                }
+                if (n == null) {
+                    ncd.f("SubripParser", "Unexpected end");
                     break;
                 }
-                break;
-        }
-    }
-
-    public final void f() {
-        if (this.y) {
-            kcb kcbVar = this.c;
-            if (kcbVar == null) {
-                this.a.restore();
-            } else {
-                int[] iArr = kcb.u;
-                kcbVar.a.add(null);
-            }
-        }
-    }
-
-    public final void g(Attributes attributes) {
-        String k = lcb.k("transform", attributes);
-        boolean z = k != null;
-        this.y = z;
-        if (z) {
-            Matrix n = lcb.n(k);
-            kcb kcbVar = this.c;
-            if (kcbVar != null) {
-                int[] iArr = kcb.u;
-                kcbVar.a.add(n);
-            } else {
-                this.a.save();
-                this.a.concat(n);
-            }
-        }
-    }
-
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x022c  */
-    @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void startElement(String str, String str2, String str3, Attributes attributes) {
-        uqc uqcVar;
-        il8 il8Var;
-        String k;
-        float min;
-        Paint paint;
-        char c;
-        Float valueOf = Float.valueOf(0.0f);
-        if (!"g".equals(str3) || this.I) {
-            if (this.I) {
-                this.J++;
-                if ("rect".equals(str3)) {
-                    float f = this.f;
-                    try {
-                        float parseFloat = Float.parseFloat(attributes.getValue("x"));
-                        float parseFloat2 = Float.parseFloat(attributes.getValue("y"));
-                        RectF rectF = new RectF(parseFloat, parseFloat2, Float.parseFloat(attributes.getValue("width")) + parseFloat, Float.parseFloat(attributes.getValue("height")) + parseFloat2);
-                        Matrix n = lcb.n(attributes.getValue("transform"));
-                        n.postScale(f, f);
-                        uqcVar = new uqc(rectF, n);
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                        uqcVar = null;
-                    }
-                    if (uqcVar != null) {
-                        ArrayList arrayList = this.K;
-                        if (arrayList == null) {
-                            arrayList = new ArrayList();
-                            this.K = arrayList;
+                Matcher matcher = d.matcher(n);
+                if (matcher.matches()) {
+                    long b = b(matcher, 1);
+                    long b2 = b(matcher, 6);
+                    StringBuilder sb = icbVar.a;
+                    sb.setLength(0);
+                    long j3 = j2;
+                    ArrayList arrayList2 = icbVar.b;
+                    arrayList2.clear();
+                    for (String n3 = yw7Var.n(J); !TextUtils.isEmpty(n3); n3 = yw7Var.n(J)) {
+                        if (sb.length() > 0) {
+                            sb.append("<br>");
                         }
-                        arrayList.add(uqcVar);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            }
-        } else if ("GiftPatterns".equals(attributes.getValue("id"))) {
-            this.I = true;
-            this.J = 1;
-        }
-        if (!this.G || str2.equals("style")) {
-            str2.getClass();
-            char c2 = 65535;
-            switch (str2.hashCode()) {
-                case -1656480802:
-                    if (str2.equals("ellipse")) {
-                        c2 = 0;
-                        break;
-                    }
-                    break;
-                case -1360216880:
-                    if (str2.equals("circle")) {
-                        c2 = 1;
-                        break;
-                    }
-                    break;
-                case -397519558:
-                    if (str2.equals("polygon")) {
-                        c2 = 2;
-                        break;
-                    }
-                    break;
-                case kk7.n1 /* 103 */:
-                    if (str2.equals("g")) {
-                        c2 = 3;
-                        break;
-                    }
-                    break;
-                case 114276:
-                    if (str2.equals("svg")) {
-                        c = 4;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 3079438:
-                    if (str2.equals("defs")) {
-                        c = 5;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 3321844:
-                    if (str2.equals("line")) {
-                        c = 6;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 3433509:
-                    if (str2.equals("path")) {
-                        c = 7;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 3496420:
-                    if (str2.equals("rect")) {
-                        c = '\b';
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 109780401:
-                    if (str2.equals("style")) {
-                        c = '\t';
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 561938880:
-                    if (str2.equals("polyline")) {
-                        c = '\n';
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case 917656469:
-                    if (str2.equals("clipPath")) {
-                        c = 11;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-            }
-            HashMap hashMap = this.E;
-            kcb kcbVar = this.c;
-            Paint paint2 = this.h;
-            switch (c2) {
-                case 0:
-                    Float j = lcb.j("cx", attributes);
-                    Float j2 = lcb.j("cy", attributes);
-                    Float j3 = lcb.j("rx", attributes);
-                    Float j4 = lcb.j("ry", attributes);
-                    if (j != null && j2 != null && j3 != null && j4 != null) {
-                        g(attributes);
-                        v8b v8bVar = new v8b(attributes, hashMap);
-                        float floatValue = j.floatValue() - j3.floatValue();
-                        float floatValue2 = j2.floatValue() - j4.floatValue();
-                        float floatValue3 = j3.floatValue() + j.floatValue();
-                        float floatValue4 = j4.floatValue() + j2.floatValue();
-                        RectF rectF2 = this.n;
-                        rectF2.set(floatValue, floatValue2, floatValue3, floatValue4);
-                        if (b(v8bVar)) {
-                            if (kcbVar != null) {
-                                fcb fcbVar = new fcb(rectF2);
-                                int[] iArr = kcb.u;
-                                kcbVar.a(fcbVar, paint2);
-                            } else {
-                                this.a.drawOval(rectF2, paint2);
-                            }
+                        String trim = n3.trim();
+                        StringBuilder sb2 = new StringBuilder(trim);
+                        Matcher matcher2 = e.matcher(trim);
+                        int i3 = 0;
+                        while (matcher2.find()) {
+                            String group = matcher2.group();
+                            arrayList2.add(group);
+                            int start = matcher2.start() - i3;
+                            int length = group.length();
+                            sb2.replace(start, start + length, "");
+                            i3 += length;
+                            j = j;
                         }
-                        if (c(v8bVar)) {
-                            if (kcbVar != null) {
-                                fcb fcbVar2 = new fcb(rectF2);
-                                int[] iArr2 = kcb.u;
-                                kcbVar.a(fcbVar2, paint2);
-                            } else {
-                                this.a.drawOval(rectF2, paint2);
-                            }
-                        }
-                        f();
-                        break;
+                        sb.append(sb2.toString());
                     }
-                    break;
-                case 1:
-                    Float j5 = lcb.j("cx", attributes);
-                    Float j6 = lcb.j("cy", attributes);
-                    Float j7 = lcb.j("r", attributes);
-                    if (j5 != null && j6 != null && j7 != null) {
-                        g(attributes);
-                        v8b v8bVar2 = new v8b(attributes, hashMap);
-                        if (b(v8bVar2)) {
-                            if (kcbVar != null) {
-                                dcb dcbVar = new dcb(j5.floatValue(), j6.floatValue(), j7.floatValue());
-                                int[] iArr3 = kcb.u;
-                                kcbVar.a(dcbVar, paint2);
-                            } else {
-                                this.a.drawCircle(j5.floatValue(), j6.floatValue(), j7.floatValue(), paint2);
-                            }
-                        }
-                        if (c(v8bVar2)) {
-                            if (kcbVar != null) {
-                                dcb dcbVar2 = new dcb(j5.floatValue(), j6.floatValue(), j7.floatValue());
-                                int[] iArr4 = kcb.u;
-                                kcbVar.a(dcbVar2, paint2);
-                            } else {
-                                this.a.drawCircle(j5.floatValue(), j6.floatValue(), j7.floatValue(), paint2);
-                            }
-                        }
-                        f();
-                        break;
-                    }
-                    break;
-                case 2:
-                case '\n':
-                    int length = attributes.getLength();
-                    int i = 0;
+                    long j4 = j;
+                    Spanned fromHtml = Html.fromHtml(sb.toString());
+                    int i4 = 0;
                     while (true) {
-                        if (i >= length) {
-                            il8Var = null;
-                        } else if (attributes.getLocalName(i).equals("points")) {
-                            il8Var = lcb.m(attributes.getValue(i));
-                        } else {
-                            i++;
-                        }
-                    }
-                    if (il8Var != null) {
-                        Path path = new Path();
-                        ArrayList arrayList2 = il8Var.a;
-                        if (arrayList2.size() > 1) {
-                            g(attributes);
-                            v8b v8bVar3 = new v8b(attributes, hashMap);
-                            path.moveTo(((Float) arrayList2.get(0)).floatValue(), ((Float) arrayList2.get(1)).floatValue());
-                            for (int i2 = 2; i2 < arrayList2.size(); i2 += 2) {
-                                path.lineTo(((Float) arrayList2.get(i2)).floatValue(), ((Float) arrayList2.get(i2 + 1)).floatValue());
-                            }
-                            if (str2.equals("polygon")) {
-                                path.close();
-                            }
-                            if (b(v8bVar3)) {
-                                if (kcbVar != null) {
-                                    int[] iArr5 = kcb.u;
-                                    kcbVar.a(path, paint2);
-                                } else {
-                                    this.a.drawPath(path, paint2);
-                                }
-                            }
-                            if (c(v8bVar3)) {
-                                if (kcbVar != null) {
-                                    int[] iArr6 = kcb.u;
-                                    kcbVar.a(path, paint2);
-                                } else {
-                                    this.a.drawPath(path, paint2);
-                                }
-                            }
-                            f();
+                        if (i4 >= arrayList2.size()) {
+                            str = null;
                             break;
                         }
-                    }
-                    break;
-                case 3:
-                    if ("bounds".equalsIgnoreCase(lcb.k("id", attributes))) {
-                        this.G = true;
-                        break;
-                    }
-                    break;
-                case 4:
-                    Float j8 = lcb.j("width", attributes);
-                    Float j9 = lcb.j("height", attributes);
-                    if ((j8 == null || j9 == null) && (k = lcb.k("viewBox", attributes)) != null) {
-                        String[] split = k.split(" ");
-                        Float valueOf2 = Float.valueOf(Float.parseFloat(split[2]));
-                        j9 = Float.valueOf(Float.parseFloat(split[3]));
-                        j8 = valueOf2;
-                    }
-                    int i3 = this.e;
-                    int i4 = this.d;
-                    if (j8 == null || j9 == null) {
-                        j8 = Float.valueOf(i4);
-                        j9 = Float.valueOf(i3);
-                    }
-                    int ceil = (int) Math.ceil(j8.floatValue());
-                    int ceil2 = (int) Math.ceil(j9.floatValue());
-                    if (ceil != 0 && ceil2 != 0) {
-                        if (i4 == 0 || i3 == 0) {
-                            i4 = ceil;
-                            i3 = ceil2;
-                        } else {
-                            if (this.x == 2) {
-                                min = i4 / ceil;
-                                this.f = min;
-                            } else {
-                                min = Math.min(i4 / ceil, i3 / ceil2);
-                                this.f = min;
-                            }
-                            i4 = (int) (ceil * min);
-                            i3 = (int) (ceil2 * min);
-                        }
-                    }
-                    if (kcbVar == null) {
-                        Bitmap createBitmap = Bitmap.createBitmap(i4, i3, this.F ? Bitmap.Config.ALPHA_8 : Bitmap.Config.ARGB_8888);
-                        this.b = createBitmap;
-                        createBitmap.eraseColor(0);
-                        Canvas canvas = new Canvas(this.b);
-                        this.a = canvas;
-                        float f2 = this.f;
-                        if (f2 != 0.0f) {
-                            float f3 = this.w * f2;
-                            canvas.scale(f3, f3);
+                        str = (String) arrayList2.get(i4);
+                        if (str.matches("\\{\\\\an[1-9]\\}")) {
                             break;
-                        }
-                    } else {
-                        kcbVar.e = i4;
-                        kcbVar.f = i3;
-                        break;
-                    }
-                    break;
-                case 5:
-                case 11:
-                    this.G = true;
-                    break;
-                case 6:
-                    Float j10 = lcb.j("x1", attributes);
-                    Float j11 = lcb.j("x2", attributes);
-                    Float j12 = lcb.j("y1", attributes);
-                    Float j13 = lcb.j("y2", attributes);
-                    if (c(new v8b(attributes, hashMap))) {
-                        g(attributes);
-                        if (kcbVar != null) {
-                            float floatValue5 = j10.floatValue();
-                            float floatValue6 = j12.floatValue();
-                            float floatValue7 = j11.floatValue();
-                            float floatValue8 = j13.floatValue();
-                            ecb ecbVar = new ecb();
-                            ecbVar.a = floatValue5;
-                            ecbVar.b = floatValue6;
-                            ecbVar.c = floatValue7;
-                            ecbVar.d = floatValue8;
-                            int[] iArr7 = kcb.u;
-                            kcbVar.a(ecbVar, paint2);
                         } else {
-                            this.a.drawLine(j10.floatValue(), j12.floatValue(), j11.floatValue(), j13.floatValue(), paint2);
-                        }
-                        f();
-                        break;
-                    }
-                    break;
-                case 7:
-                    Path b = lcb.b(lcb.k("d", attributes));
-                    g(attributes);
-                    v8b v8bVar4 = new v8b(attributes, hashMap);
-                    if (b(v8bVar4)) {
-                        if (kcbVar != null) {
-                            int[] iArr8 = kcb.u;
-                            kcbVar.a(b, paint2);
-                        } else {
-                            this.a.drawPath(b, paint2);
+                            i4++;
                         }
                     }
-                    if (c(v8bVar4)) {
-                        if (kcbVar != null) {
-                            int[] iArr9 = kcb.u;
-                            kcbVar.a(b, paint2);
-                        } else {
-                            this.a.drawPath(b, paint2);
-                        }
+                    if (j4 == j3 || b2 >= j4) {
+                        fu2Var.accept(new i53(b, b2 - b, mo5.u(a(fromHtml, str))));
+                    } else if (arrayList != null) {
+                        arrayList.add(new i53(b, b2 - b, mo5.u(a(fromHtml, str))));
                     }
-                    f();
-                    break;
-                case '\b':
-                    Float j14 = lcb.j("x", attributes);
-                    if (j14 == null) {
-                        j14 = valueOf;
-                    }
-                    Float j15 = lcb.j("y", attributes);
-                    if (j15 != null) {
-                        valueOf = j15;
-                    }
-                    Float j16 = lcb.j("width", attributes);
-                    Float j17 = lcb.j("height", attributes);
-                    Float j18 = lcb.j("rx", attributes);
-                    g(attributes);
-                    v8b v8bVar5 = new v8b(attributes, hashMap);
-                    boolean b2 = b(v8bVar5);
-                    RectF rectF3 = this.r;
-                    if (b2) {
-                        if (kcbVar == null) {
-                            if (j18 == null) {
-                                this.a.drawRect(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue(), paint2);
-                                paint = paint2;
-                                if (c(v8bVar5)) {
-                                    if (kcbVar != null) {
-                                        if (j18 != null) {
-                                            hcb hcbVar = new hcb(new RectF(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue()), j18.floatValue());
-                                            int[] iArr10 = kcb.u;
-                                            kcbVar.a(hcbVar, paint);
-                                        } else {
-                                            RectF rectF4 = new RectF(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue());
-                                            int[] iArr11 = kcb.u;
-                                            kcbVar.a(rectF4, paint);
-                                        }
-                                    } else if (j18 != null) {
-                                        rectF3.set(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue());
-                                        this.a.drawRoundRect(rectF3, j18.floatValue(), j18.floatValue(), paint);
-                                    } else {
-                                        this.a.drawRect(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue(), paint);
-                                    }
-                                }
-                                f();
-                                break;
-                            } else {
-                                rectF3.set(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue());
-                                this.a.drawRoundRect(rectF3, j18.floatValue(), j18.floatValue(), paint2);
-                            }
-                        } else if (j18 != null) {
-                            hcb hcbVar2 = new hcb(new RectF(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue()), j18.floatValue());
-                            int[] iArr12 = kcb.u;
-                            kcbVar.a(hcbVar2, paint2);
-                        } else {
-                            RectF rectF5 = new RectF(j14.floatValue(), valueOf.floatValue(), j16.floatValue() + j14.floatValue(), j17.floatValue() + valueOf.floatValue());
-                            int[] iArr13 = kcb.u;
-                            kcbVar.a(rectF5, paint2);
-                        }
-                    }
-                    paint = paint2;
-                    if (c(v8bVar5)) {
-                    }
-                    f();
-                case '\t':
-                    this.H = new StringBuilder();
-                    break;
+                    icbVar = this;
+                    j2 = j3;
+                    j = j4;
+                } else {
+                    ncd.f("SubripParser", "Skipping invalid timing: ".concat(n));
+                    icbVar = this;
+                }
+            }
+        }
+        if (arrayList != null) {
+            int size = arrayList.size();
+            int i5 = 0;
+            while (i5 < size) {
+                Object obj = arrayList.get(i5);
+                i5++;
+                fu2Var.accept((i53) obj);
             }
         }
     }
 
-    @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
-    public final void endDocument() {
+    @Override // vcb
+    public final int r() {
+        return 1;
     }
 
-    @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
-    public final void startDocument() {
-    }
-
-    public icb(int i, int i2, Integer num, boolean z) {
-        this(i, i2, num, z, 1.0f, 1);
+    @Override // vcb
+    public final void reset() {
     }
 }

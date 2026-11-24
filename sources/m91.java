@@ -1,57 +1,42 @@
 // default package
 
-import java.lang.ref.WeakReference;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
+import android.os.Bundle;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class m91 implements t56 {
-    public final WeakReference a;
-    public final l91 b = new l91(this);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class m91 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ia1 b;
 
-    public m91(k91 k91Var) {
-        this.a = new WeakReference(k91Var);
+    public /* synthetic */ m91(ia1 ia1Var, byte b) {
+        this.a = b;
+        this.b = ia1Var;
     }
 
-    @Override // t56
-    public final void b(Runnable runnable, Executor executor) {
-        this.b.b(runnable, executor);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z) {
-        k91 k91Var = (k91) this.a.get();
-        boolean cancel = this.b.cancel(z);
-        if (cancel && k91Var != null) {
-            k91Var.a = null;
-            k91Var.b = null;
-            k91Var.c.k(null);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                Long l = (Long) view.getTag();
+                ia1 ia1Var = this.b;
+                qd2 f1 = ia1Var.getMessagesController().f1(l.longValue(), false, null);
+                TLRPC.Chat L0 = ia1Var.getMessagesController().L0(l);
+                ia1Var.M = L0;
+                if (f1 == null) {
+                    ia1Var.N = l;
+                    ia1Var.getMessagesController().a3(0, l.longValue(), true);
+                    break;
+                } else {
+                    sic.l(L0, null, false, null, ia1Var.getParentActivity(), ia1Var, ia1Var.getAccountInstance());
+                    break;
+                }
+            default:
+                Bundle l2 = ts2.l("isCall", true);
+                ia1 ia1Var2 = this.b;
+                ia1Var2.presentFragment(new ca1(l2, ia1Var2.getCurrentAccount(), ia1Var2));
+                break;
         }
-        return cancel;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof t3;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    public final String toString() {
-        return this.b.toString();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        return this.b.get(j, timeUnit);
     }
 }

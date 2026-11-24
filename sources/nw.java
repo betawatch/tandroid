@@ -1,71 +1,53 @@
 // default package
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.util.SparseArray;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class nw {
-    public TextPaint a;
-    public final SparseArray b = new SparseArray();
-    public final SparseArray c = new SparseArray();
-    public final SparseArray d = new SparseArray();
-    public final SparseArray e = new SparseArray();
-    public final SparseArray f = new SparseArray();
-    public final SparseArray g = new SparseArray();
-    public final SparseArray h = new SparseArray();
-    public final SparseArray i = new SparseArray();
-    public final SparseArray j = new SparseArray();
-    public final SparseArray k = new SparseArray();
-    public final SparseArray l = new SparseArray();
-    public final SparseArray m = new SparseArray();
-    public final SparseArray n = new SparseArray();
-    public final SparseArray o = new SparseArray();
-    public final SparseArray p = new SparseArray();
-    public final SparseArray q = new SparseArray();
-    public final SparseArray r = new SparseArray();
-    public final SparseArray s = new SparseArray();
-    public final SparseArray t = new SparseArray();
-    public final SparseArray u = new SparseArray();
-    public final SparseArray v = new SparseArray();
-    public final SparseArray w = new SparseArray();
-    public final SparseArray x = new SparseArray();
-    public final SparseArray y = new SparseArray();
-    public final SparseArray z = new SparseArray();
-    public final SparseArray A = new SparseArray();
+public final class nw extends qt7 {
+    public final /* synthetic */ pw c;
 
-    public static void a(vg5 vg5Var, SparseArray sparseArray) {
-        for (int i = 0; i < sparseArray.size(); i++) {
-            int keyAt = sparseArray.keyAt(i);
-            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i);
-            if (textPaint != null) {
-                if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
-                    textPaint.setColor(bkb.w0(null, bkb.F6, false));
-                } else {
-                    textPaint.setColor(bkb.w0(null, bkb.I6, false));
-                }
-            }
-        }
+    public nw(pw pwVar) {
+        this.c = pwVar;
     }
 
-    public static void b(int i, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
-        if ((i & 1) != 0) {
-            if ((i & 2) != 0) {
-                textPaint.setTypeface(typeface2);
-                return;
-            } else {
-                textPaint.setTypeface(typeface3);
-                return;
-            }
+    @Override // qt7
+    public final int b() {
+        TL_iv.pageBlockSlideshow pageblockslideshow = this.c.e;
+        if (pageblockslideshow == null) {
+            return 0;
         }
-        if ((i & 2) != 0) {
-            textPaint.setTypeface(typeface4);
+        return pageblockslideshow.items.size();
+    }
+
+    @Override // qt7
+    public final int c(Object obj) {
+        return this.c.e.items.contains(((mw) obj).a) ? -1 : -2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // qt7
+    public final Object e(ggc ggcVar, int i) {
+        xw xwVar;
+        pw pwVar = this.c;
+        ey eyVar = pwVar.y;
+        o oVar = pwVar.E;
+        TL_iv.PageBlock pageBlock = pwVar.e.items.get(i);
+        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
+            cw cwVar = new cw(pwVar.getContext(), oVar, eyVar, 1);
+            cwVar.a((TL_iv.pageBlockPhoto) pageBlock, eyVar.F.cached_page, false, true);
+            xwVar = cwVar;
         } else {
-            if ((i & 4) != 0) {
-                return;
-            }
-            textPaint.setTypeface(typeface);
+            xw xwVar2 = new xw(pwVar.getContext(), oVar, eyVar, 1);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            xwVar2.b(pageblockvideo, (yw) oVar.E.f(pageblockvideo.video_id), false, true);
+            xwVar = xwVar2;
         }
+        ggcVar.addView(xwVar);
+        mw mwVar = new mw();
+        mwVar.b = xwVar;
+        mwVar.a = pageBlock;
+        return mwVar;
     }
 }

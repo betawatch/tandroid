@@ -1,8 +1,94 @@
 // default package
 
-import java.io.IOException;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class fx2 extends IOException {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public interface fx2 {
+    void A(TLRPC.Document document);
+
+    boolean B();
+
+    boolean C(TLRPC.Document document);
+
+    void D(TLRPC.Document document);
+
+    String E(boolean z);
+
+    void G(TLRPC.Document document);
+
+    boolean H();
+
+    bu5 I(ViewGroup viewGroup);
+
+    void J(t5a t5aVar);
+
+    void K(Object obj, Object obj2);
+
+    boolean L();
+
+    void M();
+
+    void O();
+
+    void P(TLRPC.InputStickerSet inputStickerSet, boolean z);
+
+    boolean Q(TLRPC.Document document);
+
+    void R(String str);
+
+    Boolean S(TLRPC.Document document);
+
+    boolean T();
+
+    long a();
+
+    boolean b();
+
+    boolean c();
+
+    TLRPC.TL_messageMediaPoll d();
+
+    boolean e(TLRPC.Document document);
+
+    boolean f();
+
+    TLRPC.PollAnswer g();
+
+    boolean h();
+
+    boolean i();
+
+    boolean j(int i);
+
+    void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2);
+
+    void l(String str);
+
+    void m(TLRPC.Document document);
+
+    boolean n();
+
+    void o(TLRPC.Document document);
+
+    void p();
+
+    void q();
+
+    void r(TLRPC.Document document);
+
+    void s(TLRPC.StickerSet stickerSet, String str);
+
+    boolean t();
+
+    void u(Object obj, Object obj2, boolean z, int i, int i2);
+
+    void w(String str);
+
+    k47 x();
+
+    boolean y();
+
+    void z(CharSequence charSequence, String str, qy1 qy1Var);
 }

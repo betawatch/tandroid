@@ -1,40 +1,37 @@
 // default package
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class mv7 implements Runnable {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class mv7 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ yv7 b;
+    public final /* synthetic */ xv7 b;
 
-    public /* synthetic */ mv7(yv7 yv7Var, byte b) {
+    public /* synthetic */ mv7(xv7 xv7Var, byte b) {
         this.a = b;
-        this.b = yv7Var;
+        this.b = xv7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        yv7 yv7Var = this.b;
+        xv7 xv7Var = this.b;
         switch (b) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = yv7Var.r;
-                if (!yv7Var.Q && yv7Var.isAttachedToWindow() && yv7Var.y.getVisibility() != 0 && editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    gl.F3(editTextBoldCursor);
-                    break;
-                }
+                xv7Var.R1 = 0.0f;
+                xv7Var.P1.setAlpha(1.0f);
+                xv7Var.P1.setVisibility(8);
+                xv7Var.P1.k();
+                break;
+            case 1:
+                xv7Var.j2.setTranslationY(0.0f);
                 break;
             default:
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(yv7Var.b0, 0.0f);
-                yv7Var.T = ofFloat;
-                ofFloat.addUpdateListener(new nv7(yv7Var, (byte) 1));
-                ofFloat.addListener(new v85(yv7Var, (byte) 24));
-                ofFloat.setDuration(420L);
-                ofFloat.setInterpolator(s33.h);
-                ofFloat.start();
+                xv7Var.m2 = false;
+                xv7Var.j2.setTranslationY(0.0f);
+                xv7Var.t0();
                 break;
         }
     }

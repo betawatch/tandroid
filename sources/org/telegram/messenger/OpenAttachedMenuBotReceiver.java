@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class OpenAttachedMenuBotReceiver extends Activity {
     public static final /* synthetic */ int a = 0;
@@ -32,7 +32,7 @@ public class OpenAttachedMenuBotReceiver extends Activity {
             startActivity(intent2);
             finish();
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
         }
     }
 }

@@ -1,26 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class n1f {
-    public static String a(String str) {
-        int length = str.length();
-        int i = 0;
-        while (i < length) {
-            char charAt = str.charAt(i);
-            if (charAt >= 'a' && charAt <= 'z') {
-                char[] charArray = str.toCharArray();
-                while (i < length) {
-                    char c = charArray[i];
-                    if (c >= 'a' && c <= 'z') {
-                        charArray[i] = (char) (c ^ ' ');
-                    }
-                    i++;
-                }
-                return String.valueOf(charArray);
-            }
-            i++;
+public final class n1f implements cq7 {
+    public static final n1f a = new n1f();
+
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return str;
+        throw null;
     }
 }

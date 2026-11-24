@@ -1,33 +1,32 @@
 // default package
 
-import android.view.View;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rv0 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ow0 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class rv0 extends yv1 {
+    public boolean Gd;
+    public final /* synthetic */ TLRPC.User Hd;
+    public final /* synthetic */ long Id;
+    public final /* synthetic */ qw0 Jd;
 
-    public /* synthetic */ rv0(ow0 ow0Var, byte b) {
-        this.a = b;
-        this.b = ow0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rv0(qw0 qw0Var, Bundle bundle, TLRPC.User user, long j) {
+        super(bundle);
+        this.Jd = qw0Var;
+        this.Hd = user;
+        this.Id = j;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        ow0 ow0Var = this.b;
-        switch (b) {
-            case 0:
-                cv0 webView = ow0Var.E.getWebView();
-                if (webView != null) {
-                    webView.reload();
-                    break;
-                }
-                break;
-            default:
-                ow0Var.w();
-                break;
+    @Override // yv1, org.telegram.ui.ActionBar.d
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Gd) {
+            return;
         }
+        this.Gd = true;
+        c41.b0(this).I(R.raw.contact_check, jb6.a0(null, null, 2131751676, m9c.r(this.Hd)), gm.N2(jb6.a0(null, null, 2131751677, m9c.r(this.Jd.V)), -1, 0, new fu(this, this.Id, (byte) 3), null)).j();
     }
 }

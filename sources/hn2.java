@@ -2,103 +2,127 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class hn2 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final be0 b;
-    public final TextView c;
-    public final TextView d;
-    public final ImageView e;
+public final class hn2 extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public float d;
+    public float e;
+    public final Drawable f;
+    public final float[] h;
+    public final /* synthetic */ ln2 n;
 
-    public hn2(Context context, wjb wjbVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hn2(ln2 ln2Var, Context context) {
         super(context);
-        this.a = wjbVar;
-        be0 be0Var = new be0(context);
-        this.b = be0Var;
-        be0Var.setRoundRadius(gl.L(9.0f));
-        addView(be0Var, nme.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(16);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(gl.o());
-        textView.setTextSize(1, 16.0f);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, nme.o(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setSingleLine(true);
-        textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, nme.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, nme.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
-        ImageView imageView = new ImageView(context);
-        this.e = imageView;
-        imageView.setImageResource(R.drawable.msg_inputarrow);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, nme.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        updateColors();
+        this.n = ln2Var;
+        this.a = new Paint(1);
+        this.b = new Paint(1);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.h = new float[3];
+        setPadding(gm.L(14.0f), gm.L(3.0f), gm.L(14.0f), gm.L(3.0f));
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeWidth(gm.L(3.0f));
+        this.f = context.getDrawable(R.drawable.knob_shadow);
     }
 
-    public final void a(int i, TLRPC.Chat chat) {
-        if (chat == null) {
-            return;
+    public final void a(MotionEvent motionEvent) {
+        float f;
+        this.d = (motionEvent.getX() - getPaddingLeft()) / ((getWidth() - getPaddingLeft()) - getPaddingRight());
+        float y = (motionEvent.getY() - getPaddingTop()) / ((getHeight() - getPaddingTop()) - getPaddingBottom());
+        this.e = y;
+        float[] fArr = this.h;
+        fArr[0] = y * 360.0f;
+        float f2 = this.d;
+        if (f2 <= 0.22f) {
+            f = 1.0f - (f2 / 0.22f);
+        } else {
+            if (f2 < 0.78f) {
+                fArr[1] = 1.0f;
+                fArr[2] = 1.0f;
+                int HSVToColor = Color.HSVToColor(fArr);
+                ln2 ln2Var = this.n;
+                ln2Var.p1 = HSVToColor;
+                ln2Var.D0(HSVToColor, 0);
+                invalidate();
+            }
+            f = (f2 - 0.78f) / 0.22000003f;
         }
-        TLRPC.ChatFull L0 = na7.q1(i).L0(chat.id);
-        setTitle(cf3.t(chat));
-        setSubtitle(k96.G(L0 != null ? L0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
-        this.b.f(chat, new pb0(chat));
+        fArr[1] = gm.R1(1.0f, 0.0f, f);
+        float f3 = this.d;
+        fArr[2] = f3 > 0.22f ? gm.R1(1.0f, 0.0f, (f3 - 0.78f) / 0.22000003f) : 1.0f;
+        int HSVToColor2 = Color.HSVToColor(fArr);
+        ln2 ln2Var2 = this.n;
+        ln2Var2.p1 = HSVToColor2;
+        ln2Var2.D0(HSVToColor2, 0);
+        invalidate();
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.y6));
-        hashSet.add(Integer.valueOf(bkb.F6));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        RectF rectF = gm.P;
+        rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+        canvas.drawRoundRect(rectF, gm.L(8.0f), gm.L(8.0f), this.a);
+        canvas.drawRoundRect(rectF, gm.L(8.0f), gm.L(8.0f), this.b);
+        float L = gm.L(13.0f);
+        Paint paint = this.c;
+        float strokeWidth = L - (paint.getStrokeWidth() / 2.0f);
+        float L2 = gm.L(16.0f);
+        int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
+        int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
+        float f = width;
+        float a = pqe.a(this.d * f, L2, f - L2) + getPaddingLeft();
+        float f2 = height;
+        float a2 = pqe.a(this.e * f2, L2, f2 - L2) + getPaddingTop();
+        Rect rect = gm.Q;
+        Drawable drawable = this.f;
+        drawable.getPadding(rect);
+        int i = (int) ((a - L) - rect.left);
+        int i2 = (int) ((a2 - L) - rect.top);
+        float f3 = rect.bottom;
+        drawable.setBounds(i, i2, (int) (a + L + f3), (int) (a2 + L + f3));
+        drawable.draw(canvas);
+        canvas.drawCircle(a, a2, L, paint);
+        bu7.A1(a, a2, strokeWidth, on2.p(this.n.p1, nm7.d4), canvas);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = bkb.R0;
-        be0 be0Var = this.b;
-        kq3.a(canvas, drawable, (be0Var.getWidth() / 2.0f) + be0Var.getLeft(), (be0Var.getHeight() / 2.0f) + be0Var.getTop(), be0Var.getHeight());
-        super.dispatchDraw(canvas);
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        this.a.setShader(new LinearGradient(0.0f, getPaddingTop(), 0.0f, i2 - getPaddingBottom(), new int[]{-65536, -256, -16711936, -16711681, -16776961, -65281, -65536}, (float[]) null, Shader.TileMode.CLAMP));
+        this.b.setShader(new LinearGradient(getPaddingLeft(), 0.0f, i - getPaddingRight(), 0.0f, new int[]{-1, 0, 0, -16777216}, new float[]{0.06f, 0.22f, 0.78f, 0.94f}, Shader.TileMode.MIRROR));
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(60.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        int i = bkb.y6;
-        wjb wjbVar = this.a;
-        this.e.setColorFilter(bkb.v0(i, wjbVar));
-        this.c.setTextColor(bkb.v0(bkb.F6, wjbVar));
-        this.d.setTextColor(bkb.v0(i, wjbVar));
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+            a(motionEvent);
+        } else if (actionMasked == 1) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            a(motionEvent);
+        } else if (actionMasked == 2) {
+            a(motionEvent);
+        } else if (actionMasked == 3) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+        }
+        return true;
     }
 }

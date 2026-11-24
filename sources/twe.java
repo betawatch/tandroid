@@ -1,19 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class twe implements zn7 {
-    public static final twe a = new twe();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class twe {
+    public static HashMap a(zd1 zd1Var) {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap2.put("number", uwe.e((String) zd1Var.a));
+        hashMap2.put("cvc", uwe.e((String) zd1Var.b));
+        hashMap2.put("exp_month", (Integer) zd1Var.m);
+        hashMap2.put("exp_year", (Integer) zd1Var.n);
+        hashMap2.put("name", uwe.e((String) zd1Var.c));
+        hashMap2.put("currency", uwe.e((String) zd1Var.l));
+        hashMap2.put("address_line1", uwe.e((String) zd1Var.d));
+        hashMap2.put("address_line2", uwe.e((String) zd1Var.e));
+        hashMap2.put("address_city", uwe.e((String) zd1Var.f));
+        hashMap2.put("address_zip", uwe.e((String) zd1Var.h));
+        hashMap2.put("address_state", uwe.e((String) zd1Var.g));
+        hashMap2.put("address_country", uwe.e((String) zd1Var.i));
+        Iterator it = new HashSet(hashMap2.keySet()).iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (hashMap2.get(str) == null) {
+                hashMap2.remove(str);
+            }
         }
-        throw null;
+        hashMap.put("card", hashMap2);
+        return hashMap;
     }
 }

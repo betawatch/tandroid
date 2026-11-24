@@ -1,45 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class gzc extends s0d {
-    public final /* synthetic */ byte h;
-    public final /* synthetic */ Object n;
+import android.view.animation.Interpolator;
 
-    public /* synthetic */ gzc(Object obj, byte b) {
-        this.h = b;
-        this.n = obj;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class gzc {
+    public final int a;
+    public float b;
+    public final Interpolator c;
+    public final short d;
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [int, short] */
+    public gzc(int i, Interpolator interpolator, long j) {
+        this.a = i;
+        this.c = interpolator;
+        this.d = (int) j;
     }
 
-    @Override // s0d
-    public final void b() {
-        switch (this.h) {
-            case 0:
-                hzc hzcVar = (hzc) ((b5a) this.n).b;
-                hzcVar.b.b("unlinkToDeath", new Object[0]);
-                hzcVar.n.asBinder().unlinkToDeath(hzcVar.k, 0);
-                hzcVar.n = null;
-                hzcVar.g = false;
-                return;
-            default:
-                synchronized (((hzc) this.n).f) {
-                    if (((hzc) this.n).l.get() > 0 && ((hzc) this.n).l.decrementAndGet() > 0) {
-                        ((hzc) this.n).b.b("Leaving the connection open for other ongoing calls.", new Object[0]);
-                        return;
-                    }
-                    hzc hzcVar2 = (hzc) this.n;
-                    if (hzcVar2.n != null) {
-                        hzcVar2.b.b("Unbind from service.", new Object[0]);
-                        hzc hzcVar3 = (hzc) this.n;
-                        hzcVar3.a.unbindService(hzcVar3.m);
-                        hzcVar2 = (hzc) this.n;
-                        hzcVar2.g = false;
-                        hzcVar2.n = null;
-                        hzcVar2.m = null;
-                    }
-                    hzcVar2.e();
-                    return;
-                }
-        }
+    public long a() {
+        return this.d;
+    }
+
+    public float b() {
+        float f = this.b;
+        Interpolator interpolator = this.c;
+        return interpolator != null ? interpolator.getInterpolation(f) : f;
+    }
+
+    public int c() {
+        return this.a;
+    }
+
+    public void d(float f) {
+        this.b = f;
     }
 }

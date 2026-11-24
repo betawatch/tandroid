@@ -1,48 +1,25 @@
 // default package
 
-import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class r79 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ wjb d;
-    public final /* synthetic */ k27 e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class r79 {
+    public final /* synthetic */ s79 a;
 
-    public /* synthetic */ r79(mu1 mu1Var, Activity activity, wjb wjbVar, k27 k27Var, byte b) {
-        this.a = b;
-        this.b = mu1Var;
-        this.c = activity;
-        this.d = wjbVar;
-        this.e = k27Var;
+    public r79(s79 s79Var) {
+        this.a = s79Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        k27 k27Var = this.e;
-        wjb wjbVar = this.d;
-        Activity activity = this.c;
-        mu1 mu1Var = this.b;
-        byte b2 = 2;
-        switch (b) {
-            case 0:
-                u21.b0(mu1Var).c(gl.O2(k96.M0(2131754484, null), -1, 2, new m9(activity, (byte) 3), wjbVar)).j();
-                mu1Var.Na(k27Var);
-                mu1Var.Pa(k27Var);
-                break;
-            case 1:
-                u21.b0(mu1Var).c(gl.O2(k96.M0(2131754484, null), -1, 2, new m9(activity, b2), wjbVar)).j();
-                mu1Var.Na(k27Var);
-                mu1Var.Pa(k27Var);
-                break;
-            default:
-                u21.b0(mu1Var).c(gl.O2(k96.M0(2131754484, null), -1, 2, new m9(activity, (byte) 4), wjbVar)).j();
-                mu1Var.Na(k27Var);
-                mu1Var.Pa(k27Var);
-                break;
-        }
+    public static void a(String str, Bundle bundle) {
+        Log.d("MediaRouteProviderProxy", "Error: " + str + ", data: " + bundle);
+    }
+
+    public final void b(Bundle bundle) {
+        String string = bundle.getString("groupableTitle");
+        s79 s79Var = this.a;
+        s79Var.g = string;
+        s79Var.h = bundle.getString("transferableTitle");
     }
 }

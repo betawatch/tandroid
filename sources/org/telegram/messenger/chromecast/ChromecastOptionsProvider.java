@@ -4,28 +4,28 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class ChromecastOptionsProvider {
-    public static final dd1 a;
+    public static final le1 a;
 
     static {
         ArrayList arrayList = new ArrayList();
-        b06 b06Var = new b06();
+        b26 b26Var = new b26();
         ArrayList arrayList2 = new ArrayList();
-        bd1 bd1Var = dd1.J;
-        if (bd1Var != null) {
-            a = new dd1("CC1AD845", arrayList, false, b06Var, true, bd1Var, true, 0.05000000074505806d, false, false, false, arrayList2, true, false, dd1.H, dd1.I);
+        je1 je1Var = le1.J;
+        if (je1Var != null) {
+            a = new le1("CC1AD845", arrayList, false, b26Var, true, je1Var, true, 0.05000000074505806d, false, false, false, arrayList2, true, false, le1.H, le1.I);
         } else {
-            fvc.f("use Optional.orNull() instead of Optional.or(null)");
+            gxc.d("use Optional.orNull() instead of Optional.or(null)");
         }
     }
 
-    public List<e7d> getAdditionalSessionProviders(Context context) {
+    public List<g9d> getAdditionalSessionProviders(Context context) {
         return null;
     }
 
-    public dd1 getCastOptions(Context context) {
+    public le1 getCastOptions(Context context) {
         return a;
     }
 }

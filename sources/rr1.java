@@ -1,39 +1,34 @@
 // default package
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class rr1 implements LayoutTransition.TransitionListener {
-    public qr1 a;
-    public int b;
-    public final /* synthetic */ r6 c;
-    public final /* synthetic */ mu1 d;
+public final class rr1 implements o7, iu1 {
+    public final /* synthetic */ yv1 a;
 
-    public rr1(mu1 mu1Var, r6 r6Var) {
-        this.d = mu1Var;
-        this.c = r6Var;
+    public /* synthetic */ rr1(yv1 yv1Var) {
+        this.a = yv1Var;
     }
 
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i) {
-        int i2 = this.b - 1;
-        this.b = i2;
-        if (i2 != 0 || this.a == null) {
-            return;
-        }
-        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
-        this.a = null;
+    @Override // iu1
+    public final void N(String str) {
+        this.a.sa(str, false);
     }
 
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i) {
-        if (this.b == 0 && this.a == null) {
-            this.a = new qr1(this, (byte) 0);
-            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
-        }
-        this.b++;
+    @Override // iu1
+    public final void Z(int i) {
+        this.a.J(i, 0, 0, 0, true, true);
+    }
+
+    @Override // o7
+    public final void h2() {
+        vs9.d(new pm1(this.a, (byte) 2));
+    }
+
+    @Override // o7
+    public final void z0() {
+    }
+
+    @Override // iu1
+    public final void E(boolean z, boolean z2) {
     }
 }

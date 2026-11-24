@@ -1,37 +1,51 @@
 // default package
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface i54 {
-    Map b(byte[] bArr);
+public final class i54 implements cs3 {
+    public final bs3 a;
 
-    h54 c();
+    public i54(bs3 bs3Var) {
+        this.a = bs3Var;
+    }
 
-    kp4 g(byte[] bArr);
+    @Override // cs3
+    public final UUID a() {
+        return n61.b;
+    }
 
-    byte[] j();
+    @Override // cs3
+    public final boolean b() {
+        return false;
+    }
 
-    void k(byte[] bArr, byte[] bArr2);
+    @Override // cs3
+    public final int e() {
+        return 1;
+    }
 
-    void l(byte[] bArr);
+    @Override // cs3
+    public final boolean f(String str) {
+        return false;
+    }
 
-    void n(lj9 lj9Var);
+    @Override // cs3
+    public final bs3 g() {
+        return this.a;
+    }
 
-    byte[] p(byte[] bArr, byte[] bArr2);
+    @Override // cs3
+    public final lr4 h() {
+        return null;
+    }
 
-    void release();
+    @Override // cs3
+    public final void c(fs3 fs3Var) {
+    }
 
-    void s(byte[] bArr);
-
-    g54 t(byte[] bArr, List list, int i, HashMap hashMap);
-
-    int v();
-
-    void w(byte[] bArr, uc8 uc8Var);
-
-    boolean x(String str, byte[] bArr);
+    @Override // cs3
+    public final void d(fs3 fs3Var) {
+    }
 }

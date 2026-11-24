@@ -1,71 +1,111 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import j$.util.Objects;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class dh0 extends b4 {
-    public static final Parcelable.Creator<dh0> CREATOR = new b1d((byte) 19);
-    public final boolean a;
-    public final String b;
-    public final String c;
-    public final boolean d;
-    public final String e;
-    public final ArrayList f;
-    public final boolean h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class dh0 implements vi5 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public dh0(boolean z, String str, String str2, boolean z2, String str3, ArrayList arrayList, boolean z3) {
-        boolean z4 = true;
-        if (z2 && z3) {
-            z4 = false;
-        }
-        fre.a("filterByAuthorizedAccounts and requestVerifiedPhoneNumber must not both be true; the Verified Phone Number feature only works in sign-ups.", z4);
-        this.a = z;
-        if (z) {
-            fre.i(str, "serverClientId must be provided if Google ID tokens are requested");
-        }
-        this.b = str;
-        this.c = str2;
-        this.d = z2;
-        ArrayList arrayList2 = null;
-        if (arrayList != null && !arrayList.isEmpty()) {
-            arrayList2 = new ArrayList(arrayList);
-            Collections.sort(arrayList2);
-        }
-        this.f = arrayList2;
-        this.e = str3;
-        this.h = z3;
+    public /* synthetic */ dh0(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof dh0)) {
-            return false;
+    @Override // vi5
+    public final void a(ucb ucbVar, RectF rectF) {
+        byte b = this.a;
+        ucbVar.b = true;
+    }
+
+    @Override // vi5
+    public final void g(Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        byte b = this.a;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                ww9 ww9Var = (ww9) obj2;
+                tl0.a(ww9Var, canvas, rectF, ww9Var, (FrameLayout) obj);
+                break;
+            case 1:
+                r59 r59Var = (r59) obj2;
+                tl0.a(r59Var, canvas, rectF, r59Var, (FrameLayout) obj);
+                break;
+            case 2:
+                ((au0) obj2).f.d(canvas, rectF, (je) obj);
+                break;
+            case 3:
+                ((y71) obj2).c0.d(canvas, rectF, (xg0) obj);
+                break;
+            case 4:
+                t93 t93Var = (t93) obj2;
+                a6 a6Var = (a6) obj;
+                int childCount = t93Var.a.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    View childAt = t93Var.a.getChildAt(i);
+                    if (childAt instanceof r59) {
+                        r59 r59Var2 = (r59) childAt;
+                        tl0.a(r59Var2, canvas, rectF, r59Var2, a6Var);
+                    }
+                }
+                break;
+            case 5:
+                ((re5) obj2).n.w(canvas, rectF, (FrameLayout) obj);
+                break;
+            case 6:
+                ((cm6) obj2).S.w(canvas, rectF, (ne6) obj);
+                break;
+            case 7:
+                ProfileActivity profileActivity = (ProfileActivity) obj2;
+                nfc nfcVar = (nfc) obj;
+                RectF rectF2 = ProfileActivity.e7;
+                Paint paint = profileActivity.Y6;
+                ViewGroup viewGroup = (ViewGroup) profileActivity.fragmentView;
+                wp8 wp8Var = profileActivity.O;
+                float f = (wp8Var == null || wp8Var.getParent() != profileActivity.a) ? 0.0f : profileActivity.b6;
+                if (f < 1.0f) {
+                    xq8 xq8Var = profileActivity.d1;
+                    RectF rectF3 = ProfileActivity.e7;
+                    if (zgc.c(xq8Var, viewGroup, rectF3) && RectF.intersects(rectF3, rectF)) {
+                        tl0.a(new ms0(profileActivity, (byte) 8), canvas, rectF, profileActivity.d1, viewGroup);
+                    }
+                    po8 po8Var = profileActivity.a;
+                    Objects.requireNonNull(po8Var);
+                    tl0.a(new ms0(po8Var, (byte) 9), canvas, rectF, profileActivity.a, viewGroup);
+                    nfcVar.g(canvas, rectF);
+                }
+                if (f > 0.0f) {
+                    float y = f < 1.0f ? profileActivity.O.getY() + profileActivity.a.getY() : Float.MAX_VALUE;
+                    paint.setColor(cmb.v0(cmb.Z6, profileActivity.A0));
+                    paint.setAlpha((int) (f * 255.0f));
+                    canvas2 = canvas;
+                    canvas2.drawRect(rectF.left, rectF.top, rectF.right, Math.min(rectF.bottom, y), paint);
+                } else {
+                    canvas2 = canvas;
+                }
+                profileActivity.O.w(canvas2, rectF, viewGroup);
+                ProfileActivity.G1(profileActivity.u0, canvas2, rectF, viewGroup);
+                ProfileActivity.G1(profileActivity.o0, canvas2, rectF, viewGroup);
+                ProfileActivity.G1(profileActivity.n0, canvas2, rectF, viewGroup);
+                break;
+            case 8:
+                ((nxa) obj2).V.d(canvas, rectF, (kwa) obj);
+                break;
+            default:
+                ((yfb) obj2).V.d(canvas, rectF, (kwa) obj);
+                break;
         }
-        dh0 dh0Var = (dh0) obj;
-        return this.a == dh0Var.a && cqe.a(this.b, dh0Var.b) && cqe.a(this.c, dh0Var.c) && this.d == dh0Var.d && cqe.a(this.e, dh0Var.e) && cqe.a(this.f, dh0Var.f) && this.h == dh0Var.h;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, this.c, Boolean.valueOf(this.d), this.e, this.f, Boolean.valueOf(this.h)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.l(parcel, 2, this.b);
-        jte.l(parcel, 3, this.c);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        jte.l(parcel, 5, this.e);
-        jte.n(parcel, 6, this.f);
-        jte.q(parcel, 7, 4);
-        parcel.writeInt(this.h ? 1 : 0);
-        jte.s(parcel, r);
     }
 }

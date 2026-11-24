@@ -1,30 +1,69 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class r7a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d8a b;
+import android.os.Bundle;
+import android.text.TextUtils;
+import j$.util.Objects;
 
-    public /* synthetic */ r7a(d8a d8aVar, byte b) {
-        this.a = b;
-        this.b = d8aVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class r7a {
+    public static final y79 d;
+    public static final y79 e;
+    public static final y79 f;
+    public static final y79 g;
+    public static final String h;
+    public static final String i;
+    public static final String j;
+    public final int a;
+    public final String b;
+    public final Bundle c;
+
+    static {
+        ko5 ko5Var = mo5.b;
+        y79 y79Var = y79.e;
+        d = y79Var;
+        e = mo5.u(40010);
+        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
+        ase.a(7, objArr);
+        f = mo5.o(7, objArr);
+        g = y79Var;
+        String str = hac.a;
+        h = "0";
+        i = "1";
+        j = "2";
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        d8a d8aVar = this.b;
-        switch (b) {
-            case 0:
-                d8aVar.b0();
-                break;
-            case 1:
-                d01.t(d8aVar.getParentActivity(), k96.M0(2131752142, null));
-                break;
-            default:
-                d8aVar.c.g3.O(true);
-                break;
+    public r7a(int i2) {
+        jte.e("commandCode shouldn't be COMMAND_CODE_CUSTOM", i2 != 0);
+        this.a = i2;
+        this.b = "";
+        this.c = Bundle.EMPTY;
+    }
+
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(h, this.a);
+        bundle.putString(i, this.b);
+        bundle.putBundle(j, this.c);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof r7a)) {
+            return false;
         }
+        r7a r7aVar = (r7a) obj;
+        return this.a == r7aVar.a && TextUtils.equals(this.b, r7aVar.b);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.b, Integer.valueOf(this.a));
+    }
+
+    public r7a(String str, Bundle bundle) {
+        this.a = 0;
+        this.b = str;
+        bundle.getClass();
+        this.c = new Bundle(bundle);
     }
 }

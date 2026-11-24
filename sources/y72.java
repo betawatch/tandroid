@@ -1,45 +1,93 @@
 // default package
 
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class y72 extends gb {
-    public final /* synthetic */ st x;
+public final class y72 extends q59 {
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public String e;
+    public final /* synthetic */ a82 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y72(st stVar, st stVar2) {
-        super(stVar2);
-        this.x = stVar;
+    public y72(a82 a82Var, Context context) {
+        this.f = a82Var;
+        this.c = context;
     }
 
-    @Override // gb
-    public final boolean b() {
-        boolean z;
-        boolean z2;
-        c82 c82Var = (c82) this.x.c;
-        ui5 parentLayout = c82Var.getParentLayout();
-        z = ((d) c82Var).inPreviewMode;
-        if (z || gl.O1()) {
-            return false;
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        return u69Var.f == 0;
+    }
+
+    @Override // y59
+    public final int b() {
+        return this.d.size() + 2;
+    }
+
+    @Override // y59
+    public final int d(int i) {
+        if (i == 0) {
+            return 1;
         }
-        z2 = ((d) c82Var).inBubbleMode;
-        return (z2 || gl.E || parentLayout == null) ? false : true;
+        return i == b() - 1 ? 2 : 0;
     }
 
-    @Override // gb
-    public final void e(float f, float f2, boolean z) {
-        c82 c82Var = (c82) this.x.c;
-        if (c82Var.getParentLayout() != null) {
-            boolean z2 = ((ActionBarLayout) c82Var.getParentLayout()).n;
+    @Override // y59
+    public final void f() {
+        super.f();
+        this.f.P();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002a  */
+    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
+    @Override // y59
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(u69 u69Var, int i) {
+        Object obj;
+        if (u69Var.f != 0) {
+            return;
+        }
+        kz8 kz8Var = (kz8) u69Var.a;
+        boolean z = i != b() + (-2);
+        int i2 = i - 1;
+        if (i2 >= 0) {
+            ArrayList arrayList = this.d;
+            if (i2 < arrayList.size()) {
+                obj = arrayList.get(i2);
+                if (obj instanceof oz8) {
+                    return;
+                }
+                oz8 oz8Var = (oz8) obj;
+                kz8Var.a(oz8Var, this.e, z);
+                kz8Var.d.a(this.f.x.contains(Integer.valueOf(oz8Var.a)), false);
+                return;
+            }
+        }
+        obj = null;
+        if (obj instanceof oz8) {
         }
     }
 
-    @Override // gb
-    public final void g(int i, boolean z) {
-        c82 c82Var = (c82) this.x.c;
-        c82Var.w.setVisibility(0);
-        c82Var.w.animate().alpha(!z ? 1.0f : 0.0f).withEndAction(new x6c((byte) 10, this, z)).start();
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        View kz8Var;
+        Context context = this.c;
+        if (i == 0) {
+            kz8Var = new kz8(this.f.a, context, false);
+        } else if (i != 1) {
+            kz8Var = new View(context);
+            kz8Var.setTag(-33024);
+        } else {
+            kz8Var = new View(context);
+            kz8Var.setLayoutParams(new g69(-1, gm.L(56.0f)));
+            kz8Var.setTag(-33024);
+        }
+        return new b59(kz8Var);
     }
 }

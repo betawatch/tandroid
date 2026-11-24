@@ -1,52 +1,31 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class em5 extends fm5 {
-    public Object[] a;
-    public int b;
-    public boolean c;
+public final class em5 extends b4 {
+    public static final Parcelable.Creator<em5> CREATOR = new t0e((byte) 21);
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public em5(int i) {
-        krd.b(i, "initialCapacity");
-        this.a = new Object[i];
-        this.b = 0;
+    public em5(int i, int i2, int i3) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
     }
 
-    public final void c(Object obj) {
-        obj.getClass();
-        e(1);
-        Object[] objArr = this.a;
-        int i = this.b;
-        this.b = i + 1;
-        objArr[i] = obj;
-    }
-
-    public final void d(Iterable iterable) {
-        if (iterable instanceof Collection) {
-            Collection collection = (Collection) iterable;
-            e(collection.size());
-            if (collection instanceof gm5) {
-                this.b = ((gm5) collection).i(this.b, this.a);
-                return;
-            }
-        }
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            a(it.next());
-        }
-    }
-
-    public final void e(int i) {
-        Object[] objArr = this.a;
-        int b = fm5.b(objArr.length, this.b + i);
-        if (b > objArr.length || this.c) {
-            this.a = Arrays.copyOf(this.a, b);
-            this.c = false;
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        mve.q(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        mve.q(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        mve.s(parcel, r);
     }
 }

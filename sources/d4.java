@@ -3,31 +3,31 @@
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class d4 extends bl4 implements Runnable {
-    public t56 n;
+public final class d4 extends bn4 implements Runnable {
+    public t76 n;
     public Object r;
 
-    public static d4 o(t56 t56Var, aq4 aq4Var) {
+    public static d4 o(t76 t76Var, bs4 bs4Var) {
         d4 d4Var = new d4();
-        t56Var.getClass();
-        d4Var.n = t56Var;
-        d4Var.r = aq4Var;
-        t56Var.b(d4Var, vn3.a);
+        t76Var.getClass();
+        d4Var.n = t76Var;
+        d4Var.r = bs4Var;
+        t76Var.b(d4Var, fp3.a);
         return d4Var;
     }
 
     @Override // t2
     public final void d() {
-        t56 t56Var = this.n;
+        t76 t76Var = this.n;
         boolean z = false;
-        if ((t56Var != null) & (this.a instanceof h2)) {
+        if ((t76Var != null) & (this.a instanceof h2)) {
             Object obj = this.a;
             if ((obj instanceof h2) && ((h2) obj).a) {
                 z = true;
             }
-            t56Var.cancel(z);
+            t76Var.cancel(z);
         }
         this.n = null;
         this.r = null;
@@ -36,11 +36,11 @@ public final class d4 extends bl4 implements Runnable {
     @Override // t2
     public final String j() {
         String str;
-        t56 t56Var = this.n;
+        t76 t76Var = this.n;
         Object obj = this.r;
         String j = super.j();
-        if (t56Var != null) {
-            str = "inputFuture=[" + t56Var + "], ";
+        if (t76Var != null) {
+            str = "inputFuture=[" + t76Var + "], ";
         } else {
             str = "";
         }
@@ -55,19 +55,19 @@ public final class d4 extends bl4 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        t56 t56Var = this.n;
+        t76 t76Var = this.n;
         Object obj = this.r;
-        if (((this.a instanceof h2) | (t56Var == null)) || (obj == null)) {
+        if (((this.a instanceof h2) | (t76Var == null)) || (obj == null)) {
             return;
         }
         this.n = null;
-        if (t56Var.isCancelled()) {
-            n(t56Var);
+        if (t76Var.isCancelled()) {
+            n(t76Var);
             return;
         }
         try {
             try {
-                Object apply = ((aq4) obj).apply(jie.a(t56Var));
+                Object apply = ((bs4) obj).apply(kke.a(t76Var));
                 this.r = null;
                 l(apply);
             } catch (Throwable th) {

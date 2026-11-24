@@ -1,39 +1,263 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.text.Editable;
+import android.view.inputmethod.BaseInputConnection;
+import android.widget.EditText;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ap3 extends kg0 {
-    public fp3 d;
+public final class ap3 {
+    public final TextView a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public boolean g;
+    public mn3 h;
+    public wo3 i;
+    public zo3 j;
+    public LinearGradient k;
+    public float m;
+    public float f = 0.5f;
+    public final Matrix l = new Matrix();
+    public final o1 n = new o1(this, 23);
 
-    @Override // kg0
-    public final w39 a() {
-        fp3 fp3Var = new fp3(y6c.t0, this.a);
-        this.d = fp3Var;
-        fp3Var.r = this;
-        return fp3Var;
+    public ap3(TextView textView) {
+        this.a = textView;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        fp3 fp3Var = this.d;
-        Context context = getContext();
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        ArrayList arrayList = fp3Var.f;
-        hp3 hp3Var = new hp3(context, fp3Var.c);
-        int i3 = 0;
-        for (int i4 = 0; i4 < arrayList.size(); i4++) {
-            hp3Var.a((gp3) arrayList.get(i4));
-            hp3Var.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
-            ((gp3) arrayList.get(i4)).e = i3;
-            i3 += hp3Var.getMeasuredHeight();
+    public static float b(float f) {
+        return f < 0.5f ? mlb.C(f, 4.0f, f, f) : 1.0f - (((float) Math.pow((f * (-2.0f)) + 2.0f, 3.0d)) / 2.0f);
+    }
+
+    public final void a() {
+        Editable editableText = this.a.getEditableText();
+        if (editableText == null) {
+            return;
         }
-        fp3Var.n = i3;
+        for (xo3 xo3Var : (xo3[]) editableText.getSpans(0, editableText.length(), xo3.class)) {
+            editableText.removeSpan(xo3Var);
+        }
+        for (yo3 yo3Var : (yo3[]) editableText.getSpans(0, editableText.length(), yo3.class)) {
+            editableText.removeSpan(yo3Var);
+        }
+        for (wo3 wo3Var : (wo3[]) editableText.getSpans(0, editableText.length(), wo3.class)) {
+            editableText.removeSpan(wo3Var);
+        }
+        this.i = null;
+    }
+
+    public final void c(int i, int i2, boolean z) {
+        this.b = i;
+        this.c = i2;
+        this.d = zn3.e(z ? -10777345 : -15374904);
+        this.e = zn3.e(z ? -6128385 : -15823740);
+        this.f = z ? 0.6f : 0.75f;
+        this.k = null;
+    }
+
+    public final void d(Editable editable, int i) {
+        int length = editable.length();
+        int max = Math.max(0, Math.min(i, length));
+        long uptimeMillis = SystemClock.uptimeMillis();
+        Object obj = this.i;
+        if (obj != null) {
+            int spanStart = editable.getSpanStart(obj);
+            if (spanStart >= 0 && spanStart < max) {
+                wo3 wo3Var = new wo3();
+                wo3Var.a = uptimeMillis;
+                editable.setSpan(wo3Var, spanStart, max, 33);
+            }
+            editable.removeSpan(this.i);
+            this.i = null;
+        }
+        for (Object obj2 : (wo3[]) editable.getSpans(0, length, wo3.class)) {
+            int spanStart2 = editable.getSpanStart(obj2);
+            int spanEnd = editable.getSpanEnd(obj2);
+            editable.removeSpan(obj2);
+            if (spanEnd > spanStart2) {
+                editable.setSpan(obj2, spanStart2, spanEnd, 33);
+            }
+        }
+        if (max < length) {
+            wo3 wo3Var2 = new wo3();
+            this.i = wo3Var2;
+            editable.setSpan(wo3Var2, max, length, 33);
+        }
+        g();
+    }
+
+    public final void e(int i, int i2, String str) {
+        long j;
+        TextView textView = this.a;
+        Editable editableText = textView.getEditableText();
+        if (editableText == null) {
+            return;
+        }
+        boolean z = false;
+        int max = Math.max(0, Math.min(i, editableText.length()));
+        String charSequence = editableText.subSequence(max, editableText.length()).toString();
+        if (charSequence.equals(str)) {
+            d(editableText, i2 < 0 ? editableText.length() : max + i2);
+            return;
+        }
+        int min = Math.min(charSequence.length(), str.length());
+        int i3 = 0;
+        while (i3 < min && charSequence.charAt(i3) == str.charAt(i3)) {
+            i3++;
+        }
+        String substring = str.substring(i3);
+        int i4 = 0;
+        for (String str2 : charSequence.substring(i3).trim().split("\\s+")) {
+            int length = str2.length();
+            int i5 = 0;
+            while (true) {
+                if (i5 >= length) {
+                    break;
+                }
+                if (Character.isLetterOrDigit(str2.charAt(i5))) {
+                    i4++;
+                    break;
+                }
+                i5++;
+            }
+        }
+        BaseInputConnection.removeComposingSpans(editableText);
+        int i6 = i3 + max;
+        boolean z2 = i6 == editableText.length();
+        if (z2) {
+            editableText.append((CharSequence) substring);
+        } else {
+            editableText.replace(i6, editableText.length(), substring);
+        }
+        int length2 = substring.length() + i6;
+        if (z2) {
+            i4 = 0;
+        }
+        long uptimeMillis = SystemClock.uptimeMillis();
+        int i7 = 0;
+        int i8 = 0;
+        loop3: while (i6 < length2) {
+            while (i6 < length2) {
+                if (Character.isWhitespace(editableText.charAt(i6))) {
+                    i6++;
+                } else {
+                    int i9 = i6;
+                    while (i9 < length2 && !Character.isWhitespace(editableText.charAt(i9))) {
+                        i9++;
+                    }
+                    boolean z3 = i7 < i4 ? true : z;
+                    int i10 = i6;
+                    while (true) {
+                        if (i10 >= i9) {
+                            break;
+                        }
+                        if (Character.isLetterOrDigit(editableText.charAt(i10))) {
+                            i7++;
+                            break;
+                        }
+                        i10++;
+                    }
+                    int i11 = i7;
+                    long j2 = z3 ? 0L : (i8 * 22) + uptimeMillis;
+                    int i12 = i6;
+                    while (true) {
+                        if (i12 <= 0) {
+                            j = 0;
+                            break;
+                        }
+                        j = 0;
+                        if (Character.isWhitespace(editableText.charAt(i12 - 1))) {
+                            break;
+                        } else {
+                            i12--;
+                        }
+                    }
+                    int i13 = length2;
+                    int i14 = i9;
+                    while (i14 < editableText.length() && !Character.isWhitespace(editableText.charAt(i14))) {
+                        i14++;
+                    }
+                    Object[] objArr = (xo3[]) editableText.getSpans(i12, i14, xo3.class);
+                    int i15 = max;
+                    int length3 = objArr.length;
+                    int i16 = 0;
+                    while (i16 < length3) {
+                        int i17 = i16;
+                        Object obj = objArr[i17];
+                        int i18 = length3;
+                        if (editableText.getSpanStart(obj) < i14 && editableText.getSpanEnd(obj) > i12) {
+                            editableText.removeSpan(obj);
+                        }
+                        i16 = i17 + 1;
+                        length3 = i18;
+                    }
+                    if (j2 > j) {
+                        yo3 yo3Var = new yo3(j2, this.b);
+                        yo3Var.c = i9 - i6;
+                        editableText.setSpan(yo3Var, i6, i9, 33);
+                    }
+                    int i19 = i6;
+                    editableText.setSpan(new xo3(Math.max(uptimeMillis, j2), this.b, this.c), i12, i14, 33);
+                    if (!z3) {
+                        i8 += i9 - i19;
+                    }
+                    i7 = i11;
+                    i6 = i9;
+                    length2 = i13;
+                    max = i15;
+                    z = false;
+                }
+            }
+            break loop3;
+        }
+        d(editableText, i2 < 0 ? editableText.length() : max + i2);
+        if (textView instanceof EditText) {
+            ((EditText) textView).setSelection(editableText.length());
+        }
+        g();
+    }
+
+    public final void f(boolean z) {
+        Editable editableText = this.a.getEditableText();
+        if (editableText != null) {
+            if (!z) {
+                zo3 zo3Var = this.j;
+                if (zo3Var != null) {
+                    this.m = 0.0f;
+                    editableText.removeSpan(zo3Var);
+                    return;
+                }
+                return;
+            }
+            if (this.k == null) {
+                float L = gm.L(150.0f);
+                int f = on2.f(this.f, this.c, this.d);
+                int f2 = on2.f(this.f, this.c, this.e);
+                this.k = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{this.c, f, on2.f(0.5f, f, f2), f2, this.c}, new float[]{0.0f, 0.3f, 0.5f, 0.7f, 1.0f}, Shader.TileMode.MIRROR);
+            }
+            zo3 zo3Var2 = this.j;
+            byte b = 0;
+            if (zo3Var2 == null) {
+                zo3Var2 = new zo3(this, b);
+                this.j = zo3Var2;
+            }
+            this.m = 1.0f;
+            editableText.setSpan(zo3Var2, 0, editableText.length(), 18);
+            g();
+        }
+    }
+
+    public final void g() {
+        if (this.g) {
+            return;
+        }
+        this.g = true;
+        this.a.postOnAnimation(this.n);
     }
 }

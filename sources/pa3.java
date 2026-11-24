@@ -1,68 +1,41 @@
 // default package
 
-import androidx.appcompat.widget.ActionBarContextView;
-import java.util.ArrayList;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class pa3 implements dfc {
-    public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
-    public boolean a;
-    public byte b;
-    public Object c;
+public final class pa3 {
+    public final String a;
+    public final go4 b;
+    public final go4 c;
+    public final byte d;
+    public final int e;
 
-    public static void d(int i, ArrayList arrayList) {
-        int i2 = 0;
-        while (true) {
-            if (i2 >= 7) {
-                i2 = -1;
-                break;
-            } else if (d[i2] == i) {
-                break;
-            } else {
-                i2++;
-            }
-        }
-        if (i2 == -1 || arrayList.contains(Integer.valueOf(i))) {
-            return;
-        }
-        arrayList.add(Integer.valueOf(i));
+    /* JADX WARN: Multi-variable type inference failed */
+    public pa3(String str, go4 go4Var, go4 go4Var2, int i, int i2) {
+        jte.f(i == 0 || i2 == 0);
+        jte.f(!TextUtils.isEmpty(str));
+        this.a = str;
+        go4Var.getClass();
+        this.b = go4Var;
+        go4Var2.getClass();
+        this.c = go4Var2;
+        this.d = i;
+        this.e = i2;
     }
 
-    @Override // dfc
-    public final void a() {
-        this.a = true;
-    }
-
-    @Override // dfc
-    public final void b() {
-        super/*android.view.ViewGroup*/.setVisibility(0);
-        this.a = false;
-    }
-
-    @Override // dfc
-    public final void c() {
-        if (this.a) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        ActionBarContextView actionBarContextView = (ActionBarContextView) this.c;
-        actionBarContextView.f = null;
-        super/*android.view.ViewGroup*/.setVisibility(this.b);
+        if (obj == null || pa3.class != obj.getClass()) {
+            return false;
+        }
+        pa3 pa3Var = (pa3) obj;
+        return this.d == pa3Var.d && this.e == pa3Var.e && this.a.equals(pa3Var.a) && this.b.equals(pa3Var.b) && this.c.equals(pa3Var.c);
     }
 
-    public final fm4 e(fm4 fm4Var) {
-        if (!this.a || !((eef) this.c).h(fm4Var)) {
-            return fm4Var;
-        }
-        em4 a = fm4Var.a();
-        String str = fm4Var.l;
-        a.s = ud7.n("application/x-media3-cues");
-        a.T = ((eef) this.c).y(fm4Var);
-        StringBuilder sb = new StringBuilder();
-        sb.append(fm4Var.t);
-        sb.append(str != null ? " ".concat(str) : "");
-        a.k = sb.toString();
-        a.x = Long.MAX_VALUE;
-        return new fm4(a);
+    public final int hashCode() {
+        return this.c.hashCode() + ((this.b.hashCode() + ts2.j((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
     }
 }

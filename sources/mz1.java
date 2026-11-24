@@ -1,49 +1,30 @@
 // default package
 
-import android.view.KeyEvent;
+import android.content.Context;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class mz1 implements m8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class mz1 extends p3c {
+    public final /* synthetic */ nz1 p1;
 
-    public /* synthetic */ mz1(KeyEvent.Callback callback, byte b) {
-        this.a = b;
-        this.b = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mz1(nz1 nz1Var, Context context, d dVar, d4c d4cVar, ylb ylbVar) {
+        super(context, dVar, d4cVar, ylbVar);
+        this.p1 = nz1Var;
     }
 
-    @Override // m8c
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        byte b = this.a;
-        KeyEvent.Callback callback = this.b;
-        switch (b) {
-            case 0:
-                x02 x02Var = (x02) callback;
-                CharSequence charSequence = (CharSequence) obj;
-                zz1 zz1Var = x02Var.B2;
-                zz1Var.setText(charSequence);
-                zz1Var.w(charSequence.length(), charSequence.length());
-                x02Var.i1();
-                break;
-            case 1:
-                x02 x02Var2 = (x02) callback;
-                CharSequence charSequence2 = (CharSequence) obj;
-                b02 b02Var = x02Var2.M2;
-                b02Var.setText(charSequence2);
-                b02Var.w(charSequence2.length(), charSequence2.length());
-                x02Var2.i1();
-                break;
-            default:
-                mb1 mb1Var = (mb1) callback;
-                cb1 cb1Var = mb1Var.f;
-                cb1Var.setText((CharSequence) obj);
-                cb1Var.d();
-                cb1Var.k(true);
-                za1 za1Var = mb1Var.d0;
-                gl.r(za1Var);
-                za1Var.run();
-                break;
+    @Override // p3c, my0, android.app.Dialog, android.content.DialogInterface, ah0
+    public final void dismiss() {
+        super.dismiss();
+        ChatActivityEnterView chatActivityEnterView = this.p1.a;
+        if (chatActivityEnterView.Q3 == this) {
+            chatActivityEnterView.Q3 = null;
+        }
+        uz1 uz1Var = chatActivityEnterView.P3;
+        if (uz1Var != null) {
+            uz1Var.p(false);
         }
     }
 }

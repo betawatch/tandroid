@@ -1,43 +1,30 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ypa {
-    public final oj a;
-    public final TLRPC.TL_payments_paymentFormStarGift b;
-    public final nj c;
+public final /* synthetic */ class ypa implements ee {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wsa b;
 
-    public ypa(oj ojVar, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
-        long j;
-        this.a = ojVar;
-        this.b = tL_payments_paymentFormStarGift;
-        gta[][] gtaVarArr = gta.S;
-        if (tL_payments_paymentFormStarGift != null) {
-            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
-            int size = arrayList.size();
-            int i = 0;
-            j = 0;
-            while (i < size) {
-                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i);
-                i++;
-                j += tL_labeledPrice.amount;
-            }
-        } else {
-            j = 0;
-        }
-        oj ojVar2 = oj.a;
-        if (ojVar == ojVar2) {
-            this.c = nj.h(j, ojVar2);
-            return;
-        }
-        oj ojVar3 = oj.b;
-        if (ojVar == ojVar3) {
-            this.c = nj.j(j, ojVar3);
-        } else {
-            this.c = nj.j(0L, ojVar2);
+    public /* synthetic */ ypa(wsa wsaVar, byte b) {
+        this.a = b;
+        this.b = wsaVar;
+    }
+
+    @Override // ee
+    public final void r(he heVar, int i) {
+        byte b = this.a;
+        wsa wsaVar = this.b;
+        switch (b) {
+            case 0:
+                wsaVar.X1();
+                break;
+            case 1:
+                goc.M0(wsaVar.a, wsaVar.J0, wsaVar.getContext());
+                break;
+            default:
+                wsaVar.X1();
+                break;
         }
     }
 }

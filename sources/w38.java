@@ -1,18 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class w38 extends c6 {
-    public final /* synthetic */ b48 a;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-    public w38(b48 b48Var) {
-        this.a = b48Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class w38 implements r17 {
+    public final /* synthetic */ a58 a;
+
+    public w38(a58 a58Var) {
+        this.a = a58Var;
     }
 
-    @Override // c6
-    public final void b(int i) {
-        if (i == -1) {
-            this.a.dismiss();
-        }
+    @Override // r17
+    public final void Y0(int i, int i2, CharSequence charSequence, boolean z) {
+        this.a.R1.q1(i, i2, charSequence, z);
+    }
+
+    @Override // r17
+    public final void c1(String str) {
+        t38 t38Var = this.a.R1;
+        t38Var.X();
+        t38Var.V0.d(str);
+    }
+
+    @Override // r17
+    public final void r(TLRPC.BotInlineResult botInlineResult, boolean z, int i) {
+        a58 a58Var = this.a;
+        ik.X(a58Var.s2, a58Var.r1, 1, new b42(this, i, botInlineResult, z, (byte) 1));
+    }
+
+    @Override // r17
+    public final Paint.FontMetricsInt u0() {
+        return this.a.R1.getEditField().getPaint().getFontMetricsInt();
+    }
+
+    @Override // r17
+    public final void w0(TLRPC.TL_document tL_document, String str, Object obj) {
+        a58 a58Var = this.a;
+        ik.X(a58Var.s2, a58Var.r1, 1, new jv0(this, tL_document, str, obj, (byte) 13));
     }
 }

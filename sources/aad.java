@@ -1,149 +1,268 @@
 // default package
 
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.charset.Charset;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class aad extends x8d implements List, RandomAccess {
-    public static final k9d f = new k9d(tdd.r, 0);
+public final class aad implements dq7 {
+    public static final Charset e = Charset.forName("UTF-8");
+    public static final wa4 f = new wa4("key", b10.m(mlb.o(i9d.class, new f8d(1))));
+    public static final wa4 g = new wa4("value", b10.m(mlb.o(i9d.class, new f8d(2))));
+    public static final u9d h = u9d.b;
+    public OutputStream a;
+    public final HashMap b;
+    public final HashMap c;
+    public final kv8 d = new kv8(this, (byte) 1);
 
-    public static tdd m(int i, Object[] objArr) {
-        return i == 0 ? tdd.r : new tdd(i, objArr);
+    public aad(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2) {
+        this.a = byteArrayOutputStream;
+        this.b = hashMap;
+        this.c = hashMap2;
     }
 
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public static int j(wa4 wa4Var) {
+        i9d i9dVar = (i9d) wa4Var.b(i9d.class);
+        if (i9dVar != null) {
+            return i9dVar.zza();
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (int i = 0; i < size; i++) {
-                        if (m1f.a(get(i), list.get(i))) {
-                        }
-                    }
-                    return true;
+        throw new e44("Field has no @Protobuf config");
+    }
+
+    @Override // dq7
+    public final dq7 a(wa4 wa4Var, Object obj) {
+        c(wa4Var, obj, true);
+        return this;
+    }
+
+    public final void b(wa4 wa4Var, double d, boolean z) {
+        if (z && d == 0.0d) {
+            return;
+        }
+        l((j(wa4Var) << 3) | 1);
+        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
+    }
+
+    public final void c(wa4 wa4Var, Object obj, boolean z) {
+        if (obj != null) {
+            if (obj instanceof CharSequence) {
+                CharSequence charSequence = (CharSequence) obj;
+                if (z && charSequence.length() == 0) {
+                    return;
                 }
-                k9d listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !m1f.a(listIterator.next(), it.next())) {
-                            break;
-                        }
-                    } else if (!it.hasNext()) {
-                        return true;
-                    }
+                l((j(wa4Var) << 3) | 2);
+                byte[] bytes = charSequence.toString().getBytes(e);
+                l(bytes.length);
+                this.a.write(bytes);
+                return;
+            }
+            if (obj instanceof Collection) {
+                Iterator it = ((Collection) obj).iterator();
+                while (it.hasNext()) {
+                    c(wa4Var, it.next(), false);
+                }
+                return;
+            }
+            if (obj instanceof Map) {
+                Iterator it2 = ((Map) obj).entrySet().iterator();
+                while (it2.hasNext()) {
+                    k(h, wa4Var, (Map.Entry) it2.next(), false);
+                }
+                return;
+            }
+            if (obj instanceof Double) {
+                b(wa4Var, ((Double) obj).doubleValue(), z);
+                return;
+            }
+            if (obj instanceof Float) {
+                float floatValue = ((Float) obj).floatValue();
+                if (z && floatValue == 0.0f) {
+                    return;
+                }
+                l((j(wa4Var) << 3) | 5);
+                this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
+                return;
+            }
+            if (obj instanceof Number) {
+                i(wa4Var, ((Number) obj).longValue(), z);
+                return;
+            }
+            if (obj instanceof Boolean) {
+                h(wa4Var, ((Boolean) obj).booleanValue() ? 1 : 0, z);
+                return;
+            }
+            if (obj instanceof byte[]) {
+                byte[] bArr = (byte[]) obj;
+                if (z && bArr.length == 0) {
+                    return;
+                }
+                l((j(wa4Var) << 3) | 2);
+                l(bArr.length);
+                this.a.write(bArr);
+                return;
+            }
+            cq7 cq7Var = (cq7) this.b.get(obj.getClass());
+            if (cq7Var != null) {
+                k(cq7Var, wa4Var, obj, z);
+                return;
+            }
+            zac zacVar = (zac) this.c.get(obj.getClass());
+            if (zacVar != null) {
+                kv8 kv8Var = this.d;
+                kv8Var.b = false;
+                kv8Var.d = wa4Var;
+                kv8Var.c = z;
+                zacVar.a(obj, kv8Var);
+                return;
+            }
+            if (obj instanceof y8d) {
+                h(wa4Var, ((y8d) obj).zza(), true);
+            } else if (obj instanceof Enum) {
+                h(wa4Var, ((Enum) obj).ordinal(), true);
+            } else {
+                k(u9d.c, wa4Var, obj, z);
+            }
+        }
+    }
+
+    @Override // dq7
+    public final /* synthetic */ dq7 d(wa4 wa4Var, boolean z) {
+        h(wa4Var, z ? 1 : 0, true);
+        return this;
+    }
+
+    @Override // dq7
+    public final /* synthetic */ dq7 e(wa4 wa4Var, int i) {
+        h(wa4Var, i, true);
+        return this;
+    }
+
+    @Override // dq7
+    public final dq7 f(wa4 wa4Var, double d) {
+        b(wa4Var, d, true);
+        return this;
+    }
+
+    @Override // dq7
+    public final /* synthetic */ dq7 g(wa4 wa4Var, long j) {
+        i(wa4Var, j, true);
+        return this;
+    }
+
+    public final void h(wa4 wa4Var, int i, boolean z) {
+        if (z && i == 0) {
+            return;
+        }
+        i9d i9dVar = (i9d) wa4Var.b(i9d.class);
+        if (i9dVar == null) {
+            throw new e44("Field has no @Protobuf config");
+        }
+        int ordinal = i9dVar.zzb().ordinal();
+        if (ordinal == 0) {
+            l(i9dVar.zza() << 3);
+            l(i);
+        } else if (ordinal == 1) {
+            l(i9dVar.zza() << 3);
+            l((i << 1) ^ (i >> 31));
+        } else {
+            if (ordinal != 2) {
+                return;
+            }
+            l((i9dVar.zza() << 3) | 5);
+            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(i).array());
+        }
+    }
+
+    public final void i(wa4 wa4Var, long j, boolean z) {
+        if (z && j == 0) {
+            return;
+        }
+        i9d i9dVar = (i9d) wa4Var.b(i9d.class);
+        if (i9dVar == null) {
+            throw new e44("Field has no @Protobuf config");
+        }
+        int ordinal = i9dVar.zzb().ordinal();
+        if (ordinal == 0) {
+            l(i9dVar.zza() << 3);
+            m(j);
+        } else if (ordinal == 1) {
+            l(i9dVar.zza() << 3);
+            m((j << 1) ^ (j >> 63));
+        } else {
+            if (ordinal != 2) {
+                return;
+            }
+            l((i9dVar.zza() << 3) | 1);
+            this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(j).array());
+        }
+    }
+
+    public final void k(cq7 cq7Var, wa4 wa4Var, Object obj, boolean z) {
+        n26 n26Var = new n26((byte) 1);
+        n26Var.b = 0L;
+        try {
+            OutputStream outputStream = this.a;
+            this.a = n26Var;
+            try {
+                cq7Var.a(obj, this);
+                this.a = outputStream;
+                long j = n26Var.b;
+                n26Var.close();
+                if (z && j == 0) {
+                    return;
+                }
+                l((j(wa4Var) << 3) | 2);
+                m(j);
+                cq7Var.a(obj, this);
+            } catch (Throwable th) {
+                this.a = outputStream;
+                throw th;
+            }
+        } catch (Throwable th2) {
+            try {
+                n26Var.close();
+            } catch (Throwable th3) {
+                try {
+                    Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th2, th3);
+                } catch (Exception unused) {
                 }
             }
+            throw th2;
         }
-        return false;
     }
 
-    @Override // x8d
-    public int h(Object[] objArr) {
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            objArr[i] = get(i);
-        }
-        return size;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
-        }
-        return i;
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        int size = size();
-        for (int i = 0; i < size; i++) {
-            if (obj.equals(get(i))) {
-                return i;
+    public final void l(int i) {
+        while (true) {
+            long j = i & (-128);
+            OutputStream outputStream = this.a;
+            if (j == 0) {
+                outputStream.write(i & nm7.K1);
+                return;
+            } else {
+                outputStream.write((i & nm7.K1) | 128);
+                i >>>= 7;
             }
         }
-        return -1;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: l, reason: merged with bridge method [inline-methods] */
-    public aad subList(int i, int i2) {
-        l2f.b(i, i2, size());
-        int i3 = i2 - i;
-        return i3 == size() ? this : i3 == 0 ? tdd.r : new y9d(this, i, i3);
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
+    public final void m(long j) {
+        while (true) {
+            long j2 = (-128) & j;
+            OutputStream outputStream = this.a;
+            if (j2 == 0) {
+                outputStream.write(((int) j) & nm7.K1);
+                return;
+            } else {
+                outputStream.write((((int) j) & nm7.K1) | 128);
+                j >>>= 7;
             }
         }
-        return -1;
-    }
-
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: n, reason: merged with bridge method [inline-methods] */
-    public final k9d listIterator(int i) {
-        int size = size();
-        if (i >= 0 && i <= size) {
-            return isEmpty() ? f : new k9d(this, i);
-        }
-        k93.i(l2f.c(i, size, "index"));
-        return null;
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
-        throw new UnsupportedOperationException();
     }
 }

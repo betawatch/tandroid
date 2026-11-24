@@ -4,14 +4,14 @@ import android.graphics.Rect;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.ISurfaceCallback;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
-    private final w06 mLifecycle;
-    private final zbb mSurfaceCallback;
+    private final w26 mLifecycle;
+    private final beb mSurfaceCallback;
 
-    public RemoteUtils$SurfaceCallbackStub(w06 w06Var, zbb zbbVar) {
-        this.mLifecycle = w06Var;
+    public RemoteUtils$SurfaceCallbackStub(w26 w26Var, beb bebVar) {
+        this.mLifecycle = w26Var;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,12 +40,12 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onSurfaceAvailable$0(y21 y21Var) {
+    public /* synthetic */ Object lambda$onSurfaceAvailable$0(g41 g41Var) {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onSurfaceDestroyed$3(y21 y21Var) {
+    public /* synthetic */ Object lambda$onSurfaceDestroyed$3(g41 g41Var) {
         throw null;
     }
 
@@ -56,29 +56,29 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onClick(float f, float f2) {
-        hnb.a(new gm8(this.mLifecycle, new b(this, f, f2, (byte) 0), "onClick", (byte) 8));
+        ipb.a(new ak8((Object) this.mLifecycle, (Object) new b(this, f, f2, (byte) 0), (Object) "onClick", (byte) 11));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onFling(float f, float f2) {
-        hnb.a(new gm8(this.mLifecycle, new b(this, f, f2, (byte) 2), "onFling", (byte) 8));
+        ipb.a(new ak8((Object) this.mLifecycle, (Object) new b(this, f, f2, (byte) 2), (Object) "onFling", (byte) 11));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScale(final float f, final float f2, final float f3) {
-        hnb.a(new gm8(this.mLifecycle, new q69() { // from class: androidx.car.app.utils.d
-            @Override // q69
+        ipb.a(new ak8((Object) this.mLifecycle, (Object) new s89() { // from class: androidx.car.app.utils.d
+            @Override // s89
             public final Object a() {
                 Object lambda$onScale$6;
                 lambda$onScale$6 = RemoteUtils$SurfaceCallbackStub.this.lambda$onScale$6(f, f2, f3);
                 return lambda$onScale$6;
             }
-        }, "onScale", (byte) 8));
+        }, (Object) "onScale", (byte) 11));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScroll(float f, float f2) {
-        hnb.a(new gm8(this.mLifecycle, new b(this, f, f2, (byte) 1), "onScroll", (byte) 8));
+        ipb.a(new ak8((Object) this.mLifecycle, (Object) new b(this, f, f2, (byte) 1), (Object) "onScroll", (byte) 11));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
@@ -87,13 +87,13 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     }
 
     @Override // androidx.car.app.ISurfaceCallback
-    public void onSurfaceAvailable(y21 y21Var, IOnDoneCallback iOnDoneCallback) {
-        e.b(this.mLifecycle, iOnDoneCallback, "onSurfaceAvailable", new a(this, y21Var, (byte) 1));
+    public void onSurfaceAvailable(g41 g41Var, IOnDoneCallback iOnDoneCallback) {
+        e.b(this.mLifecycle, iOnDoneCallback, "onSurfaceAvailable", new a(this, g41Var, (byte) 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
-    public void onSurfaceDestroyed(y21 y21Var, IOnDoneCallback iOnDoneCallback) {
-        e.b(this.mLifecycle, iOnDoneCallback, "onSurfaceDestroyed", new a(this, y21Var, (byte) 0));
+    public void onSurfaceDestroyed(g41 g41Var, IOnDoneCallback iOnDoneCallback) {
+        e.b(this.mLifecycle, iOnDoneCallback, "onSurfaceDestroyed", new a(this, g41Var, (byte) 0));
     }
 
     @Override // androidx.car.app.ISurfaceCallback

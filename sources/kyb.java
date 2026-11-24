@@ -1,53 +1,28 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final class kyb {
-    public final HashSet a = new HashSet();
-    public final HashMap b = new HashMap();
+    public TLRPC.TL_forumTopic a;
+    public vr9 b;
+    public final /* synthetic */ oyb c;
 
-    public static String c(int i, String str) {
-        if (str.length() <= (i << 1) + 1) {
-            return str;
-        }
-        return str.substring(0, i) + "…" + str.substring(str.length() - i);
+    public kyb(oyb oybVar) {
+        this.c = oybVar;
     }
 
-    public final String a(String str) {
-        if (str == null) {
-            return null;
+    public final long a() {
+        vr9 vr9Var = this.b;
+        if (vr9Var != null) {
+            return vr9Var.a;
         }
-        String str2 = (String) this.b.get(str);
-        return str2 == null ? str : str2;
-    }
-
-    public final void b(int i, ArrayList arrayList) {
-        HashMap hashMap = new HashMap();
-        int size = arrayList.size();
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            String str = (String) obj;
-            String c = c(i, str);
-            ArrayList arrayList2 = (ArrayList) hashMap.get(c);
-            if (arrayList2 == null) {
-                arrayList2 = new ArrayList();
-                hashMap.put(c, arrayList2);
-            }
-            arrayList2.add(str);
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        if (tL_forumTopic == null) {
+            return 0L;
         }
-        for (ArrayList arrayList3 : hashMap.values()) {
-            if (arrayList3.size() == 1) {
-                String str2 = (String) arrayList3.get(0);
-                this.b.put(str2, c(i, str2));
-            } else {
-                b(i + 1, arrayList3);
-            }
-        }
+        int i = oyb.r0;
+        return this.c.c ? pg3.n(tL_forumTopic.from_id) : tL_forumTopic.id;
     }
 }

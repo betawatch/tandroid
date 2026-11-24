@@ -5,11 +5,11 @@ import java.util.Comparator;
 import java.util.ListIterator;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes4.dex */
 public interface List<E> extends Collection<E> {
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public final /* synthetic */ class -CC {
         public static void $default$replaceAll(java.util.List list, UnaryOperator unaryOperator) {
             Objects.requireNonNull(unaryOperator);
@@ -30,7 +30,7 @@ public interface List<E> extends Collection<E> {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public final /* synthetic */ class -EL {
         public static /* synthetic */ void sort(java.util.List list, Comparator comparator) {
             if (list instanceof List) {

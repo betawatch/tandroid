@@ -1,36 +1,32 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class i0b extends taa {
-    public final /* synthetic */ u0b U2;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class i0b {
+    public final String a;
+    public final String b;
+    public final j0b c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0b(u0b u0bVar, Context context, String str, String str2, wjb wjbVar) {
-        super(context, null, str, false, str2, false, wjbVar);
-        this.U2 = u0bVar;
+    public i0b(String str, String str2, j0b j0bVar) {
+        this.a = str;
+        this.b = str2;
+        this.c = j0bVar;
     }
 
-    @Override // taa, fx0
-    public final void I() {
-        super.I();
-        d dVar = this.U2.F1;
-        if (dVar instanceof mu1) {
-            gl.W2(dVar.getParentActivity(), dVar.getClassGuid());
-            if (((mu1) dVar).a0.getVisibility() == 0) {
-                dVar.getFragmentView().requestLayout();
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof i0b)) {
+            return false;
+        }
+        i0b i0bVar = (i0b) obj;
+        return this.a.equals(i0bVar.a) && this.b.equals(i0bVar.b) && this.c.equals(i0bVar.c);
     }
 
-    @Override // taa
-    public final void L0(vf6 vf6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
-        if (z) {
-            gl.e3(new t79(this, vf6Var, i, (byte) 17), 100L);
-        }
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c);
     }
 }

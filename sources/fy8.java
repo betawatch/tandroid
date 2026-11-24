@@ -1,10 +1,11 @@
 // default package
 
-import android.R;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class fy8 {
+    public final /* synthetic */ iy8 a;
 
-/* loaded from: classes.dex */
-public abstract class fy8 {
-    public static final int[] a = {R.attr.dither, R.attr.visible, R.attr.variablePadding, R.attr.constantSize, R.attr.enterFadeDuration, R.attr.exitFadeDuration};
-    public static final int[] b = {R.attr.id, R.attr.drawable};
-    public static final int[] c = {R.attr.drawable, R.attr.toId, R.attr.fromId, R.attr.reversible};
+    public fy8(iy8 iy8Var) {
+        this.a = iy8Var;
+    }
 }

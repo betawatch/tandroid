@@ -1,21 +1,30 @@
 // default package
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.hardware.display.DisplayManager;
+import android.view.Choreographer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class zcc {
-    public static WindowInsets a(View view, WindowInsets windowInsets) {
-        int i = ldc.a;
-        return view.dispatchApplyWindowInsets(windowInsets);
+public abstract class zcc implements DisplayManager.DisplayListener {
+    public final Choreographer a;
+    public final DisplayManager b;
+    public volatile long c = -9223372036854775807L;
+    public volatile long d = -9223372036854775807L;
+
+    public zcc(Choreographer choreographer, DisplayManager displayManager) {
+        this.a = choreographer;
+        this.b = displayManager;
     }
 
-    public static WindowInsets b(View view, WindowInsets windowInsets) {
-        return view.onApplyWindowInsets(windowInsets);
+    public abstract void a();
+
+    public abstract void b();
+
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayAdded(int i) {
     }
 
-    public static void c(View view) {
-        view.requestApplyInsets();
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayRemoved(int i) {
     }
 }

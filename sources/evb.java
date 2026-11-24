@@ -1,67 +1,127 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class evb extends gb3 {
-    public Runnable F;
-    public int G;
-    public final /* synthetic */ qvb H;
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+import androidx.appcompat.widget.Toolbar;
+import java.util.ArrayList;
 
-    public evb(qvb qvbVar) {
-        this.H = qvbVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class evb implements s27 {
+    public y17 a;
+    public c27 b;
+    public final /* synthetic */ Toolbar c;
+
+    public evb(Toolbar toolbar) {
+        this.c = toolbar;
     }
 
-    @Override // gb3
-    public final void F() {
-        if (this.G == -1) {
-            this.G = this.H.getNotificationCenter().q(null, this.G, false);
-            Runnable runnable = this.F;
-            if (runnable != null) {
-                gl.r(runnable);
-                this.F = null;
+    @Override // s27
+    public final boolean b(dcb dcbVar) {
+        return false;
+    }
+
+    @Override // s27
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // s27
+    public final boolean g(c27 c27Var) {
+        Toolbar toolbar = this.c;
+        KeyEvent.Callback callback = toolbar.r;
+        if (callback instanceof em2) {
+            ((em2) callback).onActionViewCollapsed();
+        }
+        toolbar.removeView(toolbar.r);
+        toolbar.removeView(toolbar.n);
+        toolbar.r = null;
+        ArrayList arrayList = toolbar.V;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            toolbar.addView((View) arrayList.get(size));
+        }
+        arrayList.clear();
+        this.b = null;
+        toolbar.requestLayout();
+        c27Var.C = false;
+        c27Var.n.p(false);
+        toolbar.t();
+        return true;
+    }
+
+    @Override // s27
+    public final boolean i(c27 c27Var) {
+        Toolbar toolbar = this.c;
+        toolbar.c();
+        ViewParent parent = toolbar.n.getParent();
+        if (parent != toolbar) {
+            if (parent instanceof ViewGroup) {
+                ((ViewGroup) parent).removeView(toolbar.n);
+            }
+            toolbar.addView(toolbar.n);
+        }
+        View actionView = c27Var.getActionView();
+        toolbar.r = actionView;
+        this.b = c27Var;
+        ViewParent parent2 = actionView.getParent();
+        if (parent2 != toolbar) {
+            if (parent2 instanceof ViewGroup) {
+                ((ViewGroup) parent2).removeView(toolbar.r);
+            }
+            fvb h = Toolbar.h();
+            h.a = (toolbar.E & nm7.w1) | 8388611;
+            h.b = (byte) 2;
+            toolbar.r.setLayoutParams(h);
+            toolbar.addView(toolbar.r);
+        }
+        for (int childCount = toolbar.getChildCount() - 1; childCount >= 0; childCount--) {
+            View childAt = toolbar.getChildAt(childCount);
+            if (((fvb) childAt.getLayoutParams()).b != 2 && childAt != toolbar.a) {
+                toolbar.removeViewAt(childCount);
+                toolbar.V.add(childAt);
             }
         }
-    }
-
-    @Override // gb3
-    public final void N() {
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            gl.r(runnable);
-            this.F = null;
+        toolbar.requestLayout();
+        c27Var.C = true;
+        c27Var.n.p(false);
+        KeyEvent.Callback callback = toolbar.r;
+        if (callback instanceof em2) {
+            ((em2) callback).onActionViewExpanded();
         }
-        dvb dvbVar = new dvb(this, (byte) 0);
-        this.F = dvbVar;
-        gl.d3(dvbVar);
+        toolbar.t();
+        return true;
     }
 
-    @Override // gb3, b49
-    public final void g() {
-        super.g();
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            gl.r(runnable);
-        }
-        dvb dvbVar = new dvb(this, (byte) 1);
-        this.F = dvbVar;
-        gl.d3(dvbVar);
-    }
-
-    @Override // gb3
-    public final void z(s49 s49Var) {
-        qvb qvbVar = this.H;
-        nvb nvbVar = qvbVar.d1;
-        if (nvbVar == s49Var.a) {
-            nvbVar.setTranslationX(0.0f);
-            vub vubVar = qvbVar.P;
-            if (vubVar != null) {
-                vubVar.G.clear();
+    @Override // s27
+    public final void j() {
+        if (this.b != null) {
+            y17 y17Var = this.a;
+            if (y17Var != null) {
+                int size = y17Var.f.size();
+                for (int i = 0; i < size; i++) {
+                    if (this.a.getItem(i) == this.b) {
+                        return;
+                    }
+                }
             }
-            nvb nvbVar2 = qvbVar.d1;
-            if (ug8.A(nvbVar2)) {
-                nvbVar2.setTopicIcon(nvbVar2.d5);
-            }
-            qvbVar.d1 = null;
+            g(this.b);
         }
+    }
+
+    @Override // s27
+    public final void k(Context context, y17 y17Var) {
+        c27 c27Var;
+        y17 y17Var2 = this.a;
+        if (y17Var2 != null && (c27Var = this.b) != null) {
+            y17Var2.d(c27Var);
+        }
+        this.a = y17Var;
+    }
+
+    @Override // s27
+    public final void d(y17 y17Var, boolean z) {
     }
 }

@@ -1,44 +1,24 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class qc7 implements Runnable {
-    public final /* synthetic */ ad7 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLRPC.Reaction d;
-    public final /* synthetic */ short e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ m8c n;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class qc7 extends b6c {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ qc7(ad7 ad7Var, String str, long j, TLRPC.Reaction reaction, int i, int i2, boolean z, m8c m8cVar) {
-        this.a = ad7Var;
-        this.b = str;
-        this.c = j;
-        this.d = reaction;
-        this.e = i;
-        this.f = i2;
-        this.h = z;
-        this.n = m8cVar;
+    static {
+        b6c.h(new qc7());
     }
 
-    /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
-        */
-    @Override // java.lang.Runnable
-    public final void run() {
-        /*
-            Method dump skipped, instructions count: 665
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: qc7.run():void");
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        ((rc7) view).a((u3b) c6cVar.H);
+    }
+
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        return new rc7(context, ylbVar);
     }
 }

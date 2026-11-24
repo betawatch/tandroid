@@ -1,166 +1,192 @@
 // default package
 
-import java.io.Serializable;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorSpace;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.Build;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class rk4 implements ik4 {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ ik4 b;
-    public final /* synthetic */ Serializable c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class rk4 {
+    public final Context a;
+    public final nk4 b;
+    public final nk4 c;
+    public final WindowManager e;
+    public final View f;
+    public final WindowManager.LayoutParams g;
+    public ValueAnimator i;
+    public int j;
+    public int k;
+    public int l;
+    public float m;
+    public int n;
+    public RadialGradient r;
+    public final Paint s;
+    public final ArrayList d = new ArrayList();
+    public float h = 0.0f;
+    public float o = 0.75f;
+    public float p = 1.0f;
+    public final Matrix q = new Matrix();
 
-    public rk4(ik4 ik4Var, c59 c59Var) {
-        this.b = ik4Var;
-        this.c = c59Var;
+    public rk4(Context context, WindowManager windowManager, View view, WindowManager.LayoutParams layoutParams) {
+        Paint paint = new Paint(1);
+        this.s = paint;
+        this.a = context;
+        this.e = windowManager;
+        this.f = view;
+        this.g = layoutParams;
+        this.b = new nk4(this, context, (byte) 0);
+        this.c = new nk4(this, context, (byte) 1);
+        paint.setAlpha(0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x006a, code lost:
-    
-        if (r11.c(r10, r0) == r3) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:?, code lost:
-    
-        return r3;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0054, code lost:
-    
-        if (r11 != r3) goto L19;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00a1  */
-    /* JADX WARN: Type inference failed for: r9v14 */
-    @Override // ik4
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object c(Object obj, fw2 fw2Var) {
-        qk4 qk4Var;
-        int i;
-        xk4 xk4Var;
-        Object obj2;
-        int i2;
-        ?? r9;
-        rk4 rk4Var;
-        byte b = this.a;
-        Object obj3 = g5c.a;
-        Object obj4 = bx2.a;
-        boolean z = true;
-        switch (b) {
-            case 0:
-                try {
-                    if (fw2Var instanceof qk4) {
-                        qk4Var = (qk4) fw2Var;
-                        int i3 = qk4Var.d;
-                        if ((i3 & TLObject.FLAG_31) != 0) {
-                            qk4Var.d = i3 - TLObject.FLAG_31;
-                            Object obj5 = qk4Var.b;
-                            i = qk4Var.d;
-                            if (i != 0) {
-                                qse.b(obj5);
-                                ik4 ik4Var = this.b;
-                                qk4Var.a = this;
-                                qk4Var.d = 1;
-                                Object c = ik4Var.c(obj, qk4Var);
-                                this = c;
-                                if (c == obj4) {
-                                    obj3 = obj4;
-                                    this = c;
-                                }
-                            } else {
-                                if (i != 1) {
-                                    sc8.j("call to 'resume' before 'invoke' with coroutine");
-                                    return null;
-                                }
-                                rk4 rk4Var2 = qk4Var.a;
-                                qse.b(obj5);
-                                this = rk4Var2;
-                            }
-                            return obj3;
-                        }
-                    }
-                    if (i != 0) {
-                    }
-                    return obj3;
-                } catch (Throwable th) {
-                    ((c59) this.c).a = th;
-                    throw th;
-                }
-                qk4Var = new qk4(this, fw2Var);
-                Object obj52 = qk4Var.b;
-                i = qk4Var.d;
-            default:
-                if (fw2Var instanceof xk4) {
-                    xk4Var = (xk4) fw2Var;
-                    int i4 = xk4Var.c;
-                    if ((i4 & TLObject.FLAG_31) != 0) {
-                        xk4Var.c = i4 - TLObject.FLAG_31;
-                        obj2 = xk4Var.b;
-                        i2 = xk4Var.c;
-                        if (i2 != 0) {
-                            qse.b(obj2);
-                            c73 c73Var = (c73) this.c;
-                            xk4Var.a = this;
-                            xk4Var.e = obj;
-                            xk4Var.c = 1;
-                            obj2 = c73Var.invoke(obj, xk4Var);
-                            this = this;
-                            break;
-                        } else {
-                            if (i2 != 1) {
-                                if (i2 != 2) {
-                                    sc8.j("call to 'resume' before 'invoke' with coroutine");
-                                    return null;
-                                }
-                                rk4 rk4Var3 = xk4Var.a;
-                                qse.b(obj2);
-                                rk4Var = rk4Var3;
-                                if (z) {
-                                    return obj3;
-                                }
-                                throw new i1(rk4Var);
-                            }
-                            obj = xk4Var.e;
-                            rk4 rk4Var4 = xk4Var.a;
-                            qse.b(obj2);
-                            r9 = rk4Var4;
-                        }
-                        if (!((Boolean) obj2).booleanValue()) {
-                            ik4 ik4Var2 = r9.b;
-                            xk4Var.a = r9;
-                            xk4Var.e = null;
-                            xk4Var.c = 2;
-                            rk4Var = r9;
-                            break;
-                        } else {
-                            z = false;
-                            rk4Var = r9;
-                        }
-                        if (z) {
-                        }
-                    }
-                }
-                xk4Var = new xk4(this, fw2Var);
-                obj2 = xk4Var.b;
-                i2 = xk4Var.c;
-                if (i2 != 0) {
-                }
-                if (!((Boolean) obj2).booleanValue()) {
-                }
-                if (z) {
-                }
+    public static int f(float f) {
+        return f < 0.5f ? on2.f(Utilities.i(f / 0.5f, 1.0f, 0.0f), -7544833, -1) : on2.f(Utilities.i((f - 0.5f) / 0.5f, 1.0f, 0.0f), -1, -70004);
+    }
+
+    public final void a(qk4 qk4Var) {
+        qk4Var.setInvert(this.h);
+        this.d.add(qk4Var);
+    }
+
+    public final void b(Canvas canvas, boolean z) {
+        if (this.r != null) {
+            g();
+            this.r.setLocalMatrix(this.q);
+            Paint paint = this.s;
+            if (z) {
+                canvas.drawRect(0.0f, 0.0f, this.j, this.k, paint);
+                return;
+            }
+            RectF rectF = gm.P;
+            nk4 nk4Var = this.c;
+            rectF.set(0.0f, 0.0f, nk4Var.getMeasuredWidth(), nk4Var.getMeasuredHeight());
+            canvas.drawRoundRect(rectF, gm.L(12.0f) - 2, gm.L(12.0f) - 2, paint);
         }
     }
 
-    public rk4(c73 c73Var, ik4 ik4Var) {
-        this.c = c73Var;
-        this.b = ik4Var;
+    public final void c(u8b u8bVar) {
+        h(this.p);
+        e(1.0f, 320L, u8bVar);
+    }
+
+    public final void d() {
+        h(-1.0f);
+        e(0.0f, 240L, null);
+    }
+
+    public final void e(float f, long j, Runnable runnable) {
+        ValueAnimator valueAnimator = this.i;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.i = null;
+        }
+        if (j <= 0) {
+            this.h = f;
+            i();
+            if (runnable != null) {
+                runnable.run();
+                return;
+            }
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f);
+        this.i = ofFloat;
+        ofFloat.addUpdateListener(new fh4(this, (byte) 1));
+        this.i.addListener(new ok4(this, f, runnable, (byte) 0));
+        this.i.setDuration(j);
+        this.i.setInterpolator(d53.i);
+        this.i.start();
+    }
+
+    public final void g() {
+        RadialGradient radialGradient;
+        int i = this.l;
+        int i2 = this.n;
+        nk4 nk4Var = this.b;
+        if (i == i2 && this.j == nk4Var.getMeasuredWidth() && this.k == nk4Var.getMeasuredHeight() && Math.abs(this.m - this.h) <= 0.005f) {
+            return;
+        }
+        this.l = this.n;
+        this.j = nk4Var.getMeasuredWidth();
+        int measuredHeight = nk4Var.getMeasuredHeight();
+        this.k = measuredHeight;
+        this.m = this.h;
+        if (this.j <= 0 || measuredHeight <= 0) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT >= 29) {
+            float f = this.j * 0.5f;
+            float f2 = this.k * 0.4f;
+            float min = (2.0f - this.h) * (Math.min(r1, r11) / 2.0f) * 1.35f;
+            ColorSpace.Named named = ColorSpace.Named.EXTENDED_SRGB;
+            long[] jArr = {Color.valueOf(Color.red(this.n) / 255.0f, Color.green(this.n) / 255.0f, Color.blue(this.n) / 255.0f, 0.0f, ColorSpace.get(named)).pack(), Color.valueOf(Color.red(this.n) / 255.0f, Color.green(this.n) / 255.0f, Color.blue(this.n) / 255.0f, 1.0f, ColorSpace.get(named)).pack()};
+            float[] fArr = {gm.R1(0.9f, 0.22f, this.h), 1.0f};
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            radialGradient = ul1.b(f, f2, min, jArr, fArr);
+            this.r = radialGradient;
+        } else {
+            RadialGradient radialGradient2 = new RadialGradient(this.j * 0.5f, this.k * 0.4f, (2.0f - this.h) * (Math.min(r1, r11) / 2.0f) * 1.35f, new int[]{on2.p(this.n, 0), this.n}, new float[]{gm.R1(0.9f, 0.22f, this.h), 1.0f}, Shader.TileMode.CLAMP);
+            this.r = radialGradient2;
+            radialGradient = radialGradient2;
+        }
+        this.s.setShader(radialGradient);
+        nk4Var.invalidate();
+        this.c.invalidate();
+    }
+
+    public final void h(float f) {
+        Window window;
+        WindowManager.LayoutParams layoutParams;
+        View view = this.f;
+        if (view != null && (layoutParams = this.g) != null) {
+            layoutParams.screenBrightness = f;
+            WindowManager windowManager = this.e;
+            if (windowManager != null) {
+                windowManager.updateViewLayout(view, layoutParams);
+                return;
+            }
+            return;
+        }
+        Activity W = gm.W(this.a);
+        if (W == null) {
+            W = LaunchActivity.H1;
+        }
+        if (W == null || W.isFinishing() || (window = W.getWindow()) == null) {
+            return;
+        }
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.screenBrightness = f;
+        window.setAttributes(attributes);
+    }
+
+    public final void i() {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.d;
+            if (i >= arrayList.size()) {
+                this.s.setAlpha((int) (this.p * 255.0f * this.h));
+                this.b.invalidate();
+                this.c.invalidate();
+                return;
+            }
+            ((qk4) arrayList.get(i)).setInvert(this.h);
+            ((qk4) arrayList.get(i)).invalidate();
+            i++;
+        }
     }
 }

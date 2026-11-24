@@ -1,44 +1,30 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
+import android.os.Bundle;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class zu4 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tv4 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class zu4 extends c33 {
+    public final String e;
 
-    public /* synthetic */ zu4(tv4 tv4Var, byte b) {
-        this.a = b;
-        this.b = tv4Var;
-    }
-
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        tv4 tv4Var = this.b;
-        switch (b) {
-            case 0:
-                tv4Var.u2.setTitleMinSideInset(gl.L(6.0f) + ((Integer) obj).intValue());
-                break;
-            default:
-                List list = (List) obj;
-                if (tv4Var.getContext() != null && !tv4Var.J) {
-                    ArrayList c = on0.c(1, list);
-                    tv4Var.U1 = c;
-                    List d = on0.d(c);
-                    tv4Var.U1 = d;
-                    if (!((ArrayList) d).isEmpty()) {
-                        tv4Var.b1();
-                        l5c l5cVar = tv4Var.T1;
-                        if (l5cVar != null) {
-                            l5cVar.O(true);
-                            break;
-                        }
-                    }
-                }
-                break;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public zu4(String str) {
+        super("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", r2, new Bundle(), false, q34.a);
+        Bundle bundle = new Bundle();
+        bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
+        this.e = str;
+        if (str.length() != 0) {
+            try {
+                new JSONObject(str);
+                return;
+            } catch (Exception unused) {
+            }
         }
+        u36.j("credentialJson must not be empty, and must be a valid JSON");
+        throw null;
     }
 }

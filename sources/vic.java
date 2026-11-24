@@ -1,27 +1,35 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import android.animation.ValueAnimator;
+import android.view.WindowManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class vic extends CharacterStyle implements UpdateAppearance {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class vic implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ yic b;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
+    public /* synthetic */ vic(yic yicVar, byte b) {
+        this.a = b;
+        this.b = yicVar;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        yic yicVar = this.b;
+        switch (b) {
             case 0:
-                int alpha = textPaint.getAlpha();
-                textPaint.setColor(yic.u3);
-                textPaint.setAlpha((int) (alpha * 1.0f));
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                WindowManager.LayoutParams layoutParams = yicVar.d;
+                layoutParams.x = (int) floatValue;
+                gm.N3(yicVar.c, yicVar.a, layoutParams);
                 break;
             default:
-                int alpha2 = textPaint.getAlpha();
-                textPaint.setColor(jjc.Y1);
-                textPaint.setAlpha(alpha2 / 2);
-                textPaint.clearShadowLayer();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                WindowManager.LayoutParams layoutParams2 = yicVar.d;
+                layoutParams2.y = (int) floatValue2;
+                gm.N3(yicVar.c, yicVar.a, layoutParams2);
                 break;
         }
     }

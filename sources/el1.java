@@ -1,48 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class el1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ tq9 c;
-    public final /* synthetic */ String d;
-
-    public /* synthetic */ el1(mu1 mu1Var, tq9 tq9Var, String str, byte b) {
-        this.a = b;
-        this.b = mu1Var;
-        this.c = tq9Var;
-        this.d = str;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class el1 implements di8 {
+    public static el1 a(String str) {
+        int length = str.length();
+        if (length != 0) {
+            return length != 1 ? length != 2 ? new zk1(str) : new cl1(str.charAt(0), str.charAt(1)) : new bl1(str.charAt(0), (byte) 0);
+        }
+        return yk1.f;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        String str = this.d;
-        tq9 tq9Var = this.c;
-        mu1 mu1Var = this.b;
-        switch (b) {
-            case 0:
-                tq9Var.dismiss();
-                gl.g(str);
-                u21.b0(mu1Var).i(k96.M0(2131746142, null)).j();
-                break;
-            case 1:
-                mu1Var.getClass();
-                tq9Var.dismiss();
-                gl.g(str);
-                u21.b0(mu1Var).i(k96.M0(2131742958, null)).j();
-                break;
-            case 2:
-                tq9Var.dismiss();
-                gl.g(str);
-                u21.b0(mu1Var).i(k96.M0(2131752541, null)).j();
-                break;
-            default:
-                tq9Var.dismiss();
-                gl.g("@".concat(str));
-                u21.b0(mu1Var).i(k96.M0(2131743426, null)).j();
-                break;
+    public static String d(char c) {
+        char[] cArr = new char[6];
+        cArr[0] = '\\';
+        cArr[1] = 'u';
+        cArr[2] = 0;
+        cArr[3] = 0;
+        cArr[4] = 0;
+        cArr[5] = 0;
+        for (int i = 0; i < 4; i++) {
+            cArr[5 - i] = "0123456789ABCDEF".charAt(c & 15);
+            c = (char) (c >> 4);
         }
+        return String.copyValueOf(cArr);
+    }
+
+    @Override // di8
+    public final boolean apply(Object obj) {
+        return b(((Character) obj).charValue());
+    }
+
+    public abstract boolean b(char c);
+
+    public el1 c() {
+        return new zk1(this);
     }
 }

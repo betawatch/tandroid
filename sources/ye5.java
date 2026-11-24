@@ -1,14 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ye5 extends bf5 {
-    public final boolean x;
-    public final boolean y;
+import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 
-    public ye5(String str, af5 af5Var, long j, int i, long j2, qq3 qq3Var, String str2, String str3, long j3, long j4, boolean z, boolean z2, boolean z3) {
-        super(str, af5Var, j, i, j2, qq3Var, str2, str3, j3, j4, z);
-        this.x = z2;
-        this.y = z3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ye5 {
+    public final long a;
+    public final int b;
+
+    public ye5(TLRPC.Message message) {
+        long B0 = k47.B0(message);
+        int i = message.id;
+        this.a = B0;
+        this.b = i;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && ye5.class == obj.getClass()) {
+            ye5 ye5Var = (ye5) obj;
+            if (this.a == ye5Var.a && this.b == ye5Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
     }
 }

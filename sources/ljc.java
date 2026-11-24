@@ -1,36 +1,42 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ljc extends AnimatorListenerAdapter {
-    public final /* synthetic */ gb2 a;
-    public final /* synthetic */ w02 b;
-    public final /* synthetic */ mjc c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ljc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ String f;
 
-    public ljc(mjc mjcVar, gb2 gb2Var, w02 w02Var) {
-        this.c = mjcVar;
-        this.a = gb2Var;
-        this.b = w02Var;
+    public /* synthetic */ ljc(VoIPService voIPService, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, String str, byte b) {
+        this.a = b;
+        this.b = voIPService;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
+        this.f = str;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.setEnterTransitionInProgress(false);
-        w02 w02Var = this.b;
-        ArrayList arrayList = (ArrayList) w02Var.c;
-        mjc mjcVar = this.c;
-        arrayList.remove(mjcVar);
-        w02Var.a();
-        ((ViewGroup) w02Var.d).invalidate();
-        ChatActivityEnterView.RecordCircle recordCircle = mjcVar.g;
-        if (recordCircle != null) {
-            recordCircle.O = false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.f;
+        ArrayList arrayList = this.e;
+        ArrayList arrayList2 = this.d;
+        ArrayList arrayList3 = this.c;
+        VoIPService voIPService = this.b;
+        switch (b) {
+            case 0:
+                voIPService.lambda$startConferenceGroupCall$50(arrayList3, arrayList2, arrayList, str);
+                break;
+            default:
+                voIPService.lambda$startConferenceGroupCall$42(arrayList3, arrayList2, arrayList, str);
+                break;
         }
     }
 }

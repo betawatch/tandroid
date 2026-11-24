@@ -1,73 +1,27 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import org.telegram.tgnet.TLRPC;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qvc implements fwc {
-    public final bw2 a;
-    public final String b;
-    public final bwc c;
-    public final wjb d;
-    public final Paint e = new Paint(1);
-    public final Path f = new Path();
-    public gwc h;
-    public int n;
-    public boolean r;
+public interface qvc {
+    void a(boolean z, mvc mvcVar, float f, boolean z2);
 
-    public qvc(bw2 bw2Var, int i, TLRPC.BotInlineResult botInlineResult, wjb wjbVar) {
-        this.a = bw2Var;
-        this.d = wjbVar;
-        String v = vvc.v(i, botInlineResult);
-        this.b = v;
-        this.c = vvc.h(v);
-    }
+    TextureView b(View view, boolean z, float f, int i, boolean z2);
 
-    public final void a(int i) {
-        bwc bwcVar = this.c;
-        if (bwcVar == null || i <= 0) {
-            return;
-        }
-        this.n = i;
-        bwcVar.l(i);
-        if (this.r) {
-            return;
-        }
-        this.r = true;
-        bwcVar.j(mwc.a(this.d, true));
-        gwc gwcVar = this.h;
-        if (gwcVar == null) {
-            gwcVar = new gwc(this, gl.p);
-            this.h = gwcVar;
-        }
-        gwcVar.b(bwcVar);
-        this.h.q(true);
-        vvc.t(bwcVar);
-    }
+    void c();
 
-    @Override // fwc
-    public final void g() {
-        this.a.invalidate();
-    }
+    void d(float f);
 
-    @Override // fwc
-    public final void j() {
-        bw2 bw2Var = this.a;
-        bw2Var.requestLayout();
-        bw2Var.invalidate();
-    }
+    void e();
 
-    @Override // fwc
-    public final void d() {
-    }
+    TextureView f(View view, boolean z, int i, int i2, boolean z2);
 
-    @Override // fwc
-    public final void b(boolean z) {
-    }
+    void g(tvc tvcVar, boolean z);
 
-    @Override // fwc
-    public final void f(String str) {
-    }
+    ViewGroup h();
+
+    boolean i();
 }

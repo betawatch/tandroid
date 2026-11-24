@@ -1,36 +1,90 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class p44 {
-    public final double a;
-    public final o44 b = new o44(9.0d);
-    public final o44 c = new o44(3.0d);
-    public final o44 d = new o44(9.0d);
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
-    public p44(double d) {
-        this.a = d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class p44 extends FrameLayout {
+    public boolean a;
+    public final o44 b;
+    public boolean c;
+    public float d;
+    public float e;
+    public boolean f;
+
+    public p44(Context context, o44 o44Var) {
+        super(context);
+        this.b = o44Var;
     }
 
-    public final double a() {
-        o44 o44Var = this.c;
-        return o44Var.c >= 0.001d ? Math.min(o44Var.a(), this.b.a()) : this.a;
-    }
-
-    public final double b() {
-        o44 o44Var = this.d;
-        if (o44Var.c >= 0.001d) {
-            return o44Var.a();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        if (this.a && (view instanceof g29)) {
+            return true;
         }
-        return 100.0d;
+        return super.drawChild(canvas, view, j);
     }
 
-    public final void c(long j, double d) {
-        if (j <= 0) {
+    @Override // android.view.ViewGroup
+    public final void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
+        if (!(view instanceof xjb)) {
+            super.measureChildWithMargins(view, i, i2, i3, i4);
             return;
         }
-        double max = (j * 8.0d) / (Math.max(d, 50.0d) / 1000.0d);
-        this.c.b(1.0d, max);
-        this.b.b(1.0d, max);
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i2, marginLayoutParams.width), 0);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        o44 o44Var = this.b;
+        w44 i = o44Var.i();
+        if (i == null) {
+            return false;
+        }
+        if (motionEvent.getPointerCount() != 1) {
+            i.n = false;
+            i.r = true;
+            this.c = false;
+            this.f = true;
+            invalidate();
+            return true;
+        }
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            this.c = false;
+            i.n = false;
+            i.r = false;
+            this.d = motionEvent.getX();
+            this.e = motionEvent.getY();
+            this.f = false;
+            return true;
+        }
+        if (!this.f && actionMasked == 2) {
+            float x = motionEvent.getX();
+            float y = motionEvent.getY();
+            if (this.c || oqe.a(x, y, this.d, this.e) > gm.e) {
+                this.c = true;
+                i.n = true;
+                i.e(x - this.d, y - this.e);
+                this.d = x;
+                this.e = y;
+                return true;
+            }
+        } else if (actionMasked == 1 || actionMasked == 3) {
+            i.n = false;
+            i.r = true;
+            if (!this.c) {
+                o44Var.d();
+            }
+            invalidate();
+            return false;
+        }
+        return true;
     }
 }

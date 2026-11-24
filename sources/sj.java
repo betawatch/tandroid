@@ -1,35 +1,10 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class sj {
-    public volatile Object a;
-    public final Object b;
-    public volatile Object c;
-
-    public sj(vq7 vq7Var) {
-        ize izeVar = new ize((byte) 18);
-        pd5 pd5Var = new pd5((byte) 28);
-        this.c = izeVar;
-        this.b = new ArrayList();
-        this.a = pd5Var;
-        vq7Var.a(new ag(this));
-    }
-
-    public final boolean a() {
-        try {
-            Context context = (Context) this.b;
-            return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
-        } catch (Exception e) {
-            xgd.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e);
-            return false;
-        }
-    }
-
-    public /* synthetic */ sj(Object obj) {
-        this.b = obj;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class sj extends lp7 {
+    @Override // lp7
+    public final CharSequence d(int i) {
+        return jb6.G(i + 1, "Times", new Object[0]);
     }
 }

@@ -1,15 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.concurrent.CancellationException;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface av5 extends yu5, fq4 {
-    boolean isExternal();
+public interface av5 extends ay2 {
+    th2 attachChild(wh2 wh2Var);
 
-    boolean isInfix();
+    void cancel(CancellationException cancellationException);
 
-    boolean isInline();
+    CancellationException getCancellationException();
 
-    boolean isOperator();
+    p6a getChildren();
 
-    boolean isSuspend();
+    xp3 invokeOnCompletion(rr4 rr4Var);
+
+    xp3 invokeOnCompletion(boolean z, boolean z2, rr4 rr4Var);
+
+    boolean isActive();
+
+    boolean isCancelled();
+
+    Object join(px2 px2Var);
+
+    boolean start();
 }

@@ -1,28 +1,34 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
+import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class cvb extends ovb {
-    public final /* synthetic */ qvb p3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class cvb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Toolbar b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cvb(qvb qvbVar, Context context) {
-        super(qvbVar, context);
-        this.p3 = qvbVar;
+    public /* synthetic */ cvb(Toolbar toolbar, byte b) {
+        this.a = b;
+        this.b = toolbar;
     }
 
-    @Override // o39
-    public final boolean S0() {
-        ArrayList arrayList = this.p3.b;
-        return (getAdapter() == null || this.W1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((ivb) arrayList.get(0)).c == null || ((ivb) arrayList.get(0)).c.id != 1 ? getAdapter().b() > 1 : getAdapter().b() > 2)) ? false : true;
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.p3.y0();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Toolbar toolbar = this.b;
+        switch (b) {
+            case 0:
+                evb evbVar = toolbar.f0;
+                c27 c27Var = evbVar == null ? null : evbVar.b;
+                if (c27Var != null) {
+                    c27Var.collapseActionView();
+                    break;
+                }
+                break;
+            default:
+                toolbar.m();
+                break;
+        }
     }
 }

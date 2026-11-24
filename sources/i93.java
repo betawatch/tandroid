@@ -1,108 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i93 implements x56 {
-    public final /* synthetic */ byte a;
+public final class i93 {
+    public static final w03 b = new w03();
+    public static final String c = a("hts/cahyiseot-agolai.o/1frlglgc/aclg", "tp:/rsltcrprsp.ogepscmv/ieo/eaybtho");
+    public static final String d = a("AzSBpY4F0rHiHFdinTvM", "IayrSTFL9eJ69YeSUO2");
+    public static final u03 e = new u03((byte) 9);
+    public final ha9 a;
 
-    @Override // x56
-    public final void invoke(Object obj) {
-        uj ujVar = (uj) obj;
-        switch (this.a) {
-            case 0:
-                ujVar.getClass();
-                break;
-            case 1:
-                ujVar.getClass();
-                break;
-            case 2:
-                ujVar.getClass();
-                break;
-            case 3:
-                ujVar.getClass();
-                break;
-            case 4:
-                ujVar.getClass();
-                break;
-            case 5:
-                ujVar.getClass();
-                break;
-            case 6:
-                ujVar.getClass();
-                break;
-            case 7:
-                ujVar.getClass();
-                break;
-            case 8:
-                ujVar.getClass();
-                break;
-            case 9:
-                ujVar.getClass();
-                break;
-            case 10:
-                ujVar.getClass();
-                break;
-            case 11:
-                ujVar.getClass();
-                break;
-            case 12:
-                ujVar.getClass();
-                break;
-            case 13:
-                ujVar.getClass();
-                break;
-            case 14:
-                ujVar.getClass();
-                break;
-            case 15:
-                ujVar.getClass();
-                break;
-            case 16:
-                ujVar.getClass();
-                break;
-            case 17:
-                ujVar.getClass();
-                break;
-            case 18:
-                ujVar.getClass();
-                break;
-            case 19:
-                ujVar.getClass();
-                break;
-            case 20:
-                ujVar.getClass();
-                break;
-            case 21:
-                ujVar.getClass();
-                break;
-            case 22:
-                ujVar.getClass();
-                break;
-            case 23:
-                ujVar.getClass();
-                break;
-            case 24:
-                ujVar.getClass();
-                break;
-            case 25:
-                ujVar.getClass();
-                break;
-            case 26:
-                ujVar.getClass();
-                break;
-            case 27:
-                ujVar.getClass();
-                break;
-            case 28:
-                ujVar.getClass();
-                break;
-            default:
-                ujVar.getClass();
-                break;
-        }
+    public i93(ha9 ha9Var) {
+        this.a = ha9Var;
     }
 
-    public /* synthetic */ i93(tj tjVar, byte b) {
-        this.a = b;
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            u36.j("Invalid input received");
+            return null;
+        }
+        StringBuilder sb = new StringBuilder(str2.length() + str.length());
+        for (int i = 0; i < str.length(); i++) {
+            sb.append(str.charAt(i));
+            if (str2.length() > i) {
+                sb.append(str2.charAt(i));
+            }
+        }
+        return sb.toString();
     }
 }

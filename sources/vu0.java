@@ -1,47 +1,72 @@
 // default package
 
-import android.webkit.JsResult;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ShapeDrawable;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vu0 implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ JsResult c;
-
-    public /* synthetic */ vu0(boolean[] zArr, JsResult jsResult, byte b) {
-        this.a = b;
-        this.b = zArr;
-        this.c = jsResult;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        JsResult jsResult = this.c;
-        boolean[] zArr = this.b;
-        switch (b) {
-            case 0:
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    jsResult.cancel();
-                    break;
-                }
-                break;
-            case 1:
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    jsResult.confirm();
-                    break;
-                }
-                break;
-            default:
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    jsResult.confirm();
-                    break;
-                }
-                break;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class vu0 {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void a(Activity activity, int i, long j, long j2, TL_bots.BotVerifierSettings botVerifierSettings, qu0 qu0Var) {
+        String str;
+        TLRPC.Chat chat;
+        if (j2 >= 0) {
+            TLRPC.User W1 = oc7.r1(i).W1(Long.valueOf(j2));
+            str = m9c.l(W1);
+            chat = W1;
+        } else {
+            TLRPC.Chat L0 = oc7.r1(i).L0(Long.valueOf(-j2));
+            if (L0 == null) {
+                str = "";
+                chat = L0;
+            } else {
+                str = L0.title;
+                chat = L0;
+            }
         }
+        FrameLayout frameLayout = new FrameLayout(activity);
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        int L = gm.L(28.0f);
+        int L2 = gm.L(28.0f);
+        int i2 = cmb.Si;
+        ShapeDrawable c0 = cmb.c0(L, L2, cmb.w0(null, i2, false));
+        wmb M = anb.M(i2);
+        frameLayout2.setBackground(c0);
+        anb.j(frameLayout2, c0, M, null, null);
+        bf0 bf0Var = new bf0(activity);
+        bf0Var.setRoundRadius(gm.L(28.0f));
+        pc0 pc0Var = new pc0((ylb) null);
+        pc0Var.k(chat);
+        bf0Var.f(chat, pc0Var);
+        frameLayout2.addView(bf0Var, qoe.e(28, 28, 51));
+        bf0 bf0Var2 = new bf0(activity);
+        bf0Var2.setEmojiColorFilter(new PorterDuffColorFilter(cmb.w0(null, cmb.y9, false), PorterDuff.Mode.SRC_IN));
+        bf0Var2.setAnimatedEmojiDrawable(vm.m(i, botVerifierSettings.icon, null, 3));
+        frameLayout2.addView(bf0Var2, qoe.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        lka lkaVar = new lka(activity);
+        anb.W(lkaVar, cmb.i5, null);
+        lkaVar.setTextSize(13);
+        lkaVar.setEllipsizeByGradient(true);
+        lkaVar.l(str, false);
+        lkaVar.setWidthWrapContent(true);
+        frameLayout2.addView(lkaVar, qoe.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        frameLayout.addView(frameLayout2, qoe.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
+        boolean[] zArr = new boolean[1];
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
+        String M0 = jb6.M0(2131752950, null);
+        he heVar = alertDialog$Builder.a;
+        heVar.S = M0;
+        heVar.U = jb6.M0(j2 >= 0 ? 2131752951 : 2131752952, null);
+        alertDialog$Builder.n(frameLayout);
+        alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+        alertDialog$Builder.j(jb6.M0(2131746054, null), new tu0(zArr, i, j, j2, qu0Var));
+        alertDialog$Builder.c(-1);
+        alertDialog$Builder.o();
     }
 }

@@ -1,52 +1,40 @@
 // default package
 
+import android.os.BadParcelableException;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class tid implements Cloneable {
-    public final vid a;
-    public vid b;
-    public boolean c = false;
+public abstract class tid {
+    public static final /* synthetic */ int a = 0;
 
-    public tid(vid vidVar) {
-        this.a = vidVar;
-        this.b = (vid) vidVar.a(4);
+    static {
+        tid.class.getClassLoader();
     }
 
-    public final void a(vid vidVar) {
-        b();
-        vid vidVar2 = this.b;
-        ttd ttdVar = ttd.c;
-        ttdVar.getClass();
-        ttdVar.a(vidVar2.getClass()).d(vidVar2, vidVar);
-    }
-
-    public final void b() {
-        if (this.c) {
-            vid vidVar = (vid) this.b.a(4);
-            vid vidVar2 = this.b;
-            ttd ttdVar = ttd.c;
-            ttdVar.getClass();
-            ttdVar.a(vidVar.getClass()).d(vidVar, vidVar2);
-            this.b = vidVar;
-            this.c = false;
+    public static void a(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(hg9.j(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
     }
 
-    public final vid c() {
-        boolean z = this.c;
-        vid vidVar = this.b;
-        if (z) {
-            return vidVar;
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
         }
-        ttd ttdVar = ttd.c;
-        ttdVar.getClass();
-        ttdVar.a(vidVar.getClass()).b(vidVar);
-        this.c = true;
-        return this.b;
     }
 
-    public final /* synthetic */ Object clone() {
-        tid tidVar = (tid) this.a.a(5);
-        tidVar.a(c());
-        return tidVar;
+    public static void c(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
+        }
     }
 }

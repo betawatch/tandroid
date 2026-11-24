@@ -1,74 +1,135 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import j$.util.concurrent.ConcurrentHashMap;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class jc4 implements TextWatcher {
-    public final /* synthetic */ byte a;
-    public boolean b;
-    public final /* synthetic */ EditTextBoldCursor c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class jc4 implements Runnable {
+    public final /* synthetic */ lc4 a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ jc4(EditTextBoldCursor editTextBoldCursor, byte b) {
-        this.a = b;
-        this.c = editTextBoldCursor;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ jc4(lc4 lc4Var, long j, int i, int i2, String str, int i3) {
+        this.a = lc4Var;
+        this.b = j;
+        this.c = i;
+        this.d = i2;
+        this.e = str;
+        this.f = i3;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        byte b = this.a;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        switch (b) {
-            case 0:
-                if (!this.b && editable.length() > 32) {
-                    this.b = true;
-                    editable.delete(32, editable.length());
-                    gl.A3(editTextBoldCursor);
-                    try {
-                        editTextBoldCursor.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    this.b = false;
-                    break;
-                }
-                break;
-            default:
-                if (!this.b && editable.length() > 40) {
-                    this.b = true;
-                    editable.delete(40, editable.length());
-                    gl.A3(editTextBoldCursor);
-                    try {
-                        editTextBoldCursor.performHapticFeedback(3, 2);
-                    } catch (Exception unused2) {
-                    }
-                    this.b = false;
-                    break;
-                }
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0109  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLitePreparedStatement sQLitePreparedStatement2;
+        boolean z = this.f;
+        lc4 lc4Var = this.a;
+        ConcurrentHashMap concurrentHashMap = lc4Var.f;
+        boolean z2 = e21.a;
+        StringBuilder sb = new StringBuilder("put file path id=");
+        long j = this.b;
+        sb.append(j);
+        sb.append(" dc=");
+        int i = this.c;
+        sb.append(i);
+        sb.append(" type=");
+        byte b = this.d;
+        sb.append((int) b);
+        sb.append(" path=");
+        String str = this.e;
+        sb.append(str);
+        fc4.b(sb.toString());
+        lc4Var.c();
+        SQLiteDatabase sQLiteDatabase = lc4Var.c;
+        if (sQLiteDatabase == null) {
+            return;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    private final void a(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void b(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void c(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void d(int i, int i2, int i3, CharSequence charSequence) {
+        SQLitePreparedStatement sQLitePreparedStatement3 = null;
+        r9 = null;
+        SQLitePreparedStatement sQLitePreparedStatement4 = null;
+        sQLitePreparedStatement3 = null;
+        sQLitePreparedStatement3 = null;
+        try {
+            if (str != null) {
+                SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("DELETE FROM paths WHERE path = ?");
+                try {
+                    executeFast.bindString(1, str);
+                    executeFast.step();
+                    sQLitePreparedStatement4 = lc4Var.c.executeFast("REPLACE INTO paths VALUES(?, ?, ?, ?, ?)");
+                    sQLitePreparedStatement4.requery();
+                    sQLitePreparedStatement4.bindLong(1, j);
+                    sQLitePreparedStatement4.bindInteger(2, i);
+                    sQLitePreparedStatement4.bindInteger(3, b);
+                    sQLitePreparedStatement4.bindString(4, str);
+                    sQLitePreparedStatement4.bindInteger(5, z ? 1 : 0);
+                    sQLitePreparedStatement4.step();
+                    sQLitePreparedStatement4.dispose();
+                    concurrentHashMap.put(j + "_" + i + "_" + ((int) b), str);
+                    sQLitePreparedStatement2 = sQLitePreparedStatement4;
+                    sQLitePreparedStatement3 = executeFast;
+                } catch (SQLiteException e) {
+                    e = e;
+                    sQLitePreparedStatement = sQLitePreparedStatement4;
+                    sQLitePreparedStatement3 = executeFast;
+                    try {
+                        fc4.g(e, true);
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                        }
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                            return;
+                        }
+                        return;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                        }
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    sQLitePreparedStatement = sQLitePreparedStatement4;
+                    sQLitePreparedStatement3 = executeFast;
+                    if (sQLitePreparedStatement3 != null) {
+                    }
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    throw th;
+                }
+            } else {
+                sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j + " AND dc_id = " + i + " AND type = " + ((int) b)).stepThis().dispose();
+                concurrentHashMap.put(j + "_" + i + "_" + ((int) b), "~null~");
+                sQLitePreparedStatement2 = null;
+            }
+            if (sQLitePreparedStatement3 != null) {
+                sQLitePreparedStatement3.dispose();
+            }
+            if (sQLitePreparedStatement2 != null) {
+                sQLitePreparedStatement2.dispose();
+            }
+        } catch (SQLiteException e2) {
+            e = e2;
+            sQLitePreparedStatement = sQLitePreparedStatement3;
+        } catch (Throwable th3) {
+            th = th3;
+            sQLitePreparedStatement = sQLitePreparedStatement3;
+        }
     }
 }

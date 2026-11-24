@@ -1,16 +1,202 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class au6 {
-    public final gu6 a;
-    public final zt6 b;
-    public yt6 c = yt6.c;
-    public int d;
-    public long e;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.cast.MediaInfo;
+import java.util.Arrays;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    public au6(gu6 gu6Var, zt6 zt6Var) {
-        this.a = gu6Var;
-        this.b = zt6Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class au6 extends b4 {
+    public static final Parcelable.Creator<au6> CREATOR = new jid(15);
+    public MediaInfo a;
+    public int b;
+    public boolean c;
+    public double d;
+    public double e;
+    public double f;
+    public long[] h;
+    public String n;
+    public JSONObject r;
+
+    public au6(MediaInfo mediaInfo, int i, boolean z, double d, double d2, double d3, long[] jArr, String str) {
+        this.a = mediaInfo;
+        this.b = i;
+        this.c = z;
+        this.d = d;
+        this.e = d2;
+        this.f = d3;
+        this.h = jArr;
+        this.n = str;
+        if (str == null) {
+            this.r = null;
+            return;
+        }
+        try {
+            this.r = new JSONObject(this.n);
+        } catch (JSONException unused) {
+            this.r = null;
+            this.n = null;
+        }
+    }
+
+    public final boolean b(JSONObject jSONObject) {
+        boolean z;
+        long[] jArr;
+        boolean z2;
+        int i;
+        boolean z3 = false;
+        if (jSONObject.has("media")) {
+            this.a = new MediaInfo(jSONObject.getJSONObject("media"));
+            z = true;
+        } else {
+            z = false;
+        }
+        if (jSONObject.has("itemId") && this.b != (i = jSONObject.getInt("itemId"))) {
+            this.b = i;
+            z = true;
+        }
+        if (jSONObject.has("autoplay") && this.c != (z2 = jSONObject.getBoolean("autoplay"))) {
+            this.c = z2;
+            z = true;
+        }
+        double optDouble = jSONObject.optDouble("startTime");
+        if (Double.isNaN(optDouble) != Double.isNaN(this.d) || (!Double.isNaN(optDouble) && Math.abs(optDouble - this.d) > 1.0E-7d)) {
+            this.d = optDouble;
+            z = true;
+        }
+        if (jSONObject.has("playbackDuration")) {
+            double d = jSONObject.getDouble("playbackDuration");
+            if (Math.abs(d - this.e) > 1.0E-7d) {
+                this.e = d;
+                z = true;
+            }
+        }
+        if (jSONObject.has("preloadTime")) {
+            double d2 = jSONObject.getDouble("preloadTime");
+            if (Math.abs(d2 - this.f) > 1.0E-7d) {
+                this.f = d2;
+                z = true;
+            }
+        }
+        if (jSONObject.has("activeTrackIds")) {
+            JSONArray jSONArray = jSONObject.getJSONArray("activeTrackIds");
+            int length = jSONArray.length();
+            jArr = new long[length];
+            for (int i2 = 0; i2 < length; i2++) {
+                jArr[i2] = jSONArray.getLong(i2);
+            }
+            long[] jArr2 = this.h;
+            if (jArr2 != null && jArr2.length == length) {
+                for (int i3 = 0; i3 < length; i3++) {
+                    if (this.h[i3] == jArr[i3]) {
+                    }
+                }
+            }
+            z3 = true;
+            break;
+        } else {
+            jArr = null;
+        }
+        if (z3) {
+            this.h = jArr;
+            z = true;
+        }
+        if (!jSONObject.has("customData")) {
+            return z;
+        }
+        this.r = jSONObject.getJSONObject("customData");
+        return true;
+    }
+
+    public final JSONObject c() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            MediaInfo mediaInfo = this.a;
+            if (mediaInfo != null) {
+                jSONObject.put("media", mediaInfo.b());
+            }
+            int i = this.b;
+            if (i != 0) {
+                jSONObject.put("itemId", i);
+            }
+            jSONObject.put("autoplay", this.c);
+            if (!Double.isNaN(this.d)) {
+                jSONObject.put("startTime", this.d);
+            }
+            double d = this.e;
+            if (d != Double.POSITIVE_INFINITY) {
+                jSONObject.put("playbackDuration", d);
+            }
+            jSONObject.put("preloadTime", this.f);
+            if (this.h != null) {
+                JSONArray jSONArray = new JSONArray();
+                for (long j : this.h) {
+                    jSONArray.put(j);
+                }
+                jSONObject.put("activeTrackIds", jSONArray);
+            }
+            JSONObject jSONObject2 = this.r;
+            if (jSONObject2 != null) {
+                jSONObject.put("customData", jSONObject2);
+            }
+        } catch (JSONException unused) {
+        }
+        return jSONObject;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof au6)) {
+            return false;
+        }
+        au6 au6Var = (au6) obj;
+        JSONObject jSONObject = this.r;
+        boolean z = jSONObject == null;
+        JSONObject jSONObject2 = au6Var.r;
+        if (z != (jSONObject2 == null)) {
+            return false;
+        }
+        return (jSONObject == null || jSONObject2 == null || vw5.a(jSONObject, jSONObject2)) && qe1.d(this.a, au6Var.a) && this.b == au6Var.b && this.c == au6Var.c && ((Double.isNaN(this.d) && Double.isNaN(au6Var.d)) || this.d == au6Var.d) && this.e == au6Var.e && this.f == au6Var.f && Arrays.equals(this.h, au6Var.h);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), Boolean.valueOf(this.c), Double.valueOf(this.d), Double.valueOf(this.e), Double.valueOf(this.f), Integer.valueOf(Arrays.hashCode(this.h)), String.valueOf(this.r)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        JSONObject jSONObject = this.r;
+        this.n = jSONObject == null ? null : jSONObject.toString();
+        int r = mve.r(parcel, 20293);
+        mve.k(parcel, 2, this.a, i);
+        int i2 = this.b;
+        mve.q(parcel, 3, 4);
+        parcel.writeInt(i2);
+        boolean z = this.c;
+        mve.q(parcel, 4, 4);
+        parcel.writeInt(z ? 1 : 0);
+        double d = this.d;
+        mve.q(parcel, 5, 8);
+        parcel.writeDouble(d);
+        double d2 = this.e;
+        mve.q(parcel, 6, 8);
+        parcel.writeDouble(d2);
+        double d3 = this.f;
+        mve.q(parcel, 7, 8);
+        parcel.writeDouble(d3);
+        mve.j(parcel, 8, this.h);
+        mve.l(parcel, 9, this.n);
+        mve.s(parcel, r);
+    }
+
+    public au6(JSONObject jSONObject) {
+        this(null, 0, true, Double.NaN, Double.POSITIVE_INFINITY, 0.0d, null, null);
+        b(jSONObject);
     }
 }

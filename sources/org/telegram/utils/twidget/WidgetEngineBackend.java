@@ -11,16 +11,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 final class WidgetEngineBackend {
     private static final int MAX_CACHED_TEXT = 1024;
     private static final int MAX_CACHED_WIDTHS = 8192;
     private static final int PART = 262144;
     private static final int TEXT_PIECE = 65536;
-    private static final LinkedHashMap<String, Float> WIDTHS = new np4(TLObject.FLAG_12, 0.75f, true, (byte) 3);
+    private static final LinkedHashMap<String, Float> WIDTHS = new or4(TLObject.FLAG_12, 0.75f, true, (byte) 3);
     private static volatile boolean localFonts = true;
-    private final jj5 client;
+    private final il5 client;
     private final float density;
     private long imageBytes;
     private int nextFont;
@@ -28,16 +28,16 @@ final class WidgetEngineBackend {
     private final ConcurrentHashMap<Integer, String> fontKeys = new ConcurrentHashMap<>();
     private final Object largeLock = new Object();
 
-    public WidgetEngineBackend(jj5 jj5Var, float f) {
-        this.client = jj5Var;
+    public WidgetEngineBackend(il5 il5Var, float f) {
+        this.client = il5Var;
         this.density = f;
     }
 
-    private static void call(kvc kvcVar) {
+    private static void call(lxc lxcVar) {
         try {
-            kvcVar.run();
+            lxcVar.run();
         } catch (RemoteException e) {
-            wn4.i(e, "Widget client: ");
+            zo4.j(e, "Widget client: ");
         }
     }
 
@@ -48,7 +48,7 @@ final class WidgetEngineBackend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$canvasRun$8(int i, int i2, int i3, int[] iArr) {
-        this.client.A(i, i2, i3, iArr);
+        this.client.z(i, i2, i3, iArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,32 +68,32 @@ final class WidgetEngineBackend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$recordLayer$6(int i, int i2, byte[] bArr) {
-        this.client.F(i, i2, bArr);
+        this.client.E(i, i2, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$remoteWidth$1(float[] fArr, int i, byte[] bArr) {
-        fArr[0] = this.client.z(i, bArr);
+        fArr[0] = this.client.y(i, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$selectableText$5(byte[] bArr) {
-        this.client.x(bArr);
+        this.client.w(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$send$11(byte[] bArr) {
-        this.client.J(bArr);
+        this.client.I(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$signal$3(int i, byte[] bArr) {
-        this.client.C(i, bArr);
+        this.client.B(i, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$state$4(int i, float f) {
-        this.client.K(i, f);
+        this.client.J(i, f);
     }
 
     private Paint localFont(byte[] bArr, float f, int i, boolean z, byte[] bArr2) {
@@ -108,8 +108,8 @@ final class WidgetEngineBackend {
 
     private float remoteWidth(final int i, final byte[] bArr) {
         final float[] fArr = new float[1];
-        call(new kvc() { // from class: org.telegram.utils.twidget.j
-            @Override // kvc
+        call(new lxc() { // from class: org.telegram.utils.twidget.j
+            @Override // lxc
             public final void run() {
                 WidgetEngineBackend.this.lambda$remoteWidth$1(fArr, i, bArr);
             }
@@ -117,10 +117,10 @@ final class WidgetEngineBackend {
         return fArr[0];
     }
 
-    private void send(byte[] bArr, lvc lvcVar) {
+    private void send(byte[] bArr, mxc mxcVar) {
         byte b = 0;
         if (bArr == null || bArr.length <= 262144) {
-            call(new l(lvcVar, bArr, b));
+            call(new l(mxcVar, bArr, b));
             return;
         }
         synchronized (this.largeLock) {
@@ -130,7 +130,7 @@ final class WidgetEngineBackend {
                 System.arraycopy(bArr, i, bArr2, 0, min);
                 call(new l(this, bArr2, (byte) 1));
             }
-            call(new g(lvcVar));
+            call(new g(mxcVar));
         }
     }
 
@@ -154,8 +154,8 @@ final class WidgetEngineBackend {
 
     public byte[] canvasRead(final int i, final int i2, final int i3, final int i4, final int i5) {
         final byte[][] bArr = new byte[1][];
-        call(new kvc() { // from class: org.telegram.utils.twidget.e
-            @Override // kvc
+        call(new lxc() { // from class: org.telegram.utils.twidget.e
+            @Override // lxc
             public final void run() {
                 WidgetEngineBackend.this.lambda$canvasRead$9(bArr, i, i2, i3, i4, i5);
             }
@@ -178,15 +178,15 @@ final class WidgetEngineBackend {
         final int i2 = this.nextFont + 1;
         this.nextFont = i2;
         final float[][] fArr = new float[1][];
-        call(new kvc() { // from class: org.telegram.utils.twidget.d
-            @Override // kvc
+        call(new lxc() { // from class: org.telegram.utils.twidget.d
+            @Override // lxc
             public final void run() {
                 WidgetEngineBackend.this.lambda$createFont$0(fArr, i2, bArr, f, i, z, bArr2);
             }
         });
         float[] fArr2 = fArr[0];
         if (fArr2 == null || fArr2.length != 6) {
-            sc8.j("Widget client: font");
+            dq9.m("Widget client: font");
             return null;
         }
         Paint localFont = localFonts ? localFont(bArr, f, i, z, bArr2) : null;
@@ -208,7 +208,7 @@ final class WidgetEngineBackend {
     }
 
     public byte[] formatIntl(byte[] bArr) {
-        return i00.d(WidgetSandboxBackend.text(bArr)).getBytes(StandardCharsets.UTF_8);
+        return i10.d(WidgetSandboxBackend.text(bArr)).getBytes(StandardCharsets.UTF_8);
     }
 
     public float[] loadImage(final int i, byte[] bArr) {
@@ -229,8 +229,8 @@ final class WidgetEngineBackend {
         decodeImage.copyPixelsToBuffer(allocate);
         final int width = decodeImage.getWidth();
         final int height = decodeImage.getHeight();
-        send(allocate.array(), new lvc() { // from class: org.telegram.utils.twidget.c
-            @Override // lvc
+        send(allocate.array(), new mxc() { // from class: org.telegram.utils.twidget.c
+            @Override // mxc
             public final void a(byte[] bArr2) {
                 WidgetEngineBackend.this.lambda$loadImage$2(i, width, height, bArr2);
             }
@@ -239,8 +239,8 @@ final class WidgetEngineBackend {
     }
 
     public void record(byte[] bArr, final byte[] bArr2, final double d, final int i, final int i2, final float f, final float f2, final int i3, final int i4) {
-        send(bArr, new lvc() { // from class: org.telegram.utils.twidget.k
-            @Override // lvc
+        send(bArr, new mxc() { // from class: org.telegram.utils.twidget.k
+            @Override // mxc
             public final void a(byte[] bArr3) {
                 WidgetEngineBackend.this.lambda$record$7(bArr2, d, i, i2, f, f2, i3, i4, bArr3);
             }
@@ -248,8 +248,8 @@ final class WidgetEngineBackend {
     }
 
     public void recordLayer(final int i, final int i2, byte[] bArr) {
-        send(bArr, new lvc() { // from class: org.telegram.utils.twidget.f
-            @Override // lvc
+        send(bArr, new mxc() { // from class: org.telegram.utils.twidget.f
+            @Override // mxc
             public final void a(byte[] bArr2) {
                 WidgetEngineBackend.this.lambda$recordLayer$6(i, i2, bArr2);
             }
@@ -265,8 +265,8 @@ final class WidgetEngineBackend {
     }
 
     public void state(final int i, final float f) {
-        call(new kvc() { // from class: org.telegram.utils.twidget.h
-            @Override // kvc
+        call(new lxc() { // from class: org.telegram.utils.twidget.h
+            @Override // lxc
             public final void run() {
                 WidgetEngineBackend.this.lambda$state$4(i, f);
             }

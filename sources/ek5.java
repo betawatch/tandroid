@@ -1,31 +1,52 @@
 // default package
 
+import android.os.IBinder;
 import android.os.Parcel;
-import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ek5 extends b4 {
-    public static final Parcelable.Creator<ek5> CREATOR = new qyd((byte) 21);
-    public final int a;
-    public final int b;
-    public final int c;
+public final class ek5 implements gk5 {
+    public IBinder a;
 
-    public ek5(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        jte.s(parcel, r);
+    @Override // gk5
+    public final void g(int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i);
+            this.a.transact(9, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // gk5
+    public final void i(int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i);
+            this.a.transact(12, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // gk5
+    public final void j(ge8 ge8Var) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(1);
+            ge8Var.writeToParcel(obtain, 0);
+            this.a.transact(3, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

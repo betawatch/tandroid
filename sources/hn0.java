@@ -1,31 +1,72 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class hn0 implements cx5 {
+    public static final hn0 a = new hn0();
+    public static final el8 b = new el8("kotlin.Boolean", dl8.b);
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hn0 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p8c b;
-    public final /* synthetic */ p8c c;
-
-    public /* synthetic */ hn0(p8c p8cVar, p8c p8cVar2, byte b) {
-        this.a = b;
-        this.b = p8cVar;
-        this.c = p8cVar2;
+    @Override // cx5
+    public final void b(c40 c40Var, Object obj) {
+        boolean booleanValue = ((Boolean) obj).booleanValue();
+        if (c40Var.a) {
+            c40Var.k(String.valueOf(booleanValue));
+        } else {
+            ((vk1) ((m41) c40Var.b).c).c(String.valueOf(booleanValue));
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                gl.d3(new nn6(tL_error, this.b, this.c));
-                break;
-            default:
-                gl.d3(new s67(tL_error, this.b, tLObject, this.c, (byte) 9));
-                break;
+    @Override // cx5
+    public final Object c(jif jifVar) {
+        boolean z;
+        boolean z2;
+        e0c e0cVar = (e0c) jifVar.d;
+        int t = e0cVar.t();
+        String str = (String) e0cVar.f;
+        if (t == str.length()) {
+            e0c.m(e0cVar, "EOF", 0, 6);
+            throw null;
         }
+        if (str.charAt(t) == '\"') {
+            t++;
+            z = true;
+        } else {
+            z = false;
+        }
+        int r = e0cVar.r(t);
+        if (r >= str.length() || r == -1) {
+            e0c.m(e0cVar, "EOF", 0, 6);
+            throw null;
+        }
+        int i = r + 1;
+        int charAt = str.charAt(r) | ' ';
+        if (charAt == 102) {
+            e0cVar.f(i, "alse");
+            z2 = false;
+        } else {
+            if (charAt != 116) {
+                e0c.m(e0cVar, "Expected valid boolean literal prefix, but had '" + e0cVar.k() + '\'', 0, 6);
+                throw null;
+            }
+            e0cVar.f(i, "rue");
+            z2 = true;
+        }
+        if (z) {
+            if (e0cVar.b == str.length()) {
+                e0c.m(e0cVar, "EOF", 0, 6);
+                throw null;
+            }
+            if (str.charAt(e0cVar.b) != '\"') {
+                e0c.m(e0cVar, "Expected closing quotation mark", 0, 6);
+                throw null;
+            }
+            e0cVar.b++;
+        }
+        return Boolean.valueOf(z2);
+    }
+
+    @Override // cx5
+    public final y6a d() {
+        return b;
     }
 }

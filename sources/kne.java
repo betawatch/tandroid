@@ -1,26 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class kne {
-    public static final void a(odc odcVar, oo ooVar, w06 w06Var) {
-        AutoCloseable autoCloseable;
-        ooVar.getClass();
-        w06Var.getClass();
-        pdc pdcVar = odcVar.a;
-        synchronized (pdcVar.a) {
-            autoCloseable = (AutoCloseable) pdcVar.b.get("androidx.lifecycle.savedstate.vm.tag");
-        }
-        xp9 xp9Var = (xp9) autoCloseable;
-        if (xp9Var == null || xp9Var.c) {
-            return;
-        }
-        xp9Var.a(ooVar, w06Var);
-        v06 v06Var = ((g16) w06Var).b;
-        if (v06Var == v06.b || v06Var.compareTo(v06.d) >= 0) {
-            ooVar.g();
-        } else {
-            w06Var.a(new ib3(w06Var, ooVar, (byte) 1));
-        }
+    public static void a(ByteBuffer byteBuffer, double d) {
+        int i = (int) (d * 1.073741824E9d);
+        byteBuffer.put((byte) (((-16777216) & i) >> 24));
+        byteBuffer.put((byte) ((16711680 & i) >> 16));
+        byteBuffer.put((byte) ((65280 & i) >> 8));
+        byteBuffer.put((byte) (i & nm7.d4));
+    }
+
+    public static void b(ByteBuffer byteBuffer, double d) {
+        int i = (int) (d * 65536.0d);
+        byteBuffer.put((byte) (((-16777216) & i) >> 24));
+        byteBuffer.put((byte) ((16711680 & i) >> 16));
+        byteBuffer.put((byte) ((65280 & i) >> 8));
+        byteBuffer.put((byte) (i & nm7.d4));
+    }
+
+    public static void c(ByteBuffer byteBuffer, double d) {
+        short s = (short) (d * 256.0d);
+        byteBuffer.put((byte) ((65280 & s) >> 8));
+        byteBuffer.put((byte) (s & 255));
+    }
+
+    public static void d(int i, ByteBuffer byteBuffer) {
+        f((65535 & i) >> 8, byteBuffer);
+        byteBuffer.put((byte) (i & nm7.d4));
+    }
+
+    public static void e(int i, ByteBuffer byteBuffer) {
+        d((16777215 & i) >> 8, byteBuffer);
+        byteBuffer.put((byte) (i & nm7.d4));
+    }
+
+    public static void f(int i, ByteBuffer byteBuffer) {
+        byteBuffer.put((byte) (i & nm7.d4));
     }
 }

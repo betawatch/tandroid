@@ -1,256 +1,198 @@
 // default package
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class bd2 extends LinearLayout {
-    public t09 a;
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
-    public FrameLayout c;
-    public int d;
-    public float e;
-    public float f;
-    public float h;
-    public float n;
-    public float r;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class bd2 {
+    public final yv1 a;
+    public final ArrayList b = new ArrayList(10);
+    public final ArrayList c = new ArrayList(10);
+    public final ArrayList d = new ArrayList(10);
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
 
-    public final void a() {
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setTranslationY(this.h + this.n + this.r);
+    public bd2(yv1 yv1Var) {
+        this.a = yv1Var;
+    }
+
+    public final void a(hu1 hu1Var, int i, int i2, long j) {
+        TL_stories.StoryItem storyItem;
+        TLRPC.MessageMedia messageMedia;
+        final bd2 bd2Var = this;
+        ArrayList G = hu1Var.G();
+        yv1 yv1Var = bd2Var.a;
+        if (yv1Var.X7() || i < 0 || i2 < 0) {
+            return;
         }
-    }
-
-    public final void b() {
-        float f = (1.0f - this.f) * this.e;
-        this.b.setTranslationX(f);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setTranslationX(f);
+        int i3 = hu1Var.K;
+        int i4 = (i2 - i3) - 10;
+        int i5 = (i - i3) + 10;
+        final byte b = 0;
+        if (i4 < 0) {
+            i4 = 0;
         }
-    }
+        if (i5 > G.size()) {
+            i5 = G.size();
+        }
+        ArrayList arrayList = bd2Var.b;
+        arrayList.clear();
+        ArrayList arrayList2 = bd2Var.c;
+        arrayList2.clear();
+        ArrayList arrayList3 = bd2Var.d;
+        arrayList3.clear();
+        while (i4 < i5) {
+            k47 k47Var = (k47) G.get(i4);
+            if (yv1Var.m4 != k47Var && k47Var.e1() > 0 && ((k47Var.k.action == null || k47Var.z()) && j - k47Var.E > 15000)) {
+                k47Var.E = j;
+                arrayList.add(k47Var);
+            }
+            if (yv1Var.m4 != k47Var && k47Var.e1() > 0 && ((k47Var.q2() || ((messageMedia = k47Var.k.media) != null && (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) && !messageMedia.extended_media.isEmpty() && (k47Var.k.media.extended_media.get(0) instanceof TLRPC.TL_messageExtendedMediaPreview))) && j - k47Var.F > 30000)) {
+                k47Var.F = j;
+                arrayList2.add(k47Var);
+            }
+            int i6 = k47Var.D;
+            if (i6 == 23 || i6 == 24 || k47Var.k.replyStory != null) {
+                TL_stories.StoryItem storyItem2 = (i6 == 23 || i6 == 24) ? k47Var.k.media.storyItem : k47Var.k.replyStory;
+                if (storyItem2 != null && !(storyItem2 instanceof TL_stories.TL_storyItemDeleted) && j - storyItem2.lastUpdateTime > 300000) {
+                    storyItem2.lastUpdateTime = j;
+                    arrayList3.add(k47Var);
+                }
+            }
+            i4++;
+        }
+        long a = yv1Var.a();
+        if (!arrayList.isEmpty()) {
+            TLRPC.TL_messages_getMessagesReactions tL_messages_getMessagesReactions = new TLRPC.TL_messages_getMessagesReactions();
+            tL_messages_getMessagesReactions.peer = yv1Var.getMessagesController().i1(a);
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                tL_messages_getMessagesReactions.id.add(Integer.valueOf(((k47) arrayList.get(i7)).e1()));
+            }
+            final byte b2 = 1;
+            Integer valueOf = Integer.valueOf(yv1Var.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new RequestDelegate(bd2Var) { // from class: ad2
+                public final /* synthetic */ bd2 b;
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-    }
+                {
+                    this.b = bd2Var;
+                }
 
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0379  */
-    @Override // android.widget.LinearLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i, int i2) {
-        boolean z;
-        t09 t09Var;
-        float f;
-        float f2;
-        int i3 = i;
-        int i4 = this.d;
-        int makeMeasureSpec = i4 != 0 ? View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_31) : i2;
-        if (this.b != null && View.MeasureSpec.getMode(i3) == Integer.MIN_VALUE) {
-            this.b.measure(0, makeMeasureSpec);
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.b.getLayoutParams();
-            if (this.b.getMeasuredWidth() + layoutParams.leftMargin + layoutParams.rightMargin > View.MeasureSpec.getSize(i3)) {
-                z = true;
-                t09Var = this.a;
-                if (t09Var != null || this.b == null) {
-                    super.onMeasure(i3, makeMeasureSpec);
-                } else {
-                    t09Var.getLayoutParams().width = -2;
-                    ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
-                    this.e = 0.0f;
-                    super.onMeasure(i3, makeMeasureSpec);
-                    int measuredWidth = this.a.getMeasuredWidth();
-                    if (this.b.getSwipeBack() != null && this.b.getSwipeBack().getMeasuredWidth() > measuredWidth) {
-                        measuredWidth = this.b.getSwipeBack().getMeasuredWidth();
-                    }
-                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.b.getLayoutParams();
-                    int measuredWidth2 = this.b.getMeasuredWidth() + layoutParams2.leftMargin + layoutParams2.rightMargin;
-                    if (measuredWidth2 > measuredWidth) {
-                        measuredWidth = measuredWidth2;
-                    }
-                    if (this.a.n()) {
-                        i3 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                    }
-                    t09 t09Var2 = this.a;
-                    float f3 = 16.0f;
-                    if (t09Var2.g1 || !t09Var2.R0 || t09Var2.getMeasuredWidth() <= 0) {
-                        f = 16.0f;
-                        f2 = 24.0f;
-                    } else {
-                        int x = b00.x(16.0f, t09Var2.getMeasuredWidth(), gl.L(320.0f));
-                        StaticLayout staticLayout = new StaticLayout(t09Var2.S0.getText(), t09Var2.S0.getPaint(), x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                        t09Var2.U0 = staticLayout.getHeight();
-                        t09Var2.T0 = 0;
-                        int i5 = 0;
-                        while (i5 < staticLayout.getLineCount()) {
-                            t09Var2.T0 = Math.max(t09Var2.T0, (int) Math.ceil(staticLayout.getLineWidth(i5)));
-                            i5++;
-                            f3 = f3;
-                        }
-                        f = f3;
-                        f2 = 24.0f;
-                        if (staticLayout.getLineCount() <= 1 || t09Var2.S0.getText().toString().contains("\n")) {
-                            t09Var2.S0.setWidth(gl.L(f) + x);
-                        } else {
-                            int a = je5.a(t09Var2.S0.getText(), t09Var2.S0.getPaint());
-                            StaticLayout staticLayout2 = new StaticLayout(t09Var2.S0.getText(), t09Var2.S0.getPaint(), a, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                            t09Var2.U0 = staticLayout2.getHeight();
-                            t09Var2.T0 = 0;
-                            for (int i6 = 0; i6 < staticLayout2.getLineCount(); i6++) {
-                                t09Var2.T0 = Math.max(t09Var2.T0, (int) Math.ceil(staticLayout2.getLineWidth(i6)));
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    byte b3 = b2;
+                    bd2 bd2Var2 = this.b;
+                    switch (b3) {
+                        case 0:
+                            if (tL_error == null) {
+                                bd2Var2.a.getMessagesController().T3((TLRPC.Updates) tLObject, false);
+                                break;
                             }
-                            t09Var2.S0.setPadding(gl.L(24.0f), 0, gl.L(24.0f), 0);
-                            t09Var2.S0.setWidth(gl.L(48.0f) + a);
-                        }
-                        int max = Math.max(gl.L(20.0f), gl.L(7.0f) + t09Var2.U0);
-                        byte b = t09Var2.N0;
-                        if (b == 1 || b == 2) {
-                            max = gl.L(20.0f);
-                        } else {
-                            t09Var2.getLayoutParams().height = gl.L(22.0f) + gl.L(52.0f) + max;
-                        }
-                        ((FrameLayout.LayoutParams) t09Var2.A0.getLayoutParams()).topMargin = max;
-                        ((FrameLayout.LayoutParams) t09Var2.b.getLayoutParams()).topMargin = max;
-                        t09Var2.g1 = true;
+                            break;
+                        default:
+                            if (tL_error == null) {
+                                TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                                for (int i8 = 0; i8 < updates.updates.size(); i8++) {
+                                    if (updates.updates.get(i8) instanceof TL_update.TL_updateMessageReactions) {
+                                        ((TL_update.TL_updateMessageReactions) updates.updates.get(i8)).updateUnreadState = false;
+                                    }
+                                }
+                                bd2Var2.a.getMessagesController().T3(updates, false);
+                                break;
+                            }
+                            break;
                     }
-                    int totalWidth = this.a.getTotalWidth();
-                    rf8 swipeBack = this.b.getSwipeBack();
-                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.b;
-                    View childAt = swipeBack != null ? actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().getChildAt(0) : actionBarPopupWindow$ActionBarPopupWindowLayout.getChildAt(0);
-                    int L = gl.L(36.0f) + gl.L(f) + gl.L(f) + childAt.getMeasuredWidth();
-                    int hintTextWidth = this.a.getHintTextWidth();
-                    if (hintTextWidth > L) {
-                        L = hintTextWidth;
-                    } else if (L > measuredWidth) {
-                        L = measuredWidth;
-                    }
-                    this.a.H = gl.L(36.0f);
-                    if (this.a.n()) {
-                        this.a.getLayoutParams().width = totalWidth;
-                        this.a.H = Math.max((totalWidth - childAt.getMeasuredWidth()) - gl.L(36.0f), gl.L(36.0f));
-                    } else if (totalWidth > L) {
-                        int L2 = ((L - gl.L(f)) / gl.L(36.0f)) + 1;
-                        int L3 = gl.L(8.0f) + (gl.L(36.0f) * L2);
-                        if (gl.L(f2) + hintTextWidth > L3) {
-                            L3 = gl.L(f2) + hintTextWidth;
-                        }
-                        if (L3 <= totalWidth && L2 != this.a.getItemsCount()) {
-                            totalWidth = L3;
-                        }
-                        this.a.getLayoutParams().width = totalWidth;
-                    } else {
-                        this.a.getLayoutParams().width = -2;
-                    }
-                    if (this.a.getMeasuredWidth() == measuredWidth && this.a.n()) {
-                        float measuredWidth3 = (measuredWidth - childAt.getMeasuredWidth()) * 0.25f;
-                        this.e = measuredWidth3;
-                        int i7 = (int) (r7.H - measuredWidth3);
-                        this.a.H = i7;
-                        if (i7 < gl.L(36.0f)) {
-                            this.e = 0.0f;
-                            this.a.H = gl.L(36.0f);
-                        }
-                        b();
-                    } else {
-                        int measuredWidth4 = this.b.getSwipeBack() != null ? this.b.getSwipeBack().getMeasuredWidth() - this.b.getSwipeBack().getChildAt(0).getMeasuredWidth() : 0;
-                        if (this.a.getLayoutParams().width != -2 && this.a.getLayoutParams().width + measuredWidth4 > measuredWidth) {
-                            measuredWidth4 = gl.L(8.0f) + (measuredWidth - this.a.getLayoutParams().width);
-                        }
-                        r6 = measuredWidth4 >= 0 ? measuredWidth4 : 0;
-                        ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = r6;
-                        this.e = 0.0f;
-                        b();
-                    }
-                    if (this.c != null) {
-                        boolean n = this.a.n();
-                        FrameLayout frameLayout = this.c;
-                        if (n) {
-                            frameLayout.getLayoutParams().width = gl.L(f) + childAt.getMeasuredWidth();
-                            b();
-                        } else {
-                            frameLayout.getLayoutParams().width = -1;
-                        }
-                        rf8 swipeBack2 = this.b.getSwipeBack();
-                        FrameLayout frameLayout2 = this.c;
-                        if (swipeBack2 != null) {
-                            ((LinearLayout.LayoutParams) frameLayout2.getLayoutParams()).rightMargin = gl.L(36.0f) + r6;
-                        } else {
-                            ((LinearLayout.LayoutParams) frameLayout2.getLayoutParams()).rightMargin = gl.L(36.0f);
-                        }
-                    }
-                    super.onMeasure(i3, makeMeasureSpec);
                 }
-                if (z) {
-                    setMeasuredDimension(getMeasuredWidthAndState() | 16777216, getMeasuredHeightAndState());
-                }
-                this.d = getMeasuredHeight();
+            }));
+            ArrayList arrayList4 = bd2Var.e;
+            arrayList4.add(valueOf);
+            if (arrayList4.size() > 5) {
+                yv1Var.getConnectionsManager().cancelRequest(((Integer) arrayList4.remove(0)).intValue(), true);
             }
         }
-        z = false;
-        t09Var = this.a;
-        if (t09Var != null) {
+        long a2 = yv1Var.a();
+        boolean isEmpty = arrayList2.isEmpty();
+        ArrayList arrayList5 = bd2Var.f;
+        if (!isEmpty) {
+            TLRPC.TL_messages_getExtendedMedia tL_messages_getExtendedMedia = new TLRPC.TL_messages_getExtendedMedia();
+            tL_messages_getExtendedMedia.peer = yv1Var.getMessagesController().i1(a2);
+            for (int i8 = 0; i8 < arrayList2.size(); i8++) {
+                tL_messages_getExtendedMedia.id.add(Integer.valueOf(((k47) arrayList2.get(i8)).e1()));
+            }
+            arrayList5.add(Integer.valueOf(yv1Var.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new RequestDelegate(bd2Var) { // from class: ad2
+                public final /* synthetic */ bd2 b;
+
+                {
+                    this.b = bd2Var;
+                }
+
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    byte b3 = b;
+                    bd2 bd2Var2 = this.b;
+                    switch (b3) {
+                        case 0:
+                            if (tL_error == null) {
+                                bd2Var2.a.getMessagesController().T3((TLRPC.Updates) tLObject, false);
+                                break;
+                            }
+                            break;
+                        default:
+                            if (tL_error == null) {
+                                TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                                for (int i82 = 0; i82 < updates.updates.size(); i82++) {
+                                    if (updates.updates.get(i82) instanceof TL_update.TL_updateMessageReactions) {
+                                        ((TL_update.TL_updateMessageReactions) updates.updates.get(i82)).updateUnreadState = false;
+                                    }
+                                }
+                                bd2Var2.a.getMessagesController().T3(updates, false);
+                                break;
+                            }
+                            break;
+                    }
+                }
+            })));
+            if (arrayList5.size() > 10) {
+                yv1Var.getConnectionsManager().cancelRequest(((Integer) arrayList5.remove(0)).intValue(), false);
+            }
         }
-        super.onMeasure(i3, makeMeasureSpec);
-        if (z) {
+        if (arrayList3.isEmpty()) {
+            return;
         }
-        this.d = getMeasuredHeight();
-    }
-
-    public void setExpandSize(float f) {
-        this.b.setTranslationY(f);
-        this.n = f;
-        a();
-    }
-
-    public void setMaxHeight(int i) {
-        this.d = i;
-    }
-
-    public void setPopupAlpha(float f) {
-        this.b.setAlpha(f);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setAlpha(f);
+        int i9 = 0;
+        while (i9 < arrayList3.size()) {
+            TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
+            k47 k47Var2 = (k47) arrayList3.get(i9);
+            new TL_stories.TL_storyItem();
+            int i10 = k47Var2.D;
+            if (i10 == 23 || i10 == 24) {
+                TLRPC.MessageMedia messageMedia2 = k47Var2.k.media;
+                TL_stories.StoryItem storyItem3 = messageMedia2.storyItem;
+                storyItem3.dialogId = messageMedia2.user_id;
+                storyItem = storyItem3;
+            } else {
+                TLRPC.Message message = k47Var2.k;
+                TLRPC.MessageReplyHeader messageReplyHeader = message.reply_to;
+                if (messageReplyHeader != null) {
+                    storyItem = message.replyStory;
+                    storyItem.dialogId = pg3.n(messageReplyHeader.peer);
+                } else {
+                    i9++;
+                    bd2Var = this;
+                }
+            }
+            long j2 = storyItem.dialogId;
+            tL_stories_getStoriesByID.peer = yv1Var.getMessagesController().i1(j2);
+            tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
+            arrayList5.add(Integer.valueOf(yv1Var.getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new mh((Object) bd2Var, storyItem.id, (Object) k47Var2, j2, (byte) 2))));
+            i9++;
+            bd2Var = this;
         }
-    }
-
-    public void setPopupWindowLayout(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new v82((Object) this, (Object) actionBarPopupWindow$ActionBarPopupWindowLayout, (byte) 4));
-        if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-            rf8 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
-            swipeBack.y.add(new ad2(this, (byte) 0));
-        }
-    }
-
-    public void setReactionsLayout(t09 t09Var) {
-        this.a = t09Var;
-        if (t09Var != null) {
-            t09Var.setChatScrimView(this);
-        }
-    }
-
-    public void setReactionsTransitionProgress(float f) {
-        this.b.setReactionsTransitionProgress(f);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setAlpha(f);
-            float f2 = (f * 0.5f) + 0.5f;
-            this.c.setPivotX(r0.getMeasuredWidth());
-            this.c.setPivotY(0.0f);
-            this.r = (1.0f - f) * (-this.b.getMeasuredHeight());
-            a();
-            this.c.setScaleX(f2);
-            this.c.setScaleY(f2);
+        if (arrayList5.size() > 10) {
+            yv1Var.getConnectionsManager().cancelRequest(((Integer) arrayList5.remove(0)).intValue(), false);
         }
     }
 }

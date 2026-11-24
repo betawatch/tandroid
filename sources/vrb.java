@@ -1,44 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum vrb extends qsb {
-    public vrb() {
-        super("BeforeDoctypeName", 51);
+public final class vrb extends wrb {
+    @Override // wrb
+    /* renamed from: B */
+    public final wrb s() {
+        super.s();
+        this.m = new fz();
+        return this;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        rpb rpbVar = aqbVar.m;
-        boolean o = zj1Var.o();
-        wrb wrbVar = qsb.q0;
-        if (o) {
-            rpbVar.s();
-            aqbVar.c = wrbVar;
-            return;
+    @Override // wrb, eu5
+    public final /* bridge */ /* synthetic */ eu5 s() {
+        s();
+        return this;
+    }
+
+    @Override // eu5
+    public final String toString() {
+        fz fzVar = this.m;
+        if (fzVar == null || fzVar.a <= 0) {
+            return "<" + z() + ">";
         }
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            rpbVar.s();
-            rpbVar.e.append((char) 65533);
-            aqbVar.c = wrbVar;
-            return;
-        }
-        if (d != ' ') {
-            if (d == 65535) {
-                aqbVar.l(this);
-                rpbVar.s();
-                aqbVar.j();
-                aqbVar.c = qsb.a;
-                return;
-            }
-            if (d == '\t' || d == '\n' || d == '\f' || d == '\r') {
-                return;
-            }
-            rpbVar.s();
-            rpbVar.e.append(d);
-            aqbVar.c = wrbVar;
-        }
+        return "<" + z() + " " + this.m.toString() + ">";
     }
 }

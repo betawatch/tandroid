@@ -1,74 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class ztb extends View {
-    public final aub a;
-    public p8c b;
-    public final wjb c;
-    public int d;
-
-    public ztb(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.c = wjbVar;
-        aub aubVar = new aub(i, this, wjbVar, false);
-        this.a = aubVar;
-        aubVar.s = new cib(this, (byte) 11);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum ztb extends rub {
+    public ztb() {
+        super("AfterDoctypePublicKeyword", 54);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        wjb wjbVar = this.c;
-        if (wjbVar != null) {
-            wjbVar.b(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        char d = hl1Var.d();
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
+            bsbVar.c = rub.t0;
+            return;
+        }
+        if (d == '\"') {
+            bsbVar.m(this);
+            bsbVar.c = rub.u0;
+            return;
+        }
+        if (d == '\'') {
+            bsbVar.m(this);
+            bsbVar.c = rub.v0;
+            return;
+        }
+        msb msbVar = rub.a;
+        if (d == '>') {
+            bsbVar.m(this);
+            bsbVar.j();
+            bsbVar.c = msbVar;
+        } else if (d != 65535) {
+            bsbVar.m(this);
+            bsbVar.c = rub.D0;
         } else {
-            bkb.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+            bsbVar.l(this);
+            bsbVar.j();
+            bsbVar.c = msbVar;
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(33.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(k27 k27Var) {
-        aub aubVar = this.a;
-        aubVar.e(k27Var);
-        if (isAttachedToWindow()) {
-            aubVar.a();
-        }
-    }
-
-    public void setBackgroundHeight(int i) {
-        this.d = i;
-    }
-
-    public void setOnTopicClickListener(p8c p8cVar) {
-        this.b = p8cVar;
     }
 }

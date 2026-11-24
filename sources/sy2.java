@@ -1,6 +1,141 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class sy2 {
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import org.telegram.messenger.beta.R;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class sy2 extends Drawable {
+    public final /* synthetic */ byte a = 0;
+    public final TextPaint b;
+    public String c;
+    public final RectF d;
+    public float e;
+    public final Paint f;
+    public final Object g;
+
+    public sy2(pp9 pp9Var) {
+        this.g = pp9Var;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        this.f = new Paint(1);
+        String M0 = jb6.M0(2131743158, null);
+        this.c = M0;
+        this.d = new RectF();
+        textPaint.setTextSize(gm.L(11.0f));
+        textPaint.setTypeface(gm.o());
+        textPaint.setColor(-1);
+        this.e = textPaint.measureText(M0);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        byte b = this.a;
+        TextPaint textPaint = this.b;
+        Object obj = this.g;
+        Paint paint = this.f;
+        RectF rectF = this.d;
+        switch (b) {
+            case 0:
+                Rect bounds = getBounds();
+                rectF.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
+                canvas.drawRoundRect(rectF, gm.L(12.0f), gm.L(12.0f), (TextPaint) paint);
+                Drawable drawable = (Drawable) obj;
+                drawable.setBounds(gm.L(2.0f) + bounds.left, gm.L(1.0f) + bounds.top, drawable.getIntrinsicWidth() + gm.L(2.0f) + bounds.left, drawable.getIntrinsicHeight() + gm.L(1.0f) + getBounds().top);
+                drawable.draw(canvas);
+                String str = this.c;
+                if (str != null) {
+                    canvas.drawText(str, gm.L(16.5f) + bounds.left, gm.L(13.0f) + bounds.top, textPaint);
+                    break;
+                }
+                break;
+            default:
+                Rect bounds2 = getBounds();
+                float L = gm.L(6.0f) + bounds2.left;
+                float f = bounds2.top;
+                int L2 = gm.L(6.0f) + bounds2.left;
+                float f2 = this.e;
+                rectF.set(L, f, hg9.v(16.0f, (int) Math.ceil(f2), L2), bounds2.bottom);
+                pp9 pp9Var = (pp9) obj;
+                paint.setColor(on2.f(pp9Var.x0, -12761513, -1163700));
+                canvas.drawRoundRect(rectF, gm.L(9.0f), gm.L(9.0f), paint);
+                Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+                canvas.drawText(this.c, rectF.centerX() - (f2 / 2.0f), rectF.centerY() - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f), textPaint);
+                if (pp9Var.w0) {
+                    paint.setColor(-1163700);
+                    canvas.drawCircle(rectF.right + gm.L(10.0f), rectF.centerY(), gm.L(4.0f), paint);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+        }
+        return gm.L(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return (int) (gm.L(23.0f) + this.e);
+            default:
+                return hg9.v(16.0f, (int) Math.ceil(this.e), gm.L(6.0f)) + (((pp9) this.g).w0 ? gm.L(14.0f) : 0);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return -1;
+            default:
+                return -3;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        byte b = this.a;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        byte b = this.a;
+    }
+
+    private final void a(int i) {
+    }
+
+    private final void b(int i) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
+    }
+
+    private final void d(ColorFilter colorFilter) {
+    }
+
+    public sy2(Context context) {
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.f = textPaint2;
+        this.d = new RectF();
+        textPaint.setColor(-1);
+        textPaint.setTypeface(gm.o());
+        textPaint.setTextSize(gm.L(12.0f));
+        textPaint2.setColor(-6915073);
+        this.g = context.getDrawable(R.drawable.mini_boost_badge);
+    }
 }

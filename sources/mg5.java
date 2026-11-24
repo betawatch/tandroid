@@ -1,120 +1,42 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mg5 extends AsyncTask {
-    public final /* synthetic */ byte a = 0;
-    public final HashMap b = new HashMap();
-    public Exception c;
-    public final p8c d;
+public final class mg5 extends ni2 {
+    public byte[] s;
+    public volatile boolean w;
+    public byte[] x;
 
-    public mg5(p8c p8cVar) {
-        this.d = p8cVar;
-    }
-
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        byte b = this.a;
-        HashMap hashMap = this.b;
-        switch (b) {
-            case 0:
-                try {
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
-                    for (Map.Entry entry : hashMap.entrySet()) {
-                        if (entry.getKey() != null && entry.getValue() != null) {
-                            httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                        }
-                    }
-                    httpURLConnection.setRequestMethod("GET");
-                    httpURLConnection.setDoInput(true);
-                    int responseCode = httpURLConnection.getResponseCode();
-                    if (responseCode < 200 || responseCode >= 300) {
-                        httpURLConnection.disconnect();
-                        break;
-                    } else if (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) {
-                        break;
-                    } else {
-                        break;
-                    }
-                } catch (Exception e) {
-                    this.c = e;
-                    return null;
+    @Override // ja6
+    public final void a() {
+        try {
+            this.r.open(this.b);
+            int i = 0;
+            int i2 = 0;
+            while (i != -1 && !this.w) {
+                byte[] bArr = this.s;
+                if (bArr.length < i2 + TLObject.FLAG_14) {
+                    bArr = Arrays.copyOf(bArr, bArr.length + TLObject.FLAG_14);
+                    this.s = bArr;
                 }
-                break;
-            default:
-                try {
-                    HttpURLConnection httpURLConnection2 = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
-                    for (Map.Entry entry2 : hashMap.entrySet()) {
-                        if (entry2.getKey() != null && entry2.getValue() != null) {
-                            httpURLConnection2.setRequestProperty((String) entry2.getKey(), (String) entry2.getValue());
-                        }
-                    }
-                    httpURLConnection2.setRequestMethod("GET");
-                    httpURLConnection2.setDoInput(true);
-                    int responseCode2 = httpURLConnection2.getResponseCode();
-                    BufferedReader bufferedReader = (responseCode2 < 200 || responseCode2 >= 300) ? new BufferedReader(new InputStreamReader(httpURLConnection2.getErrorStream())) : new BufferedReader(new InputStreamReader(httpURLConnection2.getInputStream()));
-                    StringBuilder sb = new StringBuilder();
-                    while (true) {
-                        String readLine = bufferedReader.readLine();
-                        if (readLine == null) {
-                            bufferedReader.close();
-                            break;
-                        } else {
-                            sb.append(readLine);
-                        }
-                    }
-                } catch (Exception e2) {
-                    this.c = e2;
-                    return null;
+                i = this.r.read(bArr, i2, TLObject.FLAG_14);
+                if (i != -1) {
+                    i2 += i;
                 }
-                break;
-        }
-        return null;
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        byte b = this.a;
-        p8c p8cVar = this.d;
-        switch (b) {
-            case 0:
-                Bitmap bitmap = (Bitmap) obj;
-                nu9 nu9Var = (nu9) p8cVar;
-                if (nu9Var != null) {
-                    if (this.c != null) {
-                        nu9Var.a(null);
-                        break;
-                    } else {
-                        nu9Var.a(bitmap);
-                        break;
-                    }
-                }
-                break;
-            default:
-                String str = (String) obj;
-                if (p8cVar != null) {
-                    if (this.c != null) {
-                        p8cVar.a(null);
-                        break;
-                    } else {
-                        p8cVar.a(str);
-                        break;
-                    }
-                }
-                break;
+            }
+            if (!this.w) {
+                this.x = Arrays.copyOf(this.s, i2);
+            }
+        } finally {
+            wde.a(this.r);
         }
     }
 
-    public mg5(nu9 nu9Var) {
-        this.d = nu9Var;
+    @Override // ja6
+    public final void e() {
+        this.w = true;
     }
 }

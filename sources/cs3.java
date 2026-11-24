@@ -1,9 +1,23 @@
 // default package
 
-import android.content.Context;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public interface cs3 {
-    pc0 a(Context context, String str, bs3 bs3Var);
+    UUID a();
+
+    boolean b();
+
+    void c(fs3 fs3Var);
+
+    void d(fs3 fs3Var);
+
+    int e();
+
+    boolean f(String str);
+
+    bs3 g();
+
+    lr4 h();
 }

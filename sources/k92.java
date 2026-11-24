@@ -1,35 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class k92 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x92 b;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
 
-    public /* synthetic */ k92(x92 x92Var, byte b) {
-        this.a = b;
-        this.b = x92Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class k92 extends f63 {
+    public final /* synthetic */ n92 i2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k92(n92 n92Var, Context context, ylb ylbVar, int i) {
+        super(i, ylbVar, context);
+        this.i2 = n92Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        x92 x92Var = this.b;
-        switch (b) {
-            case 0:
-                hd hdVar = x92Var.r;
-                if (hdVar != null) {
-                    hdVar.setOnCancelListener(new ur0(x92Var, (byte) 6));
-                    x92Var.showDialog(x92Var.r);
-                    break;
-                }
-                break;
-            case 1:
-                x92Var.getMessagesController().X2(0, x92Var.F, true);
-                break;
-            default:
-                x92Var.getMessagesController().X2(0, x92Var.F, true);
-                break;
+    @Override // qu3
+    public final void G(int i, int i2) {
+        if (i2 > i) {
+            this.i2.F.x0(0, gm.L(30.0f), null);
         }
+    }
+
+    @Override // qu3, android.widget.EditText, android.widget.TextView
+    public final boolean onTextContextMenuItem(int i) {
+        if (i == R.id.menu_delete || i == 16908320) {
+            return this.i2.g0();
+        }
+        if (i == 16908322 || i == 16908321) {
+            return false;
+        }
+        return super.onTextContextMenuItem(i);
     }
 }

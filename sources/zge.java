@@ -1,50 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zge extends sie {
-    public final int e;
-    public final int f;
+public final class zge implements cq7 {
+    public static final zge a = new zge();
 
-    public zge(byte[] bArr, int i, int i2) {
-        super(bArr);
-        sie.l(i, i + i2, bArr.length);
-        this.e = i;
-        this.f = i2;
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)), 5)), 6)), 7)));
     }
 
-    @Override // sie
-    public final byte h(int i) {
-        int i2 = this.f;
-        if (((i2 - (i + 1)) | i) >= 0) {
-            return this.b[this.e + i];
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (i < 0) {
-            StringBuilder sb = new StringBuilder(22);
-            sb.append("Index < 0: ");
-            sb.append(i);
-            throw new ArrayIndexOutOfBoundsException(sb.toString());
-        }
-        StringBuilder sb2 = new StringBuilder(40);
-        sb2.append("Index > length: ");
-        sb2.append(i);
-        sb2.append(", ");
-        sb2.append(i2);
-        throw new ArrayIndexOutOfBoundsException(sb2.toString());
-    }
-
-    @Override // sie
-    public final int i() {
-        return this.f;
-    }
-
-    @Override // sie
-    public final byte k(int i) {
-        return this.b[this.e + i];
-    }
-
-    @Override // sie
-    public final int m() {
-        return this.e;
+        throw null;
     }
 }

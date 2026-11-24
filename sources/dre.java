@@ -1,64 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.MappedByteBuffer;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class dre extends c2e {
-    private static final dre zzb;
-    private int zzd;
-    private int zze;
-    private boolean zzf;
-    private long zzg;
-    private boolean zzh;
-    private int zzi;
-
-    static {
-        dre dreVar = new dre();
-        zzb = dreVar;
-        c2e.k(dre.class, dreVar);
-    }
-
-    public static /* synthetic */ void n(dre dreVar, boolean z) {
-        dreVar.zzd |= 8;
-        dreVar.zzh = z;
-    }
-
-    public static /* synthetic */ void o(dre dreVar) {
-        dreVar.zzd |= 16;
-        dreVar.zzi = 0;
-    }
-
-    public static /* synthetic */ void p(dre dreVar, long j) {
-        dreVar.zzd |= 4;
-        dreVar.zzg = j;
-    }
-
-    public static /* synthetic */ void q(dre dreVar) {
-        dreVar.zzd |= 2;
-        dreVar.zzf = true;
-    }
-
-    public static vqe r() {
-        return (vqe) zzb.f();
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+public abstract class dre {
+    public static rf7 a(MappedByteBuffer mappedByteBuffer) {
+        long j;
+        ByteBuffer duplicate = mappedByteBuffer.duplicate();
+        duplicate.order(ByteOrder.BIG_ENDIAN);
+        duplicate.position(duplicate.position() + 4);
+        int i = duplicate.getShort() & 65535;
+        if (i > 100) {
+            wa3.d("Cannot read metadata.");
+            return null;
         }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001င\u0000\u0002ဇ\u0001\u0003ဂ\u0002\u0004ဇ\u0003\u0005င\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
+        duplicate.position(duplicate.position() + 6);
+        int i2 = 0;
+        while (true) {
+            if (i2 >= i) {
+                j = -1;
+                break;
+            }
+            int i3 = duplicate.getInt();
+            duplicate.position(duplicate.position() + 4);
+            j = duplicate.getInt() & 4294967295L;
+            duplicate.position(duplicate.position() + 4);
+            if (1835365473 == i3) {
+                break;
+            }
+            i2++;
         }
-        if (i2 == 3) {
-            return new dre();
+        if (j != -1) {
+            duplicate.position(duplicate.position() + ((int) (j - duplicate.position())));
+            duplicate.position(duplicate.position() + 12);
+            long j2 = duplicate.getInt() & 4294967295L;
+            for (int i4 = 0; i4 < j2; i4++) {
+                int i5 = duplicate.getInt();
+                long j3 = duplicate.getInt() & 4294967295L;
+                duplicate.getInt();
+                if (1164798569 == i5 || 1701669481 == i5) {
+                    duplicate.position((int) (j3 + j));
+                    rf7 rf7Var = new rf7();
+                    duplicate.order(ByteOrder.LITTLE_ENDIAN);
+                    int position = duplicate.position() + duplicate.getInt(duplicate.position());
+                    rf7Var.b = duplicate;
+                    rf7Var.a = position;
+                    int i6 = position - duplicate.getInt(position);
+                    rf7Var.c = i6;
+                    rf7Var.d = rf7Var.b.getShort(i6);
+                    return rf7Var;
+                }
+            }
         }
-        if (i2 == 4) {
-            return new vqe(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
+        wa3.d("Cannot read metadata.");
+        return null;
     }
 }

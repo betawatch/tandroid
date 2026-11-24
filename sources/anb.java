@@ -1,694 +1,883 @@
 // default package
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.util.SparseArray;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.RippleDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class anb extends FrameLayout implements gk7, tjb {
-    public ValueAnimator E;
-    public TextPaint F;
-    public StaticLayout G;
-    public wd2 H;
-    public final be0 I;
-    public final int J;
-    public cib K;
-    public final byte L;
-    public int M;
-    public float N;
-    public p72 O;
-    public boolean P;
-    public final ImageReceiver Q;
-    public pb0 R;
-    public final m17 S;
-    public final m17 T;
-    public TLRPC.WallPaper U;
-    public long V;
-    public int W;
-    public final float a;
-    public boolean a0;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final float e;
-    public zmb f;
-    public zmb h;
-    public float n;
-    public final Paint r;
-    public final Paint s;
-    public final RectF w;
-    public final Path x;
-    public final wjb y;
+public abstract class anb {
+    public static final zmb a = new zmb();
+    public static int b = 1;
+    public static long c = -1;
+    public static float d;
+
+    public static void A(EditTextBoldCursor editTextBoldCursor, int i, ylb ylbVar) {
+        l(editTextBoldCursor, 34, i, ylbVar);
+    }
+
+    public static void B(View view, Drawable drawable, wmb wmbVar, ylb ylbVar) {
+        view.setBackground(drawable);
+        j(view, drawable, wmbVar, null, ylbVar);
+    }
+
+    public static void C(TextView textView, int i, ylb ylbVar) {
+        n(textView, 3, i, -1, 0, 0.0f, ylbVar);
+    }
+
+    public static void D(TextView textView, int i, ylb ylbVar) {
+        n(textView, 1, i, -1, 0, 0.0f, ylbVar);
+    }
+
+    public static void E(EditTextBoldCursor editTextBoldCursor, int i) {
+        D(editTextBoldCursor, i, null);
+    }
+
+    public static void F(EditTextBoldCursor editTextBoldCursor, int i, int i2, int i3, ylb ylbVar) {
+        editTextBoldCursor.u(cmb.v0(i, ylbVar), cmb.v0(i2, ylbVar), cmb.v0(i3, ylbVar));
+        T(editTextBoldCursor, 31, i, ylbVar).g = editTextBoldCursor.getLineColor();
+        T(editTextBoldCursor, 32, i2, ylbVar).g = editTextBoldCursor.getActiveLineColor();
+        T(editTextBoldCursor, 33, i3, ylbVar).g = editTextBoldCursor.getErrorLineColor();
+    }
+
+    public static void G(TextView textView, int i, ylb ylbVar) {
+        n(textView, 2, i, -1, 0, 0.0f, ylbVar);
+    }
+
+    public static void H(RecyclerView recyclerView, int i, ylb ylbVar) {
+        l(recyclerView, 21, i, ylbVar);
+    }
+
+    public static void I(int i, p85 p85Var) {
+        l(p85Var, 20, i, null);
+    }
+
+    public static void J(r59 r59Var, int i, ylb ylbVar) {
+        l(r59Var, 20, i, ylbVar);
+    }
+
+    public static wmb K(float f, int i) {
+        return new wmb(i, -1, f, 2);
+    }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public anb(int i, int i2, wjb wjbVar, Context context) {
-        super(context);
-        this.a = gl.L(8.0f);
-        this.b = gl.L(6.0f);
-        this.c = gl.L(4.0f);
-        this.d = gl.L(21.0f);
-        this.e = gl.L(41.0f);
-        this.f = new zmb(this);
-        this.n = 1.0f;
-        Paint paint = new Paint(1);
-        this.r = paint;
-        this.s = new Paint(1);
-        this.w = new RectF();
-        this.x = new Path();
-        this.S = new m17(0, true, false, null);
-        this.T = new m17(0, false, false, null);
-        this.L = i2;
-        this.J = i;
-        this.y = wjbVar;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.Q = imageReceiver;
-        imageReceiver.q0(gl.L(8.0f));
-        zkb.h(bkb.h5, wjbVar, this);
-        be0 be0Var = new be0(context);
-        this.I = be0Var;
-        be0Var.getImageReceiver().B0 = true;
-        be0Var.getImageReceiver().v0 = false;
-        be0Var.getImageReceiver().M(0);
-        if (i2 == 0 || i2 == 3 || i2 == 2) {
-            addView(be0Var, nme.d(28, 28.0f, 81, 0.0f, 0.0f, 0.0f, 12.0f));
-        } else {
-            addView(be0Var, nme.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 12.0f));
+    public static zmb L(boolean z, int i, HashSet hashSet) {
+        zmb zmbVar = a;
+        if (zmbVar.e) {
+            zmbVar = new zmb();
         }
-        paint.setStrokeWidth(gl.L(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(551805923);
+        zmbVar.e = true;
+        zmbVar.b = z;
+        zmbVar.c = i;
+        zmbVar.d = hashSet;
+        zmbVar.a.clear();
+        return zmbVar;
     }
 
-    public static Bitmap e(Bitmap bitmap) {
-        if (bitmap == null) {
-            return null;
-        }
-        float max = Math.max(gl.L(120.0f) / bitmap.getWidth(), gl.L(140.0f) / bitmap.getHeight());
-        if (bitmap.getWidth() <= 0 || bitmap.getHeight() <= 0 || Math.abs(max - 1.0f) < 0.0125f) {
-            return bitmap;
-        }
-        int width = (int) (bitmap.getWidth() * max);
-        int height = (int) (bitmap.getHeight() * max);
-        return (height <= 0 || width <= 0) ? bitmap : Bitmap.createScaledBitmap(bitmap, width, height, true);
+    public static wmb M(int i) {
+        return new wmb(i, -1, 0.0f, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public StaticLayout getNoThemeStaticLayout() {
-        StaticLayout staticLayout = this.G;
-        if (staticLayout != null) {
-            return staticLayout;
+    public static umb N(View view, int i, int i2, int i3, int i4, float f, ylb ylbVar, int i5, PorterDuffColorFilter porterDuffColorFilter) {
+        umb[] umbVarArr = o(view, true).a;
+        umb umbVar = umbVarArr[i];
+        if (umbVar == null) {
+            umbVar = new umb();
+            umbVarArr[i] = umbVar;
         }
-        TextPaint textPaint = new TextPaint(kk7.M1);
-        this.F = textPaint;
-        textPaint.setColor(bkb.v0(bkb.Nf, this.y));
-        this.F.setTextSize(gl.L(c()));
-        this.F.setTypeface(gl.o());
-        int L = gl.L(52.0f);
-        byte b = this.L;
-        if (b == 3 || b == 4) {
-            L = gl.L(77.0f);
+        umb umbVar2 = umbVar;
+        umbVar2.c(i2, i3, i4, f, ylbVar);
+        umbVar2.g = i5;
+        umbVar2.i = porterDuffColorFilter;
+        return umbVar2;
+    }
+
+    public static void O(RadioButton radioButton, int i, int i2, ylb ylbVar) {
+        radioButton.b(cmb.v0(i, ylbVar), cmb.v0(i2, ylbVar));
+        l(radioButton, 23, i, ylbVar);
+        l(radioButton, 24, i2, ylbVar);
+    }
+
+    public static int P(int i, int i2, int i3, float f, ylb ylbVar) {
+        int v0 = cmb.v0(i, ylbVar);
+        return i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? i3 != 5 ? v0 : ulb.b(v0) : cmb.v(v0, cmb.v0(i2, ylbVar)) : on2.f(f, v0, cmb.v0(i2, ylbVar)) : cmb.p1(f, v0) : on2.p(v0, (int) f);
+    }
+
+    public static void Q(View view, fg0 fg0Var, wmb wmbVar, wmb wmbVar2) {
+        R(view, fg0Var, wmbVar, wmbVar2, null);
+    }
+
+    public static void R(View view, Drawable drawable, wmb wmbVar, wmb wmbVar2, ylb ylbVar) {
+        view.setBackground(drawable);
+        j(view, drawable, wmbVar, wmbVar2, ylbVar);
+    }
+
+    public static void S(View view, umb umbVar, int i) {
+        byte b2 = umbVar.l;
+        switch (b2) {
+            case 1:
+            case 2:
+                if (view instanceof a) {
+                    ((a) view).H(i, b2 == 2);
+                    break;
+                }
+                break;
+            case 3:
+            case 4:
+                if (view instanceof a) {
+                    ((a) view).G(i, b2 == 4);
+                    break;
+                }
+                break;
+            case 5:
+                if (view instanceof a) {
+                    ((a) view).setTitleColor(i);
+                    break;
+                }
+                break;
+            case 6:
+                if (view instanceof a) {
+                    ((a) view).setSubtitleColor(i);
+                    break;
+                }
+                break;
+            default:
+                switch (b2) {
+                    case 20:
+                        if (view instanceof r59) {
+                            ((r59) view).setSelectorDrawableColor(i);
+                            break;
+                        }
+                        break;
+                    case 21:
+                        if (view instanceof RecyclerView) {
+                            ((RecyclerView) view).setGlowColor(i);
+                            break;
+                        }
+                        break;
+                    case 22:
+                        WeakReference weakReference = umbVar.j;
+                        Drawable drawable = weakReference != null ? (Drawable) weakReference.get() : null;
+                        if (drawable != null && i != umbVar.g) {
+                            drawable.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
+                            view.invalidate();
+                            break;
+                        }
+                        break;
+                    case 23:
+                        if (view instanceof RadioButton) {
+                            ((RadioButton) view).setBackgroundColor(i);
+                            break;
+                        }
+                        break;
+                    case 24:
+                        if (view instanceof RadioButton) {
+                            ((RadioButton) view).setCheckedColor(i);
+                            break;
+                        }
+                        break;
+                    default:
+                        if (view instanceof EditTextBoldCursor) {
+                            EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                            switch (b2) {
+                                case nm7.S /* 30 */:
+                                    editTextBoldCursor.setCursorColor(i);
+                                    break;
+                                case 31:
+                                    editTextBoldCursor.setLineColor(i);
+                                    break;
+                                case 32:
+                                    editTextBoldCursor.setActiveLineColor(i);
+                                    break;
+                                case 33:
+                                    editTextBoldCursor.setErrorLineColor(i);
+                                    break;
+                                case 34:
+                                    editTextBoldCursor.setHintColor(i);
+                                    break;
+                                case 35:
+                                    editTextBoldCursor.setHeaderHintColor(i);
+                                    break;
+                                case 36:
+                                    editTextBoldCursor.setHandlesColor(i);
+                                    break;
+                            }
+                        }
+                        break;
+                }
         }
-        String b2 = b();
-        TextPaint textPaint2 = this.F;
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        StaticLayout d = lwa.d(b2, textPaint2, true, L, 3);
-        this.G = d;
-        return d;
     }
 
-    public String b() {
-        return k96.M0(2131752205, null);
+    public static umb T(View view, int i, int i2, ylb ylbVar) {
+        umb w = w(i, view);
+        w.c(i2, -1, 0, 0.0f, ylbVar);
+        w.n = null;
+        w.o = null;
+        w.m = true;
+        return w;
     }
 
-    public int c() {
-        return 14;
+    public static void U(io ioVar, int i, ylb ylbVar) {
+        m(ioVar, i, -1, 0, 0.0f, ylbVar);
     }
 
-    public final void d() {
-        if (this.I.getImageReceiver().y() != null) {
-            gl.r(this.K);
-            this.I.setVisibility(0);
-            if (!this.I.getImageReceiver().y().l0) {
-                this.I.getImageReceiver().y().I(0, true, false);
-                this.I.getImageReceiver().y().start();
-            }
-            this.I.animate().scaleX(2.0f).scaleY(2.0f).setDuration(300L).setInterpolator(gl.H).start();
-            cib cibVar = new cib(this, (byte) 6);
-            this.K = cibVar;
-            gl.e3(cibVar, 2500L);
-        }
+    public static void V(lka lkaVar, int i) {
+        W(lkaVar, i, null);
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.k4) {
-            invalidate();
-        }
+    public static void W(lka lkaVar, int i, ylb ylbVar) {
+        m(lkaVar, i, -1, 0, 0.0f, ylbVar);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        zmb zmbVar;
-        zmb zmbVar2;
-        if (this.H == null) {
-            super.dispatchDraw(canvas);
+    public static void X(TextView textView, int i, ylb ylbVar) {
+        m(textView, i, -1, 0, 0.0f, ylbVar);
+    }
+
+    public static void Y(TextView textView, wmb wmbVar, ylb ylbVar) {
+        m(textView, wmbVar.a, wmbVar.b, wmbVar.c, wmbVar.d, ylbVar);
+    }
+
+    public static void Z(View view, Context context, int i, int i2) {
+        Drawable V0 = cmb.V0(context, i, cmb.v0(i2, null));
+        view.setBackground(V0);
+        if (V0 == null) {
             return;
         }
-        if (this.O != null) {
-            canvas.save();
-            canvas.clipPath(this.x);
-            this.O.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            this.O.draw(canvas);
-            canvas.restore();
-        }
-        if (this.n != 1.0f && (zmbVar2 = this.h) != null) {
-            zmbVar2.b(canvas, 1.0f);
-        }
-        float f = this.n;
-        if (f != 0.0f) {
-            this.f.b(canvas, f);
-        }
-        if (this.n != 1.0f && (zmbVar = this.h) != null) {
-            zmbVar.a(canvas, 1.0f);
-        }
-        float f2 = this.n;
-        if (f2 != 0.0f) {
-            this.f.a(canvas, f2);
-        }
-        float f3 = this.n;
-        if (f3 != 1.0f) {
-            float f4 = f3 + 0.10666667f;
-            this.n = f4;
-            if (f4 >= 1.0f) {
-                this.n = 1.0f;
-            }
-            invalidate();
-        }
-        super.dispatchDraw(canvas);
+        umb T = T(view, 22, i2, null);
+        T.j = new WeakReference(V0);
+        T.g = cmb.w0(null, i2, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:113:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0171  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0335  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x03ca  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x014e  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x018f  */
+    public static void a(a aVar, int i, ylb ylbVar, boolean z) {
+        l(aVar, z ? 4 : 3, i, ylbVar);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0358 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x035c  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x008b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(wd2 wd2Var, long j, boolean z) {
-        long j2;
-        zmb zmbVar;
-        wd2 wd2Var2;
-        long h;
-        TLRPC.TL_theme tL_theme;
-        TLRPC.Document document;
-        jy3 jy3Var;
-        fj5 fj5Var;
-        wd2 wd2Var3;
-        Drawable drawable;
-        wd2 wd2Var4;
+    public static void a0(View view) {
         int i;
-        int i2;
-        int i3;
-        int i4;
-        ye7 ye7Var;
-        jy3 jy3Var2;
-        p72 p72Var;
-        p72 p72Var2;
-        boolean z2 = this.H != wd2Var;
-        int i5 = this.W;
-        int i6 = wd2Var.c;
-        boolean z3 = i5 != i6;
-        this.W = i6;
-        this.H = wd2Var;
-        TLRPC.Document e = wd2Var.a.e();
-        jy3 jy3Var3 = wd2Var.a;
-        if (jy3Var3.d instanceof TLRPC.TL_chatThemeUniqueGift) {
-            Long l = (Long) je2.e(jy3Var3.g).r.get(((TLRPC.TL_chatThemeUniqueGift) jy3Var3.d).gift.slug);
-            if (l != null) {
-                j2 = l.longValue();
-                this.V = j2;
-                if (j == j2) {
-                    this.V = 0L;
-                    j2 = 0;
-                }
-                String str = null;
-                if (j2 == 0) {
-                    if (this.R == null) {
-                        this.R = new pb0((wjb) null);
-                    }
-                    TLObject Z1 = na7.q1(this.J).Z1(this.V);
-                    this.R.o(Z1);
-                    this.Q.U(Z1, this.R, null);
-                } else {
-                    this.Q.f();
-                }
-                if (z2) {
-                    cib cibVar = this.K;
-                    if (cibVar != null) {
-                        gl.r(cibVar);
-                        this.K = null;
-                    }
-                    this.I.animate().cancel();
-                    this.I.setScaleX(1.0f);
-                    this.I.setScaleY(1.0f);
-                }
-                if (z2) {
-                    Drawable f = e != null ? uo3.f(e, bkb.b7, 0.2f, null) : null;
-                    if (f == null) {
-                        vu3.k(wd2Var.a.e);
-                        f = vu3.g(wd2Var.a.e);
-                    }
-                    this.I.m(gl5.b(e), "50_50", f, null);
-                    wd2Var.a.getClass();
-                    TLRPC.WallPaper wallPaper = this.U;
-                    boolean z4 = this.P;
-                    if (wallPaper != null) {
-                        if (z4 && (p72Var2 = this.O) != null) {
-                            p72Var2.g(this);
-                        }
-                        p72 p72Var3 = new p72(wallPaper, false, true);
-                        this.O = p72Var3;
-                        p72Var3.b = this;
-                        ye7 ye7Var2 = p72Var3.f;
-                        if (ye7Var2 != null) {
-                            ye7Var2.p(this);
-                        }
-                        if (this.P) {
-                            this.O.f(this);
-                        }
-                    } else {
-                        if (z4 && (p72Var = this.O) != null) {
-                            p72Var.g(this);
-                        }
-                        this.O = null;
-                    }
-                }
-                this.I.setVisibility((wd2Var.a.l() || this.U == null) ? 0 : 8);
-                if (!z2 || z3) {
-                    if (z) {
-                        this.n = 1.0f;
-                    } else {
-                        this.n = 0.0f;
-                        this.h = this.f;
-                        this.f = new zmb(this);
-                        invalidate();
-                    }
-                    zmbVar = this.f;
-                    wd2Var2 = this.H;
-                    if (wd2Var2 != null && (jy3Var = wd2Var2.a) != null) {
-                        iy3 iy3Var = (iy3) jy3Var.f.get(wd2Var2.c);
-                        int i7 = iy3Var.h;
-                        if (this.V != 0) {
-                            i7 = iy3Var.k;
-                        }
-                        Paint paint = zmbVar.c;
-                        Paint paint2 = zmbVar.a;
-                        Paint paint3 = zmbVar.b;
-                        paint.setColor(i7);
-                        paint3.setColor(iy3Var.i);
-                        int v0 = !this.H.a.l() ? bkb.v0(bkb.Ei, this.y) : iy3Var.j;
-                        int alpha = paint2.getAlpha();
-                        paint2.setColor(v0);
-                        paint2.setAlpha(alpha);
-                        wd2 wd2Var5 = this.H;
-                        fj5Var = (fj5) wd2Var5.a.f.get(wd2Var5.c);
-                        if (fj5Var != null) {
-                            iy3 iy3Var2 = (iy3) fj5Var;
-                            if (iy3Var2.a() != 0) {
-                                wd2 wd2Var6 = this.H;
-                                int i8 = ((iy3) wd2Var6.a.f.get(wd2Var6.c)).d;
-                                ArrayList<Integer> arrayList = iy3Var2.b(i8).message_colors;
-                                if (arrayList.size() > 1) {
-                                    int[] iArr = new int[arrayList.size()];
-                                    for (int i9 = 0; i9 != arrayList.size(); i9++) {
-                                        iArr[i9] = arrayList.get(i9).intValue() | (-16777216);
-                                    }
-                                    float L = this.c + gl.L(8.0f);
-                                    paint3.setShader(new LinearGradient(0.0f, L, 0.0f, L + this.d, iArr, (float[]) null, Shader.TileMode.CLAMP));
-                                } else {
-                                    paint3.setShader(null);
+        int g;
+        int b2;
+        boolean z;
+        int b3;
+        int textColor;
+        int currentTextColor;
+        int currentHintTextColor;
+        int defaultColor;
+        int color;
+        a aVar;
+        t5 t5Var;
+        vmb o = o(view, false);
+        if (o != null) {
+            for (int i2 = 0; i2 < 6; i2++) {
+                umb umbVar = o.a[i2];
+                if (umbVar != null && !umbVar.a()) {
+                    int b4 = umbVar.b();
+                    if (i2 != 0) {
+                        if (i2 == 1) {
+                            TextView textView = (TextView) view;
+                            if (textView.getHintTextColors() != null && !textView.getHintTextColors().isStateful() && ((currentHintTextColor = textView.getCurrentHintTextColor()) == umbVar.g || currentHintTextColor == b4)) {
+                                if (currentHintTextColor != b4) {
+                                    textView.setHintTextColor(b4);
                                 }
-                                paint3.setAlpha(kk7.d4);
-                                wd2Var4 = this.H;
-                                if (wd2Var4 != null) {
-                                    if (i8 >= 0) {
-                                        TLRPC.WallPaperSettings wallPaperSettings = iy3Var2.b(i8).wallpaper.settings;
-                                        int i10 = wallPaperSettings.background_color;
-                                        int i11 = wallPaperSettings.second_background_color;
-                                        int i12 = wallPaperSettings.third_background_color;
-                                        i4 = wallPaperSettings.fourth_background_color;
-                                        i = i10;
-                                        i2 = i11;
-                                        i3 = i12;
-                                    } else {
-                                        i = 0;
-                                        i2 = 0;
-                                        i3 = 0;
-                                        i4 = 0;
-                                    }
-                                    if (i2 != 0) {
-                                        ye7Var = new ye7(i, i2, i3, i4, true, false);
-                                        this.M = ye7Var.f();
-                                    } else {
-                                        ye7 ye7Var3 = new ye7(i, i, i, i, true, false);
-                                        this.M = -16777216;
-                                        ye7Var = ye7Var3;
-                                    }
-                                    wd2Var4 = this.H;
-                                    wd2Var4.b = ye7Var;
-                                }
-                                zmbVar.d = wd2Var4.b;
-                                invalidate();
+                                umbVar.g = b4;
                             }
-                        }
-                        wd2 wd2Var7 = this.H;
-                        iy3 iy3Var3 = (iy3) wd2Var7.a.f.get(wd2Var7.c);
-                        wd2Var3 = this.H;
-                        if (wd2Var3 != null) {
-                            wd2Var4 = wd2Var3;
+                        } else if (i2 == 2) {
+                            TextView textView2 = (TextView) view;
+                            if (textView2.getLinkTextColors() != null && !textView2.getLinkTextColors().isStateful() && ((defaultColor = textView2.getLinkTextColors().getDefaultColor()) == umbVar.g || defaultColor == b4)) {
+                                if (defaultColor != b4) {
+                                    textView2.setLinkTextColor(b4);
+                                }
+                                umbVar.g = b4;
+                            }
+                        } else if (i2 == 3) {
+                            TextView textView3 = (TextView) view;
+                            int highlightColor = textView3.getHighlightColor();
+                            if (highlightColor == umbVar.g || highlightColor == b4) {
+                                if (highlightColor != b4) {
+                                    textView3.setHighlightColor(b4);
+                                }
+                                umbVar.g = b4;
+                            }
+                        } else if (i2 != 4) {
+                            if (i2 == 5) {
+                                ImageView imageView = (ImageView) view;
+                                if (imageView.getColorFilter() == umbVar.i) {
+                                    if (b4 != umbVar.g) {
+                                        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(b4, umbVar.h);
+                                        imageView.setColorFilter(porterDuffColorFilter);
+                                        umbVar.i = porterDuffColorFilter;
+                                    }
+                                }
+                            }
+                            umbVar.g = b4;
                         } else {
-                            int i13 = iy3Var3.k;
-                            int i14 = iy3Var3.l;
-                            int i15 = iy3Var3.m;
-                            int i16 = iy3Var3.n;
-                            if (iy3Var3.a.i(false) != null) {
-                                if (i14 != 0) {
-                                    ye7 ye7Var4 = new ye7(i13, i14, i15, i16, true, false);
-                                    this.M = ye7Var4.f();
-                                    drawable = ye7Var4;
-                                } else {
-                                    Drawable ye7Var5 = new ye7(i13, i13, i13, i13, true, false);
-                                    this.M = -16777216;
-                                    drawable = ye7Var5;
-                                }
-                            } else if (i13 != 0) {
-                                drawable = i14 != 0 ? new ye7(i13, i14, i15, i16, true, false) : new ColorDrawable(i13);
-                            } else {
-                                akb akbVar = iy3Var3.a;
-                                if (akbVar == null || (akbVar.Q <= 0 && akbVar.c == null)) {
-                                    jy3 jy3Var4 = this.H.a;
-                                    if (jy3Var4 == null || !jy3Var4.l()) {
-                                        drawable = new ye7(-2368069, -9722489, -2762611, -7817084, true, false);
+                            if (view instanceof a) {
+                                a aVar2 = (a) view;
+                                if (aVar2.M0) {
+                                    color = aVar2.getBackgroundColor();
+                                    if (color != umbVar.g || color == b4) {
+                                        if (color != b4) {
+                                            view.setBackgroundColor(b4);
+                                        }
+                                        umbVar.g = b4;
                                     }
-                                    drawable = null;
-                                } else {
-                                    float L2 = gl.L(112.0f);
-                                    float L3 = gl.L(134.0f);
-                                    akb akbVar2 = iy3Var3.a;
-                                    Bitmap d1 = gl.d1(L2, L3, akbVar2.c, akbVar2.b, akbVar2.Q);
-                                    if (d1 != null) {
-                                        BitmapDrawable bitmapDrawable = new BitmapDrawable(d1);
-                                        bitmapDrawable.setFilterBitmap(true);
-                                        drawable = bitmapDrawable;
-                                    }
-                                    drawable = null;
                                 }
                             }
-                            wd2Var4 = this.H;
-                            wd2Var4.b = drawable;
+                            if ((view instanceof r6) && (aVar = ((r6) view).b) != null && aVar.M0 && (t5Var = aVar.G) != null && t5Var == view) {
+                                color = t5Var == view ? aVar.x : 0;
+                            } else {
+                                Drawable background = view.getBackground();
+                                if (background instanceof ColorDrawable) {
+                                    color = ((ColorDrawable) background).getColor();
+                                }
+                            }
+                            if (color != umbVar.g) {
+                            }
+                            if (color != b4) {
+                            }
+                            umbVar.g = b4;
                         }
-                        zmbVar.d = wd2Var4.b;
-                        invalidate();
-                    }
-                    h = wd2Var.a.h(this.W);
-                    jy3 jy3Var5 = wd2Var.a;
-                    int i17 = this.W;
-                    if (h == 0) {
-                        TLRPC.WallPaper j3 = jy3Var5.j(i17);
-                        if (j3 != null) {
-                            wd2Var.a.p(this.W, new bf(this, h, wd2Var, j3.settings.intensity, (byte) 5));
+                    } else if (view instanceof TextView) {
+                        TextView textView4 = (TextView) view;
+                        if (!textView4.getTextColors().isStateful() && ((currentTextColor = textView4.getCurrentTextColor()) == umbVar.g || currentTextColor == b4)) {
+                            if (currentTextColor != b4) {
+                                textView4.setTextColor(b4);
+                            }
+                            umbVar.g = b4;
                         }
                     } else {
-                        SparseArray sparseArray = jy3Var5.i(i17).b0;
-                        zjb zjbVar = sparseArray != null ? (zjb) sparseArray.get(((iy3) wd2Var.a.f.get(this.W)).e) : null;
-                        if (zjbVar != null && (tL_theme = zjbVar.r) != null && tL_theme.settings.size() > 0) {
-                            TLRPC.WallPaper wallPaper2 = zjbVar.r.settings.get(0).wallpaper;
-                            if (wallPaper2 != null && (document = wallPaper2.document) != null) {
-                                gl5 c = gl5.c(ba4.w(document.thumbs, 120, false, null, false), document);
-                                ImageReceiver imageReceiver = new ImageReceiver(null);
-                                imageReceiver.A1 = false;
-                                imageReceiver.d0(c, "120_140", null, null, null, 1);
-                                imageReceiver.h1 = new io9(this, wd2Var, wallPaper2, (byte) 9);
-                                fl5.z().I(imageReceiver, null);
+                        boolean z2 = view instanceof lka;
+                        if (z2) {
+                            textColor = ((lka) view).getTextColor();
+                        } else if (view instanceof io) {
+                            textColor = ((io) view).getTextColor();
+                        }
+                        int i3 = textColor & 16777215;
+                        if (i3 == (umbVar.g & 16777215) || i3 == (16777215 & b4)) {
+                            if (textColor != b4) {
+                                if (z2) {
+                                    ((lka) view).setTextColor(b4);
+                                } else {
+                                    ((io) view).setTextColor(b4);
+                                }
                             }
-                        } else if (zjbVar != null && zjbVar.r == null) {
-                            int i18 = (int) (zjbVar.p * 100.0f);
-                            Drawable drawable2 = wd2Var.b;
-                            if (drawable2 instanceof ye7) {
-                                ye7 ye7Var6 = (ye7) drawable2;
-                                ye7Var6.r(i18, ye7Var6.u);
-                            }
-                            je2.s.c(new t79((Object) this, (Object) wd2Var, i18, (byte) 24));
+                            umbVar.g = b4;
                         }
                     }
                 }
-                if (!z) {
-                    this.I.animate().cancel();
-                    this.I.setScaleX(1.0f);
-                    this.I.setScaleY(1.0f);
-                    gl.r(this.K);
-                    if (this.I.getImageReceiver().y() != null) {
-                        this.I.getImageReceiver().y().stop();
-                        this.I.getImageReceiver().y().I(0, false, false);
+            }
+            if (o.b != null) {
+                boolean z3 = false;
+                for (int i4 = 0; i4 < o.b.size(); i4++) {
+                    umb umbVar2 = (umb) o.b.get(i4);
+                    Drawable drawable = (Drawable) umbVar2.j.get();
+                    if (drawable == null || umbVar2.a() || (!(umbVar2.k || drawable.getColorFilter() == umbVar2.i) || (b3 = umbVar2.b()) == umbVar2.g)) {
+                        z = false;
+                    } else {
+                        PorterDuffColorFilter porterDuffColorFilter2 = new PorterDuffColorFilter(b3, umbVar2.h);
+                        drawable.setColorFilter(porterDuffColorFilter2);
+                        umbVar2.i = porterDuffColorFilter2;
+                        umbVar2.g = b3;
+                        z = true;
+                    }
+                    z3 |= z;
+                }
+                if (z3) {
+                    view.invalidate();
+                }
+            }
+            if (o.d != null && view.getBackground() == o.d) {
+                umb umbVar3 = o.e;
+                if (umbVar3 != null && !umbVar3.a()) {
+                    int b5 = umbVar3.b();
+                    int t = t(o.d);
+                    if (t == umbVar3.g || t == b5) {
+                        if (t != b5) {
+                            Drawable drawable2 = o.d;
+                            Drawable drawable3 = drawable2 instanceof InsetDrawable ? ((InsetDrawable) drawable2).getDrawable() : drawable2;
+                            if (drawable3 instanceof RippleDrawable) {
+                                RippleDrawable rippleDrawable = (RippleDrawable) drawable3;
+                                drawable3 = (rippleDrawable.getNumberOfLayers() <= 0 || rippleDrawable.getId(0) == 16908334) ? null : rippleDrawable.getDrawable(0);
+                            }
+                            if (drawable3 instanceof ShapeDrawable) {
+                                ((ShapeDrawable) drawable3).getPaint().setColor(b5);
+                                drawable2.invalidateSelf();
+                            } else if (drawable3 instanceof ColorDrawable) {
+                                ((ColorDrawable) drawable3).setColor(b5);
+                            }
+                        }
+                        umbVar3.g = b5;
                     }
                 }
-                jy3Var2 = this.H.a;
-                if (jy3Var2 != null || jy3Var2.l()) {
-                    setContentDescription(k96.M0(2131752205, null));
+                umb umbVar4 = o.f;
+                if (umbVar4 != null && !umbVar4.a() && (o.d instanceof RippleDrawable) && (b2 = umbVar4.b()) != umbVar4.g) {
+                    ((RippleDrawable) o.d).setColor(ColorStateList.valueOf(b2));
+                    umbVar4.g = b2;
                 }
-                elb elbVar = this.H.a.c;
-                if (elbVar != null && (str = elbVar.b) == null) {
-                    str = elbVar.a;
+            }
+            if (o.c != null) {
+                for (int i5 = 0; i5 < o.c.size(); i5++) {
+                    umb umbVar5 = (umb) o.c.get(i5);
+                    if (!umbVar5.a()) {
+                        int b6 = umbVar5.b();
+                        if (umbVar5.m) {
+                            byte b7 = umbVar5.l;
+                            switch (b7) {
+                                case 1:
+                                    if (view instanceof a) {
+                                        g = ((a) view).s0;
+                                        break;
+                                    } else {
+                                        i = umbVar5.g;
+                                        g = ~i;
+                                        break;
+                                    }
+                                case 2:
+                                    if (view instanceof a) {
+                                        g = ((a) view).t0;
+                                        break;
+                                    } else {
+                                        i = umbVar5.g;
+                                        g = ~i;
+                                        break;
+                                    }
+                                case 3:
+                                    if (view instanceof a) {
+                                        g = ((a) view).q0;
+                                        break;
+                                    } else {
+                                        i = umbVar5.g;
+                                        g = ~i;
+                                        break;
+                                    }
+                                case 4:
+                                    if (view instanceof a) {
+                                        g = ((a) view).r0;
+                                        break;
+                                    } else {
+                                        i = umbVar5.g;
+                                        g = ~i;
+                                        break;
+                                    }
+                                case 5:
+                                    if (view instanceof a) {
+                                        g = ((a) view).getTitleColorToSet();
+                                        break;
+                                    } else {
+                                        i = umbVar5.g;
+                                        g = ~i;
+                                        break;
+                                    }
+                                case 6:
+                                    if (view instanceof a) {
+                                        g = ((a) view).getSubtitleColorInternal();
+                                        break;
+                                    } else {
+                                        i = umbVar5.g;
+                                        g = ~i;
+                                        break;
+                                    }
+                                default:
+                                    switch (b7) {
+                                        case 20:
+                                            if (view instanceof r59) {
+                                                g = ((r59) view).getSelectorDrawableColor();
+                                                break;
+                                            } else {
+                                                i = umbVar5.g;
+                                                g = ~i;
+                                                break;
+                                            }
+                                        case 21:
+                                            if (view instanceof RecyclerView) {
+                                                g = ((RecyclerView) view).getGlowColor();
+                                                break;
+                                            } else {
+                                                i = umbVar5.g;
+                                                g = ~i;
+                                                break;
+                                            }
+                                        case 22:
+                                            WeakReference weakReference = umbVar5.j;
+                                            Drawable drawable4 = weakReference != null ? (Drawable) weakReference.get() : null;
+                                            if (drawable4 == null || view.getBackground() != drawable4) {
+                                                i = umbVar5.g;
+                                                g = ~i;
+                                                break;
+                                            } else {
+                                                g = umbVar5.g;
+                                                break;
+                                            }
+                                            break;
+                                        case 23:
+                                            if (view instanceof RadioButton) {
+                                                g = ((RadioButton) view).getColor();
+                                                break;
+                                            } else {
+                                                i = umbVar5.g;
+                                                g = ~i;
+                                                break;
+                                            }
+                                        case 24:
+                                            if (view instanceof RadioButton) {
+                                                g = ((RadioButton) view).getCheckedColor();
+                                                break;
+                                            } else {
+                                                i = umbVar5.g;
+                                                g = ~i;
+                                                break;
+                                            }
+                                        default:
+                                            if (view instanceof EditTextBoldCursor) {
+                                                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                                                switch (b7) {
+                                                    case nm7.S /* 30 */:
+                                                        g = editTextBoldCursor.getCursorColor();
+                                                        break;
+                                                    case 31:
+                                                        g = editTextBoldCursor.getLineColor();
+                                                        break;
+                                                    case 32:
+                                                        g = editTextBoldCursor.getActiveLineColor();
+                                                        break;
+                                                    case 33:
+                                                        g = editTextBoldCursor.getErrorLineColor();
+                                                        break;
+                                                    case 34:
+                                                        g = editTextBoldCursor.getHintColor();
+                                                        break;
+                                                    case 35:
+                                                        g = editTextBoldCursor.getHeaderHintColor();
+                                                        break;
+                                                    case 36:
+                                                        g = editTextBoldCursor.getHandlesColor();
+                                                        break;
+                                                }
+                                            }
+                                            i = umbVar5.g;
+                                            g = ~i;
+                                            break;
+                                    }
+                            }
+                            if (g != umbVar5.g || g == b6) {
+                                if (g != b6) {
+                                    if (umbVar5.m) {
+                                        S(view, umbVar5, b6);
+                                    } else {
+                                        ymb ymbVar = umbVar5.o;
+                                        if (ymbVar != null) {
+                                            ymbVar.e(b6, view);
+                                        }
+                                    }
+                                }
+                                umbVar5.g = b6;
+                            }
+                        } else {
+                            xmb xmbVar = umbVar5.n;
+                            if (xmbVar != null) {
+                                g = xmbVar.g(view);
+                                if (g != umbVar5.g) {
+                                }
+                                if (g != b6) {
+                                }
+                                umbVar5.g = b6;
+                            } else {
+                                i = umbVar5.g;
+                                g = ~i;
+                                if (g != umbVar5.g) {
+                                }
+                                if (g != b6) {
+                                }
+                                umbVar5.g = b6;
+                            }
+                        }
+                    }
                 }
-                setContentDescription(str);
-                return;
             }
         }
-        j2 = 0;
-        this.V = j2;
-        if (j == j2) {
-        }
-        String str2 = null;
-        if (j2 == 0) {
-        }
-        if (z2) {
-        }
-        if (z2) {
-        }
-        this.I.setVisibility((wd2Var.a.l() || this.U == null) ? 0 : 8);
-        if (!z2) {
-        }
-        if (z) {
-        }
-        zmbVar = this.f;
-        wd2Var2 = this.H;
-        if (wd2Var2 != null) {
-            iy3 iy3Var4 = (iy3) jy3Var.f.get(wd2Var2.c);
-            int i72 = iy3Var4.h;
-            if (this.V != 0) {
+    }
+
+    public static void b(a aVar, int i, ylb ylbVar, boolean z) {
+        l(aVar, z ? 2 : 1, i, ylbVar);
+    }
+
+    public static void b0(ActionBarLayout actionBarLayout, boolean z) {
+        b++;
+        zmb L = L(z, 0, null);
+        try {
+            List j = gm.j();
+            if (j == null) {
+                j = new ArrayList();
             }
-            Paint paint4 = zmbVar.c;
-            Paint paint22 = zmbVar.a;
-            Paint paint32 = zmbVar.b;
-            paint4.setColor(i72);
-            paint32.setColor(iy3Var4.i);
-            if (!this.H.a.l()) {
+            for (int i = 0; i < j.size(); i++) {
+                L.b((View) j.get(i));
             }
-            int alpha2 = paint22.getAlpha();
-            paint22.setColor(v0);
-            paint22.setAlpha(alpha2);
-            wd2 wd2Var52 = this.H;
-            fj5Var = (fj5) wd2Var52.a.f.get(wd2Var52.c);
-            if (fj5Var != null) {
-            }
-            wd2 wd2Var72 = this.H;
-            iy3 iy3Var32 = (iy3) wd2Var72.a.f.get(wd2Var72.c);
-            wd2Var3 = this.H;
-            if (wd2Var3 != null) {
-            }
-            zmbVar.d = wd2Var4.b;
-            invalidate();
+            L.b(actionBarLayout);
+        } finally {
+            L.a();
         }
-        h = wd2Var.a.h(this.W);
-        jy3 jy3Var52 = wd2Var.a;
-        int i172 = this.W;
-        if (h == 0) {
+    }
+
+    public static void c(a85 a85Var, int i) {
+        l(a85Var, 5, i, null);
+    }
+
+    public static void c0(FrameLayout frameLayout, boolean z) {
+        zmb L = L(z, 0, null);
+        try {
+            L.b(frameLayout);
+        } finally {
+            L.a();
+        }
+    }
+
+    public static void d(a aVar, int i, ylb ylbVar) {
+        l(aVar, 5, i, ylbVar);
+    }
+
+    public static wmb e(int i) {
+        return new wmb(i, -1, 0.0f, 5);
+    }
+
+    public static void f(umb umbVar, HashSet hashSet) {
+        hashSet.add(Integer.valueOf(umbVar.a));
+        int i = umbVar.b;
+        if (i >= 0) {
+            hashSet.add(Integer.valueOf(i));
+        }
+    }
+
+    public static wmb g(int i, int i2) {
+        return new wmb(i, -1, i2, 1);
+    }
+
+    public static void h(int i, ylb ylbVar, View view) {
+        int P = P(i, -1, 0, 0.0f, ylbVar);
+        view.setBackgroundColor(P);
+        N(view, 4, i, -1, 0, 0.0f, ylbVar, P, null);
+    }
+
+    public static void i(View view, wmb wmbVar, ylb ylbVar) {
+        int i = wmbVar.a;
+        int i2 = wmbVar.b;
+        byte b2 = wmbVar.c;
+        float f = wmbVar.d;
+        int P = P(i, i2, b2, f, ylbVar);
+        view.setBackgroundColor(P);
+        N(view, 4, i, i2, b2, f, ylbVar, P, null);
+    }
+
+    public static void j(View view, Drawable drawable, wmb wmbVar, wmb wmbVar2, ylb ylbVar) {
+        vmb o = o(view, true);
+        o.d = drawable;
+        o.e = null;
+        o.f = null;
+        if (drawable != null) {
+            if (wmbVar != null) {
+                umb umbVar = new umb();
+                o.e = umbVar;
+                umbVar.c(wmbVar.a, wmbVar.b, wmbVar.c, wmbVar.d, ylbVar);
+                umbVar.g = t(drawable);
+            }
+            if (wmbVar2 != null) {
+                umb umbVar2 = new umb();
+                o.f = umbVar2;
+                umbVar2.c(wmbVar2.a, wmbVar2.b, wmbVar2.c, wmbVar2.d, ylbVar);
+                umbVar2.g = umbVar2.b();
+            }
+        }
+    }
+
+    public static void k(View view, Drawable drawable, int i, int i2, int i3, float f, ylb ylbVar, PorterDuff.Mode mode) {
+        int P = P(i, i2, i3, f, ylbVar);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(P, mode);
+        drawable.setColorFilter(porterDuffColorFilter);
+        if (view == null) {
+            return;
+        }
+        vmb o = o(view, true);
+        ArrayList arrayList = o.b;
+        if (arrayList == null) {
+            arrayList = new ArrayList(2);
+            o.b = arrayList;
+        }
+        umb umbVar = null;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            umb umbVar2 = (umb) o.b.get(size);
+            Drawable drawable2 = (Drawable) umbVar2.j.get();
+            if (drawable2 == drawable) {
+                umbVar = umbVar2;
+            } else if (drawable2 == null || (!umbVar2.k && drawable2.getColorFilter() != umbVar2.i)) {
+                o.b.remove(size);
+            }
+        }
+        if (umbVar == null) {
+            umbVar = new umb();
+            umbVar.j = new WeakReference(drawable);
+            o.b.add(umbVar);
+        }
+        umb umbVar3 = umbVar;
+        umbVar3.c(i, i2, i3, f, ylbVar);
+        umbVar3.g = P;
+        umbVar3.i = porterDuffColorFilter;
+        umbVar3.h = mode;
+        umbVar3.k = drawable.getColorFilter() != porterDuffColorFilter;
+    }
+
+    public static void l(View view, int i, int i2, ylb ylbVar) {
+        umb T = T(view, i, i2, ylbVar);
+        int b2 = T.b();
+        S(view, T, b2);
+        T.g = b2;
+    }
+
+    public static void m(View view, int i, int i2, int i3, float f, ylb ylbVar) {
+        int P = P(i, i2, i3, f, ylbVar);
+        if (view instanceof TextView) {
+            ((TextView) view).setTextColor(P);
+        } else if (view instanceof lka) {
+            ((lka) view).setTextColor(P);
+        } else {
+            ((io) view).setTextColor(P);
+        }
+        N(view, 0, i, i2, i3, f, ylbVar, P, null);
+    }
+
+    public static void n(TextView textView, int i, int i2, int i3, int i4, float f, ylb ylbVar) {
+        int P = P(i2, i3, i4, f, ylbVar);
+        if (i == 1) {
+            textView.setHintTextColor(P);
+        } else if (i == 2) {
+            textView.setLinkTextColor(P);
+        } else if (i == 3) {
+            textView.setHighlightColor(P);
+        }
+        N(textView, i, i2, i3, i4, f, ylbVar, P, null);
+    }
+
+    public static vmb o(View view, boolean z) {
+        Object tag = view.getTag(R.id.theme_bind);
+        if (tag instanceof vmb) {
+            return (vmb) tag;
         }
         if (!z) {
+            return null;
         }
-        jy3Var2 = this.H.a;
-        if (jy3Var2 != null) {
-        }
-        setContentDescription(k96.M0(2131752205, null));
+        vmb vmbVar = new vmb();
+        view.setTag(R.id.theme_bind, vmbVar);
+        return vmbVar;
     }
 
-    public final void g(boolean z, boolean z2) {
-        if (!z2) {
-            ValueAnimator valueAnimator = this.E;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.a0 = z;
-            this.N = z ? 1.0f : 0.0f;
-            invalidate();
-            return;
-        }
-        if (this.a0 != z) {
-            float f = this.N;
-            ValueAnimator valueAnimator2 = this.E;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(f, z ? 1.0f : 0.0f);
-            this.E = ofFloat;
-            ofFloat.addUpdateListener(new gja(this, (byte) 24));
-            this.E.addListener(new pu9((byte) 8, this, z));
-            this.E.setDuration(250L);
-            this.E.start();
-        }
-        this.a0 = z;
+    public static wmb p(int i, int i2) {
+        return new wmb(i, i2, 0.0f, 4);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        kk7.e().b(this, kk7.k4);
-        this.P = true;
-        p72 p72Var = this.O;
-        if (p72Var != null) {
-            p72Var.f(this);
-        }
-        this.Q.I();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        kk7.e().n(this, kk7.k4);
-        this.P = false;
-        p72 p72Var = this.O;
-        if (p72Var != null) {
-            p72Var.g(this);
-        }
-        this.Q.K();
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-        accessibilityNodeInfo.setSelected(this.a0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        byte b = this.L;
-        if (b == 1 || b == 4) {
-            int size = View.MeasureSpec.getSize(i);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size * 1.2f), TLObject.FLAG_30));
-        } else {
-            int L = gl.L(b == 0 ? 77.0f : 83.0f);
-            int size2 = View.MeasureSpec.getSize(i2);
-            if (size2 == 0) {
-                size2 = (int) (L * 1.35f);
-            }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        }
-        be0 be0Var = this.I;
-        be0Var.setPivotY(be0Var.getMeasuredHeight());
-        be0Var.setPivotX(be0Var.getMeasuredWidth() / 2.0f);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        if (i == i3 && i2 == i4) {
-            return;
-        }
-        float f = this.c;
-        RectF rectF = this.w;
-        rectF.set(f, f, i - f, i2 - f);
-        Path path = this.x;
-        path.reset();
-        float f2 = this.b;
-        path.addRoundRect(rectF, f2, f2, Path.Direction.CW);
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        int i2 = bkb.h5;
-        wjb wjbVar = this.y;
-        this.s.setColor(bkb.v0(i2, wjbVar));
-        TextPaint textPaint = this.F;
-        if (textPaint != null) {
-            textPaint.setColor(bkb.v0(bkb.Nf, wjbVar));
-        }
-        invalidate();
-    }
-
-    public void setFallbackWallpaper(TLRPC.WallPaper wallPaper) {
-        if (this.U != wallPaper) {
-            this.U = wallPaper;
-            wd2 wd2Var = this.H;
-            if (wd2Var != null) {
-                this.H = null;
-                f(wd2Var, 0L, false);
-            }
+    public static void q(View view) {
+        if (view != null) {
+            view.setTag(R.id.theme_bind, null);
         }
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        wjb wjbVar = this.y;
+    public static HashSet r() {
+        HashSet hashSet = new HashSet();
+        zmb L = L(true, 1, hashSet);
         try {
-            this.s.setColor(bkb.v0(bkb.h5, wjbVar));
-            TextPaint textPaint = this.F;
-            if (textPaint != null) {
-                textPaint.setColor(bkb.v0(bkb.Nf, wjbVar));
+            List j = gm.j();
+            if (j == null) {
+                j = new ArrayList();
             }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+            for (int i = 0; i < j.size(); i++) {
+                L.b((View) j.get(i));
+            }
+            return hashSet;
+        } finally {
+            L.a();
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    public static void s(ImageView imageView, int i, ylb ylbVar, PorterDuff.Mode mode) {
+        int P = P(i, -1, 0, 0.0f, ylbVar);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(P, mode);
+        imageView.setColorFilter(porterDuffColorFilter);
+        N(imageView, 5, i, -1, 0, 0.0f, ylbVar, P, porterDuffColorFilter).h = mode;
+    }
+
+    public static int t(Drawable drawable) {
+        if (drawable instanceof InsetDrawable) {
+            drawable = ((InsetDrawable) drawable).getDrawable();
+        }
+        if (drawable instanceof RippleDrawable) {
+            RippleDrawable rippleDrawable = (RippleDrawable) drawable;
+            drawable = (rippleDrawable.getNumberOfLayers() <= 0 || rippleDrawable.getId(0) == 16908334) ? null : rippleDrawable.getDrawable(0);
+        }
+        if (drawable instanceof ShapeDrawable) {
+            return ((ShapeDrawable) drawable).getPaint().getColor();
+        }
+        if (drawable instanceof ColorDrawable) {
+            return ((ColorDrawable) drawable).getColor();
+        }
+        return 0;
+    }
+
+    public static void u(EditTextBoldCursor editTextBoldCursor, int i) {
+        v(editTextBoldCursor, i, null);
+    }
+
+    public static void v(EditTextBoldCursor editTextBoldCursor, int i, ylb ylbVar) {
+        l(editTextBoldCursor, 30, i, ylbVar);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static umb w(int i, View view) {
+        vmb o = o(view, true);
+        if (o.c == null) {
+            o.c = new ArrayList(2);
+        }
+        for (int i2 = 0; i2 < o.c.size(); i2++) {
+            if (((umb) o.c.get(i2)).l == i) {
+                return (umb) o.c.get(i2);
+            }
+        }
+        umb umbVar = new umb();
+        umbVar.l = i;
+        o.c.add(umbVar);
+        return umbVar;
+    }
+
+    public static void x(View view, Drawable drawable, int i, ylb ylbVar, PorterDuff.Mode mode) {
+        k(view, drawable, i, -1, 0, 0.0f, ylbVar, mode);
+    }
+
+    public static void y(EditTextBoldCursor editTextBoldCursor, int i, ylb ylbVar) {
+        l(editTextBoldCursor, 36, i, ylbVar);
+    }
+
+    public static void z(EditTextBoldCursor editTextBoldCursor, int i, ylb ylbVar) {
+        l(editTextBoldCursor, 35, i, ylbVar);
     }
 }

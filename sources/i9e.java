@@ -1,19 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class i9e implements zn7 {
-    public static final i9e a = new i9e();
+public enum i9e {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(4);
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)), 5)), 6)), 7)));
-    }
+    public final byte a;
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    /* JADX WARN: Multi-variable type inference failed */
+    i9e(int i) {
+        this.a = i;
     }
 }

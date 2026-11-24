@@ -1,38 +1,7 @@
 // default package
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class st6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pj4 b;
-    public final /* synthetic */ zs6 c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ut6 e;
-
-    public /* synthetic */ st6(ut6 ut6Var, pj4 pj4Var, zs6 zs6Var, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.e = ut6Var;
-        this.b = pj4Var;
-        this.c = zs6Var;
-        this.d = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ArrayList arrayList = this.d;
-        zs6 zs6Var = this.c;
-        ut6 ut6Var = this.e;
-        pj4 pj4Var = this.b;
-        switch (b) {
-            case 0:
-                pj4Var.V(ut6Var, zs6Var, arrayList);
-                break;
-            default:
-                pj4Var.V(ut6Var, zs6Var, arrayList);
-                break;
-        }
-    }
+public interface st6 extends r6a {
+    void a(tt6 tt6Var);
 }

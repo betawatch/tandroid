@@ -1,290 +1,177 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qb5 extends n39 {
-    public final Context c;
-    public final zr9 d;
-    public ob5 e;
-    public int f;
-    public boolean h;
-    public int n;
-    public int r;
-    public int s;
-    public int w;
-    public final /* synthetic */ rb5 x;
+public abstract class qb5 extends FrameLayout implements vlb {
+    public lka a;
+    public lka b;
+    public ImageView c;
+    public ImageView d;
+    public byte e;
+    public boolean f;
+    public int h;
+    public byte n;
+    public Paint r;
 
-    public qb5(rb5 rb5Var, Context context) {
-        this.x = rb5Var;
-        this.c = context;
-        zr9 zr9Var = new zr9(true);
-        this.d = zr9Var;
-        zr9Var.a = new pb5(this);
+    public final void a(int i, int i2) {
+        lka lkaVar = this.a;
+        anb.q(lkaVar);
+        ImageView imageView = this.c;
+        anb.q(imageView);
+        lkaVar.setTextColor(i2);
+        lkaVar.setTag(null);
+        imageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
+        imageView.setTag(null);
     }
 
-    @Override // w39
-    public final void A(s49 s49Var) {
-        View view = s49Var.a;
-        if (view instanceof gh6) {
-            ((gh6) view).a();
-        }
+    public final void b(int i, String str, boolean z) {
+        this.a.l(str, false);
+        lka lkaVar = this.b;
+        lkaVar.l(null, false);
+        ImageView imageView = this.c;
+        imageView.setImageResource(i);
+        imageView.setVisibility(0);
+        lkaVar.setVisibility(8);
+        this.d.setVisibility(8);
+        imageView.setPadding(0, gm.L(7.0f), 0, 0);
+        this.f = z;
+        setWillNotDraw(!z);
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        View view = s49Var.a;
-        return !((view instanceof gh6) && this.x.Z1.contains(Long.valueOf(((gh6) view).getUserId()))) && s49Var.f == 0;
+    public lka getTextView() {
+        return this.a;
     }
 
-    @Override // w39
-    public final int b() {
-        return this.f;
+    public ImageView getValueImageView() {
+        return this.d;
     }
 
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 2;
-        }
-        if (i == this.r) {
-            return 3;
-        }
-        return (i == this.w || i == this.s) ? 1 : 0;
+    public lka getValueTextView() {
+        return this.b;
     }
 
-    @Override // w39
-    public final void f() {
-        this.f = 1;
-        zr9 zr9Var = this.d;
-        int size = zr9Var.g.size();
-        if (size != 0) {
-            int i = this.f;
-            this.s = i;
-            this.f = size + 1 + i;
-        } else {
-            this.s = -1;
-        }
-        int size2 = zr9Var.e.size();
-        if (size2 != 0) {
-            int i2 = this.f;
-            this.w = i2;
-            this.f = size2 + 1 + i2;
-        } else {
-            this.w = -1;
-        }
-        int i3 = this.f;
-        this.f = i3 + 1;
-        this.r = i3;
-        super.f();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00b9 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x006e  */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        TLObject tLObject;
-        boolean z;
-        TLRPC.User V1;
-        int size;
-        String str;
-        boolean z2;
-        int size2;
-        zr9 zr9Var = this.d;
-        ArrayList arrayList = zr9Var.e;
-        ArrayList arrayList2 = zr9Var.g;
-        int i2 = s49Var.f;
-        View view = s49Var.a;
-        SpannableStringBuilder spannableStringBuilder = null;
-        if (i2 != 0) {
-            if (i2 == 1) {
-                l35 l35Var = (l35) view;
-                if (i == this.s) {
-                    l35Var.setText(k96.M0(2131752365, null));
-                    return;
-                } else {
-                    if (i == this.w) {
-                        l35Var.setText(k96.M0(2131749360, null));
-                        return;
-                    }
-                    return;
-                }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float L;
+        int i;
+        ImageView imageView = this.c;
+        if (this.f) {
+            if (jb6.a0) {
+                L = 0.0f;
+            } else {
+                L = gm.L(imageView.getVisibility() == 0 ? 68.0f : 20.0f);
             }
+            float f = L;
+            float measuredHeight = getMeasuredHeight() - 1;
+            int measuredWidth = getMeasuredWidth();
+            if (jb6.a0) {
+                i = gm.L(imageView.getVisibility() == 0 ? 68.0f : 20.0f);
+            } else {
+                i = 0;
+            }
+            canvas.drawLine(f, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, this.r);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        CharSequence text = this.a.getText();
+        if (TextUtils.isEmpty(text)) {
             return;
         }
-        int i3 = this.s;
-        if (i3 >= 0 && i > i3) {
-            if (i < arrayList2.size() + i3 + 1) {
-                tLObject = (TLObject) arrayList2.get((i - this.s) - 1);
-                z = tLObject instanceof TLRPC.User;
-                rb5 rb5Var = this.x;
-                if (z) {
-                    V1 = (TLRPC.User) tLObject;
-                } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    V1 = na7.q1(rb5Var.a).V1(Long.valueOf(k27.B1(((TLRPC.ChannelParticipant) tLObject).peer)));
-                } else if (!(tLObject instanceof TLRPC.ChatParticipant)) {
-                    return;
-                } else {
-                    V1 = na7.q1(rb5Var.a).V1(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
-                }
-                String o = l7c.o(V1);
-                size = arrayList2.size();
-                if (size != 0) {
-                    int i4 = size + 1;
-                    if (i4 > i) {
-                        str = zr9Var.n;
-                        z2 = true;
-                        if (!z2 || o == null || (size2 = arrayList.size()) == 0 || size2 + 1 <= i) {
-                            o = null;
-                        } else {
-                            String str2 = zr9Var.c;
-                            if (str2.startsWith("@")) {
-                                str2 = str2.substring(1);
-                            }
-                            try {
-                                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                                spannableStringBuilder2.append((CharSequence) "@");
-                                spannableStringBuilder2.append((CharSequence) o);
-                                int y1 = gl.y1(o, str2);
-                                if (y1 != -1) {
-                                    int length = str2.length();
-                                    if (y1 == 0) {
-                                        length++;
-                                    } else {
-                                        y1++;
-                                    }
-                                    spannableStringBuilder2.setSpan(new ForegroundColorSpan(bkb.w0(null, bkb.fh, false)), y1, length + y1, 33);
-                                }
-                                o = spannableStringBuilder2;
-                            } catch (Exception e) {
-                                fa4.g(e, true);
-                            }
-                        }
-                        if (str != null) {
-                            String q = l7c.q(V1);
-                            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(q);
-                            int y12 = gl.y1(q, str);
-                            if (y12 != -1) {
-                                spannableStringBuilder3.setSpan(new ForegroundColorSpan(bkb.w0(null, bkb.fh, false)), y12, str.length() + y12, 33);
-                            }
-                            spannableStringBuilder = spannableStringBuilder3;
-                        }
-                        gh6 gh6Var = (gh6) view;
-                        gh6Var.setTag(Integer.valueOf(i));
-                        gh6Var.setCustomImageVisible(rb5Var.Z1.contains(Long.valueOf(V1.id)));
-                        gh6Var.c(V1, spannableStringBuilder, o, false);
-                    }
-                    i -= i4;
-                }
-                str = null;
-                z2 = false;
-                if (z2) {
-                }
-                o = null;
-                if (str != null) {
-                }
-                gh6 gh6Var2 = (gh6) view;
-                gh6Var2.setTag(Integer.valueOf(i));
-                gh6Var2.setCustomImageVisible(rb5Var.Z1.contains(Long.valueOf(V1.id)));
-                gh6Var2.c(V1, spannableStringBuilder, o, false);
-            }
+        CharSequence text2 = this.b.getText();
+        if (TextUtils.isEmpty(text2)) {
+            accessibilityNodeInfo.setText(text);
+            return;
         }
-        int i5 = this.w;
-        if (i5 >= 0 && i > i5) {
-            if (i < arrayList.size() + i5 + 1) {
-                tLObject = (TLObject) arrayList.get((i - this.w) - 1);
-                z = tLObject instanceof TLRPC.User;
-                rb5 rb5Var2 = this.x;
-                if (z) {
-                }
-                String o2 = l7c.o(V1);
-                size = arrayList2.size();
-                if (size != 0) {
-                }
-                str = null;
-                z2 = false;
-                if (z2) {
-                }
-                o2 = null;
-                if (str != null) {
-                }
-                gh6 gh6Var22 = (gh6) view;
-                gh6Var22.setTag(Integer.valueOf(i));
-                gh6Var22.setCustomImageVisible(rb5Var2.Z1.contains(Long.valueOf(V1.id)));
-                gh6Var22.c(V1, spannableStringBuilder, o2, false);
-            }
-        }
-        tLObject = null;
-        z = tLObject instanceof TLRPC.User;
-        rb5 rb5Var22 = this.x;
-        if (z) {
-        }
-        String o22 = l7c.o(V1);
-        size = arrayList2.size();
-        if (size != 0) {
-        }
-        str = null;
-        z2 = false;
-        if (z2) {
-        }
-        o22 = null;
-        if (str != null) {
-        }
-        gh6 gh6Var222 = (gh6) view;
-        gh6Var222.setTag(Integer.valueOf(i));
-        gh6Var222.setCustomImageVisible(rb5Var22.Z1.contains(Long.valueOf(V1.id)));
-        gh6Var222.c(V1, spannableStringBuilder, o22, false);
+        accessibilityNodeInfo.setText(((Object) text) + ": " + ((Object) text2));
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v4, types: [android.view.View, l35] */
-    /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View] */
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        gh6 gh6Var;
-        if (i != 0) {
-            Context context = this.c;
-            if (i == 1) {
-                ?? l35Var = new l35(context, null);
-                zkb.h(bkb.Zg, null, l35Var);
-                l35Var.setTextColor(bkb.Gh);
-                gh6Var = l35Var;
-            } else if (i != 2) {
-                gh6Var = new View(context);
-            } else {
-                ?? view = new View(context);
-                view.setLayoutParams(new e49(-1, gl.L(56.0f)));
-                gh6Var = view;
-            }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int L;
+        byte b = this.n;
+        byte b2 = this.e;
+        lka lkaVar = this.a;
+        ImageView imageView = this.d;
+        ImageView imageView2 = this.c;
+        int i5 = i4 - i2;
+        int i6 = i3 - i;
+        lka lkaVar2 = this.b;
+        int textHeight = (i5 - lkaVar2.getTextHeight()) / 2;
+        int L2 = jb6.a0 ? gm.L(b2) : 0;
+        lkaVar2.layout(L2, textHeight, lkaVar2.getMeasuredWidth() + L2, lkaVar2.getMeasuredHeight() + textHeight);
+        int textHeight2 = (i5 - lkaVar.getTextHeight()) / 2;
+        if (jb6.a0) {
+            L = (getMeasuredWidth() - lkaVar.getMeasuredWidth()) - gm.L(imageView2.getVisibility() == 0 ? this.h : b2);
         } else {
-            gh6 gh6Var2 = new gh6(this.c, 2, 2, false, null);
-            gh6Var2.setCustomRightImage(R.drawable.msg_invited);
-            gh6Var2.setNameColor(bkb.w0(null, bkb.dh, false));
-            int w0 = bkb.w0(null, bkb.bh, false);
-            int w02 = bkb.w0(null, bkb.fh, false);
-            gh6Var2.P = true;
-            gh6Var2.I = w0;
-            gh6Var2.J = w02;
-            gh6Var2.setDividerColor(bkb.jh);
-            gh6Var = gh6Var2;
+            L = gm.L(imageView2.getVisibility() == 0 ? this.h : b2);
         }
-        return new y29(gh6Var);
+        lkaVar.layout(L, textHeight2, lkaVar.getMeasuredWidth() + L, lkaVar.getMeasuredHeight() + textHeight2);
+        if (imageView2.getVisibility() == 0) {
+            int L3 = gm.L(5.0f);
+            int L4 = !jb6.a0 ? gm.L(b) : (i6 - imageView2.getMeasuredWidth()) - gm.L(b);
+            imageView2.layout(L4, L3, imageView2.getMeasuredWidth() + L4, imageView2.getMeasuredHeight() + L3);
+        }
+        if (imageView.getVisibility() == 0) {
+            int measuredHeight = (i5 - imageView.getMeasuredHeight()) / 2;
+            int L5 = jb6.a0 ? gm.L(23.0f) : (i6 - imageView.getMeasuredWidth()) - gm.L(23.0f);
+            imageView.layout(L5, measuredHeight, imageView.getMeasuredWidth() + L5, imageView.getMeasuredHeight() + measuredHeight);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i, int i2) {
+        ImageView imageView = this.d;
+        int size = View.MeasureSpec.getSize(i);
+        int L = gm.L(48.0f);
+        lka lkaVar = this.b;
+        lkaVar.measure(wi8.f(this.e, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gm.L(20.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec((size - gm.L(r2 + 71)) - lkaVar.getTextWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gm.L(20.0f), TLObject.FLAG_30));
+        ImageView imageView2 = this.c;
+        if (imageView2.getVisibility() == 0) {
+            imageView2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31));
+        }
+        if (imageView.getVisibility() == 0) {
+            imageView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31));
+        }
+        setMeasuredDimension(size, gm.L(50.0f) + (this.f ? 1 : 0));
+    }
+
+    public void setOffsetFromImage(int i) {
+        this.h = i;
+    }
+
+    public void setTextColor(int i) {
+        lka lkaVar = this.a;
+        anb.q(lkaVar);
+        lkaVar.setTextColor(i);
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        try {
+            this.r.setColor(cmb.w0(null, cmb.Wg, false));
+            invalidate();
+        } catch (Exception e) {
+            fc4.g(e, true);
+        }
+    }
+
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

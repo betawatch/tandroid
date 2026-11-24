@@ -1,63 +1,81 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class y68 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PhotoViewer b;
+public final class y68 extends FrameLayout {
+    public final TextView a;
+    public final LinearLayout b;
+    public View.OnClickListener c;
+    public int d;
+    public final int[] e;
 
-    public /* synthetic */ y68(PhotoViewer photoViewer, byte b) {
-        this.a = b;
-        this.b = photoViewer;
+    public y68(Context context) {
+        super(context);
+        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setGravity(5);
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, qoe.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        for (int i = 0; i < this.e.length; i++) {
+            RadioButton radioButton = new RadioButton(context);
+            radioButton.setSize(gm.L(20.0f));
+            radioButton.setTag(Integer.valueOf(i));
+            this.b.addView(radioButton, qoe.l(1.0f / this.e.length, 0, -1));
+            radioButton.setOnClickListener(new m67(this, (byte) 13));
+        }
+        addView(this.b, qoe.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (b) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.f9;
-                this.b.E1(false, 0, 0, true, false, false);
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.f9;
-                photoViewer.h2();
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.f9;
-                this.b.E1(false, 0, 0, false, false, false);
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.f9;
-                photoViewer.B(false, false);
-                x02 x02Var = photoViewer.b2;
-                if (x02Var != null) {
-                    x02Var.a(true);
-                }
-                d dVar = photoViewer.m4;
-                if (dVar != null) {
-                    dVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
-                    break;
-                }
-                break;
-            case 4:
-                Drawable[] drawableArr5 = PhotoViewer.f9;
-                photoViewer.t7 = null;
-                break;
-            case 5:
-                Drawable[] drawableArr6 = PhotoViewer.f9;
-                photoViewer.B(true, false);
-                break;
-            default:
-                Drawable[] drawableArr7 = PhotoViewer.f9;
-                photoViewer.E2();
-                break;
+    public final void a(int i, String str) {
+        this.d = i;
+        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        b(false);
+    }
+
+    public final void b(boolean z) {
+        LinearLayout linearLayout = this.b;
+        int childCount = linearLayout.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = linearLayout.getChildAt(i);
+            if (childAt instanceof RadioButton) {
+                RadioButton radioButton = (RadioButton) childAt;
+                int intValue = ((Integer) radioButton.getTag()).intValue();
+                int[] iArr = this.e;
+                radioButton.a(this.d == iArr[intValue], z);
+                int i2 = intValue == 0 ? -1 : iArr[intValue];
+                radioButton.b(i2, i2);
+            }
         }
+    }
+
+    public int getCurrentColor() {
+        return this.d;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(40.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.c = onClickListener;
     }
 }

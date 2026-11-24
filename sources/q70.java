@@ -1,19 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class q70 implements zn7 {
+public final class q70 implements cq7 {
     public static final q70 a = new q70();
-    public static final w84 b = w84.c("performance");
-    public static final w84 c = w84.c("crashlytics");
-    public static final w84 d = w84.c("sessionSamplingRate");
+    public static final wa4 b = wa4.c("identifier");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        a63 a63Var = (a63) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, a63Var.a);
-        ao7Var.a(c, a63Var.b);
-        ao7Var.f(d, a63Var.c);
+        ((dq7) obj2).a(b, ((la0) ((q03) obj)).a);
     }
 }

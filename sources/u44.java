@@ -1,11 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class u44 {
-    public final mt8 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public interface u44 {
+    void A(w44 w44Var);
 
-    public u44(mt8 mt8Var) {
-        this.a = mt8Var;
-    }
+    void B(boolean z);
+
+    void C();
+
+    void d(boolean z);
+
+    void e(boolean z);
+
+    void f();
+
+    void g();
+
+    boolean i(w44 w44Var);
+
+    void j(boolean z);
+
+    boolean o();
+
+    boolean p();
+
+    void u(float f, float f2, float[] fArr);
+
+    int[] v(w44 w44Var);
+
+    void x();
 }

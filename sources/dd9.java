@@ -1,131 +1,42 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.ViewPropertyAnimator;
-import android.widget.ImageView;
-import java.util.HashSet;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class dd9 extends ImageView implements tjb {
-    public final int a;
-    public int b;
-    public boolean c;
-    public boolean d;
-    public byte e;
-    public int f;
-    public final wjb h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class dd9 extends at7 implements Serializable {
+    public final at7 a;
 
-    public dd9(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.e = (byte) 20;
-        this.f = bkb.c6;
-        this.n = true;
-        this.s = true;
-        this.b = i;
-        this.a = i;
-        this.h = wjbVar;
-        if (i != 0) {
-            setImageResource(i);
+    public dd9(at7 at7Var) {
+        this.a = at7Var;
+    }
+
+    @Override // at7
+    public final at7 a() {
+        return this.a;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return this.a.compare(obj2, obj);
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        setScaleType(ImageView.ScaleType.CENTER);
-        ote.a(this);
-        updateColors();
-    }
-
-    public final void a() {
-        e(this.a);
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.Ei));
-        hashSet.add(Integer.valueOf(bkb.F6));
-        hashSet.add(Integer.valueOf(bkb.h6));
-        hashSet.add(Integer.valueOf(this.f));
-    }
-
-    public final void b() {
-        if (this.s) {
-            this.s = false;
-            updateColors();
+        if (obj instanceof dd9) {
+            return this.a.equals(((dd9) obj).a);
         }
+        return false;
     }
 
-    public final void c(int i) {
-        if (this.f == i) {
-            return;
-        }
-        this.f = i;
-        updateColors();
+    public final int hashCode() {
+        return -this.a.hashCode();
     }
 
-    public final void d() {
-        this.c = true;
-        fd9 fd9Var = new fd9(getContext(), this.b);
-        fd9Var.d = this.f;
-        fd9Var.a(this.d);
-        setImageDrawable(fd9Var);
-    }
-
-    public final void e(int i) {
-        if (this.b == i) {
-            return;
-        }
-        this.b = i;
-        if (!this.c) {
-            gl.M3(this, i);
-            return;
-        }
-        fd9 fd9Var = new fd9(getContext(), i);
-        fd9Var.d = this.f;
-        fd9Var.a(this.d);
-        gl.N3(this, fd9Var);
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z) {
-        if (this.n == z) {
-            return;
-        }
-        setClickable(z);
-        ViewPropertyAnimator animate = animate();
-        this.n = z;
-        animate.alpha(z ? 1.0f : 0.5f).setDuration(320L).setInterpolator(s33.h).start();
-    }
-
-    public void setPremiumLocked(boolean z) {
-        this.d = z;
-        if (getDrawable() instanceof fd9) {
-            ((fd9) getDrawable()).a(z);
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void setSelected(boolean z) {
-        if (this.r == z) {
-            return;
-        }
-        this.r = z;
-        updateColors();
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        boolean z = this.r;
-        wjb wjbVar = this.h;
-        if (!z) {
-            setBackground(bkb.Z(bkb.v0(this.f, wjbVar), bkb.v0(bkb.h6, wjbVar), gl.L(this.e), gl.L(this.e)));
-            setColorFilter(new PorterDuffColorFilter(bkb.v0(bkb.F6, wjbVar), PorterDuff.Mode.SRC_IN));
-        } else {
-            int w0 = bkb.w0(null, this.s ? bkb.Ei : bkb.F6, false);
-            setBackground(bkb.Z(bkb.v(bkb.v0(this.f, wjbVar), bkb.p1(0.1f, w0)), bkb.p1(0.1f, w0), gl.L(this.e), gl.L(this.e)));
-            setColorFilter(new PorterDuffColorFilter(w0, PorterDuff.Mode.SRC_IN));
-        }
+    public final String toString() {
+        return this.a + ".reverse()";
     }
 }

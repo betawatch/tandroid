@@ -1,11 +1,81 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ft0 {
-    public String a;
-    public long b;
-    public String c;
-    public long d;
-    public long e;
+public final class ft0 implements zl1 {
+    @Override // zl1
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // zl1
+    public final long d() {
+        return 0L;
+    }
+
+    @Override // zl1
+    public final boolean f() {
+        return true;
+    }
+
+    @Override // zl1
+    public final boolean j0(cm1 cm1Var, float f, float f2) {
+        return false;
+    }
+
+    @Override // zl1
+    public final d w() {
+        return null;
+    }
+
+    @Override // zl1
+    public final void I(long j) {
+    }
+
+    @Override // zl1
+    public final void J(cm1 cm1Var) {
+    }
+
+    @Override // zl1
+    public final void b0(cm1 cm1Var) {
+    }
+
+    @Override // zl1
+    public final void h(cm1 cm1Var) {
+    }
+
+    @Override // zl1
+    public final void o(cm1 cm1Var) {
+    }
+
+    @Override // zl1
+    public final void x(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    }
+
+    @Override // zl1
+    public final void C(cm1 cm1Var, int i) {
+    }
+
+    @Override // zl1
+    public final void l(cm1 cm1Var, String str) {
+    }
+
+    @Override // zl1
+    public final void g0(cm1 cm1Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str) {
+    }
+
+    @Override // zl1
+    public final void n(cm1 cm1Var, int i, int i2) {
+    }
+
+    @Override // zl1
+    public final void r(cm1 cm1Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
+    }
+
+    @Override // zl1
+    public final void y(cm1 cm1Var, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2) {
+    }
 }

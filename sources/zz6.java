@@ -1,68 +1,38 @@
 // default package
 
-import android.content.DialogInterface;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.Window;
+import android.util.Pair;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zz6 implements DialogInterface.OnKeyListener, DialogInterface.OnClickListener, DialogInterface.OnDismissListener, r07 {
-    public yz6 a;
-    public id b;
-    public i56 c;
+public final /* synthetic */ class zz6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ b07 b;
+    public final /* synthetic */ Pair c;
+    public final /* synthetic */ ea6 d;
+    public final /* synthetic */ ft6 e;
 
-    @Override // r07
-    public final boolean J(yz6 yz6Var) {
-        return false;
+    public /* synthetic */ zz6(b07 b07Var, Pair pair, ea6 ea6Var, ft6 ft6Var, byte b) {
+        this.a = b;
+        this.b = b07Var;
+        this.c = pair;
+        this.d = ea6Var;
+        this.e = ft6Var;
     }
 
-    @Override // r07
-    public final void d(yz6 yz6Var, boolean z) {
-        id idVar;
-        if ((z || yz6Var == this.a) && (idVar = this.b) != null) {
-            idVar.dismiss();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ft6 ft6Var = this.e;
+        ea6 ea6Var = this.d;
+        Pair pair = this.c;
+        b07 b07Var = this.b;
+        switch (b) {
+            case 0:
+                b07Var.b.i.s(((Integer) pair.first).intValue(), (rz6) pair.second, ea6Var, ft6Var);
+                break;
+            default:
+                b07Var.b.i.u(((Integer) pair.first).intValue(), (rz6) pair.second, ea6Var, ft6Var);
+                break;
         }
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        yz6 yz6Var = this.a;
-        i56 i56Var = this.c;
-        h56 h56Var = i56Var.f;
-        if (h56Var == null) {
-            h56Var = new h56(i56Var);
-            i56Var.f = h56Var;
-        }
-        yz6Var.q(h56Var.getItem(i), null, 0);
-    }
-
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        this.c.d(this.a, true);
-    }
-
-    @Override // android.content.DialogInterface.OnKeyListener
-    public final boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
-        Window window;
-        View decorView;
-        KeyEvent.DispatcherState keyDispatcherState;
-        View decorView2;
-        KeyEvent.DispatcherState keyDispatcherState2;
-        yz6 yz6Var = this.a;
-        if (i == 82 || i == 4) {
-            if (keyEvent.getAction() == 0 && keyEvent.getRepeatCount() == 0) {
-                Window window2 = this.b.getWindow();
-                if (window2 != null && (decorView2 = window2.getDecorView()) != null && (keyDispatcherState2 = decorView2.getKeyDispatcherState()) != null) {
-                    keyDispatcherState2.startTracking(keyEvent, this);
-                    return true;
-                }
-            } else if (keyEvent.getAction() == 1 && !keyEvent.isCanceled() && (window = this.b.getWindow()) != null && (decorView = window.getDecorView()) != null && (keyDispatcherState = decorView.getKeyDispatcherState()) != null && keyDispatcherState.isTracking(keyEvent)) {
-                yz6Var.c(true);
-                dialogInterface.dismiss();
-                return true;
-            }
-        }
-        return yz6Var.performShortcut(i, keyEvent, 0);
     }
 }

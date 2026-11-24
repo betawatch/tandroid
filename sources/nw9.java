@@ -1,55 +1,65 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class nw9 extends AnimatorListenerAdapter {
+public final /* synthetic */ class nw9 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ tx9 c;
+    public final /* synthetic */ tw9 b;
 
-    public /* synthetic */ nw9(tx9 tx9Var, boolean z, byte b) {
+    public /* synthetic */ nw9(tw9 tw9Var, byte b) {
         this.a = b;
-        this.c = tx9Var;
-        this.b = z;
+        this.b = tw9Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        boolean z = this.b;
-        tx9 tx9Var = this.c;
+        tw9 tw9Var = this.b;
         switch (b) {
             case 0:
-                tx9Var.j0.setVisibility(z ? 0 : 8);
-                tx9Var.i0.setVisibility(z ? 8 : 0);
-                tx9Var.G1 = null;
-                if (!z && (arrayList2 = tx9Var.C1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = tx9Var.F1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
+                nw9 nw9Var = tw9Var.a0;
+                if (tw9Var.x != null) {
+                    tw9Var.b0 = r1.S() / tw9Var.x.U();
+                    rw9 rw9Var = tw9Var.O;
+                    if (rw9Var != null) {
+                        rw9Var.Bc = (tw9Var.x.U() - tw9Var.x.S()) / 1000;
+                        tw9Var.O.W3();
+                        gx9 seekBarWaveform = tw9Var.O.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f = tw9Var.b0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f;
+                            rc2 rc2Var = seekBarWaveform.n;
+                            if (rc2Var != null) {
+                                rc2Var.invalidate();
+                            }
+                        }
                     }
-                    tx9Var.r0.E(false);
-                }
-                if (!z && (arrayList = tx9Var.D1) != null) {
-                    arrayList.clear();
-                    break;
+                    if (tw9Var.x.c0()) {
+                        gm.r(nw9Var);
+                        gm.d3(nw9Var, 16L);
+                        break;
+                    }
                 }
                 break;
+            case 1:
+                tw9Var.c();
+                break;
+            case 2:
+                tw9Var.b();
+                break;
             default:
-                FrameLayout frameLayout = tx9Var.k0;
-                if (z && tx9Var.j0.getVisibility() == 0) {
-                    r1 = 0;
+                if (tw9Var.d == null) {
+                    gm.c3(new nw9(tw9Var, (byte) 2));
+                    rc2 rc2Var2 = tw9Var.P;
+                    if (rc2Var2 != null) {
+                        rc2Var2.setVisibility(0);
+                        tw9Var.P.invalidate();
+                    }
                 }
-                frameLayout.setVisibility(r1);
-                tx9Var.J1 = null;
+                MediaController.w().E0();
                 break;
         }
     }

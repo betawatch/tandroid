@@ -1,18 +1,67 @@
 // default package
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class rz6 {
+    public final Object a;
+    public final int b;
+    public final int c;
+    public final long d;
+    public final int e;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface rz6 {
-    void c(TLRPC.BotInlineResult botInlineResult, boolean z, int i);
+    public rz6(Object obj, int i, int i2, long j, int i3) {
+        this.a = obj;
+        this.b = i;
+        this.c = i2;
+        this.d = j;
+        this.e = i3;
+    }
 
-    Paint.FontMetricsInt d();
+    public final rz6 a(Object obj) {
+        if (this.a.equals(obj)) {
+            return this;
+        }
+        return new rz6(obj, this.b, this.c, this.d, this.e);
+    }
 
-    void h(TLRPC.TL_document tL_document, String str, Object obj);
+    public final boolean b(rz6 rz6Var) {
+        if (rz6Var == null) {
+            return false;
+        }
+        if (this == rz6Var) {
+            return true;
+        }
+        return this.a.equals(rz6Var.a) && this.b == rz6Var.b && this.c == rz6Var.c && this.d == rz6Var.d;
+    }
 
-    void k(int i, int i2, CharSequence charSequence, boolean z);
+    public final boolean c() {
+        return this.b != -1;
+    }
 
-    void m(String str);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof rz6)) {
+            return false;
+        }
+        rz6 rz6Var = (rz6) obj;
+        return b(rz6Var) && this.e == rz6Var.e;
+    }
+
+    public final int hashCode() {
+        return ((((((((this.a.hashCode() + 527) * 31) + this.b) * 31) + this.c) * 31) + ((int) this.d)) * 31) + this.e;
+    }
+
+    public rz6(Object obj, long j) {
+        this(obj, -1, -1, j, -1);
+    }
+
+    public rz6(Object obj, long j, int i) {
+        this(obj, -1, -1, j, i);
+    }
+
+    public rz6(Object obj) {
+        this(obj, -1L);
+    }
 }

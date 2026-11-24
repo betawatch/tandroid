@@ -1,61 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
+import j$.util.Objects;
+import java.util.Set;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class y3d extends xx4 {
-    public final x3d F;
+public final class y3d implements fh0 {
+    public final zz4 a;
+    public final gp b;
+    public ti5 c;
+    public Set d;
+    public boolean e;
+    public final /* synthetic */ i05 f;
 
-    public y3d(Context context, Looper looper, ntb ntbVar, x3d x3dVar, ey4 ey4Var, fy4 fy4Var) {
-        super(68, ey4Var, fy4Var, ntbVar, context, looper);
-        x3dVar = x3dVar == null ? x3d.c : x3dVar;
-        aec aecVar = new aec((byte) 7, false);
-        aecVar.b = Boolean.FALSE;
-        x3d x3dVar2 = x3d.c;
-        x3dVar.getClass();
-        aecVar.b = Boolean.valueOf(x3dVar.a);
-        aecVar.c = x3dVar.b;
-        aecVar.c = s3d.a();
-        this.F = new x3d(aecVar);
+    public y3d(i05 i05Var, zz4 zz4Var, gp gpVar) {
+        Objects.requireNonNull(i05Var);
+        this.f = i05Var;
+        this.c = null;
+        this.d = null;
+        this.e = false;
+        this.a = zz4Var;
+        this.b = gpVar;
     }
 
-    @Override // gg0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+    @Override // fh0
+    public final void a(ot2 ot2Var) {
+        this.f.y.post(new tnd((Object) this, (Object) ot2Var, false, (byte) 12));
+    }
+
+    public final void b(ot2 ot2Var) {
+        w3d w3dVar = (w3d) this.f.s.get(this.b);
+        if (w3dVar != null) {
+            w3dVar.k(ot2Var);
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.credentials.internal.ICredentialsService");
-        return queryLocalInterface instanceof a4d ? (a4d) queryLocalInterface : new a4d(iBinder, "com.google.android.gms.auth.api.credentials.internal.ICredentialsService", (byte) 2);
-    }
-
-    @Override // gg0
-    public final Bundle h() {
-        x3d x3dVar = this.F;
-        x3dVar.getClass();
-        Bundle bundle = new Bundle();
-        bundle.putString("consumer_package", null);
-        bundle.putBoolean("force_save_dialog", x3dVar.a);
-        bundle.putString("log_session_id", x3dVar.b);
-        return bundle;
-    }
-
-    @Override // gg0
-    public final int i() {
-        return 12800000;
-    }
-
-    @Override // gg0
-    public final String l() {
-        return "com.google.android.gms.auth.api.credentials.internal.ICredentialsService";
-    }
-
-    @Override // gg0
-    public final String n() {
-        return "com.google.android.gms.auth.api.credentials.service.START";
     }
 }

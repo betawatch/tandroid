@@ -1,68 +1,9 @@
 // default package
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class qob {
-    public final String b;
-    public int a = 0;
-    public final ArrayList d = new ArrayList();
-    public final long c = System.currentTimeMillis();
-
-    public qob(String str) {
-        this.b = str;
-    }
-
-    public static void a(pob pobVar) {
-        if (pobVar != null) {
-            if (pobVar.b < 0) {
-                qob qobVar = pobVar.e;
-                int i = qobVar.a;
-                qobVar.a = i - 1;
-                pobVar.d = i;
-            }
-            pobVar.b = System.currentTimeMillis();
-        }
-    }
-
-    public static void b(qob qobVar) {
-        if (qobVar != null) {
-            ArrayList arrayList = qobVar.d;
-            long currentTimeMillis = System.currentTimeMillis() - qobVar.c;
-            StringBuilder sb = new StringBuilder(qobVar.b);
-            sb.append(" total=");
-            sb.append(currentTimeMillis);
-            sb.append("ms\n");
-            for (int i = 0; i < arrayList.size(); i++) {
-                if (arrayList.get(i) != null) {
-                    sb.append("#");
-                    sb.append(i);
-                    int i2 = ((pob) arrayList.get(i)).d;
-                    for (int i3 = 0; i3 < i2; i3++) {
-                        sb.append(" ");
-                    }
-                    sb.append(" ");
-                    sb.append(arrayList.get(i));
-                    sb.append("\n");
-                }
-            }
-            fa4.b(sb.toString());
-        }
-    }
-
-    public static void c(qob qobVar, String str) {
-        if (qobVar != null) {
-            qobVar.d.add(new oob(qobVar, str));
-        }
-    }
-
-    public static pob d(qob qobVar, String str) {
-        if (qobVar == null) {
-            return null;
-        }
-        pob pobVar = new pob(qobVar, str);
-        qobVar.d.add(pobVar);
-        return pobVar;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public interface qob {
+    void a(TLRPC.WallPaper wallPaper);
 }

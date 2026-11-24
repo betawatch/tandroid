@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzcq implements zzbt {
     private final Context zza;
@@ -35,7 +35,7 @@ public final class zzcq implements zzbt {
                 ArrayList arrayList = new ArrayList();
                 int i = 0;
                 for (File file : listFiles) {
-                    if (n9b.d(file.getName(), this.zzb)) {
+                    if (pbb.d(file.getName(), this.zzb)) {
                         arrayList.add(file);
                     }
                 }
@@ -52,16 +52,16 @@ public final class zzcq implements zzbt {
 
     @Override // com.google.android.recaptcha.internal.zzbt
     public final void zzc(String str, String str2) {
-        yj1 yj1Var = new yj1('A', 'z');
-        ArrayList arrayList = new ArrayList(al2.c(yj1Var, 10));
-        Iterator it = yj1Var.iterator();
+        gl1 gl1Var = new gl1('A', 'z');
+        ArrayList arrayList = new ArrayList(mm2.c(gl1Var, 10));
+        Iterator it = gl1Var.iterator();
         while (true) {
-            xj1 xj1Var = (xj1) it;
-            boolean z = xj1Var.b;
+            fl1 fl1Var = (fl1) it;
+            boolean z = fl1Var.b;
             if (!z) {
                 ArrayList arrayList2 = new ArrayList(arrayList);
                 Collections.shuffle(arrayList2);
-                String f = yk2.f(arrayList2.subList(0, 8), "", null, null, null, 62);
+                String f = km2.f(arrayList2.subList(0, 8), "", null, null, null, 62);
                 Context context = this.zza;
                 String str3 = this.zzb;
                 File file = new File(context.getCacheDir(), str3.concat(f));
@@ -69,15 +69,15 @@ public final class zzcq implements zzbt {
                 file.renameTo(new File(context.getCacheDir(), str3.concat(String.valueOf(str))));
                 return;
             }
-            int i = xj1Var.c;
-            if (i != xj1Var.a) {
-                xj1Var.c = i + 1;
+            int i = fl1Var.c;
+            if (i != fl1Var.a) {
+                fl1Var.c = i + 1;
             } else {
                 if (!z) {
-                    w26.g();
+                    u36.g();
                     return;
                 }
-                xj1Var.b = false;
+                fl1Var.b = false;
             }
             arrayList.add(Character.valueOf((char) i));
         }
@@ -97,7 +97,7 @@ public final class zzcq implements zzbt {
                         break;
                     }
                     File file2 = listFiles[i];
-                    if (rp5.a(file2.getName(), this.zzb + str)) {
+                    if (rr5.a(file2.getName(), this.zzb + str)) {
                         file = file2;
                         break;
                     }

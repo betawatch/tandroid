@@ -1,36 +1,35 @@
 // default package
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class xy3 extends c49 {
-    public final /* synthetic */ t14 a;
+public final /* synthetic */ class xy3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yy3 b;
 
-    public xy3(t14 t14Var) {
-        this.a = t14Var;
+    public /* synthetic */ xy3(yy3 yy3Var, byte b) {
+        this.a = b;
+        this.b = yy3Var;
     }
 
-    @Override // c49
-    public final void e(Rect rect, View view, RecyclerView recyclerView, p49 p49Var) {
-        int R = RecyclerView.R(view);
-        t14 t14Var = this.a;
-        w39 adapter = t14Var.i0.getAdapter();
-        y04 y04Var = t14Var.o0;
-        if (adapter == y04Var && R == y04Var.J) {
-            rect.set(0, 0, 0, 0);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        yy3 yy3Var = this.b;
+        switch (b) {
+            case 0:
+                yy3Var.f.dismiss();
+                break;
+            default:
+                az3 az3Var = yy3Var.f;
+                az3Var.dismiss();
+                d dVar = az3Var.m1;
+                if (dVar != null && dVar.getParentActivity() != null) {
+                    mlb.y(null, 2131754432, c41.b0(dVar), null);
+                    break;
+                }
+                break;
         }
-        if (R == 0) {
-            y04Var.getClass();
-        }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = gl.L(2.0f);
-        z04 z04Var = t14Var.j0;
-        y04Var.getClass();
-        rect.right = z04Var.C1(R) ? 0 : gl.L(2.0f);
     }
 }

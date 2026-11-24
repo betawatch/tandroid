@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     private static final long[] zza;
@@ -33,12 +33,12 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     }
 
     private final String zzj(int i) {
-        return b00.g(i, this.zzd, "Index:", ", Size:");
+        return b10.g(i, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzk(int i) {
         if (i < 0 || i >= this.zzd) {
-            k93.i(zzj(i));
+            wa3.i(zzj(i));
         }
     }
 
@@ -48,7 +48,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         long longValue = ((Long) obj).longValue();
         zza();
         if (i < 0 || i > (i2 = this.zzd)) {
-            k93.i(zzj(i));
+            wa3.i(zzj(i));
             return;
         }
         int i3 = i + 1;
@@ -172,7 +172,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     public final void removeRange(int i, int i2) {
         zza();
         if (i2 < i) {
-            k93.i("toIndex < fromIndex");
+            wa3.i("toIndex < fromIndex");
             return;
         }
         long[] jArr = this.zzc;
@@ -202,7 +202,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         if (i >= this.zzd) {
             return new zzth(i == 0 ? zza : Arrays.copyOf(this.zzc, i), this.zzd, true);
         }
-        sc8.e();
+        i98.g();
         return null;
     }
 

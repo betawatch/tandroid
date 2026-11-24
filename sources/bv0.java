@@ -1,68 +1,72 @@
 // default package
 
-import android.net.Uri;
-import android.webkit.DownloadListener;
-import android.webkit.URLUtil;
-import android.widget.TextView;
-import java.util.List;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.json.JSONObject;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class bv0 implements DownloadListener {
-    public final /* synthetic */ cv0 a;
+public final /* synthetic */ class bv0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qw0 b;
 
-    public bv0(cv0 cv0Var) {
-        this.a = cv0Var;
+    public /* synthetic */ bv0(qw0 qw0Var, byte b) {
+        this.a = b;
+        this.b = qw0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0046, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r1.substring(r2 + 1)) != false) goto L9;
-     */
-    @Override // android.webkit.DownloadListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDownloadStart(String str, String str2, String str3, String str4, long j) {
-        String guessFileName;
-        StringBuilder l = yjb.l("onDownloadStart ", str, " ", str2, " ");
-        ls6.u(l, str3, " ", str4, " ");
-        l.append(j);
-        String sb = l.toString();
-        cv0 cv0Var = this.a;
-        cv0Var.b(sb);
-        try {
-            if (str.startsWith("blob:")) {
-                return;
-            }
-            try {
-                List<String> pathSegments = Uri.parse(str).getPathSegments();
-                guessFileName = pathSegments.get(pathSegments.size() - 1);
-                int lastIndexOf = guessFileName.lastIndexOf(".");
-                if (lastIndexOf > 0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = false;
+        qw0 qw0Var = this.b;
+        switch (b) {
+            case 0:
+                uv0 uv0Var = qw0Var.c;
+                if (uv0Var != null) {
+                    uv0Var.b();
                 }
-            } catch (Exception unused) {
-            }
-            guessFileName = URLUtil.guessFileName(str, str3, str4);
-            String U = gl.U(guessFileName);
-            b87 b87Var = new b87((Object) this, (Object) str, (Object) str4, (Object) str2, (Object) U, (byte) 9);
-            if (up3.q(y6c.t0).c(8, j)) {
-                b87Var.run();
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cv0Var.getContext());
-            hd hdVar = alertDialog$Builder.a;
-            hdVar.S = k96.M0(2131742667, null);
-            hdVar.U = gl.T2(j > 0 ? k96.a0(null, null, 2131742668, U, gl.i0(j, false, false)) : k96.a0(null, null, 2131742669, U));
-            alertDialog$Builder.j(k96.M0(2131742666, null), new sg0(b87Var, (byte) 13));
-            alertDialog$Builder.g(k96.M0(2131752577, null), null);
-            TextView textView = (TextView) alertDialog$Builder.o().c(-2);
-            if (textView != null) {
-                zkb.X(textView, bkb.p7, null);
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+                LaunchActivity.K();
+                break;
+            case 1:
+                if (qw0Var.T) {
+                    qw0Var.T = false;
+                    uv0 uv0Var2 = qw0Var.c;
+                    if (uv0Var2 != null) {
+                        uv0Var2.t(false);
+                    }
+                }
+                qw0Var.a();
+                qw0Var.O = false;
+                qw0Var.Q = 0L;
+                qw0Var.U = false;
+                mw0 mw0Var = qw0Var.a;
+                if (mw0Var != null) {
+                    mw0Var.onResume();
+                    qw0Var.a.reload();
+                    break;
+                }
+                break;
+            default:
+                ow0 ow0Var = qw0Var.K0;
+                tr0 tr0Var = qw0Var.l0;
+                tr0Var.getClass();
+                JSONObject jSONObject = new JSONObject();
+                try {
+                    jSONObject.put("available", tr0Var.c());
+                    if (tr0Var.c()) {
+                        jSONObject.put("access_requested", tr0Var.d);
+                        if (tr0Var.d) {
+                            if (tr0Var.e && tr0Var.a()) {
+                                z = true;
+                            }
+                            jSONObject.put("access_granted", z);
+                        }
+                    }
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                }
+                qw0Var.u(ow0Var, "location_checked", jSONObject);
+                break;
         }
     }
 }

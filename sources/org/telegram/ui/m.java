@@ -17,27 +17,27 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class m extends FrameLayout {
     public int E;
-    public atc F;
+    public bvc F;
     public boolean G;
     public String H;
     public String I;
     public boolean J;
     public float K;
-    public zv L;
+    public zw L;
     public final /* synthetic */ o M;
     public int a;
-    public final hw b;
-    public final dx c;
-    public final t26 d;
-    public final iw e;
+    public final hx b;
+    public final ey c;
+    public final u46 d;
+    public final ix e;
     public final l f;
     public boolean h;
     public boolean n;
-    public cw r;
+    public cx r;
     public boolean s;
     public boolean w;
     public int x;
@@ -47,37 +47,37 @@ public final class m extends FrameLayout {
     public m(o oVar, Activity activity) {
         super(activity);
         this.M = oVar;
-        int i = bkb.Fl;
+        int i = cmb.Fl;
         final byte b = 0;
-        this.x = bkb.w0(null, i, false);
-        int w0 = bkb.w0(null, i, false);
+        this.x = cmb.w0(null, i, false);
+        int w0 = cmb.w0(null, i, false);
         this.y = w0;
         this.E = w0;
         this.G = false;
         this.K = -1.0f;
-        hw hwVar = new hw(this, activity);
-        this.b = hwVar;
-        hwVar.setClipToPadding(false);
-        hwVar.setPadding(0, gl.L(56.0f), 0, 0);
-        hwVar.setTopGlowOffset(gl.L(56.0f));
-        ((gb3) hwVar.getItemAnimator()).C = false;
+        hx hxVar = new hx(this, activity);
+        this.b = hxVar;
+        hxVar.setClipToPadding(false);
+        hxVar.setPadding(0, gm.L(56.0f), 0, 0);
+        hxVar.setTopGlowOffset(gm.L(56.0f));
+        ((sc3) hxVar.getItemAnimator()).C = false;
         final byte b2 = 1;
-        dx dxVar = new dx(oVar, activity, oVar.L != null);
-        this.c = dxVar;
-        hwVar.setAdapter(dxVar);
-        t26 t26Var = new t26(1, false);
-        this.d = t26Var;
-        hwVar.setLayoutManager(t26Var);
-        hwVar.setOnScrollListener(new y(this, (byte) 4));
-        addView(hwVar, nme.c(-1.0f, -1));
-        iw iwVar = new iw(getContext());
-        this.e = iwVar;
-        iwVar.setShouldWaitWebViewScroll(true);
-        iwVar.setFullSize(true);
-        iwVar.setAllowFullSizeSwipe(true);
-        l lVar = new l(this, getContext(), bkb.w0(null, bkb.c6, false));
+        ey eyVar = new ey(oVar, activity, oVar.L != null);
+        this.c = eyVar;
+        hxVar.setAdapter(eyVar);
+        u46 u46Var = new u46(1, false);
+        this.d = u46Var;
+        hxVar.setLayoutManager(u46Var);
+        hxVar.setOnScrollListener(new y(this, (byte) 5));
+        addView(hxVar, qoe.c(-1.0f, -1));
+        ix ixVar = new ix(getContext());
+        this.e = ixVar;
+        ixVar.setShouldWaitWebViewScroll(true);
+        ixVar.setFullSize(true);
+        ixVar.setAllowFullSizeSwipe(true);
+        l lVar = new l(this, getContext(), cmb.w0(null, cmb.c6, false));
         this.f = lVar;
-        lVar.setOnCloseRequestedListener(new Runnable(this) { // from class: fw
+        lVar.setOnCloseRequestedListener(new Runnable(this) { // from class: fx
             public final /* synthetic */ m b;
 
             {
@@ -94,11 +94,11 @@ public final class m extends FrameLayout {
                         o oVar2 = mVar.M;
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            qx0 O = launchActivity.O();
+                            xy0 O = launchActivity.O();
                             if (O != null) {
                                 int i2 = 0;
                                 while (true) {
-                                    HashMap hashMap = qx0.L;
+                                    HashMap hashMap = xy0.L;
                                     if (i2 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i2));
                                         if (arrayList != null) {
@@ -107,9 +107,9 @@ public final class m extends FrameLayout {
                                             while (i3 < size) {
                                                 Object obj = arrayList.get(i3);
                                                 i3++;
-                                                px0 px0Var = (px0) obj;
-                                                if (px0Var.J == oVar2) {
-                                                    z = O.h(i2, px0Var, true);
+                                                wy0 wy0Var = (wy0) obj;
+                                                if (wy0Var.J == oVar2) {
+                                                    z = O.h(i2, wy0Var, true);
                                                 }
                                             }
                                         }
@@ -127,22 +127,22 @@ public final class m extends FrameLayout {
                         mVar.f.l(true, false);
                         break;
                     default:
-                        iw iwVar2 = mVar.e;
+                        ix ixVar2 = mVar.e;
                         mVar.f.l(false, false);
-                        cw cwVar = mVar.r;
-                        if (cwVar != null) {
-                            cwVar.a.setTranslationY(((iwVar2.getTopActionBarOffsetY() + (-iwVar2.getOffsetY())) - iwVar2.getSwipeOffsetY()) / 2.0f);
+                        cx cxVar = mVar.r;
+                        if (cxVar != null) {
+                            cxVar.a.setTranslationY(((ixVar2.getTopActionBarOffsetY() + (-ixVar2.getOffsetY())) - ixVar2.getSwipeOffsetY()) / 2.0f);
                         }
                         mVar.M.d0();
                         break;
                 }
             }
         });
-        lVar.setWebViewProgressListener(new gw(this, b));
-        lVar.setDelegate(new jw(this));
-        lVar.setWebViewScrollListener(new lj9((Object) this, (byte) 6));
-        iwVar.addView(lVar, nme.c(-1.0f, -1));
-        iwVar.setScrollEndListener(new Runnable(this) { // from class: fw
+        lVar.setWebViewProgressListener(new gx(this, b));
+        lVar.setDelegate(new jx(this));
+        lVar.setWebViewScrollListener(new nl9((Object) this, (byte) 6));
+        ixVar.addView(lVar, qoe.c(-1.0f, -1));
+        ixVar.setScrollEndListener(new Runnable(this) { // from class: fx
             public final /* synthetic */ m b;
 
             {
@@ -159,11 +159,11 @@ public final class m extends FrameLayout {
                         o oVar2 = mVar.M;
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            qx0 O = launchActivity.O();
+                            xy0 O = launchActivity.O();
                             if (O != null) {
                                 int i2 = 0;
                                 while (true) {
-                                    HashMap hashMap = qx0.L;
+                                    HashMap hashMap = xy0.L;
                                     if (i2 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i2));
                                         if (arrayList != null) {
@@ -172,9 +172,9 @@ public final class m extends FrameLayout {
                                             while (i3 < size) {
                                                 Object obj = arrayList.get(i3);
                                                 i3++;
-                                                px0 px0Var = (px0) obj;
-                                                if (px0Var.J == oVar2) {
-                                                    z = O.h(i2, px0Var, true);
+                                                wy0 wy0Var = (wy0) obj;
+                                                if (wy0Var.J == oVar2) {
+                                                    z = O.h(i2, wy0Var, true);
                                                 }
                                             }
                                         }
@@ -192,20 +192,20 @@ public final class m extends FrameLayout {
                         mVar.f.l(true, false);
                         break;
                     default:
-                        iw iwVar2 = mVar.e;
+                        ix ixVar2 = mVar.e;
                         mVar.f.l(false, false);
-                        cw cwVar = mVar.r;
-                        if (cwVar != null) {
-                            cwVar.a.setTranslationY(((iwVar2.getTopActionBarOffsetY() + (-iwVar2.getOffsetY())) - iwVar2.getSwipeOffsetY()) / 2.0f);
+                        cx cxVar = mVar.r;
+                        if (cxVar != null) {
+                            cxVar.a.setTranslationY(((ixVar2.getTopActionBarOffsetY() + (-ixVar2.getOffsetY())) - ixVar2.getSwipeOffsetY()) / 2.0f);
                         }
                         mVar.M.d0();
                         break;
                 }
             }
         });
-        iwVar.setDelegate(new l0(this, (byte) 20));
+        ixVar.setDelegate(new l0(this, (byte) 22));
         final byte b3 = 2;
-        iwVar.setScrollListener(new Runnable(this) { // from class: fw
+        ixVar.setScrollListener(new Runnable(this) { // from class: fx
             public final /* synthetic */ m b;
 
             {
@@ -222,11 +222,11 @@ public final class m extends FrameLayout {
                         o oVar2 = mVar.M;
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            qx0 O = launchActivity.O();
+                            xy0 O = launchActivity.O();
                             if (O != null) {
                                 int i2 = 0;
                                 while (true) {
-                                    HashMap hashMap = qx0.L;
+                                    HashMap hashMap = xy0.L;
                                     if (i2 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i2));
                                         if (arrayList != null) {
@@ -235,9 +235,9 @@ public final class m extends FrameLayout {
                                             while (i3 < size) {
                                                 Object obj = arrayList.get(i3);
                                                 i3++;
-                                                px0 px0Var = (px0) obj;
-                                                if (px0Var.J == oVar2) {
-                                                    z = O.h(i2, px0Var, true);
+                                                wy0 wy0Var = (wy0) obj;
+                                                if (wy0Var.J == oVar2) {
+                                                    z = O.h(i2, wy0Var, true);
                                                 }
                                             }
                                         }
@@ -255,19 +255,19 @@ public final class m extends FrameLayout {
                         mVar.f.l(true, false);
                         break;
                     default:
-                        iw iwVar2 = mVar.e;
+                        ix ixVar2 = mVar.e;
                         mVar.f.l(false, false);
-                        cw cwVar = mVar.r;
-                        if (cwVar != null) {
-                            cwVar.a.setTranslationY(((iwVar2.getTopActionBarOffsetY() + (-iwVar2.getOffsetY())) - iwVar2.getSwipeOffsetY()) / 2.0f);
+                        cx cxVar = mVar.r;
+                        if (cxVar != null) {
+                            cxVar.a.setTranslationY(((ixVar2.getTopActionBarOffsetY() + (-ixVar2.getOffsetY())) - ixVar2.getSwipeOffsetY()) / 2.0f);
                         }
                         mVar.M.d0();
                         break;
                 }
             }
         });
-        iwVar.setTopActionBarOffsetY(gl.L(56.0f) + gl.m);
-        addView(iwVar, nme.c(-1.0f, -1));
+        ixVar.setTopActionBarOffsetY(gm.L(56.0f) + gm.m);
+        addView(ixVar, qoe.c(-1.0f, -1));
         a();
         setType(0);
     }
@@ -279,32 +279,32 @@ public final class m extends FrameLayout {
         l lVar = this.f;
         lVar.f();
         lVar.a = null;
-        int i = bkb.Fl;
-        this.x = bkb.w0(null, i, false);
-        int w0 = bkb.w0(null, i, false);
+        int i = cmb.Fl;
+        this.x = cmb.w0(null, i, false);
+        int w0 = cmb.w0(null, i, false);
         this.y = w0;
         this.E = w0;
-        cw cwVar = this.r;
-        if (cwVar != null) {
-            cwVar.b(gl.B(w0) <= 0.721f, true);
+        cx cxVar = this.r;
+        if (cxVar != null) {
+            cxVar.b(gm.B(w0) <= 0.721f, true);
             this.r.setBackgroundColor(this.y);
-            cw cwVar2 = this.r;
+            cx cxVar2 = this.r;
             this.n = false;
-            gl.U3(cwVar2, false, 1.0f, true, false);
+            gm.T3(cxVar2, false, 1.0f, true, false);
         }
-        dx dxVar = this.c;
-        dxVar.F = null;
-        dxVar.e.clear();
-        dxVar.f.clear();
-        dxVar.s.clear();
-        dxVar.w.clear();
-        dxVar.h.clear();
-        dxVar.r.clear();
-        dxVar.n.clear();
-        dxVar.y.clear();
-        dxVar.x.clear();
-        dxVar.G = null;
-        dxVar.f();
+        ey eyVar = this.c;
+        eyVar.F = null;
+        eyVar.e.clear();
+        eyVar.f.clear();
+        eyVar.s.clear();
+        eyVar.w.clear();
+        eyVar.h.clear();
+        eyVar.r.clear();
+        eyVar.n.clear();
+        eyVar.y.clear();
+        eyVar.x.clear();
+        eyVar.G = null;
+        eyVar.f();
         invalidate();
     }
 
@@ -313,16 +313,16 @@ public final class m extends FrameLayout {
     }
 
     public final boolean c() {
-        dx dxVar;
+        ey eyVar;
         TLRPC.WebPage webPage;
         TL_iv.Page page;
-        return (e() || (dxVar = this.c) == null || (webPage = dxVar.F) == null || (page = webPage.cached_page) == null || page.local == null) ? false : true;
+        return (e() || (eyVar = this.c) == null || (webPage = eyVar.F) == null || (page = webPage.cached_page) == null || page.local == null) ? false : true;
     }
 
     public final boolean d() {
-        cv0 webView;
+        mw0 webView;
         String r;
-        return e() && (webView = getWebView()) != null && (r = hv0.r(webView.getUrl())) != null && hv0.n(Uri.parse(r));
+        return e() && (webView = getWebView()) != null && (r = qw0.r(webView.getUrl())) != null && qw0.n(Uri.parse(r));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -336,37 +336,37 @@ public final class m extends FrameLayout {
 
     public final void f() {
         if (b()) {
-            sw swVar = this.M.L;
-            this.d.g1(swVar != null ? 1 : 0, swVar != null ? gl.L(32.0f) : 0);
+            sx sxVar = this.M.L;
+            this.d.g1(sxVar != null ? 1 : 0, sxVar != null ? gm.L(32.0f) : 0);
         } else if (e()) {
-            iw iwVar = this.e;
-            iwVar.setSwipeOffsetY(iwVar.getTopActionBarOffsetY() + (-iwVar.getOffsetY()));
+            ix ixVar = this.e;
+            ixVar.setSwipeOffsetY(ixVar.getTopActionBarOffsetY() + (-ixVar.getOffsetY()));
         }
     }
 
     public final void g(int i, boolean z) {
         o oVar = this.M;
-        sw swVar = oVar.L;
+        sx sxVar = oVar.L;
         if (z) {
-            int v = bkb.v(bkb.w0(null, bkb.Fl, false), i);
+            int v = cmb.v(cmb.w0(null, cmb.Fl, false), i);
             this.x = v;
             if (this == oVar.v0[0]) {
-                if (gba.s0) {
+                if (gda.s0) {
                     oVar.i0.d(v, true);
                 }
-                if (swVar != null) {
-                    swVar.s();
+                if (sxVar != null) {
+                    sxVar.u();
                 }
             }
         } else {
-            int v2 = bkb.v(-1, i);
+            int v2 = cmb.v(-1, i);
             this.y = v2;
             if (this == oVar.v0[0]) {
-                if (gba.s0) {
+                if (gda.s0) {
                     oVar.i0.setMenuColors(v2);
                 }
-                if (swVar != null) {
-                    swVar.s();
+                if (sxVar != null) {
+                    sxVar.u();
                 }
             }
         }
@@ -374,15 +374,15 @@ public final class m extends FrameLayout {
     }
 
     public int getActionBarColor() {
-        return (e() && gba.s0) ? this.x : bkb.w0(null, bkb.Fl, false);
+        return (e() && gda.s0) ? this.x : cmb.w0(null, cmb.Fl, false);
     }
 
-    public dx getAdapter() {
+    public ey getAdapter() {
         return this.c;
     }
 
     public int getBackgroundColor() {
-        return (e() && gba.s0) ? this.n ? bkb.w0(null, bkb.Fl, false) : this.y : bkb.w0(null, bkb.Fl, false);
+        return (e() && gda.s0) ? this.n ? cmb.w0(null, cmb.Fl, false) : this.y : cmb.w0(null, cmb.Fl, false);
     }
 
     public float getListTop() {
@@ -393,14 +393,14 @@ public final class m extends FrameLayout {
             }
             return 0.0f;
         }
-        hw hwVar = this.b;
-        float height = hwVar.getHeight();
-        for (int i2 = 0; i2 < hwVar.getChildCount(); i2++) {
-            View childAt = hwVar.getChildAt(i2);
-            if (hwVar.getLayoutManager() == null) {
+        hx hxVar = this.b;
+        float height = hxVar.getHeight();
+        for (int i2 = 0; i2 < hxVar.getChildCount(); i2++) {
+            View childAt = hxVar.getChildAt(i2);
+            if (hxVar.getLayoutManager() == null) {
                 i = 0;
             } else {
-                hwVar.getLayoutManager().getClass();
+                hxVar.getLayoutManager().getClass();
                 i = RecyclerView.U(childAt).f;
             }
             height = i == 2147483646 ? Math.min(height, childAt.getBottom()) : Math.min(height, childAt.getTop());
@@ -408,29 +408,29 @@ public final class m extends FrameLayout {
         return height;
     }
 
-    public o39 getListView() {
+    public r59 getListView() {
         return this.b;
     }
 
     public float getProgress() {
-        cv0 webView;
-        sw swVar = this.M.L;
+        mw0 webView;
+        sx sxVar = this.M.L;
         if (b()) {
             float f = this.K;
             if (f >= 0.0f) {
                 return f;
             }
-            t26 t26Var = this.d;
-            int K0 = t26Var.K0();
-            if (t26Var.m(K0) != null) {
+            u46 u46Var = this.d;
+            int K0 = u46Var.K0();
+            if (u46Var.m(K0) != null) {
                 int[] iArr = this.c.K;
-                hw hwVar = this.b;
+                hx hxVar = this.b;
                 if (iArr != null) {
                     int i = K0 - 1;
-                    return Utilities.l((((i < 0 || i >= iArr.length) ? 0 : iArr[i]) + ((K0 != 0 || swVar == null) ? -r4.getTop() : 0)) / Math.max(1, r5.L - hwVar.getHeight()));
+                    return Utilities.l((((i < 0 || i >= iArr.length) ? 0 : iArr[i]) + ((K0 != 0 || sxVar == null) ? -r4.getTop() : 0)) / Math.max(1, r5.L - hxVar.getHeight()));
                 }
-                int M0 = t26Var.M0();
-                if (swVar != null) {
+                int M0 = u46Var.M0();
+                if (sxVar != null) {
                     if (K0 < 1) {
                         K0 = 1;
                     }
@@ -438,12 +438,12 @@ public final class m extends FrameLayout {
                         M0 = 1;
                     }
                 }
-                int A = t26Var.A() - 2;
-                View m = M0 >= A ? t26Var.m(A) : t26Var.m(K0);
+                int A = u46Var.A() - 2;
+                View m = M0 >= A ? u46Var.m(A) : u46Var.m(K0);
                 if (m != null) {
                     float width = getWidth() / (r0 - 1);
                     float measuredHeight = m.getMeasuredHeight();
-                    return ((K0 * width) + (M0 >= A ? (((A - K0) * width) * (hwVar.getMeasuredHeight() - m.getTop())) / measuredHeight : (1.0f - ((Math.min(0, m.getTop() - hwVar.getPaddingTop()) + measuredHeight) / measuredHeight)) * width)) / getWidth();
+                    return ((K0 * width) + (M0 >= A ? (((A - K0) * width) * (hxVar.getMeasuredHeight() - m.getTop())) / measuredHeight : (1.0f - ((Math.min(0, m.getTop() - hxVar.getPaddingTop()) + measuredHeight) / measuredHeight)) * width)) / getWidth();
                 }
             }
         } else if (e() && (webView = this.f.getWebView()) != null) {
@@ -453,8 +453,8 @@ public final class m extends FrameLayout {
     }
 
     public String getSubtitle() {
-        cv0 webView;
-        wt wtVar;
+        mw0 webView;
+        wu wuVar;
         if (!e() || (webView = this.f.getWebView()) == null) {
             return "";
         }
@@ -464,7 +464,7 @@ public final class m extends FrameLayout {
         try {
             String url = webView.getUrl();
             this.H = url;
-            Uri parse = Uri.parse(hv0.r(url));
+            Uri parse = Uri.parse(qw0.r(url));
             String uri = (parse.getScheme() == null || !(parse.getScheme().equalsIgnoreCase("http") || parse.getScheme().equalsIgnoreCase("https"))) ? parse.toString() : parse.getSchemeSpecificPart();
             try {
                 if (!d()) {
@@ -473,19 +473,19 @@ public final class m extends FrameLayout {
                         if (parse2.getHost() != null) {
                             parse = parse2;
                         }
-                        String a = d01.a(parse.getHost());
+                        String a = l11.a(parse.getHost());
                         String[] split = a.split("\\.");
-                        if (split.length > 2 && (wtVar = this.M.i0) != null && je5.h(a, wtVar.F) > gl.q.x - gl.L(162.0f)) {
+                        if (split.length > 2 && (wuVar = this.M.i0) != null && hg5.h(a, wuVar.F) > gm.q.x - gm.L(162.0f)) {
                             a = split[split.length - 2] + '.' + split[split.length - 1];
                         }
-                        uri = d01.w(parse, null, "", a, null);
+                        uri = l11.x(parse, null, "", a, null);
                     } catch (Exception e) {
-                        fa4.g(e, false);
+                        fc4.g(e, false);
                     }
                     uri = URLDecoder.decode(uri.replaceAll("\\+", "%2b"), "UTF-8");
                 }
             } catch (Exception e2) {
-                fa4.g(e2, true);
+                fc4.g(e2, true);
             }
             if (uri.startsWith("//")) {
                 uri = uri.substring(2);
@@ -508,7 +508,7 @@ public final class m extends FrameLayout {
     }
 
     public String getTitle() {
-        cv0 webView;
+        mw0 webView;
         TLRPC.WebPage webPage;
         if (b() && (webPage = this.c.F) != null) {
             String str = webPage.site_name;
@@ -523,11 +523,11 @@ public final class m extends FrameLayout {
         return (!e() || (webView = this.f.getWebView()) == null) ? "" : webView.getTitle();
     }
 
-    public hv0 getWebContainer() {
+    public qw0 getWebContainer() {
         return this.f;
     }
 
-    public cv0 getWebView() {
+    public mw0 getWebView() {
         l lVar = this.f;
         if (lVar != null) {
             return lVar.getWebView();
@@ -537,14 +537,14 @@ public final class m extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        cw cwVar;
+        cx cxVar;
         super.onAttachedToWindow();
-        if (!this.n || (cwVar = this.r) == null) {
+        if (!this.n || (cxVar = this.r) == null) {
             return;
         }
-        int i = bkb.Fl;
-        cwVar.b(gl.B(bkb.w0(null, i, false)) <= 0.721f, false);
-        zkb.h(i, null, this.r);
+        int i = cmb.Fl;
+        cxVar.b(gm.B(cmb.w0(null, i, false)) <= 0.721f, false);
+        anb.h(i, null, this.r);
     }
 
     public void setLastVisible(boolean z) {
@@ -564,11 +564,11 @@ public final class m extends FrameLayout {
         }
         if (oVar.g0.e) {
             oVar.h0.invalidate();
-            oVar.V((int) (((gl.L(56.0f) - oVar.g0.h) * (f / getMeasuredWidth())) + oVar.g0.h));
+            oVar.V((int) (((gm.L(56.0f) - oVar.g0.h) * (f / getMeasuredWidth())) + oVar.g0.h));
         }
-        sw swVar = oVar.L;
-        if (swVar != null) {
-            swVar.A();
+        sx sxVar = oVar.L;
+        if (sxVar != null) {
+            sxVar.A();
         }
     }
 
@@ -581,36 +581,36 @@ public final class m extends FrameLayout {
         this.e.setVisibility(e() ? 0 : 8);
     }
 
-    public void setWeb(zv zvVar) {
-        zv zvVar2 = this.L;
-        if (zvVar2 != zvVar) {
-            if (zvVar2 != null) {
-                zvVar2.c(this);
+    public void setWeb(zw zwVar) {
+        zw zwVar2 = this.L;
+        if (zwVar2 != zwVar) {
+            if (zwVar2 != null) {
+                zwVar2.c(this);
             }
-            this.L = zvVar;
-            if (zvVar != null) {
-                cv0 cv0Var = zvVar.b;
+            this.L = zwVar;
+            if (zwVar != null) {
+                mw0 mw0Var = zwVar.b;
                 l lVar = this.f;
-                if (cv0Var != null) {
-                    cv0Var.onResume();
-                    lVar.L(y6c.t0, zvVar.b, zvVar.d, zvVar.x, false);
-                    g(zvVar.q, true);
-                    g(zvVar.r, false);
+                if (mw0Var != null) {
+                    mw0Var.onResume();
+                    lVar.L(z8c.t0, zwVar.b, zwVar.d, zwVar.x, false);
+                    g(zwVar.q, true);
+                    g(zwVar.r, false);
                 } else {
-                    String str = zvVar.x;
+                    String str = zwVar.x;
                     if (str != null) {
-                        lVar.q(y6c.t0, str, false);
+                        lVar.q(z8c.t0, str, false);
                     }
                 }
             }
-            atc atcVar = this.F;
-            if (atcVar != null) {
-                atcVar.a();
-                atc atcVar2 = this.F;
-                TLRPC.TL_webPage tL_webPage = atcVar2.j;
+            bvc bvcVar = this.F;
+            if (bvcVar != null) {
+                bvcVar.a();
+                bvc bvcVar2 = this.F;
+                TLRPC.TL_webPage tL_webPage = bvcVar2.j;
                 if (tL_webPage != null) {
-                    ctc.o(tL_webPage);
-                    atcVar2.j = null;
+                    dvc.o(tL_webPage);
+                    bvcVar2.j = null;
                 }
                 this.F = null;
             }

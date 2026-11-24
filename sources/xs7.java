@@ -1,31 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class xs7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x6b b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class xs7 implements nv8 {
+    public static final bh7 c = new bh7(8);
+    public static final nr2 d = new nr2(6);
+    public ke3 a;
+    public volatile nv8 b;
 
-    public /* synthetic */ xs7(x6b x6bVar, byte b) {
-        this.a = b;
-        this.b = x6bVar;
+    public xs7(bh7 bh7Var, nv8 nv8Var) {
+        this.a = bh7Var;
+        this.b = nv8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        x6b x6bVar = this.b;
-        switch (b) {
-            case 0:
-                mt7 mt7Var = x6bVar.e2;
-                if (mt7Var != null) {
-                    mt7Var.I0();
-                    break;
-                }
-                break;
-            default:
-                x6bVar.u2.q1.setVisibility(8);
-                break;
+    public final void a(ke3 ke3Var) {
+        nv8 nv8Var;
+        nv8 nv8Var2;
+        nv8 nv8Var3 = this.b;
+        nr2 nr2Var = d;
+        if (nv8Var3 != nr2Var) {
+            ke3Var.f(nv8Var3);
+            return;
         }
+        synchronized (this) {
+            nv8Var = this.b;
+            if (nv8Var != nr2Var) {
+                nv8Var2 = nv8Var;
+            } else {
+                this.a = new cz6((Object) this.a, (Object) ke3Var, (byte) 7);
+                nv8Var2 = null;
+            }
+        }
+        if (nv8Var2 != null) {
+            ke3Var.f(nv8Var);
+        }
+    }
+
+    @Override // nv8
+    public final Object get() {
+        return this.b.get();
     }
 }

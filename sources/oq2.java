@@ -1,135 +1,70 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.SparseArray;
+import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class oq2 extends ru3 {
-    public static final Paint i = new Paint(2);
-    public static final Rect j = new Rect();
-    public pq2 c;
-    public pq2 d;
-    public lm e;
-    public lm f;
-    public pq2 g;
-    public pq2 h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class oq2 {
+    public final Object a;
+    public final rb1 b;
+    public final hs4 c;
+    public final Object d;
+    public final Throwable e;
 
-    public static void c(Canvas canvas, pq2 pq2Var, Rect rect, float f) {
-        int i2;
-        Bitmap bitmap = (Bitmap) pq2.e.get(pq2Var.c);
-        if (bitmap != null) {
-            Paint paint = pq2Var.d ? qq2.b : i;
-            if (f < 1.0f) {
-                i2 = paint.getAlpha();
-                paint.setAlpha((int) (i2 * f));
-            } else {
-                i2 = kk7.d4;
-            }
-            canvas.drawBitmap(bitmap, (Rect) null, rect, paint);
-            if (f < 1.0f) {
-                paint.setAlpha(i2);
-            }
-        }
+    public /* synthetic */ oq2(Object obj, rb1 rb1Var, hs4 hs4Var, CancellationException cancellationException, int i) {
+        this(obj, (i & 2) != 0 ? null : rb1Var, (i & 4) != 0 ? null : hs4Var, (Object) null, (i & 16) != 0 ? null : cancellationException);
     }
 
-    @Override // ru3
-    public final boolean a() {
-        pq2 pq2Var = this.c;
-        SparseArray sparseArray = pq2.e;
-        return sparseArray.indexOfKey(pq2Var.c) >= 0 && sparseArray.indexOfKey(this.d.c) >= 0;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r8v2, types: [java.lang.Throwable] */
+    public static oq2 a(oq2 oq2Var, rb1 rb1Var, CancellationException cancellationException, int i) {
+        Object obj = oq2Var.a;
+        if ((i & 2) != 0) {
+            rb1Var = oq2Var.b;
+        }
+        rb1 rb1Var2 = rb1Var;
+        hs4 hs4Var = oq2Var.c;
+        Object obj2 = oq2Var.d;
+        CancellationException cancellationException2 = cancellationException;
+        if ((i & 16) != 0) {
+            cancellationException2 = oq2Var.e;
+        }
+        return new oq2(obj, rb1Var2, hs4Var, obj2, cancellationException2);
     }
 
-    @Override // ru3
-    public final void b() {
-        if (a()) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.c.a();
-        this.d.a();
+        if (!(obj instanceof oq2)) {
+            return false;
+        }
+        oq2 oq2Var = (oq2) obj;
+        return rr5.a(this.a, oq2Var.a) && rr5.a(this.b, oq2Var.b) && rr5.a(this.c, oq2Var.c) && rr5.a(this.d, oq2Var.d) && rr5.a(this.e, oq2Var.e);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds;
-        if (!a()) {
-            b();
-            Paint paint = vu3.d;
-            paint.setColor(this.b);
-            Rect bounds2 = getBounds();
-            canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), bounds2.width() * 0.4f, paint);
-            return;
-        }
-        if (this.a) {
-            Rect bounds3 = getBounds();
-            int centerX = bounds3.centerX();
-            int centerY = bounds3.centerY();
-            boolean z = this.a;
-            int i2 = z ? vu3.c : vu3.b;
-            bounds = j;
-            bounds.left = centerX - (i2 / 2);
-            bounds.right = ((z ? vu3.c : vu3.b) / 2) + centerX;
-            bounds.top = centerY - ((z ? vu3.c : vu3.b) / 2);
-            bounds.bottom = ((z ? vu3.c : vu3.b) / 2) + centerY;
-        } else {
-            bounds = getBounds();
-        }
-        Rect rect = bounds;
-        if (canvas.quickReject(rect.left, rect.top, rect.right, rect.bottom, Canvas.EdgeType.AA)) {
-            return;
-        }
-        byte b = 7;
-        if (this.g != null) {
-            lm lmVar = this.e;
-            if (lmVar == null) {
-                lm lmVar2 = new lm(0.0f, new mk2(this, b), 0L, 320L, s33.g);
-                this.e = lmVar2;
-                lmVar = lmVar2;
-            }
-            float e = lmVar.e(false, 1.0f);
-            c(canvas, this.g, rect, Math.min(1.0f, e * 1.5f));
-            c(canvas, this.c, rect, 1.0f - e);
-            if (e >= 1.0f) {
-                this.c = this.g;
-                this.g = null;
-            }
-        } else {
-            c(canvas, this.c, rect, 1.0f);
-        }
-        if (this.h == null) {
-            c(canvas, this.d, rect, 1.0f);
-            return;
-        }
-        lm lmVar3 = this.f;
-        if (lmVar3 == null) {
-            lm lmVar4 = new lm(0.0f, new mk2(this, b), 0L, 320L, s33.g);
-            this.f = lmVar4;
-            lmVar3 = lmVar4;
-        }
-        float e2 = lmVar3.e(false, 1.0f);
-        c(canvas, this.h, rect, Math.min(1.0f, 1.5f * e2));
-        c(canvas, this.d, rect, 1.0f - e2);
-        if (e2 >= 1.0f) {
-            this.d = this.h;
-            this.h = null;
-        }
+    public final int hashCode() {
+        Object obj = this.a;
+        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
+        rb1 rb1Var = this.b;
+        int hashCode2 = (hashCode + (rb1Var == null ? 0 : rb1Var.hashCode())) * 31;
+        hs4 hs4Var = this.c;
+        int hashCode3 = (hashCode2 + (hs4Var == null ? 0 : hs4Var.hashCode())) * 31;
+        Object obj2 = this.d;
+        int hashCode4 = (hashCode3 + (obj2 == null ? 0 : obj2.hashCode())) * 31;
+        Throwable th = this.e;
+        return hashCode4 + (th != null ? th.hashCode() : 0);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final String toString() {
+        return "CompletedContinuation(result=" + this.a + ", cancelHandler=" + this.b + ", onCancellation=" + this.c + ", idempotentResume=" + this.d + ", cancelCause=" + this.e + ')';
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i2) {
-        i.setAlpha(i2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public oq2(Object obj, rb1 rb1Var, hs4 hs4Var, Object obj2, Throwable th) {
+        this.a = obj;
+        this.b = rb1Var;
+        this.c = hs4Var;
+        this.d = obj2;
+        this.e = th;
     }
 }

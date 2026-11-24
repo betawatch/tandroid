@@ -1,204 +1,99 @@
 // default package
 
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.p;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import android.graphics.drawable.shapes.RoundRectShape;
+import android.util.StateSet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ulb implements nl2 {
-    public final /* synthetic */ qmb a;
+public abstract class ulb {
+    public static final int a = cmb.c6;
+    public static float[] b;
 
-    public ulb(qmb qmbVar) {
-        this.a = qmbVar;
+    public static float[] a(float... fArr) {
+        return fArr.length == 0 ? new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f} : fArr.length == 1 ? new float[]{gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0])} : fArr.length == 2 ? new float[]{gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[1]), gm.L(fArr[1]), gm.L(fArr[1]), gm.L(fArr[1])} : fArr.length == 3 ? new float[]{gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[1]), gm.L(fArr[1]), gm.L(fArr[2]), gm.L(fArr[2]), gm.L(fArr[2]), gm.L(fArr[2])} : fArr.length < 8 ? new float[]{gm.L(fArr[0]), gm.L(fArr[0]), gm.L(fArr[1]), gm.L(fArr[1]), gm.L(fArr[2]), gm.L(fArr[2]), gm.L(fArr[3]), gm.L(fArr[3])} : new float[]{gm.L(fArr[0]), gm.L(fArr[1]), gm.L(fArr[2]), gm.L(fArr[3]), gm.L(fArr[4]), gm.L(fArr[5]), gm.L(fArr[6]), gm.L(fArr[7])};
     }
 
-    @Override // nl2
-    public final void a(boolean z) {
-        int i;
-        int i2;
-        qmb qmbVar = this.a;
-        zjb zjbVar = qmbVar.w;
-        if (!z) {
-            ij.T(qmbVar, 1, null, null);
-            return;
+    public static int b(int i) {
+        float[] fArr = b;
+        if (fArr == null) {
+            fArr = new float[3];
+            b = fArr;
         }
-        if (zjbVar.r == null) {
-            qmbVar.finishFragment();
-            i2 = ((d) qmbVar).currentAccount;
-            na7.q1(i2).A4(zjbVar.b, zjbVar);
-            kk7.e().k(kk7.u4, zjbVar.b, zjbVar);
-            return;
+        Color.colorToHSV(i, fArr);
+        float[] fArr2 = b;
+        float f = fArr2[1];
+        if (f > 0.01f) {
+            fArr2[1] = Math.min(1.0f, Math.max(0.0f, f + (cmb.I.o() ? 0.25f : -0.25f)));
+            float[] fArr3 = b;
+            fArr3[2] = Math.min(1.0f, Math.max(0.0f, fArr3[2] + (cmb.I.o() ? 0.05f : -0.05f)));
+        } else {
+            fArr2[2] = Math.min(1.0f, Math.max(0.0f, fArr2[2] + (cmb.I.o() ? 0.1f : -0.1f)));
         }
-        StringBuilder sb = new StringBuilder("https://");
-        i = ((d) qmbVar).currentAccount;
-        sb.append(na7.q1(i).N2);
-        sb.append("/addtheme/");
-        sb.append(zjbVar.r.slug);
-        String sb2 = sb.toString();
-        qmbVar.showDialog(new taa(qmbVar.getParentActivity(), null, sb2, false, sb2, false, null));
+        return Color.HSVToColor(nm7.K1, b);
     }
 
-    @Override // nl2
-    public final void b() {
-        qmb qmbVar = this.a;
-        if (qmbVar.getParentActivity() != null) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qmbVar.getParentActivity());
-            String M0 = k96.M0(2131751472, null);
-            hd hdVar = alertDialog$Builder.a;
-            hdVar.S = M0;
-            hdVar.U = k96.M0(2131751473, null);
-            alertDialog$Builder.j(k96.M0(2131751586, null), new hza(this, (byte) 15));
-            alertDialog$Builder.g(k96.M0(2131752577, null), null);
-            qmbVar.showDialog(hdVar);
-            TextView textView = (TextView) hdVar.c(-1);
-            if (textView != null) {
-                zkb.X(textView, bkb.p7, qmbVar.a);
-            }
+    public static fg0 c(wn9 wn9Var, int i) {
+        ColorStateList colorStateList = new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i});
+        wn9 wn9Var2 = new wn9((byte) 1);
+        if (wn9.c == null) {
+            Paint paint = new Paint(1);
+            wn9.c = paint;
+            paint.setColor(-1);
         }
+        wn9Var2.b = wn9.c;
+        return new fg0(colorStateList, wn9Var, wn9Var2);
     }
 
-    @Override // nl2
-    public final void c(int i, int i2, boolean z) {
-        qmb qmbVar = this.a;
-        if (qmbVar.b == 2) {
-            qmbVar.e1(i, i2, true);
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static fg0 d(int i, int i2, float... fArr) {
+        ColorDrawable colorDrawable;
+        ShapeDrawable shapeDrawable;
+        if (i != 0) {
+            int i3 = 0;
+            while (true) {
+                if (i3 >= Math.min(8, fArr.length)) {
+                    colorDrawable = new ColorDrawable(i);
+                    break;
+                }
+                if (fArr[i3] > 0.0f) {
+                    ShapeDrawable shapeDrawable2 = new ShapeDrawable(new RoundRectShape(a(fArr), null, null));
+                    shapeDrawable2.getPaint().setColor(i);
+                    colorDrawable = shapeDrawable2;
+                    break;
+                }
+                i3++;
+            }
+        } else {
+            colorDrawable = null;
         }
-        Runnable runnable = qmbVar.a0;
-        zjb zjbVar = qmbVar.w;
-        if (i2 != -1) {
-            int i3 = qmbVar.Z;
-            if (i3 != -1 && i3 != i2) {
-                runnable.run();
+        int i4 = 0;
+        while (true) {
+            if (i4 >= Math.min(8, fArr.length)) {
+                shapeDrawable = new ShapeDrawable(new RectShape());
+                shapeDrawable.getPaint().setColor(-1);
+                break;
             }
-            qmbVar.Y = i;
-            qmbVar.Z = i2;
-            if (z) {
-                runnable.run();
-                return;
-            } else {
-                if (qmbVar.b0) {
-                    return;
-                }
-                qmbVar.b0 = true;
-                qmbVar.fragmentView.postDelayed(runnable, 16L);
-                return;
+            if (fArr[i4] > 0.0f) {
+                shapeDrawable = new ShapeDrawable(new RoundRectShape(a(fArr), null, null));
+                shapeDrawable.getPaint().setColor(-1);
+                break;
             }
+            i4++;
         }
-        int i4 = qmbVar.n;
-        if (i4 == 1 || i4 == 2) {
-            long j = qmbVar.K;
-            if (j != 0) {
-                zjbVar.j = j;
-            } else {
-                zjbVar.j = 0L;
-            }
-            long j2 = qmbVar.L;
-            if (j2 != 0) {
-                zjbVar.k = j2;
-            } else {
-                zjbVar.k = 0L;
-            }
-            long j3 = qmbVar.M;
-            if (j3 != 0) {
-                zjbVar.l = j3;
-            } else {
-                zjbVar.l = 0L;
-            }
-            long j4 = qmbVar.N;
-            if (j4 != 0) {
-                zjbVar.m = j4;
-            } else {
-                zjbVar.m = 0L;
-            }
-            zjbVar.n = qmbVar.Q;
-            if (i4 == 2) {
-                int C0 = bkb.C0(bkb.De);
-                int C02 = bkb.C0(bkb.Ee);
-                int C03 = bkb.C0(bkb.Fe);
-                int C04 = bkb.C0(bkb.Ge);
-                int i5 = (int) zjbVar.k;
-                int i6 = (int) zjbVar.l;
-                int i7 = (int) zjbVar.m;
-                int i8 = (int) zjbVar.j;
-                p pVar = qmbVar.X;
-                if (i7 != 0) {
-                    C04 = i7;
-                }
-                pVar.e(C04, 3);
-                p pVar2 = qmbVar.X;
-                if (i6 != 0) {
-                    C03 = i6;
-                }
-                pVar2.e(C03, 2);
-                p pVar3 = qmbVar.X;
-                if (i5 != 0) {
-                    C02 = i5;
-                }
-                pVar3.e(C02, 1);
-                p pVar4 = qmbVar.X;
-                if (i8 != 0) {
-                    C0 = i8;
-                }
-                pVar4.e(C0, 0);
-            }
-        }
-        int i9 = qmbVar.n;
-        if (i9 == 1 || i9 == 3) {
-            int i10 = qmbVar.F;
-            if (i10 != 0) {
-                zjbVar.e = i10;
-            } else {
-                zjbVar.e = 0;
-            }
-            int i11 = qmbVar.G;
-            if (i11 != 0) {
-                zjbVar.f = i11;
-            } else {
-                zjbVar.f = 0;
-            }
-            int i12 = qmbVar.H;
-            if (i12 != 0) {
-                zjbVar.g = i12;
-            } else {
-                zjbVar.g = 0;
-            }
-            int i13 = qmbVar.I;
-            if (i13 != 0) {
-                zjbVar.h = i13;
-            } else {
-                zjbVar.h = 0;
-                i13 = 0;
-            }
-            if (i9 == 3) {
-                qmbVar.X.e(i13, 3);
-                qmbVar.X.e(zjbVar.g, 2);
-                qmbVar.X.e(zjbVar.f, 1);
-                p pVar5 = qmbVar.X;
-                int i14 = zjbVar.e;
-                if (i14 == 0) {
-                    i14 = zjbVar.c;
-                }
-                pVar5.e(i14, 0);
-            }
-        }
-        bkb.r1(false, false);
-        qmbVar.w0.h1();
+        return new fg0(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i2}), colorDrawable, shapeDrawable);
     }
 
-    @Override // nl2
-    public final int d(int i) {
-        zjb zjbVar;
-        qmb qmbVar = this.a;
-        if (qmbVar.n != 3) {
-            return 0;
-        }
-        akb akbVar = qmbVar.g0;
-        if (akbVar.T && i == 0 && (zjbVar = (zjb) akbVar.b0.get(bkb.n)) != null) {
-            return zjbVar.e;
-        }
-        return 0;
+    public static fg0 e(int i, float... fArr) {
+        return d(i, b(i), fArr);
+    }
+
+    public static fg0 f(int i, float... fArr) {
+        return e(cmb.w0(null, i, false), fArr);
     }
 }

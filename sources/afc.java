@@ -1,53 +1,21 @@
 // default package
 
 import android.view.View;
-import java.lang.ref.WeakReference;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class afc {
-    public final WeakReference a;
-
-    public afc(View view) {
-        this.a = new WeakReference(view);
+public abstract class afc {
+    public static WindowInsets a(View view, WindowInsets windowInsets) {
+        int i = mfc.a;
+        return view.dispatchApplyWindowInsets(windowInsets);
     }
 
-    public final void a(float f) {
-        View view = (View) this.a.get();
-        if (view != null) {
-            view.animate().alpha(f);
-        }
+    public static WindowInsets b(View view, WindowInsets windowInsets) {
+        return view.onApplyWindowInsets(windowInsets);
     }
 
-    public final void b() {
-        View view = (View) this.a.get();
-        if (view != null) {
-            view.animate().cancel();
-        }
-    }
-
-    public final void c(long j) {
-        View view = (View) this.a.get();
-        if (view != null) {
-            view.animate().setDuration(j);
-        }
-    }
-
-    public final void d(dfc dfcVar) {
-        View view = (View) this.a.get();
-        if (view != null) {
-            if (dfcVar != null) {
-                view.animate().setListener(new eh8((Object) dfcVar, view, (byte) 20));
-            } else {
-                view.animate().setListener(null);
-            }
-        }
-    }
-
-    public final void e(float f) {
-        View view = (View) this.a.get();
-        if (view != null) {
-            view.animate().translationY(f);
-        }
+    public static void c(View view) {
+        view.requestApplyInsets();
     }
 }

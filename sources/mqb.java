@@ -1,19 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum mqb extends qsb {
-    public mqb() {
-        super("ScriptDataEscapeStart", 19);
+public final class mqb extends to4 {
+    public final bt6 f;
+
+    public mqb(bqb bqbVar, bt6 bt6Var) {
+        super(bqbVar);
+        this.f = bt6Var;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        if (!zj1Var.m('-')) {
-            aqbVar.c = qsb.f;
-        } else {
-            aqbVar.f('-');
-            aqbVar.a(qsb.K);
-        }
+    @Override // to4, bqb
+    public final aqb m(int i, aqb aqbVar, long j) {
+        super.m(i, aqbVar, j);
+        bt6 bt6Var = this.f;
+        aqbVar.b = bt6Var;
+        xs6 xs6Var = bt6Var.b;
+        return aqbVar;
     }
 }

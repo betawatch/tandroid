@@ -1,38 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum asb extends qsb {
-    public asb() {
-        super("DoctypePublicIdentifier_doubleQuoted", 56);
+public final class asb extends b4 {
+    public static final Parcelable.Creator<asb> CREATOR = new lbd(9);
+    public final yrb a;
+    public final String b;
+
+    static {
+        new asb("supported", null);
+        new asb("not-supported", null);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        rpb rpbVar = aqbVar.m;
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            rpbVar.f.append((char) 65533);
-            return;
+    public asb(String str, String str2) {
+        ite.h(str);
+        try {
+            this.a = yrb.a(str);
+            this.b = str2;
+        } catch (zrb e) {
+            throw new IllegalArgumentException(e);
         }
-        if (d == '\"') {
-            aqbVar.c = qsb.w0;
-            return;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof asb)) {
+            return false;
         }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else {
-            if (d != 65535) {
-                rpbVar.f.append(d);
-                return;
-            }
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        }
+        asb asbVar = (asb) obj;
+        return x1f.a(this.a, asbVar.a) && x1f.a(this.b, asbVar.b);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.l(parcel, 2, this.a.a);
+        mve.l(parcel, 3, this.b);
+        mve.s(parcel, r);
     }
 }

@@ -1,29 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class v91 implements yr3 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ da1 b;
+import android.view.View;
+import java.io.Serializable;
 
-    public /* synthetic */ v91(da1 da1Var, byte b) {
-        this.a = b;
-        this.b = da1Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class v91 implements oac, pac, qq7 {
+    public final /* synthetic */ ia1 a;
+
+    public /* synthetic */ v91(ia1 ia1Var) {
+        this.a = ia1Var;
     }
 
-    @Override // yr3
-    public final void a(yla ylaVar, float f, float f2) {
-        byte b = this.a;
-        da1 da1Var = this.b;
-        switch (b) {
-            case 0:
-                da1Var.F = f / 500.0f;
-                da1Var.fragmentView.invalidate();
-                break;
-            default:
-                da1Var.c0 = da1Var.O ? f / 500.0f : 1.0f - (f / 500.0f);
-                da1Var.fragmentView.invalidate();
-                break;
+    @Override // qq7
+    public final wzc C0(View view, wzc wzcVar) {
+        return this.a.onInsetsInternal(view, wzcVar);
+    }
+
+    @Override // pac
+    public final Object b(c6c c6cVar, View view, Integer num, Float f, Float f2) {
+        boolean z;
+        Object obj = c6cVar.H;
+        if (obj instanceof fa1) {
+            this.a.a0(((fa1) obj).c, (ea1) view);
+            z = true;
+        } else {
+            z = false;
         }
+        return Boolean.valueOf(z);
+    }
+
+    @Override // oac
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.j0((c6c) obj, (View) obj2);
     }
 }

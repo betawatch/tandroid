@@ -1,23 +1,18 @@
 // default package
 
-import java.util.ArrayList;
+import android.media.MediaCodec;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mm9 implements un9 {
-    public final /* synthetic */ nm9 a;
+public final class mm9 {
+    public final boolean a;
+    public final ByteBuffer b;
+    public final MediaCodec.BufferInfo c;
 
-    public mm9(nm9 nm9Var) {
-        this.a = nm9Var;
-    }
-
-    @Override // un9
-    public final void onRejoinRequested() {
-        gl.d3(new zk9(this, (byte) 3));
-    }
-
-    @Override // un9
-    public final void onStreamChannels(ArrayList arrayList) {
-        gl.d3(new tj9(this, arrayList, (byte) 7));
+    public mm9(boolean z, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        this.a = z;
+        this.b = byteBuffer;
+        this.c = bufferInfo;
     }
 }

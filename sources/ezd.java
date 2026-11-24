@@ -1,51 +1,19 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ezd extends AbstractList implements omd, RandomAccess {
-    public final cmd a;
+public final class ezd implements cq7 {
+    public static final ezd a = new ezd();
 
-    public ezd(cmd cmdVar) {
-        this.a = cmdVar;
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)));
     }
 
-    @Override // omd
-    public final List c() {
-        return DesugarCollections.unmodifiableList(this.a.b);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i) {
-        return (String) this.a.get(i);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        dcd dcdVar = new dcd((byte) 2);
-        dcdVar.b = this.a.iterator();
-        return dcdVar;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i) {
-        fzd fzdVar = new fzd((byte) 0);
-        fzdVar.b = this.a.listIterator(i);
-        return fzdVar;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.size();
-    }
-
-    @Override // omd
-    public final omd g() {
-        return this;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

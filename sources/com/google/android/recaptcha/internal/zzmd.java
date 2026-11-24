@@ -1,27 +1,27 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzmd {
     public static void zza(boolean z) {
         if (z) {
             return;
         }
-        sc8.e();
+        i98.g();
     }
 
     public static void zzb(boolean z, Object obj) {
         if (z) {
             return;
         }
-        w26.j((String) obj);
+        u36.j((String) obj);
     }
 
     public static void zzc(boolean z, String str, char c) {
         if (z) {
             return;
         }
-        w26.j(zzmg.zza(str, Character.valueOf(c)));
+        u36.j(zzmg.zza(str, Character.valueOf(c)));
     }
 
     public static void zzd(int i, int i2, int i3) {
@@ -34,7 +34,7 @@ public final class zzmd {
         if (z) {
             return;
         }
-        sc8.j((String) obj);
+        dq9.m((String) obj);
     }
 
     private static String zzf(int i, int i2, String str) {

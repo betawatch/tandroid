@@ -1,69 +1,124 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.app.PendingIntent;
+import android.os.BadParcelableException;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class y0e extends nne {
-    private static final y0e zzf;
-    private static volatile dwe zzg;
-    private int zzc;
-    private String zzd = "";
-    private String zze = "";
+public final class y0e extends Binder implements IInterface {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ TaskCompletionSource b;
 
-    static {
-        y0e y0eVar = new y0e();
-        zzf = y0eVar;
-        nne.g(y0e.class, y0eVar);
-    }
-
-    public static x0e k() {
-        return (x0e) ((jne) zzf.d(5));
-    }
-
-    /* JADX WARN: Type inference failed for: r2v12, types: [dwe, java.lang.Object] */
-    @Override // nne
-    public final Object d(int i) {
-        dwe dweVar;
-        switch (l2e.a[i - 1]) {
-            case 1:
-                return new y0e();
+    public y0e(TaskCompletionSource taskCompletionSource, byte b) {
+        this.a = b;
+        switch (b) {
             case 2:
-                return new x0e(zzf);
-            case 3:
-                return new swe(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzc", "zzd", "zze"});
-            case 4:
-                return zzf;
-            case 5:
-                dwe dweVar2 = zzg;
-                if (dweVar2 != null) {
-                    return dweVar2;
-                }
-                synchronized (y0e.class) {
-                    dwe dweVar3 = zzg;
-                    dweVar = dweVar3;
-                    if (dweVar3 == null) {
-                        ?? ineVar = new ine();
-                        zzg = ineVar;
-                        dweVar = ineVar;
-                    }
-                }
-                return dweVar;
-            case 6:
-                return (byte) 1;
+                this.b = taskCompletionSource;
+                attachInterface(this, "com.google.android.gms.auth.api.phone.internal.ISmsRetrieverResultCallback");
+                break;
             default:
-                fvc.b();
-            case 7:
-                return null;
+                this.b = taskCompletionSource;
+                attachInterface(this, "com.google.android.gms.fido.fido2.internal.regular.IFido2AppCallbacks");
+                break;
         }
     }
 
-    public final void j(String str) {
-        str.getClass();
-        this.zzc |= 1;
-        this.zzd = str;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        byte b = this.a;
+        return this;
     }
 
-    public final void m(String str) {
-        this.zzc |= 2;
-        this.zze = str;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0051, code lost:
+    
+        if (super.onTransact(r7, r8, r9, r10) != false) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00b9, code lost:
+    
+        if (super.onTransact(r7, r8, r9, r10) != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0013, code lost:
+    
+        if (super.onTransact(r7, r8, r9, r10) != false) goto L7;
+     */
+    @Override // android.os.Binder
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        switch (this.a) {
+            case 0:
+                if (i > 16777215) {
+                    break;
+                } else {
+                    parcel.enforceInterface(getInterfaceDescriptor());
+                }
+                if (i != 1) {
+                    return false;
+                }
+                Parcelable.Creator<Status> creator = Status.CREATOR;
+                int i3 = oid.a;
+                Status createFromParcel = parcel.readInt() == 0 ? null : creator.createFromParcel(parcel);
+                PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
+                int dataAvail = parcel.dataAvail();
+                if (dataAvail > 0) {
+                    throw new BadParcelableException(hg9.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                }
+                fxe.a(createFromParcel, pendingIntent, this.b);
+                return true;
+            case 1:
+                if (i > 16777215) {
+                    break;
+                } else {
+                    parcel.enforceInterface(getInterfaceDescriptor());
+                }
+                if (i != 1) {
+                    return false;
+                }
+                Parcelable.Creator<Status> creator2 = Status.CREATOR;
+                int i4 = mid.a;
+                Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
+                String readString = parcel.readString();
+                int dataAvail2 = parcel.dataAvail();
+                if (dataAvail2 <= 0) {
+                    fxe.a(createFromParcel2, readString, this.b);
+                    return true;
+                }
+                StringBuilder sb = new StringBuilder(String.valueOf(dataAvail2).length() + 45);
+                sb.append("Parcel data not fully consumed, unread size: ");
+                sb.append(dataAvail2);
+                throw new BadParcelableException(sb.toString());
+            default:
+                if (i > 16777215) {
+                    break;
+                } else {
+                    parcel.enforceInterface(getInterfaceDescriptor());
+                }
+                if (i != 1) {
+                    return false;
+                }
+                Parcelable.Creator<Status> creator3 = Status.CREATOR;
+                int i5 = kjd.a;
+                Status createFromParcel3 = parcel.readInt() == 0 ? null : creator3.createFromParcel(parcel);
+                int dataAvail3 = parcel.dataAvail();
+                if (dataAvail3 > 0) {
+                    throw new BadParcelableException(hg9.j(dataAvail3, "Parcel data not fully consumed, unread size: "));
+                }
+                fxe.a(createFromParcel3, null, this.b);
+                return true;
+        }
+    }
+
+    public y0e(ua4 ua4Var, TaskCompletionSource taskCompletionSource) {
+        this.a = (byte) 1;
+        this.b = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.cloudmessaging.internal.IRegisterCallback");
     }
 }

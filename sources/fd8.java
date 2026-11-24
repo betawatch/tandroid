@@ -1,31 +1,11 @@
 // default package
 
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class fd8 implements op4 {
-    public final /* synthetic */ byte a = 1;
-
-    public /* synthetic */ fd8() {
-    }
-
-    @Override // op4
-    public final Object invoke() {
-        w4a[] w4aVarArr;
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = new ArrayList(0);
-                if (arrayList.isEmpty()) {
-                    arrayList = null;
-                }
-                return (arrayList == null || (w4aVarArr = (w4a[]) arrayList.toArray(new w4a[0])) == null) ? xbd.a : w4aVarArr;
-            default:
-                c9b c9bVar = c9b.a;
-                return new q46(tk8.a);
-        }
-    }
-
-    public /* synthetic */ fd8(gd8 gd8Var) {
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class fd8 {
+    public Bitmap a;
+    public final RectF b = new RectF();
 }

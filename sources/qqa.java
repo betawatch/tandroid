@@ -1,35 +1,29 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qqa extends AnimatorListenerAdapter {
-    public final /* synthetic */ rqa a;
+public final /* synthetic */ class qqa implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wsa b;
 
-    public qqa(rqa rqaVar) {
-        this.a = rqaVar;
+    public /* synthetic */ qqa(wsa wsaVar, byte b) {
+        this.a = b;
+        this.b = wsaVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        rqa rqaVar = this.a;
-        z6a z6aVar = rqaVar.p0;
-        rqaVar.z0 = rqaVar.y0;
-        rqaVar.d(rqaVar.b0);
-        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = rqaVar.e;
-        int i = 2 - rqaVar.y0;
-        stargiftattributemodelArr[i] = (TL_stars.starGiftAttributeModel) rqaVar.d0.f;
-        jva.d1(rqaVar.d[i].getImageReceiver(), stargiftattributemodelArr[2 - rqaVar.y0].document, kk7.p2);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) rqaVar.e0.f;
-        if (stargiftattributepattern != null) {
-            vl l = vl.l(y6c.t0, 7, stargiftattributepattern.document);
-            l.m = true;
-            l.u();
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        byte b = this.a;
+        wsa wsaVar = this.b;
+        switch (b) {
+            case 0:
+                wsaVar.f2.setLoading(false);
+                break;
+            default:
+                wsaVar.f2.setLoading(false);
+                break;
         }
-        gl.r(z6aVar);
-        gl.e3(z6aVar, 2500L);
     }
 }

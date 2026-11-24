@@ -1,111 +1,112 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import j$.util.Objects;
-import org.telegram.ui.ProfileActivity;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class cg0 implements wg5 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class cg0 implements p30 {
+    public l30 b;
+    public l30 c;
+    public l30 d;
+    public l30 e;
+    public ByteBuffer f;
+    public ByteBuffer g;
+    public boolean h;
 
-    public /* synthetic */ cg0(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = obj2;
+    public cg0() {
+        ByteBuffer byteBuffer = p30.a;
+        this.f = byteBuffer;
+        this.g = byteBuffer;
+        l30 l30Var = l30.e;
+        this.d = l30Var;
+        this.e = l30Var;
+        this.b = l30Var;
+        this.c = l30Var;
     }
 
-    @Override // wg5
-    public final void a(tab tabVar, RectF rectF) {
-        byte b = this.a;
-        tabVar.b = true;
+    @Override // p30
+    public boolean a() {
+        return this.h && this.g == p30.a;
     }
 
-    @Override // wg5
-    public final void d(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        byte b = this.a;
-        Object obj = this.b;
-        Object obj2 = this.c;
-        switch (b) {
-            case 0:
-                tu9 tu9Var = (tu9) obj2;
-                tk0.a(tu9Var, canvas, rectF, tu9Var, (FrameLayout) obj);
-                break;
-            case 1:
-                o39 o39Var = (o39) obj2;
-                tk0.a(o39Var, canvas, rectF, o39Var, (FrameLayout) obj);
-                break;
-            case 2:
-                ((ss0) obj2).f.d(canvas, rectF, (jd) obj);
-                break;
-            case 3:
-                ((r61) obj2).c0.d(canvas, rectF, (sg0) obj);
-                break;
-            case 4:
-                h83 h83Var = (h83) obj2;
-                a6 a6Var = (a6) obj;
-                int childCount = h83Var.a.getChildCount();
-                for (int i = 0; i < childCount; i++) {
-                    View childAt = h83Var.a.getChildAt(i);
-                    if (childAt instanceof o39) {
-                        o39 o39Var2 = (o39) childAt;
-                        tk0.a(o39Var2, canvas, rectF, o39Var2, a6Var);
-                    }
-                }
-                break;
-            case 5:
-                ((tc5) obj2).n.u(canvas, rectF, (FrameLayout) obj);
-                break;
-            case 6:
-                ((zj6) obj2).S.u(canvas, rectF, (oc6) obj);
-                break;
-            case 7:
-                ProfileActivity profileActivity = (ProfileActivity) obj2;
-                mdc mdcVar = (mdc) obj;
-                RectF rectF2 = ProfileActivity.Z6;
-                Paint paint = profileActivity.T6;
-                ViewGroup viewGroup = (ViewGroup) profileActivity.fragmentView;
-                vn8 vn8Var = profileActivity.O;
-                float f = (vn8Var == null || vn8Var.getParent() != profileActivity.a) ? 0.0f : profileActivity.W5;
-                if (f < 1.0f) {
-                    wo8 wo8Var = profileActivity.d1;
-                    RectF rectF3 = ProfileActivity.Z6;
-                    if (zec.c(wo8Var, viewGroup, rectF3) && RectF.intersects(rectF3, rectF)) {
-                        tk0.a(new vw0(profileActivity, (byte) 7), canvas, rectF, profileActivity.d1, viewGroup);
-                    }
-                    om8 om8Var = profileActivity.a;
-                    Objects.requireNonNull(om8Var);
-                    tk0.a(new vw0(om8Var, (byte) 8), canvas, rectF, profileActivity.a, viewGroup);
-                    mdcVar.d(canvas, rectF);
-                }
-                if (f > 0.0f) {
-                    float y = f < 1.0f ? profileActivity.O.getY() + profileActivity.a.getY() : Float.MAX_VALUE;
-                    paint.setColor(bkb.v0(bkb.Z6, profileActivity.A0));
-                    paint.setAlpha((int) (f * 255.0f));
-                    canvas2 = canvas;
-                    canvas2.drawRect(rectF.left, rectF.top, rectF.right, Math.min(rectF.bottom, y), paint);
-                } else {
-                    canvas2 = canvas;
-                }
-                profileActivity.O.u(canvas2, rectF, viewGroup);
-                ProfileActivity.E1(profileActivity.u0, canvas2, rectF, viewGroup);
-                ProfileActivity.E1(profileActivity.o0, canvas2, rectF, viewGroup);
-                ProfileActivity.E1(profileActivity.n0, canvas2, rectF, viewGroup);
-                break;
-            case 8:
-                ((jva) obj2).V.d(canvas, rectF, (gua) obj);
-                break;
-            default:
-                ((ydb) obj2).V.d(canvas, rectF, (gua) obj);
-                break;
+    @Override // p30
+    public ByteBuffer b() {
+        ByteBuffer byteBuffer = this.g;
+        this.g = p30.a;
+        return byteBuffer;
+    }
+
+    @Override // p30
+    public final void c(n30 n30Var) {
+        this.g = p30.a;
+        this.h = false;
+        this.b = this.d;
+        this.c = this.e;
+        i();
+    }
+
+    @Override // p30
+    public final l30 e(l30 l30Var) {
+        this.d = l30Var;
+        this.e = h(l30Var);
+        return isActive() ? this.e : l30.e;
+    }
+
+    @Override // p30
+    public final void f() {
+        this.h = true;
+        j();
+    }
+
+    public l30 h(l30 l30Var) {
+        if (l30Var.c == 2) {
+            return l30Var.a == -1 ? l30.e : l30Var;
         }
+        throw new o30(l30Var);
+    }
+
+    @Override // p30
+    public boolean isActive() {
+        return this.e != l30.e;
+    }
+
+    public final ByteBuffer l(int i) {
+        if (this.f.capacity() < i) {
+            this.f = ByteBuffer.allocateDirect(i).order(ByteOrder.nativeOrder());
+        } else {
+            this.f.clear();
+        }
+        ByteBuffer byteBuffer = this.f;
+        this.g = byteBuffer;
+        return byteBuffer;
+    }
+
+    @Override // p30
+    public final void reset() {
+        ByteBuffer byteBuffer = p30.a;
+        this.g = byteBuffer;
+        this.h = false;
+        this.f = byteBuffer;
+        l30 l30Var = l30.e;
+        this.d = l30Var;
+        this.e = l30Var;
+        this.b = l30Var;
+        this.c = l30Var;
+        k();
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void k() {
+    }
+
+    @Override // p30
+    public long g(long j) {
+        return j;
     }
 }

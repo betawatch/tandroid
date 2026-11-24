@@ -1,43 +1,60 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class qzc implements uzc {
-    public static final Object c = new Object();
-    public volatile rzc a;
-    public volatile Object b;
+import android.view.WindowInsets;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static qzc b(rzc rzcVar) {
-        if (rzcVar instanceof qzc) {
-            return (qzc) rzcVar;
-        }
-        qzc qzcVar = new qzc();
-        qzcVar.b = c;
-        qzcVar.a = rzcVar;
-        return qzcVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public class qzc extends pzc {
+    public iq5 o;
+    public iq5 p;
+    public iq5 q;
+
+    public qzc(wzc wzcVar, WindowInsets windowInsets) {
+        super(wzcVar, windowInsets);
+        this.o = null;
+        this.p = null;
+        this.q = null;
     }
 
-    @Override // vzc
-    public final Object a() {
-        Object obj;
-        Object obj2 = this.b;
-        Object obj3 = c;
-        if (obj2 != obj3) {
-            return obj2;
+    @Override // tzc
+    public iq5 h() {
+        iq5 iq5Var = this.p;
+        if (iq5Var != null) {
+            return iq5Var;
         }
-        synchronized (this) {
-            obj = this.b;
-            if (obj == obj3) {
-                obj = this.a.a();
-                Object obj4 = this.b;
-                if (obj4 != obj3 && obj4 != obj) {
-                    throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
-                }
-                this.b = obj;
-                this.a = null;
-            }
+        iq5 c = iq5.c(this.c.getMandatorySystemGestureInsets());
+        this.p = c;
+        return c;
+    }
+
+    @Override // tzc
+    public iq5 j() {
+        iq5 iq5Var = this.o;
+        if (iq5Var != null) {
+            return iq5Var;
         }
-        return obj;
+        iq5 c = iq5.c(this.c.getSystemGestureInsets());
+        this.o = c;
+        return c;
+    }
+
+    @Override // tzc
+    public iq5 l() {
+        iq5 iq5Var = this.q;
+        if (iq5Var != null) {
+            return iq5Var;
+        }
+        iq5 c = iq5.c(this.c.getTappableElementInsets());
+        this.q = c;
+        return c;
+    }
+
+    @Override // nzc, tzc
+    public wzc m(int i, int i2, int i3, int i4) {
+        return wzc.h(null, this.c.inset(i, i2, i3, i4));
+    }
+
+    @Override // ozc, tzc
+    public void s(iq5 iq5Var) {
     }
 }

@@ -1,15 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface kp5 {
-    Object a(u73 u73Var);
+public final class kp5 extends mo5 {
+    public final /* synthetic */ vo5 c;
 
-    Object b(fw2 fw2Var);
+    public kp5(vo5 vo5Var) {
+        this.c = vo5Var;
+    }
 
-    Object c(qp4 qp4Var, fw2 fw2Var);
+    @Override // java.util.List
+    public final Object get(int i) {
+        vo5 vo5Var = this.c;
+        switch (vo5Var.d) {
+            case 0:
+                zp7 zp7Var = ((e89) vo5Var.e).e;
+                jte.j(i, zp7Var.c);
+                return new yp7(zp7Var, i);
+            default:
+                zp7 zp7Var2 = ((e89) vo5Var.e).e;
+                jte.j(i, zp7Var2.c);
+                return zp7Var2.a[i];
+        }
+    }
 
-    hk4 d();
+    @Override // go5
+    public final boolean m() {
+        return this.c.m();
+    }
 
-    Object e(eq4 eq4Var, fw2 fw2Var);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.size();
+    }
 }

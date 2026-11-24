@@ -11,7 +11,7 @@ import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class q1 extends ClickableSpan {
     public final /* synthetic */ byte a;
@@ -26,7 +26,7 @@ public final class q1 extends ClickableSpan {
 
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
-        m21 b;
+        u31 b;
         switch (this.a) {
             case 0:
                 s1 s1Var = (s1) this.c;
@@ -35,90 +35,90 @@ public final class q1 extends ClickableSpan {
             case 1:
                 try {
                     ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (u21.a((me1) this.c)) {
-                        u21.j((me1) this.c).j();
+                    if (c41.a((uf1) this.c)) {
+                        c41.j((uf1) this.c).j();
                         break;
                     }
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    fc4.g(e, true);
                     return;
                 }
                 break;
             case 2:
-                d01.t(((ke1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                l11.u(((sf1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 3:
-                uk1 uk1Var = (uk1) this.c;
-                if (uk1Var.g1 != null) {
-                    uk1Var.e0((CharacterStyle) this.b);
+                cm1 cm1Var = (cm1) this.c;
+                if (cm1Var.g1 != null) {
+                    cm1Var.d0((CharacterStyle) this.b);
                     break;
                 }
                 break;
             case 4:
-                d01.t(((z82) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                l11.u(((ka2) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
                 CharacterStyle characterStyle = (CharacterStyle) this.b;
-                if (!(characterStyle instanceof oa2)) {
-                    gb2 gb2Var = ((pa2) this.c).a;
-                    bb2 bb2Var = gb2Var.eb;
-                    if (bb2Var != null) {
-                        bb2Var.O(gb2Var, characterStyle, false);
+                if (!(characterStyle instanceof zb2)) {
+                    rc2 rc2Var = ((ac2) this.c).a;
+                    mc2 mc2Var = rc2Var.eb;
+                    if (mc2Var != null) {
+                        mc2Var.M(rc2Var, characterStyle, false);
                         break;
                     }
                 } else {
-                    ((oa2) characterStyle).onClick(view);
+                    ((zb2) characterStyle).onClick(view);
                     break;
                 }
                 break;
             case 6:
-                ((gu2) this.c).run();
+                ((mv2) this.c).run();
                 break;
             case 7:
                 ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                u21 b0 = u21.b0(((yj8) this.c).d);
-                String M0 = k96.M0(2131748729, null);
-                wjb resourceProvider = ((yj8) this.c).d.getResourceProvider();
+                c41 b0 = c41.b0(((bm8) this.c).d);
+                String M0 = jb6.M0(2131748678, null);
+                ylb resourceProvider = ((bm8) this.c).d.getResourceProvider();
                 b0.getClass();
-                if (gl.D3()) {
-                    t11 t11Var = new t11(b0.X(), resourceProvider);
-                    t11Var.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
-                    t11Var.b.setText(M0);
-                    b = b0.b(t11Var, 1500);
+                if (gm.C3()) {
+                    b31 b31Var = new b31(b0.X(), resourceProvider);
+                    b31Var.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
+                    b31Var.b.setText(M0);
+                    b = b0.b(b31Var, 1500);
                 } else {
-                    b = new j11();
+                    b = new r21();
                 }
                 b.j();
                 break;
             case 8:
                 try {
                     ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (u21.a((ymb) this.c)) {
-                        u21.j((ymb) this.c).j();
+                    if (c41.a((zob) this.c)) {
+                        c41.j((zob) this.c).j();
                         break;
                     }
                 } catch (Exception e2) {
-                    fa4.g(e2, true);
+                    fc4.g(e2, true);
                     return;
                 }
                 break;
             case 9:
                 URLSpan uRLSpan = (URLSpan) this.b;
-                rzb rzbVar = (rzb) this.c;
-                q8c q8cVar = rzbVar.N1;
-                if (q8cVar == null) {
-                    d dVar = rzbVar.M1;
+                s1c s1cVar = (s1c) this.c;
+                rac racVar = s1cVar.N1;
+                if (racVar == null) {
+                    d dVar = s1cVar.M1;
                     if (dVar != null) {
-                        ij.n0(dVar, uRLSpan.getURL(), false, false);
+                        ik.n0(dVar, uRLSpan.getURL(), false, false);
                         break;
                     }
-                } else if (((Boolean) q8cVar.a(uRLSpan)).booleanValue()) {
-                    rzbVar.dismiss();
+                } else if (((Boolean) racVar.a(uRLSpan)).booleanValue()) {
+                    s1cVar.dismiss();
                     break;
                 }
                 break;
             default:
-                gl.g((String) this.b);
+                gm.g((String) this.b);
                 ((Runnable) this.c).run();
                 break;
         }
@@ -150,18 +150,18 @@ public final class q1 extends ClickableSpan {
             case 6:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
-                textPaint.setColor(bkb.v0(bkb.wj, (wjb) obj));
+                textPaint.setColor(cmb.v0(cmb.wj, (ylb) obj));
                 break;
             case 8:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
                 break;
             case 9:
-                int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & kk7.d4);
-                if (!(((URLSpan) obj) instanceof g4c)) {
+                int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & nm7.d4);
+                if (!(((URLSpan) obj) instanceof g6c)) {
                     textPaint.setUnderlineText(true);
                 }
-                textPaint.setColor(bkb.w0(null, bkb.j5, false));
+                textPaint.setColor(cmb.w0(null, cmb.j5, false));
                 textPaint.setAlpha(min);
                 break;
             case 10:

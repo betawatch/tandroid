@@ -1,47 +1,27 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class iw1 implements gj, e39 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class iw1 extends LinearLayout {
+    public final jw1[] a;
 
-    public /* synthetic */ iw1(ChatActivityEnterView chatActivityEnterView, byte b) {
-        this.a = b;
-        this.b = chatActivityEnterView;
+    public iw1(Context context) {
+        super(context);
+        this.a = new jw1[2];
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        if (!(view instanceof cp0)) {
-            return false;
+    public final void a(os1 os1Var, LinearLayout.LayoutParams layoutParams) {
+        int childCount = getChildCount();
+        if (childCount < 2) {
+            this.a[childCount] = os1Var;
+            addView(os1Var, layoutParams);
         }
-        String str = ((cp0) view).getCommand() + " ";
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        chatActivityEnterView.setFieldText(str);
-        chatActivityEnterView.n0.c();
-        return true;
     }
 
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        switch (this.a) {
-            case 0:
-                this.b.v1(z, i, i2, 0L, true);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                boolean v1 = chatActivityEnterView.v1(z, i, i2, 0L, true);
-                j47 j47Var = chatActivityEnterView.M0;
-                if (j47Var != null) {
-                    j47Var.f(!v1);
-                    chatActivityEnterView.M0 = null;
-                    break;
-                }
-                break;
-        }
+    public jw1[] getButtons() {
+        return this.a;
     }
 }

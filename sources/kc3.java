@@ -1,31 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class kc3 extends qc3 implements Comparable {
-    public final int e;
-    public final int f;
+public final /* synthetic */ class kc3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sc3 b;
 
-    public kc3(int i, sxb sxbVar, int i2, nc3 nc3Var, int i3) {
-        super(i, sxbVar, i2);
-        int i4;
-        this.e = ls6.c(i3, nc3Var.B0) ? 1 : 0;
-        fm4 fm4Var = this.d;
-        int i5 = fm4Var.A;
-        int i6 = -1;
-        if (i5 != -1 && (i4 = fm4Var.B) != -1) {
-            i6 = i5 * i4;
+    public /* synthetic */ kc3(sc3 sc3Var, u69 u69Var, byte b) {
+        this.a = b;
+        this.b = sc3Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        sc3 sc3Var = this.b;
+        switch (b) {
+            case 0:
+                sc3Var.Q();
+                break;
+            default:
+                sc3Var.M();
+                break;
         }
-        this.f = i6;
-    }
-
-    @Override // qc3
-    public final int a() {
-        return this.e;
-    }
-
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Integer.compare(this.f, ((kc3) obj).f);
     }
 }

@@ -1,39 +1,37 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.UUID;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ju8 {
-    public final short a;
-    public final byte[] b;
-    public final Object c;
-    public final Object d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class ju8 extends View {
+    public final /* synthetic */ ku8 a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ju8(int i, String str, int i2, ArrayList arrayList, byte[] bArr) {
-        this.c = str;
-        this.a = i2;
-        this.d = arrayList == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList);
-        this.b = bArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ju8(ku8 ku8Var, Context context) {
+        super(context);
+        this.a = ku8Var;
     }
 
-    public final int a() {
-        short s = this.a;
-        if (s != 2) {
-            return s != 3 ? 0 : 512;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        ku8 ku8Var = this.a;
+        RectF rectF = ku8Var.E;
+        Bitmap bitmap = ku8Var.H;
+        if (bitmap == null || bitmap.isRecycled()) {
+            return;
         }
-        return 2048;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public ju8(UUID uuid, int i, byte[] bArr, UUID[] uuidArr) {
-        this.c = uuid;
-        this.a = i;
-        this.b = bArr;
-        this.d = uuidArr;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        canvas.drawBitmap(ku8Var.H, (Rect) null, rectF, ku8Var.y);
     }
 }

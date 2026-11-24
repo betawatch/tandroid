@@ -1,32 +1,31 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vhe extends b4 {
-    public static final Parcelable.Creator<vhe> CREATOR = new rhe(13);
-    public final String a;
-    public final String b;
-    public final String c;
-
-    public vhe(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+public abstract class vhe {
+    public static String a(byte[] bArr) {
+        StringBuilder sb = new StringBuilder(bArr.length << 1);
+        for (byte b : bArr) {
+            sb.append(String.format("%02x", Byte.valueOf(b)));
+        }
+        return sb.toString();
     }
 
-    public final String toString() {
-        return b00.j(yjb.l("DocumentId[packageName=", this.a, ", corpusName=", this.b, ", uri="), this.c, "]");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 1, this.a);
-        jte.l(parcel, 2, this.b);
-        jte.l(parcel, 3, this.c);
-        jte.s(parcel, r);
+    /* JADX WARN: Multi-variable type inference failed */
+    public static long[] b(Serializable serializable) {
+        if (!(serializable instanceof int[])) {
+            if (serializable instanceof long[]) {
+                return (long[]) serializable;
+            }
+            return null;
+        }
+        int[] iArr = (int[]) serializable;
+        long[] jArr = new long[iArr.length];
+        for (int i = 0; i < iArr.length; i++) {
+            jArr[i] = iArr[i];
+        }
+        return jArr;
     }
 }

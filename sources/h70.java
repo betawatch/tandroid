@@ -1,19 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class h70 implements zn7 {
+public final class h70 implements cq7 {
     public static final h70 a = new h70();
+    public static final wa4 b = wa4.c("pc");
+    public static final wa4 c = wa4.c("symbol");
+    public static final wa4 d = wa4.c("file");
+    public static final wa4 e = wa4.c("offset");
+    public static final wa4 f = wa4.c("importance");
 
-    static {
-        w84.c("messagingClientEventExtension");
-    }
-
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+        e03 e03Var = (e03) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.g(b, ((aa0) e03Var).a);
+        aa0 aa0Var = (aa0) e03Var;
+        dq7Var.a(c, aa0Var.b);
+        dq7Var.a(d, aa0Var.c);
+        dq7Var.g(e, aa0Var.d);
+        dq7Var.e(f, aa0Var.e);
     }
 }

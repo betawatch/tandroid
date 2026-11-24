@@ -3,7 +3,7 @@ package androidx.car.app.navigation.model;
 import androidx.car.app.model.CarIcon;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class Maneuver {
     public static final int TYPE_DEPART = 1;
@@ -64,7 +64,7 @@ public final class Maneuver {
         this.mType = i;
         this.mRoundaboutExitNumber = i2;
         this.mRoundaboutExitAngle = i3;
-        lc1.b.b(carIcon);
+        td1.c.d(carIcon);
         this.mIcon = carIcon;
     }
 

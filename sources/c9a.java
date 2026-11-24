@@ -1,36 +1,39 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.a;
+import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class c9a {
-    public final uc a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final /* synthetic */ class c9a implements ee {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ SessionsActivity b;
 
-    public c9a(View view) {
-        uc ucVar = new uc(view, (byte) 5);
-        this.b = System.currentTimeMillis();
-        this.a = ucVar;
-        yyc yycVar = Utilities.c;
-        this.c = gl.R1(5.0f, 9.0f, Utilities.l(yycVar.nextFloat()));
-        this.d = gl.R1(2.5f, 5.0f, Utilities.l(yycVar.nextFloat()));
-        this.e = gl.R1(2.5f, 5.2f, Utilities.l(yycVar.nextFloat()));
+    public /* synthetic */ c9a(SessionsActivity sessionsActivity, byte b) {
+        this.a = b;
+        this.b = sessionsActivity;
     }
 
-    public final void a(Canvas canvas, float f) {
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * gl.L(0.5f) * f, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * gl.L(0.5f) * f);
-        canvas.translate(-0.0f, -0.0f);
-        if (f > 0.0f) {
-            this.a.run();
+    @Override // ee
+    public final void r(he heVar, int i) {
+        byte b = this.a;
+        SessionsActivity sessionsActivity = this.b;
+        switch (b) {
+            case 0:
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + a.b.getPackageName()));
+                    sessionsActivity.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                    return;
+                }
+            default:
+                sessionsActivity.j0();
+                break;
         }
     }
 }

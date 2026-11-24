@@ -1,45 +1,28 @@
 // default package
 
-import android.view.View;
+import java.util.ArrayList;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ea5 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qa5 b;
+public final class ea5 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ha5 a;
 
-    public /* synthetic */ ea5(qa5 qa5Var, byte b) {
-        this.a = b;
-        this.b = qa5Var;
+    public ea5(ha5 ha5Var) {
+        this.a = ha5Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        qa5 qa5Var = this.b;
-        switch (b) {
-            case 0:
-                qa5Var.Y = null;
-                qa5Var.a0.b();
-                qa5Var.h.b();
-                qa5Var.l0();
-                qa5Var.v0();
-                qa5Var.w0();
-                break;
-            case 1:
-                qa5Var.f.r.clearFocus();
-                qa5Var.f.r.requestFocus();
-                gl.F3(qa5Var.f.r);
-                break;
-            case 2:
-                qa5Var.r0();
-                break;
-            case 3:
-                qa5Var.q0(qa5Var.n0());
-                break;
-            default:
-                qa5Var.q0(qa5Var.n0());
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ArrayList arrayList = this.a.m0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            gm.r((Runnable) arrayList.get(i));
+            ((Runnable) arrayList.get(i)).run();
         }
+        arrayList.clear();
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i, int i2, int i3) {
     }
 }

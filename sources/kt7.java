@@ -1,38 +1,32 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class kt7 implements aj2 {
+    public final Class a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class kt7 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t09 b;
-
-    public /* synthetic */ kt7(t09 t09Var, byte b) {
-        this.a = b;
-        this.b = t09Var;
+    public kt7(Class cls) {
+        cls.getClass();
+        this.a = cls;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        t09 t09Var = this.b;
-        switch (b) {
-            case 0:
-                gl.B2(t09Var);
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                t09Var.M0.e();
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                t09Var.R = null;
-                t09Var.o0 = 0.0f;
-                t09Var.m0 = null;
-                t09Var.invalidate();
-                break;
+    @Override // aj2
+    public final Class a() {
+        return this.a;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof kt7) {
+            return rr5.a(this.a, ((kt7) obj).a);
         }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return this.a + " (Kotlin reflection is not available)";
     }
 }

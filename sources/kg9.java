@@ -1,15 +1,20 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
 public final class kg9 {
-    public final TL_iv.RichText a;
-    public final int b;
+    public final /* synthetic */ ch9 a;
 
-    public kg9(TL_iv.RichText richText, int i) {
-        this.a = richText;
-        this.b = i;
+    public kg9(ch9 ch9Var) {
+        this.a = ch9Var;
+    }
+
+    public final void a() {
+        ch9 ch9Var = this.a;
+        of9 of9Var = ch9Var.R3;
+        if (of9Var != null) {
+            of9Var.g();
+        }
+        ch9Var.p3.onContentChanged();
     }
 }

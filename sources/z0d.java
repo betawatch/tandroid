@@ -1,89 +1,73 @@
 // default package
 
-import android.os.IInterface;
-import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
+import java.util.Random;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class z0d extends dzc implements IInterface {
-    public final /* synthetic */ byte b;
+public final class z0d extends Random {
+    public long a;
+    public long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0d(byte b) {
-        super("com.google.android.gms.common.moduleinstall.internal.IModuleInstallCallbacks", (byte) 1);
-        this.b = b;
-        switch (b) {
-            case 1:
-                super("com.google.android.gms.signin.internal.ISignInCallbacks", (byte) 1);
-                break;
-            default:
-                break;
+    @Override // java.util.Random
+    public final int next(int i) {
+        return ((int) nextLong()) >>> (32 - i);
+    }
+
+    @Override // java.util.Random
+    public final boolean nextBoolean() {
+        return nextLong() >= 0;
+    }
+
+    @Override // java.util.Random
+    public final void nextBytes(byte[] bArr) {
+        int length = bArr.length;
+        int i = 0;
+        while (i < length) {
+            long nextLong = (int) nextLong();
+            int min = Math.min(length - i, 8);
+            while (true) {
+                int i2 = min - 1;
+                if (min > 0) {
+                    bArr[i] = (byte) nextLong;
+                    nextLong >>>= 8;
+                    i++;
+                    min = i2;
+                }
+            }
         }
     }
 
-    public void T(Status status, me7 me7Var) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.Random
+    public final double nextDouble() {
+        return (nextLong() >>> 11) * 1.1102230246251565E-16d;
     }
 
-    public abstract void U(c3d c3dVar);
-
-    public void V(Status status, oe7 oe7Var) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.Random
+    public final float nextFloat() {
+        return (((int) nextLong()) >>> 8) * 5.9604645E-8f;
     }
 
-    @Override // dzc
-    public final boolean b(int i, Parcel parcel, Parcel parcel2) {
-        switch (this.b) {
-            case 0:
-                if (i == 1) {
-                    Status status = (Status) e2d.a(parcel, Status.CREATOR);
-                    me7 me7Var = (me7) e2d.a(parcel, me7.CREATOR);
-                    e2d.d(parcel);
-                    T(status, me7Var);
-                    break;
-                } else if (i == 2) {
-                    Status status2 = (Status) e2d.a(parcel, Status.CREATOR);
-                    oe7 oe7Var = (oe7) e2d.a(parcel, oe7.CREATOR);
-                    e2d.d(parcel);
-                    V(status2, oe7Var);
-                    break;
-                } else {
-                    if (i == 3) {
-                        e2d.d(parcel);
-                        fvc.b();
-                    } else if (i == 4) {
-                        e2d.d(parcel);
-                        fvc.b();
-                    }
-                    break;
-                }
-            default:
-                switch (i) {
-                    case 3:
-                        e2d.d(parcel);
-                        break;
-                    case 4:
-                        e2d.d(parcel);
-                        break;
-                    case 6:
-                        e2d.d(parcel);
-                        break;
-                    case 7:
-                        e2d.d(parcel);
-                        break;
-                    case 8:
-                        c3d c3dVar = (c3d) e2d.a(parcel, c3d.CREATOR);
-                        e2d.d(parcel);
-                        U(c3dVar);
-                        break;
-                    case 9:
-                        e2d.d(parcel);
-                        break;
-                }
-                parcel2.writeNoException();
-                break;
+    @Override // java.util.Random
+    public final int nextInt() {
+        return (int) nextLong();
+    }
+
+    @Override // java.util.Random
+    public final long nextLong() {
+        long j = this.a;
+        long j2 = this.b;
+        long j3 = j + j2;
+        long j4 = j2 ^ j;
+        this.a = (Long.rotateLeft(j, 55) ^ j4) ^ (j4 << 14);
+        this.b = Long.rotateLeft(j4, 36);
+        return j3;
+    }
+
+    @Override // java.util.Random
+    public final void setSeed(long j) {
+        if (this.a == 0 && this.b == 0) {
+            return;
         }
-        return true;
+        zo4.k("No seed set");
     }
 }

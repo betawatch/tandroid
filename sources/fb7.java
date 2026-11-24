@@ -1,148 +1,213 @@
 // default package
 
-import android.graphics.Typeface;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.NativeByteBuffer;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fb7 implements Runnable {
+public final /* synthetic */ class fb7 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ad7 b;
-    public final /* synthetic */ TLRPC.EncryptedChat c;
+    public final /* synthetic */ oc7 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ fb7(ad7 ad7Var, TLRPC.EncryptedChat encryptedChat, byte b) {
+    public /* synthetic */ fb7(oc7 oc7Var, int i, byte b) {
         this.a = b;
-        this.b = ad7Var;
-        this.c = encryptedChat;
+        this.b = oc7Var;
+        this.c = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte[] bArr;
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00e1, code lost:
+    
+        if (r4.left != false) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00f6, code lost:
+    
+        r16 = r1;
+        r1 = r7;
+        r4 = r13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00f4, code lost:
+    
+        if (r4.migrated_to != null) goto L36;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x014f  */
+    @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i;
+        boolean z;
+        int size;
+        int i2;
+        TLRPC.Chat chat;
+        vh6 vh6Var;
+        ArrayList arrayList;
+        TLRPC.Message message;
+        int i3;
+        TLRPC.Chat chat2;
+        int i4;
+        vh6 vh6Var2;
+        vh6 vh6Var3;
+        ArrayList arrayList2;
         byte b = this.a;
-        SQLitePreparedStatement sQLitePreparedStatement = null;
-        TLRPC.EncryptedChat encryptedChat = this.c;
-        ad7 ad7Var = this.b;
-        try {
-            try {
-                switch (b) {
-                    case 0:
-                        try {
-                            try {
-                                sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE enc_chats SET ttl = ? WHERE uid = ?");
-                                sQLitePreparedStatement.bindInteger(1, encryptedChat.ttl);
-                                sQLitePreparedStatement.bindInteger(2, encryptedChat.id);
-                                sQLitePreparedStatement.step();
-                            } catch (Exception e) {
-                                ad7Var.n(e, true);
-                                if (sQLitePreparedStatement == null) {
-                                    return;
+        int i5 = this.c;
+        oc7 oc7Var = this.b;
+        switch (b) {
+            case 0:
+                oc7 oc7Var2 = this.b;
+                ConcurrentHashMap concurrentHashMap = oc7Var2.Q;
+                ConcurrentHashMap concurrentHashMap2 = oc7Var2.P;
+                Integer num = 0;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
+                    ArrayList arrayList3 = new ArrayList(tL_messages_peerDialogs.dialogs);
+                    oc7Var2.s0(tL_messages_peerDialogs);
+                    TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                    tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
+                    tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
+                    tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
+                    tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
+                    vh6 vh6Var4 = new vh6();
+                    vh6 vh6Var5 = new vh6();
+                    vh6 vh6Var6 = new vh6();
+                    for (int i6 = 0; i6 < tL_messages_peerDialogs.users.size(); i6++) {
+                        TLRPC.User user = tL_messages_peerDialogs.users.get(i6);
+                        vh6Var5.k(user, user.id);
+                    }
+                    for (int i7 = 0; i7 < tL_messages_peerDialogs.chats.size(); i7++) {
+                        TLRPC.Chat chat3 = tL_messages_peerDialogs.chats.get(i7);
+                        vh6Var6.k(chat3, chat3.id);
+                    }
+                    ArrayList arrayList4 = new ArrayList();
+                    int i8 = 0;
+                    while (i8 < tL_messages_peerDialogs.messages.size()) {
+                        TLRPC.Message message2 = tL_messages_peerDialogs.messages.get(i8);
+                        TLRPC.Peer peer = message2.peer_id;
+                        Integer num2 = num;
+                        long j = peer.channel_id;
+                        if (j != 0) {
+                            TLRPC.Chat chat4 = (TLRPC.Chat) vh6Var6.f(j);
+                            if (chat4 != null) {
+                                break;
+                            }
+                            i4 = i8;
+                            vh6Var2 = vh6Var5;
+                            vh6 vh6Var7 = vh6Var6;
+                            k47 k47Var = new k47(oc7Var2.currentAccount, message2, vh6Var2, vh6Var7, false, false);
+                            vh6Var3 = vh6Var7;
+                            arrayList4.add(k47Var);
+                            long B0 = k47.B0(k47Var.k);
+                            arrayList2 = (ArrayList) vh6Var4.f(B0);
+                            if (arrayList2 == null) {
+                                arrayList2 = new ArrayList();
+                            }
+                            arrayList2.add(k47Var);
+                            vh6Var4.k(arrayList2, B0);
+                        } else {
+                            long j2 = peer.chat_id;
+                            if (j2 != 0) {
+                                TLRPC.Chat chat5 = (TLRPC.Chat) vh6Var6.f(j2);
+                                if (chat5 != null) {
+                                    break;
                                 }
                             }
-                            sQLitePreparedStatement.dispose();
-                            return;
-                        } catch (Throwable th) {
-                            if (sQLitePreparedStatement != null) {
-                                sQLitePreparedStatement.dispose();
+                            i4 = i8;
+                            vh6Var2 = vh6Var5;
+                            vh6 vh6Var72 = vh6Var6;
+                            k47 k47Var2 = new k47(oc7Var2.currentAccount, message2, vh6Var2, vh6Var72, false, false);
+                            vh6Var3 = vh6Var72;
+                            arrayList4.add(k47Var2);
+                            long B02 = k47.B0(k47Var2.k);
+                            arrayList2 = (ArrayList) vh6Var4.f(B02);
+                            if (arrayList2 == null) {
                             }
-                            throw th;
+                            arrayList2.add(k47Var2);
+                            vh6Var4.k(arrayList2, B02);
                         }
-                    case 1:
-                        try {
-                            byte[] bArr2 = encryptedChat.key_hash;
-                            if ((bArr2 == null || bArr2.length < 16) && (bArr = encryptedChat.auth_key) != null) {
-                                Typeface typeface = gl.a;
-                                byte[] bArr3 = new byte[16];
-                                System.arraycopy(Utilities.n(bArr), 0, bArr3, 0, 16);
-                                encryptedChat.key_hash = bArr3;
+                        i8 = i4 + 1;
+                        vh6Var6 = vh6Var3;
+                        vh6Var5 = vh6Var2;
+                        num = num2;
+                    }
+                    Integer num3 = num;
+                    vh6 vh6Var8 = vh6Var6;
+                    boolean z2 = true;
+                    if (!arrayList3.isEmpty()) {
+                        i = 0;
+                        if (arrayList3.get(0) instanceof TLRPC.TL_dialogFolder) {
+                            z = 1;
+                            size = arrayList3.size();
+                            i2 = i;
+                            while (i2 < size) {
+                                TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList3.get(i2);
+                                dialog.pinned = z2;
+                                pg3.w(dialog);
+                                boolean x = pg3.x(dialog);
+                                long j3 = dialog.id;
+                                if (!x ? !pg3.y(j3) || (chat = (TLRPC.Chat) vh6Var8.f(-dialog.id)) == null || chat.migrated_to == null : (chat2 = (TLRPC.Chat) vh6Var8.f(-j3)) == null || !chat2.left) {
+                                    if (dialog.last_message_date != 0 || (arrayList = (ArrayList) vh6Var4.f(dialog.id)) == null) {
+                                        vh6Var = vh6Var8;
+                                    } else {
+                                        vh6Var = vh6Var8;
+                                        int i9 = TLObject.FLAG_31;
+                                        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                                            k47 k47Var3 = (k47) arrayList.get(i10);
+                                            if (k47Var3 != null && (message = k47Var3.k) != null && (i3 = message.date) > i9) {
+                                                i9 = i3;
+                                            }
+                                        }
+                                        if (i9 > Integer.MIN_VALUE) {
+                                            dialog.last_message_date = i9;
+                                        }
+                                    }
+                                    Integer num4 = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
+                                    if (num4 == null) {
+                                        num4 = num3;
+                                    }
+                                    concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num4.intValue(), dialog.read_inbox_max_id)));
+                                    Integer num5 = (Integer) concurrentHashMap.get(Long.valueOf(dialog.id));
+                                    if (num5 == null) {
+                                        num5 = num3;
+                                    }
+                                    concurrentHashMap.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num5.intValue(), dialog.read_outbox_max_id)));
+                                } else {
+                                    vh6Var = vh6Var8;
+                                }
+                                i2++;
+                                vh6Var8 = vh6Var;
+                                z2 = true;
                             }
-                            sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE enc_chats SET data = ?, g = ?, authkey = ?, ttl = ?, layer = ?, seq_in = ?, seq_out = ?, use_count = ?, exchange_id = ?, key_date = ?, fprint = ?, fauthkey = ?, khash = ?, in_seq_no = ?, admin_id = ?, mtproto_seq = ? WHERE uid = ?");
-                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(encryptedChat.getObjectSize());
-                            byte[] bArr4 = encryptedChat.a_or_b;
-                            NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(bArr4 != null ? bArr4.length : 1);
-                            byte[] bArr5 = encryptedChat.auth_key;
-                            NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(bArr5 != null ? bArr5.length : 1);
-                            byte[] bArr6 = encryptedChat.future_auth_key;
-                            NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(bArr6 != null ? bArr6.length : 1);
-                            byte[] bArr7 = encryptedChat.key_hash;
-                            NativeByteBuffer nativeByteBuffer5 = new NativeByteBuffer(bArr7 != null ? bArr7.length : 1);
-                            encryptedChat.serializeToStream(nativeByteBuffer);
-                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                            byte[] bArr8 = encryptedChat.a_or_b;
-                            if (bArr8 != null) {
-                                nativeByteBuffer2.writeBytes(bArr8);
-                            }
-                            byte[] bArr9 = encryptedChat.auth_key;
-                            if (bArr9 != null) {
-                                nativeByteBuffer3.writeBytes(bArr9);
-                            }
-                            byte[] bArr10 = encryptedChat.future_auth_key;
-                            if (bArr10 != null) {
-                                nativeByteBuffer4.writeBytes(bArr10);
-                            }
-                            byte[] bArr11 = encryptedChat.key_hash;
-                            if (bArr11 != null) {
-                                nativeByteBuffer5.writeBytes(bArr11);
-                            }
-                            sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer2);
-                            sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer3);
-                            sQLitePreparedStatement.bindInteger(4, encryptedChat.ttl);
-                            sQLitePreparedStatement.bindInteger(5, encryptedChat.layer);
-                            sQLitePreparedStatement.bindInteger(6, encryptedChat.seq_in);
-                            sQLitePreparedStatement.bindInteger(7, encryptedChat.seq_out);
-                            sQLitePreparedStatement.bindInteger(8, (encryptedChat.key_use_count_in << 16) | encryptedChat.key_use_count_out);
-                            sQLitePreparedStatement.bindLong(9, encryptedChat.exchange_id);
-                            sQLitePreparedStatement.bindInteger(10, encryptedChat.key_create_date);
-                            sQLitePreparedStatement.bindLong(11, encryptedChat.future_key_fingerprint);
-                            sQLitePreparedStatement.bindByteBuffer(12, nativeByteBuffer4);
-                            sQLitePreparedStatement.bindByteBuffer(13, nativeByteBuffer5);
-                            sQLitePreparedStatement.bindInteger(14, encryptedChat.in_seq_no);
-                            sQLitePreparedStatement.bindLong(15, encryptedChat.admin_id);
-                            sQLitePreparedStatement.bindInteger(16, encryptedChat.mtproto_seq);
-                            sQLitePreparedStatement.bindInteger(17, encryptedChat.id);
-                            sQLitePreparedStatement.step();
-                            nativeByteBuffer.reuse();
-                            nativeByteBuffer2.reuse();
-                            nativeByteBuffer3.reuse();
-                            nativeByteBuffer4.reuse();
-                            nativeByteBuffer5.reuse();
-                        } catch (Exception e2) {
-                            ad7Var.n(e2, true);
-                            if (sQLitePreparedStatement == null) {
-                                return;
-                            }
+                            oc7Var2.getMessagesStorage().a.c(new b97(oc7Var2, this.c, arrayList3, z, tL_messages_peerDialogs, vh6Var4, tL_messages_dialogs, (byte) 1));
+                            break;
                         }
-                        sQLitePreparedStatement.dispose();
-                        return;
-                    default:
-                        try {
-                            sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE enc_chats SET layer = ? WHERE uid = ?");
-                            sQLitePreparedStatement.bindInteger(1, encryptedChat.layer);
-                            sQLitePreparedStatement.bindInteger(2, encryptedChat.id);
-                            sQLitePreparedStatement.step();
-                        } catch (Exception e3) {
-                            ad7Var.n(e3, true);
-                            if (sQLitePreparedStatement == null) {
-                                return;
-                            }
-                        }
-                        sQLitePreparedStatement.dispose();
-                        return;
+                    } else {
+                        i = 0;
+                    }
+                    z = i;
+                    size = arrayList3.size();
+                    i2 = i;
+                    while (i2 < size) {
+                    }
+                    oc7Var2.getMessagesStorage().a.c(new b97(oc7Var2, this.c, arrayList3, z, tL_messages_peerDialogs, vh6Var4, tL_messages_dialogs, (byte) 1));
                 }
-            } catch (Throwable th2) {
-                if (sQLitePreparedStatement != null) {
-                    sQLitePreparedStatement.dispose();
+                break;
+            case 1:
+                gm.c3(new h65(oc7Var, tLObject, i5, (byte) 10));
+                break;
+            default:
+                if (tL_error == null) {
+                    oc7Var.getMessagesStorage().a.c(new h65(oc7Var, (TLRPC.messages_Dialogs) tLObject, i5, (byte) 11));
+                    break;
+                } else {
+                    gm.c3(new ba7(oc7Var, (byte) 6));
+                    break;
                 }
-                throw th2;
-            }
-        } catch (Throwable th3) {
-            if (sQLitePreparedStatement != null) {
-                sQLitePreparedStatement.dispose();
-            }
-            throw th3;
         }
     }
 }

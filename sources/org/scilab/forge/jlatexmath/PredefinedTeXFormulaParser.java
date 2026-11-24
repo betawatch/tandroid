@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class PredefinedTeXFormulaParser {
     public static final String RESOURCE_NAME = "PredefinedTeXFormulas.xml";
@@ -31,7 +31,7 @@ public class PredefinedTeXFormulaParser {
         if (!attribute.equals("")) {
             return attribute;
         }
-        k93.g(RESOURCE_NAME, element.getTagName(), str, null);
+        wa3.f(RESOURCE_NAME, element.getTagName(), str, null);
         return null;
     }
 

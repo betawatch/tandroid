@@ -1,69 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class c33 {
-    public boolean a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
+import android.os.Bundle;
+import java.util.Set;
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final c33 clone() {
-        c33 c33Var = new c33();
-        c33Var.a = this.a;
-        c33Var.b = this.b;
-        c33Var.c = this.c;
-        c33Var.d = this.d;
-        c33Var.e = this.e;
-        c33Var.f = this.f;
-        c33Var.g = this.g;
-        c33Var.h = this.h;
-        c33Var.i = this.i;
-        c33Var.j = this.j;
-        c33Var.k = this.k;
-        c33Var.l = this.l;
-        c33Var.m = this.m;
-        return c33Var;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class c33 {
+    public final String a;
+    public final Bundle b;
+    public final Bundle c;
+    public final Set d;
 
-    public final void b(boolean z, float f, float f2, float f3, int i, float f4, float f5, float f6, float f7, float f8, float f9, float f10, boolean z2) {
-        this.a = z;
-        this.b = f;
-        this.c = f2;
-        this.f = f4;
-        this.g = f3;
-        this.i = i;
-        while (true) {
-            int i2 = this.i;
-            if (i2 >= 0) {
-                break;
-            } else {
-                this.i = i2 + 360;
-            }
-        }
-        while (true) {
-            int i3 = this.i;
-            if (i3 < 360) {
-                this.j = f7;
-                this.k = f8;
-                this.d = f9;
-                this.e = f10;
-                this.l = f5;
-                this.m = f6;
-                this.h = z2;
-                return;
-            }
-            this.i = i3 - 360;
-        }
+    public c33(String str, Bundle bundle, Bundle bundle2, boolean z, Set set) {
+        this.a = str;
+        this.b = bundle;
+        this.c = bundle2;
+        this.d = set;
+        bundle.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", z);
+        bundle2.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", z);
+        bundle.putInt("androidx.credentials.BUNDLE_KEY_TYPE_PRIORITY_VALUE", 100);
+        bundle2.putInt("androidx.credentials.BUNDLE_KEY_TYPE_PRIORITY_VALUE", 100);
     }
 }

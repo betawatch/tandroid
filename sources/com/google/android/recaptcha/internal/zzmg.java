@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
@@ -25,9 +25,9 @@ public final class zzmg {
                 try {
                     i = obj.toString();
                 } catch (Exception e) {
-                    String y = tb4.y(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(y), (Throwable) e);
-                    i = b00.i("<", y, " threw ", e.getClass().getName(), ">");
+                    String o = kt6.o(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(o), (Throwable) e);
+                    i = b10.i("<", o, " threw ", e.getClass().getName(), ">");
                 }
             }
             objArr[i3] = i;

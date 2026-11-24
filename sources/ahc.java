@@ -1,47 +1,53 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ahc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ TLRPC.TL_error d;
+public final class ahc {
+    public final WeakReference a;
 
-    public /* synthetic */ ahc(VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = (byte) 1;
-        this.b = voIPService;
-        this.c = tLObject;
-        this.d = tL_error;
+    public ahc(View view) {
+        this.a = new WeakReference(view);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLObject tLObject = this.c;
-        TLRPC.TL_error tL_error = this.d;
-        VoIPService voIPService = this.b;
-        switch (b) {
-            case 0:
-                voIPService.lambda$acceptIncomingCall$97(tL_error, tLObject);
-                break;
-            case 1:
-                voIPService.lambda$startGroupCheckShortpoll$64(tLObject, tL_error);
-                break;
-            default:
-                voIPService.lambda$processAcceptedCall$22(tL_error, tLObject);
-                break;
+    public final void a(float f) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().alpha(f);
         }
     }
 
-    public /* synthetic */ ahc(VoIPService voIPService, TLRPC.TL_error tL_error, TLObject tLObject, byte b) {
-        this.a = b;
-        this.b = voIPService;
-        this.d = tL_error;
-        this.c = tLObject;
+    public final void b() {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().cancel();
+        }
+    }
+
+    public final void c(long j) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().setDuration(j);
+        }
+    }
+
+    public final void d(dhc dhcVar) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            if (dhcVar != null) {
+                view.animate().setListener(new ic8((Object) dhcVar, view, (byte) 21));
+            } else {
+                view.animate().setListener(null);
+            }
+        }
+    }
+
+    public final void e(float f) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().translationY(f);
+        }
     }
 }

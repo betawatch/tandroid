@@ -1,48 +1,34 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class jhf extends x8d implements Set {
-    public transient jff f;
+public final class jhf extends b4 {
+    public static final Parcelable.Creator<jhf> CREATOR = new yhf((byte) 5);
+    public final boolean a;
 
-    @Override // java.util.Collection, java.util.Set
+    public jhf(boolean z) {
+        this.a = z;
+    }
+
     public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
+        if (this == obj) {
             return true;
         }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+        return (obj instanceof jhf) && this.a == ((jhf) obj).a;
     }
 
-    @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
-        Iterator it = iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i += next != null ? next.hashCode() : 0;
-        }
-        return i;
+        return this.a ? 1 : 0;
     }
 
-    public final jff l() {
-        jff jffVar = this.f;
-        if (jffVar != null) {
-            return jffVar;
-        }
-        zhf zhfVar = new zhf((c5d) this);
-        this.f = zhfVar;
-        return zhfVar;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        mve.s(parcel, r);
     }
 }

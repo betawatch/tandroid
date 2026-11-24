@@ -1,25 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum ksb extends qsb {
+public enum ksb extends rub {
     public ksb() {
-        super("BogusDoctype", 65);
+        super("ScriptDataEndTagOpen", 17);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.j();
-            aqbVar.c = lqbVar;
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        if (hl1Var.o()) {
+            bsbVar.d(false);
+            bsbVar.c = rub.I;
         } else {
-            if (d != 65535) {
-                return;
-            }
-            aqbVar.j();
-            aqbVar.c = lqbVar;
+            bsbVar.h("</");
+            bsbVar.c = rub.f;
         }
     }
 }

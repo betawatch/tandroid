@@ -1,246 +1,206 @@
 // default package
 
 import android.animation.ValueAnimator;
-import android.graphics.RectF;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class uwb implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class uwb extends u46 {
+    public boolean I;
+    public final /* synthetic */ sxb J;
 
-    public /* synthetic */ uwb(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public uwb(sxb sxbVar) {
+        this.J = sxbVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                kxb kxbVar = (kxb) obj;
-                kxbVar.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kxbVar.m();
-                break;
-            case 1:
-                ((lyb) obj).g(valueAnimator);
-                break;
-            case 2:
-                o1c o1cVar = (o1c) obj;
-                o1cVar.r0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o1cVar.invalidate();
-                break;
-            case 3:
-                y5c y5cVar = (y5c) obj;
-                y5cVar.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y5cVar.invalidate();
-                break;
-            case 4:
-                v7c v7cVar = (v7c) obj;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v7cVar.b = floatValue;
-                v7cVar.setTranslationY(floatValue);
-                break;
-            case 5:
-                vec vecVar = (vec) obj;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vecVar.setAnimationIdicatorProgress(floatValue2);
-                uec uecVar = vecVar.E;
-                if (uecVar != null) {
-                    uecVar.g(floatValue2);
-                    break;
-                }
-                break;
-            case 6:
-                pfc pfcVar = (pfc) obj;
-                pfcVar.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pfcVar.invalidate();
-                break;
-            case 7:
-                hgc hgcVar = (hgc) obj;
-                hgcVar.y0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hgcVar.x();
-                break;
-            case 8:
-                xgc xgcVar = (xgc) obj;
-                xgcVar.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xgcVar.b.invalidate();
-                break;
-            case 9:
-                xlc xlcVar = (xlc) obj;
-                xlcVar.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xlcVar.invalidate();
-                break;
-            case 10:
-                fmc fmcVar = (fmc) obj;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fmcVar.c.setRotationY(floatValue3);
-                boolean z = floatValue3 > 90.0f;
-                fmcVar.d.setVisibility(z ? 4 : 0);
-                fmcVar.e.setVisibility(z ? 0 : 4);
-                break;
-            case 11:
-                anc ancVar = (anc) obj;
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ymc ymcVar = ancVar.q;
-                lnc lncVar = ancVar.i;
-                RectF rectF = ancVar.n;
-                RectF rectF2 = ancVar.o;
-                if (!ancVar.v) {
-                    ancVar.e();
-                    float interpolation = ancVar.k.getInterpolation(Math.min(1.0f, floatValue4 * 2.0f));
-                    x02 x02Var = ancVar.c;
-                    if (x02Var != null) {
-                        x02Var.s1(interpolation);
-                    } else {
-                        ancVar.b.setTranslationY(r12.getHeight() * interpolation);
-                    }
-                    if (ancVar.p != null && !rectF2.isEmpty()) {
-                        uk1 D6 = ancVar.e.D6(ancVar.f);
-                        uk1 uk1Var = ancVar.p;
-                        if (D6 != uk1Var) {
-                            uk1Var.J0.i(false);
-                            ancVar.p = D6;
-                        } else {
-                            D6 = uk1Var;
-                        }
-                        if (D6 != null && !ancVar.s) {
-                            D6.J0.i(true);
-                            mkc mkcVar = ancVar.p.J0.m;
-                            if (mkcVar != null && mkcVar.isAttachedToWindow()) {
-                                rectF2.set(ancVar.c(mkcVar));
-                                ancVar.r = floatValue4;
-                                float max = Math.max(0.0f, Math.min(1.0f, (floatValue4 - 0.25f) / 0.5f));
-                                float B = yjb.B(max, 2.0f, 3.0f, max * max);
-                                lncVar.setAlpha((1.0f - B) * ancVar.l);
-                                ymcVar.setAlpha(B);
-                                ancVar.d();
-                                float f = 1.0f - floatValue4;
-                                float centerX = ((rectF2.centerX() - rectF.centerX()) * 0.35f) + rectF.centerX();
-                                float min = Math.min(rectF.centerY(), rectF2.centerY()) - gl.L(150.0f);
-                                float f2 = f * f;
-                                float f3 = f * 2.0f * floatValue4;
-                                float f4 = floatValue4 * floatValue4;
-                                float centerX2 = (rectF2.centerX() * f4) + (centerX * f3) + (rectF.centerX() * f2);
-                                float centerY = (rectF2.centerY() * f4) + (f3 * min) + (rectF.centerY() * f2);
-                                ancVar.b(centerX2, centerY, ((rectF2.width() - rectF.width()) * floatValue4) + rectF.width());
-                                if (floatValue4 < 0.92f) {
-                                    ancVar.j.A(centerX2, centerY);
-                                }
-                                ancVar.h.invalidate();
-                                break;
-                            } else {
-                                rectF2.setEmpty();
-                                lncVar.setAlpha(0.0f);
-                                ymcVar.setAlpha(0.0f);
-                                break;
-                            }
-                        } else {
-                            rectF2.setEmpty();
-                            lncVar.setAlpha(0.0f);
-                            ymcVar.setAlpha(0.0f);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 12:
-                lnc lncVar2 = (lnc) obj;
-                lncVar2.j0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lncVar2.b();
-                break;
-            case 13:
-                ((ync) obj).n(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 14:
-                woc wocVar = (woc) obj;
-                wocVar.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wocVar.invalidate();
-                break;
-            case 15:
-                zoc zocVar = (zoc) obj;
-                Float f5 = (Float) valueAnimator.getAnimatedValue();
-                zocVar.w = f5.floatValue();
-                zocVar.f.a(f5);
-                View view = zocVar.a;
-                view.setAlpha(1.0f - zoc.c(0.05f, 0.45f, zocVar.w));
-                view.setScaleX(1.0f - (zocVar.w * 0.06f));
-                EditTextBoldCursor editTextBoldCursor = zocVar.b;
-                editTextBoldCursor.setAlpha(zoc.c(0.3f, 0.9f, zocVar.w));
-                editTextBoldCursor.setTranslationX((1.0f - zocVar.w) * b00.c(80.0f, zocVar.getWidth(), 0));
-                zocVar.invalidate();
-                break;
-            case 16:
-                ((qpc) obj).x0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 17:
-                ppc ppcVar = (ppc) obj;
-                ppcVar.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ppcVar.c();
-                break;
-            case 18:
-                cqc cqcVar = (cqc) obj;
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                RectF rectF3 = cqcVar.n;
-                RectF rectF4 = cqcVar.o;
-                if (!cqcVar.s) {
-                    cqcVar.e();
-                    float interpolation2 = cqcVar.k.getInterpolation(Math.min(1.0f, floatValue5 * 2.0f));
-                    x02 x02Var2 = cqcVar.a;
-                    if (x02Var2 != null) {
-                        x02Var2.s1(interpolation2);
-                    } else {
-                        cqcVar.c.setTranslationY(r8.getHeight() * interpolation2);
-                    }
-                    if (cqcVar.p != null && !rectF4.isEmpty()) {
-                        lnc pendingDiamond = cqcVar.p.getPendingDiamond();
-                        if (pendingDiamond != null) {
-                            lyb lybVar = cqcVar.p;
-                            TL_wallet.walletTransaction wallettransaction = cqcVar.f;
-                            TL_wallet.walletTransaction wallettransaction2 = lybVar.S;
-                            if (wallettransaction2 != null && jyb.j(wallettransaction2, wallettransaction) && pendingDiamond.isAttachedToWindow()) {
-                                rectF4.set(cqcVar.d(pendingDiamond));
-                            }
-                        }
-                        float f6 = 1.0f - floatValue5;
-                        float centerX3 = ((rectF4.centerX() - rectF3.centerX()) * 0.35f) + rectF3.centerX();
-                        float min2 = Math.min(rectF3.centerY(), rectF4.centerY()) - gl.L(150.0f);
-                        float f7 = f6 * f6;
-                        float f8 = f6 * 2.0f * floatValue5;
-                        float f9 = floatValue5 * floatValue5;
-                        float centerX4 = (rectF4.centerX() * f9) + (centerX3 * f8) + (rectF3.centerX() * f7);
-                        float centerY2 = (rectF4.centerY() * f9) + (f8 * min2) + (rectF3.centerY() * f7);
-                        cqcVar.c(centerX4, centerY2, ((rectF4.width() - rectF3.width()) * floatValue5) + rectF3.width());
-                        if (floatValue5 < 0.92f) {
-                            cqcVar.j.A(centerX4, centerY2);
-                        }
-                        cqcVar.h.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 19:
-                nsc nscVar = (nsc) obj;
-                float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nscVar.V = floatValue6;
-                nscVar.W.setAlpha(floatValue6);
-                nscVar.invalidate();
-                break;
-            default:
-                wt wtVar = (wt) obj;
-                float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wtVar.b0 = floatValue7;
-                wtVar.j(floatValue7);
-                wtVar.c0.setAlpha(wtVar.b0);
-                wtVar.S.setTranslationX(gl.L(56.0f) * wtVar.b0);
-                wtVar.P.setTranslationX(gl.L(112.0f) * wtVar.b0);
-                wtVar.invalidate();
-                break;
+    @Override // u46, f69
+    public final void a0(ki2 ki2Var, r69 r69Var) {
+        boolean z = e21.a;
+        try {
+            super.a0(ki2Var, r69Var);
+        } catch (IndexOutOfBoundsException e) {
+            fc4.g(e, true);
+            gm.c3(new zcb(this, (byte) 20));
         }
+    }
+
+    @Override // u46
+    public final void a1(View view, View view2, int i, int i2) {
+        this.I = true;
+        super.a1(view, view2, i, i2);
+        this.I = false;
+    }
+
+    @Override // u46
+    public final void g1(int i, int i2) {
+        if (this.I) {
+            i2 -= this.J.O.getPaddingTop();
+        }
+        super.g1(i, i2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c6  */
+    @Override // u46, f69
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int n0(int i, ki2 ki2Var, r69 r69Var) {
+        int i2;
+        dxb dxbVar;
+        pi3 pi3Var;
+        float f;
+        int i3;
+        View m;
+        sxb sxbVar = this.J;
+        dxb dxbVar2 = sxbVar.O;
+        boolean z = false;
+        if (dxbVar2.W1) {
+            return 0;
+        }
+        boolean z2 = dxbVar2.getScrollState() == 1;
+        int paddingTop = sxbVar.O.getPaddingTop();
+        if (i < 0 && sxbVar.y > 0 && sxbVar.E == 2) {
+            sxbVar.O.setOverScrollMode(0);
+            int K0 = sxbVar.G.K0();
+            if (K0 == 0 && (m = sxbVar.G.m(K0)) != null) {
+                m.setTranslationX(0.0f);
+                if (m.getBottom() - paddingTop <= gm.L(1.0f)) {
+                    K0 = 1;
+                }
+            }
+            if (!z2) {
+                View m2 = sxbVar.G.m(K0);
+                if (m2 != null) {
+                    int h = aq1.h(K0, 1, gm.L(gda.l1 ? 78.0f : 72.0f) + 1, -(m2.getTop() - paddingTop));
+                    if (h < Math.abs(i)) {
+                        i2 = -h;
+                    }
+                }
+            } else if (K0 == 0) {
+                View m3 = sxbVar.G.m(K0);
+                float top = ((m3.getTop() - paddingTop) / m3.getMeasuredHeight()) + 1.0f;
+                if (top > 1.0f) {
+                    top = 1.0f;
+                }
+                sxbVar.O.setOverScrollMode(2);
+                i2 = (int) mlb.B(top, 0.25f, 0.45f, i);
+                if (i2 > -1) {
+                    i2 = -1;
+                }
+            }
+            dxbVar = sxbVar.O;
+            if (dxbVar.m3 != 0.0f && i > 0 && z2) {
+                f = ((int) r14) - i;
+                if (f >= 0.0f) {
+                    i3 = (int) f;
+                    f = 0.0f;
+                } else {
+                    i3 = 0;
+                }
+                dxbVar.setViewsOffset(f);
+                i2 = i3;
+            }
+            if (sxbVar.E != 0 || sxbVar.y <= 0) {
+                return super.n0(i2, ki2Var, r69Var);
+            }
+            int n0 = super.n0(i2, ki2Var, r69Var);
+            pi3 pi3Var2 = sxbVar.x;
+            if (pi3Var2 != null) {
+                pi3Var2.a = n0;
+            }
+            int K02 = sxbVar.G.K0();
+            View m4 = K02 == 0 ? sxbVar.G.m(K02) : null;
+            if (m4 != null) {
+                m4.setTranslationX(0.0f);
+            }
+            if (K02 != 0 || m4 == null || m4.getBottom() - paddingTop < gm.L(4.0f)) {
+                sxbVar.Z = 0L;
+                sxbVar.a0 = false;
+                sxbVar.E = (byte) 2;
+                pi3 pi3Var3 = sxbVar.x;
+                if (pi3Var3 != null) {
+                    ValueAnimator valueAnimator = pi3Var3.z;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    hg3 hg3Var = pi3Var3.H;
+                    if (hg3Var != null) {
+                        hg3Var.removeCallbacks(pi3Var3.d0);
+                    }
+                    pi3Var3.x = 0.0f;
+                    pi3Var3.y = false;
+                    pi3Var3.e0 = false;
+                    sxbVar.x.f(0.0f);
+                    sxbVar.x.I = sxbVar.O;
+                }
+            } else {
+                if (sxbVar.Z == 0) {
+                    sxbVar.Z = System.currentTimeMillis();
+                }
+                if (sxbVar.E == 2 && (pi3Var = sxbVar.x) != null) {
+                    pi3Var.g();
+                }
+                float top2 = ((m4.getTop() - paddingTop) / m4.getMeasuredHeight()) + 1.0f;
+                if (top2 > 1.0f) {
+                    top2 = 1.0f;
+                }
+                long currentTimeMillis = System.currentTimeMillis() - sxbVar.Z;
+                if (top2 > 0.85f && currentTimeMillis > 220) {
+                    z = true;
+                }
+                if (sxbVar.a0 != z) {
+                    sxbVar.a0 = z;
+                    if (sxbVar.E == 2) {
+                        try {
+                            sxbVar.O.performHapticFeedback(3, 2);
+                        } catch (Exception unused) {
+                        }
+                        pi3 pi3Var4 = sxbVar.x;
+                        if (pi3Var4 != null) {
+                            pi3Var4.a(z);
+                        }
+                    }
+                }
+                if (sxbVar.E == 2 && i2 - n0 != 0 && i < 0 && z2) {
+                    float L = 1.0f - (sxbVar.O.m3 / gm.L(72.0f));
+                    dxb dxbVar3 = sxbVar.O;
+                    dxbVar3.setViewsOffset(dxbVar3.m3 - ((i * 0.2f) * L));
+                }
+                pi3 pi3Var5 = sxbVar.x;
+                if (pi3Var5 != null) {
+                    pi3Var5.f(top2);
+                    sxbVar.x.I = sxbVar.O;
+                }
+            }
+            if (m4 != null) {
+                m4.invalidate();
+            }
+            return n0;
+        }
+        i2 = i;
+        dxbVar = sxbVar.O;
+        if (dxbVar.m3 != 0.0f) {
+            f = ((int) r14) - i;
+            if (f >= 0.0f) {
+            }
+            dxbVar.setViewsOffset(f);
+            i2 = i3;
+        }
+        if (sxbVar.E != 0) {
+        }
+        return super.n0(i2, ki2Var, r69Var);
+    }
+
+    @Override // f69
+    public final void u0(RecyclerView recyclerView, r69 r69Var, int i) {
+        if (this.J.y > 0 && i == 1) {
+            super.u0(recyclerView, r69Var, i);
+            return;
+        }
+        w46 w46Var = new w46(recyclerView.getContext(), 0);
+        w46Var.a = i;
+        v0(w46Var);
     }
 }

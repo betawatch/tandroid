@@ -2,14 +2,14 @@ package org.webrtc;
 
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class RtpReceiver {
     private MediaStreamTrack cachedTrack;
     private long nativeObserver;
     private long nativeRtpReceiver;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface Observer {
         void onFirstPacketReceived(MediaStreamTrack.MediaType mediaType);
     }
@@ -23,7 +23,7 @@ public class RtpReceiver {
         if (this.nativeRtpReceiver != 0) {
             return;
         }
-        sc8.j("RtpReceiver has been disposed.");
+        dq9.m("RtpReceiver has been disposed.");
     }
 
     private static native String nativeGetId(long j);

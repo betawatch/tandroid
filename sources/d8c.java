@@ -1,262 +1,174 @@
 // default package
 
-import java.nio.charset.Charset;
-import java.util.Arrays;
+import java.lang.reflect.Field;
+import java.nio.Buffer;
+import java.nio.ByteOrder;
+import java.security.AccessController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class d8c {
-    public final /* synthetic */ byte a;
+public abstract class d8c {
+    public static final Unsafe a;
+    public static final Class b;
+    public static final c8c c;
+    public static final boolean d;
+    public static final boolean e;
+    public static final long f;
+    public static final boolean g;
 
-    public /* synthetic */ d8c(byte b) {
-        this.a = b;
+    static {
+        Unsafe unsafe;
+        c8c c8cVar = null;
+        try {
+            unsafe = (Unsafe) AccessController.doPrivileged(new q2((byte) 1));
+        } catch (Throwable unused) {
+            unsafe = null;
+        }
+        a = unsafe;
+        b = wk.a;
+        boolean d2 = d(Long.TYPE);
+        boolean d3 = d(Integer.TYPE);
+        if (unsafe != null) {
+            if (!wk.a()) {
+                c8cVar = new b8c(unsafe);
+            } else if (d2) {
+                c8cVar = new a8c(unsafe, (byte) 1);
+            } else if (d3) {
+                c8cVar = new a8c(unsafe, (byte) 0);
+            }
+        }
+        c = c8cVar;
+        d = c8cVar == null ? false : c8cVar.i();
+        e = c8cVar == null ? false : c8cVar.h();
+        f = a(byte[].class);
+        a(boolean[].class);
+        b(boolean[].class);
+        a(int[].class);
+        b(int[].class);
+        a(long[].class);
+        b(long[].class);
+        a(float[].class);
+        b(float[].class);
+        a(double[].class);
+        b(double[].class);
+        a(Object[].class);
+        b(Object[].class);
+        Field c2 = c();
+        if (c2 != null && c8cVar != null) {
+            c8cVar.a.objectFieldOffset(c2);
+        }
+        g = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0049  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String a(int i, int i2, byte[] bArr) {
-        switch (this.a) {
-            case 0:
-                if ((i | i2 | ((bArr.length - i) - i2)) < 0) {
-                    throw new ArrayIndexOutOfBoundsException(String.format("buffer length=%d, index=%d, size=%d", Integer.valueOf(bArr.length), Integer.valueOf(i), Integer.valueOf(i2)));
-                }
-                int i3 = i + i2;
-                char[] cArr = new char[i2];
-                int i4 = 0;
-                while (i < i3) {
-                    byte b = bArr[i];
-                    if (b < 0) {
-                        while (i < i3) {
-                            int i5 = i + 1;
-                            byte b2 = bArr[i];
-                            if (b2 >= 0) {
-                                int i6 = i4 + 1;
-                                cArr[i4] = (char) b2;
-                                while (i5 < i3) {
-                                    byte b3 = bArr[i5];
-                                    if (b3 >= 0) {
-                                        i5++;
-                                        cArr[i6] = (char) b3;
-                                        i6++;
-                                    } else {
-                                        i4 = i6;
-                                        i = i5;
-                                    }
-                                }
-                                i4 = i6;
-                                i = i5;
-                            } else if (b2 < -32) {
-                                if (i5 >= i3) {
-                                    throw zp5.a();
-                                }
-                                i += 2;
-                                byte b4 = bArr[i5];
-                                int i7 = i4 + 1;
-                                if (b2 < -62 || mxe.a(b4)) {
-                                    throw zp5.a();
-                                }
-                                cArr[i4] = (char) (((b2 & 31) << 6) | (b4 & 63));
-                                i4 = i7;
-                            } else if (b2 < -16) {
-                                if (i5 >= i3 - 1) {
-                                    throw zp5.a();
-                                }
-                                int i8 = i + 2;
-                                byte b5 = bArr[i5];
-                                i += 3;
-                                byte b6 = bArr[i8];
-                                int i9 = i4 + 1;
-                                if (mxe.a(b5) || ((b2 == -32 && b5 < -96) || ((b2 == -19 && b5 >= -96) || mxe.a(b6)))) {
-                                    throw zp5.a();
-                                }
-                                cArr[i4] = (char) (((b2 & 15) << 12) | ((b5 & 63) << 6) | (b6 & 63));
-                                i4 = i9;
-                            } else {
-                                if (i5 >= i3 - 2) {
-                                    throw zp5.a();
-                                }
-                                byte b7 = bArr[i5];
-                                int i10 = i + 3;
-                                byte b8 = bArr[i + 2];
-                                i += 4;
-                                byte b9 = bArr[i10];
-                                int i11 = i4 + 1;
-                                if (mxe.a(b7) || (((b7 + 112) + (b2 << 28)) >> 30) != 0 || mxe.a(b8) || mxe.a(b9)) {
-                                    throw zp5.a();
-                                }
-                                int i12 = ((b2 & 7) << 18) | ((b7 & 63) << 12) | ((b8 & 63) << 6) | (b9 & 63);
-                                cArr[i4] = (char) ((i12 >>> 10) + 55232);
-                                cArr[i11] = (char) ((i12 & 1023) + 56320);
-                                i4 += 2;
-                            }
-                        }
-                        return new String(cArr, 0, i4);
-                    }
-                    i++;
-                    cArr[i4] = (char) b;
-                    i4++;
-                }
-                while (i < i3) {
-                }
-                return new String(cArr, 0, i4);
-            default:
-                Charset charset = mp5.a;
-                String str = new String(bArr, i, i2, charset);
-                if (str.indexOf(65533) < 0 || Arrays.equals(str.getBytes(charset), Arrays.copyOfRange(bArr, i, i2 + i))) {
-                    return str;
-                }
-                throw zp5.a();
+    public static int a(Class cls) {
+        if (e) {
+            return c.a.arrayBaseOffset(cls);
+        }
+        return -1;
+    }
+
+    public static void b(Class cls) {
+        if (e) {
+            c.a.arrayIndexScale(cls);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:79:0x017f  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0183  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int b(String str, byte[] bArr, int i, int i2) {
-        int i3;
-        char charAt;
-        int i4;
-        int i5;
-        char charAt2;
-        char c = 2048;
-        char c2 = 128;
-        char c3 = 55296;
-        switch (this.a) {
-            case 0:
-                int length = str.length();
-                int i6 = i2 + i;
-                int i7 = 0;
-                while (i7 < length) {
-                    int i8 = i7 + i;
-                    if (i8 < i6 && (charAt = str.charAt(i7)) < 128) {
-                        bArr[i8] = (byte) charAt;
-                        i7++;
-                    }
-                    if (i7 != length) {
-                        return i + length;
-                    }
-                    int i9 = i + i7;
-                    while (i7 < length) {
-                        char charAt3 = str.charAt(i7);
-                        if (charAt3 < 128 && i9 < i6) {
-                            bArr[i9] = (byte) charAt3;
-                            i9++;
-                        } else if (charAt3 < 2048 && i9 <= i6 - 2) {
-                            int i10 = i9 + 1;
-                            bArr[i9] = (byte) ((charAt3 >>> 6) | 960);
-                            i9 += 2;
-                            bArr[i10] = (byte) ((charAt3 & '?') | 128);
-                        } else {
-                            if ((charAt3 >= 55296 && 57343 >= charAt3) || i9 > i6 - 3) {
-                                if (i9 > i6 - 4) {
-                                    if (55296 <= charAt3 && charAt3 <= 57343 && ((i3 = i7 + 1) == str.length() || !Character.isSurrogatePair(charAt3, str.charAt(i3)))) {
-                                        throw new e8c(i7, length);
-                                    }
-                                    haf.e(charAt3, i9);
-                                    return 0;
-                                }
-                                int i11 = i7 + 1;
-                                if (i11 != str.length()) {
-                                    char charAt4 = str.charAt(i11);
-                                    if (Character.isSurrogatePair(charAt3, charAt4)) {
-                                        int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                        bArr[i9] = (byte) ((codePoint >>> 18) | kk7.O3);
-                                        bArr[i9 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
-                                        int i12 = i9 + 3;
-                                        bArr[i9 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
-                                        i9 += 4;
-                                        bArr[i12] = (byte) ((codePoint & 63) | 128);
-                                        i7 = i11;
-                                    } else {
-                                        i7 = i11;
-                                    }
-                                }
-                                throw new e8c(i7 - 1, length);
-                            }
-                            bArr[i9] = (byte) ((charAt3 >>> '\f') | 480);
-                            int i13 = i9 + 2;
-                            bArr[i9 + 1] = (byte) (((charAt3 >>> 6) & 63) | 128);
-                            i9 += 3;
-                            bArr[i13] = (byte) ((charAt3 & '?') | 128);
-                        }
-                        i7++;
-                    }
-                    return i9;
-                }
-                if (i7 != length) {
-                }
-                break;
-            default:
-                long j = i;
-                long j2 = i2 + j;
-                int length2 = str.length();
-                if (length2 > i2 || bArr.length - i2 < i) {
-                    throw new ArrayIndexOutOfBoundsException("Failed writing " + str.charAt(length2 - 1) + " at index " + (i + i2));
-                }
-                int i14 = 0;
-                while (i14 < length2 && (charAt2 = str.charAt(i14)) < 128) {
-                    d6c.j(bArr, j, (byte) charAt2);
-                    i14++;
-                    j++;
-                }
-                if (i14 != length2) {
-                    while (i14 < length2) {
-                        char charAt5 = str.charAt(i14);
-                        if (charAt5 >= c2 || j >= j2) {
-                            if (charAt5 >= c || j > j2 - 2) {
-                                i4 = i14;
-                                if ((charAt5 >= c3 && 57343 >= charAt5) || j > j2 - 3) {
-                                    if (j > j2 - 4) {
-                                        if (55296 <= charAt5 && charAt5 <= 57343 && ((i5 = i4 + 1) == length2 || !Character.isSurrogatePair(charAt5, str.charAt(i5)))) {
-                                            throw new e8c(i4, length2);
-                                        }
-                                        throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt5 + " at index " + j);
-                                    }
-                                    i14 = i4 + 1;
-                                    if (i14 != length2) {
-                                        char charAt6 = str.charAt(i14);
-                                        if (Character.isSurrogatePair(charAt5, charAt6)) {
-                                            int codePoint2 = Character.toCodePoint(charAt5, charAt6);
-                                            d6c.j(bArr, j, (byte) ((codePoint2 >>> 18) | kk7.O3));
-                                            d6c.j(bArr, j + 1, (byte) (((codePoint2 >>> 12) & 63) | 128));
-                                            long j3 = j + 3;
-                                            d6c.j(bArr, j + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));
-                                            j += 4;
-                                            d6c.j(bArr, j3, (byte) ((codePoint2 & 63) | 128));
-                                        }
-                                    } else {
-                                        i14 = i4;
-                                    }
-                                    throw new e8c(i14 - 1, length2);
-                                }
-                                d6c.j(bArr, j, (byte) ((charAt5 >>> '\f') | 480));
-                                long j4 = j + 2;
-                                d6c.j(bArr, j + 1, (byte) (((charAt5 >>> 6) & 63) | c2));
-                                j += 3;
-                                d6c.j(bArr, j4, (byte) ((charAt5 & '?') | 128));
-                            } else {
-                                i4 = i14;
-                                long j5 = j + 1;
-                                d6c.j(bArr, j, (byte) ((charAt5 >>> 6) | 960));
-                                j += 2;
-                                d6c.j(bArr, j5, (byte) ((charAt5 & '?') | c2));
-                            }
-                            i14 = i4;
-                        } else {
-                            d6c.j(bArr, j, (byte) charAt5);
-                            j++;
-                        }
-                        i14++;
-                        c = 2048;
-                        c2 = 128;
-                        c3 = 55296;
-                    }
-                }
-                return (int) j;
+    public static Field c() {
+        Field field;
+        Field field2;
+        if (wk.a()) {
+            try {
+                field2 = Buffer.class.getDeclaredField("effectiveDirectAddress");
+            } catch (Throwable unused) {
+                field2 = null;
+            }
+            if (field2 != null) {
+                return field2;
+            }
         }
+        try {
+            field = Buffer.class.getDeclaredField("address");
+        } catch (Throwable unused2) {
+            field = null;
+        }
+        if (field == null || field.getType() != Long.TYPE) {
+            return null;
+        }
+        return field;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static boolean d(Class cls) {
+        if (!wk.a()) {
+            return false;
+        }
+        try {
+            Class cls2 = b;
+            Class cls3 = Boolean.TYPE;
+            cls2.getMethod("peekLong", cls, cls3);
+            cls2.getMethod("pokeLong", cls, Long.TYPE, cls3);
+            Class cls4 = Integer.TYPE;
+            cls2.getMethod("pokeInt", cls, cls4, cls3);
+            cls2.getMethod("peekInt", cls, cls3);
+            cls2.getMethod("pokeByte", cls, Byte.TYPE);
+            cls2.getMethod("peekByte", cls);
+            cls2.getMethod("pokeByteArray", cls, byte[].class, cls4, cls4);
+            cls2.getMethod("peekByteArray", cls, byte[].class, cls4, cls4);
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public static boolean e(Object obj, long j) {
+        return ((byte) ((f(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & nm7.d4)) != 0;
+    }
+
+    public static int f(Object obj, long j) {
+        return c.a.getInt(obj, j);
+    }
+
+    public static long g(Object obj, long j) {
+        return c.a.getLong(obj, j);
+    }
+
+    public static Object h(Object obj, long j) {
+        return c.a.getObject(obj, j);
+    }
+
+    public static void i(Throwable th) {
+        Logger.getLogger(d8c.class.getName()).log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
+    }
+
+    public static void j(byte[] bArr, long j, byte b2) {
+        c.e(f + j, bArr, b2);
+    }
+
+    public static void k(long j, Object obj, byte b2) {
+        long j2 = (-4) & j;
+        int f2 = f(obj, j2);
+        int i = ((~((int) j)) & 3) << 3;
+        m(obj, (f2 & (~(nm7.d4 << i))) | ((b2 & 255) << i), j2);
+    }
+
+    public static void l(long j, Object obj, byte b2) {
+        long j2 = (-4) & j;
+        int i = (((int) j) & 3) << 3;
+        m(obj, (f(obj, j2) & (~(nm7.d4 << i))) | ((b2 & 255) << i), j2);
+    }
+
+    public static void m(Object obj, int i, long j) {
+        c.a.putInt(obj, j, i);
+    }
+
+    public static void n(Object obj, long j, long j2) {
+        c.a.putLong(obj, j, j2);
+    }
+
+    public static void o(Object obj, long j, Object obj2) {
+        c.a.putObject(obj, j, obj2);
     }
 }

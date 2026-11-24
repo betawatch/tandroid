@@ -1,230 +1,196 @@
 // default package
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.util.SparseIntArray;
-import org.telegram.ui.ActionBar.d;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class fd implements wjb {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public abstract class fd {
+    public static final LongSparseArray a = new LongSparseArray();
+    public static final LongSparseArray b = new LongSparseArray();
 
-    public /* synthetic */ fd(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    @Override // wjb
-    public final boolean a() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-            case 1:
-            case 2:
-            default:
-                return bkb.I.o();
-            case 3:
-                return ((a18) obj).T;
-            case 4:
-                return ((mmb) obj).f.a.a();
+    public static TL_aicompose.AiComposeTone a(int i, TL_aicompose.InputAiComposeTone inputAiComposeTone) {
+        if (inputAiComposeTone == null) {
+            return null;
         }
+        ArrayList arrayList = oc7.r1(i).P1().b;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
+            if ((inputAiComposeTone instanceof TL_aicompose.inputAiComposeToneID) && (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.inputAiComposeToneID) inputAiComposeTone).id == ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id) {
+                return aiComposeTone;
+            }
+            if ((inputAiComposeTone instanceof TL_aicompose.inputAiComposeToneSlug) && (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) && TextUtils.equals(((TL_aicompose.inputAiComposeToneSlug) inputAiComposeTone).slug, ((TL_aicompose.TL_aiComposeTone) aiComposeTone).slug)) {
+                return aiComposeTone;
+            }
+            if ((inputAiComposeTone instanceof TL_aicompose.inputAiComposeToneDefault) && (aiComposeTone instanceof TL_aicompose.TL_aiComposeToneDefault) && TextUtils.equals(((TL_aicompose.inputAiComposeToneDefault) inputAiComposeTone).tone, ((TL_aicompose.TL_aiComposeToneDefault) aiComposeTone).tone)) {
+                return aiComposeTone;
+            }
+        }
+        return null;
     }
 
-    @Override // wjb
-    public final void b(float f, float f2, int i, int i2) {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            default:
-                bkb.q(f, f2, i, i2);
-                break;
-            case 4:
-                slb slbVar = ((mmb) this.b).f.a;
-                if (slbVar == null) {
-                    bkb.q(f, f2, i, i2);
-                    break;
+    public static ed b(int i, long j) {
+        ed edVar;
+        if (j == 0) {
+            return null;
+        }
+        if (!pg3.B(j)) {
+            hs6 d0 = hs6.d0(i);
+            d0.k();
+            TL_aicompose.inputAiComposeStyle inputaicomposestyle = (TL_aicompose.inputAiComposeStyle) d0.r1.f(j);
+            if (inputaicomposestyle != null) {
+                ed edVar2 = new ed();
+                edVar2.c = TextUtils.isEmpty(inputaicomposestyle.to_lang) ? null : inputaicomposestyle.to_lang;
+                TL_aicompose.InputAiComposeTone d = d(inputaicomposestyle.tone);
+                edVar2.d = d;
+                edVar2.b = inputaicomposestyle.emojify;
+                edVar2.f = edVar2.c == null ? 1 : 0;
+                TL_aicompose.AiComposeTone a2 = a(i, d);
+                String str = (a2 == null || TextUtils.isEmpty(a2.title)) ? null : a2.title;
+                String str2 = edVar2.c;
+                if (str2 != null) {
+                    String E0 = s1c.E0(s1c.J0(str2, null, null));
+                    if (str != null) {
+                        E0 = kt6.o(str, " ", E0);
+                    }
+                    edVar2.e = E0;
                 } else {
-                    slbVar.b(f, f2, i, i2);
-                    break;
+                    if (str == null) {
+                        str = jb6.M0(2131754963, null);
+                    }
+                    edVar2.e = str;
                 }
+                if (edVar2.b) {
+                    edVar2.e = b10.j(new StringBuilder(), edVar2.e, " + Emoji");
+                }
+                return edVar2;
+            }
         }
-    }
-
-    @Override // wjb
-    public final ColorFilter c() {
-        byte b = this.a;
-        return bkb.u3;
-    }
-
-    @Override // wjb
-    public final Paint d(String str) {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-            default:
-                return bkb.T0(str);
-            case 3:
-                return bkb.T0(str);
-            case 4:
-                return ((mmb) this.b).f.a.d(str);
+        LongSparseArray longSparseArray = a;
+        long j2 = (j << 3) + i;
+        LongSparseArray longSparseArray2 = b;
+        if (longSparseArray2.get(j2) != null) {
+            edVar = (ed) longSparseArray.get(j2);
+        } else {
+            String string = a.b.getSharedPreferences("anim_ai_always", 0).getString(c(i, j), null);
+            if (string != null) {
+                try {
+                    SerializedData serializedData = new SerializedData(Base64.decode(string, 2));
+                    edVar = new ed();
+                    serializedData.readInt32(false);
+                    edVar.f = serializedData.readInt32(false);
+                    edVar.a = serializedData.readBool(false);
+                    edVar.b = serializedData.readBool(false);
+                    edVar.c = serializedData.readBool(false) ? serializedData.readString(false) : null;
+                    edVar.e = serializedData.readString(false);
+                    if (serializedData.readBool(false)) {
+                        edVar.d = TL_aicompose.InputAiComposeTone.TLdeserialize(serializedData, serializedData.readInt32(false), false);
+                    }
+                    serializedData.cleanup();
+                } catch (Throwable unused) {
+                }
+                longSparseArray.put(j2, edVar);
+                longSparseArray2.put(j2, Boolean.TRUE);
+            }
+            edVar = null;
+            longSparseArray.put(j2, edVar);
+            longSparseArray2.put(j2, Boolean.TRUE);
         }
-    }
-
-    @Override // wjb
-    public final boolean e() {
-        byte b = this.a;
-        return gba.D0;
-    }
-
-    @Override // wjb
-    public final int f(int i) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((hd) obj).e(i);
-            case 1:
-                return ((d) obj).getThemedColor(i);
-            case 2:
-                return ((mu1) obj).getThemedColor(i);
-            case 3:
-                return h(i);
-            case 4:
-                return ((mmb) obj).f.a.h(i);
-            default:
-                return ((l5c) obj).I(i);
+        if (edVar == null) {
+            return null;
         }
-    }
-
-    @Override // wjb
-    public final boolean g() {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                return false;
-            case 4:
-                return ((mmb) this.b).f.a.g();
-            default:
-                return false;
+        if (edVar.a || pg3.B(j)) {
+            return edVar;
         }
+        return null;
     }
 
-    @Override // wjb
-    public final Drawable getDrawable(String str) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-            case 1:
-            case 2:
-                return null;
-            case 3:
-                a18 a18Var = (a18) obj;
-                if (str.equals("drawableMsgIn")) {
-                    return a18Var.x;
-                }
-                if (str.equals("drawableMsgInSelected")) {
-                    return a18Var.y;
-                }
-                wjb wjbVar = a18Var.s;
-                return wjbVar != null ? wjbVar.getDrawable(str) : bkb.P0(str);
-            case 4:
-                qmb qmbVar = ((mmb) obj).f;
-                if (str.equals("drawableMsgOut")) {
-                    return qmbVar.T;
-                }
-                if (str.equals("drawableMsgOutSelected")) {
-                    return qmbVar.U;
-                }
-                if (str.equals("drawableMsgOutMedia")) {
-                    return qmbVar.V;
-                }
-                if (str.equals("drawableMsgOutMediaSelected")) {
-                    return qmbVar.W;
-                }
-                slb slbVar = qmbVar.a;
-                return slbVar != null ? slbVar.getDrawable(str) : bkb.P0(str);
-            default:
-                return null;
+    public static String c(int i, long j) {
+        return i + "_" + j;
+    }
+
+    public static TL_aicompose.InputAiComposeTone d(TL_aicompose.InputAiComposeTone inputAiComposeTone) {
+        if (((inputAiComposeTone instanceof TL_aicompose.inputAiComposeToneDefault) && TextUtils.isEmpty(((TL_aicompose.inputAiComposeToneDefault) inputAiComposeTone).tone)) || (inputAiComposeTone instanceof TL_aicompose.inputAiComposeToneSingleUse)) {
+            return null;
         }
+        return inputAiComposeTone;
     }
 
-    @Override // wjb
-    public final int h(int i) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((hd) obj).e(i);
-            case 1:
-                return ((d) obj).getThemedColor(i);
-            case 2:
-                return ((mu1) obj).getThemedColor(i);
-            case 3:
-                a18 a18Var = (a18) obj;
-                SparseIntArray sparseIntArray = a18Var.w;
-                int indexOfKey = sparseIntArray.indexOfKey(i);
-                if (indexOfKey >= 0) {
-                    return sparseIntArray.valueAt(indexOfKey);
+    public static void e(int i, long j, ed edVar) {
+        TL_aicompose.inputAiComposeStyle inputaicomposestyle;
+        if (j != 0) {
+            boolean z = edVar != null && (edVar.a || pg3.B(j));
+            ed edVar2 = z ? edVar : null;
+            LongSparseArray longSparseArray = a;
+            LongSparseArray longSparseArray2 = b;
+            long j2 = (j << 3) + i;
+            if (edVar2 != null || longSparseArray2.get(j2) == null || longSparseArray.get(j2) != null) {
+                longSparseArray.put(j2, edVar2);
+                longSparseArray2.put(j2, Boolean.TRUE);
+                if (edVar2 == null) {
+                    a.b.getSharedPreferences("anim_ai_always", 0).edit().remove(c(i, j)).apply();
+                } else {
+                    SerializedData serializedData = new SerializedData();
+                    serializedData.writeInt32(1);
+                    serializedData.writeInt32(edVar2.f);
+                    serializedData.writeBool(edVar2.a);
+                    serializedData.writeBool(edVar2.b);
+                    serializedData.writeBool(edVar2.c != null);
+                    String str = edVar2.c;
+                    if (str != null) {
+                        serializedData.writeString(str);
+                    }
+                    String str2 = edVar2.e;
+                    if (str2 == null) {
+                        str2 = "";
+                    }
+                    serializedData.writeString(str2);
+                    TL_aicompose.InputAiComposeTone d = d(edVar2.d);
+                    serializedData.writeBool(d != null);
+                    if (d != null) {
+                        d.serializeToStream(serializedData);
+                    }
+                    a.b.getSharedPreferences("anim_ai_always", 0).edit().putString(c(i, j), Base64.encodeToString(serializedData.toByteArray(), 2)).apply();
+                    serializedData.cleanup();
                 }
-                wjb wjbVar = a18Var.s;
-                return wjbVar != null ? wjbVar.h(i) : bkb.w0(null, i, false);
-            case 4:
-                return ((mmb) obj).f.a.h(i);
-            default:
-                return ((l5c) obj).I(i);
+            }
+            if (pg3.B(j)) {
+                return;
+            }
+            hs6 d0 = hs6.d0(i);
+            if (edVar == null || z) {
+                inputaicomposestyle = null;
+            } else {
+                inputaicomposestyle = new TL_aicompose.inputAiComposeStyle();
+                inputaicomposestyle.tone = d(edVar.d);
+                inputaicomposestyle.to_lang = TextUtils.isEmpty(edVar.c) ? null : edVar.c;
+                inputaicomposestyle.emojify = edVar.b;
+            }
+            if (pg3.B(j)) {
+                return;
+            }
+            TLRPC.InputPeer i1 = d0.getMessagesController().i1(j);
+            d0.k();
+            TL_aicompose.inputAiComposeStyle inputaicomposestyle2 = (TL_aicompose.inputAiComposeStyle) d0.r1.f(j);
+            TL_aicompose.inputAiComposeStyle inputaicomposestyle3 = hs6.A0(inputaicomposestyle) ? null : inputaicomposestyle;
+            if (hs6.j(inputaicomposestyle2, inputaicomposestyle3)) {
+                return;
+            }
+            d0.F1(j, inputaicomposestyle3);
+            TL_aicompose.setChatStyle setchatstyle = new TL_aicompose.setChatStyle();
+            setchatstyle.peer = i1;
+            setchatstyle.style = inputaicomposestyle3;
+            d0.getConnectionsManager().sendRequestTyped(setchatstyle, new kc((byte) 0), new tm3(d0, j, inputaicomposestyle3, inputaicomposestyle2));
         }
-    }
-
-    @Override // wjb
-    public final void i(int i, int i2) {
-        byte b = this.a;
-    }
-
-    @Override // wjb
-    public final int j(int i) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((hd) obj).e(i);
-            case 1:
-                return ((d) obj).getThemedColor(i);
-            case 2:
-                return ((mu1) obj).getThemedColor(i);
-            case 3:
-                return h(i);
-            case 4:
-                return ((mmb) obj).f.a.j(i);
-            default:
-                return ((l5c) obj).I(i);
-        }
-    }
-
-    private final void k(int i, int i2) {
-    }
-
-    private final void l(int i, int i2) {
-    }
-
-    private final void m(int i, int i2) {
-    }
-
-    private final void n(int i, int i2) {
-    }
-
-    private final void o(int i, int i2) {
-    }
-
-    private final void p(int i, int i2) {
     }
 }

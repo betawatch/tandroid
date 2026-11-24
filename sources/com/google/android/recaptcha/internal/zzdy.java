@@ -2,34 +2,34 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzdy extends ccb implements eq4 {
+final class zzdy extends eeb implements fs4 {
     int zza;
     final /* synthetic */ Application zzb;
     final /* synthetic */ String zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzdy(Application application, String str, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzdy(Application application, String str, px2 px2Var) {
+        super(2, px2Var);
         this.zzb = application;
         this.zzc = str;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzdy(this.zzb, this.zzc, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        return new zzdy(this.zzb, this.zzc, px2Var);
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzdy) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzdy) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        qse.b(obj);
+        tue.b(obj);
         if (i != 0) {
             return obj;
         }
@@ -37,7 +37,7 @@ final class zzdy extends ccb implements eq4 {
         String str = this.zzc;
         this.zza = 1;
         Object zzd = zzdz.zzd(application, str, this);
-        bx2 bx2Var = bx2.a;
-        return zzd == bx2Var ? bx2Var : zzd;
+        ly2 ly2Var = ly2.a;
+        return zzd == ly2Var ? ly2Var : zzd;
     }
 }

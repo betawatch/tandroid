@@ -1,24 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class gia extends ri4 {
-    public final eia a;
-    public final fia b;
-    public float c = 1.0f;
+import org.telegram.tgnet.TLObject;
 
-    public gia(eia eiaVar, fia fiaVar) {
-        this.a = eiaVar;
-        this.b = fiaVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class gia extends qx2 {
+    public String a;
+    public eia b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ hia d;
+    public int e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gia(hia hiaVar, px2 px2Var) {
+        super(px2Var);
+        this.d = hiaVar;
     }
 
-    @Override // ri4
-    public final float a(Object obj) {
-        return this.a.get(obj) * this.c;
-    }
-
-    @Override // ri4
-    public final void b(Object obj, float f) {
-        this.b.b(obj, f / this.c);
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.e(null, null, this);
     }
 }

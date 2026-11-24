@@ -1,81 +1,19 @@
 // default package
 
-import android.os.SystemClock;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vq2 {
-    public final adb a;
-    public boolean b;
+public final /* synthetic */ class vq2 implements lr2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public vq2() {
-        this(adb.a);
+    public /* synthetic */ vq2(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public final synchronized void a() {
-        while (!this.b) {
-            this.a.getClass();
-            wait();
-        }
-    }
-
-    public final synchronized void b() {
-        boolean z = false;
-        while (!this.b) {
-            try {
-                this.a.getClass();
-                wait();
-            } catch (InterruptedException unused) {
-                z = true;
-            }
-        }
-        if (z) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    public final synchronized boolean c(long j) {
-        if (j <= 0) {
-            return this.b;
-        }
-        this.a.getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j2 = j + elapsedRealtime;
-        if (j2 < elapsedRealtime) {
-            b();
-        } else {
-            boolean z = false;
-            while (!this.b && elapsedRealtime < j2) {
-                try {
-                    this.a.getClass();
-                    wait(j2 - elapsedRealtime);
-                } catch (InterruptedException unused) {
-                    z = true;
-                }
-                this.a.getClass();
-                elapsedRealtime = SystemClock.elapsedRealtime();
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-        }
+    @Override // lr2
+    public final Object X(sm2 sm2Var) {
+        byte b = this.a;
         return this.b;
-    }
-
-    public final synchronized void d() {
-        this.b = false;
-    }
-
-    public final synchronized boolean e() {
-        if (this.b) {
-            return false;
-        }
-        this.b = true;
-        notifyAll();
-        return true;
-    }
-
-    public vq2(adb adbVar) {
-        this.a = adbVar;
     }
 }

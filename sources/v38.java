@@ -1,22 +1,35 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.ui.ActionBar.a;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class v38 extends a {
-    public final /* synthetic */ b48 G1;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class v38 extends u17 {
+    public final /* synthetic */ a58 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v38(b48 b48Var, Activity activity) {
-        super(activity, null);
-        this.G1 = b48Var;
+    public v38(a58 a58Var, Context context, long j, d dVar, r63 r63Var) {
+        super(context, j, 0L, dVar, r63Var);
+        this.V = a58Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        super.setAlpha(f);
-        this.G1.b.invalidate();
+    @Override // u17
+    public final void f(Canvas canvas, Rect rect, float f) {
+        a58 a58Var = this.V;
+        eq eqVar = a58Var.F1;
+        eqVar.i(getX(), -getY(), getX() + getMeasuredWidth(), (-getY()) + getMeasuredHeight());
+        RectF rectF = gm.P;
+        rectF.set(rect);
+        rectF.offset(0.0f, 0.0f);
+        canvas.drawRoundRect(rectF, f, f, (Paint) eqVar.a);
+        canvas.drawRoundRect(rectF, f, f, a58Var.d2);
+        if (rectF.top < getMeasuredHeight() - 1) {
+            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, a58Var.r0.d("paintDivider"));
+        }
     }
 }

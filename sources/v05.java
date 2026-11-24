@@ -1,16 +1,26 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_wallet;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class v05 implements AutoCloseable {
-    public TL_wallet.sendTransfer a;
-    public y05 b;
-    public byte[] c;
+public final /* synthetic */ class v05 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ su b;
 
-    @Override // java.lang.AutoCloseable
-    public final void close() {
-        this.b.close();
+    public /* synthetic */ v05(su suVar, byte b) {
+        this.a = b;
+        this.b = suVar;
+    }
+
+    public final Boolean a(MotionEvent motionEvent) {
+        byte b = this.a;
+        su suVar = this.b;
+        switch (b) {
+            case 0:
+                return suVar.c(motionEvent);
+            default:
+                return suVar.d(motionEvent);
+        }
     }
 }

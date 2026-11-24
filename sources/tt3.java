@@ -1,62 +1,40 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class tt3 extends FrameLayout {
-    public final EditTextBoldCursor a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class tt3 extends e2 {
+    public static final /* synthetic */ ai4 n;
+    public static final /* synthetic */ ai4 r;
 
-    public tt3(Context context) {
-        super(context);
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.a = editTextBoldCursor;
-        zkb.X(editTextBoldCursor, bkb.F6, null);
-        zkb.D(editTextBoldCursor, bkb.G6, null);
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
-        editTextBoldCursor.setGravity((k96.a0 ? 5 : 3) | 16);
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | TLObject.FLAG_14);
-        addView(editTextBoldCursor, nme.d(-1, -1.0f, (k96.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    static {
+        i94 i94Var = new i94(tt3.class, "ESDescriptorBox.java");
+        i94Var.e(i94Var.d("getEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor"));
+        i94Var.e(i94Var.d("setEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor", "esDescriptor", "void"));
+        n = i94Var.e(i94Var.d("equals", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "java.lang.Object", "o", "boolean"));
+        r = i94Var.e(i94Var.d("hashCode", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "int"));
     }
 
-    public final void a(String str) {
-        EditTextBoldCursor editTextBoldCursor = this.a;
-        editTextBoldCursor.setText("");
-        editTextBoldCursor.setHint(str);
-        setWillNotDraw(true);
+    public final boolean equals(Object obj) {
+        aq1.r(i94.c(n, this, this, obj));
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || tt3.class != obj.getClass()) {
+            return false;
+        }
+        ByteBuffer byteBuffer = this.e;
+        ByteBuffer byteBuffer2 = ((tt3) obj).e;
+        return byteBuffer != null ? byteBuffer.equals(byteBuffer2) : byteBuffer2 == null;
     }
 
-    public String getText() {
-        return this.a.getText().toString();
-    }
-
-    public EditTextBoldCursor getTextView() {
-        return this.a;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(50.0f));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - gl.L(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-    }
-
-    public void setTextColor(int i) {
-        this.a.setTextColor(i);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    public final int hashCode() {
+        aq1.r(i94.b(r, this, this));
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            return byteBuffer.hashCode();
+        }
+        return 0;
     }
 }

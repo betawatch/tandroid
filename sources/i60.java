@@ -1,22 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class i60 implements zn7 {
+public final class i60 implements cq7 {
     public static final i60 a = new i60();
-    public static final w84 b = w84.c("processName");
-    public static final w84 c = w84.c("pid");
-    public static final w84 d = w84.c("importance");
-    public static final w84 e = w84.c("defaultProcess");
+    public static final wa4 b = wa4.c("privacyContext");
+    public static final wa4 c = wa4.c("productIdOrigin");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        wy2 wy2Var = (wy2) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, ((b90) wy2Var).a);
-        b90 b90Var = (b90) wy2Var;
-        ao7Var.e(c, b90Var.b);
-        ao7Var.e(d, b90Var.c);
-        ao7Var.d(e, b90Var.d);
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.a(b, ((y80) ((tq2) obj)).a);
+        dq7Var.a(c, sq2.a);
     }
 }

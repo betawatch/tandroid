@@ -1,63 +1,22 @@
 // default package
 
-import j$.util.Objects;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class iw6 implements ru6 {
-    public final mw6 a;
+public final class iw6 {
+    public final byte a;
+    public final boolean b;
+    public final boolean c;
+    public final boolean d;
+    public final Bundle e;
 
-    public iw6(mw6 mw6Var) {
-        this.a = mw6Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || obj.getClass() != iw6.class) {
-            return false;
-        }
-        return Objects.equals(this.a, ((iw6) obj).a);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a);
-    }
-
-    @Override // ru6
-    public final void e() {
-    }
-
-    @Override // ru6
-    public final void b(int i) {
-    }
-
-    @Override // ru6
-    public final void a(int i, p5a p5aVar) {
-    }
-
-    @Override // ru6
-    public final void d(int i, q06 q06Var) {
-    }
-
-    @Override // ru6
-    public final void f(int i, kc8 kc8Var) {
-    }
-
-    @Override // ru6
-    public final void g(int i, o6a o6aVar) {
-    }
-
-    @Override // ru6
-    public final void c(int i, int i2, int i3) {
-    }
-
-    @Override // ru6
-    public final void h(int i, wc8 wc8Var, kc8 kc8Var, boolean z, boolean z2) {
-    }
-
-    @Override // ru6
-    public final void i(int i, l6a l6aVar, boolean z, boolean z2, int i2) {
+    public iw6(hw6 hw6Var) {
+        this.a = hw6Var.a;
+        this.b = hw6Var.b;
+        this.c = hw6Var.c;
+        this.d = hw6Var.d;
+        Bundle bundle = hw6Var.e;
+        this.e = bundle == null ? Bundle.EMPTY : new Bundle(bundle);
     }
 }

@@ -1,16 +1,81 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class bo4 implements ko4 {
-    public final /* synthetic */ bn4 a;
+import android.os.Bundle;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-    public bo4(bn4 bn4Var) {
-        this.a = bn4Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class bo4 {
+    public final /* synthetic */ byte a;
+    public final List b;
+    public final boolean c;
+
+    public bo4(ArrayList arrayList, boolean z) {
+        this.a = (byte) 1;
+        if (arrayList.isEmpty()) {
+            this.b = Collections.EMPTY_LIST;
+        } else {
+            this.b = DesugarCollections.unmodifiableList(new ArrayList(arrayList));
+        }
+        this.c = z;
     }
 
-    @Override // ko4
-    public final void a() {
-        this.a.getClass();
+    public static bo4 a(Bundle bundle) {
+        if (bundle == null) {
+            return null;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList("routes");
+        if (parcelableArrayList != null) {
+            for (int i = 0; i < parcelableArrayList.size(); i++) {
+                Bundle bundle2 = (Bundle) parcelableArrayList.get(i);
+                arrayList.add(bundle2 != null ? new zu6(bundle2) : null);
+            }
+        }
+        return new bo4(arrayList, bundle.getBoolean("supportsDynamicGroupRoute", false));
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 1:
+                StringBuilder sb = new StringBuilder("MediaRouteProviderDescriptor{ routes=");
+                List list = this.b;
+                sb.append(Arrays.toString(list.toArray()));
+                sb.append(", isValid=");
+                int size = list.size();
+                boolean z = false;
+                int i = 0;
+                while (true) {
+                    if (i >= size) {
+                        z = true;
+                    } else {
+                        zu6 zu6Var = (zu6) list.get(i);
+                        if (zu6Var != null && zu6Var.e()) {
+                            i++;
+                        }
+                    }
+                }
+                sb.append(z);
+                sb.append(" }");
+                return sb.toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public bo4() {
+        this.a = (byte) 0;
+        this.c = true;
+        this.b = Collections.singletonList(null);
+    }
+
+    public bo4(ArrayList arrayList) {
+        this.a = (byte) 0;
+        this.c = false;
+        this.b = arrayList;
     }
 }

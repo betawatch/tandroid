@@ -1,28 +1,22 @@
 // default package
 
-import android.view.View;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class zd6 implements View.OnAttachStateChangeListener {
-    public boolean b;
-    public final /* synthetic */ ae6 d;
-    public long a = System.currentTimeMillis();
-    public final yd6 c = new yd6(this, (byte) 0);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class zd6 {
+    public static final /* synthetic */ int c = 0;
+    public final String a;
+    public final List b;
 
-    public zd6(ae6 ae6Var) {
-        this.d = ae6Var;
+    static {
+        DesugarCollections.unmodifiableList(new ArrayList());
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.b = true;
-        view.post(this.c);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.b = false;
-        view.removeCallbacks(this.c);
+    public zd6(String str, List list) {
+        this.a = str;
+        this.b = list;
     }
 }

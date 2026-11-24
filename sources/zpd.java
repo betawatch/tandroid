@@ -1,19 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class zpd implements zn7 {
-    public static final zpd a = new zpd();
-
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)));
+public final class zpd extends wod {
+    @Override // wod
+    public final void a(Object obj, long j) {
+        ((fcd) ((omd) x1e.l(obj, j))).a = false;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // wod
+    public final void b(xkd xkdVar, xkd xkdVar2, long j) {
+        omd omdVar = (omd) x1e.l(xkdVar, j);
+        omd omdVar2 = (omd) x1e.l(xkdVar2, j);
+        int size = omdVar.size();
+        int size2 = omdVar2.size();
+        if (size > 0 && size2 > 0) {
+            if (!((fcd) omdVar).a) {
+                omdVar = omdVar.f(size2 + size);
+            }
+            omdVar.addAll(omdVar2);
         }
-        throw null;
+        if (size > 0) {
+            omdVar2 = omdVar;
+        }
+        x1e.d(xkdVar, j, omdVar2);
     }
 }

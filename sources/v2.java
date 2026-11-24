@@ -3,7 +3,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class v2 implements Iterator {
     public final /* synthetic */ byte a;
@@ -32,7 +32,7 @@ public class v2 implements Iterator {
                 }
                 break;
             default:
-                if (this.b < ((fy) obj).a) {
+                if (this.b < ((fz) obj).a) {
                     break;
                 }
                 break;
@@ -47,7 +47,7 @@ public class v2 implements Iterator {
         switch (b) {
             case 0:
                 if (!hasNext()) {
-                    w26.g();
+                    u36.g();
                     return null;
                 }
                 int i = this.b;
@@ -63,28 +63,28 @@ public class v2 implements Iterator {
                     throw new NoSuchElementException(e.getMessage());
                 }
             default:
-                fy fyVar = (fy) obj;
-                String[] strArr = fyVar.c;
+                fz fzVar = (fz) obj;
+                String[] strArr = fzVar.c;
                 int i3 = this.b;
                 String str = strArr[i3];
-                String str2 = fyVar.b[i3];
+                String str2 = fzVar.b[i3];
                 if (str == null) {
                     str = "";
                 }
-                ey eyVar = new ey();
+                ez ezVar = new ez();
                 if (str2 == null) {
-                    w26.j("Object must not be null");
+                    u36.j("Object must not be null");
                     return null;
                 }
-                eyVar.a = str2.trim();
+                ezVar.a = str2.trim();
                 if (str2.length() == 0) {
-                    w26.j("String must not be empty");
+                    u36.j("String must not be empty");
                     return null;
                 }
-                eyVar.b = str;
-                eyVar.c = fyVar;
+                ezVar.b = str;
+                ezVar.c = fzVar;
                 this.b++;
-                return eyVar;
+                return ezVar;
         }
     }
 
@@ -96,26 +96,26 @@ public class v2 implements Iterator {
             case 1:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
             default:
-                fy fyVar = (fy) this.c;
+                fz fzVar = (fz) this.c;
                 int i = this.b;
                 int i2 = i - 1;
                 this.b = i2;
-                int i3 = fyVar.a;
+                int i3 = fzVar.a;
                 if (i2 >= i3) {
-                    w26.j("Must be false");
+                    u36.j("Must be false");
                     return;
                 }
                 int i4 = (i3 - i2) - 1;
                 if (i4 > 0) {
-                    String[] strArr = fyVar.b;
+                    String[] strArr = fzVar.b;
                     System.arraycopy(strArr, i, strArr, i2, i4);
-                    String[] strArr2 = fyVar.c;
+                    String[] strArr2 = fzVar.c;
                     System.arraycopy(strArr2, i, strArr2, i2, i4);
                 }
-                int i5 = fyVar.a - 1;
-                fyVar.a = i5;
-                fyVar.b[i5] = null;
-                fyVar.c[i5] = null;
+                int i5 = fzVar.a - 1;
+                fzVar.a = i5;
+                fzVar.b[i5] = null;
+                fzVar.c[i5] = null;
                 return;
         }
     }
@@ -125,9 +125,9 @@ public class v2 implements Iterator {
         this.c = y2Var;
     }
 
-    public v2(fy fyVar) {
+    public v2(fz fzVar) {
         this.a = (byte) 2;
-        this.c = fyVar;
+        this.c = fzVar;
         this.b = 0;
     }
 }

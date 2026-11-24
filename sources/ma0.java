@@ -1,34 +1,64 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ma0 {
-    public final na0 a;
-    public final pa0 b;
-    public final oa0 c;
+import android.content.Context;
 
-    public ma0(na0 na0Var, pa0 pa0Var, oa0 oa0Var) {
-        this.a = na0Var;
-        this.b = pa0Var;
-        this.c = oa0Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ma0 extends t23 {
+    public final Context a;
+    public final hk2 b;
+    public final hk2 c;
+    public final String d;
+
+    public ma0(Context context, hk2 hk2Var, hk2 hk2Var2, String str) {
+        if (context == null) {
+            gxc.d("Null applicationContext");
+            throw null;
+        }
+        this.a = context;
+        if (hk2Var == null) {
+            gxc.d("Null wallClock");
+            throw null;
+        }
+        this.b = hk2Var;
+        if (hk2Var2 == null) {
+            gxc.d("Null monotonicClock");
+            throw null;
+        }
+        this.c = hk2Var2;
+        if (str != null) {
+            this.d = str;
+        } else {
+            gxc.d("Null backendName");
+            throw null;
+        }
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ma0)) {
-            return false;
+        if (obj instanceof t23) {
+            ma0 ma0Var = (ma0) ((t23) obj);
+            if (this.a.equals(ma0Var.a) && this.b.equals(ma0Var.b) && this.c.equals(ma0Var.c) && this.d.equals(ma0Var.d)) {
+                return true;
+            }
         }
-        ma0 ma0Var = (ma0) obj;
-        return this.a.equals(ma0Var.a) && this.b.equals(ma0Var.b) && this.c.equals(ma0Var.c);
+        return false;
     }
 
     public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode();
+        return ((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode();
     }
 
     public final String toString() {
-        return "StaticSessionData{appData=" + this.a + ", osData=" + this.b + ", deviceData=" + this.c + "}";
+        StringBuilder sb = new StringBuilder("CreationContext{applicationContext=");
+        sb.append(this.a);
+        sb.append(", wallClock=");
+        sb.append(this.b);
+        sb.append(", monotonicClock=");
+        sb.append(this.c);
+        sb.append(", backendName=");
+        return b10.j(sb, this.d, "}");
     }
 }

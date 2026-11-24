@@ -1,16 +1,10 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public interface df2 {
-    void a(TLRPC.User user);
-
-    void b(long j);
-
-    void c(long j, TLObject tLObject);
-
-    void d(long j);
+public final class df2 extends v46 {
+    @Override // v46
+    public final int n(int i) {
+        return super.n(i) * 6;
+    }
 }

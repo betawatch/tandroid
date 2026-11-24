@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -18,26 +18,26 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_TOGGLE_PLAYBACK = "com.google.android.gms.cast.framework.action.TOGGLE_PLAYBACK";
     public static final String EXTRA_SKIP_STEP_MS = "googlecast-extra_skip_step_ms";
     private static final String TAG = "MediaIntentReceiver";
-    private static final dc6 log = new dc6(TAG, null);
+    private static final ce6 log = new ce6(TAG, null);
 
-    private static i69 getRemoteMediaClient(ed1 ed1Var) {
-        if (ed1Var == null || !ed1Var.b()) {
+    private static k89 getRemoteMediaClient(me1 me1Var) {
+        if (me1Var == null || !me1Var.b()) {
             return null;
         }
-        fre.e("Must be called from the main thread.");
-        return ed1Var.j;
+        ite.e("Must be called from the main thread.");
+        return me1Var.j;
     }
 
-    private void seek(ed1 ed1Var, long j) {
-        i69 remoteMediaClient;
-        if (j == 0 || (remoteMediaClient = getRemoteMediaClient(ed1Var)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
+    private void seek(me1 me1Var, long j) {
+        k89 remoteMediaClient;
+        if (j == 0 || (remoteMediaClient = getRemoteMediaClient(me1Var)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.q(new nu6(remoteMediaClient.a() + j));
+        remoteMediaClient.q(new nw6(remoteMediaClient.a() + j));
     }
 
-    private void togglePlayback(ed1 ed1Var) {
-        i69 remoteMediaClient = getRemoteMediaClient(ed1Var);
+    private void togglePlayback(me1 me1Var) {
+        k89 remoteMediaClient = getRemoteMediaClient(me1Var);
         if (remoteMediaClient == null) {
             return;
         }
@@ -49,11 +49,11 @@ public class MediaIntentReceiver extends BroadcastReceiver {
      */
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        j6a b;
-        d5a d;
+        l8a b;
+        f7a d;
         String action = intent.getAction();
         log.b("onReceive action: %s", action);
-        if (action == null || (d = (b = ad1.c(context).b()).d()) == null) {
+        if (action == null || (d = (b = ie1.c(context).b()).d()) == null) {
             return;
         }
         switch (action.hashCode()) {
@@ -109,58 +109,58 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         onReceiveOtherAction(context, action, intent);
     }
 
-    public void onReceiveActionForward(d5a d5aVar, long j) {
-        if (d5aVar instanceof ed1) {
-            seek((ed1) d5aVar, j);
+    public void onReceiveActionForward(f7a f7aVar, long j) {
+        if (f7aVar instanceof me1) {
+            seek((me1) f7aVar, j);
         }
     }
 
-    public void onReceiveActionMediaButton(d5a d5aVar, Intent intent) {
-        if ((d5aVar instanceof ed1) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
+    public void onReceiveActionMediaButton(f7a f7aVar, Intent intent) {
+        if ((f7aVar instanceof me1) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
             Bundle extras = intent.getExtras();
-            fre.h(extras);
+            ite.h(extras);
             KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
             if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
-                togglePlayback((ed1) d5aVar);
+                togglePlayback((me1) f7aVar);
             }
         }
     }
 
-    public void onReceiveActionRewind(d5a d5aVar, long j) {
-        if (d5aVar instanceof ed1) {
-            seek((ed1) d5aVar, -j);
+    public void onReceiveActionRewind(f7a f7aVar, long j) {
+        if (f7aVar instanceof me1) {
+            seek((me1) f7aVar, -j);
         }
     }
 
-    public void onReceiveActionSkipNext(d5a d5aVar) {
-        i69 remoteMediaClient;
-        if (!(d5aVar instanceof ed1) || (remoteMediaClient = getRemoteMediaClient((ed1) d5aVar)) == null || remoteMediaClient.n()) {
+    public void onReceiveActionSkipNext(f7a f7aVar) {
+        k89 remoteMediaClient;
+        if (!(f7aVar instanceof me1) || (remoteMediaClient = getRemoteMediaClient((me1) f7aVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        fre.e("Must be called from the main thread.");
+        ite.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
-            i69.x(new x5d(remoteMediaClient, (byte) 2));
+            k89.x(new z7d(remoteMediaClient, (byte) 2));
         } else {
-            i69.t();
+            k89.t();
         }
     }
 
-    public void onReceiveActionSkipPrev(d5a d5aVar) {
-        i69 remoteMediaClient;
-        if (!(d5aVar instanceof ed1) || (remoteMediaClient = getRemoteMediaClient((ed1) d5aVar)) == null || remoteMediaClient.n()) {
+    public void onReceiveActionSkipPrev(f7a f7aVar) {
+        k89 remoteMediaClient;
+        if (!(f7aVar instanceof me1) || (remoteMediaClient = getRemoteMediaClient((me1) f7aVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        fre.e("Must be called from the main thread.");
+        ite.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
-            i69.x(new x5d(remoteMediaClient, (byte) 1));
+            k89.x(new z7d(remoteMediaClient, (byte) 1));
         } else {
-            i69.t();
+            k89.t();
         }
     }
 
-    public void onReceiveActionTogglePlayback(d5a d5aVar) {
-        if (d5aVar instanceof ed1) {
-            togglePlayback((ed1) d5aVar);
+    public void onReceiveActionTogglePlayback(f7a f7aVar) {
+        if (f7aVar instanceof me1) {
+            togglePlayback((me1) f7aVar);
         }
     }
 

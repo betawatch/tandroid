@@ -1,95 +1,34 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ltc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ stc b;
+public final class ltc extends View {
+    public int a;
+    public final /* synthetic */ WallpapersListActivity b;
 
-    public /* synthetic */ ltc(stc stcVar, byte b) {
-        this.a = b;
-        this.b = stcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ltc(WallpapersListActivity wallpapersListActivity, Context context) {
+        super(context);
+        this.b = wallpapersListActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        stc stcVar = this.b;
-        switch (b) {
-            case 0:
-                otc otcVar = stcVar.g0;
-                lbc lbcVar = stcVar.a;
-                if (lbcVar != null && lbcVar.c0()) {
-                    otcVar.c((int) (lbcVar.S() / 1000));
-                    otcVar.x = (int) (lbcVar.N() / 1000);
-                    otcVar.invalidate();
-                    gl.e3(stcVar.j0, 1000L);
-                    break;
-                }
-                break;
-            default:
-                otc otcVar2 = stcVar.g0;
-                ImageView imageView = stcVar.e;
-                TextureView textureView = stcVar.d;
-                stcVar.a0 = false;
-                Bitmap bitmap = stcVar.h;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    stcVar.h = null;
-                }
-                stcVar.T = true;
-                if (imageView != null) {
-                    try {
-                        int width = textureView.getWidth();
-                        int height = textureView.getHeight();
-                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                        Bitmap a = dc1.a(width, height);
-                        stcVar.h = a;
-                        textureView.getBitmap(a);
-                    } catch (Throwable th) {
-                        Bitmap bitmap2 = stcVar.h;
-                        if (bitmap2 != null) {
-                            bitmap2.recycle();
-                            stcVar.h = null;
-                        }
-                        fa4.g(th, true);
-                    }
-                    if (stcVar.h != null) {
-                        imageView.setVisibility(0);
-                        imageView.setImageBitmap(stcVar.h);
-                    } else {
-                        imageView.setImageDrawable(null);
-                    }
-                }
-                stcVar.V = true;
-                stcVar.n();
-                stcVar.o();
-                stcVar.k();
-                stcVar.m();
-                ViewGroup viewGroup = (ViewGroup) otcVar2.getParent();
-                if (viewGroup != null) {
-                    viewGroup.removeView(otcVar2);
-                }
-                ptc ptcVar = stcVar.w;
-                otc otcVar3 = stcVar.g0;
-                boolean z = stcVar.V;
-                int i = stcVar.h0;
-                int i2 = stcVar.i0;
-                stcVar.c.getVideoRotation();
-                TextureView f = ptcVar.f(otcVar3, z, i, i2, stcVar.J);
-                stcVar.n = f;
-                f.setVisibility(4);
-                ViewGroup viewGroup2 = (ViewGroup) textureView.getParent();
-                if (viewGroup2 != null) {
-                    viewGroup2.removeView(textureView);
-                }
-                otcVar2.d(false, false);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        WallpapersListActivity wallpapersListActivity = this.b;
+        wallpapersListActivity.s.setColor(this.a);
+        canvas.drawCircle(gm.L(25.0f), gm.L(31.0f), gm.L(18.0f), wallpapersListActivity.s);
+        if (this.a == cmb.w0(null, cmb.c6, false)) {
+            canvas.drawCircle(gm.L(25.0f), gm.L(31.0f), gm.L(18.0f), wallpapersListActivity.w);
         }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(gm.L(50.0f), gm.L(62.0f));
     }
 }

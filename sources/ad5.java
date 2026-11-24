@@ -1,35 +1,8 @@
 // default package
 
-import j$.util.Objects;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final class ad5 {
-    public final long a;
-    public final int b;
-
-    public ad5(TLRPC.Message message) {
-        long B0 = k27.B0(message);
-        int i = message.id;
-        this.a = B0;
-        this.b = i;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && ad5.class == obj.getClass()) {
-            ad5 ad5Var = (ad5) obj;
-            if (this.a == ad5Var.a && this.b == ad5Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
-    }
+    public int[] a;
+    public float[] b;
 }

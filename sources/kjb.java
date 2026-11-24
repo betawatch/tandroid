@@ -1,45 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class kjb implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ String c;
+import java.util.regex.Pattern;
 
-    public /* synthetic */ kjb(boolean z, String str, byte b) {
-        this.a = b;
-        this.b = z;
-        this.c = str;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class kjb {
+    public static final Pattern d = Pattern.compile("\\s+");
+    public static final yo5 e = yo5.p(2, "auto", "none");
+    public static final yo5 f = yo5.p(3, "dot", "sesame", "circle");
+    public static final yo5 g = yo5.p(2, "filled", "open");
+    public static final yo5 h = yo5.p(3, "after", "before", "outside");
+    public final int a;
+    public final byte b;
+    public final int c;
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        String str = this.c;
-        boolean z = this.b;
-        mqc mqcVar = (mqc) obj;
-        switch (b) {
-            case 0:
-                if (mqcVar != null && z && bkb.Cm.add(str)) {
-                    akb akbVar = bkb.I;
-                    vjb vjbVar = akbVar != null ? akbVar.j0 : null;
-                    if (vjbVar != null && str.equals(vjbVar.c)) {
-                        bkb.s1(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (mqcVar != null && z && bkb.Cm.add(str)) {
-                    akb akbVar2 = bkb.I;
-                    zjb i = akbVar2 != null ? akbVar2.i(false) : null;
-                    if (i != null && str.equals(i.o)) {
-                        bkb.s1(true);
-                        break;
-                    }
-                }
-                break;
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    public kjb(int i, int i2, int i3) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
     }
 }

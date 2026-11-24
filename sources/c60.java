@@ -1,23 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class c60 implements zn7 {
-    public static final c60 a = new c60();
-    public static final w84 b = w84.c("baseAddress");
-    public static final w84 c = w84.c("size");
-    public static final w84 d = w84.c("name");
-    public static final w84 e = w84.c("uuid");
-
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        qy2 qy2Var = (qy2) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.g(b, ((v80) qy2Var).a);
-        v80 v80Var = (v80) qy2Var;
-        ao7Var.g(c, v80Var.b);
-        ao7Var.a(d, v80Var.c);
-        String str = v80Var.d;
-        ao7Var.a(e, str != null ? str.getBytes(hz2.a) : null);
-    }
+public abstract class c60 extends b4 {
 }

@@ -1,183 +1,114 @@
 // default package
 
-import j$.util.List;
-import java.util.Collection;
-import java.util.Comparator;
+import java.io.Serializable;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public abstract class efd extends ned implements List, RandomAccess, j$.util.List {
-    public static final sed b = new sed(nhd.e, 0);
+public final class efd implements Serializable, Iterable {
+    public static final efd c = new efd(gld.b);
+    public static final red d;
+    public int a = 0;
+    public final byte[] b;
 
-    public static nhd o(int i, Object[] objArr) {
-        return i == 0 ? nhd.e : new nhd(i, objArr);
+    static {
+        d = lcd.a() ? new lfd() : new ied();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static efd p(List list) {
-        if (!(list instanceof ned)) {
-            Object[] array = list.toArray();
-            int length = array.length;
-            s0f.a(length, array);
-            return o(length, array);
-        }
-        efd k = ((ned) list).k();
-        if (!k.l()) {
-            return k;
-        }
-        Object[] array2 = k.toArray(ned.a);
-        return o(array2.length, array2);
+    public efd(byte[] bArr) {
+        this.b = bArr;
     }
 
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
-        throw new UnsupportedOperationException();
+    public static efd i(int i, int i2, byte[] bArr) {
+        return new efd(d.c(i, i2, bArr));
     }
 
-    @Override // java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
     public final boolean equals(Object obj) {
-        Object next;
-        Object next2;
-        int i;
         if (obj == this) {
             return true;
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (0; i < size; i + 1) {
-                        Object obj2 = get(i);
-                        Object obj3 = list.get(i);
-                        i = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i + 1 : 0;
-                    }
-                    return true;
-                }
-                sed listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || ((next = listIterator.next()) != (next2 = it.next()) && (next == null || !next.equals(next2)))) {
-                            break;
-                        }
-                    } else if (!it.hasNext()) {
-                        return true;
-                    }
-                }
-            }
+        if (!(obj instanceof efd) || size() != ((efd) obj).size()) {
+            return false;
         }
-        return false;
-    }
-
-    @Override // ned
-    public int h(Object[] objArr) {
+        if (size() == 0) {
+            return true;
+        }
+        if (!(obj instanceof efd)) {
+            return obj.equals(this);
+        }
+        efd efdVar = (efd) obj;
+        int i = this.a;
+        int i2 = efdVar.a;
+        if (i != 0 && i2 != 0 && i != i2) {
+            return false;
+        }
         int size = size();
-        for (int i = 0; i < size; i++) {
-            objArr[i] = get(i);
+        if (size > efdVar.size()) {
+            int size2 = size();
+            StringBuilder sb = new StringBuilder(40);
+            sb.append("Length too large: ");
+            sb.append(size);
+            sb.append(size2);
+            throw new IllegalArgumentException(sb.toString());
         }
-        return size;
+        if (size > efdVar.size()) {
+            int size3 = efdVar.size();
+            StringBuilder sb2 = new StringBuilder(59);
+            sb2.append("Ran off end of other: 0, ");
+            sb2.append(size);
+            sb2.append(", ");
+            sb2.append(size3);
+            throw new IllegalArgumentException(sb2.toString());
+        }
+        byte[] bArr = efdVar.b;
+        int h = h() + size;
+        int h2 = h();
+        int h3 = efdVar.h();
+        while (h2 < h) {
+            if (this.b[h2] != bArr[h3]) {
+                return false;
+            }
+            h2++;
+            h3++;
+        }
+        return true;
     }
 
-    @Override // java.util.Collection, java.util.List
+    public final int h() {
+        return 0;
+    }
+
     public final int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
-        }
-        return i;
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        if (obj == null) {
-            return -1;
+        int i = this.a;
+        if (i != 0) {
+            return i;
         }
         int size = size();
-        for (int i = 0; i < size; i++) {
-            if (obj.equals(get(i))) {
-                return i;
-            }
+        int h = h();
+        int i2 = size;
+        for (int i3 = h; i3 < h + size; i3++) {
+            i2 = (i2 * 31) + this.b[i3];
         }
-        return -1;
+        if (i2 == 0) {
+            i2 = 1;
+        }
+        this.a = i2;
+        return i2;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    @Override // java.lang.Iterable
     public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
+        return new j61(this);
     }
 
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
-            }
-        }
-        return -1;
+    public final byte j(int i) {
+        return this.b[i];
     }
 
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
+    public final int size() {
+        return this.b.length;
     }
 
-    @Override // java.util.List
-    /* renamed from: n */
-    public efd subList(int i, int i2) {
-        sze.c(i, i2, size());
-        int i3 = i2 - i;
-        return i3 == size() ? this : i3 == 0 ? nhd.e : new zed(this, i, i3);
-    }
-
-    @Override // java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final sed listIterator(int i) {
-        sze.b(i, size());
-        return isEmpty() ? b : new sed(this, i);
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public final /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
-        List.-CC.$default$replaceAll(this, unaryOperator);
-    }
-
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public final /* synthetic */ void sort(Comparator comparator) {
-        List.-CC.$default$sort(this, comparator);
-    }
-
-    @Override // ned
-    public final efd k() {
-        return this;
+    public final String toString() {
+        return String.format("<ByteString@%s size=%d>", Integer.toHexString(System.identityHashCode(this)), Integer.valueOf(size()));
     }
 }

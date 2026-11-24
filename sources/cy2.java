@@ -1,26 +1,13 @@
 // default package
 
-import android.util.Log;
-import java.util.concurrent.Callable;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class cy2 implements Callable {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ dy2 b;
+public interface cy2 {
+    Object fold(Object obj, fs4 fs4Var);
 
-    public cy2(dy2 dy2Var, long j) {
-        this.b = dy2Var;
-        this.a = j;
-    }
+    ay2 get(by2 by2Var);
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        ls6.j(1, "fatal").putLong("timestamp", this.a);
-        ((pd5) this.b.k.a.a).getClass();
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Skipping logging Crashlytics event to Firebase, no Firebase Analytics", null);
-        }
-        return null;
-    }
+    cy2 minusKey(by2 by2Var);
+
+    cy2 plus(cy2 cy2Var);
 }

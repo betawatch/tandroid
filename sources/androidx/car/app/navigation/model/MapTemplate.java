@@ -6,9 +6,9 @@ import androidx.car.app.model.ItemList;
 import androidx.car.app.model.Pane;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class MapTemplate implements ogb {
+public final class MapTemplate implements pib {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
     private final ItemList mItemList;
@@ -58,7 +58,7 @@ public final class MapTemplate implements ogb {
         return Objects.hash(this.mMapController, this.mPane, this.mItemList, this.mHeader, this.mActionStrip);
     }
 
-    public MapTemplate(hi6 hi6Var) {
+    public MapTemplate(jk6 jk6Var) {
         throw null;
     }
 }

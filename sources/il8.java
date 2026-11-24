@@ -1,28 +1,21 @@
 // default package
 
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
 public final class il8 {
-    public final ArrayList a;
+    public final wm4 a;
+    public final long b;
 
-    public il8(JSONArray jSONArray) {
-        ArrayList arrayList = new ArrayList();
-        if (jSONArray != null) {
-            for (int i = 0; i < jSONArray.length(); i++) {
-                JSONObject optJSONObject = jSONArray.optJSONObject(i);
-                if (optJSONObject != null) {
-                    arrayList.add(new hl8(optJSONObject));
-                }
-            }
+    public il8(kl8 kl8Var, wm4 wm4Var) {
+        long length;
+        this.a = wm4Var;
+        long length2 = ((kl8Var.b.length() + kl8Var.a.length()) << 1) + 128;
+        f26 f26Var = (f26) wm4Var.b;
+        if (f26Var == null) {
+            length = 1024;
+        } else {
+            length = (((int[]) f26Var.c) == null ? 0L : ((int[]) f26Var.c).length << 2) + (((int[]) f26Var.b).length << 2) + 64;
         }
-        this.a = arrayList;
-    }
-
-    public il8(ArrayList arrayList) {
-        this.a = arrayList;
+        this.b = length2 + length;
     }
 }

@@ -1,61 +1,19 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class u5e extends q4e {
-    public final transient f7d s;
-    public final transient Object[] w;
-    public final transient int x;
+public final class u5e implements cq7 {
+    public static final u5e a = new u5e();
 
-    public u5e(f7d f7dVar, Object[] objArr, int i) {
-        super((byte) 5);
-        this.s = f7dVar;
-        this.w = objArr;
-        this.x = i;
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)), 3)), 4)), 5)));
     }
 
-    public final u3e A() {
-        return new o5e(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.s.get(key))) {
-                return true;
-            }
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        u3e u3eVar = this.n;
-        if (u3eVar == null) {
-            u3eVar = A();
-            this.n = u3eVar;
-        }
-        return u3eVar.listIterator(0);
-    }
-
-    @Override // kzc
-    public final int p(Object[] objArr) {
-        u3e u3eVar = this.n;
-        if (u3eVar == null) {
-            u3eVar = A();
-            this.n = u3eVar;
-        }
-        return u3eVar.p(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.x;
+        throw null;
     }
 }

@@ -1,85 +1,107 @@
 // default package
 
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.content.Intent;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.PasscodeActivity;
+import org.telegram.ui.ProxyListActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class kx7 implements Runnable {
+public final class kx7 extends c6 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ lx7 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ d c;
 
-    public /* synthetic */ kx7(lx7 lx7Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = (byte) 0;
-        this.b = lx7Var;
-        this.d = tLObject;
-        this.c = tL_error;
+    public /* synthetic */ kx7(d dVar, Object obj, byte b) {
+        this.a = b;
+        this.c = dVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // c6
+    public final void b(int i) {
+        byte b = this.a;
+        byte b2 = 19;
+        Object obj = this.b;
+        int i2 = 0;
+        d dVar = this.c;
+        switch (b) {
             case 0:
-                lx7 lx7Var = this.b;
-                TLObject tLObject = this.d;
-                TLRPC.TL_error tL_error = this.c;
-                vx7 vx7Var = lx7Var.e;
-                if (tLObject instanceof Vector) {
-                    vx7Var.E = new TL_account.authorizationForm();
-                    Vector vector = (Vector) tLObject;
-                    int size = vector.objects.size();
-                    for (int i = 0; i < size; i++) {
-                        vx7Var.E.values.add((TLRPC.TL_secureValue) vector.objects.get(i));
+                PasscodeActivity passcodeActivity = (PasscodeActivity) dVar;
+                if (i != -1) {
+                    if (i == 1) {
+                        passcodeActivity.E = !passcodeActivity.E;
+                        gm.d3(new bl7(this, (a8) obj, b2), 150L);
+                        passcodeActivity.h.setText("");
+                        gl2[] gl2VarArr = passcodeActivity.n.f;
+                        int length = gl2VarArr.length;
+                        while (i2 < length) {
+                            gl2VarArr[i2].setText("");
+                            i2++;
+                        }
+                        passcodeActivity.y0();
+                        break;
                     }
-                    lx7Var.a();
-                    break;
                 } else {
-                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        ij.u0(vx7Var.getParentActivity(), k96.M0(2131743581, null), true);
-                    } else {
-                        vx7Var.O1(k96.M0(R.string.AppName, null), tL_error.text);
-                    }
-                    vx7Var.P1(true, false);
-                    break;
-                }
-            case 1:
-                lx7 lx7Var2 = this.b;
-                TLRPC.TL_error tL_error2 = this.c;
-                TLObject tLObject2 = this.d;
-                if (tL_error2 == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject2;
-                    lx7Var2.e.K = password;
-                    TwoStepVerificationActivity.e0(password);
-                    lx7Var2.b();
+                    passcodeActivity.finishFragment();
                     break;
                 }
                 break;
             default:
-                lx7 lx7Var3 = this.b;
-                TLRPC.TL_error tL_error3 = this.c;
-                TLObject tLObject3 = this.d;
-                if (tL_error3 == null) {
-                    TL_account.Password password2 = (TL_account.Password) tLObject3;
-                    lx7Var3.e.K = password2;
-                    TwoStepVerificationActivity.e0(password2);
-                    Utilities.e.c(new pc7((Object) lx7Var3, (Object) lx7Var3.b, (Object) lx7Var3.d, (byte) 11));
-                    break;
+                ProxyListActivity proxyListActivity = (ProxyListActivity) dVar;
+                ArrayList arrayList = proxyListActivity.F;
+                if (i == -1) {
+                    if (!arrayList.isEmpty()) {
+                        proxyListActivity.a.F();
+                        break;
+                    } else {
+                        proxyListActivity.finishFragment();
+                        break;
+                    }
+                } else if (i == 0) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
+                    String M0 = jb6.M0(arrayList.size() > 1 ? 2131751447 : 2131751448, null);
+                    he heVar = alertDialog$Builder.a;
+                    heVar.U = M0;
+                    alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                    heVar.S = jb6.M0(2131751446, null);
+                    alertDialog$Builder.j(jb6.M0(2131751535, null), new h68(this, (byte) 19));
+                    proxyListActivity.showDialog(heVar);
+                    TextView textView = (TextView) heVar.c(-1);
+                    if (textView != null) {
+                        anb.X(textView, cmb.p7, null);
+                        break;
+                    }
+                } else if (i == 1) {
+                    StringBuilder sb = new StringBuilder();
+                    int size = arrayList.size();
+                    while (i2 < size) {
+                        Object obj2 = arrayList.get(i2);
+                        i2++;
+                        fda fdaVar = (fda) obj2;
+                        if (sb.length() > 0) {
+                            sb.append("\n\n");
+                        }
+                        sb.append(fdaVar.a.e());
+                    }
+                    Intent intent = new Intent("android.intent.action.SEND");
+                    intent.setType("text/plain");
+                    intent.putExtra("android.intent.extra.TEXT", sb.toString());
+                    Intent createChooser = Intent.createChooser(intent, jb6.M0(arrayList.size() > 1 ? 2131745191 : 2131745192, null));
+                    createChooser.setFlags(TLObject.FLAG_28);
+                    ((Context) obj).startActivity(createChooser);
+                    s30 s30Var = proxyListActivity.a;
+                    if (s30Var != null) {
+                        s30Var.F();
+                        break;
+                    }
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ kx7(lx7 lx7Var, TLRPC.TL_error tL_error, TLObject tLObject, byte b) {
-        this.a = b;
-        this.b = lx7Var;
-        this.c = tL_error;
-        this.d = tLObject;
     }
 }

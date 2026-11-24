@@ -1,36 +1,21 @@
 // default package
 
-import j$.util.Objects;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class a69 {
+    public abstract void a();
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class a69 extends mm5 {
-    public final transient Object[] c;
-    public final transient boolean d;
-    public final transient int e;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public a69(int i, int i2, Object[] objArr) {
-        this.c = objArr;
-        this.d = i;
-        this.e = i2;
+    public void c(int i, int i2, Object obj) {
+        b(i, i2);
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        gre.j(i, this.e);
-        Object obj = this.c[(i << 1) + (this.d ? 1 : 0)];
-        Objects.requireNonNull(obj);
-        return obj;
+    public abstract void d(int i, int i2);
+
+    public abstract void f(int i, int i2);
+
+    public void b(int i, int i2) {
     }
 
-    @Override // gm5
-    public final boolean m() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.e;
+    public void e(int i, int i2) {
     }
 }

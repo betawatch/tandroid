@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 final class zzvd {
     public static /* bridge */ /* synthetic */ void zza(byte b, byte b2, byte b3, byte b4, char[] cArr, int i) {
@@ -12,7 +12,7 @@ final class zzvd {
                 return;
             }
         }
-        fvc.i("Protocol message had invalid UTF-8.");
+        i2d.j("Protocol message had invalid UTF-8.");
     }
 
     public static /* bridge */ /* synthetic */ void zzb(byte b, byte b2, byte b3, char[] cArr, int i) {
@@ -32,12 +32,12 @@ final class zzvd {
                 return;
             }
         }
-        fvc.i("Protocol message had invalid UTF-8.");
+        i2d.j("Protocol message had invalid UTF-8.");
     }
 
     public static /* bridge */ /* synthetic */ void zzc(byte b, byte b2, char[] cArr, int i) {
         if (b < -62 || zze(b2)) {
-            fvc.i("Protocol message had invalid UTF-8.");
+            i2d.j("Protocol message had invalid UTF-8.");
         } else {
             cArr[i] = (char) (((b & 31) << 6) | (b2 & 63));
         }

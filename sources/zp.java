@@ -1,110 +1,41 @@
 // default package
 
-import android.database.DataSetObserver;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListAdapter;
-import android.widget.SpinnerAdapter;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import androidx.appcompat.widget.ContentFrameLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zp implements ListAdapter, SpinnerAdapter {
-    public SpinnerAdapter a;
-    public ListAdapter b;
+public final class zp extends ContentFrameLayout {
+    public final /* synthetic */ bq r;
 
-    @Override // android.widget.ListAdapter
-    public final boolean areAllItemsEnabled() {
-        ListAdapter listAdapter = this.b;
-        if (listAdapter != null) {
-            return listAdapter.areAllItemsEnabled();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zp(bq bqVar, ox2 ox2Var) {
+        super(ox2Var);
+        this.r = bqVar;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        return this.r.i(keyEvent) || super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            int x = (int) motionEvent.getX();
+            int y = (int) motionEvent.getY();
+            if (x < -5 || y < -5 || x > getWidth() + 5 || y > getHeight() + 5) {
+                bq bqVar = this.r;
+                bqVar.h(bqVar.o(0), true);
+                return true;
+            }
         }
-        return true;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.Adapter
-    public final int getCount() {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return 0;
-        }
-        return spinnerAdapter.getCount();
-    }
-
-    @Override // android.widget.SpinnerAdapter
-    public final View getDropDownView(int i, View view, ViewGroup viewGroup) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return null;
-        }
-        return spinnerAdapter.getDropDownView(i, view, viewGroup);
-    }
-
-    @Override // android.widget.Adapter
-    public final Object getItem(int i) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return null;
-        }
-        return spinnerAdapter.getItem(i);
-    }
-
-    @Override // android.widget.Adapter
-    public final long getItemId(int i) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return -1L;
-        }
-        return spinnerAdapter.getItemId(i);
-    }
-
-    @Override // android.widget.Adapter
-    public final int getItemViewType(int i) {
-        return 0;
-    }
-
-    @Override // android.widget.Adapter
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        return getDropDownView(i, view, viewGroup);
-    }
-
-    @Override // android.widget.Adapter
-    public final int getViewTypeCount() {
-        return 1;
-    }
-
-    @Override // android.widget.Adapter
-    public final boolean hasStableIds() {
-        SpinnerAdapter spinnerAdapter = this.a;
-        return spinnerAdapter != null && spinnerAdapter.hasStableIds();
-    }
-
-    @Override // android.widget.Adapter
-    public final boolean isEmpty() {
-        return getCount() == 0;
-    }
-
-    @Override // android.widget.ListAdapter
-    public final boolean isEnabled(int i) {
-        ListAdapter listAdapter = this.b;
-        if (listAdapter != null) {
-            return listAdapter.isEnabled(i);
-        }
-        return true;
-    }
-
-    @Override // android.widget.Adapter
-    public final void registerDataSetObserver(DataSetObserver dataSetObserver) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter != null) {
-            spinnerAdapter.registerDataSetObserver(dataSetObserver);
-        }
-    }
-
-    @Override // android.widget.Adapter
-    public final void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter != null) {
-            spinnerAdapter.unregisterDataSetObserver(dataSetObserver);
-        }
+    @Override // android.view.View
+    public final void setBackgroundResource(int i) {
+        setBackgroundDrawable(kod.a(getContext(), i));
     }
 }

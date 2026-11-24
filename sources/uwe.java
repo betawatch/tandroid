@@ -1,123 +1,41 @@
 // default package
 
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class uwe extends oee implements RandomAccess {
-    public static final uwe d;
-    public Object[] b;
-    public int c;
-
-    static {
-        uwe uweVar = new uwe(0, new Object[0]);
-        d = uweVar;
-        uweVar.a = false;
-    }
-
-    public uwe(int i, Object[] objArr) {
-        this.b = objArr;
-        this.c = i;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i, Object obj) {
-        int i2;
-        h();
-        if (i < 0 || i > (i2 = this.c)) {
-            k93.i(j(i));
-            return;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class uwe {
+    public static String a(String str) {
+        if (d(str)) {
+            return null;
         }
-        Object[] objArr = this.b;
-        if (i2 < objArr.length) {
-            System.arraycopy(objArr, i, objArr, i + 1, i2 - i);
-        } else {
-            Object[] objArr2 = new Object[ls6.y(i2, 3, 2, 1)];
-            System.arraycopy(objArr, 0, objArr2, 0, i);
-            System.arraycopy(this.b, i, objArr2, i + 1, this.c - i);
-            this.b = objArr2;
+        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
+    }
+
+    public static String b(String str) {
+        if (d(str)) {
+            return null;
         }
-        this.b[i] = obj;
-        this.c++;
-        ((AbstractList) this).modCount++;
+        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i) {
-        i(i);
-        return this.b[i];
-    }
-
-    public final void i(int i) {
-        if (i < 0 || i >= this.c) {
-            k93.i(j(i));
+    public static boolean c(String str, String... strArr) {
+        if (str != null) {
+            for (String str2 : strArr) {
+                if (str.startsWith(str2)) {
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
-    public final String j(int i) {
-        int i2 = this.c;
-        StringBuilder sb = new StringBuilder(35);
-        sb.append("Index:");
-        sb.append(i);
-        sb.append(", Size:");
-        sb.append(i2);
-        return sb.toString();
+    public static boolean d(String str) {
+        return str == null || str.trim().length() == 0;
     }
 
-    @Override // oee, java.util.AbstractList, java.util.List
-    public final Object remove(int i) {
-        h();
-        i(i);
-        Object[] objArr = this.b;
-        Object obj = objArr[i];
-        if (i < this.c - 1) {
-            System.arraycopy(objArr, i + 1, objArr, i, (r2 - i) - 1);
+    public static String e(String str) {
+        if (d(str)) {
+            return null;
         }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return obj;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i, Object obj) {
-        h();
-        i(i);
-        Object[] objArr = this.b;
-        Object obj2 = objArr[i];
-        objArr[i] = obj;
-        ((AbstractList) this).modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // kpe
-    public final /* synthetic */ kpe zza(int i) {
-        if (i >= this.c) {
-            return new uwe(this.c, Arrays.copyOf(this.b, i));
-        }
-        sc8.e();
-        return null;
-    }
-
-    @Override // oee, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        h();
-        int i = this.c;
-        Object[] objArr = this.b;
-        if (i == objArr.length) {
-            objArr = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
-            this.b = objArr;
-        }
-        int i2 = this.c;
-        this.c = i2 + 1;
-        objArr[i2] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
+        return str;
     }
 }

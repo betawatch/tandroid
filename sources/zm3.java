@@ -1,362 +1,86 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-import java.util.zip.GZIPInputStream;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
+import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class zm3 {
-    public static ArrayList a;
-    public static long b;
-    public static CountDownLatch c;
-    public static long d;
+public final /* synthetic */ class zm3 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ float[] b;
+    public final /* synthetic */ in3 c;
+    public final /* synthetic */ t0c d;
+    public final /* synthetic */ boolean[] e;
 
-    public static synchronized ArrayList a() {
-        synchronized (zm3.class) {
-            if (a == null) {
-                String string = na7.c1().getString("speech_models", null);
-                if (string == null) {
-                    return null;
-                }
-                try {
-                    SerializedData serializedData = new SerializedData(Base64.decode(string, 0));
-                    int readInt32 = serializedData.readInt32(true);
-                    ArrayList arrayList = new ArrayList(readInt32);
-                    for (int i = 0; i < readInt32; i++) {
-                        arrayList.add(TLRPC.TL_transcriptionModel.TLdeserialize(serializedData, serializedData.readInt32(true), true));
+    public /* synthetic */ zm3(float[] fArr, in3 in3Var, t0c t0cVar, boolean[] zArr) {
+        this.b = fArr;
+        this.c = in3Var;
+        this.d = t0cVar;
+        this.e = zArr;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.e;
+                in3 in3Var = this.c;
+                t0c t0cVar = this.d;
+                float[] fArr = this.b;
+                gn3[] gn3VarArr = DictationAsr.a;
+                if (!zArr[0]) {
+                    if (in3Var != null) {
+                        DictationAsr.i0((gn3) in3Var.b, false, new an3(zArr, in3Var, t0cVar, fArr));
+                        break;
+                    } else {
+                        k47 k47Var = t0cVar.b;
+                        Integer valueOf = Integer.valueOf(v0c.r(k47Var));
+                        int i = k47Var.K1;
+                        v0c.R.remove(valueOf);
+                        v0c.S.remove(valueOf);
+                        HashMap hashMap = v0c.P;
+                        if (hashMap != null) {
+                            hashMap.remove(valueOf);
+                        }
+                        if (e21.a) {
+                            fc4.b("local transcription of msg_id=" + k47Var.e1() + ": unknown language, no words");
+                        }
+                        TLRPC.Message message = k47Var.k;
+                        message.voiceTranscription = "";
+                        message.voiceTranscriptionWords = null;
+                        message.voiceTranscriptionLocal = true;
+                        message.voiceTranscriptionFinal = true;
+                        message.voiceTranscriptionOpen = true;
+                        message.voiceTranscriptionId = 0L;
+                        v0c.q(k47Var);
+                        nm7 f = nm7.f(i);
+                        Boolean bool = Boolean.TRUE;
+                        f.k(nm7.A1, k47Var, null, null, bool, bool);
+                        break;
                     }
-                    serializedData.cleanup();
-                    a = arrayList;
+                }
+                break;
+            default:
+                float[] fArr2 = this.b;
+                in3 in3Var2 = this.c;
+                t0c t0cVar2 = this.d;
+                boolean[] zArr2 = this.e;
+                try {
+                    DictationAsr.d0(fArr2, in3Var2, t0cVar2, zArr2);
+                    break;
                 } catch (Throwable th) {
-                    Log.d("Dictation", "speech models: cached list unreadable: " + th);
-                    na7.c1().edit().remove("speech_models").apply();
+                    Log.e("Dictation", "tinyasr: transcription failed", th);
+                    gm.c3(new ym3(zArr2, t0cVar2, (byte) 1));
                 }
-            }
-            return a;
         }
     }
 
-    public static boolean b() {
-        up3 q = up3.q(y6c.k());
-        int e = a.e();
-        tp3 p = e == 1 ? q.p() : e == 2 ? q.o() : q.n();
-        return p != null && p.g;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x00ea, code lost:
-    
-        android.util.Log.d("Dictation", "speech models: " + r17 + " download stalled");
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:89:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r4v11 */
-    /* JADX WARN: Type inference failed for: r4v4, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r4v5 */
-    /* JADX WARN: Type inference failed for: r4v6, types: [java.io.File] */
-    /* JADX WARN: Type inference failed for: r4v7 */
-    /* JADX WARN: Type inference failed for: r4v8 */
-    /* JADX WARN: Type inference failed for: r4v9 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int c(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file, boolean z, ym3 ym3Var) {
-        int i;
-        int i2;
-        int i3;
-        va7 va7Var;
-        File file2;
-        BufferedInputStream bufferedInputStream;
-        int i4 = 0;
-        if (tL_transcriptionModel != null) {
-            TLRPC.Document document = tL_transcriptionModel.document;
-            String str = "speech_doc_" + file.getName();
-            if (file.exists()) {
-                if (na7.c1().getLong(str, 0L) != document.id) {
-                    if (!z && (!a.o() || !up3.q(y6c.k()).p().g)) {
-                        Log.d("Dictation", "speech models: " + file.getName() + " has an update, not on Wi-Fi / auto-download");
-                        return 0;
-                    }
-                }
-            }
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            int k = y6c.k();
-            ba4 G = ba4.G(k);
-            File J = ba4.J(document, null, true, true);
-            if (J.exists()) {
-                i3 = 0;
-                i = 1;
-                file2 = J;
-                i2 = -1;
-            } else {
-                String r = ba4.r(null, document);
-                CountDownLatch countDownLatch = new CountDownLatch(1);
-                File[] fileArr = new File[1];
-                long[] jArr = {SystemClock.elapsedRealtime()};
-                xm3 xm3Var = new xm3(r, jArr, ym3Var, fileArr, J, countDownLatch);
-                int[] iArr = {kk7.W1, kk7.X1, kk7.Y1};
-                i = 1;
-                i2 = -1;
-                gl.d3(new i57(k, (Object) iArr, (Object) xm3Var, (Object) G, (Object) document, (byte) 13));
-                while (true) {
-                    try {
-                        try {
-                            i3 = i4;
-                            try {
-                                if (countDownLatch.await(10L, TimeUnit.SECONDS)) {
-                                    break;
-                                }
-                                if (SystemClock.elapsedRealtime() - jArr[i3] > 120000) {
-                                    break;
-                                }
-                                i4 = i3;
-                            } catch (InterruptedException unused) {
-                                va7Var = new va7(k, (Object) iArr, (Object) xm3Var, (byte) 21);
-                                gl.d3(va7Var);
-                                File file3 = fileArr[i3];
-                                if (file3 == null) {
-                                }
-                                if (file2 != null) {
-                                }
-                            }
-                        } catch (Throwable th) {
-                            gl.d3(new va7(k, (Object) iArr, (Object) xm3Var, (byte) 21));
-                            throw th;
-                        }
-                    } catch (InterruptedException unused2) {
-                        i3 = i4;
-                    }
-                }
-                va7Var = new va7(k, (Object) iArr, (Object) xm3Var, (byte) 21);
-                gl.d3(va7Var);
-                File file32 = fileArr[i3];
-                file2 = (file32 == null && file32.exists()) ? fileArr[i3] : null;
-            }
-            if (file2 != null) {
-                return i2;
-            }
-            File parentFile = file.getParentFile();
-            StringBuilder sb = new StringBuilder();
-            sb.append(file.getName());
-            ?? r4 = ".part";
-            sb.append(".part");
-            File file4 = new File(parentFile, sb.toString());
-            try {
-                try {
-                    file.getParentFile().mkdirs();
-                    bufferedInputStream = new BufferedInputStream(new FileInputStream(file2));
-                } catch (Throwable th2) {
-                    th = th2;
-                    try {
-                        Log.d("Dictation", "speech models: " + r4.getName() + " unzip failed: " + th);
-                        return i2;
-                    } finally {
-                        file4.delete();
-                        file2.delete();
-                    }
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                r4 = file;
-                Log.d("Dictation", "speech models: " + r4.getName() + " unzip failed: " + th);
-                return i2;
-            }
-            try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file4);
-                try {
-                    bufferedInputStream.mark(2);
-                    int i5 = (bufferedInputStream.read() == 31 && bufferedInputStream.read() == 139) ? i : i3;
-                    bufferedInputStream.reset();
-                    InputStream gZIPInputStream = i5 != 0 ? new GZIPInputStream(bufferedInputStream, 65536) : bufferedInputStream;
-                    byte[] bArr = new byte[65536];
-                    while (true) {
-                        int read = gZIPInputStream.read(bArr);
-                        if (read <= 0) {
-                            break;
-                        }
-                        fileOutputStream.write(bArr, i3, read);
-                    }
-                    fileOutputStream.close();
-                    bufferedInputStream.close();
-                    if (!file4.renameTo(file)) {
-                        Log.d("Dictation", "speech models: couldn't store " + file.getName());
-                        return i2;
-                    }
-                    na7.c1().edit().putLong(str, document.id).apply();
-                    Log.d("Dictation", "speech models: " + file.getName() + " (" + TextUtils.join(",", tL_transcriptionModel.languages) + " v" + tL_transcriptionModel.version + "), " + file2.length() + " → " + file.length() + " bytes in " + (SystemClock.elapsedRealtime() - elapsedRealtime) + " ms");
-                    return i;
-                } catch (Throwable th4) {
-                    r4 = file;
-                    try {
-                        try {
-                            fileOutputStream.close();
-                            throw th4;
-                        } catch (Throwable th5) {
-                            th = th5;
-                            Throwable th6 = th;
-                            try {
-                                bufferedInputStream.close();
-                                throw th6;
-                            } catch (Throwable th7) {
-                                th6.addSuppressed(th7);
-                                throw th6;
-                            }
-                        }
-                    } catch (Throwable th8) {
-                        th4.addSuppressed(th8);
-                        throw th4;
-                    }
-                }
-            } catch (Throwable th9) {
-                th = th9;
-                r4 = file;
-            }
-        } else if (!file.exists()) {
-            return -1;
-        }
-        return 0;
-    }
-
-    public static boolean d() {
-        ArrayList a2 = a();
-        long currentTimeMillis = System.currentTimeMillis() - na7.c1().getLong("speech_models_checked", 0L);
-        if (a2 == null) {
-            return true;
-        }
-        if (currentTimeMillis > (a2.isEmpty() ? 3600000L : 86400000L)) {
-            return true;
-        }
-        if (a2.isEmpty() && b == 0) {
-            return true;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(w01.c);
-        sb.append("/");
-        sb.append(DictationAsr.h0());
-        return !sb.toString().equals(na7.c1().getString("speech_models_build", null));
-    }
-
-    public static synchronized CountDownLatch e() {
-        synchronized (zm3.class) {
-            CountDownLatch countDownLatch = c;
-            if (countDownLatch != null) {
-                return countDownLatch;
-            }
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j = b;
-            if (j != 0 && elapsedRealtime - j < 60000) {
-                return null;
-            }
-            int k = y6c.k();
-            if (!y6c.q(k)) {
-                return null;
-            }
-            b = elapsedRealtime;
-            CountDownLatch countDownLatch2 = new CountDownLatch(1);
-            c = countDownLatch2;
-            TLRPC.TL_messages_getTranscriptionModels tL_messages_getTranscriptionModels = new TLRPC.TL_messages_getTranscriptionModels();
-            tL_messages_getTranscriptionModels.version = DictationAsr.h0();
-            ConnectionsManager.getInstance(k).sendRequest(tL_messages_getTranscriptionModels, new uf(countDownLatch2, (byte) 20));
-            return countDownLatch2;
-        }
-    }
-
-    public static TLRPC.TL_transcriptionModel f(ArrayList arrayList, String... strArr) {
-        if (arrayList == null) {
-            return null;
-        }
-        String[] strArr2 = (String[]) strArr.clone();
-        Arrays.sort(strArr2);
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            TLRPC.TL_transcriptionModel tL_transcriptionModel = (TLRPC.TL_transcriptionModel) obj;
-            String[] strArr3 = (String[]) tL_transcriptionModel.languages.toArray(new String[0]);
-            Arrays.sort(strArr3);
-            if (Arrays.equals(strArr2, strArr3)) {
-                return tL_transcriptionModel;
-            }
-        }
-        return null;
-    }
-
-    public static void g(File file) {
-        na7.c1().edit().remove("speech_doc_" + file.getName()).apply();
-    }
-
-    public static boolean h() {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j = d;
-        if (j == 0 || elapsedRealtime - j > 60000) {
-            d = elapsedRealtime;
-            if (d()) {
-                e();
-            }
-        }
-        ArrayList a2 = a();
-        if (a2 != null) {
-            int size = a2.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = a2.get(i);
-                i++;
-                TLRPC.TL_transcriptionModel tL_transcriptionModel = (TLRPC.TL_transcriptionModel) obj;
-                if (!tL_transcriptionModel.languages.isEmpty() && !tL_transcriptionModel.languages.contains("tinylid") && !tL_transcriptionModel.languages.contains("silero-vad")) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static boolean i(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file) {
-        if (tL_transcriptionModel == null || !file.exists()) {
-            return false;
-        }
-        SharedPreferences c1 = na7.c1();
-        StringBuilder sb = new StringBuilder("speech_doc_");
-        sb.append(file.getName());
-        return c1.getLong(sb.toString(), 0L) != tL_transcriptionModel.document.id;
-    }
-
-    public static void j() {
-        CountDownLatch e = e();
-        if (e != null) {
-            new Thread(new wm3(e, (byte) 0), "DictationModels").start();
-        }
-    }
-
-    public static void k(ArrayList arrayList) {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(arrayList.size());
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            ((TLRPC.TL_transcriptionModel) obj).serializeToStream(serializedData);
-        }
-        na7.c1().edit().putString("speech_models", Base64.encodeToString(serializedData.toByteArray(), 2)).putLong("speech_models_checked", System.currentTimeMillis()).putString("speech_models_build", w01.c + "/" + DictationAsr.h0()).apply();
-        serializedData.cleanup();
+    public /* synthetic */ zm3(boolean[] zArr, in3 in3Var, t0c t0cVar, float[] fArr) {
+        this.e = zArr;
+        this.c = in3Var;
+        this.d = t0cVar;
+        this.b = fArr;
     }
 }

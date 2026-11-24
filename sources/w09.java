@@ -1,19 +1,102 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class w09 extends kx9 {
-    public final /* synthetic */ y09 e;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w09(y09 y09Var, v09 v09Var) {
-        super(v09Var);
-        this.e = y09Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public class w09 extends FrameLayout {
+    public final TextView a;
+    public final RadioButton b;
+    public boolean c;
+
+    public w09(Context context, ylb ylbVar) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        anb.X(textView, cmb.F6, ylbVar);
+        wi8.w(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((jb6.a0 ? 5 : 3) | 16);
+        addView(textView, qoe.d(-1, -1.0f, (jb6.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        RadioButton radioButton = new RadioButton(context);
+        this.b = radioButton;
+        radioButton.setSize(gm.L(20.0f));
+        anb.O(radioButton, cmb.f7, cmb.g7, ylbVar);
+        boolean z = jb6.a0;
+        addView(radioButton, qoe.d(22, 22.0f, (z ? 3 : 5) | 48, z ? 22 : 0, 14.0f, z ? 0 : 22, 0.0f));
     }
 
-    @Override // kx9, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.n = null;
+    public final void a(boolean z, boolean z2) {
+        this.b.a(z, z2);
+    }
+
+    public final void b(ArrayList arrayList, boolean z) {
+        super.setEnabled(z);
+        RadioButton radioButton = this.b;
+        TextView textView = this.a;
+        if (arrayList == null) {
+            textView.setAlpha(z ? 1.0f : 0.5f);
+            radioButton.setAlpha(z ? 1.0f : 0.5f);
+        } else {
+            float[] fArr = {z ? 1.0f : 0.5f};
+            Property property = View.ALPHA;
+            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
+            arrayList.add(ObjectAnimator.ofFloat(radioButton, (Property<RadioButton, Float>) property, z ? 1.0f : 0.5f));
+        }
+    }
+
+    public final void c(String str, boolean z, boolean z2) {
+        this.a.setText(str);
+        this.b.a(z, false);
+        this.c = z2;
+        setWillNotDraw(!z2);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(jb6.a0 ? 0.0f : gm.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (jb6.a0 ? gm.L(20.0f) : 0), getMeasuredHeight() - 1, cmb.j0);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), gm.L(50.0f) + (this.c ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - gm.L(34.0f);
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(gm.L(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gm.L(22.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    }
+
+    public void setRadioIcon(Drawable drawable) {
+        this.b.setIcon(drawable);
+    }
+
+    public void setTextColor(int i) {
+        this.a.setTextColor(i);
+    }
+
+    public w09(Context context) {
+        this(context, null);
     }
 }

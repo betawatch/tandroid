@@ -1,38 +1,19 @@
 // default package
 
-import android.R;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ote {
+    public final Long a;
+    public final bve b;
+    public final Boolean c;
+    public final Boolean d;
+    public final Boolean e;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class ote {
-    public static void a(View view) {
-        b(view, 0.1f, 1.5f);
-    }
-
-    public static void b(View view, float f, float f2) {
-        if (view == null) {
-            return;
-        }
-        AnimatorSet animatorSet = new AnimatorSet();
-        Property property = View.SCALE_X;
-        float f3 = 1.0f - f;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, f3);
-        Property property2 = View.SCALE_Y;
-        animatorSet.playTogether(ofFloat, ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, f3));
-        animatorSet.setDuration(80L);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, 1.0f));
-        animatorSet2.setInterpolator(new OvershootInterpolator(f2));
-        animatorSet2.setDuration(350L);
-        StateListAnimator stateListAnimator = new StateListAnimator();
-        stateListAnimator.addState(new int[]{R.attr.state_pressed}, animatorSet);
-        stateListAnimator.addState(new int[0], animatorSet2);
-        view.setStateListAnimator(stateListAnimator);
+    public /* synthetic */ ote(sm2 sm2Var) {
+        this.a = (Long) sm2Var.b;
+        this.b = (bve) sm2Var.c;
+        this.c = (Boolean) sm2Var.d;
+        this.d = (Boolean) sm2Var.e;
+        this.e = (Boolean) sm2Var.f;
     }
 }

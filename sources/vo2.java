@@ -1,38 +1,17 @@
 // default package
 
-import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class vo2 extends wo2 {
-    public final int d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class vo2 {
+    public final long a;
+    public final TLRPC.User b;
+    public final boolean c;
 
-    public vo2(int i) {
-        this.d = i;
-    }
-
-    @Override // wo2
-    public final int e() {
-        return this.d;
-    }
-
-    @Override // wo2
-    public final wo2 a(int i, int i2) {
-        return this;
-    }
-
-    @Override // wo2
-    public final wo2 c(boolean z, boolean z2) {
-        return this;
-    }
-
-    @Override // wo2
-    public final wo2 d(boolean z, boolean z2) {
-        return this;
-    }
-
-    @Override // wo2
-    public final wo2 b(Object obj, Object obj2, Comparator comparator) {
-        return this;
+    public vo2(long j, TLRPC.User user, boolean z) {
+        this.a = j;
+        this.b = user;
+        this.c = z;
     }
 }

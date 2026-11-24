@@ -1,21 +1,44 @@
 // default package
 
-import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class cf2 extends wv4 {
-    public final /* synthetic */ kf2 m1;
+public final class cf2 implements job {
+    public final /* synthetic */ if2 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cf2(kf2 kf2Var, Activity activity, kf2 kf2Var2) {
-        super(activity, kf2Var2);
-        this.m1 = kf2Var;
+    public cf2(if2 if2Var) {
+        this.a = if2Var;
     }
 
-    @Override // wv4
-    public final void E0() {
-        kf2 kf2Var = this.m1;
-        kf2Var.getMessagesController().O(kf2Var.getParentActivity(), kf2Var.n, kf2Var, new rh1(this, (byte) 25));
+    @Override // job
+    public final boolean a() {
+        return this.a.G1;
+    }
+
+    @Override // job
+    public final boolean s() {
+        return true;
+    }
+
+    @Override // job
+    public final void w(boolean z) {
+        if2 if2Var = this.a;
+        yv1 yv1Var = if2Var.u1;
+        if2Var.G1 = !if2Var.G1;
+        if (if2Var.F1 != null) {
+            if2Var.I1 = true;
+            yv1Var.w7 = true;
+            TLRPC.WallPaper wallPaper = if2Var.J0() ? null : if2Var.r1.g;
+            tz3 tz3Var = if2Var.F1.a;
+            boolean z2 = tz3Var.a;
+            wv1 wv1Var = if2Var.r1;
+            if (z2) {
+                wv1Var.q(null, wallPaper, z, Boolean.valueOf(if2Var.G1), false);
+            } else {
+                wv1Var.q(tz3Var, wallPaper, z, Boolean.valueOf(if2Var.G1), false);
+            }
+            yv1Var.w7 = false;
+        }
     }
 }

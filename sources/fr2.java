@@ -1,32 +1,70 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.os.Looper;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class fr2 {
-    public final String a;
-    public String b;
-    public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
+public final class fr2 implements ViewTreeObserver.OnDrawListener, Runnable, Executor {
+    public Runnable b;
+    public final /* synthetic */ hr2 d;
+    public final long a = SystemClock.uptimeMillis() + 10000;
+    public boolean c = false;
 
-    public fr2(String str) {
-        this.a = str;
+    public fr2(hr2 hr2Var) {
+        this.d = hr2Var;
     }
 
-    public final void a(Runnable runnable) {
-        this.c.addIfAbsent(runnable);
+    public final void a(View view) {
+        if (this.c) {
+            return;
+        }
+        this.c = true;
+        view.getViewTreeObserver().addOnDrawListener(this);
     }
 
-    public abstract boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.b = runnable;
+        View decorView = this.d.getWindow().getDecorView();
+        if (!this.c) {
+            decorView.postOnAnimation(new xf2(this, (byte) 9));
+        } else if (Looper.myLooper() == Looper.getMainLooper()) {
+            decorView.invalidate();
+        } else {
+            decorView.postInvalidate();
+        }
+    }
 
-    public abstract boolean c(SharedPreferences.Editor editor);
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        boolean z;
+        Runnable runnable = this.b;
+        if (runnable == null) {
+            if (SystemClock.uptimeMillis() > this.a) {
+                this.c = false;
+                this.d.getWindow().getDecorView().post(this);
+                return;
+            }
+            return;
+        }
+        runnable.run();
+        this.b = null;
+        ry ryVar = this.d.s;
+        synchronized (ryVar.c) {
+            z = ryVar.b;
+        }
+        if (z) {
+            this.c = false;
+            this.d.getWindow().getDecorView().post(this);
+        }
+    }
 
-    public abstract void d(SharedPreferences sharedPreferences);
-
-    public final String e() {
-        String str = this.b;
-        return str != null ? str : this.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.d.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(this);
     }
 }

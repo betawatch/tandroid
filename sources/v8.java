@@ -13,9 +13,9 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class v8 implements ybb {
+public final class v8 implements aeb {
     public CharSequence a;
     public CharSequence b;
     public Intent c;
@@ -33,13 +33,13 @@ public final class v8 implements ybb {
     public boolean o;
     public int p;
 
-    @Override // ybb
-    public final ybb a(d07 d07Var) {
+    @Override // aeb
+    public final aeb a(d27 d27Var) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // ybb
-    public final d07 b() {
+    @Override // aeb
+    public final d27 b() {
         return null;
     }
 
@@ -80,7 +80,7 @@ public final class v8 implements ybb {
         return null;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final int getAlphabeticModifiers() {
         return this.g;
     }
@@ -90,7 +90,7 @@ public final class v8 implements ybb {
         return this.f;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final CharSequence getContentDescription() {
         return this.j;
     }
@@ -105,12 +105,12 @@ public final class v8 implements ybb {
         return this.h;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final ColorStateList getIconTintList() {
         return this.l;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final PorterDuff.Mode getIconTintMode() {
         return this.m;
     }
@@ -130,7 +130,7 @@ public final class v8 implements ybb {
         return null;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final int getNumericModifiers() {
         return this.e;
     }
@@ -161,7 +161,7 @@ public final class v8 implements ybb {
         return charSequence != null ? charSequence : this.a;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final CharSequence getTooltipText() {
         return this.k;
     }
@@ -206,7 +206,7 @@ public final class v8 implements ybb {
         throw new UnsupportedOperationException();
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final MenuItem setAlphabeticShortcut(char c, int i) {
         this.f = Character.toLowerCase(c);
         this.g = KeyEvent.normalizeMetaState(i);
@@ -225,8 +225,8 @@ public final class v8 implements ybb {
         return this;
     }
 
-    @Override // ybb, android.view.MenuItem
-    public final ybb setContentDescription(CharSequence charSequence) {
+    @Override // aeb, android.view.MenuItem
+    public final aeb setContentDescription(CharSequence charSequence) {
         this.j = charSequence;
         return this;
     }
@@ -244,7 +244,7 @@ public final class v8 implements ybb {
         return this;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final MenuItem setIconTintList(ColorStateList colorStateList) {
         this.l = colorStateList;
         this.n = true;
@@ -252,7 +252,7 @@ public final class v8 implements ybb {
         return this;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final MenuItem setIconTintMode(PorterDuff.Mode mode) {
         this.m = mode;
         this.o = true;
@@ -266,7 +266,7 @@ public final class v8 implements ybb {
         return this;
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final MenuItem setNumericShortcut(char c, int i) {
         this.d = c;
         this.e = KeyEvent.normalizeMetaState(i);
@@ -278,7 +278,7 @@ public final class v8 implements ybb {
         throw new UnsupportedOperationException();
     }
 
-    @Override // ybb, android.view.MenuItem
+    @Override // aeb, android.view.MenuItem
     public final MenuItem setShortcut(char c, char c2, int i, int i2) {
         this.d = c;
         this.e = KeyEvent.normalizeMetaState(i);
@@ -299,8 +299,8 @@ public final class v8 implements ybb {
         return this;
     }
 
-    @Override // ybb, android.view.MenuItem
-    public final ybb setTooltipText(CharSequence charSequence) {
+    @Override // aeb, android.view.MenuItem
+    public final aeb setTooltipText(CharSequence charSequence) {
         this.k = charSequence;
         return this;
     }

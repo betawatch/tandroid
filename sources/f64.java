@@ -1,20 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class f64 {
-    public boolean a;
-    public yb8 b;
-    public int c;
-    public boolean d;
-    public byte e;
+    public final nv8 a;
 
-    public f64(yb8 yb8Var) {
-        this.b = yb8Var;
-    }
-
-    public final void a(int i) {
-        this.a |= i > 0;
-        this.c += i;
+    public f64(nv8 nv8Var) {
+        this.a = nv8Var;
     }
 }

@@ -1,27 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yy1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ az1 b;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ yy1(az1 az1Var, byte b) {
+    public /* synthetic */ yy1(FrameLayout frameLayout, byte b) {
         this.a = b;
-        this.b = az1Var;
+        this.b = frameLayout;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        az1 az1Var = this.b;
+        FrameLayout frameLayout = this.b;
         switch (b) {
             case 0:
-                az1Var.a();
+                gm.B2(frameLayout);
                 break;
             default:
-                gl.e3(az1Var.E, 400L);
-                az1Var.c();
+                gm.B2(frameLayout);
                 break;
         }
     }

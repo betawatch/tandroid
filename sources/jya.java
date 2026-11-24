@@ -1,27 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class jya implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cv8 b;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ jya(cv8 cv8Var, byte b) {
-        this.a = b;
-        this.b = cv8Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class jya extends qx2 {
+    public kya a;
+    public jm4 b;
+    public lya c;
+    public av5 d;
+    public Object e;
+    public /* synthetic */ Object f;
+    public final /* synthetic */ kya h;
+    public int n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jya(kya kyaVar, px2 px2Var) {
+        super(px2Var);
+        this.h = kyaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        cv8 cv8Var = this.b;
-        switch (b) {
-            case 0:
-                cv8Var.b();
-                break;
-            default:
-                cv8Var.b();
-                break;
-        }
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        this.f = obj;
+        this.n |= TLObject.FLAG_31;
+        this.h.g(null, this);
+        return ly2.a;
     }
 }

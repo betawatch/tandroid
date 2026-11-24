@@ -1,32 +1,35 @@
 // default package
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class n0f {
-    public static boolean a(o7a o7aVar, Collection collection) {
-        collection.getClass();
-        if (collection instanceof mdd) {
-            collection = ((mdd) collection).zza();
+    public static final y6a a(y6a y6aVar, dhf dhfVar) {
+        y6aVar.getClass();
+        dhfVar.getClass();
+        if (!rr5.a(y6aVar.e(), a7a.b)) {
+            return y6aVar.isInline() ? a(y6aVar.i(0), dhfVar) : y6aVar;
         }
-        boolean z = false;
-        if (!(collection instanceof Set) || collection.size() <= o7aVar.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z |= o7aVar.remove(it.next());
-            }
-            return z;
+        awd.a(y6aVar);
+        return y6aVar;
+    }
+
+    public static final v0d b(lw5 lw5Var, y6a y6aVar) {
+        y6aVar.getClass();
+        yve e = y6aVar.e();
+        if (e instanceof jh8) {
+            return v0d.f;
         }
-        Iterator<E> it2 = o7aVar.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z = true;
-            }
+        if (rr5.a(e, xbb.c)) {
+            return v0d.d;
         }
-        return z;
+        if (!rr5.a(e, xbb.d)) {
+            return v0d.c;
+        }
+        y6a a = a(y6aVar.i(0), lw5Var.b);
+        yve e2 = a.e();
+        if ((e2 instanceof dl8) || rr5.a(e2, a7a.c)) {
+            return v0d.e;
+        }
+        throw new rw5("Value of type '" + a.a() + "' can't be used in JSON as a key in the map. It should have either primitive or enum kind, but its kind is '" + a.e() + "'.\nUse 'allowStructuredMapKeys = true' in 'Json {}' builder to convert such maps to [key1, value1, key2, value2,...] arrays.");
     }
 }

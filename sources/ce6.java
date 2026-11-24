@@ -1,34 +1,53 @@
 // default package
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.os.Build;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ce6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ de6 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ce6 {
+    public final String a;
+    public final boolean b;
+    public final String c;
 
-    public /* synthetic */ ce6(de6 de6Var, byte b) {
-        this.a = b;
-        this.b = de6Var;
+    public ce6(String str, String str2) {
+        ite.g(str, "The log tag cannot be null or empty.");
+        this.a = str;
+        this.b = str.length() <= 23;
+        this.c = TextUtils.isEmpty(str2) ? null : kt6.o("[", str2, "] ");
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        de6 de6Var = this.b;
-        switch (b) {
-            case 0:
-                ry8 ry8Var = de6Var.h;
-                ry8Var.getAnimatedDrawable().I(0, false, false);
-                ry8Var.d();
-                EditTextBoldCursor editTextBoldCursor = de6Var.b;
-                editTextBoldCursor.requestFocus();
-                gl.F3(editTextBoldCursor);
-                break;
-            default:
-                de6Var.b.requestFocus();
-                break;
+    public final void a(Exception exc, String str, Object... objArr) {
+        if (Build.TYPE.equals("user") || !this.b) {
+            return;
         }
+        String str2 = this.a;
+        if (Log.isLoggable(str2, 3)) {
+            Log.d(str2, d(str, objArr), exc);
+        }
+    }
+
+    public final void b(String str, Object... objArr) {
+        if (Build.TYPE.equals("user") || !this.b) {
+            return;
+        }
+        String str2 = this.a;
+        if (Log.isLoggable(str2, 3)) {
+            Log.d(str2, d(str, objArr));
+        }
+    }
+
+    public final void c(Object... objArr) {
+        Log.e(this.a, d("Bundle is null", objArr));
+    }
+
+    public final String d(String str, Object... objArr) {
+        if (objArr.length != 0) {
+            str = String.format(Locale.ROOT, str, objArr);
+        }
+        String str2 = this.c;
+        return !TextUtils.isEmpty(str2) ? String.valueOf(str2).concat(str) : str;
     }
 }

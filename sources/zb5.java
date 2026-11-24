@@ -1,55 +1,26 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Arrays;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class zb5 {
-    public static final byte[] f = {0, 0, 1};
-    public int a;
-    public int b;
-    public boolean c;
-    public byte d;
-    public Serializable e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class zb5 extends i46 {
+    public final /* synthetic */ ac5 S2;
 
-    public final b90 a() {
-        String str;
-        if (this.d == 7 && (str = (String) this.e) != null) {
-            return new b90(this.a, this.b, str, this.c);
-        }
-        StringBuilder sb = new StringBuilder();
-        if (((String) this.e) == null) {
-            sb.append(" processName");
-        }
-        if ((this.d & 1) == 0) {
-            sb.append(" pid");
-        }
-        if ((this.d & 2) == 0) {
-            sb.append(" importance");
-        }
-        if ((this.d & 4) == 0) {
-            sb.append(" defaultProcess");
-        }
-        sc8.j(ir2.o("Missing required properties:", sb));
-        return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zb5(ac5 ac5Var, ac5 ac5Var2, Activity activity, int i, int i2, ylb ylbVar) {
+        super(i, i2, ylbVar, activity, ac5Var2);
+        this.S2 = ac5Var;
     }
 
-    /* JADX WARN: Type inference failed for: r0v4, types: [byte[], java.io.Serializable] */
-    public final void b(int i, int i2, byte[] bArr) {
-        if (this.c) {
-            int i3 = i2 - i;
-            byte[] bArr2 = (byte[]) this.e;
-            int length = bArr2.length;
-            int i4 = this.a + i3;
-            byte[] bArr3 = bArr2;
-            if (length < i4) {
-                ?? copyOf = Arrays.copyOf(bArr2, i4 << 1);
-                this.e = copyOf;
-                bArr3 = copyOf;
-            }
-            System.arraycopy(bArr, i, bArr3, this.a, i3);
-            this.a += i3;
-        }
+    @Override // my0, android.app.Dialog, android.content.DialogInterface, ah0
+    public final void dismiss() {
+        super.dismiss();
+        this.S2.C0 = false;
+    }
+
+    @Override // my0
+    public final void w() {
+        this.S2.C0 = false;
     }
 }

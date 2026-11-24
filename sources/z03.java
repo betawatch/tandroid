@@ -1,22 +1,79 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class z03 extends d03 {
-    public static final /* synthetic */ int b = 0;
-    public static final /* synthetic */ int c = 0;
+import android.util.Log;
+import java.lang.Thread;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public z03(h1 h1Var, String str) {
-        super(str, r2);
-        String concat = "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/".concat(h1Var.a);
-        if (concat.length() > 0) {
-            return;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class z03 implements Thread.UncaughtExceptionHandler {
+    public final nl9 a;
+    public final ex8 b;
+    public final Thread.UncaughtExceptionHandler c;
+    public final qz2 d;
+    public final AtomicBoolean e = new AtomicBoolean(false);
+
+    public z03(nl9 nl9Var, ex8 ex8Var, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, qz2 qz2Var) {
+        this.a = nl9Var;
+        this.b = ex8Var;
+        this.c = uncaughtExceptionHandler;
+        this.d = qz2Var;
+    }
+
+    public final boolean a(Thread thread, Throwable th) {
+        if (thread == null) {
+            Log.e("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; null thread", null);
+            return false;
         }
-        w26.j("type must not be empty");
-        throw null;
+        if (th == null) {
+            Log.e("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; null throwable", null);
+            return false;
+        }
+        if (!this.d.b()) {
+            return true;
+        }
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; native crash exists for session.", null);
+        }
+        return false;
+    }
+
+    @Override // java.lang.Thread.UncaughtExceptionHandler
+    public final void uncaughtException(Thread thread, Throwable th) {
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.c;
+        AtomicBoolean atomicBoolean = this.e;
+        atomicBoolean.set(true);
+        try {
+            try {
+                if (a(thread, th)) {
+                    this.a.F0(this.b, thread, th);
+                } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", "Uncaught exception will not be recorded by Crashlytics.", null);
+                }
+            } catch (Exception e) {
+                f8e f8eVar = f8e.b;
+                if (f8eVar.e(6)) {
+                    Log.e("FirebaseCrashlytics", "An error occurred in the uncaught exception handler", e);
+                }
+                if (uncaughtExceptionHandler != null) {
+                    f8eVar.f("Completed exception processing. Invoking default exception handler.");
+                } else {
+                    f8eVar.f("Completed exception processing, but no default exception handler.");
+                }
+            }
+        } finally {
+            if (uncaughtExceptionHandler != null) {
+                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", "Completed exception processing. Invoking default exception handler.", null);
+                }
+                uncaughtExceptionHandler.uncaughtException(thread, th);
+            } else {
+                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", "Completed exception processing, but no default exception handler.", null);
+                }
+                System.exit(1);
+            }
+            atomicBoolean.set(false);
+        }
     }
 }

@@ -1,39 +1,6 @@
 // default package
 
-import android.text.TextUtils;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class kr4 extends rr4 {
-    public final /* synthetic */ sr4 y;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kr4(sr4 sr4Var) {
-        super(sr4Var);
-        this.y = sr4Var;
-    }
-
-    @Override // rr4
-    public final void F(boolean z) {
-        sr4 sr4Var = this.y;
-        r7 r7Var = sr4Var.H;
-        if (r7Var != null) {
-            r7Var.setShowSearchProgress(z);
-        }
-        sr4Var.s.e(z, true);
-    }
-
-    @Override // w39
-    public final void f() {
-        super.f();
-        boolean isEmpty = TextUtils.isEmpty(this.f);
-        zya zyaVar = this.y.s;
-        if (isEmpty) {
-            zyaVar.setStickerType(11);
-            zyaVar.d.setText(k96.M0(2131745568, null));
-        } else {
-            zyaVar.setStickerType(1);
-            zyaVar.d.setText(k96.a0(null, null, 2131747974, this.f));
-        }
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class kr4 extends Exception {
 }

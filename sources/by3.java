@@ -1,70 +1,53 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import android.text.Editable;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputConnectionWrapper;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class by3 extends jr9 {
-    public int h;
-    public boolean n;
-    public float r;
-    public final /* synthetic */ cy3 s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class by3 extends InputConnectionWrapper {
+    public final EditText a;
+    public final nf5 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public by3(cy3 cy3Var, Context context) {
-        super(context);
-        this.s = cy3Var;
-        boolean z = cy3Var.h;
-        this.n = z;
-        this.r = z ? 1.0f : 0.0f;
-        setSmoothScrollingEnabled(true);
-        setHorizontalScrollBarEnabled(false);
-        setVerticalScrollBarEnabled(false);
-        setNestedScrollingEnabled(true);
-        pkb pkbVar = new pkb((byte) 5, context, this);
-        this.b = pkbVar;
-        pkbVar.setOrientation(0);
-        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
-        for (int i = 0; i < 8; i++) {
-            int i2 = cy3.e0[i];
-            ay3 ay3Var = new ay3(this, context, cy3.f0[i]);
-            ay3Var.setContentDescription(cy3.f(i));
-            this.b.addView(ay3Var);
-        }
-    }
-
-    public final void d(MotionEvent motionEvent) {
-        if (!this.n || this.d) {
-            return;
-        }
-        int action = motionEvent.getAction();
-        if (action != 0) {
-            if (action == 1) {
-                this.a = false;
-                return;
-            } else if (action != 2) {
+    public by3(EditText editText, InputConnection inputConnection, EditorInfo editorInfo) {
+        super(inputConnection, false);
+        nf5 nf5Var = new nf5((byte) 19);
+        this.a = editText;
+        this.b = nf5Var;
+        if (wx3.j != null) {
+            wx3 a = wx3.a();
+            if (a.b() != 1 || editorInfo == null) {
                 return;
             }
+            if (editorInfo.extras == null) {
+                editorInfo.extras = new Bundle();
+            }
+            sk skVar = a.e;
+            skVar.getClass();
+            Bundle bundle = editorInfo.extras;
+            rf7 rf7Var = (rf7) ((e7a) skVar.c).a;
+            int a2 = rf7Var.a(4);
+            bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a2 != 0 ? rf7Var.b.getInt(a2 + rf7Var.a) : 0);
+            editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);
         }
-        this.a = true;
-        if (!this.d) {
-            this.e = -1;
-        }
-        this.s.requestDisallowInterceptTouchEvent(true);
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.U1(this.r, gl.L(30.0f), gl.L(Math.min(5.7f, this.b.getChildCount()) * 32.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
+    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
+    public final boolean deleteSurroundingText(int i, int i2) {
+        Editable editableText = this.a.getEditableText();
+        this.b.getClass();
+        return hi2.y(this, editableText, i, i2, false) || super.deleteSurroundingText(i, i2);
     }
 
-    @Override // jr9, android.widget.HorizontalScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        d(motionEvent);
-        return super.onTouchEvent(motionEvent);
+    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
+    public final boolean deleteSurroundingTextInCodePoints(int i, int i2) {
+        Editable editableText = this.a.getEditableText();
+        this.b.getClass();
+        return hi2.y(this, editableText, i, i2, true) || super.deleteSurroundingTextInCodePoints(i, i2);
     }
 }

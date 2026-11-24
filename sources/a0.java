@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         TL_aicompose.getToneExample gettoneexample = new TL_aicompose.getToneExample();
                         gettoneexample.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
                         gettoneexample.num = i;
-                        ConnectionsManager.getInstance(e0Var.a).sendRequestTyped(gettoneexample, new hc(b2), new c0(e0Var, i, b2));
+                        ConnectionsManager.getInstance(e0Var.a).sendRequestTyped(gettoneexample, new kc((byte) 0), new c0(e0Var, i, b2));
                     }
                     e0Var.b2.O(true);
                     break;

@@ -1,6 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.media.MediaRouter2;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gfb extends o43 {
+public abstract class gfb {
+    public static boolean a(MediaRouter2 mediaRouter2) {
+        return mediaRouter2.showSystemOutputSwitcher();
+    }
 }

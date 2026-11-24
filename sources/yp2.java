@@ -1,146 +1,189 @@
 // default package
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.window.OnBackInvokedDispatcher;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class yp2 extends Dialog implements e16, dq9 {
-    public g16 a;
-    public final qx b;
-    public final vo7 c;
-
-    public yp2(Context context, int i) {
-        super(context, i);
-        this.b = new qx(this);
-        this.c = new vo7(new mk2(this, (byte) 5));
-    }
-
-    public static final void b(yp2 yp2Var) {
-        super.onBackPressed();
-    }
-
-    public final void a() {
-        Window window = getWindow();
-        window.getClass();
-        View decorView = window.getDecorView();
-        decorView.getClass();
-        decorView.setTag(R.id.view_tree_lifecycle_owner, this);
-        Window window2 = getWindow();
-        window2.getClass();
-        View decorView2 = window2.getDecorView();
-        decorView2.getClass();
-        decorView2.setTag(R.id.view_tree_on_back_pressed_dispatcher_owner, this);
-        Window window3 = getWindow();
-        window3.getClass();
-        View decorView3 = window3.getDecorView();
-        decorView3.getClass();
-        decorView3.setTag(R.id.view_tree_saved_state_registry_owner, this);
-    }
-
-    @Override // android.app.Dialog
-    public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
-        view.getClass();
-        a();
-        super.addContentView(view, layoutParams);
-    }
-
-    @Override // dq9
-    public final oo g() {
-        return (oo) this.b.d;
-    }
-
-    @Override // e16
-    public final g16 m() {
-        g16 g16Var = this.a;
-        if (g16Var != null) {
-            return g16Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class yp2 {
+    public static SpannableStringBuilder a(k47 k47Var, String str, String str2, boolean z, boolean z2) {
+        TLRPC.Message message = k47Var.k;
+        TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message.action;
+        boolean z3 = pg3.n(message.peer_id) == pg3.n(message.from_id);
+        boolean z4 = tL_messageActionChangeCommunity.community_id == 0;
+        if (z3) {
+            if (z4) {
+                return gm.S2(jb6.M0(z2 ? 2131751805 : z ? 2131751799 : 2131751793, null));
+            }
+            return gm.S2(jb6.a0(null, null, z2 ? 2131751807 : z ? 2131751801 : 2131751795, str));
         }
-        g16 g16Var2 = new g16(this);
-        this.a = g16Var2;
-        return g16Var2;
-    }
-
-    @Override // android.app.Dialog
-    public final void onBackPressed() {
-        this.c.a();
-    }
-
-    @Override // android.app.Dialog
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        if (Build.VERSION.SDK_INT >= 33) {
-            OnBackInvokedDispatcher onBackInvokedDispatcher = getOnBackInvokedDispatcher();
-            onBackInvokedDispatcher.getClass();
-            vo7 vo7Var = this.c;
-            vo7Var.getClass();
-            vo7Var.e = onBackInvokedDispatcher;
-            vo7Var.b(vo7Var.g);
+        if (k47Var.N3()) {
+            if (z4) {
+                return gm.S2(jb6.M0(z2 ? 2131751803 : z ? 2131751797 : 2131751791, null));
+            }
+            return gm.S2(jb6.a0(null, null, z2 ? 2131751804 : z ? 2131751798 : 2131751792, str));
         }
-        this.b.f(bundle);
-        g16 g16Var = this.a;
-        if (g16Var == null) {
-            g16Var = new g16(this);
-            this.a = g16Var;
+        if (z4) {
+            return gm.S2(jb6.a0(null, null, z2 ? 2131751806 : z ? 2131751800 : 2131751794, str2));
         }
-        g16Var.e(u06.ON_CREATE);
+        return gm.S2(jb6.a0(null, null, z2 ? 2131751808 : z ? 2131751802 : 2131751796, str2, str));
     }
 
-    @Override // android.app.Dialog
-    public final Bundle onSaveInstanceState() {
-        Bundle onSaveInstanceState = super.onSaveInstanceState();
-        onSaveInstanceState.getClass();
-        this.b.g(onSaveInstanceState);
-        return onSaveInstanceState;
-    }
-
-    @Override // android.app.Dialog
-    public final void onStart() {
-        super.onStart();
-        g16 g16Var = this.a;
-        if (g16Var == null) {
-            g16Var = new g16(this);
-            this.a = g16Var;
+    public static int b(int i, long j) {
+        TLRPC.Chat L0;
+        long j2;
+        TLRPC.User user;
+        TLRPC.ChatFull M0;
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        if (j > 0) {
+            TLRPC.User W1 = oc7.r1(i).W1(Long.valueOf(j));
+            if (W1 == null) {
+                return 0;
+            }
+            j2 = W1.linked_community_id;
+            user = W1;
+            L0 = null;
+        } else {
+            L0 = oc7.r1(i).L0(Long.valueOf(-j));
+            if (L0 == null) {
+                return 0;
+            }
+            j2 = L0.linked_community_id;
+            user = null;
         }
-        g16Var.e(u06.ON_RESUME);
-    }
-
-    @Override // android.app.Dialog
-    public void onStop() {
-        g16 g16Var = this.a;
-        if (g16Var == null) {
-            g16Var = new g16(this);
-            this.a = g16Var;
+        if (j2 != 0 && (M0 = oc7.r1(i).M0(j2)) != null && (arrayList = M0.linked_peers) != null) {
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i2 < size) {
+                TL_communities.CommunityPeer communityPeer = arrayList.get(i2);
+                i2++;
+                TL_communities.CommunityPeer communityPeer2 = communityPeer;
+                if (pg3.n(communityPeer2.peer) == j) {
+                    return c(L0, user != null ? oc7.r1(i).R0(user.id) : null, user, communityPeer2);
+                }
+            }
         }
-        g16Var.e(u06.ON_DESTROY);
-        this.a = null;
-        super.onStop();
+        return 0;
     }
 
-    @Override // android.app.Dialog
-    public void setContentView(View view) {
-        view.getClass();
-        a();
-        super.setContentView(view);
+    public static int c(TLRPC.Chat chat, TLRPC.Dialog dialog, TLRPC.User user, TL_communities.CommunityPeer communityPeer) {
+        if (user != null) {
+            if (dialog == null) {
+                return 2;
+            }
+        } else {
+            if (chat == null) {
+                return 0;
+            }
+            if (!sd2.j0(chat)) {
+                if (sd2.t0(chat) || communityPeer.can_view_history) {
+                    return 2;
+                }
+                return (!iqd.a(communityPeer.flags, 1) || communityPeer.visible) ? 3 : 4;
+            }
+        }
+        return 1;
     }
 
-    @Override // android.app.Dialog
-    public void setContentView(int i) {
-        a();
-        super.setContentView(i);
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void d(int i, long j, d dVar) {
+        tk5 tk5Var;
+        yv1 yv1Var;
+        int i2;
+        List list = null;
+        if (gm.O1()) {
+            tk5Var = null;
+            yv1Var = null;
+        } else {
+            tk5Var = dVar.getParentLayout();
+            if (tk5Var != null) {
+                List fragmentStack = tk5Var.getFragmentStack();
+                i2 = fragmentStack.size() - 2;
+                while (true) {
+                    if (i2 < 0) {
+                        yv1Var = null;
+                        i2 = -1;
+                        break;
+                    }
+                    d dVar2 = (d) fragmentStack.get(i2);
+                    if (dVar2 instanceof yv1) {
+                        yv1Var = (yv1) dVar2;
+                        if (yv1Var.a() == j) {
+                            break;
+                        }
+                    }
+                    i2--;
+                }
+                list = fragmentStack;
+                boolean U = sd2.U(dVar.getCurrentAccount(), j);
+                if (i2 != -1) {
+                    if (!(dVar instanceof nk3)) {
+                        dVar.finishFragment();
+                    }
+                    f(c41.Y(), i, U);
+                    return;
+                }
+                for (int size = list.size() - 2; size > i2; size--) {
+                    ((ActionBarLayout) tk5Var).c0((d) list.get(size), false);
+                }
+                dVar.finishFragment();
+                gm.d3(new wp1(i, yv1Var, U), 250L);
+                return;
+            }
+            yv1Var = null;
+        }
+        i2 = -1;
+        boolean U2 = sd2.U(dVar.getCurrentAccount(), j);
+        if (i2 != -1) {
+        }
     }
 
-    @Override // android.app.Dialog
-    public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
-        view.getClass();
-        a();
-        super.setContentView(view, layoutParams);
+    public static void e(he[] heVarArr, d dVar, int i, TLRPC.Chat chat) {
+        byte b = 0;
+        if (heVarArr[0] != null) {
+            return;
+        }
+        oc7 r1 = oc7.r1(i);
+        e eVar = new e((Object) heVarArr, (Object) dVar, i, (Object) chat, (byte) 5);
+        TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
+        tL_channels_getAdminedPublicChannels.for_community_peer = true;
+        int sendRequestTyped = r1.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new kc((byte) 0), new s87(r1, eVar, b));
+        ConnectionsManager.getInstance(i).bindRequestToGuid(sendRequestTyped, dVar.getClassGuid());
+        he heVar = new he(3, null, dVar.getContext());
+        heVarArr[0] = heVar;
+        heVar.q(500L);
+        heVarArr[0].setOnCancelListener(new qp2(i, sendRequestTyped, heVarArr, b));
+    }
+
+    public static void f(c41 c41Var, int i, boolean z) {
+        int i2;
+        int i3;
+        String M0;
+        if (i == 2) {
+            i2 = R.raw.timer_toast;
+            i3 = 24;
+        } else {
+            i2 = R.raw.contact_check;
+            i3 = 36;
+        }
+        if (i == 0) {
+            M0 = jb6.M0(2131751880, null);
+        } else if (i == 1) {
+            M0 = jb6.M0(z ? 2131751879 : 2131751878, null);
+        } else {
+            M0 = jb6.M0(2131751877, null);
+        }
+        c41Var.G(i2, i3, M0).j();
     }
 }

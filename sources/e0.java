@@ -11,32 +11,32 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class e0 extends fy0 implements gk7 {
+public final class e0 extends mz0 implements jm7 {
     public final TL_aicompose.AiComposeTone S1;
-    public final ic T1;
+    public final id T1;
     public final ImageView U1;
     public final FrameLayout V1;
     public final TextView W1;
     public final TextView X1;
     public final FrameLayout Y1;
     public final FrameLayout Z1;
-    public final u41 a2;
-    public l5c b2;
+    public final b61 a2;
+    public l7c b2;
     public int c2;
     public final TL_aicompose.aiComposeToneExample[] d2;
     public int e2;
 
-    public e0(Context context, TL_aicompose.AiComposeTone aiComposeTone, wjb wjbVar) {
-        super(context, null, false, false, 2, wjbVar);
+    public e0(Context context, TL_aicompose.AiComposeTone aiComposeTone, ylb ylbVar) {
+        super(context, null, false, false, 2, ylbVar);
         byte b = 0;
         this.c2 = 0;
-        ic O1 = na7.q1(this.a).O1();
-        this.T1 = O1;
-        O1.b();
+        id P1 = oc7.r1(this.a).P1();
+        this.T1 = P1;
+        P1.b();
         this.S1 = aiComposeTone;
-        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[na7.q1(this.a).k4.T.f()];
+        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[oc7.r1(this.a).l4.T.f()];
         this.d2 = aicomposetoneexampleArr;
         if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
             aicomposetoneexampleArr[0] = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).example_english;
@@ -45,65 +45,65 @@ public final class e0 extends fy0 implements gk7 {
         this.U1 = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.ic_close_white);
-        int i = bkb.F6;
-        zkb.s(imageView, i, wjbVar, PorterDuff.Mode.SRC_ATOP);
-        ff0 f0 = bkb.f0(bkb.p1(0.1f, bkb.v0(i, this.J0)), 1, -1);
-        vkb K = zkb.K(0.1f, i);
+        int i = cmb.F6;
+        anb.s(imageView, i, ylbVar, PorterDuff.Mode.SRC_ATOP);
+        fg0 f0 = cmb.f0(cmb.p1(0.1f, cmb.v0(i, this.J0)), 1, -1);
+        wmb K = anb.K(0.1f, i);
         imageView.setBackground(f0);
-        zkb.j(imageView, f0, null, K, wjbVar);
-        this.b.addView(imageView, nme.d(54, 54.0f, 53, 0.0f, 0.0f, 8.0f, 0.0f));
-        ote.b(imageView, 0.1f, 1.5f);
+        anb.j(imageView, f0, null, K, ylbVar);
+        this.b.addView(imageView, qoe.d(54, 54.0f, 53, 0.0f, 0.0f, 8.0f, 0.0f));
+        rve.b(imageView, 0.1f, 1.5f);
         imageView.setOnClickListener(new a0(this, b));
         FrameLayout frameLayout = new FrameLayout(context);
         this.V1 = frameLayout;
         frameLayout.setClipToPadding(false);
         frameLayout.setClipChildren(false);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        int L = gl.L(100.0f);
-        int i2 = bkb.c6;
-        ShapeDrawable K2 = bkb.K(L, bkb.v0(i2, wjbVar));
-        vkb M = zkb.M(i2);
+        int L = gm.L(100.0f);
+        int i2 = cmb.c6;
+        ShapeDrawable K2 = cmb.K(L, cmb.v0(i2, ylbVar));
+        wmb M = anb.M(i2);
         frameLayout2.setBackground(K2);
-        zkb.j(frameLayout2, K2, M, null, wjbVar);
-        frameLayout.addView(frameLayout2, nme.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
-        be0 be0Var = new be0(context);
-        be0Var.setAnimatedEmojiDrawable(new vl(4, this.a, aiComposeTone.emoji_id));
-        frameLayout2.addView(be0Var, nme.e(64, 64, 17));
+        anb.j(frameLayout2, K2, M, null, ylbVar);
+        frameLayout.addView(frameLayout2, qoe.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
+        bf0 bf0Var = new bf0(context);
+        bf0Var.setAnimatedEmojiDrawable(new vm(4, this.a, aiComposeTone.emoji_id));
+        frameLayout2.addView(bf0Var, qoe.e(64, 64, 17));
         TextView textView = new TextView(context);
         this.W1 = textView;
-        tb4.w(textView, i, wjbVar, 1, 20.0f);
+        td4.x(textView, i, ylbVar, 1, 20.0f);
         textView.setGravity(17);
         textView.setText(aiComposeTone.title);
         TextView textView2 = new TextView(context);
         this.X1 = textView2;
-        zkb.X(textView2, i, wjbVar);
+        anb.X(textView2, i, ylbVar);
         textView2.setTextSize(1, 14.0f);
-        de9.q(textView2, 17, null, 2131754966);
+        hg9.p(textView2, 17, null, 2131754966);
         this.o1.setTitle(aiComposeTone.title);
-        int i3 = bkb.Z6;
+        int i3 = cmb.Z6;
         this.b0 = i3;
-        s0(bkb.v0(i3, this.J0));
-        o39 o39Var = this.n1;
+        s0(cmb.v0(i3, this.J0));
+        r59 r59Var = this.n1;
         int i4 = this.u0;
-        o39Var.setPadding(i4, 0, i4, gl.L(66.0f));
+        r59Var.setPadding(i4, 0, i4, gm.L(66.0f));
         this.n1.setClipToPadding(false);
         this.n1.r1();
         this.n1.setOnItemClickListener(new u(this, (byte) 1));
         this.F1 = false;
-        this.E1 = gl.L(36.0f);
+        this.E1 = gm.L(36.0f);
         this.u1 = 0.35f;
         this.I1 = true;
         d0 d0Var = new d0(this);
         d0Var.m = false;
         d0Var.C = false;
-        d0Var.o(s33.h);
+        d0Var.o(d53.h);
         d0Var.n(350L);
         this.n1.setItemAnimator(d0Var);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.Y1 = frameLayout3;
-        frameLayout3.setPadding(gl.L(16.0f), gl.L(6.0f), gl.L(16.0f), gl.L(12.0f));
-        frameLayout3.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{bkb.p1(0.0f, bkb.v0(i3, this.J0)), bkb.v0(i3, this.J0), bkb.v0(i3, this.J0)}));
-        FrameLayout.LayoutParams e = nme.e(-1, -2, 80);
+        frameLayout3.setPadding(gm.L(16.0f), gm.L(6.0f), gm.L(16.0f), gm.L(12.0f));
+        frameLayout3.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{cmb.p1(0.0f, cmb.v0(i3, this.J0)), cmb.v0(i3, this.J0), cmb.v0(i3, this.J0)}));
+        FrameLayout.LayoutParams e = qoe.e(-1, -2, 80);
         int i5 = e.leftMargin;
         int i6 = this.u0;
         e.leftMargin = i5 + i6;
@@ -111,17 +111,17 @@ public final class e0 extends fy0 implements gk7 {
         this.b.addView(frameLayout3, e);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.Z1 = frameLayout4;
-        FrameLayout.LayoutParams d = nme.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 60.0f);
+        FrameLayout.LayoutParams d = qoe.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 60.0f);
         int i7 = d.leftMargin;
         int i8 = this.u0;
         d.leftMargin = i7 + i8;
         d.rightMargin += i8;
         this.b.addView(frameLayout4, d);
-        u41 i9 = yjb.i(24, wjbVar, context, true);
+        b61 i9 = mlb.i(24, ylbVar, context, true);
         this.a2 = i9;
-        i9.setText(k96.M0(Y0() ? 2131754980 : 2131755005, null));
-        i9.setOnClickListener(new b0(this, aiComposeTone, wjbVar, b));
-        frameLayout3.addView(i9, nme.e(-1, 48, kk7.D1));
+        i9.setText(jb6.M0(Y0() ? 2131754980 : 2131755005, null));
+        i9.setOnClickListener(new b0(this, aiComposeTone, ylbVar, b));
+        frameLayout3.addView(i9, qoe.e(-1, 48, nm7.D1));
         this.b2.O(false);
     }
 
@@ -131,42 +131,42 @@ public final class e0 extends fy0 implements gk7 {
             if (i > 0) {
                 spannableStringBuilder.append((CharSequence) "\n");
             }
-            int L = gl.L((int) (Math.random() * 50.0d));
+            int L = gm.L((int) (Math.random() * 50.0d));
             int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) k96.M0(2131748587, null));
-            u86 u86Var = new u86(null, L, 0, null);
-            u86Var.f = gl.L(6.0f);
-            u86Var.h = 0.5f;
-            u86Var.n = true;
-            spannableStringBuilder.setSpan(u86Var, length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) jb6.M0(2131748536, null));
+            ta6 ta6Var = new ta6(null, L, 0, null);
+            ta6Var.f = gm.L(6.0f);
+            ta6Var.h = 0.5f;
+            ta6Var.n = true;
+            spannableStringBuilder.setSpan(ta6Var, length, spannableStringBuilder.length(), 33);
         }
         return spannableStringBuilder;
     }
 
-    @Override // fy0
-    public final n39 G0(o39 o39Var) {
-        l5c l5cVar = new l5c(o39Var, getContext(), this.a, 0, true, new f(this, (byte) 1), this.J0);
-        this.b2 = l5cVar;
-        l5cVar.r = false;
-        return l5cVar;
+    @Override // mz0
+    public final q59 G0(r59 r59Var) {
+        l7c l7cVar = new l7c(r59Var, getContext(), this.a, 0, true, new f(this, (byte) 1), this.J0);
+        this.b2 = l7cVar;
+        l7cVar.r = false;
+        return l7cVar;
     }
 
-    @Override // fy0
+    @Override // mz0
     public final CharSequence J0() {
         TL_aicompose.AiComposeTone aiComposeTone = this.S1;
         return aiComposeTone == null ? "" : aiComposeTone.title;
     }
 
-    @Override // fy0
+    @Override // mz0
     public final void L0(float f) {
-        by0 by0Var = this.o1;
-        jia titleTextView = by0Var.getTitleTextView();
+        iz0 iz0Var = this.o1;
+        lka titleTextView = iz0Var.getTitleTextView();
         if (titleTextView != null) {
             titleTextView.setAlpha(f);
         }
-        float translationY = by0Var.getTranslationY() + gl.m;
-        int height = by0Var.getHeight() - gl.m;
-        this.U1.setTranslationY(((1.0f - f) * gl.L(28.0f)) + ((height - r3.getHeight()) / 2.0f) + translationY);
+        float translationY = iz0Var.getTranslationY() + gm.m;
+        int height = iz0Var.getHeight() - gm.m;
+        this.U1.setTranslationY(((1.0f - f) * gm.L(28.0f)) + ((height - r3.getHeight()) / 2.0f) + translationY);
     }
 
     public final boolean Y0() {
@@ -175,11 +175,11 @@ public final class e0 extends fy0 implements gk7 {
             TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
             int i = 0;
             while (true) {
-                ic icVar = this.T1;
-                if (i >= icVar.b.size()) {
+                id idVar = this.T1;
+                if (i >= idVar.b.size()) {
                     break;
                 }
-                TL_aicompose.AiComposeTone aiComposeTone2 = (TL_aicompose.AiComposeTone) icVar.b.get(i);
+                TL_aicompose.AiComposeTone aiComposeTone2 = (TL_aicompose.AiComposeTone) idVar.b.get(i);
                 if ((aiComposeTone2 instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) aiComposeTone2).id == tL_aiComposeTone.id) {
                     return true;
                 }
@@ -189,37 +189,37 @@ public final class e0 extends fy0 implements gk7 {
         return false;
     }
 
-    @Override // gk7
+    @Override // jm7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.a4) {
-            this.a2.setText(k96.M0(Y0() ? 2131754980 : 2131755005, null));
+        if (i == nm7.b4) {
+            this.a2.setText(jb6.M0(Y0() ? 2131754980 : 2131755005, null));
         }
     }
 
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
+    @Override // my0, android.app.Dialog, android.content.DialogInterface, ah0
     public final void dismiss() {
         super.dismiss();
-        kk7.f(this.a).n(this, kk7.a4);
+        nm7.f(this.a).n(this, nm7.b4);
     }
 
-    @Override // fx0
+    @Override // my0
     public final void p0() {
         try {
             super.p0();
-            int v0 = bkb.v0(bkb.Z6, this.J0);
+            int v0 = cmb.v0(cmb.Z6, this.J0);
             if (v0 != this.e2) {
                 this.e2 = v0;
                 s0(v0);
-                this.Y1.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{bkb.p1(0.0f, v0), v0, v0}));
+                this.Y1.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{cmb.p1(0.0f, v0), v0, v0}));
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
-    @Override // fx0, android.app.Dialog
+    @Override // my0, android.app.Dialog
     public final void show() {
         super.show();
-        kk7.f(this.a).b(this, kk7.a4);
+        nm7.f(this.a).b(this, nm7.b4);
     }
 }

@@ -1,30 +1,58 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gk9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jk9 b;
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.tgnet.tl.TL_iv;
 
-    public /* synthetic */ gk9(jk9 jk9Var, byte b) {
-        this.a = b;
-        this.b = jk9Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class gk9 implements qkb {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ TL_iv.pageTableCell e;
+
+    public gk9(Layout layout, int i, int i2, int i3, TL_iv.pageTableCell pagetablecell) {
+        this.a = layout;
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
+        this.e = pagetablecell;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        jk9 jk9Var = this.b;
-        switch (b) {
-            case 0:
-                if (jk9Var.W != 0) {
-                    jk9Var.V = true;
-                    break;
-                }
-                break;
-            default:
-                jk9Var.c();
-                break;
-        }
+    @Override // qkb, mi7
+    public final Layout a() {
+        return this.a;
+    }
+
+    @Override // qkb
+    public final Rect c() {
+        return null;
+    }
+
+    @Override // qkb
+    public final CharSequence getPrefix() {
+        return null;
+    }
+
+    @Override // qkb
+    public final int getRow() {
+        return this.d;
+    }
+
+    @Override // qkb
+    public final CharSequence getText() {
+        return fhb.h(this.e);
+    }
+
+    @Override // qkb
+    public final int getX() {
+        return this.b;
+    }
+
+    @Override // qkb
+    public final int getY() {
+        return this.c;
     }
 }

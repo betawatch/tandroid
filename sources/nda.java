@@ -1,61 +1,28 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class nda extends AnimatorListenerAdapter {
+public final /* synthetic */ class nda implements qac {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ nfa b;
+    public final /* synthetic */ nha b;
 
-    public /* synthetic */ nda(nfa nfaVar, byte b) {
+    public /* synthetic */ nda(nha nhaVar, byte b) {
         this.a = b;
-        this.b = nfaVar;
+        this.b = nhaVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // qac
+    public final void a(Object obj) {
         byte b = this.a;
-        nfa nfaVar = this.b;
+        nha nhaVar = this.b;
+        a4b a4bVar = (a4b) obj;
         switch (b) {
             case 0:
-                nfaVar.O0 = null;
+                gm.d3(new e6a(nhaVar, a4bVar, (byte) 4), 100L);
                 break;
             default:
-                r7 r7Var = nfaVar.q0;
-                nfaVar.i1 = null;
-                boolean z = nfaVar.l1;
-                iea[] ieaVarArr = nfaVar.n0;
-                if (z) {
-                    ieaVarArr[1].setVisibility(8);
-                    if (r7Var == null || nfaVar.q()) {
-                        nfaVar.r0 = nfaVar.V(0.0f);
-                        nfaVar.K1(0.0f);
-                    } else {
-                        nfaVar.setSearchItemVisibility(nfaVar.s0() ? 8 : 4);
-                        nfaVar.r0 = 0.0f;
-                    }
-                    nfaVar.G1(false);
-                    nfaVar.A0 = (byte) 0;
-                } else {
-                    iea ieaVar = ieaVarArr[0];
-                    ieaVarArr[0] = ieaVarArr[1];
-                    ieaVarArr[1] = ieaVar;
-                    ieaVar.setVisibility(8);
-                    if (r7Var != null && nfaVar.A0 == 2) {
-                        nfaVar.setSearchItemVisibility(nfaVar.s0() ? 8 : 4);
-                    }
-                    nfaVar.A0 = (byte) 0;
-                    nfaVar.g1(1.0f, ieaVarArr[0].F);
-                    nfaVar.S0();
-                    nfaVar.q1();
-                }
-                nfaVar.j1 = false;
-                nfaVar.B1 = false;
-                nfaVar.A1 = false;
-                nfaVar.setHeaderEnabled(true);
-                nfaVar.L0.setEnabled(true);
+                int[] iArr = nha.t2;
+                gm.d3(new e6a(nhaVar, a4bVar, (byte) 4), 100L);
                 break;
         }
     }

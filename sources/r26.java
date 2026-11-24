@@ -1,70 +1,120 @@
 // default package
 
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import android.util.Log;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class r26 {
-    public boolean a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public List k;
-    public boolean l;
+    public static final s13 b = new s13("LibraryVersion", "", (byte) 1);
+    public static final r26 c = new r26();
+    public final ConcurrentHashMap a = new ConcurrentHashMap();
 
-    public final void a(View view) {
-        int b;
-        int size = this.k.size();
-        View view2 = null;
-        int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        for (int i2 = 0; i2 < size; i2++) {
-            View view3 = ((s49) this.k.get(i2)).a;
-            e49 e49Var = (e49) view3.getLayoutParams();
-            if (view3 != view && !e49Var.a.j() && (b = (e49Var.b() - this.d) * this.e) >= 0 && b < i) {
-                view2 = view3;
-                if (b == 0) {
-                    break;
-                } else {
-                    i = b;
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00f1  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String a(String str) {
+        IOException e;
+        String str2;
+        InputStream inputStream;
+        s13 s13Var = b;
+        ite.g(str, "Please provide a valid libraryName");
+        ConcurrentHashMap concurrentHashMap = this.a;
+        if (concurrentHashMap.containsKey(str)) {
+            return (String) concurrentHashMap.get(str);
+        }
+        Properties properties = new Properties();
+        InputStream inputStream2 = null;
+        r6 = null;
+        String str3 = null;
+        inputStream2 = null;
+        try {
+            try {
+                inputStream = r26.class.getResourceAsStream("/" + str + ".properties");
+            } catch (IOException e2) {
+                e = e2;
+                str2 = null;
+            }
+        } catch (Throwable th) {
+            th = th;
+        }
+        try {
+            if (inputStream != null) {
+                properties.load(inputStream);
+                str3 = properties.getProperty("version", null);
+                StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 12 + String.valueOf(str3).length());
+                sb.append(str);
+                sb.append(" version is ");
+                sb.append(str3);
+                String sb2 = sb.toString();
+                if (Log.isLoggable(s13Var.b, 2)) {
+                    String str4 = s13Var.c;
+                    if (str4 != null) {
+                        sb2 = str4.concat(sb2);
+                    }
+                    Log.v("LibraryVersion", sb2);
+                }
+            } else {
+                StringBuilder sb3 = new StringBuilder(String.valueOf(str).length() + 43);
+                sb3.append("Failed to get app version for libraryName: ");
+                sb3.append(str);
+                String sb4 = sb3.toString();
+                if (Log.isLoggable(s13Var.b, 5)) {
+                    String str5 = s13Var.c;
+                    if (str5 != null) {
+                        sb4 = str5.concat(sb4);
+                    }
+                    Log.w("LibraryVersion", sb4);
                 }
             }
-        }
-        if (view2 == null) {
-            this.d = -1;
-        } else {
-            this.d = ((e49) view2.getLayoutParams()).b();
-        }
-    }
-
-    public final boolean b(p49 p49Var) {
-        int i = this.d;
-        return i >= 0 && i < p49Var.b();
-    }
-
-    public final View c(wg2 wg2Var) {
-        List list = this.k;
-        if (list == null) {
-            View view = wg2Var.k(this.d, Long.MAX_VALUE).a;
-            this.d += this.e;
-            return view;
-        }
-        int size = list.size();
-        for (int i = 0; i < size; i++) {
-            View view2 = ((s49) this.k.get(i)).a;
-            e49 e49Var = (e49) view2.getLayoutParams();
-            if (!e49Var.a.j() && this.d == e49Var.b()) {
-                a(view2);
-                return view2;
+        } catch (IOException e3) {
+            e = e3;
+            inputStream2 = inputStream;
+            str2 = null;
+            StringBuilder sb5 = new StringBuilder(String.valueOf(str).length() + 43);
+            sb5.append("Failed to get app version for libraryName: ");
+            sb5.append(str);
+            String sb6 = sb5.toString();
+            if (Log.isLoggable(s13Var.b, 6)) {
+                String str6 = s13Var.c;
+                if (str6 != null) {
+                    sb6 = str6.concat(sb6);
+                }
+                Log.e("LibraryVersion", sb6, e);
             }
+            InputStream inputStream3 = inputStream2;
+            str3 = str2;
+            inputStream = inputStream3;
+            if (inputStream != null) {
+            }
+            if (str3 == null) {
+            }
+            concurrentHashMap.put(str, str3);
+            return str3;
+        } catch (Throwable th2) {
+            th = th2;
+            inputStream2 = inputStream;
+            if (inputStream2 != null) {
+                hme.a(inputStream2);
+            }
+            throw th;
         }
-        return null;
+        if (inputStream != null) {
+            hme.a(inputStream);
+        }
+        if (str3 == null) {
+            if (Log.isLoggable(s13Var.b, 3)) {
+                String str7 = s13Var.c;
+                Log.d("LibraryVersion", str7 != null ? str7.concat(".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used") : ".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used");
+            }
+            str3 = "UNKNOWN";
+        }
+        concurrentHashMap.put(str, str3);
+        return str3;
     }
 }

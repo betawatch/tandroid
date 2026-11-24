@@ -1,47 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class i6a {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final long d;
-    public final a63 e;
-    public final String f;
-    public final String g;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
-    public i6a(String str, String str2, int i, long j, a63 a63Var, String str3, String str4) {
-        str.getClass();
-        str2.getClass();
-        str4.getClass();
-        this.a = str;
-        this.b = str2;
-        this.c = i;
-        this.d = j;
-        this.e = a63Var;
-        this.f = str3;
-        this.g = str4;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class i6a extends FrameLayout {
+    public final /* synthetic */ l6a a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i6a(l6a l6aVar, Context context) {
+        super(context);
+        this.a = l6aVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        l6a l6aVar = this.a;
+        View contentView = l6aVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + l6aVar.E;
+        iArr[1] = iArr[1] + l6aVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (gm.m + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
         }
-        if (!(obj instanceof i6a)) {
-            return false;
+        if (!l6aVar.A && !l6aVar.D) {
+            l6aVar.D = true;
+            l6aVar.l(new zna[0]);
         }
-        i6a i6aVar = (i6a) obj;
-        return rp5.a(this.a, i6aVar.a) && rp5.a(this.b, i6aVar.b) && this.c == i6aVar.c && this.d == i6aVar.d && this.e.equals(i6aVar.e) && this.f.equals(i6aVar.f) && rp5.a(this.g, i6aVar.g);
-    }
-
-    public final int hashCode() {
-        int j = (ir2.j(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
-        long j2 = this.d;
-        return this.g.hashCode() + ir2.j((this.e.hashCode() + ((j + ((int) (j2 ^ (j2 >>> 32)))) * 31)) * 31, 31, this.f);
-    }
-
-    public final String toString() {
-        return "SessionInfo(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", eventTimestampUs=" + this.d + ", dataCollectionStatus=" + this.e + ", firebaseInstallationId=" + this.f + ", firebaseAuthenticationToken=" + this.g + ')';
+        return true;
     }
 }

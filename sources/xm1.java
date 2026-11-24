@@ -1,110 +1,40 @@
 // default package
 
-import android.content.DialogInterface;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+import java.util.function.ToIntFunction;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xm1 implements Runnable {
+public final /* synthetic */ class xm1 implements ToIntFunction {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ hd[] c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ xm1(mu1 mu1Var, hd[] hdVarArr, int i, byte b) {
+    public /* synthetic */ xm1(Object obj, byte b) {
         this.a = b;
-        this.b = mu1Var;
-        this.c = hdVarArr;
-        this.d = i;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
         byte b = this.a;
-        final int i = this.d;
-        hd[] hdVarArr = this.c;
-        final mu1 mu1Var = this.b;
-        final byte b2 = 0;
+        Object obj2 = this.b;
         switch (b) {
             case 0:
-                hd hdVar = hdVarArr[0];
-                if (hdVar != null) {
-                    final byte b3 = 1;
-                    hdVar.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: pn1
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            byte b4 = b3;
-                            int i2 = i;
-                            mu1 mu1Var2 = mu1Var;
-                            switch (b4) {
-                                case 0:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                                case 1:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                                default:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                            }
-                        }
-                    });
-                    mu1Var.showDialog(hdVarArr[0]);
-                    break;
-                }
-                break;
+                return ((Integer) ((HashMap) obj2).get((View) obj)).intValue();
             case 1:
-                hd hdVar2 = hdVarArr[0];
-                if (hdVar2 != null) {
-                    hdVar2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: pn1
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            byte b4 = b2;
-                            int i2 = i;
-                            mu1 mu1Var2 = mu1Var;
-                            switch (b4) {
-                                case 0:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                                case 1:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                                default:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                            }
-                        }
-                    });
-                    mu1Var.showDialog(hdVarArr[0]);
-                    break;
-                }
-                break;
+                RectF rectF = ProfileActivity.e7;
+                return ((Integer) ((ArrayList) obj2).get(((Integer) obj).intValue())).intValue();
+            case 2:
+                return ((SpannableStringBuilder) obj2).getSpanStart((rj9) obj);
             default:
-                hd hdVar3 = hdVarArr[0];
-                if (hdVar3 != null) {
-                    final byte b4 = 2;
-                    hdVar3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: pn1
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            byte b42 = b4;
-                            int i2 = i;
-                            mu1 mu1Var2 = mu1Var;
-                            switch (b42) {
-                                case 0:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                                case 1:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                                default:
-                                    mu1Var2.getConnectionsManager().cancelRequest(i2, true);
-                                    break;
-                            }
-                        }
-                    });
-                    mu1Var.showDialog(hdVarArr[0]);
-                    break;
-                }
-                break;
+                return ((int[]) ((IdentityHashMap) obj2).get((TL_iv.pageTableCell) obj))[1];
         }
     }
 }

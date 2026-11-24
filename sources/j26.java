@@ -1,132 +1,221 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.animation.DecelerateInterpolator;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class j26 extends View {
-    public static DecelerateInterpolator w;
-    public static Paint x;
-    public long a;
-    public float b;
-    public float c;
-    public long d;
-    public float e;
-    public float f;
-    public int h;
-    public int n;
-    public final RectF r;
-    public wd1 s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class j26 {
+    public static final /* synthetic */ int a = 0;
 
-    public j26(Context context) {
-        super(context);
-        this.f = 1.0f;
-        this.r = new RectF();
-        if (w == null) {
-            w = new DecelerateInterpolator();
-            Paint paint = new Paint(1);
-            x = paint;
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            x.setStrokeWidth(gl.L(2.0f));
+    static {
+        yo5.s("android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.DURATION", "android.media.metadata.ALBUM", "android.media.metadata.AUTHOR", "android.media.metadata.WRITER", "android.media.metadata.COMPOSER", "android.media.metadata.COMPILATION", "android.media.metadata.DATE", "android.media.metadata.YEAR", "android.media.metadata.GENRE", "android.media.metadata.TRACK_NUMBER", "android.media.metadata.NUM_TRACKS", "android.media.metadata.DISC_NUMBER", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.ART", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART", "android.media.metadata.ALBUM_ART_URI", "android.media.metadata.USER_RATING", "android.media.metadata.RATING", "android.media.metadata.DISPLAY_TITLE", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION", "android.media.metadata.DISPLAY_ICON", "android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.MEDIA_ID", "android.media.metadata.MEDIA_URI", "android.media.metadata.BT_FOLDER_TYPE", "android.media.metadata.ADVERTISEMENT", "android.media.metadata.DOWNLOAD_STATUS", "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
+    }
+
+    public static long a(int i) {
+        switch (i) {
+            case 0:
+                return 0L;
+            case 1:
+                return 1L;
+            case 2:
+                return 2L;
+            case 3:
+                return 3L;
+            case 4:
+                return 4L;
+            case 5:
+                return 5L;
+            case 6:
+                return 6L;
+            default:
+                u36.j(hg9.j(i, "Unrecognized FolderType: "));
+                return 0L;
         }
     }
 
-    public final void a(boolean z, float f) {
-        if (z) {
-            this.c = this.e;
-        } else {
-            this.e = f;
-            this.c = f;
+    public static lt6 b(jt6 jt6Var, String str, Uri uri, long j, Bitmap bitmap) {
+        Long l;
+        fk3 fk3Var = new fk3((byte) 19);
+        fk3Var.i0("android.media.metadata.MEDIA_ID", str);
+        CharSequence charSequence = jt6Var.a;
+        Bundle bundle = jt6Var.K;
+        Integer num = jt6Var.q;
+        Uri uri2 = jt6Var.n;
+        if (charSequence != null) {
+            fk3Var.k0(charSequence, "android.media.metadata.TITLE");
         }
-        if (f != 1.0f) {
-            this.f = 1.0f;
+        CharSequence charSequence2 = jt6Var.e;
+        if (charSequence2 != null) {
+            fk3Var.k0(charSequence2, "android.media.metadata.DISPLAY_TITLE");
         }
-        this.b = f;
-        this.d = 0L;
-        this.a = System.currentTimeMillis();
-        invalidate();
-    }
-
-    public float getCurrentProgress() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i = this.h;
-        RectF rectF = this.r;
-        if (i != 0 && this.e != 1.0f) {
-            x.setColor(i);
-            x.setAlpha((int) (this.f * 255.0f));
-            getWidth();
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        CharSequence charSequence3 = jt6Var.f;
+        if (charSequence3 != null) {
+            fk3Var.k0(charSequence3, "android.media.metadata.DISPLAY_SUBTITLE");
         }
-        x.setColor(this.n);
-        x.setAlpha((int) (this.f * 255.0f));
-        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
-        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
-        if (this.f > 0.0f) {
-            wd1 wd1Var = this.s;
-            if (wd1Var == null) {
-                wd1Var = new wd1(kk7.p2, 0);
-                this.s = wd1Var;
-                wd1Var.k = false;
-                wd1Var.n = 0.8f;
-                wd1Var.m = 1.2f;
-            }
-            wd1Var.f = getMeasuredWidth();
-            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
-            invalidate();
+        CharSequence charSequence4 = jt6Var.g;
+        if (charSequence4 != null) {
+            fk3Var.k0(charSequence4, "android.media.metadata.DISPLAY_DESCRIPTION");
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        float f = this.e;
-        if (f != 1.0f) {
-            float f2 = this.b;
-            if (f != f2) {
-                float f3 = this.c;
-                float f4 = f2 - f3;
-                if (f4 > 0.0f) {
-                    long j2 = this.d + j;
-                    this.d = j2;
-                    if (j2 >= 300) {
-                        this.e = f2;
-                        this.c = f2;
-                        this.d = 0L;
-                    } else {
-                        this.e = (w.getInterpolation(j2 / 300.0f) * f4) + f3;
-                    }
+        CharSequence charSequence5 = jt6Var.b;
+        if (charSequence5 != null) {
+            fk3Var.k0(charSequence5, "android.media.metadata.ARTIST");
+        }
+        CharSequence charSequence6 = jt6Var.c;
+        if (charSequence6 != null) {
+            fk3Var.k0(charSequence6, "android.media.metadata.ALBUM");
+        }
+        CharSequence charSequence7 = jt6Var.d;
+        if (charSequence7 != null) {
+            fk3Var.k0(charSequence7, "android.media.metadata.ALBUM_ARTIST");
+        }
+        if (jt6Var.u != null) {
+            fk3Var.e0(r7.intValue(), "android.media.metadata.YEAR");
+        }
+        CharSequence charSequence8 = jt6Var.A;
+        if (charSequence8 != null) {
+            fk3Var.k0(charSequence8, "android.media.metadata.WRITER");
+        }
+        CharSequence charSequence9 = jt6Var.B;
+        if (charSequence9 != null) {
+            fk3Var.k0(charSequence9, "android.media.metadata.COMPOSER");
+        }
+        if (uri != null) {
+            fk3Var.i0("android.media.metadata.MEDIA_URI", uri.toString());
+        }
+        if (uri2 != null) {
+            fk3Var.i0("android.media.metadata.DISPLAY_ICON_URI", uri2.toString());
+            fk3Var.i0("android.media.metadata.ALBUM_ART_URI", uri2.toString());
+            fk3Var.i0("android.media.metadata.ART_URI", uri2.toString());
+        }
+        if (bitmap != null) {
+            fk3Var.a0("android.media.metadata.DISPLAY_ICON", bitmap);
+            fk3Var.a0("android.media.metadata.ALBUM_ART", bitmap);
+        }
+        if (num != null && num.intValue() != -1) {
+            fk3Var.e0(a(num.intValue()), "android.media.metadata.BT_FOLDER_TYPE");
+        }
+        if (j == -9223372036854775807L && (l = jt6Var.h) != null) {
+            j = l.longValue();
+        }
+        if (j == -9223372036854775807L) {
+            j = -1;
+        }
+        fk3Var.e0(j, "android.media.metadata.DURATION");
+        i19 d = d(jt6Var.i);
+        if (d != null) {
+            fk3Var.h0("android.media.metadata.USER_RATING", d);
+        }
+        i19 d2 = d(jt6Var.j);
+        if (d2 != null) {
+            fk3Var.h0("android.media.metadata.RATING", d2);
+        }
+        if (jt6Var.J != null) {
+            fk3Var.e0(r6.intValue(), "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
+        }
+        if (bundle != null) {
+            for (String str2 : bundle.keySet()) {
+                Object obj = bundle.get(str2);
+                if (obj == null || (obj instanceof CharSequence)) {
+                    fk3Var.k0((CharSequence) obj, str2);
+                } else if ((obj instanceof Byte) || (obj instanceof Short) || (obj instanceof Integer) || (obj instanceof Long)) {
+                    fk3Var.e0(((Number) obj).longValue(), str2);
                 }
-                invalidate();
             }
         }
-        float f5 = this.e;
-        if (f5 < 1.0f || f5 != 1.0f) {
-            return;
+        return new lt6((Bundle) fk3Var.a);
+    }
+
+    public static g19 c(i19 i19Var) {
+        if (i19Var == null) {
+            return null;
         }
-        float f6 = this.f;
-        if (f6 != 0.0f) {
-            float f7 = f6 - (j / 200.0f);
-            this.f = f7;
-            if (f7 <= 0.0f) {
-                this.f = 0.0f;
-            }
-            invalidate();
+        float f = i19Var.b;
+        int i = i19Var.a;
+        switch (i) {
+            case 1:
+                if (i19Var.b()) {
+                    return new sf5(i == 1 && f == 1.0f);
+                }
+                return new sf5();
+            case 2:
+                if (i19Var.b()) {
+                    return new lpb(i == 2 && f == 1.0f);
+                }
+                return new lpb();
+            case 3:
+                return i19Var.b() ? new eta(3, i19Var.a()) : new eta(3);
+            case 4:
+                return i19Var.b() ? new eta(4, i19Var.a()) : new eta(4);
+            case 5:
+                return i19Var.b() ? new eta(5, i19Var.a()) : new eta(5);
+            case 6:
+                if (!i19Var.b()) {
+                    return new g58();
+                }
+                if (i != 6 || !i19Var.b()) {
+                    f = -1.0f;
+                }
+                return new g58(f);
+            default:
+                return null;
         }
     }
 
-    public void setBackColor(int i) {
-        this.h = i;
+    public static i19 d(g19 g19Var) {
+        if (g19Var != null) {
+            int e = e(g19Var);
+            if (!g19Var.b()) {
+                switch (e) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        return new i19(e, -1.0f);
+                    default:
+                        return null;
+                }
+            }
+            switch (e) {
+                case 1:
+                    return new i19(1, ((sf5) g19Var).c ? 1.0f : 0.0f);
+                case 2:
+                    return new i19(2, ((lpb) g19Var).c ? 1.0f : 0.0f);
+                case 3:
+                case 4:
+                case 5:
+                    return i19.d(((eta) g19Var).c, e);
+                case 6:
+                    return i19.c(((g58) g19Var).b);
+            }
+        }
+        return null;
     }
 
-    public void setProgressColor(int i) {
-        this.n = i;
+    public static int e(g19 g19Var) {
+        if (g19Var instanceof sf5) {
+            return 1;
+        }
+        if (g19Var instanceof lpb) {
+            return 2;
+        }
+        if (!(g19Var instanceof eta)) {
+            return g19Var instanceof g58 ? 6 : 0;
+        }
+        int i = ((eta) g19Var).b;
+        int i2 = 3;
+        if (i != 3) {
+            i2 = 4;
+            if (i != 4) {
+                i2 = 5;
+                if (i != 5) {
+                    return 0;
+                }
+            }
+        }
+        return i2;
     }
 }

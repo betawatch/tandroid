@@ -1,113 +1,129 @@
 // default package
 
-import java.io.StringReader;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserFactory;
+import android.app.PendingIntent;
+import android.os.Bundle;
+import android.os.Looper;
+import android.os.Message;
+import android.text.TextUtils;
+import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class rdd {
-    public static final String[] a = {"Camera:MotionPhoto", "GCamera:MotionPhoto", "Camera:MicroVideo", "GCamera:MicroVideo"};
-    public static final String[] b = {"Camera:MotionPhotoPresentationTimestampUs", "GCamera:MotionPhotoPresentationTimestampUs", "Camera:MicroVideoPresentationTimestampUs", "GCamera:MicroVideoPresentationTimestampUs"};
-    public static final String[] c = {"Camera:MicroVideoOffset", "GCamera:MicroVideoOffset"};
+public final class rdd extends q79 {
+    public final /* synthetic */ hh0 a;
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005f, code lost:
-    
-        if (r6 == (-1)) goto L22;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static hg2 a(String str) {
-        XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
-        newPullParser.setInput(new StringReader(str));
-        newPullParser.next();
-        if (!oye.c(newPullParser, "x:xmpmeta")) {
-            throw av7.a("Couldn't find xmp metadata", null);
-        }
-        km5 km5Var = mm5.b;
-        w59 w59Var = w59.e;
-        long j = -9223372036854775807L;
-        loop0: while (true) {
-            newPullParser.next();
-            byte b2 = 2;
-            if (oye.c(newPullParser, "rdf:Description")) {
-                int i = 0;
-                int i2 = 0;
-                while (true) {
-                    if (i2 >= 4) {
-                        break loop0;
-                    }
-                    String a2 = oye.a(newPullParser, a[i2]);
-                    if (a2 == null) {
-                        i2++;
-                    } else {
-                        if (Integer.parseInt(a2) != 1) {
-                            break;
-                        }
-                        int i3 = 0;
-                        while (true) {
-                            if (i3 >= 4) {
-                                break;
-                            }
-                            String a3 = oye.a(newPullParser, b[i3]);
-                            if (a3 != null) {
-                                j = Long.parseLong(a3);
-                            } else {
-                                i3++;
-                            }
-                        }
-                        j = -9223372036854775807L;
-                        while (true) {
-                            if (i >= 2) {
-                                km5 km5Var2 = mm5.b;
-                                w59Var = w59.e;
-                                break;
-                            }
-                            String a4 = oye.a(newPullParser, c[i]);
-                            if (a4 != null) {
-                                w59Var = mm5.v(new df7("image/jpeg", "Primary", 0L, 0L), new df7("video/mp4", "MotionPhoto", Long.parseLong(a4), 0L));
-                                break;
-                            }
-                            i++;
-                        }
-                    }
-                }
-            } else if (oye.c(newPullParser, "Container:Directory")) {
-                w59Var = b(newPullParser, "Container", "Item");
-            } else if (oye.c(newPullParser, "GContainer:Directory")) {
-                w59Var = b(newPullParser, "GContainer", "GContainerItem");
-            }
-            if (oye.b(newPullParser, "x:xmpmeta")) {
-                if (!w59Var.isEmpty()) {
-                    return new hg2(j, w59Var, b2);
-                }
-            }
-        }
-        return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rdd(hh0 hh0Var, Looper looper) {
+        super(looper, (byte) 4);
+        this.a = hh0Var;
     }
 
-    public static w59 b(XmlPullParser xmlPullParser, String str, String str2) {
-        jm5 p = mm5.p();
-        String concat = str.concat(":Item");
-        String concat2 = str.concat(":Directory");
-        do {
-            xmlPullParser.next();
-            if (oye.c(xmlPullParser, concat)) {
-                String concat3 = str2.concat(":Mime");
-                String concat4 = str2.concat(":Semantic");
-                String concat5 = str2.concat(":Length");
-                String concat6 = str2.concat(":Padding");
-                String a2 = oye.a(xmlPullParser, concat3);
-                String a3 = oye.a(xmlPullParser, concat4);
-                String a4 = oye.a(xmlPullParser, concat5);
-                String a5 = oye.a(xmlPullParser, concat6);
-                if (a2 == null || a3 == null) {
-                    return w59.e;
-                }
-                p.c(new df7(a2, a3, a4 != null ? Long.parseLong(a4) : 0L, a5 != null ? Long.parseLong(a5) : 0L));
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        Boolean bool;
+        p6d p6dVar;
+        hh0 hh0Var = this.a;
+        int i = hh0Var.C.get();
+        int i2 = message.arg1;
+        int i3 = message.what;
+        if (i != i2) {
+            if ((i3 == 2 || i3 == 1 || i3 == 7) && (p6dVar = (p6d) message.obj) != null) {
+                p6dVar.c();
+                return;
             }
-        } while (!oye.b(xmlPullParser, concat2));
-        return p.f();
+            return;
+        }
+        if ((i3 == 1 || i3 == 7 || i3 == 4 || i3 == 5) && !hh0Var.r()) {
+            p6d p6dVar2 = (p6d) message.obj;
+            if (p6dVar2 != null) {
+                p6dVar2.c();
+                return;
+            }
+            return;
+        }
+        int i4 = message.what;
+        if (i4 == 4) {
+            hh0Var.z = new ot2(message.arg2, null, null);
+            if (!hh0Var.A) {
+                TextUtils.isEmpty(hh0Var.l());
+            }
+            ot2 ot2Var = hh0Var.z;
+            if (ot2Var == null) {
+                ot2Var = new ot2(8, null, null);
+            }
+            hh0Var.o.a(ot2Var);
+            hh0Var.s(ot2Var);
+            return;
+        }
+        if (i4 == 5) {
+            ot2 ot2Var2 = hh0Var.z;
+            if (ot2Var2 == null) {
+                ot2Var2 = new ot2(8, null, null);
+            }
+            hh0Var.o.a(ot2Var2);
+            hh0Var.s(ot2Var2);
+            return;
+        }
+        if (i4 == 3) {
+            Object obj = message.obj;
+            ot2 ot2Var3 = new ot2(message.arg2, obj instanceof PendingIntent ? (PendingIntent) obj : null, null);
+            hh0Var.o.a(ot2Var3);
+            hh0Var.s(ot2Var3);
+            return;
+        }
+        if (i4 == 6) {
+            hh0Var.A(5, null);
+            cf9 cf9Var = hh0Var.t;
+            if (cf9Var != null) {
+                ((f05) cf9Var.b).onConnectionSuspended(message.arg2);
+            }
+            hh0Var.t(message.arg2);
+            hh0Var.y(5, 1, null);
+            return;
+        }
+        if (i4 == 2 && !hh0Var.q()) {
+            p6d p6dVar3 = (p6d) message.obj;
+            if (p6dVar3 != null) {
+                p6dVar3.c();
+                return;
+            }
+            return;
+        }
+        int i5 = message.what;
+        if (i5 != 2 && i5 != 1 && i5 != 7) {
+            StringBuilder sb = new StringBuilder(String.valueOf(i5).length() + 34);
+            sb.append("Don't know how to handle message: ");
+            sb.append(i5);
+            Log.wtf("GmsClient", sb.toString(), new Exception());
+            return;
+        }
+        p6d p6dVar4 = (p6d) message.obj;
+        synchronized (p6dVar4) {
+            bool = p6dVar4.a;
+            if (p6dVar4.b) {
+                String obj2 = p6dVar4.toString();
+                StringBuilder sb2 = new StringBuilder(obj2.length() + 47);
+                sb2.append("Callback proxy ");
+                sb2.append(obj2);
+                sb2.append(" being reused. This is not safe.");
+                Log.w("GmsClient", sb2.toString());
+            }
+        }
+        if (bool != null) {
+            hh0 hh0Var2 = p6dVar4.f;
+            int i6 = p6dVar4.d;
+            if (i6 != 0) {
+                hh0Var2.A(1, null);
+                Bundle bundle = p6dVar4.e;
+                p6dVar4.b(new ot2(i6, bundle != null ? (PendingIntent) bundle.getParcelable("pendingIntent") : null, null));
+            } else if (!p6dVar4.a()) {
+                hh0Var2.A(1, null);
+                p6dVar4.b(new ot2(8, null, null));
+            }
+        }
+        synchronized (p6dVar4) {
+            p6dVar4.b = true;
+        }
+        p6dVar4.c();
     }
 }

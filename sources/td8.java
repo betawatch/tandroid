@@ -1,56 +1,37 @@
 // default package
 
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class td8 extends ld8 {
-    public final k27 b;
-    public final RadialProgress2 c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class td8 {
+    public static final Method a;
 
-    public td8(k27 k27Var) {
-        this.b = k27Var;
-        RadialProgress2 radialProgress2 = new RadialProgress2(null, null);
-        this.c = radialProgress2;
-        TLRPC.Document F0 = k27Var.F0();
-        if (k27.W2(F0)) {
-            TLRPC.PhotoSize w = ba4.w(F0.thumbs, gl.L(22.0f), true, null, false);
-            radialProgress2.j(ba4.w(F0.thumbs, gl.L(44.0f), true, w, true), w, F0, k27Var);
-        } else {
-            String t0 = k27.t0(F0, true);
-            if (TextUtils.isEmpty(t0)) {
-                radialProgress2.i(null, null, null);
-            } else {
-                radialProgress2.h(t0);
+    static {
+        Method method;
+        Method[] methods = Throwable.class.getMethods();
+        methods.getClass();
+        int length = methods.length;
+        int i = 0;
+        while (true) {
+            method = null;
+            if (i >= length) {
+                break;
             }
+            Method method2 = methods[i];
+            if (rr5.a(method2.getName(), "addSuppressed")) {
+                Class<?>[] parameterTypes = method2.getParameterTypes();
+                parameterTypes.getClass();
+                if (rr5.a(parameterTypes.length == 1 ? parameterTypes[0] : null, Throwable.class)) {
+                    method = method2;
+                    break;
+                }
+            }
+            i++;
         }
-        radialProgress2.g(bkb.Ye, bkb.Ze, bkb.kd, bkb.ld);
-    }
-
-    @Override // ld8
-    public final void a(View view) {
-        super.a(view);
-        RadialProgress2 radialProgress2 = this.c;
-        radialProgress2.m(view);
-        radialProgress2.e();
-        radialProgress2.setIcon(0, false, false);
-    }
-
-    @Override // ld8
-    public final void b() {
-        super.b();
-        this.c.f();
-    }
-
-    @Override // ld8
-    public final void c(Canvas canvas, int i, int i2) {
-        RadialProgress2 radialProgress2 = this.c;
-        radialProgress2.setCircleRadius(i / 2);
-        radialProgress2.p(0, 0, i, i2);
-        radialProgress2.draw(canvas);
+        a = method;
+        int length2 = methods.length;
+        for (int i2 = 0; i2 < length2 && !rr5.a(methods[i2].getName(), "getSuppressed"); i2++) {
+        }
     }
 }

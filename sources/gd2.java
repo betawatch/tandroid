@@ -1,56 +1,51 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gd2 implements Runnable {
+public final /* synthetic */ class gd2 implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ xd2 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ gd2(xd2 xd2Var, byte b) {
+    public /* synthetic */ gd2(Object obj, Context context, Object obj2, int i, Object obj3, byte b) {
         this.a = b;
-        this.b = xd2Var;
+        this.c = obj;
+        this.d = context;
+        this.e = obj2;
+        this.b = i;
+        this.f = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        xd2 xd2Var = this.b;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Context context = this.d;
+        Object obj3 = this.c;
         switch (b) {
             case 0:
-                xd2Var.q1.f();
-                break;
-            case 1:
-                xd2Var.E0(true);
-                break;
-            case 2:
-                mu1 mu1Var = xd2Var.u1;
-                d d0 = uxa.d0(mu1Var.getMessagesController().K0(Long.valueOf(-mu1Var.a())), true);
-                ag0 ag0Var = new ag0();
-                ag0Var.a = true;
-                d0.setResourceProvider(mu1Var.getResourceProvider());
-                ag0Var.c = new jc((byte) 23);
-                ag0Var.d = new gd2(xd2Var, (byte) 3);
-                ag0Var.b = new gd2(xd2Var, (byte) 4);
-                ag0Var.e = true;
-                xd2Var.Q1 = d0;
-                mu1Var.showAsSheet(d0, ag0Var);
-                break;
-            case 3:
-                xd2Var.I0();
-                break;
-            case 4:
-                xd2Var.Q1 = null;
-                break;
-            case 5:
-                xd2Var.I0();
-                break;
-            case 6:
-                xd2Var.Q1 = null;
+                ((jd2) obj3).a();
+                ik.D(context, (ylb) obj2, new ji(this.b, (id2) obj, (byte) 4));
                 break;
             default:
-                xd2Var.N1.c(xd2Var.z1);
+                jh2 jh2Var = (jh2) obj2;
+                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) obj;
+                ((my0) obj3).dismiss();
+                Activity W = gm.W((Activity) context);
+                if (W != null) {
+                    oc7.d1().edit().putBoolean("callmiconstart", jh2Var.a.q).apply();
+                    sic.g(W, this.b, tL_inputGroupCallSlug, false, null, null);
+                    break;
+                }
                 break;
         }
     }

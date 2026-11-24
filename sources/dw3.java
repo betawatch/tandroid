@@ -1,144 +1,156 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.text.style.ImageSpan;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class dw3 extends View {
-    public final RectF E;
-    public final RectF F;
-    public float G;
-    public av3 H;
-    public int I;
-    public final TextPaint a;
-    public final Paint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public StaticLayout f;
-    public float h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class dw3 extends ImageSpan {
+    public Paint.FontMetricsInt a;
+    public float b;
+    public int c;
+    public String d;
+    public boolean e;
+    public int f;
+    public boolean h;
     public float n;
-    public StaticLayout r;
-    public float s;
-    public float w;
-    public final RectF x;
-    public final RectF y;
+    public float r;
 
-    public dw3(Context context) {
-        super(context);
-        this.a = new TextPaint(1);
-        this.b = new Paint(1);
-        this.x = new RectF();
-        this.y = new RectF();
-        this.E = new RectF();
-        this.F = new RectF();
+    public static void a(Paint.FontMetricsInt fontMetricsInt, int i) {
+        int i2 = fontMetricsInt.descent;
+        int i3 = fontMetricsInt.ascent;
+        int i4 = i2 - i3;
+        if (i <= i4) {
+            return;
+        }
+        int i5 = i - i4;
+        int i6 = (i5 + 1) / 2;
+        int i7 = i3 - i6;
+        fontMetricsInt.ascent = i7;
+        fontMetricsInt.descent = i2 + (i5 - i6);
+        fontMetricsInt.top = Math.min(fontMetricsInt.top, i7);
+        fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawColor(-14737633);
-        Paint paint = this.b;
-        paint.setColor(-13224394);
-        float f = this.G;
-        int i = (int) f;
-        RectF rectF = this.E;
-        RectF rectF2 = this.y;
-        RectF rectF3 = this.x;
-        RectF rectF4 = i <= 0 ? rectF3 : i == 1 ? rectF2 : rectF;
-        int ceil = (int) Math.ceil(f);
-        RectF rectF5 = ceil <= 0 ? rectF3 : ceil == 1 ? rectF2 : rectF;
-        float f2 = this.G;
-        RectF rectF6 = this.F;
-        gl.X1(rectF4, rectF5, f2 - ((int) f2), rectF6);
-        canvas.drawRoundRect(rectF6, gl.L(20.0f), gl.L(20.0f), paint);
-        StaticLayout staticLayout = this.c;
-        TextPaint textPaint = this.a;
-        if (staticLayout != null) {
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        boolean z;
+        this.n = kt6.d(this.b, this.c, 2.0f, f);
+        this.r = ((i5 - i3) / 2.0f) + i3;
+        boolean z2 = true;
+        this.h = true;
+        if (paint.getAlpha() == 255 || !gw3.n) {
+            z = false;
+        } else {
+            getDrawable().setAlpha(paint.getAlpha());
+            z = true;
+        }
+        float f2 = gw3.m;
+        int i6 = this.c;
+        float f3 = f2 - ((i6 - (this.b * i6)) / 2.0f);
+        if (f3 != 0.0f) {
             canvas.save();
-            canvas.translate((rectF3.left + gl.L(12.0f)) - this.e, oo1.z(rectF3.height(), this.c.getHeight(), 2.0f, rectF3.top));
-            textPaint.setColor(bm2.f(Utilities.i(1.0f - Math.abs(this.G - 0.0f), 1.0f, 0.0f), -8158333, -1));
-            this.c.draw(canvas);
+            canvas.translate(0.0f, f3);
+        } else {
+            z2 = false;
+        }
+        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
+        if (z2) {
             canvas.restore();
         }
-        if (this.f != null) {
-            canvas.save();
-            canvas.translate((rectF2.left + gl.L(12.0f)) - this.n, oo1.z(rectF2.height(), this.f.getHeight(), 2.0f, rectF2.top));
-            textPaint.setColor(bm2.f(Utilities.i(1.0f - Math.abs(this.G - 1.0f), 1.0f, 0.0f), -8158333, -1));
-            this.f.draw(canvas);
-            canvas.restore();
-        }
-        if (this.r != null) {
-            canvas.save();
-            canvas.translate((rectF.left + gl.L(12.0f)) - this.w, oo1.z(rectF.height(), this.r.getHeight(), 2.0f, rectF.top));
-            textPaint.setColor(bm2.f(Utilities.i(1.0f - Math.abs(this.G - 2.0f), 1.0f, 0.0f), -8158333, -1));
-            this.r.draw(canvas);
-            canvas.restore();
+        if (z) {
+            getDrawable().setAlpha(nm7.d4);
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(40.0f) + gl.n);
-        if (getMeasuredWidth() != this.I || this.c == null) {
-            float L = gl.L(14.0f);
-            TextPaint textPaint = this.a;
-            textPaint.setTextSize(L);
-            textPaint.setTypeface(gl.o());
-            String N0 = k96.N0("Emoji");
-            int measuredWidth = getMeasuredWidth();
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            StaticLayout staticLayout = new StaticLayout(N0, textPaint, measuredWidth, alignment, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineCount() >= 1 ? this.c.getLineWidth(0) : 0.0f;
-            this.e = this.c.getLineCount() >= 1 ? this.c.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout2 = new StaticLayout(k96.N0("AccDescrStickers"), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
-            this.f = staticLayout2;
-            this.h = staticLayout2.getLineCount() >= 1 ? this.f.getLineWidth(0) : 0.0f;
-            this.n = this.f.getLineCount() >= 1 ? this.f.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout3 = new StaticLayout(k96.M0(2131754879, null), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
-            this.r = staticLayout3;
-            this.s = staticLayout3.getLineCount() >= 1 ? this.r.getLineWidth(0) : 0.0f;
-            this.w = this.r.getLineCount() >= 1 ? this.r.getLineLeft(0) : 0.0f;
-            float L2 = gl.L(14.0f) / 2.0f;
-            float L3 = gl.L(66.0f) / 2.0f;
-            float measuredWidth2 = (getMeasuredWidth() - ((((((gl.L(12.0f) + this.d) + gl.L(36.0f)) + this.h) + gl.L(36.0f)) + this.s) + gl.L(12.0f))) / 2.0f;
-            this.x.set(measuredWidth2, L2, this.d + measuredWidth2 + gl.L(24.0f), L3);
-            float L4 = this.d + gl.L(36.0f) + measuredWidth2;
-            this.y.set(L4, L2, this.h + L4 + gl.L(24.0f), L3);
-            float L5 = this.h + gl.L(36.0f) + L4;
-            this.E.set(L5, L2, this.s + L5 + gl.L(24.0f), L3);
-            gl.L(36.0f);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.I = getMeasuredWidth();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0) {
-            if (motionEvent.getAction() != 1 || this.H == null) {
-                return super.onTouchEvent(motionEvent);
-            }
-            if (this.x.contains(motionEvent.getX(), motionEvent.getY())) {
-                this.H.a(0);
+        if (obj != null && dw3.class == obj.getClass()) {
+            dw3 dw3Var = (dw3) obj;
+            if (Float.compare(this.b, dw3Var.b) == 0 && this.c == dw3Var.c && Objects.equals(this.d, dw3Var.d)) {
                 return true;
             }
-            if (this.y.contains(motionEvent.getX(), motionEvent.getY())) {
-                this.H.a(1);
-                return true;
-            }
-            if (this.E.contains(motionEvent.getX(), motionEvent.getY())) {
-                this.H.a(2);
-            }
         }
-        return true;
+        return false;
+    }
+
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        Paint.FontMetricsInt fontMetricsInt2 = fontMetricsInt;
+        boolean z = this.e && fontMetricsInt2 != null;
+        if (z) {
+            i3 = fontMetricsInt2.top;
+            i4 = fontMetricsInt2.ascent;
+            i5 = fontMetricsInt2.descent;
+            i6 = fontMetricsInt2.bottom;
+            i7 = fontMetricsInt2.leading;
+        } else {
+            i3 = 0;
+            i4 = 0;
+            i5 = 0;
+            i6 = 0;
+            i7 = 0;
+        }
+        if (fontMetricsInt2 == null) {
+            fontMetricsInt2 = new Paint.FontMetricsInt();
+        }
+        Paint.FontMetricsInt fontMetricsInt3 = fontMetricsInt2;
+        int i8 = (int) (this.b * this.c);
+        Paint.FontMetricsInt fontMetricsInt4 = this.a;
+        if (fontMetricsInt4 != null) {
+            fontMetricsInt3.ascent = fontMetricsInt4.ascent;
+            fontMetricsInt3.descent = fontMetricsInt4.descent;
+            fontMetricsInt3.top = fontMetricsInt4.top;
+            fontMetricsInt3.bottom = fontMetricsInt4.bottom;
+            if (getDrawable() != null) {
+                getDrawable().setBounds(0, 0, i8, i8);
+            }
+            if (z) {
+                fontMetricsInt3.top = i3;
+                fontMetricsInt3.ascent = i4;
+                fontMetricsInt3.descent = i5;
+                fontMetricsInt3.bottom = i6;
+                fontMetricsInt3.leading = i7;
+                a(fontMetricsInt3, this.f);
+            }
+            return i8;
+        }
+        int size = super.getSize(paint, charSequence, i, i2, fontMetricsInt3);
+        int L = gm.L(8.0f);
+        int L2 = gm.L(10.0f);
+        int i9 = (-L2) - L;
+        fontMetricsInt3.top = i9;
+        int i10 = L2 - L;
+        fontMetricsInt3.bottom = i10;
+        fontMetricsInt3.ascent = i9;
+        fontMetricsInt3.leading = 0;
+        fontMetricsInt3.descent = i10;
+        if (z) {
+            fontMetricsInt3.top = i3;
+            fontMetricsInt3.ascent = i4;
+            fontMetricsInt3.descent = i5;
+            fontMetricsInt3.bottom = i6;
+            fontMetricsInt3.leading = i7;
+            a(fontMetricsInt3, this.f);
+        }
+        return size;
+    }
+
+    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        if (getDrawable() instanceof cw3) {
+            ((cw3) getDrawable()).b = textPaint.getColor() & 285212671;
+        }
+        super.updateDrawState(textPaint);
     }
 }

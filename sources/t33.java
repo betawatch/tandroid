@@ -1,31 +1,23 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.text.Layout;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class t33 {
-    public CharSequence a = null;
-    public Bitmap b = null;
-    public Layout.Alignment c = null;
-    public Layout.Alignment d = null;
-    public float e = -3.4028235E38f;
-    public int f = TLObject.FLAG_31;
-    public int g = TLObject.FLAG_31;
-    public float h = -3.4028235E38f;
-    public int i = TLObject.FLAG_31;
-    public int j = TLObject.FLAG_31;
-    public float k = -3.4028235E38f;
-    public float l = -3.4028235E38f;
-    public final float m = -3.4028235E38f;
-    public final boolean n = false;
-    public final int o = -16777216;
-    public int p = TLObject.FLAG_31;
-    public float q;
+public final class t33 extends j33 {
+    public final Context e;
+    public a33 f;
+    public Executor g;
+    public CancellationSignal h;
+    public final j23 i;
 
-    public final u33 a() {
-        return new u33(this.a, this.c, this.d, this.b, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, 0);
+    public t33(Context context) {
+        context.getClass();
+        this.e = context;
+        this.i = new j23(this, new Handler(Looper.getMainLooper()), (byte) 3);
     }
 }

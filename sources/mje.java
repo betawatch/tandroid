@@ -1,15 +1,19 @@
 // default package
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mje extends IOException {
-    public mje(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
-        super(str.length() != 0 ? "CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str) : new String("CodedOutputStream was writing to a flat byte array and ran out of space.: "), indexOutOfBoundsException);
+public final class mje implements cq7 {
+    public static final mje a = new mje();
+
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)));
     }
 
-    public mje(IndexOutOfBoundsException indexOutOfBoundsException) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

@@ -1,53 +1,39 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.text.TextUtils;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class py6 implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public class py6 {
+    public final String a;
+    public final int b;
+    public final int c;
 
-    public /* synthetic */ py6(xy6 xy6Var, boolean z, oy6 oy6Var, String str, boolean z2) {
-        this.d = xy6Var;
-        this.b = z;
-        this.e = oy6Var;
-        this.f = str;
-        this.c = z2;
+    public py6(String str, int i, int i2) {
+        this.a = str;
+        this.b = i;
+        this.c = i2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        switch (b) {
-            case 0:
-                xy6 xy6Var = (xy6) obj3;
-                xy6Var.getClass();
-                gl.d3(new zo6(xy6Var, this.b, (oy6) obj2, (String) obj, tL_error, tLObject, this.c));
-                break;
-            default:
-                vqa vqaVar = (vqa) obj3;
-                vqaVar.getClass();
-                gl.d3(new zo6(vqaVar, tLObject, this.b, (TLRPC.Document) obj2, this.c, tL_error, (TL_stars.saveStarGift) obj));
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof py6)) {
+            return false;
+        }
+        py6 py6Var = (py6) obj;
+        int i = py6Var.c;
+        String str = py6Var.a;
+        int i2 = py6Var.b;
+        int i3 = this.c;
+        String str2 = this.a;
+        int i4 = this.b;
+        return (i4 < 0 || i2 < 0) ? TextUtils.equals(str2, str) && i3 == i : TextUtils.equals(str2, str) && i4 == i2 && i3 == i;
     }
 
-    public /* synthetic */ py6(vqa vqaVar, boolean z, TLRPC.Document document, boolean z2, TL_stars.saveStarGift savestargift) {
-        this.d = vqaVar;
-        this.b = z;
-        this.e = document;
-        this.c = z2;
-        this.f = savestargift;
+    public final int hashCode() {
+        return Objects.hash(this.a, Integer.valueOf(this.c));
     }
 }

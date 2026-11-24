@@ -1,27 +1,27 @@
 // default package
 
-import java.util.Set;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ka0 {
-    public final long a;
-    public final long b;
-    public final Set c;
+public final class ka0 extends p03 {
+    public final int a;
+    public final String b;
+    public final String c;
+    public final boolean d;
 
-    public ka0(long j, long j2, Set set) {
-        this.a = j;
-        this.b = j2;
-        this.c = set;
+    public ka0(int i, String str, String str2, boolean z) {
+        this.a = i;
+        this.b = str;
+        this.c = str2;
+        this.d = z;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ka0) {
-            ka0 ka0Var = (ka0) obj;
-            if (this.a == ka0Var.a && this.b == ka0Var.b && this.c.equals(ka0Var.c)) {
+        if (obj instanceof p03) {
+            ka0 ka0Var = (ka0) ((p03) obj);
+            if (this.a == ka0Var.a && this.b.equals(ka0Var.b) && this.c.equals(ka0Var.c) && this.d == ka0Var.d) {
                 return true;
             }
         }
@@ -29,13 +29,10 @@ public final class ka0 {
     }
 
     public final int hashCode() {
-        long j = this.a;
-        int i = (((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003;
-        long j2 = this.b;
-        return ((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.c.hashCode();
+        return ((((((this.a ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ (this.d ? 1231 : 1237);
     }
 
     public final String toString() {
-        return "ConfigValue{delta=" + this.a + ", maxAllowedDelay=" + this.b + ", flags=" + this.c + "}";
+        return "OperatingSystem{platform=" + this.a + ", version=" + this.b + ", buildVersion=" + this.c + ", jailbroken=" + this.d + "}";
     }
 }

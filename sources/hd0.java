@@ -1,52 +1,95 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class hd0 extends FrameLayout {
+public class hd0 extends View {
     public final gd0 a;
-    public boolean b;
-    public boolean c;
-    public p8c d;
+    public nj8 b;
+    public uib c;
+    public Paint d;
 
-    public hd0(Activity activity, wjb wjbVar) {
-        super(activity);
-        gd0 gd0Var = new gd0(this, activity);
-        this.a = gd0Var;
-        gd0Var.setHapticFeedbackEnabled(true);
-        gd0Var.setImageResource(R.drawable.smiles_tab_clear);
-        zkb.s(gd0Var, bkb.If, wjbVar, PorterDuff.Mode.MULTIPLY);
-        gd0Var.setScaleType(ImageView.ScaleType.CENTER);
-        gd0Var.setContentDescription(k96.M0(2131754920, null));
-        gd0Var.setFocusable(true);
-        gd0Var.setOnClickListener(new x00((byte) 1));
-        addView(gd0Var, nme.e(36, 36, 17));
-        int w0 = bkb.w0(null, bkb.h6, false);
-        int L = gl.L(36.0f);
-        int i = bkb.c6;
-        ff0 h0 = bkb.h0(L, wjbVar != null ? wjbVar.h(i) : bkb.w0(null, i, false), w0);
-        vkb M = zkb.M(i);
-        gd0Var.setBackground(h0);
-        zkb.j(gd0Var, h0, M, null, wjbVar);
-        gd0Var.setOutlineProvider(new nj9(18));
-        gd0Var.setElevation(gl.L(1.0f));
-        gd0Var.setClipToOutline(true);
-        setClickable(true);
+    public hd0(Context context, boolean z) {
+        super(context);
+        this.a = new gd0(this, z);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.L(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(42.0f), TLObject.FLAG_30));
+    public final void a(boolean z) {
+        this.a.a(z, true);
     }
 
-    public void setOnBackspace(p8c p8cVar) {
-        this.d = p8cVar;
+    public final void b(int i, int i2, TLObject tLObject) {
+        this.a.j(i, i2, tLObject);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.e();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.f();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.g(canvas);
+        if (this.c != null) {
+            RectF rectF = gm.P;
+            rectF.set(getWidth() - gm.L(22.0f), getHeight() - gm.L(22.0f), getWidth() - gm.L(0.0f), getHeight() - gm.L(0.0f));
+            this.b.e(rectF);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + gm.L(1.33f), this.d);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
+            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int measuredWidth = getMeasuredWidth();
+        gd0 gd0Var = this.a;
+        gd0Var.p = measuredWidth;
+        gd0Var.o = getMeasuredHeight();
+    }
+
+    public void setAvatarsTextSize(int i) {
+        this.a.h(i);
+    }
+
+    public void setCentered(boolean z) {
+        this.a.l = z;
+    }
+
+    public void setCount(int i) {
+        this.a.i(i);
+    }
+
+    public void setDelegate(Runnable runnable) {
+        this.a.j = runnable;
+    }
+
+    public void setSize(int i) {
+        this.a.s = i;
+    }
+
+    public void setStepFactor(float f) {
+        this.a.t = f;
+    }
+
+    public void setStyle(int i) {
+        gd0 gd0Var = this.a;
+        gd0Var.k = i;
+        gd0Var.d();
     }
 }

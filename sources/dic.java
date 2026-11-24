@@ -1,434 +1,207 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.Drawable;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import android.widget.ToggleButton;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class dic extends FrameLayout {
-    public int E;
-    public String F;
-    public int G;
-    public boolean H;
-    public int I;
-    public final Paint J;
-    public final Paint K;
-    public float L;
-    public boolean M;
-    public float N;
-    public ff0 O;
-    public boolean P;
-    public boolean Q;
-    public float R;
-    public int S;
-    public int T;
-    public final float U;
-    public ValueAnimator V;
-    public ValueAnimator W;
-    public final Paint a;
-    public float a0;
-    public boolean b;
+public final class dic extends FrameLayout {
+    public float a;
+    public float b;
     public boolean c;
-    public boolean d;
-    public final Drawable[] e;
-    public final FrameLayout f;
-    public final TextView[] h;
-    public int n;
-    public int r;
-    public float s;
-    public ValueAnimator w;
-    public int x;
-    public int y;
+    public long d;
+    public final /* synthetic */ iic e;
 
-    public dic(Context context, float f) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = true;
-        this.c = true;
-        this.e = new Drawable[2];
-        this.h = new TextView[2];
-        this.J = new Paint(1);
-        this.K = new Paint(1);
-        this.a0 = 1.0f;
-        this.U = f;
-        setWillNotDraw(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.f = frameLayout;
-        addView(frameLayout);
-        for (int i = 0; i < 2; i++) {
-            TextView textView = new TextView(context);
-            textView.setGravity(1);
-            textView.setTextSize(1, 11.0f);
-            textView.setTextColor(-1);
-            textView.setImportantForAccessibility(2);
-            this.f.addView(textView, nme.d(-1, -2.0f, 0, 0.0f, f + 6.0f, 0.0f, 0.0f));
-            this.h[i] = textView;
-        }
-        this.h[1].setVisibility(8);
-        this.K.setColor(-16777216);
-        this.K.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.K.setStrokeWidth(gl.L(3.0f));
-        this.J.setStrokeWidth(gl.L(2.0f));
-        this.J.setStrokeCap(Paint.Cap.ROUND);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dic(iic iicVar, Activity activity) {
+        super(activity);
+        this.e = iicVar;
     }
 
-    public final void a(int i, int i2) {
-        this.S = i;
-        this.T = i2;
-        this.n = bm2.f(this.R, i, i2);
-        invalidate();
-    }
-
-    public final void b(boolean z, boolean z2) {
-        if (this.Q != z) {
-            this.Q = z;
-            if (this.P) {
-                if (!z2) {
-                    this.R = z ? 1.0f : 0.0f;
-                    a(this.S, this.T);
-                    return;
-                }
-                ValueAnimator valueAnimator = this.V;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    this.V.cancel();
-                }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.R, this.Q ? 1.0f : 0.0f);
-                this.V = ofFloat;
-                ofFloat.addUpdateListener(new cic(this, (byte) 0));
-                this.V.addListener(new iab(this, (byte) 21));
-                this.V.setDuration(150L);
-                this.V.start();
-            }
-        }
-    }
-
-    public final void c(int i, int i2, int i3, float f, boolean z, String str, boolean z2, boolean z3) {
-        String str2;
-        if (getVisibility() != 0) {
-            setVisibility(0);
-            z3 = false;
-        }
-        if (this.x == i && this.y == i2 && ((this.P || this.E == i3) && (str2 = this.F) != null && str2.equals(str) && z2 == this.M)) {
-            return;
-        }
-        if (this.O == null || z) {
-            int alpha = Color.alpha(i3);
-            float f2 = this.U;
-            if (alpha != 255 || gl.B(i3) <= 0.5d) {
-                ff0 h0 = bkb.h0(gl.L(f2), 0, bm2.o(-1, (int) (f * 76.5f)));
-                this.O = h0;
-                h0.setCallback(this);
-            } else {
-                ff0 h02 = bkb.h0(gl.L(f2), 0, bm2.o(-16777216, (int) (f * 25.5f)));
-                this.O = h02;
-                h02.setCallback(this);
-            }
-        }
-        ValueAnimator valueAnimator = this.w;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.d = this.E != i3;
-        boolean z4 = this.x == i;
-        this.H = z4;
-        if (z4) {
-            this.I = this.y;
-        }
-        this.x = i;
-        this.y = i2;
-        this.E = i3;
-        this.F = str;
-        this.M = z2;
-        Drawable[] drawableArr = this.e;
-        TextView[] textViewArr = this.h;
-        if (!z3) {
-            if (i != 0) {
-                Drawable mutate = getContext().getDrawable(i).mutate();
-                drawableArr[0] = mutate;
-                mutate.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
-            }
-            this.J.setColor(i2);
-            if (!this.P) {
-                this.n = i3;
-            }
-            textViewArr[0].setText(str);
-            this.L = this.M ? 1.0f : 0.0f;
-            this.H = false;
-            this.s = 0.0f;
-            invalidate();
-            return;
-        }
-        if (!z4 && i != 0) {
-            Drawable mutate2 = getContext().getDrawable(i).mutate();
-            drawableArr[1] = mutate2;
-            mutate2.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
-        }
-        if (!this.P) {
-            this.r = i3;
-        }
-        boolean equals = textViewArr[0].getText().toString().equals(str);
-        boolean z5 = !equals;
-        if (equals) {
-            textViewArr[0].setText(str);
-        } else {
-            textViewArr[1].setText(str);
-            textViewArr[1].setVisibility(0);
-            textViewArr[1].setAlpha(0.0f);
-            textViewArr[1].setScaleX(0.0f);
-            textViewArr[1].setScaleY(0.0f);
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.w = ofFloat;
-        ofFloat.addUpdateListener(new d20((byte) 11, this, z5));
-        this.w.addListener(new pu9((byte) 16, this, z5));
-        this.w.setDuration(150L).start();
-        invalidate();
-    }
-
-    public final void d(boolean z, boolean z2) {
-        FrameLayout frameLayout = this.f;
-        if (!z2) {
-            frameLayout.animate().cancel();
-            frameLayout.setAlpha(z ? 1.0f : 0.0f);
-        } else {
-            float f = z ? 1.0f : 0.0f;
-            if (frameLayout.getAlpha() != f) {
-                frameLayout.animate().alpha(f).start();
-            }
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        ff0 ff0Var = this.O;
-        if (ff0Var != null) {
-            ff0Var.setState(getDrawableState());
-        }
-    }
-
-    public View getTextView() {
-        return this.h[0];
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        ff0 ff0Var = this.O;
-        if (ff0Var != null) {
-            ff0Var.jumpToCurrentState();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0052  */
-    @Override // android.view.View
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x001a, code lost:
+    
+        if (r0.b0 == false) goto L20;
+     */
+    @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onDraw(Canvas canvas) {
-        float f;
-        Canvas canvas2 = canvas;
-        canvas2.save();
-        float f2 = this.a0;
-        float f3 = 2.0f;
-        canvas2.scale(f2, f2, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        boolean z = this.d;
-        Paint paint = this.a;
-        if (z) {
-            float f4 = this.s;
-            if (f4 != 0.0f) {
-                paint.setColor(bm2.f(f4, this.n, this.r));
-                float width = getWidth() / 2.0f;
-                float f5 = this.U;
-                float L = gl.L(f5) / 2.0f;
-                float L2 = gl.L(f5) / 2.0f;
-                if (this.b) {
-                    canvas2.drawCircle(width, L, L2, paint);
-                }
-                if (this.O == null) {
-                    ff0 h0 = bkb.h0(gl.L(f5), 0, -16777216);
-                    this.O = h0;
-                    h0.setCallback(this);
-                }
-                if (this.c) {
-                    this.O.setBounds((int) (width - L2), (int) (L - L2), (int) (width + L2), (int) (L2 + L));
-                    this.O.draw(canvas2);
-                }
-                if (this.x != 0) {
-                    boolean z2 = this.M;
-                    Paint paint2 = this.J;
-                    Drawable[] drawableArr = this.e;
-                    if (!z2 && this.L == 0.0f) {
-                        int i = 0;
-                        while (true) {
-                            if (i >= ((this.s == 0.0f || this.H) ? 1 : 2)) {
-                                break;
-                            }
-                            if (drawableArr[i] != null) {
-                                canvas2.save();
-                                float f6 = this.s;
-                                if (f6 == 0.0f || this.H || drawableArr[0] == null || drawableArr[1] == null) {
-                                    if (this.H) {
-                                        int f7 = bm2.f(f6, this.I, this.y);
-                                        drawableArr[i].setColorFilter(new PorterDuffColorFilter(f7, PorterDuff.Mode.MULTIPLY));
-                                        paint2.setColor(f7);
-                                    }
-                                    drawableArr[i].setAlpha(kk7.d4);
-                                } else {
-                                    if (i == 0) {
-                                        f6 = 1.0f - f6;
-                                    }
-                                    canvas2.scale(f6, f6, width, L);
-                                    drawableArr[i].setAlpha((int) (f6 * 255.0f));
-                                }
-                                f = f3;
-                                drawableArr[i].setBounds((int) (width - (r6.getIntrinsicWidth() / f3)), (int) (L - (drawableArr[i].getIntrinsicHeight() / f3)), (int) ((drawableArr[i].getIntrinsicWidth() / f3) + width), (int) ((drawableArr[i].getIntrinsicHeight() / f) + L));
-                                drawableArr[i].draw(canvas2);
-                                canvas2.restore();
-                            } else {
-                                f = f3;
-                            }
-                            i++;
-                            f3 = f;
-                        }
-                    } else {
-                        if (this.H) {
-                            int f8 = bm2.f(this.s, this.I, this.y);
-                            drawableArr[0].setColorFilter(new PorterDuffColorFilter(f8, PorterDuff.Mode.MULTIPLY));
-                            paint2.setColor(f8);
-                        }
-                        drawableArr[0].setAlpha(kk7.d4);
-                        float f9 = this.s;
-                        if (f9 != 0.0f && this.H) {
-                            int f10 = bm2.f(f9, this.I, this.y);
-                            drawableArr[0].setColorFilter(new PorterDuffColorFilter(f10, PorterDuff.Mode.MULTIPLY));
-                            paint2.setColor(f10);
-                        }
-                        drawableArr[0].setAlpha(kk7.d4);
-                        boolean z3 = this.M;
-                        float f11 = this.L;
-                        if (!z3) {
-                            float f12 = f11 - 0.08f;
-                            this.L = f12;
-                            if (f12 < 0.0f) {
-                                this.L = 0.0f;
-                            } else {
-                                invalidate();
-                            }
-                        } else if (f11 < 1.0f) {
-                            float f13 = f11 + 0.08f;
-                            this.L = f13;
-                            if (f13 > 1.0f) {
-                                this.L = 1.0f;
-                            } else {
-                                invalidate();
-                            }
-                        }
-                        if (this.L > 0.0f) {
-                            float N = gl.N(8.0f) + ((int) (width - (drawableArr[0].getIntrinsicWidth() / 2.0f))) + this.N;
-                            float N2 = gl.N(8.0f) + ((int) (L - (drawableArr[0].getIntrinsicHeight() / 2.0f)));
-                            float L3 = gl.L(17.0f);
-                            s33 s33Var = s33.f;
-                            float interpolation = (s33Var.getInterpolation(this.L) * L3) + (N - gl.L(1.0f));
-                            float interpolation2 = (s33Var.getInterpolation(this.L) * gl.L(17.0f)) + N2;
-                            canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), kk7.d4, 31);
-                            drawableArr[0].setBounds((int) (width - (r2.getIntrinsicWidth() / 2.0f)), (int) (L - (drawableArr[0].getIntrinsicHeight() / 2.0f)), (int) ((drawableArr[0].getIntrinsicWidth() / 2.0f) + width), (int) ((drawableArr[0].getIntrinsicHeight() / 2.0f) + L));
-                            drawableArr[0].draw(canvas2);
-                            canvas2.drawLine(N, N2 - gl.L(2.0f), interpolation, interpolation2 - gl.L(2.0f), this.K);
-                            canvas2.drawLine(N, N2, interpolation, interpolation2, paint2);
-                            canvas2 = canvas2;
-                            canvas2.restore();
-                        } else {
-                            drawableArr[0].setBounds((int) (width - (r0.getIntrinsicWidth() / 2.0f)), (int) (L - (drawableArr[0].getIntrinsicHeight() / 2.0f)), (int) ((drawableArr[0].getIntrinsicWidth() / 2.0f) + width), (int) ((drawableArr[0].getIntrinsicHeight() / 2.0f) + L));
-                            drawableArr[0].draw(canvas2);
-                        }
-                    }
-                }
-                canvas2.restore();
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        iic iicVar = this.e;
+        if (view == iicVar.w) {
+            if (iicVar.n0 || iicVar.m0) {
+                return false;
+            }
+        } else if (view != iicVar.d0) {
+            if (view == iicVar.Z) {
+            }
+            return super.drawChild(canvas, view, j);
+        }
+        if (iicVar.g1 || iicVar.i1 != null) {
+            canvas.save();
+            float f = iicVar.f1;
+            canvas.scale(f, f, iicVar.b1, iicVar.c1);
+            canvas.translate(iicVar.Y0, iicVar.Z0);
+            boolean drawChild = super.drawChild(canvas, view, j);
+            canvas.restore();
+            return drawChild;
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        iic iicVar = this.e;
+        thc thcVar = iicVar.T0;
+        if (motionEvent.getActionMasked() == 1) {
+            iicVar.E.b(false, false);
+            iicVar.w.a();
+            gm.r(thcVar);
+            if (iicVar.p0 == 3) {
+                gm.d3(thcVar, 10000L);
             }
         }
-        paint.setColor(this.n);
-        float width2 = getWidth() / 2.0f;
-        float f52 = this.U;
-        float L4 = gl.L(f52) / 2.0f;
-        float L22 = gl.L(f52) / 2.0f;
-        if (this.b) {
-        }
-        if (this.O == null) {
-        }
-        if (this.c) {
-        }
-        if (this.x != 0) {
-        }
-        canvas2.restore();
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
     @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(this.F);
-        if (!this.P) {
-            accessibilityNodeInfo.setClassName(Button.class.getName());
-            return;
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        qh2 qh2Var;
+        iic iicVar = this.e;
+        thc thcVar = iicVar.T0;
+        if (motionEvent.getActionMasked() == 1) {
+            iicVar.E.b(false, false);
+            iicVar.w.a();
+            gm.r(thcVar);
+            if (iicVar.p0 == 3) {
+                gm.d3(thcVar, 10000L);
+            }
         }
-        accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.Q);
-    }
-
-    public void setCheckable(boolean z) {
-        this.P = z;
-    }
-
-    public void setCrossOffset(float f) {
-        this.N = f;
-    }
-
-    public void setDrawBackground(boolean z) {
-        this.b = z;
-    }
-
-    public void setDrawRipple(boolean z) {
-        this.c = z;
-    }
-
-    public void setPressedBtn(boolean z) {
-        ValueAnimator valueAnimator = this.W;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        if (!iicVar.h1 && !iicVar.a1 && !iicVar.g1 && motionEvent.getActionMasked() != 0) {
+            iicVar.e();
+            return false;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a0, z ? 0.8f : 1.0f);
-        this.W = ofFloat;
-        ofFloat.addUpdateListener(new cic(this, (byte) 1));
-        this.W.setDuration(150L);
-        this.W.start();
-    }
-
-    public void setTextSize(int i) {
-        for (int i2 = 0; i2 < 2; i2++) {
-            this.h[i2].setTextSize(1, i);
+        if (motionEvent.getActionMasked() == 0) {
+            iicVar.h1 = false;
+            iicVar.a1 = false;
+            iicVar.g1 = false;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.O == drawable || super.verifyDrawable(drawable);
+        akc akcVar = iicVar.m0 ? iicVar.d0 : iicVar.e0;
+        if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
+            if (motionEvent.getActionMasked() == 0) {
+                RectF rectF = gm.P;
+                rectF.set(akcVar.getX(), akcVar.getY(), akcVar.getX() + akcVar.getMeasuredWidth(), akcVar.getY() + akcVar.getMeasuredHeight());
+                rectF.inset(((akcVar.getMeasuredHeight() * akcVar.U) - akcVar.getMeasuredHeight()) / 2.0f, ((akcVar.getMeasuredWidth() * akcVar.U) - akcVar.getMeasuredWidth()) / 2.0f);
+                boolean z = g95.u5;
+                float f = rectF.top;
+                if (z) {
+                    rectF.top = Math.max(f, a.getCurrentActionBarHeight());
+                    rectF.right = Math.min(rectF.right, akcVar.getMeasuredWidth() - gm.L(90.0f));
+                } else {
+                    rectF.top = Math.max(f, a.getCurrentActionBarHeight());
+                    rectF.bottom = Math.min(rectF.bottom, akcVar.getMeasuredHeight() - gm.L(90.0f));
+                }
+                boolean contains = rectF.contains(motionEvent.getX(), motionEvent.getY());
+                iicVar.h1 = contains;
+                if (!contains) {
+                    iicVar.e();
+                }
+            }
+            if (iicVar.h1 && !iicVar.a1 && motionEvent.getPointerCount() == 2) {
+                iicVar.X0 = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
+                float x = (motionEvent.getX(1) + motionEvent.getX(0)) / 2.0f;
+                iicVar.b1 = x;
+                iicVar.V0 = x;
+                float y = (motionEvent.getY(1) + motionEvent.getY(0)) / 2.0f;
+                iicVar.c1 = y;
+                iicVar.W0 = y;
+                iicVar.f1 = 1.0f;
+                iicVar.d1 = motionEvent.getPointerId(0);
+                iicVar.e1 = motionEvent.getPointerId(1);
+                iicVar.a1 = true;
+            }
+        } else if (motionEvent.getActionMasked() == 2 && iicVar.a1) {
+            int i = -1;
+            int i2 = -1;
+            for (int i3 = 0; i3 < motionEvent.getPointerCount(); i3++) {
+                if (iicVar.d1 == motionEvent.getPointerId(i3)) {
+                    i = i3;
+                }
+                if (iicVar.e1 == motionEvent.getPointerId(i3)) {
+                    i2 = i3;
+                }
+            }
+            if (i == -1 || i2 == -1) {
+                getParent().requestDisallowInterceptTouchEvent(false);
+                iicVar.e();
+            } else {
+                float hypot = ((float) Math.hypot(motionEvent.getX(i2) - motionEvent.getX(i), motionEvent.getY(i2) - motionEvent.getY(i))) / iicVar.X0;
+                iicVar.f1 = hypot;
+                if (hypot > 1.005f && !iicVar.g1) {
+                    iicVar.X0 = (float) Math.hypot(motionEvent.getX(i2) - motionEvent.getX(i), motionEvent.getY(i2) - motionEvent.getY(i));
+                    float x2 = (motionEvent.getX(i2) + motionEvent.getX(i)) / 2.0f;
+                    iicVar.b1 = x2;
+                    iicVar.V0 = x2;
+                    float y2 = (motionEvent.getY(i2) + motionEvent.getY(i)) / 2.0f;
+                    iicVar.c1 = y2;
+                    iicVar.W0 = y2;
+                    iicVar.f1 = 1.0f;
+                    iicVar.Y0 = 0.0f;
+                    iicVar.Z0 = 0.0f;
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                    iicVar.g1 = true;
+                    iicVar.a1 = true;
+                }
+                float x3 = (motionEvent.getX(i2) + motionEvent.getX(i)) / 2.0f;
+                float y3 = (motionEvent.getY(i2) + motionEvent.getY(i)) / 2.0f;
+                float f2 = iicVar.V0 - x3;
+                float f3 = iicVar.W0 - y3;
+                float f4 = iicVar.f1;
+                iicVar.Y0 = (-f2) / f4;
+                iicVar.Z0 = (-f3) / f4;
+                invalidate();
+            }
+        } else if (motionEvent.getActionMasked() == 1 || ((motionEvent.getActionMasked() == 6 && motionEvent.getPointerCount() >= 2 && ((iicVar.d1 == motionEvent.getPointerId(0) && iicVar.e1 == motionEvent.getPointerId(1)) || (iicVar.d1 == motionEvent.getPointerId(1) && iicVar.e1 == motionEvent.getPointerId(0)))) || motionEvent.getActionMasked() == 3)) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            iicVar.e();
+        }
+        iicVar.s.invalidate();
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            this.a = motionEvent.getX();
+            this.b = motionEvent.getY();
+            this.c = true;
+            this.d = System.currentTimeMillis();
+        } else if (action != 1) {
+            if (action == 3) {
+                this.c = false;
+            }
+        } else if (this.c) {
+            float x4 = motionEvent.getX() - this.a;
+            float y4 = motionEvent.getY() - this.b;
+            long currentTimeMillis = System.currentTimeMillis();
+            float f5 = (y4 * y4) + (x4 * x4);
+            float f6 = iicVar.t0;
+            if (f5 < f6 * f6 && currentTimeMillis - this.d < 300 && currentTimeMillis - iicVar.K0 > 300) {
+                iicVar.K0 = System.currentTimeMillis();
+                if (iicVar.C0) {
+                    iicVar.c(false);
+                } else if (iicVar.z0) {
+                    iicVar.r(!iicVar.x0);
+                    iicVar.q0 = iicVar.p0;
+                    if (!iicVar.x0 && (qh2Var = iicVar.N0) != null && qh2Var.W) {
+                        qh2Var.f(true);
+                    }
+                    iicVar.y();
+                }
+            }
+            this.c = false;
+        }
+        return iicVar.h1 || this.c;
     }
 }

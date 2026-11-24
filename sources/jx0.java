@@ -1,54 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
+import android.animation.ValueAnimator;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class jx0 extends View implements tjb {
-    public final /* synthetic */ lx0 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class jx0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ wx0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx0(lx0 lx0Var, Context context) {
-        super(context);
-        this.a = lx0Var;
+    public jx0(wx0 wx0Var, boolean z, float f, float f2, float f3, float f4) {
+        this.f = wx0Var;
+        this.a = z;
+        this.b = f;
+        this.c = f2;
+        this.d = f3;
+        this.e = f4;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.n);
-        setTranslationY(gl.n);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        lx0 lx0Var = this.a;
-        Paint paint = lx0Var.d;
-        try {
-            vx0 vx0Var = lx0Var.a;
-            if (vx0Var != null) {
-                int e = vx0Var.e(bkb.w0(null, bkb.Z6, false));
-                if (paint.getColor() != e) {
-                    paint.setColor(e);
-                    invalidate();
-                    gl.p3(lx0Var, e, true, null);
-                    gl.j3(lx0Var, gl.B(e) >= 0.721f);
-                }
-            }
-        } catch (Exception e2) {
-            fa4.g(e2, true);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        wx0 wx0Var = this.f;
+        ox0 ox0Var = wx0Var.E;
+        tx0 tx0Var = wx0Var.Y;
+        nx0 nx0Var = wx0Var.x;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        wx0Var.i0 = floatValue;
+        if (!this.a) {
+            floatValue = 1.0f - floatValue;
         }
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+        wx0Var.h0 = floatValue;
+        tx0Var.setAlpha(1.0f - floatValue);
+        tx0Var.setTranslationY((-a.getCurrentActionBarHeight()) * wx0Var.h0);
+        float f = this.b;
+        float f2 = wx0Var.i0;
+        float f3 = this.c;
+        nx0Var.setTranslationY(gm.R1(f, f3, f2));
+        nx0Var.setTranslationX(gm.R1(this.d, 0.0f, wx0Var.i0));
+        wx0Var.n0.setTranslationX(gm.R1(this.e, 0.0f, wx0Var.i0));
+        wx0Var.o0.setAlpha(wx0Var.h0);
+        wx0Var.f.invalidate();
+        ox0Var.setViewPortHeightOffset(nx0Var.getTranslationY() - f3);
+        ox0Var.l(false, false);
+        wx0Var.H();
     }
 }

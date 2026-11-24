@@ -1,37 +1,62 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.view.View;
+import android.view.Window;
+import android.view.WindowInsetsController;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class zzc {
-    public final byte a;
-    public final long b;
+public class zzc extends m0f {
+    public final WindowInsetsController a;
+    public final Window b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public zzc(int i, long j) {
-        this.a = i;
-        this.b = j;
+    public zzc(Window window, x59 x59Var) {
+        this.a = window.getInsetsController();
+        this.b = window;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // m0f
+    public final void a() {
+        this.a.hide(519);
+    }
+
+    @Override // m0f
+    public final void b() {
+        g(16);
+        this.a.setSystemBarsAppearance(0, 16);
+    }
+
+    @Override // m0f
+    public final void c(boolean z) {
+        if (z) {
+            f(TLObject.FLAG_13);
+            this.a.setSystemBarsAppearance(8, 8);
+        } else {
+            g(TLObject.FLAG_13);
+            this.a.setSystemBarsAppearance(0, 8);
         }
-        if (!(obj instanceof zzc)) {
-            return false;
-        }
-        zzc zzcVar = (zzc) obj;
-        return this.a == zzcVar.a && this.b == zzcVar.b;
     }
 
-    public final int hashCode() {
-        long j = this.b;
-        return ((this.a ^ 1000003) * 1000003) ^ ((int) ((j >>> 32) ^ j));
+    @Override // m0f
+    public void d() {
+        this.b.getDecorView().setTag(356039078, 2);
+        g(2048);
+        f(TLObject.FLAG_12);
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("EventRecord{eventType=");
-        sb.append((int) this.a);
-        sb.append(", eventTimestamp=");
-        return ls6.p(sb, this.b, "}");
+    @Override // m0f
+    public final void e() {
+        this.a.show(519);
+    }
+
+    public final void f(int i) {
+        View decorView = this.b.getDecorView();
+        decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() | i);
+    }
+
+    public final void g(int i) {
+        View decorView = this.b.getDecorView();
+        decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() & (~i));
     }
 }

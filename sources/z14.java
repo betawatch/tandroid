@@ -1,40 +1,27 @@
 // default package
 
-import java.io.Serializable;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class z14 implements sw2, Serializable {
-    public static final z14 a = new z14();
-
-    @Override // sw2
-    public final qw2 get(rw2 rw2Var) {
-        rw2Var.getClass();
-        return null;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class z14 extends q7c {
+    public z14(Context context, int i, jac jacVar, oac oacVar, ylb ylbVar) {
+        super(context, i, -1, false, jacVar, oacVar, null, ylbVar, -1, 0);
+        this.z2 = true;
+        setOverScrollMode(2);
     }
 
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // sw2
-    public final sw2 minusKey(rw2 rw2Var) {
-        rw2Var.getClass();
-        return this;
-    }
-
-    @Override // sw2
-    public final sw2 plus(sw2 sw2Var) {
-        sw2Var.getClass();
-        return sw2Var;
-    }
-
-    public final String toString() {
-        return "EmptyCoroutineContext";
-    }
-
-    @Override // sw2
-    public final Object fold(Object obj, eq4 eq4Var) {
-        return obj;
+    public final void L1(View view) {
+        if (view != null) {
+            float L = gm.L(92.0f);
+            float width = getWidth() - L;
+            float x = view.getX();
+            float width2 = view.getWidth() + x;
+            int i = x < L ? (int) (x - L) : width2 > width ? (int) (width2 - width) : 0;
+            if (i != 0) {
+                gm.J(this, new wc7((Object) this, (Object) view, i, (byte) 28));
+            }
+        }
     }
 }

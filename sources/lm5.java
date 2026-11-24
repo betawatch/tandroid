@@ -1,72 +1,104 @@
 // default package
 
-import java.util.Iterator;
-import java.util.ListIterator;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class lm5 extends mm5 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ mm5 e;
+public final class lm5 extends ir {
+    public final /* synthetic */ byte e;
+    public final /* synthetic */ fn5 f;
 
-    public lm5(mm5 mm5Var, int i, int i2) {
-        this.e = mm5Var;
-        this.c = i;
-        this.d = i2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lm5(fn5 fn5Var) {
+        super(10485760);
+        this.e = (byte) 2;
+        this.f = fn5Var;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        gre.j(i, this.d);
-        return this.e.get(i + this.c);
+    @Override // ir
+    public final void e(Object obj, Object obj2, String str) {
+        byte b = this.e;
+        fn5 fn5Var = this.f;
+        switch (b) {
+            case 0:
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
+                String str2 = fn5Var.F;
+                if (str2 == null || !str2.equals(str)) {
+                    Integer num = (Integer) fn5Var.a.get(str);
+                    if (num == null || num.intValue() == 0) {
+                        Bitmap bitmap = bitmapDrawable.getBitmap();
+                        if (!bitmap.isRecycled()) {
+                            ArrayList arrayList = new ArrayList();
+                            arrayList.add(bitmap);
+                            gm.x2(arrayList);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                BitmapDrawable bitmapDrawable2 = (BitmapDrawable) obj;
+                String str3 = fn5Var.F;
+                if (str3 == null || !str3.equals(str)) {
+                    Integer num2 = (Integer) fn5Var.a.get(str);
+                    if (num2 == null || num2.intValue() == 0) {
+                        Bitmap bitmap2 = bitmapDrawable2.getBitmap();
+                        if (!bitmap2.isRecycled()) {
+                            ArrayList arrayList2 = new ArrayList();
+                            arrayList2.add(bitmap2);
+                            gm.x2(arrayList2);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                BitmapDrawable bitmapDrawable3 = (BitmapDrawable) obj;
+                Integer num3 = (Integer) fn5Var.a.get(str);
+                boolean z = bitmapDrawable3 instanceof kn;
+                if (z) {
+                    fn5Var.f.remove((kn) bitmapDrawable3);
+                }
+                if (num3 == null || num3.intValue() == 0) {
+                    if (z) {
+                        ((kn) bitmapDrawable3).u();
+                    }
+                    if (bitmapDrawable3 instanceof p09) {
+                        ((p09) bitmapDrawable3).x(false);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // mm5, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return listIterator(0);
+    @Override // ir
+    public final Object l(String str, Object obj) {
+        switch (this.e) {
+            case 2:
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
+                if (bitmapDrawable instanceof kn) {
+                    this.f.f.add((kn) bitmapDrawable);
+                }
+                return (BitmapDrawable) super.l(str, bitmapDrawable);
+            default:
+                return super.l(str, obj);
+        }
     }
 
-    @Override // gm5
-    public final Object[] j() {
-        return this.e.j();
+    @Override // ir
+    public final int q(Object obj) {
+        switch (this.e) {
+        }
+        return fn5.Z((BitmapDrawable) obj);
     }
 
-    @Override // gm5
-    public final int k() {
-        return this.e.l() + this.c + this.d;
-    }
-
-    @Override // gm5
-    public final int l() {
-        return this.e.l() + this.c;
-    }
-
-    @Override // mm5, java.util.List
-    public final ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // gm5
-    public final boolean m() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
-    }
-
-    @Override // mm5, java.util.List
-    /* renamed from: x */
-    public final mm5 subList(int i, int i2) {
-        gre.n(i, i2, this.d);
-        int i3 = this.c;
-        return this.e.subList(i + i3, i2 + i3);
-    }
-
-    @Override // mm5, java.util.List
-    public final /* bridge */ /* synthetic */ ListIterator listIterator(int i) {
-        return listIterator(i);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ lm5(fn5 fn5Var, int i, byte b) {
+        super(i);
+        this.e = b;
+        this.f = fn5Var;
     }
 }

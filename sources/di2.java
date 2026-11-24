@@ -1,188 +1,263 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class di2 extends fx0 {
-    public final Drawable l1;
-    public final ArrayList m1;
-    public final ai2 n1;
-    public final ci2 o1;
-    public final boolean p1;
-    public int q1;
-    public final int[] r1;
-    public final byte s1;
-    public int t1;
-    public boolean u1;
-    public xe1 v1;
-    public int w1;
-    public int x1;
-    public int y1;
+public final class di2 extends e0b {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public long c;
+    public boolean d;
+    public float e;
+    public int f;
+    public final Paint g;
+    public final Object h;
 
-    public di2(Activity activity, TLRPC.Chat chat) {
-        super(1, (wjb) null, (Context) activity, false);
-        ArrayList arrayList = new ArrayList();
-        this.m1 = arrayList;
-        int i = 2;
-        this.r1 = new int[2];
-        this.p1 = true;
-        this.w0 = false;
-        TLRPC.ChatFull L0 = na7.q1(this.a).L0(chat.id);
-        int i2 = L0 != null ? L0.ttl_period : 0;
-        if (i2 == 0) {
-            this.s1 = (byte) 0;
-            this.t1 = 0;
-            i = 0;
-        } else if (i2 == 86400) {
-            this.s1 = (byte) 1;
-            this.t1 = 1;
-            i = 1;
-        } else if (i2 == 604800) {
-            this.s1 = (byte) 2;
-            this.t1 = 2;
-        } else {
-            i = 3;
-            this.s1 = (byte) 3;
-            this.t1 = 3;
-        }
-        Drawable mutate = activity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
-        this.l1 = mutate;
-        int i3 = bkb.g5;
-        mutate.setColorFilter(new PorterDuffColorFilter(bkb.v0(i3, this.J0), PorterDuff.Mode.MULTIPLY));
-        zh2 zh2Var = new zh2(this, activity);
-        zh2Var.setFillViewport(true);
-        zh2Var.setWillNotDraw(false);
-        zh2Var.setClipToPadding(false);
-        int i4 = this.u0;
-        zh2Var.setPadding(i4, 0, i4, 0);
-        this.b = zh2Var;
-        ai2 ai2Var = new ai2(this, activity);
-        this.n1 = ai2Var;
-        ai2Var.setOrientation(1);
-        zh2Var.addView(ai2Var, nme.x(-1, -2, 80));
-        this.O = ai2Var;
-        y6c.h(this.a).e();
-        na7.q1(this.a);
-        ry8 ry8Var = new ry8(activity);
-        ry8Var.setAutoRepeat(false);
-        ry8Var.f(R.raw.utyan_private, 120, 120, null);
-        ry8Var.setPadding(0, gl.L(20.0f), 0, 0);
-        ry8Var.d();
-        ai2Var.addView(ry8Var, nme.t(kk7.p2, kk7.p2, 49, 17, 0, 17, 0));
-        TextView textView = new TextView(activity);
-        ug8.v(textView, 1, 24.0f);
-        ug8.x(textView, bkb.i5, null, null, 2131753866);
-        ai2Var.addView(textView, nme.t(-2, -2, 49, 17, 18, 17, 0));
-        TextView textView2 = new TextView(activity);
-        textView2.setTextSize(1, 14.0f);
-        zkb.X(textView2, bkb.q5, null);
-        textView2.setGravity(1);
-        if (!hc2.T(chat) || chat.megagroup) {
-            textView2.setText(k96.M0(2131753867, null));
-        } else {
-            textView2.setText(k96.M0(2131753868, null));
-        }
-        ai2Var.addView(textView2, nme.t(-2, -2, 49, 30, 22, 30, 20));
-        fja fjaVar = new fja(activity, null);
-        fjaVar.setCallback(new bi2(this, zh2Var));
-        fjaVar.b(i, null, k96.M0(2131753846, null), k96.M0(2131753876, null), k96.M0(2131753875, null), k96.M0(2131753877, null));
-        ai2Var.addView(fjaVar, nme.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
-        FrameLayout frameLayout = new FrameLayout(activity);
-        fm2 fm2Var = new fm2(new ColorDrawable(bkb.v0(bkb.Z6, this.J0)), bkb.W0(activity, R.drawable.greydivider_bottom, bkb.a7));
-        fm2Var.x = true;
-        frameLayout.setBackgroundDrawable(fm2Var);
-        arrayList.add(fm2Var);
-        ai2Var.addView(frameLayout, nme.o(-1, -2));
-        mhb mhbVar = new mhb(activity, null);
-        mhbVar.setText(k96.M0(2131753849, null));
-        frameLayout.addView(mhbVar);
-        ci2 ci2Var = new ci2(activity);
-        this.o1 = ci2Var;
-        zkb.h(i3, null, ci2Var);
-        ci2Var.setText(k96.M0(2131753842, null));
-        ci2Var.a.setOnClickListener(new x91(this, (byte) 13));
-        frameLayout.addView(ci2Var);
-        E0(false);
-    }
-
-    public final void D0() {
-        View childAt = this.n1.getChildAt(0);
-        int[] iArr = this.r1;
-        childAt.getLocationInWindow(iArr);
-        int max = Math.max(iArr[1] - gl.L(this.p1 ? 6.0f : 19.0f), 0);
-        if (this.q1 != max) {
-            this.q1 = max;
-            this.b.invalidate();
-        }
-    }
-
-    @Override // fx0
-    public final boolean E() {
-        return false;
-    }
-
-    public final void E0(boolean z) {
-        byte b = this.s1;
-        int i = this.t1;
-        ci2 ci2Var = this.o1;
-        if (b != i || this.p1) {
-            ci2Var.setVisibility(0);
-            if (z) {
-                ci2Var.animate().alpha(1.0f).setDuration(180L).start();
-                return;
-            } else {
-                ci2Var.setAlpha(1.0f);
-                return;
-            }
-        }
+    public di2(boolean z) {
+        this.a = (byte) 1;
+        this.b = false;
+        this.c = 0L;
+        this.d = false;
+        this.h = new RectF();
+        this.f = nm7.d4;
         if (z) {
-            ci2Var.animate().alpha(0.0f).setDuration(180L).start();
-        } else {
-            ci2Var.setVisibility(4);
-            ci2Var.setAlpha(0.0f);
+            Paint paint = new Paint(1);
+            this.g = paint;
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            paint.setStrokeWidth(gm.L(2.0f));
         }
     }
 
-    @Override // fx0
-    public final void p0() {
-        ArrayList arrayList = this.m1;
-        try {
-            super.p0();
-            int v0 = bkb.v0(bkb.Z6, this.J0);
-            int v02 = bkb.v0(bkb.a7, this.J0);
-            if (v0 != this.x1 || v02 != this.y1) {
-                this.x1 = v0;
-                this.y1 = v02;
-                for (int i = 0; i < arrayList.size(); i++) {
-                    fm2 fm2Var = (fm2) arrayList.get(i);
-                    bkb.z1(fm2Var, v0, false);
-                    if (fm2Var.b != null) {
-                        bkb.z1(fm2Var, v02, true);
-                    }
-                    fm2Var.invalidateSelf();
+    @Override // e0b
+    public final void b(int i) {
+        byte b = this.a;
+        Paint paint = this.g;
+        switch (b) {
+            case 0:
+                if (this.f != i) {
+                    ((Paint) this.h).setColor(i);
+                    paint.setColor(i);
                 }
-            }
-            int v03 = bkb.v0(bkb.g5, this.J0);
-            Drawable drawable = this.l1;
-            if (drawable == null || v03 == this.w1) {
-                return;
-            }
-            this.w1 = v03;
-            drawable.setColorFilter(new PorterDuffColorFilter(v03, PorterDuff.Mode.MULTIPLY));
-        } catch (Exception e) {
-            fa4.g(e, true);
+                this.f = i;
+                break;
+            default:
+                if (paint != null) {
+                    paint.setColor(i);
+                    break;
+                }
+                break;
         }
+    }
+
+    @Override // e0b
+    public final void c(boolean z) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                this.b = z;
+                break;
+        }
+    }
+
+    @Override // e0b
+    public final void d() {
+        switch (this.a) {
+            case 0:
+                this.c = System.currentTimeMillis();
+                this.b = true;
+                invalidateSelf();
+                break;
+            default:
+                this.c = System.currentTimeMillis();
+                this.d = true;
+                invalidateSelf();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float L;
+        float N;
+        byte b = this.a;
+        Paint paint = this.g;
+        Object obj = this.h;
+        switch (b) {
+            case 0:
+                float min = Math.min(this.e, 1.0f);
+                float interpolation = d53.i.getInterpolation(min < 0.3f ? min / 0.3f : 1.0f);
+                d53 d53Var = d53.g;
+                float interpolation2 = d53Var.getInterpolation(min < 0.3f ? 0.0f : (min - 0.3f) / 0.7f);
+                if (this.d) {
+                    L = td4.A(1.0f, interpolation, gm.L(7.0f) - gm.L(2.1f), gm.L(2.1f) * interpolation);
+                    N = (1.0f - d53Var.getInterpolation(this.e / 2.0f)) * gm.N(1.5f);
+                } else {
+                    L = ((gm.L(7.0f) - gm.L(2.1f)) * interpolation) + ((1.0f - interpolation) * gm.L(2.1f));
+                    N = gm.N(1.5f) * d53.h.getInterpolation(this.e / 2.0f);
+                }
+                float L2 = gm.L(11.0f) / 2.0f;
+                float N2 = gm.N(2.0f);
+                float N3 = (gm.N(0.5f) * interpolation) - (gm.N(0.5f) * interpolation2);
+                if (paint == null) {
+                    paint = cmb.c2;
+                }
+                Paint paint2 = (Paint) obj;
+                if (paint2 == null) {
+                    paint2 = cmb.b2;
+                }
+                if (paint.getStrokeWidth() != gm.L(0.8f)) {
+                    paint.setStrokeWidth(gm.L(0.8f));
+                }
+                int i = 0;
+                for (int i2 = 2; i < i2; i2 = 2) {
+                    canvas.save();
+                    canvas.translate(gm.N(0.2f) + (paint.getStrokeWidth() / 2.0f) + N + (gm.L(9.0f) * i) + getBounds().left, gm.N(2.0f) + (paint.getStrokeWidth() / 2.0f) + getBounds().top);
+                    RectF rectF = gm.P;
+                    rectF.set(0.0f, N3, gm.L(7.0f), gm.L(11.0f) - N3);
+                    canvas.drawOval(rectF, paint);
+                    canvas.drawCircle(L, L2, N2, paint2);
+                    canvas.restore();
+                    i++;
+                }
+                if (this.b) {
+                    long currentTimeMillis = System.currentTimeMillis();
+                    long j = currentTimeMillis - this.c;
+                    this.c = currentTimeMillis;
+                    float f = ((j > 50 ? 50L : j) / 500.0f) + this.e;
+                    this.e = f;
+                    if (f >= 2.0f) {
+                        this.e = 0.0f;
+                        this.d = !this.d;
+                    }
+                    a();
+                    break;
+                }
+                break;
+            default:
+                RectF rectF2 = (RectF) obj;
+                if (paint == null) {
+                    paint = cmb.c2;
+                }
+                if (paint.getStrokeWidth() != gm.L(2.0f)) {
+                    paint.setStrokeWidth(gm.L(2.0f));
+                }
+                canvas.save();
+                canvas.translate(0.0f, gm.L(this.b ? 1.0f : 2.0f) + (gm.L(14.0f) / 2));
+                for (int i3 = 0; i3 < 4; i3++) {
+                    int i4 = this.f;
+                    if (i3 == 0) {
+                        paint.setAlpha((int) (i4 * this.e));
+                    } else if (i3 == 3) {
+                        paint.setAlpha((int) ((1.0f - this.e) * i4));
+                    } else {
+                        paint.setAlpha(i4);
+                    }
+                    float L3 = (gm.L(4.0f) * this.e) + (gm.L(4.0f) * i3);
+                    float f2 = -L3;
+                    rectF2.set(f2, f2, L3, L3);
+                    canvas.drawArc(rectF2, -15.0f, 30.0f, false, paint);
+                }
+                canvas.restore();
+                if (this.d) {
+                    long currentTimeMillis2 = System.currentTimeMillis();
+                    long j2 = currentTimeMillis2 - this.c;
+                    this.c = currentTimeMillis2;
+                    this.e = ((j2 <= 50 ? j2 : 50L) / 800.0f) + this.e;
+                    while (true) {
+                        float f3 = this.e;
+                        if (f3 <= 1.0f) {
+                            a();
+                            break;
+                        } else {
+                            this.e = f3 - 1.0f;
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e0b
+    public final void e() {
+        switch (this.a) {
+            case 0:
+                this.b = false;
+                break;
+            default:
+                this.d = false;
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return gm.L(18.0f);
+            default:
+                return gm.L(14.0f);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return gm.L(20.0f);
+            default:
+                return gm.L(18.0f);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        byte b = this.a;
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                this.f = i;
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        byte b = this.a;
+    }
+
+    private final void f(int i) {
+    }
+
+    private final void g(ColorFilter colorFilter) {
+    }
+
+    private final void h(ColorFilter colorFilter) {
+    }
+
+    private final void i(boolean z) {
+    }
+
+    public di2() {
+        this.a = (byte) 0;
+        this.c = 0L;
+        this.b = false;
+        this.d = true;
+        Paint paint = new Paint(1);
+        this.g = paint;
+        this.h = new Paint(1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(gm.N(1.2f));
     }
 }

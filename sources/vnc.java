@@ -1,36 +1,40 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.Wallet.WalletEngine2;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vnc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ AtomicBoolean b;
-    public final /* synthetic */ i8c c;
+public final class vnc extends FrameLayout {
+    public View a;
+    public float b;
+    public int c;
+    public final cc d;
+    public final /* synthetic */ goc e;
 
-    public /* synthetic */ vnc(AtomicBoolean atomicBoolean, i8c i8cVar, byte b) {
-        this.a = b;
-        this.b = atomicBoolean;
-        this.c = i8cVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vnc(goc gocVar, Context context) {
+        super(context);
+        this.e = gocVar;
+        this.d = new cc(this, (byte) 10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        i8c i8cVar = this.c;
-        AtomicBoolean atomicBoolean = this.b;
-        switch (b) {
-            case 0:
-                WalletEngine2.lambda$emulateSend$20(atomicBoolean, i8cVar);
-                break;
-            case 1:
-                WalletEngine2.lambda$emulateSendNFT$24(atomicBoolean, i8cVar);
-                break;
-            default:
-                WalletEngine2.lambda$emulateSendNFT$25(atomicBoolean, i8cVar);
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.d);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.d);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.e.Y0();
     }
 }

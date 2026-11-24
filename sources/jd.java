@@ -1,58 +1,300 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.util.LongSparseArray;
+import com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.Map;
+import org.telegram.messenger.AppStartReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.PushListenerController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.messenger.b;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class jd implements no7, cha {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class jd implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ jd(FrameLayout frameLayout, byte b) {
+    public /* synthetic */ jd(byte b) {
         this.a = b;
-        this.b = frameLayout;
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        Rect rect = new Rect();
-        int i = Build.VERSION.SDK_INT;
-        sxc sxcVar = vxcVar.a;
-        if (i >= 30) {
-            io5 f = sxcVar.f(527);
-            rect.set(f.a, f.b, f.c, f.d);
-        } else {
-            rect.set(sxcVar.i().a, sxcVar.i().b, sxcVar.i().c, sxcVar.i().d);
-        }
-        int i2 = rect.left;
-        int i3 = rect.top;
-        int i4 = rect.right;
-        int i5 = rect.bottom + gl.n;
-        FrameLayout frameLayout = this.b;
-        frameLayout.setPadding(i2, i3, i4, i5);
-        frameLayout.requestLayout();
-        return vxcVar;
-    }
-
-    @Override // cha
-    public final void m(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
-        byte b = this.a;
-        FrameLayout frameLayout = this.b;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = 3;
+        int i = 0;
+        switch (this.a) {
+            case 0:
+                int i2 = AlarmManagerSchedulerBroadcastReceiver.a;
+                return;
             case 1:
-                o39 o39Var = (o39) recyclerView;
-                tk0.a(o39Var, canvas, rectF, o39Var, frameLayout);
+                d S = LaunchActivity.S();
+                if (S != null) {
+                    bh0 bh0Var = new bh0();
+                    bh0Var.a = true;
+                    S.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), bh0Var);
+                    return;
+                }
+                return;
+            case 2:
+                gm.r(vm.w);
+                try {
+                    if (vm.r != null) {
+                        for (int i3 = 0; i3 < vm.r.size(); i3++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) vm.r.valueAt(i3);
+                            int i4 = 0;
+                            while (i4 < longSparseArray.size()) {
+                                if (!((vm) longSparseArray.valueAt(i4)).a) {
+                                    longSparseArray.removeAt(i4);
+                                    i4--;
+                                }
+                                i4++;
+                            }
+                        }
+                        return;
+                    }
+                    return;
+                } catch (Exception unused) {
+                    boolean z = e21.a;
+                    return;
+                }
+            case 3:
+                int i5 = AppStartReceiver.a;
+                gda.s();
+                if (gda.r.length() > 0) {
+                    gda.w = true;
+                    gda.x();
+                }
+                a.w();
+                return;
+            case 4:
+                Utilities.e.c(new jd((byte) 7));
+                return;
+            case 5:
+                boolean z2 = fc4.j;
+                StringBuilder sb = new StringBuilder();
+                for (Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
+                    Thread key = entry.getKey();
+                    StackTraceElement[] value = entry.getValue();
+                    sb.append("Thread: ");
+                    sb.append(key.getName());
+                    sb.append("\n");
+                    for (StackTraceElement stackTraceElement : value) {
+                        sb.append("\tat ");
+                        sb.append(stackTraceElement);
+                        sb.append("\n");
+                    }
+                    sb.append("\n\n");
+                }
+                fc4.d("ANR thread dump\n".concat(sb.toString()));
+                fc4.j();
+                fc4.c(false);
+                return;
+            case 6:
+                a.w();
+                return;
+            case 7:
+                z.d(a.b);
+                return;
+            case 8:
+                if (((b) a.k()).hasServices()) {
+                    ((b) a.k()).onRequestPushToken();
+                    return;
+                }
+                if (e21.a) {
+                    a.k();
+                    fc4.b("No valid Google Play Services APK found.");
+                }
+                gda.g = "__NO_GOOGLE_PLAY_SERVICES__";
+                a.k();
+                PushListenerController.sendRegistrationToServer(2, null);
+                return;
+            case 9:
+                kq kqVar = dl0.B;
+                if (kqVar != null) {
+                    ArrayList arrayList = null;
+                    while (i < dl0.y) {
+                        if (((Bitmap[]) kqVar.d)[i] != null) {
+                            if (arrayList == null) {
+                                arrayList = new ArrayList();
+                            }
+                            arrayList.add(((Bitmap[]) kqVar.d)[i]);
+                        }
+                        ((Bitmap[]) kqVar.d)[i] = null;
+                        ((do5[]) kqVar.c)[i] = null;
+                        i++;
+                    }
+                    if (arrayList != null) {
+                        Utilities.e.c(new sf(arrayList, b));
+                    }
+                    dl0.B = null;
+                    return;
+                }
+                return;
+            case 10:
+                return;
+            case 11:
+                Utilities.e.c(new jd((byte) 13));
+                return;
+            case 12:
+                ArrayList arrayList2 = new ArrayList();
+                LongSparseArray longSparseArray2 = new LongSparseArray();
+                try {
+                    File file = new File(bc4.z(4), "webhistory.dat");
+                    if (file.exists()) {
+                        SerializedData serializedData = new SerializedData(file);
+                        long readInt64 = serializedData.readInt64(true);
+                        for (long j = 0; j < readInt64; j++) {
+                            m11 m11Var = new m11();
+                            m11Var.readParams(serializedData, true);
+                            arrayList2.add(m11Var);
+                            longSparseArray2.put(m11Var.a, m11Var);
+                        }
+                    }
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                }
+                gm.c3(new x30(arrayList2, longSparseArray2, (byte) 29));
+                return;
+            case 13:
+                try {
+                    File file2 = new File(bc4.z(4), "webhistory.dat");
+                    if (!file2.exists()) {
+                        file2.createNewFile();
+                    }
+                    long size = crd.c.size();
+                    SerializedData serializedData2 = new SerializedData(true);
+                    serializedData2.writeInt64(size);
+                    ArrayList arrayList3 = crd.c;
+                    int size2 = arrayList3.size();
+                    int i6 = 0;
+                    while (i6 < size2) {
+                        Object obj = arrayList3.get(i6);
+                        i6++;
+                        ((m11) obj).serializeToStream(serializedData2);
+                    }
+                    SerializedData serializedData3 = new SerializedData(serializedData2.length());
+                    serializedData3.writeInt64(size);
+                    ArrayList arrayList4 = crd.c;
+                    int size3 = arrayList4.size();
+                    while (i < size3) {
+                        Object obj2 = arrayList4.get(i);
+                        i++;
+                        ((m11) obj2).serializeToStream(serializedData3);
+                    }
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                        fileOutputStream.write(serializedData3.toByteArray());
+                        fileOutputStream.close();
+                        return;
+                    } catch (Exception e2) {
+                        fc4.g(e2, true);
+                        return;
+                    }
+                } catch (Exception e3) {
+                    fc4.g(e3, true);
+                    return;
+                }
+            case 14:
+                d Q = LaunchActivity.Q();
+                if (Q != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", z8c.h(Q.getCurrentAccount()).e());
+                    Q.presentFragment(new yv1(bundle));
+                    return;
+                }
+                return;
+            case 15:
+                LaunchActivity launchActivity = LaunchActivity.H1;
+                if (launchActivity == null || launchActivity.isFinishing()) {
+                    return;
+                }
+                Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
+                intent.setFlags(268468224);
+                LaunchActivity.H1.startActivity(intent);
+                return;
+            case 16:
+                d Q2 = LaunchActivity.Q();
+                if (Q2 != null) {
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putLong("user_id", z8c.h(Q2.getCurrentAccount()).e());
+                    bundle2.putInt("chatMode", 1);
+                    Q2.presentFragment(new yv1(bundle2));
+                    return;
+                }
+                return;
+            case 17:
+                g39.b(true);
+                return;
+            case 18:
+                nm7 e4 = nm7.e();
+                Boolean bool = Boolean.TRUE;
+                e4.k(nm7.r4, Boolean.FALSE, bool, bool);
+                return;
+            case 19:
+                int i7 = ChatActivityEnterView.z7;
+                return;
+            case 20:
+                MediaController.w().A0(0, 0, false, false);
+                return;
+            case 21:
+                MediaController.w().A0(0, 0, false, false);
+                return;
+            case 22:
+                nm7.e().k(100, 512);
+                return;
+            case 23:
+                PhotoViewer.r0().A(false, false);
+                return;
+            case 24:
+                PhotoViewer.r0().A(false, false);
+                return;
+            case 25:
+                ConnectionsManager.lambda$onProxyError$19();
+                return;
+            case 26:
                 break;
+            case 27:
+                return;
+            case 28:
+                h0b.D0();
+                return;
             default:
-                o39 o39Var2 = (o39) recyclerView;
-                tk0.a(o39Var2, canvas, rectF, o39Var2, frameLayout);
-                break;
+                return;
         }
+        while (i < 4) {
+            if (z8c.h(i).o()) {
+                ConnectionsManager.getInstance(i).resumeNetworkMaybe();
+                Utilities.e.c(new hv2(bw2.r(i), b));
+            }
+            i++;
+        }
+    }
+
+    public /* synthetic */ jd(Object obj, byte b) {
+        this.a = b;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
     }
 }

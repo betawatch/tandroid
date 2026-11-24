@@ -1,57 +1,35 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.PushListenerController;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class zw8 {
-    public static final zw8 d;
+public final /* synthetic */ class zw8 implements Runnable {
     public final /* synthetic */ byte a;
-    public int b;
-    public int c;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
 
-    static {
-        int i = 0;
-        d = new zw8(i, i, (byte) 0);
-    }
-
-    public /* synthetic */ zw8(int i, int i2, byte b) {
+    public /* synthetic */ zw8(String str, String str2, long j, byte b) {
         this.a = b;
-        this.b = i;
-        this.c = i2;
+        this.b = str;
+        this.c = str2;
+        this.d = j;
     }
 
-    public final int a() {
-        int i = this.c;
-        if (i == 2) {
-            return 10;
-        }
-        if (i == 5) {
-            return 11;
-        }
-        if (i == 29) {
-            return 12;
-        }
-        if (i != 42) {
-            return i != 22 ? i != 23 ? 0 : 15 : TLObject.FLAG_30;
-        }
-        return 16;
-    }
-
-    public final int b() {
-        return this.b | this.c;
-    }
-
-    public final String toString() {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.d;
+        String str = this.c;
+        String str2 = this.b;
+        switch (b) {
             case 0:
-                StringBuilder sb = new StringBuilder(zw8.class.getSimpleName());
-                sb.append("[position = ");
-                sb.append(this.b);
-                sb.append(", length = ");
-                return de9.l(sb, this.c, "]");
+                PushListenerController.lambda$processRemoteMessage$6(str2, str, j);
+                break;
             default:
-                return super.toString();
+                PushListenerController.lambda$processRemoteMessage$7(str2, str, j);
+                break;
         }
     }
 }

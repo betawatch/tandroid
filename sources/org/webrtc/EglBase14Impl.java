@@ -12,7 +12,7 @@ import android.os.Build;
 import android.view.Surface;
 import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 class EglBase14Impl implements EglBase14 {
     private static final int CURRENT_SDK_VERSION = Build.VERSION.SDK_INT;
@@ -24,7 +24,7 @@ class EglBase14Impl implements EglBase14 {
     private EGLSurface eglSurface;
     private EGLSurface eglSurfaceBackground;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 
@@ -57,14 +57,14 @@ class EglBase14Impl implements EglBase14 {
 
     private void checkIsNotReleased() {
         if (this.eglDisplay == EGL14.EGL_NO_DISPLAY || this.eglContext == EGL14.EGL_NO_CONTEXT || this.eglConfig == null) {
-            wn4.j("This object has been released");
+            zo4.k("This object has been released");
         }
     }
 
     private static EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i) {
         EGLContext eglCreateContext;
         if (eGLContext != null && eGLContext == EGL14.EGL_NO_CONTEXT) {
-            wn4.j("Invalid sharedContext");
+            zo4.k("Invalid sharedContext");
             return null;
         }
         int[] iArr = {12440, i, 12344};
@@ -82,25 +82,25 @@ class EglBase14Impl implements EglBase14 {
 
     private void createSurfaceInternal(Object obj, boolean z) {
         if (!(obj instanceof Surface) && !(obj instanceof SurfaceTexture)) {
-            sc8.j("Input must be either a Surface or SurfaceTexture");
+            dq9.m("Input must be either a Surface or SurfaceTexture");
             return;
         }
         checkIsNotReleased();
         if (z) {
             if (this.eglSurfaceBackground != EGL14.EGL_NO_SURFACE) {
-                wn4.j("Already has an EGLSurface");
+                zo4.k("Already has an EGLSurface");
                 return;
             }
             EGLSurface eglCreateWindowSurface = EGL14.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344}, 0);
             this.eglSurfaceBackground = eglCreateWindowSurface;
             if (eglCreateWindowSurface == EGL14.EGL_NO_SURFACE) {
-                k93.c(Integer.toHexString(EGL14.eglGetError()), "Failed to create window surface: 0x");
+                wa3.c(Integer.toHexString(EGL14.eglGetError()), "Failed to create window surface: 0x");
                 return;
             }
             return;
         }
         if (this.eglSurface != EGL14.EGL_NO_SURFACE) {
-            wn4.j("Already has an EGLSurface");
+            zo4.k("Already has an EGLSurface");
             return;
         }
         EGLSurface eglCreateWindowSurface2 = EGL14.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344}, 0);
@@ -108,7 +108,7 @@ class EglBase14Impl implements EglBase14 {
         if (eglCreateWindowSurface2 != EGL14.EGL_NO_SURFACE) {
             return;
         }
-        k93.c(Integer.toHexString(EGL14.eglGetError()), "Failed to create window surface: 0x");
+        wa3.c(Integer.toHexString(EGL14.eglGetError()), "Failed to create window surface: 0x");
     }
 
     private static EGLConfig getEglConfig(EGLDisplay eGLDisplay, int[] iArr) {
@@ -118,14 +118,14 @@ class EglBase14Impl implements EglBase14 {
             throw new GLException(EGL14.eglGetError(), "eglChooseConfig failed: 0x" + Integer.toHexString(EGL14.eglGetError()));
         }
         if (iArr2[0] <= 0) {
-            wn4.j("Unable to find any matching EGL config");
+            zo4.k("Unable to find any matching EGL config");
             return null;
         }
         EGLConfig eGLConfig = eGLConfigArr[0];
         if (eGLConfig != null) {
             return eGLConfig;
         }
-        wn4.j("eglChooseConfig returned null");
+        zo4.k("eglChooseConfig returned null");
         return null;
     }
 
@@ -165,7 +165,7 @@ class EglBase14Impl implements EglBase14 {
     public void createPbufferSurface(int i, int i2) {
         checkIsNotReleased();
         if (this.eglSurface != EGL14.EGL_NO_SURFACE) {
-            wn4.j("Already has an EGLSurface");
+            zo4.k("Already has an EGLSurface");
             return;
         }
         EGLSurface eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i, 12374, i2, 12344}, 0);
@@ -173,9 +173,9 @@ class EglBase14Impl implements EglBase14 {
         if (eglCreatePbufferSurface != EGL14.EGL_NO_SURFACE) {
             return;
         }
-        StringBuilder p = ir2.p("Failed to create pixel buffer surface with size ", i, "x", i2, ": 0x");
-        p.append(Integer.toHexString(EGL14.eglGetError()));
-        throw new RuntimeException(p.toString());
+        StringBuilder o = ts2.o("Failed to create pixel buffer surface with size ", i, "x", i2, ": 0x");
+        o.append(Integer.toHexString(EGL14.eglGetError()));
+        throw new RuntimeException(o.toString());
     }
 
     @Override // org.webrtc.EglBase
@@ -213,7 +213,7 @@ class EglBase14Impl implements EglBase14 {
     public void makeBackgroundCurrent() {
         checkIsNotReleased();
         if (this.eglSurfaceBackground == EGL14.EGL_NO_SURFACE) {
-            wn4.j("No EGLSurface - can't make current");
+            zo4.k("No EGLSurface - can't make current");
             return;
         }
         synchronized (EglBase.lock) {
@@ -229,7 +229,7 @@ class EglBase14Impl implements EglBase14 {
     public void makeCurrent() {
         checkIsNotReleased();
         if (this.eglSurface == EGL14.EGL_NO_SURFACE) {
-            wn4.j("No EGLSurface - can't make current");
+            zo4.k("No EGLSurface - can't make current");
             return;
         }
         synchronized (EglBase.lock) {
@@ -294,7 +294,7 @@ class EglBase14Impl implements EglBase14 {
         checkIsNotReleased();
         EGLSurface eGLSurface = z ? this.eglSurfaceBackground : this.eglSurface;
         if (eGLSurface == EGL14.EGL_NO_SURFACE) {
-            wn4.j("No EGLSurface - can't swap buffers");
+            zo4.k("No EGLSurface - can't swap buffers");
             return;
         }
         synchronized (EglBase.lock) {
@@ -317,7 +317,7 @@ class EglBase14Impl implements EglBase14 {
                 EGL14.eglSwapBuffers(this.eglDisplay, eGLSurface);
             }
         } else {
-            wn4.j("No EGLSurface - can't swap buffers");
+            zo4.k("No EGLSurface - can't swap buffers");
         }
     }
 }

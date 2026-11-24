@@ -1,32 +1,34 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bg3 implements ValueAnimator.AnimatorUpdateListener {
+public final class bg3 implements Interpolator {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ cj3 b;
-    public final /* synthetic */ float c;
 
-    public /* synthetic */ bg3(cj3 cj3Var, float f, byte b) {
+    public /* synthetic */ bg3(byte b) {
         this.a = b;
-        this.b = cj3Var;
-        this.c = f;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        float f = this.c;
-        cj3 cj3Var = this.b;
-        switch (b) {
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f) {
+        switch (this.a) {
             case 0:
-                cj3Var.c4(f, valueAnimator);
-                break;
+                if (f < 0.33f) {
+                    return (f / 0.33f) * 0.1f;
+                }
+                float f2 = f - 0.33f;
+                return f2 < 0.33f ? hg9.x(f2, 0.34f, 0.15f, 0.1f) : (((f2 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+            case 1:
+                return f * f * f * f * f;
+            case 2:
+            case 3:
             default:
-                cj3Var.Q3(f, valueAnimator);
-                break;
+                float f3 = f - 1.0f;
+                return (f3 * f3 * f3 * f3 * f3) + 1.0f;
+            case 4:
+                return (float) Math.pow(f, 2.0d);
         }
     }
 }

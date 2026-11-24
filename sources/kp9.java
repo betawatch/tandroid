@@ -1,38 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class kp9 {
-    public final long a;
-    public final long b;
-    public final long c;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-    public kp9(long j, long j2, long j3) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class kp9 extends tca {
+    public final /* synthetic */ pp9 U2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kp9(pp9 pp9Var, Context context, String str, String str2) {
+        super(context, null, str, null, false, str2, null, true);
+        this.U2 = pp9Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // tca
+    public final void L0(vh6 vh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        if (z) {
+            int m = vh6Var.m();
+            UndoView undoView = this.U2.J;
+            if (m != 1) {
+                undoView.k(0L, 41, Integer.valueOf(i), Integer.valueOf(vh6Var.m()), null, null);
+            } else {
+                undoView.m(Integer.valueOf(i), 41, ((TLRPC.Dialog) vh6Var.n(0)).id);
+            }
         }
-        if (obj == null || kp9.class != obj.getClass()) {
-            return false;
-        }
-        kp9 kp9Var = (kp9) obj;
-        return this.a == kp9Var.a && this.c == kp9Var.c && this.b == kp9Var.b;
-    }
-
-    public final int hashCode() {
-        long j = this.a;
-        long j2 = this.b;
-        int i = ((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31;
-        long j3 = this.c;
-        return i + ((int) (j3 ^ (j3 >>> 32)));
-    }
-
-    public final String toString() {
-        return "Entry{firstChunk=" + this.a + ", samplesPerChunk=" + this.b + ", sampleDescriptionIndex=" + this.c + '}';
     }
 }

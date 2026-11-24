@@ -1,17 +1,23 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_stars;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class gna implements lf7 {
+    @Override // lf7
+    public final go4 a() {
+        return null;
+    }
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class gna {
-    public final TL_stars.starGiftAttributeBackdrop a;
-    public final TL_stars.starGiftAttributePattern b;
-    public final TL_stars.starGiftAttributeModel c;
+    @Override // lf7
+    public final byte[] c() {
+        return null;
+    }
 
-    public gna(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop, TL_stars.starGiftAttributePattern stargiftattributepattern, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributebackdrop;
-        this.b = stargiftattributepattern;
-        this.c = stargiftattributemodel;
+    public String toString() {
+        return "SCTE-35 splice command: type=".concat(getClass().getSimpleName());
+    }
+
+    @Override // lf7
+    public final void b(ht6 ht6Var) {
     }
 }

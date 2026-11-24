@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class AnimatedFileDrawableStream implements m94 {
+public class AnimatedFileDrawableStream implements mb4 {
     public final boolean E;
     public int F;
     public boolean G;
-    public l94 a;
+    public lb4 a;
     public CountDownLatch b;
     public final TLRPC.Document c;
-    public final gl5 d;
+    public final gn5 d;
     public final Object e;
     public final int f;
     public volatile boolean h;
@@ -26,22 +26,22 @@ public class AnimatedFileDrawableStream implements m94 {
     public String y;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public AnimatedFileDrawableStream(TLRPC.Document document, gl5 gl5Var, Object obj, int i, boolean z, int i2, int i3) {
+    public AnimatedFileDrawableStream(TLRPC.Document document, gn5 gn5Var, Object obj, int i, boolean z, int i2, int i3) {
         this.c = document;
-        this.d = gl5Var;
+        this.d = gn5Var;
         this.e = obj;
         this.f = i;
         this.w = z;
         this.E = i2;
-        ba4 G = ba4.G(i);
+        bc4 G = bc4.G(i);
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        l94[] l94VarArr = new l94[1];
-        ba4.K.c(new n94(G, l94VarArr, document, gl5Var, obj, i2, this, 0L, z, i3, countDownLatch));
-        ba4.a(countDownLatch, true);
-        this.a = l94VarArr[0];
+        lb4[] lb4VarArr = new lb4[1];
+        bc4.K.c(new nb4(G, lb4VarArr, document, gn5Var, obj, i2, this, 0L, z, i3, countDownLatch));
+        bc4.a(countDownLatch, true);
+        this.a = lb4VarArr[0];
     }
 
-    @Override // m94
+    @Override // mb4
     public final void a() {
         CountDownLatch countDownLatch = this.b;
         if (countDownLatch != null) {
@@ -61,14 +61,14 @@ public class AnimatedFileDrawableStream implements m94 {
                 countDownLatch.countDown();
                 this.b = null;
                 if (z && !this.h && !this.w) {
-                    ba4.G(this.f).Z(this.c, false, true);
+                    bc4.G(this.f).Z(this.c, false, true);
                 }
             }
             Object obj = this.e;
-            if (obj instanceof k27) {
-                k27 k27Var = (k27) obj;
-                up3 q = up3.q(k27Var.K1);
-                int e1 = k27Var.e1();
+            if (obj instanceof k47) {
+                k47 k47Var = (k47) obj;
+                er3 q = er3.q(k47Var.K1);
+                int e1 = k47Var.e1();
                 ArrayList arrayList = q.H;
                 int i = 0;
                 while (true) {
@@ -76,7 +76,7 @@ public class AnimatedFileDrawableStream implements m94 {
                         z2 = false;
                         break;
                     } else {
-                        if (((k27) arrayList.get(i)).k.id == e1) {
+                        if (((k47) arrayList.get(i)).k.id == e1) {
                             z2 = true;
                             break;
                         }
@@ -96,10 +96,10 @@ public class AnimatedFileDrawableStream implements m94 {
 
     public final void c() {
         int i = this.f;
-        ba4.G(i).f(this.c);
-        gl5 gl5Var = this.d;
-        if (gl5Var != null) {
-            ba4.G(i).e(null, null, null, gl5Var.f, "mp4", null);
+        bc4.G(i).f(this.c);
+        gn5 gn5Var = this.d;
+        if (gn5Var != null) {
+            bc4.G(i).e(null, null, null, gn5Var.f, "mp4", null);
         }
     }
 
@@ -144,7 +144,7 @@ public class AnimatedFileDrawableStream implements m94 {
                 this.F = i4;
                 if (!this.G && i4 > 200) {
                     this.G = true;
-                    fa4.g(new RuntimeException("infinity stream reading!!!"), true);
+                    fc4.g(new RuntimeException("infinity stream reading!!!"), true);
                 }
                 return 0;
             }
@@ -154,12 +154,12 @@ public class AnimatedFileDrawableStream implements m94 {
             long j3 = 0;
             while (j3 == 0) {
                 try {
-                    l94 l94Var = this.a;
+                    lb4 lb4Var = this.a;
                     j = i;
-                    l94Var.getClass();
+                    lb4Var.getClass();
                     CountDownLatch countDownLatch = new CountDownLatch(r2);
                     ?? r10 = new long[2];
-                    Utilities.d.c(new dt4((Object) l94Var, (Serializable) r10, j, i3, (Object) countDownLatch, (byte) 4));
+                    Utilities.d.c(new ev4((Object) lb4Var, (Serializable) r10, j, i3, (Object) countDownLatch, (byte) 4));
                     try {
                         countDownLatch.await();
                     } catch (Exception unused) {
@@ -193,26 +193,26 @@ public class AnimatedFileDrawableStream implements m94 {
                         }
                         this.b = new CountDownLatch(r2);
                         if (this.a.Z || this.r != j || this.w) {
-                            ba4 G = ba4.G(this.f);
+                            bc4 G = bc4.G(this.f);
                             TLRPC.Document document = this.c;
-                            gl5 gl5Var = this.d;
+                            gn5 gn5Var = this.d;
                             Object obj = this.e;
                             boolean z3 = this.w;
                             boolean z4 = this.E;
                             byte b2 = document == null ? r2 : b;
                             CountDownLatch countDownLatch2 = new CountDownLatch(r2);
                             int i5 = r2;
-                            l94[] l94VarArr = new l94[i5];
+                            lb4[] lb4VarArr = new lb4[i5];
                             boolean z5 = i5;
                             byte b3 = b;
-                            ba4.K.c(new n94(G, l94VarArr, document, gl5Var, obj, z4 ? 1 : 0, this, j, z3, b2, countDownLatch2));
-                            ba4.a(countDownLatch2, z5);
-                            l94 l94Var2 = l94VarArr[b3];
-                            l94 l94Var3 = this.a;
-                            if (l94Var3 != l94Var2) {
-                                l94Var3.getClass();
-                                Utilities.d.c(new h94(l94Var3, this, b3));
-                                this.a = l94Var2;
+                            bc4.K.c(new nb4(G, lb4VarArr, document, gn5Var, obj, z4 ? 1 : 0, this, j, z3, b2, countDownLatch2));
+                            bc4.a(countDownLatch2, z5);
+                            lb4 lb4Var2 = lb4VarArr[b3];
+                            lb4 lb4Var3 = this.a;
+                            if (lb4Var3 != lb4Var2) {
+                                lb4Var3.getClass();
+                                Utilities.d.c(new hb4(lb4Var3, this, b3));
+                                this.a = lb4Var2;
                             }
                             this.r = j + j2;
                             z2 = z5;
@@ -227,7 +227,7 @@ public class AnimatedFileDrawableStream implements m94 {
                             }
                         }
                         if (!this.w) {
-                            ba4.G(this.f).b0(this.c, false, z2);
+                            bc4.G(this.f).b0(this.c, false, z2);
                         }
                         CountDownLatch countDownLatch3 = this.b;
                         if (countDownLatch3 != null) {
@@ -238,7 +238,7 @@ public class AnimatedFileDrawableStream implements m94 {
                         e = e2;
                         j3 = j2;
                         z = 0;
-                        fa4.g(e, z);
+                        fc4.g(e, z);
                         return (int) j3;
                     }
                 }

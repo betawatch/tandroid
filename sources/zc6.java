@@ -1,29 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ViewSwitcher;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class zc6 extends ViewSwitcher {
+public final /* synthetic */ class zc6 implements Runnable {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ dd6 b;
+    public final /* synthetic */ ArrayList c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zc6(Context context, byte b) {
-        super(context);
+    public /* synthetic */ zc6(dd6 dd6Var, ArrayList arrayList, byte b) {
         this.a = b;
+        this.b = dd6Var;
+        this.c = arrayList;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ArrayList arrayList = this.c;
+        dd6 dd6Var = this.b;
+        switch (b) {
             case 0:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
+                ArrayList arrayList2 = dd6Var.b;
+                arrayList2.addAll(arrayList);
+                for (int i = 0; i < arrayList2.size(); i++) {
+                    cd6 cd6Var = (cd6) arrayList2.get(i);
+                    dd6Var.a.k(cd6Var, cd6Var.a);
+                }
+                gm.c3(new zc6(dd6Var, arrayList, (byte) 1));
                 break;
             default:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
+                dd6Var.J.addAll(arrayList);
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    cd6 cd6Var2 = (cd6) arrayList.get(i2);
+                    dd6Var.K.k(cd6Var2, cd6Var2.a);
+                }
+                dd6.q();
+                nm7.e().k(nm7.H4, new Object[0]);
                 break;
         }
     }

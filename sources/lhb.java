@@ -1,60 +1,65 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class lhb extends mhb {
-    public Drawable E;
-    public int F;
-    public boolean G;
-    public final wjb x;
-    public ColorDrawable y;
+public final class lhb extends TextView {
+    public final mhb a;
+    public boolean b;
+    public boolean c;
 
-    public lhb(Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.x = wjbVar;
+    public lhb(mhb mhbVar, String str) {
+        super(mhbVar.getContext());
+        this.a = mhbVar;
+        ylb ylbVar = mhbVar.a;
+        setPadding(gm.L(12.66f), gm.L(9.33f), gm.L(12.66f), gm.L(9.33f));
+        anb.X(this, cmb.F6, ylbVar);
+        setTypeface(gm.o());
+        setTextSize(1, 14.0f);
+        setText(str);
     }
 
-    public void setBackground(boolean z) {
-        Context context = getContext();
-        int i = z ? R.drawable.greydivider_bottom : R.drawable.greydivider;
-        int i2 = bkb.a7;
-        wjb wjbVar = this.x;
-        Drawable V0 = bkb.V0(context, i, bkb.v0(i2, wjbVar));
-        ColorDrawable colorDrawable = new ColorDrawable(bkb.v0(bkb.Z6, wjbVar));
-        this.y = colorDrawable;
-        this.E = V0;
-        fm2 fm2Var = new fm2(colorDrawable, V0, 0, 0);
-        fm2Var.x = true;
-        setBackground(fm2Var);
-    }
-
-    @Override // mhb, tjb
-    public final void updateColors() {
-        super.updateColors();
-        try {
-            ColorDrawable colorDrawable = this.y;
-            wjb wjbVar = this.x;
-            if (colorDrawable != null) {
-                colorDrawable.setColor(bkb.v0(bkb.Z6, wjbVar));
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z = this.b;
+        mhb mhbVar = this.a;
+        if (z || this.c) {
+            canvas2 = canvas;
+            float L = gm.L(10.0f);
+            float[] fArr = mhbVar.c;
+            float f = mhbVar.h;
+            Path path = mhbVar.b;
+            float f2 = this.b ? L : 0.0f;
+            fArr[1] = f2;
+            fArr[0] = f2;
+            fArr[3] = 0.0f;
+            fArr[2] = 0.0f;
+            fArr[5] = 0.0f;
+            fArr[4] = 0.0f;
+            if (!this.c) {
+                L = 0.0f;
             }
-            if (this.E != null) {
-                int v0 = bkb.v0(bkb.a7, wjbVar);
-                if (v0 == this.F && this.G) {
-                    return;
-                }
-                this.F = v0;
-                this.G = true;
-                this.E.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.MULTIPLY));
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+            fArr[7] = L;
+            fArr[6] = L;
+            path.rewind();
+            RectF rectF = gm.P;
+            rectF.set(f, f, getWidth() + f, ((this.c ? -1 : 1) * f) + getHeight());
+            path.addRoundRect(rectF, mhbVar.c, Path.Direction.CW);
+            canvas2.drawPath(path, mhbVar.d);
+            canvas2.drawPath(path, mhbVar.e);
+        } else {
+            float f3 = mhbVar.h;
+            float f4 = mhbVar.h;
+            canvas2 = canvas;
+            canvas2.drawRect(f3, f3, getWidth() + f4, getHeight() + f4, mhbVar.d);
+            float f5 = mhbVar.h;
+            canvas2.drawRect(f5, f5, getWidth() + f4, getHeight() + f4, mhbVar.e);
         }
+        super.onDraw(canvas2);
     }
 }

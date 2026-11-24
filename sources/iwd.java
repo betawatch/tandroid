@@ -1,19 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public final class iwd implements zn7 {
-    public static final iwd a = new iwd();
+public final class iwd {
+    public final xkd a;
+    public final jwd b;
 
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)), 4)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public iwd(xkd xkdVar, String str, Object[] objArr) {
+        this.a = xkdVar;
+        this.b = new jwd(xkdVar.getClass(), str, objArr);
     }
 }

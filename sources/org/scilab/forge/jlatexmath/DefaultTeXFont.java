@@ -11,7 +11,7 @@ import java.util.Map;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class DefaultTeXFont implements TeXFont {
     protected static final int BOT = 3;
@@ -63,7 +63,7 @@ public class DefaultTeXFont implements TeXFont {
                 return;
             }
         }
-        k93.g(DefaultTeXFontParser.RESOURCE_NAME, DefaultTeXFontParser.GEN_SET_EL, DefaultTeXFontParser.MUFONTID_ATTR, "contains an unknown font id!");
+        wa3.f(DefaultTeXFontParser.RESOURCE_NAME, DefaultTeXFontParser.GEN_SET_EL, DefaultTeXFontParser.MUFONTID_ATTR, "contains an unknown font id!");
     }
 
     public DefaultTeXFont(float f) {
@@ -491,9 +491,9 @@ public class DefaultTeXFont implements TeXFont {
     }
 
     public static void addAlphabet(Character.UnicodeBlock unicodeBlock, String str) {
-        String i = b00.i("fonts/", str, "/language_", str, ".xml");
-        String i2 = b00.i("fonts/", str, "/symbols_", str, ".xml");
-        String i3 = b00.i("fonts/", str, "/mappings_", str, ".xml");
+        String i = b10.i("fonts/", str, "/language_", str, ".xml");
+        String i2 = b10.i("fonts/", str, "/symbols_", str, ".xml");
+        String i3 = b10.i("fonts/", str, "/mappings_", str, ".xml");
         try {
             addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(i), i, JLatexMathAndroid.getResourceAsStream(i2), i2, JLatexMathAndroid.getResourceAsStream(i3), i3);
         } catch (FontAlreadyLoadedException unused) {

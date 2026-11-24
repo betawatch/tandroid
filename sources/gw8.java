@@ -1,675 +1,613 @@
 // default package
 
-import android.animation.AnimatorSet;
+import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.InsetDrawable;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.view.MotionEvent;
+import android.text.method.PasswordTransformationMethod;
+import android.transition.ChangeBounds;
+import android.transition.Fade;
+import android.transition.Transition;
+import android.transition.TransitionManager;
+import android.transition.TransitionSet;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.a;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class gw8 extends d {
-    public boolean E;
-    public boolean F;
-    public yv8 G;
-    public boolean H;
-    public final cw8 I;
-    public int J;
-    public final Paint K;
-    public float L;
-    public final int[] M;
-    public final int[] N;
-    public LinearGradient O;
-    public final Paint P;
-    public final Matrix Q;
-    public final Paint R;
-    public final RectF S;
-    public final float[] T;
-    public final int[] U;
-    public final int[] V;
-    public LinearGradient W;
-    public int X;
-    public int Y;
-    public int Z;
-    public long a;
-    public nv8 a0;
-    public long b;
-    public int b0;
-    public gi3 c;
-    public int c0;
-    public vw8 d;
-    public int d0;
-    public kw8 e;
-    public float e0;
-    public FrameLayout f;
-    public boolean f0;
-    public LinearGradient g0;
-    public ew8 h;
-    public final Paint h0;
-    public final RectF i0;
-    public final int[] j0;
-    public final int[] k0;
-    public final int[] l0;
-    public final Path m0;
-    public float n;
-    public final RectF n0;
-    public Paint o0;
-    public final nm4 p0;
-    public final RectF q0;
-    public float r;
-    public boolean r0;
-    public float s;
-    public Boolean s0;
-    public float w;
-    public float x;
-    public sx3 y;
+public final class gw8 extends d {
+    public float E;
+    public float[] F;
+    public boolean G;
+    public ValueAnimator H;
+    public ClipboardManager I;
+    public final boolean J;
+    public fda K;
+    public boolean L;
+    public ClipboardManager.OnPrimaryClipChangedListener M;
+    public int N;
+    public EditTextBoldCursor[] a;
+    public ew8 b;
+    public m56 c;
+    public LinearLayout d;
+    public bba[] e;
+    public njb[] f;
+    public vkb h;
+    public vkb n;
+    public uja r;
+    public w09[] s;
+    public int w;
+    public bw8 x;
+    public String y;
 
-    public gw8(Bundle bundle) {
-        super(bundle);
-        this.I = new cw8(this, (byte) 0);
-        this.K = new Paint();
-        this.L = Float.NaN;
-        this.M = new int[2];
-        this.N = new int[2];
-        this.P = new Paint();
-        this.Q = new Matrix();
-        this.R = new Paint(1);
-        this.S = new RectF();
-        this.T = new float[2];
-        this.U = new int[2];
-        this.V = new int[2];
-        this.X = -1;
-        this.Y = -1;
-        this.Z = -1;
-        this.h0 = new Paint();
-        this.i0 = new RectF();
-        this.j0 = new int[2];
-        this.k0 = new int[2];
-        this.l0 = new int[2];
-        this.m0 = new Path();
-        this.n0 = new RectF();
-        this.p0 = new nm4();
-        this.q0 = new RectF();
-        this.hasOwnBackground = true;
+    public gw8() {
+        super(null);
+        this.e = new bba[3];
+        this.f = new njb[2];
+        this.s = new w09[3];
+        this.E = 1.0f;
+        this.F = new float[2];
+        this.G = true;
+        this.M = new cw8(this, (byte) 0);
+        this.K = new fda(bw8.i);
+        this.J = true;
     }
 
-    public static void Z(View view) {
-        view.setVerticalScrollBarEnabled(false);
-        view.setHorizontalScrollBarEnabled(false);
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                Z(viewGroup.getChildAt(i));
+    public final void Z(boolean z) {
+        EditTextBoldCursor[] editTextBoldCursorArr;
+        EditTextBoldCursor editTextBoldCursor;
+        if (this.h == null || this.r == null || (editTextBoldCursor = (editTextBoldCursorArr = this.a)[0]) == null || editTextBoldCursorArr[1] == null) {
+            return;
+        }
+        boolean z2 = this.w != 3 ? !(editTextBoldCursor.length() == 0 || Utilities.z(this.a[1].getText().toString()).intValue() == 0) : !(TextUtils.isEmpty(bwc.l(editTextBoldCursor.getText().toString())) || bwc.f(this.a[4].getText().toString()) == null);
+        if (this.G != z2) {
+            ValueAnimator valueAnimator = this.H;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            } else if (z) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.H = ofFloat;
+                ofFloat.setDuration(200L);
+                this.H.addUpdateListener(new fx7(this, (byte) 22));
             }
+            if (z) {
+                float[] fArr = this.F;
+                fArr[0] = this.E;
+                fArr[1] = z2 ? 1.0f : 0.0f;
+                this.H.start();
+            } else {
+                this.E = z2 ? 1.0f : 0.0f;
+                anb.X(this.h.getTextView(), z2 ? cmb.p6 : cmb.y6, null);
+            }
+            this.h.setEnabled(z2);
+            this.r.a(z2, z);
+            this.G = z2;
         }
     }
 
-    public static void c0(d dVar) {
-        da1.i0(dVar.getParentActivity(), 1, new dd(dVar.getCurrentAccount(), (Object) dVar, (byte) 14));
-    }
-
-    public static LinearGradient i0(boolean z) {
-        int[] iArr = new int[9];
-        float[] fArr = new float[9];
-        for (int i = 0; i < 9; i++) {
-            float f = i / 8.0f;
-            float B = yjb.B(f, 2.0f, 3.0f, f * f);
-            if (!z) {
-                B = 1.0f - B;
-            }
-            iArr[i] = ((int) ((B * 255.0f) + 0.5f)) << 24;
-            fArr[i] = f;
-        }
-        return new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, iArr, fArr, Shader.TileMode.CLAMP);
-    }
-
-    public final void Y() {
-        Activity parentActivity = getParentActivity();
-        if (parentActivity != null) {
-            Window window = parentActivity.getWindow();
-            gl.i3(parentActivity, false);
-            gl.o3(window, false);
-            if (Build.VERSION.SDK_INT >= 29) {
-                if (this.s0 == null) {
-                    this.s0 = Boolean.valueOf(window.isNavigationBarContrastEnforced());
+    public final void a0(int i, boolean z, ge7 ge7Var) {
+        w09[] w09VarArr = this.s;
+        njb[] njbVarArr = this.f;
+        if (this.w != i) {
+            this.w = i;
+            TransitionManager.endTransitions(this.c);
+            byte b = 2;
+            if (z) {
+                TransitionSet duration = new TransitionSet().addTransition(new Fade(2)).addTransition(new ChangeBounds()).addTransition(new Fade(1)).setInterpolator((TimeInterpolator) d53.f).setDuration(250L);
+                if (ge7Var != null) {
+                    duration.addListener((Transition.TransitionListener) new i7(ge7Var, b));
                 }
-                window.setNavigationBarContrastEnforced(false);
+                TransitionManager.beginDelayedTransition(this.c, duration);
             }
+            int i2 = this.w;
+            if (i2 == 1) {
+                njbVarArr[0].setVisibility(0);
+                njbVarArr[1].setVisibility(8);
+                ((View) this.a[4].getParent()).setVisibility(8);
+                ((View) this.a[3].getParent()).setVisibility(0);
+                ((View) this.a[2].getParent()).setVisibility(0);
+                ((View) this.a[1].getParent()).setVisibility(0);
+            } else if (i2 == 2) {
+                njbVarArr[0].setVisibility(8);
+                njbVarArr[1].setVisibility(0);
+                njbVarArr[1].setText(jb6.M0(2131743464, null) + "\n\n" + jb6.M0(2131743463, null));
+                ((View) this.a[4].getParent()).setVisibility(0);
+                ((View) this.a[3].getParent()).setVisibility(8);
+                ((View) this.a[2].getParent()).setVisibility(8);
+                ((View) this.a[1].getParent()).setVisibility(0);
+            } else if (i2 == 3) {
+                njbVarArr[0].setVisibility(8);
+                njbVarArr[1].setVisibility(0);
+                njbVarArr[1].setText(jb6.M0(2131743459, null));
+                ((View) this.a[4].getParent()).setVisibility(0);
+                ((View) this.a[3].getParent()).setVisibility(8);
+                ((View) this.a[2].getParent()).setVisibility(8);
+                ((View) this.a[1].getParent()).setVisibility(8);
+                this.a[1].setText("443");
+            }
+            w09VarArr[0].a(this.w == 1, z);
+            w09VarArr[1].a(this.w == 2, z);
+            w09VarArr[2].a(this.w == 3, z);
+            Z(z);
         }
-    }
-
-    public final void a0(AnimatorSet animatorSet) {
-        k0();
-        boolean z = !this.E;
-        int i = this.currentAccount;
-        this.Z = i;
-        this.X = kk7.f(i).q(null, -1, z);
-        this.Y = kk7.e().q(null, -1, z);
-        animatorSet.start();
-    }
-
-    public final void b0() {
-        vw8 vw8Var;
-        if (this.h == null || (vw8Var = this.d) == null || vw8Var.getWidth() == 0) {
-            return;
-        }
-        int max = Math.max(1, (int) (this.d.a1() - ((int) this.d.H0())));
-        this.d.getClass();
-        int width = (int) (this.f.getWidth() - (this.d.getWidth() - gl.L(10.0f)));
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.h.getLayoutParams();
-        if (layoutParams.height == max && layoutParams.leftMargin == r2 && layoutParams.rightMargin == width) {
-            return;
-        }
-        layoutParams.height = max;
-        layoutParams.leftMargin = r2;
-        layoutParams.rightMargin = width;
-        this.h.setLayoutParams(layoutParams);
     }
 
     @Override // org.telegram.ui.ActionBar.d
-    public final boolean canBeginSlide() {
-        return false;
+    public final void addThemeColorKeys(HashSet hashSet) {
+        super.addThemeColorKeys(hashSet);
+        hashSet.add(Integer.valueOf(cmb.I6));
+        hashSet.add(Integer.valueOf(cmb.A6));
+        hashSet.add(Integer.valueOf(cmb.a7));
+        hashSet.add(Integer.valueOf(cmb.g7));
+        hashSet.add(Integer.valueOf(cmb.f7));
+        hashSet.add(Integer.valueOf(cmb.c7));
+        hashSet.add(Integer.valueOf(cmb.s8));
+        hashSet.add(Integer.valueOf(cmb.z8));
+        hashSet.add(Integer.valueOf(cmb.u8));
+        hashSet.add(Integer.valueOf(cmb.r8));
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void clearViews() {
-        FrameLayout frameLayout = this.f;
-        if (frameLayout != null) {
-            frameLayout.removeCallbacks(this.I);
-        }
-        yv8 yv8Var = this.G;
-        if (yv8Var != null) {
-            yv8Var.g();
-            this.G = null;
-        }
-        kw8 kw8Var = this.e;
-        if (kw8Var != null) {
-            kw8Var.l();
-            this.e = null;
-        }
-        super.clearViews();
-        vw8 vw8Var = this.d;
-        if (vw8Var != null) {
-            vw8Var.O0();
-            this.d = null;
-        }
-        this.f = null;
-        this.h = null;
-        this.y = null;
-        this.a0 = null;
+    public final void b0(Context context, String str) {
+        ax8 ax8Var = new ax8(context, jb6.M0(2131745182, null), str, jb6.M0(2131746237, null), true);
+        ax8Var.q1.setImageBitmap(neb.e(gm.L(60.0f), gm.L(60.0f), gm.v2(null, R.raw.qr_dog)));
+        showDialog(ax8Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final a createActionBar(Context context) {
-        return null;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x01a7, code lost:
-    
-        if (r5 != 1) goto L93;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x01ba  */
-    @Override // org.telegram.ui.ActionBar.d
+    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x002e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final View createView(Context context) {
+    public final void c0() {
         String str;
-        boolean z;
-        iw8 iw8Var;
-        long j;
-        char c;
-        boolean startsWith;
-        iw8 iw8Var2;
-        TLRPC.ShareTheme shareTheme;
-        int i = this.currentAccount;
-        fv8[] fv8VarArr = fv8.f;
-        if (fv8VarArr[i] == null) {
-            fv8VarArr[i] = new fv8(i);
-        }
-        fv8 fv8Var = fv8VarArr[i];
-        TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = fv8Var.b;
-        ld0.a(tL_shareThemeBackdrops != null ? tL_shareThemeBackdrops.backdrops : null);
-        TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops2 = fv8Var.b;
-        byte b = 6;
-        gm8 gm8Var = new gm8(this, fv8Var, tL_shareThemeBackdrops2 != null ? tL_shareThemeBackdrops2.backdrops : null, b);
-        byte b2 = 0;
-        if (fv8Var.d) {
-            gm8Var.run();
-        } else {
-            fv8Var.e.add(gm8Var);
-            if (!fv8Var.c) {
-                fv8Var.c = true;
-                TLRPC.TL_messages_getShareThemeBackdrops tL_messages_getShareThemeBackdrops = new TLRPC.TL_messages_getShareThemeBackdrops();
-                TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops3 = fv8Var.b;
-                tL_messages_getShareThemeBackdrops.hash = tL_shareThemeBackdrops3 != null ? tL_shareThemeBackdrops3.hash : 0;
-                ConnectionsManager.getInstance(fv8Var.a).sendRequestTyped(tL_messages_getShareThemeBackdrops, new hc(b2), new tf8(fv8Var, b));
+        bba[] bbaVarArr = this.e;
+        ClipData primaryClip = this.I.getPrimaryClip();
+        bw8 bw8Var = null;
+        if (primaryClip != null && primaryClip.getItemCount() > 0) {
+            try {
+                str = primaryClip.getItemAt(0).coerceToText(this.fragmentView.getContext()).toString();
+            } catch (Exception unused) {
             }
-        }
-        Activity parentActivity = getParentActivity();
-        zq7 zq7Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).t1 : null;
-        if (zq7Var != null && this.c == null) {
-            gi3 gi3Var = new gi3(zq7Var);
-            zq7Var.b.add(gi3Var);
-            zq7Var.a();
-            this.c = gi3Var;
-        }
-        int i2 = this.currentAccount;
-        long j2 = this.a;
-        long j3 = this.b;
-        na7 q1 = na7.q1(i2);
-        String j4 = b00.j(new StringBuilder("https://"), q1.N2, "/");
-        long j5 = 0;
-        if (j2 != 0 || j3 == 0) {
-            if (j2 == y6c.h(i2).e()) {
-                str = "";
-                z = true;
-            } else {
-                str = "";
-                z = false;
+            if (TextUtils.equals(str, this.y)) {
+                this.x = null;
+                this.y = str;
+                if (str != null) {
+                    try {
+                        bw8Var = bw8.d(Uri.parse(str));
+                    } catch (Exception unused2) {
+                    }
+                    if (bw8Var != null && bw8Var.g()) {
+                        this.x = bw8Var;
+                    }
+                }
+                bw8 bw8Var2 = this.x;
+                vkb vkbVar = this.n;
+                if (bw8Var2 != null) {
+                    if (vkbVar.getVisibility() != 0) {
+                        this.n.setVisibility(0);
+                        bbaVarArr[2].setVisibility(0);
+                        return;
+                    }
+                    return;
+                }
+                if (vkbVar.getVisibility() != 8) {
+                    this.n.setVisibility(8);
+                    bbaVarArr[2].setVisibility(8);
+                    return;
+                }
+                return;
             }
-            TLRPC.User V1 = q1.V1(Long.valueOf(j2));
-            String o = V1 != null ? l7c.o(V1) : null;
-            if (o != null) {
-                j = 0;
-                iw8Var = new iw8(j4.concat(o), o, true, false, z, j2, z);
-            } else if (z) {
-                if (V1 != null && V1.phone != null) {
-                    ArrayList v = qu2.r(i2).v(6);
-                    if (v != null) {
-                        int size = v.size();
-                        int i3 = 0;
-                        while (i3 < size) {
-                            Object obj = v.get(i3);
-                            i3++;
-                            TLRPC.PrivacyRule privacyRule = (TLRPC.PrivacyRule) obj;
-                            if (!(privacyRule instanceof TLRPC.TL_privacyValueAllowAll)) {
-                                if (privacyRule instanceof TLRPC.TL_privacyValueDisallowAll) {
+            return;
+        }
+        str = null;
+        if (TextUtils.equals(str, this.y)) {
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        njb[] njbVarArr = this.f;
+        fda fdaVar = this.K;
+        bba[] bbaVarArr = this.e;
+        w09[] w09VarArr = this.s;
+        final byte b = 1;
+        setHasOwnBackground(true);
+        this.simpleActionBar.setTitle(jb6.M0(2131746337, null));
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        tk5 tk5Var = this.parentLayout;
+        final byte b2 = 0;
+        if (tk5Var != null && ((ActionBarLayout) tk5Var).T0) {
+            this.simpleActionBar.setOccupyStatusBar(false);
+        }
+        this.simpleActionBar.setActionBarMenuOnItemClick(new im8(this, (byte) 5));
+        this.r = this.simpleActionBar.s(jb6.M0(2131745680, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        this.c = new m56(context);
+        ew8 ew8Var = new ew8(context, this.c, this.resourceProvider, true);
+        this.b = ew8Var;
+        ew8Var.setDrawBackground(true);
+        this.b.setFillViewport(true);
+        this.b.setOverScrollMode(0);
+        gm.u3(this.b, cmb.w0(null, cmb.r8, false));
+        int i = -1;
+        frameLayout.addView(this.b, qoe.c(-1.0f, -1));
+        this.c.setOrientation(1);
+        this.b.addView(this.c, new FrameLayout.LayoutParams(-1, -2));
+        View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: dw8
+            public final /* synthetic */ gw8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                String str;
+                byte b3 = b2;
+                gw8 gw8Var = this.b;
+                switch (b3) {
+                    case 0:
+                        gw8Var.a0(bw8.f(((Integer) view.getTag()).intValue()), true, null);
+                        break;
+                    default:
+                        bw8 bw8Var = gw8Var.x;
+                        if (bw8Var != null) {
+                            int i2 = bw8Var.a;
+                            int i3 = 0;
+                            while (true) {
+                                EditTextBoldCursor[] editTextBoldCursorArr = gw8Var.a;
+                                if (i3 >= editTextBoldCursorArr.length) {
+                                    EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[0];
+                                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                                    gw8Var.a0(i2, true, new ge7(gw8Var, i2, (byte) 9));
                                     break;
-                                }
-                                if (privacyRule instanceof TLRPC.TL_privacyValueAllowContacts) {
-                                    c = 1;
-                                    break;
-                                }
-                            } else {
-                                c = 0;
-                                break;
-                            }
-                        }
-                        c = 2;
-                        if (c == 2) {
-                            ArrayList v2 = qu2.r(i2).v(7);
-                            if (v2 != null && !v2.isEmpty()) {
-                                int size2 = v2.size();
-                                int i4 = 0;
-                                while (i4 < size2) {
-                                    Object obj2 = v2.get(i4);
-                                    i4++;
-                                    TLRPC.PrivacyRule privacyRule2 = (TLRPC.PrivacyRule) obj2;
-                                    if (!(privacyRule2 instanceof TLRPC.TL_privacyValueAllowAll)) {
-                                        if ((privacyRule2 instanceof TLRPC.TL_privacyValueDisallowAll) || (privacyRule2 instanceof TLRPC.TL_privacyValueAllowContacts)) {
-                                            break;
+                                } else {
+                                    if ((i2 != 1 || i3 != 4) && (i2 != 2 || (i3 != 2 && i3 != 3))) {
+                                        if (i3 == 0) {
+                                            str = gw8Var.x.b;
+                                        } else if (i3 == 1) {
+                                            int i4 = gw8Var.x.c;
+                                            if (i4 != 0) {
+                                                str = Integer.toString(i4);
+                                            }
+                                            str = null;
+                                        } else if (i3 == 2) {
+                                            str = gw8Var.x.d;
+                                        } else if (i3 == 3) {
+                                            str = gw8Var.x.e;
+                                        } else {
+                                            if (i3 == 4) {
+                                                str = gw8Var.x.f;
+                                            }
+                                            str = null;
                                         }
-                                    } else {
-                                        break;
+                                        if (TextUtils.isEmpty(str)) {
+                                            gw8Var.a[i3].setText((CharSequence) null);
+                                        } else {
+                                            try {
+                                                gw8Var.a[i3].setText(URLDecoder.decode(str, "UTF-8"));
+                                            } catch (UnsupportedEncodingException unused) {
+                                                gw8Var.a[i3].setText(str);
+                                            }
+                                        }
                                     }
+                                    i3++;
                                 }
                             }
-                            startsWith = V1.phone.startsWith("+");
-                            String str2 = V1.phone;
-                            if (!startsWith) {
-                                str2 = b00.h("+", str2);
-                            }
-                            String str3 = str2;
-                            j = 0;
-                            iw8Var = new iw8(b00.h(j4, str3), str3, false, false, true, j2, true);
                         }
-                        if (c != 0) {
-                        }
-                        startsWith = V1.phone.startsWith("+");
-                        String str22 = V1.phone;
-                        if (!startsWith) {
-                        }
-                        String str32 = str22;
-                        j = 0;
-                        iw8Var = new iw8(b00.h(j4, str32), str32, false, false, true, j2, true);
-                    }
-                    j5 = 0;
+                        break;
                 }
-                TLRPC.TL_exportedContactToken tL_exportedContactToken = q1.L4;
-                TLRPC.TL_exportedContactToken tL_exportedContactToken2 = (tL_exportedContactToken == null || ((long) tL_exportedContactToken.expires) <= System.currentTimeMillis() / 1000) ? null : q1.L4;
-                String str4 = tL_exportedContactToken2 != null ? tL_exportedContactToken2.url : null;
-                j = j5;
-                iw8Var = new iw8(str4, V1 != null ? l7c.q(V1) : str, false, true, true, j2, true);
-            } else {
-                j = 0;
-                iw8Var = new iw8(j4, V1 != null ? l7c.q(V1) : str, false, false, false, j2, false);
             }
-            iw8Var2 = iw8Var;
-        } else {
-            TLRPC.Chat K0 = q1.K0(Long.valueOf(j3));
-            String K = hc2.K(K0, false);
-            if (K != null) {
-                iw8Var2 = new iw8(j4.concat(K), K, true, false, false, -j3, hc2.w(1, K0));
-                j = 0;
+        };
+        int i2 = 0;
+        while (i2 < 3) {
+            int f = bw8.f(i2);
+            w09 w09Var = new w09(context, null);
+            w09VarArr[i2] = w09Var;
+            anb.R(w09Var, cmb.L0(true), anb.M(cmb.c6), anb.M(cmb.h6), null);
+            w09VarArr[i2].setTag(Integer.valueOf(i2));
+            if (i2 == 0) {
+                w09VarArr[i2].c(jb6.M0(2131743469, null), f == this.w, true);
+            } else if (i2 == 1) {
+                w09VarArr[i2].c(jb6.M0(2131743466, null), f == this.w, true);
             } else {
-                j = 0;
-                iw8Var2 = new iw8(j4, K0 != null ? K0.title : "", false, false, false, -j3, false);
+                w09VarArr[i2].c(jb6.M0(2131743460, null), f == this.w, false);
             }
+            this.c.addView(w09VarArr[i2], qoe.o(-1, 50));
+            w09VarArr[i2].setOnClickListener(onClickListener);
+            i2++;
+            i = -1;
         }
-        this.f = new FrameLayout(context);
-        vw8 vw8Var = new vw8(context, this.currentAccount, iw8Var2.a, iw8Var2.b, iw8Var2.c, new z24((Object) this, (byte) 28));
-        this.d = vw8Var;
-        this.f.addView(vw8Var, nme.c(-1.0f, -1));
-        this.d.setImmediateOnOpen(this.E);
-        this.d.setRevealOpening(true);
-        if (this.H) {
-            this.d.setReveal(1.0f);
-            this.f.postDelayed(this.I, 680L);
-        } else {
-            boolean O1 = gl.O1();
-            vw8 vw8Var2 = this.d;
-            if (O1) {
-                vw8Var2.setReveal(1.0f);
-                vw8Var2.S4 = false;
+        bba bbaVar = new bba(context, (hg9) null);
+        bbaVarArr[0] = bbaVar;
+        this.c.addView(bbaVar, qoe.o(i, -2));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.d = linearLayout;
+        linearLayout.setOrientation(1);
+        this.d.setElevation(gm.L(1.0f));
+        this.d.setOutlineProvider(null);
+        int i3 = -1;
+        this.c.addView(this.d, qoe.o(-1, -2));
+        int i4 = 5;
+        this.a = new EditTextBoldCursor[5];
+        int i5 = 0;
+        while (i5 < i4) {
+            FrameLayout frameLayout2 = new FrameLayout(context);
+            this.d.addView(frameLayout2, qoe.o(i3, 64));
+            this.a[i5] = new EditTextBoldCursor(context);
+            this.a[i5].setTag(Integer.valueOf(i5));
+            this.a[i5].setTextSize(1, 16.0f);
+            anb.A(this.a[i5], cmb.G6, null);
+            EditTextBoldCursor editTextBoldCursor = this.a[i5];
+            int i6 = cmb.F6;
+            anb.X(editTextBoldCursor, i6, null);
+            this.a[i5].setBackground(null);
+            anb.v(this.a[i5], i6, null);
+            this.a[i5].setCursorSize(gm.L(20.0f));
+            this.a[i5].setCursorWidth(1.5f);
+            this.a[i5].setSingleLine(true);
+            this.a[i5].setGravity((jb6.a0 ? 5 : 3) | 16);
+            anb.z(this.a[i5], cmb.K6, null);
+            this.a[i5].setTransformHintToHeader(true);
+            anb.F(this.a[i5], cmb.j6, cmb.k6, cmb.o7, null);
+            if (i5 == 0) {
+                this.a[i5].setInputType(524305);
+                this.a[i5].addTextChangedListener(new fw8(this, (byte) 0));
             } else {
-                vw8Var2.setReveal(0.0f);
-            }
-        }
-        this.fragmentView = this.f;
-        kw8 kw8Var = this.e;
-        if (kw8Var != null) {
-            kw8Var.l();
-        }
-        int i5 = this.currentAccount;
-        vw8 vw8Var3 = this.d;
-        kw8 kw8Var2 = new kw8(i5, vw8Var3, iw8Var2);
-        this.e = kw8Var2;
-        boolean z2 = iw8Var2.d;
-        vw8Var3.setTimerOnly(z2);
-        vw8Var3.setTemporaryLink(z2);
-        LongSparseArray h = kw8.h(i5);
-        long j6 = iw8Var2.f;
-        jw8 jw8Var = (jw8) h.get(j6);
-        if (jw8Var != null) {
-            shareTheme = jw8Var.a;
-        } else {
-            na7 q12 = na7.q1(i5);
-            if (j6 > j) {
-                TLRPC.UserFull W1 = q12.W1(j6);
-                if (W1 != null) {
-                    shareTheme = W1.share_theme;
-                    if (shareTheme == null) {
-                        shareTheme = new TLRPC.TL_shareThemeDefault();
-                    }
-                }
-                shareTheme = null;
-            } else {
-                TLRPC.ChatFull L0 = q12.L0(-j6);
-                if (L0 != null) {
-                    shareTheme = L0.share_theme;
-                    if (shareTheme == null) {
-                        shareTheme = new TLRPC.TL_shareThemeDefault();
-                    }
-                }
-                shareTheme = null;
-            }
-        }
-        if (shareTheme != null) {
-            vw8Var3.setInstantTheme(true);
-            kw8Var2.a(shareTheme);
-            vw8Var3.setInstantTheme(false);
-        }
-        boolean z3 = iw8Var2.g;
-        vw8Var3.setThemeEditable(z3);
-        if (z3) {
-            vw8Var3.setGiftsOwner(j6);
-        }
-        if (iw8Var2.e) {
-            kk7.f(i5).b(kw8Var2, kk7.j0);
-            if (z2) {
-                na7 q13 = na7.q1(i5);
-                TLRPC.TL_exportedContactToken tL_exportedContactToken3 = q13.L4;
-                TLRPC.TL_exportedContactToken tL_exportedContactToken4 = (tL_exportedContactToken3 == null || ((long) tL_exportedContactToken3.expires) <= System.currentTimeMillis() / 1000) ? null : q13.L4;
-                kw8Var2.r = tL_exportedContactToken4;
-                if (tL_exportedContactToken4 == null) {
-                    kw8Var2.m();
+                EditTextBoldCursor[] editTextBoldCursorArr = this.a;
+                if (i5 == 1) {
+                    editTextBoldCursorArr[i5].setInputType(2);
+                    this.a[i5].addTextChangedListener(new fw8(this, (byte) 1));
+                } else if (i5 == 3) {
+                    editTextBoldCursorArr[i5].setInputType(nm7.M1);
+                    this.a[i5].setTypeface(Typeface.DEFAULT);
+                    this.a[i5].setTransformationMethod(PasswordTransformationMethod.getInstance());
                 } else {
-                    vw8Var3.setLinkExpires(tL_exportedContactToken4.expires);
+                    editTextBoldCursorArr[i5].setInputType(524289);
                 }
             }
-            kw8Var2.r();
-            kw8Var2.g();
-            kw8Var2.p();
-        } else {
-            vw8Var3.setFeeStars(j);
-            kw8Var2.g();
+            if (i5 == 4) {
+                this.a[i5].addTextChangedListener(new fw8(this, (byte) 2));
+            }
+            this.a[i5].setImeOptions(268435461);
+            if (i5 == 0) {
+                this.a[i5].setHintText(jb6.M0(2131743478, null));
+                this.a[i5].setText(fdaVar.a.b);
+            } else if (i5 == 1) {
+                this.a[i5].setHintText(jb6.M0(2131743473, null));
+                this.a[i5].setText(Integer.toString(fdaVar.a.c));
+            } else if (i5 == 2) {
+                this.a[i5].setHintText(jb6.M0(2131743461, null));
+                this.a[i5].setText(fdaVar.a.d);
+            } else if (i5 == 3) {
+                this.a[i5].setHintText(jb6.M0(2131743474, null));
+                this.a[i5].setText(fdaVar.a.e);
+            } else if (i5 == 4) {
+                this.a[i5].setHintText(jb6.M0(2131743471, null));
+                this.a[i5].setText(fdaVar.a.f);
+            }
+            EditTextBoldCursor editTextBoldCursor2 = this.a[i5];
+            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
+            this.a[i5].setPadding(0, 0, 0, 0);
+            frameLayout2.addView(this.a[i5], qoe.d(-1, -1.0f, 51, 17.0f, i5 == 0 ? 12.0f : 0.0f, 17.0f, 0.0f));
+            this.a[i5].setOnEditorActionListener(new j(this, (byte) 20));
+            i5++;
+            i4 = 5;
+            i3 = -1;
         }
-        return this.f;
+        for (int i7 = 0; i7 < 2; i7++) {
+            njb njbVar = new njb(context);
+            njbVarArr[i7] = njbVar;
+            if (i7 == 0) {
+                njbVar.setText(jb6.M0(2131743475, null));
+            } else {
+                njbVar.setText(jb6.M0(2131743464, null) + "\n\n" + jb6.M0(2131743463, null));
+                njbVarArr[i7].setVisibility(8);
+            }
+            this.c.addView(njbVarArr[i7], qoe.o(-1, -2));
+        }
+        vkb vkbVar = new vkb(this.fragmentView.getContext());
+        this.n = vkbVar;
+        fg0 L0 = cmb.L0(true);
+        int i8 = cmb.c6;
+        wmb M = anb.M(i8);
+        int i9 = cmb.h6;
+        wmb M2 = anb.M(i9);
+        vkbVar.setBackground(L0);
+        anb.j(vkbVar, L0, M, M2, null);
+        this.n.b(jb6.M0(2131747167, null), false);
+        TextView textView = this.n.getTextView();
+        int i10 = cmb.p6;
+        anb.X(textView, i10, null);
+        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: dw8
+            public final /* synthetic */ gw8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                String str;
+                byte b3 = b;
+                gw8 gw8Var = this.b;
+                switch (b3) {
+                    case 0:
+                        gw8Var.a0(bw8.f(((Integer) view.getTag()).intValue()), true, null);
+                        break;
+                    default:
+                        bw8 bw8Var = gw8Var.x;
+                        if (bw8Var != null) {
+                            int i22 = bw8Var.a;
+                            int i32 = 0;
+                            while (true) {
+                                EditTextBoldCursor[] editTextBoldCursorArr2 = gw8Var.a;
+                                if (i32 >= editTextBoldCursorArr2.length) {
+                                    EditTextBoldCursor editTextBoldCursor3 = editTextBoldCursorArr2[0];
+                                    editTextBoldCursor3.setSelection(editTextBoldCursor3.length());
+                                    gw8Var.a0(i22, true, new ge7(gw8Var, i22, (byte) 9));
+                                    break;
+                                } else {
+                                    if ((i22 != 1 || i32 != 4) && (i22 != 2 || (i32 != 2 && i32 != 3))) {
+                                        if (i32 == 0) {
+                                            str = gw8Var.x.b;
+                                        } else if (i32 == 1) {
+                                            int i42 = gw8Var.x.c;
+                                            if (i42 != 0) {
+                                                str = Integer.toString(i42);
+                                            }
+                                            str = null;
+                                        } else if (i32 == 2) {
+                                            str = gw8Var.x.d;
+                                        } else if (i32 == 3) {
+                                            str = gw8Var.x.e;
+                                        } else {
+                                            if (i32 == 4) {
+                                                str = gw8Var.x.f;
+                                            }
+                                            str = null;
+                                        }
+                                        if (TextUtils.isEmpty(str)) {
+                                            gw8Var.a[i32].setText((CharSequence) null);
+                                        } else {
+                                            try {
+                                                gw8Var.a[i32].setText(URLDecoder.decode(str, "UTF-8"));
+                                            } catch (UnsupportedEncodingException unused) {
+                                                gw8Var.a[i32].setText(str);
+                                            }
+                                        }
+                                    }
+                                    i32++;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        this.c.addView(this.n, 0, qoe.o(-1, -2));
+        this.n.setVisibility(8);
+        bba bbaVar2 = new bba(this.fragmentView.getContext(), (hg9) null);
+        bbaVarArr[2] = bbaVar2;
+        this.c.addView(bbaVar2, 1, qoe.o(-1, -2));
+        bbaVarArr[2].setVisibility(8);
+        vkb vkbVar2 = new vkb(context);
+        this.h = vkbVar2;
+        fg0 L02 = cmb.L0(true);
+        wmb M3 = anb.M(i8);
+        wmb M4 = anb.M(i9);
+        vkbVar2.setBackground(L02);
+        anb.j(vkbVar2, L02, M3, M4, null);
+        this.h.b(jb6.M0(2131745193, null), false);
+        anb.X(this.h.getTextView(), i10, null);
+        this.c.addView(this.h, qoe.o(-1, -2));
+        this.h.setOnClickListener(new n06(this, context, (byte) 27));
+        bba bbaVar3 = new bba(context, (hg9) null);
+        bbaVarArr[1] = bbaVar3;
+        this.c.addView(bbaVar3, qoe.o(-1, -2));
+        this.I = (ClipboardManager) context.getSystemService("clipboard");
+        this.G = true;
+        this.E = 1.0f;
+        Z(false);
+        this.w = 0;
+        a0(fdaVar.a.a, false, null);
+        this.x = null;
+        this.y = null;
+        c0();
+        return this.fragmentView;
     }
 
     public final void d0() {
-        if (getParentActivity() == null) {
-            return;
-        }
-        tv4 tv4Var = new tv4(getParentActivity(), this.currentAccount, getUserConfig().e(), null, null);
-        if (!tv4Var.n2) {
-            tv4Var.n2 = true;
-            qua quaVar = tv4Var.p2;
-            if (quaVar != null && (quaVar.getParent() instanceof ViewGroup)) {
-                ViewGroup viewGroup = (ViewGroup) tv4Var.p2.getParent();
-                int indexOfChild = viewGroup.indexOfChild(tv4Var.p2);
-                viewGroup.removeView(tv4Var.p2);
-                qua quaVar2 = new qua(tv4Var.getContext(), kk7.Y3, 2);
-                tv4Var.p2 = quaVar2;
-                viewGroup.addView(quaVar2, indexOfChild, nme.c(-1.0f, -1));
-            }
-            l46 l46Var = tv4Var.q2;
-            if (l46Var != null) {
-                String M0 = k96.M0(2131750272, null);
-                s11 s11Var = tv4Var.e2;
-                s11Var.setText(M0);
-                s11Var.setBreakStrategy(2);
-                l46Var.setVisibility(8);
-            }
-            tv4Var.T1.O(false);
-        }
-        tv4Var.show();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean drawEdgeNavigationBar() {
-        return false;
-    }
-
-    public final void e0() {
-        if (this.G != null || this.d == null || this.f == null || getParentActivity() == null) {
-            return;
-        }
-        RectF rectF = new RectF();
-        RectF rectF2 = new RectF();
-        rectF.set(this.d.j7);
-        rectF2.set(this.d.g7);
-        if (rectF.isEmpty()) {
-            rectF.set((this.f.getWidth() / 2.0f) - gl.L(20.0f), (this.f.getHeight() / 2.0f) - gl.L(20.0f), (this.f.getWidth() / 2.0f) + gl.L(20.0f), (this.f.getHeight() / 2.0f) + gl.L(20.0f));
-        }
-        this.d.setScanHidden(true);
-        yv8 yv8Var = new yv8(getParentActivity(), rectF, rectF2, new s34((Object) this, (byte) 29));
-        this.G = yv8Var;
-        yv8Var.setButtonLabel(k96.M0(2131746277, null));
-        yv8 yv8Var2 = this.G;
-        yv8Var2.setOnGallery(new ll8(this, yv8Var2, (byte) 28));
-        this.f.addView(this.G, nme.c(-1.0f, -1));
-    }
-
-    public final void f0(float f, float f2, boolean z) {
-        ew8 ew8Var = this.h;
-        if (!z) {
-            if (ew8Var != null && ew8Var.getVisibility() == 0) {
-                this.h.setVisibility(4);
-            }
-            sx3 sx3Var = this.y;
-            if (sx3Var == null || sx3Var.getVisibility() != 0) {
-                return;
-            }
-            this.y.setVisibility(4);
-            return;
-        }
-        if (ew8Var == null) {
-            if (getParentActivity() == null) {
-                return;
-            }
-            ew8 ew8Var2 = new ew8(this, getParentActivity(), this.currentAccount, new dw8(this));
-            this.h = ew8Var2;
-            ew8Var2.setOutlineProvider(new fw8(this, (byte) 0));
-            this.h.setClipToOutline(true);
-            sx3 sx3Var2 = new sx3(getParentActivity(), new pj4((Object) this, (byte) 29));
-            this.y = sx3Var2;
-            sx3Var2.b = this.h;
-            this.d.setOnPicksChanged(new cw8(this, (byte) 1));
-            this.y.setOutlineProvider(this.h.getOutlineProvider());
-            this.y.setClipToOutline(true);
-            this.f.addView(this.h, nme.e(-1, -1, 48));
-            b0();
-            this.f.post(new cw8(this, (byte) 2));
-        }
-        b0();
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.h.getLayoutParams();
-        int i = layoutParams.height;
-        int i2 = layoutParams.leftMargin;
-        int i3 = layoutParams.rightMargin;
-        if (this.y.getParent() == null) {
-            this.f.addView(this.y, nme.e(-1, -1, 48));
-        }
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.y.getLayoutParams();
-        if (layoutParams2.height != i || layoutParams2.leftMargin != i2 || layoutParams2.rightMargin != i3) {
-            layoutParams2.height = i;
-            layoutParams2.leftMargin = i2;
-            layoutParams2.rightMargin = i3;
-            this.y.setLayoutParams(layoutParams2);
-        }
-        this.y.setTranslationY(f);
-        this.y.setAlpha(f2);
-        this.y.invalidateOutline();
-        this.y.invalidate();
-        if (this.y.getVisibility() != 0) {
-            this.y.setVisibility(0);
-        }
-        int t0 = this.d.t0();
-        tw8 tw8Var = this.d.n;
-        int i4 = t0 ^ (tw8Var != null ? tw8Var.h : 872415231);
-        if (this.h.getTranslationY() != f || i4 != this.J) {
-            this.h.setTranslationY(f);
-            this.J = i4;
-            this.h.getTabs().invalidate();
-        }
-        this.h.invalidateOutline();
-        this.h.setAlpha(f2);
-        ew8 ew8Var3 = this.h;
-        vw8 vw8Var = this.d;
-        tw8 tw8Var2 = vw8Var.n;
-        int i5 = tw8Var2 != null ? tw8Var2.b : -16777216;
-        if (i5 != vw8Var.b2) {
-            vw8Var.b2 = i5;
-            vw8Var.c2 = (bm2.f(0.13f, -1, vw8.D0(0.75f, 1.3f, 0.16f, i5)) & 16777215) | (-1728053248);
-        }
-        ew8Var3.setHeaderColor(vw8Var.c2);
-        if (this.h.getVisibility() != 0) {
-            ew8 ew8Var4 = this.h;
-            if (ew8Var4.K) {
-                ew8Var4.K = false;
-                ew8Var4.e();
-            }
-            this.h.setVisibility(0);
-        }
-        if (this.r0) {
-            return;
-        }
-        j0();
-    }
-
-    public final void g0() {
-        vw8 vw8Var;
-        Activity parentActivity = getParentActivity();
-        if (parentActivity == null || (vw8Var = this.d) == null || vw8Var.getCurrentLink() == null) {
-            return;
-        }
-        if ((Build.VERSION.SDK_INT <= 28 || w01.b) && parentActivity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
-            this.F = true;
-            parentActivity.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 4);
-        } else {
-            Bitmap T0 = this.d.T0();
-            if (T0 != null) {
-                Utilities.e.c(new ll8(this, T0, (byte) 27));
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final int getNavigationBarColor() {
-        return -16777216;
-    }
-
-    public final void h0(String str) {
-        vw8 vw8Var;
-        if (getParentActivity() == null || (vw8Var = this.d) == null || vw8Var.getCurrentLink() == null) {
-            return;
-        }
-        Bitmap T0 = this.d.T0();
-        Uri B0 = T0 != null ? gl.B0(T0, "qr_tmp.jpg", Bitmap.CompressFormat.JPEG) : null;
-        Intent intent = new Intent("android.intent.action.SEND");
-        if (B0 != null) {
-            intent.setType("image/*");
-            intent.putExtra("android.intent.extra.STREAM", B0);
-            intent.addFlags(1);
-        } else {
-            if (TextUtils.isEmpty(str)) {
-                return;
-            }
-            intent.setType("text/plain");
-            intent.putExtra("android.intent.extra.TEXT", str);
-        }
+        int w0;
         try {
-            getParentActivity().startActivity(Intent.createChooser(intent, k96.M0(2131748978, null)));
-        } catch (ActivityNotFoundException e) {
-            fa4.g(e, true);
+            int i = 0;
+            if (this.b != null && (w0 = cmb.w0(null, cmb.r8, false)) != this.N) {
+                this.N = w0;
+                gm.u3(this.b, w0);
+            }
+            if (this.a == null) {
+                return;
+            }
+            cmb.u0(cmb.G6);
+            cmb.u0(cmb.F6);
+            cmb.u0(cmb.K6);
+            while (true) {
+                EditTextBoldCursor[] editTextBoldCursorArr = this.a;
+                if (i >= editTextBoldCursorArr.length) {
+                    return;
+                }
+                EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i];
+                if (editTextBoldCursor != null) {
+                    anb.l(editTextBoldCursor, 34, cmb.G6, null);
+                    anb.v(this.a[i], cmb.F6, null);
+                    anb.z(this.a[i], cmb.K6, null);
+                }
+                i++;
+            }
+        } catch (Exception e) {
+            fc4.g(e, true);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.d
-    public final boolean isLightStatusBar() {
-        return false;
+    public final ww9 getScrollViewForSimpleGlass() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new cnb(this.b, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.r8));
+        arrayList.add(new cnb(this.d, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.c6));
+        for (int i = 0; i < this.s.length; i++) {
+        }
+        if (this.a != null) {
+            int i2 = 0;
+            while (true) {
+                EditTextBoldCursor[] editTextBoldCursorArr = this.a;
+                if (i2 >= editTextBoldCursorArr.length) {
+                    break;
+                }
+                arrayList.add(new cnb(editTextBoldCursorArr[i2], TLObject.FLAG_23, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.G6));
+                arrayList.add(new cnb(this.a[i2], 8390656, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.K6));
+                i2++;
+            }
+        } else {
+            arrayList.add(new cnb((View) null, 4, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.F6));
+            arrayList.add(new cnb((View) null, TLObject.FLAG_23, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.G6));
+        }
+        arrayList.add(new cnb((View) null, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (bnb) null, cmb.c6));
+        int i3 = 0;
+        while (true) {
+            bba[] bbaVarArr = this.e;
+            if (i3 >= bbaVarArr.length) {
+                break;
+            }
+            bba bbaVar = bbaVarArr[i3];
+            i3++;
+        }
+        for (int i4 = 0; i4 < this.f.length; i4++) {
+        }
+        return arrayList;
     }
 
     @Override // org.telegram.ui.ActionBar.d
@@ -678,271 +616,43 @@ public class gw8 extends d {
     }
 
     @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public final void j0() {
-        ew8 ew8Var;
-        if (this.r0 || (ew8Var = this.h) == null) {
-            return;
-        }
-        rv8 tabs = ew8Var.getTabs();
-        GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setColor(872415231);
-        gradientDrawable.setCornerRadius(gl.L(20.0f));
-        float[] fArr = lcd.a[0];
-        int ceil = (int) Math.ceil(gl.N(Math.max(0.0f, -fArr[8]) + fArr[4]));
-        int i = ceil - 3;
-        this.b0 = Math.max(0, i);
-        this.c0 = Math.max(0, i);
-        this.d0 = Math.max(0, ceil - 4);
-        tabs.a = new kq8(this, tabs, (byte) 3);
-        tabs.b = new zv8(this);
-        int paddingLeft = tabs.getPaddingLeft();
-        int paddingTop = tabs.getPaddingTop();
-        int paddingRight = tabs.getPaddingRight();
-        int paddingBottom = tabs.getPaddingBottom();
-        int i2 = this.b0;
-        tabs.setBackground(new InsetDrawable((Drawable) gradientDrawable, i2, this.c0, i2, this.d0));
-        tabs.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
-        tabs.setOutlineProvider(new fw8(this, (byte) 1));
-        tabs.setClipToOutline(true);
-        if (tabs.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) tabs.getLayoutParams();
-            int L = gl.L(10.0f);
-            int L2 = gl.L(2.0f);
-            if (marginLayoutParams.leftMargin != L || marginLayoutParams.rightMargin != L || marginLayoutParams.topMargin != L2) {
-                marginLayoutParams.leftMargin = L;
-                marginLayoutParams.rightMargin = L;
-                marginLayoutParams.topMargin = L2;
-                tabs.setLayoutParams(marginLayoutParams);
-            }
-        }
-        nv8 grid = this.h.getGrid();
-        this.r0 = true;
-        grid.g3 = new aw8(this, grid, tabs);
-        grid.f3 = new ay2(this, grid, (byte) 2);
-        sx3 sx3Var = this.y;
-        byte b = 9;
-        if (sx3Var.U != grid) {
-            sx3Var.U = grid;
-            grid.setVerticalScrollBarEnabled(false);
-            grid.j(new ao2(sx3Var, b));
-        }
-        int L3 = gl.L(44.0f);
-        this.a0 = grid;
-        grid.setPadding(grid.getPaddingLeft(), L3, gl.L(5.0f) + grid.getPaddingRight(), grid.getPaddingBottom());
-        l0();
-        grid.setClipToPadding(false);
-        grid.j(new si1(this, tabs, b));
-        tabs.bringToFront();
-    }
-
-    public final void k0() {
-        if (this.X >= 0) {
-            kk7.f(this.Z).j(this.X);
-        }
-        if (this.Y >= 0) {
-            kk7.e().j(this.Y);
-        }
-        this.Y = -1;
-        this.X = -1;
-    }
-
-    public final void l0() {
-        vw8 vw8Var;
-        nv8 nv8Var = this.a0;
-        if (nv8Var == null || (vw8Var = this.d) == null) {
-            return;
-        }
-        int L = gl.L(vw8Var.J.isEmpty() ? 12.0f : 73.0f);
-        if (nv8Var.getPaddingBottom() != L) {
-            nv8Var.setPadding(nv8Var.getPaddingLeft(), nv8Var.getPaddingTop(), nv8Var.getPaddingRight(), L);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onBackPressed(boolean z) {
-        yv8 yv8Var = this.G;
-        if (yv8Var != null) {
-            if (z) {
-                yv8Var.e();
-            }
-            return false;
-        }
-        vw8 vw8Var = this.d;
-        if (vw8Var != null) {
-            float f = vw8Var.l1;
-            if (f > 0.5f || vw8Var.g1 > 0.5f) {
-                if (z) {
-                    if (f > 0.5f) {
-                        vw8Var.m1 = 0.0f;
-                    } else if (vw8Var.g1 > 0.5f) {
-                        vw8Var.h1 = 0.0f;
-                    }
-                }
-                return false;
-            }
-        }
-        return super.onBackPressed(z);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final AnimatorSet onCustomTransitionAnimation(boolean z, Runnable runnable) {
-        if (this.d == null || gl.O1()) {
-            return null;
-        }
-        this.d.setRevealOpening(z);
-        float f = 1.0f;
-        float f2 = 0.0f;
-        this.d.setReveal(z ? 0.0f : 1.0f);
-        if (!z) {
-            f2 = 1.0f;
-            f = 0.0f;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(f2, f);
-        ofFloat.addUpdateListener(new u28(this, (byte) 22));
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(ofFloat);
-        animatorSet.setDuration(z ? 860L : 200L);
-        animatorSet.setInterpolator(new LinearInterpolator());
-        animatorSet.addListener(new qw((Object) this, z, (Object) runnable, (byte) 9));
-        gl.d3(new ll8(this, animatorSet, (byte) 26));
-        return animatorSet;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        Bundle bundle = this.arguments;
-        this.a = bundle != null ? bundle.getLong("user_id") : 0L;
-        Bundle bundle2 = this.arguments;
-        this.b = bundle2 != null ? bundle2.getLong("chat_id") : 0L;
-        Bundle bundle3 = this.arguments;
-        this.E = bundle3 != null && bundle3.getBoolean("immediate") && gba.o() == 2;
-        if (this.a == 0 && this.b == 0) {
-            this.a = getUserConfig().e();
-        }
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        k0();
-        gi3 gi3Var = this.c;
-        if (gi3Var != null) {
-            zq7 zq7Var = (zq7) gi3Var.a;
-            if (zq7Var.b.remove(gi3Var)) {
-                zq7Var.a();
-            }
-            this.c = null;
-        }
-        FrameLayout frameLayout = this.f;
-        if (frameLayout != null) {
-            frameLayout.removeCallbacks(this.I);
-        }
-        yv8 yv8Var = this.G;
-        if (yv8Var != null) {
-            yv8Var.g();
-            this.G = null;
-        }
-        kw8 kw8Var = this.e;
-        if (kw8Var != null) {
-            kw8Var.l();
-            this.e = null;
-        }
-        vw8 vw8Var = this.d;
-        if (vw8Var != null) {
-            vw8Var.O0();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
     public final void onPause() {
         super.onPause();
-        yv8 yv8Var = this.G;
-        if (yv8Var != null) {
-            yv8Var.g();
-            yv8 yv8Var2 = this.G;
-            FrameLayout frameLayout = this.f;
-            if (frameLayout != null) {
-                frameLayout.removeView(yv8Var2);
-            }
-            if (this.G == yv8Var2) {
-                this.G = null;
-            }
-            vw8 vw8Var = this.d;
-            if (vw8Var != null) {
-                vw8Var.setScanHidden(false);
-            }
-        }
-        Activity parentActivity = getParentActivity();
-        if (parentActivity == null || Build.VERSION.SDK_INT < 29 || this.s0 == null) {
-            return;
-        }
-        parentActivity.getWindow().setNavigationBarContrastEnforced(this.s0.booleanValue());
-        this.s0 = null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onRequestPermissionsResultFragment(int i, String[] strArr, int[] iArr) {
-        if (i == 4) {
-            boolean z = iArr.length > 0 && iArr[0] == 0;
-            if (this.F && z) {
-                this.F = false;
-                g0();
-            }
-            this.F = false;
-            return;
-        }
-        if (getParentActivity() == null || i != 34) {
-            return;
-        }
-        if (iArr.length > 0 && iArr[0] == 0) {
-            e0();
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.U = gl.T2(k96.M0(2131746310, null));
-        alertDialog$Builder.j(k96.M0(2131747107, null), new zv8(this));
-        alertDialog$Builder.g(k96.M0(2131751760, null), null);
-        int i2 = bkb.K5;
-        alertDialog$Builder.l(R.raw.permission_request_camera, 72, bkb.w0(null, i2, false), null);
-        alertDialog$Builder.m(i2, null);
-        alertDialog$Builder.o();
+        this.I.removePrimaryClipChangedListener(this.M);
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final void onResume() {
         super.onResume();
-        Y();
-        if (getParentActivity() != null) {
-            gl.i3(getParentActivity(), false);
+        gm.V2(getParentActivity(), this.classGuid);
+        this.I.addPrimaryClipChangedListener(this.M);
+        c0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onThemeColorsChanged() {
+        ValueAnimator valueAnimator;
+        try {
+            super.onThemeColorsChanged();
+            if (this.h != null && ((valueAnimator = this.H) == null || !valueAnimator.isRunning())) {
+                anb.X(this.h.getTextView(), this.G ? cmb.p6 : cmb.y6, null);
+            }
+            d0();
+        } catch (Exception e) {
+            fc4.g(e, true);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final void onTransitionAnimationEnd(boolean z, boolean z2) {
-        super.onTransitionAnimationEnd(z, z2);
-        if (z) {
-            this.H = true;
-            vw8 vw8Var = this.d;
-            if (vw8Var != null) {
-                vw8Var.setReveal(1.0f);
-            }
+        if (z && !z2 && this.J) {
+            this.a[0].requestFocus();
+            gm.E3(this.a[0]);
         }
-        if (!z || z2 || this.f == null) {
-            return;
-        }
-        float f = hv8.S;
-        long j = 0;
-        if (Build.VERSION.SDK_INT >= 29 && gba.o() == 2) {
-            j = Math.max(0L, Math.round(lcd.b[51]) - 860);
-        }
-        FrameLayout frameLayout = this.f;
-        cw8 cw8Var = this.I;
-        frameLayout.removeCallbacks(cw8Var);
-        this.f.postDelayed(cw8Var, j + 680);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

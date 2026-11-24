@@ -1,24 +1,25 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class x19 extends q5c {
-    public final /* synthetic */ int n3;
+public final class x19 extends tk4 {
+    public final /* synthetic */ c29 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x19(d dVar, w19 w19Var, int i) {
-        super(dVar, w19Var, null, null);
-        this.n3 = i;
+    public x19(c29 c29Var, Context context, ylb ylbVar) {
+        super(context, ylbVar);
+        this.V = c29Var;
     }
 
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int min = Math.min(gl.L(220.0f), View.MeasureSpec.getSize(i));
-        View.MeasureSpec.getSize(i2);
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(moe.b(this.n3, 1, 5) * 48), TLObject.FLAG_30));
+    @Override // tk4
+    public final int getAdditionalHeight() {
+        j37 j37Var;
+        c29 c29Var = this.V;
+        if (c29Var.I.isEmpty() || (j37Var = c29Var.K) == null) {
+            return 0;
+        }
+        return gm.L(8.0f) + j37Var.getMeasuredHeight();
     }
 }

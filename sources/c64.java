@@ -1,23 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class c64 {
-    public final /* synthetic */ i64 a;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-    public c64(i64 i64Var) {
-        this.a = i64Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class c64 extends b4 {
+    public static final Parcelable.Creator<c64> CREATOR = new jid((byte) 19);
+    public String a;
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof c64) {
+            return fse.a(this.a, ((c64) obj).a);
+        }
+        return false;
     }
 
-    public final void a() {
-        i64 i64Var = this.a;
-        if (!i64Var.M) {
-            if (i64Var.U) {
-                i64Var.T.getClass();
-            } else if (!i64Var.k0) {
-                return;
-            }
-        }
-        i64Var.h.h(2);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.l(parcel, 1, this.a);
+        mve.s(parcel, r);
     }
 }

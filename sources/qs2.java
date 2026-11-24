@@ -1,55 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.SharedPreferences;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qs2 extends ps2 implements kv9 {
-    public final long i;
-    public final long j;
+public abstract class qs2 {
+    public final String a;
+    public String b;
+    public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
 
-    public qs2(long j, long j2, int i, int i2, boolean z, boolean z2, long j3) {
-        super(j, j2, i, i2, z, z2);
-        this.i = j3;
-        this.j = j == -1 ? -1L : j;
+    public qs2(String str) {
+        this.a = str;
     }
 
-    @Override // kv9
-    public final long a() {
-        return this.j;
+    public final void a(Runnable runnable) {
+        this.c.addIfAbsent(runnable);
     }
 
-    @Override // kv9
-    public final long b() {
-        return this.b;
-    }
+    public abstract boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
-    @Override // kv9
-    public final long e(long j) {
-        return ((Math.max(0L, j - this.b) << 3) * 1000000) / this.e;
-    }
+    public abstract boolean c(SharedPreferences.Editor editor);
 
-    @Override // ps2, fv9
-    public final ev9 f(long j) {
-        long j2 = this.i;
-        if (j2 != -9223372036854775807L && j >= j2) {
-            long j3 = this.j;
-            if (j3 != -1) {
-                long j4 = this.c;
-                long j5 = this.b;
-                hv9 hv9Var = new hv9(Math.max(0L, j2 - (((Math.max(0L, (j4 + j5) - j5) << 3) * 1000000) / this.e)), Math.max(j5, j3 - j4));
-                return new ev9(hv9Var, hv9Var);
-            }
-        }
-        return super.f(j);
-    }
+    public abstract void d(SharedPreferences sharedPreferences);
 
-    @Override // kv9
-    public final int g() {
-        return this.e;
-    }
-
-    @Override // ps2, fv9
-    public final long h() {
-        long j = this.i;
-        return j != -9223372036854775807L ? j : this.f;
+    public final String e() {
+        String str = this.b;
+        return str != null ? str : this.a;
     }
 }

@@ -3,31 +3,31 @@
 import android.view.View;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l5 implements c39 {
+public final /* synthetic */ class l5 implements f59 {
     public final /* synthetic */ byte a;
 
     public /* synthetic */ l5(byte b) {
         this.a = b;
     }
 
-    @Override // c39
-    public final void d(int i, View view) {
+    @Override // f59
+    public final void g(int i, View view) {
         switch (this.a) {
             case 0:
                 break;
             case 1:
-                if (view instanceof j20) {
-                    ((j20) view).a();
+                if (view instanceof j30) {
+                    ((j30) view).a();
                     break;
                 }
                 break;
             default:
                 boolean z = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof o48) {
-                    o48 o48Var = (o48) view;
-                    o48Var.y.c(o48Var);
+                if (view instanceof q68) {
+                    q68 q68Var = (q68) view;
+                    q68Var.y.c(q68Var);
                     break;
                 }
                 break;

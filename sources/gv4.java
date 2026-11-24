@@ -1,21 +1,43 @@
 // default package
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class gv4 extends h1a {
-    public final /* synthetic */ tv4 u2;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class gv4 implements jac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qac b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gv4(tv4 tv4Var, Context context, int i, mu4 mu4Var, long j, av4 av4Var) {
-        super(context, i, null, mu4Var, j, av4Var, false, false);
-        this.u2 = tv4Var;
+    public /* synthetic */ gv4(qac qacVar, byte b) {
+        this.a = b;
+        this.b = qacVar;
     }
 
-    @Override // h1a
-    public final u21 Z0() {
-        tv4 tv4Var = this.u2;
-        return new u21(tv4Var.c, tv4Var.J0);
+    @Override // jac
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        qac qacVar = this.b;
+        switch (b) {
+            case 0:
+                TL_stars.starGiftUpgradeAttributes stargiftupgradeattributes = (TL_stars.starGiftUpgradeAttributes) obj;
+                if (stargiftupgradeattributes == null) {
+                    qacVar.a(null);
+                    break;
+                } else {
+                    qacVar.a(stargiftupgradeattributes.attributes);
+                    break;
+                }
+            default:
+                TLRPC.messages_FoundStickerSets messages_foundstickersets = (TLRPC.messages_FoundStickerSets) obj;
+                if (!(messages_foundstickersets instanceof TLRPC.TL_messages_foundStickerSets)) {
+                    qacVar.a(new ArrayList());
+                    break;
+                } else {
+                    qacVar.a(((TLRPC.TL_messages_foundStickerSets) messages_foundstickersets).sets);
+                    break;
+                }
+        }
     }
 }

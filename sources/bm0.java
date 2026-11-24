@@ -1,206 +1,126 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.graphics.RectF;
-import android.graphics.SurfaceTexture;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
+import android.graphics.Color;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bm0 implements p8c {
-    public final /* synthetic */ byte a;
+public class bm0 implements am0 {
+    public final ylb a;
+    public final int b;
+    public final float c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
 
-    public /* synthetic */ bm0(nh1 nh1Var) {
-        this.a = (byte) 3;
+    public bm0(ylb ylbVar, int i, float f) {
+        this.n = -1;
+        this.r = anb.b;
+        this.a = ylbVar;
+        this.b = i;
+        this.c = f;
+        d();
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        k27 messageObject;
-        k27 messageObject2;
-        switch (this.a) {
-            case 0:
-                View view = (View) obj;
-                if (view instanceof bb) {
-                    ((bb) view).setChecked(false);
-                    break;
-                }
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                nh1.e1((View) obj);
-                break;
-            case 4:
-                View view2 = (View) obj;
-                if ((view2 instanceof gb2) && (messageObject = ((gb2) view2).getMessageObject()) != null) {
-                    messageObject.M1 = true;
-                    break;
-                }
-                break;
-            case 5:
-                View view3 = (View) obj;
-                if ((view3 instanceof gb2) && (messageObject2 = ((gb2) view3).getMessageObject()) != null) {
-                    messageObject2.M1 = true;
-                    messageObject2.H = true;
-                    break;
-                }
-                break;
-            case 6:
-                View view4 = (View) obj;
-                if (view4 instanceof jx8) {
-                    ((jx8) view4).c.invalidate();
-                    break;
-                }
-                break;
-            case 7:
-                View view5 = (View) obj;
-                view5.setAlpha(1.0f);
-                view5.setTranslationX(0.0f);
-                view5.setTranslationY(0.0f);
-                break;
-            case 8:
-                ((View) obj).setTranslationY(0.0f);
-                break;
-            case 9:
-                ((uf3) ((View) obj)).invalidate();
-                break;
-            case 10:
-                break;
-            case 11:
-                View view6 = (View) obj;
-                if (view6 instanceof zw0) {
-                    ((zw0) view6).getTextView().invalidate();
-                    break;
-                } else {
-                    view6.invalidate();
-                    break;
-                }
-            case 12:
-                ((View) obj).invalidate();
-                break;
-            case 13:
-                ((i35) obj).a();
-                break;
-            case 14:
-                ((i35) obj).b();
-                break;
-            case 15:
-                ((Boolean) obj).getClass();
-                break;
-            case 16:
-                View view7 = (View) obj;
-                if (view7 instanceof bb) {
-                    ((bb) view7).setChecked(false);
-                    break;
-                }
-                break;
-            case 17:
-                break;
-            case 18:
-                View view8 = (View) obj;
-                if (view8 instanceof yy6) {
-                    yy6 yy6Var = (yy6) view8;
-                    yy6Var.b.invalidate();
-                    yy6Var.c.invalidate();
-                    break;
-                } else if (view8 instanceof jx8) {
-                    ((jx8) view8).c.invalidate();
-                    break;
-                } else {
-                    view8.invalidate();
-                    break;
-                }
-            case 19:
-                Long l = (Long) obj;
-                if (l != null && l.longValue() != Long.MAX_VALUE) {
-                    d S = LaunchActivity.S();
-                    if (S != null) {
-                        S.presentFragment(ProfileActivity.P2(l.longValue()));
-                        break;
-                    }
-                } else {
-                    gl.d3(new am6((byte) 5));
-                    break;
-                }
-                break;
-            case 20:
-                SurfaceTexture surfaceTexture = (SurfaceTexture) obj;
-                Drawable[] drawableArr = PhotoViewer.f9;
-                if (surfaceTexture != null) {
-                    surfaceTexture.release();
-                    break;
-                }
-                break;
-            case 21:
-                Drawable[] drawableArr2 = PhotoViewer.f9;
-                break;
-            case 22:
-                RectF rectF = ProfileActivity.Z6;
-                break;
-            case 23:
-                View view9 = (View) obj;
-                if (view9 instanceof jx8) {
-                    ((jx8) view9).d.a(false, true);
-                    break;
-                }
-                break;
-            case 24:
-                HashSet hashSet = (HashSet) obj;
-                String str = k96.D0().B.f;
-                hashSet.addAll(qa9.b0());
-                SharedPreferences.Editor edit = na7.c1().edit();
-                if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
-                    edit.remove("translate_button_restricted_languages");
-                } else {
-                    edit.putStringSet("translate_button_restricted_languages", hashSet);
-                }
-                edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                qa9.s = false;
-                for (int i = 0; i < 4; i++) {
-                    try {
-                        na7.q1(i).i4.f();
-                    } catch (Exception unused) {
-                    }
-                }
-                break;
-            case 25:
-                kk7.e().k(((Boolean) obj).booleanValue() ? 98 : 99, 4);
-                break;
-            case 26:
-                View view10 = (View) obj;
-                view10.setScaleX(1.0f);
-                view10.setScaleY(1.0f);
-                break;
-            case 27:
-                break;
-            case 28:
-                View view11 = (View) obj;
-                if (view11 instanceof xya) {
-                    ((xya) view11).a(true);
-                    break;
-                }
-                break;
-            default:
-                View view12 = (View) obj;
-                if (view12 instanceof xya) {
-                    ((xya) view12).c(true);
-                    break;
-                }
-                break;
+    @Override // am0
+    public int K1() {
+        a();
+        return this.d;
+    }
+
+    @Override // am0
+    public int V() {
+        a();
+        if (!b() || Color.alpha(cmb.v0(this.n, this.a)) == 0) {
+            return this.f;
+        }
+        return 0;
+    }
+
+    public final void a() {
+        if (this.r != anb.b) {
+            d();
         }
     }
 
-    public /* synthetic */ bm0(byte b) {
-        this.a = b;
+    public final boolean b() {
+        return this.n >= 0 && cmb.g1(this.a);
+    }
+
+    public boolean c() {
+        return gm.B(cmb.v0(this.b, this.a)) < 0.721f;
+    }
+
+    public final void d() {
+        this.r = anb.b;
+        this.d = cmb.p1(this.c, cmb.v0(this.b, this.a));
+        if (c()) {
+            this.f = 687865855;
+            this.h = 352321535;
+            this.e = 0;
+        } else {
+            this.f = -1;
+            this.h = -1;
+            this.e = TLObject.FLAG_29;
+        }
+    }
+
+    @Override // am0
+    public final int g0() {
+        if (b()) {
+            return cmb.v0(this.n, this.a);
+        }
+        return 0;
+    }
+
+    @Override // am0
+    public final float g1() {
+        return gm.N(0.6f);
+    }
+
+    @Override // am0
+    public final int h1() {
+        if (b()) {
+            return cmb.v0(cmb.xa, this.a);
+        }
+        return 0;
+    }
+
+    @Override // am0
+    public int r1() {
+        a();
+        return b() ? cmb.v0(cmb.wa, this.a) : this.e;
+    }
+
+    @Override // am0
+    public int u0() {
+        a();
+        if (!b() || Color.alpha(cmb.v0(this.n, this.a)) == 0) {
+            return this.h;
+        }
+        return 0;
+    }
+
+    @Override // am0
+    public final float w0() {
+        if (b()) {
+            return gm.N(1.0f);
+        }
+        return -1.0f;
+    }
+
+    @Override // am0
+    public final float y0() {
+        if (b()) {
+            return gm.N(2.25f);
+        }
+        return -1.0f;
+    }
+
+    public bm0(int i, ylb ylbVar) {
+        this(ylbVar, i, e86.e(262144) ? 0.85f : 0.76f);
     }
 }

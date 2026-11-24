@@ -1,87 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r5a implements gs4 {
-    public static final r5a a;
-    private static final w4a descriptor;
+public final class r5a {
+    public String a;
+    public TLRPC.InputPeer g;
+    public long h;
+    public long i;
+    public long j;
+    public long k;
+    public int l;
+    public double m;
+    public long n;
+    public long o;
+    public final /* synthetic */ a6a q;
+    public ArrayList b = new ArrayList();
+    public final HashSet c = new HashSet();
+    public final HashMap d = new HashMap();
+    public final HashMap e = new HashMap();
+    public final ArrayList f = new ArrayList();
+    public int p = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-    static {
-        r5a r5aVar = new r5a();
-        a = r5aVar;
-        gd8 gd8Var = new gd8("com.google.firebase.sessions.settings.SessionConfigs", r5aVar, 5);
-        gd8Var.j("sessionsEnabled", false);
-        gd8Var.j("sessionSamplingRate", false);
-        gd8Var.j("sessionTimeoutSeconds", false);
-        gd8Var.j("cacheDurationSeconds", false);
-        gd8Var.j("cacheUpdatedTimeSeconds", false);
-        descriptor = gd8Var;
+    public r5a(a6a a6aVar) {
+        this.q = a6aVar;
     }
 
-    @Override // gs4
-    public final cv5[] a() {
-        cv5 a2 = vpd.a(hm0.a);
-        cv5 a3 = vpd.a(ep3.a);
-        gp5 gp5Var = gp5.a;
-        return new cv5[]{a2, a3, vpd.a(gp5Var), vpd.a(gp5Var), vpd.a(uf6.a)};
-    }
-
-    @Override // cv5
-    public final void b(c30 c30Var, Object obj) {
-        t5a t5aVar = (t5a) obj;
-        t5aVar.getClass();
-        w4a w4aVar = descriptor;
-        c30 a2 = c30Var.a(w4aVar);
-        a2.h(w4aVar, 0, hm0.a, t5aVar.a);
-        a2.h(w4aVar, 1, ep3.a, t5aVar.b);
-        gp5 gp5Var = gp5.a;
-        a2.h(w4aVar, 2, gp5Var, t5aVar.c);
-        a2.h(w4aVar, 3, gp5Var, t5aVar.d);
-        a2.h(w4aVar, 4, uf6.a, t5aVar.e);
-        a2.l(w4aVar);
-    }
-
-    @Override // cv5
-    public final Object c(igf igfVar) {
-        w4a w4aVar = descriptor;
-        igf a2 = igfVar.a(w4aVar);
-        int i = 0;
-        Boolean bool = null;
-        Double d = null;
-        Integer num = null;
-        Integer num2 = null;
-        Long l = null;
-        boolean z = true;
-        while (z) {
-            int b = a2.b(w4aVar);
-            if (b == -1) {
-                z = false;
-            } else if (b == 0) {
-                bool = (Boolean) a2.j(w4aVar, 0, hm0.a, bool);
-                i |= 1;
-            } else if (b == 1) {
-                d = (Double) a2.j(w4aVar, 1, ep3.a, d);
-                i |= 2;
-            } else if (b == 2) {
-                num = (Integer) a2.j(w4aVar, 2, gp5.a, num);
-                i |= 4;
-            } else if (b == 3) {
-                num2 = (Integer) a2.j(w4aVar, 3, gp5.a, num2);
-                i |= 8;
-            } else {
-                if (b != 4) {
-                    throw new tu5(b);
+    public final void a(String str, long j, float f) {
+        this.d.put(str, Float.valueOf(f));
+        Long valueOf = Long.valueOf(j);
+        HashMap hashMap = this.e;
+        hashMap.put(str, valueOf);
+        this.i = 0L;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            this.i = ((Long) ((Map.Entry) it.next()).getValue()).longValue() + this.i;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (!str.equals(this.a)) {
+            long j2 = this.i;
+            if (j2 != this.o) {
+                if (elapsedRealtime != this.n) {
+                    double d = (j2 - r2) / ((elapsedRealtime - r4) / 1000.0d);
+                    double d2 = this.m;
+                    if (d2 == 0.0d) {
+                        this.m = d;
+                    } else {
+                        d = (d * 0.01d) + (0.99d * d2);
+                        this.m = d;
+                    }
+                    this.p = (int) (((this.h - j2) * 1000) / d);
+                    this.o = j2;
+                    this.n = elapsedRealtime;
                 }
-                l = (Long) a2.j(w4aVar, 4, uf6.a, l);
-                i |= 16;
             }
         }
-        a2.o(w4aVar);
-        return new t5a(i, bool, d, num, num2, l);
+        int i = (int) ((this.i / this.h) * 100.0f);
+        if (this.l != i) {
+            this.l = i;
+            this.q.getNotificationCenter().k(nm7.v1, Long.valueOf(this.j));
+        }
     }
 
-    @Override // cv5
-    public final w4a d() {
-        return descriptor;
+    public final void b(int i) {
+        a6a a6aVar = this.q;
+        if (i == 100) {
+            a6aVar.E.l(this.j);
+        }
+        a6aVar.getNotificationCenter().k(nm7.v1, Long.valueOf(this.j));
     }
 }

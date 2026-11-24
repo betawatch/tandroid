@@ -1,22 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.Context;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class bze {
-    public static String a(int i) {
-        if (i == 100) {
-            return "HIGH_ACCURACY";
+public final class bze implements qze {
+    public final ArrayList a;
+
+    public bze(Context context, jye jyeVar) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        jyeVar.getClass();
+        arrayList.add(new v0f(context, jyeVar));
+    }
+
+    @Override // qze
+    public final void a(ry ryVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((qze) obj).a(ryVar);
         }
-        if (i == 102) {
-            return "BALANCED_POWER_ACCURACY";
-        }
-        if (i == 104) {
-            return "LOW_POWER";
-        }
-        if (i == 105) {
-            return "PASSIVE";
-        }
-        sc8.e();
-        return null;
     }
 }

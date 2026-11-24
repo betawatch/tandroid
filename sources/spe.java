@@ -1,21 +1,19 @@
 // default package
 
-import com.google.android.gms.cast.framework.media.internal.ResourceProvider;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class spe {
-    public static int a(String str) {
-        try {
-            Map map = ResourceProvider.a;
-            Integer num = (Integer) ResourceProvider.class.getMethod("findResourceByName", String.class).invoke(null, str);
-            if (num != null) {
-                return num.intValue();
-            }
-        } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
+public final class spe implements cq7 {
+    public static final spe a = new spe();
+
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return 0;
+        throw null;
     }
 }

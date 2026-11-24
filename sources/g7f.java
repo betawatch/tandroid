@@ -1,42 +1,42 @@
 // default package
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class g7f implements Iterator {
-    public Map.Entry a;
-    public final /* synthetic */ Iterator b;
-
-    public g7f(xze xzeVar, Iterator it) {
-        this.b = it;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        Map.Entry entry = (Map.Entry) this.b.next();
-        this.a = entry;
-        return entry.getKey();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        Map.Entry entry = this.a;
-        if (!(entry != null)) {
-            sc8.j("no calls to next() since the last call to remove()");
-            return;
+public final class g7f extends zz4 {
+    @Override // hh0
+    public final IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        Collection collection = (Collection) entry.getValue();
-        this.b.remove();
-        collection.size();
-        collection.clear();
-        this.a = null;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.internal.ICastService");
+        return queryLocalInterface instanceof p9d ? (p9d) queryLocalInterface : new p9d(iBinder, "com.google.android.gms.cast.internal.ICastService", (byte) 3);
+    }
+
+    @Override // hh0
+    public final o94[] f() {
+        return jgd.e;
+    }
+
+    @Override // hh0
+    public final int i() {
+        return 12451000;
+    }
+
+    @Override // hh0
+    public final String l() {
+        return "com.google.android.gms.cast.internal.ICastService";
+    }
+
+    @Override // hh0
+    public final String n() {
+        return "com.google.android.gms.cast.service.BIND_CAST_DEVICE_CONTROLLER_SERVICE";
+    }
+
+    @Override // hh0
+    public final boolean x() {
+        return true;
     }
 }

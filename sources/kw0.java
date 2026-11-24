@@ -1,27 +1,24 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.webkit.WebView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class kw0 extends zo0 {
-    public final /* synthetic */ ow0 s;
+public final class kw0 implements WebView.FindListener {
+    public final /* synthetic */ mw0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw0(ow0 ow0Var, Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.s = ow0Var;
+    public kw0(mw0 mw0Var) {
+        this.a = mw0Var;
     }
 
-    @Override // zo0, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        if (!this.s.f0 && gl.O1() && !gl.E && !gl.N1()) {
-            Point point = gl.q;
-            i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
+    @Override // android.webkit.WebView.FindListener
+    public final void onFindResultReceived(int i, int i2, boolean z) {
+        mw0 mw0Var = this.a;
+        mw0Var.H = i;
+        mw0Var.I = i2;
+        Runnable runnable = mw0Var.J;
+        if (runnable != null) {
+            runnable.run();
         }
-        super.onMeasure(i, i2);
     }
 }

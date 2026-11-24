@@ -1,55 +1,92 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.io.File;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEncodingService;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final /* synthetic */ class en6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hq6 b;
-    public final /* synthetic */ TLRPC.messages_Messages c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ int w;
+    public final /* synthetic */ MediaController a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ oo6 d;
+    public final /* synthetic */ File e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ long r;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ en6(hq6 hq6Var, TLRPC.messages_Messages messages_messages, int i, long j, ArrayList arrayList, int i2, int i3, boolean z, int i4, int i5, byte b) {
-        this.a = b;
-        this.b = hq6Var;
-        this.c = messages_messages;
-        this.d = i;
-        this.e = j;
-        this.f = arrayList;
-        this.h = i2;
-        this.n = i3;
-        this.r = z;
-        this.s = i4;
-        this.w = i5;
+    public /* synthetic */ en6(MediaController mediaController, boolean z, boolean z2, oo6 oo6Var, File file, float f, long j, boolean z3, long j2) {
+        this.a = mediaController;
+        this.b = z;
+        this.c = z2;
+        this.d = oo6Var;
+        this.e = file;
+        this.f = f;
+        this.h = j;
+        this.n = z3;
+        this.r = j2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                gl.d3(new en6(this.b, this.c, this.d ? 1 : 0, this.e, this.f, this.h, this.n, this.r, this.s, this.w, (byte) 1));
-                break;
-            default:
-                TLRPC.messages_Messages messages_messages = this.c;
-                int i = messages_messages.count;
-                hq6 hq6Var = this.b;
-                na7 messagesController = hq6Var.getMessagesController();
-                ArrayList<TLRPC.User> arrayList = messages_messages.users;
-                boolean z = this.d;
-                messagesController.a4(arrayList, z);
-                hq6Var.getMessagesController().U3(messages_messages.chats, z);
-                hq6Var.getNotificationCenter().k(32, Long.valueOf(this.e), Integer.valueOf(i), this.f, Integer.valueOf(this.h), Integer.valueOf(this.n), Boolean.valueOf(this.r), Boolean.valueOf(this.s != 0), Integer.valueOf(this.w));
-                break;
+        VideoEncodingService videoEncodingService;
+        char c;
+        MediaController mediaController = this.a;
+        boolean z = this.b;
+        boolean z2 = this.c;
+        oo6 oo6Var = this.d;
+        File file = this.e;
+        float f = this.f;
+        long j = this.h;
+        boolean z3 = this.n;
+        long j2 = this.r;
+        String[] strArr = MediaController.W1;
+        if (z || z2) {
+            boolean z4 = oo6Var.b.V;
+            synchronized (mediaController.b) {
+                oo6Var.b.V = false;
+            }
+            mediaController.c0.remove(oo6Var);
+            mediaController.a0.remove(oo6Var);
+            mediaController.f(z4 || z);
+            if (oo6Var.d && (videoEncodingService = VideoEncodingService.e) != null && videoEncodingService.b == oo6Var) {
+                oo6 oo6Var2 = MediaController.w().b0;
+                VideoEncodingService videoEncodingService2 = VideoEncodingService.e;
+                if (oo6Var2 != null) {
+                    videoEncodingService2.a(oo6Var2);
+                } else {
+                    videoEncodingService2.stopSelf();
+                }
+            }
+            mediaController.x0();
         }
+        if (z) {
+            nm7.f(oo6Var.c).k(nm7.c2, oo6Var.a, file.toString(), Float.valueOf(f), Long.valueOf(j));
+            return;
+        }
+        if (z3) {
+            c = 1;
+            nm7.f(oo6Var.c).k(nm7.a2, oo6Var.a, file.toString(), Float.valueOf(f), Long.valueOf(j));
+        } else {
+            c = 1;
+        }
+        nm7 f2 = nm7.f(oo6Var.c);
+        int i = nm7.b2;
+        k47 k47Var = oo6Var.a;
+        String file2 = file.toString();
+        Long valueOf = Long.valueOf(j2);
+        Long valueOf2 = Long.valueOf(z2 ? file.length() : 0L);
+        Float valueOf3 = Float.valueOf(f);
+        Long valueOf4 = Long.valueOf(j);
+        Object[] objArr = new Object[6];
+        objArr[0] = k47Var;
+        objArr[c] = file2;
+        objArr[2] = valueOf;
+        objArr[3] = valueOf2;
+        objArr[4] = valueOf3;
+        objArr[5] = valueOf4;
+        f2.k(i, objArr);
     }
 }

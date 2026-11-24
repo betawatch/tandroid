@@ -1,8 +1,8 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements kvc, xvc {
+public final /* synthetic */ class i implements lxc, yxc {
     public final /* synthetic */ byte a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class i implements kvc, xvc {
         this.f = obj2;
     }
 
-    @Override // xvc
+    @Override // yxc
     public final Object run() {
         byte b = this.a;
         Object obj = this.f;
@@ -43,7 +43,7 @@ public final /* synthetic */ class i implements kvc, xvc {
         return null;
     }
 
-    @Override // kvc
+    @Override // lxc
     public final void run() {
         ((WidgetEngineBackend) this.e).lambda$canvasRun$8(this.b, this.c, this.d, (int[]) this.f);
     }

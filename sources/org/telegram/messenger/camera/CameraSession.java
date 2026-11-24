@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
@@ -41,7 +41,7 @@ public class CameraSession {
     public ArrayList<String> availableFlashModes = new ArrayList<>();
     private int infoCameraId = -1;
     Camera.CameraInfo info = new Camera.CameraInfo();
-    private Camera.AutoFocusCallback autoFocusCallback = new ea1();
+    private Camera.AutoFocusCallback autoFocusCallback = new mb1();
 
     public CameraSession(CameraInfo cameraInfo, Size size, Size size2, int i, boolean z) {
         this.previewSize = size;
@@ -88,7 +88,7 @@ public class CameraSession {
             if (rotation == 1) {
                 i = 90;
             } else if (rotation == 2) {
-                i = kk7.J2;
+                i = nm7.J2;
             } else if (rotation == 3) {
                 i = 270;
             }
@@ -153,7 +153,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    fc4.g(e, true);
                     parameters = null;
                 }
                 updateCameraInfo();
@@ -211,7 +211,7 @@ public class CameraSession {
                 }
             }
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
         }
     }
 
@@ -233,7 +233,7 @@ public class CameraSession {
             mediaRecorder.setProfile(CamcorderProfile.get(this.cameraInfo.cameraId, high));
         } else {
             if (!hasProfile2) {
-                sc8.j("cannot find valid CamcorderProfile");
+                dq9.m("cannot find valid CamcorderProfile");
                 return;
             }
             mediaRecorder.setProfile(CamcorderProfile.get(this.cameraInfo.cameraId, 0));
@@ -251,18 +251,18 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    fc4.g(e, true);
                     parameters = null;
                 }
                 updateCameraInfo();
                 updateRotation();
                 if (parameters != null) {
-                    if (z && w01.a) {
-                        fa4.b("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
+                    if (z && e21.a) {
+                        fc4.b("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
                     }
                     parameters.setPreviewSize(this.previewSize.getWidth(), this.previewSize.getHeight());
-                    if (z && w01.a) {
-                        fa4.b("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
+                    if (z && e21.a) {
+                        fc4.b("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
                     }
                     parameters.setPictureSize(this.pictureSize.getWidth(), this.pictureSize.getHeight());
                     parameters.setPictureFormat(this.pictureFormat);
@@ -307,7 +307,7 @@ public class CameraSession {
             }
             return true;
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
             return false;
         }
     }
@@ -331,7 +331,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    fc4.g(e, true);
                     parameters = null;
                 }
                 if (parameters != null) {
@@ -348,12 +348,12 @@ public class CameraSession {
                         camera.setParameters(parameters);
                         camera.autoFocus(this.autoFocusCallback);
                     } catch (Exception e2) {
-                        fa4.g(e2, true);
+                        fc4.g(e2, true);
                     }
                 }
             }
         } catch (Exception e3) {
-            fa4.g(e3, true);
+            fc4.g(e3, true);
         }
     }
 
@@ -462,7 +462,7 @@ public class CameraSession {
                 configurePhotoCamera();
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
@@ -506,9 +506,9 @@ public class CameraSession {
                         if (i4 == 1) {
                             i = 90;
                         } else if (i4 == 2) {
-                            i = kk7.J2;
+                            i = nm7.J2;
                         } else if (i4 == 3) {
-                            i = kk7.s4;
+                            i = nm7.s4;
                         }
                         Camera.CameraInfo cameraInfo = this.info;
                         i2 = cameraInfo.orientation;
@@ -540,7 +540,7 @@ public class CameraSession {
                     this.diffOrientation = i5 + 360;
                 }
             } catch (Throwable th) {
-                fa4.g(th, true);
+                fc4.g(th, true);
             }
         }
     }
@@ -554,7 +554,7 @@ public class CameraSession {
             updateCameraInfo();
             return getDisplayOrientation(this.info, true);
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             return 0;
         }
     }

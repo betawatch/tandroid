@@ -1,29 +1,177 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class dta implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eta b;
-    public final /* synthetic */ long c;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import android.view.View;
+import java.util.HashSet;
 
-    public /* synthetic */ dta(eta etaVar, long j, byte b) {
-        this.a = b;
-        this.b = etaVar;
-        this.c = j;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public class dta extends View implements vlb {
+    public cta a;
+    public final zka b;
+    public int c;
+    public eg9 d;
+    public boolean e;
+    public Paint f;
+    public LinearGradient h;
+    public Matrix n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dta(Context context) {
+        super(context);
+        int i = gda.o() == 2 ? nm7.d3 : gda.o() == 1 ? 100 : 50;
+        this.b = new zka((Object) this, (byte) 1);
+        this.e = true;
+        this.a = new cta(i);
+        a();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        eta etaVar = this.b;
-        switch (b) {
-            case 0:
-                etaVar.q.b0(etaVar.b, etaVar.c, this.c, true, true, etaVar.n);
-                break;
-            default:
-                etaVar.q.b0(etaVar.b, etaVar.c, this.c, true, true, etaVar.n);
-                break;
+    public void a() {
+        cta ctaVar = this.a;
+        ctaVar.N = 100;
+        ctaVar.L = true;
+        ctaVar.G = true;
+        ctaVar.J = true;
+        ctaVar.H = true;
+        ctaVar.r = (byte) 4;
+        ctaVar.w = 0.98f;
+        ctaVar.v = 0.98f;
+        ctaVar.u = 0.98f;
+        ctaVar.c();
+    }
+
+    public final void b(float f) {
+        float f2 = f < 60.0f ? 5.0f : f < 180.0f ? 9.0f : 15.0f;
+        AnimatorSet animatorSet = new AnimatorSet();
+        rha rhaVar = new rha(this, (byte) 6);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, f2);
+        ofFloat.addUpdateListener(rhaVar);
+        ofFloat.setDuration(600L);
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f2, 1.0f);
+        ofFloat2.addUpdateListener(rhaVar);
+        ofFloat2.setDuration(2000L);
+        animatorSet.playTogether(ofFloat, ofFloat2);
+        animatorSet.start();
+    }
+
+    public final void c() {
+        Paint paint = new Paint(1);
+        this.f = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, gm.L(12.0f), new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.h = linearGradient;
+        this.f.setShader(linearGradient);
+        this.n = new Matrix();
+    }
+
+    public int getStarsRectWidth() {
+        return gm.L(140.0f);
+    }
+
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        eg9 eg9Var = new eg9(this, (byte) 9);
+        this.d = eg9Var;
+        e86.a(eg9Var);
+        boolean e = e86.e(131072);
+        if (this.e != e) {
+            this.e = e;
+            invalidate();
         }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        HashSet hashSet;
+        super.onDetachedFromWindow();
+        eg9 eg9Var = this.d;
+        if (eg9Var == null || (hashSet = e86.n) == null) {
+            return;
+        }
+        hashSet.remove(eg9Var);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        super.onDraw(canvas);
+        if (this.e) {
+            if (this.f != null) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), nm7.d4, 31);
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+            }
+            this.a.d(canvas2);
+            if (this.f != null) {
+                canvas2.save();
+                this.n.reset();
+                this.n.postTranslate(0.0f, (getHeight() + 1) - gm.L(12.0f));
+                this.h.setLocalMatrix(this.n);
+                canvas2.drawRect(0.0f, getHeight() - gm.L(12.0f), getWidth(), getHeight(), this.f);
+                this.n.reset();
+                this.n.postRotate(180.0f);
+                this.n.postTranslate(0.0f, gm.L(12.0f));
+                this.h.setLocalMatrix(this.n);
+                canvas2.drawRect(0.0f, 0.0f, getWidth(), gm.L(12.0f), this.f);
+                canvas2.restore();
+                canvas2.restore();
+            }
+            if (this.a.g) {
+                return;
+            }
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
+        this.a.a.set(0.0f, 0.0f, getStarsRectWidth(), gm.L(140.0f));
+        this.a.a.offset((getMeasuredWidth() - this.a.a.width()) / 2.0f, (getMeasuredHeight() - this.a.a.height()) / 2.0f);
+        this.a.b.set(-gm.L(15.0f), -gm.L(15.0f), gm.L(15.0f) + getMeasuredWidth(), gm.L(15.0f) + getMeasuredHeight());
+        if (this.c != measuredHeight) {
+            this.c = measuredHeight;
+            this.a.f();
+        }
+    }
+
+    public void setPaused(boolean z) {
+        cta ctaVar = this.a;
+        if (z == ctaVar.g) {
+            return;
+        }
+        ctaVar.g = z;
+        if (z) {
+            ctaVar.Q = System.currentTimeMillis();
+            return;
+        }
+        for (int i = 0; i < this.a.n.size(); i++) {
+            bta btaVar = (bta) this.a.n.get(i);
+            btaVar.a = (System.currentTimeMillis() - this.a.Q) + btaVar.a;
+        }
+        invalidate();
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        zka zkaVar = this.b;
+        removeCallbacks(zkaVar);
+        postDelayed(zkaVar, 150L);
+    }
+
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

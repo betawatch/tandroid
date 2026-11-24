@@ -1,31 +1,29 @@
 // default package
 
-import android.os.CancellationSignal;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class n13 implements qp4 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ n13(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    @Override // qp4
-    public final Object invoke(Object obj) {
-        byte b = this.a;
-        g5c g5cVar = g5c.a;
-        Object obj2 = this.b;
+public final class n13 extends o13 {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n13(CharSequence charSequence, byte b) {
+        super(charSequence, "androidx.credentials.TYPE_CREATE_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION");
         switch (b) {
-            case 0:
-                ((CancellationSignal) obj2).cancel();
+            case 2:
+                super(charSequence, "android.credentials.CreateCredentialException.TYPE_UNKNOWN");
+                break;
+            case 3:
+                super(charSequence, "androidx.credentials.TYPE_CREATE_CREDENTIAL_UNSUPPORTED_EXCEPTION");
                 break;
             default:
-                ((na1) obj2).resumeWith(g5cVar);
                 break;
         }
-        return g5cVar;
+    }
+
+    public n13(CharSequence charSequence, String str) {
+        super(charSequence, str);
+        if (str.length() > 0) {
+            return;
+        }
+        u36.j("type must not be empty");
+        throw null;
     }
 }

@@ -1,31 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jba implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lba b;
+public final class jba extends lba {
+    public final /* synthetic */ byte f;
+    public final /* synthetic */ iba g;
+    public final /* synthetic */ mba h;
 
-    public /* synthetic */ jba(lba lbaVar, byte b) {
-        this.a = b;
-        this.b = lbaVar;
+    public /* synthetic */ jba(mba mbaVar, iba ibaVar, byte b) {
+        this.f = b;
+        this.h = mbaVar;
+        this.g = ibaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 1;
-        lba lbaVar = this.b;
+    @Override // lba
+    public final void a() {
+        byte b = this.f;
+        mba mbaVar = this.h;
         switch (b) {
             case 0:
-                lbaVar.post(new jba(lbaVar, b2));
+                dba dbaVar = mbaVar.h;
+                float f = dbaVar.i;
+                float f2 = dbaVar.j;
+                this.d = f;
+                this.e = f2;
                 break;
             default:
-                lbaVar.c0.N0 = true;
-                lbaVar.I.clear();
-                lbaVar.J.clear();
-                lbaVar.K.clear();
-                lbaVar.invalidate();
+                dba dbaVar2 = mbaVar.h;
+                float f3 = dbaVar2.d;
+                float f4 = dbaVar2.e;
+                this.d = f3;
+                this.e = f4;
+                break;
+        }
+    }
+
+    @Override // lba
+    public final void b(float f, float f2) {
+        byte b = this.f;
+        iba ibaVar = this.g;
+        mba mbaVar = this.h;
+        switch (b) {
+            case 0:
+                dba dbaVar = mbaVar.h;
+                dbaVar.i = f;
+                dbaVar.j = f2;
+                this.d = f;
+                this.e = f2;
+                ibaVar.a();
+                break;
+            default:
+                dba dbaVar2 = mbaVar.h;
+                dbaVar2.d = f;
+                dbaVar2.e = f2;
+                this.d = f;
+                this.e = f2;
+                ibaVar.a();
                 break;
         }
     }

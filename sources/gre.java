@@ -1,125 +1,151 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
 public abstract class gre {
-    public static String a(int i, int i2, String str) {
-        if (i < 0) {
-            return nue.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+    public static yg7 a(float[] fArr, float[] fArr2, float f, float f2, int[] iArr, float f3) {
+        int[][] iArr2;
+        float f4;
+        float f5;
+        int[][] iArr3;
+        int length = fArr.length;
+        yg7 yg7Var = new yg7();
+        float f6 = 0.0f;
+        if (length == 0) {
+            yg7Var.a = Math.max(f, Math.min(f2, f3 > 0.0f ? f3 : 1.0f));
+            yg7Var.b = new float[0];
+            yg7Var.c = new int[0];
+            yg7Var.e = new int[0];
+            return yg7Var;
         }
-        if (i2 >= 0) {
-            return nue.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
+        yg7Var.f = Float.MAX_VALUE;
+        Integer[] numArr = new Integer[length];
+        for (int i = 0; i < length; i++) {
+            numArr[i] = Integer.valueOf(i);
         }
-        w26.j(de9.k(i2, "negative size: "));
-        return null;
-    }
-
-    public static void b(int i, int i2, String str, boolean z) {
-        if (z) {
-            return;
+        if (iArr != null) {
+            Arrays.sort(numArr, new i01(iArr, (byte) 5));
         }
-        w26.j(nue.a(str, Integer.valueOf(i), Integer.valueOf(i2)));
-    }
-
-    public static void c(int i, String str, boolean z) {
-        if (z) {
-            return;
+        int[] iArr4 = new int[length];
+        for (int i2 = 0; i2 < length; i2++) {
+            iArr4[i2] = numArr[i2].intValue();
         }
-        w26.j(nue.a(str, Integer.valueOf(i)));
-    }
-
-    public static void d(long j, String str, boolean z) {
-        if (z) {
-            return;
-        }
-        w26.j(nue.a(str, Long.valueOf(j)));
-    }
-
-    public static void e(String str, boolean z) {
-        if (z) {
-            return;
-        }
-        w26.j(str);
-    }
-
-    public static void f(boolean z) {
-        if (z) {
-            return;
-        }
-        sc8.e();
-    }
-
-    public static void g(boolean z, String str, long j, long j2) {
-        if (z) {
-            return;
-        }
-        w26.j(nue.a(str, Long.valueOf(j), Long.valueOf(j2)));
-    }
-
-    public static void h(boolean z, String str, Comparable comparable) {
-        if (z) {
-            return;
-        }
-        w26.j(nue.a(str, comparable));
-    }
-
-    public static void i(boolean z, String str, Object obj, Comparable comparable) {
-        if (z) {
-            return;
-        }
-        w26.j(nue.a(str, obj, comparable));
-    }
-
-    public static void j(int i, int i2) {
-        String a;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                a = nue.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
-            } else {
-                if (i2 < 0) {
-                    w26.j(de9.k(i2, "negative size: "));
-                    return;
-                }
-                a = nue.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+        int i3 = 1;
+        if (length <= 1) {
+            iArr2 = new int[][]{iArr4};
+        } else {
+            Integer[] numArr2 = new Integer[length];
+            for (int i4 = 0; i4 < length; i4++) {
+                numArr2[i4] = Integer.valueOf(iArr4[i4]);
             }
-            throw new IndexOutOfBoundsException(a);
+            Arrays.sort(numArr2, new xm3(fArr, (byte) 2));
+            int[] iArr5 = new int[length];
+            int[] iArr6 = new int[length];
+            for (int i5 = 0; i5 < length; i5++) {
+                iArr5[i5] = numArr2[i5].intValue();
+                iArr6[(length - 1) - i5] = numArr2[i5].intValue();
+            }
+            iArr2 = Arrays.equals(iArr5, iArr4) ? new int[][]{iArr4, iArr6} : Arrays.equals(iArr6, iArr4) ? new int[][]{iArr4, iArr5} : new int[][]{iArr4, iArr5, iArr6};
         }
-    }
-
-    public static void k(Object obj) {
-        obj.getClass();
-    }
-
-    public static void l(Object obj, String str) {
-        if (obj != null) {
-            return;
+        int[][] iArr7 = iArr2;
+        if (length <= 8) {
+            int i6 = length - 1;
+            int i7 = 1 << i6;
+            iArr3 = new int[i7][];
+            int i8 = 0;
+            while (i8 < i7) {
+                int[] iArr8 = new int[Integer.bitCount(i8) + 1];
+                float f7 = f6;
+                int i9 = 0;
+                int i10 = 1;
+                for (int i11 = 0; i11 < i6; i11++) {
+                    if ((i8 & (1 << i11)) != 0) {
+                        iArr8[i9] = i10;
+                        i10 = 1;
+                        i9++;
+                    } else {
+                        i10++;
+                    }
+                }
+                iArr8[i9] = i10;
+                iArr3[i8] = iArr8;
+                i8++;
+                f6 = f7;
+            }
+            f4 = f6;
+            f5 = 1.0f;
+        } else {
+            f4 = 0.0f;
+            ArrayList arrayList = new ArrayList();
+            int i12 = 1;
+            while (i12 <= length) {
+                int i13 = length / i12;
+                int i14 = length % i12;
+                int[] iArr9 = new int[i12];
+                int[] iArr10 = new int[i12];
+                int i15 = 0;
+                while (i15 < i12) {
+                    iArr9[i15] = i13 + (i15 < i14 ? i3 : 0);
+                    iArr10[i15] = (i15 >= i12 - i14 ? 1 : 0) + i13;
+                    i15++;
+                    i3 = 1;
+                }
+                arrayList.add(iArr9);
+                if (i14 != 0) {
+                    arrayList.add(iArr10);
+                }
+                i12++;
+                i3 = 1;
+            }
+            f5 = 1.0f;
+            iArr3 = (int[][]) arrayList.toArray(new int[0][]);
         }
-        fvc.f(str);
-    }
-
-    public static void m(int i, int i2) {
-        if (i < 0 || i > i2) {
-            k93.i(a(i, i2, "index"));
+        float[] fArr3 = new float[length];
+        for (int i16 = 0; i16 < length; i16++) {
+            float f8 = fArr[i16];
+            fArr3[i16] = f8 > f4 ? f5 / f8 : f4;
         }
-    }
-
-    public static void n(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? a(i, i3, "start index") : (i2 < 0 || i2 > i3) ? a(i2, i3, "end index") : nue.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+        float[] fArr4 = new float[length];
+        for (int i17 = 0; i17 < length; i17++) {
+            fArr4[i17] = fArr2[i17];
         }
-    }
-
-    public static void o(String str, boolean z) {
-        if (z) {
-            return;
+        xg7 xg7Var = new xg7(fArr, fArr4, f, f2, f3);
+        xg7 xg7Var2 = new xg7(fArr3, fArr4, f5 / f2, f5 / f, f3 > f4 ? f5 / f3 : f4);
+        int length2 = iArr7.length;
+        int i18 = 0;
+        while (i18 < length2) {
+            int[] iArr11 = iArr7[i18];
+            int i19 = 0;
+            for (int i20 = 0; i20 < iArr11.length; i20++) {
+                if (iArr11[i20] != iArr4[i20]) {
+                    i19++;
+                }
+            }
+            float f9 = i19 * 0.05f;
+            int length3 = iArr3.length;
+            int i21 = 0;
+            while (i21 < length3) {
+                int[] iArr12 = iArr3[i21];
+                xg7 xg7Var3 = xg7Var;
+                int[] iArr13 = iArr11;
+                float f10 = f9;
+                yg7 yg7Var2 = yg7Var;
+                xg7Var3.a(iArr13, iArr12, f10, yg7Var2, false);
+                if (iArr12.length > 1) {
+                    xg7Var2.a(iArr13, iArr12, f10, yg7Var2, true);
+                }
+                i21++;
+                yg7Var = yg7Var2;
+                xg7Var = xg7Var3;
+                iArr11 = iArr13;
+                f9 = f10;
+            }
+            i18++;
+            xg7Var = xg7Var;
         }
-        sc8.j(str);
-    }
-
-    public static void p(boolean z) {
-        if (z) {
-            return;
-        }
-        sdb.a();
+        return yg7Var;
     }
 }

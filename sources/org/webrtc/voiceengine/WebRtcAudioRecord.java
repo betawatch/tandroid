@@ -13,7 +13,7 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class WebRtcAudioRecord {
     private static final long AUDIO_RECORD_THREAD_JOIN_TIMEOUT_MS = 2000;
@@ -40,13 +40,13 @@ public class WebRtcAudioRecord {
     private int requestedSampleRate = 48000;
     private int requestedChannels = 1;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public enum AudioRecordStartErrorCode {
         AUDIO_RECORD_START_EXCEPTION,
         AUDIO_RECORD_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -88,7 +88,7 @@ public class WebRtcAudioRecord {
                             WebRtcAudioRecord webRtcAudioRecord = WebRtcAudioRecord.this;
                             webRtcAudioRecord.nativeDataIsRecorded(read, webRtcAudioRecord.nativeAudioRecord);
                         } catch (UnsatisfiedLinkError e) {
-                            fa4.g(e, true);
+                            fc4.g(e, true);
                             this.keepAlive = false;
                         }
                     }
@@ -120,7 +120,7 @@ public class WebRtcAudioRecord {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class AudioSamples {
         private final int audioFormat;
         private final int channelCount;
@@ -151,7 +151,7 @@ public class WebRtcAudioRecord {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface WebRtcAudioRecordErrorCallback {
         void onWebRtcAudioRecordError(String str);
 
@@ -160,7 +160,7 @@ public class WebRtcAudioRecord {
         void onWebRtcAudioRecordStartError(AudioRecordStartErrorCode audioRecordStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface WebRtcAudioRecordSamplesReadyCallback {
         void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
     }
@@ -185,7 +185,7 @@ public class WebRtcAudioRecord {
         if (z) {
             return;
         }
-        fi7.g("Expected condition to be true");
+        bh7.j("Expected condition to be true");
     }
 
     private int channelCountToConfiguration(int i) {
@@ -236,7 +236,7 @@ public class WebRtcAudioRecord {
             int channelCountToConfiguration = channelCountToConfiguration(i2);
             int minBufferSize = AudioRecord.getMinBufferSize(i, channelCountToConfiguration, 2);
             if (minBufferSize == -1 || minBufferSize == -2) {
-                reportWebRtcAudioRecordInitError(de9.k(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+                reportWebRtcAudioRecordInitError(hg9.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
                 return -1;
             }
             Logging.d(TAG, "AudioRecord.getMinBufferSize: " + minBufferSize);
@@ -254,7 +254,7 @@ public class WebRtcAudioRecord {
                 try {
                     MediaProjection mediaProjection = VideoCapturerDevice.getMediaProjection();
                     if (mediaProjection != null) {
-                        mk1.r();
+                        ul1.r();
                         AudioPlaybackCaptureConfiguration.Builder builder = new AudioPlaybackCaptureConfiguration.Builder(mediaProjection);
                         builder.addMatchingUsage(1);
                         builder.addMatchingUsage(14);
@@ -410,7 +410,7 @@ public class WebRtcAudioRecord {
         try {
             this.audioRecord.stop();
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
         }
         releaseAudioResources(false);
         return true;
@@ -424,12 +424,12 @@ public class WebRtcAudioRecord {
             int channelCountToConfiguration = channelCountToConfiguration(this.requestedChannels);
             int minBufferSize = AudioRecord.getMinBufferSize(this.requestedSampleRate, channelCountToConfiguration, 2);
             if (minBufferSize == -1 || minBufferSize == -2) {
-                reportWebRtcAudioRecordInitError(de9.k(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+                reportWebRtcAudioRecordInitError(hg9.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
                 return;
             }
             int max = Math.max(minBufferSize << 1, this.deviceByteBuffer.capacity());
             try {
-                mk1.r();
+                ul1.r();
                 AudioPlaybackCaptureConfiguration.Builder builder = new AudioPlaybackCaptureConfiguration.Builder(mediaProjection);
                 builder.addMatchingUsage(1);
                 builder.addMatchingUsage(14);
@@ -467,7 +467,7 @@ public class WebRtcAudioRecord {
         try {
             audioRecord.stop();
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
         }
         releaseAudioResources(true);
     }

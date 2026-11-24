@@ -1,54 +1,137 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class aga extends ccb implements gq4 {
-    public boolean a;
-    public /* synthetic */ ik4 b;
-    public /* synthetic */ Throwable c;
-    public final /* synthetic */ fga d;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aga(fga fgaVar, fw2 fw2Var) {
-        super(3, fw2Var);
-        this.d = fgaVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class aga extends q59 {
+    public final Context c;
+    public TLRPC.ChatFull d;
+    public ArrayList e;
+    public final /* synthetic */ nha f;
+
+    public aga(nha nhaVar, Context context) {
+        this.f = nhaVar;
+        this.c = context;
     }
 
-    @Override // gq4
-    public final Object a(Object obj, Object obj2, Object obj3) {
-        aga agaVar = new aga(this.d, (fw2) obj3);
-        agaVar.b = (ik4) obj;
-        agaVar.c = (Throwable) obj2;
-        return agaVar.invokeSuspend(g5c.a);
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        return true;
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        boolean z = this.a;
-        if (!z) {
-            qse.b(obj);
-            ik4 ik4Var = this.b;
-            Throwable th = this.c;
-            a6a a = this.d.b.a(null);
-            w5a w5aVar = new w5a(a, null, null);
-            StringBuilder sb = new StringBuilder("Init session datastore failed with exception message: ");
-            sb.append(th.getMessage());
-            sb.append(". Emit fallback session ");
-            ir2.x(sb, a.a, "FirebaseSessions");
-            this.b = null;
-            this.a = true;
-            Object c = ik4Var.c(w5aVar, this);
-            bx2 bx2Var = bx2.a;
-            if (c == bx2Var) {
-                return bx2Var;
-            }
-        } else {
-            if (!z) {
-                sc8.j("call to 'resume' before 'invoke' with coroutine");
-                return null;
-            }
-            qse.b(obj);
+    @Override // y59
+    public final int b() {
+        TLRPC.ChatFull chatFull = this.d;
+        if (chatFull != null && chatFull.participants.participants.isEmpty()) {
+            return 1;
         }
-        return g5c.a;
+        TLRPC.ChatFull chatFull2 = this.d;
+        if (chatFull2 != null) {
+            return chatFull2.participants.participants.size();
+        }
+        return 0;
+    }
+
+    @Override // y59
+    public final int d(int i) {
+        TLRPC.ChatFull chatFull = this.d;
+        return (chatFull == null || !chatFull.participants.participants.isEmpty()) ? 21 : 20;
+    }
+
+    @Override // y59
+    public final void t(u69 u69Var, int i) {
+        String str;
+        boolean z;
+        boolean z2;
+        boolean z3;
+        boolean z4;
+        boolean z5;
+        boolean z6;
+        nha nhaVar = this.f;
+        d dVar = nhaVar.y1;
+        View view = u69Var.a;
+        if (view instanceof w8c) {
+            w8c w8cVar = (w8c) view;
+            boolean isEmpty = this.e.isEmpty();
+            TLRPC.ChatFull chatFull = this.d;
+            TLRPC.ChatParticipant chatParticipant = !isEmpty ? chatFull.participants.participants.get(((Integer) this.e.get(i)).intValue()) : chatFull.participants.participants.get(i);
+            if (chatParticipant != null) {
+                if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                    TLRPC.ChannelParticipant channelParticipant = ((TLRPC.TL_chatChannelParticipant) chatParticipant).channelParticipant;
+                    String str2 = channelParticipant.rank;
+                    if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
+                        if (TextUtils.isEmpty(str2)) {
+                            str2 = jb6.M0(2131752369, "ChannelCreator");
+                        }
+                        z5 = true;
+                        z6 = true;
+                        z4 = false;
+                    } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
+                        if (TextUtils.isEmpty(str2)) {
+                            str2 = jb6.M0(2131752467, "ChannelAdmin");
+                        }
+                        z4 = channelParticipant.promoted_by == dVar.getUserConfig().e();
+                        z5 = true;
+                        z6 = false;
+                    } else {
+                        z4 = false;
+                        z5 = false;
+                        z6 = false;
+                    }
+                    boolean z7 = z6;
+                    z3 = z4;
+                    z = z5;
+                    z2 = z7;
+                    str = str2;
+                } else {
+                    String str3 = chatParticipant.rank;
+                    if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
+                        if (TextUtils.isEmpty(str3)) {
+                            str3 = jb6.M0(2131752369, "ChannelCreator");
+                        }
+                        str = str3;
+                        z = true;
+                        z2 = true;
+                        z3 = false;
+                    } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
+                        if (TextUtils.isEmpty(str3)) {
+                            str3 = jb6.M0(2131752467, "ChannelAdmin");
+                        }
+                        z3 = chatParticipant.inviter_id == dVar.getUserConfig().e();
+                        str = str3;
+                        z = true;
+                        z2 = false;
+                    } else {
+                        str = str3;
+                        z = false;
+                        z2 = false;
+                        z3 = false;
+                    }
+                }
+                TLRPC.User W1 = dVar.getMessagesController().W1(Long.valueOf(chatParticipant.user_id));
+                w8cVar.a(str, z, z2, m9c.D(W1) && sd2.h(dVar.getMessagesController().L0(Long.valueOf(-nhaVar.m1))), new ns5(this, W1, str, z, z2, z3, (byte) 2));
+                w8cVar.d(W1, null, null, i != this.d.participants.participants.size() - 1);
+            }
+        }
+    }
+
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        nha nhaVar = this.f;
+        if (i == 20) {
+            bj G = nha.G(7, nhaVar.m1, nhaVar.I1, this.c);
+            G.setLayoutParams(new g69(-1, -1));
+            return new b59(G);
+        }
+        w8c w8cVar = new w8c(9, 0, nhaVar.I1, this.c, true, false);
+        w8cVar.setLayoutParams(new g69(-1, -2));
+        return new b59(w8cVar);
     }
 }

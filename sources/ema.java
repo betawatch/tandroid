@@ -1,81 +1,84 @@
 // default package
 
-import android.graphics.Color;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class ema {
-    public final String a;
-    public final int b;
-    public final Integer c;
-    public final Integer d;
-    public final float e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final boolean i;
-    public final int j;
+    public final SocketFactory a;
+    public final qa b;
+    public final short c;
+    public int d = 1;
+    public short e = 250;
+    public boolean f;
+    public Socket g;
 
-    public ema(String str, int i, Integer num, Integer num2, float f, boolean z, boolean z2, boolean z3, boolean z4, int i2) {
-        this.a = str;
-        this.b = i;
-        this.c = num;
-        this.d = num2;
-        this.e = f;
-        this.f = z;
-        this.g = z2;
-        this.h = z3;
-        this.i = z4;
-        this.j = i2;
+    /* JADX WARN: Multi-variable type inference failed */
+    public ema(SocketFactory socketFactory, qa qaVar, int i, ste steVar, SSLSocketFactory sSLSocketFactory) {
+        this.a = socketFactory;
+        this.b = qaVar;
+        this.c = i;
     }
 
-    public static int a(String str) {
-        boolean z;
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00aa  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a() {
+        InetAddress[] inetAddressArr;
+        String str = "";
+        int i = this.d;
+        short s = this.e;
+        SocketFactory socketFactory = this.a;
+        qa qaVar = this.b;
+        gma gmaVar = new gma(socketFactory, qaVar, this.c, i, s);
+        UnknownHostException unknownHostException = null;
         try {
-            int parseInt = Integer.parseInt(str.trim());
-            switch (parseInt) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    z = true;
-                    break;
-                default:
-                    z = false;
-                    break;
+            inetAddressArr = InetAddress.getAllByName(qaVar.a);
+            try {
+                Arrays.sort(inetAddressArr, new ju6((byte) 9));
+            } catch (UnknownHostException e) {
+                e = e;
+                unknownHostException = e;
+                if (inetAddressArr != null) {
+                }
+                if (unknownHostException == null) {
+                }
+                throw new dwc(44, "Failed to resolve hostname " + qaVar + ": " + unknownHostException.getMessage(), unknownHostException);
             }
-            if (z) {
-                return parseInt;
+        } catch (UnknownHostException e2) {
+            e = e2;
+            inetAddressArr = null;
+        }
+        if (inetAddressArr != null || inetAddressArr.length <= 0) {
+            if (unknownHostException == null) {
+                unknownHostException = new UnknownHostException("No IP addresses found");
             }
-        } catch (NumberFormatException unused) {
+            throw new dwc(44, "Failed to resolve hostname " + qaVar + ": " + unknownHostException.getMessage(), unknownHostException);
         }
-        oo1.s("Ignoring unknown alignment: ", str, "SsaStyle");
-        return -1;
-    }
-
-    public static boolean b(String str) {
         try {
-            int parseInt = Integer.parseInt(str);
-            return parseInt == 1 || parseInt == -1;
-        } catch (NumberFormatException e) {
-            lad.g("SsaStyle", "Failed to parse boolean value: '" + str + "'", e);
-            return false;
-        }
-    }
-
-    public static Integer c(String str) {
-        try {
-            long parseLong = str.startsWith("&H") ? Long.parseLong(str.substring(2), 16) : Long.parseLong(str);
-            gre.f(parseLong <= 4294967295L);
-            return Integer.valueOf(Color.argb(gle.b(((parseLong >> 24) & 255) ^ 255), gle.b(parseLong & 255), gle.b((parseLong >> 8) & 255), gle.b((parseLong >> 16) & 255)));
-        } catch (IllegalArgumentException e) {
-            lad.g("SsaStyle", "Failed to parse color expression: '" + str + "'", e);
-            return null;
+            Socket a = gmaVar.a(inetAddressArr);
+            this.g = a;
+            if (a instanceof SSLSocket) {
+                SSLSocket sSLSocket = (SSLSocket) a;
+                String str2 = qaVar.a;
+                if (!this.f || pq7.a.verify(str2, sSLSocket.getSession())) {
+                    return;
+                }
+                try {
+                    str = " (" + sSLSocket.getSession().getPeerPrincipal().toString() + ")";
+                } catch (Exception unused) {
+                }
+                throw new zh5(49, b10.i("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
+            }
+        } catch (Exception e3) {
+            throw new dwc(44, "Failed to connect to '" + qaVar + "': " + e3.getMessage(), e3);
         }
     }
 }

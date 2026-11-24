@@ -1,33 +1,15 @@
 // default package
 
-import android.graphics.RenderNode;
-import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class y75 extends u75 {
-    public final /* synthetic */ b85 h;
+public final class y75 extends om8 {
+    public final /* synthetic */ g95 F;
 
-    public y75(b85 b85Var) {
-        this.h = b85Var;
-        this.e = -1;
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        t75 t75Var = new t75(viewGroup.getContext());
-        t75Var.setPadding(gl.L(22.0f), 0, gl.L(22.0f), 0);
-        s75 s75Var = new s75(t75Var);
-        b85 b85Var = this.h;
-        View view = b85Var.X0;
-        RenderNode renderNode = b85Var.V0;
-        float f = b85Var.W0;
-        t75 t75Var2 = s75Var.v;
-        t75Var2.H = view;
-        t75Var2.F = renderNode;
-        t75Var2.G = f;
-        t75Var2.setDelegate(b85Var.Z0);
-        return s75Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y75(g95 g95Var, LaunchActivity launchActivity, boolean z) {
+        super(launchActivity, z);
+        this.F = g95Var;
     }
 }

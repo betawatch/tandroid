@@ -1,62 +1,128 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qda implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final /* synthetic */ class qda implements tp4, af7, hk3 {
+    public final /* synthetic */ nha a;
 
-    public /* synthetic */ qda(KeyEvent.Callback callback, int i, byte b) {
-        this.a = b;
-        this.c = callback;
-        this.b = i;
+    public /* synthetic */ qda(nha nhaVar) {
+        this.a = nhaVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        byte b = this.a;
-        int i = this.b;
-        KeyEvent.Callback callback = this.c;
-        switch (b) {
-            case 0:
-                nfa nfaVar = (nfa) callback;
-                nfaVar.n0[i].getViewTreeObserver().removeOnPreDrawListener(this);
-                nfaVar.N(i);
-                break;
-            default:
-                x7c x7cVar = (x7c) callback;
-                ns9 ns9Var = x7cVar.n1;
-                ns9Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = ns9Var.getChildCount();
-                AnimatorSet animatorSet = new AnimatorSet();
-                for (int i2 = 0; i2 < childCount; i2++) {
-                    View childAt = ns9Var.getChildAt(i2);
-                    ns9Var.getClass();
-                    int R = RecyclerView.R(childAt);
-                    if (R >= i) {
-                        if (R == 1 && ns9Var.getAdapter() == x7cVar.o1 && (childAt instanceof l35)) {
-                            childAt = ((l35) childAt).getTextView();
-                        }
-                        childAt.setAlpha(0.0f);
-                        int min = (int) ((Math.min(ns9Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / ns9Var.getMeasuredHeight()) * 100.0f);
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                        ofFloat.setStartDelay(min);
-                        ofFloat.setDuration(200L);
-                        animatorSet.playTogether(ofFloat);
-                    }
-                }
-                animatorSet.start();
-                break;
+    @Override // hk3
+    public final boolean E() {
+        return false;
+    }
+
+    @Override // af7
+    public final void a(String str) {
+        this.a.w0(str);
+    }
+
+    public final void b(boolean z) {
+        nha nhaVar = this.a;
+        if (!z) {
+            nhaVar.requestLayout();
         }
-        return true;
+        nhaVar.setVisibleHeight(nhaVar.Q1);
+    }
+
+    @Override // hk3
+    public final boolean q(nk3 nk3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, sxb sxbVar) {
+        nha nhaVar = this.a;
+        SparseArray[] sparseArrayArr = nhaVar.c1;
+        d dVar = nhaVar.y1;
+        ArrayList arrayList2 = new ArrayList();
+        boolean z3 = true;
+        int i3 = 1;
+        while (true) {
+            int i4 = 0;
+            if (i3 < 0) {
+                break;
+            }
+            ArrayList arrayList3 = new ArrayList();
+            for (int i5 = 0; i5 < sparseArrayArr[i3].size(); i5++) {
+                arrayList3.add(Integer.valueOf(sparseArrayArr[i3].keyAt(i5)));
+            }
+            Collections.sort(arrayList3);
+            int size = arrayList3.size();
+            while (i4 < size) {
+                Object obj = arrayList3.get(i4);
+                i4++;
+                Integer num = (Integer) obj;
+                if (num.intValue() > 0) {
+                    arrayList2.add((k47) sparseArrayArr[i3].get(num.intValue()));
+                }
+            }
+            sparseArrayArr[i3].clear();
+            i3--;
+        }
+        nhaVar.d1 = 0;
+        nhaVar.l1(false);
+        yga ygaVar = nhaVar.U;
+        if (ygaVar != null) {
+            ygaVar.x.clear();
+        }
+        UndoView undoView = null;
+        if (arrayList.size() <= 1 && ((bf7) arrayList.get(0)).a != dVar.getUserConfig().e() && charSequence == null) {
+            long j = ((bf7) arrayList.get(0)).a;
+            Bundle l = ts2.l("scrollToTopOnResume", true);
+            if (pg3.B(j)) {
+                l.putInt("enc_id", (int) (j & 4294967295L));
+            } else {
+                if (pg3.D(j)) {
+                    l.putLong("user_id", j);
+                } else {
+                    l.putLong("chat_id", -j);
+                }
+                if (!dVar.getMessagesController().A(l, nk3Var, null, null)) {
+                    return true;
+                }
+            }
+            dVar.getNotificationCenter().k(nm7.s, new Object[0]);
+            yv1 yv1Var = new yv1(l);
+            no4.a(yv1Var, (bf7) arrayList.get(0));
+            nk3Var.presentFragment(yv1Var, true);
+            yv1Var.cc(arrayList2);
+            return true;
+        }
+        nhaVar.J1(true);
+        int i6 = 0;
+        while (i6 < arrayList.size()) {
+            long j2 = ((bf7) arrayList.get(i6)).a;
+            if (charSequence != null) {
+                dVar.getSendMessagesHelper().q0(y5a.b(charSequence.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            }
+            dVar.getSendMessagesHelper().p0(arrayList2, j2, false, false, true, 0, 0, null, -1, 0L, 0L, null);
+            i6++;
+            z3 = z3;
+            undoView = undoView;
+        }
+        boolean z4 = z3;
+        UndoView undoView2 = undoView;
+        nk3Var.finishFragment();
+        UndoView undoView3 = dVar instanceof ProfileActivity ? ((ProfileActivity) dVar).M : undoView2;
+        if (undoView3 == null) {
+            return z4;
+        }
+        if (arrayList.size() == z4) {
+            undoView3.m(Integer.valueOf(arrayList2.size()), 53, ((bf7) arrayList.get(0)).a);
+            return z4;
+        }
+        undoView3.k(0L, 53, Integer.valueOf(arrayList2.size()), Integer.valueOf(arrayList.size()), null, null);
+        return z4;
+    }
+
+    @Override // hk3
+    public final boolean s(nk3 nk3Var) {
+        return false;
     }
 }

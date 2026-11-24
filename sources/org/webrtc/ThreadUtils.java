@@ -7,26 +7,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class ThreadUtils {
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     class 1CaughtException {
         Exception e;
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     class 1Result {
         public V value;
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface BlockingOperation {
         void run();
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -37,7 +37,7 @@ public class ThreadUtils {
             if (Thread.currentThread() == this.thread) {
                 return;
             }
-            sc8.j("Wrong thread");
+            dq9.m("Wrong thread");
         }
 
         public void detachThread() {
@@ -73,7 +73,7 @@ public class ThreadUtils {
         if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
             return;
         }
-        sc8.j("Not on main thread!");
+        dq9.m("Not on main thread!");
     }
 
     public static StackTraceElement[] concatStackTraces(StackTraceElement[] stackTraceElementArr, StackTraceElement[] stackTraceElementArr2) {
@@ -103,7 +103,7 @@ public class ThreadUtils {
             try {
                 return callable.call();
             } catch (Exception e) {
-                sdb.b(e);
+                rjb.m(e);
                 return null;
             }
         }

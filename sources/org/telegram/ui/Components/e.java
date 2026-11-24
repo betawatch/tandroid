@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -16,21 +16,21 @@ public final class e extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        i29 i29Var = chatActivityEnterView.i1;
-        if (i29Var != null && i29Var.T0 != null) {
-            chatActivityEnterView.y5 = new kx1(this, animator, (byte) 2);
+        l49 l49Var = chatActivityEnterView.i1;
+        if (l49Var != null && l49Var.T0 != null) {
+            chatActivityEnterView.y5 = new lx1(this, animator, (byte) 3);
             return;
         }
-        scc sccVar = chatActivityEnterView.g1;
-        if (sccVar != null) {
-            sccVar.setVisibility(8);
+        tec tecVar = chatActivityEnterView.g1;
+        if (tecVar != null) {
+            tecVar.setVisibility(8);
         }
-        i29 i29Var2 = chatActivityEnterView.i1;
-        if (i29Var2 != null) {
-            i29Var2.setVisibility(8);
+        l49 l49Var2 = chatActivityEnterView.i1;
+        if (l49Var2 != null) {
+            l49Var2.setVisibility(8);
         }
         chatActivityEnterView.e5 = 0.0f;
-        chatActivityEnterView.U0();
+        chatActivityEnterView.V0();
         chatActivityEnterView.M0();
         ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
         if (recordCircle != null) {

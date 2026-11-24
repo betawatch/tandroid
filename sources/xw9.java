@@ -1,25 +1,24 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class xw9 extends FrameLayout {
-    public FrameLayout a;
-    public ri b;
-    public ah8 c;
-    public String d;
-    public ValueAnimator e;
-    public float f;
-    public Boolean h;
-    public ValueAnimator n;
+public final class xw9 extends TLObject {
+    public final yw9 a;
+    public final TLRPC.TL_secureFile b;
+    public final String c;
+    public TLRPC.TL_inputFile d;
+    public final byte[] e;
+    public final byte[] f;
+    public byte i;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        setPadding(gl.L(5.0f), gl.L(8.0f), gl.L(5.0f), gl.L(8.0f));
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + gl.L(44.0f), TLObject.FLAG_30));
+    public xw9(yw9 yw9Var, TLRPC.TL_secureFile tL_secureFile, String str, byte[] bArr, byte[] bArr2) {
+        this.a = yw9Var;
+        this.b = tL_secureFile;
+        this.c = str;
+        this.f = bArr;
+        this.e = bArr2;
     }
 }

@@ -1,64 +1,34 @@
 // default package
 
-import org.telegram.ui.PasscodeActivity;
+import android.view.KeyEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ev7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PasscodeActivity b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ev7 implements k8, mac {
+    public final /* synthetic */ xv7 a;
 
-    public /* synthetic */ ev7(PasscodeActivity passcodeActivity, byte b) {
-        this.a = b;
-        this.b = passcodeActivity;
+    public /* synthetic */ ev7(xv7 xv7Var) {
+        this.a = xv7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        PasscodeActivity passcodeActivity = this.b;
-        switch (b) {
-            case 0:
-                passcodeActivity.n.postDelayed(passcodeActivity.T, 3000L);
-                passcodeActivity.S = true;
-                break;
-            case 1:
-                vc4 vc4Var = passcodeActivity.W;
-                if (vc4Var != null) {
-                    gl.d3(vc4Var);
-                    passcodeActivity.W = null;
-                }
-                passcodeActivity.finishFragment();
-                break;
-            case 2:
-                passcodeActivity.presentFragment(new PasscodeActivity(0), true);
-                t36 t36Var = passcodeActivity.V;
-                if (t36Var != null) {
-                    gl.d3(t36Var);
-                    passcodeActivity.V = null;
-                    break;
-                }
-                break;
-            case 3:
-                gl.e3(new ev7(passcodeActivity, (byte) 4), passcodeActivity.p0() ? 150L : 1000L);
-                break;
-            case 4:
-                if (passcodeActivity.p0()) {
-                    for (sj2 sj2Var : passcodeActivity.n.f) {
-                        sj2Var.A(0.0f);
-                    }
-                    break;
-                } else {
-                    passcodeActivity.f.a(0.0f);
-                    break;
-                }
-            case 5:
-                passcodeActivity.S = false;
-                gl.S3(passcodeActivity.r, false);
-                break;
-            default:
-                passcodeActivity.w0();
-                break;
+    @Override // mac
+    public final void h(Object obj, TLRPC.Document document, Boolean bool) {
+        xv7 xv7Var = this.a;
+        xv7Var.f2 = true;
+        qv7 k0 = xv7Var.k0(obj, document);
+        if (bool.booleanValue()) {
+            k0.setScale(1.5f);
+        }
+        xv7Var.a0(k0);
+    }
+
+    @Override // k8
+    public final void q(KeyEvent keyEvent) {
+        xv7 xv7Var;
+        m8 m8Var;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m8Var = (xv7Var = this.a).x1) != null && m8Var.isShowing()) {
+            xv7Var.x1.d(true);
         }
     }
 }

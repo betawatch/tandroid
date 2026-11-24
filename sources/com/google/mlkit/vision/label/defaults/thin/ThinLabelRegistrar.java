@@ -3,28 +3,28 @@ package com.google.mlkit.vision.label.defaults.thin;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class ThinLabelRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        lp2 b = mp2.b(ktd.class);
-        b.a(wd3.b(ae7.class));
-        b.f = ize.r;
-        mp2 b2 = b.b();
-        lp2 b3 = mp2.b(jnd.class);
-        b3.a(wd3.b(ktd.class));
-        b3.a(wd3.b(u44.class));
-        b3.f = o5f.s;
-        mp2 b4 = b3.b();
-        lp2 b5 = mp2.b(hg7.class);
+        wq2 b = xq2.b(nvd.class);
+        b.a(if3.b(cg7.class));
+        b.f = k1f.r;
+        xq2 b2 = b.b();
+        wq2 b3 = xq2.b(mpd.class);
+        b3.a(if3.b(nvd.class));
+        b3.a(if3.b(f64.class));
+        b3.f = q7f.s;
+        xq2 b4 = b3.b();
+        wq2 b5 = xq2.b(ki7.class);
         b5.e = true;
-        b5.a(new wd3(1, 1, jnd.class));
-        b5.f = eef.s;
-        mp2 b6 = b5.b();
-        ccd ccdVar = ncd.f;
+        b5.a(new if3(1, 1, mpd.class));
+        b5.f = fgf.s;
+        xq2 b6 = b5.b();
+        eed eedVar = ped.f;
         Object[] objArr = {b2, b4, b6};
-        p0f.a(3, objArr);
-        return new hfd(3, objArr);
+        r2f.a(3, objArr);
+        return new ihd(3, objArr);
     }
 }

@@ -1,19 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.IInterface;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class evd implements zn7 {
-    public static final evd a = new evd();
+public interface evd extends IInterface {
+    boolean getBooleanFlagValue(String str, boolean z, int i);
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
-    }
+    int getIntFlagValue(String str, int i, int i2);
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
-    }
+    long getLongFlagValue(String str, long j, int i);
+
+    String getStringFlagValue(String str, String str2, int i);
+
+    void init(xk5 xk5Var);
 }

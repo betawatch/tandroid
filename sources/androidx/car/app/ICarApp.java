@@ -9,7 +9,7 @@ import android.os.Parcel;
 import androidx.car.app.ICarHost;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public interface ICarApp extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ICarApp".replace('$', '.');
@@ -30,11 +30,11 @@ public interface ICarApp extends IInterface {
 
     void onConfigurationChanged(Configuration configuration, IOnDoneCallback iOnDoneCallback);
 
-    void onHandshakeCompleted(y21 y21Var, IOnDoneCallback iOnDoneCallback);
+    void onHandshakeCompleted(g41 g41Var, IOnDoneCallback iOnDoneCallback);
 
     void onNewIntent(Intent intent, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static abstract class Stub extends Binder implements ICarApp {
         static final int TRANSACTION_getAppInfo = 10;
         static final int TRANSACTION_getManager = 9;
@@ -47,7 +47,7 @@ public interface ICarApp extends IInterface {
         static final int TRANSACTION_onHandshakeCompleted = 11;
         static final int TRANSACTION_onNewIntent = 7;
 
-        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
         private static class Proxy implements ICarApp {
             private IBinder mRemote;
 
@@ -95,8 +95,8 @@ public interface ICarApp extends IInterface {
                 try {
                     obtain.writeInterfaceToken(ICarApp.DESCRIPTOR);
                     obtain.writeStrongInterface(iCarHost);
-                    sje.b(obtain, intent);
-                    sje.b(obtain, configuration);
+                    ule.b(obtain, intent);
+                    ule.b(obtain, configuration);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -157,7 +157,7 @@ public interface ICarApp extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarApp.DESCRIPTOR);
-                    sje.b(obtain, configuration);
+                    ule.b(obtain, configuration);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(8, obtain, null, 1);
                 } finally {
@@ -166,11 +166,11 @@ public interface ICarApp extends IInterface {
             }
 
             @Override // androidx.car.app.ICarApp
-            public void onHandshakeCompleted(y21 y21Var, IOnDoneCallback iOnDoneCallback) {
+            public void onHandshakeCompleted(g41 g41Var, IOnDoneCallback iOnDoneCallback) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarApp.DESCRIPTOR);
-                    sje.b(obtain, y21Var);
+                    ule.b(obtain, g41Var);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(11, obtain, null, 1);
                 } finally {
@@ -183,7 +183,7 @@ public interface ICarApp extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarApp.DESCRIPTOR);
-                    sje.b(obtain, intent);
+                    ule.b(obtain, intent);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(7, obtain, null, 1);
                 } finally {
@@ -216,7 +216,7 @@ public interface ICarApp extends IInterface {
             }
             switch (i) {
                 case 2:
-                    onAppCreate(ICarHost.Stub.asInterface(parcel.readStrongBinder()), (Intent) sje.a(parcel, Intent.CREATOR), (Configuration) sje.a(parcel, Configuration.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onAppCreate(ICarHost.Stub.asInterface(parcel.readStrongBinder()), (Intent) ule.a(parcel, Intent.CREATOR), (Configuration) ule.a(parcel, Configuration.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 3:
                     onAppStart(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
@@ -231,10 +231,10 @@ public interface ICarApp extends IInterface {
                     onAppStop(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 7:
-                    onNewIntent((Intent) sje.a(parcel, Intent.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onNewIntent((Intent) ule.a(parcel, Intent.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 8:
-                    onConfigurationChanged((Configuration) sje.a(parcel, Configuration.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onConfigurationChanged((Configuration) ule.a(parcel, Configuration.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 9:
                     getManager(parcel.readString(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
@@ -243,7 +243,7 @@ public interface ICarApp extends IInterface {
                     getAppInfo(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 11:
-                    onHandshakeCompleted((y21) sje.a(parcel, y21.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onHandshakeCompleted((g41) ule.a(parcel, g41.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 default:
                     return super.onTransact(i, parcel, parcel2, i2);
@@ -256,7 +256,7 @@ public interface ICarApp extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Default implements ICarApp {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -292,7 +292,7 @@ public interface ICarApp extends IInterface {
         }
 
         @Override // androidx.car.app.ICarApp
-        public void onHandshakeCompleted(y21 y21Var, IOnDoneCallback iOnDoneCallback) {
+        public void onHandshakeCompleted(g41 g41Var, IOnDoneCallback iOnDoneCallback) {
         }
 
         @Override // androidx.car.app.ICarApp

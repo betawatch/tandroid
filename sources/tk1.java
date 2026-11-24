@@ -1,19 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class tk1 {
-    public boolean a;
-    public boolean b;
-    public float c = 1.0f;
-    public final /* synthetic */ uk1 d;
+import java.util.Arrays;
 
-    public tk1(uk1 uk1Var) {
-        this.d = uk1Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class tk1 extends tl5 {
+    public final String b;
+    public final boolean c;
+    public final boolean d;
+    public final String[] e;
+    public final tl5[] f;
+
+    public tk1(String str, boolean z, boolean z2, String[] strArr, tl5[] tl5VarArr) {
+        super("CTOC");
+        this.b = str;
+        this.c = z;
+        this.d = z2;
+        this.e = strArr;
+        this.f = tl5VarArr;
     }
 
-    public final void a() {
-        this.a = true;
-        this.d.F0.q();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || tk1.class != obj.getClass()) {
+            return false;
+        }
+        tk1 tk1Var = (tk1) obj;
+        return this.c == tk1Var.c && this.d == tk1Var.d && this.b.equals(tk1Var.b) && Arrays.equals(this.e, tk1Var.e) && Arrays.equals(this.f, tk1Var.f);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + ((((527 + (this.c ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31);
     }
 }

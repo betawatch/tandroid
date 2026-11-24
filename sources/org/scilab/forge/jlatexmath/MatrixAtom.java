@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class MatrixAtom extends Atom {
     public static final int ALIGN = 2;
@@ -85,7 +85,7 @@ public class MatrixAtom extends Atom {
         while (i < length) {
             i2++;
             if (i2 > 100000 || length > 10000) {
-                qm0.g("Column specification is too complex");
+                qn0.g("Column specification is too complex");
                 return;
             }
             char charAt = stringBuffer.charAt(i);

@@ -6,14 +6,14 @@ import android.text.TextUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class n9 extends rr {
+public abstract class n9 extends rs {
     public static void v(Activity activity, String[] strArr, int i) {
         HashSet hashSet = new HashSet();
         for (int i2 = 0; i2 < strArr.length; i2++) {
             if (TextUtils.isEmpty(strArr[i2])) {
-                w26.j(b00.j(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
+                u36.j(b10.j(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
                 return;
             }
             if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i2], "android.permission.POST_NOTIFICATIONS")) {

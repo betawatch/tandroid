@@ -1,29 +1,32 @@
 // default package
 
-import java.nio.ByteBuffer;
-import org.webrtc.JniCommon;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class ys5 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ByteBuffer b;
+    public final /* synthetic */ l7 b;
 
-    public /* synthetic */ ys5(ByteBuffer byteBuffer, byte b) {
+    public /* synthetic */ ys5(l7 l7Var, byte b) {
         this.a = b;
-        this.b = byteBuffer;
+        this.b = l7Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        ByteBuffer byteBuffer = this.b;
+        l7 l7Var = this.b;
         switch (b) {
             case 0:
-                JniCommon.nativeFreeByteBuffer(byteBuffer);
+                gm.E3(l7Var);
+                break;
+            case 1:
+                gm.E3(l7Var);
+                break;
+            case 2:
+                gm.E3(l7Var);
                 break;
             default:
-                JniCommon.nativeFreeByteBuffer(byteBuffer);
+                gm.E3(l7Var);
                 break;
         }
     }

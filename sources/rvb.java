@@ -1,24 +1,30 @@
 // default package
 
-import java.util.Iterator;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rvb implements ed {
-    public final /* synthetic */ tvb a;
+public final /* synthetic */ class rvb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wvb b;
 
-    public /* synthetic */ rvb(tvb tvbVar) {
-        this.a = tvbVar;
+    public /* synthetic */ rvb(wvb wvbVar, byte b) {
+        this.a = b;
+        this.b = wvbVar;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        wvb wvbVar = this.a.a;
-        Iterator it = wvbVar.e.iterator();
-        while (it.hasNext()) {
-            wvbVar.Y(((Integer) it.next()).intValue());
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        wvb wvbVar = this.b;
+        switch (b) {
+            case 0:
+                new kj8((d) wvbVar, 11, false).show();
+                break;
+            default:
+                wvbVar.e.requestFocus();
+                gm.E3(wvbVar.e);
+                break;
         }
-        wvbVar.e.clear();
-        wvbVar.Z();
     }
 }

@@ -1,16 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class qd3 extends gb3 {
-    public final /* synthetic */ sd3 F;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-    public qd3(sd3 sd3Var) {
-        this.F = sd3Var;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class qd3 extends dxe {
+    public final Object a = new Object();
+    public final ExecutorService b = Executors.newFixedThreadPool(4, new pd3());
+    public volatile Handler c;
 
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        this.F.b.invalidate();
+    public static Handler a(Looper looper) {
+        if (Build.VERSION.SDK_INT >= 28) {
+            return fp.c(looper);
+        }
+        try {
+            return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException unused) {
+            return new Handler(looper);
+        } catch (InvocationTargetException unused2) {
+            return new Handler(looper);
+        }
     }
 }

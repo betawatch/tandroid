@@ -1,31 +1,22 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.StickersActivity;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class e0b extends a2c {
-    public final /* synthetic */ StickersActivity b;
-
-    public e0b(StickersActivity stickersActivity) {
-        this.b = stickersActivity;
+public abstract class e0b extends Drawable {
+    public final void a() {
+        fi2 d = fi2.d();
+        fi2.c();
+        d.d.add(this);
     }
 
-    @Override // a2c
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z) {
-        int i;
-        StickersActivity stickersActivity = this.b;
-        i = ((d) stickersActivity).currentAccount;
-        hq6.d0(i).h2(stickersActivity.getParentActivity(), stickerSetCovered, 2, this.b, false, false);
-    }
+    public abstract void c(boolean z);
 
-    @Override // a2c
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        int i;
-        StickersActivity stickersActivity = this.b;
-        i = ((d) stickersActivity).currentAccount;
-        hq6.d0(i).h2(stickersActivity.getParentActivity(), stickerSetCovered, 0, this.b, false, false);
+    public abstract void d();
+
+    public abstract void e();
+
+    public void b(int i) {
     }
 }

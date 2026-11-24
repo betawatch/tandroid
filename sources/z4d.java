@@ -1,40 +1,27 @@
 // default package
 
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z4d implements aq2, OnSuccessListener, OnFailureListener {
-    public final /* synthetic */ byte a;
+public abstract class z4d {
+    public final byte a;
 
-    public /* synthetic */ z4d(ad1 ad1Var) {
-        this.a = (byte) 3;
+    /* JADX WARN: Multi-variable type inference failed */
+    public z4d(int i) {
+        this.a = i;
     }
 
-    @Override // aq2
-    public final Object K(gl2 gl2Var) {
-        switch (this.a) {
-            case 0:
-                return new ie7((byte) 0);
-            default:
-                return new l69(gl2Var.O(k69.class));
-        }
+    public static Status e(RemoteException remoteException) {
+        return new Status(19, remoteException.getClass().getSimpleName() + ": " + remoteException.getLocalizedMessage(), null, null);
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        Log.e("OptionalModuleUtils", "Failed to request modules install request", exc);
-    }
+    public abstract void a(Status status);
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        cze.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
-    }
+    public abstract void b(RuntimeException runtimeException);
 
-    public /* synthetic */ z4d(byte b) {
-        this.a = b;
-    }
+    public abstract void c(rhb rhbVar, boolean z);
+
+    public abstract void d(w3d w3dVar);
 }

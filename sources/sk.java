@@ -1,21 +1,35 @@
 // default package
 
-import android.view.View;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class sk implements View.OnLayoutChangeListener {
-    public final /* synthetic */ o39 a;
-    public final /* synthetic */ Runnable b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class sk {
+    public volatile Object a;
+    public final Object b;
+    public volatile Object c;
 
-    public sk(o39 o39Var, Runnable runnable) {
-        this.a = o39Var;
-        this.b = runnable;
+    public sk(xs7 xs7Var) {
+        k1f k1fVar = new k1f((byte) 18);
+        nf5 nf5Var = new nf5((byte) 28);
+        this.c = k1fVar;
+        this.b = new ArrayList();
+        this.a = nf5Var;
+        xs7Var.a(new zg(this));
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        this.a.removeOnLayoutChangeListener(this);
-        this.b.run();
+    public final boolean a() {
+        try {
+            Context context = (Context) this.b;
+            return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
+        } catch (Exception e) {
+            yid.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e);
+            return false;
+        }
+    }
+
+    public /* synthetic */ sk(Object obj) {
+        this.b = obj;
     }
 }

@@ -1,80 +1,57 @@
 // default package
 
-import java.util.ListIterator;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class dgd extends v5c implements ListIterator {
-    public final int b;
-    public int c;
-    public final xhd d;
+public final class dgd extends xcd {
+    public final transient h9d h;
+    public final transient Object[] n;
+    public final transient boolean r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dgd(xhd xhdVar, int i) {
-        super((byte) 10);
-        int size = xhdVar.size();
-        if (i < 0 || i > size) {
-            k93.i(k0f.c(i, size, "index"));
-            throw null;
+    public dgd(h9d h9dVar, Object[] objArr) {
+        super((byte) 0);
+        this.h = h9dVar;
+        this.n = objArr;
+        this.r = true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.h.get(key))) {
+                return true;
+            }
         }
-        this.b = size;
-        this.c = i;
-        this.d = xhdVar;
+        return false;
     }
 
-    public final Object a(int i) {
-        return this.d.get(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            w26.g();
-            return null;
+    @Override // zad
+    public final int h(Object[] objArr) {
+        ccd ccdVar = this.f;
+        if (ccdVar == null) {
+            ccdVar = new yfd(this);
+            this.f = ccdVar;
         }
-        int i = this.c;
-        this.c = i + 1;
-        return a(i);
+        return ccdVar.h(objArr);
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            w26.g();
-            return null;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        ccd ccdVar = this.f;
+        if (ccdVar == null) {
+            ccdVar = new yfd(this);
+            this.f = ccdVar;
         }
-        int i = this.c - 1;
-        this.c = i;
-        return a(i);
+        return ccdVar.listIterator(0);
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.r ? 1 : 0;
     }
 }

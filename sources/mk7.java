@@ -1,46 +1,110 @@
 // default package
 
-import android.app.PendingIntent;
-import android.os.Bundle;
-import androidx.core.graphics.drawable.IconCompat;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class mk7 {
-    public final Bundle a;
-    public IconCompat b;
-    public final g69[] c;
-    public final boolean d;
-    public final boolean e;
-    public final byte f;
-    public final int g;
-    public final CharSequence h;
-    public final PendingIntent i;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class mk7 extends my0 {
+    public final hs1 l1;
+    public final ArrayList m1;
+    public boolean n1;
+    public FrameLayout o1;
+    public Integer p1;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public mk7(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, g69[] g69VarArr, boolean z, int i, boolean z2) {
-        this.e = true;
-        this.b = iconCompat;
-        if (iconCompat != null && iconCompat.i() == 2) {
-            this.g = iconCompat.g();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mk7(Context context, ylb ylbVar, View... viewArr) {
+        super(1, ylbVar, context, true);
+        List asList = Arrays.asList(viewArr);
+        ArrayList arrayList = new ArrayList();
+        this.m1 = arrayList;
+        if (asList != null) {
+            arrayList.addAll(asList);
         }
-        this.h = xk7.c(charSequence);
-        this.i = pendingIntent;
-        this.a = bundle;
-        this.c = g69VarArr;
-        this.d = z;
-        this.f = i;
-        this.e = z2;
+        kk7 kk7Var = new kk7(this, context);
+        this.b = kk7Var;
+        hs1 hs1Var = new hs1((byte) 3, context, this);
+        this.l1 = hs1Var;
+        int i = this.u0;
+        hs1Var.setPadding(i, 0, i, gm.n);
+        kk7Var.addView(hs1Var, qoe.e(-1, -1, nm7.D1));
     }
 
-    public final IconCompat a() {
-        int i;
-        IconCompat iconCompat = this.b;
-        if (iconCompat != null || (i = this.g) == 0) {
-            return iconCompat;
+    @Override // my0
+    public final boolean C() {
+        return this.l1.getCurrentPosition() == 0;
+    }
+
+    public final void D0(lk7 lk7Var) {
+        this.m1.add(lk7Var);
+        if (this.n1) {
+            hs1 hs1Var = this.l1;
+            hs1Var.D(false);
+            hs1Var.m(false);
         }
-        IconCompat e = IconCompat.e(null, "", i);
-        this.b = e;
-        return e;
+    }
+
+    public final void E0(int i) {
+        this.p1 = Integer.valueOf(i);
+        s0(i);
+        K(i);
+        ((kk7) this.b).invalidate();
+    }
+
+    @Override // my0
+    public final boolean F(MotionEvent motionEvent) {
+        return this.l1.getCurrentPosition() == 0;
+    }
+
+    public final void F0(LinearLayout linearLayout) {
+        FrameLayout frameLayout = this.o1;
+        if (frameLayout == null) {
+            FrameLayout frameLayout2 = new FrameLayout(getContext());
+            this.o1 = frameLayout2;
+            frameLayout2.setClipChildren(false);
+            this.o1.setClipToPadding(false);
+            this.b.addView(this.o1, qoe.e(-1, -2, 80));
+        } else {
+            frameLayout.removeAllViews();
+        }
+        this.o1.addView(linearLayout, qoe.e(-1, -2, 80));
+        hs1 hs1Var = this.l1;
+        int i = this.u0;
+        hs1Var.setPadding(i, 0, i, 0);
+        ((kk7) this.b).requestLayout();
+    }
+
+    @Override // my0, android.app.Dialog
+    public final void onBackPressed() {
+        hs1 hs1Var = this.l1;
+        if (hs1Var.getCurrentPosition() <= 0) {
+            super.onBackPressed();
+            return;
+        }
+        for (View view : hs1Var.getViewPages()) {
+            if (view != null) {
+                gm.t1(view);
+            }
+        }
+        hs1Var.E(hs1Var.getCurrentPosition() - 1);
+    }
+
+    @Override // my0, android.app.Dialog
+    public final void show() {
+        if (!this.n1) {
+            this.n1 = true;
+            this.l1.setAdapter(new fn2(this, (byte) 3));
+        }
+        super.show();
+        Integer num = this.p1;
+        if (num != null) {
+            x0(num.intValue());
+        }
     }
 }

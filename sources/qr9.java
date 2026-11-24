@@ -1,41 +1,40 @@
 // default package
 
-import java.util.ArrayList;
+import android.app.Activity;
+import android.graphics.Canvas;
+import org.telegram.ui.SaveToGallerySettingsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qr9 implements yr9 {
-    public final /* synthetic */ nt2 a;
+public final class qr9 extends io {
+    public boolean s;
+    public final ln w;
+    public final /* synthetic */ SaveToGallerySettingsActivity x;
 
-    public qr9(nt2 nt2Var) {
-        this.a = nt2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qr9(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
+        super(activity, true, true, false);
+        this.x = saveToGallerySettingsActivity;
+        this.w = new ln(this);
+        getDrawable().K = true;
     }
 
-    @Override // yr9
-    public final vf6 O0() {
-        return null;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f = this.s ? 1.0f : 0.0f;
+        ln lnVar = this.w;
+        lnVar.e(false, f);
+        int i = cmb.x6;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.x;
+        setTextColor(on2.f(lnVar.c, saveToGallerySettingsActivity.getThemedColor(i), saveToGallerySettingsActivity.getThemedColor(cmb.m6)));
+        super.dispatchDraw(canvas);
     }
 
-    @Override // yr9
-    public final boolean U1(int i) {
-        return true;
-    }
-
-    @Override // yr9
-    public final void r(int i) {
-        nt2 nt2Var = this.a;
-        nt2Var.f();
-        if (i != 0) {
-            nt2Var.F();
+    public final void e(boolean z, boolean z2) {
+        if (this.s != z) {
+            this.s = z;
+            this.w.e(z2, z ? 1.0f : 0.0f);
+            invalidate();
         }
-    }
-
-    @Override // yr9
-    public final vf6 t1() {
-        return null;
-    }
-
-    @Override // yr9
-    public final void m2(ArrayList arrayList) {
     }
 }

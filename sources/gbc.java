@@ -1,49 +1,32 @@
 // default package
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import org.telegram.tgnet.InputSerializedData;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gbc implements o63 {
-    public final ExtendedDefaultDataSource a;
-    public final long b;
+public final /* synthetic */ class gbc implements rac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ InputSerializedData b;
 
-    public gbc(ExtendedDefaultDataSource extendedDefaultDataSource, long j) {
-        this.a = extendedDefaultDataSource;
-        this.b = j;
+    public /* synthetic */ gbc(InputSerializedData inputSerializedData, byte b) {
+        this.a = b;
+        this.b = inputSerializedData;
     }
 
-    @Override // o63
-    public final void addTransferListener(vyb vybVar) {
-        this.a.addTransferListener(vybVar);
-    }
-
-    @Override // o63
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // o63
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // o63
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // o63
-    public final long open(u63 u63Var) {
-        t63 a = u63Var.a();
-        a.e = u63Var.e + this.b;
-        return this.a.open(a.a());
-    }
-
-    @Override // g63
-    public final int read(byte[] bArr, int i, int i2) {
-        return this.a.read(bArr, i, i2);
+    @Override // rac
+    public final Object a(Object obj) {
+        byte b = this.a;
+        InputSerializedData inputSerializedData = this.b;
+        boolean booleanValue = ((Boolean) obj).booleanValue();
+        switch (b) {
+            case 0:
+                return Long.valueOf(inputSerializedData.readInt64(booleanValue));
+            case 1:
+                return Integer.valueOf(inputSerializedData.readInt32(booleanValue));
+            case 2:
+                return inputSerializedData.readString(booleanValue);
+            default:
+                return inputSerializedData.readByteArray(booleanValue);
+        }
     }
 }

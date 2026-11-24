@@ -1,98 +1,47 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import android.os.Build;
 
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ss extends rmd {
-    public static boolean a(Object[] objArr, Object obj) {
-        int i;
-        objArr.getClass();
-        if (obj == null) {
-            int length = objArr.length;
-            i = 0;
-            while (i < length) {
-                if (objArr[i] == null) {
-                    break;
-                }
-                i++;
-            }
-            i = -1;
-        } else {
-            int length2 = objArr.length;
-            for (int i2 = 0; i2 < length2; i2++) {
-                if (obj.equals(objArr[i2])) {
-                    i = i2;
-                    break;
-                }
-            }
-            i = -1;
+public final class ss {
+    public final String a;
+    public final xk b;
+
+    public ss(String str, xk xkVar) {
+        String str2 = Build.MODEL;
+        String str3 = Build.VERSION.RELEASE;
+        str.getClass();
+        str2.getClass();
+        str3.getClass();
+        this.a = str;
+        this.b = xkVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return i >= 0;
-    }
-
-    public static void b(int i, int i2, int i3, int[] iArr, int[] iArr2) {
-        iArr.getClass();
-        iArr2.getClass();
-        System.arraycopy(iArr, i2, iArr2, i, i3 - i2);
-    }
-
-    public static void c(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {
-        objArr.getClass();
-        objArr2.getClass();
-        System.arraycopy(objArr, i2, objArr2, i, i3 - i2);
-    }
-
-    public static /* synthetic */ void d(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {
-        if ((i3 & 4) != 0) {
-            i = 0;
+        if (!(obj instanceof ss)) {
+            return false;
         }
-        c(0, i, i2, objArr, objArr2);
+        ss ssVar = (ss) obj;
+        if (!rr5.a(this.a, ssVar.a)) {
+            return false;
+        }
+        String str = Build.MODEL;
+        if (!rr5.a(str, str)) {
+            return false;
+        }
+        String str2 = Build.VERSION.RELEASE;
+        return rr5.a(str2, str2) && this.b.equals(ssVar.b);
     }
 
-    public static final void e(int i, int i2, Object[] objArr) {
-        objArr.getClass();
-        Arrays.fill(objArr, i, i2, (Object) null);
+    public final int hashCode() {
+        return this.b.hashCode() + ((ud6.b.hashCode() + ts2.j((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 48517567) * 31, 31, Build.VERSION.RELEASE)) * 31);
     }
 
-    public static String f(Object[] objArr) {
-        objArr.getClass();
-        StringBuilder sb = new StringBuilder();
-        sb.append((CharSequence) "[");
-        int i = 0;
-        for (Object obj : objArr) {
-            i++;
-            if (i > 1) {
-                sb.append((CharSequence) ",");
-            }
-            g9b.a(sb, obj, null);
-        }
-        sb.append((CharSequence) "]");
-        return sb.toString();
-    }
-
-    public static List g(long[] jArr) {
-        jArr.getClass();
-        int length = jArr.length;
-        if (length == 0) {
-            return c24.a;
-        }
-        int i = 0;
-        if (length == 1) {
-            return zk2.a(Long.valueOf(jArr[0]));
-        }
-        ArrayList arrayList = new ArrayList(jArr.length);
-        int length2 = jArr.length;
-        while (i < length2) {
-            i = mue.c(i, 1, jArr[i], arrayList);
-        }
-        return arrayList;
-    }
-
-    public static List h(Object[] objArr) {
-        objArr.getClass();
-        int length = objArr.length;
-        return length != 0 ? length != 1 ? new ArrayList(new js(objArr)) : zk2.a(objArr[0]) : c24.a;
+    public final String toString() {
+        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=3.0.8, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + ud6.b + ", androidAppInfo=" + this.b + ')';
     }
 }

@@ -1,31 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class wff extends yff {
-    @Override // yff
-    public final void a(Object obj, long j) {
-        ldf ldfVar = (ldf) ((dff) ghf.g(obj, j));
-        if (ldfVar.a) {
-            ldfVar.a = false;
-        }
-    }
-
-    @Override // yff
-    public final void b(Object obj, long j, Object obj2) {
-        dff dffVar = (dff) ghf.g(obj, j);
-        dff dffVar2 = (dff) ghf.g(obj2, j);
-        int size = dffVar.size();
-        int size2 = dffVar2.size();
-        if (size > 0 && size2 > 0) {
-            if (!((ldf) dffVar).a) {
-                dffVar = dffVar.zzg(size2 + size);
-            }
-            dffVar.addAll(dffVar2);
-        }
-        if (size > 0) {
-            dffVar2 = dffVar;
-        }
-        ghf.i(obj, j, dffVar2);
-    }
+public abstract class wff {
 }

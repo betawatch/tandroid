@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class oge implements zn7 {
+public final class oge implements cq7 {
     public static final oge a = new oge();
+    public static final wa4 b = new wa4("durationMs", b10.m(mlb.q(ikd.class, new cid(1))));
+    public static final wa4 c = new wa4("errorCode", b10.m(mlb.q(ikd.class, new cid(2))));
+    public static final wa4 d = new wa4("isColdCall", b10.m(mlb.q(ikd.class, new cid(3))));
+    public static final wa4 e = new wa4("autoManageModelOnBackground", b10.m(mlb.q(ikd.class, new cid(4))));
+    public static final wa4 f = new wa4("autoManageModelOnLowMemory", b10.m(mlb.q(ikd.class, new cid(5))));
+    public static final wa4 g = new wa4("isNnApiEnabled", b10.m(mlb.q(ikd.class, new cid(6))));
+    public static final wa4 h = new wa4("eventsCount", b10.m(mlb.q(ikd.class, new cid(7))));
+    public static final wa4 i = new wa4("otherErrors", b10.m(mlb.q(ikd.class, new cid(8))));
+    public static final wa4 j = new wa4("remoteConfigValueForAcceleration", b10.m(mlb.q(ikd.class, new cid(9))));
+    public static final wa4 k = new wa4("isAccelerated", b10.m(mlb.q(ikd.class, new cid(10))));
 
-    static {
-        yjb.y(yjb.q(kkd.class, new cjd(1)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        c6f c6fVar = (c6f) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.a(b, c6fVar.a);
+        dq7Var.a(c, c6fVar.b);
+        dq7Var.a(d, c6fVar.c);
+        dq7Var.a(e, null);
+        dq7Var.a(f, null);
+        dq7Var.a(g, null);
+        dq7Var.a(h, null);
+        dq7Var.a(i, null);
+        dq7Var.a(j, null);
+        dq7Var.a(k, null);
     }
 }

@@ -1,32 +1,23 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class cic implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ dic b;
+public final class cic extends um8 {
+    public final /* synthetic */ iic W;
 
-    public /* synthetic */ cic(dic dicVar, byte b) {
-        this.a = b;
-        this.b = dicVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cic(iic iicVar, Context context, float f, float f2) {
+        super(context, f, f2);
+        this.W = iicVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        dic dicVar = this.b;
-        switch (b) {
-            case 0:
-                dicVar.getClass();
-                dicVar.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dicVar.a(dicVar.S, dicVar.T);
-                break;
-            default:
-                dicVar.a0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dicVar.invalidate();
-                break;
-        }
+    @Override // um8
+    public final int[] getFloatingViewLocation() {
+        int[] iArr = new int[2];
+        iic iicVar = this.W;
+        iicVar.Z.getLocationOnScreen(iArr);
+        return new int[]{iArr[0], iArr[1], iicVar.Z.getMeasuredWidth()};
     }
 }

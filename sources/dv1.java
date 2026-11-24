@@ -1,32 +1,27 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.ChatActivityEnterView;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class dv1 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class dv1 implements dc7 {
+    public final /* synthetic */ cr1 a;
+    public final /* synthetic */ yv1 b;
+    public final /* synthetic */ iv1 c;
 
-    public /* synthetic */ dv1(ChatActivityEnterView chatActivityEnterView, byte b) {
-        this.a = b;
-        this.b = chatActivityEnterView;
+    public dv1(iv1 iv1Var, cr1 cr1Var, yv1 yv1Var) {
+        this.c = iv1Var;
+        this.a = cr1Var;
+        this.b = yv1Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (b) {
-            case 0:
-                int i = ChatActivityEnterView.r7;
-                chatActivityEnterView.M0 = null;
-                break;
-            default:
-                int i2 = ChatActivityEnterView.r7;
-                chatActivityEnterView.M0 = null;
-                break;
-        }
+    @Override // dc7
+    public final void a() {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
+    }
+
+    @Override // dc7
+    public final void l(boolean z) {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 }

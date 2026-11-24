@@ -1,37 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class h90 extends az2 {
-    public final String a;
-    public final String b;
+import java.util.Arrays;
 
-    public h90(String str, String str2) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class h90 extends uz2 {
+    public final String a;
+    public final byte[] b;
+
+    public h90(String str, byte[] bArr) {
         this.a = str;
-        this.b = str2;
+        this.b = bArr;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof az2) {
-            h90 h90Var = (h90) ((az2) obj);
-            if (this.a.equals(h90Var.a) && this.b.equals(h90Var.b)) {
-                return true;
-            }
+        if (!(obj instanceof uz2)) {
+            return false;
         }
-        return false;
+        uz2 uz2Var = (uz2) obj;
+        h90 h90Var = (h90) uz2Var;
+        if (!this.a.equals(h90Var.a)) {
+            return false;
+        }
+        if (uz2Var instanceof h90) {
+            h90Var = (h90) uz2Var;
+        }
+        return Arrays.equals(this.b, h90Var.b);
     }
 
     public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("RolloutVariant{rolloutId=");
-        sb.append(this.a);
-        sb.append(", variantId=");
-        return b00.j(sb, this.b, "}");
+        return "File{filename=" + this.a + ", contents=" + Arrays.toString(this.b) + "}";
     }
 }

@@ -1,40 +1,40 @@
 // default package
 
-import org.telegram.ui.FiltersSetupActivity;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ri3 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ ti3 b;
-    public final /* synthetic */ t97 c;
-    public final /* synthetic */ boolean d;
+public final class ri3 extends FragmentContextView {
+    public final /* synthetic */ byte X0;
+    public final /* synthetic */ nk3 Y0;
 
-    public /* synthetic */ ri3(ti3 ti3Var, t97 t97Var, boolean z) {
-        this.b = ti3Var;
-        this.c = t97Var;
-        this.d = z;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.d;
-        t97 t97Var = this.c;
-        ti3 ti3Var = this.b;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ri3(nk3 nk3Var, Context context, nk3 nk3Var2, byte b) {
+        super(context, nk3Var2, true);
+        this.X0 = b;
         switch (b) {
-            case 0:
-                ti3Var.b.presentFragment(z ? new FiltersSetupActivity() : new pd4(t97Var, null));
+            case 1:
+                this.Y0 = nk3Var;
+                super(context, nk3Var2, false);
                 break;
             default:
-                ti3Var.b.getMessagesController().N4(t97Var, !z);
+                this.Y0 = nk3Var;
                 break;
         }
     }
 
-    public /* synthetic */ ri3(ti3 ti3Var, boolean z, t97 t97Var) {
-        this.b = ti3Var;
-        this.d = z;
-        this.c = t97Var;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i) {
+        byte b = this.X0;
+        nk3 nk3Var = this.Y0;
+        switch (b) {
+            case 0:
+                nk3Var.L1.j(nk3Var.I1, i == 0, true);
+                break;
+            default:
+                nk3Var.L1.j(nk3Var.K1, i == 0, true);
+                break;
+        }
     }
 }

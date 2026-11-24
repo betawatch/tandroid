@@ -1,13 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class o5d {
-    public final byte a;
-    public final long b = System.currentTimeMillis();
-    public long c;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import j$.util.Objects;
+import java.util.Map;
 
-    public o5d(d00 d00Var) {
-        this.a = d00Var.a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class o5d implements d58 {
+    public final /* synthetic */ BasePendingResult a;
+    public final /* synthetic */ rhb b;
+
+    public o5d(rhb rhbVar, BasePendingResult basePendingResult) {
+        this.a = basePendingResult;
+        Objects.requireNonNull(rhbVar);
+        this.b = rhbVar;
+    }
+
+    @Override // d58
+    public final void a(Status status) {
+        ((Map) this.b.b).remove(this.a);
     }
 }

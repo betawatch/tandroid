@@ -1,31 +1,30 @@
 // default package
 
-import java.io.FilterOutputStream;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bi7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ji7 b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class bi7 extends FilterOutputStream {
-    public final void a() {
-        ((FilterOutputStream) this).out.write("0\r\n\r\n".getBytes());
+    public /* synthetic */ bi7(ji7 ji7Var, byte b) {
+        this.a = b;
+        this.b = ji7Var;
     }
 
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
-    public final void write(byte[] bArr, int i, int i2) {
-        if (i2 == 0) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ji7 ji7Var = this.b;
+        switch (b) {
+            case 0:
+                ji7Var.dismiss();
+                break;
+            case 1:
+                ji7Var.b1(true, false);
+                break;
+            default:
+                ji7Var.b1(true, false);
+                break;
         }
-        ((FilterOutputStream) this).out.write(String.format("%x\r\n", Integer.valueOf(i2)).getBytes());
-        ((FilterOutputStream) this).out.write(bArr, i, i2);
-        ((FilterOutputStream) this).out.write("\r\n".getBytes());
-    }
-
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
-    public final void write(byte[] bArr) {
-        write(bArr, 0, bArr.length);
-    }
-
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
-    public final void write(int i) {
-        write(new byte[]{(byte) i}, 0, 1);
     }
 }

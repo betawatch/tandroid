@@ -1,35 +1,47 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.List;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class zqe {
-    public static final jre a = new jre();
-    public static final xre b = new xre();
-
-    public abstract void a(nne nneVar, nne nneVar2, long j);
-
-    public void b(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) i0f.l(obj, j);
-        if (list instanceof ere) {
-            unmodifiableList = ((ere) list).zze();
-        } else {
-            if (jre.c.isAssignableFrom(list.getClass())) {
-                return;
+    public static ne8 a(ne8 ne8Var, ne8 ne8Var2) {
+        if (ne8Var != null) {
+            lk4 lk4Var = ne8Var.a;
+            if (ne8Var2 != null) {
+                me8 me8Var = new me8();
+                for (int i = 0; i < lk4Var.a.size(); i++) {
+                    if (ne8Var2.a(lk4Var.a(i))) {
+                        me8Var.a.b(lk4Var.a(i));
+                    }
+                }
+                return me8Var.b();
             }
-            if ((list instanceof yve) && (list instanceof kpe)) {
-                kpe kpeVar = (kpe) list;
-                if (kpeVar.zza()) {
-                    kpeVar.zzb();
+        }
+        return ne8.b;
+    }
+
+    public static void b(re8 re8Var, tw6 tw6Var) {
+        int i = tw6Var.b;
+        long j = tw6Var.c;
+        mo5 mo5Var = tw6Var.a;
+        if (i == -1) {
+            if (re8Var.m0(20)) {
+                re8Var.N0(mo5Var);
+                return;
+            } else {
+                if (mo5Var.isEmpty()) {
                     return;
                 }
+                re8Var.D0((bt6) mo5Var.get(0));
                 return;
             }
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
-        i0f.d(obj, j, unmodifiableList);
+        if (re8Var.m0(20)) {
+            re8Var.T(mo5Var, tw6Var.b, j);
+        } else {
+            if (mo5Var.isEmpty()) {
+                return;
+            }
+            re8Var.r((bt6) mo5Var.get(0), j);
+        }
     }
 }

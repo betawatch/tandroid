@@ -1,46 +1,81 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ds8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ js8 b;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 
-    public /* synthetic */ ds8(js8 js8Var, byte b) {
-        this.a = b;
-        this.b = js8Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ds8 extends Drawable {
+    public final /* synthetic */ byte a;
+    public final ShapeDrawable b;
+    public final Rect c;
+
+    public ds8(nea neaVar) {
+        this.a = (byte) 1;
+        int L = gm.L(16.0f);
+        int L2 = gm.L(16.0f);
+        int i = cmb.c6;
+        ylb ylbVar = neaVar.c;
+        this.b = cmb.c0(L, L2, cmb.v(cmb.v0(i, ylbVar), cmb.p1(0.04f, cmb.v0(cmb.F6, ylbVar))));
+        this.c = new Rect();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         byte b = this.a;
-        js8 js8Var = this.b;
+        ShapeDrawable shapeDrawable = this.b;
+        Rect rect = this.c;
         switch (b) {
             case 0:
-                if (!js8Var.T && !js8Var.S) {
-                    tk0.c(js8Var.F, js8Var.h);
-                    js8Var.G.d();
-                    smc smcVar = js8Var.r;
-                    ds8 ds8Var = new ds8(js8Var, (byte) 1);
-                    mmc mmcVar = smcVar.E;
-                    if (mmcVar == null) {
-                        ds8Var.run();
-                        break;
-                    } else if (mmcVar.b == null) {
-                        mmcVar.d = ds8Var;
-                        break;
-                    } else {
-                        ds8Var.run();
-                        break;
-                    }
-                }
+                rect.set(getBounds());
+                rect.inset(gm.L(2.0f), gm.L(8.0f));
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
                 break;
             default:
-                if (!js8Var.T && !js8Var.S) {
-                    js8Var.a(1.0f);
-                    break;
-                }
+                rect.set(getBounds());
+                rect.inset(gm.L(2.0f), gm.L(8.0f));
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
                 break;
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        byte b = this.a;
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i);
+                break;
+            default:
+                this.b.setAlpha(i);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        byte b = this.a;
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
+    }
+
+    public ds8(lea leaVar) {
+        this.a = (byte) 0;
+        this.b = cmb.c0(gm.L(16.0f), gm.L(16.0f), 0);
+        this.c = new Rect();
     }
 }

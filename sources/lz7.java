@@ -1,208 +1,118 @@
 // default package
 
-import android.os.AsyncTask;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Locale;
-import java.util.Scanner;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.p;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class lz7 extends AsyncTask {
-    public final /* synthetic */ rc1 a;
-    public final /* synthetic */ p b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class lz7 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nz7 b;
 
-    public lz7(p pVar, rc1 rc1Var) {
-        this.b = pVar;
-        this.a = rc1Var;
+    public /* synthetic */ lz7(nz7 nz7Var, byte b) {
+        this.a = b;
+        this.b = nz7Var;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(20:0|1|2|3|(15:52|53|(3:55|56|(1:58))|(1:7)(2:48|(1:50)(1:51))|8|9|10|11|12|13|14|15|(1:23)(1:19)|20|21)|5|(0)(0)|8|9|10|11|12|13|14|15|(1:17)|23|20|21|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0150, code lost:
-    
-        r15 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x013e, code lost:
-    
-        r15 = r14;
-        r14 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0158, code lost:
-    
-        fa4.g(r14, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x015b, code lost:
-    
-        if (r15 != null) goto L50;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x015d, code lost:
-    
-        r15.disconnect();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0161, code lost:
-    
-        r14 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0162, code lost:
-    
-        r4 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0163, code lost:
-    
-        if (r4 != null) goto L55;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x0165, code lost:
-    
-        r4.disconnect();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0168, code lost:
-    
-        throw r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x014e, code lost:
-    
-        r15 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x013b, code lost:
-    
-        r4 = r14;
-        r14 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0079, code lost:
-    
-        if (r14.endsWith(".smart-glocal.com/cds/v1/tokenize/card") == false) goto L11;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0084 A[Catch: all -> 0x0154, Exception -> 0x0156, TryCatch #4 {all -> 0x0154, blocks: (B:3:0x000c, B:53:0x0058, B:56:0x006b, B:58:0x0073, B:7:0x007e, B:8:0x009b, B:48:0x0084, B:50:0x008c, B:51:0x0094), top: B:2:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x007e A[Catch: all -> 0x0154, Exception -> 0x0156, TRY_ENTER, TryCatch #4 {all -> 0x0154, blocks: (B:3:0x000c, B:53:0x0058, B:56:0x006b, B:58:0x0073, B:7:0x007e, B:8:0x009b, B:48:0x0084, B:50:0x008c, B:51:0x0094), top: B:2:0x000c }] */
-    @Override // android.os.AsyncTask
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object doInBackground(Object[] objArr) {
-        JSONObject jSONObject;
-        String string;
-        HttpURLConnection httpURLConnection;
-        OutputStream outputStream;
-        int responseCode;
-        p pVar = this.b;
-        rc1 rc1Var = this.a;
-        HttpURLConnection httpURLConnection2 = null;
-        r4 = null;
-        r4 = null;
-        String str = null;
-        try {
-            try {
-                jSONObject = new JSONObject();
-                JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("number", (String) rc1Var.a);
-                jSONObject2.put("expiration_month", String.format(Locale.US, "%02d", (Integer) rc1Var.m));
-                jSONObject2.put("expiration_year", String.valueOf((Integer) rc1Var.n));
-                jSONObject2.put("security_code", String.valueOf((String) rc1Var.b));
-                jSONObject.put("card", jSONObject2);
-            } catch (Throwable th) {
-                th = th;
-            }
-        } catch (Exception e) {
-            e = e;
-            HttpURLConnection httpURLConnection3 = null;
-        }
-        try {
-            if (pVar.D0.native_params != null) {
-                try {
-                    string = new JSONObject(pVar.D0.native_params.data).getString("tokenize_url");
-                    if (string != null) {
-                        try {
-                            if (string.startsWith("https://")) {
-                            }
-                        } catch (Exception unused) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final byte b2 = 1;
+        final nz7 nz7Var = this.b;
+        switch (b) {
+            case 0:
+                gm.c3(new mz7(nz7Var, tLObject, tL_error));
+                break;
+            case 1:
+                gm.c3(new Runnable() { // from class: kz7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i;
+                        int i2;
+                        switch (b2) {
+                            case 0:
+                                nz7 nz7Var2 = nz7Var;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                xz7 xz7Var = nz7Var2.e;
+                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
+                                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                                    i = ((d) xz7Var).currentAccount;
+                                    ConnectionsManager.getInstance(i).sendRequest(getpassword, new lz7(nz7Var2, (byte) 4), 8);
+                                    break;
+                                } else {
+                                    if (xz7Var.E == null) {
+                                        xz7Var.E = new TL_account.authorizationForm();
+                                    }
+                                    nz7Var2.a();
+                                    break;
+                                }
+                            default:
+                                nz7 nz7Var3 = nz7Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
+                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
+                                    i2 = ((d) nz7Var3.e).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(getpassword2, new lz7(nz7Var3, (byte) 3), 8);
+                                    break;
+                                } else {
+                                    Utilities.e.c(new ud7((byte) 14, (Object) nz7Var3, (Object) nz7Var3.b, nz7Var3.d));
+                                    break;
+                                }
                         }
                     }
-                } catch (Exception unused2) {
-                }
-                httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : pVar.D0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
-                httpURLConnection.setConnectTimeout(30000);
-                httpURLConnection.setReadTimeout(80000);
-                httpURLConnection.setUseCaches(false);
-                httpURLConnection.setDoOutput(true);
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setRequestProperty("Content-Type", "application/json");
-                httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", pVar.k0);
-                outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(jSONObject.toString().getBytes("UTF-8"));
-                outputStream.close();
-                responseCode = httpURLConnection.getResponseCode();
-                if (responseCode >= 200 || responseCode >= 300) {
-                    boolean z = w01.a;
-                    InputStream errorStream = httpURLConnection.getErrorStream();
-                    String next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
-                    errorStream.close();
-                    fa4.d(String.valueOf(next));
-                } else {
-                    JSONObject jSONObject3 = new JSONObject();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    String next2 = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
-                    inputStream.close();
-                    jSONObject3.put("token", new JSONObject(next2).getJSONObject("data").getString("token"));
-                    jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
-                    str = jSONObject3.toString();
-                }
-                httpURLConnection.disconnect();
-                return str;
-            }
-            outputStream.write(jSONObject.toString().getBytes("UTF-8"));
-            outputStream.close();
-            responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200) {
-            }
-            boolean z2 = w01.a;
-            InputStream errorStream2 = httpURLConnection.getErrorStream();
-            String next3 = new Scanner(errorStream2, "UTF-8").useDelimiter("\\A").next();
-            errorStream2.close();
-            fa4.d(String.valueOf(next3));
-            httpURLConnection.disconnect();
-            return str;
-        } catch (Throwable th2) {
-            if (outputStream != null) {
-                try {
-                    outputStream.close();
-                } catch (Throwable th3) {
-                    th2.addSuppressed(th3);
-                }
-            }
-            throw th2;
+                });
+                break;
+            case 2:
+                final byte b3 = 0;
+                gm.c3(new Runnable() { // from class: kz7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i;
+                        int i2;
+                        switch (b3) {
+                            case 0:
+                                nz7 nz7Var2 = nz7Var;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                xz7 xz7Var = nz7Var2.e;
+                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
+                                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                                    i = ((d) xz7Var).currentAccount;
+                                    ConnectionsManager.getInstance(i).sendRequest(getpassword, new lz7(nz7Var2, (byte) 4), 8);
+                                    break;
+                                } else {
+                                    if (xz7Var.E == null) {
+                                        xz7Var.E = new TL_account.authorizationForm();
+                                    }
+                                    nz7Var2.a();
+                                    break;
+                                }
+                            default:
+                                nz7 nz7Var3 = nz7Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
+                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
+                                    i2 = ((d) nz7Var3.e).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(getpassword2, new lz7(nz7Var3, (byte) 3), 8);
+                                    break;
+                                } else {
+                                    Utilities.e.c(new ud7((byte) 14, (Object) nz7Var3, (Object) nz7Var3.b, nz7Var3.d));
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 3:
+                gm.c3(new mz7(nz7Var, tL_error, tLObject, b2));
+                break;
+            default:
+                gm.c3(new mz7(nz7Var, tL_error, tLObject, (byte) 2));
+                break;
         }
-        string = null;
-        httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : pVar.D0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
-        httpURLConnection.setConnectTimeout(30000);
-        httpURLConnection.setReadTimeout(80000);
-        httpURLConnection.setUseCaches(false);
-        httpURLConnection.setDoOutput(true);
-        httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("Content-Type", "application/json");
-        httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", pVar.k0);
-        outputStream = httpURLConnection.getOutputStream();
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String str = (String) obj;
-        p pVar = this.b;
-        if (pVar.R0) {
-            return;
-        }
-        if (str == null) {
-            ij.t0(k96.M0(2131747211, null), pVar);
-        } else {
-            pVar.x0 = str;
-            pVar.h0();
-        }
-        pVar.M0(true, false);
-        pVar.I0(false);
     }
 }

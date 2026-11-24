@@ -1,31 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class eze {
-    public static xye a;
+public final class eze implements cq7 {
+    public static final eze a = new eze();
 
-    public static synchronized sxe a(hwe hweVar) {
-        sxe sxeVar;
-        synchronized (eze.class) {
-            xye xyeVar = a;
-            if (xyeVar == null) {
-                xyeVar = new xye((byte) 0);
-                a = xyeVar;
-            }
-            sxeVar = (sxe) xyeVar.c(hweVar);
-        }
-        return sxeVar;
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)), 5)), 6)));
     }
 
-    public static void b(int i, Object[] objArr) {
-        for (int i2 = 0; i2 < i; i2++) {
-            if (objArr[i2] == null) {
-                StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 9);
-                sb.append("at index ");
-                sb.append(i2);
-                throw new NullPointerException(sb.toString());
-            }
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

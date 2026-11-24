@@ -1,130 +1,35 @@
 // default package
 
-import android.content.Context;
-import android.os.Parcel;
-import android.os.RemoteException;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class d5a {
-    public static final dc6 b = new dc6("Session", null);
-    public final gad a;
+public final /* synthetic */ class d5a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a6a b;
+    public final /* synthetic */ TL_update.TL_updateNewMessage c;
 
-    public d5a(Context context, String str, String str2) {
-        gad gadVar;
-        try {
-            gadVar = t6d.b(context).b0(str, str2, new r5d(this));
-        } catch (RemoteException | qe7 e) {
-            t6d.a.a(e, "Unable to call %s on %s.", "newSessionImpl", o7d.class.getSimpleName());
-            gadVar = null;
-        }
-        this.a = gadVar;
+    public /* synthetic */ d5a(a6a a6aVar, TL_update.TL_updateNewMessage tL_updateNewMessage, byte b) {
+        this.a = b;
+        this.b = a6aVar;
+        this.c = tL_updateNewMessage;
     }
 
-    public final String a() {
-        fre.e("Must be called from the main thread.");
-        gad gadVar = this.a;
-        if (gadVar != null) {
-            try {
-                t9d t9dVar = (t9d) gadVar;
-                Parcel T = t9dVar.T(t9dVar.R(), 3);
-                String readString = T.readString();
-                T.recycle();
-                return readString;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "getSessionId", gad.class.getSimpleName());
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TL_update.TL_updateNewMessage tL_updateNewMessage = this.c;
+        a6a a6aVar = this.b;
+        switch (b) {
+            case 0:
+                a6aVar.getMessagesController().R3(tL_updateNewMessage.pts, -1, tL_updateNewMessage.pts_count);
+                break;
+            case 1:
+                a6aVar.getMessagesController().R3(tL_updateNewMessage.pts, -1, tL_updateNewMessage.pts_count);
+                break;
+            default:
+                a6aVar.getMessagesController().R3(tL_updateNewMessage.pts, -1, tL_updateNewMessage.pts_count);
+                break;
         }
-        return null;
-    }
-
-    public final boolean b() {
-        fre.e("Must be called from the main thread.");
-        gad gadVar = this.a;
-        if (gadVar != null) {
-            try {
-                t9d t9dVar = (t9d) gadVar;
-                Parcel T = t9dVar.T(t9dVar.R(), 5);
-                int i = jgd.a;
-                boolean z = T.readInt() != 0;
-                T.recycle();
-                return z;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "isConnected", gad.class.getSimpleName());
-            }
-        }
-        return false;
-    }
-
-    public final boolean c() {
-        fre.e("Must be called from the main thread.");
-        gad gadVar = this.a;
-        if (gadVar != null) {
-            try {
-                t9d t9dVar = (t9d) gadVar;
-                Parcel T = t9dVar.T(t9dVar.R(), 6);
-                int i = jgd.a;
-                boolean z = T.readInt() != 0;
-                T.recycle();
-                return z;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "isConnecting", gad.class.getSimpleName());
-            }
-        }
-        return false;
-    }
-
-    public final void d(int i) {
-        gad gadVar = this.a;
-        if (gadVar == null) {
-            return;
-        }
-        try {
-            t9d t9dVar = (t9d) gadVar;
-            Parcel R = t9dVar.R();
-            R.writeInt(i);
-            t9dVar.V(R, 13);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "notifySessionEnded", gad.class.getSimpleName());
-        }
-    }
-
-    public final int e() {
-        fre.e("Must be called from the main thread.");
-        gad gadVar = this.a;
-        if (gadVar != null) {
-            try {
-                t9d t9dVar = (t9d) gadVar;
-                Parcel T = t9dVar.T(t9dVar.R(), 17);
-                int readInt = T.readInt();
-                T.recycle();
-                if (readInt >= 211100000) {
-                    t9d t9dVar2 = (t9d) gadVar;
-                    Parcel T2 = t9dVar2.T(t9dVar2.R(), 18);
-                    int readInt2 = T2.readInt();
-                    T2.recycle();
-                    return readInt2;
-                }
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "getSessionStartType", gad.class.getSimpleName());
-            }
-        }
-        return 0;
-    }
-
-    public final yi5 f() {
-        gad gadVar = this.a;
-        if (gadVar != null) {
-            try {
-                t9d t9dVar = (t9d) gadVar;
-                Parcel T = t9dVar.T(t9dVar.R(), 1);
-                yi5 T2 = bo7.T(T.readStrongBinder());
-                T.recycle();
-                return T2;
-            } catch (RemoteException e) {
-                b.a(e, "Unable to call %s on %s.", "getWrappedObject", gad.class.getSimpleName());
-            }
-        }
-        return null;
     }
 }

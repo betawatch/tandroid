@@ -1,54 +1,48 @@
 // default package
 
-import org.json.JSONObject;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xt0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ cv0 d;
-    public final /* synthetic */ ev0 e;
+public final class xt0 extends ogc {
+    public final zt0[] a = new zt0[3];
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ v59 c;
+    public final /* synthetic */ au0 d;
 
-    public /* synthetic */ xt0(String[] strArr, int i, cv0 cv0Var, ev0 ev0Var, byte b) {
-        this.a = b;
-        this.b = strArr;
-        this.c = i;
-        this.d = cv0Var;
-        this.e = ev0Var;
+    public xt0(au0 au0Var, Context context, v59 v59Var) {
+        this.d = au0Var;
+        this.b = context;
+        this.c = v59Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ev0 ev0Var = this.e;
-        cv0 cv0Var = this.d;
-        int i = this.c;
-        String[] strArr = this.b;
-        switch (b) {
-            case 0:
-                if (strArr[0] != null) {
-                    try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("status", strArr[0]);
-                        hv0.t(i, cv0Var, ev0Var, "phone_requested", jSONObject);
-                        break;
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                    }
-                }
-                break;
-            default:
-                try {
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("status", strArr[0]);
-                    hv0.t(i, cv0Var, ev0Var, "write_access_requested", jSONObject2);
-                    break;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return;
-                }
+    @Override // ogc
+    public final void b(View view, int i, int i2) {
+        this.c.L(view);
+    }
+
+    @Override // ogc
+    public final View d(int i) {
+        zt0[] zt0VarArr = this.a;
+        if (zt0VarArr[i] == null) {
+            zt0VarArr[i] = new zt0(this.d, this.b, i);
         }
+        return zt0VarArr[i];
+    }
+
+    @Override // ogc
+    public final int e() {
+        return this.a.length;
+    }
+
+    @Override // ogc
+    public final CharSequence g(int i) {
+        return jb6.M0(i == 1 ? 2131744608 : i == 2 ? 2131744607 : 2131744609, null);
+    }
+
+    @Override // ogc
+    public final int h(int i) {
+        return i;
     }
 }

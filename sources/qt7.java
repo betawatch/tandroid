@@ -1,199 +1,51 @@
 // default package
 
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.view.KeyEvent;
+import android.database.DataSetObservable;
+import android.database.DataSetObserver;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class qt7 implements u04 {
-    public final /* synthetic */ wt7 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class qt7 {
+    public final DataSetObservable a = new DataSetObservable();
+    public DataSetObserver b;
 
-    public qt7(wt7 wt7Var) {
-        this.a = wt7Var;
+    public void a(ggc ggcVar, Object obj) {
+        ggcVar.removeView(((mw) obj).b);
     }
 
-    @Override // u04
-    public final boolean A() {
-        return false;
+    public abstract int b();
+
+    public int c(Object obj) {
+        return -1;
     }
 
-    @Override // u04
-    public final long a() {
-        return 0L;
+    public CharSequence d(int i) {
+        return null;
     }
 
-    @Override // u04
-    public final boolean b() {
-        return false;
+    public abstract Object e(ggc ggcVar, int i);
+
+    public boolean f(View view, Object obj) {
+        return ((mw) obj).b == view;
     }
 
-    @Override // u04
-    public final boolean c() {
-        return false;
-    }
-
-    @Override // u04
-    public final int f() {
-        return 0;
-    }
-
-    @Override // u04
-    public final boolean h() {
-        return false;
-    }
-
-    @Override // u04
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // u04
-    public final boolean l() {
-        st3 editText = ((vhb) this.a.z0).getEditText();
-        if (editText == null || editText.length() == 0) {
-            return false;
-        }
-        editText.dispatchKeyEvent(new KeyEvent(0, 67));
-        return true;
-    }
-
-    @Override // u04
-    public final void m(String str) {
-        vhb vhbVar;
-        st3 editText;
-        su3[] su3VarArr;
-        l34 l34Var = this.a.z0;
-        if (!(l34Var instanceof vhb) || (editText = (vhbVar = (vhb) l34Var).getEditText()) == null) {
-            return;
-        }
-        int selectionEnd = editText.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            CharSequence m = vu3.m(str, vhbVar.getFontMetricsInt(), false, null, 0);
-            if ((m instanceof Spanned) && (su3VarArr = (su3[]) ((Spanned) m).getSpans(0, m.length(), su3.class)) != null) {
-                for (su3 su3Var : su3VarArr) {
-                    su3Var.b = 0.85f;
-                }
+    public void g() {
+        synchronized (this) {
+            DataSetObserver dataSetObserver = this.b;
+            if (dataSetObserver != null) {
+                dataSetObserver.onChanged();
             }
-            editText.setText(editText.getText().insert(selectionEnd, m));
-            int length = selectionEnd + m.length();
-            editText.setSelection(length, length);
-        } catch (Exception e) {
-            fa4.g(e, true);
+        }
+        this.a.notifyChanged();
+    }
+
+    public final void i(DataSetObserver dataSetObserver) {
+        synchronized (this) {
+            this.b = dataSetObserver;
         }
     }
 
-    @Override // u04
-    public final void n() {
-        wt7 wt7Var = this.a;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wt7Var.w1, wt7Var.getContext());
-        String M0 = k96.M0(2131752056, null);
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = M0;
-        hdVar.U = k96.M0(2131752057, null);
-        alertDialog$Builder.j(k96.M0(2131752087, null), new im6(this, (byte) 22));
-        alertDialog$Builder.g(k96.M0(2131752577, null), null);
-        alertDialog$Builder.o();
-    }
-
-    @Override // u04
-    public final float o() {
-        return 0.0f;
-    }
-
-    @Override // u04
-    public final void w(long j, TLRPC.Document document, String str, boolean z) {
-        gm gmVar;
-        st3 editText = ((vhb) this.a.z0).getEditText();
-        if (editText == null) {
-            return;
-        }
-        int selectionEnd = editText.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            SpannableString spannableString = new SpannableString(str);
-            if (document != null) {
-                gmVar = new gm(document.id, 1.0f, editText.getPaint().getFontMetricsInt());
-                gmVar.document = document;
-            } else {
-                gmVar = new gm(j, 1.0f, editText.getPaint().getFontMetricsInt());
-            }
-            spannableString.setSpan(gmVar, 0, spannableString.length(), 33);
-            editText.setText(editText.getText().insert(selectionEnd, spannableString));
-            int length = selectionEnd + spannableString.length();
-            editText.setSelection(length, length);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // u04
-    public final boolean z() {
-        return false;
-    }
-
-    @Override // u04
-    public final void p() {
-    }
-
-    @Override // u04
-    public final void t() {
-    }
-
-    @Override // u04
-    public final void v() {
-    }
-
-    @Override // u04
-    public final void g(d2c d2cVar) {
-    }
-
-    @Override // u04
-    public final void i(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // u04
-    public final void j(int i) {
-    }
-
-    @Override // u04
-    public final void q(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // u04
-    public final void r(int i) {
-    }
-
-    @Override // u04
-    public final void s(ArrayList arrayList) {
-    }
-
-    @Override // u04
-    public final void y(long j) {
-    }
-
-    @Override // u04
-    public final void e(Object obj, Object obj2) {
-    }
-
-    @Override // u04
-    public final void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z) {
-    }
-
-    @Override // u04
-    public final void u(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
-    }
-
-    @Override // u04
-    public final void x(View view, TLRPC.Document document, String str, Object obj, g27 g27Var, boolean z, int i) {
+    public void h(int i) {
     }
 }

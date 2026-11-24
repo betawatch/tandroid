@@ -1,1251 +1,834 @@
 // default package
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.SystemClock;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
 import android.text.TextUtils;
-import android.util.SparseArray;
+import android.util.StateSet;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final class fc2 {
-    public static int R;
-    public gc2 A;
-    public boolean B;
-    public j5 C;
-    public boolean E;
-    public int F;
-    public long I;
-    public TLRPC.Peer J;
-    public Runnable M;
-    public long N;
-    public boolean O;
-    public boolean a;
-    public TLRPC.GroupCall b;
-    public long c;
-    public String s;
-    public boolean t;
-    public boolean u;
-    public boolean v;
-    public boolean w;
-    public boolean x;
-    public int y;
-    public gc2 z;
-    public vf6 d = new vf6();
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public final HashMap h = new HashMap();
-    public final HashMap i = new HashMap();
-    public final ArrayList j = new ArrayList();
-    public final HashMap k = new HashMap();
-    public final ArrayList l = new ArrayList();
-    public final ArrayList m = new ArrayList();
-    public final HashSet n = new HashSet();
-    public final ArrayList o = new ArrayList();
-    public final SparseArray p = new SparseArray();
-    public final SparseArray q = new SparseArray();
-    public final SparseArray r = new SparseArray();
-    public final zb2 D = new zb2(this, 1);
-    public final HashSet G = new HashSet();
-    public final ArrayList H = new ArrayList();
-    public final HashSet K = new HashSet();
-    public final HashSet L = new HashSet();
-    public final vf6 P = new vf6();
-    public final dc2 Q = new dc2(this);
+    public final rc2 a;
+    public final HashMap b = new HashMap();
+    public final HashMap c = new HashMap();
+    public String d;
 
-    public static boolean E(TLRPC.GroupCallParticipant groupCallParticipant, boolean z, fc2 fc2Var) {
-        VoIPService sharedInstance;
-        gc2 gc2Var;
-        if (groupCallParticipant == null || (sharedInstance = VoIPService.getSharedInstance()) == null) {
-            return false;
-        }
-        if (groupCallParticipant.self) {
-            return sharedInstance.getVideoState(z) == 2;
-        }
-        gc2 gc2Var2 = fc2Var.A;
-        if ((gc2Var2 != null && gc2Var2.a == groupCallParticipant) || (((gc2Var = fc2Var.z) != null && gc2Var.a == groupCallParticipant) || fc2Var.d.f(k27.B1(groupCallParticipant.peer)) != null)) {
-            if (z) {
-                return groupCallParticipant.presentation != null;
-            }
-            if (groupCallParticipant.video != null) {
-                return true;
-            }
-        }
-        return false;
+    public fc2(rc2 rc2Var) {
+        this.a = rc2Var;
     }
 
-    public static boolean j(TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo, TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo2) {
-        if (tL_groupCallParticipantVideo == null) {
-            return tL_groupCallParticipantVideo2 == null;
-        }
-        if (tL_groupCallParticipantVideo2 != null && TextUtils.equals(tL_groupCallParticipantVideo.endpoint, tL_groupCallParticipantVideo2.endpoint) && tL_groupCallParticipantVideo.source_groups.size() == tL_groupCallParticipantVideo2.source_groups.size()) {
-            int size = tL_groupCallParticipantVideo.source_groups.size();
-            for (int i = 0; i < size; i++) {
-                TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = tL_groupCallParticipantVideo.source_groups.get(i);
-                TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup2 = tL_groupCallParticipantVideo2.source_groups.get(i);
-                if (TextUtils.equals(tL_groupCallParticipantVideoSourceGroup.semantics, tL_groupCallParticipantVideoSourceGroup2.semantics) && tL_groupCallParticipantVideoSourceGroup.sources.size() == tL_groupCallParticipantVideoSourceGroup2.sources.size()) {
-                    int size2 = tL_groupCallParticipantVideoSourceGroup.sources.size();
-                    for (int i2 = 0; i2 < size2; i2++) {
-                        if (tL_groupCallParticipantVideoSourceGroup2.sources.contains(tL_groupCallParticipantVideoSourceGroup.sources.get(i2))) {
-                        }
-                    }
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public final boolean A() {
-        TLRPC.GroupCall groupCall = this.b;
-        return groupCall.participants_count > 0 || groupCall.rtmp_stream || k();
-    }
-
-    public final void B() {
-        ArrayList<TLRPC.GroupCallParticipant> arrayList;
-        ArrayList arrayList2;
+    public final boolean a(MotionEvent motionEvent) {
         int i;
-        int size;
-        gc2 gc2Var;
-        char c;
-        boolean z;
-        int i2;
-        ArrayList arrayList3 = this.f;
-        arrayList3.clear();
-        ArrayList arrayList4 = this.g;
-        arrayList4.clear();
-        TLRPC.Chat K0 = na7.q1(this.C.a).K0(Long.valueOf(this.c));
-        final boolean w = hc2.w(14, K0);
-        gc2 gc2Var2 = this.A;
-        if (gc2Var2 != null) {
-            arrayList3.add(gc2Var2);
-        }
-        final long i3 = i();
-        VoIPService.getSharedInstance();
-        this.x = true;
-        int i4 = 0;
-        this.y = 0;
-        int i5 = 0;
-        boolean z2 = false;
-        while (true) {
-            arrayList = this.e;
-            int size2 = arrayList.size();
-            arrayList2 = this.o;
-            if (i5 >= size2) {
-                break;
-            }
-            TLRPC.GroupCallParticipant groupCallParticipant = arrayList.get(i5);
-            boolean E = E(groupCallParticipant, false, this);
-            boolean E2 = E(groupCallParticipant, true, this);
-            if (!groupCallParticipant.self && (E || E2)) {
-                this.y++;
-            }
-            if (arrayList2.contains(Long.valueOf(cf3.n(groupCallParticipant.peer)))) {
-                arrayList.remove(i5);
-                i5--;
-            }
-            if (E || E2) {
-                if (!this.x) {
-                    groupCallParticipant.videoIndex = 0;
-                } else if (groupCallParticipant.videoIndex == 0) {
-                    if (groupCallParticipant.self) {
-                        groupCallParticipant.videoIndex = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    } else {
-                        int i6 = R + 1;
-                        R = i6;
-                        groupCallParticipant.videoIndex = i6;
+        int L;
+        rc2 rc2Var = this.a;
+        ArrayList arrayList = rc2Var.I5;
+        if (!arrayList.isEmpty()) {
+            int x = (int) motionEvent.getX();
+            int P1 = (int) rc2Var.P1(motionEvent);
+            if (motionEvent.getAction() == 0) {
+                int widthForButtons = rc2Var.getWidthForButtons();
+                if (rc2Var.Q5.O3()) {
+                    L = (rc2Var.getMeasuredWidth() - widthForButtons) - gm.L(10.0f);
+                } else if (rc2Var.v2()) {
+                    L = rc2Var.getCompactLeft();
+                } else {
+                    L = rc2Var.N6 + gm.L(rc2Var.C6 ? 1.0f : 7.0f);
+                }
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    wp0 wp0Var = (wp0) arrayList.get(i2);
+                    int L2 = (wp0Var.d + rc2Var.e7) - gm.L(2.0f);
+                    float f = x;
+                    float f2 = widthForButtons;
+                    float f3 = (wp0Var.c * f2) + L;
+                    if (f >= f3 && f <= (wp0Var.e * f2) + f3 && P1 >= L2 && P1 <= wp0Var.f + L2) {
+                        rc2Var.N5 = i2;
+                        rc2Var.r2();
+                        if (wp0Var.s == null) {
+                            fg0 Y = cmb.Y(cmb.v0(cmb.dd, rc2Var.cc), 6, 6);
+                            wp0Var.s = Y;
+                            Y.setCallback(rc2Var);
+                            fg0 fg0Var = wp0Var.s;
+                            int i3 = ((int) (wp0Var.c * f2)) + L;
+                            fg0Var.setBounds(i3, L2, ((int) (wp0Var.e * f2)) + i3, wp0Var.f + L2);
+                        }
+                        wp0Var.s.setHotspot(f, P1);
+                        wp0Var.s.setState(rc2Var.N2);
+                        wp0Var.b(!wp0Var.m);
+                        rc2Var.postDelayed(new eh(this, rc2Var.N5, (byte) 27), ViewConfiguration.getLongPressTimeout() - 1);
+                        return true;
                     }
                 }
-                z2 = true;
-            } else if (groupCallParticipant.self || !this.x || (groupCallParticipant.video == null && groupCallParticipant.presentation == null)) {
-                groupCallParticipant.videoIndex = 0;
-            }
-            i5++;
-        }
-        try {
-            Collections.sort(arrayList, new Comparator() { // from class: cc2
-                /* JADX WARN: Code restructure failed: missing block: B:35:0x005a, code lost:
-                
-                    if (r6 != 0) goto L36;
-                 */
-                @Override // java.util.Comparator
-                /*
-                    Code decompiled incorrectly, please refer to instructions dump.
-                */
-                public final int compare(Object obj, Object obj2) {
-                    TLRPC.GroupCallParticipant groupCallParticipant2 = (TLRPC.GroupCallParticipant) obj;
-                    TLRPC.GroupCallParticipant groupCallParticipant3 = (TLRPC.GroupCallParticipant) obj2;
-                    int i7 = groupCallParticipant2.videoIndex;
-                    boolean z3 = i7 > 0;
-                    int i8 = groupCallParticipant3.videoIndex;
-                    boolean z4 = i8 > 0;
-                    if (z3) {
-                        if (z4) {
-                            return i8 - i7;
-                        }
-                        return -1;
+            } else if (motionEvent.getAction() == 1) {
+                if (rc2Var.N5 != -1) {
+                    rc2Var.playSoundEffect(0);
+                    wp0 wp0Var2 = (wp0) arrayList.get(rc2Var.N5);
+                    fg0 fg0Var2 = wp0Var2.s;
+                    if (fg0Var2 != null) {
+                        fg0Var2.setState(StateSet.NOTHING);
                     }
-                    if (!z4) {
-                        int i9 = groupCallParticipant2.active_date;
-                        int i10 = groupCallParticipant3.active_date;
-                        if (i9 != 0) {
-                            if (i10 != 0) {
-                                return Integer.compare(i10, i9);
-                            }
-                            return -1;
-                        }
-                        if (i10 == 0) {
-                            long B1 = k27.B1(groupCallParticipant2.peer);
-                            long j = i3;
-                            if (B1 == j) {
-                                return -1;
-                            }
-                            if (k27.B1(groupCallParticipant3.peer) != j) {
-                                if (w) {
-                                    long j2 = groupCallParticipant2.raise_hand_rating;
-                                    long j3 = groupCallParticipant3.raise_hand_rating;
-                                    if (j2 != 0) {
-                                        if (j3 != 0) {
-                                            return Long.compare(j3, j2);
-                                        }
-                                        return -1;
-                                    }
+                    wp0Var2.b(false);
+                    if (rc2Var.Q5.r1) {
+                        Toast.makeText(rc2Var.getContext(), jb6.M0(2131748287, null), 1).show();
+                    } else {
+                        mc2 mc2Var = rc2Var.eb;
+                        if (mc2Var != null && !wp0Var2.m) {
+                            ir0 ir0Var = wp0Var2.j;
+                            if (ir0Var != null) {
+                                mc2Var.B1(rc2Var, ir0Var);
+                            } else {
+                                TL_keyboard.KeyboardInlineButton keyboardInlineButton = wp0Var2.i;
+                                if (keyboardInlineButton != null) {
+                                    mc2Var.L0(rc2Var, keyboardInlineButton);
                                 }
-                                return fc2.this.b.join_date_asc ? Integer.compare(groupCallParticipant2.date, groupCallParticipant3.date) : Integer.compare(groupCallParticipant3.date, groupCallParticipant2.date);
                             }
                         }
                     }
-                    return 1;
+                    rc2Var.N5 = -1;
+                    rc2Var.r2();
+                    return false;
                 }
-            });
-        } catch (Exception unused) {
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant2 = arrayList.isEmpty() ? null : (TLRPC.GroupCallParticipant) b00.f(1, arrayList);
-        char c2 = 2;
-        if ((E(groupCallParticipant2, false, this) || E(groupCallParticipant2, true, this)) && (i = this.b.unmuted_video_count) > this.y) {
-            this.y = i;
-            VoIPService sharedInstance = VoIPService.getSharedInstance();
-            if (sharedInstance != null && sharedInstance.groupCall == this && (sharedInstance.getVideoState(false) == 2 || sharedInstance.getVideoState(true) == 2)) {
-                this.y--;
-            }
-        }
-        int i7 = 5000;
-        if (arrayList.size() > 5000 && (!hc2.w(14, K0) || groupCallParticipant2.raise_hand_rating == 0)) {
-            int size3 = arrayList.size();
-            int i8 = 5000;
-            while (i8 < size3) {
-                TLRPC.GroupCallParticipant groupCallParticipant3 = arrayList.get(i7);
-                char c3 = c2;
-                if (groupCallParticipant3.raise_hand_rating != 0) {
-                    c = c3;
-                    z = z2;
-                    i2 = 5000;
-                } else {
-                    o(groupCallParticipant3, false);
-                    c = c3;
-                    z = z2;
-                    this.d.l(k27.B1(groupCallParticipant3.peer));
-                    i2 = 5000;
-                    arrayList.remove(5000);
+            } else if (motionEvent.getAction() == 3 && (i = rc2Var.N5) != -1) {
+                wp0 wp0Var3 = (wp0) arrayList.get(i);
+                fg0 fg0Var3 = wp0Var3.s;
+                if (fg0Var3 != null) {
+                    fg0Var3.setState(StateSet.NOTHING);
                 }
-                i8++;
-                z2 = z;
-                i7 = i2;
-                c2 = c;
+                wp0Var3.b(false);
+                rc2Var.N5 = -1;
+                rc2Var.r2();
             }
         }
-        boolean z3 = z2;
-        d();
-        if (!this.x && z3 && (gc2Var = this.z) != null) {
-            arrayList3.add(gc2Var);
-        }
-        int i9 = 0;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            TLRPC.GroupCallParticipant groupCallParticipant4 = arrayList.get(i10);
-            if (!this.x || groupCallParticipant4.videoIndex == 0) {
-                arrayList4.add(groupCallParticipant4);
-            } else {
-                boolean z4 = groupCallParticipant4.self;
-                HashMap hashMap = this.i;
-                if (!z4 && E(groupCallParticipant4, true, this) && E(groupCallParticipant4, false, this)) {
-                    gc2 gc2Var3 = (gc2) hashMap.get(groupCallParticipant4.videoEndpoint);
-                    if (gc2Var3 == null) {
-                        gc2Var3 = new gc2(groupCallParticipant4, false);
-                        hashMap.put(groupCallParticipant4.videoEndpoint, gc2Var3);
-                    } else {
-                        gc2Var3.a = groupCallParticipant4;
-                        gc2Var3.b = false;
-                    }
-                    gc2 gc2Var4 = (gc2) hashMap.get(groupCallParticipant4.presentationEndpoint);
-                    if (gc2Var4 == null) {
-                        gc2Var4 = new gc2(groupCallParticipant4, true);
-                    } else {
-                        gc2Var4.a = groupCallParticipant4;
-                        gc2Var4.b = true;
-                    }
-                    arrayList3.add(gc2Var3);
-                    if (gc2Var3.c > 1.0f) {
-                        i9 = arrayList3.size() - 1;
-                    }
-                    arrayList3.add(gc2Var4);
-                    if (gc2Var4.c > 1.0f) {
-                        size = arrayList3.size();
-                        i9 = size - 1;
-                    }
-                } else if (groupCallParticipant4.self) {
-                    if (E(groupCallParticipant4, true, this)) {
-                        arrayList3.add(new gc2(groupCallParticipant4, true));
-                    }
-                    if (E(groupCallParticipant4, false, this)) {
-                        arrayList3.add(new gc2(groupCallParticipant4, false));
-                    }
-                } else {
-                    boolean E3 = E(groupCallParticipant4, true, this);
-                    gc2 gc2Var5 = (gc2) hashMap.get(E3 ? groupCallParticipant4.presentationEndpoint : groupCallParticipant4.videoEndpoint);
-                    if (gc2Var5 == null) {
-                        gc2Var5 = new gc2(groupCallParticipant4, E3);
-                        hashMap.put(E3 ? groupCallParticipant4.presentationEndpoint : groupCallParticipant4.videoEndpoint, gc2Var5);
-                    } else {
-                        gc2Var5.a = groupCallParticipant4;
-                        gc2Var5.b = E3;
-                    }
-                    arrayList3.add(gc2Var5);
-                    if (gc2Var5.c > 1.0f) {
-                        size = arrayList3.size();
-                        i9 = size - 1;
-                    }
-                }
-            }
-        }
-        int size4 = arrayList.size();
-        int i11 = 0;
-        while (i11 < size4) {
-            TLRPC.GroupCallParticipant groupCallParticipant5 = arrayList.get(i11);
-            i11++;
-            arrayList2.remove(Long.valueOf(cf3.n(groupCallParticipant5.peer)));
-        }
-        VoIPService sharedInstance2 = VoIPService.getSharedInstance();
-        if (this.b != null && sharedInstance2 != null && sharedInstance2.isConference() && sharedInstance2.groupCall == this) {
-            int size5 = arrayList.size();
-            int i12 = 0;
-            while (i12 < size5) {
-                TLRPC.GroupCallParticipant groupCallParticipant6 = arrayList.get(i12);
-                i12++;
-                sharedInstance2.conference.joiningBlockchainParticipants.remove(Long.valueOf(cf3.n(groupCallParticipant6.peer)));
-            }
-            ArrayList arrayList5 = this.l;
-            arrayList5.clear();
-            arrayList5.addAll(sharedInstance2.conference.getShadyLeftParticipants(arrayList));
-            ArrayList arrayList6 = this.m;
-            arrayList6.clear();
-            arrayList6.addAll(sharedInstance2.conference.getShadyJoiningParticipants(arrayList));
-            int size6 = arrayList.size();
-            while (i4 < size6) {
-                TLRPC.GroupCallParticipant groupCallParticipant7 = arrayList.get(i4);
-                i4++;
-                long n = cf3.n(groupCallParticipant7.peer);
-                Long valueOf = Long.valueOf(n);
-                HashSet hashSet = this.n;
-                if (hashSet.contains(valueOf)) {
-                    hashSet.remove(Long.valueOf(n));
-                    this.j.remove(Long.valueOf(n));
-                }
-            }
-        }
-        if (h75.u5 || arrayList3.size() % 2 != 1) {
-            return;
-        }
-        arrayList3.add((gc2) arrayList3.remove(i9));
+        return false;
     }
 
-    public final void C(int i, String str) {
-        this.w = !this.w;
-        TL_phone.toggleGroupCallRecord togglegroupcallrecord = new TL_phone.toggleGroupCallRecord();
-        togglegroupcallrecord.call = h(this.a);
-        togglegroupcallrecord.start = this.w;
-        byte b = 2;
-        if (str != null) {
-            togglegroupcallrecord.title = str;
-            togglegroupcallrecord.flags |= 2;
-        }
-        if (i == 1 || i == 2) {
-            togglegroupcallrecord.flags |= 4;
-            togglegroupcallrecord.video = true;
-            togglegroupcallrecord.video_portrait = i == 1;
-        }
-        ConnectionsManager.getInstance(this.C.a).sendRequest(togglegroupcallrecord, new ac2(this, b));
-        kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-    }
-
-    public final void D() {
-        B();
-        kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE, 0L);
-    }
-
-    public final void a(long j) {
-        if (this.d.f(j) == null) {
-            Long valueOf = Long.valueOf(j);
-            HashSet hashSet = this.n;
-            if (hashSet.contains(valueOf)) {
-                return;
-            }
-            hashSet.add(Long.valueOf(j));
-            this.j.add(Long.valueOf(j));
-            this.o.remove(Long.valueOf(j));
-            B();
-            kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-        }
-    }
-
-    public final void b(boolean z) {
-        long i = i();
-        if (this.d.h(i) < 0) {
-            TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
-            tL_groupCallParticipant.peer = this.J;
-            tL_groupCallParticipant.muted = true;
-            tL_groupCallParticipant.self = true;
-            tL_groupCallParticipant.video_joined = this.b.can_start_video;
-            TLRPC.Chat K0 = na7.q1(this.C.a).K0(Long.valueOf(this.c));
-            tL_groupCallParticipant.can_self_unmute = !this.b.join_muted || hc2.w(14, K0);
-            tL_groupCallParticipant.date = ConnectionsManager.getInstance(this.C.a).getCurrentTime();
-            if (hc2.w(14, K0) || !hc2.T(K0) || K0.megagroup || tL_groupCallParticipant.can_self_unmute) {
-                tL_groupCallParticipant.active_date = ConnectionsManager.getInstance(this.C.a).getCurrentTime();
-            }
-            j5 j5Var = this.C;
-            if (i > 0) {
-                TLRPC.UserFull W1 = na7.q1(j5Var.a).W1(i);
-                if (W1 != null) {
-                    tL_groupCallParticipant.about = W1.about;
-                }
-            } else {
-                TLRPC.ChatFull L0 = na7.q1(j5Var.a).L0(-i);
-                if (L0 != null) {
-                    tL_groupCallParticipant.about = L0.about;
-                }
-            }
-            this.d.k(tL_groupCallParticipant, i);
-            this.e.add(tL_groupCallParticipant);
-            B();
-            if (z) {
-                kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-            }
-        }
-    }
-
-    public final boolean c() {
-        VoIPService sharedInstance;
-        return this.x && (((sharedInstance = VoIPService.getSharedInstance()) != null && sharedInstance.groupCall == this && (sharedInstance.getVideoState(false) == 2 || sharedInstance.getVideoState(true) == 2)) || this.y < this.b.unmuted_video_limit);
-    }
-
-    public final void d() {
-        boolean z = this.E;
-        zb2 zb2Var = this.D;
-        if (z) {
-            gl.r(zb2Var);
-            this.E = false;
-        }
-        int currentTime = ConnectionsManager.getInstance(this.C.a).getCurrentTime();
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i = Integer.MAX_VALUE;
-        for (int i2 = 0; i2 < size; i2++) {
-            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList.get(i2);
-            int i3 = currentTime - groupCallParticipant.active_date;
-            if (i3 < 5) {
-                i = Math.min(i3, i);
-            }
-            if (Math.max(groupCallParticipant.date, groupCallParticipant.active_date) <= currentTime - 5) {
-                break;
-            }
-        }
-        if (i != Integer.MAX_VALUE) {
-            gl.e3(zb2Var, i * 1000);
-            this.E = true;
-        }
-    }
-
-    public final void e() {
-        this.M = null;
-        if (this.I != 0 && System.currentTimeMillis() - this.I >= 1500) {
-            if (w01.a) {
-                fa4.b("QUEUE GROUP CALL UPDATES WAIT TIMEOUT - CHECK QUEUE");
-            }
-            s();
-        }
-        if (this.H.isEmpty()) {
-            return;
-        }
-        zb2 zb2Var = new zb2(this, (byte) 3);
-        this.M = zb2Var;
-        gl.e3(zb2Var, 1000L);
-    }
-
-    public final void f() {
-        if (this.z != null) {
-            return;
-        }
-        TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
-        TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-        tL_groupCallParticipant.peer = tL_peerChannel;
-        tL_peerChannel.channel_id = this.c;
-        tL_groupCallParticipant.muted = true;
-        TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = new TLRPC.TL_groupCallParticipantVideo();
-        tL_groupCallParticipant.video = tL_groupCallParticipantVideo;
-        tL_groupCallParticipantVideo.paused = true;
-        tL_groupCallParticipantVideo.endpoint = "";
-        this.z = new gc2(tL_groupCallParticipant, false);
-    }
-
-    public final void g(List list) {
-        if (!this.B || this.A == null) {
-            gc2 gc2Var = this.A;
-            TLRPC.GroupCallParticipant tL_groupCallParticipant = gc2Var != null ? gc2Var.a : new TLRPC.TL_groupCallParticipant();
-            TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
-            tL_groupCallParticipant.peer = tL_peerChat;
-            tL_peerChat.channel_id = this.c;
-            tL_groupCallParticipant.video = new TLRPC.TL_groupCallParticipantVideo();
-            TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
-            tL_groupCallParticipantVideoSourceGroup.semantics = "SIM";
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                tL_groupCallParticipantVideoSourceGroup.sources.add(Integer.valueOf(((TL_phone.TL_groupCallStreamChannel) it.next()).channel));
-            }
-            tL_groupCallParticipant.video.source_groups.add(tL_groupCallParticipantVideoSourceGroup);
-            tL_groupCallParticipant.video.endpoint = "unified";
-            tL_groupCallParticipant.videoEndpoint = "unified";
-            this.A = new gc2(tL_groupCallParticipant, false);
-            B();
-            gl.d3(new zb2(this, (byte) 0));
-        }
-    }
-
-    public final TLRPC.InputGroupCall h(boolean z) {
-        TLRPC.GroupCall groupCall = this.b;
-        if (groupCall == null) {
-            return null;
-        }
-        if (z) {
-            if (groupCall.invite_link == null) {
-                return null;
-            }
-            TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = new TLRPC.TL_inputGroupCallSlug();
-            tL_inputGroupCallSlug.slug = (String) oo1.m(1, Uri.parse(this.b.invite_link).getPathSegments());
-            return tL_inputGroupCallSlug;
-        }
-        TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
-        TLRPC.GroupCall groupCall2 = this.b;
-        tL_inputGroupCall.id = groupCall2.id;
-        tL_inputGroupCall.access_hash = groupCall2.access_hash;
-        return tL_inputGroupCall;
-    }
-
-    public final long i() {
-        TLRPC.Peer peer = this.J;
-        return peer != null ? k27.B1(peer) : y6c.h(this.C.a).e();
-    }
-
-    public final boolean k() {
-        return (this.b.flags & 128) != 0;
-    }
-
-    public final void l(boolean z) {
-        if (z) {
-            if (this.v) {
-                return;
-            }
-            this.t = false;
-            this.s = null;
-        }
-        if (this.t || this.e.size() > 5000) {
-            return;
-        }
-        byte b = 1;
-        if (z) {
-            this.v = true;
-        }
-        this.u = true;
-        TL_phone.getGroupParticipants getgroupparticipants = new TL_phone.getGroupParticipants();
-        getgroupparticipants.call = h(this.a);
-        String str = this.s;
-        if (str == null) {
-            str = "";
-        }
-        getgroupparticipants.offset = str;
-        getgroupparticipants.limit = this.a ? na7.q1(this.C.a).k4.w3.f() : 20;
-        ConnectionsManager.getInstance(this.C.a).sendRequest(getgroupparticipants, new mi1(this, z, getgroupparticipants, b));
-    }
-
-    public final void m(ArrayList arrayList, boolean z, hs0 hs0Var) {
-        HashSet hashSet = z ? this.K : this.L;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            if (hashSet.contains(arrayList.get(i))) {
-                arrayList.remove(i);
-                i--;
-                size--;
-            }
-            i++;
-        }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        int i2 = this.F + 1;
-        this.F = i2;
-        this.G.add(Integer.valueOf(i2));
-        hashSet.addAll(arrayList);
-        TL_phone.getGroupParticipants getgroupparticipants = new TL_phone.getGroupParticipants();
-        getgroupparticipants.call = h(this.a);
-        int size2 = arrayList.size();
-        for (int i3 = 0; i3 < size2; i3++) {
-            long longValue = ((Long) arrayList.get(i3)).longValue();
-            if (z) {
-                getgroupparticipants.ids.add(na7.q1(this.C.a).h1(longValue));
-            } else {
-                getgroupparticipants.sources.add(Integer.valueOf((int) longValue));
-            }
-        }
-        getgroupparticipants.offset = "";
-        getgroupparticipants.limit = 100;
-        ConnectionsManager.getInstance(this.C.a).sendRequest(getgroupparticipants, new vt0((Object) this, i2, (Object) hs0Var, (Object) arrayList, (Object) hashSet, (byte) 2));
-    }
-
-    public final void n(ArrayList arrayList, boolean z, String str, String str2, int i, int i2) {
-        TLRPC.GroupCallParticipant groupCallParticipant;
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0344  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0387  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x039d  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x042d  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0540  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0541 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x046b  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0430  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x03d1  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x038c  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x02c4  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0201  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0222  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x028e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(Canvas canvas, ArrayList arrayList, int i) {
+        int L;
+        int i2;
+        int i3;
+        yc2 yc2Var;
+        boolean z;
+        ylb ylbVar;
         boolean z2;
-        TLRPC.GroupCallParticipant groupCallParticipant2;
-        int max;
-        int max2;
-        System.currentTimeMillis();
-        TLRPC.GroupCallParticipant groupCallParticipant3 = (TLRPC.GroupCallParticipant) this.d.f(i());
-        boolean isEmpty = TextUtils.isEmpty(str);
-        ArrayList arrayList2 = this.e;
-        vf6 vf6Var = null;
-        if (isEmpty) {
-            int m = this.d.m();
-            vf6 vf6Var2 = this.d;
-            if (m != 0) {
-                this.d = new vf6();
-                vf6Var = vf6Var2;
-            } else {
-                vf6Var2.b();
-            }
-            arrayList2.clear();
-            this.p.clear();
-            this.q.clear();
-            this.r.clear();
-            this.G.clear();
-        }
-        this.s = str2;
-        if (arrayList.isEmpty() || TextUtils.isEmpty(this.s)) {
-            this.t = true;
-        }
-        if (TextUtils.isEmpty(str)) {
-            TLRPC.GroupCall groupCall = this.b;
-            groupCall.version = i;
-            groupCall.participants_count = i2;
-            if (w01.a) {
-                b00.p(this.b.participants_count, new StringBuilder("new participants count "));
-            }
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z3 = false;
-        kk7.f(this.C.a).k(kk7.A2, Long.valueOf(elapsedRealtime));
-        int size = arrayList.size();
-        int i3 = 0;
-        boolean z4 = false;
-        while (i3 <= size) {
-            if (i3 != size) {
-                groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList.get(i3);
-                z4 = z4;
-                if (groupCallParticipant.self) {
-                    z4 = true;
-                }
-            } else if (!z || groupCallParticipant3 == null || z4) {
-                z2 = z3;
-                i3++;
-                z3 = z2;
-                z4 = z4;
-            } else {
-                groupCallParticipant = groupCallParticipant3;
-                z4 = z4;
-            }
-            TLRPC.GroupCallParticipant groupCallParticipant4 = (TLRPC.GroupCallParticipant) this.d.f(k27.B1(groupCallParticipant.peer));
-            if (groupCallParticipant4 != null) {
-                arrayList2.remove(groupCallParticipant4);
-                o(groupCallParticipant4, z3);
-                if (groupCallParticipant4.self) {
-                    max2 = groupCallParticipant4.active_date;
-                    groupCallParticipant.lastTypingDate = max2;
-                } else {
-                    max2 = Math.max(groupCallParticipant.active_date, groupCallParticipant4.active_date);
-                    groupCallParticipant.lastTypingDate = max2;
-                }
-                if (elapsedRealtime != groupCallParticipant.lastVisibleDate) {
-                    groupCallParticipant.active_date = max2;
-                }
-            } else if (vf6Var != null && (groupCallParticipant2 = (TLRPC.GroupCallParticipant) vf6Var.f(k27.B1(groupCallParticipant.peer))) != null) {
-                if (groupCallParticipant2.self) {
-                    max = groupCallParticipant2.active_date;
-                    groupCallParticipant.lastTypingDate = max;
-                } else {
-                    max = Math.max(groupCallParticipant.active_date, groupCallParticipant2.active_date);
-                    groupCallParticipant.lastTypingDate = max;
-                }
-                z2 = z3;
-                if (elapsedRealtime != groupCallParticipant.lastVisibleDate) {
-                    groupCallParticipant.active_date = max;
-                } else {
-                    groupCallParticipant.active_date = groupCallParticipant2.active_date;
-                }
-                this.d.k(groupCallParticipant, k27.B1(groupCallParticipant.peer));
-                arrayList2.add(groupCallParticipant);
-                o(groupCallParticipant, true);
-                i3++;
-                z3 = z2;
-                z4 = z4;
-            }
-            z2 = z3;
-            this.d.k(groupCallParticipant, k27.B1(groupCallParticipant.peer));
-            arrayList2.add(groupCallParticipant);
-            o(groupCallParticipant, true);
-            i3++;
-            z3 = z2;
-            z4 = z4;
-        }
-        boolean z5 = z3;
-        if (this.b.participants_count < this.d.m()) {
-            this.b.participants_count = this.d.m();
-        }
-        B();
-        kk7 f = kk7.f(this.C.a);
-        Long valueOf = Long.valueOf(this.c);
-        Long valueOf2 = Long.valueOf(this.b.id);
-        Object[] objArr = new Object[3];
-        objArr[z5 ? 1 : 0] = valueOf;
-        objArr[1] = valueOf2;
-        objArr[2] = Boolean.FALSE;
-        f.k(kk7.v2, objArr);
-        x();
-    }
-
-    public final void o(TLRPC.GroupCallParticipant groupCallParticipant, boolean z) {
-        int i;
-        int i2 = groupCallParticipant.source;
-        SparseArray sparseArray = this.p;
-        if (i2 != 0) {
-            if (z) {
-                sparseArray.put(i2, groupCallParticipant);
-            } else {
-                sparseArray.remove(i2);
-            }
-        }
-        int i3 = 0;
-        while (i3 < 2) {
-            TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = i3 == 0 ? groupCallParticipant.video : groupCallParticipant.presentation;
-            if (tL_groupCallParticipantVideo != null) {
-                if ((tL_groupCallParticipantVideo.flags & 2) != 0 && (i = tL_groupCallParticipantVideo.audio_source) != 0) {
-                    if (z) {
-                        sparseArray.put(i, groupCallParticipant);
-                    } else {
-                        sparseArray.remove(i);
-                    }
-                }
-                SparseArray sparseArray2 = i3 == 0 ? this.q : this.r;
-                int size = tL_groupCallParticipantVideo.source_groups.size();
-                for (int i4 = 0; i4 < size; i4++) {
-                    TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = tL_groupCallParticipantVideo.source_groups.get(i4);
-                    int size2 = tL_groupCallParticipantVideoSourceGroup.sources.size();
-                    for (int i5 = 0; i5 < size2; i5++) {
-                        int intValue = tL_groupCallParticipantVideoSourceGroup.sources.get(i5).intValue();
-                        if (z) {
-                            sparseArray2.put(intValue, groupCallParticipant);
-                        } else {
-                            sparseArray2.remove(intValue);
-                        }
-                    }
-                }
-                if (z) {
-                    String str = tL_groupCallParticipantVideo.endpoint;
-                    if (i3 == 0) {
-                        groupCallParticipant.videoEndpoint = str;
-                    } else {
-                        groupCallParticipant.presentationEndpoint = str;
-                    }
-                } else if (i3 == 0) {
-                    groupCallParticipant.videoEndpoint = null;
-                } else {
-                    groupCallParticipant.presentationEndpoint = null;
-                }
-            }
-            i3++;
-        }
-    }
-
-    public final void p(TLRPC.GroupCall groupCall) {
-        if (this.b.version < groupCall.version) {
-            this.s = null;
-            l(true);
-        }
-        apb.a(this.b, groupCall);
-        this.b = groupCall;
-        this.w = this.b.record_start_date != 0;
-        kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-    }
-
-    public final void q(TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants, boolean z) {
-        long j;
-        TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo;
-        byte b = 2;
-        long j2 = 0;
-        boolean z2 = true;
-        if (!z) {
-            int size = tL_updateGroupCallParticipants.participants.size();
-            int i = 0;
-            while (true) {
-                if (i >= size) {
-                    break;
-                }
-                if (tL_updateGroupCallParticipants.participants.get(i).versioned) {
-                    int i2 = this.b.version;
-                    int i3 = i2 + 1;
-                    int i4 = tL_updateGroupCallParticipants.version;
-                    if (i3 < i4) {
-                        if (!this.v && this.I != 0 && Math.abs(System.currentTimeMillis() - this.I) > 1500) {
-                            this.s = null;
-                            l(true);
-                            return;
-                        }
-                        if (this.I == 0) {
-                            this.I = System.currentTimeMillis();
-                        }
-                        if (w01.a) {
-                            b00.p(tL_updateGroupCallParticipants.version, new StringBuilder("add TL_updateGroupCallParticipants to queue "));
-                        }
-                        this.H.add(tL_updateGroupCallParticipants);
-                        if (this.M == null) {
-                            zb2 zb2Var = new zb2(this, b);
-                            this.M = zb2Var;
-                            gl.e3(zb2Var, 1500L);
-                            return;
-                        }
-                        return;
-                    }
-                    if (i4 < i2) {
-                        if (w01.a) {
-                            fa4.b("ignore processParticipantsUpdate because of version");
-                            return;
-                        }
-                        return;
-                    }
-                } else {
-                    i++;
-                }
-            }
-        }
-        long i5 = i();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        ArrayList arrayList = this.e;
-        int i6 = !arrayList.isEmpty() ? ((TLRPC.GroupCallParticipant) b00.f(1, arrayList)).date : 0;
-        kk7.f(this.C.a).k(kk7.A2, Long.valueOf(elapsedRealtime));
-        int size2 = tL_updateGroupCallParticipants.participants.size();
-        long j3 = 0;
-        int i7 = 0;
-        boolean z3 = false;
-        boolean z4 = false;
-        boolean z5 = false;
-        boolean z6 = false;
-        boolean z7 = false;
-        while (i7 < size2) {
-            long j4 = j2;
-            TLRPC.GroupCallParticipant groupCallParticipant = tL_updateGroupCallParticipants.participants.get(i7);
-            boolean z8 = z2;
-            long B1 = k27.B1(groupCallParticipant.peer);
-            if (w01.a) {
-                StringBuilder o = ug8.o(B1, "process participant ", " left = ");
-                o.append(groupCallParticipant.left);
-                o.append(" versioned ");
-                o.append(groupCallParticipant.versioned);
-                o.append(" flags = ");
-                o.append(groupCallParticipant.flags);
-                o.append(" self = ");
-                o.append(i5);
-                o.append(" volume = ");
-                b00.p(groupCallParticipant.volume, o);
-            }
-            TLRPC.GroupCallParticipant groupCallParticipant2 = (TLRPC.GroupCallParticipant) this.d.f(B1);
-            boolean z9 = groupCallParticipant.left;
-            int i8 = size2;
-            long j5 = i5;
-            vf6 vf6Var = this.P;
-            if (z9) {
-                if (groupCallParticipant2 == null && tL_updateGroupCallParticipants.version == this.b.version) {
-                    if (w01.a) {
-                        fa4.b("unknowd participant left, reload call");
-                    }
-                    z3 = z8;
-                }
-                if (groupCallParticipant2 != null) {
-                    this.d.l(B1);
-                    o(groupCallParticipant2, false);
-                    arrayList.remove(groupCallParticipant2);
-                    this.g.remove(groupCallParticipant2);
-                    if (vf6Var.g(null, B1) != null) {
-                        j5 j5Var = this.C;
-                        if (B1 > j4) {
-                            j = elapsedRealtime;
-                            TLRPC.User V1 = na7.q1(j5Var.a).V1(Long.valueOf(B1));
-                            ir2.x(ug8.o(B1, "left remove from speaking ", " "), V1 == null ? null : V1.first_name, "GroupCall");
-                        } else {
-                            j = elapsedRealtime;
-                            TLRPC.Chat K0 = na7.q1(j5Var.a).K0(Long.valueOf(-B1));
-                            ir2.x(ug8.o(B1, "left remove from speaking ", " "), K0 == null ? null : K0.title, "GroupCall");
-                        }
-                        vf6Var.l(B1);
-                        z6 = z8;
-                    } else {
-                        j = elapsedRealtime;
-                    }
-                    int i9 = 0;
-                    while (true) {
-                        ArrayList arrayList2 = this.f;
-                        if (i9 >= arrayList2.size()) {
-                            break;
-                        }
-                        if (k27.B1(((gc2) arrayList2.get(i9)).a.peer) == k27.B1(groupCallParticipant2.peer)) {
-                            arrayList2.remove(i9);
-                            i9--;
-                        }
-                        i9++;
-                    }
-                } else {
-                    j = elapsedRealtime;
-                }
-                TLRPC.GroupCall groupCall = this.b;
-                int i10 = groupCall.participants_count - 1;
-                groupCall.participants_count = i10;
-                if (i10 < 0) {
-                    groupCall.participants_count = 0;
-                }
-            } else {
-                j = elapsedRealtime;
-                Long valueOf = Long.valueOf(B1);
-                HashSet hashSet = this.n;
-                if (hashSet.contains(valueOf)) {
-                    Long valueOf2 = Long.valueOf(B1);
-                    hashSet.remove(valueOf2);
-                    this.j.remove(valueOf2);
-                }
-                if (groupCallParticipant2 != null) {
-                    if (w01.a) {
-                        fa4.b("new participant, update old");
-                    }
-                    groupCallParticipant2.muted = groupCallParticipant.muted;
-                    if (groupCallParticipant.muted && vf6Var.g(null, B1) != null) {
-                        vf6Var.l(B1);
-                        j5 j5Var2 = this.C;
-                        if (B1 > j4) {
-                            TLRPC.User V12 = na7.q1(j5Var2.a).V1(Long.valueOf(B1));
-                            ir2.x(ug8.o(B1, "muted remove from speaking ", " "), V12 == null ? null : V12.first_name, "GroupCall");
-                        } else {
-                            TLRPC.Chat K02 = na7.q1(j5Var2.a).K0(Long.valueOf(-B1));
-                            ir2.x(ug8.o(B1, "muted remove from speaking ", " "), K02 == null ? null : K02.title, "GroupCall");
-                        }
-                        z6 = z8;
-                    }
-                    if (groupCallParticipant.min) {
-                        int i11 = groupCallParticipant.flags;
-                        if ((i11 & 128) != 0 && (groupCallParticipant2.flags & 128) == 0) {
-                            groupCallParticipant.flags = i11 & (-129);
-                        }
-                        if (groupCallParticipant.volume_by_admin && groupCallParticipant2.volume_by_admin) {
-                            groupCallParticipant2.volume = groupCallParticipant.volume;
-                        }
-                    } else {
-                        groupCallParticipant2.volume = groupCallParticipant.volume;
-                        groupCallParticipant2.muted_by_you = groupCallParticipant.muted_by_you;
-                    }
-                    groupCallParticipant2.flags = groupCallParticipant.flags;
-                    groupCallParticipant2.can_self_unmute = groupCallParticipant.can_self_unmute;
-                    groupCallParticipant2.video_joined = groupCallParticipant.video_joined;
-                    if (groupCallParticipant2.raise_hand_rating == j4 && groupCallParticipant.raise_hand_rating != j4) {
-                        groupCallParticipant2.lastRaiseHandDate = SystemClock.elapsedRealtime();
-                    }
-                    groupCallParticipant2.raise_hand_rating = groupCallParticipant.raise_hand_rating;
-                    groupCallParticipant2.date = groupCallParticipant.date;
-                    int max = Math.max(groupCallParticipant2.active_date, groupCallParticipant.active_date);
-                    groupCallParticipant2.lastTypingDate = max;
-                    if (j != groupCallParticipant2.lastVisibleDate) {
-                        groupCallParticipant2.active_date = max;
-                    }
-                    if (groupCallParticipant2.source == groupCallParticipant.source && j(groupCallParticipant2.video, groupCallParticipant.video) && j(groupCallParticipant2.presentation, groupCallParticipant.presentation)) {
-                        TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo2 = groupCallParticipant2.video;
-                        if (tL_groupCallParticipantVideo2 != null && (tL_groupCallParticipantVideo = groupCallParticipant.video) != null) {
-                            tL_groupCallParticipantVideo2.paused = tL_groupCallParticipantVideo.paused;
-                        }
-                    } else {
-                        o(groupCallParticipant2, false);
-                        groupCallParticipant2.video = groupCallParticipant.video;
-                        groupCallParticipant2.presentation = groupCallParticipant.presentation;
-                        groupCallParticipant2.source = groupCallParticipant.source;
-                        o(groupCallParticipant2, z8);
-                        groupCallParticipant.presentationEndpoint = groupCallParticipant2.presentationEndpoint;
-                        groupCallParticipant.videoEndpoint = groupCallParticipant2.videoEndpoint;
-                        groupCallParticipant.videoIndex = groupCallParticipant2.videoIndex;
-                    }
-                } else {
-                    if (groupCallParticipant.just_joined) {
-                        if (B1 != j5) {
-                            j3 = B1;
-                        }
-                        TLRPC.GroupCall groupCall2 = this.b;
-                        groupCall2.participants_count++;
-                        if (tL_updateGroupCallParticipants.version == groupCall2.version) {
-                            if (w01.a) {
-                                fa4.b("new participant, just joined, reload call");
-                            }
-                            z3 = true;
-                        } else if (w01.a) {
-                            fa4.b("new participant, just joined");
-                        }
-                    }
-                    if (groupCallParticipant.raise_hand_rating != j4) {
-                        groupCallParticipant.lastRaiseHandDate = SystemClock.elapsedRealtime();
-                    }
-                    if (B1 == j5 || arrayList.size() < 20 || groupCallParticipant.date <= i6 || groupCallParticipant.active_date != 0 || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || !groupCallParticipant.min || this.t) {
-                        arrayList.add(groupCallParticipant);
-                    }
-                    this.d.k(groupCallParticipant, B1);
-                    o(groupCallParticipant, true);
-                }
-                if (B1 == j5 && groupCallParticipant.active_date == 0 && (groupCallParticipant.can_self_unmute || !groupCallParticipant.muted)) {
-                    groupCallParticipant.active_date = ConnectionsManager.getInstance(this.C.a).getCurrentTime();
-                }
-                z5 = true;
-            }
-            if (B1 == j5) {
-                z7 = true;
-            }
-            i7++;
-            j2 = j4;
-            size2 = i8;
-            i5 = j5;
-            elapsedRealtime = j;
-            z2 = true;
-            z4 = true;
-        }
-        int i12 = tL_updateGroupCallParticipants.version;
-        TLRPC.GroupCall groupCall3 = this.b;
-        if (i12 > groupCall3.version) {
-            groupCall3.version = i12;
-            if (!z) {
-                s();
-            }
-        }
-        if (this.b.participants_count < this.d.m()) {
-            this.b.participants_count = this.d.m();
-        }
-        if (w01.a) {
-            b00.p(this.b.participants_count, new StringBuilder("new participants count after update "));
-        }
-        if (z3 && !this.O && SystemClock.elapsedRealtime() - this.N >= 30000) {
-            this.O = true;
-            TL_phone.getGroupParticipants getgroupparticipants = new TL_phone.getGroupParticipants();
-            getgroupparticipants.call = h(this.a);
-            getgroupparticipants.offset = "";
-            getgroupparticipants.limit = 1;
-            ConnectionsManager.getInstance(this.C.a).sendRequest(getgroupparticipants, new ac2(this, (byte) 0));
-        }
-        if (z4) {
-            if (z5) {
-                B();
-            }
-            kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.valueOf(z7), Long.valueOf(j3));
-        }
-        if (z6) {
-            kk7.f(this.C.a).k(kk7.x2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-        }
-    }
-
-    public final void r(int i, ArrayList arrayList) {
-        kk7.f(this.C.a).k(kk7.A2, Long.valueOf(SystemClock.elapsedRealtime()));
-        int size = arrayList.size();
-        ArrayList arrayList2 = null;
-        boolean z = false;
-        for (int i2 = 0; i2 < size; i2++) {
-            Long l = (Long) arrayList.get(i2);
-            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) this.d.f(l.longValue());
-            if (groupCallParticipant == null) {
-                if (arrayList2 == null) {
-                    arrayList2 = new ArrayList();
-                }
-                arrayList2.add(l);
-            } else if (i - groupCallParticipant.lastTypingDate > 10) {
-                if (groupCallParticipant.lastVisibleDate != i) {
-                    groupCallParticipant.active_date = i;
-                }
-                groupCallParticipant.lastTypingDate = i;
-                z = true;
-            }
-        }
-        if (arrayList2 != null) {
-            m(arrayList2, true, null);
-        }
-        if (z) {
-            B();
-            kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-        }
-    }
-
-    public final void s() {
-        sa saVar = new sa((byte) 25);
-        ArrayList arrayList = this.H;
-        Collections.sort(arrayList, saVar);
-        if (arrayList != null && !arrayList.isEmpty()) {
-            boolean z = false;
-            while (arrayList.size() > 0) {
-                TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) arrayList.get(0);
-                int i = this.b.version;
-                int i2 = i + 1;
-                int i3 = tL_updateGroupCallParticipants.version;
-                char c = (i2 == i3 || i == i3) ? (char) 0 : i < i3 ? (char) 1 : (char) 2;
-                if (c == 0) {
-                    q(tL_updateGroupCallParticipants, true);
-                    arrayList.remove(0);
-                    z = true;
-                } else {
-                    if (c == 1) {
-                        if (this.I != 0 && (z || Math.abs(System.currentTimeMillis() - this.I) <= 1500)) {
-                            if (w01.a) {
-                                fa4.b("HOLE IN GROUP CALL UPDATES QUEUE - will wait more time");
-                            }
-                            if (z) {
-                                this.I = System.currentTimeMillis();
-                                return;
-                            }
-                            return;
-                        }
-                        if (w01.a) {
-                            fa4.b("HOLE IN GROUP CALL UPDATES QUEUE - reload participants");
-                        }
-                        this.I = 0L;
-                        arrayList.clear();
-                        this.s = null;
-                        l(true);
-                        return;
-                    }
-                    arrayList.remove(0);
-                }
-            }
-            arrayList.clear();
-            if (w01.a) {
-                fa4.b("GROUP CALL UPDATES QUEUE PROCEED - OK");
-            }
-        }
-        this.I = 0L;
-    }
-
-    public final void t() {
-        TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
-        getgroupcall.call = h(this.a);
-        getgroupcall.limit = 100;
-        ConnectionsManager.getInstance(this.C.a).sendRequest(getgroupcall, new ac2(this, (byte) 3));
-    }
-
-    public final void u(long j) {
-        this.n.remove(Long.valueOf(j));
-        this.j.remove(Long.valueOf(j));
-        B();
-        kk7.f(this.C.a).k(kk7.v2, Long.valueOf(this.c), Long.valueOf(this.b.id), Boolean.FALSE);
-    }
-
-    public final void v(j5 j5Var, long j, TL_phone.groupCall groupcall) {
-        this.c = j;
-        this.C = j5Var;
-        TLRPC.GroupCall groupCall = this.b;
-        TLRPC.GroupCall groupCall2 = groupcall.call;
-        apb.a(groupCall, groupCall2);
-        this.b = groupCall2;
-        int i = groupCall2.record_start_date;
-        this.w = i != 0;
-        int size = groupcall.participants.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            TLRPC.GroupCallParticipant groupCallParticipant = groupcall.participants.get(i2);
-            this.d.k(groupCallParticipant, k27.B1(groupCallParticipant.peer));
-            this.e.add(groupCallParticipant);
-            o(groupCallParticipant, true);
-        }
-        B();
-        this.s = groupcall.participants_next_offset;
-        l(true);
-        f();
-        if (this.b.rtmp_stream) {
-            g(Collections.EMPTY_LIST);
-        }
-    }
-
-    public final void w(j5 j5Var, TLRPC.GroupCall groupCall) {
-        this.c = 0L;
-        this.C = j5Var;
-        apb.a(this.b, groupCall);
-        this.b = groupCall;
-        this.w = groupCall.record_start_date != 0;
-        B();
-        l(true);
-        f();
-        if (groupCall.rtmp_stream) {
-            g(Collections.EMPTY_LIST);
-        }
-    }
-
-    public final void x() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || sharedInstance.getAccount() != this.C.a || sharedInstance.getChat() == null || sharedInstance.getChat().id != (-this.c)) {
+        Path path;
+        rc2 rc2Var;
+        float a;
+        boolean z3;
+        int i4;
+        int a2;
+        qa6 qa6Var;
+        boolean z4;
+        fg0 fg0Var;
+        float f;
+        ArrayList arrayList2 = arrayList;
+        rc2 rc2Var2 = this.a;
+        int i5 = rc2Var2.a6;
+        yc2 yc2Var2 = rc2Var2.ub;
+        RectF rectF = rc2Var2.c4;
+        if (ela.l0) {
             return;
         }
-        sharedInstance.setParticipantsVolume();
-    }
-
-    public final void y(TLRPC.InputPeer inputPeer) {
-        if (inputPeer == null) {
-            this.J = null;
-            return;
-        }
-        if (inputPeer instanceof TLRPC.TL_inputPeerSelf) {
-            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-            this.J = tL_peerUser;
-            tL_peerUser.user_id = y6c.h(this.C.a).e();
-        } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
-            TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
-            this.J = tL_peerUser2;
-            tL_peerUser2.user_id = inputPeer.user_id;
-        } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-            TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
-            this.J = tL_peerChat;
-            tL_peerChat.chat_id = inputPeer.chat_id;
+        int widthForButtons = rc2Var2.getWidthForButtons();
+        k47 k47Var = rc2Var2.Q5;
+        if (k47Var != null && k47Var.O3()) {
+            L = (rc2Var2.getMeasuredWidth() - widthForButtons) - gm.L(10.0f);
+        } else if (rc2Var2.v2()) {
+            L = rc2Var2.getCompactLeft();
         } else {
-            TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-            this.J = tL_peerChannel;
-            tL_peerChannel.channel_id = inputPeer.channel_id;
+            L = rc2Var2.N6 + gm.L((rc2Var2.C6 || rc2Var2.K) ? 1.0f : 7.0f);
+        }
+        if (yc2Var2.x0) {
+            L = (int) (L + yc2Var2.h0);
+        }
+        float L2 = (rc2Var2.e7 - gm.L(2.0f)) + yc2Var2.j0;
+        float f2 = 2.0f;
+        float f3 = 0.0f;
+        for (int i6 = 0; i6 < arrayList2.size(); i6++) {
+            wp0 wp0Var = (wp0) arrayList2.get(i6);
+            float f4 = wp0Var.d + wp0Var.f;
+            if (f4 > f3) {
+                f3 = f4;
+            }
+        }
+        rectF.set(0.0f, L2, rc2Var2.getMeasuredWidth(), L2 + f3);
+        if (i != 255) {
+            canvas.saveLayerAlpha(rectF, i, 31);
+        } else {
+            canvas.save();
+        }
+        int i7 = 0;
+        boolean z5 = false;
+        while (i7 < arrayList2.size()) {
+            wp0 wp0Var2 = (wp0) arrayList2.get(i7);
+            float L3 = ((wp0Var2.d + rc2Var2.e7) - gm.L(f2)) + yc2Var2.j0;
+            wp0Var2.a();
+            if (wp0Var2.b) {
+                float f5 = widthForButtons;
+                float f6 = (wp0Var2.c * f5) + L;
+                float f7 = ((wp0Var2.e * f5) + f6) - f6;
+                float L4 = gm.L(3.66f);
+                float f8 = f7 - L4;
+                int round = Math.round(f8 / gm.L(8.66f));
+                i2 = i7;
+                float f9 = f8 / round;
+                rc2Var2.x();
+                float L5 = gm.L(1.0f);
+                int i8 = 0;
+                while (true) {
+                    i3 = i5;
+                    if (i8 >= round + 1) {
+                        break;
+                    }
+                    float f10 = (i8 * f9) + f6;
+                    int i9 = i8;
+                    yc2 yc2Var3 = yc2Var2;
+                    rectF.set(f10, L3, f10 + L4, wp0Var2.f + L3);
+                    canvas.drawRoundRect(rectF, L5, L5, rc2Var2.c2("paintChatActionBackground"));
+                    if (rc2Var2.i2()) {
+                        canvas.drawRoundRect(rectF, L5, L5, cmb.g2);
+                    }
+                    i8 = i9 + 1;
+                    i5 = i3;
+                    yc2Var2 = yc2Var3;
+                }
+                yc2Var = yc2Var2;
+                rc2Var = rc2Var2;
+                i4 = widthForButtons;
+            } else {
+                i2 = i7;
+                i3 = i5;
+                yc2Var = yc2Var2;
+                float f11 = widthForButtons;
+                float f12 = (wp0Var2.c * f11) + L;
+                rectF.set(f12, L3, (wp0Var2.e * f11) + f12, wp0Var2.f + L3);
+                rc2Var2.x();
+                boolean P0 = rc2Var2.P0(wp0Var2.i);
+                ir0 ir0Var = wp0Var2.j;
+                if (ir0Var != null && rc2Var2.Q5 != null) {
+                    byte b = ir0Var.a;
+                    if (b == 2) {
+                        P0 |= oc7.r1(i3).E2(rc2Var2.Q5.e1(), k47.B0(rc2Var2.Q5.k), true);
+                    } else if (b == 1) {
+                        z = false;
+                        P0 |= oc7.r1(i3).E2(rc2Var2.Q5.e1(), k47.B0(rc2Var2.Q5.k), false);
+                        boolean z6 = (rc2Var2.U1 || !rc2Var2.V1) ? z : true;
+                        boolean v2 = rc2Var2.v2();
+                        ylbVar = rc2Var2.cc;
+                        RectF rectF2 = wp0Var2.p;
+                        Paint paint = wp0Var2.o;
+                        float[] fArr = wp0Var2.q;
+                        z2 = P0;
+                        path = wp0Var2.n;
+                        rc2Var = rc2Var2;
+                        a = wp0Var2.a();
+                        canvas.save();
+                        if (a == 1.0f) {
+                            z3 = z6;
+                            i4 = widthForButtons;
+                            canvas.scale(a, a, rectF.centerX(), rectF.centerY());
+                        } else {
+                            z3 = z6;
+                            i4 = widthForButtons;
+                        }
+                        Arrays.fill(fArr, gm.L(Math.min(6.75f, gda.U0)));
+                        if ((wp0Var2.g & 9) == 9) {
+                            float L6 = gm.L(gda.U0);
+                            fArr[7] = L6;
+                            fArr[6] = L6;
+                        }
+                        if ((wp0Var2.g & 10) == 10) {
+                            float L7 = gm.L(gda.U0);
+                            fArr[5] = L7;
+                            fArr[4] = L7;
+                        }
+                        path.rewind();
+                        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                        canvas.drawPath(path, cmb.U0("paintChatActionBackground", ylbVar));
+                        gr0 gr0Var = wp0Var2.k;
+                        a2 = gr0Var == null ? gr0Var.a() : 1;
+                        if (a2 != 1) {
+                            int F = wi8.F(a2);
+                            if (F == 1) {
+                                paint.setColor(cmb.p1(0.7f, cmb.v0(cmb.Tl, ylbVar)));
+                            } else if (F == 2) {
+                                paint.setColor(cmb.p1(0.7f, cmb.v0(cmb.Vl, ylbVar)));
+                            } else if (F == 3) {
+                                paint.setColor(cmb.p1(0.7f, cmb.v0(cmb.Ul, ylbVar)));
+                            }
+                            canvas.drawPath(path, paint);
+                        }
+                        if ((ylbVar == null ? ylbVar.g() : cmb.b1()) && (a2 == 1 || (ylbVar != null && ylbVar.a()))) {
+                            canvas.drawPath(path, cmb.g2);
+                        }
+                        canvas.save();
+                        canvas.clipPath(path);
+                        qa6 qa6Var2 = wp0Var2.r;
+                        if (z2) {
+                            if (qa6Var2 != null && !qa6Var2.d() && !wp0Var2.r.c()) {
+                                wp0Var2.r.a();
+                            }
+                        } else if (qa6Var2 == null) {
+                            qa6 qa6Var3 = new qa6();
+                            wp0Var2.r = qa6Var3;
+                            qa6Var3.j(5.5f);
+                            qa6 qa6Var4 = wp0Var2.r;
+                            qa6Var4.D = true;
+                            qa6Var4.x.setStrokeWidth(gm.N(1.25f));
+                        } else if (qa6Var2.c() || wp0Var2.r.d()) {
+                            qa6 qa6Var5 = wp0Var2.r;
+                            qa6Var5.b = -1L;
+                            qa6Var5.c = -1L;
+                        }
+                        qa6Var = wp0Var2.r;
+                        if (qa6Var == null && (z2 || qa6Var.d())) {
+                            rectF2.set(rectF);
+                            rectF2.inset(gm.N(0.625f), gm.N(0.625f));
+                            wp0Var2.r.i(fArr);
+                            wp0Var2.r.e(rectF2);
+                            int p1 = v2 ? cmb.p1(0.125f, cmb.v0(cmb.Ga, ylbVar)) : cmb.v0(cmb.dd, ylbVar);
+                            wp0Var2.r.g(cmb.p1(1.0f, p1), cmb.p1(2.5f, p1), cmb.p1(3.0f, p1), cmb.p1(10.0f, p1));
+                            wp0Var2.r.setAlpha(nm7.d4);
+                            wp0Var2.r.draw(canvas);
+                            z4 = true;
+                        } else {
+                            z4 = false;
+                        }
+                        fg0Var = wp0Var2.s;
+                        if (fg0Var != null) {
+                            fg0Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                            wp0Var2.s.setAlpha(nm7.d4);
+                            wp0Var2.s.draw(canvas);
+                        }
+                        canvas.restore();
+                        canvas.save();
+                        float L8 = (wp0Var2.t == null || wp0Var2.u != null) ? gm.L(26.0f) : 0;
+                        float f13 = f2;
+                        float z7 = aq1.z(rectF.width() - (wp0Var2.h.j() + (wp0Var2.t == null ? gm.L(4.0f) : 0)), L8, f13, rectF.left);
+                        if (wp0Var2.u == null) {
+                            f = 3.0f;
+                            int centerY = (int) (rectF.centerY() - (gm.L(20.0f) / f13));
+                            int i10 = (int) z7;
+                            wp0Var2.u.setBounds(i10, centerY, gm.L(20.0f) + i10, gm.L(20.0f) + centerY);
+                            wp0Var2.u.setAlpha(wp0Var2.m ? 128 : nm7.d4);
+                            wp0Var2.u.draw(canvas);
+                        } else {
+                            f = 3.0f;
+                            if (wp0Var2.t != null) {
+                                int centerY2 = (int) (rectF.centerY() - (gm.L(24.0f) / 2.0f));
+                                int i11 = (int) z7;
+                                wp0Var2.t.setBounds(i11, centerY2, gm.L(24.0f) + i11, gm.L(24.0f) + centerY2);
+                                wp0Var2.t.setAlpha(wp0Var2.m ? 128 : nm7.d4);
+                                wp0Var2.t.draw(canvas);
+                            }
+                            wp0Var2.h.p = Math.max(1.0f, (rectF.width() - gm.L(15.0f)) - L8);
+                            wp0Var2.h.f(canvas, z7, rectF.centerY(), wp0Var2.m ? 0.5f : 1.0f);
+                            canvas.restore();
+                            TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) kfb.a(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                            if (wp0Var2.j != null) {
+                                if (wp0Var2.m) {
+                                    Drawable Q0 = cmb.Q0("drawableBotLock", ylbVar);
+                                    hg0.t(Q0, (((int) rectF.right) - gm.L(f)) - Q0.getIntrinsicWidth(), rectF.top + gm.L(f));
+                                    Q0.draw(canvas);
+                                }
+                            } else if (kfb.b(wp0Var2.i)) {
+                                Drawable Q02 = cmb.Q0("drawableBotWebView", ylbVar);
+                                hg0.t(Q02, (((int) rectF.right) - gm.L(f)) - Q02.getIntrinsicWidth(), rectF.top + gm.L(f));
+                                Q02.draw(canvas);
+                            } else if (tL_inlineButtonTypeUrl != null) {
+                                Drawable Q03 = a66.q(tL_inlineButtonTypeUrl.url) ? cmb.Q0("drawableBotWebView", ylbVar) : wp0Var2.l ? cmb.Q0("drawable_botInvite", ylbVar) : cmb.Q0("drawableBotLink", ylbVar);
+                                hg0.t(Q03, (((int) rectF.right) - gm.L(f)) - Q03.getIntrinsicWidth(), rectF.top + gm.L(f));
+                                Q03.draw(canvas);
+                            } else if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || kfb.c(wp0Var2.i, TL_keyboard.TL_buttonTypeRequestPeer.class)) {
+                                Drawable Q04 = cmb.Q0("drawableBotInline", ylbVar);
+                                hg0.t(Q04, (((int) rectF.right) - gm.L(f)) - Q04.getIntrinsicWidth(), rectF.top + gm.L(f));
+                                Q04.draw(canvas);
+                            } else if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeBuy.class) && z3) {
+                                hg0.t(cmb.v4, (((int) rectF.right) - gm.L(5.0f)) - cmb.v4.getIntrinsicWidth(), rectF.top + gm.L(4.0f));
+                                cmb.v4.draw(canvas);
+                            }
+                            canvas.restore();
+                            if (z4) {
+                                z5 = true;
+                            }
+                        }
+                        z7 += L8;
+                        wp0Var2.h.p = Math.max(1.0f, (rectF.width() - gm.L(15.0f)) - L8);
+                        wp0Var2.h.f(canvas, z7, rectF.centerY(), wp0Var2.m ? 0.5f : 1.0f);
+                        canvas.restore();
+                        TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl2 = (TL_keyboard.TL_inlineButtonTypeUrl) kfb.a(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                        if (wp0Var2.j != null) {
+                        }
+                        canvas.restore();
+                        if (z4) {
+                        }
+                    }
+                }
+                z = false;
+                if (rc2Var2.U1) {
+                }
+                boolean v22 = rc2Var2.v2();
+                ylbVar = rc2Var2.cc;
+                RectF rectF22 = wp0Var2.p;
+                Paint paint2 = wp0Var2.o;
+                float[] fArr2 = wp0Var2.q;
+                z2 = P0;
+                path = wp0Var2.n;
+                rc2Var = rc2Var2;
+                a = wp0Var2.a();
+                canvas.save();
+                if (a == 1.0f) {
+                }
+                Arrays.fill(fArr2, gm.L(Math.min(6.75f, gda.U0)));
+                if ((wp0Var2.g & 9) == 9) {
+                }
+                if ((wp0Var2.g & 10) == 10) {
+                }
+                path.rewind();
+                path.addRoundRect(rectF, fArr2, Path.Direction.CW);
+                canvas.drawPath(path, cmb.U0("paintChatActionBackground", ylbVar));
+                gr0 gr0Var2 = wp0Var2.k;
+                if (gr0Var2 == null) {
+                }
+                if (a2 != 1) {
+                }
+                if (ylbVar == null ? ylbVar.g() : cmb.b1()) {
+                    canvas.drawPath(path, cmb.g2);
+                }
+                canvas.save();
+                canvas.clipPath(path);
+                qa6 qa6Var22 = wp0Var2.r;
+                if (z2) {
+                }
+                qa6Var = wp0Var2.r;
+                if (qa6Var == null) {
+                }
+                z4 = false;
+                fg0Var = wp0Var2.s;
+                if (fg0Var != null) {
+                }
+                canvas.restore();
+                canvas.save();
+                float L82 = (wp0Var2.t == null || wp0Var2.u != null) ? gm.L(26.0f) : 0;
+                float f132 = f2;
+                float z72 = aq1.z(rectF.width() - (wp0Var2.h.j() + (wp0Var2.t == null ? gm.L(4.0f) : 0)), L82, f132, rectF.left);
+                if (wp0Var2.u == null) {
+                }
+                z72 += L82;
+                wp0Var2.h.p = Math.max(1.0f, (rectF.width() - gm.L(15.0f)) - L82);
+                wp0Var2.h.f(canvas, z72, rectF.centerY(), wp0Var2.m ? 0.5f : 1.0f);
+                canvas.restore();
+                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl22 = (TL_keyboard.TL_inlineButtonTypeUrl) kfb.a(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                if (wp0Var2.j != null) {
+                }
+                canvas.restore();
+                if (z4) {
+                }
+            }
+            i7 = i2 + 1;
+            arrayList2 = arrayList;
+            i5 = i3;
+            yc2Var2 = yc2Var;
+            rc2Var2 = rc2Var;
+            widthForButtons = i4;
+            f2 = 2.0f;
+        }
+        rc2 rc2Var3 = rc2Var2;
+        canvas.restore();
+        if (z5) {
+            rc2Var3.r2();
         }
     }
 
-    public final void z(String str) {
-        TL_phone.editGroupCallTitle editgroupcalltitle = new TL_phone.editGroupCallTitle();
-        editgroupcalltitle.call = h(this.a);
-        editgroupcalltitle.title = str;
-        ConnectionsManager.getInstance(this.C.a).sendRequest(editgroupcalltitle, new ac2(this, (byte) 1));
+    /* JADX WARN: Removed duplicated region for block: B:105:0x032c  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01d8  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x01a3  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01d1  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01e0  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0217  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0223  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x02c4  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x02dc  */
+    /* JADX WARN: Type inference failed for: r9v6 */
+    /* JADX WARN: Type inference failed for: r9v7, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r9v9 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(k47 k47Var, de deVar, int i, boolean z) {
+        HashMap hashMap;
+        gr0[][] gr0VarArr;
+        int i2;
+        int i3;
+        int i4;
+        HashMap hashMap2;
+        HashMap hashMap3;
+        int i5;
+        HashMap hashMap4;
+        ArrayList arrayList;
+        int i6;
+        byte b;
+        long b2;
+        wp0 wp0Var;
+        int i7;
+        int i8;
+        CharSequence charSequence;
+        HashMap hashMap5;
+        HashMap hashMap6;
+        CharSequence charSequence2;
+        ?? r9;
+        CharSequence charSequence3;
+        CharSequence m;
+        TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl;
+        uib uibVar;
+        String str;
+        int i9 = deVar.b;
+        rc2 rc2Var = this.a;
+        ArrayList arrayList2 = rc2Var.I5;
+        int i10 = rc2Var.a6;
+        gr0[][] gr0VarArr2 = (gr0[][]) deVar.c;
+        int length = gr0VarArr2.length;
+        int i11 = 0;
+        for (int i12 = 0; i12 < length; i12++) {
+            if (((1 << i12) & i9) != 0) {
+                i11++;
+            }
+        }
+        int L = (i11 * i) + gm.L(1.0f) + (gm.L(48.0f) * length);
+        rc2Var.x0 = L;
+        rc2Var.J6 = L;
+        int L2 = rc2Var.b7 - gm.L(rc2Var.C6 ? 0.0f : 9.0f);
+        rc2Var.K5 = L2;
+        if (k47Var.x0 > L2) {
+            int i13 = -gm.L((rc2Var.X6 ? 71 : z ? 52 : 0) + 10);
+            rc2Var.K5 = Math.max(rc2Var.b7, Math.min(k47Var.x0, gm.O1() ? gm.P0() + i13 : b10.z(5.0f, Math.min(rc2Var.getParentWidth(), gm.q.y), i13)));
+        }
+        if (rc2Var.v2()) {
+            rc2Var.K5 = gm.L(2.0f) + (rc2Var.C6 ? rc2Var.b7 - gm.L(8.0f) : rc2Var.getCompactContentWidth());
+        }
+        HashMap hashMap7 = this.b;
+        HashMap hashMap8 = new HashMap(hashMap7);
+        StringBuilder sb = k47Var.F0;
+        HashMap hashMap9 = this.c;
+        if (sb == null || (str = this.d) == null || !str.equals(sb.toString())) {
+            StringBuilder sb2 = k47Var.F0;
+            if (sb2 != null) {
+                this.d = sb2.toString();
+            }
+            hashMap = null;
+        } else {
+            hashMap = new HashMap(hashMap9);
+        }
+        hashMap7.clear();
+        int i14 = 0;
+        int i15 = 0;
+        int i16 = 0;
+        while (i14 < length) {
+            int length2 = gr0VarArr2[i14].length;
+            if (length2 == 0) {
+                gr0VarArr = gr0VarArr2;
+                i2 = i9;
+                i3 = i10;
+                i4 = length;
+                hashMap2 = hashMap9;
+                hashMap3 = hashMap8;
+                i5 = i16;
+                hashMap4 = hashMap;
+                arrayList = arrayList2;
+            } else {
+                int i17 = length2 - 1;
+                gr0VarArr = gr0VarArr2;
+                int D = wi8.D(2.0f, rc2Var.K5 - (gm.L(5.0f) * i17), length2);
+                i2 = i9;
+                int i18 = 0;
+                while (i18 < length2) {
+                    gr0 gr0Var = gr0VarArr[i14][i18];
+                    int i19 = length;
+                    int i20 = length2;
+                    int i21 = i15;
+                    wp0 wp0Var2 = new wp0(new dc2(rc2Var, (byte) 0));
+                    wp0Var2.k = gr0Var;
+                    if (gr0Var instanceof hr0) {
+                        wp0Var2.i = ((hr0) gr0Var).a;
+                    } else if (gr0Var instanceof ir0) {
+                        wp0Var2.j = (ir0) gr0Var;
+                        k47 k47Var2 = rc2Var.Q5;
+                        if (k47Var2 != null) {
+                            i6 = i17;
+                            if (sd2.z(i10, 24, k47.B0(k47Var2.k)) && !sd2.z(i10, 5, k47.B0(rc2Var.Q5.k)) && ((b = wp0Var2.j.a) == 2 || b == 3)) {
+                                wp0Var2.m = true;
+                            }
+                            b2 = gr0Var.b();
+                            int c = gr0Var.c();
+                            ArrayList arrayList3 = arrayList2;
+                            if (b2 == 0) {
+                                vm vmVar = new vm(0, i10, b2);
+                                wp0Var2.u = vmVar;
+                                vmVar.a(new ec2(rc2Var, (byte) 0));
+                                wp0Var2.u.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                            } else if (c != 0) {
+                                Drawable drawable = rc2Var.getResources().getDrawable(c);
+                                wp0Var2.t = drawable;
+                                drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                            }
+                            TL_keyboard.KeyboardInlineButton keyboardInlineButton = wp0Var2.i;
+                            String f = keyboardInlineButton == null ? Utilities.f(hg9.a(keyboardInlineButton)) : "";
+                            String n = td4.n(i14, i18, "_");
+                            wp0Var = hashMap == null ? (wp0) hashMap.get(n) : (wp0) hashMap8.get(f);
+                            if (wp0Var == null) {
+                                System.currentTimeMillis();
+                            }
+                            hashMap7.put(f, wp0Var2);
+                            hashMap9.put(n, wp0Var2);
+                            wp0Var2.c = (i18 * (gm.L(5.0f) + D)) / rc2Var.K5;
+                            int i22 = i16;
+                            wp0Var2.d = hg9.v(2.5f, gm.L(48.0f) * i14, i22);
+                            wp0Var2.e = D / rc2Var.K5;
+                            wp0Var2.f = gm.L(44.0f);
+                            if (i18 == 0) {
+                                wp0Var2.g |= 1;
+                            }
+                            i7 = i6;
+                            if (i18 == i7) {
+                                wp0Var2.g |= 2;
+                            }
+                            if (i14 == 0) {
+                                wp0Var2.g |= 4;
+                            }
+                            if (i14 == i19 - 1) {
+                                wp0Var2.g |= 8;
+                            }
+                            TextPaint textPaint = (TextPaint) rc2Var.c2("paintChatBotButton");
+                            HashMap hashMap10 = hashMap;
+                            int i23 = i10;
+                            if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeBuy.class) || (k47.n1(k47Var.k).flags & 4) == 0) {
+                                i8 = D;
+                                charSequence = gr0Var.d();
+                            } else {
+                                i8 = D;
+                                charSequence = jb6.M0(2131747115, null);
+                            }
+                            if ((gr0Var instanceof ir0) || ((ir0) gr0Var).a != 4) {
+                                hashMap5 = hashMap9;
+                                hashMap6 = hashMap8;
+                                charSequence2 = charSequence;
+                            } else {
+                                SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) ">");
+                                hashMap5 = hashMap9;
+                                pn2 pn2Var = new pn2(R.drawable.msg_inputarrow, 0);
+                                pn2Var.I = 0.8f;
+                                pn2Var.J = 0.8f;
+                                pn2Var.x = 0.6f;
+                                hashMap6 = hashMap8;
+                                append.setSpan(pn2Var, append.length() - 1, append.length(), 33);
+                                charSequence2 = append;
+                            }
+                            CharSequence charSequence4 = charSequence2;
+                            if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
+                                charSequence4 = charSequence2;
+                                if (k47.n1(k47Var.k) instanceof TLRPC.TL_messageMediaInvoice) {
+                                    charSequence4 = nxa.T0(charSequence2);
+                                }
+                            }
+                            if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeCopy.class)) {
+                                r9 = 0;
+                                charSequence3 = charSequence4;
+                            } else {
+                                SpannableStringBuilder append2 = new SpannableStringBuilder("c ").append(charSequence4);
+                                r9 = 0;
+                                pn2 pn2Var2 = new pn2(R.drawable.menu_copy_s, 0);
+                                pn2Var2.I = 0.9f;
+                                pn2Var2.J = 0.9f;
+                                append2.setSpan(pn2Var2, 0, 1, 33);
+                                charSequence3 = append2;
+                            }
+                            m = gw3.m(charSequence3, textPaint.getFontMetricsInt(), r9, null, r9);
+                            if (wp0Var == null && (uibVar = wp0Var.h) != null && TextUtils.equals(uibVar.i(), m)) {
+                                wp0Var2.h = wp0Var.h;
+                            } else {
+                                wp0Var2.h = new uib(m, textPaint);
+                            }
+                            arrayList3.add(wp0Var2);
+                            if (i18 != i7) {
+                                float f2 = wp0Var2.c;
+                                float f3 = rc2Var.K5;
+                                i15 = Math.max(i21, ((int) (f2 * f3)) + ((int) (wp0Var2.e * f3)));
+                            } else {
+                                i15 = i21;
+                            }
+                            tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) kfb.a(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                            if (k47Var.p3() && tL_inlineButtonTypeUrl != null) {
+                                try {
+                                    Uri parse = Uri.parse(tL_inlineButtonTypeUrl.url);
+                                    String lowerCase = parse.getHost().toLowerCase();
+                                    wp0Var2.l = (parse.getQueryParameter("startgroup") == null && ((("http".equals(parse.getScheme()) || "https".equals(parse.getScheme())) && ("t.me".equals(lowerCase) || "telegram.me".equals(lowerCase) || "telegram.dog".equals(lowerCase))) || ("tg".equals(parse.getScheme()) && (tL_inlineButtonTypeUrl.url.startsWith("tg:resolve") || tL_inlineButtonTypeUrl.url.startsWith("tg://resolve"))))) ? true : r9;
+                                } catch (Exception unused) {
+                                }
+                            }
+                            i18++;
+                            i17 = i7;
+                            length = i19;
+                            i10 = i23;
+                            D = i8;
+                            hashMap9 = hashMap5;
+                            hashMap8 = hashMap6;
+                            arrayList2 = arrayList3;
+                            hashMap = hashMap10;
+                            i16 = i22;
+                            length2 = i20;
+                        }
+                    }
+                    i6 = i17;
+                    b2 = gr0Var.b();
+                    int c2 = gr0Var.c();
+                    ArrayList arrayList32 = arrayList2;
+                    if (b2 == 0) {
+                    }
+                    TL_keyboard.KeyboardInlineButton keyboardInlineButton2 = wp0Var2.i;
+                    if (keyboardInlineButton2 == null) {
+                    }
+                    String n2 = td4.n(i14, i18, "_");
+                    if (hashMap == null) {
+                    }
+                    if (wp0Var == null) {
+                    }
+                    hashMap7.put(f, wp0Var2);
+                    hashMap9.put(n2, wp0Var2);
+                    wp0Var2.c = (i18 * (gm.L(5.0f) + D)) / rc2Var.K5;
+                    int i222 = i16;
+                    wp0Var2.d = hg9.v(2.5f, gm.L(48.0f) * i14, i222);
+                    wp0Var2.e = D / rc2Var.K5;
+                    wp0Var2.f = gm.L(44.0f);
+                    if (i18 == 0) {
+                    }
+                    i7 = i6;
+                    if (i18 == i7) {
+                    }
+                    if (i14 == 0) {
+                    }
+                    if (i14 == i19 - 1) {
+                    }
+                    TextPaint textPaint2 = (TextPaint) rc2Var.c2("paintChatBotButton");
+                    HashMap hashMap102 = hashMap;
+                    int i232 = i10;
+                    if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
+                    }
+                    i8 = D;
+                    charSequence = gr0Var.d();
+                    if (gr0Var instanceof ir0) {
+                    }
+                    hashMap5 = hashMap9;
+                    hashMap6 = hashMap8;
+                    charSequence2 = charSequence;
+                    CharSequence charSequence42 = charSequence2;
+                    if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
+                    }
+                    if (kfb.c(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeCopy.class)) {
+                    }
+                    m = gw3.m(charSequence3, textPaint2.getFontMetricsInt(), r9, null, r9);
+                    if (wp0Var == null) {
+                    }
+                    wp0Var2.h = new uib(m, textPaint2);
+                    arrayList32.add(wp0Var2);
+                    if (i18 != i7) {
+                    }
+                    tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) kfb.a(wp0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                    if (k47Var.p3()) {
+                        Uri parse2 = Uri.parse(tL_inlineButtonTypeUrl.url);
+                        String lowerCase2 = parse2.getHost().toLowerCase();
+                        wp0Var2.l = (parse2.getQueryParameter("startgroup") == null && ((("http".equals(parse2.getScheme()) || "https".equals(parse2.getScheme())) && ("t.me".equals(lowerCase2) || "telegram.me".equals(lowerCase2) || "telegram.dog".equals(lowerCase2))) || ("tg".equals(parse2.getScheme()) && (tL_inlineButtonTypeUrl.url.startsWith("tg:resolve") || tL_inlineButtonTypeUrl.url.startsWith("tg://resolve"))))) ? true : r9;
+                    }
+                    i18++;
+                    i17 = i7;
+                    length = i19;
+                    i10 = i232;
+                    D = i8;
+                    hashMap9 = hashMap5;
+                    hashMap8 = hashMap6;
+                    arrayList2 = arrayList32;
+                    hashMap = hashMap102;
+                    i16 = i222;
+                    length2 = i20;
+                }
+                i3 = i10;
+                i4 = length;
+                hashMap2 = hashMap9;
+                hashMap3 = hashMap8;
+                i5 = i16;
+                hashMap4 = hashMap;
+                arrayList = arrayList2;
+                if ((i2 & (1 << i14)) != 0) {
+                    wp0 wp0Var3 = new wp0(new dc2(rc2Var, (byte) 1));
+                    wp0Var3.b = true;
+                    wp0Var3.d = gm.L(49.0f) + hg9.v(2.5f, gm.L(48.0f) * i14, i5);
+                    wp0Var3.f = gm.L(2.0f);
+                    wp0Var3.e = (rc2Var.K5 - gm.L(2.0f)) / rc2Var.K5;
+                    arrayList.add(wp0Var3);
+                    i5 += i;
+                }
+            }
+            i14++;
+            arrayList2 = arrayList;
+            hashMap = hashMap4;
+            gr0VarArr2 = gr0VarArr;
+            i9 = i2;
+            length = i4;
+            hashMap9 = hashMap2;
+            hashMap8 = hashMap3;
+            i16 = i5;
+            i10 = i3;
+        }
+        if (rc2Var.v2()) {
+            return;
+        }
+        rc2Var.K5 = i15;
     }
 }

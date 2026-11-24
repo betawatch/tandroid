@@ -1,54 +1,54 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+import android.os.SystemClock;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class pq5 implements View.OnClickListener {
+public final /* synthetic */ class pq5 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ n39 h;
+    public final /* synthetic */ q b;
 
-    public /* synthetic */ pq5(n39 n39Var, TLRPC.User user, String str, boolean z, boolean z2, boolean z3, byte b) {
+    public /* synthetic */ pq5(q qVar, byte b) {
         this.a = b;
-        this.h = n39Var;
-        this.b = user;
-        this.c = str;
-        this.d = z;
-        this.e = z2;
-        this.f = z3;
+        this.b = qVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i;
-        wjb wjbVar;
+    @Override // java.lang.Runnable
+    public final void run() {
+        tn9 tn9Var;
         byte b = this.a;
-        n39 n39Var = this.h;
+        q qVar = this.b;
         switch (b) {
             case 0:
-                zq5 zq5Var = ((uq5) n39Var).c;
-                wfb.b(zq5Var.getContext(), zq5Var.a, -zq5Var.a2, this.b, this.c, this.d, this.e, this.f, zq5Var.J0);
+                tn9 tn9Var2 = qVar.S;
+                if (tn9Var2 != null && tn9Var2.a == 3) {
+                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+                    long j = qVar.I0;
+                    if (j == 0 || elapsedRealtimeNanos - j >= 70000000) {
+                        qVar.B();
+                        break;
+                    }
+                }
                 break;
             case 1:
-                ProfileActivity profileActivity = ((ko8) n39Var).e;
-                Activity parentActivity = profileActivity.getParentActivity();
-                i = ((d) profileActivity).currentAccount;
-                long a = profileActivity.a();
-                wjbVar = ((d) profileActivity).resourceProvider;
-                wfb.b(parentActivity, i, a, this.b, this.c, this.d, this.e, this.f, wjbVar);
+                int i = q.N0;
+                qVar.k();
                 break;
             default:
-                nfa nfaVar = ((aea) n39Var).f;
-                wfb.b(nfaVar.getContext(), nfaVar.y1.getCurrentAccount(), nfaVar.m1, this.b, this.c, this.d, this.e, this.f, nfaVar.I1);
+                int i2 = q.N0;
+                un9 un9Var = qVar.Q;
+                if (un9Var != null && (tn9Var = qVar.S) != null) {
+                    if (tn9Var.a != 3) {
+                        if (tn9Var.e) {
+                            un9Var.p();
+                            break;
+                        }
+                    } else {
+                        qVar.r();
+                        break;
+                    }
+                }
                 break;
         }
     }

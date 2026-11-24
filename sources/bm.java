@@ -1,40 +1,27 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class bm implements dm {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public gm d;
-    public Rect e;
-    public vl f;
-    public ru3 h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class bm extends CharacterStyle {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ylb c;
 
-    public bm(View view, boolean z) {
-        this.a = new WeakReference(view);
-        this.b = z;
+    public bm(boolean z, int i, ylb ylbVar) {
+        this.a = z;
+        this.b = i;
+        this.c = ylbVar;
     }
 
-    @Override // dm
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
-            return;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        if (this.a) {
+            textPaint.setTypeface(gm.o());
         }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
-        }
+        textPaint.setColor(cmb.v0(this.b, this.c));
     }
 }

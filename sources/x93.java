@@ -1,200 +1,50 @@
 // default package
 
 import android.content.Context;
-import android.net.Uri;
-import android.text.TextUtils;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Date;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class x93 implements o63 {
-    public final Context a;
-    public final ArrayList b;
-    public final o63 c;
-    public a94 d;
-    public kx e;
-    public zu2 f;
-    public o63 h;
-    public l4c n;
-    public h63 r;
-    public kz8 s;
-    public o63 w;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class x93 extends FrameLayout {
+    public final lka a;
+    public long b;
 
-    public x93(Context context, o63 o63Var) {
-        this.a = context.getApplicationContext();
-        o63Var.getClass();
-        this.c = o63Var;
-        this.b = new ArrayList();
+    public x93(Context context, ylb ylbVar) {
+        super(context);
+        lka lkaVar = new lka(context);
+        lkaVar.setTextSize(16);
+        anb.W(lkaVar, cmb.i5, ylbVar);
+        lkaVar.setGravity(jb6.a0 ? 5 : 3);
+        addView(lkaVar);
+        lka lkaVar2 = new lka(context);
+        this.a = lkaVar2;
+        lkaVar2.setTextSize(16);
+        anb.W(lkaVar2, cmb.K6, ylbVar);
+        lkaVar2.setGravity(jb6.a0 ? 3 : 5);
+        addView(lkaVar2);
+        lkaVar.l(jb6.a0("BoostingDateAndTime", null, 2131753504, new Object[0]), false);
+        boolean z = jb6.a0;
+        lkaVar.setLayoutParams(qoe.d(-1, -2.0f, (z ? 5 : 3) | 16, z ? 0.0f : 21.0f, 0.0f, z ? 21.0f : 0.0f, 0.0f));
+        boolean z2 = jb6.a0;
+        lkaVar2.setLayoutParams(qoe.d(-1, -2.0f, (z2 ? 3 : 5) | 16, z2 ? 21.0f : 0.0f, 0.0f, z2 ? 0.0f : 21.0f, 0.0f));
+        anb.h(cmb.g5, ylbVar, this);
     }
 
-    public static void e(o63 o63Var, vyb vybVar) {
-        if (o63Var != null) {
-            o63Var.addTransferListener(vybVar);
-        }
+    public long getSelectedTime() {
+        return this.b;
     }
 
-    public final void a(o63 o63Var) {
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i >= arrayList.size()) {
-                return;
-            }
-            o63Var.addTransferListener((vyb) arrayList.get(i));
-            i++;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(50.0f), TLObject.FLAG_30));
     }
 
-    @Override // o63
-    public final void addTransferListener(vyb vybVar) {
-        vybVar.getClass();
-        this.c.addTransferListener(vybVar);
-        this.b.add(vybVar);
-        e(this.d, vybVar);
-        e(this.e, vybVar);
-        e(this.f, vybVar);
-        e(this.h, vybVar);
-        e(this.n, vybVar);
-        e(this.r, vybVar);
-        e(this.s, vybVar);
-    }
-
-    @Override // o63
-    public final void close() {
-        o63 o63Var = this.w;
-        if (o63Var != null) {
-            try {
-                o63Var.close();
-            } finally {
-                this.w = null;
-            }
-        }
-    }
-
-    @Override // o63
-    public final Map getResponseHeaders() {
-        o63 o63Var = this.w;
-        return o63Var == null ? Collections.EMPTY_MAP : o63Var.getResponseHeaders();
-    }
-
-    @Override // o63
-    public final Uri getUri() {
-        o63 o63Var = this.w;
-        if (o63Var == null) {
-            return null;
-        }
-        return o63Var.getUri();
-    }
-
-    @Override // o63
-    public final long open(u63 u63Var) {
-        o63 o63Var;
-        gre.p(this.w == null);
-        Uri uri = u63Var.a;
-        String scheme = uri.getScheme();
-        String str = g8c.a;
-        String scheme2 = uri.getScheme();
-        boolean isEmpty = TextUtils.isEmpty(scheme2);
-        Context context = this.a;
-        if (isEmpty || Objects.equals(scheme2, "file")) {
-            String path = uri.getPath();
-            if (path == null || !path.startsWith("/android_asset/")) {
-                if (this.d == null) {
-                    a94 a94Var = new a94(false);
-                    this.d = a94Var;
-                    a(a94Var);
-                }
-                o63Var = this.d;
-                this.w = o63Var;
-            } else {
-                if (this.e == null) {
-                    kx kxVar = new kx(context);
-                    this.e = kxVar;
-                    a(kxVar);
-                }
-                o63Var = this.e;
-                this.w = o63Var;
-            }
-        } else if ("asset".equals(scheme)) {
-            if (this.e == null) {
-                kx kxVar2 = new kx(context);
-                this.e = kxVar2;
-                a(kxVar2);
-            }
-            o63Var = this.e;
-            this.w = o63Var;
-        } else if ("content".equals(scheme)) {
-            if (this.f == null) {
-                zu2 zu2Var = new zu2(context);
-                this.f = zu2Var;
-                a(zu2Var);
-            }
-            o63Var = this.f;
-            this.w = o63Var;
-        } else {
-            boolean equals = "rtmp".equals(scheme);
-            o63 o63Var2 = this.c;
-            if (equals) {
-                o63Var = this.h;
-                if (o63Var == null) {
-                    try {
-                        o63 o63Var3 = (o63) Class.forName("androidx.media3.datasource.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
-                        this.h = o63Var3;
-                        a(o63Var3);
-                    } catch (ClassNotFoundException unused) {
-                        lad.f("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
-                    } catch (Exception e) {
-                        fyb.j("Error instantiating RTMP extension", e);
-                        return 0L;
-                    }
-                    o63 o63Var4 = this.h;
-                    if (o63Var4 == null) {
-                        this.h = o63Var2;
-                    } else {
-                        o63Var2 = o63Var4;
-                    }
-                    o63Var = o63Var2;
-                }
-                this.w = o63Var;
-            } else if ("udp".equals(scheme)) {
-                if (this.n == null) {
-                    l4c l4cVar = new l4c();
-                    this.n = l4cVar;
-                    a(l4cVar);
-                }
-                o63Var = this.n;
-                this.w = o63Var;
-            } else if ("data".equals(scheme)) {
-                if (this.r == null) {
-                    h63 h63Var = new h63(false);
-                    this.r = h63Var;
-                    a(h63Var);
-                }
-                o63Var = this.r;
-                this.w = o63Var;
-            } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
-                if (this.s == null) {
-                    kz8 kz8Var = new kz8(context);
-                    this.s = kz8Var;
-                    a(kz8Var);
-                }
-                o63Var = this.s;
-                this.w = o63Var;
-            } else {
-                this.w = o63Var2;
-                o63Var = o63Var2;
-            }
-        }
-        return o63Var.open(u63Var);
-    }
-
-    @Override // g63
-    public final int read(byte[] bArr, int i, int i2) {
-        o63 o63Var = this.w;
-        o63Var.getClass();
-        return o63Var.read(bArr, i, i2);
+    public void setDate(long j) {
+        this.b = j;
+        Date date = new Date(j);
+        this.a.l(jb6.a0("formatDateAtTime", null, 2131742446, jb6.D0().p0().format(date), jb6.D0().o0().format(date)), false);
     }
 }

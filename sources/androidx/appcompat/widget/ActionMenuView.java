@@ -16,15 +16,15 @@ import androidx.appcompat.view.menu.ActionMenuItemView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class ActionMenuView extends o26 implements xz6, v07 {
-    public yz6 G;
+public class ActionMenuView extends p46 implements x17, v27 {
+    public y17 G;
     public Context H;
     public int I;
     public boolean J;
     public b9 K;
-    public v39 L;
+    public oo8 L;
     public boolean M;
     public int N;
     public final int O;
@@ -66,17 +66,17 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         return d9Var;
     }
 
-    @Override // xz6
-    public final boolean a(c07 c07Var) {
-        return this.G.q(c07Var, null, 0);
+    @Override // x17
+    public final boolean a(c27 c27Var) {
+        return this.G.q(c27Var, null, 0);
     }
 
-    @Override // v07
-    public final void b(yz6 yz6Var) {
-        this.G = yz6Var;
+    @Override // v27
+    public final void b(y17 y17Var) {
+        this.G = y17Var;
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // p46, android.view.ViewGroup
     public final boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof d9;
     }
@@ -86,54 +86,54 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         return false;
     }
 
-    @Override // o26
+    @Override // p46
     /* renamed from: e */
-    public final /* bridge */ /* synthetic */ n26 generateDefaultLayoutParams() {
+    public final /* bridge */ /* synthetic */ o46 generateDefaultLayoutParams() {
         return i();
     }
 
-    @Override // o26
+    @Override // p46
     /* renamed from: f */
-    public final n26 generateLayoutParams(AttributeSet attributeSet) {
+    public final o46 generateLayoutParams(AttributeSet attributeSet) {
         return new d9(getContext(), attributeSet);
     }
 
-    @Override // o26
+    @Override // p46
     /* renamed from: g */
-    public final /* bridge */ /* synthetic */ n26 generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    public final /* bridge */ /* synthetic */ o46 generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return j(layoutParams);
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // p46, android.view.ViewGroup
     public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return i();
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // p46, android.view.ViewGroup
     public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         return new d9(getContext(), attributeSet);
     }
 
     public Menu getMenu() {
-        yz6 yz6Var = this.G;
-        if (yz6Var != null) {
-            return yz6Var;
+        y17 y17Var = this.G;
+        if (y17Var != null) {
+            return y17Var;
         }
         Context context = getContext();
-        yz6 yz6Var2 = new yz6(context);
-        this.G = yz6Var2;
-        yz6Var2.e = new qx4(this);
+        y17 y17Var2 = new y17(context);
+        this.G = y17Var2;
+        y17Var2.e = new sz4(this);
         b9 b9Var = new b9(context);
         this.K = b9Var;
         b9Var.x = true;
         b9Var.y = true;
-        b9Var.e = new i2f((byte) 13);
+        b9Var.e = new k4f((byte) 13);
         this.G.b(b9Var, this.H);
         b9 b9Var2 = this.K;
         b9Var2.n = this;
-        yz6 yz6Var3 = b9Var2.c;
-        this.G = yz6Var3;
-        return yz6Var3;
+        y17 y17Var3 = b9Var2.c;
+        this.G = y17Var3;
+        return y17Var3;
     }
 
     public Drawable getOverflowIcon() {
@@ -197,7 +197,7 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         }
     }
 
-    @Override // o26, android.view.ViewGroup, android.view.View
+    @Override // p46, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int width;
         int i5;
@@ -210,7 +210,7 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         int dividerWidth = getDividerWidth();
         int i7 = i3 - i;
         int paddingRight = (i7 - getPaddingRight()) - getPaddingLeft();
-        boolean a = gfc.a(this);
+        boolean a = ghc.a(this);
         int i8 = 0;
         int i9 = 0;
         for (int i10 = 0; i10 < childCount; i10++) {
@@ -287,14 +287,14 @@ public class ActionMenuView extends o26 implements xz6, v07 {
     /* JADX WARN: Type inference failed for: r11v12, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r11v14 */
     /* JADX WARN: Type inference failed for: r11v37 */
-    @Override // o26, android.view.View
+    @Override // p46, android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
         int i4;
         ?? r11;
         int i5;
         int i6;
-        yz6 yz6Var;
+        y17 y17Var;
         boolean z = this.M;
         boolean z2 = View.MeasureSpec.getMode(i) == 1073741824;
         this.M = z2;
@@ -302,9 +302,9 @@ public class ActionMenuView extends o26 implements xz6, v07 {
             this.N = 0;
         }
         int size = View.MeasureSpec.getSize(i);
-        if (this.M && (yz6Var = this.G) != null && size != this.N) {
+        if (this.M && (y17Var = this.G) != null && size != this.N) {
             this.N = size;
-            yz6Var.p(true);
+            y17Var.p(true);
         }
         int childCount = getChildCount();
         if (!this.M || childCount <= 0) {
@@ -567,7 +567,7 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         this.G = b9Var.c;
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // p46, android.view.ViewGroup
     public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return j(layoutParams);
     }

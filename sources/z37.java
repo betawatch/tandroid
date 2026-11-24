@@ -1,48 +1,25 @@
 // default package
 
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class z37 extends zu3 {
-    public final int[] O;
-    public final /* synthetic */ j47 P;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z37(j47 j47Var, y37 y37Var, int i) {
-        super(i, y37Var);
-        this.P = j47Var;
-        this.O = new int[2];
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class z37 extends TLRPC.TL_messageMediaStory {
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
+        this.user_id = inputSerializedData.readInt64(z);
+        this.id = inputSerializedData.readInt32(z);
+        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
     }
 
-    @Override // zu3
-    public final void g(yu3 yu3Var) {
-        j47 j47Var = this.P;
-        f47 f47Var = j47Var.K;
-        if (yu3Var != null) {
-            if (j47Var.l0 != null) {
-                yu3Var.c = true;
-                float f = (zu3.f() * gl.p) / 1.3f;
-                float f2 = f / 3.0f;
-                yu3Var.d = f2;
-                yu3Var.e = f2;
-                yu3Var.a = Utilities.i(j47Var.l0.right - (0.75f * f), gl.q.x - f, 0.0f);
-                yu3Var.b = j47Var.l0.bottom - (f / 2.0f);
-                return;
-            }
-            gb2 gb2Var = j47Var.Q;
-            if (gb2Var == null || !gb2Var.isAttachedToWindow() || j47Var.Q.getMessageObject() == null || j47Var.Q.getMessageObject().e1() != j47Var.R) {
-                return;
-            }
-            j47Var.Q.getLocationOnScreen(this.O);
-            yu3Var.c = true;
-            float f3 = (zu3.f() * gl.p) / 1.3f;
-            float f4 = f3 / 3.0f;
-            yu3Var.d = f4;
-            yu3Var.e = f4;
-            float f5 = f3 / 2.0f;
-            yu3Var.a = Utilities.i(((f47Var.getScaleX() * j47Var.Q.getTimeX()) + r9[0]) - f5, gl.q.x - f3, 0.0f);
-            yu3Var.b = ((f47Var.getScaleY() * j47Var.Q.getTimeY()) + r9[1]) - f5;
-        }
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-946147809);
+        outputSerializedData.writeInt64(this.user_id);
+        outputSerializedData.writeInt32(this.id);
+        this.storyItem.serializeToStream(outputSerializedData);
     }
 }

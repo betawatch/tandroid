@@ -1,113 +1,152 @@
 // default package
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class g5b extends fx0 implements gk7 {
-    public final int l1;
-    public ArrayList m1;
-    public final TLRPC.InputPeer n1;
-    public final o39 o1;
-    public final f5b p1;
-    public final TextView q1;
+public final class g5b {
+    public static CharSequence[] y;
+    public int a;
+    public Long b;
+    public Integer c;
+    public Integer d;
+    public boolean e;
+    public TLRPC.Document g;
+    public SpannableStringBuilder k;
+    public String l;
+    public boolean m;
+    public uib n;
+    public uib o;
+    public boolean p;
+    public boolean q;
+    public View r;
+    public Runnable s;
+    public int x;
+    public boolean f = true;
+    public final ln h = new ln(0, 350, d53.h);
+    public final u51 i = new u51((View) null);
+    public final fg0 j = cmb.Y(553648127, 0, 0);
+    public final Paint t = new Paint(1);
+    public final Paint u = new Paint(1);
+    public final Path v = new Path();
+    public final RectF w = new RectF();
 
-    public g5b(Context context, final int i, boolean z, TLRPC.InputPeer inputPeer, final p8c p8cVar, final wjb wjbVar) {
-        super(1, wjbVar, context, false);
-        K();
-        na7.q1(i).M1().T();
-        this.l1 = i;
-        this.m1 = na7.q1(i).M1().T;
-        this.n1 = inputPeer;
-        this.b = new d5b(this, context, wjbVar);
-        o39 o39Var = new o39(context, wjbVar);
-        this.o1 = o39Var;
-        int i2 = this.u0;
-        o39Var.setPadding(i2, 0, i2, 0);
-        f5b f5bVar = new f5b(this);
-        this.p1 = f5bVar;
-        o39Var.setAdapter(f5bVar);
-        o39Var.setLayoutManager(new t26());
-        this.b.addView(o39Var, nme.e(-1, -1, kk7.D1));
-        o39Var.setOnItemClickListener(new c39() { // from class: c5b
-            @Override // c39
-            public final void d(int i3, View view) {
-                if (i3 <= 1) {
-                    return;
-                }
-                g5b g5bVar = g5b.this;
-                TLRPC.InputPeer inputPeer2 = (TLRPC.InputPeer) g5bVar.m1.get(i3 - 2);
-                long j = inputPeer2.channel_id;
-                p8c p8cVar2 = p8cVar;
-                if (j == 0 && inputPeer2.chat_id == 0) {
-                    p8cVar2.a(inputPeer2);
-                    g5bVar.dismiss();
-                    return;
-                }
-                Context context2 = g5bVar.getContext();
-                wjb wjbVar2 = wjbVar;
-                hd hdVar = new hd(3, wjbVar2, context2);
-                hdVar.q(200L);
-                na7.q1(i).M1().j(cf3.m(inputPeer2), new f28((Object) hdVar, (Object) p8cVar2, (Object) inputPeer2, (byte) 11), true, wjbVar2);
-                g5bVar.dismiss();
-            }
-        });
-        o39Var.setOnScrollListener(new e5b(this));
-        TextView textView = new TextView(getContext());
-        this.q1 = textView;
-        zkb.X(textView, bkb.F6, wjbVar);
-        textView.setTextSize(1, 20.0f);
-        textView.setPadding(gl.L(22.0f) + this.u0, gl.L(2.0f), gl.L(22.0f) + this.u0, gl.L(14.0f));
-        zkb.h(bkb.g5, wjbVar, textView);
-        textView.setTypeface(gl.o());
-        textView.setText(k96.M0(z ? 2131744277 : 2131744278, null));
-        this.b.addView(textView, nme.c(-2.0f, -1));
-    }
-
-    public final float D0() {
-        int R;
-        float measuredHeight = this.b.getMeasuredHeight();
-        int i = 0;
-        while (true) {
-            o39 o39Var = this.o1;
-            if (i >= o39Var.getChildCount()) {
-                return measuredHeight;
-            }
-            View childAt = o39Var.getChildAt(i);
-            if (childAt != null && (R = RecyclerView.R(childAt)) != -1 && R > 0) {
-                measuredHeight = Math.min(gl.R1(measuredHeight, childAt.getY(), childAt.getAlpha()), measuredHeight);
-            }
-            i++;
+    public static CharSequence d() {
+        CharSequence[] charSequenceArr = y;
+        if (charSequenceArr == null) {
+            charSequenceArr = new CharSequence[2];
+            y = charSequenceArr;
         }
-    }
-
-    @Override // fx0
-    public final boolean E() {
-        return D0() > ((float) ((int) (((float) gl.q.y) * 0.5f)));
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.d3) {
-            this.m1 = na7.q1(this.l1).M1().T;
-            this.p1.f();
+        if (charSequenceArr[0] == null) {
+            charSequenceArr[0] = new SpannableStringBuilder("u");
+            pn2 pn2Var = new pn2(R.drawable.filled_widget_music, 0);
+            pn2Var.c(gm.L(16.0f));
+            pn2Var.H = 1.0f;
+            float f = -gm.L(1.0f);
+            float L = gm.L(1.0f);
+            pn2Var.r = f;
+            pn2Var.s = L;
+            ((SpannableStringBuilder) y[0]).setSpan(pn2Var, 0, 1, 33);
         }
+        return y[0];
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        kk7.f(this.l1).b(this, kk7.d3);
+    public final void a(Canvas canvas, float f) {
+        Typeface o;
+        float f2;
+        if (this.n == null) {
+            CharSequence charSequence = this.k;
+            if (charSequence == null) {
+                charSequence = "";
+            }
+            if (this.g != null) {
+                o = null;
+                f2 = 12.0f;
+            } else {
+                o = gm.o();
+                f2 = 14.0f;
+            }
+            this.n = new uib(charSequence, f2, o);
+        }
+        if (this.o == null || this.m) {
+            String str = this.l;
+            this.o = new uib(str != null ? str : "", 14.0f, null);
+        }
+        float d = this.h.d(this.f);
+        Paint paint = this.t;
+        paint.setColor(TLObject.FLAG_30);
+        int min = (int) Math.min(f, Math.max(this.n.c, this.o.c) + gm.U1(d, gm.L(20.0f), gm.L(18.0f)));
+        this.x = min;
+        int U1 = gm.U1(d, gm.L(42.0f), gm.L(22.0f));
+        float f3 = min;
+        RectF rectF = this.w;
+        rectF.set(0.0f, 0.0f, f3, U1);
+        canvas.save();
+        float a = this.i.a(0.02f);
+        canvas.scale(a, a, rectF.centerX(), rectF.centerY());
+        float U12 = gm.U1(d, gm.L(5.0f), gm.L(11.0f));
+        canvas.drawRoundRect(rectF, U12, U12, paint);
+        canvas.save();
+        Path path = this.v;
+        path.rewind();
+        path.addRoundRect(rectF, U12, U12, Path.Direction.CW);
+        canvas.clipPath(path);
+        fg0 fg0Var = this.j;
+        fg0Var.setBounds(0, 0, min, U1);
+        fg0Var.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.clipRect(0, 0, gm.L(3.0f), gm.L(42.0f));
+        RectF rectF2 = gm.P;
+        rectF2.set(0.0f, 0.0f, gm.L(10.0f), gm.L(42.0f));
+        Paint paint2 = this.u;
+        paint2.setColor(-1);
+        float f4 = 1.0f - d;
+        paint2.setAlpha((int) (255.0f * f4));
+        canvas.drawRoundRect(rectF2, gm.L(5.0f), gm.L(5.0f), paint2);
+        canvas.restore();
+        int L = min - gm.L(20.0f);
+        if (f3 < f) {
+            L = (int) Math.min(gm.L(12.0f) + L, f - gm.L(20.0f));
+        }
+        uib uibVar = this.n;
+        float f5 = L;
+        uibVar.p = f5;
+        uibVar.c(gm.U1(d, gm.L(10.0f), gm.L(7.0f)), gm.U1(d, gm.L(12.0f), gm.L(11.0f)), 1.0f, -1, canvas);
+        uib uibVar2 = this.o;
+        uibVar2.p = f5;
+        uibVar2.c(gm.L(10.0f), gm.L(30.0f), f4, -1, canvas);
+        canvas.restore();
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        kk7.f(this.l1).n(this, kk7.d3);
+    public final int b() {
+        return gm.L(this.f ? 22.0f : 42.0f);
+    }
+
+    public final void c() {
+        if (this.p || this.q || this.b == null || this.c == null || this.r == null) {
+            return;
+        }
+        this.q = true;
+        oc7.r1(this.a).N1().f0(this.c.intValue(), this.b.longValue(), new eg9(this, (byte) 14));
+    }
+
+    public final void e(float f, float f2, boolean z) {
+        this.i.c(z);
+        int[] iArr = z ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0];
+        fg0 fg0Var = this.j;
+        fg0Var.setState(iArr);
+        if (z) {
+            fg0Var.setHotspot(f, f2);
+        }
     }
 }

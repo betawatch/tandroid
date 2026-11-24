@@ -1,137 +1,216 @@
 // default package
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Process;
-import android.os.SystemClock;
-import java.util.concurrent.CountDownLatch;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Dictation.DictationLid;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class do3 extends Thread {
-    private static final int THREAD_PRIORITY_DEFAULT = -1000;
-    private static int indexPointer;
-    public final int index;
-    private long lastTaskTime;
-    private int threadPriority;
-    private volatile Handler handler = null;
-    private CountDownLatch syncLatch = new CountDownLatch(1);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class do3 implements Runnable {
+    public final /* synthetic */ byte a = 3;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public do3(String str, boolean z) {
-        int i = indexPointer;
-        indexPointer = i + 1;
-        this.index = i;
-        this.threadPriority = THREAD_PRIORITY_DEFAULT;
-        setName(str);
-        if (z) {
-            start();
+    public /* synthetic */ do3(eo3 eo3Var, boolean z, float[] fArr, long j, int i) {
+        this.e = eo3Var;
+        this.d = z;
+        this.f = fArr;
+        this.c = j;
+        this.b = i;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00c2  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        TL_stories.StoryItem storyItem;
+        SQLiteCursor queryFinalized;
+        byte b = this.a;
+        r4 = null;
+        r4 = null;
+        r4 = null;
+        r4 = null;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        q4b a = null;
+        int i = this.b;
+        long j = this.c;
+        boolean z = this.d;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        switch (b) {
+            case 0:
+                eo3 eo3Var = (eo3) obj2;
+                float[] fArr = (float[]) obj;
+                ExecutorService executorService = DictationLid.a;
+                eo3Var.a(z ? fArr : null, j, i);
+                return;
+            case 1:
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                TLObject tLObject = (TLObject) obj;
+                String str = LaunchActivity.C1;
+                if (tLObject instanceof TL_stories.TL_stories_stories) {
+                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 >= tL_stories_stories.stories.size()) {
+                            storyItem = null;
+                        } else if (tL_stories_stories.stories.get(i2).id == i) {
+                            storyItem = tL_stories_stories.stories.get(i2);
+                        } else {
+                            i2++;
+                        }
+                    }
+                    if (storyItem != null) {
+                        storyItem.dialogId = j;
+                        d Q = LaunchActivity.Q();
+                        if (Q != null) {
+                            if (Q instanceof nk3) {
+                                try {
+                                    a = q4b.a(((nk3) Q).F0.h);
+                                } catch (Exception unused) {
+                                }
+                            }
+                            q4b q4bVar = a;
+                            Q.getOrCreateStoryViewer().z();
+                            ArrayList arrayList = new ArrayList();
+                            arrayList.add(Long.valueOf(j));
+                            if (z) {
+                                Q.getOrCreateStoryViewer().w1 = true;
+                            }
+                            Q.getOrCreateStoryViewer().K(launchActivity, storyItem, arrayList, 0, null, null, q4bVar, false);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                c41.Y().Q(R.raw.error, 36, jb6.M0(2131744292, null)).k(false);
+                return;
+            case 2:
+                cf7 cf7Var = (cf7) obj2;
+                String str2 = (String) obj;
+                if (z) {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = cf7Var.b;
+                        StringBuilder sb = new StringBuilder();
+                        Locale locale = Locale.US;
+                        sb.append("SELECT " + str2 + " FROM dialogs WHERE did = ");
+                        sb.append(j);
+                        queryFinalized = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
+                        try {
+                            try {
+                                r2 = queryFinalized.next() ? Math.max(0, queryFinalized.intValue(0)) : 0;
+                                queryFinalized.dispose();
+                            } catch (SQLiteException e) {
+                                e = e;
+                                e.printStackTrace();
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                if (queryFinalized == null) {
+                                    queryFinalized.dispose();
+                                    return;
+                                }
+                                return;
+                            }
+                        } catch (Throwable th) {
+                            th = th;
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            if (queryFinalized != null) {
+                                queryFinalized.dispose();
+                            }
+                            throw th;
+                        }
+                    } catch (SQLiteException e2) {
+                        e = e2;
+                        queryFinalized = null;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        queryFinalized = null;
+                        if (sQLitePreparedStatement != null) {
+                        }
+                        if (queryFinalized != null) {
+                        }
+                        throw th;
+                    }
+                }
+                int i3 = r2 + i;
+                SQLiteDatabase sQLiteDatabase2 = cf7Var.getMessagesStorage().b;
+                Locale locale2 = Locale.US;
+                SQLitePreparedStatement executeFast = sQLiteDatabase2.executeFast("UPDATE dialogs SET " + str2 + " = ? WHERE did = ?");
+                try {
+                    executeFast.bindInteger(1, i3);
+                    executeFast.bindLong(2, j);
+                    executeFast.step();
+                    executeFast.dispose();
+                    return;
+                } catch (SQLiteException e3) {
+                    e = e3;
+                    queryFinalized = null;
+                    sQLitePreparedStatement = executeFast;
+                    e.printStackTrace();
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    if (queryFinalized == null) {
+                    }
+                } catch (Throwable th3) {
+                    th = th3;
+                    queryFinalized = null;
+                    sQLitePreparedStatement = executeFast;
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    if (queryFinalized != null) {
+                    }
+                    throw th;
+                }
+            default:
+                ((cf7) obj2).A1(this.c, (List) obj, this.d, true, this.b);
+                return;
         }
     }
 
-    public void cancelRunnable(Runnable runnable) {
-        try {
-            this.syncLatch.await();
-            this.handler.removeCallbacks(runnable);
-        } catch (Exception e) {
-            fa4.g(e, false);
-        }
+    public /* synthetic */ do3(cf7 cf7Var, long j, List list, boolean z, int i) {
+        this.e = cf7Var;
+        this.c = j;
+        this.f = list;
+        this.d = z;
+        this.b = i;
     }
 
-    public void cancelRunnables(Runnable[] runnableArr) {
-        try {
-            this.syncLatch.await();
-            for (Runnable runnable : runnableArr) {
-                this.handler.removeCallbacks(runnable);
-            }
-        } catch (Exception e) {
-            fa4.g(e, false);
-        }
+    public /* synthetic */ do3(cf7 cf7Var, boolean z, String str, long j, int i, String str2) {
+        this.e = cf7Var;
+        this.d = z;
+        this.f = str;
+        this.c = j;
+        this.b = i;
     }
 
-    public void cleanupQueue() {
-        try {
-            this.syncLatch.await();
-            this.handler.removeCallbacksAndMessages(null);
-        } catch (Exception e) {
-            fa4.g(e, false);
-        }
-    }
-
-    public Handler getHandler() {
-        return this.handler;
-    }
-
-    public long getLastTaskTime() {
-        return this.lastTaskTime;
-    }
-
-    public boolean isReady() {
-        return this.syncLatch.getCount() == 0;
-    }
-
-    public boolean postRunnable(Runnable runnable, long j) {
-        try {
-            this.syncLatch.await();
-        } catch (Exception e) {
-            fa4.g(e, false);
-        }
-        Handler handler = this.handler;
-        return j <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j);
-    }
-
-    public boolean postToFrontRunnable(Runnable runnable) {
-        try {
-            this.syncLatch.await();
-        } catch (Exception e) {
-            fa4.g(e, false);
-        }
-        return this.handler.postAtFrontOfQueue(runnable);
-    }
-
-    public void recycle() {
-        this.handler.getLooper().quit();
-    }
-
-    @Override // java.lang.Thread, java.lang.Runnable
-    public void run() {
-        Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new zn3(this, (byte) 0));
-        this.syncLatch.countDown();
-        int i = this.threadPriority;
-        if (i != THREAD_PRIORITY_DEFAULT) {
-            Process.setThreadPriority(i);
-        }
-        Looper.loop();
-    }
-
-    public void sendMessage(Message message, int i) {
-        try {
-            this.syncLatch.await();
-            Handler handler = this.handler;
-            if (i <= 0) {
-                handler.sendMessage(message);
-            } else {
-                handler.sendMessageDelayed(message, i);
-            }
-        } catch (Exception unused) {
-        }
-    }
-
-    public void handleMessage(Message message) {
-    }
-
-    public boolean postRunnable(Runnable runnable) {
-        this.lastTaskTime = SystemClock.elapsedRealtime();
-        return postRunnable(runnable, 0L);
-    }
-
-    public do3(String str, int i) {
-        int i2 = indexPointer;
-        indexPointer = i2 + 1;
-        this.index = i2;
-        this.threadPriority = i;
-        setName(str);
-        start();
+    public /* synthetic */ do3(LaunchActivity launchActivity, TLObject tLObject, int i, long j, boolean z) {
+        this.e = launchActivity;
+        this.f = tLObject;
+        this.b = i;
+        this.c = j;
+        this.d = z;
     }
 }

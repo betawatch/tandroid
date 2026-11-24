@@ -1,27 +1,22 @@
 // default package
 
-import android.content.Context;
-import org.webrtc.TextureViewRenderer;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class zhc extends TextureViewRenderer {
-    public final /* synthetic */ aic a;
+public final class zhc implements RendererCommon.RendererEvents {
+    public final /* synthetic */ iic a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zhc(aic aicVar, Context context) {
-        super(context);
-        this.a = aicVar;
+    public zhc(iic iicVar) {
+        this.a = iicVar;
     }
 
-    @Override // org.webrtc.TextureViewRenderer, org.webrtc.RendererCommon.RendererEvents
+    @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
-        super.onFirstFrameRendered();
-        this.a.b();
+        gm.c3(new f8c(this, (byte) 14));
     }
 
-    @Override // android.view.TextureView, android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i, int i2, int i3) {
     }
 }

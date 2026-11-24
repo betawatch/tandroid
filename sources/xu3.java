@@ -1,43 +1,50 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class xu3 implements ll5 {
-    public final /* synthetic */ yu3 a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ k27 c;
-    public final /* synthetic */ zu3 d;
+public final class xu3 extends e34 {
+    public int V2;
+    public boolean W2;
+    public boolean X2;
+    public final /* synthetic */ cv3 Y2;
 
-    public xu3(zu3 zu3Var, yu3 yu3Var, boolean z, k27 k27Var) {
-        this.d = zu3Var;
-        this.a = yu3Var;
-        this.b = z;
-        this.c = k27Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xu3(cv3 cv3Var, d dVar, boolean z, Context context, boolean z2, boolean z3, ylb ylbVar, boolean z4) {
+        super(dVar, z, false, false, context, z2, null, null, z3, ylbVar, false, z4);
+        this.Y2 = cv3Var;
     }
 
-    @Override // ll5
-    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-        ImageReceiver imageReceiver2 = this.a.r;
-        if (imageReceiver2.y() != null) {
-            imageReceiver2.y().I(0, false, true);
+    @Override // e34, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        cv3 cv3Var = this.Y2;
+        int i = cv3Var.M;
+        if (i == 2 || i == 3) {
+            cv3Var.g(canvas, this);
         }
+        super.dispatchDraw(canvas);
     }
 
-    @Override // ll5
-    public final void v(ImageReceiver imageReceiver) {
-        k27 k27Var;
-        if (this.b && (k27Var = this.c) != null && k27Var.F2() && imageReceiver.y() != null && imageReceiver.y().y == null) {
-            try {
-                this.d.H.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
+    @Override // e34, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5;
+        super.onLayout(z, i, i2, i3, i4);
+        cv3 cv3Var = this.Y2;
+        if (cv3Var.b()) {
+            int i6 = i4 - i2;
+            if (!this.W2 && cv3Var.y) {
+                this.X2 = true;
             }
+            if (this.X2 && (i5 = this.V2) > 0 && i6 > 0 && i6 != i5) {
+                setTranslationY(i6 - i5);
+                wi8.t(animate().translationY(0.0f), gb.w, 250L);
+                this.X2 = false;
+            }
+            this.W2 = cv3Var.y;
+            this.V2 = i6;
         }
-    }
-
-    @Override // ll5
-    public final void E(int i, Drawable drawable) {
     }
 }

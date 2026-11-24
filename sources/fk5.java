@@ -1,63 +1,53 @@
 // default package
 
-import java.util.Arrays;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.support.v4.media.session.PlaybackStateCompat;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class fk5 {
-    public final String a;
-    public final float b;
-    public final int c;
-    public final String d;
+public final class fk5 implements hk5 {
+    public IBinder a;
 
-    public fk5(float f, int i, String str, String str2) {
-        int i2 = ece.a;
-        this.a = str == null ? "" : str;
-        this.b = f;
-        this.c = i;
-        this.d = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // hk5
+    public final void N(PlaybackStateCompat playbackStateCompat) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(1);
+            playbackStateCompat.writeToParcel(obtain, 0);
+            this.a.transact(3, obtain, null, 1);
+        } finally {
+            obtain.recycle();
         }
-        if (!(obj instanceof fk5)) {
-            return false;
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
+
+    @Override // hk5
+    public final void g(int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i);
+            this.a.transact(9, obtain, null, 1);
+        } finally {
+            obtain.recycle();
         }
-        fk5 fk5Var = (fk5) obj;
-        return cqe.a(this.a, fk5Var.a) && Float.compare(this.b, fk5Var.b) == 0 && this.c == fk5Var.c && cqe.a(this.d, fk5Var.d);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
-    }
-
-    public final String toString() {
-        vk9 vk9Var = new vk9(fk5.class.getSimpleName(), (byte) 29);
-        byte b = 26;
-        boolean z = false;
-        vk9 vk9Var2 = new vk9(b, z);
-        ((vk9) vk9Var.d).d = vk9Var2;
-        vk9Var.d = vk9Var2;
-        vk9Var2.c = this.a;
-        vk9Var2.b = "text";
-        String valueOf = String.valueOf(this.b);
-        ebd ebdVar = new ebd(b, z);
-        ((vk9) vk9Var.d).d = ebdVar;
-        vk9Var.d = ebdVar;
-        ebdVar.c = valueOf;
-        ebdVar.b = "confidence";
-        String valueOf2 = String.valueOf(this.c);
-        ebd ebdVar2 = new ebd(b, z);
-        ((vk9) vk9Var.d).d = ebdVar2;
-        ebdVar2.c = valueOf2;
-        ebdVar2.b = "index";
-        vk9 vk9Var3 = new vk9(b, z);
-        ebdVar2.d = vk9Var3;
-        vk9Var.d = vk9Var3;
-        vk9Var3.c = this.d;
-        vk9Var3.b = "mid";
-        return vk9Var.toString();
+    @Override // hk5
+    public final void i(int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i);
+            this.a.transact(12, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

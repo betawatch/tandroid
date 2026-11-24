@@ -1,38 +1,62 @@
 // default package
 
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteException;
+import android.net.Uri;
+import android.util.Log;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
-public abstract class r7d extends kzc implements Set, j$.util.Set {
-    public transient r6d n;
+public final class r7d {
+    public static final ConcurrentHashMap h = new ConcurrentHashMap();
+    public static final String[] i = {"key", "value"};
+    public final ContentResolver a;
+    public final Uri b;
+    public volatile HashMap e;
+    public final Object d = new Object();
+    public final Object f = new Object();
+    public final ArrayList g = new ArrayList();
+    public final m53 c = new m53(this);
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+    public r7d(ContentResolver contentResolver, Uri uri) {
+        this.a = contentResolver;
+        this.b = uri;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i += next != null ? next.hashCode() : 0;
+    public final HashMap a() {
+        try {
+            HashMap hashMap = new HashMap();
+            Cursor query = this.a.query(this.b, i, null, null, null);
+            if (query == null) {
+                return hashMap;
+            }
+            while (query.moveToNext()) {
+                try {
+                    hashMap.put(query.getString(0), query.getString(1));
+                } finally {
+                    query.close();
+                }
+            }
+            return hashMap;
+        } catch (SQLiteException | SecurityException unused) {
+            Log.e("ConfigurationContentLoader", "PhenotypeFlag unable to load ContentProvider, using default values");
+            return null;
         }
-        return i;
+    }
+
+    public final void b() {
+        synchronized (this.f) {
+            Iterator it = this.g.iterator();
+            if (it.hasNext()) {
+                if (it.next() != null) {
+                    throw new ClassCastException();
+                }
+                throw null;
+            }
+        }
     }
 }

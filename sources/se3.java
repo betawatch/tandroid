@@ -1,34 +1,144 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class se3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ue3 b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ k6d d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class se3 extends ReplacementSpan {
-    public final int a;
-
-    public se3(int i) {
-        this.a = i;
+    public /* synthetic */ se3(ue3 ue3Var, Runnable runnable, k6d k6dVar, byte b) {
+        this.a = b;
+        this.b = ue3Var;
+        this.c = runnable;
+        this.d = k6dVar;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt == null) {
-            fontMetricsInt = paint.getFontMetricsInt();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        final k6d k6dVar = this.d;
+        final Runnable runnable = this.c;
+        ue3 ue3Var = this.b;
+        switch (b) {
+            case 0:
+                final byte b2 = 0;
+                ue3Var.a.execute(new Runnable() { // from class: qe3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        k6d k6dVar2 = k6dVar;
+                        Runnable runnable2 = runnable;
+                        switch (b3) {
+                            case 0:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e) {
+                                    ((we3) k6dVar2.b).l(e);
+                                    throw e;
+                                }
+                            case 1:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e2) {
+                                    ((we3) k6dVar2.b).l(e2);
+                                    return;
+                                }
+                            default:
+                                we3 we3Var = (we3) k6dVar2.b;
+                                try {
+                                    runnable2.run();
+                                    we3Var.k(null);
+                                    return;
+                                } catch (Exception e3) {
+                                    we3Var.l(e3);
+                                    return;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final byte b3 = 2;
+                ue3Var.a.execute(new Runnable() { // from class: qe3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        k6d k6dVar2 = k6dVar;
+                        Runnable runnable2 = runnable;
+                        switch (b32) {
+                            case 0:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e) {
+                                    ((we3) k6dVar2.b).l(e);
+                                    throw e;
+                                }
+                            case 1:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e2) {
+                                    ((we3) k6dVar2.b).l(e2);
+                                    return;
+                                }
+                            default:
+                                we3 we3Var = (we3) k6dVar2.b;
+                                try {
+                                    runnable2.run();
+                                    we3Var.k(null);
+                                    return;
+                                } catch (Exception e3) {
+                                    we3Var.l(e3);
+                                    return;
+                                }
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b4 = 1;
+                ue3Var.a.execute(new Runnable() { // from class: qe3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b4;
+                        k6d k6dVar2 = k6dVar;
+                        Runnable runnable2 = runnable;
+                        switch (b32) {
+                            case 0:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e) {
+                                    ((we3) k6dVar2.b).l(e);
+                                    throw e;
+                                }
+                            case 1:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e2) {
+                                    ((we3) k6dVar2.b).l(e2);
+                                    return;
+                                }
+                            default:
+                                we3 we3Var = (we3) k6dVar2.b;
+                                try {
+                                    runnable2.run();
+                                    we3Var.k(null);
+                                    return;
+                                } catch (Exception e3) {
+                                    we3Var.l(e3);
+                                    return;
+                                }
+                        }
+                    }
+                });
+                break;
         }
-        if (fontMetricsInt != null) {
-            int i3 = 1 - (fontMetricsInt.descent - fontMetricsInt.ascent);
-            fontMetricsInt.descent = i3;
-            fontMetricsInt.bottom = i3;
-            fontMetricsInt.ascent = -1;
-            fontMetricsInt.top = -1;
-        }
-        return this.a;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
     }
 }

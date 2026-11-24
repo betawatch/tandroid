@@ -4,11 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
 public final class za extends Drawable {
     public final /* synthetic */ byte a;
-    public final tgb b;
+    public final uib b;
     public final /* synthetic */ bb c;
 
     public za(bb bbVar, String str, byte b) {
@@ -16,11 +16,11 @@ public final class za extends Drawable {
         switch (b) {
             case 1:
                 this.c = bbVar;
-                this.b = new tgb(str, 14.0f, gl.o());
+                this.b = new uib(str, 14.0f, gm.o());
                 break;
             default:
                 this.c = bbVar;
-                this.b = new tgb(str, 14.0f, gl.o());
+                this.b = new uib(str, 14.0f, gm.o());
                 break;
         }
     }
@@ -29,13 +29,13 @@ public final class za extends Drawable {
     public final void draw(Canvas canvas) {
         byte b = this.a;
         bb bbVar = this.c;
-        tgb tgbVar = this.b;
+        uib uibVar = this.b;
         switch (b) {
             case 0:
-                this.b.c(getBounds().centerX() - (tgbVar.c / 2.0f), getBounds().centerY(), 1.0f, bbVar.s, canvas);
+                this.b.c(getBounds().centerX() - (uibVar.c / 2.0f), getBounds().centerY(), 1.0f, bbVar.s, canvas);
                 break;
             default:
-                this.b.c(getBounds().centerX() - (tgbVar.c / 2.0f), getBounds().centerY(), 1.0f, bbVar.s, canvas);
+                this.b.c(getBounds().centerX() - (uibVar.c / 2.0f), getBounds().centerY(), 1.0f, bbVar.s, canvas);
                 break;
         }
     }

@@ -1,172 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class wjc implements jd7 {
-    public final String a;
-    public final String b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public wjc(String str, String str2) {
-        this.a = smd.d(str);
-        this.b = str2;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class wjc extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xjc b;
+
+    public /* synthetic */ wjc(xjc xjcVar, byte b) {
+        this.a = b;
+        this.b = xjcVar;
     }
 
-    @Override // jd7
-    public final fm4 a() {
-        return null;
-    }
-
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // jd7
-    public final void b(hr6 hr6Var) {
-        String str = this.a;
-        str.getClass();
-        char c = 65535;
-        switch (str.hashCode()) {
-            case -1935137620:
-                if (str.equals("TOTALTRACKS")) {
-                    c = 0;
-                    break;
-                }
-                break;
-            case -215998278:
-                if (str.equals("TOTALDISCS")) {
-                    c = 1;
-                    break;
-                }
-                break;
-            case -113312716:
-                if (str.equals("TRACKNUMBER")) {
-                    c = 2;
-                    break;
-                }
-                break;
-            case 62359119:
-                if (str.equals("ALBUM")) {
-                    c = 3;
-                    break;
-                }
-                break;
-            case 67703139:
-                if (str.equals("GENRE")) {
-                    c = 4;
-                    break;
-                }
-                break;
-            case 79833656:
-                if (str.equals("TITLE")) {
-                    c = 5;
-                    break;
-                }
-                break;
-            case 428414940:
-                if (str.equals("DESCRIPTION")) {
-                    c = 6;
-                    break;
-                }
-                break;
-            case 905239725:
-                if (str.equals("DISCSUBTITLE")) {
-                    c = 7;
-                    break;
-                }
-                break;
-            case 993300766:
-                if (str.equals("DISCNUMBER")) {
-                    c = '\b';
-                    break;
-                }
-                break;
-            case 1746739798:
-                if (str.equals("ALBUMARTIST")) {
-                    c = '\t';
-                    break;
-                }
-                break;
-            case 1939198791:
-                if (str.equals("ARTIST")) {
-                    c = '\n';
-                    break;
-                }
-                break;
-        }
-        String str2 = this.b;
-        switch (c) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        xjc xjcVar = this.b;
+        switch (b) {
             case 0:
-                Integer f = gle.f(str2);
-                if (f != null) {
-                    hr6Var.p = f;
-                    break;
-                }
+                xjcVar.b.setVisibility(8);
                 break;
-            case 1:
-                Integer f2 = gle.f(str2);
-                if (f2 != null) {
-                    hr6Var.E = f2;
-                    break;
-                }
-                break;
-            case 2:
-                Integer f3 = gle.f(str2);
-                if (f3 != null) {
-                    hr6Var.o = f3;
-                    break;
-                }
-                break;
-            case 3:
-                hr6Var.c = str2;
-                break;
-            case 4:
-                hr6Var.F = str2;
-                break;
-            case 5:
-                hr6Var.a = str2;
-                break;
-            case 6:
-                hr6Var.g = str2;
-                break;
-            case 7:
-                hr6Var.C = str2;
-                break;
-            case '\b':
-                Integer f4 = gle.f(str2);
-                if (f4 != null) {
-                    hr6Var.D = f4;
-                    break;
-                }
-                break;
-            case '\t':
-                hr6Var.d = str2;
-                break;
-            case '\n':
-                hr6Var.b = str2;
+            default:
+                xjcVar.c.setVisibility(8);
                 break;
         }
-    }
-
-    @Override // jd7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && wjc.class == obj.getClass()) {
-            wjc wjcVar = (wjc) obj;
-            if (this.a.equals(wjcVar.a) && this.b.equals(wjcVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + ir2.j(527, 31, this.a);
-    }
-
-    public final String toString() {
-        return "VC: " + this.a + "=" + this.b;
     }
 }

@@ -1,21 +1,44 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.View;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class uh8 extends qx3 {
-    public final /* synthetic */ xh8 Q1;
+public final /* synthetic */ class uh8 implements ee, oac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wh8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uh8(xh8 xh8Var, hu0 hu0Var, Context context, wjb wjbVar, ArrayList arrayList) {
-        super(hu0Var, context, wjbVar, arrayList);
-        this.Q1 = xh8Var;
+    public /* synthetic */ uh8(wh8 wh8Var, byte b) {
+        this.a = b;
+        this.b = wh8Var;
     }
 
-    @Override // qx3
-    public final void G0() {
-        this.Q1.dismiss();
+    @Override // oac
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        View view = (View) obj2;
+        if (((c6c) obj).d == 1) {
+            bjb bjbVar = (bjb) view;
+            boolean z = !bjbVar.e.h;
+            wh8 wh8Var = this.b;
+            wh8Var.n = z;
+            bjbVar.setChecked(z);
+            wh8Var.d.g3.O(true);
+            wh8Var.Z(true);
+        }
+    }
+
+    @Override // ee
+    public final void r(he heVar, int i) {
+        byte b = this.a;
+        wh8 wh8Var = this.b;
+        switch (b) {
+            case 0:
+                wh8Var.d0();
+                break;
+            default:
+                wh8Var.finishFragment();
+                break;
+        }
     }
 }

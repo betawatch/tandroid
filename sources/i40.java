@@ -1,25 +1,16 @@
 // default package
 
-import android.os.Handler;
+import java.nio.ShortBuffer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class i40 {
-    public final Handler a;
-    public final h40 b;
-    public final /* synthetic */ j40 c;
+public interface i40 {
+    public static final k4f i = new k4f(18);
+    public static final f8e j = new f8e();
+    public static final nf5 k = new nf5(23);
+    public static final jk2 l = new jk2(27);
 
-    public i40(j40 j40Var) {
-        this.c = j40Var;
-        Handler q = g8c.q(null);
-        this.a = q;
-        h40 h40Var = new h40(this);
-        this.b = h40Var;
-        j40Var.a.registerStreamEventCallback(new g40(q, (byte) 0), h40Var);
-    }
+    void j0(ShortBuffer shortBuffer, int i2, ShortBuffer shortBuffer2, int i3);
 
-    public final void a() {
-        this.c.a.unregisterStreamEventCallback(this.b);
-        this.a.removeCallbacksAndMessages(null);
-    }
+    int p1(int i2, int i3, int i4);
 }

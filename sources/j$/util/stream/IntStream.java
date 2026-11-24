@@ -18,7 +18,7 @@ import java.util.function.ObjIntConsumer;
 import java.util.function.Supplier;
 import java.util.stream.DoubleStream;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes4.dex */
 public interface IntStream extends BaseStream<Integer, IntStream> {
     IntStream a();
@@ -99,7 +99,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     boolean v();
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public final /* synthetic */ class VivifiedWrapper implements IntStream {
         public final /* synthetic */ java.util.stream.IntStream a;
 
@@ -362,7 +362,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public final /* synthetic */ class Wrapper implements java.util.stream.IntStream {
         public /* synthetic */ Wrapper() {
         }

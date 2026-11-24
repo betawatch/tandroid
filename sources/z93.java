@@ -1,18 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class z93 {
-    public final long a;
-    public final boolean b;
-    public final long c;
-    public final Object d;
-    public int e;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-    public z93(long j, boolean z, long j2, Object obj) {
-        this.a = j;
-        this.b = z;
-        this.c = j2;
-        this.d = obj;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+@Retention(RetentionPolicy.RUNTIME)
+/* loaded from: classes.dex */
+public @interface z93 {
+    String c() default "";
+
+    String f() default "";
+
+    int[] l() default {};
+
+    String m() default "";
+
+    int v() default 1;
 }

@@ -1,32 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class kma implements fw2, cx2 {
-    public final fw2 a;
-    public final sw2 b;
+public interface kma {
+    void a(int i, ByteBuffer byteBuffer);
 
-    public kma(fw2 fw2Var, sw2 sw2Var) {
-        this.a = fw2Var;
-        this.b = sw2Var;
-    }
+    void b(int i, ByteBuffer byteBuffer);
 
-    @Override // cx2
-    public final cx2 getCallerFrame() {
-        fw2 fw2Var = this.a;
-        if (fw2Var instanceof cx2) {
-            return (cx2) fw2Var;
-        }
-        return null;
-    }
+    void c(int i, int i2);
 
-    @Override // fw2
-    public final sw2 getContext() {
-        return this.b;
-    }
+    void d(int i, int i2);
 
-    @Override // fw2
-    public final void resumeWith(Object obj) {
-        this.a.resumeWith(obj);
-    }
+    int e(int i, int i2, int i3);
+
+    void f();
+
+    void flush();
+
+    Object g();
+
+    Object h();
+
+    void i(int i);
+
+    boolean j();
+
+    void k(long j, int i, long j2);
+
+    Object l();
+
+    void m(int i, int i2, int i3, int i4, int i5);
+
+    void n(int i);
+
+    int o();
+
+    void p(int i);
+
+    int q(int i, int i2);
 }

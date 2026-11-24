@@ -1,30 +1,15 @@
 // default package
 
-import androidx.car.app.model.Action;
-import androidx.car.app.model.ActionStrip;
-import androidx.car.app.model.CarText;
-import androidx.car.app.model.ItemList;
-import androidx.car.app.model.ListTemplate;
-import java.util.ArrayList;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class p56 {
-    public final boolean a;
-    public final ItemList b;
-    public final ArrayList c;
-    public final CarText d;
-    public final Action e;
-    public final ActionStrip f;
-    public final ArrayList g;
-
-    public p56(ListTemplate listTemplate) {
-        this.a = listTemplate.isLoading();
-        this.e = listTemplate.getHeaderAction();
-        this.d = listTemplate.getTitle();
-        this.b = listTemplate.getSingleList();
-        this.c = new ArrayList(listTemplate.getSectionedLists());
-        this.f = listTemplate.getActionStrip();
-        this.g = new ArrayList(listTemplate.getActions());
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class p56 extends bjb {
+    @Override // bjb, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0, 0, getWidth(), getHeight());
+        super.onDraw(canvas);
+        canvas.restore();
     }
 }

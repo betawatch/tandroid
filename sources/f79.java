@@ -1,15 +1,82 @@
 // default package
 
+import java.lang.ref.Reference;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class f79 implements Comparable {
-    public long b = -9223372036854775807L;
-    public final ArrayList a = new ArrayList();
+public final class f79 implements Iterator {
+    public int a;
+    public Object b;
+    public final /* synthetic */ g79 c;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.b, ((f79) obj).b);
+    public f79(g79 g79Var) {
+        this.c = g79Var;
+        this.a = g79Var.b.size();
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        Object obj;
+        int i;
+        synchronized (this.c.b) {
+            this.b = null;
+            while (true) {
+                obj = this.b;
+                if (obj != null || (i = this.a) <= 0) {
+                    break;
+                }
+                ArrayList arrayList = this.c.b;
+                int i2 = i - 1;
+                this.a = i2;
+                Reference reference = (Reference) arrayList.get(i2);
+                Object obj2 = reference.get();
+                if (obj2 != null && !this.c.c.contains(reference)) {
+                    this.b = obj2;
+                    obj = obj2;
+                    break;
+                }
+            }
+            if (obj == null) {
+                g79 g79Var = this.c;
+                if (g79Var.a) {
+                    ArrayList arrayList2 = g79Var.b;
+                    ArrayList arrayList3 = g79Var.d;
+                    ArrayList arrayList4 = g79Var.c;
+                    if (!g79Var.e) {
+                        throw new IllegalStateException();
+                    }
+                    g79Var.e = false;
+                    if (!arrayList4.isEmpty()) {
+                        arrayList2.removeAll(arrayList4);
+                        arrayList4.clear();
+                    }
+                    if (!arrayList3.isEmpty()) {
+                        arrayList2.addAll(arrayList3);
+                        arrayList3.clear();
+                    }
+                }
+            }
+        }
+        if (this.b != null) {
+            return true;
+        }
+        Semaphore semaphore = this.c.f;
+        if (semaphore != null) {
+            semaphore.release();
+        }
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        Object obj = this.b;
+        if (obj != null) {
+            return obj;
+        }
+        u36.g();
+        return null;
     }
 }

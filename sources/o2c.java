@@ -1,15 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class o2c {
-    public final float a;
-    public final int b;
-    public final int c;
+import org.telegram.tgnet.tl.TL_stories;
 
-    public o2c(float f, int i, int i2) {
-        this.a = f;
-        this.b = i;
-        this.c = i2;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class o2c implements zy5, yy5 {
+    public final /* synthetic */ b3c a;
+    public final /* synthetic */ TL_stories.StoryItem b;
+    public final /* synthetic */ z2c c;
+
+    public /* synthetic */ o2c(b3c b3cVar, TL_stories.StoryItem storyItem, z2c z2cVar) {
+        this.a = b3cVar;
+        this.b = storyItem;
+        this.c = z2cVar;
+    }
+
+    @Override // zy5
+    public final void a(String str) {
+        gm.c3(new hza((Object) this.a, (Object) this.b, (Object) str, (Object) this.c, (byte) 16));
+    }
+
+    @Override // yy5
+    public final void o(Exception exc) {
+        gm.c3(new j2b(this.a, this.b, this.c, (byte) 23));
     }
 }

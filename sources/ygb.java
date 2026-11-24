@@ -1,37 +1,32 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ygb extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ahb c;
+public final class ygb {
+    public final int a;
+    public final int b;
 
-    public /* synthetic */ ygb(ahb ahbVar, int i, byte b) {
-        this.a = b;
-        this.c = ahbVar;
-        this.b = i;
+    public ygb(int i, int i2) {
+        this.a = i;
+        this.b = i2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        int i = this.b;
-        ahb ahbVar = this.c;
-        switch (b) {
-            case 0:
-                ahbVar.r = 0;
-                ahbVar.setBackgroundColor(i);
-                ahbVar.invalidate();
-                break;
-            default:
-                ahbVar.setBackgroundColor(i);
-                ahbVar.r = 0;
-                ahbVar.invalidate();
-                break;
+    public final int a() {
+        return this.b - this.a;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || ygb.class != obj.getClass()) {
+            return false;
+        }
+        ygb ygbVar = (ygb) obj;
+        return this.b == ygbVar.b && this.a == ygbVar.a;
+    }
+
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
     }
 }

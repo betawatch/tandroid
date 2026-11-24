@@ -1,89 +1,152 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class tb3 {
-    public final String a;
-    public int b;
-    public long c;
-    public final rx6 d;
-    public boolean e;
-    public boolean f;
-    public final /* synthetic */ ub3 g;
+public final class tb3 extends t54 implements Runnable {
+    private static volatile Thread _thread;
+    private static volatile int debugStatus;
+    public static final tb3 w;
+    public static final long x;
 
-    public tb3(ub3 ub3Var, String str, int i, rx6 rx6Var) {
-        this.g = ub3Var;
-        this.a = str;
-        this.b = i;
-        this.c = rx6Var == null ? -1L : rx6Var.d;
-        if (rx6Var == null || !rx6Var.c()) {
-            return;
+    static {
+        Long l;
+        tb3 tb3Var = new tb3();
+        w = tb3Var;
+        tb3Var.g(false);
+        try {
+            l = Long.getLong("kotlinx.coroutines.DefaultExecutor.keepAlive", 1000L);
+        } catch (SecurityException unused) {
+            l = 1000L;
         }
-        this.d = rx6Var;
+        x = TimeUnit.MILLISECONDS.toNanos(l.longValue());
     }
 
-    public final boolean a(tj tjVar) {
-        rx6 rx6Var = tjVar.d;
-        aob aobVar = tjVar.b;
-        if (rx6Var == null) {
-            return this.b != tjVar.c;
+    @Override // t54, pe3
+    public final xp3 a(long j, oqb oqbVar, cy2 cy2Var) {
+        long j2 = j > 0 ? j >= 9223372036854L ? Long.MAX_VALUE : 1000000 * j : 0L;
+        if (j2 >= 4611686018427387903L) {
+            return vl7.a;
         }
-        long j = this.c;
-        if (j == -1) {
-            return false;
-        }
-        if (rx6Var.d > j) {
-            return true;
-        }
-        rx6 rx6Var2 = this.d;
-        if (rx6Var2 == null) {
-            return false;
-        }
-        int i = rx6Var2.b;
-        int b = aobVar.b(rx6Var.a);
-        int b2 = aobVar.b(rx6Var2.a);
-        if (rx6Var.d < rx6Var2.d || b < b2) {
-            return false;
-        }
-        if (b > b2) {
-            return true;
-        }
-        if (!rx6Var.c()) {
-            int i2 = rx6Var.e;
-            return i2 == -1 || i2 > i;
-        }
-        int i3 = rx6Var.b;
-        int i4 = rx6Var.c;
-        if (i3 <= i) {
-            return i3 == i && i4 > rx6Var2.c;
-        }
-        return true;
+        long nanoTime = System.nanoTime();
+        q54 q54Var = new q54(j2 + nanoTime, oqbVar);
+        p(nanoTime, q54Var);
+        return q54Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x000e, code lost:
-    
-        if (r0 < r8.o()) goto L15;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(aob aobVar, aob aobVar2) {
-        rx6 rx6Var;
-        int i = this.b;
-        if (i < aobVar.o()) {
-            ub3 ub3Var = this.g;
-            znb znbVar = ub3Var.a;
-            aobVar.n(i, znbVar);
-            for (int i2 = znbVar.m; i2 <= znbVar.n; i2++) {
-                int b = aobVar2.b(aobVar.l(i2));
-                if (b != -1) {
-                    i = aobVar2.f(b, ub3Var.b, false).c;
-                    break;
+    @Override // t54
+    public final void j(Runnable runnable) {
+        if (debugStatus == 4) {
+            throw new RejectedExecutionException("DefaultExecutor was shut down. This error indicates that Dispatchers.shutdown() was invoked prior to completion of exiting coroutines, leaving coroutines in incomplete state. Please refer to Dispatchers.shutdown documentation for more details");
+        }
+        super.j(runnable);
+    }
+
+    @Override // t54
+    public final Thread m() {
+        Thread thread;
+        Thread thread2 = _thread;
+        if (thread2 != null) {
+            return thread2;
+        }
+        synchronized (this) {
+            thread = _thread;
+            if (thread == null) {
+                thread = new Thread(this, "kotlinx.coroutines.DefaultExecutor");
+                _thread = thread;
+                thread.setContextClassLoader(w.getClass().getClassLoader());
+                thread.setDaemon(true);
+                thread.start();
+            }
+        }
+        return thread;
+    }
+
+    @Override // t54
+    public final void o(long j, r54 r54Var) {
+        throw new RejectedExecutionException("DefaultExecutor was shut down. This error indicates that Dispatchers.shutdown() was invoked prior to completion of exiting coroutines, leaving coroutines in incomplete state. Please refer to Dispatchers.shutdown documentation for more details");
+    }
+
+    public final synchronized void q() {
+        int i = debugStatus;
+        if (i == 2 || i == 3) {
+            debugStatus = 3;
+            Unsafe unsafe = fy.a;
+            unsafe.putObjectVolatile(this, t54.r, (Object) null);
+            unsafe.putObjectVolatile(this, t54.h, (Object) null);
+            notifyAll();
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean n;
+        epb.a.set(this);
+        try {
+            synchronized (this) {
+                int i = debugStatus;
+                if (i == 2 || i == 3) {
+                    _thread = null;
+                    q();
+                    if (n()) {
+                    }
+                } else {
+                    debugStatus = 1;
+                    notifyAll();
+                    long j = Long.MAX_VALUE;
+                    while (true) {
+                        Thread.interrupted();
+                        long h = h();
+                        if (h == Long.MAX_VALUE) {
+                            long nanoTime = System.nanoTime();
+                            if (j == Long.MAX_VALUE) {
+                                j = x + nanoTime;
+                            }
+                            long j2 = j - nanoTime;
+                            if (j2 <= 0) {
+                                _thread = null;
+                                q();
+                                if (n()) {
+                                    return;
+                                }
+                            } else if (h > j2) {
+                                h = j2;
+                            }
+                        } else {
+                            j = Long.MAX_VALUE;
+                        }
+                        if (h > 0) {
+                            int i2 = debugStatus;
+                            if (!(i2 == 2 || i2 == 3)) {
+                                LockSupport.parkNanos(this, h);
+                            } else if (n) {
+                                return;
+                            }
+                        }
+                    }
                 }
             }
-            i = -1;
+        } finally {
+            _thread = null;
+            q();
+            if (!n()) {
+                m();
+            }
         }
-        this.b = i;
-        return i != -1 && ((rx6Var = this.d) == null || aobVar2.b(rx6Var.a) != -1);
+    }
+
+    @Override // t54, o54
+    public final void shutdown() {
+        debugStatus = 4;
+        super.shutdown();
+    }
+
+    @Override // fy2
+    public final String toString() {
+        return "DefaultExecutor";
     }
 }

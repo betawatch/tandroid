@@ -1,62 +1,73 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class cda extends pi4 {
-    public final /* synthetic */ pca V;
-    public final /* synthetic */ nfa W;
+public final class cda extends FrameLayout {
+    public final bf0 a;
+    public final uca b;
+    public final TextView c;
+    public long d;
+    public long e;
+    public final int f;
+    public final ylb h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cda(nfa nfaVar, Context context, pca pcaVar) {
-        super(context, null);
-        this.W = nfaVar;
-        this.V = pcaVar;
+    public cda(Context context, ylb ylbVar) {
+        super(context);
+        this.f = z8c.t0;
+        this.h = ylbVar;
+        setWillNotDraw(false);
+        bf0 bf0Var = new bf0(context);
+        this.a = bf0Var;
+        bf0Var.setRoundRadius(gm.L(28.0f));
+        addView(bf0Var, qoe.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        anb.X(textView, cmb.i5, ylbVar);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(2);
+        textView.setGravity(49);
+        textView.setLines(2);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, qoe.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
+        this.b = new uca(this, ylbVar, (byte) 1);
+        int i = cmb.h6;
+        Drawable Y = cmb.Y(cmb.w0(null, i, false), gm.L(2.0f), gm.L(2.0f));
+        wmb M = anb.M(i);
+        setBackground(Y);
+        anb.j(this, Y, null, M, null);
     }
 
-    @Override // pi4
-    public final int getColumnsCount() {
-        return this.W.p1[nfa.j0(this.V.F) ? 1 : 0];
+    public long getCurrentDialog() {
+        return this.d;
     }
 
-    @Override // pi4
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i = this.V.F;
-        if (i == 0 || i == 5) {
-            return 2;
-        }
-        if (i == 1) {
-            return 3;
-        }
-        if (i != 2 && i != 4) {
-            if (i == 3) {
-                return 5;
-            }
-            if (i != 7) {
-                if (i == 6) {
-                    if (this.W.L0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
-                    }
-                } else if (nfa.j0(i)) {
-                    return 27;
-                }
-                return 1;
-            }
-        }
-        return 6;
+    public long getCurrentTopic() {
+        return this.e;
     }
 
-    @Override // pi4, android.view.View
-    public final void onDraw(Canvas canvas) {
-        nfa nfaVar = this.W;
-        Paint paint = nfaVar.W0;
-        paint.setColor(nfaVar.c0(bkb.c6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.onDraw(canvas);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(103.0f), TLObject.FLAG_30));
+    }
+
+    public void setAsNewBotForumTopic(boolean z) {
+        this.c.setText(jb6.M0(z ? 2131745169 : 2131745168, null));
+        bf0 bf0Var = this.a;
+        bf0Var.setAnimatedEmojiDrawable(null);
+        ko4 ko4Var = new ko4(ko4.k[0]);
+        o26 o26Var = new o26(1, null);
+        o26Var.a("");
+        o26Var.i = 1.8f;
+        sn2 sn2Var = new sn2(ko4Var, o26Var, 0, 0);
+        sn2Var.x = true;
+        bf0Var.setImageDrawable(sn2Var);
     }
 }

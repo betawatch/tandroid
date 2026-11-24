@@ -1,51 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qhd extends xhd {
-    public final transient int r;
-    public final transient int s;
-    public final /* synthetic */ xhd w;
+public final class qhd implements cq7 {
+    public static final qhd a = new qhd();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qhd(xhd xhdVar, int i, int i2) {
-        super((byte) 4);
-        this.w = xhdVar;
-        this.r = i;
-        this.s = i2;
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        k0f.a(i, this.s);
-        return this.w.get(i + this.r);
-    }
-
-    @Override // kzc
-    public final int q() {
-        return this.w.s() + this.r + this.s;
-    }
-
-    @Override // kzc
-    public final int s() {
-        return this.w.s() + this.r;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.s;
-    }
-
-    @Override // kzc
-    public final Object[] v() {
-        return this.w.v();
-    }
-
-    @Override // xhd, java.util.List
-    /* renamed from: z */
-    public final xhd subList(int i, int i2) {
-        k0f.b(i, i2, this.s);
-        int i3 = this.r;
-        return this.w.subList(i + i3, i2 + i3);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

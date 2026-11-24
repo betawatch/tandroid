@@ -1,70 +1,18 @@
 // default package
 
 import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class vk extends ClickableSpan {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Runnable b;
+public final class vk extends MetricAffectingSpan {
+    public String a;
 
-    public /* synthetic */ vk(Runnable runnable, byte b) {
-        this.a = b;
-        this.b = runnable;
-    }
-
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        byte b = this.a;
-        Runnable runnable = this.b;
-        switch (b) {
-            case 0:
-                runnable.run();
-                break;
-            case 1:
-                runnable.run();
-                break;
-            case 2:
-                runnable.run();
-                break;
-            case 3:
-                runnable.run();
-                break;
-            case 4:
-                runnable.run();
-                break;
-            default:
-                runnable.run();
-                break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(textPaint.linkColor);
-                break;
-            case 1:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 2:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 3:
-                textPaint.setUnderlineText(false);
-                break;
-            case 4:
-                textPaint.setUnderlineText(false);
-                break;
-            default:
-                textPaint.setUnderlineText(false);
-                break;
-        }
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
     }
 }

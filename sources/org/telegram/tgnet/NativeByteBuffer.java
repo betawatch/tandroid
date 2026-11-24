@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class NativeByteBuffer extends AbstractSerializedData {
     private static final ThreadLocal<LinkedList<NativeByteBuffer>> addressWrappers = new ThreadLocal<LinkedList<NativeByteBuffer>>() { // from class: org.telegram.tgnet.NativeByteBuffer.1
@@ -99,7 +99,7 @@ public class NativeByteBuffer extends AbstractSerializedData {
         try {
             return Utilities.f(readData(Math.min(limit(), 1024), true));
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             return "<err>";
         }
     }
@@ -129,11 +129,11 @@ public class NativeByteBuffer extends AbstractSerializedData {
         }
         if (readInt32 != -1132882121) {
             if (z) {
-                wn4.j("Not bool value!");
+                zo4.k("Not bool value!");
                 return false;
             }
-            if (w01.a) {
-                fa4.d("Not bool value!");
+            if (e21.a) {
+                fc4.d("Not bool value!");
             }
         }
         return false;
@@ -145,14 +145,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return this.buffer.get();
         } catch (Exception e) {
             if (z) {
-                fyb.j("read byte error", e);
+                rjb.k("read byte error", e);
                 return (byte) 0;
             }
-            if (!w01.a) {
+            if (!e21.a) {
                 return (byte) 0;
             }
-            fa4.d("read byte error");
-            fa4.g(e, true);
+            fc4.d("read byte error");
+            fc4.g(e, true);
             return (byte) 0;
         }
     }
@@ -180,12 +180,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return bArr;
         } catch (Exception e) {
             if (z) {
-                fyb.j("read byte array error", e);
+                rjb.k("read byte array error", e);
                 return null;
             }
-            if (w01.a) {
-                fa4.d("read byte array error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("read byte array error");
+                fc4.g(e, true);
             }
             return new byte[0];
         }
@@ -219,12 +219,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return nativeByteBuffer;
         } catch (Exception e) {
             if (z) {
-                fyb.j("read byte array error", e);
+                rjb.k("read byte array error", e);
                 return null;
             }
-            if (w01.a) {
-                fa4.d("read byte array error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("read byte array error");
+                fc4.g(e, true);
             }
             return null;
         }
@@ -236,10 +236,10 @@ public class NativeByteBuffer extends AbstractSerializedData {
             this.buffer.get(bArr);
         } catch (Exception e) {
             if (z) {
-                fyb.j("read raw error", e);
-            } else if (w01.a) {
-                fa4.d("read raw error");
-                fa4.g(e, true);
+                rjb.k("read raw error", e);
+            } else if (e21.a) {
+                fc4.d("read raw error");
+                fc4.g(e, true);
             }
         }
     }
@@ -257,14 +257,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return Double.longBitsToDouble(readInt64(z));
         } catch (Exception e) {
             if (z) {
-                fyb.j("read double error", e);
+                rjb.k("read double error", e);
                 return 0.0d;
             }
-            if (!w01.a) {
+            if (!e21.a) {
                 return 0.0d;
             }
-            fa4.d("read double error");
-            fa4.g(e, true);
+            fc4.d("read double error");
+            fc4.g(e, true);
             return 0.0d;
         }
     }
@@ -275,14 +275,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return Float.intBitsToFloat(this.buffer.getInt());
         } catch (Exception e) {
             if (z) {
-                fyb.j("read float error", e);
+                rjb.k("read float error", e);
                 return 0.0f;
             }
-            if (!w01.a) {
+            if (!e21.a) {
                 return 0.0f;
             }
-            fa4.d("read float error");
-            fa4.g(e, true);
+            fc4.d("read float error");
+            fc4.g(e, true);
             return 0.0f;
         }
     }
@@ -293,14 +293,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return this.buffer.getInt();
         } catch (Exception e) {
             if (z) {
-                fyb.j("read int32 error", e);
+                rjb.k("read int32 error", e);
                 return 0;
             }
-            if (!w01.a) {
+            if (!e21.a) {
                 return 0;
             }
-            fa4.d("read int32 error");
-            fa4.g(e, true);
+            fc4.d("read int32 error");
+            fc4.g(e, true);
             return 0;
         }
     }
@@ -311,14 +311,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return this.buffer.getLong();
         } catch (Exception e) {
             if (z) {
-                fyb.j("read int64 error", e);
+                rjb.k("read int64 error", e);
                 return 0L;
             }
-            if (!w01.a) {
+            if (!e21.a) {
                 return 0L;
             }
-            fa4.d("read int64 error");
-            fa4.g(e, true);
+            fc4.d("read int64 error");
+            fc4.g(e, true);
             return 0L;
         }
     }
@@ -347,12 +347,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
             return new String(bArr, "UTF-8");
         } catch (Exception e) {
             if (z) {
-                fyb.j("read string error", e);
+                rjb.k("read string error", e);
                 return null;
             }
-            if (w01.a) {
-                fa4.d("read string error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("read string error");
+                fc4.g(e, true);
             }
             position(position);
             return "";
@@ -413,9 +413,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 this.buffer.put(b);
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write byte error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write byte error");
+                fc4.g(e, true);
             }
         }
     }
@@ -452,9 +452,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 }
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write byte array error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write byte array error");
+                fc4.g(e, true);
             }
         }
     }
@@ -492,7 +492,7 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 }
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
@@ -505,9 +505,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 this.buffer.put(bArr);
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write raw error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write raw error");
+                fc4.g(e, true);
             }
         }
     }
@@ -517,9 +517,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
         try {
             writeInt64(Double.doubleToRawLongBits(d));
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write double error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write double error");
+                fc4.g(e, true);
             }
         }
     }
@@ -533,9 +533,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 this.buffer.putInt(Float.floatToIntBits(f));
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write float error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write float error");
+                fc4.g(e, true);
             }
         }
     }
@@ -549,9 +549,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 this.buffer.putInt(i);
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write int32 error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write int32 error");
+                fc4.g(e, true);
             }
         }
     }
@@ -565,9 +565,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 this.buffer.putLong(j);
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write int64 error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write int64 error");
+                fc4.g(e, true);
             }
         }
     }
@@ -575,18 +575,18 @@ public class NativeByteBuffer extends AbstractSerializedData {
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
     public void writeString(String str) {
         if (str == null) {
-            if (w01.a) {
-                fa4.d("write string null");
-                fa4.g(new Throwable(), true);
+            if (e21.a) {
+                fc4.d("write string null");
+                fc4.g(new Throwable(), true);
             }
             str = "";
         }
         try {
             writeByteArray(str.getBytes("UTF-8"));
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write string error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write string error");
+                fc4.g(e, true);
             }
         }
     }
@@ -604,14 +604,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
             this.buffer.get(bArr, i, i2);
         } catch (Exception e) {
             if (!z) {
-                if (w01.a) {
-                    fa4.d("read raw error");
-                    fa4.g(e, true);
+                if (e21.a) {
+                    fc4.d("read raw error");
+                    fc4.g(e, true);
                     return;
                 }
                 return;
             }
-            fyb.j("read raw error", e);
+            rjb.k("read raw error", e);
         }
     }
 
@@ -629,9 +629,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 this.len += i2;
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write raw error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write raw error");
+                fc4.g(e, true);
             }
         }
     }
@@ -683,9 +683,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 }
             }
         } catch (Exception e) {
-            if (w01.a) {
-                fa4.d("write byte array error");
-                fa4.g(e, true);
+            if (e21.a) {
+                fc4.d("write byte array error");
+                fc4.g(e, true);
             }
         }
     }

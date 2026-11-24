@@ -1,85 +1,200 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.ActionMode;
-import android.view.Menu;
-import org.telegram.messenger.beta.R;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ts3 implements Comparable {
+    public static final long b;
+    public static final long c;
+    public static final /* synthetic */ int d = 0;
+    public final long a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ts3 extends rt3 {
-    public final /* synthetic */ wjb W;
-    public final /* synthetic */ boolean a0;
-    public final /* synthetic */ ws3 b0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ts3(ws3 ws3Var, Context context, cja cjaVar, wjb wjbVar, boolean z) {
-        super(context, cjaVar, null, 4, true, null);
-        this.b0 = ws3Var;
-        this.W = wjbVar;
-        this.a0 = z;
+    static {
+        int i = vs3.a;
+        b = wge.a(4611686018427387903L);
+        c = wge.a(-4611686018427387903L);
     }
 
-    @Override // rt3
-    public final boolean a() {
-        return this.b0.r && super.a();
-    }
-
-    @Override // rt3
-    public final boolean b() {
-        return this.b0.s;
-    }
-
-    @Override // rt3
-    public final int h() {
-        return this.b0.a();
-    }
-
-    @Override // rt3
-    public final void i(ActionMode actionMode, Menu menu) {
-        if (menu.findItem(R.id.menu_bold) != null) {
-            return;
+    public static final void a(StringBuilder sb, int i, int i2, int i3, String str, boolean z) {
+        CharSequence charSequence;
+        sb.append(i);
+        if (i2 != 0) {
+            sb.append('.');
+            String valueOf = String.valueOf(i2);
+            valueOf.getClass();
+            if (i3 < 0) {
+                u36.j(td4.o(i3, "Desired length ", " is less than zero."));
+                return;
+            }
+            if (i3 <= valueOf.length()) {
+                charSequence = valueOf.subSequence(0, valueOf.length());
+            } else {
+                StringBuilder sb2 = new StringBuilder(i3);
+                int length = i3 - valueOf.length();
+                int i4 = 1;
+                if (1 <= length) {
+                    while (true) {
+                        sb2.append('0');
+                        if (i4 == length) {
+                            break;
+                        } else {
+                            i4++;
+                        }
+                    }
+                }
+                sb2.append((CharSequence) valueOf);
+                charSequence = sb2;
+            }
+            String obj = charSequence.toString();
+            int i5 = -1;
+            int length2 = obj.length() - 1;
+            if (length2 >= 0) {
+                while (true) {
+                    int i6 = length2 - 1;
+                    if (obj.charAt(length2) == '0') {
+                        if (i6 < 0) {
+                            break;
+                        } else {
+                            length2 = i6;
+                        }
+                    } else {
+                        i5 = length2;
+                        break;
+                    }
+                }
+            }
+            int i7 = i5 + 1;
+            if (z || i7 >= 3) {
+                sb.append((CharSequence) obj, 0, ((i5 + 3) / 3) * 3);
+            } else {
+                sb.append((CharSequence) obj, 0, i7);
+            }
         }
-        menu.removeItem(android.R.id.shareText);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, k96.M0(2131745025, null));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k96.M0(2131753668, null));
-        spannableStringBuilder.setSpan(new z3c(gl.o()), 0, spannableStringBuilder.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(k96.M0(2131748895, null));
-        spannableStringBuilder2.setSpan(new z3c(gl.n1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(k96.M0(2131744196, null));
-        vib vibVar = new vib();
-        vibVar.a |= 8;
-        spannableStringBuilder3.setSpan(new wib(vibVar, 0), 0, spannableStringBuilder3.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, k96.M0(2131746144, null));
+        sb.append(str);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(getPaddingLeft() + getScrollX(), 0, (getWidth() + getScrollX()) - getPaddingRight(), getHeight());
-        super.onDraw(canvas);
-        canvas.restore();
-        ws3 ws3Var = this.b0;
-        gn gnVar = ws3Var.y;
-        kl klVar = ws3Var.w;
-        if (klVar != null) {
-            gnVar.u(klVar.a(bkb.v0(ws3Var.x <= 0 ? bkb.o7 : bkb.O5, this.W), false));
+    public static int b(long j, long j2) {
+        long j3 = j ^ j2;
+        if (j3 >= 0 && (((int) j3) & 1) != 0) {
+            int i = (((int) j) & 1) - (((int) j2) & 1);
+            return j < 0 ? -i : i;
         }
-        int min = Math.min(gl.L(48.0f), getHeight());
-        boolean z = this.a0;
-        float f = z ? 0.0f : -gl.L(1.0f);
-        gnVar.o(getScrollX(), (getHeight() + f) - min, (getWidth() + getScrollX()) - gl.L((z ? 0 : 44) + 12), f + getHeight());
-        gnVar.draw(canvas);
+        if (j < j2) {
+            return -1;
+        }
+        return j == j2 ? 0 : 1;
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b0.y || super.verifyDrawable(drawable);
+    public static final boolean c(long j) {
+        return j == b || j == c;
+    }
+
+    public static final long d(long j, xs3 xs3Var) {
+        if (j == b) {
+            return Long.MAX_VALUE;
+        }
+        if (j == c) {
+            return Long.MIN_VALUE;
+        }
+        return xs3Var.a.convert(j >> 1, ((((int) j) & 1) == 0 ? xs3.b : xs3.c).a);
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return b(this.a, ((ts3) obj).a);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof ts3) {
+            return this.a == ((ts3) obj).a;
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        long j = this.a;
+        return (int) (j ^ (j >>> 32));
+    }
+
+    public final String toString() {
+        int i;
+        long j = this.a;
+        if (j == 0) {
+            return "0s";
+        }
+        if (j == b) {
+            return "Infinity";
+        }
+        if (j == c) {
+            return "-Infinity";
+        }
+        int i2 = 0;
+        boolean z = j < 0;
+        StringBuilder sb = new StringBuilder();
+        if (z) {
+            sb.append('-');
+        }
+        if (j < 0) {
+            j = (((int) j) & 1) + ((-(j >> 1)) << 1);
+            int i3 = vs3.a;
+        }
+        long d2 = d(j, xs3.h);
+        int d3 = c(j) ? 0 : (int) (d(j, xs3.f) % 24);
+        int d4 = c(j) ? 0 : (int) (d(j, xs3.e) % 60);
+        int d5 = c(j) ? 0 : (int) (d(j, xs3.d) % 60);
+        if (c(j)) {
+            i = 0;
+        } else {
+            int i4 = ((int) j) & 1;
+            long j2 = j >> 1;
+            i = (int) (i4 == 1 ? (j2 % 1000) * 1000000 : j2 % 1000000000);
+        }
+        boolean z2 = d2 != 0;
+        boolean z3 = d3 != 0;
+        boolean z4 = d4 != 0;
+        boolean z5 = (d5 == 0 && i == 0) ? false : true;
+        if (z2) {
+            sb.append(d2);
+            sb.append('d');
+            i2 = 1;
+        }
+        if (z3 || (z2 && (z4 || z5))) {
+            int i5 = i2 + 1;
+            if (i2 > 0) {
+                sb.append(' ');
+            }
+            sb.append(d3);
+            sb.append('h');
+            i2 = i5;
+        }
+        if (z4 || (z5 && (z3 || z2))) {
+            int i6 = i2 + 1;
+            if (i2 > 0) {
+                sb.append(' ');
+            }
+            sb.append(d4);
+            sb.append('m');
+            i2 = i6;
+        }
+        if (z5) {
+            int i7 = i2 + 1;
+            if (i2 > 0) {
+                sb.append(' ');
+            }
+            if (d5 != 0 || z2 || z3 || z4) {
+                a(sb, d5, i, 9, "s", false);
+            } else if (i >= 1000000) {
+                a(sb, i / 1000000, i % 1000000, 6, "ms", false);
+            } else if (i >= 1000) {
+                a(sb, i / 1000, i % 1000, 3, "us", false);
+            } else {
+                sb.append(i);
+                sb.append("ns");
+            }
+            i2 = i7;
+        }
+        if (z && i2 > 1) {
+            sb.insert(1, '(').append(')');
+        }
+        return sb.toString();
     }
 }

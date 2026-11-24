@@ -1,32 +1,63 @@
 // default package
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ms2 implements OnSuccessListener, OnFailureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ String d;
+public final class ms2 extends qs2 {
+    public final boolean d;
+    public final int e;
+    public volatile boolean f;
 
-    public /* synthetic */ ms2(int i, long j, String str, int i2) {
-        this.a = i;
-        this.b = j;
-        this.c = i2;
-        this.d = str;
+    public ms2(int i, String str, boolean z) {
+        super(str);
+        this.d = z;
+        this.e = i;
+        this.f = z;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        ConnectionsManager.lambda$onIntegrityCheckClassic$26(this.a, this.b, this.c, this.d, exc);
+    @Override // qs2
+    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        boolean z;
+        if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z = ((TLRPC.TL_jsonBool) jSONValue).value) == this.f) {
+            return false;
+        }
+        this.f = z;
+        editor.putBoolean(e(), z);
+        return true;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        ConnectionsManager.lambda$onIntegrityCheckClassic$25(this.a, this.b, this.c, this.d, (IntegrityTokenResponse) obj);
+    @Override // qs2
+    public final boolean c(SharedPreferences.Editor editor) {
+        if (this.e != 2) {
+            return false;
+        }
+        boolean z = this.f;
+        boolean z2 = this.d;
+        if (z == z2) {
+            return false;
+        }
+        this.f = z2;
+        editor.remove(e());
+        return true;
+    }
+
+    @Override // qs2
+    public final void d(SharedPreferences sharedPreferences) {
+        try {
+            this.f = sharedPreferences.getBoolean(e(), this.d);
+        } catch (ClassCastException e) {
+            fc4.g(e, true);
+            this.f = this.d;
+        }
+    }
+
+    public final boolean f() {
+        return this.f;
+    }
+
+    public final String toString() {
+        return this.a + "=" + this.f;
     }
 }

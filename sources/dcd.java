@@ -1,61 +1,41 @@
 // default package
 
-import java.util.Iterator;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class dcd implements Iterator {
-    public final /* synthetic */ byte a;
-    public Iterator b;
+public final class dcd extends b4 {
+    public static final Parcelable.Creator<dcd> CREATOR = new lbd(6);
+    public final obd a;
+    public final obd b;
 
-    public dcd(Iterator it, byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                it.getClass();
-                this.b = it;
-                break;
-            default:
-                it.getClass();
-                this.b = it;
-                break;
-        }
+    public dcd(obd obdVar, obd obdVar2) {
+        this.a = obdVar;
+        this.b = obdVar2;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return this.b.hasNext();
+        if (!(obj instanceof dcd)) {
+            return false;
+        }
+        dcd dcdVar = (dcd) obj;
+        return qe1.d(this.a, dcdVar.a) && qe1.d(this.b, dcdVar.b);
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-        }
-        return (String) this.b.next();
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                this.b.remove();
-                return;
-            case 1:
-                this.b.remove();
-                return;
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    public dcd(ehf ehfVar) {
-        this.a = (byte) 4;
-        this.b = ehfVar.a.iterator();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.k(parcel, 2, this.a, i);
+        mve.k(parcel, 3, this.b, i);
+        mve.s(parcel, r);
     }
 }

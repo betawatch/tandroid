@@ -1,18 +1,29 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Path;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class p6b extends dh7 {
-    public final Path O;
-    public final /* synthetic */ t7b P;
+public final /* synthetic */ class p6b implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ u6b b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p6b(t7b t7bVar, Context context, f53 f53Var, sl0 sl0Var) {
-        super(context, f53Var, sl0Var);
-        this.P = t7bVar;
-        this.O = new Path();
+    public /* synthetic */ p6b(u6b u6bVar, byte b) {
+        this.a = b;
+        this.b = u6bVar;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        u6b u6bVar = this.b;
+        switch (b) {
+            case 0:
+                u6bVar.Z0();
+                break;
+            default:
+                u6bVar.c1();
+                break;
+        }
     }
 }

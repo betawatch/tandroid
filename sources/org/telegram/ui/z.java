@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class z extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -27,10 +27,10 @@ public final class z extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        mu1 mu1Var = this.a.l4;
-        if (mu1Var != null) {
-            mu1Var.Z5();
-            UndoView undoView = mu1Var.N3;
+        yv1 yv1Var = this.a.k4;
+        if (yv1Var != null) {
+            yv1Var.i6();
+            UndoView undoView = yv1Var.N3;
             if (undoView == null || undoView.getVisibility() != 0) {
                 return;
             }
@@ -63,15 +63,15 @@ public final class z extends FrameLayout {
         if (photoViewer.R.w()) {
             photoViewer.R.e(false);
         }
-        if (photoViewer.J0()) {
-            photoViewer.z(true);
+        if (photoViewer.K0()) {
+            photoViewer.x(true);
             return false;
         }
-        if (xv2.e().E) {
-            xv2.e().c();
+        if (hx2.e().E) {
+            hx2.e().c();
             return false;
         }
-        PhotoViewer.r0().B(true, false);
+        PhotoViewer.r0().A(true, false);
         return true;
     }
 
@@ -92,19 +92,19 @@ public final class z extends FrameLayout {
                     if (actionMasked != 5) {
                     }
                 }
-                k27 k27Var = photoViewer.T4;
-                if (k27Var == null || !k27Var.q4()) {
-                    photoViewer.z1();
+                k47 k47Var = photoViewer.S4;
+                if (k47Var == null || !k47Var.q4()) {
+                    photoViewer.A1();
                 }
             }
-            gl.r(photoViewer.y2);
+            gm.r(photoViewer.y2);
         }
         return super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // android.view.View
     public final void draw(Canvas canvas) {
-        Drawable[] drawableArr = PhotoViewer.f9;
+        Drawable[] drawableArr = PhotoViewer.d9;
         super.draw(canvas);
     }
 
@@ -121,21 +121,21 @@ public final class z extends FrameLayout {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         PhotoViewer photoViewer = this.a;
-        photoViewer.C4.I();
         photoViewer.B4.I();
-        photoViewer.D4.I();
-        photoViewer.S5 = true;
+        photoViewer.A4.I();
+        photoViewer.C4.I();
+        photoViewer.R5 = true;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         PhotoViewer photoViewer = this.a;
-        photoViewer.C4.K();
         photoViewer.B4.K();
-        photoViewer.D4.K();
+        photoViewer.A4.K();
+        photoViewer.C4.K();
+        photoViewer.R5 = false;
         photoViewer.S5 = false;
-        photoViewer.T5 = false;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0053  */
@@ -148,14 +148,14 @@ public final class z extends FrameLayout {
         Canvas canvas2;
         PhotoViewer photoViewer = this.a;
         Paint paint = photoViewer.N0;
-        rj4 rj4Var = photoViewer.s5;
-        if (rj4Var != null && rj4Var.getVisibility() == 0) {
-            View view = (View) photoViewer.s5.getParent();
-            float min = Math.min(photoViewer.s5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
+        yc ycVar = photoViewer.r5;
+        if (ycVar != null && ycVar.getVisibility() == 0) {
+            View view = (View) photoViewer.r5.getParent();
+            float min = Math.min(photoViewer.r5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
             if (min > 0.0f) {
                 canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (min * 255.0f), 31);
                 canvas2 = canvas;
-                photoViewer.s5.draw(canvas2);
+                photoViewer.r5.draw(canvas2);
                 canvas2.restore();
                 if (photoViewer.e) {
                     return;
@@ -181,23 +181,23 @@ public final class z extends FrameLayout {
         photoViewer.i0.layout(getPaddingLeft(), 0, photoViewer.i0.getMeasuredWidth() + getPaddingLeft(), photoViewer.i0.getMeasuredHeight());
         photoViewer.f0.layout(getPaddingLeft(), 0, photoViewer.f0.getMeasuredWidth() + getPaddingLeft(), photoViewer.f0.getMeasuredHeight());
         photoViewer.k0.layout(getPaddingLeft(), photoViewer.f0.getMeasuredHeight(), photoViewer.k0.getMeasuredWidth(), photoViewer.k0.getMeasuredHeight() + photoViewer.f0.getMeasuredHeight());
-        photoViewer.T5 = true;
+        photoViewer.S5 = true;
         if (z) {
-            if (!photoViewer.U5) {
-                float y1 = photoViewer.y1(true);
-                photoViewer.a6 = y1;
+            if (!photoViewer.T5) {
+                float z1 = photoViewer.z1(true);
+                photoViewer.Z5 = z1;
+                photoViewer.W5 = 0.0f;
                 photoViewer.X5 = 0.0f;
-                photoViewer.Y5 = 0.0f;
-                photoViewer.H2(y1);
+                photoViewer.I2(z1);
             }
             CheckBox checkBox = photoViewer.O0;
             if (checkBox != null) {
-                checkBox.post(new w88(this, (byte) 4));
+                checkBox.post(new q78(this, (byte) 11));
             }
         }
-        if (photoViewer.U5) {
-            photoViewer.V1();
-            photoViewer.U5 = false;
+        if (photoViewer.T5) {
+            photoViewer.W1();
+            photoViewer.T5 = false;
         }
     }
 
@@ -206,12 +206,12 @@ public final class z extends FrameLayout {
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         PhotoViewer photoViewer = this.a;
-        if (!photoViewer.s && gl.y) {
-            int i3 = gl.q.y;
+        if (!photoViewer.s && gm.y) {
+            int i3 = gm.q.y;
             if (size2 > i3) {
                 size2 = i3;
             }
-            size2 += gl.m;
+            size2 += gm.m;
         }
         setMeasuredDimension(size, size2);
         int i4 = size2 - photoViewer.t2.bottom;
@@ -226,6 +226,6 @@ public final class z extends FrameLayout {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer = this.a;
-        return photoViewer.e && photoViewer.g1(motionEvent);
+        return photoViewer.e && photoViewer.h1(motionEvent);
     }
 }

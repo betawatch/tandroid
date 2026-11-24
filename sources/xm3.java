@@ -1,63 +1,35 @@
 // default package
 
-import android.os.SystemClock;
-import android.util.Log;
-import java.io.File;
-import java.util.concurrent.CountDownLatch;
+import java.util.Comparator;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class xm3 implements gk7 {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long[] b;
-    public final /* synthetic */ ym3 c;
-    public final /* synthetic */ File[] d;
-    public final /* synthetic */ File e;
-    public final /* synthetic */ CountDownLatch f;
+public final /* synthetic */ class xm3 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float[] b;
 
-    public xm3(String str, long[] jArr, ym3 ym3Var, File[] fileArr, File file, CountDownLatch countDownLatch) {
-        this.a = str;
-        this.b = jArr;
-        this.c = ym3Var;
-        this.d = fileArr;
-        this.e = file;
-        this.f = countDownLatch;
+    public /* synthetic */ xm3(float[] fArr, byte b) {
+        this.a = b;
+        this.b = fArr;
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        File file;
-        if (objArr.length != 0) {
-            Object obj = objArr[0];
-            String str = this.a;
-            if (str.equals(obj)) {
-                this.b[0] = SystemClock.elapsedRealtime();
-                if (i == kk7.W1) {
-                    this.c.c(((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue());
-                    return;
-                }
-                if (i == kk7.X1) {
-                    if (objArr.length > 1) {
-                        Object obj2 = objArr[1];
-                        if (obj2 instanceof File) {
-                            file = (File) obj2;
-                            this.d[0] = file;
-                        }
-                    }
-                    file = this.e;
-                    this.d[0] = file;
-                } else {
-                    if (i != kk7.Y1) {
-                        return;
-                    }
-                    StringBuilder p = ug8.p("speech models: ", str, " download failed (");
-                    p.append(objArr.length > 1 ? objArr[1] : "");
-                    p.append(")");
-                    Log.d("Dictation", p.toString());
-                    na7.c1().edit().remove("speech_models_checked").apply();
-                }
-                this.f.countDown();
-            }
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        byte b = this.a;
+        float[] fArr = this.b;
+        Integer num = (Integer) obj;
+        Integer num2 = (Integer) obj2;
+        switch (b) {
+            case 0:
+                gn3[] gn3VarArr = DictationAsr.a;
+                break;
+            case 2:
+                float f = fArr[num.intValue()];
+                float log = f > 0.0f ? (float) Math.log(f) : 0.0f;
+                float f2 = fArr[num2.intValue()];
+                break;
         }
+        return Float.compare(fArr[(num.intValue() * 3) + 2], fArr[(num2.intValue() * 3) + 2]);
     }
 }

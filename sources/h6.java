@@ -9,9 +9,9 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h6 implements no7, ed, nw4 {
+public final /* synthetic */ class h6 implements qq7, ee, py4 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ d b;
 
@@ -20,24 +20,24 @@ public final /* synthetic */ class h6 implements no7, ed, nw4 {
         this.b = dVar;
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
+    @Override // qq7
+    public final wzc C0(View view, wzc wzcVar) {
         byte b = this.a;
-        return this.b.onInsetsInternal(view, vxcVar);
+        return this.b.onInsetsInternal(view, wzcVar);
     }
 
-    @Override // nw4
+    @Override // py4
     public final int i() {
-        return this.b.getThemedColor(bkb.Z6);
+        return this.b.getThemedColor(cmb.Z6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x007c  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x009e  */
-    @Override // ed
+    @Override // ee
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(hd hdVar, int i) {
+    public final void r(he heVar, int i) {
         TLRPC.User user;
         String string;
         byte b = this.a;
@@ -46,10 +46,10 @@ public final /* synthetic */ class h6 implements no7, ed, nw4 {
             case 2:
                 d dVar2 = this.b;
                 int currentAccount = dVar2.getCurrentAccount();
-                SharedPreferences sharedPreferences = na7.q1(currentAccount).X3;
-                long a1 = gl.a1(sharedPreferences, "support_id2", 0L);
+                SharedPreferences sharedPreferences = oc7.r1(currentAccount).X3;
+                long a1 = gm.a1(sharedPreferences, "support_id2", 0L);
                 if (a1 != 0) {
-                    user = na7.q1(currentAccount).V1(Long.valueOf(a1));
+                    user = oc7.r1(currentAccount).W1(Long.valueOf(a1));
                     if (user == null && (string = sharedPreferences.getString("support_user", null)) != null) {
                         try {
                             byte[] decode = Base64.decode(string, 0);
@@ -63,20 +63,20 @@ public final /* synthetic */ class h6 implements no7, ed, nw4 {
                                 user = TLdeserialize;
                             }
                         } catch (Exception e) {
-                            fa4.g(e, true);
+                            fc4.g(e, true);
                         }
                     }
                     if (user == null) {
-                        na7.q1(currentAccount).Z3(user, true, false);
+                        oc7.r1(currentAccount).c4(user, true, false);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        dVar2.presentFragment(new mu1(bundle));
+                        dVar2.presentFragment(new yv1(bundle));
                         break;
                     } else {
-                        hd hdVar2 = new hd(3, null, dVar2.getParentActivity());
-                        hdVar2.j0 = false;
-                        hdVar2.show();
-                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new ae((Object) sharedPreferences, (Object) hdVar2, currentAccount, (Object) dVar2, (byte) 0));
+                        he heVar2 = new he(3, null, dVar2.getParentActivity());
+                        heVar2.j0 = false;
+                        heVar2.show();
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new af((Object) sharedPreferences, (Object) heVar2, currentAccount, (Object) dVar2, (byte) 0));
                         break;
                     }
                 }
@@ -85,10 +85,10 @@ public final /* synthetic */ class h6 implements no7, ed, nw4 {
                 }
                 break;
             case 3:
-                na7.q1(dVar.getCurrentAccount()).z3("spambot", dVar, 1, null);
+                oc7.r1(dVar.getCurrentAccount()).C3("spambot", dVar, 1, null);
                 break;
             default:
-                dVar.presentFragment(new p3c(6, null));
+                dVar.presentFragment(new p5c(6, null));
                 break;
         }
     }

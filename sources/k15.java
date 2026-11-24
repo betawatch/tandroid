@@ -1,56 +1,35 @@
 // default package
 
-import android.app.AlertDialog;
-import android.hardware.fingerprint.FingerprintManager;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class k15 extends FingerprintManager.AuthenticationCallback {
-    public final /* synthetic */ l15 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class k15 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ d b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
 
-    public k15(l15 l15Var) {
-        this.a = l15Var;
+    public /* synthetic */ k15(d dVar, TwoStepVerificationActivity twoStepVerificationActivity, byte b) {
+        this.a = b;
+        this.b = dVar;
+        this.c = twoStepVerificationActivity;
     }
 
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationError(int i, CharSequence charSequence) {
-        if (this.a.f()) {
-            l15 l15Var = this.a;
-            if (l15Var.f) {
-                return;
-            }
-            if (i == 5) {
-                l15Var.c("AUTH_CANCELED");
-            } else {
-                l15Var.a();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TwoStepVerificationActivity twoStepVerificationActivity = this.c;
+        d dVar = this.b;
+        switch (b) {
+            case 0:
+                dVar.presentFragment(twoStepVerificationActivity);
+                break;
+            default:
+                bh0 bh0Var = new bh0();
+                bh0Var.a = true;
+                dVar.showAsSheet(twoStepVerificationActivity, bh0Var);
+                break;
         }
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationFailed() {
-        AlertDialog alertDialog;
-        if (!this.a.f() || (alertDialog = this.a.i) == null) {
-            return;
-        }
-        alertDialog.setMessage(k96.M0(2131742873, null));
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationHelp(int i, CharSequence charSequence) {
-        AlertDialog alertDialog;
-        if (!this.a.f() || (alertDialog = this.a.i) == null) {
-            return;
-        }
-        alertDialog.setMessage(charSequence);
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        l15 l15Var = this.a;
-        if (l15Var.f) {
-            return;
-        }
-        l15Var.c(null);
     }
 }

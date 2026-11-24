@@ -1,118 +1,85 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RenderNode;
-import android.os.Build;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.Arrays;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class g7b extends FrameLayout {
-    public final Rect a;
-    public final Rect b;
-    public RenderNode c;
-    public final /* synthetic */ t7b d;
+public final class g7b extends q59 {
+    public final /* synthetic */ h7b c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g7b(t7b t7bVar, Context context) {
-        super(context);
-        this.d = t7bVar;
-        this.a = new Rect();
-        this.b = new Rect();
+    public g7b(h7b h7bVar) {
+        this.c = h7bVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        return u69Var.f == 2;
+    }
+
+    @Override // y59
+    public final int b() {
+        return this.c.m1.size() + 2;
+    }
+
+    @Override // y59
+    public final int d(int i) {
+        if (i == 0) {
+            return 0;
+        }
+        return i == 1 ? 1 : 2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b4  */
+    @Override // y59
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(u69 u69Var, int i) {
         boolean z;
-        Canvas canvas2;
-        int i = Build.VERSION.SDK_INT;
-        if (i < 31 || !canvas.isHardwareAccelerated() || gl.m0) {
-            z = false;
-            canvas2 = canvas;
-        } else {
-            RenderNode renderNode = this.c;
-            if (renderNode == null) {
-                renderNode = new RenderNode("StoryRecorder.PreviewView");
-                this.c = renderNode;
+        h7b h7bVar = this.c;
+        int i2 = h7bVar.l1;
+        if (u69Var.f == 2) {
+            z7b z7bVar = (z7b) u69Var.a;
+            z7bVar.d(true, true);
+            TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) h7bVar.m1.get(i - 2);
+            boolean z2 = inputPeer instanceof TLRPC.TL_inputPeerSelf;
+            if (z2) {
+                z7bVar.setUser(z8c.h(i2).f());
+            } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
+                z7bVar.setUser(oc7.r1(i2).W1(Long.valueOf(inputPeer.user_id)));
+            } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
+                z7bVar.a(0, oc7.r1(i2).L0(Long.valueOf(inputPeer.chat_id)));
+            } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
+                z7bVar.a(0, oc7.r1(i2).L0(Long.valueOf(inputPeer.channel_id)));
             }
-            renderNode.setPosition(0, 0, getWidth(), getHeight());
-            canvas2 = this.c.beginRecording();
+            z7bVar.f.setVisibility(8);
+            z7bVar.h.setVisibility(0);
+            TLRPC.InputPeer inputPeer2 = h7bVar.n1;
+            if (inputPeer2 != null || i != 2) {
+                if ((inputPeer2 instanceof TLRPC.TL_inputPeerSelf ? z8c.h(h7bVar.l1).e() : pg3.m(inputPeer2)) != (z2 ? z8c.h(h7bVar.l1).e() : pg3.m(inputPeer))) {
+                    z = false;
+                    z7bVar.c(z, false);
+                    z7bVar.setDivider(i != b() - 1);
+                }
+            }
             z = true;
-        }
-        super.dispatchDraw(canvas2);
-        if (!z || i < 31) {
-            return;
-        }
-        this.c.endRecording();
-        sl0 sl0Var = this.d.s0;
-        if (sl0Var != null) {
-            sl0Var.g(this, this.c);
-        }
-        canvas.drawRenderNode(this.c);
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        ValueAnimator valueAnimator = this.d.F;
-        if (valueAnimator == null || !valueAnimator.isRunning()) {
-            super.invalidate();
+            z7bVar.c(z, false);
+            z7bVar.setDivider(i != b() - 1);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (Build.VERSION.SDK_INT >= 29) {
-            int i5 = i3 - i;
-            int i6 = i4 - i2;
-            int L = i6 - gl.L(120.0f);
-            int L2 = gl.L(40.0f);
-            Rect rect = this.a;
-            rect.set(0, L, L2, i6);
-            int L3 = i5 - gl.L(40.0f);
-            int L4 = i6 - gl.L(120.0f);
-            Rect rect2 = this.b;
-            rect2.set(L3, L4, i5, i6);
-            setSystemGestureExclusionRects(Arrays.asList(rect, rect2));
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        View view;
+        h7b h7bVar = this.c;
+        if (i == 0 || i == 1) {
+            view = new View(h7bVar.getContext());
+            view.setLayoutParams(new g69(-1, i == 0 ? (gm.q.y + gm.m) - gm.L(306.0f) : gm.L(54.0f)));
+        } else {
+            view = new z7b(h7bVar.getContext(), h7bVar.J0);
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        t7b t7bVar = this.d;
-        e58 e58Var = t7bVar.G1;
-        if (e58Var != null) {
-            float measuredWidth = e58Var.getMeasuredWidth();
-            float measuredHeight = t7bVar.G1.getMeasuredHeight();
-            l29 l29Var = e58Var.e;
-            l29Var.a = 0.0f;
-            l29Var.b = 0.0f;
-            l29Var.c = measuredWidth;
-            l29Var.d = measuredHeight;
-        }
-        c58 c58Var = t7bVar.F1;
-        if (c58Var != null) {
-            float measuredWidth2 = c58Var.getMeasuredWidth();
-            float measuredHeight2 = t7bVar.F1.getMeasuredHeight();
-            via viaVar = c58Var.d;
-            viaVar.a = measuredWidth2;
-            viaVar.b = measuredHeight2;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        p7b p7bVar = this.d.w2;
-        if (p7bVar == null) {
-            return super.onTouchEvent(motionEvent);
-        }
-        p7bVar.h(motionEvent);
-        return true;
+        return new b59(view);
     }
 }

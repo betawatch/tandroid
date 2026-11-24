@@ -1,19 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class oz0 {
-    public final String a;
-    public final int b;
-    public final int c;
-    public final byte[] d;
-    public final int e;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import java.nio.BufferUnderflowException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
-    public oz0(String str, int i, int i2, byte[] bArr, int i3) {
-        this.a = str;
-        this.b = i;
-        this.c = i2;
-        this.d = bArr;
-        this.e = i3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class oz0 {
+    public static final byte[] a = {-75, 0, 60, 0, 1, 4};
+
+    public static Object a(Class cls, InvocationHandler invocationHandler) {
+        if (invocationHandler == null) {
+            return null;
+        }
+        return cls.cast(Proxy.newProxyInstance(oz0.class.getClassLoader(), new Class[]{cls}, invocationHandler));
+    }
+
+    public static void b(ByteBuffer byteBuffer, boolean z) {
+        ArrayList b = hse.b(byteBuffer.asReadOnlyBuffer());
+        int size = b.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = b.get(i);
+            i++;
+            hq7 hq7Var = (hq7) obj;
+            byte b2 = hq7Var.a;
+            ByteBuffer byteBuffer2 = hq7Var.b;
+            if (b2 == 5) {
+                try {
+                    jte.f(b2 == 5);
+                    ByteBuffer asReadOnlyBuffer = byteBuffer2.asReadOnlyBuffer();
+                    if (hse.a(asReadOnlyBuffer) == 4) {
+                        if (z && asReadOnlyBuffer.remaining() >= 6) {
+                            int position = asReadOnlyBuffer.position();
+                            for (int i2 = 0; i2 < 6; i2++) {
+                                if (asReadOnlyBuffer.get(position + i2) == a[i2]) {
+                                }
+                            }
+                        }
+                        byteBuffer.put(byteBuffer2.position(), (byte) 31);
+                        break;
+                    }
+                } catch (BufferUnderflowException unused) {
+                }
+            }
+        }
     }
 }

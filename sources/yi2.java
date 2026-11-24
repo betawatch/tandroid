@@ -1,8 +1,17 @@
 // default package
 
-import java.util.NoSuchElementException;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class yi2 extends qt7 {
+    public abstract int j();
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class yi2 extends NoSuchElementException {
+    public final int k(int i) {
+        int size = ((sr8) this).c.size();
+        int j = j();
+        if (i < j) {
+            return ((size - (j << 1)) - ((j - i) - 1)) - 1;
+        }
+        int i2 = size - j;
+        return i >= i2 ? i - i2 : i - j;
+    }
 }

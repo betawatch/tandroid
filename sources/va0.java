@@ -1,149 +1,57 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Switch;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class va0 {
+    public final String a;
+    public final String b;
+    public final String c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class va0 extends FrameLayout {
-    public final jia a;
-    public final be0 b;
-    public final Switch c;
-    public final wf2 d;
-    public final View e;
-    public TLRPC.TL_availableReaction f;
-    public final boolean h;
-    public boolean n;
-
-    public va0(Context context, boolean z, boolean z2) {
-        super(context);
-        this.h = z2;
-        jia jiaVar = new jia(context);
-        this.a = jiaVar;
-        kk7.i(jiaVar);
-        zkb.W(jiaVar, bkb.F6, null);
-        jiaVar.setTextSize(16);
-        jiaVar.setTypeface(gl.o());
-        jiaVar.setMaxLines(1);
-        jiaVar.setMaxLines(1);
-        jiaVar.setGravity(nme.y() | 16);
-        addView(jiaVar, nme.i(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
-        be0 be0Var = new be0(context);
-        this.b = be0Var;
-        be0Var.setAspectFit(true);
-        be0Var.setLayerNum(1);
-        addView(be0Var, nme.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
-        if (z) {
-            wf2 wf2Var = new wf2(26, null, context);
-            this.d = wf2Var;
-            wf2Var.setDrawUnchecked(false);
-            wf2Var.b(-1, -1, bkb.g7);
-            wf2Var.setDrawBackgroundAsArc(-1);
-            addView(wf2Var, nme.i(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
-        } else {
-            Switch r14 = new Switch(context, null);
-            this.c = r14;
-            r14.d(bkb.L6, bkb.M6, bkb.P6, bkb.Q6);
-            addView(r14, nme.i(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+    public va0(String str, String str2, String str3) {
+        if (str == null) {
+            gxc.d("Null crashlyticsInstallId");
+            throw null;
         }
-        View view = new View(context);
-        this.e = view;
-        view.setBackground(bkb.L0(false));
-        addView(view, nme.c(-1.0f, -1));
-        setWillNotDraw(false);
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    public final void a(TLRPC.TL_availableReaction tL_availableReaction, boolean z, int i) {
-        TLRPC.TL_availableReaction tL_availableReaction2 = this.f;
-        boolean z2 = tL_availableReaction2 != null && tL_availableReaction.reaction.equals(tL_availableReaction2.reaction);
-        this.f = tL_availableReaction;
-        String str = tL_availableReaction.title;
-        jia jiaVar = this.a;
-        jiaVar.l(b00.e(jiaVar, str, false, null, 0), false);
-        this.b.n(gl5.b(tL_availableReaction.activate_animation), "30_30_pcache", "tgs", uo3.f(tL_availableReaction.static_icon, bkb.Z6, 1.0f, null), tL_availableReaction);
-        boolean z3 = this.h && tL_availableReaction.premium && !y6c.h(i).p();
-        this.n = z3;
-        if (z3) {
-            Drawable drawable = getContext().getDrawable(R.drawable.other_lockedfolders2);
-            zkb.x(this, drawable, bkb.Ki, null, PorterDuff.Mode.MULTIPLY);
-            jiaVar.i(drawable);
-        } else {
-            jiaVar.i(null);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        Switch r1 = this.c;
-        if (r1 != null) {
-            r1.c(z, z2);
-        }
-        wf2 wf2Var = this.d;
-        if (wf2Var != null) {
-            wf2Var.a(z, z2);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float strokeWidth = bkb.j0.getStrokeWidth();
-        int L = gl.L(81.0f);
-        int i = 0;
-        if (k96.a0) {
-            i = L;
-            L = 0;
-        }
-        canvas.drawLine(getPaddingLeft() + L, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - i, getHeight() - strokeWidth, bkb.j0);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-        accessibilityNodeInfo.setClickable(true);
-        boolean z = false;
-        wf2 wf2Var = this.d;
-        Switch r3 = this.c;
-        if (r3 != null) {
-            accessibilityNodeInfo.setCheckable(true);
-            if (r3 != null) {
-                z = r3.h;
-            } else if (wf2Var != null) {
-                z = wf2Var.a.q;
-            }
-            accessibilityNodeInfo.setChecked(z);
-            accessibilityNodeInfo.setClassName("android.widget.Switch");
-        } else {
-            if (r3 != null) {
-                z = r3.h;
-            } else if (wf2Var != null) {
-                z = wf2Var.a.q;
-            }
-            if (z) {
-                accessibilityNodeInfo.setSelected(true);
+        if (obj instanceof va0) {
+            va0 va0Var = (va0) obj;
+            if (this.a.equals(va0Var.a)) {
+                String str = va0Var.b;
+                String str2 = this.b;
+                if (str2 != null ? str2.equals(str) : str == null) {
+                    String str3 = va0Var.c;
+                    String str4 = this.c;
+                    if (str4 != null ? str4.equals(str3) : str3 == null) {
+                        return true;
+                    }
+                }
             }
         }
-        accessibilityNodeInfo.setContentDescription(this.a.getText());
+        return false;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (bkb.j0.getStrokeWidth() + gl.L(58.0f)), TLObject.FLAG_30));
+    public final int hashCode() {
+        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
+        String str = this.b;
+        int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
+        String str2 = this.c;
+        return hashCode2 ^ (str2 != null ? str2.hashCode() : 0);
     }
 
-    public void setChecked(boolean z) {
-        Switch r1 = this.c;
-        if (r1 != null) {
-            r1.c(z, false);
-        }
-        wf2 wf2Var = this.d;
-        if (wf2Var != null) {
-            wf2Var.a(z, false);
-        }
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("InstallIds{crashlyticsInstallId=");
+        sb.append(this.a);
+        sb.append(", firebaseInstallationId=");
+        sb.append(this.b);
+        sb.append(", firebaseAuthenticationToken=");
+        return b10.j(sb, this.c, "}");
     }
 }

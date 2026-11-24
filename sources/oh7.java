@@ -1,61 +1,48 @@
 // default package
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class oh7 {
-    public final short a;
-    public boolean b;
-    public boolean c;
-    public byte[] d;
-    public int e;
+public final class oh7 extends eu5 {
+    public final long e;
+    public final ArrayList f;
+    public final ArrayList g;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public oh7(int i) {
-        this.a = i;
-        byte[] bArr = new byte[kk7.O1];
-        this.d = bArr;
-        bArr[2] = 1;
+    public oh7(int i, long j) {
+        super(i, (byte) 1);
+        this.e = j;
+        this.f = new ArrayList();
+        this.g = new ArrayList();
     }
 
-    public final void a(int i, int i2, byte[] bArr) {
-        if (this.b) {
-            int i3 = i2 - i;
-            byte[] bArr2 = this.d;
-            int length = bArr2.length;
-            int i4 = this.e + i3;
-            if (length < i4) {
-                bArr2 = Arrays.copyOf(bArr2, i4 << 1);
-                this.d = bArr2;
+    @Override // eu5
+    public final String toString() {
+        return eu5.e(this.b) + " leaves: " + Arrays.toString(this.f.toArray()) + " containers: " + Arrays.toString(this.g.toArray());
+    }
+
+    public final oh7 u(int i) {
+        ArrayList arrayList = this.g;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            oh7 oh7Var = (oh7) arrayList.get(i2);
+            if (oh7Var.b == i) {
+                return oh7Var;
             }
-            System.arraycopy(bArr, i, bArr2, this.e, i3);
-            this.e += i3;
         }
+        return null;
     }
 
-    public final boolean b(int i) {
-        if (!this.b) {
-            return false;
+    public final ph7 v(int i) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            ph7 ph7Var = (ph7) arrayList.get(i2);
+            if (ph7Var.b == i) {
+                return ph7Var;
+            }
         }
-        this.e -= i;
-        this.b = false;
-        this.c = true;
-        return true;
-    }
-
-    public final void c() {
-        this.b = false;
-        this.c = false;
-    }
-
-    public final void d(int i) {
-        gre.p(!this.b);
-        boolean z = i == this.a;
-        this.b = z;
-        if (z) {
-            this.e = 3;
-            this.c = false;
-        }
+        return null;
     }
 }

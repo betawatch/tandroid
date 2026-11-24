@@ -1,28 +1,19 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class sqe {
-    public static boolean a(l38 l38Var, l38 l38Var2) {
-        if (l38Var == null) {
-            if (l38Var2 == null) {
-                return true;
-            }
-        } else if (l38Var2 != null) {
-            String str = l38Var.d;
-            String str2 = l38Var2.d;
-            return (str == null && str2 == null) ? Objects.equals(Objects.toString(l38Var.a), Objects.toString(l38Var2.a)) && Objects.equals(l38Var.c, l38Var2.c) && Boolean.valueOf(l38Var.e).equals(Boolean.valueOf(l38Var2.e)) && Boolean.valueOf(l38Var.f).equals(Boolean.valueOf(l38Var2.f)) : Objects.equals(str, str2);
-        }
-        return false;
+public final class sqe implements cq7 {
+    public static final sqe a = new sqe();
+
+    static {
+        mlb.z(mlb.q(ikd.class, new cid(1)));
     }
 
-    public static int b(l38 l38Var) {
-        if (l38Var == null) {
-            return 0;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        String str = l38Var.d;
-        return str != null ? str.hashCode() : Objects.hash(l38Var.a, l38Var.c, Boolean.valueOf(l38Var.e), Boolean.valueOf(l38Var.f));
+        throw null;
     }
 }

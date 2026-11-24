@@ -1,69 +1,70 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import java.util.ArrayList;
+import android.media.MediaDataSource;
+import android.net.Uri;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class u5b extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ gz9 c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class u5b extends MediaDataSource {
+    public final Uri a;
+    public final long b;
+    public volatile kd4 c;
+    public long d = -1;
+    public volatile boolean e;
 
-    public /* synthetic */ u5b(gz9 gz9Var, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.c = gz9Var;
-        this.b = arrayList;
+    public u5b(long j, Uri uri) {
+        this.a = uri;
+        this.b = j;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        gz9 gz9Var = this.c;
-        ArrayList arrayList = this.b;
-        switch (b) {
-            case 0:
-                for (int i = 0; i < arrayList.size(); i++) {
-                    gz9Var.removeView((View) arrayList.get(i));
-                }
-                gz9Var.getClass();
-                v5b v5bVar = (v5b) gz9Var.n;
-                gz9Var.h.clear();
-                gz9Var.b = null;
-                gz9Var.c = false;
-                v5bVar.b.setAllowDrawCursor(true);
-                l5b l5bVar = v5bVar.h;
-                if (l5bVar != null) {
-                    l5bVar.run();
-                }
-                if (v5bVar.M) {
-                    v5bVar.fullScroll(kk7.N1);
-                    v5bVar.M = false;
-                    break;
-                }
-                break;
-            default:
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    gz9Var.removeView((View) arrayList.get(i2));
-                }
-                ArrayList arrayList2 = gz9Var.h;
-                v5b v5bVar2 = (v5b) gz9Var.n;
-                arrayList2.clear();
-                gz9Var.b = null;
-                gz9Var.c = false;
-                v5bVar2.b.setAllowDrawCursor(true);
-                l5b l5bVar2 = v5bVar2.h;
-                if (l5bVar2 != null) {
-                    l5bVar2.run();
-                }
-                if (v5bVar2.M) {
-                    v5bVar2.fullScroll(kk7.N1);
-                    v5bVar2.M = false;
-                    break;
-                }
-                break;
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.e = true;
+        kd4 kd4Var = this.c;
+        if (kd4Var != null) {
+            try {
+                kd4Var.close();
+            } catch (Throwable unused) {
+            }
         }
+    }
+
+    @Override // android.media.MediaDataSource
+    public final long getSize() {
+        return this.b;
+    }
+
+    @Override // android.media.MediaDataSource
+    public final synchronized int readAt(long j, byte[] bArr, int i, int i2) {
+        if (this.e) {
+            throw new IOException("closed");
+        }
+        if (j >= this.b) {
+            return -1;
+        }
+        if (i2 == 0) {
+            return 0;
+        }
+        if (this.c == null || j != this.d) {
+            kd4 kd4Var = this.c;
+            this.c = null;
+            if (kd4Var != null) {
+                kd4Var.close();
+            }
+            kd4 kd4Var2 = new kd4();
+            kd4Var2.open(new g83(j, this.a));
+            this.c = kd4Var2;
+            this.d = j;
+        }
+        int read = this.c.read(bArr, i, i2);
+        if (this.e) {
+            throw new IOException("closed");
+        }
+        if (read <= 0) {
+            return read == 0 ? 0 : -1;
+        }
+        this.d += read;
+        return read;
     }
 }

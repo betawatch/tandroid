@@ -1,147 +1,82 @@
 // default package
 
-import android.graphics.Canvas;
+import android.app.Activity;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.animation.AccelerateInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class uya extends FrameLayout {
-    public be0 a;
-    public TLRPC.Document b;
-    public Object c;
-    public long d;
-    public boolean e;
-    public float f;
-    public boolean h;
-    public oh8 n;
-    public boolean r;
-    public boolean s;
-    public wjb w;
+public final class uya extends wgc {
+    public boolean W;
+    public final /* synthetic */ xza a0;
 
-    static {
-        new AccelerateInterpolator(0.5f);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uya(xza xzaVar, Activity activity) {
+        super(activity, null);
+        this.a0 = xzaVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        boolean drawChild = super.drawChild(canvas, view, j);
-        be0 be0Var = this.a;
-        if (view == be0Var) {
-            boolean z = this.e;
-            float f = 1.0f;
-            float f2 = 0.8f;
-            if ((z && this.f != 0.8f) || (!z && this.f != 1.0f)) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j2 = currentTimeMillis - this.d;
-                this.d = currentTimeMillis;
-                if (this.e) {
-                    float f3 = this.f;
-                    if (f3 != 0.8f) {
-                        f = f3 - (j2 / 400.0f);
-                        this.f = f;
-                        if (f < 0.8f) {
-                            this.f = 0.8f;
-                            f = f2;
-                        }
-                        be0Var.setScaleX(f);
-                        be0Var.setScaleY(this.f);
-                        be0Var.invalidate();
-                        invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            xza xzaVar = this.a0;
+            if (xzaVar.k0 != null) {
+                View currentView = getCurrentView();
+                ik1 ik1Var = xzaVar.k0;
+                if (currentView == ik1Var) {
+                    boolean H = ik1Var.H(motionEvent.getX() - xzaVar.k0.getX(), motionEvent.getY() - xzaVar.k0.getY());
+                    ik1Var.Q0 = H;
+                    if (H && ik1Var.a1.b.canScrollHorizontally(-1)) {
+                        z = true;
+                        this.W = z;
                     }
                 }
-                f2 = (j2 / 400.0f) + this.f;
-                this.f = f2;
-                if (f2 > 1.0f) {
-                    this.f = 1.0f;
-                    be0Var.setScaleX(f);
-                    be0Var.setScaleY(this.f);
-                    be0Var.invalidate();
-                    invalidate();
-                }
-                f = f2;
-                be0Var.setScaleX(f);
-                be0Var.setScaleY(this.f);
-                be0Var.invalidate();
-                invalidate();
             }
+            z = false;
+            this.W = z;
         }
-        return drawChild;
-    }
-
-    public Object getParentObject() {
-        return this.c;
-    }
-
-    public g27 getSendAnimationData() {
-        be0 be0Var = this.a;
-        ImageReceiver imageReceiver = be0Var.getImageReceiver();
-        if (!imageReceiver.E()) {
-            return null;
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.W = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.W = false;
+            }
+            throw th;
         }
-        g27 g27Var = new g27();
-        be0Var.getLocationInWindow(new int[2]);
-        g27Var.a = imageReceiver.r() + r2[0];
-        g27Var.b = imageReceiver.s() + r2[1];
-        g27Var.c = imageReceiver.N0;
-        return g27Var;
     }
 
-    public TLRPC.Document getSticker() {
-        return this.b;
+    @Override // wgc, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.W && super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.b == null) {
+    @Override // wgc, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.W && B(motionEvent);
+    }
+
+    @Override // wgc
+    public final void t() {
+        xza xzaVar = this.a0;
+        xzaVar.p0(xzaVar.i0.getCurrentPosition(), true);
+        xzaVar.q0(false, 0.0f);
+    }
+
+    @Override // wgc
+    public final void w(boolean z) {
+        xza xzaVar = this.a0;
+        float positionAnimated = xzaVar.i0.getPositionAnimated();
+        xzaVar.q0(!z, positionAnimated);
+        if (z) {
             return;
         }
-        String str = null;
-        for (int i = 0; i < this.b.attributes.size(); i++) {
-            TLRPC.DocumentAttribute documentAttribute = this.b.attributes.get(i);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
-                String str2 = documentAttribute.alt;
-                str = (str2 == null || str2.length() <= 0) ? null : documentAttribute.alt;
-            }
-        }
-        if (str != null) {
-            StringBuilder k = b00.k(str, " ");
-            k.append(k96.M0(2131753933, null));
-            accessibilityNodeInfo.setText(k.toString());
-        } else {
-            accessibilityNodeInfo.setText(k96.M0(2131753933, null));
-        }
-        accessibilityNodeInfo.setEnabled(true);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + gl.L(76.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(78.0f), TLObject.FLAG_30));
-    }
-
-    public void setClearsInputField(boolean z) {
-        this.h = z;
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z) {
-        be0 be0Var = this.a;
-        if ((be0Var.getImageReceiver().f1 != 0) != z) {
-            be0Var.getImageReceiver().f1 = z ? 1 : 0;
-            be0Var.invalidate();
-        }
-        super.setPressed(z);
-    }
-
-    public void setScaled(boolean z) {
-        this.e = z;
-        this.d = System.currentTimeMillis();
-        invalidate();
+        xzaVar.p0(Math.round(positionAnimated), true);
     }
 }

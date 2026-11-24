@@ -1,52 +1,568 @@
 // default package
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.io.File;
 import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.HashSet;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class he9 {
-    public final /* synthetic */ ye9 a;
+public final class he9 extends jd9 implements vlb, fkb, td9, cr3 {
+    public final RadialProgress2 E;
+    public final ImageReceiver F;
+    public final sd9 G;
+    public final int H;
+    public final int I;
+    public final int J;
+    public int K;
+    public int L;
+    public boolean M;
+    public boolean N;
+    public boolean O;
+    public boolean P;
+    public byte Q;
+    public StaticLayout R;
+    public StaticLayout S;
+    public xg9 T;
+    public k47 U;
+    public TLRPC.Document V;
+    public int W;
+    public boolean a0;
+    public int b0;
+    public final int n;
+    public final ylb r;
+    public final Paint s;
+    public final Paint w;
+    public final TextPaint x;
+    public final TextPaint y;
 
-    public he9(ye9 ye9Var) {
-        this.a = ye9Var;
+    public he9(int i, ylb ylbVar, Context context) {
+        super(context);
+        this.s = new Paint(1);
+        this.w = new Paint(1);
+        this.x = new TextPaint(1);
+        this.y = new TextPaint(1);
+        int L = gm.L(10.0f);
+        this.I = L;
+        int L2 = gm.L(44.0f);
+        this.J = L2;
+        this.K = gm.L(16.0f);
+        this.L = gm.L(16.0f);
+        this.W = -1;
+        this.b0 = anb.b;
+        this.n = i;
+        this.r = ylbVar;
+        setWillNotDraw(false);
+        setMinimumHeight(gm.L(66.0f));
+        this.H = er3.q(i).k();
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, ylbVar);
+        this.E = radialProgress2;
+        radialProgress2.setCircleRadius(gm.L(24.0f));
+        int i2 = this.K;
+        radialProgress2.p(i2, L, i2 + L2, L2 + L);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.F = imageReceiver;
+        imageReceiver.A1 = true;
+        imageReceiver.q0(gm.L(6.0f));
+        sd9 sd9Var = new sd9(context, ylbVar, new oo8(this, (byte) 6));
+        this.G = sd9Var;
+        addView(sd9Var.a, qoe.e(-2, -2, 51));
+        updateColors();
     }
 
-    public final void a(lk0 lk0Var) {
-        ye9 ye9Var = this.a;
-        ArrayList arrayList = ye9Var.t3;
-        int indexOf = arrayList.indexOf(lk0Var);
-        if (indexOf < 0 || !ye9.t3(lk0Var)) {
+    @Override // cr3
+    public final void A(boolean z) {
+        n(true);
+    }
+
+    @Override // cr3
+    public final void N(String str) {
+        this.E.o(true, 1.0f);
+        n(true);
+    }
+
+    @Override // td9
+    public final boolean a(int i, int i2) {
+        return this.G.f(i, i2);
+    }
+
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(cmb.kg));
+    }
+
+    @Override // td9
+    public final void b() {
+        this.G.i();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.G.c(canvas);
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        int i;
+        int i2 = this.b0;
+        int i3 = anb.b;
+        if (i2 != i3) {
+            this.b0 = i3;
+            try {
+                RadialProgress2 radialProgress2 = this.E;
+                ylb ylbVar = this.r;
+                if (radialProgress2 != null && (i = this.W) >= 0) {
+                    radialProgress2.d = cmb.v0(i, ylbVar);
+                }
+                if (this.a0 && (getBackground() instanceof gf9)) {
+                    ((gf9) getBackground()).a(cmb.v0(cmb.c6, ylbVar));
+                }
+            } catch (Exception e) {
+                fc4.g(e, true);
+            }
+        }
+        super.draw(canvas);
+    }
+
+    @Override // jd9
+    public final void e(int i) {
+        int L = gm.L(16.0f);
+        if (this.N) {
+            i = 0;
+        }
+        int i2 = L + i;
+        this.L = i2;
+        if (this.M) {
+            i2 += gm.L(21.0f);
+        }
+        this.K = i2;
+        int L2 = this.M ? gm.L(31.0f) : this.I;
+        int i3 = this.K;
+        int i4 = this.J;
+        this.E.p(i3, L2, i3 + i4, i4 + L2);
+        requestLayout();
+    }
+
+    public final void g(TLRPC.Document document) {
+        String str;
+        i07 i07Var;
+        ll0 ll0Var = this.a;
+        String str2 = (ll0Var == null || (i07Var = ll0Var.g) == null) ? null : i07Var.e;
+        File file = TextUtils.isEmpty(str2) ? null : new File(str2);
+        String lowerCase = (document == null || (str = document.mime_type) == null) ? "" : str.toLowerCase();
+        boolean z = j() && file != null && file.exists() && (lowerCase.startsWith("image/") || lowerCase.equals("video/mp4"));
+        boolean W2 = k47.W2(document);
+        this.M = z || W2;
+        int L = gm.L(16.0f) + (this.N ? 0 : this.c);
+        this.L = L;
+        if (this.M) {
+            L += gm.L(21.0f);
+        }
+        this.K = L;
+        int L2 = this.M ? gm.L(31.0f) : this.I;
+        int i = this.K;
+        int i2 = this.J;
+        this.E.p(i, L2, i + i2, i2 + L2);
+        ImageReceiver imageReceiver = this.F;
+        if (z) {
+            imageReceiver.i0(this.L, gm.L(10.0f), gm.L(86.0f), gm.L(86.0f));
+            imageReceiver.d0(gn5.g(str2), "86_86", null, null, document, 1);
             return;
         }
-        int M3 = ye9Var.M3(indexOf);
-        if (M3 >= arrayList.size()) {
-            M3 = arrayList.size() - 1;
+        if (!W2) {
+            imageReceiver.f();
+            return;
         }
-        ld9 ld9Var = ye9Var.R3;
-        if (ld9Var != null) {
-            ld9Var.d();
+        TLRPC.PhotoSize w = bc4.w(document.thumbs, nm7.q5, false, null, true);
+        xg9 xg9Var = this.T;
+        k47 k47Var = xg9Var == null ? null : xg9Var.a.q3;
+        imageReceiver.i0(this.L, gm.L(10.0f), gm.L(86.0f), gm.L(86.0f));
+        gn5 c = w != null ? gn5.c(w, document) : null;
+        BitmapDrawable i3 = fn5.i(document.thumbs);
+        if (k47Var == null) {
+            k47Var = this.U;
         }
-        while (M3 >= indexOf) {
-            arrayList.remove(M3);
-            M3--;
+        imageReceiver.d0(c, "86_86", i3, null, k47Var, 1);
+    }
+
+    @Override // td9
+    public ne9 getCaptionEditText() {
+        return this.G.a;
+    }
+
+    @Override // cr3
+    public int getObserverTag() {
+        return this.H;
+    }
+
+    @Override // td9
+    public ll0 getRow() {
+        return this.a;
+    }
+
+    public final TLRPC.Document h() {
+        i07 i07Var;
+        ll0 ll0Var = this.a;
+        if (ll0Var == null || (i07Var = ll0Var.g) == null) {
+            return null;
         }
-        lk0 lk0Var2 = null;
-        lk0 lk0Var3 = indexOf > 0 ? (lk0) arrayList.get(indexOf - 1) : null;
-        if (lk0Var3 != null && !lk0Var3.i && !ye9.t3(lk0Var3) && !ye9.A3(lk0Var3.b)) {
-            lk0Var2 = lk0Var3;
+        return i07Var.h;
+    }
+
+    @Override // cr3
+    public final void i(long j, long j2) {
+        this.E.o(true, j2 <= 0 ? 0.0f : Math.min(1.0f, j / j2));
+    }
+
+    public final boolean j() {
+        i07 i07Var;
+        ll0 ll0Var = this.a;
+        return (ll0Var == null || (i07Var = ll0Var.g) == null || !i07Var.a()) ? false : true;
+    }
+
+    @Override // fkb
+    public final void k(ArrayList arrayList) {
+        this.G.e(arrayList);
+    }
+
+    public final void m() {
+        int i;
+        float f;
+        i07 i07Var;
+        TLRPC.Document h = h();
+        if (h == null) {
+            return;
         }
-        if (arrayList.isEmpty()) {
-            lk0Var2 = new lk0(new TL_iv.pageBlockParagraph(), 0, 0);
-            arrayList.add(lk0Var2);
+        if (this.M) {
+            i = this.L;
+            f = 97.0f;
+        } else {
+            i = this.K;
+            f = 54.0f;
         }
-        ye9Var.g3.O(false);
-        ld9 ld9Var2 = ye9Var.R3;
-        if (ld9Var2 != null) {
-            ld9Var2.h();
+        int max = Math.max(gm.L(40.0f), (((getMeasuredWidth() > 0 ? getMeasuredWidth() : gm.q.x) - (gm.L(f) + i)) - gm.L(16.0f)) - (this.N ? this.c : 0));
+        float L = gm.L(15.0f);
+        TextPaint textPaint = this.x;
+        textPaint.setTextSize(L);
+        textPaint.setTypeface(gm.o());
+        float L2 = gm.L(13.0f);
+        TextPaint textPaint2 = this.y;
+        textPaint2.setTextSize(L2);
+        String B = bc4.B(h);
+        if (TextUtils.isEmpty(B) && (i07Var = this.a.g) != null && !TextUtils.isEmpty(i07Var.e)) {
+            B = new File(this.a.g.e).getName();
         }
-        if (lk0Var2 != null) {
-            ye9Var.post(new sd9(ye9Var, lk0Var2, (byte) 22));
+        if (B == null) {
+            B = "";
         }
+        CharSequence ellipsize = TextUtils.ellipsize(B, textPaint, max, TextUtils.TruncateAt.END);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+        this.R = new StaticLayout(ellipsize, textPaint, max, alignment, 1.0f, 0.0f, false);
+        long j = h.size;
+        if (j <= 0) {
+            i07 i07Var2 = this.a.g;
+            j = (i07Var2 == null || TextUtils.isEmpty(i07Var2.e)) ? 0L : new File(this.a.g.e).length();
+        }
+        this.S = new StaticLayout(gm.i0(j, false, false), textPaint2, max, alignment, 1.0f, 0.0f, false);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x007a, code lost:
+    
+        if (r6.exists() == false) goto L18;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void n(boolean z) {
+        File J;
+        i07 i07Var;
+        boolean z2 = this.M;
+        ylb ylbVar = this.r;
+        RadialProgress2 radialProgress2 = this.E;
+        if (z2) {
+            radialProgress2.g(cmb.bf, cmb.cf, cmb.df, cmb.ef);
+            int i = cmb.Xd;
+            this.W = i;
+            radialProgress2.d = cmb.v0(i, ylbVar);
+        } else {
+            radialProgress2.g(cmb.Ye, cmb.Ze, cmb.kd, cmb.ld);
+            int i2 = cmb.re;
+            this.W = i2;
+            radialProgress2.d = cmb.v0(i2, ylbVar);
+        }
+        boolean j = j();
+        int i3 = this.n;
+        if (j) {
+            er3.q(i3).v(this);
+            radialProgress2.o(z, this.a.g.f);
+            radialProgress2.setIcon(3, false, z);
+            return;
+        }
+        String r = bc4.r(null, h());
+        ll0 ll0Var = this.a;
+        if (ll0Var != null && (i07Var = ll0Var.g) != null && !TextUtils.isEmpty(i07Var.e)) {
+            J = new File(this.a.g.e);
+        }
+        if (h() == null) {
+            J = null;
+        } else {
+            bc4.G(i3);
+            J = bc4.J(h(), null, false, true);
+            if (J == null || !J.exists()) {
+                bc4.G(i3);
+                J = bc4.J(h(), null, true, true);
+            }
+        }
+        if (J != null && J.exists()) {
+            er3.q(i3).v(this);
+            this.Q = (byte) 0;
+            radialProgress2.setIcon(this.M ? 4 : 5, false, z);
+        } else {
+            if (TextUtils.isEmpty(r)) {
+                return;
+            }
+            er3.q(i3).a(r, null, this);
+            if (!bc4.G(i3).S(r)) {
+                this.Q = (byte) 1;
+                radialProgress2.o(z, 0.0f);
+                radialProgress2.setIcon(2, false, z);
+            } else {
+                this.Q = (byte) 2;
+                Float s = fn5.z().s(r);
+                radialProgress2.o(z, s != null ? s.floatValue() : 0.0f);
+                radialProgress2.setIcon(3, true, z);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.O = true;
+        this.E.m(this);
+        this.F.I();
+        n(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.O = false;
+        this.F.K();
+        er3.q(this.n).v(this);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i;
+        float f;
+        gkb textSelectionHelper;
+        if (h() != null) {
+            boolean z = this.M;
+            ylb ylbVar = this.r;
+            if (z && !this.F.h(canvas, null)) {
+                int v0 = cmb.v0(cmb.we, ylbVar);
+                Paint paint = this.w;
+                paint.setColor(v0);
+                canvas.drawRoundRect(this.L, gm.L(10.0f), gm.L(86.0f) + this.L, gm.L(96.0f), gm.L(6.0f), gm.L(6.0f), paint);
+            }
+            this.E.draw(canvas);
+            if (this.M) {
+                i = this.L;
+                f = 97.0f;
+            } else {
+                i = this.K;
+                f = 54.0f;
+            }
+            int L = gm.L(f) + i;
+            this.x.setColor(cmb.v0(cmb.te, ylbVar));
+            int L2 = gm.L(12.0f);
+            if (this.R != null) {
+                canvas.save();
+                canvas.translate(L, L2);
+                this.R.draw(canvas);
+                canvas.restore();
+            }
+            this.y.setColor(cmb.v0(cmb.de, ylbVar));
+            StaticLayout staticLayout = this.R;
+            int L3 = gm.L(2.0f) + L2 + (staticLayout == null ? 0 : staticLayout.getHeight());
+            if (this.S != null) {
+                canvas.save();
+                canvas.translate(L, L3);
+                this.S.draw(canvas);
+                canvas.restore();
+            }
+            if (this.T == null || !(getParent() instanceof RecyclerView) || (textSelectionHelper = this.T.a.getTextSelectionHelper()) == null || !textSelectionHelper.w()) {
+                return;
+            }
+            ((RecyclerView) getParent()).getClass();
+            int R = RecyclerView.R(this);
+            if (R <= textSelectionHelper.p0 || R > textSelectionHelper.s0) {
+                return;
+            }
+            canvas.drawRoundRect(gm.L(8.0f) + (this.N ? 0 : this.c), gm.L(2.0f), (getWidth() - (this.N ? this.c : 0)) - gm.L(8.0f), gm.L(this.M ? 104.0f : 64.0f), gm.L(8.0f), gm.L(8.0f), this.s);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        boolean z2 = this.N;
+        int i5 = this.c;
+        int i6 = 0;
+        if (!z2) {
+            i6 = i5;
+            i5 = 0;
+        }
+        this.G.g(i6, i5, i3 - i, gm.L(this.M ? 106.0f : 66.0f));
+        m();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        boolean z = this.N;
+        int i3 = this.c;
+        int i4 = 0;
+        if (!z) {
+            i4 = i3;
+            i3 = 0;
+        }
+        setMeasuredDimension(size, gm.L(this.M ? 106.0f : 66.0f) + this.G.h(i4, i3, size));
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x011f  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        Object[] objArr;
+        k47 k47Var;
+        if (motionEvent.getX() >= this.L && motionEvent.getX() <= getWidth() - gm.L(12.0f) && motionEvent.getY() >= gm.L(10.0f)) {
+            if (motionEvent.getY() <= gm.L(this.M ? 96.0f : 54.0f)) {
+                objArr = true;
+                if (motionEvent.getActionMasked() != 0 && objArr == true) {
+                    this.P = true;
+                    return true;
+                }
+                if (motionEvent.getActionMasked() == 1 || !this.P) {
+                    if (motionEvent.getActionMasked() == 3) {
+                        this.P = false;
+                    }
+                    if (this.P && !super.onTouchEvent(motionEvent)) {
+                        return false;
+                    }
+                } else {
+                    this.P = false;
+                    if (objArr != false) {
+                        playSoundEffect(0);
+                        if (j()) {
+                            xg9 xg9Var = this.T;
+                            if (xg9Var != null) {
+                                ll0 ll0Var = this.a;
+                                ch9 ch9Var = xg9Var.a;
+                                fi9 fi9Var = (fi9) ch9Var.h4.remove(ll0Var.g);
+                                if (fi9Var != null) {
+                                    fi9Var.b();
+                                }
+                                of9 of9Var = ch9Var.R3;
+                                if (of9Var != null) {
+                                    of9Var.d();
+                                }
+                                ch9Var.t3.remove(ll0Var);
+                                ch9Var.g3.O(true);
+                                of9 of9Var2 = ch9Var.R3;
+                                if (of9Var2 != null) {
+                                    of9Var2.h();
+                                }
+                                ch9Var.p3.onContentChanged();
+                            }
+                        } else {
+                            byte b = this.Q;
+                            Activity activity = null;
+                            if (b == 0) {
+                                Context context = getContext();
+                                while (true) {
+                                    if (context instanceof ContextWrapper) {
+                                        if (context instanceof Activity) {
+                                            activity = (Activity) context;
+                                            break;
+                                        }
+                                        context = ((ContextWrapper) context).getBaseContext();
+                                    } else if (context instanceof Activity) {
+                                        activity = (Activity) context;
+                                    }
+                                }
+                                if (activity != null && (k47Var = this.U) != null) {
+                                    gm.r2(k47Var, activity, this.r, false);
+                                }
+                            } else {
+                                RadialProgress2 radialProgress2 = this.E;
+                                int i = this.n;
+                                if (b == 1 && h() != null) {
+                                    xg9 xg9Var2 = this.T;
+                                    k47 k47Var2 = xg9Var2 != null ? xg9Var2.a.q3 : null;
+                                    bc4 G = bc4.G(i);
+                                    TLRPC.Document h = h();
+                                    if (k47Var2 == null) {
+                                        k47Var2 = this.U;
+                                    }
+                                    G.X(h, k47Var2, 1, 1);
+                                    this.Q = (byte) 2;
+                                    radialProgress2.setIcon(3, true, true);
+                                } else if (this.Q == 2 && h() != null) {
+                                    bc4.G(i).f(h());
+                                    this.Q = (byte) 1;
+                                    radialProgress2.setIcon(2, false, true);
+                                }
+                            }
+                        }
+                        invalidate();
+                        return true;
+                    }
+                }
+                return true;
+            }
+        }
+        objArr = false;
+        if (motionEvent.getActionMasked() != 0) {
+        }
+        if (motionEvent.getActionMasked() == 1) {
+        }
+        if (motionEvent.getActionMasked() == 3) {
+        }
+        if (this.P) {
+        }
+        return true;
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        this.s.setColor(cmb.v0(cmb.kg, this.r));
+        sd9 sd9Var = this.G;
+        if (sd9Var != null) {
+            sd9Var.a();
+        }
+    }
+
+    @Override // cr3
+    public final void l(long j, long j2) {
     }
 }

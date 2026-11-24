@@ -1,37 +1,167 @@
 // default package
 
-import android.view.View;
+import android.util.LongSparseArray;
+import java.nio.ByteBuffer;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class c37 implements c39 {
-    public final /* synthetic */ f37 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class c37 implements jr9 {
+    public final su8 a;
+    public final su8 b;
+    public final mj4 c = new mj4((byte) 3, false);
+    public final la3 d = new la3(1, 0);
+    public final LongSparseArray e = new LongSparseArray();
+    public final int f;
+    public byte[] h;
+    public long n;
+    public boolean r;
+    public boolean s;
 
-    public c37(f37 f37Var) {
-        this.a = f37Var;
+    public c37(su8 su8Var, su8 su8Var2, go4 go4Var) {
+        this.a = su8Var;
+        this.b = su8Var2;
+        int i = go4Var.v;
+        this.f = i != -1 ? i + 2 : 18;
+        this.n = -9223372036854775807L;
     }
 
-    @Override // c39
-    public final void d(int i, View view) {
-        f37 f37Var = this.a;
-        if (f37Var.a != 1 || f37Var.r.f.size() <= 1) {
+    @Override // jr9
+    public final int a() {
+        return this.a.a();
+    }
+
+    @Override // jr9
+    public final void d() {
+        this.a.d();
+        if (this.r) {
             return;
         }
-        int e1 = ((k27) f37Var.r.f.get(i)).e1();
-        boolean z = f37Var.r.g.get(e1, false);
-        boolean z2 = !z;
-        if (f37Var.r.g.size() == 1 && z) {
-            return;
+        this.b.d();
+    }
+
+    @Override // jr9
+    public final boolean i() {
+        return this.a.i();
+    }
+
+    @Override // jr9
+    public final int m(long j) {
+        return this.a.m(j);
+    }
+
+    @Override // jr9
+    public final int p(mj4 mj4Var, la3 la3Var, int i) {
+        byte[] bArr;
+        boolean z;
+        int i2;
+        int i3;
+        int p = this.a.p(mj4Var, la3Var, i);
+        if (p == -4 && !la3Var.isEndOfStream() && (i & 4) == 0) {
+            boolean z2 = true;
+            if ((i & 1) == 0 && !this.r) {
+                long j = la3Var.e;
+                boolean z3 = this.s;
+                byte[] bArr2 = null;
+                LongSparseArray longSparseArray = this.e;
+                if (!z3) {
+                    while (true) {
+                        la3 la3Var2 = this.d;
+                        la3Var2.clear();
+                        su8 su8Var = this.b;
+                        mj4 mj4Var2 = this.c;
+                        int p2 = su8Var.p(mj4Var2, la3Var2, 0);
+                        if (p2 == -3) {
+                            break;
+                        }
+                        if (p2 != -5) {
+                            if (la3Var2.isEndOfStream()) {
+                                this.s = z2;
+                                break;
+                            }
+                            long j2 = la3Var2.e;
+                            long j3 = this.n;
+                            if (j3 != -9223372036854775807L && j2 < j3) {
+                                this.r = z2;
+                                longSparseArray.clear();
+                                this.h = bArr2;
+                            }
+                            this.n = j2;
+                            ByteBuffer byteBuffer = la3Var2.c;
+                            if (this.r || byteBuffer == null) {
+                                z = z2;
+                            } else {
+                                la3Var2.d();
+                                go4 go4Var = (go4) mj4Var2.c;
+                                if (go4Var != null) {
+                                    List list = go4Var.w;
+                                    z = z2;
+                                    i2 = 0;
+                                    for (int i4 = 0; i4 < list.size(); i4++) {
+                                        i2 += ((byte[]) list.get(i4)).length;
+                                    }
+                                } else {
+                                    z = z2;
+                                    i2 = 0;
+                                }
+                                byte[] bArr3 = new byte[byteBuffer.remaining() + i2];
+                                if (go4Var != null) {
+                                    List list2 = go4Var.w;
+                                    i3 = 0;
+                                    for (int i5 = 0; i5 < list2.size(); i5++) {
+                                        byte[] bArr4 = (byte[]) list2.get(i5);
+                                        System.arraycopy(bArr4, 0, bArr3, i3, bArr4.length);
+                                        i3 += bArr4.length;
+                                    }
+                                } else {
+                                    i3 = 0;
+                                }
+                                byteBuffer.get(bArr3, i3, byteBuffer.remaining());
+                                longSparseArray.put(j2, bArr3);
+                                while (longSparseArray.size() > this.f) {
+                                    longSparseArray.removeAt(0);
+                                }
+                            }
+                            if (j2 > j) {
+                                break;
+                            }
+                            z2 = z;
+                            bArr2 = null;
+                        }
+                    }
+                }
+                long j4 = la3Var.e;
+                int size = longSparseArray.size() - 1;
+                while (true) {
+                    if (size < 0) {
+                        bArr = null;
+                        break;
+                    }
+                    if (longSparseArray.keyAt(size) <= j4) {
+                        bArr = (byte[]) longSparseArray.valueAt(size);
+                        break;
+                    }
+                    size--;
+                }
+                if (bArr != null) {
+                    this.h = bArr;
+                }
+                byte[] bArr5 = this.h;
+                if (bArr5 != null) {
+                    int length = bArr5.length;
+                    ByteBuffer byteBuffer2 = la3Var.f;
+                    if (byteBuffer2 == null || byteBuffer2.capacity() < length) {
+                        la3Var.f = ByteBuffer.allocate(length);
+                    } else {
+                        la3Var.f.clear();
+                    }
+                    la3Var.f.put(bArr5);
+                    la3Var.addFlag(TLObject.FLAG_28);
+                    return p;
+                }
+            }
         }
-        m27 m27Var = f37Var.r;
-        if (z) {
-            m27Var.g.delete(e1);
-        } else {
-            m27Var.g.put(e1, z2);
-        }
-        if (view instanceof gb2) {
-            ((gb2) view).o3(z2, z2, true);
-        }
-        f37Var.l(true);
+        return p;
     }
 }

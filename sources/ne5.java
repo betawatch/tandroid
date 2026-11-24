@@ -1,42 +1,41 @@
 // default package
 
-import java.util.Arrays;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ne5 extends zg2 {
-    public byte[] s;
-    public volatile boolean w;
-    public byte[] x;
-
-    @Override // k86
-    public final void a() {
-        try {
-            this.r.open(this.b);
-            int i = 0;
-            int i2 = 0;
-            while (i != -1 && !this.w) {
-                byte[] bArr = this.s;
-                if (bArr.length < i2 + TLObject.FLAG_14) {
-                    bArr = Arrays.copyOf(bArr, bArr.length + TLObject.FLAG_14);
-                    this.s = bArr;
-                }
-                i = this.r.read(bArr, i2, TLObject.FLAG_14);
-                if (i != -1) {
-                    i2 += i;
-                }
-            }
-            if (!this.w) {
-                this.x = Arrays.copyOf(this.s, i2);
-            }
-        } finally {
-            vbe.a(this.r);
-        }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ne5 implements cga {
+    @Override // cga
+    public final boolean Y() {
+        return false;
     }
 
-    @Override // k86
-    public final void d() {
-        this.w = true;
+    @Override // cga
+    public final r59 e() {
+        return null;
+    }
+
+    @Override // cga
+    public final TLRPC.Chat f() {
+        return null;
+    }
+
+    @Override // cga
+    public final boolean g(TLRPC.ChatParticipant chatParticipant, boolean z, boolean z2, View view) {
+        return false;
+    }
+
+    @Override // cga
+    public final boolean t() {
+        return true;
+    }
+
+    @Override // cga
+    public final void I() {
+    }
+
+    @Override // cga
+    public final void W() {
     }
 }

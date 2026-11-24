@@ -1,65 +1,15 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
-import android.window.OnBackInvokedCallback;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class uo implements OnBackInvokedCallback {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class uo {
+    public static final DecelerateInterpolator a = new DecelerateInterpolator();
 
-    public /* synthetic */ uo(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    public final void onBackInvoked() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((bp) obj).r();
-                break;
-            case 1:
-                ((op4) obj).invoke();
-                break;
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.f9;
-                Activity activity = photoViewer.E;
-                if (!(activity instanceof LaunchActivity)) {
-                    if (photoViewer.U0()) {
-                        photoViewer.B(true, false);
-                        break;
-                    }
-                } else {
-                    ((LaunchActivity) activity).onBackPressed();
-                    break;
-                }
-                break;
-            case 3:
-                ((t7b) obj).K();
-                break;
-            case 4:
-                m8b m8bVar = (m8b) obj;
-                LaunchActivity launchActivity = LaunchActivity.H1;
-                if (launchActivity == null) {
-                    m8bVar.q();
-                    break;
-                } else {
-                    launchActivity.onBackPressed();
-                    break;
-                }
-            case 5:
-                ((Runnable) obj).run();
-                break;
-            default:
-                ((sfc) obj).run();
-                break;
-        }
+    static {
+        new DecelerateInterpolator(1.78f);
+        new OvershootInterpolator(3.2f);
     }
 }

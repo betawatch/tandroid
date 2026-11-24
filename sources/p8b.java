@@ -1,24 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class p8b extends hb6 {
-    public final /* synthetic */ q8b R;
+public final /* synthetic */ class p8b implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v9b b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p8b(q8b q8bVar, Context context, float f) {
-        super(context, f);
-        this.R = q8bVar;
+    public /* synthetic */ p8b(v9b v9bVar, byte b) {
+        this.a = b;
+        this.b = v9bVar;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        View view = this.R.c;
-        if (view != null) {
-            view.invalidate();
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        byte b = this.a;
+        v9b v9bVar = this.b;
+        switch (b) {
+            case 0:
+                v9bVar.Y0.x(3, false);
+                v9bVar.r0 = null;
+                break;
+            default:
+                k9b k9bVar = v9bVar.Y0;
+                if (k9bVar != null) {
+                    k9bVar.x(4, false);
+                    break;
+                }
+                break;
         }
     }
 }

@@ -1,33 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wba implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ iea b;
-    public final /* synthetic */ int c;
+public final class wba extends yp {
+    public final /* synthetic */ byte c;
+    public final /* synthetic */ tca d;
 
-    public /* synthetic */ wba(iea ieaVar, int i, byte b) {
-        this.a = b;
-        this.b = ieaVar;
-        this.c = i;
+    public /* synthetic */ wba(tca tcaVar, byte b) {
+        this.c = b;
+        this.d = tcaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        iea ieaVar = this.b;
+    @Override // yp
+    public final int i(int i) {
+        byte b = this.c;
+        tca tcaVar = this.d;
         switch (b) {
             case 0:
-                ieaVar.h.scrollBy(0, i);
-                break;
+                if (i == 0) {
+                    return tcaVar.C1.J;
+                }
+                return 1;
             case 1:
-                ieaVar.h.scrollBy(0, i);
-                break;
+                qca qcaVar = tcaVar.H1;
+                return (i == qcaVar.x || i == qcaVar.y || i == qcaVar.E || i == qcaVar.G || qcaVar.d(i) == 0) ? 4 : 1;
             default:
-                ieaVar.h.scrollBy(0, i);
-                break;
+                if (i == 0) {
+                    return tcaVar.D1.J;
+                }
+                return 1;
         }
     }
 }

@@ -1,93 +1,76 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.WallpapersListActivity;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hd2 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ xd2 b;
+public final class hd2 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public final /* synthetic */ byte U;
+    public Object V;
 
-    public /* synthetic */ hd2(xd2 xd2Var, byte b) {
-        this.a = b;
-        this.b = xd2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hd2(bu5 bu5Var, Context context, ylb ylbVar, int i) {
+        super(R.drawable.popup_fixed_alert4, i, ylbVar, context);
+        this.U = (byte) 2;
+        this.V = bu5Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        byte b2 = 1;
-        xd2 xd2Var = this.b;
-        switch (b) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.U) {
             case 0:
-                x02 x02Var = xd2Var.R1;
-                p02 p02Var = x02Var.v2;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = x02Var.d2;
-                hn hnVar = xd2Var.T1;
-                if (p02Var != chatAttachAlertPhotoLayout) {
-                    hnVar.setText(k96.M0(2131745345, null));
-                    x02 x02Var2 = xd2Var.R1;
-                    x02Var2.A1(x02Var2.d2);
-                    break;
-                } else {
-                    hnVar.setText(k96.M0(2131752126, null));
-                    x02 x02Var3 = xd2Var.R1;
-                    if (x02Var3.l2 == null) {
-                        Context context = x02Var3.getContext();
-                        wjb wjbVar = x02Var3.J0;
-                        v12 v12Var = new v12(x02Var3, wjbVar, context);
-                        v12Var.r = gl.L(80.0f);
-                        v12Var.x = (byte) 3;
-                        fu fuVar = new fu(v12Var, context, wjbVar, (byte) 7);
-                        v12Var.n = fuVar;
-                        dy0 dy0Var = new dy0(v12Var, context);
-                        v12Var.w = dy0Var;
-                        fuVar.setAdapter(dy0Var);
-                        fuVar.setClipToPadding(false);
-                        fuVar.setItemAnimator(null);
-                        fuVar.setLayoutAnimation(null);
-                        fuVar.setVerticalScrollBarEnabled(false);
-                        zkb.l(fuVar, 21, bkb.z5, wjbVar);
-                        v12Var.addView(fuVar, nme.c(-1.0f, -1));
-                        fuVar.setOnScrollListener(new y(v12Var, (byte) 17));
-                        ar0 ar0Var = new ar0(v12Var, v12Var.r, b2);
-                        v12Var.s = ar0Var;
-                        ar0Var.O = new nq1(v12Var, b2);
-                        fuVar.setLayoutManager(ar0Var);
-                        x02Var3.l2 = v12Var;
-                        v12Var.setDelegate(new gw(x02Var3, (byte) 4));
-                    }
-                    x02Var3.A1(x02Var3.l2);
-                    v12 v12Var2 = xd2Var.R1.l2;
-                    boolean z = xd2Var.G1;
-                    dy0 dy0Var2 = v12Var2.w;
-                    ((ArrayList) dy0Var2.e).clear();
-                    WallpapersListActivity.z0((ArrayList) dy0Var2.e, z);
-                    dy0Var2.f();
-                    break;
-                }
+                canvas.save();
+                Path path = (Path) this.V;
+                path.rewind();
+                RectF rectF = gm.P;
+                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path.addRoundRect(rectF, gm.L(6.0f), gm.L(6.0f), Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j);
+                canvas.restore();
+                return drawChild;
             case 1:
-                if (!xd2Var.J0()) {
-                    xd2Var.dismiss();
-                    break;
-                } else {
-                    xd2Var.N0(true);
-                    xd2Var.U0(true);
-                    break;
-                }
+                canvas.save();
+                Path path2 = (Path) this.V;
+                path2.rewind();
+                RectF rectF2 = gm.P;
+                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path2.addRoundRect(rectF2, gm.L(6.0f), gm.L(6.0f), Path.Direction.CW);
+                canvas.clipPath(path2);
+                boolean drawChild2 = super.drawChild(canvas, view, j);
+                canvas.restore();
+                return drawChild2;
+            default:
+                return super.drawChild(canvas, view, j);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int i3;
+        switch (this.U) {
             case 2:
-                if (xd2Var.M1 == null) {
-                    xd2Var.P0(!xd2Var.G1);
-                    break;
+                bu5 bu5Var = (bu5) this.V;
+                if (this == bu5Var.A && (i3 = bu5Var.a0) > 0) {
+                    i2 = View.MeasureSpec.makeMeasureSpec(Math.min(i3, View.MeasureSpec.getSize(i2)), View.MeasureSpec.getMode(i2));
                 }
+                super.onMeasure(i, i2);
                 break;
             default:
-                xd2Var.E0(false);
+                super.onMeasure(i, i2);
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hd2(Context context, int i, ylb ylbVar, int i2, byte b) {
+        super(i, i2, ylbVar, context);
+        this.U = b;
     }
 }

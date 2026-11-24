@@ -1,31 +1,20 @@
 // default package
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class a9d extends m3 implements Serializable {
-    public final Object b;
-    public final l3 c;
+public final class a9d {
+    public static final a9d a;
+    public static final /* synthetic */ a9d[] b;
 
-    public a9d(Object obj, l3 l3Var) {
-        super((byte) 2, false);
-        this.b = obj;
-        this.c = l3Var;
+    static {
+        a9d a9dVar = new a9d("DEFAULT", 0);
+        a = a9dVar;
+        b = new a9d[]{a9dVar, new a9d("SIGNED", 1), new a9d("FIXED", 2)};
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.c;
-    }
-
-    @Override // m3, java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+    public static a9d[] values() {
+        return (a9d[]) b.clone();
     }
 }

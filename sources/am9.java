@@ -1,189 +1,111 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.hardware.camera2.CameraDevice;
+import android.os.HandlerThread;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class am9 extends l34 {
-    public float A0;
-    public final Path B0;
-    public boolean C0;
-    public boolean D0;
-    public final lm E0;
-    public final int s0;
-    public boolean t0;
-    public final lm u0;
-    public final via v0;
-    public final TextureView w0;
-    public final Bitmap x0;
-    public final Rect y0;
-    public final Rect z0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class am9 extends CameraDevice.StateCallback {
+    public final CameraDevice.StateCallback a;
+    public final boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public final /* synthetic */ bm9 f;
 
-    public am9(Context context, PointF pointF, via viaVar, String str) {
-        super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        Rect rect = new Rect();
-        this.y0 = rect;
-        this.z0 = new Rect();
-        this.A0 = 1.0f;
-        this.B0 = new Path();
-        this.C0 = true;
-        this.D0 = true;
-        s33 s33Var = s33.h;
-        this.E0 = new lm(this, 0L, 350L, s33Var);
-        new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        setRotation(0.0f);
-        setScale(1.0f);
-        this.v0 = viaVar;
-        Bitmap decodeFile = BitmapFactory.decodeFile(str);
-        this.x0 = decodeFile;
-        if (decodeFile != null) {
-            this.A0 = decodeFile.getWidth() / decodeFile.getHeight();
-            rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
+    public am9(bm9 bm9Var, CameraDevice.StateCallback stateCallback, boolean z) {
+        this.f = bm9Var;
+        this.a = stateCallback;
+        this.b = z;
+        bm9Var.w0++;
+    }
+
+    public final void a() {
+        boolean z = this.b;
+        bm9 bm9Var = this.f;
+        if (z) {
+            if (bm9Var.v0 == this) {
+                bm9Var.v0 = null;
+            }
+        } else if (bm9Var.u0 == this) {
+            bm9Var.u0 = null;
         }
-        TextureView textureView = new TextureView(context);
-        this.w0 = textureView;
-        addView(textureView, nme.c(-1.0f, -1));
-        this.u0 = new lm(this, 0L, 500L, s33Var);
-        k();
-        setWillNotDraw(false);
     }
 
-    @Override // l34
-    public final k34 a() {
-        return new d09(this, getContext());
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        Rect rect;
-        Bitmap bitmap;
-        Path path;
-        if (!this.C0) {
+    public final boolean b() {
+        if (this.f.t0) {
             return false;
         }
-        if (view != this.w0) {
-            return super.drawChild(canvas, view, j);
-        }
-        canvas.save();
-        float d = this.u0.d(this.t0);
-        canvas.scale(1.0f - (d * 2.0f), 1.0f, getMeasuredWidth() / 2.0f, 0.0f);
-        canvas.skew(0.0f, tb4.z(1.0f, d, 4.0f * d, 0.25f));
-        float d2 = this.E0.d(this.D0);
-        float width = (view.getWidth() / 2.0f) + view.getX();
-        float height = (view.getHeight() / 2.0f) + view.getY();
-        float min = Math.min(view.getWidth() / 2.0f, view.getHeight() / 2.0f);
-        Rect rect2 = this.y0;
-        Rect rect3 = this.z0;
-        Bitmap bitmap2 = this.x0;
-        Path path2 = this.B0;
-        if (d2 < 1.0f) {
-            rect = rect3;
-            bitmap = bitmap2;
-            canvas.saveLayerAlpha(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight(), 128, 31);
-            path2.rewind();
-            path = path2;
-            path.addCircle(width, height, min, Path.Direction.CW);
-            canvas.clipPath(path);
-            if (bitmap != null) {
-                rect.set(0, 0, view.getWidth(), view.getHeight());
-                canvas.drawBitmap(bitmap, rect2, rect, (Paint) null);
-            }
-            super.drawChild(canvas, view, j);
-            canvas.restore();
-        } else {
-            rect = rect3;
-            bitmap = bitmap2;
-            path = path2;
-        }
-        canvas.save();
-        path.rewind();
-        path.addCircle(width, height, min * d2, Path.Direction.CW);
-        canvas.clipPath(path);
-        if (bitmap != null) {
-            rect.set(0, 0, view.getWidth(), view.getHeight());
-            canvas.drawBitmap(bitmap, rect2, rect, (Paint) null);
-        }
-        boolean drawChild = ((getParent() instanceof e34) && ((e34) getParent()).a) ? true : super.drawChild(canvas, view, j);
-        canvas.restore();
-        canvas.restore();
-        return drawChild;
+        boolean z = this.b;
+        bm9 bm9Var = this.f;
+        return (z ? bm9Var.v0 : bm9Var.u0) == this;
     }
 
-    public int getAnchor() {
-        return this.s0;
-    }
-
-    public via getBaseSize() {
-        return this.v0;
-    }
-
-    @Override // l34
-    public l29 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new l29();
+    public final void c() {
+        if (this.c) {
+            return;
         }
-        float scaleX = viewGroup.getScaleX();
-        float L = (gl.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        float L2 = (gl.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float e = de9.e(L, 2.0f, getPositionX(), scaleX);
-        return new l29(e, de9.e(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + e) - e, L2 * scaleX);
-    }
-
-    @Override // l34
-    public final void k() {
-        via viaVar = this.v0;
-        float f = viaVar.a / 2.0f;
-        float f2 = viaVar.b / 2.0f;
-        setX(getPositionX() - f);
-        setY(getPositionY() - f2);
-        m();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        TextureView textureView = this.w0;
-        if (textureView != null) {
-            int measuredHeight = ((i4 - i2) - textureView.getMeasuredHeight()) / 2;
-            int measuredWidth = ((i3 - i) - textureView.getMeasuredWidth()) / 2;
-            textureView.layout(measuredWidth, measuredHeight, textureView.getMeasuredWidth() + measuredWidth, textureView.getMeasuredHeight() + measuredHeight);
+        this.c = true;
+        bm9 bm9Var = this.f;
+        int i = bm9Var.w0 - 1;
+        bm9Var.w0 = i;
+        HandlerThread handlerThread = bm9Var.x0;
+        if (i > 0 || handlerThread == null) {
+            return;
         }
+        bm9Var.x0 = null;
+        bm9Var.j.b("camera open results settled after release; quitting thread");
+        handlerThread.quitSafely();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        via viaVar = this.v0;
-        int i3 = (int) viaVar.a;
-        int i4 = (int) viaVar.b;
-        TextureView textureView = this.w0;
-        if (textureView != null) {
-            float f = this.A0;
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(f >= 1.0f ? (int) (f * i4) : i3, TLObject.FLAG_30);
-            float f2 = this.A0;
-            textureView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(f2 >= 1.0f ? i4 : (int) (i3 / f2), TLObject.FLAG_30));
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onClosed(CameraDevice cameraDevice) {
+        if (!this.e || this.f.t0) {
+            return;
         }
-        setMeasuredDimension(i3, i4);
+        this.a.onClosed(cameraDevice);
     }
 
-    public void setDraw(boolean z) {
-        if (this.C0 != z) {
-            this.C0 = z;
-            invalidate();
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onDisconnected(CameraDevice cameraDevice) {
+        boolean b = b();
+        c();
+        if (this.f.t0 || !(this.d || b)) {
+            cameraDevice.close();
+            return;
         }
+        a();
+        this.e = true;
+        this.a.onDisconnected(cameraDevice);
+    }
+
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onError(CameraDevice cameraDevice, int i) {
+        boolean b = b();
+        c();
+        if (!this.f.t0 && (this.d || b)) {
+            a();
+            this.e = true;
+            this.a.onError(cameraDevice, i);
+            return;
+        }
+        this.f.j.b("stale camera error ignored: id=" + cameraDevice.getId() + ", error=" + bm9.e(i) + ", warm=" + this.b);
+        cameraDevice.close();
+    }
+
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onOpened(CameraDevice cameraDevice) {
+        boolean b = b();
+        a();
+        c();
+        if (b) {
+            this.d = true;
+            this.e = true;
+            this.f.r0.add(cameraDevice);
+            this.a.onOpened(cameraDevice);
+            return;
+        }
+        this.f.j.b("stale camera open closed: id=" + cameraDevice.getId() + ", warm=" + this.b + ", released=" + this.f.t0);
+        cameraDevice.close();
     }
 }

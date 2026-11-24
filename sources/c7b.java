@@ -1,32 +1,63 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.style.ImageSpan;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class c7b extends ImageSpan {
-    public final /* synthetic */ Drawable a;
+public final class c7b extends ogc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ a8b c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c7b(Drawable drawable, Drawable drawable2) {
-        super(drawable);
-        this.a = drawable2;
+    public /* synthetic */ c7b(a8b a8bVar, Context context, byte b) {
+        this.a = b;
+        this.c = a8bVar;
+        this.b = context;
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        canvas.save();
-        canvas.translate(0.0f, gl.L(1.0f) + ((i5 - i3) / 2));
-        this.a.setAlpha(paint.getAlpha());
-        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-        canvas.restore();
+    @Override // ogc
+    public final void b(View view, int i, int i2) {
+        switch (this.a) {
+            case 0:
+                ((v7b) view).b(i2);
+                break;
+            default:
+                ((v7b) view).b(i2);
+                break;
+        }
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return (super.getSize(paint, charSequence, i, i2, fontMetricsInt) / 3) << 1;
+    @Override // ogc
+    public final View d(int i) {
+        byte b = this.a;
+        Context context = this.b;
+        a8b a8bVar = this.c;
+        switch (b) {
+        }
+        return new v7b(a8bVar, context);
+    }
+
+    @Override // ogc
+    public final int e() {
+        switch (this.a) {
+            case 0:
+                return 2;
+            default:
+                return 1;
+        }
+    }
+
+    @Override // ogc
+    public final int h(int i) {
+        switch (this.a) {
+            case 0:
+                if (i == 0) {
+                    return 0;
+                }
+                return this.c.G1;
+            default:
+                return 5;
+        }
     }
 }

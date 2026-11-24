@@ -1,34 +1,36 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class xyb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ mzb b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class xyb implements Iterator {
-    public final Iterator a;
-
-    public xyb(Iterator it) {
-        it.getClass();
-        this.a = it;
+    public /* synthetic */ xyb(mzb mzbVar, byte b) {
+        this.a = b;
+        this.b = mzbVar;
     }
 
-    public Object a(Object obj) {
-        return ((Map.Entry) obj).getValue();
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        return a(this.a.next());
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.a.remove();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        mzb mzbVar = this.b;
+        switch (b) {
+            case 0:
+                if (mzbVar.i()) {
+                    mzbVar.j();
+                    break;
+                }
+                break;
+            default:
+                czb czbVar = mzbVar.K;
+                czbVar.z1(true);
+                azb azbVar = mzbVar.y;
+                azbVar.z1(true);
+                mzbVar.N.a(true, true);
+                gm.V3(azbVar);
+                gm.V3(czbVar);
+                break;
+        }
     }
 }

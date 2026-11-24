@@ -5,17 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IInputCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class InputCallbackDelegateImpl implements ao5 {
+public class InputCallbackDelegateImpl implements aq5 {
     private final IInputCallback mCallback;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     static class OnInputCallbackStub extends IInputCallback.Stub {
-        private final zn5 mCallback;
+        private final zp5 mCallback;
 
-        public OnInputCallbackStub(zn5 zn5Var) {
+        public OnInputCallbackStub(zp5 zp5Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -39,32 +39,32 @@ public class InputCallbackDelegateImpl implements ao5 {
         }
     }
 
-    private InputCallbackDelegateImpl(zn5 zn5Var) {
-        this.mCallback = new OnInputCallbackStub(zn5Var);
+    private InputCallbackDelegateImpl(zp5 zp5Var) {
+        this.mCallback = new OnInputCallbackStub(zp5Var);
     }
 
-    public static ao5 create(zn5 zn5Var) {
-        Objects.requireNonNull(zn5Var);
+    public static aq5 create(zp5 zp5Var) {
+        Objects.requireNonNull(zp5Var);
         throw new ClassCastException();
     }
 
-    public void sendInputSubmitted(String str, cp7 cp7Var) {
+    public void sendInputSubmitted(String str, fr7 fr7Var) {
         try {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
             iInputCallback.onInputSubmitted(str, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            rjb.m(e);
         }
     }
 
-    public void sendInputTextChanged(String str, cp7 cp7Var) {
+    public void sendInputTextChanged(String str, fr7 fr7Var) {
         try {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
             iInputCallback.onInputTextChanged(str, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            rjb.m(e);
         }
     }
 

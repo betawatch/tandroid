@@ -1,38 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class g3c implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p3c b;
+import java.util.Set;
 
-    public /* synthetic */ g3c(p3c p3cVar, byte b) {
-        this.a = b;
-        this.b = p3cVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class g3c implements f3c {
+    public final Set a;
+    public final rb0 b;
+    public final i3c c;
+
+    public g3c(Set set, rb0 rb0Var, i3c i3cVar) {
+        this.a = set;
+        this.b = rb0Var;
+        this.c = i3cVar;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        p3c p3cVar = this.b;
-        switch (b) {
-            case 0:
-                p3cVar.finishFragment();
-                break;
-            case 1:
-                p3cVar.F0();
-                p3cVar.finishFragment();
-                break;
-            case 2:
-                p3cVar.S = "";
-                p3cVar.I0(false);
-                break;
-            case 3:
-                p3cVar.n0();
-                break;
-            default:
-                p3cVar.t0();
-                break;
+    public final h3c a(String str, d44 d44Var, z0c z0cVar) {
+        Set set = this.a;
+        if (set.contains(d44Var)) {
+            return new h3c(this.b, str, d44Var, z0cVar, this.c);
         }
+        throw new IllegalArgumentException(String.format("%s is not supported byt this factory. Supported encodings are: %s.", d44Var, set));
     }
 }

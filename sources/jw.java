@@ -1,153 +1,147 @@
 // default package
 
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.m;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jw implements ku0 {
-    public final /* synthetic */ m a;
+public final class jw extends View implements fkb, dx {
+    public final ui5 a;
+    public final ey b;
+    public bx c;
+    public final int d;
+    public int e;
+    public TL_iv.pageBlockRelatedArticles f;
 
-    public jw(m mVar) {
-        this.a = mVar;
+    public jw(Activity activity, ui5 ui5Var, ey eyVar) {
+        super(activity);
+        this.d = gm.L(18.0f);
+        this.a = ui5Var;
+        this.b = eyVar;
     }
 
-    @Override // ku0
-    public final or0 A() {
-        return null;
+    @Override // dx
+    public int getBoundLeft() {
+        bx bxVar = this.c;
+        if (bxVar == null) {
+            return -1;
+        }
+        return wi8.h(this.a, 18.0f, bxVar.k() + bxVar.s);
     }
 
-    @Override // ku0
-    public final void b() {
-        sw swVar = this.a.M.L;
-        if (swVar != null) {
-            swVar.a(true);
+    @Override // dx
+    public int getBoundRight() {
+        bx bxVar = this.c;
+        if (bxVar == null) {
+            return -1;
+        }
+        return wi8.C(this.a, 18.0f, bxVar.l() + bxVar.s);
+    }
+
+    @Override // dx
+    public int getLastLineBoundRight() {
+        bx bxVar = this.c;
+        if (bxVar == null) {
+            return -1;
+        }
+        return wi8.C(this.a, 18.0f, bxVar.m() + bxVar.s);
+    }
+
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return wi8.a(this);
+    }
+
+    @Override // fkb
+    public final void k(ArrayList arrayList) {
+        bx bxVar = this.c;
+        if (bxVar != null) {
+            arrayList.add(bxVar);
         }
     }
 
-    @Override // ku0
-    public final String g(boolean z, boolean z2) {
-        return "UNSUPPORTED";
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        bx bxVar = this.c;
+        if (bxVar != null) {
+            bxVar.i(this);
+        }
     }
 
-    @Override // ku0
-    public final boolean h() {
-        return false;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        bx bxVar = this.c;
+        if (bxVar != null) {
+            bxVar.f(this);
+        }
     }
 
-    @Override // ku0
-    public final void j() {
-        m mVar = this.a;
-        o oVar = mVar.M;
-        sw swVar = oVar.L;
-        if (swVar == null) {
-            if (oVar.v0[0] == mVar) {
-                oVar.D();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.f == null || this.c == null) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(this.d, this.e);
+        o.s(this.a, canvas, this, 0);
+        this.c.d(canvas, this);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setClickable(false);
+        accessibilityNodeInfo.setLongClickable(false);
+        bx bxVar = this.c;
+        if (bxVar == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(o.f(2131754856, o.g(this.a, this.b, bxVar)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        jw jwVar;
+        int size = View.MeasureSpec.getSize(i);
+        TL_iv.pageBlockRelatedArticles pageblockrelatedarticles = this.f;
+        if (pageblockrelatedarticles != null) {
+            jwVar = this;
+            bx n = o.n(this.a, jwVar, null, pageblockrelatedarticles.title, size - gm.L(52.0f), 0, this.f, Layout.Alignment.ALIGN_NORMAL, 1, this.b);
+            jwVar.c = n;
+            if (n != null) {
+                jwVar.e = ((gm.L(32.0f) - jwVar.c.d.getHeight()) / 2) + gm.L(6.0f);
             }
         } else {
-            if (swVar.h) {
-                return;
-            }
-            swVar.h = true;
-            swVar.release();
-            swVar.L.p();
+            jwVar = this;
         }
-    }
-
-    @Override // ku0
-    public final void o(int i, boolean z) {
-        this.a.g(i, z);
-    }
-
-    @Override // ku0
-    public final void z() {
-        m mVar = this.a;
-        o oVar = mVar.M;
-        if (oVar.v0[0] == mVar) {
-            oVar.D();
+        if (jwVar.c == null) {
+            jwVar.setMeasuredDimension(size, 1);
+            return;
         }
+        jwVar.setMeasuredDimension(size, gm.L(38.0f));
+        bx bxVar = jwVar.c;
+        bxVar.s = jwVar.d;
+        bxVar.w = jwVar.e;
     }
 
-    @Override // ku0
-    public final void a() {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
     }
 
-    @Override // ku0
-    public final void c() {
-    }
-
-    @Override // ku0
-    public final void s() {
-    }
-
-    @Override // ku0
-    public final void d(TLRPC.Document document) {
-    }
-
-    @Override // ku0
-    public final void e(String str) {
-    }
-
-    @Override // ku0
-    public final void f(ArrayList arrayList) {
-    }
-
-    @Override // ku0
-    public final void i(boolean z) {
-    }
-
-    @Override // ku0
-    public final void k(boolean z) {
-    }
-
-    @Override // ku0
-    public final void m(int i) {
-    }
-
-    @Override // ku0
-    public final void p(boolean z) {
-    }
-
-    @Override // ku0
-    public final void r(int i) {
-    }
-
-    @Override // ku0
-    public final void t(boolean z) {
-    }
-
-    @Override // ku0
-    public final void w(boolean z) {
-    }
-
-    @Override // ku0
-    public final void x(int i) {
-    }
-
-    @Override // ku0
-    public final void y(boolean z) {
-    }
-
-    @Override // ku0
-    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
-    }
-
-    @Override // ku0
-    public final void u(int i, int i2, boolean z) {
-    }
-
-    @Override // ku0
-    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
-    }
-
-    @Override // ku0
-    public final void l(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4, String str2) {
-    }
-
-    @Override // ku0
-    public final void q(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4) {
+    public void setBlock(TL_iv.pageBlockRelatedArticles pageblockrelatedarticles) {
+        this.f = pageblockrelatedarticles;
+        requestLayout();
     }
 }

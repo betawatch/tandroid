@@ -1,26 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class a54 {
-    public final char a;
-    public final String b;
-    public final byte c;
-    public final int d;
+public class a54 {
+    public final ArrayList a = new ArrayList();
+    public final vh6 b = new vh6();
+    public final vh6 c = new vh6();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public a54(String str, int i, int i2) {
-        this.b = str;
-        this.a = i;
-        this.c = i2;
-        this.d = -1;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public a54(int i, int i2, int i3, String str) {
-        this.b = str;
-        this.a = i;
-        this.c = i2;
-        this.d = i3;
+    public final void a(TL_ephemeral.EphemeralMessage ephemeralMessage, TLRPC.TL_message tL_message, k47 k47Var) {
+        long B0 = k47.B0(tL_message);
+        this.a.add(ephemeralMessage);
+        vh6 vh6Var = this.b;
+        TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) vh6Var.f(B0);
+        if (tL_messages_messages == null) {
+            tL_messages_messages = new TLRPC.TL_messages_messages();
+            vh6Var.k(tL_messages_messages, B0);
+        }
+        tL_messages_messages.messages.add(tL_message);
+        vh6 vh6Var2 = this.c;
+        ArrayList arrayList = (ArrayList) vh6Var2.f(B0);
+        if (arrayList == null) {
+            arrayList = td4.t(vh6Var2, B0);
+        }
+        arrayList.add(k47Var);
     }
 }

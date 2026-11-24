@@ -1,12 +1,9 @@
 // default package
 
-import android.graphics.Color;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class xk0 extends fx0 {
-    public static float m1 = 1.0f;
-    public static float n1 = 1.0f;
-    public static float o1 = 1.0f - (Color.alpha(bkb.w0(null, bkb.ng, false)) / 255.0f);
-    public cja l1;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public interface xk0 {
+    Object b(Bitmap bitmap);
 }

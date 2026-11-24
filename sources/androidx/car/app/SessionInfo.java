@@ -4,11 +4,11 @@ import androidx.car.app.navigation.model.NavigationTemplate;
 import j$.util.Objects;
 import java.util.Set;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class SessionInfo {
-    private static final ym5 CLUSTER_SUPPORTED_TEMPLATES_API_6;
-    private static final ym5 CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
+    private static final yo5 CLUSTER_SUPPORTED_TEMPLATES_API_6;
+    private static final yo5 CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
     public static final SessionInfo DEFAULT_SESSION_INFO;
     public static final int DISPLAY_TYPE_CLUSTER = 1;
     public static final int DISPLAY_TYPE_MAIN = 0;
@@ -17,9 +17,9 @@ public class SessionInfo {
     private final String mSessionId;
 
     static {
-        int i = ym5.c;
-        CLUSTER_SUPPORTED_TEMPLATES_API_6 = new tia(NavigationTemplate.class);
-        CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6 = d69.s;
+        int i = yo5.c;
+        CLUSTER_SUPPORTED_TEMPLATES_API_6 = new vka(NavigationTemplate.class);
+        CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6 = f89.s;
         DEFAULT_SESSION_INFO = new SessionInfo(0, "main");
     }
 
@@ -47,7 +47,7 @@ public class SessionInfo {
         return this.mSessionId;
     }
 
-    public Set<Class<? extends ogb>> getSupportedTemplates(int i) {
+    public Set<Class<? extends pib>> getSupportedTemplates(int i) {
         if (this.mDisplayType == 1) {
             return i >= 6 ? CLUSTER_SUPPORTED_TEMPLATES_API_6 : CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
         }

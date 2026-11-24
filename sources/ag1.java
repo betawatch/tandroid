@@ -1,126 +1,94 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ag1 extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class ag1 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vg1 b;
 
-    static {
-        b4c.h(new ag1());
+    public /* synthetic */ ag1(vg1 vg1Var, byte b) {
+        this.a = b;
+        this.b = vg1Var;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        Object obj = c4cVar.H;
-        if (!(obj instanceof TL_payments.connectedBotStarRef)) {
-            if (obj instanceof TL_payments.starRefProgram) {
-                bg1 bg1Var = (bg1) view;
-                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
-                boolean z2 = c4cVar.s;
-                TLRPC.User V1 = na7.q1(bg1Var.a).V1(Long.valueOf(starrefprogram.bot_id));
-                pb0 pb0Var = new pb0((wjb) null);
-                pb0Var.q(V1);
-                bg1Var.c.f(V1, pb0Var);
-                bg1Var.h.setText(l7c.q(V1));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                if (starrefprogram.commission_permille > 0) {
-                    spannableStringBuilder.append((CharSequence) " d");
-                    nd4 nd4Var = new nd4();
-                    int i = bkb.kk;
-                    nd4Var.f = bkb.v0(i, null);
-                    nd4Var.r = i;
-                    nd4Var.s = null;
-                    nd4Var.n = true;
-                    nd4Var.w = bc.I0(starrefprogram.commission_permille);
-                    if (nd4Var.c != null) {
-                        nd4Var.c = null;
-                        nd4Var.a();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final byte b2 = 0;
+        final vg1 vg1Var = this.b;
+        switch (b) {
+            case 0:
+                if (tLObject != null) {
+                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults = (TLRPC.TL_channels_adminLogResults) tLObject;
+                    final byte b3 = 1;
+                    gm.c3(new Runnable() { // from class: yf1
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b4 = b3;
+                            TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = tL_channels_adminLogResults;
+                            vg1 vg1Var2 = vg1Var;
+                            switch (b4) {
+                                case 0:
+                                    vg1Var2.V0(tL_channels_adminLogResults2);
+                                    break;
+                                default:
+                                    vg1Var2.W0(tL_channels_adminLogResults2);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
+            case 1:
+                vg1Var.getClass();
+                if (tLObject instanceof Vector) {
+                    ArrayList<T> arrayList = ((Vector) tLObject).objects;
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        if (arrayList.get(i) instanceof TLRPC.User) {
+                            arrayList2.add((TLRPC.User) arrayList.get(i));
+                        }
                     }
-                    spannableStringBuilder.setSpan(nd4Var, 1, 2, 33);
+                    vg1Var.getMessagesController().d4(arrayList2, false);
+                    break;
                 }
-                int i2 = starrefprogram.duration_months;
-                if (i2 == 0) {
-                    spannableStringBuilder.append((CharSequence) k96.M0(2131748794, null));
-                } else if (i2 < 12 || i2 % 12 != 0) {
-                    spannableStringBuilder.append((CharSequence) k96.G(i2, "Months", new Object[0]));
-                } else {
-                    spannableStringBuilder.append((CharSequence) k96.G(i2 / 12, "Years", new Object[0]));
+                break;
+            case 2:
+                vg1Var.getClass();
+                gm.c3(new y31(vg1Var, tLObject, (byte) 20));
+                break;
+            case 3:
+                if (tLObject != null) {
+                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = (TLRPC.TL_channels_adminLogResults) tLObject;
+                    gm.c3(new Runnable() { // from class: yf1
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b4 = b2;
+                            TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults22 = tL_channels_adminLogResults2;
+                            vg1 vg1Var2 = vg1Var;
+                            switch (b4) {
+                                case 0:
+                                    vg1Var2.V0(tL_channels_adminLogResults22);
+                                    break;
+                                default:
+                                    vg1Var2.W0(tL_channels_adminLogResults22);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
                 }
-                bg1Var.n.setText(spannableStringBuilder);
-                bg1Var.r.setVisibility(z2 ? 0 : 8);
-                bg1Var.d.setVisibility(8);
-                bg1Var.f.setVisibility(8);
-                bg1Var.e.setVisibility(8);
-                bg1Var.s = z;
-                bg1Var.setWillNotDraw(!z);
-                return;
-            }
-            return;
+                break;
+            default:
+                gm.c3(new tv0(vg1Var, tL_error, tLObject, (byte) 16));
+                break;
         }
-        bg1 bg1Var2 = (bg1) view;
-        TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-        boolean z3 = c4cVar.s;
-        wjb wjbVar = bg1Var2.b;
-        View view2 = bg1Var2.e;
-        ImageView imageView = bg1Var2.f;
-        TLRPC.User V12 = na7.q1(bg1Var2.a).V1(Long.valueOf(connectedbotstarref.bot_id));
-        pb0 pb0Var2 = new pb0((wjb) null);
-        pb0Var2.q(V12);
-        bg1Var2.c.f(V12, pb0Var2);
-        TextView textView = bg1Var2.h;
-        textView.setText(vu3.m(l7c.q(V12), textView.getPaint().getFontMetricsInt(), false, null, 0));
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        if (connectedbotstarref.commission_permille > 0) {
-            spannableStringBuilder2.append((CharSequence) " d");
-            nd4 nd4Var2 = new nd4();
-            int i3 = bkb.kk;
-            nd4Var2.f = bkb.v0(i3, null);
-            nd4Var2.r = i3;
-            nd4Var2.s = null;
-            nd4Var2.n = true;
-            nd4Var2.w = bc.I0(connectedbotstarref.commission_permille);
-            if (nd4Var2.c != null) {
-                nd4Var2.c = null;
-                nd4Var2.a();
-            }
-            spannableStringBuilder2.setSpan(nd4Var2, 1, 2, 33);
-        }
-        int i4 = connectedbotstarref.duration_months;
-        if (i4 == 0) {
-            spannableStringBuilder2.append((CharSequence) k96.M0(2131748794, null));
-        } else if (i4 < 12 || i4 % 12 != 0) {
-            spannableStringBuilder2.append((CharSequence) k96.G(i4, "Months", new Object[0]));
-        } else {
-            spannableStringBuilder2.append((CharSequence) k96.G(i4 / 12, "Years", new Object[0]));
-        }
-        bg1Var2.n.setText(spannableStringBuilder2);
-        bg1Var2.r.setVisibility(z3 ? 0 : 8);
-        bg1Var2.d.setVisibility(0);
-        imageView.setVisibility(0);
-        view2.setVisibility(0);
-        ShapeDrawable K = bkb.K(gl.L(9.665f), bkb.v0(connectedbotstarref.revoked ? bkb.mk : bkb.kk, wjbVar));
-        vkb M = zkb.M(connectedbotstarref.revoked ? bkb.mk : bkb.kk);
-        view2.setBackground(K);
-        zkb.j(view2, K, M, null, wjbVar);
-        imageView.setImageResource(connectedbotstarref.revoked ? R.drawable.msg_link_2 : R.drawable.msg_limit_links);
-        imageView.setScaleX(connectedbotstarref.revoked ? 0.8f : 0.6f);
-        imageView.setScaleY(connectedbotstarref.revoked ? 0.8f : 0.6f);
-        bg1Var2.s = z;
-        bg1Var2.setWillNotDraw(!z);
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new bg1(i, wjbVar, context);
     }
 }

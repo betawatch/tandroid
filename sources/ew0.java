@@ -1,36 +1,28 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ew0 implements qac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qu3 b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class ew0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ iv0 c;
-    public final /* synthetic */ ow0 d;
-
-    public ew0(ow0 ow0Var, int i, int i2, iv0 iv0Var) {
-        this.d = ow0Var;
-        this.a = i;
-        this.b = i2;
-        this.c = iv0Var;
+    public /* synthetic */ ew0(qu3 qu3Var, byte b) {
+        this.a = b;
+        this.b = qu3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f = bm2.f(1.0f, this.a, this.b);
-        ow0 ow0Var = this.d;
-        ow0Var.S = f;
-        ow0Var.h();
-        nw0 nw0Var = ow0Var.f;
-        nw0Var.invalidate();
-        lw0 lw0Var = ow0Var.Y;
-        lw0Var.setBackgroundColor(ow0Var.S);
-        iv0 iv0Var = this.c;
-        iv0Var.b(lw0Var, 1.0f);
-        ow0Var.a = iv0Var.a(bkb.yj);
-        nw0Var.invalidate();
+    @Override // qac
+    public final void a(Object obj) {
+        byte b = this.a;
+        qu3 qu3Var = this.b;
+        switch (b) {
+            case 0:
+                gm.t1(qu3Var);
+                gm.d3((Runnable) obj, 80L);
+                break;
+            default:
+                qu3Var.H(((Integer) obj).intValue());
+                break;
+        }
     }
 }

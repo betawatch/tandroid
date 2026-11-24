@@ -1,265 +1,54 @@
 // default package
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewParent;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
-import j$.util.Objects;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class m21 {
-    public static m21 w;
-    public byte a;
-    public int b;
-    public a11 c;
-    public yla d;
-    public final q11 e;
-    public final c11 f;
-    public final d g;
-    public final FrameLayout h;
-    public final Runnable i;
-    public int j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public int o;
-    public i11 p;
-    public p11 q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
-    public Runnable v;
+public final class m21 extends FrameLayout {
+    public final /* synthetic */ n21 a;
 
-    public m21(d dVar, FrameLayout frameLayout, q11 q11Var, int i) {
-        this.i = new z01(this, (byte) 0);
-        this.r = true;
-        this.u = true;
-        this.e = q11Var;
-        this.n = !(q11Var instanceof r11);
-        this.f = new c11(this, q11Var, frameLayout);
-        this.g = dVar;
-        this.h = frameLayout;
-        this.j = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m21(n21 n21Var, Context context) {
+        super(context);
+        this.a = n21Var;
     }
 
-    public static void a(FrameLayout frameLayout, i11 i11Var) {
-        if (frameLayout != null) {
-            frameLayout.setTag(R.id.bulletin_delegate_tag, i11Var);
+    @Override // android.view.ViewGroup
+    public final void addView(View view) {
+        super.addView(view);
+        this.a.show();
+    }
+
+    public WindowManager.LayoutParams getLayout() {
+        return this.a.b;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        n21 n21Var = this.a;
+        super.removeView(view);
+        try {
+            n21Var.dismiss();
+        } catch (Exception unused) {
         }
+        u31.h(n21Var.a);
     }
 
-    public static void d(FrameLayout frameLayout) {
-        m21 m21Var;
-        int childCount = frameLayout.getChildCount();
-        int i = 0;
-        while (true) {
-            if (i >= childCount) {
-                m21Var = null;
-                break;
-            }
-            View childAt = frameLayout.getChildAt(i);
-            if (childAt instanceof q11) {
-                m21Var = ((q11) childAt).bulletin;
-                break;
-            }
-            i++;
-        }
-        if (m21Var != null) {
-            m21Var.c(0L, na7.c1().getBoolean("view_animations", true));
-        }
-    }
-
-    public static void e() {
-        m21 m21Var = w;
-        if (m21Var != null) {
-            m21Var.b();
-        }
-    }
-
-    public static m21 f(FrameLayout frameLayout, q11 q11Var, int i) {
-        return frameLayout == null ? new j11() : new m21(null, frameLayout, q11Var, i);
-    }
-
-    public static m21 g(d dVar, h11 h11Var, int i) {
-        if (dVar == null) {
-            return new j11();
-        }
-        if (dVar instanceof mu1) {
-            q11.access$000(h11Var, -2, 1);
-        } else if (dVar instanceof cj3) {
-            q11.access$000(h11Var, -1, 0);
-        }
-        return new m21(dVar, dVar.getBulletinLayoutContainer(), h11Var, i);
-    }
-
-    public static void h(FrameLayout frameLayout) {
-        if (frameLayout != null) {
-            frameLayout.setTag(R.id.bulletin_delegate_tag, null);
-        }
-    }
-
-    public final void b() {
-        c(0L, na7.c1().getBoolean("view_animations", true));
-    }
-
-    public final void c(long j, boolean z) {
-        q11 q11Var = this.e;
-        if (q11Var == null || !this.l) {
+    public void setTouchable(boolean z) {
+        n21 n21Var = this.a;
+        WindowManager.LayoutParams layoutParams = n21Var.b;
+        if (layoutParams == null) {
             return;
         }
-        byte b = 0;
-        this.l = false;
-        if (w == this) {
-            w = null;
+        int i = layoutParams.flags;
+        if (z) {
+            layoutParams.flags = i & (-17);
+        } else {
+            layoutParams.flags = i | 16;
         }
-        WeakHashMap weakHashMap = jdc.a;
-        byte b2 = 2;
-        if (q11Var.isLaidOut() || this.t) {
-            q11Var.removeCallbacks(this.i);
-            if (z) {
-                byte b3 = 1;
-                q11Var.transitionRunningExit = true;
-                q11Var.delegate = this.p;
-                q11Var.invalidate();
-                if (j >= 0) {
-                    m11 m11Var = new m11();
-                    m11Var.a = j;
-                    this.q = m11Var;
-                } else if (q11Var != null && this.q == null) {
-                    this.q = q11Var.createTransition();
-                }
-                p11 p11Var = this.q;
-                Objects.requireNonNull(q11Var);
-                p11Var.g(q11Var, new b11(q11Var, b), new z01(this, b3), new gw(this, b2));
-                return;
-            }
-        }
-        i11 i11Var = this.p;
-        if (i11Var != null && !q11Var.top) {
-            i11Var.b(0.0f);
-            this.p.c(this);
-        }
-        q11Var.onExitTransitionStart();
-        q11Var.onExitTransitionEnd();
-        q11Var.onHide();
-        if (this.h != null) {
-            gl.d3(new z01(this, b2));
-        }
-        q11Var.onDetach();
-        Runnable runnable = this.v;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public final void i(boolean z) {
-        q11 q11Var;
-        boolean z2 = z && this.n;
-        if (this.m == z2 || (q11Var = this.e) == null) {
-            return;
-        }
-        this.m = z2;
-        Runnable runnable = this.i;
-        if (!z2) {
-            q11Var.removeCallbacks(runnable);
-            return;
-        }
-        int i = this.j;
-        if (i >= 0) {
-            q11Var.postDelayed(runnable, i);
-        }
-    }
-
-    public m21 j() {
-        k(false);
-        return this;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v3, types: [a11, android.view.View$OnLayoutChangeListener] */
-    public final void k(final boolean z) {
-        FrameLayout frameLayout;
-        if (this.l || (frameLayout = this.h) == 0) {
-            return;
-        }
-        this.l = true;
-        q11 q11Var = this.e;
-        q11Var.setTop(z);
-        CharSequence accessibilityText = q11Var.getAccessibilityText();
-        if (accessibilityText != null) {
-            gl.g2(accessibilityText);
-        }
-        ViewParent parent = q11Var.getParent();
-        c11 c11Var = this.f;
-        if (parent != c11Var) {
-            sc8.j("Layout has incorrect parent");
-            return;
-        }
-        m21 m21Var = w;
-        if (m21Var != null) {
-            m21Var.b();
-        }
-        w = this;
-        q11Var.onAttach(this);
-        ?? r2 = new View.OnLayoutChangeListener() { // from class: a11
-            @Override // android.view.View.OnLayoutChangeListener
-            public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                m21 m21Var2 = m21.this;
-                i11 i11Var = m21Var2.p;
-                if ((i11Var == null || i11Var.a()) && !z) {
-                    i11 i11Var2 = m21Var2.p;
-                    int e = i11Var2 != null ? i11Var2.e(m21Var2.a) : 0;
-                    int i9 = m21Var2.o;
-                    if (i9 != e) {
-                        yla ylaVar = m21Var2.d;
-                        if (ylaVar == null || !ylaVar.f) {
-                            yla ylaVar2 = new yla(new ti4(i9));
-                            zla zlaVar = new zla();
-                            zlaVar.i = e;
-                            zlaVar.b(900.0f);
-                            zlaVar.a(1.0f);
-                            ylaVar2.m = zlaVar;
-                            m21Var2.d = ylaVar2;
-                            byte b = 1;
-                            ylaVar2.b(new h10(m21Var2, b));
-                            m21Var2.d.a(new zv0(m21Var2, b));
-                        } else {
-                            ylaVar.m.i = e;
-                        }
-                        m21Var2.d.h();
-                    }
-                }
-            }
-        };
-        this.c = r2;
-        frameLayout.addOnLayoutChangeListener(r2);
-        q11Var.addOnLayoutChangeListener(new d11(this, z));
-        if (!this.t) {
-            q11Var.addOnAttachStateChangeListener(new wc(this, (byte) 4));
-        }
-        frameLayout.addView(c11Var);
-    }
-
-    public final void l() {
-        q11 q11Var = this.e;
-        if (q11Var != null) {
-            q11Var.updatePosition();
-        }
-    }
-
-    public m21() {
-        this.i = new z01(this, (byte) 0);
-        this.n = true;
-        this.r = true;
-        this.u = true;
-        this.e = null;
-        this.f = null;
-        this.g = null;
-        this.h = null;
+        n21Var.getWindow().setAttributes(layoutParams);
     }
 }

@@ -1,12 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class po9 extends qq4 implements gq4 {
-    public static final po9 a = new po9(3, ik4.class, "emit", "emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", 0);
+public final class po9 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean g;
+    public boolean h;
 
-    @Override // gq4
-    public final Object a(Object obj, Object obj2, Object obj3) {
-        return ((ik4) obj).c(obj2, (fw2) obj3);
+    public final void a(int i, int i2) {
+        this.c = i;
+        this.d = i2;
+        this.h = true;
+        if (this.g) {
+            if (i2 != Integer.MIN_VALUE) {
+                this.a = i2;
+            }
+            if (i != Integer.MIN_VALUE) {
+                this.b = i;
+                return;
+            }
+            return;
+        }
+        if (i != Integer.MIN_VALUE) {
+            this.a = i;
+        }
+        if (i2 != Integer.MIN_VALUE) {
+            this.b = i2;
+        }
     }
 }

@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class ForegroundCarColorSpan extends CarSpan {
     private final CarColor mCarColor;
@@ -12,12 +12,12 @@ public final class ForegroundCarColorSpan extends CarSpan {
     }
 
     public static ForegroundCarColorSpan create(CarColor carColor) {
-        jc1 jc1Var = jc1.b;
-        jc1Var.getClass();
-        if (jc1Var.a.contains(Integer.valueOf(carColor.getType()))) {
+        rd1 rd1Var = rd1.b;
+        rd1Var.getClass();
+        if (rd1Var.a.contains(Integer.valueOf(carColor.getType()))) {
             return new ForegroundCarColorSpan(carColor);
         }
-        w26.i(carColor, "Car color type is not allowed: ");
+        u36.i(carColor, "Car color type is not allowed: ");
         return null;
     }
 

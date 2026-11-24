@@ -1,311 +1,163 @@
 // default package
 
-import java.util.logging.Logger;
+import java.util.NoSuchElementException;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class lje {
-    public static final Logger e = Logger.getLogger(lje.class.getName());
-    public static final boolean f = i0f.e;
-    public g6e a;
-    public final byte[] b;
-    public final int c;
-    public int d;
-
-    public lje(int i, byte[] bArr) {
-        if (((bArr.length - i) | i) < 0) {
-            throw new IllegalArgumentException(String.format("Array range is invalid. Buffer.length=%d, offset=%d, length=%d", Integer.valueOf(bArr.length), 0, Integer.valueOf(i)));
-        }
-        this.b = bArr;
-        this.d = 0;
-        this.c = i;
-    }
-
-    public static int f(String str) {
-        int length;
-        try {
-            length = q0f.a(str);
-        } catch (z0f unused) {
-            length = str.getBytes(foe.a).length;
-        }
-        return t(length) + length;
-    }
-
-    public static int h(int i, qde qdeVar, xwe xweVar) {
-        int t = t(i << 3) << 1;
-        int c = qdeVar.c();
-        if (c == -1) {
-            c = xweVar.zzb(qdeVar);
-            qdeVar.b(c);
-        }
-        return t + c;
-    }
-
-    public static int i(int i, sie sieVar) {
-        int t = t(i << 3);
-        int i2 = sieVar.i();
-        return yjb.A(i2, i2, t);
-    }
-
-    public static int m(int i) {
-        return t(i << 3);
-    }
-
-    public static int n(int i, long j) {
-        return o(j) + t(i << 3);
-    }
-
-    public static int o(long j) {
+public abstract class lje {
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0061 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object a(im4 im4Var, qx2 qx2Var) {
+        zm4 zm4Var;
         int i;
-        if (((-128) & j) == 0) {
-            return 1;
-        }
-        if (j < 0) {
-            return 10;
-        }
-        if (((-34359738368L) & j) != 0) {
-            j >>>= 28;
-            i = 6;
-        } else {
-            i = 2;
-        }
-        if (((-2097152) & j) != 0) {
-            i += 2;
-            j >>>= 14;
-        }
-        return (j & (-16384)) != 0 ? i + 1 : i;
-    }
-
-    public static int p(int i) {
-        if (i >= 0) {
-            return t(i);
-        }
-        return 10;
-    }
-
-    public static int q(int i, long j) {
-        return o((j << 1) ^ (j >> 63)) + t(i << 3);
-    }
-
-    public static int r(int i) {
-        return t(i << 3) + 8;
-    }
-
-    public static int s(int i, int i2) {
-        return t(i2) + t(i << 3);
-    }
-
-    public static int t(int i) {
-        if ((i & (-128)) == 0) {
-            return 1;
-        }
-        if ((i & (-16384)) == 0) {
-            return 2;
-        }
-        if (((-2097152) & i) == 0) {
-            return 3;
-        }
-        return (i & (-268435456)) == 0 ? 4 : 5;
-    }
-
-    public static int u(int i, int i2) {
-        return t((i2 << 1) ^ (i2 >> 31)) + t(i << 3);
-    }
-
-    public static int v(int i) {
-        return t(i << 3) + 4;
-    }
-
-    public final void a(byte b) {
-        try {
-            byte[] bArr = this.b;
-            int i = this.d;
-            this.d = i + 1;
-            bArr[i] = b;
-        } catch (IndexOutOfBoundsException e2) {
-            throw new mje(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e2);
-        }
-    }
-
-    public final void b(int i) {
-        if (i >= 0) {
-            g(i);
-        } else {
-            d(i);
-        }
-    }
-
-    public final void c(int i, int i2) {
-        g((i << 3) | i2);
-    }
-
-    public final void d(long j) {
-        boolean z = f;
-        byte[] bArr = this.b;
-        if (!z || e() < 10) {
-            while (true) {
-                long j2 = j & (-128);
-                try {
-                    int i = this.d;
-                    if (j2 == 0) {
-                        this.d = i + 1;
-                        bArr[i] = (byte) j;
-                        return;
-                    } else {
-                        this.d = i + 1;
-                        bArr[i] = (byte) ((((int) j) & kk7.K1) | 128);
-                        j >>>= 7;
+        du2 du2Var;
+        e79 e79Var;
+        i1 e;
+        ym4 ym4Var;
+        Object obj;
+        if (qx2Var instanceof zm4) {
+            zm4Var = (zm4) qx2Var;
+            int i2 = zm4Var.d;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zm4Var.d = i2 - TLObject.FLAG_31;
+                Object obj2 = zm4Var.c;
+                i = zm4Var.d;
+                du2Var = bdd.a;
+                if (i != 0) {
+                    tue.b(obj2);
+                    e79 e79Var2 = new e79();
+                    e79Var2.a = du2Var;
+                    ym4 ym4Var2 = new ym4(e79Var2, (byte) 0);
+                    try {
+                        zm4Var.a = e79Var2;
+                        zm4Var.b = ym4Var2;
+                        zm4Var.d = 1;
+                        Object g = im4Var.g(ym4Var2, zm4Var);
+                        Object obj3 = ly2.a;
+                        if (g == obj3) {
+                            return obj3;
+                        }
+                        e79Var = e79Var2;
+                    } catch (i1 e2) {
+                        e79Var = e79Var2;
+                        e = e2;
+                        ym4Var = ym4Var2;
+                        if (e.a != ym4Var) {
+                        }
+                        obj = e79Var.a;
+                        if (obj == du2Var) {
+                        }
                     }
-                } catch (IndexOutOfBoundsException e2) {
-                    throw new mje(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e2);
-                }
-            }
-        } else {
-            while (true) {
-                long j3 = j & (-128);
-                int i2 = this.d;
-                if (j3 == 0) {
-                    this.d = i2 + 1;
-                    i0f.e(bArr, i2, (byte) j);
-                    return;
                 } else {
-                    this.d = i2 + 1;
-                    i0f.e(bArr, i2, (byte) ((((int) j) & kk7.K1) | 128));
-                    j >>>= 7;
+                    if (i != 1) {
+                        dq9.m("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    ym4Var = zm4Var.b;
+                    e79Var = zm4Var.a;
+                    try {
+                        tue.b(obj2);
+                    } catch (i1 e3) {
+                        e = e3;
+                        if (e.a != ym4Var) {
+                            throw e;
+                        }
+                        obj = e79Var.a;
+                        if (obj == du2Var) {
+                        }
+                    }
                 }
+                obj = e79Var.a;
+                if (obj == du2Var) {
+                    return obj;
+                }
+                throw new NoSuchElementException("Expected at least one element");
             }
+        }
+        zm4Var = new zm4(qx2Var);
+        Object obj22 = zm4Var.c;
+        i = zm4Var.d;
+        du2Var = bdd.a;
+        if (i != 0) {
+        }
+        obj = e79Var.a;
+        if (obj == du2Var) {
         }
     }
 
-    public final int e() {
-        return this.c - this.d;
-    }
-
-    public final void g(int i) {
-        boolean z = f;
-        byte[] bArr = this.b;
-        if (z && !jee.a() && e() >= 5) {
-            int i2 = i & (-128);
-            int i3 = this.d;
-            if (i2 == 0) {
-                this.d = i3 + 1;
-                i0f.e(bArr, i3, (byte) i);
-                return;
-            }
-            this.d = i3 + 1;
-            i0f.e(bArr, i3, (byte) (i | 128));
-            int i4 = i >>> 7;
-            int i5 = i4 & (-128);
-            int i6 = this.d;
-            if (i5 == 0) {
-                this.d = i6 + 1;
-                i0f.e(bArr, i6, (byte) i4);
-                return;
-            }
-            this.d = i6 + 1;
-            i0f.e(bArr, i6, (byte) (i4 | 128));
-            int i7 = i >>> 14;
-            int i8 = i7 & (-128);
-            int i9 = this.d;
-            if (i8 == 0) {
-                this.d = i9 + 1;
-                i0f.e(bArr, i9, (byte) i7);
-                return;
-            }
-            this.d = i9 + 1;
-            i0f.e(bArr, i9, (byte) (i7 | 128));
-            int i10 = i >>> 21;
-            int i11 = i10 & (-128);
-            int i12 = this.d;
-            if (i11 == 0) {
-                this.d = i12 + 1;
-                i0f.e(bArr, i12, (byte) i10);
-                return;
-            }
-            this.d = i12 + 1;
-            i0f.e(bArr, i12, (byte) (i10 | 128));
-            int i13 = this.d;
-            this.d = i13 + 1;
-            i0f.e(bArr, i13, (byte) (i >>> 28));
-            return;
-        }
-        while (true) {
-            int i14 = i & (-128);
-            try {
-                int i15 = this.d;
-                if (i14 == 0) {
-                    this.d = i15 + 1;
-                    bArr[i15] = (byte) i;
-                    return;
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object b(im4 im4Var, qx2 qx2Var) {
+        an4 an4Var;
+        int i;
+        e79 e79Var;
+        i1 e;
+        ym4 ym4Var;
+        if (qx2Var instanceof an4) {
+            an4Var = (an4) qx2Var;
+            int i2 = an4Var.d;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                an4Var.d = i2 - TLObject.FLAG_31;
+                Object obj = an4Var.c;
+                i = an4Var.d;
+                if (i != 0) {
+                    tue.b(obj);
+                    e79 e79Var2 = new e79();
+                    ym4 ym4Var2 = new ym4(e79Var2, (byte) 1);
+                    try {
+                        an4Var.a = e79Var2;
+                        an4Var.b = ym4Var2;
+                        an4Var.d = 1;
+                        Object g = im4Var.g(ym4Var2, an4Var);
+                        Object obj2 = ly2.a;
+                        if (g == obj2) {
+                            return obj2;
+                        }
+                        e79Var = e79Var2;
+                    } catch (i1 e2) {
+                        e79Var = e79Var2;
+                        e = e2;
+                        ym4Var = ym4Var2;
+                        if (e.a != ym4Var) {
+                        }
+                        return e79Var.a;
+                    }
                 } else {
-                    this.d = i15 + 1;
-                    bArr[i15] = (byte) ((i & kk7.K1) | 128);
-                    i >>>= 7;
+                    if (i != 1) {
+                        dq9.m("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    ym4Var = an4Var.b;
+                    e79Var = an4Var.a;
+                    try {
+                        tue.b(obj);
+                    } catch (i1 e3) {
+                        e = e3;
+                        if (e.a != ym4Var) {
+                            throw e;
+                        }
+                        return e79Var.a;
+                    }
                 }
-            } catch (IndexOutOfBoundsException e2) {
-                throw new mje(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e2);
+                return e79Var.a;
             }
         }
-    }
-
-    public final void j(long j) {
-        try {
-            byte[] bArr = this.b;
-            int i = this.d;
-            int i2 = i + 1;
-            this.d = i2;
-            bArr[i] = (byte) j;
-            int i3 = i + 2;
-            this.d = i3;
-            bArr[i2] = (byte) (j >> 8);
-            int i4 = i + 3;
-            this.d = i4;
-            bArr[i3] = (byte) (j >> 16);
-            int i5 = i + 4;
-            this.d = i5;
-            bArr[i4] = (byte) (j >> 24);
-            int i6 = i + 5;
-            this.d = i6;
-            bArr[i5] = (byte) (j >> 32);
-            int i7 = i + 6;
-            this.d = i7;
-            bArr[i6] = (byte) (j >> 40);
-            int i8 = i + 7;
-            this.d = i8;
-            bArr[i7] = (byte) (j >> 48);
-            this.d = i + 8;
-            bArr[i8] = (byte) (j >> 56);
-        } catch (IndexOutOfBoundsException e2) {
-            throw new mje(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e2);
+        an4Var = new an4(qx2Var);
+        Object obj3 = an4Var.c;
+        i = an4Var.d;
+        if (i != 0) {
         }
-    }
-
-    public final void k(byte[] bArr, int i, int i2) {
-        try {
-            System.arraycopy(bArr, i, this.b, this.d, i2);
-            this.d += i2;
-        } catch (IndexOutOfBoundsException e2) {
-            throw new mje(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), Integer.valueOf(i2)), e2);
-        }
-    }
-
-    public final void l(int i) {
-        try {
-            byte[] bArr = this.b;
-            int i2 = this.d;
-            int i3 = i2 + 1;
-            this.d = i3;
-            bArr[i2] = (byte) i;
-            int i4 = i2 + 2;
-            this.d = i4;
-            bArr[i3] = (byte) (i >> 8);
-            int i5 = i2 + 3;
-            this.d = i5;
-            bArr[i4] = (byte) (i >> 16);
-            this.d = i2 + 4;
-            bArr[i5] = (byte) (i >>> 24);
-        } catch (IndexOutOfBoundsException e2) {
-            throw new mje(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e2);
-        }
+        return e79Var.a;
     }
 }

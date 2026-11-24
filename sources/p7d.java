@@ -1,37 +1,32 @@
 // default package
 
-import android.util.Log;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class p7d extends g6d {
-    public final /* synthetic */ byte i;
+public final class p7d extends b4 {
+    public static final Parcelable.Creator<p7d> CREATOR = new v6d((byte) 11);
+    public final long a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p7d(vk9 vk9Var, String str, Object obj, byte b) {
-        super(vk9Var, str, obj);
-        this.i = b;
+    public p7d(long j) {
+        this.a = j;
     }
 
-    @Override // g6d
-    public final /* synthetic */ Object d(String str) {
-        switch (this.i) {
-            case 0:
-                if (qhf.c.matcher(str).matches()) {
-                    return Boolean.TRUE;
-                }
-                if (qhf.d.matcher(str).matches()) {
-                    return Boolean.FALSE;
-                }
-                String str2 = this.b;
-                StringBuilder sb = new StringBuilder(str.length() + str2.length() + 28);
-                sb.append("Invalid boolean value for ");
-                sb.append(str2);
-                sb.append(": ");
-                sb.append(str);
-                Log.e("PhenotypeFlag", sb.toString());
-                return null;
-            default:
-                return str;
-        }
+    public final boolean equals(Object obj) {
+        return (obj instanceof p7d) && this.a == ((p7d) obj).a;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Long.valueOf(this.a)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 8);
+        parcel.writeLong(this.a);
+        mve.s(parcel, r);
     }
 }

@@ -1,75 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class toe extends c2e {
-    private static final toe zzb;
-    private int zzd;
-    private int zze = 0;
-    private Object zzf;
-    private lle zzg;
-    private xle zzh;
+public final class toe extends b4 {
+    public static final Parcelable.Creator<toe> CREATOR = new sje((byte) 14);
+    public final int a;
+    public final float b;
+    public final int c;
 
-    static {
-        toe toeVar = new toe();
-        zzb = toeVar;
-        c2e.k(toe.class, toeVar);
-    }
-
-    public static /* synthetic */ void n(toe toeVar, fhe fheVar) {
-        toeVar.zzf = fheVar;
-        toeVar.zze = 2;
-    }
-
-    public static /* synthetic */ void o(toe toeVar, fie fieVar) {
-        toeVar.zzf = fieVar;
-        toeVar.zze = 3;
-    }
-
-    public static /* synthetic */ void p(toe toeVar, vje vjeVar) {
-        vjeVar.getClass();
-        toeVar.zzf = vjeVar;
-        toeVar.zze = 7;
-    }
-
-    public static /* synthetic */ void q(toe toeVar, lle lleVar) {
-        lleVar.getClass();
-        toeVar.zzg = lleVar;
-        toeVar.zzd |= 1;
-    }
-
-    public static /* synthetic */ void r(toe toeVar, zpe zpeVar) {
-        toeVar.zzf = zpeVar;
-        toeVar.zze = 8;
-    }
-
-    public static /* synthetic */ void s(toe toeVar, oqe oqeVar) {
-        toeVar.zzf = oqeVar;
-        toeVar.zze = 4;
-    }
-
-    public static koe t() {
-        return (koe) zzb.f();
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public toe(int i, int i2, float f, int i3) {
+        if (i != 1) {
+            u36.j("Unknown language.");
+            throw null;
         }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\b\u0001\u0001\u0001\b\b\u0000\u0000\u0000\u0001ဉ\u0000\u0002<\u0000\u0003<\u0000\u0004<\u0000\u0005<\u0000\u0006ဉ\u0001\u0007<\u0000\b<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", fhe.class, fie.class, oqe.class, vke.class, "zzh", vje.class, zpe.class});
-        }
-        if (i2 == 3) {
-            return new toe();
-        }
-        if (i2 == 4) {
-            return new koe(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
+        this.a = i2;
+        this.b = f;
+        this.c = i3;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 2, 4);
+        parcel.writeInt(1);
+        mve.q(parcel, 3, 4);
+        parcel.writeInt(this.a);
+        mve.q(parcel, 4, 4);
+        parcel.writeFloat(this.b);
+        mve.q(parcel, 5, 4);
+        parcel.writeInt(this.c);
+        mve.s(parcel, r);
     }
 }

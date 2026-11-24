@@ -1,45 +1,178 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.d;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class s79 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ wjb d;
-    public final /* synthetic */ tj9 e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class s79 extends uv6 implements p79 {
+    public final String f;
+    public String g;
+    public String h;
+    public boolean i;
+    public int k;
+    public o79 l;
+    public final /* synthetic */ u79 n;
+    public int j = -1;
+    public int m = -1;
 
-    public /* synthetic */ s79(d dVar, Context context, wjb wjbVar, tj9 tj9Var, byte b) {
-        this.a = b;
-        this.b = dVar;
-        this.c = context;
-        this.d = wjbVar;
-        this.e = tj9Var;
+    public s79(u79 u79Var, String str) {
+        this.n = u79Var;
+        this.f = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        tj9 tj9Var = this.e;
-        wjb wjbVar = this.d;
-        Context context = this.c;
-        d dVar = this.b;
-        switch (b) {
-            case 0:
-                u21.b0(dVar).c(gl.O2(k96.M0(2131754484, null), -1, 2, new vf1(context, (byte) 11), wjbVar)).j();
-                gl.d3(tj9Var);
-                break;
-            case 1:
-                u21.b0(dVar).c(gl.O2(k96.M0(2131754484, null), -1, 2, new vf1(context, (byte) 10), wjbVar)).j();
-                gl.d3(tj9Var);
-                break;
-            default:
-                u21.b0(dVar).c(gl.O2(k96.M0(2131754484, null), -1, 2, new vf1(context, (byte) 14), wjbVar)).j();
-                gl.d3(tj9Var);
-                break;
+    @Override // p79
+    public final int a() {
+        return this.m;
+    }
+
+    @Override // p79
+    public final void b(o79 o79Var) {
+        r79 r79Var = new r79(this);
+        this.l = o79Var;
+        int i = o79Var.e;
+        o79Var.e = i + 1;
+        int i2 = o79Var.d;
+        o79Var.d = i2 + 1;
+        Bundle bundle = new Bundle();
+        bundle.putString("memberRouteId", this.f);
+        o79Var.b(11, i2, i, null, bundle);
+        o79Var.n.put(i2, r79Var);
+        this.m = i;
+        if (this.i) {
+            o79Var.a(i);
+            int i3 = this.j;
+            if (i3 >= 0) {
+                o79Var.c(this.m, i3);
+                this.j = -1;
+            }
+            int i4 = this.k;
+            if (i4 != 0) {
+                o79Var.d(this.m, i4);
+                this.k = 0;
+            }
+        }
+    }
+
+    @Override // p79
+    public final void c() {
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            int i = this.m;
+            int i2 = o79Var.d;
+            o79Var.d = i2 + 1;
+            o79Var.b(4, i2, i, null, null);
+            this.l = null;
+            this.m = 0;
+        }
+    }
+
+    @Override // vv6
+    public final void d() {
+        u79 u79Var = this.n;
+        u79Var.w.remove(this);
+        c();
+        u79Var.r();
+    }
+
+    @Override // vv6
+    public final void e() {
+        this.i = true;
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            o79Var.a(this.m);
+        }
+    }
+
+    @Override // vv6
+    public final void f(int i) {
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            o79Var.c(this.m, i);
+        } else {
+            this.j = i;
+            this.k = 0;
+        }
+    }
+
+    @Override // vv6
+    public final void g() {
+        h(0);
+    }
+
+    @Override // vv6
+    public final void h(int i) {
+        this.i = false;
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            int i2 = this.m;
+            Bundle j = kt6.j(i, "unselectReason");
+            int i3 = o79Var.d;
+            o79Var.d = i3 + 1;
+            o79Var.b(6, i3, i2, null, j);
+        }
+    }
+
+    @Override // vv6
+    public final void i(int i) {
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            o79Var.d(this.m, i);
+        } else {
+            this.k += i;
+        }
+    }
+
+    @Override // uv6
+    public final String j() {
+        return this.g;
+    }
+
+    @Override // uv6
+    public final String k() {
+        return this.h;
+    }
+
+    @Override // uv6
+    public final void m(String str) {
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            int i = this.m;
+            o79Var.getClass();
+            Bundle bundle = new Bundle();
+            bundle.putString("memberRouteId", str);
+            int i2 = o79Var.d;
+            o79Var.d = i2 + 1;
+            o79Var.b(12, i2, i, null, bundle);
+        }
+    }
+
+    @Override // uv6
+    public final void n(String str) {
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            int i = this.m;
+            o79Var.getClass();
+            Bundle bundle = new Bundle();
+            bundle.putString("memberRouteId", str);
+            int i2 = o79Var.d;
+            o79Var.d = i2 + 1;
+            o79Var.b(13, i2, i, null, bundle);
+        }
+    }
+
+    @Override // uv6
+    public final void o(List list) {
+        o79 o79Var = this.l;
+        if (o79Var != null) {
+            int i = this.m;
+            o79Var.getClass();
+            Bundle bundle = new Bundle();
+            bundle.putStringArrayList("memberRouteIds", new ArrayList<>(list));
+            int i2 = o79Var.d;
+            o79Var.d = i2 + 1;
+            o79Var.b(14, i2, i, null, bundle);
         }
     }
 }

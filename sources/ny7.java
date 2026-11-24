@@ -1,19 +1,70 @@
 // default package
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ny7 extends b4 {
-    public static final Parcelable.Creator<ny7> CREATOR = new xff((byte) 16);
-    public PendingIntent a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ny7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xz7 b;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.k(parcel, 1, this.a, i);
-        jte.s(parcel, r);
+    public /* synthetic */ ny7(xz7 xz7Var, byte b) {
+        this.a = b;
+        this.b = xz7Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
+        byte b = this.a;
+        int i = 0;
+        xz7 xz7Var = this.b;
+        switch (b) {
+            case 0:
+                ViewGroup[] viewGroupArr = xz7Var.a0;
+                if (viewGroupArr == null || (viewGroup = viewGroupArr[0]) == null || viewGroup.getVisibility() != 0) {
+                    return;
+                }
+                xz7Var.Z[0].requestFocus();
+                gm.E3(xz7Var.Z[0]);
+                return;
+            case 1:
+                xz7Var.presentFragment(xz7Var.i1, true);
+                xz7Var.i1 = null;
+                return;
+            case 2:
+                EditTextBoldCursor[] editTextBoldCursorArr = xz7Var.b0;
+                if (editTextBoldCursorArr != null) {
+                    xz7Var.L1(editTextBoldCursorArr[0]);
+                    return;
+                }
+                return;
+            case 3:
+                gm.E3(xz7Var.Z[2]);
+                return;
+            case 4:
+                xz7Var.A1();
+                return;
+            case 5:
+                break;
+            default:
+                xz7Var.finishFragment();
+                return;
+        }
+        while (i < xz7Var.d0.getChildCount()) {
+            View childAt = xz7Var.d0.getChildAt(i);
+            if (childAt instanceof wz7) {
+                xz7Var.d0.removeView(childAt);
+                i--;
+            }
+            i++;
+        }
+        xz7Var.A1();
+        xz7Var.r1.clear();
+        xz7Var.q1.clear();
+        xz7Var.E.values.clear();
+        xz7Var.U1();
     }
 }

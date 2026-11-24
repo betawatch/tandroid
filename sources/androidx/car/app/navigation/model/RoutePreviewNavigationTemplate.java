@@ -7,9 +7,9 @@ import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class RoutePreviewNavigationTemplate implements ogb {
+public final class RoutePreviewNavigationTemplate implements pib {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
 
@@ -19,7 +19,7 @@ public final class RoutePreviewNavigationTemplate implements ogb {
     private final ItemList mItemList;
     private final ActionStrip mMapActionStrip;
     private final Action mNavigateAction;
-    private final pu7 mPanModeDelegate;
+    private final qw7 mPanModeDelegate;
 
     @Deprecated
     private final CarText mTitle;
@@ -77,7 +77,7 @@ public final class RoutePreviewNavigationTemplate implements ogb {
         return this.mNavigateAction;
     }
 
-    public pu7 getPanModeDelegate() {
+    public qw7 getPanModeDelegate() {
         return this.mPanModeDelegate;
     }
 
@@ -98,7 +98,7 @@ public final class RoutePreviewNavigationTemplate implements ogb {
         return "RoutePreviewNavigationTemplate";
     }
 
-    public RoutePreviewNavigationTemplate(cm9 cm9Var) {
+    public RoutePreviewNavigationTemplate(co9 co9Var) {
         throw null;
     }
 }

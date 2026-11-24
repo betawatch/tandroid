@@ -1,57 +1,35 @@
 // default package
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class so8 {
-    public final String a;
-    public final Runnable b;
-    public final String c;
-    public final String[] d;
-    public final int e;
-    public final short f;
-    public int g;
-    public String h;
+public final /* synthetic */ class so8 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uo8 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public so8(int i, String str, String str2, String str3, String str4, int i2, Runnable runnable) {
-        this.f = i;
-        this.a = str;
-        this.c = str2;
-        this.b = runnable;
-        this.e = i2;
-        if (str3 != null) {
-            if (str4 != null) {
-                this.d = new String[]{str3, str4};
-            } else {
-                this.d = new String[]{str3};
-            }
+    public /* synthetic */ so8(uo8 uo8Var, byte b) {
+        this.a = b;
+        this.b = uo8Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        byte b2 = 1;
+        uo8 uo8Var = this.b;
+        switch (b) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                uo8Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new so8(uo8Var, b2));
+                break;
+            default:
+                uo8Var.c.getMessagesController().W2(true);
+                break;
         }
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof so8) && this.f == ((so8) obj).f;
-    }
-
-    public final String toString() {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(this.g);
-        serializedData.writeInt32(1);
-        serializedData.writeInt32(this.f);
-        return Utilities.f(serializedData.toByteArray());
-    }
-
-    public so8(int i, String str, String str2, int i2, Runnable runnable) {
-        this(i, str, null, str2, null, i2, runnable);
-    }
-
-    public so8(int i, String str, String str2, String str3, int i2, Runnable runnable) {
-        this(i, str, str2, str3, null, i2, runnable);
-    }
-
-    public so8(int i, String str, int i2, Runnable runnable) {
-        this(i, str, null, null, null, i2, runnable);
     }
 }

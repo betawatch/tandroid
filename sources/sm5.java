@@ -1,41 +1,236 @@
 // default package
 
-import java.util.Collection;
-import java.util.Map;
+import android.net.Uri;
+import android.os.AsyncTask;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URL;
+import java.net.UnknownHostException;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class sm5 extends gm5 {
-    public final nm5 b;
+public final class sm5 extends AsyncTask {
+    public final tm5 a;
+    public boolean b = true;
+    public HttpURLConnection c;
+    public final boolean d;
+    public final /* synthetic */ fn5 e;
 
-    public sm5(nm5 nm5Var) {
-        this.b = nm5Var;
+    public sm5(fn5 fn5Var, tm5 tm5Var) {
+        this.e = fn5Var;
+        this.a = tm5Var;
+        this.d = Uri.parse(tm5Var.i.g).getQueryParameter("s") != null;
     }
 
-    @Override // gm5, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            Collection collection = (Collection) this.b.a().get(key);
-            if (collection != null && collection.contains(value)) {
-                return true;
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00ba, code lost:
+    
+        if (r2 == null) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x00c4, code lost:
+    
+        if (r2 == null) goto L53;
+     */
+    /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x00ef A[Catch: all -> 0x012f, TryCatch #5 {all -> 0x012f, blocks: (B:79:0x00e2, B:81:0x00e6, B:83:0x00ec, B:84:0x0115, B:101:0x00ef, B:103:0x00f3, B:104:0x00f6, B:106:0x00fa, B:108:0x0100, B:110:0x010c, B:111:0x010f, B:113:0x0113), top: B:78:0x00e2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e6 A[Catch: all -> 0x012f, TryCatch #5 {all -> 0x012f, blocks: (B:79:0x00e2, B:81:0x00e6, B:83:0x00ec, B:84:0x0115, B:101:0x00ef, B:103:0x00f3, B:104:0x00f6, B:106:0x00fa, B:108:0x0100, B:110:0x010c, B:111:0x010f, B:113:0x0113), top: B:78:0x00e2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x011c A[Catch: all -> 0x011f, TRY_LEAVE, TryCatch #15 {all -> 0x011f, blocks: (B:87:0x0118, B:89:0x011c), top: B:86:0x0118 }] */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x012b A[Catch: Exception -> 0x012e, TRY_ENTER, TRY_LEAVE, TryCatch #1 {Exception -> 0x012e, blocks: (B:39:0x00ce, B:93:0x012b), top: B:2:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:94:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0121 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        ByteArrayOutputStream byteArrayOutputStream;
+        HttpURLConnection httpURLConnection;
+        int read;
+        int responseCode;
+        String str = null;
+        try {
+            try {
+                HttpURLConnection httpURLConnection2 = (HttpURLConnection) new URL(this.a.i.g.replace("athumb://", "https://")).openConnection();
+                this.c = httpURLConnection2;
+                httpURLConnection2.setConnectTimeout(5000);
+                this.c.setReadTimeout(5000);
+                this.c.connect();
+                try {
+                    HttpURLConnection httpURLConnection3 = this.c;
+                    if (httpURLConnection3 != null && (responseCode = httpURLConnection3.getResponseCode()) != 200 && responseCode != 202 && responseCode != 304) {
+                        this.b = false;
+                    }
+                } catch (Exception e) {
+                    fc4.g(e, false);
+                }
+                InputStream inputStream2 = this.c.getInputStream();
+                try {
+                    ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
+                    try {
+                        byte[] bArr = new byte[32768];
+                        while (!isCancelled() && (read = inputStream2.read(bArr)) > 0) {
+                            byteArrayOutputStream2.write(bArr, 0, read);
+                        }
+                        this.b = false;
+                        JSONArray jSONArray = new JSONObject(new String(byteArrayOutputStream2.toByteArray())).getJSONArray("results");
+                        if (jSONArray.length() > 0) {
+                            String string = jSONArray.getJSONObject(0).getString("artworkUrl100");
+                            if (this.d) {
+                                try {
+                                    HttpURLConnection httpURLConnection4 = this.c;
+                                    if (httpURLConnection4 != null) {
+                                        httpURLConnection4.disconnect();
+                                    }
+                                } catch (Throwable unused) {
+                                }
+                                if (inputStream2 != null) {
+                                    try {
+                                        inputStream2.close();
+                                    } catch (Throwable th) {
+                                        fc4.g(th, true);
+                                    }
+                                }
+                                try {
+                                    byteArrayOutputStream2.close();
+                                } catch (Exception unused2) {
+                                }
+                                return string;
+                            }
+                            str = string.replace("100x100", "600x600");
+                            try {
+                                HttpURLConnection httpURLConnection5 = this.c;
+                                if (httpURLConnection5 != null) {
+                                    httpURLConnection5.disconnect();
+                                }
+                            } catch (Throwable unused3) {
+                            }
+                        } else {
+                            try {
+                                HttpURLConnection httpURLConnection6 = this.c;
+                                if (httpURLConnection6 != null) {
+                                    httpURLConnection6.disconnect();
+                                }
+                            } catch (Throwable unused4) {
+                            }
+                        }
+                        try {
+                            inputStream2.close();
+                        } catch (Throwable th2) {
+                            fc4.g(th2, true);
+                        }
+                        byteArrayOutputStream2.close();
+                    } catch (Throwable th3) {
+                        inputStream = inputStream2;
+                        th = th3;
+                        byteArrayOutputStream = byteArrayOutputStream2;
+                        try {
+                            if (th instanceof SocketTimeoutException) {
+                                if (th instanceof UnknownHostException) {
+                                    this.b = false;
+                                } else if (th instanceof SocketException) {
+                                    if (th.getMessage() != null && th.getMessage().contains("ECONNRESET")) {
+                                        this.b = false;
+                                    }
+                                } else if (th instanceof FileNotFoundException) {
+                                    this.b = false;
+                                }
+                            } else if (a.r()) {
+                                this.b = false;
+                            }
+                            fc4.g(th, false);
+                            try {
+                                httpURLConnection = this.c;
+                                if (httpURLConnection != null) {
+                                    httpURLConnection.disconnect();
+                                }
+                            } catch (Throwable unused5) {
+                            }
+                            if (inputStream != null) {
+                                try {
+                                    inputStream.close();
+                                } catch (Throwable th4) {
+                                    fc4.g(th4, true);
+                                }
+                            }
+                            if (byteArrayOutputStream != null) {
+                                return null;
+                            }
+                            byteArrayOutputStream.close();
+                            return str;
+                        } catch (Throwable th5) {
+                            try {
+                                HttpURLConnection httpURLConnection7 = this.c;
+                                if (httpURLConnection7 != null) {
+                                    httpURLConnection7.disconnect();
+                                }
+                            } catch (Throwable unused6) {
+                            }
+                            if (inputStream != null) {
+                                try {
+                                    inputStream.close();
+                                } catch (Throwable th6) {
+                                    fc4.g(th6, true);
+                                }
+                            }
+                            if (byteArrayOutputStream == null) {
+                                throw th5;
+                            }
+                            try {
+                                byteArrayOutputStream.close();
+                                throw th5;
+                            } catch (Exception unused7) {
+                                throw th5;
+                            }
+                        }
+                    }
+                } catch (Throwable th7) {
+                    inputStream = inputStream2;
+                    th = th7;
+                    byteArrayOutputStream = null;
+                }
+            } catch (Exception unused8) {
+                return str;
+            }
+        } catch (Throwable th8) {
+            th = th8;
+            inputStream = null;
+            byteArrayOutputStream = null;
+            if (th instanceof SocketTimeoutException) {
+            }
+            fc4.g(th, false);
+            httpURLConnection = this.c;
+            if (httpURLConnection != null) {
+            }
+            if (inputStream != null) {
+            }
+            if (byteArrayOutputStream != null) {
             }
         }
-        return false;
+        return str;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
-    /* renamed from: n */
-    public final v5c iterator() {
-        nm5 nm5Var = this.b;
-        nm5Var.getClass();
-        return new rm5(nm5Var);
+    @Override // android.os.AsyncTask
+    public final void onCancelled() {
+        this.e.s.c(new rm5(this, (byte) 0));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final int size() {
-        return this.b.f;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        String str = (String) obj;
+        fn5 fn5Var = this.e;
+        mp3 mp3Var = fn5Var.s;
+        if (str != null) {
+            mp3Var.c(new fd5(this, str, (byte) 10));
+        } else if (this.b) {
+            mp3Var.c(new jm5(fn5Var, this.a.e, (byte) 0));
+        }
+        mp3Var.c(new rm5(this, (byte) 1));
     }
 }

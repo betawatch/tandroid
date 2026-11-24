@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ o a;
@@ -25,24 +25,24 @@ public final class e extends AnimatorListenerAdapter {
             oVar.i0.i();
             oVar.b1.a(oVar.v0[0].getBackgroundColor(), true);
             oVar.c1.a(oVar.v0[1].getBackgroundColor(), true);
-            sw swVar = oVar.L;
-            if (swVar != null) {
-                swVar.y();
+            sx sxVar = oVar.L;
+            if (sxVar != null) {
+                sxVar.z();
             }
-            Object l = tb4.l(1, oVar.e0);
+            Object m = td4.m(1, oVar.e0);
             oVar.Q0.Q(oVar.v0[0].b);
-            fib fibVar = oVar.Q0;
-            fibVar.z0 = oVar.v0[0].d;
-            fibVar.e(true);
+            gkb gkbVar = oVar.Q0;
+            gkbVar.z0 = oVar.v0[0].d;
+            gkbVar.e(true);
             oVar.g0(false);
             oVar.d0();
             oVar.v0[1].a();
             oVar.v0[1].setVisibility(8);
-            if (l instanceof zv) {
-                ((zv) l).a();
+            if (m instanceof zw) {
+                ((zw) m).a();
             }
-            if (l instanceof TLRPC.WebPage) {
-                ctc.o((TLRPC.WebPage) l);
+            if (m instanceof TLRPC.WebPage) {
+                dvc.o((TLRPC.WebPage) m);
             }
         } else {
             oVar.S();

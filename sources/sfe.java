@@ -1,41 +1,69 @@
 // default package
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.Arrays;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class sfe implements Comparable {
-    public static int c(byte b) {
-        return (b >> 5) & 7;
+public abstract class sfe {
+    public static Boolean a;
+    public static Boolean b;
+    public static Boolean c;
+    public static Boolean d;
+    public static Boolean e;
+    public static Boolean f;
+    public static Boolean g;
+
+    public static boolean a(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        Boolean bool = f;
+        if (bool == null) {
+            bool = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
+            f = bool;
+        }
+        return bool.booleanValue();
     }
 
-    public static sfe d(byte... bArr) {
-        bArr.getClass();
-        hge hgeVar = new hge(new ByteArrayInputStream(Arrays.copyOf(bArr, bArr.length)));
-        try {
-            return k2f.a(hgeVar);
-        } finally {
-            try {
-                hgeVar.close();
-            } catch (IOException unused) {
+    public static boolean b(Resources resources) {
+        boolean z = false;
+        if (resources == null) {
+            return false;
+        }
+        Boolean bool = d;
+        if (bool == null) {
+            Configuration configuration = resources.getConfiguration();
+            if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
+                z = true;
             }
+            bool = Boolean.valueOf(z);
+            d = bool;
         }
+        return bool.booleanValue();
     }
 
-    public int a() {
-        return 0;
-    }
-
-    public final sfe b(Class cls) {
-        if (cls.isInstance(this)) {
-            return (sfe) cls.cast(this);
+    public static boolean c(Context context) {
+        Resources resources = context.getResources();
+        if (resources == null) {
+            return false;
         }
-        throw new ife(tb4.q("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
+        Boolean bool = b;
+        if (bool == null) {
+            bool = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || b(resources));
+            b = bool;
+        }
+        return bool.booleanValue();
     }
 
-    public int zza() {
-        return c(Byte.MIN_VALUE);
+    public static boolean d(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        Boolean bool = g;
+        if (bool == null) {
+            bool = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
+            g = bool;
+        }
+        return bool.booleanValue();
     }
 }

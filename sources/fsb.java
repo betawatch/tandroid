@@ -1,41 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum fsb extends qsb {
+public enum fsb extends rub {
     public fsb() {
-        super("AfterDoctypeSystemKeyword", 60);
+        super("RCDATAEndTagName", 12);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
+    public static void e(bsb bsbVar, hl1 hl1Var) {
+        bsbVar.h("</".concat(bsbVar.h.toString()));
+        hl1Var.q();
+        bsbVar.c = rub.c;
+    }
+
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        if (hl1Var.o()) {
+            String e = hl1Var.e();
+            bsbVar.i.y(e);
+            bsbVar.h.append(e);
+            return;
+        }
+        char d = hl1Var.d();
         if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            aqbVar.c = qsb.z0;
-            return;
+            if (bsbVar.n()) {
+                bsbVar.c = rub.X;
+                return;
+            } else {
+                e(bsbVar, hl1Var);
+                return;
+            }
         }
-        if (d == '\"') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.A0;
-            return;
+        if (d == '/') {
+            if (bsbVar.n()) {
+                bsbVar.c = rub.f0;
+                return;
+            } else {
+                e(bsbVar, hl1Var);
+                return;
+            }
         }
-        if (d == '\'') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.B0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else if (d != 65535) {
-            aqbVar.m(this);
-            aqbVar.j();
+        if (d != '>') {
+            e(bsbVar, hl1Var);
+        } else if (!bsbVar.n()) {
+            e(bsbVar, hl1Var);
         } else {
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
+            bsbVar.k();
+            bsbVar.c = rub.a;
         }
     }
 }

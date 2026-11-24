@@ -1,47 +1,41 @@
 // default package
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class a13 extends i03 {
-    public final String d;
+public final class a13 implements Executor {
+    public final ExecutorService a;
+    public final Object b = new Object();
+    public Task c = Tasks.forResult(null);
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a13(String str) {
-        super(r0, r7, r2);
-        str.getClass();
-        try {
-            JSONObject jSONObject = new JSONObject(str).getJSONObject("user");
-            String string = jSONObject.getString("name");
-            String string2 = jSONObject.isNull("displayName") ? null : jSONObject.getString("displayName");
-            string.getClass();
-            i5 i5Var = new i5(string, string2, (byte) 1);
-            Bundle bundle = new Bundle();
-            bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
-            bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
-            bundle.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
-            bundle2.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
-            bundle2.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-            this.d = str;
-            if (str.length() != 0) {
-                try {
-                    new JSONObject(str);
-                    return;
-                } catch (Exception unused) {
-                }
-            }
-            w26.j("requestJson must not be empty, and must be a valid JSON");
-            throw null;
-        } catch (Exception unused2) {
-            w26.j("user.name must be defined in requestJson");
-            throw null;
+    public a13(ExecutorService executorService) {
+        this.a = executorService;
+    }
+
+    public final Task a(Runnable runnable) {
+        Task continueWithTask;
+        synchronized (this.b) {
+            continueWithTask = this.c.continueWithTask(this.a, new cf(runnable, (byte) 6));
+            this.c = continueWithTask;
         }
+        return continueWithTask;
+    }
+
+    public final Task b(lz2 lz2Var) {
+        Task continueWithTask;
+        synchronized (this.b) {
+            continueWithTask = this.c.continueWithTask(this.a, new wm2(lz2Var, (byte) 6));
+            this.c = continueWithTask;
+        }
+        return continueWithTask;
+    }
+
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.execute(runnable);
     }
 }

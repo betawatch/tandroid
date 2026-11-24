@@ -33,19 +33,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class s1 extends FrameLayout implements tjb {
-    public static final int d0 = gl.L(76.0f);
+public abstract class s1 extends FrameLayout implements vlb {
+    public static final int d0 = gm.L(76.0f);
     public static final int e0 = -2146483649;
     public StaticLayout E;
-    public final i46 F;
+    public final i66 F;
     public p1 G;
-    public r86 H;
+    public qa6 H;
     public final d I;
-    public final wjb J;
+    public final ylb J;
     public final FrameLayout K;
-    public final ff0 L;
+    public final fg0 L;
     public StaticLayout M;
     public StaticLayout[] N;
     public int O;
@@ -71,102 +71,102 @@ public abstract class s1 extends FrameLayout implements tjb {
     public final FrameLayout r;
     public final FrameLayout s;
     public final Drawable w;
-    public m46 x;
+    public m66 x;
     public float y;
 
-    public s1(Context context, d dVar, wjb wjbVar) {
+    public s1(Context context, d dVar, ylb ylbVar) {
         super(context);
         byte b = 0;
-        new b46(0);
+        new b66(0);
         this.N = null;
         this.O = -1;
         this.Q = false;
         Paint paint = new Paint();
         this.T = paint;
-        this.U = gl.L(3.0f);
+        this.U = gm.L(3.0f);
         this.V = new o1(this, b);
         this.W = 0.0f;
         this.b0 = 0;
         this.c0 = false;
-        this.J = wjbVar;
+        this.J = ylbVar;
         this.I = dVar;
         FrameLayout frameLayout = new FrameLayout(context);
         this.K = frameLayout;
         frameLayout.setImportantForAccessibility(2);
-        this.F = new i46(frameLayout);
-        this.L = bkb.Y(bkb.v0(bkb.h6, wjbVar), 0, 0);
+        this.F = new i66(frameLayout);
+        this.L = cmb.Y(cmb.v0(cmb.h6, ylbVar), 0, 0);
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setVisibility(8);
-        zkb.X(textView, bkb.y6, wjbVar);
-        ug8.w(textView, 1, 13.0f, 1, 1);
+        anb.X(textView, cmb.y6, ylbVar);
+        wi8.w(textView, 1, 13.0f, 1, 1);
         textView.setSingleLine(true);
-        textView.setGravity(k96.a0 ? 5 : 3);
+        textView.setGravity(jb6.a0 ? 5 : 3);
         textView.setImportantForAccessibility(2);
         textView.setFocusable(false);
-        frameLayout.addView(textView, nme.d(-2, -2.0f, (k96.a0 ? 5 : 3) | 80, 18.0f, 0.0f, 18.0f, 10.0f));
+        frameLayout.addView(textView, qoe.d(-2, -2.0f, (jb6.a0 ? 5 : 3) | 80, 18.0f, 0.0f, 18.0f, 10.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.s = frameLayout2;
-        Drawable d = b00.d(context, R.drawable.gradient_bottom);
-        int i = bkb.c6;
-        zkb.x(this, d, i, wjbVar, PorterDuff.Mode.SRC_ATOP);
+        Drawable d = b10.d(context, R.drawable.gradient_bottom);
+        int i = cmb.c6;
+        anb.x(this, d, i, ylbVar, PorterDuff.Mode.SRC_ATOP);
         frameLayout2.setBackground(d);
-        addView(frameLayout2, nme.d(-1, 12.0f, 87, 16.0f, 0.0f, 16.0f, 0.0f));
-        addView(frameLayout, nme.e(-1, -1, 55));
+        addView(frameLayout2, qoe.d(-1, 12.0f, 87, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(frameLayout, qoe.e(-1, -1, 55));
         l1 l1Var = new l1(context);
         l1Var.a = false;
         this.n = l1Var;
-        zkb.X(l1Var, bkb.m6, wjbVar);
+        anb.X(l1Var, cmb.m6, ylbVar);
         l1Var.setTextSize(1, 16.0f);
         l1Var.setLines(1);
         l1Var.setMaxLines(1);
         l1Var.setSingleLine(true);
-        l1Var.setText(k96.M0(2131751449, null));
+        l1Var.setText(jb6.M0(2131751398, null));
         l1Var.setOnClickListener(new j1(this, b));
-        l1Var.setPadding(gl.L(2.0f), 0, gl.L(2.0f), 0);
+        l1Var.setPadding(gm.L(2.0f), 0, gm.L(2.0f), 0);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.r = frameLayout3;
-        Drawable d2 = b00.d(context, R.drawable.gradient_left);
+        Drawable d2 = b10.d(context, R.drawable.gradient_left);
         this.w = d2;
-        zkb.x(this, d2, i, wjbVar, PorterDuff.Mode.MULTIPLY);
+        anb.x(this, d2, i, ylbVar, PorterDuff.Mode.MULTIPLY);
         frameLayout3.setBackground(d2);
-        frameLayout3.setPadding(gl.L(4.0f) + frameLayout3.getPaddingLeft(), gl.L(1.0f), 0, gl.L(3.0f));
-        frameLayout3.addView(l1Var, nme.c(-2.0f, -2));
-        addView(frameLayout3, nme.d(-2, -2.0f, 85, 18.0f - (frameLayout3.getPaddingLeft() / gl.p), 0.0f, 18.0f - (frameLayout3.getPaddingRight() / gl.p), 6.0f));
-        paint.setColor(bkb.v0(i, wjbVar));
+        frameLayout3.setPadding(gm.L(4.0f) + frameLayout3.getPaddingLeft(), gm.L(1.0f), 0, gm.L(3.0f));
+        frameLayout3.addView(l1Var, qoe.c(-2.0f, -2));
+        addView(frameLayout3, qoe.d(-2, -2.0f, 85, 18.0f - (frameLayout3.getPaddingLeft() / gm.p), 0.0f, 18.0f - (frameLayout3.getPaddingRight() / gm.p), 6.0f));
+        paint.setColor(cmb.v0(i, ylbVar));
         setWillNotDraw(false);
     }
 
     public static StaticLayout c(int i, CharSequence charSequence) {
         Layout.Alignment alignment;
         if (Build.VERSION.SDK_INT < 24) {
-            return new StaticLayout(charSequence, bkb.O1, i, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            return new StaticLayout(charSequence, cmb.O1, i, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), bkb.O1, Math.max(1, i)).setBreakStrategy(0).setHyphenationFrequency(0);
-        if (k96.a0) {
-            alignment = lwa.a();
+        StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), cmb.O1, Math.max(1, i)).setBreakStrategy(0).setHyphenationFrequency(0);
+        if (jb6.a0) {
+            alignment = oya.a();
         } else {
-            Layout.Alignment[] alignmentArr = lwa.a;
+            Layout.Alignment[] alignmentArr = oya.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
     }
 
     private void setHeight(int i) {
-        e49 e49Var = (e49) getLayoutParams();
-        if (e49Var == null) {
+        g69 g69Var = (g69) getLayoutParams();
+        if (g69Var == null) {
             if (getMinimumHeight() == 0) {
                 getHeight();
             } else {
                 getMinimumHeight();
             }
-            e49Var = new e49(-1, i);
+            g69Var = new g69(-1, i);
         } else {
-            r1 = ((ViewGroup.MarginLayoutParams) e49Var).height != i;
-            ((ViewGroup.MarginLayoutParams) e49Var).height = i;
+            r1 = ((ViewGroup.MarginLayoutParams) g69Var).height != i;
+            ((ViewGroup.MarginLayoutParams) g69Var).height = i;
         }
         if (r1) {
-            setLayoutParams(e49Var);
+            setLayoutParams(g69Var);
         }
     }
 
@@ -236,7 +236,7 @@ public abstract class s1 extends FrameLayout implements tjb {
             this.b0 = i;
             frameLayout.setMinimumHeight(g());
             if (this.c0 && this.M != null) {
-                int min = Math.min(d0 + (this.h.getVisibility() == 0 ? gl.L(20.0f) : 0), g()) - gl.L(8.0f);
+                int min = Math.min(d0 + (this.h.getVisibility() == 0 ? gm.L(20.0f) : 0), g()) - gm.L(8.0f);
                 StaticLayout staticLayout = this.M;
                 setShowMoreMarginBottom((((min - staticLayout.getLineBottom(staticLayout.getLineCount() - 1)) - frameLayout2.getPaddingBottom()) - l1Var.getPaddingBottom()) - (l1Var.getLayout() == null ? 0 : l1Var.getLayout().getHeight() - l1Var.getLayout().getLineBottom(l1Var.getLineCount() - 1)));
             }
@@ -251,7 +251,7 @@ public abstract class s1 extends FrameLayout implements tjb {
         frameLayout.setBackground(null);
     }
 
-    public final m46 b(StaticLayout staticLayout, int i, int i2, int i3, int i4) {
+    public final m66 b(StaticLayout staticLayout, int i, int i2, int i3, int i4) {
         int i5 = i3 - i;
         int i6 = i4 - i2;
         try {
@@ -264,23 +264,23 @@ public abstract class s1 extends FrameLayout implements tjb {
             }
             Spannable spannable = (Spannable) staticLayout.getText();
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-            if (clickableSpanArr.length == 0 || gl.A1()) {
+            if (clickableSpanArr.length == 0 || gm.A1()) {
                 return null;
             }
-            m46 m46Var = new m46(clickableSpanArr[0], this.J, i3, i4, 0);
-            int v0 = bkb.v0(bkb.Be, this.J);
-            RectF rectF = ProfileActivity.Z6;
-            m46Var.d(v0);
+            m66 m66Var = new m66(clickableSpanArr[0], this.J, i3, i4, 0);
+            int v0 = cmb.v0(cmb.Be, this.J);
+            RectF rectF = ProfileActivity.e7;
+            m66Var.d(v0);
             int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
             int spanEnd = spannable.getSpanEnd(clickableSpanArr[0]);
-            b46 b = m46Var.b();
+            b66 b = m66Var.b();
             float f2 = i2;
             this.y = f2;
             b.d(staticLayout, spanStart, f2);
             staticLayout.getSelectionPath(spanStart, spanEnd, b);
-            return m46Var;
+            return m66Var;
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             return null;
         }
     }
@@ -296,26 +296,26 @@ public abstract class s1 extends FrameLayout implements tjb {
             p1Var2 = new p1(this, layout, clickableSpan, f);
         }
         this.G = p1Var2;
-        if (!(clickableSpan instanceof g4c)) {
+        if (!(clickableSpan instanceof g6c)) {
             if (!(clickableSpan instanceof URLSpan)) {
                 clickableSpan.onClick(this);
                 return;
             }
             String url = ((URLSpan) clickableSpan).getURL();
-            if (!gl.E3(url)) {
-                d01.r(getContext(), Uri.parse(url), true, true, this.G);
+            if (!gm.D3(url)) {
+                l11.s(getContext(), Uri.parse(url), true, true, this.G);
                 return;
             } else {
-                ij.o0(this.I, url, true, true, true, false, this.G, null, null);
+                ik.o0(this.I, url, true, true, true, false, this.G, null, null);
                 return;
             }
         }
-        String url2 = ((g4c) clickableSpan).getURL();
+        String url2 = ((g6c) clickableSpan).getURL();
         if (url2.startsWith("@") || url2.startsWith("#") || url2.startsWith("$") || url2.startsWith("/")) {
             p1 p1Var3 = this.G;
-            ProfileActivity profileActivity = ((eo8) this).f0.e;
-            RectF rectF = ProfileActivity.Z6;
-            profileActivity.e3(url2, p1Var3);
+            ProfileActivity profileActivity = ((fq8) this).f0.e;
+            RectF rectF = ProfileActivity.e7;
+            profileActivity.i3(url2, p1Var3);
         }
     }
 
@@ -342,23 +342,23 @@ public abstract class s1 extends FrameLayout implements tjb {
         super.draw(canvas);
         float pow2 = ((View) getParent()) == null ? 1.0f : (float) Math.pow(r0.getAlpha(), 2.0d);
         canvas.save();
-        canvas.clipRect(gl.L(10.0f), gl.L(8.0f), getWidth() - gl.L(18.0f), getHeight());
-        int L = gl.L(18.0f);
+        canvas.clipRect(gm.L(10.0f), gm.L(8.0f), getWidth() - gm.L(18.0f), getHeight());
+        int L = gm.L(18.0f);
         this.c = L;
         float f7 = 0.0f;
         canvas.translate(L, 0.0f);
-        i46 i46Var = this.F;
-        if (i46Var != null && i46Var.g(canvas)) {
+        i66 i66Var = this.F;
+        if (i66Var != null && i66Var.g(canvas)) {
             invalidate();
         }
-        int L2 = gl.L(8.0f);
+        int L2 = gm.L(8.0f);
         this.d = L2;
         canvas.translate(0.0f, L2);
         float f8 = 255.0f;
         try {
-            TextPaint textPaint = bkb.O1;
-            int v0 = bkb.v0(bkb.Wc, this.J);
-            RectF rectF = ProfileActivity.Z6;
+            TextPaint textPaint = cmb.O1;
+            int v0 = cmb.v0(cmb.Wc, this.J);
+            RectF rectF = ProfileActivity.e7;
             textPaint.linkColor = v0;
             staticLayout = this.M;
         } catch (Exception e) {
@@ -385,7 +385,7 @@ public abstract class s1 extends FrameLayout implements tjb {
                 float lineBottom = (this.M.getLineBottom(lineCount) - this.M.getLineTop(lineCount)) - this.M.getBottomPadding();
                 float pow3 = 1.0f - ((float) Math.pow(this.W, 0.25d));
                 if (pow3 < 0.5d) {
-                    pow = yjb.C(pow3, 4.0f, pow3, pow3);
+                    pow = mlb.C(pow3, 4.0f, pow3, pow3);
                     f4 = 1.0f;
                     f = pow2;
                 } else {
@@ -397,7 +397,7 @@ public abstract class s1 extends FrameLayout implements tjb {
                         e = e2;
                         f3 = f7;
                         f2 = f8;
-                        fa4.g(e, true);
+                        fc4.g(e, true);
                         canvas.restore();
                         FrameLayout frameLayout = this.r;
                         alpha = frameLayout.getAlpha();
@@ -465,7 +465,7 @@ public abstract class s1 extends FrameLayout implements tjb {
             }
         } catch (Exception e3) {
             e = e3;
-            fa4.g(e, true);
+            fc4.g(e, true);
             canvas.restore();
             FrameLayout frameLayout3 = this.r;
             alpha = frameLayout3.getAlpha();
@@ -508,7 +508,7 @@ public abstract class s1 extends FrameLayout implements tjb {
     public final void e() {
         this.F.e(true);
         this.x = null;
-        gl.r(this.V);
+        gm.r(this.V);
         invalidate();
     }
 
@@ -518,7 +518,7 @@ public abstract class s1 extends FrameLayout implements tjb {
             return;
         }
         try {
-            str3 = gl.U.matcher(str).replaceAll("\u200c");
+            str3 = gm.U.matcher(str).replaceAll("\u200c");
         } catch (Throwable unused) {
             str3 = str;
         }
@@ -530,11 +530,11 @@ public abstract class s1 extends FrameLayout implements tjb {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.b);
         this.e = spannableStringBuilder;
         this.f = null;
-        k27.e(false, spannableStringBuilder, false, false, !z);
-        vu3.l(this.e, bkb.O1.getFontMetricsInt(), false);
+        k47.e(false, spannableStringBuilder, false, false, !z);
+        gw3.l(this.e, cmb.O1.getFontMetricsInt(), false);
         int i = this.b0;
         if (i <= 0) {
-            i = gl.q.x - gl.L(36.0f);
+            i = gm.q.x - gm.L(36.0f);
             this.b0 = i;
         }
         a(i, true);
@@ -555,8 +555,8 @@ public abstract class s1 extends FrameLayout implements tjb {
 
     public final int g() {
         StaticLayout staticLayout = this.a;
-        int L = gl.L(16.0f) + (staticLayout != null ? staticLayout.getHeight() : gl.L(20.0f));
-        return this.h.getVisibility() == 0 ? gl.L(23.0f) + L : L;
+        int L = gm.L(16.0f) + (staticLayout != null ? staticLayout.getHeight() : gm.L(20.0f));
+        return this.h.getVisibility() == 0 ? gm.L(23.0f) + L : L;
     }
 
     public final void h() {
@@ -567,7 +567,7 @@ public abstract class s1 extends FrameLayout implements tjb {
         }
         float f = this.W;
         g();
-        Typeface typeface = gl.a;
+        Typeface typeface = gm.a;
         this.a0 = ValueAnimator.ofFloat(0.0f, 1.0f);
         float abs = Math.abs(f - 1.0f) * 1250.0f * 2.0f;
         r1 r1Var = new r1();
@@ -581,9 +581,9 @@ public abstract class s1 extends FrameLayout implements tjb {
 
     public final int i() {
         int g = g();
-        float min = Math.min(d0 + (this.h.getVisibility() == 0 ? gl.L(20.0f) : 0), g());
+        float min = Math.min(d0 + (this.h.getVisibility() == 0 ? gm.L(20.0f) : 0), g());
         if (this.c0) {
-            g = (int) gl.R1(min, g, this.W);
+            g = (int) gm.R1(min, g, this.W);
         }
         setHeight(g);
         return g;
@@ -631,7 +631,7 @@ public abstract class s1 extends FrameLayout implements tjb {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        a(View.MeasureSpec.getSize(i) - gl.L(36.0f), false);
+        a(View.MeasureSpec.getSize(i) - gm.L(36.0f), false);
         super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i(), TLObject.FLAG_30));
     }
 
@@ -651,7 +651,7 @@ public abstract class s1 extends FrameLayout implements tjb {
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         s1 s1Var;
-        m46 b;
+        m66 b;
         int x = (int) motionEvent.getX();
         int y = (int) motionEvent.getY();
         l1 l1Var = this.n;
@@ -668,7 +668,7 @@ public abstract class s1 extends FrameLayout implements tjb {
             if (motionEvent.getAction() == 0 || (this.x != null && motionEvent.getAction() == 1)) {
                 if (motionEvent.getAction() == 0) {
                     e();
-                    if ((x < l1Var.getLeft() || x > l1Var.getRight() || y < l1Var.getTop() || y > l1Var.getBottom()) && (getMeasuredWidth() <= 0 || x <= getMeasuredWidth() - gl.L(18.0f))) {
+                    if ((x < l1Var.getLeft() || x > l1Var.getRight() || y < l1Var.getTop() || y > l1Var.getBottom()) && (getMeasuredWidth() <= 0 || x <= getMeasuredWidth() - gm.L(18.0f))) {
                         StaticLayout staticLayout = this.M;
                         if (staticLayout == null || this.W >= 1.0f || !this.c0) {
                             s1Var = this;
@@ -685,7 +685,7 @@ public abstract class s1 extends FrameLayout implements tjb {
                                         }
                                         StaticLayout staticLayout2 = staticLayoutArr[i];
                                         Point point = s1Var.P[i];
-                                        m46 b2 = s1Var.b(staticLayout2, point.x, point.y, x, y);
+                                        m66 b2 = s1Var.b(staticLayout2, point.x, point.y, x, y);
                                         if (b2 != null) {
                                             b = b2;
                                             break;
@@ -698,7 +698,7 @@ public abstract class s1 extends FrameLayout implements tjb {
                                 s1Var.E = s1Var.a;
                                 s1Var.x = b;
                                 s1Var.F.a(b, null);
-                                gl.e3(s1Var.V, ViewConfiguration.getLongPressTimeout());
+                                gm.d3(s1Var.V, ViewConfiguration.getLongPressTimeout());
                                 return true;
                             }
                             if (!super.onTouchEvent(motionEvent)) {
@@ -716,12 +716,12 @@ public abstract class s1 extends FrameLayout implements tjb {
                     }
                 } else {
                     s1Var = this;
-                    m46 m46Var = s1Var.x;
-                    if (m46Var != null) {
+                    m66 m66Var = s1Var.x;
+                    if (m66Var != null) {
                         try {
-                            s1Var.d((ClickableSpan) m46Var.i, s1Var.a, s1Var.y);
+                            s1Var.d((ClickableSpan) m66Var.i, s1Var.a, s1Var.y);
                         } catch (Exception e) {
-                            fa4.g(e, true);
+                            fc4.g(e, true);
                         }
                         s1Var.e();
                         return true;
@@ -745,28 +745,28 @@ public abstract class s1 extends FrameLayout implements tjb {
         this.R = z;
     }
 
-    @Override // tjb
+    @Override // vlb
     public final void updateColors() {
-        TextPaint textPaint = bkb.O1;
-        int i = bkb.Wc;
-        wjb wjbVar = this.J;
-        int v0 = bkb.v0(i, wjbVar);
-        RectF rectF = ProfileActivity.Z6;
+        TextPaint textPaint = cmb.O1;
+        int i = cmb.Wc;
+        ylb ylbVar = this.J;
+        int v0 = cmb.v0(i, ylbVar);
+        RectF rectF = ProfileActivity.e7;
         textPaint.linkColor = v0;
         try {
-            int v02 = bkb.v0(bkb.h6, wjbVar);
-            ff0 ff0Var = this.L;
-            if (ff0Var != null && v02 != this.S) {
+            int v02 = cmb.v0(cmb.h6, ylbVar);
+            fg0 fg0Var = this.L;
+            if (fg0Var != null && v02 != this.S) {
                 this.S = v02;
-                bkb.F1(ff0Var, v02, true);
+                cmb.F1(fg0Var, v02, true);
             }
-            this.T.setColor(bkb.v0(bkb.c6, wjbVar));
+            this.T.setColor(cmb.v0(cmb.c6, ylbVar));
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
-    @Override // tjb
+    @Override // vlb
     public final void addColorKeys(HashSet hashSet) {
     }
 }

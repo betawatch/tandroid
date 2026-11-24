@@ -7,7 +7,7 @@ import android.media.MediaFormat;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class AudioDecoder {
     private static final int TIMEOUT_USEC = 0;
@@ -21,7 +21,7 @@ public class AudioDecoder {
     private long startTimeUs;
     private int trackIndex;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class DecodedBufferData {
         public ByteBuffer byteBuffer = null;
         public int index = -1;
@@ -50,7 +50,7 @@ public class AudioDecoder {
         try {
             this.endTimeUs = this.extractor.getTrackFormat(this.trackIndex).getLong("durationUs");
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             this.endTimeUs = -1L;
         }
     }
@@ -78,7 +78,7 @@ public class AudioDecoder {
         if (i3 >= 0) {
             this.extractor.selectTrack(i3);
         } else {
-            wn4.j("No audio track found in source");
+            zo4.k("No audio track found in source");
         }
     }
 
@@ -155,11 +155,11 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat().getInteger("channel-count");
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             try {
                 return this.getInputMediaFormat().getInteger("channel-count");
             } catch (Exception e2) {
-                fa4.g(e2, true);
+                fc4.g(e2, true);
                 return -1;
             }
         }
@@ -169,11 +169,11 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat().getLong("durationUs");
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             try {
                 return getInputMediaFormat().getLong("durationUs");
             } catch (Exception e2) {
-                fa4.g(e2, true);
+                fc4.g(e2, true);
                 return -1L;
             }
         }
@@ -187,7 +187,7 @@ public class AudioDecoder {
         try {
             return this.extractor.getTrackFormat(this.trackIndex);
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             return null;
         }
     }
@@ -196,7 +196,7 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat() != null ? getOutputMediaFormat() : getInputMediaFormat();
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             return null;
         }
     }
@@ -205,7 +205,7 @@ public class AudioDecoder {
         try {
             return this.decoder.getOutputFormat();
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             return null;
         }
     }
@@ -214,11 +214,11 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat().getInteger("sample-rate");
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             try {
                 return this.getInputMediaFormat().getInteger("sample-rate");
             } catch (Exception e2) {
-                fa4.g(e2, true);
+                fc4.g(e2, true);
                 return -1;
             }
         }
@@ -282,7 +282,7 @@ public class AudioDecoder {
         StringBuilder sb = new StringBuilder("StartTimeUs(");
         sb.append(this.startTimeUs);
         sb.append(") must be less than or equal to EndTimeUs(");
-        wn4.j(ls6.p(sb, this.endTimeUs, ")"));
+        zo4.k(kt6.q(sb, this.endTimeUs, ")"));
     }
 
     public void stop() {

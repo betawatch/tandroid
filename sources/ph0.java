@@ -1,6 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface ph0 {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class ph0 extends dm6 {
+    public int[] E;
+    public final long w;
+    public final long x;
+    public lx6 y;
+
+    public ph0(a83 a83Var, g83 g83Var, go4 go4Var, int i, Object obj, long j, long j2, long j3, long j4, long j5) {
+        super(a83Var, g83Var, go4Var, i, obj, j, j2, j5, null);
+        this.w = j3;
+        this.x = j4;
+    }
+
+    public final int d(int i) {
+        int[] iArr = this.E;
+        iArr.getClass();
+        return iArr[i];
+    }
 }

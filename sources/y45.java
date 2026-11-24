@@ -1,30 +1,49 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.TextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class y45 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ h75 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class y45 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ j55 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y45(h75 h75Var, Context context) {
-        super(context);
-        this.b = h75Var;
-        this.a = new RectF();
+    public /* synthetic */ y45(j55 j55Var, byte b) {
+        this.a = b;
+        this.b = j55Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, gl.L(12.0f), gl.L(12.0f), this.b.Z2);
-        super.onDraw(canvas);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        j55 j55Var = this.b;
+        switch (b) {
+            case 0:
+                if (!j55Var.a() && !j55Var.d) {
+                    j55Var.d = false;
+                    if (!j55Var.f) {
+                        j55Var.f = true;
+                        j55Var.b.c();
+                    }
+                    if (!j55Var.e) {
+                        j55Var.a.dismiss();
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (!j55Var.a() && !j55Var.d) {
+                    j55Var.d = false;
+                    if (!j55Var.f) {
+                        j55Var.f = true;
+                        j55Var.b.c();
+                    }
+                    if (!j55Var.e) {
+                        j55Var.a.dismiss();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

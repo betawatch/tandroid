@@ -1,43 +1,63 @@
 // default package
 
-import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface jka {
-    void a(int i, ByteBuffer byteBuffer);
+public abstract class jka extends d69 {
+    public boolean m;
+    public boolean n;
 
-    void b(int i, ByteBuffer byteBuffer);
+    public jka() {
+        this.a = null;
+        this.b = new ArrayList();
+        this.c = (short) 120;
+        this.d = (short) 120;
+        this.e = (short) 250;
+        this.f = (short) 250;
+        this.g = (short) 250;
+        this.l = (short) 0;
+        this.m = true;
+    }
 
-    void c(int i, int i2);
+    @Override // d69
+    public boolean a(u69 u69Var, az8 az8Var, az8 az8Var2) {
+        int i;
+        int i2;
+        if (az8Var != null && ((i = az8Var.b) != (i2 = az8Var2.b) || az8Var.c != az8Var2.c || this.n)) {
+            return r(u69Var, az8Var, i, az8Var.c, i2, az8Var2.c);
+        }
+        p(u69Var);
+        return true;
+    }
 
-    void d(int i, int i2);
+    public abstract void p(u69 u69Var);
 
-    int e(int i, int i2, int i3);
+    public abstract boolean q(u69 u69Var, u69 u69Var2, az8 az8Var, int i, int i2, int i3, int i4);
 
-    void f();
+    public abstract boolean r(u69 u69Var, az8 az8Var, int i, int i2, int i3, int i4);
 
-    void flush();
+    public abstract void s(u69 u69Var, az8 az8Var);
 
-    Object g();
+    public boolean t(u69 u69Var) {
+        return !this.m || u69Var.h();
+    }
 
-    Object h();
+    public final void u(u69 u69Var) {
+        w(u69Var);
+        d(u69Var);
+    }
 
-    void i(int i);
+    public final void v(u69 u69Var) {
+        x(u69Var);
+        d(u69Var);
+    }
 
-    boolean j();
+    public abstract void y();
 
-    void k(long j, int i, long j2);
+    public void w(u69 u69Var) {
+    }
 
-    Object l();
-
-    void m(int i, int i2, int i3, int i4, int i5);
-
-    void n(int i);
-
-    int o();
-
-    void p(int i);
-
-    int q(int i, int i2);
+    public void x(u69 u69Var) {
+    }
 }

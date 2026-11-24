@@ -1,42 +1,49 @@
 // default package
 
-import android.graphics.RectF;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class b9c {
-    public final RectF e = new RectF();
-    public final a9c a = new a9c(0.0f);
-    public final a9c b = new a9c(0.0f);
-    public final a9c c = new a9c(0.0f);
-    public final a9c d = new a9c(0.0f);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class b9c implements qac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public final boolean a(float f) {
-        return this.d.a(f) || (this.c.a(f) || (this.b.a(f) || this.a.a(f)));
+    public /* synthetic */ b9c(UserInfoActivity userInfoActivity, byte b) {
+        this.a = b;
+        this.b = userInfoActivity;
     }
 
-    public final boolean b(float f, float f2, float f3, float f4) {
-        return this.a.b(f) || this.b.b(f2) || this.c.b(f3) || this.d.b(f4);
-    }
-
-    public final void c(boolean z) {
-        this.a.c(z);
-        this.b.c(z);
-        this.c.c(z);
-        this.d.c(z);
-    }
-
-    public final void d(float f, float f2, float f3, float f4) {
-        this.a.d(f);
-        this.b.d(f2);
-        this.c.d(f3);
-        this.d.d(f4);
-    }
-
-    public final void e(float f, float f2, float f3, float f4) {
-        this.a.c = f;
-        this.b.c = f2;
-        this.c.c = f3;
-        this.d.c = f4;
+    @Override // qac
+    public final void a(Object obj) {
+        byte b = this.a;
+        UserInfoActivity userInfoActivity = this.b;
+        switch (b) {
+            case 0:
+                userInfoActivity.K = (TL_account.TL_birthday) obj;
+                va vaVar = userInfoActivity.y;
+                if (vaVar != null) {
+                    vaVar.g3.O(true);
+                }
+                userInfoActivity.f0(true);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                if (userInfoActivity.L != chat) {
+                    userInfoActivity.L = chat;
+                    if (chat != null) {
+                        ts2.u(null, 2131751170, c41.b0(userInfoActivity), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity.f0(true);
+                    va vaVar2 = userInfoActivity.y;
+                    if (vaVar2 != null) {
+                        vaVar2.g3.O(true);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

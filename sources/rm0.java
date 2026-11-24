@@ -1,36 +1,87 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rm0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ SpannableStringBuilder b;
+public abstract class rm0 extends r59 {
+    public int f3;
+    public int g3;
+    public boolean h3;
+    public int i3;
+    public boolean j3;
 
-    public /* synthetic */ rm0(SpannableStringBuilder spannableStringBuilder, byte b) {
-        this.a = b;
-        this.b = spannableStringBuilder;
+    public final void A1() {
+        if (getLayoutParams() == null) {
+            return;
+        }
+        if (!gda.f()) {
+            this.f3 = 0;
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
+        } else {
+            this.f3 = z1();
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.f3;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        SpannableStringBuilder spannableStringBuilder = this.b;
-        switch (b) {
-            case 0:
-                u21 Y = u21.Y();
-                if (Y != null) {
-                    Y.Q(R.raw.forward, 30, spannableStringBuilder).j();
-                    break;
-                }
-                break;
-            default:
-                m21 I = vp7.h().I(R.raw.contact_check, k96.M0(2131749566, null), spannableStringBuilder);
-                I.t = true;
-                I.j();
-                break;
+    @Override // r59, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        if (this.f3 == 0 || Z0()) {
+            super.dispatchDraw(canvas);
+        } else {
+            canvas.clipRect(0, this.f3, getMeasuredWidth(), getMeasuredHeight() + this.i3);
+            super.dispatchDraw(canvas);
         }
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j) {
+        if (view.getY() + view.getMeasuredHeight() >= this.f3 || this.j3 || Z0()) {
+            return super.drawChild(canvas, view, j);
+        }
+        return true;
+    }
+
+    @Override // r59, vi5
+    public final void g(Canvas canvas, RectF rectF) {
+        this.j3 = true;
+        super.g(canvas, rectF);
+        this.j3 = false;
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        A1();
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i, int i2) {
+        this.h3 = true;
+        A1();
+        super.setPadding(getPaddingLeft(), this.g3 + this.f3, getPaddingRight(), getPaddingBottom());
+        this.h3 = false;
+        super.onMeasure(i, i2);
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.h3) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // android.view.View
+    public final void setPadding(int i, int i2, int i3, int i4) {
+        this.g3 = i2;
+        super.setPadding(i, i2 + this.f3, i3, i4);
+    }
+
+    public int z1() {
+        return gm.L(203.0f);
     }
 }

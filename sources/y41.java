@@ -1,38 +1,32 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.channels.ByteChannel;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class y41 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ f51 b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class y41 implements ByteChannel {
-    public ByteBuffer a;
-
-    @Override // java.nio.channels.Channel
-    public final boolean isOpen() {
-        return true;
+    public /* synthetic */ y41(f51 f51Var, byte b) {
+        this.a = b;
+        this.b = f51Var;
     }
 
-    @Override // java.nio.channels.ReadableByteChannel
-    public final int read(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        ByteBuffer byteBuffer2 = this.a;
-        if (byteBuffer2.remaining() <= 0) {
-            return -1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        f51 f51Var = this.b;
+        switch (b) {
+            case 0:
+                f51Var.j0();
+                break;
+            case 1:
+                f51Var.n0();
+                break;
+            default:
+                y41 y41Var = f51Var.e;
+                gm.r(y41Var);
+                gm.d3(y41Var, 5000L);
+                break;
         }
-        byteBuffer.put((ByteBuffer) byteBuffer2.duplicate().limit(byteBuffer.remaining() + byteBuffer2.position()));
-        byteBuffer2.position(byteBuffer2.position() + remaining);
-        return remaining;
-    }
-
-    @Override // java.nio.channels.WritableByteChannel
-    public final int write(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        this.a.put(byteBuffer);
-        return remaining;
-    }
-
-    @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
     }
 }

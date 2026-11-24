@@ -1,87 +1,98 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nv2 implements View.OnClickListener {
-    public final /* synthetic */ byte a = 2;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nv2 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bw2 b;
 
-    public /* synthetic */ nv2(tv2 tv2Var, ArrayList arrayList, boolean z) {
-        this.c = tv2Var;
-        this.d = arrayList;
-        this.b = z;
+    public /* synthetic */ nv2(bw2 bw2Var, byte b) {
+        this.a = b;
+        this.b = bw2Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         byte b = this.a;
-        boolean z = this.b;
-        Object obj = this.d;
-        Object obj2 = this.c;
+        final byte b2 = 1;
+        final bw2 bw2Var = this.b;
         switch (b) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                xv2 xv2Var = ((tv2) obj2).a;
-                if (xv2Var.w != null && xv2Var.l != null) {
-                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
-                    if (intValue == 0) {
-                        xv2Var.l.y(xv2Var.W);
-                    } else if (intValue == 1) {
-                        xv2Var.l.r(xv2Var.W);
-                    } else if (intValue == 2) {
-                        xv2Var.l.r(null);
-                    } else if (intValue == 3) {
-                        xv2Var.l.D(xv2Var.W);
-                    } else if (intValue == 4) {
-                        xv2Var.l.o(xv2Var.W);
-                    } else if (intValue == 5) {
-                        hq6.d0(xv2Var.r).d(2, xv2Var.b0, xv2Var.W, (int) (System.currentTimeMillis() / 1000), this.b);
-                    }
-                    xv2Var.d();
-                    break;
-                }
-                break;
-            case 1:
-                i61 i61Var = (i61) obj2;
-                Runnable runnable = (Runnable) obj;
-                d Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Q.presentFragment(new PremiumPreviewFragment(0, z ? "lastseen" : "readtime"));
-                    i61Var.dismiss();
-                    if (runnable != null) {
-                        runnable.run();
+                if (tLObject != null) {
+                    TLRPC.TL_help_inviteText tL_help_inviteText = (TLRPC.TL_help_inviteText) tLObject;
+                    if (tL_help_inviteText.message.length() != 0) {
+                        gm.c3(new pf2(bw2Var, tL_help_inviteText, b2));
                         break;
                     }
                 }
                 break;
+            case 1:
+                final byte b3 = 0;
+                gm.c3(new Runnable() { // from class: gv2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b4 = b3;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        bw2 bw2Var2 = bw2Var;
+                        switch (b4) {
+                            case 0:
+                                if (tL_error2 == null) {
+                                    bw2Var2.Y = (TLRPC.GlobalPrivacySettings) tLObject2;
+                                    bw2Var2.G = (byte) 2;
+                                } else {
+                                    bw2Var2.G = (byte) 0;
+                                }
+                                bw2Var2.getNotificationCenter().k(48, new Object[0]);
+                                break;
+                            default:
+                                if (tL_error2 == null) {
+                                    bw2Var2.I = ((TLRPC.TL_accountDaysTTL) tLObject2).days;
+                                    bw2Var2.H = (byte) 2;
+                                } else {
+                                    bw2Var2.H = (byte) 0;
+                                }
+                                bw2Var2.getNotificationCenter().k(48, new Object[0]);
+                                break;
+                        }
+                    }
+                });
+                break;
             default:
-                g29 g29Var = (g29) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                if (z) {
-                    ((nfa) g29Var.b).J.p();
-                }
-                runnable2.run();
+                gm.c3(new Runnable() { // from class: gv2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b4 = b2;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        bw2 bw2Var2 = bw2Var;
+                        switch (b4) {
+                            case 0:
+                                if (tL_error2 == null) {
+                                    bw2Var2.Y = (TLRPC.GlobalPrivacySettings) tLObject2;
+                                    bw2Var2.G = (byte) 2;
+                                } else {
+                                    bw2Var2.G = (byte) 0;
+                                }
+                                bw2Var2.getNotificationCenter().k(48, new Object[0]);
+                                break;
+                            default:
+                                if (tL_error2 == null) {
+                                    bw2Var2.I = ((TLRPC.TL_accountDaysTTL) tLObject2).days;
+                                    bw2Var2.H = (byte) 2;
+                                } else {
+                                    bw2Var2.H = (byte) 0;
+                                }
+                                bw2Var2.getNotificationCenter().k(48, new Object[0]);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ nv2(g29 g29Var, boolean z, Runnable runnable) {
-        this.c = g29Var;
-        this.b = z;
-        this.d = runnable;
-    }
-
-    public /* synthetic */ nv2(boolean z, i61 i61Var, Runnable runnable) {
-        this.b = z;
-        this.c = i61Var;
-        this.d = runnable;
     }
 }

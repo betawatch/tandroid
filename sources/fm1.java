@@ -1,80 +1,261 @@
 // default package
 
-import android.os.Bundle;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fm1 implements zz8, ed {
+public final /* synthetic */ class fm1 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ k27 c;
+    public final /* synthetic */ yv1 b;
 
-    public /* synthetic */ fm1(mu1 mu1Var, k27 k27Var, byte b) {
+    public /* synthetic */ fm1(yv1 yv1Var, byte b) {
         this.a = b;
-        this.b = mu1Var;
-        this.c = k27Var;
+        this.b = yv1Var;
     }
 
-    @Override // zz8
-    public final void l(long j, TLRPC.MessagePeerReaction messagePeerReaction) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        k27 k27Var = this.c;
-        mu1 mu1Var = this.b;
+        final byte b2 = 0;
+        final yv1 yv1Var = this.b;
         switch (b) {
             case 0:
-                Bundle bundle = new Bundle();
-                if (j > 0) {
-                    bundle.putLong("user_id", j);
-                } else {
-                    bundle.putLong("chat_id", -j);
-                }
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle.putInt("report_reaction_message_id", k27Var.e1());
-                    bundle.putLong("report_reaction_from_dialog_id", mu1Var.l6);
-                }
-                mu1Var.presentFragment(new ProfileActivity(bundle, null));
-                mu1Var.F5(true);
+                gm.c3(new Runnable() { // from class: wn1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z = false;
+                        switch (b2) {
+                            case 0:
+                                yv1Var.n9(tLObject);
+                                break;
+                            case 1:
+                                yv1Var.t8(tLObject);
+                                break;
+                            case 2:
+                                yv1 yv1Var2 = yv1Var;
+                                TLObject tLObject2 = tLObject;
+                                yv1Var2.G5 = 0;
+                                if (tLObject2 == null && yv1Var2.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, yv1Var2.Ba, yv1Var2.getParentActivity());
+                                    alertDialog$Builder.a.S = jb6.M0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = jb6.M0(2131751208, null);
+                                    alertDialog$Builder.j(jb6.M0(2131747564, null), null);
+                                    yv1Var2.showDialog(alertDialog$Builder.a);
+                                    ms1 ms1Var = yv1Var2.a0;
+                                    if (ms1Var != null) {
+                                        ms1Var.G1(null, null, false);
+                                        yv1Var2.E7(true);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                yv1 yv1Var3 = yv1Var;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 != null) {
+                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
+                                    try {
+                                        ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
+                                        if (c41.a(yv1Var3)) {
+                                            c41 b0 = c41.b0(yv1Var3);
+                                            if (!yv1Var3.j8() && tL_exportedMessageLink.link.contains("/c/")) {
+                                                z = true;
+                                            }
+                                            b0.k(z).j();
+                                            break;
+                                        }
+                                    } catch (Exception e) {
+                                        fc4.g(e, true);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
-            default:
-                mu1Var.getClass();
-                Bundle bundle2 = new Bundle();
-                if (j > 0) {
-                    bundle2.putLong("user_id", j);
+            case 1:
+                final byte b3 = 1;
+                gm.c3(new Runnable() { // from class: wn1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z = false;
+                        switch (b3) {
+                            case 0:
+                                yv1Var.n9(tLObject);
+                                break;
+                            case 1:
+                                yv1Var.t8(tLObject);
+                                break;
+                            case 2:
+                                yv1 yv1Var2 = yv1Var;
+                                TLObject tLObject2 = tLObject;
+                                yv1Var2.G5 = 0;
+                                if (tLObject2 == null && yv1Var2.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, yv1Var2.Ba, yv1Var2.getParentActivity());
+                                    alertDialog$Builder.a.S = jb6.M0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = jb6.M0(2131751208, null);
+                                    alertDialog$Builder.j(jb6.M0(2131747564, null), null);
+                                    yv1Var2.showDialog(alertDialog$Builder.a);
+                                    ms1 ms1Var = yv1Var2.a0;
+                                    if (ms1Var != null) {
+                                        ms1Var.G1(null, null, false);
+                                        yv1Var2.E7(true);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                yv1 yv1Var3 = yv1Var;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 != null) {
+                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
+                                    try {
+                                        ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
+                                        if (c41.a(yv1Var3)) {
+                                            c41 b0 = c41.b0(yv1Var3);
+                                            if (!yv1Var3.j8() && tL_exportedMessageLink.link.contains("/c/")) {
+                                                z = true;
+                                            }
+                                            b0.k(z).j();
+                                            break;
+                                        }
+                                    } catch (Exception e) {
+                                        fc4.g(e, true);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 2:
+                final byte b4 = 3;
+                gm.c3(new Runnable() { // from class: wn1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z = false;
+                        switch (b4) {
+                            case 0:
+                                yv1Var.n9(tLObject);
+                                break;
+                            case 1:
+                                yv1Var.t8(tLObject);
+                                break;
+                            case 2:
+                                yv1 yv1Var2 = yv1Var;
+                                TLObject tLObject2 = tLObject;
+                                yv1Var2.G5 = 0;
+                                if (tLObject2 == null && yv1Var2.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, yv1Var2.Ba, yv1Var2.getParentActivity());
+                                    alertDialog$Builder.a.S = jb6.M0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = jb6.M0(2131751208, null);
+                                    alertDialog$Builder.j(jb6.M0(2131747564, null), null);
+                                    yv1Var2.showDialog(alertDialog$Builder.a);
+                                    ms1 ms1Var = yv1Var2.a0;
+                                    if (ms1Var != null) {
+                                        ms1Var.G1(null, null, false);
+                                        yv1Var2.E7(true);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                yv1 yv1Var3 = yv1Var;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 != null) {
+                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
+                                    try {
+                                        ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
+                                        if (c41.a(yv1Var3)) {
+                                            c41 b0 = c41.b0(yv1Var3);
+                                            if (!yv1Var3.j8() && tL_exportedMessageLink.link.contains("/c/")) {
+                                                z = true;
+                                            }
+                                            b0.k(z).j();
+                                            break;
+                                        }
+                                    } catch (Exception e) {
+                                        fc4.g(e, true);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 3:
+                final byte b5 = 2;
+                gm.c3(new Runnable() { // from class: wn1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        boolean z = false;
+                        switch (b5) {
+                            case 0:
+                                yv1Var.n9(tLObject);
+                                break;
+                            case 1:
+                                yv1Var.t8(tLObject);
+                                break;
+                            case 2:
+                                yv1 yv1Var2 = yv1Var;
+                                TLObject tLObject2 = tLObject;
+                                yv1Var2.G5 = 0;
+                                if (tLObject2 == null && yv1Var2.getParentActivity() != null) {
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, yv1Var2.Ba, yv1Var2.getParentActivity());
+                                    alertDialog$Builder.a.S = jb6.M0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = jb6.M0(2131751208, null);
+                                    alertDialog$Builder.j(jb6.M0(2131747564, null), null);
+                                    yv1Var2.showDialog(alertDialog$Builder.a);
+                                    ms1 ms1Var = yv1Var2.a0;
+                                    if (ms1Var != null) {
+                                        ms1Var.G1(null, null, false);
+                                        yv1Var2.E7(true);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                yv1 yv1Var3 = yv1Var;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 != null) {
+                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
+                                    try {
+                                        ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
+                                        if (c41.a(yv1Var3)) {
+                                            c41 b0 = c41.b0(yv1Var3);
+                                            if (!yv1Var3.j8() && tL_exportedMessageLink.link.contains("/c/")) {
+                                                z = true;
+                                            }
+                                            b0.k(z).j();
+                                            break;
+                                        }
+                                    } catch (Exception e) {
+                                        fc4.g(e, true);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 4:
+                if (tL_error == null) {
+                    yv1Var.getMessagesController().T3((TLRPC.Updates) tLObject, false);
+                    break;
                 } else {
-                    bundle2.putLong("chat_id", -j);
+                    yv1Var.getClass();
+                    break;
                 }
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle2.putInt("report_reaction_message_id", k27Var.e1());
-                    bundle2.putLong("report_reaction_from_dialog_id", mu1Var.l6);
-                }
-                mu1Var.presentFragment(new ProfileActivity(bundle2, null));
-                mu1Var.F5(true);
+            default:
+                yv1Var.D8(tLObject);
                 break;
         }
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        mu1 mu1Var = this.b;
-        hd[] hdVarArr = {new hd(3, mu1Var.Ba, mu1Var.getParentActivity())};
-        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-        k27 k27Var = this.c;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) k27Var.k.media;
-        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
-        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-        tL_inputMediaPoll.poll = tL_poll;
-        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-        tL_poll.id = poll.id;
-        tL_poll.question = poll.question;
-        tL_poll.answers = poll.answers;
-        tL_poll.closed = true;
-        tL_messages_editMessage.media = tL_inputMediaPoll;
-        tL_messages_editMessage.peer = mu1Var.getMessagesController().h1(mu1Var.l6);
-        tL_messages_editMessage.id = k27Var.e1();
-        tL_messages_editMessage.flags |= TLObject.FLAG_14;
-        gl.e3(new xm1(mu1Var, hdVarArr, mu1Var.getConnectionsManager().sendRequest(tL_messages_editMessage, new en0((Object) mu1Var, (Object) hdVarArr, (Object) tL_messages_editMessage, (byte) 17)), (byte) 2), 500L);
     }
 }

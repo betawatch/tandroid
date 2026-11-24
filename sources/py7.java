@@ -1,48 +1,72 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class py7 extends b4 {
-    public static final Parcelable.Creator<py7> CREATOR = new t4d((byte) 9);
-    public boolean a;
-    public boolean b;
-    public uc1 c;
-    public boolean d;
-    public lga e;
-    public ArrayList f;
-    public wz7 h;
-    public myb n;
-    public boolean r;
-    public String s;
-    public Bundle w;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class py7 implements View.OnTouchListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xz7 b;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        boolean z = this.a;
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(z ? 1 : 0);
-        boolean z2 = this.b;
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(z2 ? 1 : 0);
-        jte.k(parcel, 3, this.c, i);
-        boolean z3 = this.d;
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(z3 ? 1 : 0);
-        jte.k(parcel, 5, this.e, i);
-        jte.h(parcel, 6, this.f);
-        jte.k(parcel, 7, this.h, i);
-        jte.k(parcel, 8, this.n, i);
-        boolean z4 = this.r;
-        jte.q(parcel, 9, 4);
-        parcel.writeInt(z4 ? 1 : 0);
-        jte.l(parcel, 10, this.s);
-        jte.b(parcel, 11, this.w);
-        jte.s(parcel, r);
+    public /* synthetic */ py7(xz7 xz7Var, byte b) {
+        this.a = b;
+        this.b = xz7Var;
+    }
+
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        byte b = this.a;
+        byte b2 = 2;
+        byte b3 = 3;
+        xz7 xz7Var = this.b;
+        switch (b) {
+            case 0:
+                if (xz7Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        az2 az2Var = new az2(null, false);
+                        az2Var.r = new cz6((Object) xz7Var, (Object) view, (byte) 10);
+                        xz7Var.presentFragment(az2Var);
+                    }
+                    break;
+                }
+                break;
+            case 1:
+                if (xz7Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xz7Var.getParentActivity());
+                        String M0 = jb6.M0(2131747199, null);
+                        he heVar = alertDialog$Builder.a;
+                        heVar.S = M0;
+                        alertDialog$Builder.e(new CharSequence[]{jb6.M0(2131747241, null), jb6.M0(2131747302, null)}, new r30(xz7Var, b3));
+                        alertDialog$Builder.j(jb6.M0(2131752542, null), null);
+                        xz7Var.showDialog(heVar);
+                    }
+                    break;
+                }
+                break;
+            case 2:
+                if (xz7Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        az2 az2Var2 = new az2(null, false);
+                        az2Var2.r = new qy7(xz7Var, b2);
+                        xz7Var.presentFragment(az2Var2);
+                    }
+                    break;
+                }
+                break;
+            default:
+                if (xz7Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        az2 az2Var3 = new az2(null, false);
+                        az2Var3.r = new qy7(xz7Var, b3);
+                        xz7Var.presentFragment(az2Var3);
+                    }
+                    break;
+                }
+                break;
+        }
+        return true;
     }
 }

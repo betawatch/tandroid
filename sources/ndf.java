@@ -1,7 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ndf {
-    public static final /* synthetic */ int a = 0;
+public final class ndf {
+    public final o7f a;
+    public final Long b;
+    public final pef c;
+
+    public /* synthetic */ ndf(uqd uqdVar) {
+        this.a = (o7f) uqdVar.b;
+        this.b = (Long) uqdVar.c;
+        this.c = (pef) uqdVar.d;
+    }
 }

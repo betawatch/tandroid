@@ -1,13 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class c70 implements zn7 {
+public final class c70 implements cq7 {
     public static final c70 a = new c70();
-    public static final w84 b = new w84("storageMetrics", b00.m(b00.l(et8.class, new vx(1))));
+    public static final wa4 b = wa4.c("baseAddress");
+    public static final wa4 c = wa4.c("size");
+    public static final wa4 d = wa4.c("name");
+    public static final wa4 e = wa4.c("uuid");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        ((ao7) obj2).a(b, ((vx4) obj).a);
+        b03 b03Var = (b03) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.g(b, ((v90) b03Var).a);
+        v90 v90Var = (v90) b03Var;
+        dq7Var.g(c, v90Var.b);
+        dq7Var.a(d, v90Var.c);
+        String str = v90Var.d;
+        dq7Var.a(e, str != null ? str.getBytes(s03.a) : null);
     }
 }

@@ -1,14 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class hh5 {
-    public int a;
-    public int b;
-    public byte c;
-    public boolean d;
+import j$.util.DesugarCollections;
+import java.util.List;
 
-    public final String toString() {
-        return String.format("%s[version=%s, totalTagSize=%d]", hh5.class.getSimpleName(), Integer.valueOf(this.a), Integer.valueOf(this.b));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class hh5 implements jg4 {
+    public final String a;
+    public final List b;
+    public final boolean c;
+
+    public hh5(String str, List list, boolean z) {
+        this.a = str;
+        this.b = DesugarCollections.unmodifiableList(list);
+        this.c = z;
     }
 }

@@ -1,18 +1,17 @@
 // default package
 
-import java.util.Arrays;
-import java.util.List;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class n74 {
     public final int a;
-    public final List b;
-    public final List c;
+    public final int b;
+    public final int c;
+    public final yia d;
 
-    public n74(int i, ww5[] ww5VarArr, eef[] eefVarArr) {
+    public n74(int i, int i2, int i3, yia yiaVar) {
         this.a = i;
-        this.b = Arrays.asList(ww5VarArr);
-        this.c = Arrays.asList(eefVarArr);
+        this.b = i2;
+        this.c = i3;
+        this.d = yiaVar;
     }
 }

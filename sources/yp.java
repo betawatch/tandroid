@@ -1,124 +1,120 @@
 // default package
 
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.widget.ListAdapter;
-import androidx.appcompat.app.AlertController$RecycleListView;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.util.SparseIntArray;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class yp implements eq, DialogInterface.OnClickListener {
-    public id a;
-    public zp b;
-    public CharSequence c;
-    public final /* synthetic */ fq d;
+public abstract class yp {
+    public Object a;
+    public Object b;
 
-    public yp(fq fqVar) {
-        this.d = fqVar;
+    public yp() {
+        this.a = new SparseIntArray();
+        this.b = new SparseIntArray();
     }
 
-    @Override // eq
-    public final boolean a() {
-        id idVar = this.a;
-        if (idVar != null) {
-            return idVar.isShowing();
-        }
-        return false;
-    }
-
-    @Override // eq
-    public final int b() {
-        return 0;
-    }
-
-    @Override // eq
-    public final void c(int i) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final CharSequence d() {
-        return this.c;
-    }
-
-    @Override // eq
-    public final void dismiss() {
-        id idVar = this.a;
-        if (idVar != null) {
-            idVar.dismiss();
+    public final void c() {
+        zk zkVar = (zk) this.a;
+        if (zkVar != null) {
+            try {
+                ((bq) this.b).e.unregisterReceiver(zkVar);
+            } catch (IllegalArgumentException unused) {
+            }
             this.a = null;
         }
     }
 
-    @Override // eq
-    public final Drawable g() {
-        return null;
-    }
+    public abstract IntentFilter d();
 
-    @Override // eq
-    public final void h(CharSequence charSequence) {
-        this.c = charSequence;
-    }
+    public abstract int e();
 
-    @Override // eq
-    public final void j(Drawable drawable) {
-        Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final void k(int i) {
-        Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final void l(int i) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final void m(int i, int i2) {
-        if (this.b == null) {
-            return;
+    public final MenuItem f(MenuItem menuItem) {
+        if (!(menuItem instanceof aeb)) {
+            return menuItem;
         }
-        fq fqVar = this.d;
-        dd ddVar = new dd(fqVar.getPopupContext(), (byte) 0);
-        pc pcVar = (pc) ddVar.c;
-        CharSequence charSequence = this.c;
-        if (charSequence != null) {
-            pcVar.f = charSequence;
+        aeb aebVar = (aeb) menuItem;
+        cka ckaVar = (cka) this.b;
+        if (ckaVar == null) {
+            ckaVar = new cka(0);
+            this.b = ckaVar;
         }
-        zp zpVar = this.b;
-        int selectedItemPosition = fqVar.getSelectedItemPosition();
-        pcVar.l = zpVar;
-        pcVar.m = this;
-        pcVar.b = selectedItemPosition;
-        pcVar.a = true;
-        id Y = ddVar.Y();
-        this.a = Y;
-        AlertController$RecycleListView alertController$RecycleListView = Y.f.e;
-        wp.d(alertController$RecycleListView, i);
-        wp.c(alertController$RecycleListView, i2);
-        this.a.show();
+        MenuItem menuItem2 = (MenuItem) ckaVar.get(aebVar);
+        if (menuItem2 != null) {
+            return menuItem2;
+        }
+        g27 g27Var = new g27((Context) this.a, aebVar);
+        ((cka) this.b).put(aebVar, g27Var);
+        return g27Var;
     }
 
-    @Override // eq
-    public final int n() {
+    public final int g(int i, int i2) {
+        int i3 = i(i);
+        int i4 = 0;
+        int i5 = 0;
+        for (int i6 = 0; i6 < i; i6++) {
+            int i7 = i(i6);
+            i4 += i7;
+            if (i4 == i2) {
+                i5++;
+                i4 = 0;
+            } else if (i4 > i2) {
+                i5++;
+                i4 = i7;
+            }
+        }
+        return i4 + i3 > i2 ? i5 + 1 : i5;
+    }
+
+    public int h(int i, int i2) {
+        int i3 = i(i);
+        if (i3 != i2) {
+            int i4 = 0;
+            for (int i5 = 0; i5 < i; i5++) {
+                int i6 = i(i5);
+                i4 += i6;
+                if (i4 == i2) {
+                    i4 = 0;
+                } else if (i4 > i2) {
+                    i4 = i6;
+                }
+            }
+            if (i3 + i4 <= i2) {
+                return i4;
+            }
+        }
         return 0;
     }
 
-    @Override // eq
-    public final void o(ListAdapter listAdapter) {
-        this.b = (zp) listAdapter;
+    public abstract int i(int i);
+
+    public final void j() {
+        ((SparseIntArray) this.a).clear();
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        fq fqVar = this.d;
-        fqVar.setSelection(i);
-        if (fqVar.getOnItemClickListener() != null) {
-            fqVar.performItemClick(null, i, this.b.getItemId(i));
+    public abstract void k();
+
+    public final void l() {
+        c();
+        IntentFilter d = d();
+        if (d.countActions() == 0) {
+            return;
         }
-        dismiss();
+        zk zkVar = (zk) this.a;
+        if (zkVar == null) {
+            zkVar = new zk(this, (byte) 1);
+            this.a = zkVar;
+        }
+        ((bq) this.b).e.registerReceiver(zkVar, d);
+    }
+
+    public yp(Context context) {
+        this.a = context;
+    }
+
+    public yp(bq bqVar) {
+        this.b = bqVar;
     }
 }

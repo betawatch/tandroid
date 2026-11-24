@@ -1,30 +1,20 @@
 // default package
 
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class fsc {
+    public static np3 a;
+    public static final int[] b = new int[nm7.M1];
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class fsc extends TLObject {
-    public double a;
-    public double b;
-    public String c;
-    public float d;
-
-    public final String a() {
-        boolean a = gsc.a();
-        float f = this.d;
-        if (!a) {
-            return de9.l(new StringBuilder(), (int) Math.round(((f * 9.0d) / 5.0d) + 32.0d), "°F");
+    static {
+        int i = 0;
+        while (true) {
+            int[] iArr = b;
+            if (i >= 129) {
+                return;
+            }
+            iArr[i] = (int) (Math.max(0.0d, Math.min(1.0d, 7.5d - Math.sqrt(i))) * 255.0d);
+            i++;
         }
-        return Math.round(f) + "°C";
-    }
-
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeDouble(this.a);
-        outputSerializedData.writeDouble(this.b);
-        outputSerializedData.writeString(this.c);
-        outputSerializedData.writeFloat(this.d);
     }
 }

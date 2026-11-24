@@ -1,42 +1,35 @@
 // default package
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ms5 implements Iterator {
-    public static final ms5 a;
-    public static final /* synthetic */ ms5[] b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ms5 extends ClickableSpan {
+    public final /* synthetic */ my0[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    static {
-        ms5 ms5Var = new ms5("INSTANCE", 0);
-        a = ms5Var;
-        b = new ms5[]{ms5Var};
+    public ms5(my0[] my0VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = my0VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    public static ms5 valueOf(String str) {
-        return (ms5) Enum.valueOf(ms5.class, str);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        d S = LaunchActivity.S();
+        if (S != null) {
+            S.presentFragment(ProfileActivity.S2(this.b.user_id));
+        }
     }
 
-    public static ms5[] values() {
-        return (ms5[]) b.clone();
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return false;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        throw new NoSuchElementException();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        gre.o("no calls to next() since the last call to remove()", false);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

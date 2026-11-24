@@ -1,19 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class fb3 {
-    public final s49 a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-
-    public fb3(s49 s49Var, int i, int i2, int i3, int i4) {
-        this.a = s49Var;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-    }
+public abstract class fb3 {
 }

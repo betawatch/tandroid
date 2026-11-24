@@ -1,14 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ko5 {
-    public static final cff c = new cff(20);
-    public final String a;
-    public final String b;
+public final class ko5 extends u2 {
+    public final mo5 d;
 
-    public ko5(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public ko5(mo5 mo5Var, int i) {
+        super(mo5Var.size(), i);
+        this.d = mo5Var;
+    }
+
+    @Override // u2
+    public final Object a(int i) {
+        return this.d.get(i);
     }
 }

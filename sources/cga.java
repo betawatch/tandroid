@@ -1,27 +1,22 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class cga {
-    public static final cga a;
-    public static final cga b;
-    public static final /* synthetic */ cga[] c;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    static {
-        cga cgaVar = new cga("GENERAL", 0);
-        a = cgaVar;
-        cga cgaVar2 = new cga("FALLBACK", 1);
-        b = cgaVar2;
-        c = new cga[]{cgaVar, cgaVar2};
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public interface cga {
+    void I();
 
-    public static cga valueOf(String str) {
-        return (cga) Enum.valueOf(cga.class, str);
-    }
+    void W();
 
-    public static cga[] values() {
-        return (cga[]) c.clone();
-    }
+    boolean Y();
+
+    r59 e();
+
+    TLRPC.Chat f();
+
+    boolean g(TLRPC.ChatParticipant chatParticipant, boolean z, boolean z2, View view);
+
+    boolean t();
 }

@@ -1,9 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class nub {
-    public int a;
-    public int b;
-    public long c;
+public enum nub extends rub {
+    public nub() {
+        super("ScriptData", 5);
+    }
+
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        rub.d(bsbVar, hl1Var, this, rub.G);
+    }
 }

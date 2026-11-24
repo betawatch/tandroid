@@ -1,15 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class sn3 {
-    public final int a;
-    public int b;
-    public final boolean c;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.style.ReplacementSpan;
 
-    public sn3(int i, int i2, boolean z) {
-        this.a = i;
-        this.b = i2;
-        this.c = z;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class sn3 extends ReplacementSpan {
+    public final Paint a;
+    public final Path b;
+    public final float c;
+
+    public sn3() {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        this.c = 3.25f;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(gm.N(1.25f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        float L = f + gm.L(3.0f);
+        float textSize = i4 - (paint.getTextSize() * 0.36f);
+        int color = paint.getColor();
+        Paint paint2 = this.a;
+        paint2.setColor(color);
+        Path path = this.b;
+        path.rewind();
+        float f2 = this.c;
+        path.moveTo(L, textSize - gm.L(f2));
+        path.lineTo(gm.L(f2) + L, textSize);
+        path.lineTo(L, textSize + gm.L(f2));
+        canvas.drawPath(path, paint2);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        return gm.L(this.c + 3.0f + 1.0f);
     }
 }

@@ -1,43 +1,69 @@
 // default package
 
-import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.Collections;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wq2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ConferenceCall b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ TLRPC.TL_error e;
+public final class wq2 {
+    public String a = null;
+    public final HashSet b;
+    public final HashSet c;
+    public byte d;
+    public boolean e;
+    public lr2 f;
+    public final HashSet g;
 
-    public /* synthetic */ wq2(ConferenceCall conferenceCall, long j, TLObject tLObject, TLRPC.TL_error tL_error, byte b) {
-        this.a = b;
-        this.b = conferenceCall;
-        this.c = j;
-        this.d = tLObject;
-        this.e = tL_error;
+    public wq2(Class cls, Class... clsArr) {
+        HashSet hashSet = new HashSet();
+        this.b = hashSet;
+        this.c = new HashSet();
+        this.d = (byte) 0;
+        this.e = false;
+        this.g = new HashSet();
+        hashSet.add(yy8.a(cls));
+        for (Class cls2 : clsArr) {
+            kte.a(cls2, "Null interface");
+            this.b.add(yy8.a(cls2));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.TL_error tL_error = this.e;
-        TLObject tLObject = this.d;
-        long j = this.c;
-        ConferenceCall conferenceCall = this.b;
-        switch (b) {
-            case 0:
-                conferenceCall.lambda$pull_outbound$5(j, tLObject, tL_error);
-                break;
-            case 1:
-                conferenceCall.lambda$kick$12(j, tLObject, tL_error);
-                break;
-            default:
-                conferenceCall.lambda$updateParticipants$10(j, tLObject, tL_error);
-                break;
+    public final void a(if3 if3Var) {
+        if (this.b.contains(if3Var.a)) {
+            u36.j("Components are not allowed to depend on interfaces they themselves provide.");
+        } else {
+            this.c.add(if3Var);
         }
+    }
+
+    public final xq2 b() {
+        if (!(this.f != null)) {
+            dq9.m("Missing required property: factory.");
+            return null;
+        }
+        return new xq2(this.a, new HashSet(this.b), new HashSet(this.c), this.d, this.e ? 1 : 0, this.f, this.g);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void c(int i) {
+        if (this.d == 0) {
+            this.d = i;
+        } else {
+            dq9.m("Instantiation type has already been set.");
+        }
+    }
+
+    public wq2(yy8 yy8Var, yy8... yy8VarArr) {
+        HashSet hashSet = new HashSet();
+        this.b = hashSet;
+        this.c = new HashSet();
+        this.d = (byte) 0;
+        this.e = false;
+        this.g = new HashSet();
+        hashSet.add(yy8Var);
+        for (yy8 yy8Var2 : yy8VarArr) {
+            kte.a(yy8Var2, "Null interface");
+        }
+        Collections.addAll(this.b, yy8VarArr);
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzkv implements zzkt {
     private final zzku zza;
@@ -15,11 +15,11 @@ public final class zzkv implements zzkt {
     private final zzzo zzb(String str, List list) {
         zzkq zzkqVar;
         if (str.length() == 0) {
-            fvc.c(3, 17, null);
+            i2d.d(3, 17, null);
             return null;
         }
         try {
-            long zza = this.zza.zza(yk2.l(list));
+            long zza = this.zza.zza(km2.l(list));
             zzkqVar = zzkr.zza;
             zzkr zzkrVar = new zzkr(zza, 255L, zzkqVar);
             StringBuilder sb = new StringBuilder(str.length());
@@ -28,7 +28,7 @@ public final class zzkv implements zzkt {
             }
             return zzzo.zzg(zzpp.zzh().zzj(sb.toString()));
         } catch (Exception e) {
-            fvc.c(3, 18, e);
+            i2d.d(3, 18, e);
             return null;
         }
     }

@@ -1,59 +1,119 @@
 // default package
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.text.TextPaint;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class yz1 extends View {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x02 b;
+public final class yz1 extends FrameLayout {
+    public final /* synthetic */ byte a = 0;
+    public boolean b;
+    public final View c;
+    public final Object d;
+    public final Object e;
+    public final Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yz1(x02 x02Var, Context context, byte b) {
-        super(context);
-        this.a = b;
-        this.b = x02Var;
+    public yz1(Activity activity, boolean z) {
+        super(activity);
+        this.b = false;
+        ImageView imageView = new ImageView(activity);
+        this.c = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, qoe.d(32, 32.0f, 0, 12.0f, 4.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, qoe.d(-1, -2.0f, 0, 64.0f, 4.0f, 0.0f, 4.0f));
+        TextView textView = new TextView(activity);
+        this.d = textView;
+        textView.setTextSize(2, 16.0f);
+        textView.setGravity(3);
+        anb.X(textView, cmb.F6, null);
+        linearLayout.addView(textView, qoe.t(-1, -2, 0, 0, 0, z ? 64 : 0, 0));
+        TextView textView2 = new TextView(activity);
+        this.e = textView2;
+        textView2.setTextSize(2, 13.0f);
+        textView2.setGravity(3);
+        anb.X(textView2, cmb.x6, null);
+        linearLayout.addView(textView2, qoe.t(-1, -2, 0, 0, 4, z ? 64 : 0, 0));
+        setPadding(0, gm.L(4.0f), 0, gm.L(4.0f));
+        if (z) {
+            Switch r3 = new Switch(activity, null);
+            this.f = r3;
+            r3.setDrawIconType(1);
+            addView(r3, qoe.d(37, 40.0f, 21, 21.0f, 0.0f, 21.0f, 0.0f));
+        }
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
         switch (this.a) {
-            case 0:
-                super.draw(canvas);
-                this.b.V1.draw(canvas);
+            case 1:
+                super.dispatchDraw(canvas);
+                if (this.b) {
+                    canvas.drawRect(gm.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), cmb.j0);
+                    break;
+                }
                 break;
             default:
-                super.draw(canvas);
+                super.dispatchDraw(canvas);
                 break;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.a) {
+            case 0:
+                if (!(view instanceof lka) || !this.b) {
+                    return super.drawChild(canvas, view, j);
+                }
+                lka lkaVar = (lka) view;
+                canvas.save();
+                canvas.scale(0.8f, 0.8f);
+                canvas.translate(-gm.L(12.0f), gm.L(6.0f));
+                int color = lkaVar.getTextPaint().getColor();
+                lkaVar.getTextPaint().setColor(-1);
+                boolean drawChild = super.drawChild(canvas, view, j);
+                lkaVar.getTextPaint().setColor(color);
+                canvas.restore();
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         switch (this.a) {
-            case 1:
-                x02 x02Var = this.b;
-                String format = String.format("%d", Integer.valueOf(Math.max(1, x02Var.v2.getSelectedItemsCount())));
-                TextPaint textPaint = x02Var.G2;
-                int max = Math.max(gl.L(16.0f) + ((int) Math.ceil(textPaint.measureText(format))), gl.L(24.0f));
-                int measuredWidth = getMeasuredWidth() / 2;
-                textPaint.setColor(bm2.o(bkb.v0(bkb.B5, x02Var.J0), (int) (((x02Var.S2 * 0.42d) + 0.58d) * Color.alpha(r6))));
-                Paint paint = x02Var.I2;
-                paint.setColor(bkb.v0(bkb.g5, x02Var.J0));
-                RectF rectF = x02Var.H2;
-                int i = max / 2;
-                rectF.set(measuredWidth - i, 0.0f, i + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(rectF, gl.L(12.0f), gl.L(12.0f), paint);
-                paint.setColor(bkb.v0(bkb.V9, x02Var.J0));
-                rectF.set(gl.L(2.0f) + r8, gl.L(2.0f), r4 - gl.L(2.0f), getMeasuredHeight() - gl.L(2.0f));
-                canvas.drawRoundRect(rectF, gl.L(10.0f), gl.L(10.0f), paint);
-                canvas.drawText(format, measuredWidth - (r3 / 2), gl.L(16.2f), textPaint);
+            case 0:
+                Drawable drawable = (Drawable) this.f;
+                RectF rectF = (RectF) this.d;
+                if (this.b) {
+                    canvas.save();
+                    int L = gm.L(26.0f);
+                    canvas.translate(gm.L(5.0f), (getMeasuredHeight() - L) / 2.0f);
+                    float f = L;
+                    rectF.set(-gm.L(5.0f), 0.0f, getMeasuredWidth() - getPaddingEnd(), f);
+                    float f2 = f / 2.0f;
+                    canvas.drawRoundRect(rectF, f2, f2, (Paint) this.e);
+                    canvas.translate(((getMeasuredWidth() - getPaddingEnd()) - gm.L(6.0f)) - drawable.getIntrinsicWidth(), gm.L(5.0f));
+                    drawable.draw(canvas);
+                    canvas.restore();
+                    break;
+                }
                 break;
             default:
                 super.onDraw(canvas);
@@ -62,15 +122,58 @@ public final class yz1 extends View {
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.a) {
-            case 0:
-                super.onSizeChanged(i, i2, i3, i4);
-                this.b.V1.setBounds(0, (i2 - gl.n) - gl.L(48.0f), i, i2);
+            case 1:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                Switch r0 = (Switch) this.f;
+                if (r0 != null) {
+                    accessibilityNodeInfo.setClassName("android.widget.Switch");
+                    accessibilityNodeInfo.setCheckable(true);
+                    accessibilityNodeInfo.setChecked(r0.h);
+                    StringBuilder sb = new StringBuilder();
+                    sb.append((Object) ((TextView) this.d).getText());
+                    sb.append("\n");
+                    sb.append((Object) ((TextView) this.e).getText());
+                    sb.append("\n");
+                    sb.append(jb6.M0(r0.h ? 2131747625 : 2131747627, null));
+                    accessibilityNodeInfo.setText(sb.toString());
+                    break;
+                }
                 break;
             default:
-                super.onSizeChanged(i, i2, i3, i4);
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 break;
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z, i, i2, i3, i4);
+                ((Paint) this.e).setShader(new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{-9071617, -5999873}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+                break;
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+        }
+    }
+
+    public yz1(Activity activity) {
+        super(activity);
+        this.d = new RectF();
+        this.e = new Paint(1);
+        this.b = false;
+        lka lkaVar = new lka(activity);
+        this.c = lkaVar;
+        addView(lkaVar, qoe.c(-1.0f, -1));
+        setWillNotDraw(false);
+        Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
+        this.f = drawable;
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        setClipToPadding(false);
+        setClipChildren(false);
+        rve.a(this);
     }
 }

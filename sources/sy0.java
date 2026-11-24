@@ -1,35 +1,109 @@
 // default package
 
-import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.app.Dialog;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class sy0 {
-    public final boolean a;
-    public final int b;
-    public boolean c;
-    public boolean d;
-    public final Object e;
-    public final Object f;
-    public final Object g;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class sy0 extends Dialog {
+    public final cz0 a;
+    public final ry0 b;
+    public final qy0 c;
+    public final Paint d;
+    public boolean e;
 
-    public sy0(ugb ugbVar, int i, sy0 sy0Var, ud3 ud3Var, boolean z) {
-        this.c = true;
-        this.d = false;
-        this.e = ugbVar;
-        this.b = i;
-        this.a = z;
-        this.f = sy0Var;
-        this.g = ud3Var;
+    public sy0(cz0 cz0Var) {
+        super(cz0Var.d().getContext(), R.style.TransparentDialog);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.a = cz0Var;
+        dz0 d = cz0Var.d();
+        qy0 qy0Var = new qy0(this, getContext());
+        this.c = qy0Var;
+        paint.setColor(cmb.w0(null, cmb.Z6, false));
+        ry0 ry0Var = new ry0(d);
+        this.b = ry0Var;
+        setContentView(ry0Var, new ViewGroup.LayoutParams(-1, -1));
+        ry0Var.addView(qy0Var, qoe.e(-1, -2, 80));
+        ry0Var.setClipToPadding(false);
     }
 
-    public sy0(boolean z, int i, String str, String str2, MediaSessionCompat$Token mediaSessionCompat$Token, boolean z2, boolean z3) {
-        this.a = z;
-        this.b = i;
-        this.f = str;
-        this.g = str2;
-        this.e = mediaSessionCompat$Token;
-        this.c = z2;
-        this.d = z3;
+    public static void a(cz0 cz0Var) {
+        d S = LaunchActivity.S();
+        if (S != null) {
+            if (gm.O1() || cz0Var.i() || gm.s1(S)) {
+                sy0 sy0Var = new sy0(cz0Var);
+                if (cz0Var.k(sy0Var)) {
+                    ry0 ry0Var = sy0Var.b;
+                    View view = (View) ry0Var.a;
+                    gm.B2(view);
+                    ry0Var.addView(view, qoe.e(-1, -1, nm7.D1));
+                }
+            }
+        }
+    }
+
+    public static /* synthetic */ WindowInsets c(View view, WindowInsets windowInsets) {
+        WindowInsets windowInsets2;
+        view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
+        if (Build.VERSION.SDK_INT < 30) {
+            return windowInsets.consumeSystemWindowInsets();
+        }
+        windowInsets2 = WindowInsets.CONSUMED;
+        return windowInsets2;
+    }
+
+    public final void b() {
+        this.a.k(null);
+        if (this.e) {
+            this.e = false;
+            try {
+                super.dismiss();
+            } catch (Exception e) {
+                fc4.g(e, true);
+            }
+        }
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        this.a.a(false);
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        if (Build.VERSION.SDK_INT >= 30) {
+            window.addFlags(-2147483392);
+        } else {
+            window.addFlags(-2147417856);
+        }
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        gm.m(attributes);
+        window.setAttributes(attributes);
+        window.setStatusBarColor(0);
+        ry0 ry0Var = this.b;
+        ry0Var.setFitsSystemWindows(true);
+        ry0Var.setSystemUiVisibility(1792);
+        ry0Var.setPadding(0, 0, 0, 0);
+        ry0Var.setOnApplyWindowInsetsListener(new wt((byte) 1));
     }
 }

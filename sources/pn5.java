@@ -1,12 +1,14 @@
 // default package
 
-import android.content.Context;
-import java.util.List;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface pn5 {
-    List a();
+public final class pn5 {
+    public static final pn5 c = new pn5(-9223372036854775807L, -9223372036854775807L);
+    public final long a;
+    public final long b;
 
-    Object b(Context context);
+    public pn5(long j, long j2) {
+        this.a = j;
+        this.b = j2;
+    }
 }

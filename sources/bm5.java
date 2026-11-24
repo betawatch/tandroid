@@ -1,39 +1,40 @@
 // default package
 
-import java.util.Set;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bm5 extends kp {
-    public final v59 C() {
-        if (this.b == 0) {
-            return v59.r;
+public final class bm5 extends ui6 {
+    public final /* synthetic */ byte g;
+    public final String h;
+    public final String i;
+
+    public /* synthetic */ bm5(String str, String str2, byte b) {
+        this.g = b;
+        this.h = str;
+        this.i = str2;
+    }
+
+    @Override // ui6
+    public final void a(knd kndVar) {
+        switch (this.g) {
+            case 0:
+                kndVar.i(this);
+                break;
+            default:
+                kndVar.s(this);
+                break;
         }
-        return new v59(this.b, (Object[]) this.c);
     }
 
-    public final void D(sxb sxbVar, String str) {
-        super.w(sxbVar, str);
-    }
-
-    public final void E(Set set) {
-        super.x(set);
-    }
-
-    @Override // kp
-    public final qm5 e() {
-        throw new UnsupportedOperationException("Not supported for bimaps");
-    }
-
-    @Override // kp
-    public final kp w(Object obj, Object obj2) {
-        super.w(obj, obj2);
-        return this;
-    }
-
-    @Override // kp
-    public final kp x(Set set) {
-        super.x(set);
-        return this;
+    @Override // ui6
+    public final String f() {
+        byte b = this.g;
+        String str = this.i;
+        String str2 = this.h;
+        switch (b) {
+            case 0:
+                return "destination=" + str2 + ", title=" + str;
+            default:
+                return "destination=" + str2 + ", title=" + str;
+        }
     }
 }

@@ -1,29 +1,23 @@
 // default package
 
-import android.graphics.Canvas;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.media.MediaRouter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class vd8 extends ld8 {
-    public final TLRPC.Document b;
-    public final Object c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class vd8 extends vv6 {
+    public final MediaRouter.RouteInfo a;
 
-    public vd8(Object obj, TLRPC.Document document) {
-        this.b = document;
-        this.c = obj;
-        k27.H2(document);
-        ImageReceiver imageReceiver = this.a;
-        boolean z = k27.t4(document) || k27.M4(document);
-        k27.K2(document, true);
-        imageReceiver.c0(gl5.b(document), "38_38", uo3.f(document, bkb.bd, 1.0f, null), document.size, z ? "webp" : null, obj, 0);
+    public vd8(MediaRouter.RouteInfo routeInfo) {
+        this.a = routeInfo;
     }
 
-    @Override // ld8
-    public final void c(Canvas canvas, int i, int i2) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.i0(0.0f, 0.0f, i, i2);
-        imageReceiver.h(canvas, null);
+    @Override // vv6
+    public final void f(int i) {
+        this.a.requestSetVolume(i);
+    }
+
+    @Override // vv6
+    public final void i(int i) {
+        this.a.requestUpdateVolume(i);
     }
 }

@@ -1,56 +1,53 @@
 // default package
 
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k5f {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wr6 b;
+public final class k5f extends wgf {
+    private static final k5f zzb;
+    private int zzd;
+    private String zze = "";
+    private String zzf = "";
 
-    public /* synthetic */ k5f(wr6 wr6Var, byte b) {
-        this.a = b;
-        this.b = wr6Var;
+    static {
+        k5f k5fVar = new k5f();
+        zzb = k5fVar;
+        wgf.e(k5f.class, k5fVar);
     }
 
-    public final void a(ua9 ua9Var) {
-        byte b = this.a;
-        wr6 wr6Var = this.b;
-        vcd vcdVar = (vcd) ua9Var;
-        switch (b) {
-            case 0:
-                Status a = vcdVar.a();
-                int i = a.a;
-                if (i != 0) {
-                    dc6 dc6Var = wr6Var.a;
-                    Log.w(dc6Var.a, dc6Var.d(mue.d("Error fetching queue item ids, statusCode=", i, ", statusMessage=", a.b), new Object[0]));
-                }
-                wr6Var.l = null;
-                if (!wr6Var.h.isEmpty()) {
-                    o59 o59Var = wr6Var.i;
-                    aw3 aw3Var = wr6Var.j;
-                    o59Var.removeCallbacks(aw3Var);
-                    o59Var.postDelayed(aw3Var, 500L);
-                    break;
-                }
-                break;
-            default:
-                Status a2 = vcdVar.a();
-                int i2 = a2.a;
-                if (i2 != 0) {
-                    dc6 dc6Var2 = wr6Var.a;
-                    Log.w(dc6Var2.a, dc6Var2.d(mue.d("Error fetching queue items, statusCode=", i2, ", statusMessage=", a2.b), new Object[0]));
-                }
-                wr6Var.k = null;
-                if (!wr6Var.h.isEmpty()) {
-                    o59 o59Var2 = wr6Var.i;
-                    aw3 aw3Var2 = wr6Var.j;
-                    o59Var2.removeCallbacks(aw3Var2);
-                    o59Var2.postDelayed(aw3Var2, 500L);
-                    break;
-                }
-                break;
+    public static h5f l() {
+        return (h5f) zzb.j();
+    }
+
+    public static /* synthetic */ void m(k5f k5fVar, String str) {
+        str.getClass();
+        k5fVar.zzd |= 1;
+        k5fVar.zze = str;
+    }
+
+    public static /* synthetic */ void n(k5f k5fVar, String str) {
+        str.getClass();
+        k5fVar.zzd |= 2;
+        k5fVar.zzf = str;
+    }
+
+    @Override // wgf
+    public final Object h(int i, wgf wgfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
+        if (i2 == 2) {
+            return new tif(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
+        }
+        if (i2 == 3) {
+            return new k5f();
+        }
+        if (i2 == 4) {
+            return new h5f(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

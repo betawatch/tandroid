@@ -1,49 +1,38 @@
 // default package
 
-import android.content.SharedPreferences;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jub implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pub b;
-
-    public /* synthetic */ jub(pub pubVar, byte b) {
-        this.a = b;
-        this.b = pubVar;
+public enum jub extends rub {
+    public jub() {
+        super("DoctypeSystemIdentifier_singleQuoted", 63);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        pub pubVar = this.b;
-        switch (b) {
-            case 0:
-                kk7 f = kk7.f(pubVar.currentAccount);
-                int i = na7.q5;
-                f.k(2, 512);
-                break;
-            default:
-                pubVar.a.b();
-                pubVar.b.b();
-                pubVar.d.clear();
-                SharedPreferences.Editor edit = pubVar.getUserConfig().j().edit();
-                for (String str : pubVar.getUserConfig().j().getAll().keySet()) {
-                    if (str.startsWith("topics_load_offset_message_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_date_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_topic_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_end_reached_")) {
-                        edit.remove(str);
-                    }
-                }
-                edit.apply();
-                break;
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        srb srbVar = bsbVar.m;
+        char d = hl1Var.d();
+        if (d == 0) {
+            bsbVar.m(this);
+            srbVar.g.append((char) 65533);
+            return;
+        }
+        if (d == '\'') {
+            bsbVar.c = rub.C0;
+            return;
+        }
+        msb msbVar = rub.a;
+        if (d == '>') {
+            bsbVar.m(this);
+            bsbVar.j();
+            bsbVar.c = msbVar;
+        } else {
+            if (d != 65535) {
+                srbVar.g.append(d);
+                return;
+            }
+            bsbVar.l(this);
+            bsbVar.j();
+            bsbVar.c = msbVar;
         }
     }
 }

@@ -3,23 +3,23 @@ package androidx.car.app.model.signin;
 import androidx.car.app.model.Action;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ProviderSignInMethod implements iha {
+public final class ProviderSignInMethod implements kja {
     private final Action mAction;
 
     public ProviderSignInMethod(Action action) {
         Objects.requireNonNull(action);
         if (action.getType() != 1) {
-            w26.j("The action must not be a standard action");
+            u36.j("The action must not be a standard action");
             throw null;
         }
-        yo7 onClickDelegate = action.getOnClickDelegate();
+        br7 onClickDelegate = action.getOnClickDelegate();
         Objects.requireNonNull(onClickDelegate);
         if (onClickDelegate.isParkedOnly()) {
             this.mAction = action;
         } else {
-            w26.j("The action must use a ParkedOnlyOnClickListener");
+            u36.j("The action must use a ParkedOnlyOnClickListener");
             throw null;
         }
     }

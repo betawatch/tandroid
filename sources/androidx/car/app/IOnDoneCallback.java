@@ -5,21 +5,21 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public interface IOnDoneCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IOnDoneCallback".replace('$', '.');
 
-    void onFailure(y21 y21Var);
+    void onFailure(g41 g41Var);
 
-    void onSuccess(y21 y21Var);
+    void onSuccess(g41 g41Var);
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static abstract class Stub extends Binder implements IOnDoneCallback {
         static final int TRANSACTION_onFailure = 3;
         static final int TRANSACTION_onSuccess = 2;
 
-        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
         private static class Proxy implements IOnDoneCallback {
             private IBinder mRemote;
 
@@ -37,14 +37,14 @@ public interface IOnDoneCallback extends IInterface {
             }
 
             @Override // androidx.car.app.IOnDoneCallback
-            public void onFailure(y21 y21Var) {
+            public void onFailure(g41 g41Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IOnDoneCallback.DESCRIPTOR);
-                    if (y21Var != null) {
+                    if (g41Var != null) {
                         obtain.writeInt(1);
-                        y21Var.writeToParcel(obtain, 0);
+                        g41Var.writeToParcel(obtain, 0);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -57,14 +57,14 @@ public interface IOnDoneCallback extends IInterface {
             }
 
             @Override // androidx.car.app.IOnDoneCallback
-            public void onSuccess(y21 y21Var) {
+            public void onSuccess(g41 g41Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IOnDoneCallback.DESCRIPTOR);
-                    if (y21Var != null) {
+                    if (g41Var != null) {
                         obtain.writeInt(1);
-                        y21Var.writeToParcel(obtain, 0);
+                        g41Var.writeToParcel(obtain, 0);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -100,14 +100,14 @@ public interface IOnDoneCallback extends IInterface {
                 return true;
             }
             if (i == 2) {
-                onSuccess(parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null);
+                onSuccess(parcel.readInt() != 0 ? g41.CREATOR.createFromParcel(parcel) : null);
                 parcel2.writeNoException();
                 return true;
             }
             if (i != 3) {
                 return super.onTransact(i, parcel, parcel2, i2);
             }
-            onFailure(parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null);
+            onFailure(parcel.readInt() != 0 ? g41.CREATOR.createFromParcel(parcel) : null);
             parcel2.writeNoException();
             return true;
         }
@@ -118,7 +118,7 @@ public interface IOnDoneCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Default implements IOnDoneCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -126,11 +126,11 @@ public interface IOnDoneCallback extends IInterface {
         }
 
         @Override // androidx.car.app.IOnDoneCallback
-        public void onFailure(y21 y21Var) {
+        public void onFailure(g41 g41Var) {
         }
 
         @Override // androidx.car.app.IOnDoneCallback
-        public void onSuccess(y21 y21Var) {
+        public void onSuccess(g41 g41Var) {
         }
     }
 }

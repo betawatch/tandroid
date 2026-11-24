@@ -1,43 +1,33 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.PasscodeActivity;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class yc6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ dd6 b;
+    public final /* synthetic */ Integer c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class yc6 extends fj2 {
-    public final /* synthetic */ byte h;
-    public final /* synthetic */ Object n;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yc6(byte b, Context context, Object obj) {
-        super(context);
-        this.h = b;
-        this.n = obj;
+    public /* synthetic */ yc6(dd6 dd6Var, Integer num, byte b) {
+        this.a = b;
+        this.b = dd6Var;
+        this.c = num;
     }
 
-    @Override // fj2
-    public final void a() {
-        byte b = this.h;
-        Object obj = this.n;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 1;
+        Integer num = this.c;
+        dd6 dd6Var = this.b;
         switch (b) {
             case 0:
-                ((ad6) obj).h(null);
-                break;
-            case 1:
-                ((td6) obj).h(null);
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                if (!passcodeActivity.F) {
-                    postDelayed(new oq7(this, (byte) 4), 260L);
-                    break;
-                } else {
-                    passcodeActivity.t0();
+                if (!dd6Var.b.isEmpty()) {
+                    gm.c3(new yc6(dd6Var, num, b2));
                     break;
                 }
+                break;
             default:
-                ((p3c) obj).G0();
+                dd6Var.getNotificationCenter().k(77, num);
                 break;
         }
     }

@@ -1,117 +1,218 @@
 // default package
 
+import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BlurMaskFilter;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.a;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class bnc extends Drawable {
-    public static float[] k;
-    public static Bitmap l;
-    public static Bitmap m;
-    public final int b;
-    public final int c;
-    public final Drawable d;
-    public float f;
-    public float g;
-    public static final float[] j = {0.2126f, 0.7152f, 0.0722f};
-    public static final int[] n = new int[2];
-    public static final int[] o = new int[2];
-    public final Paint a = new Paint(3);
-    public float e = -1.0f;
-    public int h = kk7.d4;
-    public float i = 1.0f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bnc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public bnc(int i, int i2) {
+    public /* synthetic */ bnc(int i, String str, qac qacVar) {
+        this.a = (byte) 4;
         this.b = i;
-        this.c = i2;
-        Drawable d = b00.d(a.b, R.drawable.wallet_card_diamond);
-        this.d = d;
-        if (l != null) {
-            return;
+        this.c = str;
+        this.d = qacVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        cyc cycVar;
+        switch (this.a) {
+            case 0:
+                Context context = (Context) this.c;
+                int i = this.b;
+                String str = ((TL_wallet.walletTransaction[]) this.d)[0].tx_hash;
+                if (!TextUtils.isEmpty(str)) {
+                    String str2 = oc7.r1(i).l4.G1.f;
+                    if (TextUtils.isEmpty(str2)) {
+                        str2 = "https://tonviewer.com/";
+                    } else if (!str2.endsWith("/")) {
+                        str2 = str2.concat("/");
+                    }
+                    StringBuilder k = b10.k(str2, "transaction/");
+                    k.append(Uri.encode(str));
+                    l11.w(context, k.toString(), false);
+                    break;
+                }
+                break;
+            case 1:
+                ioc iocVar = (ioc) this.c;
+                int i2 = this.b;
+                Bitmap[] bitmapArr = (Bitmap[]) this.d;
+                if (iocVar.f0 == i2) {
+                    iocVar.f(bitmapArr);
+                    iocVar.a.run();
+                    break;
+                }
+                break;
+            case 2:
+                pqc pqcVar = (pqc) this.c;
+                int i3 = this.b;
+                nsc nscVar = (nsc) this.d;
+                int i4 = i3 + 1;
+                ArrayList arrayList = pqcVar.w;
+                if (i4 < arrayList.size()) {
+                    ((nsc) arrayList.get(i4)).a.requestFocus();
+                    break;
+                } else {
+                    gm.t1(nscVar);
+                    break;
+                }
+            case 3:
+                hsc hscVar = (hsc) this.c;
+                int i5 = this.b;
+                nsc nscVar2 = (nsc) this.d;
+                int i6 = i5 + 1;
+                ArrayList arrayList2 = hscVar.d;
+                if (i6 < arrayList2.size()) {
+                    ((nsc) arrayList2.get(i6)).a.requestFocus();
+                    break;
+                } else {
+                    gm.t1(nscVar2);
+                    break;
+                }
+            case 4:
+                int i7 = this.b;
+                String str3 = (String) this.c;
+                qac qacVar = (qac) this.d;
+                zsc[] zscVarArr = zsc.f;
+                zsc zscVar = zscVarArr[i7];
+                if (zscVar == null) {
+                    zscVar = new zsc(i7);
+                    zscVarArr[i7] = zscVar;
+                }
+                zscVar.d(str3, true, null, null, qacVar);
+                break;
+            case 5:
+                qtc qtcVar = (qtc) this.c;
+                int i8 = this.b;
+                TLObject tLObject = (TLObject) this.d;
+                HashMap hashMap = qtcVar.e;
+                WallpapersListActivity wallpapersListActivity = qtcVar.F;
+                ArrayList arrayList3 = qtcVar.d;
+                if (i8 == qtcVar.w) {
+                    qtcVar.s = 0;
+                    int size = arrayList3.size();
+                    if (tLObject != null) {
+                        TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
+                        qtcVar.r = messages_botresults.next_offset;
+                        int size2 = messages_botresults.results.size();
+                        for (int i9 = 0; i9 < size2; i9++) {
+                            TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i9);
+                            if ("photo".equals(botInlineResult.type) && !hashMap.containsKey(botInlineResult.id)) {
+                                no6 no6Var = new no6();
+                                TLRPC.Photo photo = botInlineResult.photo;
+                                if (photo != null) {
+                                    TLRPC.PhotoSize w = bc4.w(photo.sizes, gm.Y0(false), false, null, false);
+                                    TLRPC.PhotoSize w2 = bc4.w(botInlineResult.photo.sizes, nm7.q5, false, null, false);
+                                    if (w != null) {
+                                        no6Var.E = w.w;
+                                        no6Var.F = w.h;
+                                        no6Var.L = w;
+                                        no6Var.K = botInlineResult.photo;
+                                        no6Var.G = w.size;
+                                        no6Var.M = w2;
+                                        no6Var.B = botInlineResult.id;
+                                        no6Var.H = false;
+                                        arrayList3.add(no6Var);
+                                        hashMap.put(no6Var.B, no6Var);
+                                    }
+                                } else if (botInlineResult.content != null) {
+                                    int i10 = 0;
+                                    while (true) {
+                                        if (i10 < botInlineResult.content.attributes.size()) {
+                                            TLRPC.DocumentAttribute documentAttribute = botInlineResult.content.attributes.get(i10);
+                                            if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
+                                                no6Var.E = documentAttribute.w;
+                                                no6Var.F = documentAttribute.h;
+                                            } else {
+                                                i10++;
+                                            }
+                                        }
+                                    }
+                                    TLRPC.WebDocument webDocument = botInlineResult.thumb;
+                                    if (webDocument != null) {
+                                        no6Var.D = webDocument.url;
+                                    } else {
+                                        no6Var.D = null;
+                                    }
+                                    TLRPC.WebDocument webDocument2 = botInlineResult.content;
+                                    no6Var.C = webDocument2.url;
+                                    no6Var.G = webDocument2.size;
+                                    no6Var.B = botInlineResult.id;
+                                    no6Var.H = false;
+                                    arrayList3.add(no6Var);
+                                    hashMap.put(no6Var.B, no6Var);
+                                }
+                            }
+                        }
+                        qtcVar.f = size == arrayList3.size() || qtcVar.r == null;
+                    }
+                    if (size != arrayList3.size()) {
+                        int i11 = size % wallpapersListActivity.O;
+                        float f = size;
+                        int ceil = (int) Math.ceil(f / r15);
+                        if (i11 != 0) {
+                            qtcVar.g(((int) Math.ceil(f / wallpapersListActivity.O)) - 1);
+                        }
+                        wallpapersListActivity.I.p(ceil, ((int) Math.ceil(arrayList3.size() / wallpapersListActivity.O)) - ceil);
+                    }
+                    wallpapersListActivity.L.c();
+                    break;
+                }
+                break;
+            default:
+                z zVar = (z) this.c;
+                int i12 = this.b;
+                String str4 = (String) this.d;
+                if (!zVar.A && (cycVar = zVar.R) != null) {
+                    if (i12 != 13) {
+                        boolean equals = "1".equals(str4);
+                        if (cycVar.z != equals) {
+                            cycVar.z = equals;
+                            f8e f8eVar = cycVar.d;
+                            if (f8eVar != null) {
+                                f8eVar.getClass();
+                                wxc.F();
+                                break;
+                            }
+                        }
+                    } else if (cycVar.d != null && !TextUtils.isEmpty(str4)) {
+                        gm.g(str4);
+                        d S = gm.C3() ? LaunchActivity.S() : null;
+                        if (S != null) {
+                            if (str4.length() > 80) {
+                                str4 = str4.substring(0, 80).concat("…");
+                            }
+                            c41.b0(S).Q(R.raw.copy, 36, jb6.a0(null, null, 2131742529, str4)).j();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        Bitmap createBitmap = Bitmap.createBitmap(84, 84, Bitmap.Config.ARGB_8888);
-        d.setBounds(0, 0, 84, 84);
-        d.draw(new Canvas(createBitmap));
-        Paint paint = new Paint();
-        BlurMaskFilter.Blur blur = BlurMaskFilter.Blur.NORMAL;
-        paint.setMaskFilter(new BlurMaskFilter(15.0f, blur));
-        l = createBitmap.extractAlpha(paint, n);
-        paint.setMaskFilter(new BlurMaskFilter(4.5f, blur));
-        m = createBitmap.extractAlpha(paint, o);
-        createBitmap.recycle();
     }
 
-    public static float[] a(float f, float f2, float f3) {
-        float max = Math.max(f, Math.max(f2, f3));
-        float min = max - Math.min(f, Math.min(f2, f3));
-        float f4 = 0.55f * max;
-        if (min > f4) {
-            float f5 = f4 / min;
-            f = tb4.A(f, max, f5, max);
-            f2 = tb4.A(f2, max, f5, max);
-            f3 = tb4.A(f3, max, f5, max);
-        }
-        return new float[]{f, f2, f3};
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.h <= 0 || this.e < 0.0f) {
-            return;
-        }
-        Rect bounds = getBounds();
-        if (this.i > 0.0f) {
-            float width = bounds.width() / 84.0f;
-            canvas.save();
-            canvas.translate(bounds.left, bounds.top);
-            canvas.scale(width, bounds.height() / 84.0f);
-            Paint paint = this.a;
-            paint.setColor(-16777216);
-            paint.setAlpha((int) (this.h * 0.35f * this.i));
-            Bitmap bitmap = l;
-            int[] iArr = n;
-            canvas.drawBitmap(bitmap, iArr[0], (gl.L(1.0f) / width) + iArr[1], paint);
-            paint.setAlpha((int) (this.h * 0.55f * this.i));
-            Bitmap bitmap2 = m;
-            int[] iArr2 = o;
-            canvas.drawBitmap(bitmap2, iArr2[0], iArr2[1], paint);
-            canvas.restore();
-        }
-        Drawable drawable = this.d;
-        drawable.setBounds(bounds);
-        drawable.setAlpha(this.h);
-        drawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.c;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.h = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public /* synthetic */ bnc(Object obj, int i, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
     }
 }

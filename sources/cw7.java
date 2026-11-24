@@ -1,70 +1,81 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class cw7 extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class cw7 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hw7 b;
 
-    static {
-        b4c.h(new cw7());
+    public /* synthetic */ cw7(hw7 hw7Var, byte b) {
+        this.a = b;
+        this.b = hw7Var;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        dw7 dw7Var = (dw7) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) c4cVar.H;
-        View.OnClickListener onClickListener = c4cVar.E;
-        wjb wjbVar = dw7Var.d;
-        FrameLayout frameLayout = dw7Var.e;
-        be0 be0Var = dw7Var.f;
-        dw7Var.w = passkey.id;
-        long j = passkey.software_emoji_id;
-        if (j != 0) {
-            be0Var.setAnimatedEmojiDrawable(vl.m(dw7Var.c, j, null, 3));
-            frameLayout.setBackground(null);
-            be0Var.setColorFilter(null);
-            dw7Var.a = false;
-            be0Var.setScaleX(1.0f);
-            be0Var.setScaleY(1.0f);
-        } else {
-            int L = gl.L(4.0f);
-            int i = bkb.F6;
-            zkb.B(frameLayout, bkb.b0(L, bkb.p1(0.04f, bkb.v0(i, wjbVar))), zkb.K(0.04f, i), wjbVar);
-            dw7Var.a();
-            be0Var.setImageResource(R.drawable.msg2_permissions);
-            be0Var.setScaleX(0.666f);
-            be0Var.setScaleY(0.666f);
-            be0Var.setAnimatedEmojiDrawable(null);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
+        byte b = this.a;
+        final hw7 hw7Var = this.b;
+        switch (b) {
+            case 0:
+                final byte b2 = 1;
+                hw7Var.f.f(new Runnable() { // from class: bw7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        ValueAnimator valueAnimator2 = valueAnimator;
+                        hw7 hw7Var2 = hw7Var;
+                        switch (b3) {
+                            case 0:
+                                hw7Var2.J = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                                x59 x59Var = hw7Var2.a;
+                                if (x59Var != null) {
+                                    x59Var.f0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                hw7Var2.I = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                                x59 x59Var2 = hw7Var2.a;
+                                if (x59Var2 != null) {
+                                    x59Var2.f0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b3 = 0;
+                hw7Var.f.f(new Runnable() { // from class: bw7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        ValueAnimator valueAnimator2 = valueAnimator;
+                        hw7 hw7Var2 = hw7Var;
+                        switch (b32) {
+                            case 0:
+                                hw7Var2.J = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                                x59 x59Var = hw7Var2.a;
+                                if (x59Var != null) {
+                                    x59Var.f0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                hw7Var2.I = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                                x59 x59Var2 = hw7Var2.a;
+                                if (x59Var2 != null) {
+                                    x59Var2.f0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        boolean isEmpty = TextUtils.isEmpty(passkey.name);
-        TextView textView = dw7Var.h;
-        if (isEmpty) {
-            textView.setText(k96.M0(2131747435, null));
-        } else {
-            textView.setText(passkey.name);
-        }
-        int i2 = passkey.last_usage_date;
-        TextView textView2 = dw7Var.n;
-        if (i2 != 0) {
-            textView2.setText(k96.a0(null, null, 2131747441, k96.x(i2, false)));
-        } else {
-            textView2.setText(k96.a0(null, null, 2131747454, k96.x(passkey.date, false)));
-        }
-        dw7Var.r.setOnClickListener(onClickListener);
-        dw7Var.s = z;
-        dw7Var.setWillNotDraw(!z);
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new dw7(i, wjbVar, context);
     }
 }

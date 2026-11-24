@@ -1,387 +1,166 @@
 // default package
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.os.SystemClock;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.os.StatFs;
+import java.io.File;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ex1 extends gy1 {
-    public boolean g2;
-    public final Paint h2;
-    public LinearGradient i2;
-    public final Matrix j2;
-    public float k2;
-    public float l2;
-    public boolean m2;
-    public final /* synthetic */ ChatActivityEnterView n2;
+public final /* synthetic */ class ex1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ex1(ChatActivityEnterView chatActivityEnterView, Context context, wjb wjbVar) {
-        super(chatActivityEnterView, context, wjbVar);
-        this.n2 = chatActivityEnterView;
-        this.g2 = true;
-        this.h2 = new Paint();
-        this.j2 = new Matrix();
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ ex1(Object obj, int i, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ChatActivityEnterView chatActivityEnterView = this.n2;
-        mu1 mu1Var = chatActivityEnterView.F3;
-        View view = chatActivityEnterView.i6;
-        if (view != null) {
-            setWindowView(view);
-        } else if (mu1Var == null || mu1Var.getParentLayout() == null || !((ActionBarLayout) mu1Var.getParentLayout()).b) {
-            setWindowView(chatActivityEnterView.E3.getWindow().getDecorView());
-        } else {
-            setWindowView(mu1Var.getParentLayout().getWindow().getDecorView());
-        }
-    }
-
-    @Override // gt3, org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f;
-        float f2;
-        bn3 bn3Var;
-        float f3;
-        Canvas canvas2;
-        ChatActivityEnterView chatActivityEnterView;
-        boolean z;
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0083  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
         int i;
-        float f4;
-        kra kraVar;
-        LinearGradient linearGradient;
-        float f5;
-        float f6;
-        kra kraVar2;
-        LinearGradient linearGradient2;
-        ChatActivityEnterView chatActivityEnterView2 = this.n2;
-        boolean z2 = chatActivityEnterView2.F1 && getScrollY() > 0 && getLayout() != null;
-        int i2 = -1;
-        int saveLayer = z2 ? canvas.saveLayer(-gl.L(4.0f), getScrollY() - gl.L(48.0f), gl.L(4.0f) + getWidth(), gl.L(48.0f) + getHeight() + getScrollY(), null) : -1;
-        bn3 bn3Var2 = chatActivityEnterView2.n6;
-        if (bn3Var2 == null || !bn3Var2.d) {
-            jm3 jm3Var = chatActivityEnterView2.j1;
-            bn3Var2 = jm3Var != null ? jm3Var.a : null;
-        }
-        boolean z3 = (bn3Var2 == null || !bn3Var2.d || getLayout() == null) ? false : true;
-        float totalPaddingLeft = getTotalPaddingLeft();
-        float offsetY = getOffsetY() + getTotalPaddingTop();
-        if (z3) {
-            int width = getLayout().getWidth();
-            int height = getLayout().getHeight();
-            bn3Var2.getClass();
-            f = 48.0f;
-            f2 = 4.0f;
-            f3 = offsetY;
-            bn3Var = bn3Var2;
-            canvas2 = canvas;
-            i2 = canvas2.saveLayer(totalPaddingLeft - gl.L(8.0f), offsetY - gl.L(40.0f), width + totalPaddingLeft + gl.L(8.0f), height + offsetY + gl.L(40.0f), null);
-            totalPaddingLeft = totalPaddingLeft;
-        } else {
-            f = 48.0f;
-            f2 = 4.0f;
-            bn3Var = bn3Var2;
-            f3 = offsetY;
-            canvas2 = canvas;
-        }
-        super.onDraw(canvas);
-        if (z3) {
-            int width2 = getLayout().getWidth();
-            int height2 = getLayout().getHeight();
-            LinearGradient linearGradient3 = bn3Var.r;
-            ex1 ex1Var = bn3Var.b;
-            int[] iArr = bn3Var.A;
-            LinearGradient linearGradient4 = bn3Var.s;
-            z = z2;
-            float f7 = bn3Var.B;
-            Paint paint = bn3Var.q;
-            LinearGradient linearGradient5 = bn3Var.t;
-            Paint paint2 = bn3Var.p;
-            chatActivityEnterView = chatActivityEnterView2;
-            kra kraVar3 = bn3Var.c;
-            if (bn3Var.I) {
-                kraVar = kraVar3;
-                linearGradient = linearGradient3;
-            } else {
-                bn3Var.I = true;
-                kraVar = kraVar3;
-                linearGradient = linearGradient3;
-                if (bn3Var.D) {
-                    bn3Var.e = SystemClock.uptimeMillis();
+        File z;
+        boolean z2;
+        NativeByteBuffer byteBufferValue;
+        byte b = this.a;
+        byte b2 = 2;
+        byte b3 = 1;
+        byte b4 = this.b;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                int i2 = ChatActivityEnterView.z7;
+                if (b4 == 0) {
+                    chatActivityEnterView.q3 = 0;
                 }
-                Runnable runnable = bn3Var.H;
-                bn3Var.H = null;
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
-            float uptimeMillis = (SystemClock.uptimeMillis() - bn3Var.e) / 1000.0f;
-            float d = bn3Var.d(uptimeMillis);
-            float d2 = bn3Var.d(uptimeMillis - bn3Var.F);
-            float f8 = -gl.L(8.0f);
-            float f9 = -gl.L(40.0f);
-            float L = gl.L(8.0f) + width2;
-            float L2 = gl.L(40.0f) + height2;
-            canvas2.save();
-            canvas2.translate(totalPaddingLeft, f3);
-            if (bn3Var.C) {
-                float d3 = bn3Var.d(uptimeMillis - 0.28f);
-                f5 = totalPaddingLeft;
-                f6 = L2;
-                bn3Var.e(linearGradient5, d3, Math.max(d3 + 1.0f, bn3Var.d(uptimeMillis - 0.12f)));
-                float f10 = uptimeMillis - (bn3Var.a / 1000.0f);
-                paint.setAlpha(f10 <= 0.0f ? kk7.d4 : (int) (Math.max(0.0f, 1.0f - (f10 / 0.18f)) * 255.0f));
-            } else {
-                f5 = totalPaddingLeft;
-                f6 = L2;
-                bn3Var.e(linearGradient5, d2 - gl.L(f), d2);
-            }
-            paint.setShader(linearGradient5);
-            i = saveLayer;
-            float f11 = f5;
-            f4 = 1.0f;
-            float f12 = f6;
-            float f13 = f3;
-            canvas.drawRect(f8, f9, L, f12, paint);
-            if (bn3Var.C) {
-                float f14 = bn3Var.E;
-                bn3Var.e(linearGradient4, d - f14, f14 + d);
-            } else {
-                bn3Var.e(linearGradient4, d2 - f7, d2);
-            }
-            paint2.setShader(linearGradient4);
-            canvas2 = canvas;
-            canvas2.drawRect(f8, f9, L, f12, paint2);
-            canvas2.restore();
-            canvas2.restoreToCount(i2);
-            ex1Var.getLocationInWindow(iArr);
-            bn3Var.z = bn3Var.y - ((ug8.A(ex1Var) ? ex1Var.getOffsetY() : 0.0f) + ((ex1Var.getTotalPaddingTop() + iArr[1]) - ex1Var.getScrollY()));
-            canvas2.save();
-            canvas2.translate(f11, f13 + bn3Var.z);
-            if (bn3Var.h != null) {
-                if (d - (bn3Var.C ? bn3Var.E : f7) < bn3Var.g) {
-                    int saveLayer2 = canvas2.saveLayer(f8, bn3Var.w - gl.L(2.0f), Math.max(L, bn3Var.h.getWidth()), gl.L(2.0f) + bn3Var.w + bn3Var.x, null);
-                    canvas2.drawBitmap(bn3Var.h, 0.0f, 0.0f, bn3Var.o);
-                    if (bn3Var.C) {
-                        float f15 = bn3Var.E;
-                        linearGradient2 = linearGradient;
-                        bn3Var.e(linearGradient2, d - f15, f15 + d);
-                    } else {
-                        linearGradient2 = linearGradient;
-                        bn3Var.e(linearGradient2, d, d + f7);
+                chatActivityEnterView.W0 = null;
+                jz1 jz1Var = chatActivityEnterView.V0;
+                if (jz1Var != null) {
+                    if (chatActivityEnterView.l7 == null) {
+                        jz1Var.setTranslationY(0.0f);
                     }
-                    paint2.setShader(linearGradient2);
-                    canvas2.drawRect(f8, f9, Math.max(L, bn3Var.h.getWidth()), Math.max(f12, gl.L(40.0f) + bn3Var.h.getHeight()), paint2);
-                    canvas2.restoreToCount(saveLayer2);
+                    chatActivityEnterView.V0.setVisibility(8);
+                    chatActivityEnterView.d2.removeView(chatActivityEnterView.V0);
+                    if (chatActivityEnterView.w4) {
+                        chatActivityEnterView.w4 = false;
+                        chatActivityEnterView.V0 = null;
+                    }
                 }
-            }
-            float f16 = gl.p;
-            float max = Math.max(0.05f, (bn3Var.a - (SystemClock.uptimeMillis() - bn3Var.e)) / 1000.0f);
-            while (true) {
-                int i3 = bn3Var.m;
-                if (i3 >= bn3Var.k) {
-                    break;
+                uz1 uz1Var = chatActivityEnterView.P3;
+                if (uz1Var != null) {
+                    uz1Var.o(0.0f);
                 }
-                float[] fArr = bn3Var.i;
-                int i4 = i3 * 3;
-                if (fArr[i4 + 2] > d) {
-                    break;
+                chatActivityEnterView.requestLayout();
+                break;
+            case 1:
+                g95 g95Var = (g95) obj;
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    sharedInstance.setAudioOutput(b4);
+                    g95Var.n5 = Integer.valueOf(b4);
                 }
-                bn3Var.m = i3 + 1;
-                if (!bn3Var.C) {
-                    kraVar2 = kraVar;
-                    kraVar2.g(fArr[i4], fArr[i4 + 1], ((kraVar2.d() * 34.0f) + 10.0f) * f16, (-((kraVar2.d() * 20.0f) + 6.0f)) * f16, Math.min(max, (kraVar2.d() * 0.3f) + 0.26f), 0.0f);
-                } else if (kraVar.d() >= 0.45f) {
-                    float[] fArr2 = bn3Var.i;
-                    kraVar2 = kraVar;
-                    kraVar2.g(fArr2[i4], fArr2[i4 + 1], ((kraVar.d() * 60.0f) + 26.0f) * f16, (-((kraVar.d() * 44.0f) + 10.0f)) * f16, Math.min(max, (kraVar.d() * 0.14f) + 0.12f), 0.0f);
+                c41 c41Var = new c41(g95Var.F, new q63());
+                Resources resources = g95Var.getContext().getResources();
+                if (b4 == 2) {
+                    i = R.drawable.msg_voice_bluetooth;
+                } else if (b4 == 0) {
+                    i = R.drawable.msg_voice_speaker;
+                } else {
+                    VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+                    i = (sharedInstance2 == null || !sharedInstance2.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
                 }
-                kraVar = kraVar2;
-            }
-            kra kraVar4 = kraVar;
-            while (true) {
-                int i5 = bn3Var.n;
-                if (i5 >= bn3Var.l) {
-                    break;
+                c41Var.M(resources.getDrawable(i).mutate(), g95.X0(b4)).k(g95Var.f1());
+                break;
+            case 2:
+                LaunchActivity launchActivity = (LaunchActivity) obj;
+                String str = LaunchActivity.C1;
+                if (z8c.h(launchActivity.P).o()) {
+                    try {
+                        SharedPreferences d1 = oc7.d1();
+                        if ((((b4 == 2 || b4 == 1) && Math.abs(launchActivity.x1 - System.currentTimeMillis()) > 240000) || Math.abs(d1.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z = bc4.z(4)) != null) {
+                            StatFs statFs = new StatFs(z.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (b4 > 0) {
+                                launchActivity.x1 = System.currentTimeMillis();
+                            } else if (availableBlocksLong < 52428800) {
+                            }
+                            d1.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                            gm.c3(new rz5(launchActivity, b2));
+                            break;
+                        }
+                    } catch (Throwable unused) {
+                        return;
+                    }
                 }
-                float[] fArr3 = bn3Var.j;
-                int i6 = i5 * 3;
-                if (fArr3[i6 + 2] > d) {
-                    break;
-                }
-                float f17 = fArr3[i6];
-                int i7 = i6 + 1;
-                float f18 = fArr3[i7] - bn3Var.z;
-                bn3Var.n = i5 + 1;
-                float scrollY = ex1Var.getScrollY();
-                if (bn3Var.j[i7] >= scrollY - gl.L(2.0f) && bn3Var.j[i7] <= scrollY + bn3Var.x + gl.L(2.0f)) {
-                    kraVar4.h((((kraVar4.d() * 16.0f) + 6.0f) * f16) + f17, ((kraVar4.d() - 0.5f) * 14.0f * f16) + f18, f17, f18, Math.min(max, (kraVar4.d() * 0.08f) + bn3Var.F + 0.04f));
-                }
-            }
-            kraVar4.b(canvas2, 1.0f);
-            canvas2.restore();
-            if (uptimeMillis * 1000.0f >= bn3Var.a + (bn3Var.C ? 180.0f : 0.0f)) {
-                bn3Var.c();
-            } else {
-                ex1Var.invalidate();
-            }
-        } else {
-            chatActivityEnterView = chatActivityEnterView2;
-            z = z2;
-            i = saveLayer;
-            f4 = 1.0f;
-        }
-        if (z) {
-            LinearGradient linearGradient6 = this.i2;
-            Paint paint3 = this.h2;
-            if (linearGradient6 == null) {
-                LinearGradient linearGradient7 = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{-16777216, -1291845632, 0}, new float[]{0.0f, 0.45f, 1.0f}, Shader.TileMode.CLAMP);
-                this.i2 = linearGradient7;
-                paint3.setShader(linearGradient7);
-                paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-            }
-            float extendedPaddingTop = (getExtendedPaddingTop() + getScrollY()) - gl.L(2.0f);
-            float lineHeight = getLineHeight() * 1.05f;
-            Matrix matrix = this.j2;
-            matrix.setScale(f4, lineHeight);
-            matrix.postTranslate(0.0f, extendedPaddingTop);
-            this.i2.setLocalMatrix(matrix);
-            canvas2.drawRect(-gl.L(f2), getScrollY() - gl.L(f), gl.L(f2) + getWidth(), extendedPaddingTop + lineHeight, paint3);
-            canvas2.restoreToCount(i);
-        }
-        if (getLayout() == null || !this.g2) {
-            return;
-        }
-        this.g2 = false;
-        chatActivityEnterView.N(true);
-    }
-
-    @Override // gy1, gt3, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        ChatActivityEnterView chatActivityEnterView = this.n2;
-        if (chatActivityEnterView.U != chatActivityEnterView.F0.getLineCount()) {
-            boolean z = false;
-            chatActivityEnterView.S1((chatActivityEnterView.F0.getLineCount() <= 2 || chatActivityEnterView.F0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.F0.getText().toString().trim())) ? false : true);
-            if (chatActivityEnterView.F0.getLineCount() > 2 && chatActivityEnterView.F0.getText() != null && !TextUtils.isEmpty(chatActivityEnterView.F0.getText().toString().trim())) {
-                z = true;
-            }
-            chatActivityEnterView.Y1(z);
-        }
-    }
-
-    @Override // gy1, gt3, android.widget.EditText, android.widget.TextView
-    public final boolean onTextContextMenuItem(int i) {
-        if (i == 16908322) {
-            int i2 = ChatActivityEnterView.r7;
-            ChatActivityEnterView chatActivityEnterView = this.n2;
-            if (chatActivityEnterView.F0 != null) {
+                break;
+            case 3:
+                pc6 pc6Var = (pc6) obj;
+                pc6Var.V.g1(0, -gm.L(b4));
+                pc6Var.N0(false);
+                break;
+            case 4:
+                MediaController mediaController = (MediaController) obj;
+                String[] strArr = MediaController.W1;
+                nm7.f(mediaController.i1).k(nm7.n2, Integer.valueOf(mediaController.h1), Integer.valueOf(b4 == 2 ? 1 : 0));
+                break;
+            default:
+                hs6 hs6Var = (hs6) obj;
                 try {
-                    ClipboardManager clipboardManager = (ClipboardManager) chatActivityEnterView.getContext().getSystemService("clipboard");
-                    ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
-                    if (primaryClip != null && primaryClip.getItemCount() >= 1 && primaryClip.getDescription() != null && primaryClip.getDescription().hasMimeType("text/html")) {
-                        String htmlText = primaryClip.getItemAt(0).getHtmlText();
-                        if (!TextUtils.isEmpty(htmlText)) {
-                            HashMap hashMap = new HashMap();
-                            ArrayList z = ff9.z(htmlText, hashMap);
-                            if (!z.isEmpty()) {
-                                if (dg9.d(z, hashMap)) {
-                                    na7.q1(chatActivityEnterView.R);
-                                    boolean z2 = w01.a;
-                                    int max = Math.max(0, chatActivityEnterView.F0.getSelectionStart());
-                                    int min = Math.min(chatActivityEnterView.F0.getText().length(), chatActivityEnterView.F0.getSelectionEnd());
-                                    chatActivityEnterView.k1(chatActivityEnterView.F0.getText().subSequence(0, Math.min(max, min)), chatActivityEnterView.F0.getText().subSequence(Math.max(max, min), chatActivityEnterView.F0.getText().length()), htmlText);
-                                    return true;
-                                }
-                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(dg9.f(z, false));
-                                vu3.m(spannableStringBuilder, chatActivityEnterView.F0.getPaint().getFontMetricsInt(), false, null, 0);
-                                gm[] gmVarArr = (gm[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), gm.class);
-                                if (gmVarArr != null) {
-                                    for (gm gmVar : gmVarArr) {
-                                        gmVar.applyFontMetrics(chatActivityEnterView.F0.getPaint().getFontMetricsInt(), vl.f());
-                                    }
-                                }
-                                int max2 = Math.max(0, chatActivityEnterView.F0.getSelectionStart());
-                                int min2 = Math.min(chatActivityEnterView.F0.getText().length(), chatActivityEnterView.F0.getSelectionEnd());
-                                dy8[] dy8VarArr = (dy8[]) chatActivityEnterView.F0.getText().getSpans(max2, min2, dy8.class);
-                                if (dy8VarArr == null || dy8VarArr.length <= 0) {
-                                    ey8.a(spannableStringBuilder);
-                                } else {
-                                    dy8[] dy8VarArr2 = (dy8[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), dy8.class);
-                                    for (int i3 = 0; i3 < dy8VarArr2.length; i3++) {
-                                        spannableStringBuilder.removeSpan(dy8VarArr2[i3]);
-                                        spannableStringBuilder.removeSpan(dy8VarArr2[i3].a);
-                                    }
-                                }
-                                ex1 ex1Var = chatActivityEnterView.F0;
-                                ex1Var.setText(ex1Var.getText().replace(max2, min2, spannableStringBuilder));
-                                chatActivityEnterView.F0.setSelection(Math.min(max2 + spannableStringBuilder.length(), chatActivityEnterView.F0.getText().length()));
-                                return true;
+                    SQLiteCursor queryFinalized = hs6Var.getMessagesStorage().b.queryFinalized("SELECT data FROM emoji_statuses WHERE type = " + ((int) b4) + " LIMIT 1", new Object[0]);
+                    if (!queryFinalized.next() || queryFinalized.getColumnCount() <= 0 || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
+                        z2 = false;
+                    } else {
+                        TL_account.EmojiStatuses TLdeserialize = TL_account.EmojiStatuses.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                        if (TLdeserialize instanceof TL_account.TL_emojiStatuses) {
+                            hs6Var.E0[b4] = TLdeserialize.hash;
+                            hs6Var.F0[b4] = TLdeserialize.statuses;
+                            z2 = true;
+                        } else {
+                            z2 = false;
+                        }
+                        try {
+                            byteBufferValue.reuse();
+                        } catch (Exception e) {
+                            e = e;
+                            fc4.g(e, true);
+                            hs6Var.H0[b4] = true;
+                            hs6Var.I0[b4] = false;
+                            if (!z2) {
                             }
                         }
                     }
-                } catch (Exception e) {
-                    fa4.g(e, true);
+                    queryFinalized.dispose();
+                } catch (Exception e2) {
+                    e = e2;
+                    z2 = false;
                 }
-            }
+                hs6Var.H0[b4] = true;
+                hs6Var.I0[b4] = false;
+                if (!z2) {
+                    gm.c3(new vp6(hs6Var, b3));
+                    break;
+                } else {
+                    hs6Var.N(b4, false);
+                    break;
+                }
+                break;
         }
-        return super.onTextContextMenuItem(i);
-    }
-
-    @Override // gy1, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ChatActivityEnterView chatActivityEnterView = this.n2;
-        if (!chatActivityEnterView.z()) {
-            if (motionEvent.getAction() == 0 && chatActivityEnterView.P3 != null) {
-                zkb.l(this, 36, bkb.lg, chatActivityEnterView.L4);
-                chatActivityEnterView.P3.K0();
-            }
-            return super.onTouchEvent(motionEvent);
-        }
-        if (motionEvent.getAction() == 0) {
-            this.k2 = motionEvent.getX();
-            this.l2 = motionEvent.getY();
-            this.m2 = true;
-        } else if (this.m2 && motionEvent.getAction() == 2) {
-            if (Math.abs(motionEvent.getX() - this.k2) > gl.e || Math.abs(motionEvent.getY() - this.l2) > gl.e) {
-                this.m2 = false;
-            }
-        } else if (this.m2) {
-            if (chatActivityEnterView.P3 != null) {
-                zkb.l(this, 36, bkb.lg, chatActivityEnterView.L4);
-                chatActivityEnterView.P3.K0();
-            }
-            ex1 ex1Var = chatActivityEnterView.F0;
-            if (ex1Var != null && !gl.F3(ex1Var)) {
-                chatActivityEnterView.F0.clearFocus();
-                chatActivityEnterView.F0.requestFocus();
-            }
-        }
-        return this.m2;
-    }
-
-    @Override // gy1, lt3
-    public final void setOffsetY(float f) {
-        super.setOffsetY(f);
-        this.n2.o2.invalidate();
     }
 }

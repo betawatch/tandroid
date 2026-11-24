@@ -1,33 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ri0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ aj0 b;
+public final class ri0 {
+    public static final byte[] e = new byte[1792];
+    public final CharSequence a;
+    public final int b;
+    public int c;
+    public char d;
 
-    public /* synthetic */ ri0(aj0 aj0Var, byte b) {
-        this.a = b;
-        this.b = aj0Var;
+    static {
+        for (int i = 0; i < 1792; i++) {
+            e[i] = Character.getDirectionality(i);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        aj0 aj0Var = this.b;
-        switch (b) {
-            case 0:
-                lj0 lj0Var = aj0Var.m0;
-                aod aodVar = lj0Var.c;
-                if (aodVar == null) {
-                    aodVar = new ij0();
-                    lj0Var.c = aodVar;
-                }
-                aodVar.b();
-                break;
-            default:
-                aj0Var.m0.u = false;
-                break;
+    public ri0(CharSequence charSequence) {
+        this.a = charSequence;
+        this.b = charSequence.length();
+    }
+
+    public final byte a() {
+        int i = this.c - 1;
+        CharSequence charSequence = this.a;
+        char charAt = charSequence.charAt(i);
+        this.d = charAt;
+        boolean isLowSurrogate = Character.isLowSurrogate(charAt);
+        int i2 = this.c;
+        if (isLowSurrogate) {
+            int codePointBefore = Character.codePointBefore(charSequence, i2);
+            this.c -= Character.charCount(codePointBefore);
+            return Character.getDirectionality(codePointBefore);
         }
+        this.c = i2 - 1;
+        char c = this.d;
+        return c < 1792 ? e[c] : Character.getDirectionality(c);
     }
 }

@@ -3,29 +3,29 @@
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class g4 implements j74 {
+public final class g4 implements s84 {
     public final f4 a = new f4(null, 0, "audio/ac4", (byte) 1);
-    public final xu7 b = new xu7(TLObject.FLAG_14);
+    public final yw7 b = new yw7(TLObject.FLAG_14);
     public boolean c;
 
-    @Override // j74
-    public final int b(k74 k74Var, m11 m11Var) {
-        xu7 xu7Var = this.b;
-        int read = ((ja3) k74Var).read(xu7Var.a, 0, TLObject.FLAG_14);
+    @Override // s84
+    public final int b(t84 t84Var, u21 u21Var) {
+        yw7 yw7Var = this.b;
+        int read = ((vb3) t84Var).read(yw7Var.a, 0, TLObject.FLAG_14);
         if (read == -1) {
             return -1;
         }
-        xu7Var.N(0);
-        xu7Var.M(read);
+        yw7Var.N(0);
+        yw7Var.M(read);
         boolean z = this.c;
         f4 f4Var = this.a;
         if (!z) {
             f4Var.o = 0L;
             this.c = true;
         }
-        f4Var.b(xu7Var);
+        f4Var.b(yw7Var);
         return 0;
     }
 
@@ -33,50 +33,50 @@ public final class g4 implements j74 {
     
         return false;
      */
-    @Override // j74
+    @Override // s84
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(k74 k74Var) {
-        ja3 ja3Var;
+    public final boolean c(t84 t84Var) {
+        vb3 vb3Var;
         int i;
-        xu7 xu7Var = new xu7(10);
+        yw7 yw7Var = new yw7(10);
         int i2 = 0;
         while (true) {
-            ja3Var = (ja3) k74Var;
-            ja3Var.d(xu7Var.a, 0, 10, false);
-            xu7Var.N(0);
-            if (xu7Var.D() != 4801587) {
+            vb3Var = (vb3) t84Var;
+            vb3Var.d(yw7Var.a, 0, 10, false);
+            yw7Var.N(0);
+            if (yw7Var.D() != 4801587) {
                 break;
             }
-            xu7Var.O(3);
-            int z = xu7Var.z();
+            yw7Var.O(3);
+            int z = yw7Var.z();
             i2 += z + 10;
-            ja3Var.a(z, false);
+            vb3Var.a(z, false);
         }
-        ja3Var.f = 0;
-        ja3Var.a(i2, false);
+        vb3Var.f = 0;
+        vb3Var.a(i2, false);
         int i3 = 0;
         int i4 = i2;
         while (true) {
             int i5 = 7;
-            ja3Var.d(xu7Var.a, 0, 7, false);
-            xu7Var.N(0);
-            int H = xu7Var.H();
+            vb3Var.d(yw7Var.a, 0, 7, false);
+            yw7Var.N(0);
+            int H = yw7Var.H();
             if (H != 44096 && H != 44097) {
-                ja3Var.f = 0;
+                vb3Var.f = 0;
                 i4++;
                 if (i4 - i2 >= 8192) {
                     break;
                 }
-                ja3Var.a(i4, false);
+                vb3Var.a(i4, false);
                 i3 = 0;
             } else {
                 i3++;
                 if (i3 >= 4) {
                     return true;
                 }
-                byte[] bArr = xu7Var.a;
+                byte[] bArr = yw7Var.a;
                 if (bArr.length < 7) {
                     i = -1;
                 } else {
@@ -94,36 +94,36 @@ public final class g4 implements j74 {
                 if (i == -1) {
                     break;
                 }
-                ja3Var.a(i - 7, false);
+                vb3Var.a(i - 7, false);
             }
         }
     }
 
-    @Override // j74
+    @Override // s84
     public final void d(long j, long j2) {
         this.c = false;
         this.a.d();
     }
 
-    @Override // j74
+    @Override // s84
     public final List e() {
-        km5 km5Var = mm5.b;
-        return w59.e;
+        ko5 ko5Var = mo5.b;
+        return y79.e;
     }
 
-    @Override // j74
-    public final void f(l74 l74Var) {
-        this.a.h(l74Var, new l2c(0, 1));
-        l74Var.B();
-        l74Var.f0(new oc0(-9223372036854775807L));
+    @Override // s84
+    public final void f(u84 u84Var) {
+        this.a.h(u84Var, new l4c(0, 1));
+        u84Var.B();
+        u84Var.f0(new od0(-9223372036854775807L));
     }
 
-    @Override // j74
-    public final j74 a() {
+    @Override // s84
+    public final s84 a() {
         return this;
     }
 
-    @Override // j74
+    @Override // s84
     public final void release() {
     }
 }

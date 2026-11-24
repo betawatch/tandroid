@@ -1,36 +1,36 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzga extends ccb implements eq4 {
+final class zzga extends eeb implements fs4 {
     final /* synthetic */ zzgb zza;
     final /* synthetic */ long zzb;
     private /* synthetic */ Object zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzga(zzgb zzgbVar, long j, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzga(zzgb zzgbVar, long j, px2 px2Var) {
+        super(2, px2Var);
         this.zza = zzgbVar;
         this.zzb = j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzga zzgaVar = new zzga(this.zza, this.zzb, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        zzga zzgaVar = new zzga(this.zza, this.zzb, px2Var);
         zzgaVar.zzc = obj;
         return zzgaVar;
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzga) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzga) create((zzhk) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x003e, code lost:
     
         if (com.google.android.recaptcha.internal.zzgb.zzo(r1, r9) != false) goto L10;
      */
-    @Override // of0
+    @Override // og0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -40,29 +40,29 @@ final class zzga extends ccb implements eq4 {
         zzdr zzdrVar;
         zzdt zzdtVar2;
         zzcg zzcgVar;
-        qse.b(obj);
+        tue.b(obj);
         zzhk zzhkVar = (zzhk) this.zzc;
         zzgb zzgbVar = this.zza;
         zzdv zze = zzgbVar.zze();
         zzdsVar = zzdv.zzb;
-        boolean a = rp5.a(zze, zzdsVar);
-        g5c g5cVar = g5c.a;
+        boolean a = rr5.a(zze, zzdsVar);
+        g7c g7cVar = g7c.a;
         if (!a) {
             zzdv zze2 = zzgbVar.zze();
             zzdtVar = zzdv.zzc;
-            if (!rp5.a(zze2, zzdtVar)) {
+            if (!rr5.a(zze2, zzdtVar)) {
                 zzdv zze3 = zzgbVar.zze();
                 zzdrVar = zzdv.zzd;
-                if (rp5.a(zze3, zzdrVar)) {
+                if (rr5.a(zze3, zzdrVar)) {
                     zzcgVar = zzgbVar.zzd;
                 }
                 zzdtVar2 = zzdv.zzc;
                 zzgbVar.zzf = zzdtVar2;
-                cp2 a2 = hsd.a();
+                nq2 a2 = kud.a();
                 zzgbVar.zzb = a2;
-                ppd.b(zzgb.zzd(zzgbVar).zza(), new zzfz(zzgbVar, a2, zzhkVar, this.zzb, null));
+                srd.b(zzgb.zzd(zzgbVar).zza(), new zzfz(zzgbVar, a2, zzhkVar, this.zzb, null));
             }
         }
-        return g5cVar;
+        return g7cVar;
     }
 }

@@ -1,29 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class i80 extends my2 {
-    public final j80 a;
+public final class i80 implements cq7 {
+    public static final i80 a = new i80();
 
-    public i80(j80 j80Var) {
-        this.a = j80Var;
+    static {
+        wa4.c("clientMetrics");
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (!(obj instanceof my2)) {
-            return false;
-        }
-        return this.a.equals(((i80) ((my2) obj)).a);
-    }
-
-    public final int hashCode() {
-        return 1000003 ^ this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "ProfilingManagerInfo{profilingTrigger=" + this.a + "}";
+        throw null;
     }
 }

@@ -1,18 +1,59 @@
 // default package
 
-import android.graphics.Paint;
-import org.telegram.tgnet.tl.TL_iv;
+import android.os.Handler;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface dfb {
-    web c(TL_iv.pageTableCell pagetablecell, int i);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class dfb {
+    public static final ArrayList b = new ArrayList(50);
+    public final Handler a;
 
-    Paint getHeaderPaint();
+    public dfb(Handler handler) {
+        this.a = handler;
+    }
 
-    Paint getLinePaint();
+    public static cfb d() {
+        cfb cfbVar;
+        ArrayList arrayList = b;
+        synchronized (arrayList) {
+            cfbVar = arrayList.isEmpty() ? new cfb() : (cfb) arrayList.remove(arrayList.size() - 1);
+        }
+        return cfbVar;
+    }
 
-    Paint getStripPaint();
+    public final cfb a(int i) {
+        cfb d = d();
+        d.a = this.a.obtainMessage(i);
+        return d;
+    }
 
-    void h(web webVar, int i);
+    public final cfb b(int i, int i2, int i3) {
+        cfb d = d();
+        d.a = this.a.obtainMessage(i, i2, i3);
+        return d;
+    }
+
+    public final cfb c(int i, Object obj) {
+        cfb d = d();
+        d.a = this.a.obtainMessage(i, obj);
+        return d;
+    }
+
+    public final void e(Runnable runnable) {
+        this.a.post(runnable);
+    }
+
+    public final void f() {
+        this.a.removeCallbacksAndMessages(null);
+    }
+
+    public final void g(int i) {
+        jte.f(i != 0);
+        this.a.removeMessages(i);
+    }
+
+    public final void h(int i) {
+        this.a.sendEmptyMessage(i);
+    }
 }

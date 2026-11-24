@@ -1,71 +1,55 @@
 // default package
 
-import android.util.Log;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class qv5 {
-    public final HashMap a = new HashMap();
-    public final short b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class qv5 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ wv5 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public qv5(int i) {
-        this.b = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qv5(wv5 wv5Var, Context context) {
+        super(context);
+        this.b = wv5Var;
     }
 
-    public static String b(int i, String str) {
-        if (str != null) {
-            str = str.trim();
-            if (str.length() > i) {
-                return str.substring(0, i);
-            }
-        }
-        return str;
-    }
-
-    public final synchronized Map a() {
-        return DesugarCollections.unmodifiableMap(new HashMap(this.a));
-    }
-
-    public final synchronized boolean c(String str, String str2) {
-        String b = b(this.b, str);
-        if (this.a.size() >= 64 && !this.a.containsKey(b)) {
-            Log.w("FirebaseCrashlytics", "Ignored entry \"" + str + "\" when adding custom keys. Maximum allowable: 64", null);
-            return false;
-        }
-        String b2 = b(this.b, str2);
-        String str3 = (String) this.a.get(b);
-        if (str3 == null ? b2 == null : str3.equals(b2)) {
-            return false;
-        }
-        HashMap hashMap = this.a;
-        if (str2 == null) {
-            b2 = "";
-        }
-        hashMap.put(b, b2);
-        return true;
-    }
-
-    public final synchronized void d(Map map) {
-        int i = 0;
-        for (Map.Entry entry : map.entrySet()) {
-            String str = (String) entry.getKey();
-            if (str == null) {
-                throw new IllegalArgumentException("Custom attribute key must not be null.");
-            }
-            String b = b(this.b, str);
-            if (this.a.size() < 64 || this.a.containsKey(b)) {
-                String str2 = (String) entry.getValue();
-                this.a.put(b, str2 == null ? "" : b(this.b, str2));
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        wv5 wv5Var = this.b;
+        ArrayList arrayList = wv5Var.s1;
+        if (wv5Var.v1 == 0) {
+            int size = View.MeasureSpec.getSize(i);
+            int L = gm.L(95.0f) * arrayList.size();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) wv5Var.p1.getLayoutParams();
+            if (L > size) {
+                layoutParams.width = -1;
+                layoutParams.gravity = 51;
+                if (!this.a) {
+                    TLRPC.Peer peer = wv5Var.w1;
+                    if (peer != null) {
+                        arrayList.remove(peer);
+                        arrayList.add(0, wv5Var.w1);
+                    }
+                    this.a = true;
+                }
             } else {
-                i++;
+                layoutParams.width = -2;
+                layoutParams.gravity = 49;
+                if (!this.a) {
+                    if (wv5Var.w1 != null) {
+                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
+                        arrayList.remove(wv5Var.w1);
+                        arrayList.add(max, wv5Var.w1);
+                    }
+                    this.a = true;
+                }
             }
         }
-        if (i > 0) {
-            Log.w("FirebaseCrashlytics", "Ignored " + i + " entries when adding custom keys. Maximum allowable: 64", null);
-        }
+        super.onMeasure(i, i2);
     }
 }

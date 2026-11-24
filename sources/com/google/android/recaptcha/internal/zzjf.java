@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzjf implements zzjt {
     public static final zzjf zza = new zzjf();
@@ -11,7 +11,7 @@ public final class zzjf implements zzjt {
     @Override // com.google.android.recaptcha.internal.zzjt
     public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 3) {
-            fvc.c(4, 3, null);
+            i2d.d(4, 3, null);
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
@@ -20,12 +20,12 @@ public final class zzjf implements zzjt {
         }
         Integer num = (Integer) zza2;
         if (num == null) {
-            fvc.c(4, 5, null);
+            i2d.d(4, 5, null);
             return;
         }
         int intValue = num.intValue();
         if (intValue == 0) {
-            fvc.c(4, 6, null);
+            i2d.d(4, 6, null);
             return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -33,7 +33,7 @@ public final class zzjf implements zzjt {
             zza3 = null;
         }
         if (zza3 == null) {
-            fvc.c(4, 5, null);
+            i2d.d(4, 5, null);
             return;
         }
         Object zza4 = zzizVar.zzc().zza(zzztVarArr[2]);
@@ -41,7 +41,7 @@ public final class zzjf implements zzjt {
             zza4 = null;
         }
         if (zza4 == null) {
-            fvc.c(4, 5, null);
+            i2d.d(4, 5, null);
         } else if (zza3.equals(zza4)) {
             zzizVar.zzg(zzizVar.zza() + intValue);
         }

@@ -1,62 +1,41 @@
 // default package
 
-import android.content.res.Resources;
-import android.os.Build;
-import android.util.Base64;
-import j$.util.Objects;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k40 implements qbb {
+public final /* synthetic */ class k40 implements Runnable {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ lx6 b;
+    public final /* synthetic */ ia3 c;
 
-    public /* synthetic */ k40(byte b) {
+    public /* synthetic */ k40(lx6 lx6Var, ia3 ia3Var, byte b) {
         this.a = b;
+        this.b = lx6Var;
+        this.c = ia3Var;
     }
 
-    @Override // qbb
-    public final Object get() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return Boolean.valueOf(Build.VERSION.SDK_INT > 37 && Objects.equals(g8c.J("persist.audio.compressed_offload_implicit_aac"), "false"));
-            case 1:
-                ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
-                if (newSingleThreadExecutor instanceof re7) {
-                    return (re7) newSingleThreadExecutor;
+                lx6 lx6Var = this.b;
+                ia3 ia3Var = this.c;
+                synchronized (ia3Var) {
                 }
-                return newSingleThreadExecutor instanceof ScheduledExecutorService ? new ue7((ScheduledExecutorService) newSingleThreadExecutor) : new re7(newSingleThreadExecutor);
-            case 2:
-                byte[] bArr = new byte[12];
-                ub3.i.nextBytes(bArr);
-                return Base64.encodeToString(bArr, 10);
-            case 3:
-                return new lb3(new af0(), 50000, 1000, 50000, 50000, 1000, 1000, 2000, 1000, true, b69.h);
-            case 4:
-                String J = g8c.J("ro.vendor.api_level");
-                if (J == null) {
-                    J = "";
-                }
-                return gle.f(J);
-            case 5:
-                Resources system = Resources.getSystem();
-                int i = system.getDisplayMetrics().widthPixels;
-                try {
-                    i = system.getDimensionPixelSize(system.getIdentifier("config_mediaMetadataBitmapMaxSize", "dimen", "android"));
-                } catch (Resources.NotFoundException unused) {
-                }
-                return Integer.valueOf(i);
-            case 6:
-                try {
-                    return Class.forName("androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder");
-                } catch (Exception e) {
-                    ho9.n(e);
-                    return null;
-                }
+                o40 o40Var = (o40) lx6Var.c;
+                String str = hac.a;
+                xa3 xa3Var = ((c74) o40Var).a.s;
+                tk R = xa3Var.R((rz6) xa3Var.d.e);
+                xa3Var.V(R, 1013, new ua3(R, ia3Var, (byte) 8));
+                break;
             default:
-                throw new IllegalStateException();
+                lx6 lx6Var2 = this.b;
+                ia3 ia3Var2 = this.c;
+                o40 o40Var2 = (o40) lx6Var2.c;
+                String str2 = hac.a;
+                xa3 xa3Var2 = ((c74) o40Var2).a.s;
+                tk U = xa3Var2.U();
+                xa3Var2.V(U, 1007, new ua3(U, ia3Var2, (byte) 3));
+                break;
         }
     }
 }

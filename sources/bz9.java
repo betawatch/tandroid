@@ -1,90 +1,79 @@
 // default package
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
+import android.graphics.PorterDuff;
 import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class bz9 extends gf0 {
-    public final wf2 s;
-    public TLRPC.TL_help_country w;
-    public final TextPaint x;
-    public final zk9 y;
+public final class bz9 extends FrameLayout {
+    public final TextView a;
+    public final s09 b;
+    public final ImageView c;
+    public float d;
+    public ValueAnimator e;
+    public final /* synthetic */ vz9 f;
 
-    public bz9(Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        TextPaint textPaint = new TextPaint();
-        this.x = textPaint;
-        this.y = new zk9(this, (byte) 23);
-        textPaint.setTextSize(gl.L(20.0f));
-        this.f.setVisibility(8);
-        this.c.setVisibility(8);
-        wf2 wf2Var = new wf2(21, wjbVar, context);
-        this.s = wf2Var;
-        wf2Var.b(bkb.A5, bkb.i7, bkb.B5);
-        wf2Var.setDrawUnchecked(true);
-        wf2Var.setDrawBackgroundAsArc(10);
-        addView(wf2Var);
-        wf2Var.a(false, false);
-        wf2Var.setLayoutParams(nme.d(24, 24.0f, (k96.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bz9(vz9 vz9Var, Context context, boolean z) {
+        super(context);
+        this.f = vz9Var;
+        LinearLayout i = hg9.i(context, 0);
+        addView(i, qoe.e(-2, -2, z ? 3 : 17));
+        s09 s09Var = new s09(context);
+        this.b = s09Var;
+        s09Var.f(R.raw.unlock_icon, 20, 20, null);
+        int i2 = cmb.Kf;
+        ylb ylbVar = vz9Var.a1;
+        anb.s(s09Var, i2, ylbVar, PorterDuff.Mode.SRC_ATOP);
+        i.addView(s09Var, qoe.o(20, 20));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        anb.X(textView, i2, ylbVar);
+        textView.setTypeface(gm.o());
+        textView.setTextSize(1, 14.0f);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setLines(1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        i.addView(textView, qoe.r(-2, -2, 17));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setImageResource(R.drawable.msg_close);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        anb.s(imageView, cmb.Mf, ylbVar, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, qoe.e(24, 24, 21));
     }
 
-    @Override // gf0
-    public final int a() {
-        return 22;
+    public final void a(String str, boolean z) {
+        this.a.setText(str);
+        b(z);
     }
 
-    @Override // gf0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // gf0
-    public final void c(boolean z, boolean z2) {
-        wf2 wf2Var = this.s;
-        if (wf2Var.getVisibility() == 0) {
-            wf2Var.a(z, z2);
+    public final void b(boolean z) {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.e = null;
         }
+        this.d = z ? 1.0f : 0.0f;
+        float L = (1.0f - this.d) * gm.L(-8.0f);
+        s09 s09Var = this.b;
+        s09Var.setTranslationX(L);
+        this.a.setTranslationX((1.0f - this.d) * gm.L(-8.0f));
+        s09Var.setAlpha(this.d);
     }
 
-    @Override // gf0
-    public final void d() {
-        boolean z = k96.a0;
-        this.d.setLayoutParams(nme.d(-1, -2.0f, (z ? 5 : 3) | 16, z ? 20.0f : 52.0f, 0.0f, z ? 52.0f : 20.0f, 0.0f));
-        boolean z2 = k96.a0;
-        this.e.setLayoutParams(nme.d(-1, -2.0f, (z2 ? 5 : 3) | 16, z2 ? 20.0f : 52.0f, 0.0f, z2 ? 52.0f : 20.0f, 0.0f));
-        boolean z3 = k96.a0;
-        this.f.setLayoutParams(nme.d(22, 22.0f, (z3 ? 5 : 3) | 16, z3 ? 15.0f : 20.0f, 0.0f, z3 ? 20.0f : 15.0f, 0.0f));
-    }
-
-    public final void f() {
-        TLRPC.TL_help_country tL_help_country = this.w;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        CharSequence o = vu3.o(k96.E0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
-        if (o != null) {
-            spannableStringBuilder.append(o).append((CharSequence) " ");
-            spannableStringBuilder.setSpan(new az9(16), o.length(), o.length() + 1, 0);
-        } else {
-            spannableStringBuilder.append((CharSequence) " ");
-            spannableStringBuilder.setSpan(new az9(34), 0, 1, 0);
-        }
-        String i0 = k96.i0(2131750504, tL_help_country.iso2);
-        if (TextUtils.isEmpty(i0)) {
-            i0 = tL_help_country.default_name;
-        }
-        spannableStringBuilder.append((CharSequence) i0);
-        this.d.k(spannableStringBuilder);
-    }
-
-    public TLRPC.TL_help_country getCountry() {
-        return this.w;
-    }
-
-    @Override // gf0
-    public int getFullHeight() {
-        return 44;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(30.0f), TLObject.FLAG_30));
     }
 }

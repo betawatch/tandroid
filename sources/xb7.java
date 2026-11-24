@@ -1,207 +1,271 @@
 // default package
 
-import android.text.TextUtils;
-import android.util.SparseArray;
 import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xb7 implements Runnable {
-    public final /* synthetic */ ad7 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
+public final class xb7 {
+    public final long a;
+    public boolean e;
+    public final /* synthetic */ oc7 h;
+    public final ArrayList b = new ArrayList();
+    public boolean c = true;
+    public boolean d = false;
+    public int f = -1;
+    public int g = -1;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ xb7(ad7 ad7Var, int i, ArrayList arrayList, int i2, int i3, int i4) {
-        this.a = ad7Var;
-        this.b = i;
-        this.c = arrayList;
-        this.d = i2;
-        this.e = i3;
-        this.f = i4;
+    public xb7(oc7 oc7Var, long j) {
+        this.h = oc7Var;
+        this.a = j;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x018d  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0192  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:61:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01a0  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01a5  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01aa  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLitePreparedStatement sQLitePreparedStatement;
-        SQLiteCursor sQLiteCursor;
-        SQLiteDatabase sQLiteDatabase;
-        SQLiteDatabase sQLiteDatabase2;
-        SQLiteCursor queryFinalized;
-        long j;
-        ad7 ad7Var = this.a;
-        int i = this.b;
-        boolean z = this.d;
-        int i2 = this.f;
-        try {
-            long E = cf3.E(i);
-            SparseArray sparseArray = new SparseArray();
-            ArrayList arrayList = new ArrayList();
-            StringBuilder sb = new StringBuilder();
-            ArrayList arrayList2 = this.c;
-            int i3 = this.e;
-            int i4 = 0;
-            if (arrayList2 == null) {
-                SQLiteDatabase sQLiteDatabase3 = ad7Var.b;
-                Locale locale = Locale.US;
-                queryFinalized = sQLiteDatabase3.queryFinalized("SELECT mid, ttl FROM messages_v2 WHERE uid = " + E + " AND out = " + (z ? 1 : 0) + " AND read_state > 0 AND ttl > 0 AND date <= " + i3 + " AND send_state = 0 AND media != 1", new Object[0]);
-            } else {
-                String join = TextUtils.join(",", arrayList2);
-                SQLiteDatabase sQLiteDatabase4 = ad7Var.b;
-                Locale locale2 = Locale.US;
-                queryFinalized = sQLiteDatabase4.queryFinalized("SELECT m.mid, m.ttl FROM messages_v2 as m INNER JOIN randoms_v2 as r ON m.mid = r.mid AND m.uid = r.uid WHERE r.random_id IN (" + join + ")", new Object[0]);
-            }
-            int i5 = Integer.MAX_VALUE;
-            while (queryFinalized.next()) {
-                try {
-                    int intValue = queryFinalized.intValue(1);
-                    int intValue2 = queryFinalized.intValue(i4);
-                    if (arrayList2 != null) {
-                        arrayList.add(Integer.valueOf(intValue2));
-                    }
-                    if (intValue > 0) {
-                        int max = Math.max(i3, i2) + intValue;
-                        i5 = Math.min(i5, max);
-                        ArrayList arrayList3 = (ArrayList) sparseArray.get(max);
-                        if (arrayList3 == null) {
-                            arrayList3 = new ArrayList();
-                            sparseArray.put(max, arrayList3);
-                        }
-                        if (sb.length() != 0) {
-                            sb.append(",");
-                        }
-                        sb.append(intValue2);
-                        arrayList3.add(Integer.valueOf(intValue2));
-                    }
-                    i4 = 0;
-                } catch (Exception e) {
-                    e = e;
-                    sQLiteCursor = queryFinalized;
-                    sQLitePreparedStatement = null;
-                    try {
-                        ad7Var.n(e, true);
-                        sQLiteDatabase2 = ad7Var.b;
-                        if (sQLiteDatabase2 != null) {
-                        }
-                        if (sQLitePreparedStatement != null) {
-                        }
-                        if (sQLiteCursor == null) {
-                        }
-                    } catch (Throwable th) {
-                        th = th;
-                        sQLiteDatabase = ad7Var.b;
-                        if (sQLiteDatabase != null) {
-                            sQLiteDatabase.commitTransaction();
-                        }
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                    sQLiteCursor = queryFinalized;
-                    sQLitePreparedStatement = null;
-                    sQLiteDatabase = ad7Var.b;
-                    if (sQLiteDatabase != null) {
-                    }
-                    if (sQLitePreparedStatement != null) {
-                    }
-                    if (sQLiteCursor != null) {
-                    }
-                    throw th;
-                }
-            }
-            queryFinalized.dispose();
-            if (arrayList2 != null) {
-                j = E;
-                gl.d3(new jc7(ad7Var, j, arrayList, (byte) 1));
-            } else {
-                j = E;
-            }
-            if (sparseArray.size() != 0) {
-                ad7Var.b.beginTransaction();
-                SQLitePreparedStatement executeFast = ad7Var.b.executeFast("REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)");
-                for (int i6 = 0; i6 < sparseArray.size(); i6++) {
-                    try {
-                        int keyAt = sparseArray.keyAt(i6);
-                        ArrayList arrayList4 = (ArrayList) sparseArray.get(keyAt);
-                        for (int i7 = 0; i7 < arrayList4.size(); i7++) {
-                            executeFast.requery();
-                            executeFast.bindInteger(1, ((Integer) arrayList4.get(i7)).intValue());
-                            executeFast.bindLong(2, j);
-                            executeFast.bindInteger(3, keyAt);
-                            executeFast.bindInteger(4, 0);
-                            executeFast.step();
-                        }
-                    } catch (Exception e2) {
-                        e = e2;
-                        sQLitePreparedStatement = executeFast;
-                        sQLiteCursor = null;
-                        ad7Var.n(e, true);
-                        sQLiteDatabase2 = ad7Var.b;
-                        if (sQLiteDatabase2 != null) {
-                            sQLiteDatabase2.commitTransaction();
-                        }
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
-                        if (sQLiteCursor == null) {
-                            sQLiteCursor.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        th = th3;
-                        sQLitePreparedStatement = executeFast;
-                        sQLiteCursor = null;
-                        sQLiteDatabase = ad7Var.b;
-                        if (sQLiteDatabase != null) {
-                        }
-                        if (sQLitePreparedStatement != null) {
-                        }
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
-                }
-                executeFast.dispose();
-                ad7Var.b.commitTransaction();
-                SQLiteDatabase sQLiteDatabase5 = ad7Var.b;
-                Locale locale3 = Locale.US;
-                sQLiteDatabase5.executeFast("UPDATE messages_v2 SET ttl = 0 WHERE mid IN(" + sb.toString() + ") AND uid = " + j).stepThis().dispose();
-                ad7Var.getMessagesController().k0(i5, j, sparseArray);
-            }
-            SQLiteDatabase sQLiteDatabase6 = ad7Var.b;
-            if (sQLiteDatabase6 != null) {
-                sQLiteDatabase6.commitTransaction();
-            }
-        } catch (Exception e3) {
-            e = e3;
-            sQLitePreparedStatement = null;
-        } catch (Throwable th4) {
-            th = th4;
-            sQLitePreparedStatement = null;
+    public final void a(final int i, final int i2) {
+        if (this.e || i2 <= 0 || i < 0) {
+            return;
         }
+        if (i2 == this.g && i == this.f) {
+            return;
+        }
+        final byte b = 1;
+        this.e = true;
+        this.f = i;
+        this.g = i2;
+        long j = this.a;
+        final byte b2 = 0;
+        oc7 oc7Var = this.h;
+        if (j < 0) {
+            TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
+            tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterChatPhotos();
+            tL_messages_search.add_offset = i;
+            tL_messages_search.limit = i2;
+            tL_messages_search.offset_id = 0;
+            tL_messages_search.q = "";
+            tL_messages_search.peer = oc7Var.i1(j);
+            oc7Var.getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate(this) { // from class: wb7
+                public final /* synthetic */ xb7 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    switch (b) {
+                        case 0:
+                            if (tL_error == null) {
+                                TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) tLObject;
+                                xb7 xb7Var = this.b;
+                                xb7Var.h.getMessagesStorage().j1(photos_photos.users, null, true, true);
+                                gm.c3(new zq1(xb7Var, photos_photos, i, i2, (byte) 8));
+                                break;
+                            }
+                            break;
+                        default:
+                            if (tL_error == null) {
+                                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                                xb7 xb7Var2 = this.b;
+                                xb7Var2.h.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                                gm.c3(new zq1(xb7Var2, messages_messages, i, i2, (byte) 9));
+                                break;
+                            }
+                            break;
+                    }
+                }
+            });
+            return;
+        }
+        TLRPC.User W1 = oc7Var.W1(Long.valueOf(j));
+        if (W1 == null) {
+            this.e = false;
+            return;
+        }
+        TLRPC.TL_photos_getUserPhotos tL_photos_getUserPhotos = new TLRPC.TL_photos_getUserPhotos();
+        tL_photos_getUserPhotos.offset = i;
+        tL_photos_getUserPhotos.limit = i2;
+        tL_photos_getUserPhotos.max_id = 0L;
+        tL_photos_getUserPhotos.user_id = oc7Var.p1(W1);
+        oc7Var.getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: wb7
+            public final /* synthetic */ xb7 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                switch (b2) {
+                    case 0:
+                        if (tL_error == null) {
+                            TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) tLObject;
+                            xb7 xb7Var = this.b;
+                            xb7Var.h.getMessagesStorage().j1(photos_photos.users, null, true, true);
+                            gm.c3(new zq1(xb7Var, photos_photos, i, i2, (byte) 8));
+                            break;
+                        }
+                        break;
+                    default:
+                        if (tL_error == null) {
+                            TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                            xb7 xb7Var2 = this.b;
+                            xb7Var2.h.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                            gm.c3(new zq1(xb7Var2, messages_messages, i, i2, (byte) 9));
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+    }
+
+    public final void b(int i, boolean z) {
+        ArrayList arrayList = this.b;
+        int i2 = 0;
+        if (arrayList.isEmpty()) {
+            a(0, 80);
+            return;
+        }
+        if (i < 0) {
+            i += arrayList.size();
+        }
+        if (i >= arrayList.size()) {
+            i -= arrayList.size();
+        }
+        if (i < 0 || i >= arrayList.size()) {
+            return;
+        }
+        for (int i3 = 0; i3 < arrayList.size(); i3++) {
+            if (arrayList.get(i3) == null) {
+                if (z) {
+                    while (arrayList.get(i) != null) {
+                        i++;
+                        if (i >= arrayList.size()) {
+                            i = 0;
+                        }
+                    }
+                    while (i2 <= 80) {
+                        int i4 = i + i2;
+                        if (i4 >= arrayList.size() || arrayList.get(i4) != null) {
+                            break;
+                        } else {
+                            i2++;
+                        }
+                    }
+                    if (i2 > 0) {
+                        a(i, i2);
+                        return;
+                    }
+                    return;
+                }
+                while (arrayList.get(i) != null) {
+                    i--;
+                    if (i < 0) {
+                        i = arrayList.size() - 1;
+                    }
+                }
+                while (i2 <= 80) {
+                    int i5 = i - i2;
+                    if (i5 < 0 || arrayList.get(i5) != null) {
+                        break;
+                    } else {
+                        i2++;
+                    }
+                }
+                if (i2 > 0) {
+                    a(i - i2, i2);
+                    return;
+                }
+                return;
+            }
+        }
+    }
+
+    public final void c(int i) {
+        if (i >= 0) {
+            ArrayList arrayList = this.b;
+            if (i < arrayList.size()) {
+                arrayList.add(0, (TLRPC.Photo) arrayList.remove(i));
+                g();
+                this.h.getNotificationCenter().k(nm7.g3, this);
+            }
+        }
+    }
+
+    public final void d(int i, int i2, TLRPC.photos_Photos photos_photos) {
+        boolean z = this.d;
+        this.e = false;
+        this.d = true;
+        this.c = false;
+        int max = Math.max(photos_photos.count, photos_photos.photos.size());
+        photos_photos.count = max;
+        ArrayList arrayList = this.b;
+        boolean z2 = max != arrayList.size() || i + i2 > arrayList.size();
+        if (!z2) {
+            int i3 = 0;
+            while (true) {
+                if (i3 >= photos_photos.photos.size()) {
+                    break;
+                }
+                int i4 = i + i3;
+                if (arrayList.get(i4) != null && ((TLRPC.Photo) arrayList.get(i4)).id != photos_photos.photos.get(i3).id) {
+                    z2 = true;
+                    break;
+                }
+                i3++;
+            }
+        }
+        if (z2) {
+            arrayList.clear();
+            for (int i5 = 0; i5 < photos_photos.count; i5++) {
+                int i6 = i5 - i;
+                arrayList.add((i6 < 0 || i6 >= photos_photos.photos.size()) ? null : photos_photos.photos.get(i6));
+            }
+        } else {
+            for (int i7 = 0; i7 < photos_photos.photos.size(); i7++) {
+                arrayList.set(i + i7, photos_photos.photos.get(i7));
+            }
+        }
+        g();
+        this.h.getNotificationCenter().k(nm7.g3, this);
+        if (z || i != 0 || i2 >= arrayList.size() || arrayList.size() - i2 <= 80) {
+            return;
+        }
+        a(arrayList.size() - 80, 80);
+    }
+
+    public final void e(long j) {
+        int i = 0;
+        boolean z = false;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i >= arrayList.size()) {
+                break;
+            }
+            TLRPC.Photo photo = (TLRPC.Photo) arrayList.get(i);
+            if (photo != null && photo.id == j) {
+                arrayList.remove(i);
+                i--;
+                z = true;
+            }
+            i++;
+        }
+        if (z) {
+            g();
+            this.h.getNotificationCenter().k(nm7.g3, this);
+        }
+    }
+
+    public final void f() {
+        this.b.clear();
+        this.f = -1;
+        this.g = -1;
+        this.c = true;
+        g();
+    }
+
+    public final void g() {
+        this.h.getMessagesStorage().a.c(new vb7(this, (byte) 1));
     }
 }

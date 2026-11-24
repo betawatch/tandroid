@@ -1,12 +1,19 @@
 // default package
 
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class fud {
-    public final vid a;
-    public final gud b;
+public final class fud implements cq7 {
+    public static final fud a = new fud();
 
-    public fud(vid vidVar, String str, Object[] objArr) {
-        this.a = vidVar;
-        this.b = new gud(vidVar.getClass(), str, objArr);
+    static {
+        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

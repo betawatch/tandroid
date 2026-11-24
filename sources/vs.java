@@ -1,34 +1,20 @@
 // default package
 
-import android.view.View;
-import android.view.WindowInsets;
-import org.telegram.ui.o;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vs implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ vs(jw9 jw9Var) {
-        this.a = (byte) 3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class vs extends ConnectivityManager.NetworkCallback {
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onAvailable(Network network) {
+        a.r = -1;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return o.J(windowInsets);
-            case 1:
-                return lx0.c(view, windowInsets);
-            case 2:
-                view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
-                return windowInsets;
-            default:
-                return px9.e(view, windowInsets);
-        }
-    }
-
-    public /* synthetic */ vs(byte b) {
-        this.a = b;
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
+        a.r = -1;
     }
 }

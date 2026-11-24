@@ -1,83 +1,87 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ow1 extends ky1 {
-    public final /* synthetic */ byte y0 = 0;
-    public final /* synthetic */ ChatActivityEnterView z0;
+public final /* synthetic */ class ow1 implements ii7, hk3 {
+    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ k47 b;
+    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ow1(ChatActivityEnterView chatActivityEnterView, Context context, wjb wjbVar) {
-        super(R.drawable.input_done, wjbVar, context, true);
-        this.z0 = chatActivityEnterView;
+    public /* synthetic */ ow1(ChatActivityEnterView chatActivityEnterView, k47 k47Var, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer) {
+        this.a = chatActivityEnterView;
+        this.b = k47Var;
+        this.c = tL_buttonTypeRequestPeer;
     }
 
-    @Override // ky1
-    public final boolean b() {
-        switch (this.y0) {
-            case 0:
-                return this.z0.c();
-            default:
-                return super.b();
-        }
+    @Override // hk3
+    public final boolean E() {
+        return false;
     }
 
-    @Override // ky1
-    public final boolean c() {
-        byte b = this.y0;
-        ChatActivityEnterView chatActivityEnterView = this.z0;
-        switch (b) {
-            case 0:
-                return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
-            default:
-                return !chatActivityEnterView.g4;
+    @Override // ii7
+    public final void a(ArrayList arrayList) {
+        int i = ChatActivityEnterView.z7;
+        if (arrayList.isEmpty()) {
+            return;
         }
+        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        oc7 r1 = oc7.r1(chatActivityEnterView.R);
+        k47 k47Var = this.b;
+        tL_messages_sendBotRequestedPeer.peer = r1.l1(k47Var.k.peer_id);
+        tL_messages_sendBotRequestedPeer.flags |= 1;
+        tL_messages_sendBotRequestedPeer.msg_id = k47Var.e1();
+        tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            tL_messages_sendBotRequestedPeer.requested_peers.add(oc7.r1(chatActivityEnterView.R).i1(((Long) obj).longValue()));
+        }
+        ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer, null);
     }
 
-    @Override // ky1
-    public final boolean d() {
-        switch (this.y0) {
-            case 0:
-                j47 j47Var = this.z0.M0;
-                if ((j47Var == null || j47Var.u0) && this.w <= 0) {
-                }
-                break;
+    @Override // hk3
+    public final boolean q(nk3 nk3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, sxb sxbVar) {
+        int i3 = ChatActivityEnterView.z7;
+        if (!arrayList.isEmpty()) {
+            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+            ChatActivityEnterView chatActivityEnterView = this.a;
+            oc7 r1 = oc7.r1(chatActivityEnterView.R);
+            k47 k47Var = this.b;
+            tL_messages_sendBotRequestedPeer.peer = r1.l1(k47Var.k.peer_id);
+            tL_messages_sendBotRequestedPeer.flags |= 1;
+            tL_messages_sendBotRequestedPeer.msg_id = k47Var.e1();
+            tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+            HashSet hashSet = new HashSet();
+            int size = arrayList.size();
+            int i4 = 0;
+            while (i4 < size) {
+                Object obj = arrayList.get(i4);
+                i4++;
+                hashSet.add(Long.valueOf(((bf7) obj).a));
+            }
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                tL_messages_sendBotRequestedPeer.requested_peers.add(oc7.r1(chatActivityEnterView.R).i1(((Long) it.next()).longValue()));
+            }
+            ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
+        nk3Var.finishFragment();
         return true;
     }
 
-    @Override // ky1
-    public final boolean j() {
-        switch (this.y0) {
-            case 0:
-                return this.z0.X5;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        switch (this.y0) {
-            case 0:
-                super.setAlpha(f);
-                int i = ChatActivityEnterView.r7;
-                this.z0.f2();
-                break;
-            default:
-                super.setAlpha(f);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ow1(ChatActivityEnterView chatActivityEnterView, Activity activity, int i, wjb wjbVar) {
-        super(i, wjbVar, activity, true);
-        this.z0 = chatActivityEnterView;
+    @Override // hk3
+    public final boolean s(nk3 nk3Var) {
+        return false;
     }
 }

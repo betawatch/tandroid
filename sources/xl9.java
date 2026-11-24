@@ -1,96 +1,126 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.lang.reflect.Array;
-import org.telegram.messenger.a;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CaptureRequest;
+import android.hardware.camera2.CaptureResult;
+import android.hardware.camera2.TotalCaptureResult;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class xl9 {
-    public static final String[] a = {"round_video_switch_back_to_front_ms", "round_video_switch_front_to_back_ms"};
-    public static final int[][] b = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, 2, 8);
-    public static final int[] c = new int[2];
-    public static final int[] d = new int[2];
-    public static boolean e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class xl9 extends CameraCaptureSession.CaptureCallback {
+    public final /* synthetic */ bm9 a;
 
-    public static int a(int i) {
-        int i2 = c[i];
-        if (i2 == 0) {
-            return i == 0 ? 680 : 630;
-        }
-        int i3 = 0;
-        for (int i4 = 0; i4 < i2; i4++) {
-            i3 += b[i][i4];
-        }
-        return Math.round(i3 / i2);
+    public xl9(bm9 bm9Var) {
+        this.a = bm9Var;
     }
 
-    public static void b() {
-        int[] iArr = c;
-        if (e) {
-            return;
-        }
-        e = true;
-        SharedPreferences sharedPreferences = a.b.getSharedPreferences("mainconfig", 0);
-        int i = 0;
-        while (true) {
-            String[] strArr = a;
-            if (i >= 2) {
-                return;
-            }
-            String string = sharedPreferences.getString(strArr[i], null);
-            if (string != null && !string.isEmpty()) {
-                String[] split = string.split(",");
-                for (int max = Math.max(0, split.length - 8); max < split.length; max++) {
-                    try {
-                        int max2 = Math.max(kk7.d3, Math.min(2000, Integer.parseInt(split[max])));
-                        int[] iArr2 = b[i];
-                        int i2 = iArr[i];
-                        iArr[i] = i2 + 1;
-                        iArr2[i2] = max2;
-                    } catch (NumberFormatException unused) {
+    @Override // android.hardware.camera2.CameraCaptureSession.CaptureCallback
+    public final void onCaptureCompleted(CameraCaptureSession cameraCaptureSession, CaptureRequest captureRequest, TotalCaptureResult totalCaptureResult) {
+        int i;
+        bm9 bm9Var = this.a;
+        fm9 fm9Var = bm9Var.j;
+        if (cameraCaptureSession == bm9Var.z) {
+            if (bm9Var.P) {
+                Object tag = captureRequest.getTag();
+                if ((tag instanceof Integer) && ((Integer) tag).intValue() == bm9Var.T) {
+                    bm9Var.Q++;
+                    Integer num = (Integer) totalCaptureResult.get(CaptureResult.FLASH_MODE);
+                    Integer num2 = (Integer) totalCaptureResult.get(CaptureResult.FLASH_STATE);
+                    boolean z = !bm9Var.O ? !(num == null || num.intValue() == 0) : !(num != null && num.intValue() == 2);
+                    boolean z2 = !bm9Var.O || num2 == null || num2.intValue() == 3 || num2.intValue() == 4;
+                    if (z && z2) {
+                        fm9Var.b("torch result confirmed: enabled=" + bm9Var.O + ", resultMode=" + num + ", flashState=" + num2 + ", frames=" + bm9Var.Q + ", retries=" + bm9Var.R);
+                        bm9Var.P = false;
+                    } else {
+                        int i2 = bm9Var.Q;
+                        if (i2 == 3 && (i = bm9Var.R) == 0) {
+                            bm9Var.R = i + 1;
+                            bm9Var.Q = 0;
+                            fm9Var.b("torch result not applied; rebuilding request: enabled=" + bm9Var.O + ", resultMode=" + num + ", flashState=" + num2);
+                            bm9Var.a();
+                        } else if (i2 >= 6) {
+                            fm9Var.b("torch result failed: enabled=" + bm9Var.O + ", resultMode=" + num + ", flashState=" + num2 + ", retries=" + bm9Var.R);
+                            bm9Var.P = false;
+                        }
                     }
                 }
-                d[i] = iArr[i] % 8;
             }
-            i++;
+            Long l = (Long) totalCaptureResult.get(CaptureResult.SENSOR_TIMESTAMP);
+            if (l == null || l.longValue() <= bm9Var.W0) {
+                return;
+            }
+            long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+            if (bm9Var.V0 == 0) {
+                bm9Var.V0 = l.longValue();
+                bm9Var.X0 = 1L;
+            } else {
+                long longValue = l.longValue() - bm9Var.W0;
+                bm9Var.Z0++;
+                bm9Var.a1 += longValue;
+                double d = longValue;
+                bm9Var.b1 = (d * d) + bm9Var.b1;
+                long j = bm9Var.c1;
+                if (j == 0 || longValue < j) {
+                    bm9Var.c1 = longValue;
+                }
+                bm9Var.d1 = Math.max(bm9Var.d1, longValue);
+                if (longValue > 50000000) {
+                    bm9Var.e1++;
+                }
+                if (longValue > 100000000) {
+                    bm9Var.f1++;
+                }
+                bm9Var.X0++;
+            }
+            long j2 = bm9Var.Y0;
+            if (j2 != 0) {
+                long j3 = elapsedRealtimeNanos - j2;
+                bm9Var.g1++;
+                bm9Var.h1 += j3;
+                bm9Var.i1 = Math.max(bm9Var.i1, j3);
+            }
+            bm9Var.Y0 = elapsedRealtimeNanos;
+            bm9Var.W0 = l.longValue();
+            long longValue2 = l.longValue() - bm9Var.V0;
+            if (longValue2 >= 3000000000L) {
+                float f = ((bm9Var.X0 - 1) * 1.0E9f) / longValue2;
+                pn9 pn9Var = bm9Var.I;
+                byte b = pn9Var == null ? (byte) 0 : pn9Var.a;
+                StringBuilder sb = new StringBuilder("camera capture rate: measuredFps=");
+                sb.append(f);
+                sb.append(", requestedFps=");
+                sb.append((int) bm9Var.h.a);
+                sb.append(", activeFps=");
+                sb.append(b == 0 ? "unknown" : Integer.valueOf(b));
+                sb.append(", targetMet=");
+                sb.append(b == 0 || f >= ((float) b) * 0.85f);
+                sb.append(", fpsRange=");
+                sb.append(bm9Var.J);
+                sb.append(", sensorIntervalMs={avg=");
+                sb.append(bm9.d(bm9Var.a1, bm9Var.Z0));
+                sb.append(", min=");
+                sb.append(bm9Var.c1 / 1000000.0f);
+                sb.append(", max=");
+                sb.append(bm9Var.d1 / 1000000.0f);
+                sb.append(", jitter=");
+                sb.append(bm9.U(bm9Var.b1, bm9Var.a1, bm9Var.Z0));
+                sb.append("}, sensorGaps={over50ms=");
+                sb.append(bm9Var.e1);
+                sb.append(", over100ms=");
+                sb.append(bm9Var.f1);
+                sb.append("}, callbackIntervalMs={avg=");
+                sb.append(bm9.d(bm9Var.h1, bm9Var.g1));
+                sb.append(", max=");
+                sb.append(bm9Var.i1 / 1000000.0f);
+                sb.append("}");
+                fm9Var.b(sb.toString());
+                bm9Var.N();
+                bm9Var.V0 = l.longValue();
+                bm9Var.W0 = l.longValue();
+                bm9Var.X0 = 1L;
+                bm9Var.Y0 = elapsedRealtimeNanos;
+            }
         }
-    }
-
-    public static void c(int i) {
-        int i2 = c[i];
-        int i3 = i2 == 8 ? d[i] : 0;
-        StringBuilder sb = new StringBuilder(i2 * 5);
-        for (int i4 = 0; i4 < i2; i4++) {
-            if (i4 > 0) {
-                sb.append(',');
-            }
-            sb.append(b[i][(i3 + i4) % 8]);
-        }
-        a.b.getSharedPreferences("mainconfig", 0).edit().putString(a[i], sb.toString()).apply();
-    }
-
-    public static synchronized int d(nl9 nl9Var, nl9 nl9Var2, int i) {
-        int a2;
-        synchronized (xl9.class) {
-            b();
-            if (nl9Var == nl9Var2) {
-                throw new IllegalArgumentException("Camera switch direction must change");
-            }
-            int i2 = nl9Var == nl9.b ? 0 : 1;
-            int max = Math.max(kk7.d3, Math.min(2000, i));
-            int[] iArr = b[i2];
-            int[] iArr2 = d;
-            iArr[iArr2[i2]] = max;
-            iArr2[i2] = (iArr2[i2] + 1) % 8;
-            int[] iArr3 = c;
-            int i3 = iArr3[i2];
-            if (i3 < 8) {
-                iArr3[i2] = i3 + 1;
-            }
-            c(i2);
-            a2 = a(i2);
-        }
-        return a2;
     }
 }

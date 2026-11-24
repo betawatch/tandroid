@@ -1,80 +1,42 @@
 // default package
 
+import java.util.AbstractCollection;
+import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class lne {
-    public static void a(kab kabVar, int i, us2 us2Var) {
-        long h = kabVar.h(i);
-        List l = kabVar.l(h);
-        if (l.isEmpty()) {
-            return;
-        }
-        if (i == kabVar.t() - 1) {
-            sdb.a();
-            return;
-        }
-        long h2 = kabVar.h(i + 1) - kabVar.h(i);
-        if (h2 > 0) {
-            us2Var.accept(new x33(h, h2, l));
-        }
+    public static Object a(AbstractCollection abstractCollection, String str) {
+        Iterator it = abstractCollection.iterator();
+        return it.hasNext() ? it.next() : str;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0059 A[LOOP:0: B:14:0x0053->B:16:0x0059, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
-    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void b(kab kabVar, tab tabVar, us2 us2Var) {
-        int b;
-        boolean z;
-        int i;
-        long j = tabVar.a;
-        if (j == -9223372036854775807L) {
-            b = 0;
-        } else {
-            b = kabVar.b(j);
-            if (b == -1) {
-                b = kabVar.t();
-            }
-            if (b > 0 && kabVar.h(b - 1) == j) {
-                b--;
-            }
+    public static Object b(Iterable iterable) {
+        Object next;
+        if (!(iterable instanceof List)) {
+            Iterator it = iterable.iterator();
+            do {
+                next = it.next();
+            } while (it.hasNext());
+            return next;
         }
-        if (j != -9223372036854775807L && b < kabVar.t()) {
-            List l = kabVar.l(j);
-            long h = kabVar.h(b);
-            if (!l.isEmpty()) {
-                long j2 = tabVar.a;
-                if (j2 < h) {
-                    us2Var.accept(new x33(j2, h - j2, l));
-                    z = true;
-                    for (i = b; i < kabVar.t(); i++) {
-                        a(kabVar, i, us2Var);
-                    }
-                    if (tabVar.b) {
-                        return;
-                    }
-                    if (z) {
-                        b--;
-                    }
-                    for (int i2 = 0; i2 < b; i2++) {
-                        a(kabVar, i2, us2Var);
-                    }
-                    if (z) {
-                        us2Var.accept(new x33(kabVar.h(b), j - kabVar.h(b), kabVar.l(j)));
-                        return;
-                    }
-                    return;
-                }
+        List list = (List) iterable;
+        if (!list.isEmpty()) {
+            return aq1.m(1, list);
+        }
+        u36.g();
+        return null;
+    }
+
+    public static void c(List list, di8 di8Var, int i, int i2) {
+        for (int size = list.size() - 1; size > i2; size--) {
+            if (di8Var.apply(list.get(size))) {
+                list.remove(size);
             }
         }
-        z = false;
-        while (i < kabVar.t()) {
-        }
-        if (tabVar.b) {
+        for (int i3 = i2 - 1; i3 >= i; i3--) {
+            list.remove(i3);
         }
     }
 }

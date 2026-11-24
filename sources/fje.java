@@ -1,69 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class fje extends c2e {
-    private static final fje zzb;
-    private int zzd;
-    private int zze;
-    private int zzg;
-    private int zzi;
-    private String zzf = "";
-    private String zzh = "";
+public final class fje implements cq7 {
+    public static final fje a = new fje();
 
     static {
-        fje fjeVar = new fje();
-        zzb = fjeVar;
-        c2e.k(fje.class, fjeVar);
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)));
     }
 
-    public static /* synthetic */ void n(fje fjeVar, String str) {
-        fjeVar.zzd |= 8;
-        fjeVar.zzh = str;
-    }
-
-    public static /* synthetic */ void o(fje fjeVar, String str) {
-        str.getClass();
-        fjeVar.zzd |= 2;
-        fjeVar.zzf = str;
-    }
-
-    public static /* synthetic */ void p(fje fjeVar, int i) {
-        fjeVar.zzd |= 16;
-        fjeVar.zzi = i;
-    }
-
-    public static void q(fje fjeVar, int i) {
-        fjeVar.zzg = yjb.e(i);
-        fjeVar.zzd |= 4;
-    }
-
-    public static /* synthetic */ void r(fje fjeVar, int i) {
-        fjeVar.zzd |= 1;
-        fjeVar.zze = i;
-    }
-
-    public static mie s() {
-        return (mie) zzb.f();
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0005\u0000\u0001\u0001\u0007\u0005\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001\u0004᠌\u0002\u0005ဈ\u0003\u0007င\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", yqd.d, "zzh", "zzi"});
-        }
-        if (i2 == 3) {
-            return new fje();
-        }
-        if (i2 == 4) {
-            return new mie(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
         throw null;
     }

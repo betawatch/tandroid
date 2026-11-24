@@ -1,38 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class hv9 {
-    public static final hv9 c = new hv9(0, 0);
-    public final long a;
-    public final long b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class hv9 extends sc3 {
+    public final /* synthetic */ sj3 F;
 
-    public hv9(long j, long j2) {
-        this.a = j;
-        this.b = j2;
+    public hv9(sj3 sj3Var) {
+        this.F = sj3Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && hv9.class == obj.getClass()) {
-            hv9 hv9Var = (hv9) obj;
-            if (this.a == hv9Var.a && this.b == hv9Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("[timeUs=");
-        sb.append(this.a);
-        sb.append(", position=");
-        return ls6.p(sb, this.b, "]");
+    @Override // sc3
+    public final void P(u69 u69Var) {
+        this.F.invalidate();
     }
 }

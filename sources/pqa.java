@@ -1,44 +1,33 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class pqa extends AnimatorListenerAdapter {
+public final /* synthetic */ class pqa implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ rqa b;
+    public final /* synthetic */ wsa b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ pqa(rqa rqaVar, byte b) {
+    public /* synthetic */ pqa(wsa wsaVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z, byte b) {
         this.a = b;
-        this.b = rqaVar;
+        this.b = wsaVar;
+        this.c = twoStepVerificationActivity;
+        this.d = z;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        rqa rqaVar = this.b;
-        switch (b) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                rqaVar.k0 = false;
-                break;
-            case 1:
-                rqaVar.k0 = false;
-                break;
-            case 2:
-                rqaVar.P.setVisibility(4);
-                break;
-            case 3:
-                rqaVar.z0 = rqaVar.y0;
-                rqaVar.d(rqaVar.b0);
+                gm.c3(new sqa(this.b, tLObject, this.c, this.d, tL_error));
                 break;
             default:
-                rqaVar.A0 = 1.0f;
-                FrameLayout frameLayout = rqaVar.b;
-                frameLayout.setScaleX(1.0f);
-                frameLayout.setScaleY(rqaVar.A0);
-                rqaVar.invalidate();
+                gm.c3(new sqa(this.b, tL_error, this.c, tLObject, this.d));
                 break;
         }
     }

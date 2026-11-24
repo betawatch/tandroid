@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class w0 extends LinearLayout {
     public final /* synthetic */ byte a = 1;
@@ -18,14 +18,14 @@ public final class w0 extends LinearLayout {
     public final RectF c;
     public final RectF d;
     public final Paint e;
-    public final /* synthetic */ wjb f;
+    public final /* synthetic */ ylb f;
     public final /* synthetic */ FrameLayout h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(z0 z0Var, Context context, wjb wjbVar) {
+    public w0(z0 z0Var, Context context, ylb ylbVar) {
         super(context);
         this.h = z0Var;
-        this.f = wjbVar;
+        this.f = ylbVar;
         this.b = new RectF();
         this.c = new RectF();
         this.d = new RectF();
@@ -40,7 +40,7 @@ public final class w0 extends LinearLayout {
         float f2;
         float f3;
         byte b = this.a;
-        wjb wjbVar = this.f;
+        ylb ylbVar = this.f;
         FrameLayout frameLayout = this.h;
         RectF rectF = this.b;
         RectF rectF2 = this.c;
@@ -49,21 +49,21 @@ public final class w0 extends LinearLayout {
         switch (b) {
             case 0:
                 z0 z0Var = (z0) frameLayout;
-                lm lmVar = z0Var.s;
-                if (lmVar == null) {
+                ln lnVar = z0Var.s;
+                if (lnVar == null) {
                     e = 1.0f;
                 } else {
-                    e = lmVar.e(false, z0Var.h >= 0 ? 1.0f : 0.0f);
+                    e = lnVar.e(false, z0Var.h >= 0 ? 1.0f : 0.0f);
                 }
-                lm lmVar2 = z0Var.n;
-                if (lmVar2 == null) {
+                ln lnVar2 = z0Var.n;
+                if (lnVar2 == null) {
                     e2 = 0.0f;
                 } else {
                     int i = z0Var.h;
                     if (i < 0) {
                         i = z0Var.r;
                     }
-                    e2 = lmVar2.e(false, i);
+                    e2 = lnVar2.e(false, i);
                 }
                 double d = e2;
                 float f4 = e2;
@@ -83,10 +83,10 @@ public final class w0 extends LinearLayout {
                     View childAt2 = getChildAt(ceil);
                     rectF2.set(childAt2.getLeft(), childAt2.getTop(), childAt2.getRight(), childAt2.getBottom());
                 }
-                gl.X1(rectF, rectF2, f5, rectF3);
-                paint.setColor(bkb.p1(e * 0.1f, bkb.v0(bkb.Ei, wjbVar)));
+                gm.X1(rectF, rectF2, f5, rectF3);
+                paint.setColor(cmb.p1(e * 0.1f, cmb.v0(cmb.Ei, ylbVar)));
                 if (e > f) {
-                    canvas.drawRoundRect(rectF3, gl.L(z0Var.e), gl.L(z0Var.e), paint);
+                    canvas.drawRoundRect(rectF3, gm.L(z0Var.e), gm.L(z0Var.e), paint);
                 }
                 int i2 = 0;
                 while (i2 < getChildCount()) {
@@ -103,11 +103,11 @@ public final class w0 extends LinearLayout {
                 super.dispatchDraw(canvas);
                 break;
             default:
-                cmc cmcVar = (cmc) frameLayout;
-                float e3 = cmcVar.f.e(false, cmcVar.d);
+                boc bocVar = (boc) frameLayout;
+                float e3 = bocVar.f.e(false, bocVar.d);
                 double d2 = e3;
                 int floor2 = (int) Math.floor(d2);
-                TextView[] textViewArr = cmcVar.c;
+                TextView[] textViewArr = bocVar.c;
                 int j = Utilities.j(floor2, textViewArr.length, 0);
                 int j2 = Utilities.j((int) Math.ceil(d2), textViewArr.length, 0);
                 if (j >= 0 && j < textViewArr.length) {
@@ -118,9 +118,9 @@ public final class w0 extends LinearLayout {
                     TextView textView2 = textViewArr[j2];
                     rectF2.set(textView2.getX(), textView2.getY(), textView2.getX() + textView2.getWidth(), textView2.getY() + textView2.getHeight());
                 }
-                gl.X1(rectF, rectF2, e3 - j, rectF3);
-                paint.setColor(bkb.p1(0.1f, bkb.v0(bkb.Ei, wjbVar)));
-                canvas.drawRoundRect(rectF3, gl.L(14.0f), gl.L(14.0f), paint);
+                gm.X1(rectF, rectF2, e3 - j, rectF3);
+                paint.setColor(cmb.p1(0.1f, cmb.v0(cmb.Ei, ylbVar)));
+                canvas.drawRoundRect(rectF3, gm.L(14.0f), gm.L(14.0f), paint);
                 super.dispatchDraw(canvas);
                 break;
         }
@@ -138,7 +138,7 @@ public final class w0 extends LinearLayout {
                 int i6 = 0;
                 for (int i7 = 0; i7 < getChildCount(); i7++) {
                     View childAt = getChildAt(i7);
-                    childAt.setPadding(gl.L(10.0f), 0, gl.L(10.0f), 0);
+                    childAt.setPadding(gm.L(10.0f), 0, gm.L(10.0f), 0);
                     if (z) {
                         i4 = i2;
                         i3 = 0;
@@ -155,7 +155,7 @@ public final class w0 extends LinearLayout {
                 for (int i8 = 0; i8 < getChildCount(); i8++) {
                     View childAt2 = getChildAt(i8);
                     LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt2.getLayoutParams();
-                    childAt2.setPadding(gl.L(10.0f), 0, gl.L(10.0f), 0);
+                    childAt2.setPadding(gm.L(10.0f), 0, gm.L(10.0f), 0);
                     if (z2) {
                         if (z) {
                             layoutParams.width = 0;
@@ -181,10 +181,10 @@ public final class w0 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(cmc cmcVar, Context context, wjb wjbVar) {
+    public w0(boc bocVar, Context context, ylb ylbVar) {
         super(context);
-        this.h = cmcVar;
-        this.f = wjbVar;
+        this.h = bocVar;
+        this.f = ylbVar;
         this.b = new RectF();
         this.c = new RectF();
         this.d = new RectF();

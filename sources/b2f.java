@@ -1,57 +1,45 @@
 // default package
 
-import java.math.RoundingMode;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class b2f {
-    public static int a(int i, int i2) {
-        RoundingMode roundingMode = RoundingMode.CEILING;
-        roundingMode.getClass();
-        if (i2 == 0) {
-            throw new ArithmeticException("/ by zero");
-        }
-        int i3 = i / i2;
-        int i4 = i - (i2 * i3);
-        if (i4 == 0) {
-            return i3;
-        }
-        int i5 = ((i ^ i2) >> 31) | 1;
-        switch (t7e.a[roundingMode.ordinal()]) {
-            case 1:
-                throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
-            case 2:
-                return i3;
-            case 3:
-                if (i5 >= 0) {
-                    return i3;
-                }
-                break;
-            case 4:
-                break;
-            case 5:
-                if (i5 <= 0) {
-                    return i3;
-                }
-                break;
-            case 6:
-            case 7:
-            case 8:
-                int abs = Math.abs(i4);
-                int abs2 = abs - (Math.abs(i2) - abs);
-                if (abs2 == 0) {
-                    RoundingMode roundingMode2 = RoundingMode.HALF_UP;
-                    RoundingMode roundingMode3 = RoundingMode.HALF_EVEN;
-                    return i3;
-                }
-                if (abs2 <= 0) {
-                    return i3;
-                }
-                break;
-            default:
-                wn4.f();
-                return 0;
-        }
-        return i3 + i5;
+public final class b2f extends zz4 {
+    @Override // hh0
+    public final /* bridge */ /* synthetic */ IInterface b(IBinder iBinder) {
+        iBinder.getClass();
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService");
+        return queryLocalInterface instanceof s0e ? (s0e) queryLocalInterface : new s0e(iBinder);
+    }
+
+    @Override // hh0
+    public final o94[] f() {
+        return qgd.c;
+    }
+
+    @Override // hh0
+    public final int i() {
+        return 17895000;
+    }
+
+    @Override // hh0
+    public final String l() {
+        return "com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService";
+    }
+
+    @Override // hh0
+    public final String n() {
+        return "com.google.android.gms.recaptchabase.service.START";
+    }
+
+    @Override // hh0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // hh0
+    public final boolean x() {
+        return false;
     }
 }

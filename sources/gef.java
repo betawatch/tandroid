@@ -1,17 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.io.Closeable;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gef {
-    public final boolean equals(Object obj) {
-        return obj == this || (obj instanceof gef);
-    }
-
-    public final int hashCode() {
-        return -535171828;
-    }
-
-    public final String toString() {
-        return "MLKitLoggingOptions{libraryName=subject-segmentation, enableFirelog=true, firelogEventType=1}";
-    }
+public abstract class gef implements Closeable {
+    public static final HashMap a = new HashMap();
 }

@@ -1,47 +1,33 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bif extends b4 {
-    public static final Parcelable.Creator<bif> CREATOR = new t4d((byte) 6);
-    public final int a;
-    public final boolean b;
-    public final boolean c;
+public final class bif implements eif {
+    public final eif[] a;
 
-    public bif(int i, boolean z, boolean z2) {
-        this.a = i;
-        this.b = z;
-        this.c = z2;
+    public bif(eif... eifVarArr) {
+        this.a = eifVarArr;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // eif
+    public final tif zzb(Class cls) {
+        for (int i = 0; i < 2; i++) {
+            eif eifVar = this.a[i];
+            if (eifVar.zzc(cls)) {
+                return eifVar.zzb(cls);
+            }
         }
-        if (!(obj instanceof bif)) {
-            return false;
+        rjb.j("No factory is available for message type: ".concat(cls.getName()));
+        return null;
+    }
+
+    @Override // eif
+    public final boolean zzc(Class cls) {
+        for (int i = 0; i < 2; i++) {
+            if (this.a[i].zzc(cls)) {
+                return true;
+            }
         }
-        bif bifVar = (bif) obj;
-        return this.a == bifVar.a && this.b == bifVar.b && this.c == bifVar.c;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Boolean.valueOf(this.b), Boolean.valueOf(this.c)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        jte.s(parcel, r);
+        return false;
     }
 }

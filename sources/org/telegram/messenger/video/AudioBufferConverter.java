@@ -4,18 +4,18 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class AudioBufferConverter {
     private static final int BYTES_PER_SHORT = 2;
     private static final String TAG = "AudioBufferConverter";
-    private final i30 mRemixer;
-    private final p30 mResampler;
+    private final i40 mRemixer;
+    private final p40 mResampler;
 
     public AudioBufferConverter() {
         byte b = 17;
-        this.mRemixer = new vi2(b);
-        this.mResampler = new pd5(b);
+        this.mRemixer = new jk2(b);
+        this.mResampler = new nf5(b);
     }
 
     private void checkChannels(int i, int i2) {
@@ -23,12 +23,12 @@ public class AudioBufferConverter {
             return;
         }
         if (i != 1 && i != 2) {
-            fyb.i(tb4.n(i, "Input channel count (", ") not supported."));
+            rjb.j(td4.o(i, "Input channel count (", ") not supported."));
         } else {
             if (i2 == 1 || i2 == 2) {
                 return;
             }
-            fyb.i(tb4.n(i2, "Output channel count (", ") not supported."));
+            rjb.j(td4.o(i2, "Output channel count (", ") not supported."));
         }
     }
 
@@ -41,17 +41,17 @@ public class AudioBufferConverter {
 
     public int calculateRequiredOutputSize(int i, int i2, int i3, int i4, int i5) {
         checkChannels(i3, i5);
-        return (int) Math.ceil((this.mRemixer.Z0(i, i3, i5) * i4) / i2);
+        return (int) Math.ceil((this.mRemixer.p1(i, i3, i5) * i4) / i2);
     }
 
     public ShortBuffer convert(ShortBuffer shortBuffer, int i, int i2, int i3, int i4) {
         checkChannels(i2, i4);
-        int Z0 = this.mRemixer.Z0(shortBuffer.remaining(), i2, i4);
-        ShortBuffer createBuffer = createBuffer(Z0);
-        this.mRemixer.a0(shortBuffer, i2, createBuffer, i4);
+        int p1 = this.mRemixer.p1(shortBuffer.remaining(), i2, i4);
+        ShortBuffer createBuffer = createBuffer(p1);
+        this.mRemixer.j0(shortBuffer, i2, createBuffer, i4);
         createBuffer.rewind();
-        ShortBuffer createBuffer2 = createBuffer(((int) Math.ceil((Z0 * i3) / i)) + 10);
-        this.mResampler.i(createBuffer, i, createBuffer2, i3, i4);
+        ShortBuffer createBuffer2 = createBuffer(((int) Math.ceil((p1 * i3) / i)) + 10);
+        this.mResampler.s(createBuffer, i, createBuffer2, i3, i4);
         createBuffer2.limit(createBuffer2.position());
         createBuffer2.rewind();
         return createBuffer2;

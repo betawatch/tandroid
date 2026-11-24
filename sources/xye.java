@@ -1,47 +1,54 @@
 // default package
 
 import android.content.Context;
-import java.util.ArrayList;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import java.io.File;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class xye extends l13 {
-    public final /* synthetic */ byte b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xye(byte b) {
-        super((byte) 4);
-        this.b = b;
+public abstract class xye {
+    public static co4 e(co4[] co4VarArr, int i) {
+        int i2 = (i & 1) == 0 ? 400 : 700;
+        boolean z = (i & 2) != 0;
+        co4 co4Var = null;
+        int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        for (co4 co4Var2 : co4VarArr) {
+            int abs = (Math.abs(co4Var2.c - i2) << 1) + (co4Var2.d == z ? 0 : 1);
+            if (co4Var == null || i3 > abs) {
+                co4Var = co4Var2;
+                i3 = abs;
+            }
+        }
+        return co4Var;
     }
 
-    @Override // l13
-    public final Object a(Object obj) {
-        switch (this.b) {
-            case 0:
-                hwe hweVar = (hwe) obj;
-                ae7 c = ae7.c();
-                return new sxe(c.b(), (sfa) c.a(sfa.class), new zwe(ae7.c().b(), hweVar), hweVar.a);
-            case 1:
-                ae7 c2 = ae7.c();
-                return new f1f(c2.b(), (sfa) c2.a(sfa.class), new w0f(ae7.c().b(), (j0f) obj));
-            case 2:
-                ae7 c3 = ae7.c();
-                return new z3f(c3.b(), (sfa) c3.a(sfa.class), new n3f(ae7.c().b(), (g3f) obj));
-            case 3:
-                ae7 c4 = ae7.c();
-                Context b = ae7.c().b();
-                ArrayList arrayList = new ArrayList();
-                ((kcf) obj).getClass();
-                r8d r8dVar = new r8d();
-                i51 i51Var = i51.e;
-                i1c.b(b);
-                i1c.a().c(i51Var);
-                i51.d.contains(new s24("json"));
-                arrayList.add(r8dVar);
-                return new hdf(c4.b(), (sfa) c4.a(sfa.class));
-            default:
-                ae7 c5 = ae7.c();
-                return new sef(c5.b(), (sfa) c5.a(sfa.class), new nef(ae7.c().b(), (gef) obj));
+    public abstract Typeface a(Context context, yn4 yn4Var, Resources resources, int i);
+
+    public abstract Typeface b(Context context, co4[] co4VarArr, int i);
+
+    public Typeface c(Context context, List list, int i) {
+        throw new IllegalStateException("createFromFontInfoWithFallback must only be called on API 29+");
+    }
+
+    public Typeface d(Context context, Resources resources, int i, String str, int i2) {
+        File c = aze.c(context);
+        Typeface typeface = null;
+        if (c == null) {
+            return null;
         }
+        try {
+            if (aze.a(c, resources, i)) {
+                typeface = Typeface.createFromFile(c.getPath());
+            }
+        } catch (RuntimeException unused) {
+        } catch (Throwable th) {
+            c.delete();
+            throw th;
+        }
+        c.delete();
+        return typeface;
     }
 }

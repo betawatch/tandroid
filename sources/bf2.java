@@ -1,30 +1,96 @@
 // default package
 
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.text.Editable;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class bf2 implements ka5 {
-    public final /* synthetic */ qa5 a;
-    public final /* synthetic */ kf2 b;
+public final class bf2 implements g22 {
+    public final /* synthetic */ if2 a;
 
-    public bf2(kf2 kf2Var, qa5 qa5Var) {
-        this.b = kf2Var;
-        this.a = qa5Var;
+    public bf2(if2 if2Var) {
+        this.a = if2Var;
     }
 
-    @Override // ka5
-    public final void e(TLRPC.User user) {
-        this.b.w0(user.id, null, null, null, "", true, 0, false);
+    @Override // g22
+    public final boolean B() {
+        return false;
     }
 
-    @Override // ka5
-    public final void f(int i, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // g22
+    public final void E0(int i, boolean z, boolean z2, int i2, int i3, long j, boolean z3, boolean z4, long j2) {
+        if2 if2Var = this.a;
+        try {
+            HashMap<Object, Object> selectedPhotos = if2Var.R1.d2.getSelectedPhotos();
+            if (selectedPhotos.isEmpty()) {
+                return;
+            }
+            jo6 jo6Var = (jo6) selectedPhotos.values().iterator().next();
+            String str = jo6Var.h;
+            if (str == null) {
+                str = jo6Var.I;
+            }
+            if (str != null) {
+                File file = new File(bc4.z(4), Utilities.b.nextInt() + ".jpg");
+                Point b1 = gm.b1();
+                Bitmap G = fn5.G(str, null, (float) b1.x, (float) b1.y, true);
+                G.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+                ye2 ye2Var = new ye2(new ntc(file, file, ""), G, false, (byte) 2);
+                ye2Var.X1 = if2Var.Y1;
+                ye2Var.H1 = false;
+                ye2Var.G1 = false;
+                ye2Var.p1 = 0.2f;
+                ye2Var.h1(if2Var.u1.a());
+                ye2Var.K1 = new af2(this, 0 == true ? 1 : 0);
+                if2Var.Q0(ye2Var);
+            }
+        } catch (Throwable th) {
+            fc4.g(th, true);
         }
-        kf2 kf2Var = this.b;
-        kf2Var.getMessagesController().l(kf2Var.n, kf2Var, arrayList, i, new gw(this, (byte) 6), new d42((byte) 1), null);
+    }
+
+    @Override // g22
+    public final boolean K0() {
+        System.currentTimeMillis();
+        return true;
+    }
+
+    @Override // g22
+    public final void a1(vr0 vr0Var) {
+        vr0Var.run();
+    }
+
+    @Override // g22
+    public final void f0(Object obj) {
+        ye2 ye2Var = new ye2(obj, null, true, (byte) 3);
+        if2 if2Var = this.a;
+        ye2Var.X1 = if2Var.Y1;
+        ye2Var.h1(if2Var.u1.a());
+        ye2Var.K1 = new af2(this, 1 == true ? 1 : 0);
+        if2Var.Q0(ye2Var);
+    }
+
+    @Override // g22
+    public final void I() {
+    }
+
+    @Override // g22
+    public final void b0() {
+    }
+
+    @Override // g22
+    public final void z0(TLRPC.User user) {
+    }
+
+    @Override // g22
+    public final void n0(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2) {
     }
 }

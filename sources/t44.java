@@ -1,107 +1,56 @@
 // default package
 
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class t44 extends s44 implements dd3 {
-    public final Executor c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class t44 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ w44 b;
 
-    public t44(Executor executor) {
-        this.c = executor;
-        if (executor instanceof ScheduledThreadPoolExecutor) {
-            ((ScheduledThreadPoolExecutor) executor).setRemoveOnCancelPolicy(true);
-        }
+    public /* synthetic */ t44(w44 w44Var, byte b) {
+        this.a = b;
+        this.b = w44Var;
     }
 
-    @Override // dd3
-    public final no3 a(long j, nob nobVar, sw2 sw2Var) {
-        Executor executor = this.c;
-        ScheduledFuture<?> scheduledFuture = null;
-        ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
-        if (scheduledExecutorService != null) {
-            try {
-                scheduledFuture = scheduledExecutorService.schedule(nobVar, j, TimeUnit.MILLISECONDS);
-            } catch (RejectedExecutionException e) {
-                CancellationException cancellationException = new CancellationException("The task was rejected");
-                cancellationException.initCause(e);
-                bt5 bt5Var = (bt5) sw2Var.get(pd5.c);
-                if (bt5Var != null) {
-                    bt5Var.cancel(cancellationException);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        w44 w44Var = this.b;
+        switch (b) {
+            case 0:
+                if (animator == w44Var.c0) {
+                    w44Var.c0 = null;
+                    break;
                 }
-            }
-        }
-        return scheduledFuture != null ? new mo3(scheduledFuture) : ha3.w.a(j, nobVar, sw2Var);
-    }
-
-    @Override // dd3
-    public final void b(long j, na1 na1Var) {
-        Executor executor = this.c;
-        ScheduledFuture<?> scheduledFuture = null;
-        ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
-        if (scheduledExecutorService != null) {
-            rld rldVar = new rld(this, na1Var, (byte) 8);
-            sw2 sw2Var = na1Var.e;
-            try {
-                scheduledFuture = scheduledExecutorService.schedule(rldVar, j, TimeUnit.MILLISECONDS);
-            } catch (RejectedExecutionException e) {
-                CancellationException cancellationException = new CancellationException("The task was rejected");
-                cancellationException.initCause(e);
-                bt5 bt5Var = (bt5) sw2Var.get(pd5.c);
-                if (bt5Var != null) {
-                    bt5Var.cancel(cancellationException);
+                break;
+            case 1:
+                if (animator == w44Var.d0) {
+                    w44Var.d0 = null;
+                    break;
                 }
-            }
+                break;
+            case 2:
+                if (animator == w44Var.R) {
+                    w44Var.R = null;
+                    w44Var.Q = 0.0f;
+                    break;
+                }
+                break;
+            case 3:
+                if (animator == w44Var.S) {
+                    w44Var.S = null;
+                    break;
+                }
+                break;
+            default:
+                if (!w44Var.n0) {
+                    gm.B2(w44Var.J);
+                    w44Var.J = null;
+                    break;
+                }
+                break;
         }
-        if (scheduledFuture != null) {
-            na1Var.v(new ia1(scheduledFuture, (byte) 0));
-        } else {
-            ha3.w.b(j, na1Var);
-        }
-    }
-
-    @Override // vw2
-    public final void c(sw2 sw2Var, Runnable runnable) {
-        try {
-            this.c.execute(runnable);
-        } catch (RejectedExecutionException e) {
-            CancellationException cancellationException = new CancellationException("The task was rejected");
-            cancellationException.initCause(e);
-            bt5 bt5Var = (bt5) sw2Var.get(pd5.c);
-            if (bt5Var != null) {
-                bt5Var.cancel(cancellationException);
-            }
-            xb3 xb3Var = ko3.a;
-            xa3.c.c(sw2Var, runnable);
-        }
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        Executor executor = this.c;
-        ExecutorService executorService = executor instanceof ExecutorService ? (ExecutorService) executor : null;
-        if (executorService != null) {
-            executorService.shutdown();
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof t44) && ((t44) obj).c == this.c;
-    }
-
-    public final int hashCode() {
-        return System.identityHashCode(this.c);
-    }
-
-    @Override // vw2
-    public final String toString() {
-        return this.c.toString();
     }
 }

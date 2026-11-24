@@ -18,22 +18,22 @@ import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class GroupCallMessagesController extends pf0 {
+public class GroupCallMessagesController extends pg0 {
     private static volatile GroupCallMessagesController[] Instance = new GroupCallMessagesController[4];
     private final LongSparseArray<MessagesList> callMessagesList;
     private final LongSparseArray<List<CallMessageListener>> callMessagesListeners;
     private final Set<String> sentMessageIds;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface CallMessageListener {
         void onNewGroupCallMessage(long j, GroupCallMessage groupCallMessage);
 
         void onPopGroupCallMessage();
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private static class MessagesList {
         private final List<GroupCallMessage> messages;
         private final Set<Long> randomIds;
@@ -137,13 +137,13 @@ public class GroupCallMessagesController extends pf0 {
             try {
             } catch (Exception e2) {
                 e = e2;
-                fa4.g(e, true);
+                fc4.g(e, true);
                 tL_groupCallMessage = null;
                 if (tL_groupCallMessage == null) {
                 }
             } catch (StackOverflowError e3) {
                 e = e3;
-                fa4.g(e, true);
+                fc4.g(e, true);
                 tL_groupCallMessage = null;
                 if (tL_groupCallMessage == null) {
                 }
@@ -151,14 +151,14 @@ public class GroupCallMessagesController extends pf0 {
             if (groupCallMessageDecrypt.length <= 8192) {
                 tL_groupCallMessage = TLRPC.TL_groupCallMessage.TLJsonDeserialize(new TLJsonParser(new JSONObject(new String(groupCallMessageDecrypt))));
                 if (tL_groupCallMessage == null) {
-                    gl.d3(new v75(groupCallMessagesController, j4, new GroupCallMessage(groupCallMessagesController.currentAccount, j3, tL_groupCallMessage.random_id, tL_groupCallMessage.message), (byte) 1));
+                    gm.c3(new u95(groupCallMessagesController, j4, new GroupCallMessage(groupCallMessagesController.currentAccount, j3, tL_groupCallMessage.random_id, tL_groupCallMessage.message), (byte) 1));
                     return;
                 }
                 TLRPC.TL_groupCallMessage tL_groupCallMessage2 = new TLRPC.TL_groupCallMessage();
                 TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
                 tL_groupCallMessage2.message = tL_textWithEntities;
-                tL_textWithEntities.text = k96.M0(2131749299, null);
-                gl.d3(new v75(groupCallMessagesController, j4, new GroupCallMessage(groupCallMessagesController.currentAccount, j3, 0L, tL_groupCallMessage2.message), (byte) 2));
+                tL_textWithEntities.text = jb6.M0(2131749248, null);
+                gm.c3(new u95(groupCallMessagesController, j4, new GroupCallMessage(groupCallMessagesController.currentAccount, j3, 0L, tL_groupCallMessage2.message), (byte) 2));
                 return;
             }
         }
@@ -183,7 +183,7 @@ public class GroupCallMessagesController extends pf0 {
         TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage;
         TLRPC.InputGroupCall inputGroupCall;
         TLRPC.GroupCallMessage groupCallMessage2;
-        gl.r(runnable);
+        gm.r(runnable);
         byte b = 0;
         groupCallMessage.setIsSendDelayed(false);
         if (tLObject instanceof TLRPC.Bool) {
@@ -206,16 +206,16 @@ public class GroupCallMessagesController extends pf0 {
                 Object obj = arrayList.get(i);
                 i++;
                 TLRPC.Update update2 = (TLRPC.Update) obj;
-                if ((update2 instanceof TL_update.TL_updateGroupCallMessage) && (inputGroupCall = (tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) update2).call) != null && inputGroupCall.id == j && (groupCallMessage2 = tL_updateGroupCallMessage.message) != null && cf3.n(groupCallMessage2.from_id) == j2) {
+                if ((update2 instanceof TL_update.TL_updateGroupCallMessage) && (inputGroupCall = (tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) update2).call) != null && inputGroupCall.id == j && (groupCallMessage2 = tL_updateGroupCallMessage.message) != null && pg3.n(groupCallMessage2.from_id) == j2) {
                     String str = j + "_" + tL_updateGroupCallMessage.message.id;
                     if (this.sentMessageIds.add(str)) {
-                        gl.e3(new vc4(this, str, (byte) 25), 60000L);
+                        gm.d3(new ve4(this, str, (byte) 26), 60000L);
                     }
                 }
             }
-            getMessagesController().Q3(updates, false);
+            getMessagesController().T3(updates, false);
         }
-        gl.d3(new w75(groupCallMessage, b));
+        gm.c3(new v95(groupCallMessage, b));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -267,7 +267,7 @@ public class GroupCallMessagesController extends pf0 {
                     it2.next().onNewGroupCallMessage(j, groupCallMessage);
                 }
             }
-            gl.e3(new et((Object) this, j, (byte) 17), getAppGlobalConfig().A.g(TimeUnit.MILLISECONDS));
+            gm.d3(new fu((Object) this, j, (byte) 17), getAppGlobalConfig().A.g(TimeUnit.MILLISECONDS));
         }
     }
 
@@ -278,13 +278,13 @@ public class GroupCallMessagesController extends pf0 {
 
     public void processUpdate(TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage) {
         long j = tL_updateGroupCallMessage.call.id;
-        long n = cf3.n(tL_updateGroupCallMessage.message.from_id);
+        long n = pg3.n(tL_updateGroupCallMessage.message.from_id);
         long j2 = tL_updateGroupCallMessage.message.id;
         if (getUserConfig().n != n) {
             if (this.sentMessageIds.contains(j + "_" + j2)) {
                 return;
             }
-            gl.d3(new v75(this, j, new GroupCallMessage(this.currentAccount, n, j2, tL_updateGroupCallMessage.message.message), (byte) 0));
+            gm.c3(new u95(this, j, new GroupCallMessage(this.currentAccount, n, j2, tL_updateGroupCallMessage.message.message), (byte) 0));
         }
     }
 
@@ -298,7 +298,7 @@ public class GroupCallMessagesController extends pf0 {
             return false;
         }
         getSendMessagesHelper().getClass();
-        long D = z3a.D();
+        long D = a6a.D();
         if (sharedInstance.isConference()) {
             ConferenceCall conferenceCall = sharedInstance.conference;
             if (conferenceCall == null || (groupCall = conferenceCall.groupCall) == null || groupCall.id != j2) {
@@ -330,9 +330,9 @@ public class GroupCallMessagesController extends pf0 {
         GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, j, D, tL_textWithEntities);
         groupCallMessage.setIsOut(true);
         lambda$processUpdate$2(j2, groupCallMessage);
-        w75 w75Var = new w75(groupCallMessage, (byte) 1);
-        gl.e3(w75Var, 1000L);
-        getConnectionsManager().sendRequest(sendgroupcallmessage3, new x75(this, w75Var, groupCallMessage, j2, j));
+        v95 v95Var = new v95(groupCallMessage, (byte) 1);
+        gm.d3(v95Var, 1000L);
+        getConnectionsManager().sendRequest(sendgroupcallmessage3, new w95(this, v95Var, groupCallMessage, j2, j));
         return true;
     }
 
@@ -357,11 +357,11 @@ public class GroupCallMessagesController extends pf0 {
 
     public void processUpdate(TL_update.TL_updateGroupCallEncryptedMessage tL_updateGroupCallEncryptedMessage) {
         long j = tL_updateGroupCallEncryptedMessage.call.id;
-        long n = cf3.n(tL_updateGroupCallEncryptedMessage.from_id);
+        long n = pg3.n(tL_updateGroupCallEncryptedMessage.from_id);
         byte[] bArr = tL_updateGroupCallEncryptedMessage.encrypted_message;
         if (getUserConfig().n == n) {
             return;
         }
-        Utilities.e.c(new n30((Object) this, j, n, (Object) bArr, (byte) 4));
+        Utilities.e.c(new n40((Object) this, j, n, (Object) bArr, (byte) 4));
     }
 }

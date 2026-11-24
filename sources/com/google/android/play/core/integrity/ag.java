@@ -6,9 +6,9 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class ag extends s0d {
+final class ag extends u2d {
     final /* synthetic */ Bundle a;
     final /* synthetic */ Activity b;
     final /* synthetic */ TaskCompletionSource c;
@@ -25,30 +25,30 @@ final class ag extends s0d {
         this.e = ajVar;
     }
 
-    @Override // s0d
+    @Override // u2d
     public final void b() {
-        q0d q0dVar;
+        s2d s2dVar;
         at atVar;
         try {
             aj ajVar = this.e;
-            m0d m0dVar = (m0d) ajVar.a.n;
+            o2d o2dVar = (o2d) ajVar.a.n;
             Bundle bundle = this.a;
             atVar = ajVar.e;
             as a = atVar.a(this.b, this.c, ajVar.a);
-            i0d i0dVar = (i0d) m0dVar;
-            i0dVar.getClass();
+            k2d k2dVar = (k2d) o2dVar;
+            k2dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(i0dVar.c);
-            int i = yzc.a;
+            obtain.writeInterfaceToken(k2dVar.c);
+            int i = z1d.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a);
-            i0dVar.b(obtain, 3);
+            k2dVar.b(obtain, 3);
         } catch (RemoteException e) {
             aj ajVar2 = this.e;
             int i2 = this.d;
-            q0dVar = ajVar2.b;
-            q0dVar.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i2));
+            s2dVar = ajVar2.b;
+            s2dVar.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i2));
             this.c.trySetException(new IntegrityServiceException(-100, e));
         }
     }

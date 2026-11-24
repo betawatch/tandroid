@@ -1,56 +1,38 @@
 // default package
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class am5 implements t56 {
-    public static final am5 b = new am5(null);
-    public static final f06 c = new f06(am5.class, (byte) 0);
-    public final Object a;
+public final class am5 {
+    public static final ni8 c = new ni8("|S||P|");
+    public static final ni8 d = new ni8("|S|id");
+    public static final String[] e = {"*", "FCM", "GCM", ""};
+    public final wu5 a;
+    public final String b;
 
-    public am5(Object obj) {
-        this.a = obj;
-    }
-
-    @Override // t56
-    public final void b(Runnable runnable, Executor executor) {
-        try {
-            executor.execute(runnable);
-        } catch (Exception e) {
-            c.a().log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e);
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0041, code lost:
+    
+        if (r1.isEmpty() != false) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public am5(li4 li4Var) {
+        li4Var.a();
+        this.a = new wu5(li4Var.a, "com.google.android.gms.appid");
+        li4Var.a();
+        zi4 zi4Var = li4Var.c;
+        String str = zi4Var.e;
+        if (str == null) {
+            li4Var.a();
+            str = zi4Var.b;
+            if (str.startsWith("1:") || str.startsWith("2:")) {
+                String[] split = str.split(":");
+                if (split.length == 4) {
+                    str = split[1];
+                }
+                str = null;
+            }
         }
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z) {
-        return false;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        timeUnit.getClass();
-        return this.a;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return false;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return true;
-    }
-
-    public final String toString() {
-        return super.toString() + "[status=SUCCESS, result=[" + this.a + "]]";
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.a;
+        this.b = str;
     }
 }

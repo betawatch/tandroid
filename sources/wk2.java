@@ -1,37 +1,25 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class wk2 extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final class wk2 {
+    public final String a;
+    public final String b;
 
-    static {
-        b4c.h(new wk2());
+    public wk2(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        view.requestLayout();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof wk2)) {
+            return false;
+        }
+        wk2 wk2Var = (wk2) obj;
+        return this.a.equals(wk2Var.a) && this.b.equals(wk2Var.b);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        xk2 xk2Var = new xk2(context, wjbVar, (byte) 0);
-        xk2Var.setIsSingleCell(true);
-        xk2Var.setViewType(35);
-        return xk2Var;
-    }
-
-    @Override // b4c
-    public final boolean e(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.d == c4cVar2.d;
-    }
-
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

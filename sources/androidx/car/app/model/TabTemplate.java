@@ -4,13 +4,13 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class TabTemplate implements ogb {
+public class TabTemplate implements pib {
     private final String mActiveTabContentId;
     private final Action mHeaderAction;
     private final boolean mIsLoading;
-    private final aeb mTabCallbackDelegate;
+    private final agb mTabCallbackDelegate;
     private final TabContents mTabContents;
     private final List<Tab> mTabs;
 
@@ -46,10 +46,10 @@ public class TabTemplate implements ogb {
         return action;
     }
 
-    public aeb getTabCallbackDelegate() {
-        aeb aebVar = this.mTabCallbackDelegate;
-        Objects.requireNonNull(aebVar);
-        return aebVar;
+    public agb getTabCallbackDelegate() {
+        agb agbVar = this.mTabCallbackDelegate;
+        Objects.requireNonNull(agbVar);
+        return agbVar;
     }
 
     public TabContents getTabContents() {
@@ -75,7 +75,7 @@ public class TabTemplate implements ogb {
         return "TabTemplate";
     }
 
-    public TabTemplate(ceb cebVar) {
+    public TabTemplate(cgb cgbVar) {
         throw null;
     }
 }

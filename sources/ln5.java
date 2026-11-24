@@ -1,26 +1,14 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ln5 {
-    public long a;
-    public float b;
-    public float c;
-    public boolean d;
-    public float e;
-    public final RectF f = new RectF();
-    public int g;
-    public final Paint h;
-    public final int i;
+public interface ln5 {
+    void B0(int i, Drawable drawable);
 
-    public ln5(int i) {
-        this.i = i;
-        Paint paint = new Paint(1);
-        this.h = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-    }
+    void L(ImageReceiver imageReceiver);
+
+    void b0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3);
 }

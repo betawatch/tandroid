@@ -1,31 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class chf {
-    public static final chf e = new chf(new int[0], new Object[0], false);
-    public final int[] a;
-    public final Object[] b;
-    public int c = -1;
-    public boolean d;
-
-    public chf(int[] iArr, Object[] objArr, boolean z) {
-        this.a = iArr;
-        this.b = objArr;
-        this.d = z;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || !(obj instanceof chf)) {
-            return false;
-        }
-        return true;
-    }
-
-    public final int hashCode() {
-        return 506991;
-    }
+public interface chf extends ehf {
 }

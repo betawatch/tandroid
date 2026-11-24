@@ -1,42 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class o19 implements i11 {
-    @Override // i11
-    public final boolean a() {
-        return true;
-    }
+public final class o19 {
+    public final TLObject a;
+    public final long b;
+    public int c;
 
-    @Override // i11
-    public final boolean d() {
-        return true;
-    }
-
-    @Override // i11
-    public final int e(int i) {
-        return 0;
-    }
-
-    @Override // i11
-    public final boolean f(int i) {
-        return false;
-    }
-
-    @Override // i11
-    public final int h(int i) {
-        return gl.m;
-    }
-
-    @Override // i11
-    public final void b(float f) {
-    }
-
-    @Override // i11
-    public final void c(m21 m21Var) {
-    }
-
-    @Override // i11
-    public final void g(m21 m21Var) {
+    public o19(int i, TLObject tLObject) {
+        this.a = tLObject;
+        this.c = i;
+        if (tLObject instanceof TLRPC.User) {
+            this.b = ((TLRPC.User) tLObject).id;
+        } else if (tLObject instanceof TLRPC.Chat) {
+            this.b = -((TLRPC.Chat) tLObject).id;
+        }
     }
 }

@@ -1,32 +1,108 @@
 // default package
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ua3 implements bg8 {
+public final /* synthetic */ class ua3 implements x76 {
     public final /* synthetic */ byte a;
 
-    @Override // bg8
-    public final boolean apply(Object obj) {
+    @Override // x76
+    public final void invoke(Object obj) {
+        uk ukVar = (uk) obj;
         switch (this.a) {
             case 0:
-                if (((Map.Entry) obj).getKey() != null) {
-                    break;
-                }
+                ukVar.getClass();
                 break;
             case 1:
-                if (((String) obj) != null) {
-                    break;
-                }
+                ukVar.getClass();
+                break;
+            case 2:
+                ukVar.getClass();
+                break;
+            case 3:
+                ukVar.getClass();
+                break;
+            case 4:
+                ukVar.getClass();
+                break;
+            case 5:
+                ukVar.getClass();
+                break;
+            case 6:
+                ukVar.getClass();
+                break;
+            case 7:
+                ukVar.getClass();
+                break;
+            case 8:
+                ukVar.getClass();
+                break;
+            case 9:
+                ukVar.getClass();
+                break;
+            case 10:
+                ukVar.getClass();
+                break;
+            case 11:
+                ukVar.getClass();
+                break;
+            case 12:
+                ukVar.getClass();
+                break;
+            case 13:
+                ukVar.getClass();
+                break;
+            case 14:
+                ukVar.getClass();
+                break;
+            case 15:
+                ukVar.getClass();
+                break;
+            case 16:
+                ukVar.getClass();
+                break;
+            case 17:
+                ukVar.getClass();
+                break;
+            case 18:
+                ukVar.getClass();
+                break;
+            case 19:
+                ukVar.getClass();
+                break;
+            case 20:
+                ukVar.getClass();
+                break;
+            case 21:
+                ukVar.getClass();
+                break;
+            case 22:
+                ukVar.getClass();
+                break;
+            case 23:
+                ukVar.getClass();
+                break;
+            case 24:
+                ukVar.getClass();
+                break;
+            case 25:
+                ukVar.getClass();
+                break;
+            case 26:
+                ukVar.getClass();
+                break;
+            case 27:
+                ukVar.getClass();
+                break;
+            case 28:
+                ukVar.getClass();
                 break;
             default:
-                np5 np5Var = (np5) obj;
-                if (np5Var.b.equals("com.apple.iTunes") && np5Var.c.equals("iTunSMPB")) {
-                    break;
-                }
+                ukVar.getClass();
                 break;
         }
-        return true;
+    }
+
+    public /* synthetic */ ua3(tk tkVar, byte b) {
+        this.a = b;
     }
 }

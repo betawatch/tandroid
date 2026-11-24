@@ -1,34 +1,21 @@
 // default package
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.EdgeEffect;
+import android.widget.AbsListView;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class ns3 {
-    public static EdgeEffect a(Context context, AttributeSet attributeSet) {
-        try {
-            return new EdgeEffect(context, attributeSet);
-        } catch (Throwable unused) {
-            return new EdgeEffect(context);
-        }
-    }
+    public static final Field a;
 
-    public static float b(EdgeEffect edgeEffect) {
+    static {
+        Field field = null;
         try {
-            return edgeEffect.getDistance();
-        } catch (Throwable unused) {
-            return 0.0f;
+            field = AbsListView.class.getDeclaredField("mIsChildViewEnabled");
+            field.setAccessible(true);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
         }
-    }
-
-    public static float c(EdgeEffect edgeEffect, float f, float f2) {
-        try {
-            return edgeEffect.onPullDistance(f, f2);
-        } catch (Throwable unused) {
-            edgeEffect.onPull(f, f2);
-            return 0.0f;
-        }
+        a = field;
     }
 }

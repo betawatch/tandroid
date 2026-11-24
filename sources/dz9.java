@@ -1,39 +1,39 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class dz9 extends FrameLayout {
-    public final wjb a;
-    public final TextView b;
+public final class dz9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ fz9 b;
 
-    public dz9(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        zkb.h(bkb.d7, wjbVar, this);
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        ir2.t(textView, 1, 14.0f);
-        zkb.X(textView, bkb.e7, wjbVar);
-        textView.setGravity((k96.a0 ? 5 : 3) | 16);
-        addView(textView, nme.d(-1, -1.0f, (k96.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+    public /* synthetic */ dz9(fz9 fz9Var, byte b) {
+        this.a = b;
+        this.b = fz9Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(32.0f), TLObject.FLAG_30));
-    }
-
-    public void setLetter(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i) {
-        zkb.X(this.b, i, this.a);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        fz9 fz9Var = this.b;
+        switch (b) {
+            case 0:
+                super.onAnimationEnd(animator);
+                fz9Var.J = null;
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                fz9Var.J = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                fz9Var.O = 0.0f;
+                fz9Var.J = null;
+                fz9Var.N = false;
+                fz9Var.d(true, false);
+                break;
+        }
     }
 }

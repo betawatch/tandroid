@@ -8,34 +8,34 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements xz6, v07, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements x17, v27, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public yz6 a;
+    public y17 a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        vk9 v = vk9.v(context, attributeSet, b, R.attr.listViewStyle);
+        wm9 v = wm9.v(context, attributeSet, b, R.attr.listViewStyle);
         TypedArray typedArray = (TypedArray) v.c;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(v.n(0));
+            setBackgroundDrawable(v.j(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(v.n(1));
+            setDivider(v.j(1));
         }
         v.y();
     }
 
-    @Override // xz6
-    public final boolean a(c07 c07Var) {
-        return this.a.q(c07Var, null, 0);
+    @Override // x17
+    public final boolean a(c27 c27Var) {
+        return this.a.q(c27Var, null, 0);
     }
 
-    @Override // v07
-    public final void b(yz6 yz6Var) {
-        this.a = yz6Var;
+    @Override // v27
+    public final void b(y17 y17Var) {
+        this.a = y17Var;
     }
 
     public int getWindowAnimations() {
@@ -50,6 +50,6 @@ public final class ExpandedMenuView extends ListView implements xz6, v07, Adapte
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        a((c07) getAdapter().getItem(i));
+        a((c27) getAdapter().getItem(i));
     }
 }

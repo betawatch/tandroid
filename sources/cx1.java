@@ -1,48 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Paint;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class cx1 extends ap0 {
-    public boolean s;
-    public final /* synthetic */ ChatActivityEnterView w;
+public final /* synthetic */ class cx1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx1(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.w = chatActivityEnterView;
-        this.a = null;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.f = true;
-        this.b = new zw8((byte) 3);
-        fu fuVar = new fu((byte) 1, context, (Object) this);
-        this.c = fuVar;
-        fuVar.setOverScrollMode(2);
-        fuVar.setClipToPadding(false);
-        fuVar.setClipToOutline(true);
-        fuVar.j(new y(this, (byte) 7));
-        addView(fuVar);
-        paint.setColor(bkb.w0(null, bkb.yj, false));
-        il0 il0Var = this.r;
-        if (il0Var != null) {
-            il0Var.updateColors();
-        }
-        invalidate();
-        setClipChildren(false);
-        this.s = false;
+    public /* synthetic */ cx1(ChatActivityEnterView chatActivityEnterView, boolean z, byte b) {
+        this.a = b;
+        this.b = chatActivityEnterView;
+        this.c = z;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (this.s) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        j67 j67Var;
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        boolean z = this.c;
+        switch (b) {
+            case 0:
+                int i = ChatActivityEnterView.z7;
+                if (!z) {
+                    chatActivityEnterView.j2.setVisibility(8);
+                    break;
+                }
+                break;
+            case 1:
+                int i2 = ChatActivityEnterView.z7;
+                if (!z) {
+                    chatActivityEnterView.k2.setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                int i3 = ChatActivityEnterView.z7;
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                mw1 mw1Var = chatActivityEnterView2.e6;
+                chatActivityEnterView2.N0 = System.currentTimeMillis();
+                boolean x1 = chatActivityEnterView2.x1(false, 0, 0, 0L, true);
+                if (!z && (j67Var = chatActivityEnterView2.M0) != null) {
+                    j67Var.f(!x1);
+                    chatActivityEnterView2.M0 = null;
+                    break;
+                } else {
+                    chatActivityEnterView2.d6 = !x1;
+                    gm.r(mw1Var);
+                    gm.d3(mw1Var, 500L);
+                    break;
+                }
+                break;
         }
-        this.s = true;
-        this.w.i2();
     }
 }

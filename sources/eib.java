@@ -1,9 +1,37 @@
 // default package
 
-import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface eib extends mib {
-    void k(ArrayList arrayList);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class eib {
+    public static final String a;
+    public static final long b;
+    public static final int c;
+    public static final int d;
+    public static final long e;
+    public static final k4f f;
+
+    static {
+        String str;
+        int i = ifb.a;
+        try {
+            str = System.getProperty("kotlinx.coroutines.scheduler.default.name");
+        } catch (SecurityException unused) {
+            str = null;
+        }
+        if (str == null) {
+            str = "DefaultDispatcher";
+        }
+        a = str;
+        b = bxe.a("kotlinx.coroutines.scheduler.resolution.ns", 100000L, 1L, Long.MAX_VALUE);
+        int i2 = ifb.a;
+        if (i2 < 2) {
+            i2 = 2;
+        }
+        c = bxe.b(i2, 8, "kotlinx.coroutines.scheduler.core.pool.size");
+        d = bxe.b(2097150, 4, "kotlinx.coroutines.scheduler.max.pool.size");
+        e = TimeUnit.SECONDS.toNanos(bxe.a("kotlinx.coroutines.scheduler.keep.alive.sec", 60L, 1L, Long.MAX_VALUE));
+        f = k4f.d;
+    }
 }

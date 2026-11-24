@@ -1,13 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.Handler;
+import android.os.Looper;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface qx6 {
-    qx6 a();
+public final class qx6 extends Handler {
+    public fp6 a;
+    public final /* synthetic */ tx6 b;
 
-    qx6 b();
-
-    qx6 c(eef eefVar);
-
-    qg0 d(br6 br6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qx6(tx6 tx6Var, Looper looper) {
+        super(looper);
+        this.b = tx6Var;
+    }
 }

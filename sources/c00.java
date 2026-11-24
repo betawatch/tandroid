@@ -1,95 +1,63 @@
 // default package
 
 import android.content.Context;
-import android.media.AudioManager;
-import android.os.Handler;
-import android.os.Looper;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class c00 {
-    public final qbb a;
-    public final Handler b;
-    public i64 c;
-    public nz d;
-    public byte f;
-    public f00 h;
-    public float g = 1.0f;
-    public byte e = 0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class c00 extends ssa {
+    public final Path H0;
+    public final float[] I0;
+    public final /* synthetic */ e00 J0;
 
-    public c00(Context context, Looper looper, i64 i64Var) {
-        this.a = vue.a(new a00(context, (byte) 0));
-        this.c = i64Var;
-        this.b = new Handler(looper);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c00(e00 e00Var, Context context, ylb ylbVar, uz uzVar, x10 x10Var, x10 x10Var2, x10 x10Var3, x10 x10Var4, x10 x10Var5, x10 x10Var6) {
+        super(context, ylbVar, uzVar, x10Var, null, x10Var2, x10Var3, x10Var4, x10Var5, x10Var6);
+        this.J0 = e00Var;
+        this.H0 = new Path();
+        this.I0 = new float[8];
     }
 
-    public final void a() {
-        byte b = this.e;
-        if (b == 1 || b == 0 || this.h == null) {
+    @Override // ssa, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.H0);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // ssa
+    public final int getFinalHeight() {
+        return gm.L(288.0f);
+    }
+
+    @Override // ssa
+    public final float getRealHeight() {
+        return gm.L(288.0f);
+    }
+
+    @Override // ssa
+    public final void k(int i) {
+        TextView textView = this.J0.W1;
+        if (textView == null || !cmb.F1(textView.getBackground(), i, false)) {
             return;
         }
-        i00.a((AudioManager) this.a.get(), this.h);
+        textView.invalidate();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(int i) {
-        if (this.e != i) {
-            this.e = i;
-            float f = i == 4 ? 0.2f : 1.0f;
-            if (this.g != f) {
-                this.g = f;
-                i64 i64Var = this.c;
-                if (i64Var != null) {
-                    i64Var.h.h(34);
-                }
-            }
-        }
-    }
-
-    public final int c(int i, boolean z) {
-        byte b;
-        d00 d00Var;
-        byte b2 = 0;
-        if (i == 1 || (b = this.f) != 1) {
-            a();
-            b(0);
-            return 1;
-        }
-        byte b3 = this.e;
-        if (z) {
-            if (b3 != 2) {
-                f00 f00Var = this.h;
-                if (f00Var == null) {
-                    if (f00Var == null) {
-                        d00Var = new d00();
-                        nz nzVar = nz.i;
-                        d00Var.a = b;
-                    } else {
-                        d00 d00Var2 = new d00();
-                        d00Var2.a = f00Var.a;
-                        d00Var = d00Var2;
-                    }
-                    nz nzVar2 = this.d;
-                    boolean z2 = nzVar2 != null && nzVar2.a == 1;
-                    nzVar2.getClass();
-                    this.h = new f00(d00Var.a, new zz(this, b2), this.b, nzVar2, z2, true);
-                }
-                int i2 = i00.i((AudioManager) this.a.get(), this.h);
-                if (i2 == 1 || i2 == 2) {
-                    b(2);
-                    return 1;
-                }
-                b(1);
-                return -1;
-            }
-        } else {
-            if (b3 == 1) {
-                return -1;
-            }
-            if (b3 == 3) {
-                return 0;
-            }
-        }
-        return 1;
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        float L = gm.L(12.0f);
+        float[] fArr = this.I0;
+        fArr[3] = L;
+        fArr[2] = L;
+        fArr[1] = L;
+        fArr[0] = L;
+        Path path = this.H0;
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, i, i2, this.I0, Path.Direction.CW);
     }
 }

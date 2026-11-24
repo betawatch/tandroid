@@ -1,9 +1,30 @@
 // default package
 
-import java.util.LinkedHashSet;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class xfa {
-    public static final LinkedHashSet a = new LinkedHashSet();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class xfa extends kha {
+    public final /* synthetic */ nha H;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xfa(nha nhaVar, Context context) {
+        super(nhaVar, context, 0, false);
+        this.H = nhaVar;
+    }
+
+    @Override // kha, y59
+    public final void f() {
+        super.f();
+        nha nhaVar = this.H;
+        iga P = nhaVar.P(8);
+        if (P != null && P.n.getVisibility() == 0) {
+            nhaVar.g0.f();
+        }
+        if (P != null) {
+            efa efaVar = P.w;
+            z3b z3bVar = this.s;
+            efaVar.e(z3bVar != null && (z3bVar.k() || (nhaVar.d0() && this.s.g() > 0)), true);
+        }
+    }
 }

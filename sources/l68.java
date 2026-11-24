@@ -1,263 +1,45 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.provider.Settings;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.video.VideoAds;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l68 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PhotoViewer b;
+public final class l68 extends FrameLayout {
+    public ImageView a;
+    public ImageView b;
+    public TextView c;
+    public int d;
 
-    public /* synthetic */ l68(PhotoViewer photoViewer, byte b) {
-        this.a = b;
-        this.b = photoViewer;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), wi8.E(2.0f, this.d, TLObject.FLAG_30));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b;
-                Drawable[] drawableArr = PhotoViewer.f9;
-                photoViewer.o2(1, false);
-                break;
-            case 1:
-                PhotoViewer photoViewer2 = this.b;
-                Drawable[] drawableArr2 = PhotoViewer.f9;
-                photoViewer2.o2(-1, false);
-                break;
-            case 2:
-                PhotoViewer photoViewer3 = this.b;
-                Drawable[] drawableArr3 = PhotoViewer.f9;
-                photoViewer3.n2(0);
-                break;
-            case 3:
-                PhotoViewer photoViewer4 = this.b;
-                Drawable[] drawableArr4 = PhotoViewer.f9;
-                photoViewer4.H0();
-                break;
-            case 4:
-                PhotoViewer photoViewer5 = this.b;
-                Drawable[] drawableArr5 = PhotoViewer.f9;
-                photoViewer5.E1.b(photoViewer5.J2, photoViewer5.K2, photoViewer5.L2, photoViewer5.P2, photoViewer5.R2, photoViewer5.O2, photoViewer5.y1(true), photoViewer5.y1(true), photoViewer5.M2, photoViewer5.N2, 0.0f, 0.0f, photoViewer5.Q2);
-                photoViewer5.n2(0);
-                break;
-            case 5:
-                PhotoViewer photoViewer6 = this.b;
-                Drawable[] drawableArr6 = PhotoViewer.f9;
-                photoViewer6.q5.b.setLoading(false);
-                photoViewer6.n2(0);
-                break;
-            case 6:
-                PhotoViewer photoViewer7 = this.b;
-                Drawable[] drawableArr7 = PhotoViewer.f9;
-                photoViewer7.q5.b.setLoading(false);
-                photoViewer7.n2(0);
-                break;
-            case 7:
-                PhotoViewer photoViewer8 = this.b;
-                Drawable[] drawableArr8 = PhotoViewer.f9;
-                photoViewer8.s(false);
-                break;
-            case 8:
-                PhotoViewer photoViewer9 = this.b;
-                Drawable[] drawableArr9 = PhotoViewer.f9;
-                photoViewer9.p5.W = false;
-                break;
-            case 9:
-                PhotoViewer photoViewer10 = this.b;
-                Drawable[] drawableArr10 = PhotoViewer.f9;
-                photoViewer10.e();
-                break;
-            case 10:
-                PhotoViewer photoViewer11 = this.b;
-                Drawable[] drawableArr11 = PhotoViewer.f9;
-                photoViewer11.y4.setBackground(null);
-                break;
-            case 11:
-                PhotoViewer photoViewer12 = this.b;
-                Drawable[] drawableArr12 = PhotoViewer.f9;
-                photoViewer12.i7 = null;
-                photoViewer12.e();
-                photoViewer12.n2(0);
-                break;
-            case 12:
-                PhotoViewer photoViewer13 = this.b;
-                Drawable[] drawableArr13 = PhotoViewer.f9;
-                if (photoViewer13.G3 == 2) {
-                    photoViewer13.s(false);
-                    break;
-                }
-                break;
-            case 13:
-                PhotoViewer photoViewer14 = this.b;
-                Drawable[] drawableArr14 = PhotoViewer.f9;
-                photoViewer14.n2(0);
-                break;
-            case 14:
-                PhotoViewer photoViewer15 = this.b;
-                Drawable[] drawableArr15 = PhotoViewer.f9;
-                photoViewer15.q5.b.setLoading(false);
-                photoViewer15.n2(0);
-                break;
-            case 15:
-                PhotoViewer photoViewer16 = this.b;
-                Drawable[] drawableArr16 = PhotoViewer.f9;
-                photoViewer16.q5.b.setLoading(false);
-                photoViewer16.n2(0);
-                break;
-            case 16:
-                PhotoViewer photoViewer17 = this.b;
-                Drawable[] drawableArr17 = PhotoViewer.f9;
-                photoViewer17.c();
-                break;
-            case 17:
-                PhotoViewer photoViewer18 = this.b;
-                Drawable[] drawableArr18 = PhotoViewer.f9;
-                photoViewer18.C2();
-                break;
-            case 18:
-                PhotoViewer photoViewer19 = this.b;
-                Drawable[] drawableArr19 = PhotoViewer.f9;
-                photoViewer19.x2(true);
-                break;
-            case 19:
-                PhotoViewer photoViewer20 = this.b;
-                Drawable[] drawableArr20 = PhotoViewer.f9;
-                if (photoViewer20.w0.isEnabled()) {
-                    Activity activity = photoViewer20.E;
-                    Typeface typeface = gl.a;
-                    if (Settings.canDrawOverlays(activity) && mb3.c().a() == null && photoViewer20.P3) {
-                        if (!photoViewer20.t4) {
-                            photoViewer20.K3 = false;
-                            photoViewer20.q2();
-                            break;
-                        } else {
-                            x88 x88Var = photoViewer20.g0;
-                            if (x88Var != null && !x88Var.c() && photoViewer20.g0.d()) {
-                                photoViewer20.K3 = false;
-                                if (PhotoViewer.m9 != null) {
-                                    PhotoViewer.m9.M();
-                                }
-                                photoViewer20.J3 = true;
-                                PhotoViewer.m9 = PhotoViewer.l9;
-                                PhotoViewer.l9 = null;
-                                photoViewer20.e = false;
-                                p98 p98Var = photoViewer20.d5;
-                                if (p98Var != null) {
-                                    ImageReceiver imageReceiver = p98Var.a;
-                                    if (!imageReceiver.R0) {
-                                        imageReceiver.v0(true, true);
-                                    }
-                                }
-                                photoViewer20.m6 = 1.0f;
-                                photoViewer20.f0.invalidate();
-                                photoViewer20.P();
-                                break;
-                            }
-                        }
-                    }
-                }
-                break;
-            case 20:
-                PhotoViewer photoViewer21 = this.b;
-                Drawable[] drawableArr21 = PhotoViewer.f9;
-                if (photoViewer21.e && photoViewer21.n4 == 0) {
-                    photoViewer21.G2(photoViewer21.K);
-                    break;
-                }
-                break;
-            case 21:
-                PhotoViewer photoViewer22 = this.b;
-                Drawable[] drawableArr22 = PhotoViewer.f9;
-                photoViewer22.G0();
-                break;
-            case 22:
-                PhotoViewer photoViewer23 = this.b;
-                Drawable[] drawableArr23 = PhotoViewer.f9;
-                photoViewer23.K2();
-                break;
-            case 23:
-                PhotoViewer photoViewer24 = this.b;
-                lbc lbcVar = photoViewer24.G2;
-                if (lbcVar != null && photoViewer24.a6 <= 1.35f) {
-                    long S = lbcVar.S();
-                    long U = photoViewer24.G2.U();
-                    if (S != -9223372036854775807L && U >= 8000) {
-                        float f = photoViewer24.K7;
-                        int i0 = photoViewer24.i0(photoViewer24.u4);
-                        if (U <= 180000) {
-                            photoViewer24.c4.startRewind(photoViewer24.G2, f > ((float) (i0 / 3)), photoViewer24.K7, photoViewer24.u1, photoViewer24.B1);
-                            break;
-                        } else {
-                            int i = i0 / 3;
-                            if (f < (i << 1)) {
-                                z = f >= ((float) i);
-                            }
-                            photoViewer24.a4.startRewind(photoViewer24.G2, z, photoViewer24.u1);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 24:
-                PhotoViewer photoViewer25 = this.b;
-                Drawable[] drawableArr24 = PhotoViewer.f9;
-                photoViewer25.b9 = false;
-                photoViewer25.H0();
-                break;
-            case 25:
-                PhotoViewer photoViewer26 = this.b;
-                Drawable[] drawableArr25 = PhotoViewer.f9;
-                if (!photoViewer26.U4.isPopupShown()) {
-                    lbc lbcVar2 = photoViewer26.G2;
-                    if (lbcVar2 != null && photoViewer26.U4.videoWasPlaying) {
-                        lbcVar2.g0();
-                        break;
-                    }
-                } else {
-                    VideoAds videoAds = photoViewer26.U4;
-                    lbc lbcVar3 = photoViewer26.G2;
-                    videoAds.videoWasPlaying = lbcVar3 != null ? lbcVar3.c0() : true;
-                    lbc lbcVar4 = photoViewer26.G2;
-                    if (lbcVar4 != null) {
-                        lbcVar4.f0();
-                        break;
-                    }
-                }
-                break;
-            case 26:
-                PhotoViewer photoViewer27 = this.b;
-                Drawable[] drawableArr26 = PhotoViewer.f9;
-                v48 v48Var = photoViewer27.D1;
-                b33 b33Var = v48Var.c;
-                b33Var.b(0.0f);
-                b33Var.setMirrored(false);
-                b33Var.setRotated(false);
-                v48Var.b.l(true);
-                break;
-            case 27:
-                PhotoViewer photoViewer28 = this.b;
-                Drawable[] drawableArr27 = PhotoViewer.f9;
-                photoViewer28.M2();
-                break;
-            case 28:
-                PhotoViewer photoViewer29 = this.b;
-                Drawable[] drawableArr28 = PhotoViewer.f9;
-                photoViewer29.E1(true, 0, 0, false, true, false);
-                break;
-            default:
-                PhotoViewer photoViewer30 = this.b;
-                Drawable[] drawableArr29 = PhotoViewer.f9;
-                photoViewer30.E1(true, 0, 0, false, false, false);
-                break;
+    public void setItemSize(int i) {
+        this.d = i;
+    }
+
+    public void setType(int i) {
+        TextView textView = this.c;
+        ImageView imageView = this.b;
+        ImageView imageView2 = this.a;
+        if (i == 0) {
+            imageView2.setImageResource(R.drawable.permissions_camera1);
+            imageView.setImageResource(R.drawable.permissions_camera2);
+            textView.setText(jb6.M0(2131752546, null));
+            imageView2.setLayoutParams(qoe.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+            imageView.setLayoutParams(qoe.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+            return;
         }
+        imageView2.setImageResource(R.drawable.permissions_gallery1);
+        imageView.setImageResource(R.drawable.permissions_gallery2);
+        textView.setText(jb6.M0(2131750409, null));
+        imageView2.setLayoutParams(qoe.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
+        imageView.setLayoutParams(qoe.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
     }
 }

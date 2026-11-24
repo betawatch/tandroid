@@ -1,659 +1,550 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.os.Build;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.Region;
+import android.text.Editable;
+import android.text.Layout;
 import android.text.Spannable;
-import android.text.TextUtils;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.Stack;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class vu3 {
-    public static final HashMap a = new HashMap();
-    public static final int b;
-    public static final int c;
-    public static final Paint d;
-    public static final int[] e;
-    public static final Bitmap[][] f;
-    public static final boolean[][] g;
-    public static final HashMap h;
-    public static final ArrayList i;
-    public static final HashMap j;
-    public static boolean k;
-    public static final ql3 l;
-    public static float m;
-    public static boolean n;
-    public static final String[] o;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class vu3 extends EditText {
+    public static Boolean a0;
+    public int E;
+    public cn F;
+    public PorterDuffColorFilter G;
+    public boolean H;
+    public Layout I;
+    public int J;
+    public l K;
+    public Rect L;
+    public boolean M;
+    public int N;
+    public Integer O;
+    public float P;
+    public boolean Q;
+    public rl7 R;
+    public int S;
+    public int T;
+    public boolean[] U;
+    public boolean V;
+    public boolean W;
+    public ArrayList a;
+    public Stack b;
+    public ArrayList c;
+    public boolean d;
+    public boolean e;
+    public ml0 f;
+    public boolean h;
+    public Path n;
+    public int r;
+    public int s;
+    public float w;
+    public float x;
+    public boolean y;
 
-    static {
-        String[][] strArr = ow3.i;
-        e = new int[]{strArr[0].length, strArr[1].length, strArr[2].length, strArr[3].length, strArr[4].length, strArr[5].length, strArr[6].length, strArr[7].length};
-        f = new Bitmap[8][];
-        g = new boolean[8][];
-        h = new HashMap();
-        i = new ArrayList();
-        j = new HashMap();
-        l = new ql3((byte) 4);
-        n = true;
-        o = new String[]{"😂", "😘", "❤", "😍", "😊", "😁", "👍", "☺", "😔", "😄", "😭", "💋", "😒", "😳", "😜", "🙈", "😉", "😃", "😢", "😝", "😱", "😡", "😏", "😞", "😅", "😚", "🙊", "😌", "😀", "😋", "😆", "👌", "😐", "😕"};
-        b = gl.L(20.0f);
-        c = gl.L(gl.O1() ? 40.0f : 34.0f);
-        int i2 = 0;
-        while (true) {
-            Bitmap[][] bitmapArr = f;
-            if (i2 >= bitmapArr.length) {
-                break;
-            }
-            int i3 = e[i2];
-            bitmapArr[i2] = new Bitmap[i3];
-            g[i2] = new boolean[i3];
-            i2++;
-        }
-        int i4 = 0;
-        while (true) {
-            char[] cArr = ow3.a;
-            if (i4 >= 8) {
-                Paint paint = new Paint();
-                d = paint;
-                paint.setColor(0);
-                return;
-            }
-            int i5 = 0;
-            while (true) {
-                String[] strArr2 = ow3.i[i4];
-                if (i5 < strArr2.length) {
-                    HashMap hashMap = a;
-                    String str = strArr2[i5];
-                    qu3 qu3Var = new qu3();
-                    qu3Var.a = (byte) i4;
-                    qu3Var.b = (short) i5;
-                    hashMap.put(str, qu3Var);
-                    i5++;
-                }
-            }
-            i4++;
-        }
-    }
-
-    public static void a(String str) {
-        HashMap hashMap = h;
-        Integer num = (Integer) hashMap.get(str);
-        if (num == null) {
-            num = 0;
-        }
-        if (num.intValue() == 0 && hashMap.size() >= 48) {
-            ArrayList arrayList = i;
-            hashMap.remove((String) b00.f(1, arrayList));
-            arrayList.set(arrayList.size() - 1, str);
-        }
-        hashMap.put(str, Integer.valueOf(num.intValue() + 1));
-    }
-
-    public static boolean b(CharSequence charSequence) {
-        return charSequence != null && charSequence.length() > 2 && charSequence.charAt(charSequence.length() - 2) == 8205 && charSequence.charAt(charSequence.length() - 1) == 10145;
-    }
-
-    public static String c(String str) {
-        int length = str.length();
-        int i2 = 0;
-        while (i2 < length) {
-            char charAt = str.charAt(i2);
-            if (charAt < 55356 || charAt > 55358) {
-                if (charAt == 8419) {
+    public final void d() {
+        int i;
+        int i2;
+        l lVar = this.K;
+        CharSequence text = getLayout() != null ? getLayout().getText() : null;
+        boolean z = false;
+        if (text instanceof Spannable) {
+            Spannable spannable = (Spannable) text;
+            for (xkb xkbVar : (xkb[]) spannable.getSpans(0, spannable.length(), xkb.class)) {
+                int spanStart = spannable.getSpanStart(xkbVar);
+                int spanEnd = spannable.getSpanEnd(xkbVar);
+                if (xkbVar.b() && ((spanStart > (i = this.r) && spanEnd < this.s) || ((i > spanStart && i < spanEnd) || ((i2 = this.s) > spanStart && i2 < spanEnd)))) {
+                    removeCallbacks(lVar);
+                    this.y = false;
+                    z = true;
                     break;
                 }
-                if (charAt >= 8252 && charAt <= 12953 && ow3.j.containsKey(Character.valueOf(charAt))) {
-                    i2++;
-                    str = str.substring(0, i2) + "️" + str.substring(i2);
-                    length++;
+            }
+        }
+        if (!this.d || z || this.y) {
+            return;
+        }
+        this.y = true;
+        postDelayed(lVar, 10000L);
+    }
+
+    @Override // android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z;
+        boolean z2;
+        ml0 ml0Var;
+        int paddingTop = getPaddingTop() - getScrollY();
+        ArrayList arrayList = this.c;
+        if (arrayList == null) {
+            z = false;
+        } else {
+            int size = arrayList.size();
+            z = false;
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                b09 b09Var = (b09) obj;
+                u30 u30Var = b09Var.e.K;
+                boolean z3 = b09Var.b() && b09Var.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
+                if (motionEvent.getAction() == 0) {
+                    if (u30Var != null) {
+                        u30Var.f(z3);
+                    }
+                } else if (motionEvent.getAction() == 1) {
+                    if (u30Var != null && u30Var.c && z3) {
+                        b09Var.e.e = !r5.e;
+                        g(true);
+                        z = true;
+                    }
+                    if (u30Var != null) {
+                        u30Var.f(false);
+                    }
+                } else if (motionEvent.getAction() == 3 && u30Var != null) {
+                    u30Var.f(false);
                 }
-            } else if (charAt != 55356 || i2 >= length - 1) {
-                i2++;
+                z = (u30Var != null && u30Var.c) || z;
+            }
+        }
+        if (!z) {
+            if (this.e && (ml0Var = this.f) != null && ((GestureDetector) ((lj4) ml0Var.d).a).onTouchEvent(motionEvent)) {
+                if (motionEvent.getActionMasked() == 1) {
+                    MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                    super.dispatchTouchEvent(obtain);
+                    obtain.recycle();
+                }
+                z2 = true;
             } else {
-                int i3 = i2 + 1;
-                char charAt2 = str.charAt(i3);
-                if (charAt2 == 56879 || charAt2 == 56324 || charAt2 == 56858 || charAt2 == 56703) {
-                    i2 += 2;
-                    str = str.substring(0, i2) + "️" + str.substring(i2);
-                    length++;
-                } else {
-                    i2 = i3;
+                z2 = false;
+            }
+            if (!super.dispatchTouchEvent(motionEvent) && !z2) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int e() {
+        return vm.f();
+    }
+
+    public final void f() {
+        Editable text = getText();
+        if (text != null) {
+            for (xkb xkbVar : (xkb[]) text.getSpans(0, text.length(), xkb.class)) {
+                if (xkbVar.b()) {
+                    boolean z = this.d;
+                    wkb wkbVar = xkbVar.b;
+                    if (z) {
+                        wkbVar.a |= 512;
+                    } else {
+                        wkbVar.a &= -513;
+                    }
                 }
             }
-            i2++;
         }
-        return str;
+        h();
     }
 
-    public static boolean d(CharSequence charSequence) {
-        int[] iArr = new int[1];
-        j(charSequence, iArr);
-        return iArr[0] > 0;
+    public final void g(boolean z) {
+        if (this.V) {
+            this.W = true;
+            return;
+        }
+        int i = 0;
+        int length = (getLayout() == null || getLayout().getText() == null) ? 0 : getLayout().getText().length();
+        if (z || this.S != length) {
+            this.T = 2;
+            this.S = length;
+        }
+        if (this.T > 0) {
+            boolean[] zArr = this.U;
+            if (zArr == null) {
+                zArr = new boolean[1];
+                this.U = zArr;
+            }
+            zArr[0] = false;
+            this.W = false;
+            this.V = true;
+            this.c = f09.d(this, getLayout(), this.c, this.U);
+            if (this.W) {
+                this.c = f09.d(this, getLayout(), this.c, this.U);
+            }
+            this.V = false;
+            this.W = false;
+            if (this.U[0]) {
+                float textSize = getTextSize();
+                setTextSize(0, 1.0f + textSize);
+                setTextSize(0, textSize);
+            }
+            this.T--;
+            if (getLayout() != null && getLayout().getText() != null) {
+                i = getLayout().getText().length();
+            }
+            this.S = i;
+        }
     }
 
-    public static qu3 e(CharSequence charSequence) {
-        CharSequence charSequence2;
-        if (b(charSequence)) {
-            charSequence = charSequence.subSequence(0, charSequence.length() - 2);
-        }
-        HashMap hashMap = a;
-        qu3 qu3Var = (qu3) hashMap.get(charSequence);
-        return (qu3Var != null || (charSequence2 = (CharSequence) ow3.n.get(charSequence)) == null) ? qu3Var : (qu3) hashMap.get(charSequence2);
+    public float getOffsetY() {
+        return this.P;
     }
 
-    public static ru3 f(String str) {
-        CharSequence charSequence;
-        ru3 a2 = qq2.a(str, null, null);
-        if (a2 != null) {
-            int i2 = b;
-            a2.setBounds(0, 0, i2, i2);
-        } else {
-            a2 = null;
-        }
-        if (a2 == null) {
-            a2 = g(str);
-        }
-        if (a2 == null && (charSequence = (CharSequence) ow3.n.get(str)) != null) {
-            a2 = g(charSequence);
-        }
-        if (a2 == null) {
+    public CharSequence getTextToUse() {
+        Editable text = getText();
+        if (text == null) {
             return null;
         }
-        int i3 = c;
-        a2.setBounds(0, 0, i3, i3);
-        a2.a = true;
-        return a2;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
+        d09[] d09VarArr = (d09[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), d09.class);
+        for (int length = d09VarArr.length - 1; length >= 0; length--) {
+            d09 d09Var = d09VarArr[length];
+            int spanStart = spannableStringBuilder.getSpanStart(d09Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(d09Var);
+            spannableStringBuilder.removeSpan(d09Var);
+            spannableStringBuilder.delete(spanStart, spanEnd);
+        }
+        return spannableStringBuilder;
     }
 
-    public static ru3 g(CharSequence charSequence) {
-        oq2 a2;
-        qu3 e2 = e(charSequence);
-        int i2 = b;
-        if (e2 == null) {
-            if (charSequence == null || (a2 = qq2.a(charSequence.toString(), null, null)) == null) {
-                return null;
+    public final void h() {
+        vu3 vu3Var;
+        cn cnVar;
+        cn cnVar2;
+        Stack stack = this.b;
+        ArrayList arrayList = this.a;
+        if (arrayList == null) {
+            return;
+        }
+        stack.addAll(arrayList);
+        arrayList.clear();
+        if (this.d) {
+            invalidate();
+            return;
+        }
+        Layout layout = getLayout();
+        if (layout == null || !(layout.getText() instanceof Spannable)) {
+            vu3Var = this;
+        } else {
+            if (this.H && (cnVar2 = this.F) != null) {
+                ArrayList arrayList2 = cnVar2.a;
+                for (int i = 0; i < arrayList2.size(); i++) {
+                    ((bn) arrayList2.get(i)).d.recordPositions = false;
+                }
             }
-            a2.setBounds(0, 0, i2, i2);
-            return a2;
+            ArrayList arrayList3 = this.c;
+            short s = rna.A;
+            int measuredWidth = getMeasuredWidth();
+            Layout layout2 = getLayout();
+            if (measuredWidth <= 0) {
+                measuredWidth = -2;
+            }
+            int i2 = measuredWidth;
+            vu3Var = this;
+            rna.a(vu3Var, layout2, 0, i2, (Spanned) getText(), stack, arrayList, arrayList3);
+            if (vu3Var.H && (cnVar = vu3Var.F) != null) {
+                ArrayList arrayList4 = cnVar.a;
+                for (int i3 = 0; i3 < arrayList4.size(); i3++) {
+                    ((bn) arrayList4.get(i3)).d.recordPositions = true;
+                }
+            }
         }
-        boolean b2 = b(charSequence);
-        uu3 uu3Var = new uu3();
-        uu3Var.c = e2;
-        uu3Var.d = b2;
-        uu3Var.setBounds(0, 0, i2, i2);
-        return uu3Var;
+        vu3Var.invalidate();
     }
 
-    public static boolean h(CharSequence charSequence) {
-        CharSequence charSequence2;
-        if (TextUtils.isEmpty(charSequence)) {
-            return false;
+    public final void i(rna rnaVar, float f, float f2) {
+        if (this.d) {
+            return;
         }
-        HashMap hashMap = a;
-        qu3 qu3Var = (qu3) hashMap.get(charSequence);
-        if (qu3Var == null && (charSequence2 = (CharSequence) ow3.n.get(charSequence)) != null) {
-            qu3Var = (qu3) hashMap.get(charSequence2);
+        this.w = f;
+        this.x = f2;
+        this.y = false;
+        removeCallbacks(this.K);
+        j(true, false);
+        rnaVar.q = new tu3(this, (byte) 0);
+        float sqrt = (float) Math.sqrt(Math.pow(getHeight(), 2.0d) + Math.pow(getWidth(), 2.0d));
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((rna) obj).j(f, f2, sqrt, false);
         }
-        return qu3Var != null;
     }
 
-    public static void i(final byte b2, final short s) {
-        if (f[b2][s] == null) {
-            boolean[] zArr = g[b2];
-            if (zArr[s]) {
+    public final void j(boolean z, boolean z2) {
+        this.d = z;
+        Editable text = getText();
+        if (text != null) {
+            for (xkb xkbVar : (xkb[]) text.getSpans(0, text.length(), xkb.class)) {
+                if (xkbVar.b()) {
+                    wkb wkbVar = xkbVar.b;
+                    if (z) {
+                        wkbVar.a |= 512;
+                    } else {
+                        wkbVar.a &= -513;
+                    }
+                }
+            }
+        }
+        this.h = true;
+        setText(text, TextView.BufferType.EDITABLE);
+        setSelection(this.r, this.s);
+        this.h = false;
+        if (z2) {
+            h();
+        }
+    }
+
+    public final void k(boolean z) {
+        if (this.H) {
+            int length = (getLayout() == null || getLayout().getText() == null) ? 0 : getLayout().getText().length();
+            if (!z && this.I == getLayout() && this.J == length) {
                 return;
             }
-            zArr[s] = true;
-            Utilities.e.c(new Runnable() { // from class: pu3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    Bitmap bitmap;
-                    byte b3 = b2;
-                    short s2 = s;
-                    try {
-                        bitmap = vw3.a.h(b3, s2);
-                    } catch (Exception e2) {
-                        fa4.g(e2, true);
-                        bitmap = null;
-                    }
-                    if (bitmap != null) {
-                        vu3.f[b3][s2] = bitmap;
-                        ql3 ql3Var = vu3.l;
-                        gl.r(ql3Var);
-                        gl.d3(ql3Var);
-                    }
-                    vu3.g[b3][s2] = false;
-                }
-            });
+            this.F = gn.update(e(), this, this.F, getLayout());
+            this.I = getLayout();
+            this.J = length;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x027c A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01a0 A[Catch: Exception -> 0x0284, TryCatch #0 {Exception -> 0x0284, blocks: (B:9:0x002c, B:24:0x011d, B:36:0x01a0, B:38:0x01a4, B:42:0x01b1, B:44:0x01b7, B:46:0x020c, B:63:0x01df, B:65:0x01e3, B:79:0x01f8, B:81:0x01fc, B:96:0x0217, B:98:0x021f, B:100:0x0223, B:102:0x022e, B:106:0x023c, B:109:0x024c, B:111:0x0256, B:113:0x0259, B:114:0x0273, B:120:0x0148, B:122:0x014f, B:124:0x015b, B:128:0x016b, B:130:0x0171, B:131:0x0178, B:133:0x0180, B:134:0x0187, B:136:0x0191, B:163:0x0076, B:209:0x00d6), top: B:8:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0215 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x021f A[Catch: Exception -> 0x0284, TryCatch #0 {Exception -> 0x0284, blocks: (B:9:0x002c, B:24:0x011d, B:36:0x01a0, B:38:0x01a4, B:42:0x01b1, B:44:0x01b7, B:46:0x020c, B:63:0x01df, B:65:0x01e3, B:79:0x01f8, B:81:0x01fc, B:96:0x0217, B:98:0x021f, B:100:0x0223, B:102:0x022e, B:106:0x023c, B:109:0x024c, B:111:0x0256, B:113:0x0259, B:114:0x0273, B:120:0x0148, B:122:0x014f, B:124:0x015b, B:128:0x016b, B:130:0x0171, B:131:0x0178, B:133:0x0180, B:134:0x0187, B:136:0x0191, B:163:0x0076, B:209:0x00d6), top: B:8:0x002c }] */
+    @Override // android.widget.TextView, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        k(true);
+        g(false);
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(this.K);
+        gn.release(this, this.F);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Path path;
+        ArrayList arrayList;
+        boolean z = this.Q;
+        Rect rect = this.L;
+        Path path2 = this.n;
+        ArrayList arrayList2 = this.a;
+        canvas.save();
+        if (this.M && getScrollY() != 0) {
+            canvas.clipRect(-gm.L(3.0f), (getScrollY() - super.getExtendedPaddingTop()) - this.P, getMeasuredWidth(), ((getScrollY() + getMeasuredHeight()) + super.getExtendedPaddingBottom()) - this.P);
+        }
+        int paddingLeft = getPaddingLeft();
+        int i = 0;
+        if (arrayList2.isEmpty()) {
+            path = path2;
+        } else {
+            path2.rewind();
+            int size = arrayList2.size();
+            int i2 = 0;
+            while (i2 < size) {
+                int i3 = i2 + 1;
+                Rect bounds = ((rna) arrayList2.get(i2)).getBounds();
+                path2.addRect(bounds.left + paddingLeft, bounds.top, bounds.right + paddingLeft, bounds.bottom, Path.Direction.CW);
+                i2 = i3;
+            }
+            path = path2;
+            canvas.clipPath(path, Region.Op.DIFFERENCE);
+        }
+        g(false);
+        for (int i4 = 0; i4 < this.c.size(); i4++) {
+            b09 b09Var = (b09) this.c.get(i4);
+            int width = getWidth();
+            int i5 = this.E;
+            getPaint();
+            b09Var.a(canvas, width, i5);
+        }
+        k(false);
+        if (z) {
+            rl7 rl7Var = this.R;
+            if (rl7Var == null) {
+                rl7Var = new rl7();
+                this.R = rl7Var;
+            }
+            rl7Var.a = canvas;
+            super.onDraw(rl7Var);
+        } else {
+            super.onDraw(canvas);
+        }
+        if (!this.H || this.F == null) {
+            arrayList = arrayList2;
+        } else {
+            canvas.save();
+            canvas.translate(getPaddingLeft(), 0.0f);
+            arrayList = arrayList2;
+            gn.drawAnimatedEmojis(canvas, getLayout(), this.F, 0.0f, arrayList, computeVerticalScrollOffset() - gm.L(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.G);
+            canvas.restore();
+        }
+        canvas.restore();
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        rna rnaVar = (rna) arrayList.get(0);
+        if (rnaVar.m > 0.0f && rnaVar.n > 0.0f) {
+            canvas.save();
+            canvas.clipPath(path);
+            path.rewind();
+            ((rna) arrayList.get(0)).e(path);
+            canvas.clipPath(path);
+            canvas.translate(0.0f, -getPaddingTop());
+            if (z) {
+                rl7 rl7Var2 = this.R;
+                if (rl7Var2 == null) {
+                    rl7Var2 = new rl7();
+                    this.R = rl7Var2;
+                }
+                rl7Var2.a = canvas;
+                super.onDraw(rl7Var2);
+            } else {
+                super.onDraw(canvas);
+            }
+            canvas.restore();
+        }
+        rect.set(0, (int) ((getScrollY() - super.getExtendedPaddingTop()) - this.P), getWidth(), (int) (((getScrollY() + getMeasuredHeight()) + super.getExtendedPaddingBottom()) - this.P));
+        canvas.save();
+        canvas.clipRect(rect);
+        canvas.translate(paddingLeft, 0.0f);
+        int size2 = arrayList.size();
+        while (i < size2) {
+            Object obj = arrayList.get(i);
+            i++;
+            rna rnaVar2 = (rna) obj;
+            Rect bounds2 = rnaVar2.getBounds();
+            int i6 = rect.top;
+            int i7 = bounds2.bottom;
+            if ((i6 <= i7 && rect.bottom >= bounds2.top) || (bounds2.top <= rect.bottom && i7 >= i6)) {
+                rnaVar2.h(rnaVar2.y ? this.E : getPaint().getColor());
+                rnaVar2.draw(canvas);
+            }
+        }
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        g(false);
+    }
+
+    @Override // android.widget.TextView
+    public void onSelectionChanged(int i, int i2) {
+        super.onSelectionChanged(i, i2);
+        if (this.h) {
+            return;
+        }
+        this.r = i;
+        this.s = i2;
+        d();
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        f();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0047, code lost:
+    
+        r10 = r10 - r9;
+        r6.r += r10;
+        r6.s += r10;
+        i(r4, r8, r7);
+     */
+    @Override // android.widget.TextView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList j(CharSequence charSequence, int[] iArr) {
-        boolean z;
-        boolean z2;
-        char charAt;
-        boolean z3;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        char charAt2;
-        int i8;
-        int i9;
-        ArrayList arrayList = new ArrayList();
-        if (charSequence != null && charSequence.length() > 0) {
-            StringBuilder sb = new StringBuilder(16);
-            int length = charSequence.length();
-            int i10 = -1;
-            int[] iArr2 = iArr;
-            int i11 = -1;
-            int i12 = 0;
-            int i13 = 0;
-            long j2 = 0;
-            int i14 = 0;
-            boolean z4 = false;
-            boolean z5 = false;
-            while (i13 < length) {
-                try {
-                    char charAt3 = charSequence.charAt(i13);
-                    if ((charAt3 >= 55356 && charAt3 <= 55358) || (j2 != 0 && (j2 & (-4294967296L)) == 0 && (j2 & 65535) == 55356 && charAt3 >= 56806 && charAt3 <= 56831)) {
-                        if (i11 == i10) {
-                            i11 = i13;
-                        } else if (z4) {
-                            i11 = i13;
-                            i14 = 0;
-                            z4 = false;
-                        }
-                        try {
-                            sb.append(charAt3);
-                            i14++;
-                            j2 = (j2 << 16) | charAt3;
-                        } catch (Exception e2) {
-                            e = e2;
-                            z = true;
-                            fa4.g(e, z);
-                            if (iArr2 != null) {
-                                iArr2[0] = 0;
-                            }
-                            return arrayList;
-                        }
-                    } else if ((sb.length() > 0 && (charAt3 == 9792 || charAt3 == 9794 || charAt3 == 9877)) || (j2 > 0 && (61440 & charAt3) == 53248)) {
-                        sb.append(charAt3);
-                        i14++;
-                        z5 = true;
-                        j2 = 0;
-                    } else if (charAt3 == 8419) {
-                        if (i13 > 0 && (((charAt = charSequence.charAt(i12)) >= '0' && charAt <= '9') || charAt == '#' || charAt == '*')) {
-                            i14 = (i13 - i12) + 1;
-                            sb.append(charAt);
-                            sb.append(charAt3);
-                            z5 = true;
-                            i11 = i12;
-                            z4 = false;
-                        }
-                    } else if ((charAt3 == 169 || charAt3 == 174 || (charAt3 >= 8252 && charAt3 <= 12953)) && ow3.k.containsKey(Character.valueOf(charAt3))) {
-                        if (i11 == -1) {
-                            i11 = i13;
-                        } else if (z4) {
-                            i11 = i13;
-                            i14 = 0;
-                            z4 = false;
-                        }
-                        i14++;
-                        sb.append(charAt3);
-                        z5 = true;
-                    } else {
-                        if (i11 != -1) {
-                            sb.setLength(0);
-                            z2 = false;
-                            i11 = -1;
-                            i14 = 0;
-                            z4 = false;
-                            z5 = false;
-                        } else if (charAt3 != 65039 && charAt3 != '\n' && charAt3 != ' ' && charAt3 != '\t') {
-                            z2 = true;
-                        }
-                        if (z5 || (i9 = i13 + 2) >= length) {
-                            z3 = z2;
-                        } else {
-                            int i15 = i13 + 1;
-                            char charAt4 = charSequence.charAt(i15);
-                            z3 = z2;
-                            if (charAt4 == 55356) {
-                                char charAt5 = charSequence.charAt(i9);
-                                if (charAt5 >= 57339 && charAt5 <= 57343) {
-                                    sb.append(charSequence.subSequence(i15, i13 + 3));
-                                    i14 += 2;
-                                    i2 = i9;
-                                    i3 = i2;
-                                    i4 = 0;
-                                    while (i4 < 3) {
-                                        int i16 = i3 + 1;
-                                        if (i16 < length) {
-                                            char charAt6 = charSequence.charAt(i16);
-                                            i8 = i2;
-                                            if (i4 == 1) {
-                                                if (charAt6 == 8205 && sb.length() > 0) {
-                                                    sb.append(charAt6);
-                                                    i14++;
-                                                    i3 = i16;
-                                                    z5 = false;
-                                                    z3 = false;
-                                                }
-                                            } else if (charAt3 == '*' || charAt3 == '#' || (charAt3 >= '0' && charAt3 <= '9')) {
-                                                if (charAt6 >= 65024 && charAt6 <= 65039) {
-                                                    i14++;
-                                                    if (!z5) {
-                                                        z5 = i3 + 2 >= length;
-                                                    }
-                                                    i3 = i16;
-                                                    i11 = i8;
-                                                    z4 = true;
-                                                }
-                                            } else if (i11 != -1 && charAt6 >= 65024 && charAt6 <= 65039) {
-                                                i14++;
-                                                if (!z5) {
-                                                    z5 = i3 + 2 >= length;
-                                                }
-                                                i3 = i16;
-                                            }
-                                        } else {
-                                            i8 = i2;
-                                        }
-                                        i4++;
-                                        i2 = i8;
-                                    }
-                                    int i17 = i2;
-                                    if (z3 && iArr2 != null) {
-                                        iArr2[0] = 0;
-                                        iArr2 = null;
-                                    }
-                                    if (z5 && (i6 = i3 + 2) < length) {
-                                        i7 = i3 + 1;
-                                        if (charSequence.charAt(i7) == 55356 && (charAt2 = charSequence.charAt(i6)) >= 57339 && charAt2 <= 57343) {
-                                            sb.append(charSequence.subSequence(i7, i3 + 3));
-                                            i14 += 2;
-                                            i3 = i6;
-                                        }
-                                    }
-                                    if (z5) {
-                                        if (iArr2 != null) {
-                                            iArr2[0] = iArr2[0] + 1;
-                                        }
-                                        if (i11 >= 0 && (i5 = i14 + i11) <= length) {
-                                            CharSequence subSequence = sb.subSequence(0, sb.length());
-                                            tu3 tu3Var = new tu3();
-                                            tu3Var.a = i11;
-                                            tu3Var.b = i5;
-                                            tu3Var.c = subSequence;
-                                            arrayList.add(tu3Var);
-                                        }
-                                        sb.setLength(0);
-                                        i11 = -1;
-                                        i14 = 0;
-                                        z4 = false;
-                                        z5 = false;
-                                    }
-                                    i13 = i3 + 1;
-                                    i12 = i17;
-                                    i10 = -1;
-                                }
-                            } else if (sb.length() >= 2 && sb.charAt(0) == 55356 && sb.charAt(1) == 57332 && charAt4 == 56128) {
-                                do {
-                                    if (i15 < charSequence.length()) {
-                                        sb.append(charSequence.charAt(i15));
-                                    }
-                                    i13 = i15 + 1;
-                                    if (i13 < charSequence.length()) {
-                                        sb.append(charSequence.charAt(i13));
-                                    }
-                                    i14 += 2;
-                                    i15 += 2;
-                                    if (i15 >= charSequence.length()) {
-                                        break;
-                                    }
-                                } while (charSequence.charAt(i15) == 56128);
-                            }
-                        }
-                        i2 = i13;
-                        i3 = i2;
-                        i4 = 0;
-                        while (i4 < 3) {
-                        }
-                        int i172 = i2;
-                        if (z3) {
-                            iArr2[0] = 0;
-                            iArr2 = null;
-                        }
-                        if (z5) {
-                            i7 = i3 + 1;
-                            if (charSequence.charAt(i7) == 55356) {
-                                sb.append(charSequence.subSequence(i7, i3 + 3));
-                                i14 += 2;
-                                i3 = i6;
-                            }
-                        }
-                        if (z5) {
-                        }
-                        i13 = i3 + 1;
-                        i12 = i172;
-                        i10 = -1;
-                    }
-                    z2 = false;
-                    if (z5) {
-                    }
-                    z3 = z2;
-                    i2 = i13;
-                    i3 = i2;
-                    i4 = 0;
-                    while (i4 < 3) {
-                    }
-                    int i1722 = i2;
-                    if (z3) {
-                    }
-                    if (z5) {
-                    }
-                    if (z5) {
-                    }
-                    i13 = i3 + 1;
-                    i12 = i1722;
-                    i10 = -1;
-                } catch (Exception e3) {
-                    e = e3;
-                    z = true;
-                }
-            }
-            if (iArr2 != null && sb.length() != 0) {
-                iArr2[0] = 0;
-            }
-        }
-        return arrayList;
-    }
-
-    public static void k(CharSequence charSequence) {
-        qu3 e2 = e(charSequence);
-        if (e2 != null) {
-            i(e2.a, e2.b);
-        }
-    }
-
-    public static CharSequence l(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z) {
-        return m(charSequence, fontMetricsInt, z, null, 0);
-    }
-
-    public static CharSequence m(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z, int[] iArr, int i2) {
-        return n(charSequence, fontMetricsInt, z, iArr, i2, 1.0f, 0);
-    }
-
-    public static CharSequence n(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z, int[] iArr, int i2, float f2, int i3) {
-        int i4;
-        int i5;
-        if (gba.R0 || charSequence == null || charSequence.length() == 0) {
-            return charSequence;
-        }
-        Spannable newSpannable = (z || !(charSequence instanceof Spannable)) ? Spannable.Factory.getInstance().newSpannable(charSequence) : (Spannable) charSequence;
-        ArrayList j2 = j(newSpannable, iArr);
-        if (j2.isEmpty()) {
-            return charSequence;
-        }
-        gm[] gmVarArr = (gm[]) newSpannable.getSpans(0, newSpannable.length(), gm.class);
-        cm2[] cm2VarArr = (cm2[]) newSpannable.getSpans(0, newSpannable.length(), cm2.class);
-        int i6 = (gba.o() >= 2 ? 100 : 50) - i3;
-        for (int i7 = 0; i7 < j2.size(); i7++) {
+    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        super.onTextChanged(charSequence, i, i2, i3);
+        if (!this.h) {
+            f();
             try {
-                tu3 tu3Var = (tu3) j2.get(i7);
-                if (gmVarArr != null && gmVarArr.length > 0) {
-                    for (gm gmVar : gmVarArr) {
-                        i5 = (gmVar != null && newSpannable.getSpanStart(gmVar) == tu3Var.a && newSpannable.getSpanEnd(gmVar) == tu3Var.b) ? 0 : i5 + 1;
-                    }
-                }
-                if (cm2VarArr != null && cm2VarArr.length > 0) {
-                    for (cm2 cm2Var : cm2VarArr) {
-                        i4 = (cm2Var != null && newSpannable.getSpanStart(cm2Var) == tu3Var.a && newSpannable.getSpanEnd(cm2Var) == tu3Var.b) ? 0 : i4 + 1;
-                    }
-                }
-                ru3 g2 = g(tu3Var.c);
-                if (g2 != null) {
-                    su3 su3Var = new su3(g2, i2);
-                    su3Var.b = 1.0f;
-                    su3Var.c = gl.L(20.0f);
-                    su3Var.a = fontMetricsInt;
-                    if (fontMetricsInt != null) {
-                        int abs = Math.abs(su3Var.a.ascent) + Math.abs(fontMetricsInt.descent);
-                        su3Var.c = abs;
-                        if (abs == 0) {
-                            su3Var.c = gl.L(20.0f);
-                        }
-                    }
-                    CharSequence charSequence2 = tu3Var.c;
-                    su3Var.d = charSequence2 == null ? null : charSequence2.toString();
-                    su3Var.b = f2;
-                    newSpannable.setSpan(su3Var, tu3Var.a, tu3Var.b, 33);
-                }
-            } catch (Exception e2) {
-                fa4.g(e2, true);
-            }
-            if (Build.VERSION.SDK_INT >= 29 && i7 + 1 >= i6) {
-                break;
-            }
-        }
-        return newSpannable;
-    }
-
-    public static CharSequence o(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i2, Runnable runnable) {
-        TLRPC.Document document;
-        int i3;
-        if (gba.R0 || charSequence == null || charSequence.length() == 0) {
-            return charSequence;
-        }
-        int i4 = y6c.t0;
-        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
-        tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-        TLRPC.TL_messages_stickerSet m0 = hq6.d0(i4).m0(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new hj3(runnable, (byte) 5));
-        Spannable newSpannable = charSequence instanceof Spannable ? (Spannable) charSequence : Spannable.Factory.getInstance().newSpannable(charSequence.toString());
-        ArrayList j2 = j(newSpannable, null);
-        if (j2.isEmpty()) {
-            return charSequence;
-        }
-        gm[] gmVarArr = (gm[]) newSpannable.getSpans(0, newSpannable.length(), gm.class);
-        int i5 = gba.o() >= 2 ? 100 : 50;
-        for (int i6 = 0; i6 < j2.size(); i6++) {
-            try {
-                tu3 tu3Var = (tu3) j2.get(i6);
-                if (gmVarArr != null) {
-                    for (gm gmVar : gmVarArr) {
-                        i3 = (gmVar != null && newSpannable.getSpanStart(gmVar) == tu3Var.a && newSpannable.getSpanEnd(gmVar) == tu3Var.b) ? 0 : i3 + 1;
-                    }
-                }
-                if (m0 != null) {
-                    ArrayList<TLRPC.Document> arrayList = m0.documents;
+                Layout layout = getLayout();
+                if ((charSequence instanceof Spannable) && layout != null) {
+                    int lineForOffset = layout.getLineForOffset(i);
+                    int primaryHorizontal = (int) layout.getPrimaryHorizontal(i);
+                    int lineTop = (int) ((layout.getLineTop(lineForOffset) + layout.getLineBottom(lineForOffset)) / 2.0f);
+                    ArrayList arrayList = this.a;
                     int size = arrayList.size();
-                    int i7 = 0;
-                    while (i7 < size) {
-                        TLRPC.Document document2 = arrayList.get(i7);
-                        i7++;
-                        document = document2;
-                        if (k27.V(document, null, null).contains(tu3Var.c)) {
+                    int i4 = 0;
+                    while (true) {
+                        if (i4 >= size) {
+                            break;
+                        }
+                        Object obj = arrayList.get(i4);
+                        i4++;
+                        rna rnaVar = (rna) obj;
+                        if (rnaVar.getBounds().contains(primaryHorizontal, lineTop)) {
                             break;
                         }
                     }
                 }
-                document = null;
-                gm gmVar2 = document != null ? new gm(document, fontMetricsInt) : new gm(0L, fontMetricsInt);
-                gmVar2.emoji = tu3Var.c.toString();
-                gmVar2.cacheType = i2;
-                newSpannable.setSpan(gmVar2, tu3Var.a, tu3Var.b, 33);
-            } catch (Exception e2) {
-                fa4.g(e2, true);
-            }
-            if (Build.VERSION.SDK_INT >= 29 && i6 + 1 >= i5) {
-                break;
+            } catch (Exception e) {
+                fc4.g(e, true);
             }
         }
-        return newSpannable;
+        k(true);
+        g(true);
+        invalidate();
     }
 
-    public static CharSequence p(CharSequence charSequence, TextView textView, Runnable runnable) {
-        return o(charSequence, textView.getPaint().getFontMetricsInt(), 20, runnable);
+    public void setClipToPadding(boolean z) {
+        this.M = z;
     }
 
-    public static void q() {
-        SharedPreferences b1 = na7.b1();
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry entry : j.entrySet()) {
-            if (sb.length() != 0) {
-                sb.append(",");
+    public void setEmojiColor(Integer num) {
+        this.O = num;
+        this.G = new PorterDuffColorFilter(num == null ? this.N : num.intValue(), PorterDuff.Mode.SRC_IN);
+        invalidate();
+    }
+
+    public void setOffsetY(float f) {
+        this.P = f;
+        invalidate();
+    }
+
+    public void setShouldRevealSpoilersByTouch(boolean z) {
+        this.e = z;
+    }
+
+    @Override // android.widget.EditText, android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        if (!this.h) {
+            this.d = false;
+            Stack stack = this.b;
+            if (stack != null) {
+                stack.clear();
             }
-            sb.append((String) entry.getKey());
-            sb.append("=");
-            sb.append((String) entry.getValue());
         }
-        b1.edit().putString("color", sb.toString()).commit();
+        super.setText(charSequence, bufferType);
     }
 
-    public static void r() {
-        SharedPreferences b1 = na7.b1();
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry entry : h.entrySet()) {
-            if (sb.length() != 0) {
-                sb.append(",");
-            }
-            sb.append((String) entry.getKey());
-            sb.append("=");
-            sb.append(entry.getValue());
+    @Override // android.widget.TextView
+    public void setTextColor(int i) {
+        this.N = i;
+        super.setTextColor(i);
+        Integer num = this.O;
+        if (num != null) {
+            i = num.intValue();
         }
-        b1.edit().putString("emojis2", sb.toString()).commit();
-    }
-
-    public static void s() {
-        ArrayList arrayList = i;
-        arrayList.clear();
-        Iterator it = h.entrySet().iterator();
-        while (it.hasNext()) {
-            arrayList.add((String) ((Map.Entry) it.next()).getKey());
-        }
-        Collections.sort(arrayList, new mz2((byte) 14));
-        while (arrayList.size() > 48) {
-            tb4.v(1, arrayList);
-        }
+        this.G = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
     }
 }

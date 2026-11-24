@@ -1,115 +1,39 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.z;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class r68 implements gj, ed, iu7, ll5, no7 {
-    public final /* synthetic */ PhotoViewer a;
+public final class r68 extends Path {
+    public int a;
+    public int b;
+    public int c;
 
-    public /* synthetic */ r68(PhotoViewer photoViewer) {
-        this.a = photoViewer;
-    }
-
-    @Override // ll5
-    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-        o98 o98Var;
-        int i;
-        Bitmap n;
-        int i2;
-        Drawable[] drawableArr = PhotoViewer.f9;
-        PhotoViewer photoViewer = this.a;
-        if (imageReceiver == photoViewer.C4 && z && !z2) {
-            if (!photoViewer.s1 && ((photoViewer.u4 == 1 || (i2 = photoViewer.d2) == 1 || i2 == 11) && photoViewer.D1 != null && (n = imageReceiver.n()) != null)) {
-                v48 v48Var = photoViewer.D1;
-                int i3 = imageReceiver.V;
-                int i4 = photoViewer.d2;
-                v48Var.b(n, i3, (i4 == 1 || i4 == 11) ? false : true, true, photoViewer.E1, null, null);
-            }
-            if (photoViewer.y4.getVisibility() == 0) {
-                photoViewer.f0.requestLayout();
-            }
-            photoViewer.N();
-        }
-        if (imageReceiver != photoViewer.C4 || !z || (o98Var = photoViewer.d) == null || !o98Var.J() || photoViewer.k5 || (i = photoViewer.d2) == 1 || i == 11) {
+    public final void a(int i, int i2, int i3) {
+        if (this.a == i && this.b == i2 && this.c == i3) {
             return;
         }
-        if (photoViewer.T5) {
-            photoViewer.V1();
-        } else {
-            photoViewer.U5 = true;
-        }
-    }
-
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        Drawable[] drawableArr = PhotoViewer.f9;
-        PhotoViewer photoViewer = this.a;
-        l68 l68Var = photoViewer.v4;
-        Rect rect = photoViewer.t2;
-        Rect rect2 = new Rect(rect);
-        io5 H0 = gl.H0(vxcVar, false);
-        int i = vxcVar.a.f(647).d;
-        int i2 = H0.a;
-        int i3 = H0.b;
-        int i4 = H0.c;
-        rect.set(i2, i3, i4, i);
-        if (!rect2.equals(rect)) {
-            byte b = photoViewer.n4;
-            if (b == 1 || b == 3) {
-                ClippingImageView clippingImageView = photoViewer.i0;
-                clippingImageView.setTranslationX(clippingImageView.getTranslationX() - rect.left);
-                photoViewer.k4[0][2] = photoViewer.i0.getTranslationX();
-            }
-            z zVar = photoViewer.h0;
-            if (zVar != null) {
-                zVar.requestLayout();
-            }
-        }
-        View view2 = photoViewer.k0;
-        if (view2 != null) {
-            photoViewer.l0 = rect.bottom;
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
-            int i5 = photoViewer.l0;
-            marginLayoutParams.height = i5;
-            marginLayoutParams.bottomMargin = (-i5) / 2;
-            photoViewer.k0.setLayoutParams(marginLayoutParams);
-        }
-        photoViewer.f0.setPadding(i2, 0, i4, 0);
-        if (photoViewer.G != null) {
-            gl.r(l68Var);
-            if (photoViewer.e && photoViewer.n4 == 0) {
-                gl.e3(l68Var, 200L);
-            }
-        }
-        return vxc.b;
-    }
-
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        Drawable[] drawableArr = PhotoViewer.f9;
-        this.a.E1(z, i, i2, false, false, false);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        Drawable[] drawableArr = PhotoViewer.f9;
-        this.a.n2(0);
-    }
-
-    @Override // ll5
-    public final void v(ImageReceiver imageReceiver) {
-    }
-
-    @Override // ll5
-    public final void E(int i, Drawable drawable) {
+        rewind();
+        RectF rectF = gm.P;
+        float f = i - i3;
+        float f2 = i2 + i3;
+        rectF.set(f, i2 - i3, i + i3, f2);
+        arcTo(rectF, -180.0f, 270.0f, false);
+        float f3 = i3 / 81.0f;
+        float f4 = i;
+        float f5 = f2 - (3.0f * f3);
+        cubicTo(f4 - (13.0f * f3), f2, f4 - (25.0f * f3), f5, f4 - (36.0f * f3), f2 - (8.42f * f3));
+        float f6 = f2 - f3;
+        cubicTo(f4 - (52.0f * f3), f6, f4 - (56.5f * f3), f6, f4 - (78.02f * f3), f6);
+        cubicTo(f4 - (80.0f * f3), f6, f4 - (81.0f * f3), f5, f4 - (79.52f * f3), f2 - (4.5f * f3));
+        float f7 = f4 - (63.73f * f3);
+        cubicTo(f4 - (78.0f * f3), f2 - (6.0f * f3), f7, f2 - (15.0f * f3), f7, f2 - (31.0f * f3));
+        float f8 = i2;
+        cubicTo(f4 - (74.5f * f3), f2 - (44.75f * f3), f, (f3 * 18.87f) + f8, f, f8);
+        close();
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
     }
 }

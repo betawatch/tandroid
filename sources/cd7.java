@@ -1,24 +1,144 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum cd7 implements ct8 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    c(3);
+public final /* synthetic */ class cd7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cf7 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    cd7(int i) {
-        this.a = i;
+    public /* synthetic */ cd7(cf7 cf7Var, int i, long j, byte b) {
+        this.a = b;
+        this.b = cf7Var;
+        this.c = i;
+        this.d = j;
     }
 
-    @Override // ct8
-    public final int a() {
-        return this.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        long j = this.d;
+        int i = this.c;
+        cf7 cf7Var = this.b;
+        try {
+            try {
+                try {
+                    switch (b) {
+                        case 0:
+                            try {
+                                SQLiteDatabase sQLiteDatabase = cf7Var.b;
+                                Locale locale = Locale.US;
+                                sQLiteDatabase.executeFast("UPDATE dialogs SET ttl_period = " + i + " WHERE did = " + j).stepThis().dispose();
+                                return;
+                            } catch (SQLiteException e) {
+                                cf7Var.n(e, true);
+                                return;
+                            }
+                        case 1:
+                            cf7Var.x0(i, j);
+                            return;
+                        case 2:
+                            try {
+                                sQLitePreparedStatement = cf7Var.b.executeFast("UPDATE chat_settings_v2 SET links = ? WHERE uid = ?");
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindInteger(1, i);
+                                sQLitePreparedStatement.bindLong(2, j);
+                                sQLitePreparedStatement.step();
+                                sQLitePreparedStatement.dispose();
+                            } catch (Exception e2) {
+                                cf7Var.n(e2, true);
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                            }
+                            return;
+                        case 3:
+                            try {
+                                sQLitePreparedStatement = cf7Var.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
+                                sQLitePreparedStatement.bindInteger(1, i);
+                                sQLitePreparedStatement.bindLong(2, j);
+                                sQLitePreparedStatement.step();
+                                sQLitePreparedStatement.dispose();
+                            } catch (Exception e3) {
+                                cf7Var.n(e3, true);
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                            }
+                            return;
+                        case 4:
+                            cf7Var.getClass();
+                            try {
+                                SQLiteDatabase sQLiteDatabase2 = cf7Var.b;
+                                Locale locale2 = Locale.US;
+                                sQLiteDatabase2.executeFast("UPDATE messages_v2 SET mention = 1, read_state = read_state & ~2 WHERE mid = " + i + " AND uid = " + j).stepThis().dispose();
+                                return;
+                            } catch (Exception e4) {
+                                cf7Var.n(e4, true);
+                                return;
+                            }
+                        case 5:
+                            try {
+                                SQLitePreparedStatement executeFast = cf7Var.b.executeFast("UPDATE dialogs SET pts = ? WHERE did = ?");
+                                executeFast.bindInteger(1, i);
+                                executeFast.bindLong(2, -j);
+                                executeFast.step();
+                                executeFast.dispose();
+                                return;
+                            } catch (Exception e5) {
+                                cf7Var.n(e5, true);
+                                return;
+                            }
+                        case 6:
+                            try {
+                                SQLiteDatabase sQLiteDatabase3 = cf7Var.b;
+                                Locale locale3 = Locale.US;
+                                sQLiteDatabase3.executeFast("DELETE FROM download_queue WHERE uid = " + j + " AND type = " + i).stepThis().dispose();
+                                return;
+                            } catch (Exception e6) {
+                                cf7Var.n(e6, true);
+                                return;
+                            }
+                        default:
+                            try {
+                                sQLitePreparedStatement = cf7Var.b.executeFast("UPDATE chat_settings_v2 SET online = ? WHERE uid = ?");
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindInteger(1, i);
+                                sQLitePreparedStatement.bindLong(2, j);
+                                sQLitePreparedStatement.step();
+                                sQLitePreparedStatement.dispose();
+                            } catch (Exception e7) {
+                                cf7Var.n(e7, true);
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                            }
+                            return;
+                    }
+                } catch (Throwable th) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th;
+                }
+            } catch (Throwable th2) {
+                if (sQLitePreparedStatement != null) {
+                    sQLitePreparedStatement.dispose();
+                }
+                throw th2;
+            }
+        } catch (Throwable th3) {
+            if (sQLitePreparedStatement != null) {
+                sQLitePreparedStatement.dispose();
+            }
+            throw th3;
+        }
     }
 }

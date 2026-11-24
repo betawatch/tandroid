@@ -1,94 +1,43 @@
 // default package
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface vv2 {
-    boolean A(TLRPC.Document document);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class vv2 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bw2 b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ HashMap d;
 
-    void B(TLRPC.Document document);
+    public /* synthetic */ vv2(bw2 bw2Var, HashMap hashMap, HashMap hashMap2, byte b) {
+        this.a = b;
+        this.b = bw2Var;
+        this.c = hashMap;
+        this.d = hashMap2;
+    }
 
-    String C(boolean z);
-
-    void D(TLRPC.Document document);
-
-    boolean E();
-
-    cs5 F(ViewGroup viewGroup);
-
-    void H(s3a s3aVar);
-
-    void I(Object obj, Object obj2);
-
-    boolean K();
-
-    void L();
-
-    void M();
-
-    void N(TLRPC.InputStickerSet inputStickerSet, boolean z);
-
-    boolean O(TLRPC.Document document);
-
-    void P(String str);
-
-    void Q(CharSequence charSequence, String str, pz1 pz1Var);
-
-    Boolean R(TLRPC.Document document);
-
-    boolean S();
-
-    long a();
-
-    boolean b();
-
-    boolean c();
-
-    TLRPC.TL_messageMediaPoll d();
-
-    boolean e(TLRPC.Document document);
-
-    boolean f();
-
-    TLRPC.PollAnswer g();
-
-    boolean h();
-
-    boolean i();
-
-    boolean j(int i);
-
-    void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2);
-
-    void l(String str);
-
-    void m(TLRPC.Document document);
-
-    boolean n();
-
-    void o(TLRPC.Document document);
-
-    void p();
-
-    void q();
-
-    void r(TLRPC.Document document);
-
-    void s(TLRPC.StickerSet stickerSet, String str);
-
-    boolean t();
-
-    void u(Object obj, Object obj2, boolean z, int i, int i2);
-
-    void v(String str);
-
-    k27 w();
-
-    boolean x();
-
-    void y(TLRPC.Document document);
-
-    boolean z();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bw2 bw2Var = this.b;
+                Utilities.e.c(new vv2(bw2Var, this.c, this.d, (byte) 1));
+                if (!bw2Var.e) {
+                    bw2Var.e = true;
+                    cf7 messagesStorage = bw2Var.getMessagesStorage();
+                    messagesStorage.a.c(new ee7(messagesStorage, false, (byte) 0));
+                    break;
+                }
+                break;
+            default:
+                bw2 bw2Var2 = this.b;
+                HashMap hashMap = this.c;
+                HashMap hashMap2 = this.d;
+                bw2Var2.l0 = hashMap;
+                bw2Var2.m0 = hashMap2;
+                break;
+        }
+    }
 }

@@ -22,7 +22,7 @@ import java.util.IdentityHashMap;
 import org.json.JSONArray;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public final class y {
     public final RectF A;
@@ -106,14 +106,14 @@ public final class y {
         return (long) Math.min(ceil * ceil2, 1.0E15d);
     }
 
-    public static float j(gl2 gl2Var, RectF rectF) {
-        int[] iArr = (int[]) gl2Var.b;
+    public static float j(sm2 sm2Var, RectF rectF) {
+        int[] iArr = (int[]) sm2Var.b;
         float f = 0.0f;
         float f2 = 0.0f;
         float f3 = 0.0f;
         float f4 = 0.0f;
         for (int i = 0; i < iArr.length; i++) {
-            float max = Math.max(0.0f, ((float[]) gl2Var.f)[i]);
+            float max = Math.max(0.0f, ((float[]) sm2Var.f)[i]);
             int i2 = iArr[i];
             if (i2 == 0) {
                 float f5 = max * 3.0f;
@@ -122,8 +122,8 @@ public final class y {
                 f3 += f5;
                 f4 += f5;
             } else if (i2 == 9) {
-                float f6 = ((float[]) gl2Var.d)[i];
-                float f7 = ((float[]) gl2Var.e)[i];
+                float f6 = ((float[]) sm2Var.d)[i];
+                float f7 = ((float[]) sm2Var.e)[i];
                 float f8 = max * 1.5f;
                 f = Math.max(f, f8 - f6);
                 f3 = Math.max(f3, f6 + f8);
@@ -135,23 +135,23 @@ public final class y {
         return Math.max(Math.max(f, f3), Math.max(f2, f4));
     }
 
-    public static gl2 k(dd ddVar) {
-        int X = ddVar.X(64, 5);
-        gl2 gl2Var = new gl2(X);
-        for (int i = 0; i < X; i++) {
-            ((int[]) gl2Var.b)[i] = ddVar.i0();
-            ((float[]) gl2Var.f)[i] = ddVar.c0();
-            ((float[]) gl2Var.d)[i] = ddVar.c0();
-            ((float[]) gl2Var.e)[i] = ddVar.c0();
-            ((int[]) gl2Var.c)[i] = ddVar.i0();
+    public static sm2 k(de deVar) {
+        int Z = deVar.Z(64, 5);
+        sm2 sm2Var = new sm2(Z);
+        for (int i = 0; i < Z; i++) {
+            ((int[]) sm2Var.b)[i] = deVar.j0();
+            ((float[]) sm2Var.f)[i] = deVar.d0();
+            ((float[]) sm2Var.d)[i] = deVar.d0();
+            ((float[]) sm2Var.e)[i] = deVar.d0();
+            ((int[]) sm2Var.c)[i] = deVar.j0();
         }
-        return gl2Var;
+        return sm2Var;
     }
 
-    public static void m(dd ddVar, int i, int[] iArr, float[] fArr) {
+    public static void m(de deVar, int i, int[] iArr, float[] fArr) {
         for (int i2 = 0; i2 < i; i2++) {
-            float max = Math.max(0.0f, Math.min(1.0f, ddVar.c0()));
-            iArr[i2] = ddVar.i0();
+            float max = Math.max(0.0f, Math.min(1.0f, deVar.d0()));
+            iArr[i2] = deVar.j0();
             if (i > 1) {
                 fArr[i2] = max;
             }
@@ -243,18 +243,18 @@ public final class y {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void e(Canvas canvas, jvc jvcVar, int i, dwc dwcVar, float f, boolean z) {
-        kka kkaVar;
+    public final void e(Canvas canvas, kxc kxcVar, int i, eyc eycVar, float f, boolean z) {
+        lma lmaVar;
         int i2;
         y yVar;
         Matrix matrix;
         ArrayList arrayList;
-        dd ddVar;
-        kka kkaVar2;
+        de deVar;
+        lma lmaVar2;
         Paint paint;
         Paint paint2;
-        dd ddVar2;
-        kka kkaVar3;
+        de deVar2;
+        lma lmaVar3;
         int i3;
         Shader shader;
         int i4;
@@ -277,54 +277,54 @@ public final class y {
         float f6;
         float[] fArr2;
         int i13;
-        kka kkaVar4;
+        lma lmaVar4;
         Matrix matrix2;
         boolean z2;
         RectF rectF;
         long h;
         boolean z3;
-        kka kkaVar5;
+        lma lmaVar5;
         int i14;
         BlurMaskFilter blurMaskFilter;
         float f7;
-        kka kkaVar6;
+        lma lmaVar6;
         y yVar2 = this;
-        int[] iArr = jvcVar.f;
-        kka kkaVar7 = new kka(canvas);
-        Matrix matrix3 = (Matrix) kkaVar7.f;
-        ArrayList arrayList2 = (ArrayList) kkaVar7.h;
-        dd ddVar3 = new dd(jvcVar);
+        int[] iArr = kxcVar.f;
+        lma lmaVar7 = new lma(canvas);
+        Matrix matrix3 = (Matrix) lmaVar7.f;
+        ArrayList arrayList2 = (ArrayList) lmaVar7.h;
+        de deVar3 = new de(kxcVar);
         int i15 = 0;
         while (i15 < i) {
-            Canvas canvas2 = (Canvas) kkaVar7.d;
-            int i0 = ddVar3.i0();
-            int i16 = i0 & kk7.d4;
-            int i17 = i0 >>> 8;
+            Canvas canvas2 = (Canvas) lmaVar7.d;
+            int j0 = deVar3.j0();
+            int i16 = j0 & nm7.d4;
+            int i17 = j0 >>> 8;
             int i18 = i17 & 1;
             RectF rectF2 = yVar2.p;
             if (i18 != 0) {
-                float c0 = ddVar3.c0();
-                float c02 = ddVar3.c0();
-                kkaVar = kkaVar7;
-                rectF2.set(c0, c02, c0 + ddVar3.c0(), c02 + ddVar3.c0());
+                float d0 = deVar3.d0();
+                float d02 = deVar3.d0();
+                lmaVar = lmaVar7;
+                rectF2.set(d0, d02, d0 + deVar3.d0(), d02 + deVar3.d0());
             } else {
-                kkaVar = kkaVar7;
+                lmaVar = lmaVar7;
                 rectF2.setEmpty();
             }
             boolean z4 = (i17 & 2) != 0;
             yVar2.s = z4;
             float[] fArr3 = yVar2.r;
             if (z4) {
-                ddVar3.d0(8, fArr3);
+                deVar3.e0(8, fArr3);
             }
             boolean z5 = (i17 & 4) != 0;
             yVar2.t = z5;
             RectF rectF3 = yVar2.q;
             if (z5) {
-                float c03 = ddVar3.c0();
-                float c04 = ddVar3.c0();
+                float d03 = deVar3.d0();
+                float d04 = deVar3.d0();
                 i2 = 1;
-                rectF3.set(c03, c04, c03 + ddVar3.c0(), c04 + ddVar3.c0());
+                rectF3.set(d03, d04, d03 + deVar3.d0(), d04 + deVar3.d0());
             } else {
                 i2 = 1;
             }
@@ -342,23 +342,23 @@ public final class y {
                     yVar = yVar2;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
-                    kkaVar2 = kkaVar;
-                    int i02 = ddVar.i0();
+                    deVar = deVar3;
+                    lmaVar2 = lmaVar;
+                    int j02 = deVar.j0();
                     if (yVar.t) {
                         canvas2.save();
                         canvas2.clipRect(rectF3);
                     }
                     paint4.setShader(null);
-                    paint4.setColor(i02);
+                    paint4.setColor(j02);
                     yVar.c(canvas2, paint4);
                     if (yVar.t) {
                         canvas2.restore();
                     }
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -366,18 +366,18 @@ public final class y {
                     yVar = yVar2;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
-                    kkaVar2 = kkaVar;
-                    paint3.setColor(ddVar.i0());
-                    paint3.setStrokeWidth(ddVar.c0());
+                    deVar = deVar3;
+                    lmaVar2 = lmaVar;
+                    paint3.setColor(deVar.j0());
+                    paint3.setStrokeWidth(deVar.d0());
                     paint3.setStrokeCap(Paint.Cap.BUTT);
                     paint3.setStrokeJoin(Paint.Join.MITER);
                     paint3.setPathEffect(null);
                     yVar.c(canvas2, paint3);
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -385,16 +385,16 @@ public final class y {
                     yVar = yVar2;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
-                    kkaVar2 = kkaVar;
-                    int i03 = ddVar.i0();
+                    deVar = deVar3;
+                    lmaVar2 = lmaVar;
+                    int j03 = deVar.j0();
                     paint4.setShader(null);
-                    paint4.setColor(i03);
+                    paint4.setColor(j03);
                     canvas2.drawOval(rectF2, paint4);
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -402,23 +402,23 @@ public final class y {
                     yVar = yVar2;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
-                    kkaVar2 = kkaVar;
-                    int i04 = ddVar.i0();
-                    float c05 = ddVar.c0();
+                    deVar = deVar3;
+                    lmaVar2 = lmaVar;
+                    int j04 = deVar.j0();
+                    float d05 = deVar.d0();
                     rectF5.set(rectF2);
-                    float f8 = c05 / 2.0f;
+                    float f8 = d05 / 2.0f;
                     rectF5.inset(f8, f8);
-                    paint3.setColor(i04);
-                    paint3.setStrokeWidth(c05);
+                    paint3.setColor(j04);
+                    paint3.setStrokeWidth(d05);
                     paint3.setStrokeCap(Paint.Cap.BUTT);
                     paint3.setStrokeJoin(Paint.Join.MITER);
                     paint3.setPathEffect(null);
                     canvas2.drawOval(rectF5, paint3);
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -426,14 +426,14 @@ public final class y {
                     yVar = yVar2;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
-                    kkaVar2 = kkaVar;
-                    int i05 = ddVar.i0();
-                    int i06 = ddVar.i0();
-                    float c06 = ddVar.c0();
-                    float c07 = ddVar.c0();
-                    int i07 = ddVar.i0();
-                    Paint deviceFont = dwcVar.deviceFont(i06);
+                    deVar = deVar3;
+                    lmaVar2 = lmaVar;
+                    int j05 = deVar.j0();
+                    int j06 = deVar.j0();
+                    float d06 = deVar.d0();
+                    float d07 = deVar.d0();
+                    int j07 = deVar.j0();
+                    Paint deviceFont = eycVar.deviceFont(j06);
                     if (deviceFont == null) {
                         paint = null;
                     } else {
@@ -448,40 +448,40 @@ public final class y {
                         }
                     }
                     if (paint != null) {
-                        if (i07 >= 0) {
-                            String[] strArr = jvcVar.g;
-                            if (i07 < strArr.length) {
-                                int i20 = iArr2[i07];
+                        if (j07 >= 0) {
+                            String[] strArr = kxcVar.g;
+                            if (j07 < strArr.length) {
+                                int i20 = iArr2[j07];
                                 int i21 = yVar.x;
                                 if (i20 <= TLObject.FLAG_20 - i21) {
                                     yVar.x = i21 + i20;
-                                    if (i07 < 0 || i07 >= strArr.length) {
-                                        throw jvc.a();
+                                    if (j07 < 0 || j07 >= strArr.length) {
+                                        throw kxc.a();
                                     }
-                                    String str = strArr[i07];
+                                    String str = strArr[j07];
                                     if (str == null) {
-                                        str = new String(jvcVar.a.array(), jvcVar.e[i07], iArr2[i07], StandardCharsets.UTF_8);
-                                        strArr[i07] = str;
+                                        str = new String(kxcVar.a.array(), kxcVar.e[j07], iArr2[j07], StandardCharsets.UTF_8);
+                                        strArr[j07] = str;
                                     }
-                                    paint.setColor(i05);
+                                    paint.setColor(j05);
                                     paint.setShader(null);
                                     canvas2.save();
                                     float f9 = 1.0f / f;
                                     canvas2.scale(f9, f9);
-                                    canvas2.drawText(str, c06 * f, c07 * f, paint);
+                                    canvas2.drawText(str, d06 * f, d07 * f, paint);
                                     canvas2.restore();
                                 } else {
                                     continue;
                                 }
                             }
                         }
-                        throw jvc.a();
+                        throw kxc.a();
                     }
                     continue;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -489,11 +489,11 @@ public final class y {
                 case 5:
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
-                    kkaVar2 = kkaVar;
-                    int i22 = ddVar.i0() != 0 ? i2 : 0;
-                    int i08 = ddVar.i0();
-                    Bitmap canvas3 = i22 != 0 ? dwcVar.canvas(i08) : dwcVar.image(i08);
+                    deVar = deVar3;
+                    lmaVar2 = lmaVar;
+                    int i22 = deVar.j0() != 0 ? i2 : 0;
+                    int j08 = deVar.j0();
+                    Bitmap canvas3 = i22 != 0 ? eycVar.canvas(j08) : eycVar.image(j08);
                     if (canvas3 != null) {
                         canvas2.save();
                         yVar = this;
@@ -511,8 +511,8 @@ public final class y {
                         canvas2.restore();
                         i15 = i19 + 1;
                         yVar2 = yVar;
-                        kkaVar7 = kkaVar2;
-                        ddVar3 = ddVar;
+                        lmaVar7 = lmaVar2;
+                        deVar3 = deVar;
                         iArr = iArr2;
                         arrayList2 = arrayList;
                         matrix3 = matrix;
@@ -520,8 +520,8 @@ public final class y {
                     yVar = this;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -530,23 +530,23 @@ public final class y {
                 case 8:
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    dd ddVar4 = ddVar3;
-                    kka kkaVar8 = kkaVar;
-                    ddVar4.d0(4, fArr5);
+                    de deVar4 = deVar3;
+                    lma lmaVar8 = lmaVar;
+                    deVar4.e0(4, fArr5);
                     float f10 = fArr5[0];
                     float f11 = fArr5[1];
                     float f12 = fArr5[2];
                     float f13 = fArr5[3];
-                    int X = ddVar4.X(TLObject.FLAG_12, 2);
-                    if (X == 0) {
-                        ddVar = ddVar4;
-                        kkaVar2 = kkaVar8;
+                    int Z = deVar4.Z(TLObject.FLAG_12, 2);
+                    if (Z == 0) {
+                        deVar = deVar4;
+                        lmaVar2 = lmaVar8;
                     } else {
-                        int max = Math.max(2, X);
-                        kkaVar2 = kkaVar8;
+                        int max = Math.max(2, Z);
+                        lmaVar2 = lmaVar8;
                         int[] iArr3 = new int[max];
-                        float[] fArr6 = X == 1 ? new float[]{0.0f, 1.0f} : new float[X];
-                        m(ddVar4, X, iArr3, fArr6);
+                        float[] fArr6 = Z == 1 ? new float[]{0.0f, 1.0f} : new float[Z];
+                        m(deVar4, Z, iArr3, fArr6);
                         canvas2.save();
                         if (yVar2.t) {
                             canvas2.clipRect(rectF3);
@@ -555,7 +555,7 @@ public final class y {
                         canvas2.clipPath(path);
                         paint4.setColor(-16777216);
                         if (i16 != 6) {
-                            ddVar = ddVar4;
+                            deVar = deVar4;
                             float[] fArr7 = fArr6;
                             paint2 = paint4;
                             if (i16 == 7) {
@@ -572,7 +572,7 @@ public final class y {
                         } else if (max > 16) {
                             double d = f12 - f10;
                             double d2 = f13 - f11;
-                            ddVar = ddVar4;
+                            deVar = deVar4;
                             float hypot = (float) Math.hypot(d, d2);
                             if (hypot > 0.0f) {
                                 canvas2.translate(f10, f11);
@@ -608,7 +608,7 @@ public final class y {
                             }
                             canvas2.restore();
                         } else {
-                            ddVar = ddVar4;
+                            deVar = deVar4;
                             paint2 = paint4;
                             paint2.setShader(new LinearGradient(f10, f11, f12, f13, iArr3, fArr6, Shader.TileMode.CLAMP));
                         }
@@ -619,32 +619,32 @@ public final class y {
                     yVar = this;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
                 case 9:
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar2 = ddVar3;
-                    kkaVar3 = kkaVar;
-                    boolean z6 = ddVar2.i0() != 0;
+                    deVar2 = deVar3;
+                    lmaVar3 = lmaVar;
+                    boolean z6 = deVar2.j0() != 0;
                     canvas2.save();
-                    kkaVar3.u(false);
+                    lmaVar3.u(false);
                     if (z6) {
-                        yVar2.l(ddVar2, path);
+                        yVar2.l(deVar2, path);
                     } else {
                         yVar2.n(rectF2, path);
                     }
                     canvas2.clipPath(path);
-                    ddVar = ddVar2;
-                    kkaVar2 = kkaVar3;
+                    deVar = deVar2;
+                    lmaVar2 = lmaVar3;
                     yVar = yVar2;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -652,64 +652,64 @@ public final class y {
                 case 13:
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar2 = ddVar3;
-                    kkaVar3 = kkaVar;
-                    if (kkaVar3.a > 0) {
-                        kkaVar3.t();
+                    deVar2 = deVar3;
+                    lmaVar3 = lmaVar;
+                    if (lmaVar3.a > 0) {
+                        lmaVar3.t();
                     }
-                    ddVar = ddVar2;
-                    kkaVar2 = kkaVar3;
+                    deVar = deVar2;
+                    lmaVar2 = lmaVar3;
                     yVar = yVar2;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
                 case 11:
                     arrayList = arrayList2;
-                    ddVar2 = ddVar3;
+                    deVar2 = deVar3;
                     Matrix matrix4 = matrix3;
-                    kkaVar3 = kkaVar;
-                    if (ddVar2.i0() != 0) {
+                    lmaVar3 = lmaVar;
+                    if (deVar2.j0() != 0) {
                         Path path2 = yVar2.e;
-                        yVar2.l(ddVar2, path2);
-                        int i09 = ddVar2.i0();
-                        int i28 = i09 & 1;
+                        yVar2.l(deVar2, path2);
+                        int j09 = deVar2.j0();
+                        int i28 = j09 & 1;
                         if (i28 != 0) {
-                            int i010 = ddVar2.i0();
-                            if (i010 == 0) {
-                                i3 = ddVar2.i0();
+                            int j010 = deVar2.j0();
+                            if (j010 == 0) {
+                                i3 = deVar2.j0();
                             } else {
-                                shader = yVar2.g(ddVar2, i010);
+                                shader = yVar2.g(deVar2, j010);
                                 i3 = 0;
-                                i4 = (i09 & 2) == 0 ? i2 : 0;
+                                i4 = (j09 & 2) == 0 ? i2 : 0;
                                 if (i4 == 0) {
-                                    int i011 = ddVar2.i0();
-                                    int i012 = ddVar2.i0();
-                                    Shader g = i012 != 0 ? yVar2.g(ddVar2, i012) : null;
-                                    float c08 = ddVar2.c0();
-                                    int i013 = ddVar2.i0();
-                                    int i014 = ddVar2.i0();
-                                    f2 = ddVar2.c0();
+                                    int j011 = deVar2.j0();
+                                    int j012 = deVar2.j0();
+                                    Shader g = j012 != 0 ? yVar2.g(deVar2, j012) : null;
+                                    float d08 = deVar2.d0();
+                                    int j013 = deVar2.j0();
+                                    int j014 = deVar2.j0();
+                                    f2 = deVar2.d0();
                                     i5 = i4;
                                     i6 = i28;
-                                    int X2 = ddVar2.X(1024, i2);
-                                    if (X2 > 0) {
-                                        fArr2 = new float[X2];
-                                        ddVar2.d0(X2, fArr2);
+                                    int Z2 = deVar2.Z(1024, i2);
+                                    if (Z2 > 0) {
+                                        fArr2 = new float[Z2];
+                                        deVar2.e0(Z2, fArr2);
                                     } else {
                                         fArr2 = null;
                                     }
                                     matrix = matrix4;
-                                    f3 = c08;
-                                    f4 = ddVar2.c0();
+                                    f3 = d08;
+                                    f4 = deVar2.d0();
                                     shader2 = g;
-                                    i7 = i013;
-                                    i9 = i011;
+                                    i7 = j013;
+                                    i9 = j011;
                                     fArr = fArr2;
-                                    i8 = i014;
+                                    i8 = j014;
                                 } else {
                                     i5 = i4;
                                     i6 = i28;
@@ -774,7 +774,7 @@ public final class y {
                             i3 = 0;
                         }
                         shader = null;
-                        if ((i09 & 2) == 0) {
+                        if ((j09 & 2) == 0) {
                         }
                         if (i4 == 0) {
                         }
@@ -812,13 +812,13 @@ public final class y {
                     } else {
                         matrix = matrix4;
                     }
-                    ddVar = ddVar2;
-                    kkaVar2 = kkaVar3;
+                    deVar = deVar2;
+                    lmaVar2 = lmaVar3;
                     yVar = yVar2;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
@@ -826,11 +826,11 @@ public final class y {
                 case 12:
                     Matrix matrix5 = matrix3;
                     arrayList = arrayList2;
-                    dd ddVar5 = ddVar3;
-                    kka kkaVar9 = kkaVar;
-                    ddVar5.d0(6, fArr5);
-                    float c09 = ddVar5.c0();
-                    int i29 = ddVar5.i0() != 0 ? i2 : 0;
+                    de deVar5 = deVar3;
+                    lma lmaVar9 = lmaVar;
+                    deVar5.e0(6, fArr5);
+                    float d09 = deVar5.d0();
+                    int i29 = deVar5.j0() != 0 ? i2 : 0;
                     fArr4[0] = fArr5[0];
                     fArr4[i2] = fArr5[2];
                     fArr4[2] = fArr5[4];
@@ -842,14 +842,14 @@ public final class y {
                     fArr4[8] = 1.0f;
                     Matrix matrix6 = yVar2.l;
                     matrix6.setValues(fArr4);
-                    if (c09 >= 1.0f || i29 != 0) {
+                    if (d09 >= 1.0f || i29 != 0) {
                         i13 = i29;
-                        kkaVar4 = kkaVar9;
+                        lmaVar4 = lmaVar9;
                         matrix2 = matrix5;
                         canvas2.save();
                         z2 = false;
                     } else {
-                        int round = Math.round(Math.max(0.0f, Math.min(1.0f, c09)) * 255.0f);
+                        int round = Math.round(Math.max(0.0f, Math.min(1.0f, d09)) * 255.0f);
                         boolean isEmpty = rectF2.isEmpty();
                         if (isEmpty) {
                             rectF = null;
@@ -858,8 +858,8 @@ public final class y {
                             rectF5.inset(-1.0f, -1.0f);
                             rectF = rectF5;
                         }
-                        kkaVar4 = kkaVar9;
-                        if (kkaVar4.c >= 32) {
+                        lmaVar4 = lmaVar9;
+                        if (lmaVar4.c >= 32) {
                             i13 = i29;
                             z3 = isEmpty;
                             matrix2 = matrix5;
@@ -895,28 +895,28 @@ public final class y {
                         }
                         z2 = i2;
                     }
-                    kkaVar4.u(z2);
+                    lmaVar4.u(z2);
                     canvas2.concat(matrix6);
                     matrix2.preConcat(matrix6);
                     if (i13 != 0) {
                         canvas2.clipRect(0, 0, 0, 0);
                     }
-                    ddVar = ddVar5;
-                    kkaVar2 = kkaVar4;
+                    deVar = deVar5;
+                    lmaVar2 = lmaVar4;
                     matrix = matrix2;
                     yVar = yVar2;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
                 case 14:
-                    kka kkaVar10 = kkaVar;
-                    int i015 = ddVar3.i0();
-                    ddVar3.d0(4, fArr5);
-                    int i30 = ddVar3.i0() != 0 ? i2 : 0;
+                    lma lmaVar10 = lmaVar;
+                    int j015 = deVar3.j0();
+                    deVar3.e0(4, fArr5);
+                    int i30 = deVar3.j0() != 0 ? i2 : 0;
                     float f16 = fArr5[0];
                     float f17 = fArr5[i2];
                     int i31 = i30;
@@ -924,12 +924,12 @@ public final class y {
                     float max5 = Math.max(fArr5[2], 0.0f);
                     float f18 = fArr5[3];
                     rectF4.set(rectF2);
-                    if (rectF4.isEmpty() || (i015 >>> 24) == 0 || ((i14 = Build.VERSION.SDK_INT) < 28 && (max5 / 2.0f) * f > 0.5f)) {
-                        kkaVar5 = kkaVar10;
+                    if (rectF4.isEmpty() || (j015 >>> 24) == 0 || ((i14 = Build.VERSION.SDK_INT) < 28 && (max5 / 2.0f) * f > 0.5f)) {
+                        lmaVar5 = lmaVar10;
                         matrix = matrix3;
                     } else {
                         Paint paint5 = yVar2.d;
-                        paint5.setColor(i015);
+                        paint5.setColor(j015);
                         float f19 = (max5 / 2.0f) * f;
                         if (f19 > 0.5f) {
                             float f20 = ((f19 - 0.5f) / 0.57735f) / f;
@@ -938,7 +938,7 @@ public final class y {
                             HashMap hashMap = yVar2.m;
                             blurMaskFilter = (BlurMaskFilter) hashMap.get(valueOf);
                             if (blurMaskFilter == null) {
-                                kkaVar5 = kkaVar10;
+                                lmaVar5 = lmaVar10;
                                 if (hashMap.size() >= 32) {
                                     hashMap.clear();
                                 }
@@ -946,10 +946,10 @@ public final class y {
                                 hashMap.put(Float.valueOf(f20), blurMaskFilter2);
                                 blurMaskFilter = blurMaskFilter2;
                             } else {
-                                kkaVar5 = kkaVar10;
+                                lmaVar5 = lmaVar10;
                             }
                         } else {
-                            kkaVar5 = kkaVar10;
+                            lmaVar5 = lmaVar10;
                             matrix = matrix3;
                             blurMaskFilter = null;
                         }
@@ -976,7 +976,7 @@ public final class y {
                             float f22 = rectF4.top;
                             if (i31 != 0) {
                                 float abs = Math.abs(f17) + Math.abs(f16) + Math.abs(f18) + (1.5f * max5) + 2.0f;
-                                ddVar = ddVar3;
+                                deVar = deVar3;
                                 rectF5.set(f21 - abs, f22 - abs, rectF4.right + abs, rectF4.bottom + abs);
                                 path3.addRect(rectF5, Path.Direction.CW);
                                 rectF5.set(rectF4.left + f18, rectF4.top + f18, rectF4.right - f18, rectF4.bottom - f18);
@@ -985,7 +985,7 @@ public final class y {
                                 }
                                 path3.setFillType(Path.FillType.EVEN_ODD);
                             } else {
-                                ddVar = ddVar3;
+                                deVar = deVar3;
                                 rectF5.set(f21 - f18, f22 - f18, rectF4.right + f18, rectF4.bottom + f18);
                                 if (!yVar2.s) {
                                     f18 = 0.0f;
@@ -1006,11 +1006,11 @@ public final class y {
                             canvas2.restore();
                             paint5.setMaskFilter(null);
                             yVar = yVar2;
-                            kkaVar2 = kkaVar5;
+                            lmaVar2 = lmaVar5;
                             i15 = i19 + 1;
                             yVar2 = yVar;
-                            kkaVar7 = kkaVar2;
-                            ddVar3 = ddVar;
+                            lmaVar7 = lmaVar2;
+                            deVar3 = deVar;
                             iArr = iArr2;
                             arrayList2 = arrayList;
                             matrix3 = matrix;
@@ -1040,31 +1040,31 @@ public final class y {
                             paint5.setMaskFilter(null);
                         }
                     }
-                    ddVar = ddVar3;
+                    deVar = deVar3;
                     yVar = yVar2;
-                    kkaVar2 = kkaVar5;
+                    lmaVar2 = lmaVar5;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
                     break;
                 case 15:
-                    kkaVar6 = kkaVar;
-                    gl2 k = k(ddVar3);
-                    cwc cwcVar = new cwc();
-                    cwcVar.a = (Canvas) kkaVar6.d;
-                    cwcVar.b = kkaVar6.a;
-                    arrayList2.add(cwcVar);
-                    if (((int[]) k.b).length != 0 && kkaVar6.b < 16 && yVar2.v < 64) {
+                    lmaVar6 = lmaVar;
+                    sm2 k = k(deVar3);
+                    dyc dycVar = new dyc();
+                    dycVar.a = (Canvas) lmaVar6.d;
+                    dycVar.b = lmaVar6.a;
+                    arrayList2.add(dycVar);
+                    if (((int[]) k.b).length != 0 && lmaVar6.b < 16 && yVar2.v < 64) {
                         rectF4.set(rectF2);
-                        if (!rectF4.isEmpty() && yVar2.p(kkaVar6, rectF4, j(k, rectF4))) {
-                            if (Build.VERSION.SDK_INT < 31 || !((Canvas) kkaVar6.d).isHardwareAccelerated()) {
+                        if (!rectF4.isEmpty() && yVar2.p(lmaVar6, rectF4, j(k, rectF4))) {
+                            if (Build.VERSION.SDK_INT < 31 || !((Canvas) lmaVar6.d).isHardwareAccelerated()) {
                                 matrix3.getValues(fArr4);
                                 if (fArr4[i2] == 0.0f && fArr4[3] == 0.0f) {
-                                    Matrix matrix7 = cwcVar.g;
+                                    Matrix matrix7 = dycVar.g;
                                     matrix7.set(matrix3);
                                     matrix7.postScale(f, f);
                                     matrix7.mapRect(rectF5, rectF4);
@@ -1084,204 +1084,204 @@ public final class y {
                                         if (ceil > 0 && ceil2 > 0) {
                                             long j3 = ceil2 * ceil;
                                             if (j3 <= 8388608 && yVar2.o(j3)) {
-                                                cwcVar.f = Bitmap.createBitmap(ceil, ceil2, Bitmap.Config.ARGB_8888);
-                                                kkaVar6.b++;
+                                                dycVar.f = Bitmap.createBitmap(ceil, ceil2, Bitmap.Config.ARGB_8888);
+                                                lmaVar6.b++;
                                                 yVar2.v++;
-                                                cwcVar.d = floor;
-                                                cwcVar.e = floor2;
-                                                cwcVar.h = abs2;
-                                                cwcVar.i = k;
-                                                Canvas canvas4 = new Canvas(cwcVar.f);
+                                                dycVar.d = floor;
+                                                dycVar.e = floor2;
+                                                dycVar.h = abs2;
+                                                dycVar.i = k;
+                                                Canvas canvas4 = new Canvas(dycVar.f);
                                                 canvas4.translate(-floor, -floor2);
                                                 canvas4.concat(matrix7);
-                                                kkaVar6.d = canvas4;
-                                                kkaVar6.a = 0;
+                                                lmaVar6.d = canvas4;
+                                                lmaVar6.a = 0;
                                             }
                                         }
                                     }
                                 }
                             } else {
-                                Canvas b = yz.b(yVar2, cwcVar, rectF4, k, f);
+                                Canvas b = y00.b(yVar2, dycVar, rectF4, k, f);
                                 if (b != null) {
-                                    kkaVar6.d = b;
-                                    kkaVar6.a = 0;
-                                    kkaVar6.b++;
+                                    lmaVar6.d = b;
+                                    lmaVar6.a = 0;
+                                    lmaVar6.b++;
                                     yVar2.v++;
                                 }
                             }
                         }
                     }
                     yVar = yVar2;
-                    kkaVar2 = kkaVar6;
+                    lmaVar2 = lmaVar6;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
+                    deVar = deVar3;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
                     break;
                 case 16:
-                    kkaVar6 = kkaVar;
+                    lmaVar6 = lmaVar;
                     if (!arrayList2.isEmpty()) {
-                        yVar2.i(kkaVar6, f);
+                        yVar2.i(lmaVar6, f);
                     }
                     yVar = yVar2;
-                    kkaVar2 = kkaVar6;
+                    lmaVar2 = lmaVar6;
                     matrix = matrix3;
                     arrayList = arrayList2;
-                    ddVar = ddVar3;
+                    deVar = deVar3;
                     i15 = i19 + 1;
                     yVar2 = yVar;
-                    kkaVar7 = kkaVar2;
-                    ddVar3 = ddVar;
+                    lmaVar7 = lmaVar2;
+                    deVar3 = deVar;
                     iArr = iArr2;
                     arrayList2 = arrayList;
                     matrix3 = matrix;
                 case 17:
-                    gl2 k2 = k(ddVar3);
+                    sm2 k2 = k(deVar3);
                     if (!z || Build.VERSION.SDK_INT < 31 || !canvas2.isHardwareAccelerated() || yVar2.w >= 8) {
                         yVar = yVar2;
                         matrix = matrix3;
                         arrayList = arrayList2;
-                        ddVar = ddVar3;
-                        kkaVar2 = kkaVar;
+                        deVar = deVar3;
+                        lmaVar2 = lmaVar;
                         i15 = i19 + 1;
                         yVar2 = yVar;
-                        kkaVar7 = kkaVar2;
-                        ddVar3 = ddVar;
+                        lmaVar7 = lmaVar2;
+                        deVar3 = deVar;
                         iArr = iArr2;
                         arrayList2 = arrayList;
                         matrix3 = matrix;
                     } else {
-                        kka kkaVar11 = kkaVar;
-                        yz.a(yVar2, kkaVar11, jvcVar, i19, k2, new RectF(rectF2), yVar2.s ? (float[]) fArr3.clone() : null, dwcVar, f);
+                        lma lmaVar11 = lmaVar;
+                        y00.a(yVar2, lmaVar11, kxcVar, i19, k2, new RectF(rectF2), yVar2.s ? (float[]) fArr3.clone() : null, eycVar, f);
                         i19 = i19;
-                        kkaVar2 = kkaVar11;
+                        lmaVar2 = lmaVar11;
                         matrix = matrix3;
                         arrayList = arrayList2;
-                        ddVar = ddVar3;
+                        deVar = deVar3;
                         yVar = yVar2;
                         i15 = i19 + 1;
                         yVar2 = yVar;
-                        kkaVar7 = kkaVar2;
-                        ddVar3 = ddVar;
+                        lmaVar7 = lmaVar2;
+                        deVar3 = deVar;
                         iArr = iArr2;
                         arrayList2 = arrayList;
                         matrix3 = matrix;
                     }
                     break;
                 default:
-                    throw jvc.a();
+                    throw kxc.a();
             }
         }
-        kka kkaVar12 = kkaVar7;
+        lma lmaVar12 = lmaVar7;
         ArrayList arrayList3 = arrayList2;
         y yVar3 = yVar2;
         while (!arrayList3.isEmpty()) {
-            yVar3.i(kkaVar12, f);
+            yVar3.i(lmaVar12, f);
         }
-        while (kkaVar12.a > 0) {
-            kkaVar12.t();
+        while (lmaVar12.a > 0) {
+            lmaVar12.t();
         }
     }
 
-    public final void f(Canvas canvas, jvc jvcVar, dwc dwcVar, float f, float f2, float f3, float f4, float f5) {
+    public final void f(Canvas canvas, kxc kxcVar, eyc eycVar, float f, float f2, float f3, float f4, float f5) {
         RectF rectF = this.A;
         rectF.set(f2, f3, f4, f5);
         this.D = 0L;
         this.E = h(rectF.width(), rectF.height(), f) << 6;
-        boolean z = Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && jvcVar.c;
+        boolean z = Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && kxcVar.c;
         int saveLayer = z ? canvas.saveLayer(null, null) : -1;
-        e(canvas, jvcVar, jvcVar.b, dwcVar, f, true);
+        e(canvas, kxcVar, kxcVar.b, eycVar, f, true);
         if (z) {
             canvas.restoreToCount(saveLayer);
         }
     }
 
-    public final Shader g(dd ddVar, int i) {
+    public final Shader g(de deVar, int i) {
         float[] fArr = this.k;
-        ddVar.d0(7, fArr);
+        deVar.e0(7, fArr);
         float f = fArr[0];
         float f2 = fArr[1];
         float f3 = fArr[2];
         float f4 = fArr[3];
         float f5 = fArr[4];
-        int X = ddVar.X(TLObject.FLAG_12, 2);
-        int[] iArr = new int[Math.max(2, X)];
-        float[] fArr2 = X == 1 ? new float[]{0.0f, 1.0f} : new float[Math.max(X, 2)];
-        m(ddVar, X, iArr, fArr2);
-        if (X < 2) {
+        int Z = deVar.Z(TLObject.FLAG_12, 2);
+        int[] iArr = new int[Math.max(2, Z)];
+        float[] fArr2 = Z == 1 ? new float[]{0.0f, 1.0f} : new float[Math.max(Z, 2)];
+        m(deVar, Z, iArr, fArr2);
+        if (Z < 2) {
             return null;
         }
         return i == 1 ? new LinearGradient(f, f2, f3, f4, iArr, fArr2, Shader.TileMode.CLAMP) : new RadialGradient(f, f2, Math.max(f5, 0.01f), iArr, fArr2, Shader.TileMode.CLAMP);
     }
 
-    public final void i(kka kkaVar, float f) {
+    public final void i(lma lmaVar, float f) {
         Object obj;
-        cwc cwcVar = (cwc) tb4.l(1, (ArrayList) kkaVar.h);
-        if (cwcVar.c != null || cwcVar.f != null) {
-            kkaVar.b--;
+        dyc dycVar = (dyc) td4.m(1, (ArrayList) lmaVar.h);
+        if (dycVar.c != null || dycVar.f != null) {
+            lmaVar.b--;
         }
         while (true) {
-            int i = kkaVar.a;
-            obj = cwcVar.c;
-            if (i <= ((obj == null && cwcVar.f == null) ? cwcVar.b : 0)) {
+            int i = lmaVar.a;
+            obj = dycVar.c;
+            if (i <= ((obj == null && dycVar.f == null) ? dycVar.b : 0)) {
                 break;
             } else {
-                kkaVar.t();
+                lmaVar.t();
             }
         }
         if (obj != null) {
-            yz.j(cwcVar, f);
-            kkaVar.d = cwcVar.a;
+            y00.j(dycVar, f);
+            lmaVar.d = dycVar.a;
         } else {
-            Bitmap bitmap = cwcVar.f;
+            Bitmap bitmap = dycVar.f;
             if (bitmap != null) {
-                gl2 gl2Var = cwcVar.i;
-                WidgetClientNative.filterPixels(bitmap, (int[]) gl2Var.b, (float[]) gl2Var.f, (float[]) gl2Var.d, (float[]) gl2Var.e, (int[]) gl2Var.c, cwcVar.h);
-                kkaVar.d = cwcVar.a;
+                sm2 sm2Var = dycVar.i;
+                WidgetClientNative.filterPixels(bitmap, (int[]) sm2Var.b, (float[]) sm2Var.f, (float[]) sm2Var.d, (float[]) sm2Var.e, (int[]) sm2Var.c, dycVar.h);
+                lmaVar.d = dycVar.a;
                 Matrix matrix = new Matrix();
-                if (cwcVar.g.invert(matrix)) {
-                    ((Canvas) kkaVar.d).save();
-                    ((Canvas) kkaVar.d).concat(matrix);
-                    ((Canvas) kkaVar.d).drawBitmap(cwcVar.f, cwcVar.d, cwcVar.e, this.c);
-                    ((Canvas) kkaVar.d).restore();
+                if (dycVar.g.invert(matrix)) {
+                    ((Canvas) lmaVar.d).save();
+                    ((Canvas) lmaVar.d).concat(matrix);
+                    ((Canvas) lmaVar.d).drawBitmap(dycVar.f, dycVar.d, dycVar.e, this.c);
+                    ((Canvas) lmaVar.d).restore();
                 }
             }
         }
-        kkaVar.a = cwcVar.b;
+        lmaVar.a = dycVar.b;
     }
 
-    public final void l(dd ddVar, Path path) {
+    public final void l(de deVar, Path path) {
         int i;
         int i2;
         path.rewind();
-        int X = ddVar.X(TLObject.FLAG_20, 0);
-        int X2 = ddVar.X(6291456, 1);
-        int i3 = ddVar.b;
-        long j = (X + 3) / 4;
+        int Z = deVar.Z(TLObject.FLAG_20, 0);
+        int Z2 = deVar.Z(6291456, 1);
+        int i3 = deVar.b;
+        long j = (Z + 3) / 4;
         long j2 = j << 2;
-        jvc jvcVar = (jvc) ddVar.c;
-        if (j2 > jvcVar.d - i3) {
-            throw jvc.a();
+        kxc kxcVar = (kxc) deVar.c;
+        if (j2 > kxcVar.d - i3) {
+            throw kxc.a();
         }
-        ddVar.b = (((int) j) << 2) + i3;
+        deVar.b = (((int) j) << 2) + i3;
         float[] fArr = this.u;
-        if (fArr.length < X2) {
-            fArr = new float[Math.max(X2, fArr.length << 1)];
+        if (fArr.length < Z2) {
+            fArr = new float[Math.max(Z2, fArr.length << 1)];
             this.u = fArr;
         }
-        ddVar.d0(X2, fArr);
+        deVar.e0(Z2, fArr);
         int i4 = 0;
         int i5 = 0;
-        while (i4 < X) {
-            int i6 = jvcVar.a.get(i3 + i4) & 255;
+        while (i4 < Z) {
+            int i6 = kxcVar.a.get(i3 + i4) & 255;
             int i7 = (i6 == 3 ? 6 : i6 == 2 ? 4 : i6 == 4 ? 0 : 2) + i5;
-            if (i7 > X2) {
+            if (i7 > Z2) {
                 break;
             }
             if (i6 == 0) {
@@ -1318,7 +1318,7 @@ public final class y {
             i4 = i + 1;
             i5 = i2;
         }
-        path.setFillType(ddVar.i0() != 0 ? Path.FillType.EVEN_ODD : Path.FillType.WINDING);
+        path.setFillType(deVar.j0() != 0 ? Path.FillType.EVEN_ODD : Path.FillType.WINDING);
     }
 
     public final void n(RectF rectF, Path path) {
@@ -1345,8 +1345,8 @@ public final class y {
         return true;
     }
 
-    public final boolean p(kka kkaVar, RectF rectF, float f) {
-        Matrix matrix = (Matrix) kkaVar.f;
+    public final boolean p(lma lmaVar, RectF rectF, float f) {
+        Matrix matrix = (Matrix) lmaVar.f;
         Matrix matrix2 = this.C;
         if (!matrix.invert(matrix2)) {
             return false;

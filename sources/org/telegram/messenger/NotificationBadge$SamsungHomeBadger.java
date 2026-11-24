@@ -8,9 +8,9 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class NotificationBadge$SamsungHomeBadger implements yj7 {
+public class NotificationBadge$SamsungHomeBadger implements bm7 {
     public static final String[] a = {"_id", "class"};
     public static NotificationBadge$DefaultBadger b;
 
@@ -24,7 +24,7 @@ public class NotificationBadge$SamsungHomeBadger implements yj7 {
         return contentValues;
     }
 
-    @Override // yj7
+    @Override // bm7
     public final void a(int i) {
         try {
             NotificationBadge$DefaultBadger notificationBadge$DefaultBadger = b;
@@ -39,18 +39,18 @@ public class NotificationBadge$SamsungHomeBadger implements yj7 {
         ContentResolver contentResolver = a.b.getContentResolver();
         Cursor cursor = null;
         try {
-            cursor = contentResolver.query(parse, a, "package=?", new String[]{ak7.d.getPackageName()}, null);
+            cursor = contentResolver.query(parse, a, "package=?", new String[]{dm7.d.getPackageName()}, null);
             if (cursor != null) {
-                String className = ak7.d.getClassName();
+                String className = dm7.d.getClassName();
                 boolean z = false;
                 while (cursor.moveToNext()) {
-                    contentResolver.update(parse, c(ak7.d, i, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
+                    contentResolver.update(parse, c(dm7.d, i, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
                     if (className.equals(cursor.getString(cursor.getColumnIndex("class")))) {
                         z = true;
                     }
                 }
                 if (!z) {
-                    contentResolver.insert(parse, c(ak7.d, i, true));
+                    contentResolver.insert(parse, c(dm7.d, i, true));
                 }
             }
             if (cursor == null || cursor.isClosed()) {
@@ -61,7 +61,7 @@ public class NotificationBadge$SamsungHomeBadger implements yj7 {
         }
     }
 
-    @Override // yj7
+    @Override // bm7
     public final List b() {
         return Arrays.asList("com.sec.android.app.launcher", "com.sec.android.app.twlauncher");
     }

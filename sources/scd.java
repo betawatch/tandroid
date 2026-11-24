@@ -1,100 +1,325 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.ResolveInfo;
-import android.content.res.XmlResourceParser;
-import android.os.Bundle;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class scd {
-    public static volatile ArrayList a;
-    public static final Object b = new Object();
+    public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
+    public static final int[][] b = {new int[]{1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 0, 1, 0, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1}};
+    public static final int[][] c = {new int[]{-1, -1, -1, -1, -1, -1, -1}, new int[]{6, 18, -1, -1, -1, -1, -1}, new int[]{6, 22, -1, -1, -1, -1, -1}, new int[]{6, 26, -1, -1, -1, -1, -1}, new int[]{6, 30, -1, -1, -1, -1, -1}, new int[]{6, 34, -1, -1, -1, -1, -1}, new int[]{6, 22, 38, -1, -1, -1, -1}, new int[]{6, 24, 42, -1, -1, -1, -1}, new int[]{6, 26, 46, -1, -1, -1, -1}, new int[]{6, 28, 50, -1, -1, -1, -1}, new int[]{6, 30, 54, -1, -1, -1, -1}, new int[]{6, 32, 58, -1, -1, -1, -1}, new int[]{6, 34, 62, -1, -1, -1, -1}, new int[]{6, 26, 46, 66, -1, -1, -1}, new int[]{6, 26, 48, 70, -1, -1, -1}, new int[]{6, 26, 50, 74, -1, -1, -1}, new int[]{6, 30, 54, 78, -1, -1, -1}, new int[]{6, 30, 56, 82, -1, -1, -1}, new int[]{6, 30, 58, 86, -1, -1, -1}, new int[]{6, 34, 62, 90, -1, -1, -1}, new int[]{6, 28, 50, 72, 94, -1, -1}, new int[]{6, 26, 50, 74, 98, -1, -1}, new int[]{6, 30, 54, 78, nm7.m1, -1, -1}, new int[]{6, 28, 54, 80, nm7.q1, -1, -1}, new int[]{6, 32, 58, 84, nm7.u1, -1, -1}, new int[]{6, 30, 58, 86, nm7.y1, -1, -1}, new int[]{6, 34, 62, 90, nm7.C1, -1, -1}, new int[]{6, 26, 50, 74, 98, nm7.F1, -1}, new int[]{6, 30, 54, 78, nm7.m1, nm7.J1, -1}, new int[]{6, 26, 52, 78, nm7.o1, nm7.N1, -1}, new int[]{6, 30, 56, 82, nm7.s1, 134, -1}, new int[]{6, 34, 60, 86, nm7.w1, nm7.T1, -1}, new int[]{6, 30, 58, 86, nm7.y1, nm7.X1, -1}, new int[]{6, 34, 62, 90, nm7.C1, nm7.b2, -1}, new int[]{6, 30, 54, 78, nm7.m1, nm7.J1, nm7.f2}, new int[]{6, 24, 50, 76, nm7.m1, 128, nm7.j2}, new int[]{6, 28, 54, 80, nm7.q1, nm7.P1, nm7.n2}, new int[]{6, 32, 58, 84, nm7.u1, nm7.R1, nm7.r2}, new int[]{6, 26, 54, 82, nm7.u1, nm7.T1, nm7.v2}, new int[]{6, 30, 58, 86, nm7.y1, nm7.X1, nm7.z2}};
+    public static final int[][] d = {new int[]{8, 0}, new int[]{8, 1}, new int[]{8, 2}, new int[]{8, 3}, new int[]{8, 4}, new int[]{8, 5}, new int[]{8, 7}, new int[]{8, 8}, new int[]{7, 8}, new int[]{5, 8}, new int[]{4, 8}, new int[]{3, 8}, new int[]{2, 8}, new int[]{1, 8}, new int[]{0, 8}};
 
-    public static String a(XmlResourceParser xmlResourceParser, String str) {
-        String attributeValue = xmlResourceParser.getAttributeValue("http://schemas.android.com/apk/res/android", str);
-        return attributeValue == null ? xmlResourceParser.getAttributeValue(null, str) : attributeValue;
-    }
-
-    public static zaa b(XmlResourceParser xmlResourceParser) {
-        String a2 = a(xmlResourceParser, "targetClass");
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        while (true) {
-            int next = xmlResourceParser.next();
-            if (next != 1) {
-                if (next != 2) {
-                    if (next == 3 && xmlResourceParser.getName().equals("share-target")) {
-                        break;
-                    }
-                } else {
-                    String name = xmlResourceParser.getName();
-                    name.getClass();
-                    if (name.equals("data")) {
-                        a(xmlResourceParser, "scheme");
-                        a(xmlResourceParser, "host");
-                        a(xmlResourceParser, "port");
-                        a(xmlResourceParser, "path");
-                        a(xmlResourceParser, "pathPattern");
-                        a(xmlResourceParser, "pathPrefix");
-                        arrayList.add(new yaa(a(xmlResourceParser, "mimeType")));
-                    } else if (name.equals("category")) {
-                        arrayList2.add(a(xmlResourceParser, "name"));
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0222  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void a(pk0 pk0Var, g54 g54Var, ybc ybcVar, int i, rk0 rk0Var) {
+        int i2;
+        char c2;
+        byte[][] bArr;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        int i10;
+        byte[][] bArr2 = (byte[][]) rk0Var.d;
+        int i11 = rk0Var.b;
+        int i12 = rk0Var.c;
+        for (byte[] bArr3 : bArr2) {
+            Arrays.fill(bArr3, (byte) -1);
+        }
+        int length = a[0].length;
+        d(0, 0, rk0Var);
+        int i13 = i11 - length;
+        d(i13, 0, rk0Var);
+        d(0, i13, rk0Var);
+        c(0, 7, rk0Var);
+        int i14 = i11 - 8;
+        c(i14, 7, rk0Var);
+        c(0, i14, rk0Var);
+        e(7, 0, rk0Var);
+        int i15 = i12 - 8;
+        e(i15, 0, rk0Var);
+        int i16 = i12 - 7;
+        e(7, i16, rk0Var);
+        if (rk0Var.e(8, i15) == 0) {
+            throw new v40();
+        }
+        rk0Var.g(8, i15, 1);
+        byte b2 = ybcVar.a;
+        if (b2 < 2) {
+            i2 = 0;
+            c2 = 1;
+        } else {
+            i2 = 0;
+            int[] iArr = c[b2 - 1];
+            c2 = 1;
+            int length2 = iArr.length;
+            int i17 = 0;
+            while (i17 < length2) {
+                int i18 = iArr[i17];
+                if (i18 >= 0) {
+                    int length3 = iArr.length;
+                    int i19 = 0;
+                    while (i19 < length3) {
+                        int i20 = iArr[i19];
+                        if (i20 >= 0 && f(rk0Var.e(i20, i18))) {
+                            int i21 = i20 - 2;
+                            int i22 = i18 - 2;
+                            bArr = bArr2;
+                            i3 = i11;
+                            int i23 = 0;
+                            while (true) {
+                                if (i23 >= 5) {
+                                    break;
+                                }
+                                int[] iArr2 = b[i23];
+                                int i24 = i23;
+                                int i25 = 0;
+                                for (int i26 = 5; i25 < i26; i26 = 5) {
+                                    int i27 = i25;
+                                    rk0Var.g(i21 + i25, i22 + i24, iArr2[i27]);
+                                    i25 = i27 + 1;
+                                    length3 = length3;
+                                }
+                                i23 = i24 + 1;
+                            }
+                        } else {
+                            bArr = bArr2;
+                            i3 = i11;
+                        }
+                        i19++;
+                        bArr2 = bArr;
+                        i11 = i3;
+                        length3 = length3;
                     }
                 }
-            } else {
+                i17++;
+                bArr2 = bArr2;
+                i11 = i11;
+            }
+        }
+        byte[][] bArr4 = bArr2;
+        int i28 = i11;
+        int i29 = 8;
+        while (i29 < i14) {
+            int i30 = i29 + 1;
+            int i31 = i30 % 2;
+            if (f(rk0Var.e(i29, 6))) {
+                rk0Var.g(i29, 6, i31);
+            }
+            if (f(rk0Var.e(6, i29))) {
+                rk0Var.g(6, i29, i31);
+            }
+            i29 = i30;
+        }
+        pk0 pk0Var2 = new pk0();
+        if (i < 0 || i >= 8) {
+            throw new v40("Invalid mask pattern");
+        }
+        int i32 = (g54Var.a << 3) | i;
+        pk0Var2.b(i32, 5);
+        pk0Var2.b(b(i32, 1335), 10);
+        pk0 pk0Var3 = new pk0();
+        pk0Var3.b(21522, 15);
+        if (pk0Var2.b != pk0Var3.b) {
+            u36.j("Sizes don't match");
+            return;
+        }
+        int i33 = i2;
+        while (true) {
+            int[] iArr3 = pk0Var2.a;
+            if (i33 >= iArr3.length) {
                 break;
             }
+            iArr3[i33] = iArr3[i33] ^ pk0Var3.a[i33];
+            i33++;
         }
-        if (arrayList.isEmpty() || a2 == null || arrayList2.isEmpty()) {
-            return null;
+        if (pk0Var2.b != 15) {
+            throw new v40("should not happen but we got: " + pk0Var2.b);
         }
-        return new zaa((yaa[]) arrayList.toArray(new yaa[arrayList.size()]), a2, (String[]) arrayList2.toArray(new String[arrayList2.size()]));
-    }
-
-    public static ArrayList c(Context context) {
-        zaa b2;
-        ArrayList arrayList = new ArrayList();
-        Intent intent = new Intent("android.intent.action.MAIN");
-        intent.addCategory("android.intent.category.LAUNCHER");
-        intent.setPackage(context.getPackageName());
-        List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(intent, 128);
-        if (queryIntentActivities != null) {
-            Iterator<ResolveInfo> it = queryIntentActivities.iterator();
-            while (it.hasNext()) {
-                ActivityInfo activityInfo = it.next().activityInfo;
-                Bundle bundle = activityInfo.metaData;
-                if (bundle != null && bundle.containsKey("android.app.shortcuts")) {
-                    ArrayList arrayList2 = new ArrayList();
-                    XmlResourceParser loadXmlMetaData = activityInfo.loadXmlMetaData(context.getPackageManager(), "android.app.shortcuts");
-                    if (loadXmlMetaData == null) {
-                        k32.e(activityInfo.name, "Failed to open android.app.shortcuts meta-data resource of ");
-                        return null;
-                    }
-                    while (true) {
-                        try {
-                            int next = loadXmlMetaData.next();
-                            if (next == 1) {
-                                break;
-                            }
-                            if (next == 2 && loadXmlMetaData.getName().equals("share-target") && (b2 = b(loadXmlMetaData)) != null) {
-                                arrayList2.add(b2);
-                            }
-                        } catch (Exception e) {
-                            Log.e("ShareTargetXmlParser", "Failed to parse the Xml resource: ", e);
-                        }
-                    }
-                    loadXmlMetaData.close();
-                    arrayList.addAll(arrayList2);
+        int i34 = i2;
+        while (true) {
+            int i35 = pk0Var2.b;
+            if (i34 >= i35) {
+                break;
+            }
+            boolean d2 = pk0Var2.d((i35 - 1) - i34);
+            int[] iArr4 = d[i34];
+            int i36 = iArr4[i2];
+            byte[] bArr5 = bArr4[iArr4[c2]];
+            byte b3 = d2 ? (byte) 1 : (byte) 0;
+            bArr5[i36] = b3;
+            if (i34 < 8) {
+                i10 = (i28 - i34) - 1;
+                i9 = 8;
+            } else {
+                i9 = (i34 - 8) + i16;
+                i10 = 8;
+            }
+            bArr4[i9][i10] = b3;
+            i34++;
+        }
+        if (b2 >= 7) {
+            pk0 pk0Var4 = new pk0();
+            pk0Var4.b(b2, 6);
+            pk0Var4.b(b(b2, 7973), 12);
+            if (pk0Var4.b != 18) {
+                throw new v40("should not happen but we got: " + pk0Var4.b);
+            }
+            int i37 = 17;
+            for (int i38 = i2; i38 < 6; i38++) {
+                for (int i39 = i2; i39 < 3; i39++) {
+                    boolean d3 = pk0Var4.d(i37);
+                    i37--;
+                    int i40 = (i12 - 11) + i39;
+                    byte[] bArr6 = bArr4[i40];
+                    byte b4 = d3 ? (byte) 1 : (byte) 0;
+                    bArr6[i38] = b4;
+                    bArr4[i38][i40] = b4;
                 }
             }
         }
-        return arrayList;
+        int i41 = i28 - 1;
+        int i42 = i12 - 1;
+        int i43 = i2;
+        int i44 = -1;
+        while (i41 > 0) {
+            if (i41 == 6) {
+                i41--;
+            }
+            while (i42 >= 0 && i42 < i12) {
+                for (int i45 = i2; i45 < 2; i45++) {
+                    int i46 = i41 - i45;
+                    if (f(rk0Var.e(i46, i42))) {
+                        if (i43 < pk0Var.b) {
+                            boolean d4 = pk0Var.d(i43);
+                            i43++;
+                            i4 = d4;
+                        } else {
+                            i4 = i2;
+                        }
+                        if (i != -1) {
+                            switch (i) {
+                                case 0:
+                                    i5 = i42 + i46;
+                                    i6 = i5 & 1;
+                                    if (i6 == 0) {
+                                        i4 = ~i4;
+                                        break;
+                                    }
+                                    break;
+                                case 1:
+                                    i6 = i42 & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 2:
+                                    i6 = i46 % 3;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 3:
+                                    i6 = (i42 + i46) % 3;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 4:
+                                    i6 = ((i46 / 3) + (i42 / 2)) & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 5:
+                                    int i47 = i42 * i46;
+                                    i6 = (i47 % 3) + (i47 & 1);
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 6:
+                                    int i48 = i42 * i46;
+                                    i7 = i48 & 1;
+                                    i8 = i48 % 3;
+                                    i5 = i8 + i7;
+                                    i6 = i5 & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                case 7:
+                                    i8 = (i42 * i46) % 3;
+                                    i7 = (i42 + i46) & 1;
+                                    i5 = i8 + i7;
+                                    i6 = i5 & 1;
+                                    if (i6 == 0) {
+                                    }
+                                    break;
+                                default:
+                                    u36.j(hg9.j(i, "Invalid mask pattern: "));
+                                    return;
+                            }
+                        }
+                        bArr4[i42][i46] = (byte) i4;
+                    }
+                }
+                i42 += i44;
+            }
+            i44 = -i44;
+            i42 += i44;
+            i41 -= 2;
+        }
+        if (i43 == pk0Var.b) {
+            return;
+        }
+        throw new v40("Not all bits consumed: " + i43 + '/' + pk0Var.b);
+    }
+
+    public static int b(int i, int i2) {
+        if (i2 == 0) {
+            u36.j("0 polynomial");
+            return 0;
+        }
+        int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i2);
+        int i3 = 32 - numberOfLeadingZeros;
+        int i4 = i << (31 - numberOfLeadingZeros);
+        while (32 - Integer.numberOfLeadingZeros(i4) >= i3) {
+            i4 ^= i2 << ((32 - Integer.numberOfLeadingZeros(i4)) - i3);
+        }
+        return i4;
+    }
+
+    public static void c(int i, int i2, rk0 rk0Var) {
+        for (int i3 = 0; i3 < 8; i3++) {
+            int i4 = i + i3;
+            if (!f(rk0Var.e(i4, i2))) {
+                throw new v40();
+            }
+            rk0Var.g(i4, i2, 0);
+        }
+    }
+
+    public static void d(int i, int i2, rk0 rk0Var) {
+        for (int i3 = 0; i3 < 7; i3++) {
+            int[] iArr = a[i3];
+            for (int i4 = 0; i4 < 7; i4++) {
+                rk0Var.g(i + i4, i2 + i3, iArr[i4]);
+            }
+        }
+    }
+
+    public static void e(int i, int i2, rk0 rk0Var) {
+        for (int i3 = 0; i3 < 7; i3++) {
+            int i4 = i2 + i3;
+            if (!f(rk0Var.e(i, i4))) {
+                throw new v40();
+            }
+            rk0Var.g(i, i4, 0);
+        }
+    }
+
+    public static boolean f(int i) {
+        return i == -1;
     }
 }

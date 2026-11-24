@@ -1,92 +1,29 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class bq1 implements View.OnTouchListener {
-    public View a;
-    public m8 b;
-    public final Rect c = new Rect();
-    public boolean d;
-    public boolean e;
-    public final ns4 f;
-    public final int[] h;
-    public View n;
-    public float r;
-    public float s;
-    public final /* synthetic */ ImageView w;
-    public final /* synthetic */ mu1 x;
+public final class bq1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ yv1 d;
 
-    public bq1(mu1 mu1Var, ImageView imageView) {
-        this.x = mu1Var;
-        this.w = imageView;
-        ns4 ns4Var = new ns4((Context) null, new gi3(this));
-        this.f = ns4Var;
-        this.h = new int[2];
-        ns4Var.v = true;
+    public bq1(yv1 yv1Var, boolean z, boolean z2, boolean z3) {
+        this.d = yv1Var;
+        this.a = z;
+        this.b = z2;
+        this.c = z3;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        View view2;
-        this.a = view;
-        if (motionEvent.getAction() == 0) {
-            this.r = motionEvent.getX();
-            this.s = motionEvent.getY();
-            this.e = false;
-        }
-        this.f.a(motionEvent);
-        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
-            View view3 = this.a;
-            int[] iArr = this.h;
-            view3.getLocationOnScreen(iArr);
-            float x = motionEvent.getX() + iArr[0];
-            float y = motionEvent.getY() + iArr[1];
-            this.b.getContentView().getLocationOnScreen(iArr);
-            float f = x - iArr[0];
-            float f2 = y - iArr[1];
-            this.n = null;
-            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
-            for (int i = 0; i < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i++) {
-                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i);
-                Rect rect = this.c;
-                childAt.getHitRect(rect);
-                childAt.getTag();
-                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
-                    if (rect.contains((int) f, (int) f2)) {
-                        childAt.setPressed(true);
-                        childAt.setSelected(true);
-                        childAt.drawableHotspotChanged(f, f2 - childAt.getTop());
-                        this.n = childAt;
-                    } else {
-                        childAt.setPressed(false);
-                        childAt.setSelected(false);
-                    }
-                }
-            }
-        }
-        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > gl.e * 2.0f) || Math.abs(motionEvent.getY() - this.s) > gl.e * 2.0f) {
-            this.e = true;
-            this.a.setPressed(false);
-            this.a.setSelected(false);
-        }
-        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
-            View view4 = this.n;
-            if (view4 != null) {
-                view4.callOnClick();
-                this.d = true;
-                return true;
-            }
-            if (this.b == null && (view2 = this.a) != null) {
-                view2.callOnClick();
-            }
-        }
-        return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        yv1 yv1Var = this.d;
+        yv1Var.b3 = null;
+        yv1Var.Y2.setVisibility(this.a ? 0 : 4);
+        yv1Var.a3.setVisibility(this.b ? 0 : 4);
+        yv1Var.Z2.setVisibility(this.c ? 0 : 4);
     }
 }

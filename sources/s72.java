@@ -1,107 +1,43 @@
 // default package
 
+import android.R;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.ImageView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class s72 extends gf0 implements tjb {
-    public int E;
-    public final ImageView s;
-    public r72 w;
-    public TLRPC.Chat x;
-    public boolean y;
+public final class s72 extends ng8 {
+    public final /* synthetic */ s30 G;
 
-    public s72(Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.d.setTypeface(gl.o());
-        ImageView imageView = new ImageView(context);
-        this.s = imageView;
-        imageView.setFocusable(false);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int w0 = bkb.w0(null, bkb.Li, false);
-        this.E = w0;
-        imageView.setBackground(bkb.f0(w0, 1, -1));
-        imageView.setImageResource(R.drawable.poll_remove);
-        zkb.s(imageView, bkb.l6, null, PorterDuff.Mode.MULTIPLY);
-        imageView.setContentDescription(k96.M0(2131751586, null));
-        boolean z = k96.a0;
-        addView(imageView, nme.d(48, 50.0f, (z ? 3 : 5) | 17, z ? 3.0f : 0.0f, 0.0f, z ? 0.0f : 3.0f, 0.0f));
-        this.d.setPadding(gl.L(k96.a0 ? 24.0f : 0.0f), 0, gl.L(k96.a0 ? 0.0f : 24.0f), 0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s72(s30 s30Var, Context context, int i) {
+        super(context, i, null, null);
+        this.G = s30Var;
     }
 
-    public final void f(TLRPC.Chat chat, int i, boolean z, int i2) {
-        String M0;
-        this.y = z;
-        this.x = chat;
-        pb0 pb0Var = this.b;
-        pb0Var.p(chat);
-        int L = gl.L(20.0f);
-        be0 be0Var = this.c;
-        be0Var.setRoundRadius(L);
-        be0Var.f(chat, pb0Var);
-        String str = chat.title;
-        df0 df0Var = this.d;
-        df0Var.k(vu3.m(str, df0Var.getPaint().getFontMetricsInt(), false, null, 0));
-        boolean V = hc2.V(chat);
-        if (z) {
-            if (i2 >= 1) {
-                M0 = k96.G(i2, V ? "Subscribers" : "Members", new Object[0]);
-            } else {
-                M0 = k96.M0(V ? 2131751378 : 2131754876, null);
+    @Override // ng8
+    public final void h(pz pzVar, ActionMode actionMode) {
+        if (pzVar.isFocused() && pzVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) != null) {
+                yv1.E6(menu, ((yv1) ((v72) this.G.e).b.Z1).h, false, true, true, true);
             }
-            setSubtitle(M0);
-        } else {
-            setSubtitle(k96.G(i, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
-        }
-        zkb.W(this.e, bkb.q5, this.a);
-        setDivider(true);
-        ImageView imageView = this.s;
-        if (z) {
-            imageView.setVisibility(0);
-        } else {
-            imageView.setVisibility(4);
-        }
-        imageView.setOnClickListener(new kb1((Object) this, (Object) chat, (byte) 12));
-    }
-
-    public TLRPC.Chat getChat() {
-        return this.x;
-    }
-
-    @Override // gf0, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        this.s.measure(View.MeasureSpec.makeMeasureSpec(gl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setChatDeleteListener(r72 r72Var) {
-        this.w = r72Var;
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            int w0 = bkb.w0(null, bkb.Li, false);
-            ImageView imageView = this.s;
-            if (imageView == null || w0 == this.E) {
-                return;
-            }
-            this.E = w0;
-            bkb.F1(imageView.getBackground(), w0, true);
-            imageView.invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // ng8
+    public final void j(boolean z) {
+        ((v72) this.G.e).b0(this, z);
+    }
+
+    @Override // ng8
+    public final void k(ng8 ng8Var) {
+        ((v72) this.G.e).c0(ng8Var);
+    }
+
+    @Override // ng8
+    public final void l(pz pzVar) {
+        ((v72) this.G.e).b.c1(pzVar, true);
     }
 }

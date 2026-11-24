@@ -1,176 +1,152 @@
 // default package
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextUtils;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class v28 extends FrameLayout {
-    public final kb0 a;
-    public final df0 b;
-    public final TextView[] c;
-    public ty8 d;
-    public final x28 e;
-    public Paint f;
-    public float h;
-    public boolean n;
-    public boolean r;
-    public ValueAnimator s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class v28 extends FrameLayout implements vlb {
+    public final TextView a;
+    public uib b;
+    public final tm c;
+    public final /* synthetic */ w28 d;
 
-    public v28(Context context, x28 x28Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v28(w28 w28Var, Context context) {
         super(context);
-        this.c = new TextView[2];
-        this.e = x28Var;
-        kb0 kb0Var = new kb0((byte) 8, context, this);
-        this.a = kb0Var;
-        kb0Var.setRoundRadius(gl.L(16.0f));
-        addView(kb0Var, nme.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
-        setClipChildren(false);
-        df0 df0Var = new df0(context, (byte) 3);
-        this.b = df0Var;
-        df0Var.setTextSize(14);
-        df0Var.setTypeface(gl.o());
-        df0Var.setMaxLines(1);
-        df0Var.setEllipsizeByGradient(gl.L(4.0f));
-        df0Var.setPivotX(0.0f);
-        kk7.i(df0Var);
-        addView(df0Var, nme.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
-        for (int i = 0; i < 2; i++) {
-            this.c[i] = new TextView(context);
-            this.c[i].setTextSize(1, 12.0f);
-            this.c[i].setMaxLines(1);
-            this.c[i].setSingleLine(true);
-            this.c[i].setEllipsize(TextUtils.TruncateAt.MIDDLE);
-            this.c[i].setTextColor(-1);
-            this.c[i].setPadding(gl.L(3.0f), 0, gl.L(3.0f), gl.L(1.0f));
-            addView(this.c[i], nme.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
-        }
-        this.b.setTextColor(-1);
-    }
-
-    public final void a(float f, Canvas canvas, RectF rectF, boolean z) {
-        boolean z2;
-        float f2;
-        f2b f2bVar;
-        x28 x28Var = this.e;
-        if ((x28Var == null || x28Var.b == null) && this.h == 0.0f) {
-            return;
-        }
-        if (x28Var == null || (f2bVar = x28Var.b) == null || f2bVar.J) {
-            if (this.n) {
-                this.n = false;
-                this.r = this.d.f < 0.2f;
-            }
-            if (!this.r) {
-                this.h = Utilities.i(this.h - ((1000.0f / gl.r) / 300.0f), 1.0f, 0.0f);
-            }
-            z2 = true;
-            f2 = 1.0f;
-        } else {
-            this.h = 1.0f;
-            f2 = f2bVar.h;
-            if (!this.n) {
-                this.n = true;
-            }
-            z2 = false;
-        }
-        ty8 ty8Var = this.d;
-        kb0 kb0Var = this.a;
-        if (ty8Var == null) {
-            ty8 ty8Var2 = new ty8(kb0Var);
-            this.d = ty8Var2;
-            ty8Var2.d(null, true, false);
-        }
-        this.d.q = 0;
-        ImageReceiver imageReceiver = kb0Var.getImageReceiver();
-        float B = ls6.B(1.0f, this.h, gl.L(6.0f), gl.L(3.0f));
-        this.d.f((int) (rectF.left - B), (int) (rectF.top - B), (int) (rectF.right + B), (int) (rectF.bottom + B));
-        this.d.e(true, z2 ? 1.0f : Utilities.i(f2, 1.0f, 0.0f));
-        if (this.r && z2 && this.d.f >= 0.9f) {
-            this.h = Utilities.i(this.h - ((1000.0f / gl.r) / 300.0f), 1.0f, 0.0f);
-        }
+        this.d = w28Var;
+        int i = cmb.c6;
+        d38 d38Var = w28Var.q0;
+        anb.h(i, d38Var.getResourceProvider(), this);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 16.0f);
+        anb.X(textView, cmb.F6, d38Var.getResourceProvider());
+        boolean z = w28Var.n0;
+        boolean z2 = d38Var.a;
         if (z) {
-            if (f != 1.0f) {
-                Paint t = x2b.t(imageReceiver, false);
-                t.setAlpha((int) (this.h * 255.0f));
-                ty8 ty8Var3 = this.d;
-                ty8Var3.r = t;
-                ty8Var3.a(canvas);
+            textView.setText(jb6.M0(z2 ? 2131752250 : 2131743417, null));
+        } else {
+            textView.setText(jb6.M0(z2 ? 2131752263 : 2131743420, null));
+        }
+        addView(textView, qoe.d(-1, -2.0f, 23, 20.0f, 0.0f, 20.0f, 0.0f));
+        this.c = new tm(gm.L(24.0f), 13, this, false);
+    }
+
+    public final int a() {
+        int i;
+        fc7 fc7Var;
+        ec7 d;
+        int i2;
+        ylb ylbVar;
+        ylb ylbVar2;
+        ylb ylbVar3;
+        ylb ylbVar4;
+        w28 w28Var = this.d;
+        d38 d38Var = w28Var.q0;
+        int i3 = w28Var.h;
+        if (i3 >= 0) {
+            if (i3 < 7) {
+                return d38Var.getThemedColor(cmb.q8[i3]);
             }
-            if (this.f == null) {
-                Paint paint = new Paint(1);
-                this.f = paint;
-                paint.setColor(-1);
-                this.f.setStrokeWidth(gl.L(2.0f));
-                this.f.setStyle(Paint.Style.STROKE);
-                this.f.setStrokeCap(Paint.Cap.ROUND);
+            if (w28Var.n0) {
+                i2 = ((d) d38Var).currentAccount;
+                fc7Var = oc7.r1(i2).E3;
+            } else {
+                i = ((d) d38Var).currentAccount;
+                fc7Var = oc7.r1(i).F3;
             }
-            this.f.setAlpha((int) (255.0f * f * this.h));
-            ty8 ty8Var4 = this.d;
-            ty8Var4.r = this.f;
-            ty8Var4.a(canvas);
+            return (fc7Var == null || (d = fc7Var.d(w28Var.h)) == null) ? d38Var.getThemedColor(cmb.q8[0]) : d.f();
+        }
+        int i4 = cmb.r8;
+        if (gm.B(d38Var.getThemedColor(i4)) > 0.8f) {
+            int i5 = cmb.m6;
+            ylbVar4 = ((d) d38Var).resourceProvider;
+            return cmb.v0(i5, ylbVar4);
+        }
+        if (gm.B(d38Var.getThemedColor(i4)) < 0.2f) {
+            int i6 = cmb.z8;
+            ylbVar3 = ((d) d38Var).resourceProvider;
+            return cmb.p1(0.5f, cmb.v0(i6, ylbVar3));
+        }
+        int i7 = cmb.c6;
+        ylbVar = ((d) d38Var).resourceProvider;
+        int v0 = cmb.v0(i7, ylbVar);
+        ylbVar2 = ((d) d38Var).resourceProvider;
+        return cmb.v(v0, cmb.p1(0.7f, d38.z0(cmb.v0(i4, ylbVar2))));
+    }
+
+    public final void b(boolean z) {
+        w28 w28Var = this.d;
+        long j = w28Var.n;
+        tm tmVar = this.c;
+        if (j != 0) {
+            tmVar.j(j, z);
+            this.b = null;
+        } else {
+            tmVar.g(null, z);
+            if (this.b == null) {
+                this.b = new uib(jb6.M0(w28Var.q0.a ? 2131752249 : 2131743416, null), 16.0f, null);
+            }
         }
     }
 
-    public final void b(CharSequence charSequence, boolean z) {
-        ValueAnimator valueAnimator = this.s;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.s = null;
-        }
-        TextView[] textViewArr = this.c;
-        if (!z) {
-            textViewArr[0].setVisibility(0);
-            textViewArr[0].setAlpha(1.0f);
-            textViewArr[0].setText(charSequence);
-            textViewArr[1].setVisibility(8);
-            textViewArr[1].setAlpha(0.0f);
-            return;
-        }
-        textViewArr[1].setOnClickListener(null);
-        textViewArr[1].setText(textViewArr[0].getText());
-        textViewArr[1].setVisibility(0);
-        textViewArr[1].setAlpha(1.0f);
-        textViewArr[1].setTranslationY(0.0f);
-        textViewArr[0].setText(charSequence);
-        textViewArr[0].setVisibility(0);
-        textViewArr[0].setAlpha(0.0f);
-        textViewArr[0].setTranslationY(-gl.L(4.0f));
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.s = ofFloat;
-        ofFloat.addUpdateListener(new u28(this, (byte) 0));
-        this.s.addListener(new v85(this, (byte) 29));
-        this.s.setInterpolator(s33.h);
-        this.s.setDuration(340L);
-        this.s.start();
+    public final void c() {
+        boolean z = jb6.a0;
+        tm tmVar = this.c;
+        int L = z ? gm.L(21.0f) : (getWidth() - tmVar.s) - gm.L(21.0f);
+        int height = getHeight();
+        int i = tmVar.s;
+        int i2 = tmVar.s;
+        tmVar.setBounds(L, (height - i) / 2, jb6.a0 ? gm.L(21.0f) + i2 : getWidth() - gm.L(21.0f), (getHeight() + i2) / 2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        c();
+        Integer valueOf = Integer.valueOf(a());
+        tm tmVar = this.c;
+        tmVar.k(valueOf);
+        uib uibVar = this.b;
+        if (uibVar != null) {
+            uibVar.c((getMeasuredWidth() - this.b.j()) - gm.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, this.d.q0.getThemedColor(cmb.p6), canvas);
+        } else {
+            tmVar.draw(canvas);
         }
-        return false;
     }
 
-    public void setOnSubtitleClick(View.OnClickListener onClickListener) {
-        TextView[] textViewArr = this.c;
-        textViewArr[0].setOnClickListener(onClickListener);
-        textViewArr[0].setClickable(onClickListener != null);
-        textViewArr[0].setBackground(onClickListener == null ? null : bkb.f0(822083583, 7, -1));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c.a();
     }
 
-    public void setSubtitle(CharSequence charSequence) {
-        b(charSequence, false);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.c.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(50.0f), TLObject.FLAG_30));
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        d38 d38Var = this.d.q0;
+        setBackgroundColor(d38Var.getThemedColor(cmb.c6));
+        this.a.setTextColor(d38Var.getThemedColor(cmb.F6));
+    }
+
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

@@ -11,11 +11,11 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class TL_bots {
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static abstract class BotInfo extends TLObject {
         public botAppSettings app_settings;
         public ArrayList<TLRPC.BotCommand> commands = new ArrayList<>();
@@ -60,14 +60,14 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static abstract class BotMenuButton extends TLObject {
         public static BotMenuButton TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (BotMenuButton) TLObject.TLdeserialize(BotMenuButton.class, i != -944407322 ? i != 1113113093 ? i != 1966318984 ? null : new TL_botMenuButtonDefault() : new TL_botMenuButtonCommands() : new TL_botMenuButton(), inputSerializedData, i, z);
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class BotVerification extends TLObject {
         public static final int constructor = -147976487;
         public long bot_id;
@@ -94,7 +94,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static abstract class BotVerifierSettings extends TLObject {
         public static final int constructor = -1328716265;
         public boolean can_modify_custom_description;
@@ -118,7 +118,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo extends BotInfo {
         public static final int constructor = 1300890265;
 
@@ -140,7 +140,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+                this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -192,7 +192,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfoEmpty_layer48 extends TL_botInfo {
         public static final int constructor = -1154598962;
 
@@ -202,7 +202,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer131 extends TL_botInfo {
         public static final int constructor = -1729618630;
 
@@ -210,7 +210,7 @@ public class TL_bots {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.user_id = inputSerializedData.readInt32(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+            this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
         }
 
         @Override // org.telegram.tgnet.tl.TL_bots.TL_botInfo, org.telegram.tgnet.TLObject
@@ -222,7 +222,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer139 extends BotInfo {
         public static final int constructor = 460632885;
 
@@ -230,7 +230,7 @@ public class TL_bots {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.user_id = inputSerializedData.readInt64(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+            this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -242,7 +242,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer140 extends TL_botInfo {
         public static final int constructor = -468280483;
 
@@ -250,7 +250,7 @@ public class TL_bots {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.user_id = inputSerializedData.readInt64(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+            this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
             this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
 
@@ -264,7 +264,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer185 extends TL_botInfo {
         public static final int constructor = -1892676777;
 
@@ -286,7 +286,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+                this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -320,7 +320,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer192 extends TL_botInfo {
         public static final int constructor = -2109505932;
 
@@ -342,7 +342,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+                this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -382,7 +382,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer195 extends TL_botInfo {
         public static final int constructor = 912290611;
 
@@ -404,7 +404,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+                this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -450,7 +450,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botInfo_layer48 extends TL_botInfo {
         public static final int constructor = 164583517;
 
@@ -460,7 +460,7 @@ public class TL_bots {
             this.version = inputSerializedData.readInt32(z);
             inputSerializedData.readString(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new qdb((byte) 14), z);
+            this.commands = Vector.deserialize(inputSerializedData, new rfb((byte) 18), z);
         }
 
         @Override // org.telegram.tgnet.tl.TL_bots.TL_botInfo, org.telegram.tgnet.TLObject
@@ -474,7 +474,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botMenuButton extends BotMenuButton {
         public static final int constructor = -944407322;
         public String text;
@@ -494,7 +494,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botMenuButtonCommands extends BotMenuButton {
         public static final int constructor = 1113113093;
 
@@ -504,7 +504,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botMenuButtonDefault extends BotMenuButton {
         public static final int constructor = 1966318984;
 
@@ -514,7 +514,61 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    public static class TL_botProfileWidget extends TLObject {
+        public static final int constructor = 2082111522;
+        public boolean background_query;
+        public boolean can_query;
+        public String chat_data;
+        public int flags;
+        public byte[] payload;
+        public String public_data;
+        public long public_data_hash;
+
+        public static TL_botProfileWidget TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_botProfileWidget) TLObject.TLdeserialize(TL_botProfileWidget.class, 2082111522 != i ? null : new TL_botProfileWidget(), inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.can_query = TLObject.hasFlag(readInt32, 1);
+            this.background_query = TLObject.hasFlag(this.flags, 2);
+            this.payload = inputSerializedData.readByteArray(z);
+            if (TLObject.hasFlag(this.flags, 4)) {
+                this.public_data = inputSerializedData.readString(z);
+                this.public_data_hash = inputSerializedData.readInt64(z);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.chat_data = inputSerializedData.readString(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.can_query);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.background_query);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 4, this.public_data != null);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 8, this.chat_data != null);
+            this.flags = flag4;
+            outputSerializedData.writeInt32(flag4);
+            outputSerializedData.writeByteArray(this.payload);
+            if (TLObject.hasFlag(this.flags, 4)) {
+                outputSerializedData.writeString(this.public_data);
+                outputSerializedData.writeInt64(this.public_data_hash);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeString(this.chat_data);
+            }
+        }
+    }
+
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botVerifierSettings extends BotVerifierSettings {
         public static final int constructor = -1591021569;
 
@@ -546,7 +600,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_botVerifierSettings_layer229 extends TL_botVerifierSettings {
         public static final int constructor = -1328716265;
 
@@ -580,7 +634,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_updateBotMenuButton extends TLRPC.Update {
         public static final int constructor = 347625491;
         public long bot_id;
@@ -600,7 +654,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class addPreviewMedia extends TLObject {
         public static final int constructor = 397326170;
@@ -622,7 +676,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class allowSendMessage extends TLObject {
         public static final int constructor = -248323089;
         public TLRPC.InputUser bot;
@@ -639,7 +693,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class botAppSettings extends TLObject {
         public static final int constructor = -912582320;
@@ -662,7 +716,7 @@ public class TL_bots {
             if (TLObject.hasFlag(readInt32, 1)) {
                 byte[] readByteArray = inputSerializedData.readByteArray(z);
                 this.placeholder_path = readByteArray;
-                this.placeholder_svg_path = lcb.b(lcb.a(readByteArray));
+                this.placeholder_svg_path = neb.b(neb.a(readByteArray));
             }
             if (TLObject.hasFlag(this.flags, 2)) {
                 this.background_color = inputSerializedData.readInt32(z);
@@ -700,7 +754,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class botPreviewMedia extends TLObject {
         public static final int constructor = 602479523;
         public int date;
@@ -724,7 +778,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class botVerification_layer229 extends BotVerification {
         public static final int constructor = -113453988;
 
@@ -747,7 +801,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class canSendMessage extends TLObject {
         public static final int constructor = 324662502;
@@ -765,7 +819,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class checkDownloadFileParams extends TLObject {
         public static final int constructor = 1342666121;
@@ -787,7 +841,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class deletePreviewMedia extends TLObject {
         public static final int constructor = 755054003;
         public TLRPC.InputUser bot;
@@ -808,7 +862,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class editPreviewMedia extends TLObject {
         public static final int constructor = -2061148049;
@@ -832,7 +886,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class exportedBotToken extends TLObject {
         public static final int constructor = 1012971041;
         public String token;
@@ -853,13 +907,13 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getAdminedBots extends TLObject {
         public static final int constructor = -1334764157;
 
         @Override // org.telegram.tgnet.TLObject
         public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new v0b((byte) 11));
+            return Vector.TLDeserialize(inputSerializedData, i, z, new c1b((byte) 12));
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -868,7 +922,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getBotInfo extends TLObject {
         public static final int constructor = -589753091;
         public TLRPC.InputUser bot;
@@ -891,7 +945,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getBotMenuButton extends TLObject {
         public static final int constructor = -1671369944;
         public TLRPC.InputUser user_id;
@@ -908,7 +962,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes.dex */
     public static class getBotRecommendations extends TLObject {
         public static final int constructor = -1581840363;
@@ -926,7 +980,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getPopularAppBots extends TLObject {
         public static final int constructor = -1034878574;
         public int limit;
@@ -945,7 +999,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getPreviewInfo extends TLObject {
         public static final int constructor = 1111143341;
         public TLRPC.InputUser bot;
@@ -964,14 +1018,14 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getPreviewMedias extends TLObject {
         public static final int constructor = -1566222003;
         public TLRPC.InputUser bot;
 
         @Override // org.telegram.tgnet.TLObject
         public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new qdb((byte) 15));
+            return Vector.TLDeserialize(inputSerializedData, i, z, new rfb((byte) 19));
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -981,7 +1035,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class invokeWebViewCustomMethod extends TLObject {
         public static final int constructor = 142591463;
@@ -1003,7 +1057,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class popularAppBots extends TLObject {
         public static final int constructor = 428978491;
         public int flags;
@@ -1021,7 +1075,7 @@ public class TL_bots {
             if (TLObject.hasFlag(readInt32, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.users = Vector.deserialize(inputSerializedData, new c1b((byte) 12), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1035,7 +1089,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class previewInfo extends TLObject {
         public static final int constructor = 212278628;
         public ArrayList<botPreviewMedia> media = new ArrayList<>();
@@ -1047,7 +1101,7 @@ public class TL_bots {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.media = Vector.deserialize(inputSerializedData, new qdb((byte) 15), z);
+            this.media = Vector.deserialize(inputSerializedData, new rfb((byte) 19), z);
             this.lang_codes = Vector.deserializeString(inputSerializedData, z);
         }
 
@@ -1059,8 +1113,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-    /* loaded from: classes3.dex */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class reorderPreviewMedias extends TLObject {
         public static final int constructor = -1238895702;
         public TLRPC.InputUser bot;
@@ -1081,7 +1134,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class reorderUsernames extends TLObject {
         public static final int constructor = -1760972350;
         public TLRPC.InputUser bot;
@@ -1100,7 +1153,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class requestedButton extends TLObject {
         public static final int constructor = -247743273;
         public String webapp_req_id;
@@ -1121,7 +1174,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class setBotInfo extends TLObject {
         public static final int constructor = 282013987;
         public String about;
@@ -1156,7 +1209,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class setBotMenuButton extends TLObject {
         public static final int constructor = 1157944655;
         public BotMenuButton button;
@@ -1175,7 +1228,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class toggleUserEmojiStatusPermission extends TLObject {
         public static final int constructor = 115237778;
         public TLRPC.InputUser bot;
@@ -1194,7 +1247,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class toggleUsername extends TLObject {
         public static final int constructor = 87861619;
         public boolean active;
@@ -1215,7 +1268,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class updateStarRefProgram extends TLObject {
         public static final int constructor = 2005621427;
         public TLRPC.InputUser bot;
@@ -1240,7 +1293,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_bots_addUsername extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 889307274;
         public TLRPC.InputUser bot;
@@ -1259,7 +1312,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class TL_bots_removeUsername extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -956033923;
         public TLRPC.InputUser bot;
@@ -1278,19 +1331,14 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class checkUsername extends TLMethod<TLRPC.Bool> {
-        public static final int constructor = -475247519;
-        public boolean additional;
-        public int flags;
+        public static final int constructor = -2014174821;
         public String username;
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.additional);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeString(this.username);
         }
 
@@ -1300,7 +1348,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class createBot extends TLMethod<TLRPC.User> {
         public static final int constructor = -441352405;
         public int flags;
@@ -1326,16 +1374,58 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    public static class editProfileWidgetChatData extends TLMethod<TLRPC.Bool> {
+        public static final int constructor = -54385831;
+        public String chat_data;
+        public TLRPC.InputUser user_id;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.user_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeString(this.chat_data);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    public static class editProfileWidgetData extends TLMethod<TLRPC.Bool> {
+        public static final int constructor = 905942386;
+        public int cache_time;
+        public int flags;
+        public String public_data;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.flags);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeInt32(this.cache_time);
+            }
+            outputSerializedData.writeString(this.public_data);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class exportBotToken extends TLMethod<exportedBotToken> {
-        public static final int constructor = -1123182101;
-        public TLRPC.InputUser bot;
+        public static final int constructor = 6533257;
+        public long bot_id;
         public boolean revoke;
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            this.bot.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt64(this.bot_id);
             outputSerializedData.writeBool(this.revoke);
         }
 
@@ -1345,7 +1435,48 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    public static class getProfileWidgetPublicData extends TLMethod<TLRPC.messages_WidgetPublicData> {
+        public static final int constructor = 1923143539;
+        public TLRPC.InputUser bot;
+        public long hash;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.bot.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt64(this.hash);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.messages_WidgetPublicData deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.messages_WidgetPublicData.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+    /* loaded from: classes3.dex */
+    public static class getProfileWidgetQueryAnswer extends TLMethod<TLRPC.TL_messages_botWidgetQueryAnswer> {
+        public static final int constructor = -2055962508;
+        public TLRPC.InputUser bot;
+        public byte[] data;
+        public TLRPC.WidgetQueryType query_type;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.bot.serializeToStream(outputSerializedData);
+            this.query_type.serializeToStream(outputSerializedData);
+            outputSerializedData.writeByteArray(this.data);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.TL_messages_botWidgetQueryAnswer deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.TL_messages_botWidgetQueryAnswer.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class getRequestedWebViewButton extends TLMethod<TL_keyboard.KeyboardButton> {
         public static final int constructor = -1088047117;
         public TLRPC.InputUser bot;
@@ -1364,7 +1495,7 @@ public class TL_bots {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     /* loaded from: classes3.dex */
     public static class setCustomVerification extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -191600809;

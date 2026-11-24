@@ -1,37 +1,43 @@
 // default package
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class zeb extends ViewGroup.MarginLayoutParams {
-    public bfb a;
-    public bfb b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class zeb implements d26, Serializable {
+    public pr4 a;
+    public volatile Object b;
+    public final Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zeb() {
-        super(-2, -2);
-        bfb bfbVar = bfb.e;
-        this.a = bfbVar;
-        this.b = bfbVar;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = bfbVar;
-        this.b = bfbVar;
+    public zeb(pr4 pr4Var) {
+        pr4Var.getClass();
+        this.a = pr4Var;
+        this.b = nf5.d;
+        this.c = this;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // d26
+    public final Object getValue() {
+        Object obj;
+        Object obj2 = this.b;
+        nf5 nf5Var = nf5.d;
+        if (obj2 != nf5Var) {
+            return obj2;
         }
-        if (obj == null || zeb.class != obj.getClass()) {
-            return false;
+        synchronized (this.c) {
+            obj = this.b;
+            if (obj == nf5Var) {
+                pr4 pr4Var = this.a;
+                pr4Var.getClass();
+                obj = pr4Var.invoke();
+                this.b = obj;
+                this.a = null;
+            }
         }
-        zeb zebVar = (zeb) obj;
-        return this.b.equals(zebVar.b) && this.a.equals(zebVar.a);
+        return obj;
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    public final String toString() {
+        return this.b != nf5.d ? String.valueOf(getValue()) : "Lazy value not initialized yet.";
     }
 }

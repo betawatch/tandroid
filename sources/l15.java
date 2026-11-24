@@ -1,145 +1,156 @@
 // default package
 
-import android.app.AlertDialog;
-import android.app.KeyguardManager;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.hardware.biometrics.BiometricPrompt;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.CancellationSignal;
-import android.os.Handler;
-import android.os.Looper;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class l15 {
-    public final CountDownLatch a = new CountDownLatch(1);
-    public volatile boolean b;
-    public String c;
-    public String d;
-    public LaunchActivity e;
-    public boolean f;
-    public int g;
-    public CancellationSignal h;
-    public AlertDialog i;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l15 implements RequestDelegate {
+    public final /* synthetic */ byte a = 2;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public final void a() {
-        if (this.f || !f()) {
-            return;
-        }
-        this.f = true;
-        e();
-        try {
-            KeyguardManager keyguardManager = (KeyguardManager) this.e.getSystemService("keyguard");
-            Intent createConfirmDeviceCredentialIntent = keyguardManager != null ? keyguardManager.createConfirmDeviceCredentialIntent(k96.M0(2131742707, null), null) : null;
-            if (createConfirmDeviceCredentialIntent == null) {
-                c("AUTH_UNAVAILABLE");
-                return;
-            }
-            int i = bje.a;
-            int i2 = i + 1;
-            bje.a = i2;
-            this.g = i;
-            if (i2 > 22399) {
-                bje.a = 22336;
-            }
-            this.e.startActivityForResult(createConfirmDeviceCredentialIntent, i);
-        } catch (Exception e) {
-            fa4.g(e, true);
-            c("AUTH_UNAVAILABLE");
-        }
+    public /* synthetic */ l15(he heVar, j5 j5Var, uv5 uv5Var, long j, Context context, d dVar, int i, TLRPC.Peer peer) {
+        this.e = heVar;
+        this.f = j5Var;
+        this.g = uv5Var;
+        this.b = j;
+        this.h = context;
+        this.c = dVar;
+        this.d = i;
+        this.i = peer;
     }
 
-    public final void b() {
-        FingerprintManager fingerprintManager = (FingerprintManager) this.e.getSystemService("fingerprint");
-        if (fingerprintManager == null || !fingerprintManager.isHardwareDetected() || !fingerprintManager.hasEnrolledFingerprints()) {
-            a();
-            return;
-        }
-        this.h = new CancellationSignal();
-        final byte b = 0;
-        final byte b2 = 1;
-        this.i = new AlertDialog.Builder(this.e).setTitle(k96.M0(2131742707, null)).setMessage(k96.M0(2131742726, null)).setNegativeButton(k96.M0(2131752577, null), new DialogInterface.OnClickListener(this) { // from class: i15
-            public final /* synthetic */ l15 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.content.DialogInterface.OnClickListener
-            public final void onClick(DialogInterface dialogInterface, int i) {
-                byte b3 = b;
-                l15 l15Var = this.b;
-                switch (b3) {
-                    case 0:
-                        l15Var.c("AUTH_CANCELED");
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        Object obj = this.i;
+        Object obj2 = this.h;
+        Object obj3 = this.g;
+        Object obj4 = this.c;
+        Object obj5 = this.f;
+        Object obj6 = this.e;
+        switch (b) {
+            case 0:
+                final ConnectionsManager connectionsManager = (ConnectionsManager) obj6;
+                final TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj5;
+                final d dVar = (d) obj4;
+                final qt0 qt0Var = (qt0) obj3;
+                final wz wzVar = (wz) obj2;
+                final TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP = (TLRPC.TL_inputCheckPasswordSRP) obj;
+                final long j = this.b;
+                final int i = this.d;
+                gm.c3(new Runnable() { // from class: m15
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        TLRPC.TL_error tL_error2 = TLRPC.TL_error.this;
+                        ConnectionsManager connectionsManager2 = connectionsManager;
+                        TwoStepVerificationActivity twoStepVerificationActivity2 = twoStepVerificationActivity;
+                        d dVar2 = dVar;
+                        long j2 = j;
+                        qt0 qt0Var2 = qt0Var;
+                        wz wzVar2 = wzVar;
+                        int i2 = i;
+                        if (tL_error2 == null) {
+                            TLRPC.TL_payments_withdrawStarsRevenueToWallet tL_payments_withdrawStarsRevenueToWallet = new TLRPC.TL_payments_withdrawStarsRevenueToWallet();
+                            tL_payments_withdrawStarsRevenueToWallet.ton = true;
+                            tL_payments_withdrawStarsRevenueToWallet.peer = oc7.r1(i2).i1(z8c.h(i2).e());
+                            tL_payments_withdrawStarsRevenueToWallet.tmp_password = ((TL_account.tmpPassword) tLObject).tmp_password;
+                            connectionsManager2.sendRequest(tL_payments_withdrawStarsRevenueToWallet, new xs0(i2, qt0Var2, tL_inputCheckPasswordSRP, twoStepVerificationActivity2, wzVar2, dVar2, j2));
+                            return;
+                        }
+                        if ("SRP_ID_INVALID".equals(tL_error2.text)) {
+                            connectionsManager2.sendRequest(new TL_account.getPassword(), new n15(twoStepVerificationActivity2, dVar2, j2, qt0Var2, wzVar2, i2), 8);
+                            return;
+                        }
+                        u15.a[i2] = false;
+                        twoStepVerificationActivity2.t0();
+                        if (u15.h(tL_error2, twoStepVerificationActivity2)) {
+                            return;
+                        }
+                        if (!"PASSWORD_MISSING".equals(tL_error2.text)) {
+                            if (!"PASSWORD_HASH_INVALID".equals(tL_error2.text)) {
+                                twoStepVerificationActivity2.finishFragment();
+                            }
+                            c41.e0(tL_error2);
+                            return;
+                        }
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, twoStepVerificationActivity2.getResourceProvider(), twoStepVerificationActivity2.getParentActivity());
+                        String M0 = jb6.M0(2131751234, null);
+                        he heVar = alertDialog$Builder.a;
+                        heVar.S = M0;
+                        heVar.U = jb6.M0(2131749277, null);
+                        alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                        alertDialog$Builder.j(jb6.M0(2131751228, null), new o15(twoStepVerificationActivity2, (byte) 0));
+                        twoStepVerificationActivity2.showDialog(heVar);
+                    }
+                });
+                break;
+            case 1:
+                gm.c3(new dt0((he) obj6, tLObject, (j5) obj5, (uv5) obj3, this.b, (Context) obj2, (d) obj4, this.d, (TLRPC.Peer) obj));
+                break;
+            default:
+                Context context = (Context) obj6;
+                q63 q63Var = (q63) obj5;
+                byte[] bArr = (byte[]) obj4;
+                bo1 bo1Var = (bo1) obj3;
+                c41 c41Var = (c41) obj2;
+                ecc eccVar = (ecc) obj;
+                if (tLObject == null) {
+                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                        gm.d3(new w99(bo1Var, c41Var, context, q63Var, (byte) 1), 200L);
                         break;
-                    default:
-                        l15Var.a();
+                    }
+                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
+                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
+                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
+                            gm.d3(new v99((Object) bo1Var, (Object) c41Var, this.d, (byte) 1), 200L);
+                            break;
+                        }
+                    } else {
+                        gm.d3(new w99(bo1Var, c41Var, context, q63Var, (byte) 0), 200L);
                         break;
+                    }
+                } else {
+                    gm.c3(new xh3((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject, context, q63Var, this.b, bArr, bo1Var, c41Var, eccVar, (byte) 1));
+                    break;
                 }
-            }
-        }).setPositiveButton(k96.M0(2131742702, null), new DialogInterface.OnClickListener(this) { // from class: i15
-            public final /* synthetic */ l15 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.content.DialogInterface.OnClickListener
-            public final void onClick(DialogInterface dialogInterface, int i) {
-                byte b3 = b2;
-                l15 l15Var = this.b;
-                switch (b3) {
-                    case 0:
-                        l15Var.c("AUTH_CANCELED");
-                        break;
-                    default:
-                        l15Var.a();
-                        break;
-                }
-            }
-        }).setOnCancelListener(new ur0(this, (byte) 9)).show();
-        fingerprintManager.authenticate(null, this.h, 0, new k15(this), new Handler(Looper.getMainLooper()));
-    }
-
-    public final void c(String str) {
-        CountDownLatch countDownLatch = this.a;
-        if (countDownLatch.getCount() == 0) {
-            return;
+                break;
         }
-        this.c = str;
-        countDownLatch.countDown();
     }
 
-    public final void d() {
-        this.h = new CancellationSignal();
-        new BiometricPrompt.Builder(this.e).setTitle(k96.M0(2131742707, null)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new j15(this));
+    public /* synthetic */ l15(Context context, q63 q63Var, long j, byte[] bArr, bo1 bo1Var, c41 c41Var, ecc eccVar, int i) {
+        this.e = context;
+        this.f = q63Var;
+        this.b = j;
+        this.c = bArr;
+        this.g = bo1Var;
+        this.h = c41Var;
+        this.i = eccVar;
+        this.d = i;
     }
 
-    public final void e() {
-        try {
-            CancellationSignal cancellationSignal = this.h;
-            if (cancellationSignal != null) {
-                cancellationSignal.cancel();
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-        try {
-            AlertDialog alertDialog = this.i;
-            if (alertDialog != null) {
-                alertDialog.dismiss();
-            }
-        } catch (Exception e2) {
-            fa4.g(e2, true);
-        }
-        this.i = null;
-    }
-
-    public final boolean f() {
-        return (this.b || this.a.getCount() == 0) ? false : true;
+    public /* synthetic */ l15(ConnectionsManager connectionsManager, TwoStepVerificationActivity twoStepVerificationActivity, d dVar, long j, qt0 qt0Var, wz wzVar, int i, TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        this.e = connectionsManager;
+        this.f = twoStepVerificationActivity;
+        this.c = dVar;
+        this.b = j;
+        this.g = qt0Var;
+        this.h = wzVar;
+        this.d = i;
+        this.i = tL_inputCheckPasswordSRP;
     }
 }

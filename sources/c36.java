@@ -1,21 +1,16 @@
 // default package
 
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class c36 extends zu8 {
-    public final /* synthetic */ f36 t1;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public interface c36 {
+    void a(String str, y26 y26Var);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c36(f36 f36Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.t1 = f36Var;
-    }
+    y26 b(Class cls, String str);
 
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        this.t1.F = null;
-    }
+    Activity e();
+
+    void startActivityForResult(Intent intent, int i);
 }

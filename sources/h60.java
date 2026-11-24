@@ -1,24 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class h60 implements zn7 {
+public final class h60 implements cq7 {
     public static final h60 a = new h60();
-    public static final w84 b = w84.c("pc");
-    public static final w84 c = w84.c("symbol");
-    public static final w84 d = w84.c("file");
-    public static final w84 e = w84.c("offset");
-    public static final w84 f = w84.c("importance");
+    public static final wa4 b = wa4.c("clientType");
+    public static final wa4 c = wa4.c("androidClientInfo");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        ty2 ty2Var = (ty2) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.g(b, ((a90) ty2Var).a);
-        a90 a90Var = (a90) ty2Var;
-        ao7Var.a(c, a90Var.b);
-        ao7Var.a(d, a90Var.c);
-        ao7Var.g(e, a90Var.d);
-        ao7Var.e(f, a90Var.e);
+        zj2 zj2Var = (zj2) obj;
+        dq7 dq7Var = (dq7) obj2;
+        ((x80) zj2Var).getClass();
+        dq7Var.a(b, yj2.a);
+        dq7Var.a(c, ((x80) zj2Var).a);
     }
 }

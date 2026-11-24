@@ -1,70 +1,30 @@
 // default package
 
-import android.content.Context;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.voip.GroupCallMessagesController;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class v95 extends jia {
-    public float N0;
-    public final /* synthetic */ int O0;
-    public final /* synthetic */ y95 P0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v95 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ GroupCallMessage b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v95(y95 y95Var, Context context, int i) {
-        super(context);
-        this.P0 = y95Var;
-        this.O0 = i;
+    public /* synthetic */ v95(GroupCallMessage groupCallMessage, byte b) {
+        this.a = b;
+        this.b = groupCallMessage;
     }
 
-    @Override // android.view.View
-    public final float getAlpha() {
-        return this.N0;
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        this.N0 = f;
-        y95 y95Var = this.P0;
-        jia[] jiaVarArr = y95Var.d;
-        if (this.O0 != 4) {
-            super.setAlpha((1.0f - jiaVarArr[4].getFullAlpha()) * f);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        GroupCallMessage groupCallMessage = this.b;
+        switch (b) {
+            case 0:
+                groupCallMessage.notifyStateUpdate();
+                break;
+            default:
+                GroupCallMessagesController.lambda$sendCallMessage$4(groupCallMessage);
+                break;
         }
-        float fullAlpha = jiaVarArr[4].getFullAlpha();
-        if (y95Var.c()) {
-            float f2 = y95Var.f0;
-            if (f2 > 0.0f) {
-                super.setAlpha(1.0f - f2);
-                return;
-            }
-        }
-        if (fullAlpha > 0.0f) {
-            super.setAlpha(Math.max(f, fullAlpha));
-        } else {
-            super.setAlpha(f);
-        }
-    }
-
-    @Override // jia
-    public final void setFullAlpha(float f) {
-        super.setFullAlpha(f);
-        int i = 0;
-        while (true) {
-            jia[] jiaVarArr = this.P0.d;
-            if (i >= jiaVarArr.length) {
-                return;
-            }
-            jia jiaVar = jiaVarArr[i];
-            jiaVar.setAlpha(jiaVar.getAlpha());
-            i++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        if (this.O0 == 4 && getFullAlpha() > 0.0f) {
-            f = 0.0f;
-        }
-        super.setTranslationY(f);
     }
 }

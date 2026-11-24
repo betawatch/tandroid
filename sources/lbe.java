@@ -1,23 +1,19 @@
 // default package
 
-import android.net.Uri;
-import java.util.Collections;
-import java.util.Map;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class lbe {
-    public static u63 a(i89 i89Var, String str, az8 az8Var, int i) {
-        Map map = Collections.EMPTY_MAP;
-        Uri d = jxe.d(str, az8Var.c);
-        long j = az8Var.a;
-        long j2 = az8Var.b;
-        String a = i89Var.a();
-        if (a == null) {
-            a = jxe.d(((wg0) i89Var.b.get(0)).a, az8Var.c).toString();
+public final class lbe implements cq7 {
+    public static final lbe a = new lbe();
+
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)), 5)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        String str2 = a;
-        gre.l(d, "The uri must be set.");
-        return new u63(d, 1, null, b69.h, j, j2, str2, i);
+        throw null;
     }
 }

@@ -1,257 +1,153 @@
 // default package
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-import java.util.TimeZone;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ee0 {
-    public int a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ee0 extends Drawable {
+    public final Paint a;
     public boolean b;
-    public final Serializable c;
-    public final Serializable d;
-    public final Object e;
-    public Object f;
+    public long c;
+    public float d;
+    public float e;
+    public int f;
+    public final boolean g;
+    public final DecelerateInterpolator h;
+    public int i;
+    public int j;
+    public float k;
+    public short l;
 
-    public ee0(fi2 fi2Var, byte[] bArr) {
-        this.f = fi2Var;
-        this.a = fi2Var.e;
-        this.c = fi2Var.d;
-        this.d = fi2Var.f;
-        tce tceVar = new tce();
-        tceVar.a = 0L;
-        tceVar.b = 0L;
-        tceVar.c = 0;
-        if (yce.a == null) {
-            synchronized (j5e.a) {
-                if (yce.a == null) {
-                    yce.a = new yce[0];
-                }
-            }
-        }
-        tceVar.d = yce.a;
-        byte[] bArr2 = wed.b;
-        tceVar.e = bArr2;
-        tceVar.f = bArr2;
-        tceVar.h = "";
-        tceVar.n = "";
-        tceVar.r = "";
-        tceVar.s = 180000L;
-        tceVar.w = bArr2;
-        tceVar.x = "";
-        tceVar.y = wed.a;
-        tceVar.E = false;
-        this.e = tceVar;
-        this.b = false;
-        tceVar.E = g5d.a(fi2Var.a);
-        fi2Var.h.getClass();
-        tceVar.a = System.currentTimeMillis();
-        fi2Var.h.getClass();
-        tceVar.b = SystemClock.elapsedRealtime();
-        tceVar.s = TimeZone.getDefault().getOffset(tceVar.a) / 1000;
-        tceVar.f = bArr;
+    public ee0(boolean z) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.h = new DecelerateInterpolator();
+        this.i = -1;
+        this.j = -9079435;
+        this.k = 300.0f;
+        paint.setStrokeWidth(gm.L(2.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStrokeWidth(gm.L(2.0f));
+        paint2.setColor(-65536);
+        this.g = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0165  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a() {
-        List e;
-        String str;
-        String str2;
-        int i;
-        long parseLong;
-        long parseLong2;
-        boolean g;
-        fbe fbeVar;
-        fi2 fi2Var = (fi2) this.f;
-        if (this.b) {
-            sc8.j("do not reuse LogEventBuilder");
-            return;
-        }
-        boolean z = true;
-        z = true;
-        z = true;
-        z = true;
-        this.b = true;
-        fbf fbfVar = new fbf(fi2Var.b, fi2Var.c, this.a, (String) this.c, (h7e) this.d);
-        tce tceVar = (tce) this.e;
-        mtd mtdVar = new mtd(fbfVar, tceVar);
-        Context context = fi2Var.i.a;
-        byte b = 0;
-        int i2 = tceVar != null ? tceVar.c : 0;
-        boolean booleanValue = ((Boolean) o7f.i.a()).booleanValue();
-        x1d x1dVar = null;
-        String str3 = fbfVar.h;
-        int i3 = fbfVar.c;
-        if (booleanValue) {
-            if (str3 == null || str3.isEmpty()) {
-                str3 = i3 >= 0 ? String.valueOf(i3) : null;
-            }
-            if (str3 != null) {
-                if (context == null) {
-                    e = Collections.EMPTY_LIST;
-                } else {
-                    ConcurrentHashMap concurrentHashMap = o7f.e;
-                    g6d g6dVar = (g6d) concurrentHashMap.get(str3);
-                    if (g6dVar == null) {
-                        vk9 vk9Var = o7f.c;
-                        gbe f = gbe.f();
-                        vk9Var.getClass();
-                        a8d a8dVar = new a8d(vk9Var, str3, f);
-                        g6dVar = (g6d) concurrentHashMap.putIfAbsent(str3, a8dVar);
-                        if (g6dVar == null) {
-                            g6dVar = a8dVar;
-                        }
-                    }
-                    e = ((gbe) g6dVar.a()).e();
-                }
-                Iterator it = e.iterator();
-                while (true) {
-                    if (!it.hasNext()) {
-                        break;
-                    }
-                    fbe fbeVar2 = (fbe) it.next();
-                    if (!fbeVar2.f() || fbeVar2.e() == 0 || fbeVar2.e() == i2) {
-                        if (!o7f.b(o7f.a(o7f.d(context), fbeVar2.g()), fbeVar2.h(), fbeVar2.i())) {
-                            z = false;
-                            break;
-                        }
-                    }
-                }
-            }
-        } else {
-            if (str3 == null || str3.isEmpty()) {
-                str3 = i3 >= 0 ? String.valueOf(i3) : null;
-            }
-            if (str3 != null) {
-                if (context == null || !o7f.c(context)) {
-                    str = null;
-                } else {
-                    HashMap hashMap = o7f.f;
-                    g6d g6dVar2 = (g6d) hashMap.get(str3);
-                    if (g6dVar2 == null) {
-                        vk9 vk9Var2 = o7f.d;
-                        vk9Var2.getClass();
-                        p7d p7dVar = new p7d(vk9Var2, str3, x1dVar, z ? (byte) 1 : (byte) 0);
-                        hashMap.put(str3, p7dVar);
-                        g6dVar2 = p7dVar;
-                    }
-                    str = (String) g6dVar2.a();
-                }
-                if (str != null) {
-                    int indexOf = str.indexOf(44);
-                    if (indexOf >= 0) {
-                        str2 = str.substring(0, indexOf);
-                        i = indexOf + 1;
-                    } else {
-                        str2 = "";
-                        i = 0;
-                    }
-                    int indexOf2 = str.indexOf(47, i);
-                    if (indexOf2 <= 0) {
-                        Log.e("LogSamplerImpl", str.length() != 0 ? "Failed to parse the rule: ".concat(str) : new String("Failed to parse the rule: "));
-                    } else {
-                        try {
-                            parseLong = Long.parseLong(str.substring(i, indexOf2));
-                            parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
-                        } catch (NumberFormatException e2) {
-                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e2);
-                        }
-                        if (parseLong < 0 || parseLong2 < 0) {
-                            StringBuilder sb = new StringBuilder(72);
-                            sb.append("negative values not supported: ");
-                            sb.append(parseLong);
-                            sb.append("/");
-                            sb.append(parseLong2);
-                            Log.e("LogSamplerImpl", sb.toString());
-                        } else {
-                            ebe j = fbe.j();
-                            j.b();
-                            ((fbe) j.b).k(str2);
-                            j.b();
-                            ((fbe) j.b).l(parseLong);
-                            j.b();
-                            ((fbe) j.b).m(parseLong2);
-                            vid c = j.c();
-                            byte byteValue = ((Byte) c.a(1)).byteValue();
-                            if (byteValue == 1) {
-                                g = true;
-                            } else if (byteValue == 0) {
-                                g = false;
-                            } else {
-                                ttd ttdVar = ttd.c;
-                                ttdVar.getClass();
-                                g = ttdVar.a(c.getClass()).g(c);
-                                c.a(2);
-                            }
-                            if (!g) {
-                                throw new gp2();
-                            }
-                            fbeVar = (fbe) c;
-                            if (fbeVar != null) {
-                                z = o7f.b(o7f.a(o7f.d(context), fbeVar.g()), fbeVar.h(), fbeVar.i());
-                            }
-                        }
-                    }
-                }
-                fbeVar = null;
-                if (fbeVar != null) {
-                }
-            }
-        }
-        if (!z) {
-            new cya(x1dVar, b).a(Status.e);
-            return;
-        }
-        u84 u84Var = fi2Var.g;
-        u84Var.getClass();
-        u84Var.d(2, new bce(mtdVar, u84Var.i));
+    public final void a(int i) {
+        this.i = i;
+        invalidateSelf();
     }
 
-    public final Object b() {
-        ArrayList arrayList = (ArrayList) this.d;
-        if (((ArrayList) this.c).isEmpty()) {
-            return null;
+    public final void b(int i) {
+        this.j = i;
+        invalidateSelf();
+    }
+
+    public final void c(boolean z, float f) {
+        this.c = 0L;
+        float f2 = this.e;
+        if (f2 == 1.0f) {
+            this.b = true;
+        } else if (f2 == 0.0f) {
+            this.b = false;
         }
-        Object obj = this.f;
-        if (this.a >= arrayList.size()) {
-            if (this.b) {
-                Collections.shuffle(arrayList, (Random) this.e);
-                this.a = 0;
+        this.c = 0L;
+        if (z) {
+            float f3 = this.k;
+            if (f2 < f) {
+                this.f = (int) (f2 * f3);
             } else {
-                this.a = 0;
+                this.f = (int) ((1.0f - f2) * f3);
             }
+            this.c = System.currentTimeMillis();
+            this.d = f;
+        } else {
+            this.e = f;
+            this.d = f;
         }
-        int i = this.a;
-        this.a = i + 1;
-        this.f = arrayList.get(i);
-        return obj;
+        invalidateSelf();
     }
 
-    public ee0(ArrayList arrayList) {
-        this.b = true;
-        ArrayList arrayList2 = new ArrayList(arrayList == null ? new ArrayList() : arrayList);
-        this.c = arrayList2;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        this.d = arrayList3;
-        this.a = 0;
-        Random random = new Random();
-        this.e = random;
-        Collections.shuffle(arrayList3, random);
-        this.a = 0;
-        b();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.e != this.d) {
+            if (this.c != 0) {
+                int currentTimeMillis = this.f + ((int) (System.currentTimeMillis() - this.c));
+                this.f = currentTimeMillis;
+                float f = currentTimeMillis;
+                float f2 = this.k;
+                if (f >= f2) {
+                    this.e = this.d;
+                } else {
+                    float f3 = this.e;
+                    float f4 = this.d;
+                    DecelerateInterpolator decelerateInterpolator = this.h;
+                    float f5 = f / f2;
+                    if (f3 < f4) {
+                        this.e = decelerateInterpolator.getInterpolation(f5) * this.d;
+                    } else {
+                        this.e = 1.0f - decelerateInterpolator.getInterpolation(f5);
+                    }
+                }
+            }
+            this.c = System.currentTimeMillis();
+            invalidateSelf();
+        }
+        int f6 = on2.f(this.e, this.i, this.j);
+        Paint paint = this.a;
+        paint.setColor(f6);
+        canvas.save();
+        canvas.translate(gm.L(24.0f) / 2.0f, gm.L(24.0f) / 2.0f);
+        short s = this.l;
+        if (s != 0) {
+            canvas.rotate(s);
+        }
+        float f7 = this.e;
+        canvas.translate(-gm.L(0.66f), 0.0f);
+        float f8 = this.e;
+        boolean z = this.b;
+        if (this.g) {
+            canvas.rotate((f8 * (z ? -180 : nm7.J2)) + 135.0f);
+            f7 = 1.0f;
+        } else {
+            canvas.rotate(f8 * (z ? -225 : 135));
+        }
+        float f9 = 1.0f - f7;
+        canvas.drawLine(gm.L(gm.R1(-6.75f, -8.0f, f7)), 0.0f, gm.L(8.0f) - ((paint.getStrokeWidth() / 2.0f) * f9), 0.0f, paint);
+        float L = gm.L(-0.25f);
+        float L2 = gm.L(gm.R1(7.0f, 8.0f, f7)) - ((paint.getStrokeWidth() / 4.0f) * f9);
+        float L3 = gm.L(gm.R1(-7.25f, 0.0f, f7));
+        canvas.drawLine(L3, -L, 0.0f, -L2, paint);
+        canvas.drawLine(L3, L, 0.0f, L2, paint);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return gm.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return gm.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.a.setAlpha(i);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

@@ -1,36 +1,46 @@
 // default package
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class y82 implements e36 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ f92 b;
+public final class y82 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ z82 b;
 
-    public y82(f92 f92Var, Context context) {
-        this.b = f92Var;
-        this.a = context;
+    public /* synthetic */ y82(z82 z82Var, byte b) {
+        this.a = b;
+        this.b = z82Var;
     }
 
-    @Override // e36
-    public final void c() {
-        this.b.c0(true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.R = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
     }
 
-    @Override // e36
-    public final void i() {
-        f92 f92Var = this.b;
-        zq5 zq5Var = new zq5(this.a, f92Var.m0, f92Var.Z, f92Var.p0, f92Var, f92Var.a0, true, hc2.T(f92Var.Y));
-        f92Var.q0 = zq5Var;
-        zq5Var.show();
-    }
-
-    @Override // e36
-    public final void a() {
-    }
-
-    @Override // e36
-    public final void k() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        z82 z82Var = this.b;
+        switch (b) {
+            case 0:
+                if (z82Var.R == animator) {
+                    z82Var.getSubtitleTextView().setVisibility(4);
+                    z82Var.R = null;
+                    break;
+                }
+                break;
+            default:
+                z82Var.R = null;
+                break;
+        }
     }
 }

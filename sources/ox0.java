@@ -1,108 +1,93 @@
 // default package
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.TextUtils;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ox0 extends s64 {
-    public final RectF o;
-    public final Rect p;
-    public final /* synthetic */ qx0 q;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class ox0 extends qw0 {
+    public final /* synthetic */ byte U0;
+    public final /* synthetic */ Object V0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ox0(qx0 qx0Var, qx0 qx0Var2) {
-        super(qx0Var2);
-        this.q = qx0Var;
-        this.o = new RectF();
-        this.p = new Rect();
+    public /* synthetic */ ox0(Object obj, Context context, ylb ylbVar, int i, byte b) {
+        super(i, ylbVar, context, true);
+        this.U0 = b;
+        this.V0 = obj;
     }
 
-    @Override // s64
-    public final int g(float f, float f2) {
-        nx0 c;
-        qx0 qx0Var = this.q;
-        if (!qx0Var.b) {
-            return -1;
-        }
-        ArrayList<px0> tabs = qx0Var.getTabs();
-        if (tabs.isEmpty() || (c = qx0Var.c(tabs.get(0))) == null) {
-            return -1;
-        }
-        float c2 = c.c();
-        RectF rectF = this.o;
-        qx0Var.d(rectF, c2);
-        Rect bounds = c.l.getBounds();
-        if (bounds.isEmpty() || !bounds.contains((int) (f - rectF.left), (int) (f2 - rectF.centerY()))) {
-            return rectF.contains(f, f2) ? 1 : -1;
-        }
-        return 2;
-    }
-
-    @Override // s64
-    public final void h(ArrayList arrayList) {
-        qx0 qx0Var = this.q;
-        if (qx0Var.b) {
-            ArrayList<px0> tabs = qx0Var.getTabs();
-            if (tabs.isEmpty() || qx0Var.c(tabs.get(0)) == null) {
-                return;
-            }
-            arrayList.add(1);
-            arrayList.add(2);
-        }
-    }
-
-    @Override // s64
-    public final boolean k(int i, int i2) {
-        if (i2 == 16) {
-            qx0 qx0Var = this.q;
-            ArrayList<px0> tabs = qx0Var.getTabs();
-            if (!tabs.isEmpty()) {
-                px0 px0Var = tabs.get(0);
-                if (i == 1) {
-                    qx0Var.b();
-                    return true;
+    @Override // qw0
+    public final void B(boolean z, String str) {
+        switch (this.U0) {
+            case 0:
+                wx0 wx0Var = (wx0) this.V0;
+                Paint paint = wx0Var.R;
+                if (z) {
+                    wx0Var.j();
+                    wx0Var.Z0.a(wx0Var.o() ? wx0Var.x0.e : m9c.r(oc7.r1(wx0Var.I).W1(Long.valueOf(wx0Var.J))), str);
+                    wx0Var.Z0.b(gm.B(paint.getColor()) <= 0.721f, false);
+                    wx0Var.Z0.setBackgroundColor(paint.getColor());
+                    wx0Var.Y0 = str;
                 }
-                if (i == 2) {
-                    qx0Var.g(px0Var, new bm0((byte) 2));
-                    return true;
-                }
-            }
+                cx cxVar = wx0Var.Z0;
+                wx0Var.X0 = z;
+                gm.T3(cxVar, z, 1.0f, true, false);
+                invalidate();
+                break;
         }
-        return false;
     }
 
-    @Override // s64
-    public final void l(int i, u4 u4Var) {
-        qx0 qx0Var = this.q;
-        ArrayList<px0> tabs = qx0Var.getTabs();
-        px0 px0Var = tabs.isEmpty() ? null : tabs.get(0);
-        nx0 c = px0Var == null ? null : qx0Var.c(px0Var);
-        u4Var.i("android.widget.Button");
-        u4Var.b(r4.c);
-        Rect rect = this.p;
-        if (c == null) {
-            rect.set(0, 0, 1, 1);
-            u4Var.h(rect);
-            u4Var.j("");
-            u4Var.p(false);
-            return;
+    @Override // qw0
+    public final void H(mw0 mw0Var) {
+        byte b = this.U0;
+        Object obj = this.V0;
+        switch (b) {
+            case 0:
+                wx0 wx0Var = (wx0) obj;
+                wx0Var.x.setWebView(mw0Var);
+                ws0 ws0Var = wx0Var.D0;
+                if (ws0Var != null) {
+                    ws0Var.k = mw0Var;
+                }
+                wx0Var.o0.setWebView(mw0Var);
+                wx0Var.K();
+                break;
+            default:
+                ((e32) obj).K.setWebView(mw0Var);
+                break;
         }
-        float c2 = c.c();
-        RectF rectF = this.o;
-        qx0Var.d(rectF, c2);
-        String b = px0Var.b() != null ? px0Var.b() : "";
-        if (i != 2) {
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            u4Var.h(rect);
-            u4Var.j(TextUtils.isEmpty(b) ? k96.M0(2131747624, null) : b00.j(new StringBuilder(k96.M0(2131747624, null)), ", ", b));
-        } else {
-            Rect bounds = c.l.getBounds();
-            rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
-            u4Var.h(rect);
-            u4Var.j(TextUtils.isEmpty(b) ? k96.M0(2131752029, null) : b00.j(new StringBuilder(k96.M0(2131752029, null)), ", ", b));
+    }
+
+    @Override // qw0
+    public final void I(mw0 mw0Var) {
+        switch (this.U0) {
+            case 0:
+                wx0 wx0Var = (wx0) this.V0;
+                ws0 ws0Var = wx0Var.D0;
+                if (ws0Var != null && ws0Var.k == mw0Var) {
+                    ws0Var.k = null;
+                    ws0Var.b();
+                }
+                wx0Var.o0.setWebView(null);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.U0) {
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    e32 e32Var = (e32) this.V0;
+                    if (!e32Var.Q) {
+                        e32Var.Q = true;
+                        e32Var.n.O();
+                    }
+                }
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
     }
 }

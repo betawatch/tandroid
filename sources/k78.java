@@ -1,30 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class k78 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p78 b;
-    public final /* synthetic */ boolean c;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-    public /* synthetic */ k78(p78 p78Var, boolean z, byte b) {
-        this.a = b;
-        this.b = p78Var;
-        this.c = z;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class k78 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ sm0 b;
+    public final /* synthetic */ n78 c;
+
+    public k78(n78 n78Var, boolean z, sm0 sm0Var) {
+        this.c = n78Var;
+        this.a = z;
+        this.b = sm0Var;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        boolean z = this.c;
-        p78 p78Var = this.b;
-        switch (b) {
-            case 0:
-                u21.F(p78Var.b.f0, z).j();
-                break;
-            default:
-                u21.F(p78Var.b.f0, z).j();
-                break;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+        n78 n78Var = this.c;
+        TextureView textureView = n78Var.j0;
+        if (n78Var.m0 != null || surfaceTexture == null) {
+            return;
         }
+        uf4 uf4Var = new uf4(surfaceTexture, n78Var.D0, n78Var.I0, n78Var.x0, this.a, this.b, i, i2);
+        n78Var.m0 = uf4Var;
+        if (!this.a) {
+            uf4Var.f(n78Var.K0, n78Var.L0);
+            uf4 uf4Var2 = n78Var.m0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            xm0 xm0Var = uf4Var2.J;
+            if (xm0Var != null) {
+                Matrix matrix = xm0Var.v;
+                transform.invert(matrix);
+                float f = width;
+                float f2 = height;
+                matrix.preScale(f, f2);
+                matrix.postScale(1.0f / f, 1.0f / f2);
+                xm0Var.c(matrix);
+                uf4Var2.b(false, false, false);
+            }
+        }
+        n78Var.m0.c(n78Var);
+        uf4 uf4Var3 = n78Var.m0;
+        uf4Var3.getClass();
+        uf4Var3.postRunnable(new rf4(uf4Var3, i, i2, (byte) 1));
+        n78Var.m0.b(true, true, false);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        n78 n78Var = this.c;
+        uf4 uf4Var = n78Var.m0;
+        if (uf4Var == null) {
+            return true;
+        }
+        uf4Var.postRunnable(new sf4(uf4Var, (byte) 0));
+        n78Var.m0 = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
+        n78 n78Var = this.c;
+        uf4 uf4Var = n78Var.m0;
+        if (uf4Var != null) {
+            uf4Var.postRunnable(new rf4(uf4Var, i, i2, (byte) 1));
+            n78Var.m0.b(false, true, false);
+            n78Var.m0.postRunnable(new kl7(this, (byte) 27));
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

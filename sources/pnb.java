@@ -1,24 +1,16 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class pnb extends sc3 {
+    public final /* synthetic */ rob F;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class pnb extends b4 {
-    public static final Parcelable.Creator<pnb> CREATOR = new rhe(23);
-    public long a;
-    public long b;
+    public pnb(rob robVar) {
+        this.F = robVar;
+    }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        long j = this.a;
-        jte.q(parcel, 2, 8);
-        parcel.writeLong(j);
-        long j2 = this.b;
-        jte.q(parcel, 3, 8);
-        parcel.writeLong(j2);
-        jte.s(parcel, r);
+    @Override // sc3
+    public final void P(u69 u69Var) {
+        this.F.w0.h1();
     }
 }

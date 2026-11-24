@@ -1,486 +1,242 @@
 // default package
 
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.CancellationSignal;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.ResultReceiver;
-import android.util.Log;
-import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.concurrent.Executor;
-import org.json.JSONException;
+import android.util.Pair;
+import android.view.MenuItem;
+import java.io.File;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class x03 extends ResultReceiver {
+public final /* synthetic */ class x03 implements Comparator {
     public final /* synthetic */ byte a;
-    public final Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x03(tm6 tm6Var) {
-        super(null);
-        this.a = (byte) 5;
-        this.b = new WeakReference(tm6Var);
+    public /* synthetic */ x03(byte b) {
+        this.a = b;
     }
 
-    @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i, Bundle bundle) {
-        k03 a;
-        String string;
-        Bundle bundle2;
-        d03 a2;
-        boolean z;
-        d03 d03Var;
-        li5 li5Var;
-        byte b = 0;
-        byte b2 = 2;
-        byte b3 = 1;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        long[] jArr;
+        long[] jArr2;
+        at7 at7Var;
+        at7 a;
+        int i;
+        int i2;
         switch (this.a) {
             case 0:
-                bundle.getClass();
-                w03 w03Var = new w03(2, y13.a, t13.class, "createCredentialExceptionTypeToException", "createCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/CreateCredentialException;", 0, (byte) 0);
-                y03 y03Var = (y03) this.b;
-                Executor executor = y03Var.g;
-                if (executor == null) {
-                    rp5.e("executor");
-                    throw null;
-                }
-                o13 o13Var = y03Var.f;
-                if (o13Var == null) {
-                    rp5.e("callback");
-                    throw null;
-                }
-                if (y13.b(bundle, w03Var, executor, o13Var, y03Var.h)) {
-                    return;
-                }
-                int i2 = bundle.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent = (Intent) wpd.a(bundle);
-                boolean z2 = y13.c;
-                if (i2 != z2) {
-                    Log.w("CreatePublicKey", "Returned request code " + (z2 ? 1 : 0) + " does not match what was given " + i2);
-                    return;
-                }
-                z1 z1Var = new z1(y03Var, b3);
-                CancellationSignal cancellationSignal = y03Var.h;
-                if (i != -1) {
-                    c59 c59Var = new c59();
-                    c59Var.a = new c03(lae.a(i), (byte) 2);
-                    if (i == 0) {
-                        c59Var.a = new b03("activity is cancelled by the user.");
-                    }
-                    x13 x13Var = new x13(z1Var, c59Var, b);
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (!l23.a(cancellationSignal)) {
-                        x13Var.invoke();
-                    }
-                    b = 1;
-                }
-                if (b == 0) {
-                    if (intent == null) {
-                        CancellationSignal cancellationSignal2 = y03Var.h;
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (l23.a(cancellationSignal2)) {
-                            return;
-                        }
-                        Executor executor2 = y03Var.g;
-                        if (executor2 != null) {
-                            executor2.execute(new s03(y03Var, b3));
-                            return;
-                        } else {
-                            rp5.e("executor");
-                            throw null;
-                        }
-                    }
-                    int i3 = Build.VERSION.SDK_INT;
-                    if (i3 >= 34) {
-                        a = t4.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent);
-                    } else {
-                        Bundle bundleExtra = intent.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                        a = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle2 = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : s9e.a(string, bundle2);
-                    }
-                    if (a != null) {
-                        CancellationSignal cancellationSignal3 = y03Var.h;
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (l23.a(cancellationSignal3)) {
-                            return;
-                        }
-                        Executor executor3 = y03Var.g;
-                        if (executor3 != null) {
-                            executor3.execute(new gu2((Object) y03Var, (Object) a, (byte) 13));
-                            return;
-                        } else {
-                            rp5.e("executor");
-                            throw null;
-                        }
-                    }
-                    if (i3 >= 34) {
-                        a2 = t4.a(intent);
-                    } else {
-                        int i4 = d03.a;
-                        Bundle bundleExtra2 = intent.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_EXCEPTION");
-                        if (bundleExtra2 == null) {
-                            a2 = null;
-                        } else {
-                            String string2 = bundleExtra2.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_TYPE");
-                            if (string2 == null) {
-                                w26.j("Bundle was missing exception type.");
-                                return;
-                            }
-                            a2 = dud.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
-                        }
-                    }
-                    CancellationSignal cancellationSignal4 = y03Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal4)) {
-                        return;
-                    }
-                    Executor executor4 = y03Var.g;
-                    if (executor4 != null) {
-                        executor4.execute(new u03(y03Var, a2, b3));
-                        return;
-                    } else {
-                        rp5.e("executor");
-                        throw null;
-                    }
-                }
-                return;
+                return ((File) obj2).getName().compareTo(((File) obj).getName());
             case 1:
-                bundle.getClass();
-                w03 w03Var2 = new w03(2, y13.a, t13.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, (byte) 1);
-                w13 w13Var = (w13) this.b;
-                if (y13.b(bundle, w03Var2, w13Var.f(), w13Var.e(), w13Var.h)) {
-                    return;
-                }
-                int i5 = bundle.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent2 = (Intent) bundle.getParcelable("RESULT_DATA");
-                boolean z3 = y13.c;
-                if (i5 != z3) {
-                    Log.w("BeginSignIn", "Returned request code " + (z3 ? 1 : 0) + " which  does not match what was given " + i5);
-                    return;
-                }
-                z1 z1Var2 = new z1(w13Var, b2);
-                CancellationSignal cancellationSignal5 = w13Var.h;
-                if (i != -1) {
-                    c59 c59Var2 = new c59();
-                    c59Var2.a = new ts4(lae.a(i), (byte) 2);
-                    if (i == 0) {
-                        c59Var2.a = new rs4("activity is cancelled by the user.");
-                    }
-                    x13 x13Var2 = new x13(z1Var2, c59Var2, b3);
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal5)) {
-                        return;
-                    }
-                    x13Var2.invoke();
-                    return;
-                }
-                byte b4 = 16;
-                try {
-                    ske.a(w13Var.e);
-                    xs4 d = w13Var.d(q3d.f(intent2));
-                    CancellationSignal cancellationSignal6 = w13Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal6)) {
-                        return;
-                    }
-                    w13Var.f().execute(new gu2((Object) w13Var, (Object) d, (byte) 17));
-                    return;
-                } catch (us4 e) {
-                    CancellationSignal cancellationSignal7 = w13Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal7)) {
-                        return;
-                    }
-                    w13Var.f().execute(new v13(w13Var, e, b3));
-                    return;
-                } catch (zn e2) {
-                    c59 c59Var3 = new c59();
-                    c59Var3.a = new ts4(e2.getMessage(), (byte) 2);
-                    if (e2.getStatusCode() == 16) {
-                        c59Var3.a = new rs4(e2.getMessage());
-                    } else if (y13.b.contains(Integer.valueOf(e2.getStatusCode()))) {
-                        c59Var3.a = new vs4(e2.getMessage());
-                    }
-                    CancellationSignal cancellationSignal8 = w13Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal8)) {
-                        return;
-                    }
-                    w13Var.f().execute(new gu2((Object) w13Var, (Object) c59Var3, (byte) 18));
-                    return;
-                } catch (Throwable th) {
-                    ts4 ts4Var = new ts4(th.getMessage(), (byte) 2);
-                    CancellationSignal cancellationSignal9 = w13Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal9)) {
-                        return;
-                    }
-                    w13Var.f().execute(new gu2(w13Var, ts4Var, b4));
-                    return;
-                }
+                String name = ((File) obj).getName();
+                byte b = y03.f;
+                return name.substring(0, b).compareTo(((File) obj2).getName().substring(0, b));
             case 2:
-                bundle.getClass();
-                w03 w03Var3 = new w03(2, y13.a, t13.class, "createCredentialExceptionTypeToException", "createCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/CreateCredentialException;", 0, (byte) 2);
-                d23 d23Var = (d23) this.b;
-                Executor executor5 = d23Var.g;
-                if (executor5 == null) {
-                    rp5.e("executor");
-                    throw null;
-                }
-                o13 o13Var2 = d23Var.f;
-                if (o13Var2 == null) {
-                    rp5.e("callback");
-                    throw null;
-                }
-                if (y13.b(bundle, w03Var3, executor5, o13Var2, d23Var.h)) {
-                    return;
-                }
-                int i6 = bundle.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent3 = (Intent) bundle.getParcelable("RESULT_DATA");
-                boolean z4 = y13.c;
-                if (i6 != z4) {
-                    Log.w("CreatePublicKey", "Returned request code " + (z4 ? 1 : 0) + " does not match what was given " + i6);
-                    return;
-                }
-                z1 z1Var3 = new z1((Object) d23Var, (byte) 3);
-                CancellationSignal cancellationSignal10 = d23Var.h;
-                if (i != -1) {
-                    c59 c59Var4 = new c59();
-                    c59Var4.a = new c03(lae.a(i), (byte) 2);
-                    if (i == 0) {
-                        c59Var4.a = new b03("activity is cancelled by the user.");
-                    }
-                    x13 x13Var3 = new x13(z1Var3, c59Var4, b);
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (!l23.a(cancellationSignal10)) {
-                        x13Var3.invoke();
-                    }
-                    z = true;
-                } else {
-                    z = false;
-                }
-                if (z) {
-                    return;
-                }
-                byte[] byteArrayExtra = intent3 != null ? intent3.getByteArrayExtra("FIDO2_CREDENTIAL_EXTRA") : null;
-                if (byteArrayExtra == null) {
-                    l23 l23Var = CredentialProviderPlayServicesImpl.Companion;
-                    CancellationSignal cancellationSignal11 = d23Var.h;
-                    l23Var.getClass();
-                    if (l23.a(cancellationSignal11)) {
-                        return;
-                    }
-                    Executor executor6 = d23Var.g;
-                    if (executor6 != null) {
-                        executor6.execute(new b23(d23Var, b3));
-                        return;
-                    } else {
-                        rp5.e("executor");
-                        throw null;
-                    }
-                }
-                ku8 ku8Var = (ku8) kte.a(byteArrayExtra, ku8.CREATOR);
-                ku8Var.getClass();
-                LinkedHashMap linkedHashMap = lu8.a;
-                a50 a50Var = ku8Var.d;
-                Object obj = a50Var;
-                if (a50Var == null) {
-                    z40 z40Var = ku8Var.e;
-                    obj = z40Var;
-                    if (z40Var == null) {
-                        b50 b50Var = ku8Var.f;
-                        obj = b50Var;
-                        if (b50Var == null) {
-                            sc8.j("No response set.");
-                            return;
+                dr3 dr3Var = (dr3) obj;
+                dr3 dr3Var2 = (dr3) obj2;
+                int x = er3.x(8);
+                int i3 = 0;
+                boolean z = false;
+                boolean z2 = false;
+                while (true) {
+                    int[] iArr = dr3Var.a;
+                    jArr = dr3Var.b;
+                    if (i3 < iArr.length) {
+                        int i4 = iArr[i3];
+                        z = z;
+                        if ((i4 & 4) != 0) {
+                            z = true;
+                        }
+                        z2 = z2;
+                        if ((i4 & 8) != 0) {
+                            z2 = true;
+                        }
+                        if (!z || !z2) {
+                            i3++;
+                            z = z;
+                            z2 = z2;
                         }
                     }
                 }
-                if (obj instanceof b50) {
-                    b50 b50Var2 = (b50) obj;
-                    v34 v34Var = b50Var2.a;
-                    v34Var.getClass();
-                    h1 h1Var = (h1) lu8.a.get(v34Var);
-                    String str = b50Var2.b;
-                    d03Var = h1Var == null ? new z03(new h1((byte) 26), b00.h("unknown fido gms exception - ", str)) : (v34Var != v34.x || str == null || f9b.f(0, 2, str, "Unable to get sync account") < 0) ? new z03(h1Var, str) : new b03("Passkey registration was cancelled by the user.");
-                } else {
-                    d03Var = null;
-                }
-                if (d03Var != null) {
-                    CancellationSignal cancellationSignal12 = d23Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal12)) {
-                        return;
-                    }
-                    Executor executor7 = d23Var.g;
-                    if (executor7 != null) {
-                        executor7.execute(new c23(d23Var, d03Var, b3));
-                        return;
-                    } else {
-                        rp5.e("executor");
-                        throw null;
+                int i5 = 0;
+                boolean z3 = false;
+                boolean z4 = false;
+                while (true) {
+                    int[] iArr2 = dr3Var2.a;
+                    jArr2 = dr3Var2.b;
+                    if (i5 < iArr2.length) {
+                        int i6 = iArr2[i5];
+                        z3 = z3;
+                        if ((i6 & 4) != 0) {
+                            z3 = true;
+                        }
+                        z4 = z4;
+                        if ((i6 & 8) != 0) {
+                            z4 = true;
+                        }
+                        if (!z3 || !z4) {
+                            i5++;
+                            z3 = z3;
+                            z4 = z4;
+                        }
                     }
                 }
-                try {
-                    b13 e3 = d23.e(ku8Var);
-                    CancellationSignal cancellationSignal13 = d23Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal13)) {
-                        return;
-                    }
-                    Executor executor8 = d23Var.g;
-                    if (executor8 != null) {
-                        executor8.execute(new gu2((Object) d23Var, (Object) e3, (byte) 20));
-                        return;
-                    } else {
-                        rp5.e("executor");
-                        throw null;
-                    }
-                } catch (JSONException e4) {
-                    CancellationSignal cancellationSignal14 = d23Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal14)) {
-                        return;
-                    }
-                    Executor executor9 = d23Var.g;
-                    if (executor9 != null) {
-                        executor9.execute(new z13(d23Var, e4, b));
-                        return;
-                    } else {
-                        rp5.e("executor");
-                        throw null;
-                    }
-                } catch (Throwable th2) {
-                    CancellationSignal cancellationSignal15 = d23Var.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (l23.a(cancellationSignal15)) {
-                        return;
-                    }
-                    Executor executor10 = d23Var.g;
-                    if (executor10 != null) {
-                        executor10.execute(new a23(d23Var, th2, b));
-                        return;
-                    } else {
-                        rp5.e("executor");
-                        throw null;
-                    }
+                long j = (z ? jArr[1] : 0L) + (z2 ? jArr[x] : 0L) + (dr3Var.e ? 1L : 0L);
+                long j2 = (z3 ? jArr2[1] : 0L) + (z4 ? jArr2[x] : 0L) + (dr3Var2.e ? 1L : 0L);
+                if (j > j2) {
+                    return 1;
                 }
+                return j < j2 ? -1 : 0;
             case 3:
-                bundle.getClass();
-                w03 w03Var4 = new w03(2, y13.a, t13.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, (byte) 3);
-                i23 i23Var = (i23) this.b;
-                Executor executor11 = i23Var.g;
-                if (executor11 == null) {
-                    rp5.e("executor");
-                    throw null;
-                }
-                o13 o13Var3 = i23Var.f;
-                if (o13Var3 == null) {
-                    rp5.e("callback");
-                    throw null;
-                }
-                if (y13.b(bundle, w03Var4, executor11, o13Var3, i23Var.h)) {
-                    return;
-                }
-                int i7 = bundle.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent4 = (Intent) wpd.a(bundle);
-                Executor executor12 = i23Var.g;
-                if (executor12 == null) {
-                    rp5.e("executor");
-                    throw null;
-                }
-                o13 o13Var4 = i23Var.f;
-                if (o13Var4 != null) {
-                    ose.a(i7, i, intent4, executor12, o13Var4, i23Var.h);
-                    return;
-                } else {
-                    rp5.e("callback");
-                    throw null;
-                }
+                return Long.compare(((p93) obj2).c, ((p93) obj).c);
             case 4:
-                bundle.getClass();
-                w03 w03Var5 = new w03(2, y13.a, t13.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, (byte) 4);
-                ss4 ss4Var = (ss4) this.b;
-                Executor executor13 = ss4Var.g;
-                if (executor13 == null) {
-                    rp5.e("executor");
-                    throw null;
+                Integer num = (Integer) obj;
+                Integer num2 = (Integer) obj2;
+                if (num.intValue() == -1) {
+                    return num2.intValue() == -1 ? 0 : -1;
                 }
-                o13 o13Var5 = ss4Var.f;
-                if (o13Var5 == null) {
-                    rp5.e("callback");
-                    throw null;
+                if (num2.intValue() == -1) {
+                    return 1;
                 }
-                if (y13.b(bundle, w03Var5, executor13, o13Var5, ss4Var.h)) {
-                    return;
-                }
-                int i8 = bundle.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent5 = (Intent) wpd.a(bundle);
-                Executor executor14 = ss4Var.g;
-                if (executor14 == null) {
-                    rp5.e("executor");
-                    throw null;
-                }
-                o13 o13Var6 = ss4Var.f;
-                if (o13Var6 != null) {
-                    ose.a(i8, i, intent5, executor14, o13Var6, ss4Var.h);
-                    return;
+                return num.intValue() - num2.intValue();
+            case 5:
+                return Integer.compare(((xd3) ((List) obj).get(0)).f, ((xd3) ((List) obj2).get(0)).f);
+            case 6:
+                List list = (List) obj;
+                List list2 = (List) obj2;
+                byte b2 = 9;
+                byte b3 = 10;
+                return fq2.f(ee3.c((ee3) Collections.max(list, new x03(b2)), (ee3) Collections.max(list2, new x03(b2)))).a(list.size(), list2.size()).b((ee3) Collections.max(list, new x03(b3)), (ee3) Collections.max(list2, new x03(b3)), new x03(b3)).e();
+            case 7:
+                return ((wd3) Collections.max((List) obj)).compareTo((wd3) Collections.max((List) obj2));
+            case 8:
+                return ((be3) ((List) obj).get(0)).compareTo((be3) ((List) obj2).get(0));
+            case 9:
+                return ee3.c((ee3) obj, (ee3) obj2);
+            case 10:
+                ee3 ee3Var = (ee3) obj;
+                ee3 ee3Var2 = (ee3) obj2;
+                boolean z5 = ee3Var.e;
+                int i7 = ee3Var.s;
+                if (z5 && ee3Var.n) {
+                    a = fe3.l;
+                    at7Var = a;
                 } else {
-                    rp5.e("callback");
-                    throw null;
+                    at7 at7Var2 = fe3.l;
+                    at7Var = at7Var2;
+                    a = at7Var2.a();
                 }
+                boolean z6 = ee3Var.f.F;
+                hq2 hq2Var = hq2.a;
+                if (z6) {
+                    hq2Var = hq2Var.b(Integer.valueOf(i7), Integer.valueOf(ee3Var2.s), at7Var.a());
+                }
+                hq2 b4 = hq2Var.c(ee3Var.P, ee3Var2.P).b(Integer.valueOf(ee3Var.w), Integer.valueOf(ee3Var2.w), a);
+                if (ee3Var.L && ee3Var.N) {
+                    b4 = b4.a(ee3Var.O, ee3Var2.O);
+                }
+                return b4.c(ee3Var.M, ee3Var2.M).b(Integer.valueOf(i7), Integer.valueOf(ee3Var2.s), a).e();
+            case 11:
+                i = ((hh3) obj2).b;
+                i2 = ((hh3) obj).b;
+                break;
+            case 12:
+                long j3 = z8c.h(((Integer) obj).intValue()).Z;
+                long j4 = z8c.h(((Integer) obj2).intValue()).Z;
+                if (j3 > j4) {
+                    return 1;
+                }
+                return j3 >= j4 ? 0 : -1;
+            case 13:
+                int i8 = ((lm3) obj).b;
+                int i9 = ((lm3) obj2).b;
+                if (i8 < i9) {
+                    return 1;
+                }
+                return i8 <= i9 ? 0 : -1;
+            case 14:
+                HashMap hashMap = gw3.h;
+                Integer num3 = (Integer) hashMap.get((String) obj);
+                Integer num4 = (Integer) hashMap.get((String) obj2);
+                if (num3 == null) {
+                    num3 = r5;
+                }
+                r5 = num4 != null ? num4 : 0;
+                if (num3.intValue() <= r5.intValue()) {
+                    return num3.intValue() < r5.intValue() ? 1 : 0;
+                }
+                return -1;
+            case 15:
+                k39 k39Var = (k39) obj2;
+                String str = ((k39) obj).f;
+                int i10 = (str == null || !str.equals("❤")) ? 0 : -1;
+                String str2 = k39Var.f;
+                return i10 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
+            case 16:
+                return Float.compare(((float[]) obj)[0], ((float[]) obj2)[0]);
+            case 17:
+                long j5 = ((jb4) obj).a;
+                long j6 = ((jb4) obj2).a;
+                if (j5 > j6) {
+                    return 1;
+                }
+                return j5 >= j6 ? 0 : -1;
+            case 18:
+                return ((MenuItem) obj).getOrder() - ((MenuItem) obj2).getOrder();
+            case 19:
+                List list3 = hm4.r;
+                return (list3.contains(Integer.valueOf(((MenuItem) obj).getItemId())) ? 1 : 0) - (list3.contains(Integer.valueOf(((MenuItem) obj2).getItemId())) ? 1 : 0);
+            case 20:
+                byte[] bArr = (byte[]) obj;
+                byte[] bArr2 = (byte[]) obj2;
+                if (bArr.length != bArr2.length) {
+                    return bArr.length - bArr2.length;
+                }
+                for (int i11 = 0; i11 < bArr.length; i11++) {
+                    byte b5 = bArr[i11];
+                    byte b6 = bArr2[i11];
+                    if (b5 != b6) {
+                        return b5 - b6;
+                    }
+                }
+                return 0;
+            case 21:
+                return Integer.compare(((x25) obj2).b, ((x25) obj).b);
+            case 22:
+                return Integer.compare(((TL_wallet.walletTransaction) obj2).date, ((TL_wallet.walletTransaction) obj).date);
+            case 23:
+                return ((ug5) obj).a.compareTo(((ug5) obj2).a);
+            case 24:
+                int i12 = ((yv2) obj).l;
+                int i13 = ((yv2) obj2).l;
+                if (i12 <= i13) {
+                    return i12 < i13 ? 1 : 0;
+                }
+                return -1;
+            case 25:
+            case 27:
+                i = ((j96) obj2).c;
+                i2 = ((j96) obj).c;
+                break;
+            case 26:
+                return (int) (((TL_phone.groupCallDonor) obj2).stars - ((TL_phone.groupCallDonor) obj).stars);
+            case 28:
+                return ((Integer) ((Pair) obj).first).intValue() - ((Integer) ((Pair) obj2).first).intValue();
             default:
-                tm6 tm6Var = (tm6) ((WeakReference) this.b).get();
-                if (tm6Var == null || bundle == null) {
-                    return;
+                long j7 = z8c.h(((Integer) obj).intValue()).Z;
+                long j8 = z8c.h(((Integer) obj2).intValue()).Z;
+                if (j7 > j8) {
+                    return 1;
                 }
-                synchronized (tm6Var.b) {
-                    kv6 kv6Var = tm6Var.e;
-                    IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
-                    int i9 = av6.b;
-                    if (binder == null) {
-                        li5Var = null;
-                    } else {
-                        IInterface queryLocalInterface = binder.queryLocalInterface("android.support.v4.media.session.IMediaSession");
-                        if (queryLocalInterface == null || !(queryLocalInterface instanceof li5)) {
-                            ji5 ji5Var = new ji5();
-                            ji5Var.a = binder;
-                            li5Var = ji5Var;
-                        } else {
-                            li5Var = (li5) queryLocalInterface;
-                        }
-                    }
-                    kv6Var.b(li5Var);
-                    tm6Var.e.c(vu7.b(bundle));
-                    ArrayList arrayList = tm6Var.c;
-                    if (tm6Var.e.a() != null) {
-                        Iterator it = arrayList.iterator();
-                        if (!it.hasNext()) {
-                            arrayList.clear();
-                        } else {
-                            if (it.next() == null) {
-                                tm6Var.d.put(null, new qm6());
-                                throw null;
-                            }
-                            fyb.g();
-                        }
-                    }
-                }
-                return;
+                return j7 >= j8 ? 0 : -1;
         }
+        return i - i2;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x03(y13 y13Var, Handler handler, byte b) {
-        super(handler);
+    public /* synthetic */ x03(k96 k96Var, byte b) {
         this.a = b;
-        this.b = y13Var;
     }
 }

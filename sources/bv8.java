@@ -1,25 +1,21 @@
 // default package
 
-import android.graphics.PointF;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bv8 {
-    public final String a;
-    public final PointF[] b;
-    public final float c;
-    public final float d;
+public abstract class bv8 {
+    public static final jv8 a;
 
-    public bv8(String str, PointF[] pointFArr) {
-        this.a = str;
-        this.b = pointFArr;
-        float f = 0.0f;
-        float f2 = 0.0f;
-        for (PointF pointF : pointFArr) {
-            f += pointF.x;
-            f2 += pointF.y;
-        }
-        this.c = f / pointFArr.length;
-        this.d = f2 / pointFArr.length;
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap.put(bv8.class, h80.a);
+        hashMap2.remove(bv8.class);
+        hashMap.put(hf7.class, g80.a);
+        hashMap2.remove(hf7.class);
+        hashMap.put(gf7.class, f80.a);
+        hashMap2.remove(gf7.class);
+        a = new jv8(new HashMap(hashMap), new HashMap(hashMap2));
     }
 }

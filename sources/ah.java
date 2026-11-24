@@ -1,31 +1,105 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ah implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p8c b;
-    public final /* synthetic */ boolean[] c;
+import android.app.Activity;
+import android.content.DialogInterface;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.json.JSONObject;
+import org.telegram.ui.ActionBar.d;
 
-    public /* synthetic */ ah(byte b, p8c p8cVar, boolean[] zArr) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ah implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ ah(Object obj, Object obj2, Object obj3, byte b) {
         this.a = b;
-        this.b = p8cVar;
-        this.c = zArr;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         byte b = this.a;
-        boolean[] zArr = this.c;
-        p8c p8cVar = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.b;
         switch (b) {
             case 0:
-                p8cVar.a(Boolean.valueOf(zArr[0]));
+                d dVar = (d) obj2;
+                Activity activity = (Activity) obj;
+                gm.t1((hk) obj3);
+                if (dVar != null) {
+                    gm.V2(activity, dVar.getClassGuid());
+                    break;
+                }
+                break;
+            case 1:
+                ((qac) obj3).a(Integer.valueOf(((aj) obj).getValue() + (((yi) obj2).getValue() * 60)));
+                break;
+            case 2:
+                d dVar2 = (d) obj2;
+                Activity activity2 = (Activity) obj;
+                gm.t1((pz) obj3);
+                if (dVar2 != null) {
+                    gm.V2(activity2, dVar2.getClassGuid());
+                    break;
+                }
+                break;
+            case 3:
+                tr0 tr0Var = (tr0) obj3;
+                boolean[] zArr = (boolean[]) obj2;
+                yu0 yu0Var = (yu0) obj;
+                tr0Var.getClass();
+                if (!zArr[0]) {
+                    tr0Var.d = true;
+                    tr0Var.e = false;
+                    tr0Var.j();
+                    Iterator it = tr0Var.f.iterator();
+                    while (it.hasNext()) {
+                        ((Runnable) it.next()).run();
+                    }
+                    zArr[0] = true;
+                    yu0Var.a(Boolean.TRUE, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 4:
+                qw0 qw0Var = (qw0) obj3;
+                ow0 ow0Var = (ow0) obj;
+                if (!((AtomicBoolean) obj2).get()) {
+                    qw0Var.u(ow0Var, "popup_closed", new JSONObject());
+                }
+                qw0Var.d0 = null;
+                qw0Var.f0 = System.currentTimeMillis();
+                break;
+            case 5:
+                lh6 lh6Var = (lh6) obj3;
+                boolean[] zArr2 = (boolean[]) obj;
+                if (lh6Var.d0 == ((he) obj2)) {
+                    lh6Var.d0 = null;
+                }
+                if (!zArr2[0] && lh6Var.o()) {
+                    lh6Var.t(false);
+                    break;
+                }
+                break;
+            case 6:
+                gm.t1((fs8) obj2);
+                gm.V2((Activity) obj, ((vs8) obj3).a.getClassGuid());
                 break;
             default:
-                p8cVar.a(Boolean.TRUE);
-                zArr[0] = true;
-                hdVar.dismiss();
+                boolean[] zArr3 = (boolean[]) obj2;
+                qac qacVar = (qac) obj;
+                if (!((boolean[]) obj3)[0] && !zArr3[0]) {
+                    zArr3[0] = true;
+                    qacVar.a("USER_DECLINED");
+                    break;
+                }
                 break;
         }
     }

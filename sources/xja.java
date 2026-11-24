@@ -1,60 +1,71 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PointF;
 import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class xja extends u26 {
-    public final s33 r;
-    public int s;
-    public float t;
+public final class xja implements v66, nf3 {
+    public final View a;
+    public boolean b;
+    public float c = 1.0f;
+    public float d = 1.0f;
+    public float e = 1.0f;
 
-    public xja(Context context) {
-        super(context);
-        this.r = s33.f;
-        this.t = 1.0f;
+    public xja(View view) {
+        this.a = view;
     }
 
-    @Override // u26, o49
-    public final void g(View view, n49 n49Var) {
-        int j = j(o(), view);
-        int k = k(p(), view);
-        int m = m((int) Math.sqrt((k * k) + (j * j)));
-        if (m > 0) {
-            n49Var.b(-j, -k, m, this.r);
-        }
-        gl.e3(new am6((Object) this, (byte) 25), Math.max(0, m));
-    }
-
-    @Override // u26
-    public final int k(int i, View view) {
-        return super.k(i, view) - this.s;
-    }
-
-    @Override // u26
-    public final int m(int i) {
-        return Math.round(Math.min(super.m(i), 500) * this.t);
-    }
-
-    @Override // u26
-    public final int n(int i) {
-        return Math.round(Math.min(super.n(i), kk7.f2) * this.t);
-    }
-
-    @Override // u26
-    public final void q(n49 n49Var) {
-        PointF a = a(this.a);
-        if (a == null || (a.x == 0.0f && a.y == 0.0f)) {
-            n49Var.d = this.a;
-            h();
+    @Override // nf3
+    public final void a() {
+        View view = this.a;
+        if (yja.g(view)) {
             return;
         }
-        o49.b(a);
-        this.k = a;
-        this.o = (int) (a.x * 10000.0f);
-        this.p = (int) (a.y * 10000.0f);
-        n49Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
+        if (view instanceof zja) {
+            ((zja) view).X();
+        } else {
+            view.setVisibility(8);
+        }
+        c(1.0f, 1.0f);
+    }
+
+    @Override // v66
+    public final int b(boolean z) {
+        return 0;
+    }
+
+    public final void c(float f, float f2) {
+        float f3 = this.c;
+        if (f3 == f && this.d == f2) {
+            return;
+        }
+        View view = this.a;
+        if (f3 == 1.0f) {
+            this.e = view.getAlpha();
+        }
+        this.c = f;
+        this.d = f2;
+        view.setAlpha(this.e * f);
+        float min = Math.min(gm.R1(0.6f, 1.0f, f), f2);
+        view.setScaleX(min);
+        view.setScaleY(min);
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof xja) && ((xja) obj).a == this.a;
+    }
+
+    @Override // v66
+    public final int getHeight() {
+        return this.a.getMeasuredHeight();
+    }
+
+    @Override // v66
+    public final int getWidth() {
+        return yja.e(this.a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

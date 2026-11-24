@@ -1,32 +1,25 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class uk extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
+public interface uk {
+    void i(ft6 ft6Var);
 
-    public /* synthetic */ uk(View view, byte b) {
-        this.a = b;
-        this.b = view;
-    }
+    void j(ia3 ia3Var);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.setTranslationX(0.0f);
-                break;
-            case 1:
-                gl.B2(this.b);
-                break;
-            default:
-                gl.B2(this.b);
-                break;
-        }
-    }
+    void k(tk tkVar, int i, long j);
+
+    void n(jec jecVar);
+
+    void onRenderedFirstFrame(tk tkVar);
+
+    void onSeekStarted(tk tkVar);
+
+    void s(u64 u64Var);
+
+    void u(tk tkVar, ft6 ft6Var);
+
+    void w(tk tkVar, int i);
+
+    void y(h74 h74Var, hi2 hi2Var);
 }

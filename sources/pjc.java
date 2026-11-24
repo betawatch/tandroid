@@ -1,46 +1,45 @@
 // default package
 
-import java.util.Random;
+import org.telegram.messenger.voip.Instance;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class pjc extends fk0 {
-    public final void g(float f, float f2) {
-        if (!e66.e(this.r)) {
-            return;
-        }
-        int i = 0;
-        while (true) {
-            float f3 = i;
-            float f4 = this.n;
-            if (f3 >= f4) {
-                return;
-            }
-            float[] fArr = this.i;
-            float f5 = fArr[i];
-            float[] fArr2 = this.j;
-            float f6 = fArr2[i];
-            float f7 = (f6 * f * 8.2f * 1.0f) + (0.8f * f6) + f5;
-            fArr[i] = f7;
-            if (f7 >= 1.0f) {
-                fArr[i] = 0.0f;
-                float[] fArr3 = this.g;
-                this.e[i] = fArr3[i];
-                float[] fArr4 = this.h;
-                this.f[i] = fArr4[i];
-                if (f2 < 1.0f) {
-                    float f8 = 360.0f / f4;
-                    float f9 = this.b;
-                    float f10 = this.a;
-                    Random random = this.m;
-                    fArr3[i] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f9 - f10) * f2) + f10;
-                    fArr4[i] = ((((random.nextInt() * f2) % 100.0f) / 100.0f) * 0.05f * f8) + (f8 * f3);
-                    fArr2[i] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
-                } else {
-                    c(fArr3, fArr4, i);
-                }
-            }
-            i++;
-        }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class pjc implements NativeInstance.AudioLevelsCallback, Instance.OnStateUpdatedListener, Instance.OnSignalBarsUpdatedListener, NativeInstance.BroadcastStateCallback, Instance.OnSignalingDataListener, Instance.OnRemoteMediaStateUpdatedListener {
+    public final /* synthetic */ VoIPService a;
+
+    public /* synthetic */ pjc(VoIPService voIPService) {
+        this.a = voIPService;
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.BroadcastStateCallback
+    public final void onBroadcastStateChanged(boolean z, boolean z2) {
+        this.a.lambda$createGroupInstance$76(z, z2);
+    }
+
+    @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
+    public final void onMediaStateUpdated(int i, int i2) {
+        this.a.lambda$initiateActualEncryptedCall$83(i, i2);
+    }
+
+    @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
+    public final void onSignalBarsUpdated(int i) {
+        this.a.onSignalBarCountChanged(i);
+    }
+
+    @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
+    public final void onSignalingData(byte[] bArr) {
+        this.a.onSignalingData(bArr);
+    }
+
+    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
+    public final void onStateUpdated(int i, boolean z) {
+        this.a.onConnectionStateChanged(i, z);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
+        this.a.lambda$initiateActualEncryptedCall$81(iArr, fArr, zArr);
     }
 }

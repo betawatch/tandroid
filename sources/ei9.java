@@ -1,58 +1,21 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class ei9 implements pib {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ TL_iv.pageTableCell e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public interface ei9 {
+    void a();
 
-    public ei9(Layout layout, int i, int i2, int i3, TL_iv.pageTableCell pagetablecell) {
-        this.a = layout;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = pagetablecell;
-    }
+    void b(int i, int i2);
 
-    @Override // pib, jg7
-    public final Layout a() {
-        return this.a;
-    }
+    void c(TLRPC.Photo photo);
 
-    @Override // pib
-    public final Rect c() {
-        return null;
-    }
+    void d(TLRPC.Document document);
 
-    @Override // pib
-    public final CharSequence getPrefix() {
-        return null;
-    }
+    void e(TLRPC.Document document);
 
-    @Override // pib
-    public final int getRow() {
-        return this.d;
-    }
+    void f(TLRPC.Document document);
 
-    @Override // pib
-    public final CharSequence getText() {
-        return ffb.h(this.e);
-    }
-
-    @Override // pib
-    public final int getX() {
-        return this.b;
-    }
-
-    @Override // pib
-    public final int getY() {
-        return this.c;
-    }
+    void g(float f);
 }

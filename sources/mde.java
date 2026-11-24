@@ -1,35 +1,23 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
+import android.net.Uri;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class mde {
-    public static Boolean a;
-    public static Boolean b;
-    public static Boolean c;
-    public static Boolean d;
-
-    public static boolean a(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        Boolean bool = a;
-        if (bool == null) {
-            bool = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
-            a = bool;
+    public static g83 a(ka9 ka9Var, String str, b19 b19Var, int i) {
+        Map map = Collections.EMPTY_MAP;
+        Uri d = lze.d(str, b19Var.c);
+        long j = b19Var.a;
+        long j2 = b19Var.b;
+        String a = ka9Var.a();
+        if (a == null) {
+            a = lze.d(((wh0) ka9Var.b.get(0)).a, b19Var.c).toString();
         }
-        if (bool.booleanValue() && Build.VERSION.SDK_INT < 24) {
-            return true;
-        }
-        Boolean bool2 = b;
-        if (bool2 == null) {
-            bool2 = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
-            b = bool2;
-        }
-        if (bool2.booleanValue()) {
-            return !xqe.a() || Build.VERSION.SDK_INT >= 30;
-        }
-        return false;
+        String str2 = a;
+        jte.l(d, "The uri must be set.");
+        return new g83(d, 1, null, d89.h, j, j2, str2, i);
     }
 }

@@ -1,48 +1,38 @@
 // default package
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class h5c extends FrameLayout {
-    public int a;
-    public boolean b;
+public final /* synthetic */ class h5c implements ee {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ p5c b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3 = this.a;
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (this.b && view != null) {
-            i3 = view.getPaddingBottom() + view.getPaddingTop() + i3;
-        }
-        if (view != null && view.getMeasuredHeight() > 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i3, TLObject.FLAG_30));
-            return;
-        }
-        if (View.MeasureSpec.getMode(i2) != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - i3, TLObject.FLAG_30));
-            return;
-        }
-        int size = View.MeasureSpec.getSize(i2);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
-        measureChildren(makeMeasureSpec, i2);
-        int i4 = 0;
-        for (int i5 = 0; i5 < getChildCount(); i5++) {
-            i4 = Math.max(i4, getChildAt(i5).getMeasuredHeight());
-        }
-        if (size > 0) {
-            i4 = Math.min(i4, size - i3);
-        }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30));
+    public /* synthetic */ h5c(p5c p5cVar, byte b) {
+        this.a = b;
+        this.b = p5cVar;
     }
 
-    public void setMinusHeight(int i) {
-        this.a = i;
-    }
-
-    public void setMinusPadding(boolean z) {
-        this.b = z;
+    @Override // ee
+    public final void r(he heVar, int i) {
+        byte b = this.a;
+        p5c p5cVar = this.b;
+        switch (b) {
+            case 0:
+                p5cVar.finishFragment();
+                break;
+            case 1:
+                p5cVar.G0();
+                p5cVar.finishFragment();
+                break;
+            case 2:
+                p5cVar.S = "";
+                p5cVar.J0(false);
+                break;
+            case 3:
+                p5cVar.o0();
+                break;
+            default:
+                p5cVar.u0();
+                break;
+        }
     }
 }

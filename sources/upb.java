@@ -1,28 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class upb extends vpb {
-    @Override // vpb
-    /* renamed from: B */
-    public final vpb s() {
-        super.s();
-        this.m = new fy();
-        return this;
+public final class upb {
+    public long a;
+    public final long b;
+
+    public upb(long j, long j2) {
+        this.a = j;
+        this.b = j2;
     }
 
-    @Override // vpb, fs5
-    public final /* bridge */ /* synthetic */ fs5 s() {
-        s();
-        return this;
-    }
-
-    @Override // fs5
     public final String toString() {
-        fy fyVar = this.m;
-        if (fyVar == null || fyVar.a <= 0) {
-            return "<" + z() + ">";
-        }
-        return "<" + z() + " " + this.m.toString() + ">";
+        return "Entry{count=" + this.a + ", delta=" + this.b + '}';
     }
 }

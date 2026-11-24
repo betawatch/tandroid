@@ -1,40 +1,77 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class b9b {
-    public static final String[] a;
-    public static final byte[] b;
+import android.app.Activity;
+import android.app.Dialog;
+import org.telegram.ui.ActionBar.d;
 
-    static {
-        String[] strArr = new String[93];
-        for (int i = 0; i < 32; i++) {
-            strArr[i] = "\\u" + a(i >> 12) + a(i >> 8) + a(i >> 4) + a(i);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class b9b extends d {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v9b b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b9b(v9b v9bVar, byte b) {
+        super(null);
+        this.a = b;
+        switch (b) {
+            case 1:
+                this.b = v9bVar;
+                super(null);
+                this.currentAccount = v9bVar.c;
+                break;
+            default:
+                this.b = v9bVar;
+                break;
         }
-        strArr[34] = "\\\"";
-        strArr[92] = "\\\\";
-        strArr[9] = "\\t";
-        strArr[8] = "\\b";
-        strArr[10] = "\\n";
-        strArr[13] = "\\r";
-        strArr[12] = "\\f";
-        a = strArr;
-        byte[] bArr = new byte[93];
-        for (int i2 = 0; i2 < 32; i2++) {
-            bArr[i2] = 1;
-        }
-        bArr[34] = 34;
-        bArr[92] = 92;
-        bArr[9] = 116;
-        bArr[8] = 98;
-        bArr[10] = 110;
-        bArr[13] = 114;
-        bArr[12] = 102;
-        b = bArr;
     }
 
-    public static final char a(int i) {
-        int i2 = i & 15;
-        return (char) (i2 < 10 ? i2 + 48 : i2 + 87);
+    @Override // org.telegram.ui.ActionBar.d
+    public final Activity getParentActivity() {
+        byte b = this.a;
+        v9b v9bVar = this.b;
+        switch (b) {
+        }
+        return v9bVar.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final ylb getResourceProvider() {
+        byte b = this.a;
+        v9b v9bVar = this.b;
+        switch (b) {
+            case 0:
+                return new pv0(v9bVar.a, (byte) 8);
+            default:
+                return new pv0(v9bVar.a, (byte) 9);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isLightStatusBar() {
+        byte b = this.a;
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean presentFragment(d dVar) {
+        switch (this.a) {
+            case 0:
+                this.b.S();
+                return false;
+            default:
+                return super.presentFragment(dVar);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final Dialog showDialog(Dialog dialog) {
+        switch (this.a) {
+            case 1:
+                dialog.show();
+                return dialog;
+            default:
+                return super.showDialog(dialog);
+        }
     }
 }

@@ -4,9 +4,9 @@ import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class VideoDecoderOutputBuffer extends b93 {
+public class VideoDecoderOutputBuffer extends na3 {
     public static final int COLORSPACE_BT2020 = 3;
     public static final int COLORSPACE_BT601 = 1;
     public static final int COLORSPACE_BT709 = 2;
@@ -14,10 +14,10 @@ public class VideoDecoderOutputBuffer extends b93 {
     public int colorspace;
     public ByteBuffer data;
     public long decoderPrivate;
-    public fm4 format;
+    public go4 format;
     public int height;
     public int mode;
-    private final a93 owner;
+    private final ma3 owner;
     public ByteBuffer supplementalData;
     public int uvStride;
     public int width;
@@ -25,8 +25,8 @@ public class VideoDecoderOutputBuffer extends b93 {
     public ByteBuffer[] yuvPlanes;
     public int[] yuvStrides;
 
-    public VideoDecoderOutputBuffer(a93 a93Var) {
-        this.owner = a93Var;
+    public VideoDecoderOutputBuffer(ma3 ma3Var) {
+        this.owner = ma3Var;
     }
 
     private static boolean isSafeToMultiply(int i, int i2) {
@@ -150,8 +150,8 @@ public class VideoDecoderOutputBuffer extends b93 {
         return false;
     }
 
-    @Override // b93
+    @Override // na3
     public void release() {
-        this.owner.a(this);
+        this.owner.b(this);
     }
 }

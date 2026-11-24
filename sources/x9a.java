@@ -1,50 +1,34 @@
 // default package
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class x9a extends i49 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ taa b;
+public final class x9a extends b6c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ x9a(taa taaVar, byte b) {
-        this.a = b;
-        this.b = taaVar;
+    static {
+        b6c.h(new x9a());
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        q11 q11Var;
-        byte b = this.a;
-        taa taaVar = this.b;
-        switch (b) {
-            case 0:
-                if (i2 != 0) {
-                    taaVar.U0();
-                    taaVar.l2 = taaVar.k2;
-                }
-                m21 m21Var = m21.w;
-                if (m21Var != null && (q11Var = m21Var.e) != null && (q11Var.getParent() instanceof View) && ((View) m21.w.e.getParent()).getParent() == taaVar.w1) {
-                    m21.e();
-                    break;
-                }
-                break;
-            case 1:
-                if (i2 != 0) {
-                    taaVar.U0();
-                    taaVar.l2 = taaVar.k2;
-                    break;
-                }
-                break;
-            default:
-                if (i2 != 0) {
-                    taaVar.U0();
-                    taaVar.l2 = taaVar.k2;
-                    break;
-                }
-                break;
-        }
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        ((y9a) view).set(c6cVar.A);
+    }
+
+    @Override // b6c
+    public final boolean c(c6c c6cVar, c6c c6cVar2) {
+        return c6cVar.A == c6cVar2.A;
+    }
+
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        return new y9a(context, ylbVar);
+    }
+
+    @Override // b6c
+    public final boolean e(c6c c6cVar, c6c c6cVar2) {
+        return c6cVar.d == c6cVar2.d;
     }
 }

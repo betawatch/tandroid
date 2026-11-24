@@ -1,33 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class htb extends efc {
-    public boolean a = false;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ itb c;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public htb(itb itbVar, int i) {
-        this.c = itbVar;
-        this.b = i;
+public enum htb extends rub {
+    public htb() {
+        super("AttributeValue_singleQuoted", 38);
     }
 
-    @Override // efc, dfc
-    public final void a() {
-        this.a = true;
-    }
-
-    @Override // efc, dfc
-    public final void b() {
-        this.c.a.setVisibility(0);
-    }
-
-    @Override // dfc
-    public final void c() {
-        if (this.a) {
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        String g = hl1Var.g(rub.F0);
+        int length = g.length();
+        wrb wrbVar = bsbVar.i;
+        if (length > 0) {
+            wrbVar.w(g);
+        } else {
+            wrbVar.j = true;
+        }
+        char d = hl1Var.d();
+        if (d == 0) {
+            bsbVar.m(this);
+            bsbVar.i.v((char) 65533);
             return;
         }
-        this.c.a.setVisibility(this.b);
+        if (d == 65535) {
+            bsbVar.l(this);
+            bsbVar.c = rub.a;
+            return;
+        }
+        if (d != '&') {
+            if (d != '\'') {
+                bsbVar.i.v(d);
+                return;
+            } else {
+                bsbVar.c = rub.e0;
+                return;
+            }
+        }
+        int[] c = bsbVar.c('\'', true);
+        wrb wrbVar2 = bsbVar.i;
+        if (c != null) {
+            wrbVar2.x(c);
+        } else {
+            wrbVar2.v('&');
+        }
     }
 }

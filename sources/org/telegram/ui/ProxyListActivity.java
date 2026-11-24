@@ -17,15 +17,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk7 {
+public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements jm7 {
     public int E;
     public final ArrayList F;
     public final ArrayList G;
     public boolean H;
-    public s20 a;
-    public o39 b;
+    public s30 a;
+    public r59 b;
     public int c;
     public boolean d;
     public int e;
@@ -49,96 +49,96 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
     @Override // org.telegram.ui.ActionBar.d
     public final void addThemeColorKeys(HashSet hashSet) {
         super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(bkb.A6));
-        hashSet.add(Integer.valueOf(bkb.a7));
-        hashSet.add(Integer.valueOf(bkb.y6));
-        hashSet.add(Integer.valueOf(bkb.F6));
-        hashSet.add(Integer.valueOf(bkb.K6));
-        hashSet.add(Integer.valueOf(bkb.z6));
-        hashSet.add(Integer.valueOf(bkb.H6));
-        hashSet.add(Integer.valueOf(bkb.c7));
-        hashSet.add(Integer.valueOf(bkb.h6));
-        hashSet.add(Integer.valueOf(bkb.s8));
-        hashSet.add(Integer.valueOf(bkb.z8));
-        hashSet.add(Integer.valueOf(bkb.u8));
-        hashSet.add(Integer.valueOf(bkb.r8));
-        hashSet.add(Integer.valueOf(bkb.c6));
+        hashSet.add(Integer.valueOf(cmb.A6));
+        hashSet.add(Integer.valueOf(cmb.a7));
+        hashSet.add(Integer.valueOf(cmb.y6));
+        hashSet.add(Integer.valueOf(cmb.F6));
+        hashSet.add(Integer.valueOf(cmb.K6));
+        hashSet.add(Integer.valueOf(cmb.z6));
+        hashSet.add(Integer.valueOf(cmb.H6));
+        hashSet.add(Integer.valueOf(cmb.c7));
+        hashSet.add(Integer.valueOf(cmb.h6));
+        hashSet.add(Integer.valueOf(cmb.s8));
+        hashSet.add(Integer.valueOf(cmb.z8));
+        hashSet.add(Integer.valueOf(cmb.u8));
+        hashSet.add(Integer.valueOf(cmb.r8));
+        hashSet.add(Integer.valueOf(cmb.c6));
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final View createView(Context context) {
         setHasOwnBackground(true);
-        this.simpleActionBar.setBackButtonDrawable(new ed0(false));
-        this.simpleActionBar.setTitle(k96.M0(2131746408, null));
-        ui5 ui5Var = this.parentLayout;
-        if (ui5Var != null && ((ActionBarLayout) ui5Var).T0) {
+        this.simpleActionBar.setBackButtonDrawable(new ee0(false));
+        this.simpleActionBar.setTitle(jb6.M0(2131746334, null));
+        tk5 tk5Var = this.parentLayout;
+        if (tk5Var != null && ((ActionBarLayout) tk5Var).T0) {
             this.simpleActionBar.setOccupyStatusBar(false);
         }
-        this.simpleActionBar.setActionBarMenuOnItemClick(new kk8(this, (byte) 3));
-        this.a = new s20(this, context);
+        this.simpleActionBar.setActionBarMenuOnItemClick(new im8(this, (byte) 4));
+        this.a = new s30(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        o39 o39Var = new o39(context, null);
-        this.b = o39Var;
-        o39Var.r1();
-        ((gb3) this.b.getItemAnimator()).C = false;
-        ((gb3) this.b.getItemAnimator()).o = s33.f;
+        r59 r59Var = new r59(context, null);
+        this.b = r59Var;
+        r59Var.r1();
+        ((sc3) this.b.getItemAnimator()).C = false;
+        ((sc3) this.b.getItemAnimator()).o = d53.f;
         this.b.setSectionsDrawBackground(true);
         this.b.setVerticalScrollBarEnabled(false);
-        this.b.setLayoutManager(new t26(1, false));
-        frameLayout.addView(this.b, nme.e(-1, -1, 51));
+        this.b.setLayoutManager(new u46(1, false));
+        frameLayout.addView(this.b, qoe.e(-1, -1, 51));
         this.b.setAdapter(this.a);
-        this.b.setOnItemClickListener(new bf4(this, (byte) 27));
-        this.b.setOnItemLongClickListener(new ut8(this));
-        wha q = this.simpleActionBar.q();
-        q.b(1, R.drawable.msg_share, null, null, gl.L(54.0f), null).setContentDescription(k96.M0(2131744609, null));
-        q.b(0, R.drawable.msg_delete, null, null, gl.L(54.0f), null).setContentDescription(k96.M0(2131751586, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new iv7(this, context, (byte) 1));
+        this.b.setOnItemClickListener(new kg4(this, (byte) 28));
+        this.b.setOnItemLongClickListener(new vv8(this));
+        yja q = this.simpleActionBar.q();
+        q.b(1, R.drawable.msg_share, null, null, gm.L(54.0f), null).setContentDescription(jb6.M0(2131744535, null));
+        q.b(0, R.drawable.msg_delete, null, null, gm.L(54.0f), null).setContentDescription(jb6.M0(2131751535, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new kx7(this, context, (byte) 1));
         return this.fragmentView;
     }
 
-    @Override // gk7
+    @Override // jm7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        y29 y29Var;
-        fba fbaVar;
-        y29 y29Var2;
+        b59 b59Var;
+        fda fdaVar;
+        b59 b59Var2;
         boolean z = false;
-        if (i == kk7.E4) {
-            this.b.M(new gw(this, (byte) 15));
-            g0(false);
+        if (i == nm7.G4) {
+            this.b.M(new gx(this, (byte) 15));
+            h0(false);
             return;
         }
-        if (i == kk7.C4) {
-            g0(true);
+        if (i == nm7.E4) {
+            h0(true);
             return;
         }
-        int i3 = kk7.S1;
+        int i3 = nm7.T1;
         ArrayList arrayList = this.G;
         if (i == i3) {
             int connectionState = ConnectionsManager.getInstance(i2).getConnectionState();
             if (this.c != connectionState) {
                 this.c = connectionState;
-                if (this.b == null || (fbaVar = gba.y1) == null) {
+                if (this.b == null || (fdaVar = gda.x1) == null) {
                     return;
                 }
-                int indexOf = arrayList.indexOf(fbaVar);
-                if (indexOf >= 0 && (y29Var2 = (y29) this.b.K(indexOf + this.n)) != null) {
-                    ((yt8) y29Var2.a).b();
+                int indexOf = arrayList.indexOf(fdaVar);
+                if (indexOf >= 0 && (b59Var2 = (b59) this.b.K(indexOf + this.n)) != null) {
+                    ((zv8) b59Var2.a).b();
                 }
                 if (this.c == 3) {
-                    g0(true);
+                    h0(true);
                     return;
                 }
                 return;
             }
             return;
         }
-        if (i != kk7.D4 || this.b == null) {
+        if (i != nm7.F4 || this.b == null) {
             return;
         }
-        int indexOf2 = arrayList.indexOf((fba) objArr[0]);
-        if (indexOf2 >= 0 && (y29Var = (y29) this.b.K(indexOf2 + this.n)) != null) {
-            ((yt8) y29Var.a).b();
+        int indexOf2 = arrayList.indexOf((fda) objArr[0]);
+        if (indexOf2 >= 0 && (b59Var = (b59) this.b.K(indexOf2 + this.n)) != null) {
+            ((zv8) b59Var.a).b();
         }
         if (!this.H) {
             int size = arrayList.size();
@@ -146,8 +146,8 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
             while (i4 < size) {
                 Object obj = arrayList.get(i4);
                 i4++;
-                fba fbaVar2 = (fba) obj;
-                if (fbaVar2.c || fbaVar2.e == 0) {
+                fda fdaVar2 = (fda) obj;
+                if (fdaVar2.c || fdaVar2.e == 0) {
                     z = true;
                     break;
                 }
@@ -159,94 +159,94 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
         if (z) {
             return;
         }
-        g0(true);
+        h0(true);
     }
 
-    public final void e0() {
+    public final void f0() {
         ArrayList arrayList = this.G;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
             Object obj = arrayList.get(i);
             i++;
-            gba.i((fba) obj);
+            gda.i((fda) obj);
         }
         this.d = false;
-        kk7 e = kk7.e();
-        int i2 = kk7.C4;
+        nm7 e = nm7.e();
+        int i2 = nm7.E4;
         e.n(this, i2);
-        kk7.e().k(i2, new Object[0]);
-        kk7.e().b(this, i2);
-        g0(true);
-        s20 s20Var = this.a;
-        if (s20Var != null) {
-            s20Var.h(this.useProxyRow, 0);
+        nm7.e().k(i2, new Object[0]);
+        nm7.e().b(this, i2);
+        h0(true);
+        s30 s30Var = this.a;
+        if (s30Var != null) {
+            s30Var.h(this.useProxyRow, 0);
             this.a.F();
         }
     }
 
-    public final void f0(int i, View view) {
+    public final void g0(int i, View view) {
         int i2 = this.useProxyRow;
         ArrayList arrayList = this.G;
         if (i == i2) {
-            if (gba.y1 == null) {
+            if (gda.x1 == null) {
                 if (arrayList.isEmpty()) {
-                    presentFragment(new fu8());
+                    presentFragment(new gw8());
                     return;
                 }
-                gba.y1 = (fba) arrayList.get(0);
+                gda.x1 = (fda) arrayList.get(0);
                 if (!this.d) {
-                    SharedPreferences.Editor edit = na7.c1().edit();
-                    gba.y1.a.i(edit);
+                    SharedPreferences.Editor edit = oc7.d1().edit();
+                    gda.x1.a.i(edit);
                     edit.commit();
                 }
             }
             this.d = !this.d;
-            g0(true);
-            na7.c1();
-            ((ahb) view).setChecked(this.d);
-            SharedPreferences.Editor edit2 = na7.c1().edit();
+            h0(true);
+            oc7.d1();
+            ((bjb) view).setChecked(this.d);
+            SharedPreferences.Editor edit2 = oc7.d1().edit();
             edit2.putBoolean("proxy_enabled", this.d);
             edit2.commit();
-            ConnectionsManager.setProxySettings(this.d, gba.y1.a);
-            kk7 e = kk7.e();
-            int i3 = kk7.C4;
+            ConnectionsManager.setProxySettings(this.d, gda.x1.a);
+            nm7 e = nm7.e();
+            int i3 = nm7.E4;
             e.n(this, i3);
-            kk7.e().k(i3, new Object[0]);
-            kk7.e().b(this, i3);
+            nm7.e().k(i3, new Object[0]);
+            nm7.e().b(this, i3);
             for (int i4 = this.n; i4 < this.r; i4++) {
-                y29 y29Var = (y29) this.b.K(i4);
-                if (y29Var != null) {
-                    ((yt8) y29Var.a).b();
+                b59 b59Var = (b59) this.b.K(i4);
+                if (b59Var != null) {
+                    ((zv8) b59Var.a).b();
                 }
             }
             return;
         }
         if (i == this.w) {
-            boolean z = !gba.X0;
-            gba.X0 = z;
-            ((ahb) view).setChecked(z);
-            gba.x();
-            g0(true);
+            boolean z = !gda.W0;
+            gda.W0 = z;
+            ((bjb) view).setChecked(z);
+            gda.x();
+            h0(true);
             return;
         }
         if (i < this.n || i >= this.r) {
             if (i == this.proxyAddRow) {
-                presentFragment(new fu8());
+                presentFragment(new gw8());
                 return;
             }
             if (i == this.E) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                String M0 = k96.M0(2131751567, null);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.U = M0;
-                alertDialog$Builder.g(k96.M0(2131752577, null), null);
-                hdVar.S = k96.M0(2131751497, null);
-                alertDialog$Builder.j(k96.M0(2131751586, null), new ut8(this));
-                showDialog(hdVar);
-                TextView textView = (TextView) hdVar.c(-1);
+                String M0 = jb6.M0(2131751516, null);
+                he heVar = alertDialog$Builder.a;
+                heVar.U = M0;
+                alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                heVar.S = jb6.M0(2131751446, null);
+                alertDialog$Builder.j(jb6.M0(2131751535, null), new vv8(this));
+                showDialog(heVar);
+                TextView textView = (TextView) heVar.c(-1);
                 if (textView != null) {
-                    zkb.X(textView, bkb.p7, null);
+                    anb.X(textView, cmb.p7, null);
                     return;
                 }
                 return;
@@ -257,27 +257,44 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
             this.a.P(i);
             return;
         }
-        fba fbaVar = (fba) arrayList.get(i - this.n);
+        fda fdaVar = (fda) arrayList.get(i - this.n);
         this.d = true;
-        SharedPreferences.Editor edit3 = na7.c1().edit();
-        fbaVar.a.i(edit3);
+        SharedPreferences.Editor edit3 = oc7.d1().edit();
+        fdaVar.a.i(edit3);
         edit3.putBoolean("proxy_enabled", this.d);
         edit3.commit();
-        gba.y1 = fbaVar;
+        gda.x1 = fdaVar;
         for (int i5 = this.n; i5 < this.r; i5++) {
-            y29 y29Var2 = (y29) this.b.K(i5);
-            if (y29Var2 != null) {
-                yt8 yt8Var = (yt8) y29Var2.a;
-                yt8Var.setChecked(yt8Var.d == fbaVar);
-                yt8Var.b();
+            b59 b59Var2 = (b59) this.b.K(i5);
+            if (b59Var2 != null) {
+                zv8 zv8Var = (zv8) b59Var2.a;
+                zv8Var.setChecked(zv8Var.d == fdaVar);
+                zv8Var.b();
             }
         }
-        g0(false);
-        y29 y29Var3 = (y29) this.b.K(this.useProxyRow);
-        if (y29Var3 != null) {
-            ((ahb) y29Var3.a).setChecked(true);
+        h0(false);
+        b59 b59Var3 = (b59) this.b.K(this.useProxyRow);
+        if (b59Var3 != null) {
+            ((bjb) b59Var3.a).setChecked(true);
         }
-        ConnectionsManager.setProxySettings(this.d, gba.y1.a);
+        ConnectionsManager.setProxySettings(this.d, gda.x1.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final r59 getListViewForSimpleGlass() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new cnb(this.b, 262156, new Class[]{zv8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (bnb) null, cmb.r6));
+        arrayList.add(new cnb(this.b, 262156, new Class[]{zv8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (bnb) null, cmb.y6));
+        arrayList.add(new cnb(this.b, 262156, new Class[]{zv8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (bnb) null, cmb.v6));
+        arrayList.add(new cnb(this.b, 262156, new Class[]{zv8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (bnb) null, cmb.o7));
+        arrayList.add(new cnb(this.b, 0, new Class[]{bjb.class}, new String[]{"checkBox"}, (Drawable[]) null, (bnb) null, cmb.L6));
+        arrayList.add(new cnb(this.b, 0, new Class[]{bjb.class}, new String[]{"checkBox"}, (Drawable[]) null, (bnb) null, cmb.M6));
+        return arrayList;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
@@ -291,17 +308,17 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g0(boolean z) {
+    public final void h0(boolean z) {
         int i;
         ArrayList arrayList;
         int size;
         int i2;
-        s20 s20Var;
+        s30 s30Var;
         final boolean z2;
         this.e = 1;
         byte b = 0;
         this.useProxyRow = 0;
-        if (!this.d || gba.y1 == null || gba.w1.size() <= 1) {
+        if (!this.d || gda.x1 == null || gda.v1.size() <= 1) {
             this.w = -1;
             this.x = -1;
             this.y = -1;
@@ -310,7 +327,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
             int i4 = i3 + 1;
             this.e = i4;
             this.w = i3;
-            if (gba.X0) {
+            if (gda.W0) {
                 i = i3 + 2;
                 this.x = i4;
                 this.e = i3 + 3;
@@ -328,7 +345,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
                 arrayList = this.G;
                 if (z) {
                     arrayList.clear();
-                    arrayList.addAll(gba.w1);
+                    arrayList.addAll(gda.v1);
                     if (this.H) {
                         z2 = false;
                     } else {
@@ -337,8 +354,8 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
                         while (i7 < size2) {
                             Object obj = arrayList.get(i7);
                             i7++;
-                            fba fbaVar = (fba) obj;
-                            if (fbaVar.c || fbaVar.e == 0) {
+                            fda fdaVar = (fda) obj;
+                            if (fdaVar.c || fdaVar.e == 0) {
                                 z2 = true;
                                 break;
                             }
@@ -348,22 +365,22 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
                             this.H = true;
                         }
                     }
-                    Collections.sort(arrayList, new Comparator() { // from class: vt8
+                    Collections.sort(arrayList, new Comparator() { // from class: wv8
                         @Override // java.util.Comparator
                         public final int compare(Object obj2, Object obj3) {
-                            fba fbaVar2 = (fba) obj2;
-                            fba fbaVar3 = (fba) obj3;
-                            fba fbaVar4 = gba.y1;
-                            long j = fbaVar4 == fbaVar2 ? -200000L : 0L;
-                            if (!fbaVar2.d) {
+                            fda fdaVar2 = (fda) obj2;
+                            fda fdaVar3 = (fda) obj3;
+                            fda fdaVar4 = gda.x1;
+                            long j = fdaVar4 == fdaVar2 ? -200000L : 0L;
+                            if (!fdaVar2.d) {
                                 j += 100000;
                             }
-                            long j2 = fbaVar4 == fbaVar3 ? -200000L : 0L;
-                            if (!fbaVar3.d) {
+                            long j2 = fdaVar4 == fdaVar3 ? -200000L : 0L;
+                            if (!fdaVar3.d) {
                                 j2 += 100000;
                             }
                             boolean z3 = z2;
-                            return Long.compare((!z3 || fbaVar2 == fbaVar4) ? j + fbaVar2.b : gba.w1.indexOf(fbaVar2) * 10000, (!z3 || fbaVar3 == gba.y1) ? fbaVar3.b + j2 : gba.w1.indexOf(fbaVar3) * 10000);
+                            return Long.compare((!z3 || fdaVar2 == fdaVar4) ? j + fdaVar2.b : gda.v1.indexOf(fdaVar2) * 10000, (!z3 || fdaVar3 == gda.x1) ? fdaVar3.b + j2 : gda.v1.indexOf(fdaVar3) * 10000);
                         }
                     });
                 }
@@ -390,15 +407,15 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
                 }
                 size = arrayList.size();
                 for (i2 = 0; i2 < size; i2++) {
-                    fba fbaVar2 = (fba) arrayList.get(i2);
-                    if (!fbaVar2.c && SystemClock.elapsedRealtime() - fbaVar2.e >= 120000) {
-                        fbaVar2.c = true;
-                        ConnectionsManager.getInstance(this.currentAccount).checkProxy(fbaVar2.a, new wt8(fbaVar2, b));
+                    fda fdaVar2 = (fda) arrayList.get(i2);
+                    if (!fdaVar2.c && SystemClock.elapsedRealtime() - fdaVar2.e >= 120000) {
+                        fdaVar2.c = true;
+                        ConnectionsManager.getInstance(this.currentAccount).checkProxy(fdaVar2.a, new xv8(fdaVar2, b));
                     }
                 }
-                if (z || (s20Var = this.a) == null) {
+                if (z || (s30Var = this.a) == null) {
                 }
-                s20Var.f();
+                s30Var.f();
                 return;
             }
             this.x = -1;
@@ -429,23 +446,6 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
     }
 
     @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new blb(this.b, 262156, new Class[]{yt8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (alb) null, bkb.r6));
-        arrayList.add(new blb(this.b, 262156, new Class[]{yt8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (alb) null, bkb.y6));
-        arrayList.add(new blb(this.b, 262156, new Class[]{yt8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (alb) null, bkb.v6));
-        arrayList.add(new blb(this.b, 262156, new Class[]{yt8.class}, new String[]{"valueTextView"}, (Drawable[]) null, (alb) null, bkb.o7));
-        arrayList.add(new blb(this.b, 0, new Class[]{ahb.class}, new String[]{"checkBox"}, (Drawable[]) null, (alb) null, bkb.L6));
-        arrayList.add(new blb(this.b, 0, new Class[]{ahb.class}, new String[]{"checkBox"}, (Drawable[]) null, (alb) null, bkb.M6));
-        return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
@@ -464,42 +464,42 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.d implements gk
 
     @Override // org.telegram.ui.ActionBar.d
     public final void onDialogDismiss(Dialog dialog) {
-        up3.q(this.currentAccount).g();
+        er3.q(this.currentAccount).g();
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
-        gba.t();
+        gda.t();
         this.c = ConnectionsManager.getInstance(this.currentAccount).getConnectionState();
-        kk7.e().b(this, kk7.E4);
-        kk7.e().b(this, kk7.C4);
-        kk7.e().b(this, kk7.D4);
-        kk7.f(this.currentAccount).b(this, kk7.S1);
+        nm7.e().b(this, nm7.G4);
+        nm7.e().b(this, nm7.E4);
+        nm7.e().b(this, nm7.F4);
+        nm7.f(this.currentAccount).b(this, nm7.T1);
         boolean z = false;
-        if (na7.c1().getBoolean("proxy_enabled", false) && !gba.w1.isEmpty()) {
+        if (oc7.d1().getBoolean("proxy_enabled", false) && !gda.v1.isEmpty()) {
             z = true;
         }
         this.d = z;
-        g0(true);
+        h0(true);
         return true;
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        kk7.e().n(this, kk7.E4);
-        kk7.e().n(this, kk7.C4);
-        kk7.e().n(this, kk7.D4);
-        kk7.f(this.currentAccount).n(this, kk7.S1);
+        nm7.e().n(this, nm7.G4);
+        nm7.e().n(this, nm7.E4);
+        nm7.e().n(this, nm7.F4);
+        nm7.f(this.currentAccount).n(this, nm7.T1);
     }
 
     @Override // org.telegram.ui.ActionBar.d
     public final void onResume() {
         super.onResume();
-        s20 s20Var = this.a;
-        if (s20Var != null) {
-            s20Var.f();
+        s30 s30Var = this.a;
+        if (s30Var != null) {
+            s30Var.f();
         }
     }
 

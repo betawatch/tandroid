@@ -1,35 +1,59 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class tf2 extends ih2 {
-    public final /* synthetic */ byte i = 1;
+import android.os.SystemClock;
 
-    public /* synthetic */ tf2(float f, float f2, int i) {
-        super(f, f2, i);
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class tf2 implements fm6 {
+    public long a;
+    public long b;
+    public boolean c;
+    public Object d;
+    public Object e;
 
-    @Override // ih2, android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        switch (this.i) {
-            case 0:
-                return (int) ((this.b * 2.0f) + this.a);
-            default:
-                return gl.L(26.0f);
+    public final void a(long j) {
+        this.a = j;
+        if (this.c) {
+            ((bfb) this.d).getClass();
+            this.b = SystemClock.elapsedRealtime();
         }
     }
 
-    @Override // ih2, android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.i) {
-            case 0:
-                return (int) ((this.b * 2.0f) + this.a);
-            default:
-                return gl.L(26.0f);
+    @Override // fm6
+    public final void b(ce8 ce8Var) {
+        if (this.c) {
+            a(h());
         }
+        this.e = ce8Var;
     }
 
-    public /* synthetic */ tf2(int i) {
-        super(i);
+    public final void c() {
+        if (this.c) {
+            return;
+        }
+        ((bfb) this.d).getClass();
+        this.b = SystemClock.elapsedRealtime();
+        this.c = true;
+    }
+
+    @Override // fm6
+    public final ce8 g() {
+        return (ce8) this.e;
+    }
+
+    @Override // fm6
+    public final long h() {
+        long j = this.a;
+        if (!this.c) {
+            return j;
+        }
+        ((bfb) this.d).getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime() - this.b;
+        return (((ce8) this.e).a == 1.0f ? hac.T(elapsedRealtime) : elapsedRealtime * r6.c) + j;
+    }
+
+    @Override // fm6
+    public final boolean i() {
+        return false;
     }
 }

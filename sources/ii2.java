@@ -1,117 +1,54 @@
 // default package
 
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.util.StateSet;
-import android.view.MotionEvent;
+import java.io.IOException;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ii2 extends hn {
-    public final Rect s;
-    public Drawable w;
-    public boolean x;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ii2 extends InputStream {
+    public final a83 a;
+    public final byte[] b = new byte[1];
+    public long c;
 
-    public ii2(Context context) {
-        super(context, false, false, false);
-        this.s = new Rect();
+    public ii2(a83 a83Var, g83 g83Var) {
+        this.a = a83Var;
+        try {
+            this.c = a83Var.open(g83Var);
+        } catch (IOException e) {
+            rjb.m(e);
+            throw null;
+        }
     }
 
-    public Rect getClickBounds() {
-        return this.s;
+    @Override // java.io.InputStream
+    public final int available() {
+        return (int) this.c;
     }
 
-    @Override // hn, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.w != null) {
-            Rect bounds = getDrawable().getBounds();
-            Rect rect = this.s;
-            rect.set(bounds);
-            int ceil = (int) Math.ceil(getDrawable().c());
-            if (getDrawable().b == 3) {
-                rect.right = rect.left + ceil;
-            } else if (getDrawable().b == 5) {
-                rect.left = rect.right - ceil;
-            } else if (getDrawable().b == 17) {
-                int i = (rect.left + rect.right) / 2;
-                int i2 = ceil / 2;
-                rect.left = i - i2;
-                rect.right = i + i2;
-            }
-            rect.left -= getPaddingLeft();
-            rect.top -= getPaddingTop();
-            rect.right = getPaddingRight() + rect.right;
-            rect.bottom = getPaddingBottom() + rect.bottom;
-            this.w.setBounds(rect);
-            this.w.draw(canvas);
-        }
-        super.onDraw(canvas);
+    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.a.close();
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean contains = getClickBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-        if (motionEvent.getAction() == 0 && contains) {
-            this.x = true;
-            Drawable drawable = this.w;
-            if (drawable != null) {
-                drawable.setHotspot(motionEvent.getX(), motionEvent.getY());
-                this.w.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
-            }
-            invalidate();
-            return contains;
+    @Override // java.io.InputStream
+    public final int read() {
+        a83 a83Var = this.a;
+        byte[] bArr = this.b;
+        int read = a83Var.read(bArr, 0, 1);
+        this.c--;
+        if (read == -1) {
+            return -1;
         }
-        if (motionEvent.getAction() == 1) {
-            if (this.x && contains) {
-                callOnClick();
-            }
-            this.x = false;
-            Drawable drawable2 = this.w;
-            if (drawable2 != null) {
-                drawable2.setState(StateSet.NOTHING);
-                return contains;
-            }
-        } else if (motionEvent.getAction() == 3) {
-            this.x = false;
-            Drawable drawable3 = this.w;
-            if (drawable3 != null) {
-                drawable3.setState(StateSet.NOTHING);
-            }
-        }
-        return contains;
+        return bArr[0] & 255;
     }
 
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        Drawable drawable2 = this.w;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr, int i, int i2) {
+        if (i2 == 0) {
+            return 0;
         }
-        this.w = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        Drawable drawable2 = this.w;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.w = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.w || super.verifyDrawable(drawable);
+        int read = this.a.read(bArr, i, i2);
+        this.c -= read;
+        return read;
     }
 }

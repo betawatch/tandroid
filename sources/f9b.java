@@ -1,152 +1,62 @@
 // default package
 
-/* loaded from: classes.dex */
-public abstract class f9b extends n9b {
-    public static final int e(int i, CharSequence charSequence, String str, boolean z) {
-        String str2;
-        boolean z2;
-        boolean regionMatches;
-        charSequence.getClass();
-        str.getClass();
-        if (!z && (charSequence instanceof String)) {
-            return ((String) charSequence).indexOf(str, i);
-        }
-        int length = charSequence.length();
-        if (i < 0) {
-            i = 0;
-        }
-        int length2 = charSequence.length();
-        if (length > length2) {
-            length = length2;
-        }
-        fp5 fp5Var = new fp5(i, length, 1);
-        boolean z3 = charSequence instanceof String;
-        int i2 = fp5Var.c;
-        int i3 = fp5Var.b;
-        if (z3) {
-            if ((i2 <= 0 || i > i3) && (i2 >= 0 || i3 > i)) {
-                return -1;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class f9b extends View {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Canvas b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Paint f;
+    public final /* synthetic */ Bitmap h;
+    public final /* synthetic */ Paint n;
+    public final /* synthetic */ float r;
+    public final /* synthetic */ float s;
+    public final /* synthetic */ v9b w;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f9b(v9b v9bVar, Context context, boolean z, Canvas canvas, float f, float f2, float f3, Paint paint, Bitmap bitmap, Paint paint2, float f4, float f5) {
+        super(context);
+        this.w = v9bVar;
+        this.a = z;
+        this.b = canvas;
+        this.c = f;
+        this.d = f2;
+        this.e = f3;
+        this.f = paint;
+        this.h = bitmap;
+        this.n = paint2;
+        this.r = f4;
+        this.s = f5;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        v9b v9bVar = this.w;
+        float f = v9bVar.E2;
+        Paint paint = this.n;
+        float f2 = this.e;
+        float f3 = this.d;
+        float f4 = this.c;
+        if (this.a) {
+            if (f > 0.0f) {
+                this.b.drawCircle(f4, f3, f2 * f, this.f);
             }
-            int i4 = i;
-            while (true) {
-                String str3 = (String) charSequence;
-                int length3 = str.length();
-                if (z) {
-                    str2 = str;
-                    z2 = z;
-                    regionMatches = str2.regionMatches(z2, 0, str3, i4, length3);
-                } else {
-                    regionMatches = str.regionMatches(0, str3, i4, length3);
-                    str2 = str;
-                    z2 = z;
-                }
-                if (regionMatches) {
-                    return i4;
-                }
-                if (i4 == i3) {
-                    return -1;
-                }
-                i4 += i2;
-                str = str2;
-                z = z2;
-            }
+            canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
         } else {
-            if ((i2 <= 0 || i > i3) && (i2 >= 0 || i3 > i)) {
-                return -1;
-            }
-            while (true) {
-                int length4 = str.length();
-                if (i >= 0 && str.length() - length4 >= 0 && i <= charSequence.length() - length4) {
-                    for (int i5 = 0; i5 < length4; i5++) {
-                        if (xqd.a(str.charAt(i5), charSequence.charAt(i + i5), z)) {
-                        }
-                    }
-                    return i;
-                }
-                if (i == i3) {
-                    return -1;
-                }
-                i += i2;
-            }
+            canvas.drawCircle(f4, f3, (1.0f - f) * f2, paint);
         }
-    }
-
-    public static /* synthetic */ int f(int i, int i2, CharSequence charSequence, String str) {
-        if ((i2 & 2) != 0) {
-            i = 0;
-        }
-        return e(i, charSequence, str, false);
-    }
-
-    public static int g(CharSequence charSequence, char c, int i, int i2) {
-        if ((i2 & 2) != 0) {
-            i = 0;
-        }
-        charSequence.getClass();
-        if (charSequence instanceof String) {
-            return ((String) charSequence).indexOf(c, i);
-        }
-        char[] cArr = {c};
-        if (charSequence instanceof String) {
-            return ((String) charSequence).indexOf(cArr[0], i);
-        }
-        if (i < 0) {
-            i = 0;
-        }
-        int length = charSequence.length() - 1;
-        if (i > length) {
-            return -1;
-        }
-        while (!xqd.a(cArr[0], charSequence.charAt(i), false)) {
-            if (i == length) {
-                return -1;
-            }
-            i++;
-        }
-        return i;
-    }
-
-    public static boolean h(CharSequence charSequence) {
-        charSequence.getClass();
-        for (int i = 0; i < charSequence.length(); i++) {
-            char charAt = charSequence.charAt(i);
-            if (!Character.isWhitespace(charAt) && !Character.isSpaceChar(charAt)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static String i(int i, String str) {
-        CharSequence charSequence;
-        str.getClass();
-        if (i < 0) {
-            w26.j(tb4.n(i, "Desired length ", " is less than zero."));
-            return null;
-        }
-        if (i <= str.length()) {
-            charSequence = str.subSequence(0, str.length());
-        } else {
-            StringBuilder sb = new StringBuilder(i);
-            sb.append((CharSequence) str);
-            int length = i - str.length();
-            int i2 = 1;
-            if (1 <= length) {
-                while (true) {
-                    sb.append(' ');
-                    if (i2 == length) {
-                        break;
-                    }
-                    i2++;
-                }
-            }
-            charSequence = sb;
-        }
-        return charSequence.toString();
-    }
-
-    public static String j(String str, String str2, String str3) {
-        int f = f(0, 6, str, str2);
-        return f == -1 ? str3 : str.substring(str2.length() + f, str.length());
+        canvas.save();
+        canvas.translate(this.r, this.s);
+        v9bVar.j1.draw(canvas);
+        canvas.restore();
     }
 }

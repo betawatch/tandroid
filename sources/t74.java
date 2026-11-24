@@ -1,60 +1,53 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class t74 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ r74 c;
-    public final /* synthetic */ TextView[] d;
-    public final /* synthetic */ TLRPC.TL_factCheck e;
+public interface t74 {
+    boolean a(int i, long j);
 
-    public t74(int i, r74 r74Var, TextView[] textViewArr, TLRPC.TL_factCheck tL_factCheck) {
-        this.b = i;
-        this.c = r74Var;
-        this.d = textViewArr;
-        this.e = tL_factCheck;
-    }
+    void b(long j, long j2, long j3, List list, em6[] em6VarArr);
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a) {
-            return;
-        }
-        int length = editable.length();
-        boolean z = true;
-        int i = this.b;
-        if (length > i) {
-            this.a = true;
-            editable.delete(i, editable.length());
-            r74 r74Var = this.c;
-            gl.A3(r74Var);
-            try {
-                r74Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            this.a = false;
-        }
-        TextView[] textViewArr = this.d;
-        if (textViewArr[0] != null) {
-            if (editable.length() <= 0 && this.e != null) {
-                z = false;
-            }
-            textViewArr[0].setText(k96.M0(z ? 2131751342 : 2131746128, null));
-            textViewArr[0].setTextColor(bkb.w0(null, z ? bkb.G5 : bkb.p7, false));
-        }
-    }
+    uzb c();
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
+    int d();
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
+    int e(go4 go4Var);
+
+    void f();
+
+    boolean g(long j, ni2 ni2Var, List list);
+
+    void h(boolean z);
+
+    go4 i(int i);
+
+    void j();
+
+    int k(int i);
+
+    int l(long j, List list);
+
+    int length();
+
+    void m();
+
+    int n();
+
+    go4 o();
+
+    int p();
+
+    boolean q(int i, long j);
+
+    void r(float f);
+
+    Object s();
+
+    void t();
+
+    void u();
+
+    int v(int i);
 }

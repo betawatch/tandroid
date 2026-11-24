@@ -1,25 +1,40 @@
 // default package
 
-import android.os.Bundle;
-import android.view.View;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ap {
-    public int a;
-    public int b;
-    public byte c;
-    public int d;
-    public zo e;
-    public View f;
-    public View g;
-    public yz6 h;
-    public i56 i;
-    public ew2 j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public Bundle p;
+public class ap extends Exception {
+
+    @Deprecated
+    protected final Status mStatus;
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ap(Status status) {
+        super(r4.toString());
+        int i = status.a;
+        String str = status.b;
+        str = str == null ? "" : str;
+        StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 2 + String.valueOf(str).length());
+        sb.append(i);
+        sb.append(": ");
+        sb.append(str);
+        this.mStatus = status;
+    }
+
+    public Status getStatus() {
+        return this.mStatus;
+    }
+
+    public int getStatusCode() {
+        return this.mStatus.a;
+    }
+
+    @Deprecated
+    public String getStatusMessage() {
+        return this.mStatus.b;
+    }
 }

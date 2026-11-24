@@ -10,14 +10,14 @@ import org.json.JSONObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public final class b {
     public boolean h;
     public boolean i;
     public boolean k;
     public final /* synthetic */ c m;
-    public final kyb a = new kyb();
+    public final l0c a = new l0c();
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public final HashSet d = new HashSet();
@@ -46,7 +46,7 @@ public final class b {
         if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
             return null;
         }
-        return tb4.p(optString, ":", optString2);
+        return td4.q(optString, ":", optString2);
     }
 
     public final void a() {
@@ -145,7 +145,7 @@ public final class b {
         gettransactions.limit = 10;
         gettransactions.offset = "";
         this.i = true;
-        this.j = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(gettransactions, new hc((byte) 0), new z05(this, gettransactions, (byte) 1));
+        this.j = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(gettransactions, new kc((byte) 0), new z25(this, gettransactions, (byte) 1));
     }
 
     public final void h() {
@@ -159,12 +159,12 @@ public final class b {
         gettransactions.offset = this.g;
         this.k = true;
         byte b = 0;
-        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(gettransactions, new hc(b), new z05(this, gettransactions, b));
+        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(gettransactions, new kc(b), new z25(this, gettransactions, b));
     }
 
     public final void i() {
         c cVar = this.m;
-        kk7.f(cVar.a).k(kk7.d4, this, cVar);
+        nm7.f(cVar.a).k(nm7.f4, this, cVar);
     }
 
     public final void k() {
@@ -172,9 +172,9 @@ public final class b {
         ArrayList arrayList;
         TL_wallet.WalletTransactionPeer walletTransactionPeer;
         String str;
-        kyb kybVar = this.a;
-        HashMap hashMap = kybVar.b;
-        HashSet hashSet = kybVar.a;
+        l0c l0cVar = this.a;
+        HashMap hashMap = l0cVar.b;
+        HashSet hashSet = l0cVar.a;
         c cVar = this.m;
         ArrayList arrayList2 = cVar.p;
         int size = arrayList2.size();
@@ -200,9 +200,9 @@ public final class b {
                             wallettransaction2.normalMessageBodyHash = wallettransaction.normalMessageBodyHash;
                         }
                         arrayList2.remove(size);
-                        c15 c15Var = (c15) cVar.u.remove(wallettransaction);
-                        if (c15Var != null) {
-                            c15Var.c();
+                        c35 c35Var = (c35) cVar.u.remove(wallettransaction);
+                        if (c35Var != null) {
+                            c35Var.c();
                         }
                     }
                 }
@@ -222,7 +222,7 @@ public final class b {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new mz2((byte) 21));
+        List.-EL.sort(arrayList3, new x03((byte) 22));
         hashSet.clear();
         hashMap.clear();
         int size3 = arrayList3.size();
@@ -235,6 +235,6 @@ public final class b {
             }
         }
         hashMap.clear();
-        kybVar.b(4, new ArrayList(hashSet));
+        l0cVar.b(4, new ArrayList(hashSet));
     }
 }

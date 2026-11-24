@@ -1,41 +1,32 @@
 // default package
 
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.UserInfoActivity;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class z6c implements ay2, by2 {
+    public static final z6c a = new z6c();
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class z6c implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ UserInfoActivity b;
-
-    public /* synthetic */ z6c(UserInfoActivity userInfoActivity, byte b) {
-        this.a = b;
-        this.b = userInfoActivity;
+    @Override // cy2
+    public final Object fold(Object obj, fs4 fs4Var) {
+        return fs4Var.invoke(obj, this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        UserInfoActivity userInfoActivity = this.b;
-        switch (b) {
-            case 0:
-                userInfoActivity.presentFragment(new PrivacyControlActivity(9, true));
-                break;
-            case 1:
-                va vaVar = userInfoActivity.y;
-                if (vaVar != null) {
-                    vaVar.g3.O(true);
-                    break;
-                }
-                break;
-            case 2:
-                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
-                break;
-            default:
-                userInfoActivity.presentFragment(new PremiumPreviewFragment(0, "add_account"));
-                break;
-        }
+    @Override // cy2
+    public final ay2 get(by2 by2Var) {
+        return nwd.a(this, by2Var);
+    }
+
+    @Override // cy2
+    public final cy2 minusKey(by2 by2Var) {
+        return nwd.b(this, by2Var);
+    }
+
+    @Override // cy2
+    public final cy2 plus(cy2 cy2Var) {
+        return nwd.c(this, cy2Var);
+    }
+
+    @Override // ay2
+    public final by2 getKey() {
+        return this;
     }
 }

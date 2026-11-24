@@ -1,37 +1,24 @@
 // default package
 
-import android.app.Activity;
-import android.widget.ImageView;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class h79 {
+    public static final i79 a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class h79 extends e21 {
-    public final i79 c;
-
-    public h79(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        i79 i79Var = new i79();
-        this.c = i79Var;
-        imageView.setImageDrawable(i79Var);
+    static {
+        i79 i79Var = null;
+        try {
+            i79Var = (i79) Class.forName("kotlin.reflect.jvm.internal.ReflectionFactoryImpl").newInstance();
+        } catch (ClassCastException | ClassNotFoundException | IllegalAccessException | InstantiationException unused) {
+        }
+        if (i79Var == null) {
+            i79Var = new i79();
+        }
+        a = i79Var;
     }
 
-    @Override // q11
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        i79 i79Var = this.c;
-        i79Var.getClass();
-        i79Var.g = System.currentTimeMillis();
-        i79Var.invalidateSelf();
-    }
-
-    @Override // q11
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        i79 i79Var = this.c;
-        i79Var.g = -1L;
-        i79Var.invalidateSelf();
+    public static cj2 a(Class cls) {
+        a.getClass();
+        return new cj2(cls);
     }
 }

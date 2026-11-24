@@ -1,83 +1,96 @@
 // default package
 
-import java.io.OutputStream;
-import java.util.Arrays;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+import com.google.android.gms.tasks.Task;
+import java.io.Closeable;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayDeque;
+import java.util.concurrent.Future;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class dm5 extends OutputStream {
-    public byte[] a;
-    public int b;
+public final class dm5 implements Closeable {
+    public final URL a;
+    public volatile Future b;
+    public Task c;
 
-    public dm5(int i) {
-        this.a = new byte[i];
+    public dm5(URL url) {
+        this.a = url;
     }
 
-    public final void a(int i) {
-        byte[] bArr = this.a;
-        if (i - bArr.length > 0) {
-            int length = bArr.length << 1;
-            if (length - i < 0) {
-                length = i;
-            }
-            if (length - 2147483639 > 0) {
-                if (i < 0) {
-                    throw new OutOfMemoryError();
+    public final Bitmap a() {
+        byte[] a;
+        boolean isLoggable = Log.isLoggable("FirebaseMessaging", 4);
+        URL url = this.a;
+        if (isLoggable) {
+            Log.i("FirebaseMessaging", "Starting download of: " + url);
+        }
+        URLConnection openConnection = url.openConnection();
+        if (openConnection.getContentLength() > 1048576) {
+            wa3.d("Content-Length exceeds max size of 1048576");
+            return null;
+        }
+        InputStream inputStream = openConnection.getInputStream();
+        try {
+            h61 h61Var = new h61(inputStream);
+            ArrayDeque arrayDeque = new ArrayDeque(20);
+            int i = 128;
+            int i2 = 0;
+            loop0: while (true) {
+                if (i2 < 2147483639) {
+                    int min = Math.min(i, 2147483639 - i2);
+                    byte[] bArr = new byte[min];
+                    arrayDeque.add(bArr);
+                    int i3 = 0;
+                    while (i3 < min) {
+                        int read = h61Var.read(bArr, i3, min - i3);
+                        if (read == -1) {
+                            a = esd.a(arrayDeque, i2);
+                            break loop0;
+                        }
+                        i3 += read;
+                        i2 += read;
+                    }
+                    long j = i * (i < 4096 ? 4 : 2);
+                    i = j > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j < -2147483648L ? TLObject.FLAG_31 : (int) j;
+                } else {
+                    if (h61Var.read() != -1) {
+                        throw new OutOfMemoryError("input is too large to fit in a byte array");
+                    }
+                    a = esd.a(arrayDeque, 2147483639);
                 }
-                length = i > 2147483639 ? Integer.MAX_VALUE : 2147483639;
             }
-            this.a = Arrays.copyOf(bArr, length);
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            if (Log.isLoggable("FirebaseMessaging", 2)) {
+                Log.v("FirebaseMessaging", "Downloaded " + a.length + " bytes from " + url);
+            }
+            if (a.length > 1048576) {
+                wa3.d("Image exceeds max size of 1048576");
+                return null;
+            }
+            Bitmap decodeByteArray = BitmapFactory.decodeByteArray(a, 0, a.length);
+            if (decodeByteArray == null) {
+                zg.e(url, "Failed to decode image: ");
+                return null;
+            }
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "Successfully downloaded image: " + url);
+            }
+            return decodeByteArray;
+        } finally {
         }
     }
 
-    public final synchronized void b() {
-        this.b = 0;
-    }
-
-    public final void c(int i) {
-        a(this.b + 4);
-        byte[] bArr = this.a;
-        int i2 = this.b;
-        bArr[i2] = (byte) (i >>> 24);
-        bArr[i2 + 1] = (byte) (i >>> 16);
-        bArr[i2 + 2] = (byte) (i >>> 8);
-        bArr[i2 + 3] = (byte) i;
-        this.b = i2 + 4;
-    }
-
-    public final void d(long j) {
-        a(this.b + 8);
-        byte[] bArr = this.a;
-        int i = this.b;
-        bArr[i] = (byte) (j >>> 56);
-        bArr[i + 1] = (byte) (j >>> 48);
-        bArr[i + 2] = (byte) (j >>> 40);
-        bArr[i + 3] = (byte) (j >>> 32);
-        bArr[i + 4] = (byte) (j >>> 24);
-        bArr[i + 5] = (byte) (j >>> 16);
-        bArr[i + 6] = (byte) (j >>> 8);
-        bArr[i + 7] = (byte) j;
-        this.b = i + 8;
-    }
-
-    @Override // java.io.OutputStream
-    public final synchronized void write(byte[] bArr, int i, int i2) {
-        if (i >= 0) {
-            if (i <= bArr.length && i2 >= 0 && (i + i2) - bArr.length <= 0) {
-                a(this.b + i2);
-                System.arraycopy(bArr, i, this.a, this.b, i2);
-                this.b += i2;
-            }
-        }
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // java.io.OutputStream
-    public final synchronized void write(int i) {
-        a(this.b + 1);
-        byte[] bArr = this.a;
-        int i2 = this.b;
-        bArr[i2] = (byte) i;
-        this.b = i2 + 1;
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.b.cancel(true);
     }
 }

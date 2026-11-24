@@ -1,126 +1,88 @@
 // default package
 
-import android.app.KeyguardManager;
 import android.content.Context;
-import android.hardware.biometrics.BiometricManager;
-import android.hardware.biometrics.BiometricPrompt;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Build;
-import android.util.Log;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import org.telegram.messenger.beta.R;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.text.TextUtils;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class ej0 {
-    public final dj0 a;
-    public final BiometricManager b;
-    public final uj0 c;
+    public Object a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
+    public Object f;
 
-    public ej0(dj0 dj0Var) {
-        Context context = dj0Var.a;
-        this.a = dj0Var;
-        int i = Build.VERSION.SDK_INT;
-        this.b = i >= 29 ? bj0.b(context) : null;
-        this.c = i <= 29 ? new uj0(context, (char) 0) : null;
+    public ej0(Context context, cj0 cj0Var, rhb rhbVar) {
+        this.a = context;
+        this.c = cj0Var;
+        this.d = rhbVar;
+        this.e = new idf(this, true);
+        this.f = new idf(this, false);
     }
 
-    public final int a(int i) {
-        BiometricPrompt.CryptoObject b;
-        int i2 = Build.VERSION.SDK_INT;
-        int i3 = 1;
-        if (i2 >= 30) {
-            BiometricManager biometricManager = this.b;
-            if (biometricManager != null) {
-                return cj0.a(biometricManager, i);
-            }
-            Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
-            return 1;
+    public final void a() {
+        this.a = null;
+        if (((o3a) this.f) != null) {
+            Utilities.e.a((o3a) this.f);
         }
-        if (!wmd.c(i)) {
-            return -2;
+        Bitmap bitmap = (Bitmap) this.c;
+        if (bitmap != null && !bitmap.isRecycled()) {
+            ((Bitmap) this.c).recycle();
         }
-        if (i != 0) {
-            dj0 dj0Var = this.a;
-            Context context = dj0Var.a;
-            if (ov5.a(context) != null) {
-                int i4 = 0;
-                if (wmd.b(i)) {
-                    KeyguardManager a = ov5.a(context);
-                    return a == null ? false : ov5.b(a) ? 0 : 11;
-                }
-                if (i2 != 29) {
-                    if (i2 != 28) {
-                        return b();
-                    }
-                    if (context == null || context.getPackageManager() == null || !kr7.a(context.getPackageManager())) {
-                        return 12;
-                    }
-                    KeyguardManager a2 = ov5.a(dj0Var.a);
-                    return !(a2 == null ? false : ov5.b(a2)) ? b() : b() == 0 ? 0 : -1;
-                }
-                if ((i & kk7.d4) == 255) {
-                    BiometricManager biometricManager2 = this.b;
-                    if (biometricManager2 != null) {
-                        return bj0.a(biometricManager2);
-                    }
-                    Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
-                    return 1;
-                }
-                Method c = bj0.c();
-                if (c != null && (b = rae.b(rae.a())) != null) {
-                    try {
-                        Object invoke = c.invoke(this.b, b);
-                        if (invoke instanceof Integer) {
-                            return ((Integer) invoke).intValue();
-                        }
-                        Log.w("BiometricManager", "Invalid return type for canAuthenticate(CryptoObject).");
-                    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-                        Log.w("BiometricManager", "Failed to invoke canAuthenticate(CryptoObject).", e);
-                    }
-                }
-                BiometricManager biometricManager3 = this.b;
-                if (biometricManager3 == null) {
-                    Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
-                } else {
-                    i3 = bj0.a(biometricManager3);
-                }
-                String str = Build.MODEL;
-                if (Build.VERSION.SDK_INT < 30 && str != null) {
-                    for (String str2 : context.getResources().getStringArray(R.array.assume_strong_biometrics_models)) {
-                        if (str.equals(str2)) {
-                            return i3;
-                        }
-                    }
-                }
-                if (i3 != 0) {
-                    return i3;
-                }
-                KeyguardManager a3 = ov5.a(dj0Var.a);
-                if (!(a3 == null ? false : ov5.b(a3))) {
-                    i4 = b();
-                } else if (b() != 0) {
-                    i4 = -1;
-                }
-                return i4;
-            }
-        }
-        return 12;
+        this.c = null;
     }
 
-    public final int b() {
-        uj0 uj0Var = this.c;
-        if (uj0Var == null) {
-            Log.e("BiometricManager", "Failure in canAuthenticate(). FingerprintManager was null.");
-            return 1;
+    public final Bitmap b(jn5 jn5Var) {
+        if (jn5Var == null) {
+            return null;
         }
-        Context context = uj0Var.a;
-        FingerprintManager c = dg4.c(context);
-        if (c == null || !dg4.e(c)) {
-            return 12;
+        return c(jn5Var.c, jn5Var.a, jn5Var.e, 0, false);
+    }
+
+    public final Bitmap c(Bitmap bitmap, String str, int i, int i2, boolean z) {
+        if (bitmap == null || bitmap.isRecycled()) {
+            return null;
         }
-        FingerprintManager c2 = dg4.c(context);
-        return (c2 == null || !dg4.d(c2)) ? 11 : 0;
+        if (TextUtils.equals((String) this.a, str)) {
+            Bitmap bitmap2 = (Bitmap) this.c;
+            if (bitmap2 != null) {
+                return bitmap2;
+            }
+            if (((o3a) this.f) != null) {
+                return null;
+            }
+        }
+        if (((o3a) this.f) != null) {
+            Utilities.e.a((o3a) this.f);
+        }
+        this.a = str;
+        mp3 mp3Var = Utilities.e;
+        o3a o3aVar = new o3a(this, bitmap, i, i2, str, z);
+        this.f = o3aVar;
+        mp3Var.c(o3aVar);
+        return (Bitmap) this.c;
+    }
+
+    public final Bitmap d(ImageReceiver imageReceiver) {
+        if (imageReceiver == null) {
+            return null;
+        }
+        return c(imageReceiver.n(), imageReceiver.R, imageReceiver.V, imageReceiver.W, false);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public ej0(int i, Runnable runnable) {
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.b = i;
+        this.e = runnable;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 }

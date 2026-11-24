@@ -1,186 +1,118 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Map;
+import android.content.Context;
+import android.util.Log;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
 public final class x84 {
-    public static final /* synthetic */ int c = 0;
-    public final uja a = uja.g();
-    public boolean b;
+    public static x84 e;
+    public boolean a = false;
+    public boolean b = true;
+    public boolean c = false;
+    public Object d;
 
-    static {
-        new x84(0);
+    public x84(Context context) {
+        this.d = context;
     }
 
-    public x84(int i) {
-        a();
-        a();
-    }
-
-    public static void b(ck2 ck2Var, kyc kycVar, int i, Object obj) {
-        if (kycVar == kyc.d) {
-            ck2Var.A(i, 3);
-            ((o3) obj).b(ck2Var);
-            ck2Var.A(i, 4);
-        }
-        ck2Var.A(i, kycVar.b);
-        switch (kycVar.ordinal()) {
-            case 0:
-                ck2Var.t(Double.doubleToRawLongBits(((Double) obj).doubleValue()));
-                break;
-            case 1:
-                ck2Var.r(Float.floatToRawIntBits(((Float) obj).floatValue()));
-                break;
-            case 2:
-                ck2Var.E(((Long) obj).longValue());
-                break;
-            case 3:
-                ck2Var.E(((Long) obj).longValue());
-                break;
-            case 4:
-                ck2Var.v(((Integer) obj).intValue());
-                break;
-            case 5:
-                ck2Var.t(((Long) obj).longValue());
-                break;
-            case 6:
-                ck2Var.r(((Integer) obj).intValue());
-                break;
-            case 7:
-                ck2Var.l(((Boolean) obj).booleanValue() ? (byte) 1 : (byte) 0);
-                break;
-            case 8:
-                if (!(obj instanceof f51)) {
-                    ck2Var.z((String) obj);
-                    break;
-                } else {
-                    ck2Var.p((f51) obj);
-                    break;
-                }
-            case 9:
-                ((o3) obj).b(ck2Var);
-                break;
-            case 10:
-                o3 o3Var = (o3) obj;
-                ck2Var.C(((fs4) o3Var).a(null));
-                o3Var.b(ck2Var);
-                break;
-            case 11:
-                if (!(obj instanceof f51)) {
-                    byte[] bArr = (byte[]) obj;
-                    int length = bArr.length;
-                    ck2Var.C(length);
-                    ck2Var.m(bArr, 0, length);
-                    break;
-                } else {
-                    ck2Var.p((f51) obj);
-                    break;
-                }
-            case 12:
-                ck2Var.C(((Integer) obj).intValue());
-                break;
-            case 13:
-                ck2Var.v(((Integer) obj).intValue());
-                break;
-            case 14:
-                ck2Var.r(((Integer) obj).intValue());
-                break;
-            case 15:
-                ck2Var.t(((Long) obj).longValue());
-                break;
-            case 16:
-                int intValue = ((Integer) obj).intValue();
-                ck2Var.C((intValue << 1) ^ (intValue >> 31));
-                break;
-            case 17:
-                long longValue = ((Long) obj).longValue();
-                ck2Var.E((longValue << 1) ^ (longValue >> 63));
-                break;
-        }
-    }
-
-    public final void a() {
-        if (this.b) {
-            return;
-        }
-        uja ujaVar = this.a;
-        int size = ujaVar.a.size();
-        for (int i = 0; i < size; i++) {
-            Map.Entry d = ujaVar.d(i);
-            if (d.getValue() instanceof fs4) {
-                fs4 fs4Var = (fs4) d.getValue();
-                fs4Var.getClass();
-                ft8 ft8Var = ft8.c;
-                ft8Var.getClass();
-                ft8Var.a(fs4Var.getClass()).c(fs4Var);
-                fs4Var.h();
-            }
-        }
-        if (!ujaVar.c) {
-            if (ujaVar.a.size() > 0) {
-                ujaVar.d(0).getKey().getClass();
-                fyb.g();
-                return;
-            } else {
-                Iterator it = ujaVar.e().iterator();
-                if (it.hasNext()) {
-                    ((Map.Entry) it.next()).getKey().getClass();
-                    fyb.g();
-                    return;
-                }
-            }
-        }
-        if (!ujaVar.c) {
-            ujaVar.b = ujaVar.b.isEmpty() ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(ujaVar.b);
-            ujaVar.e = ujaVar.e.isEmpty() ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(ujaVar.e);
-            ujaVar.c = true;
-        }
-        this.b = true;
-    }
-
-    public final Object clone() {
-        x84 x84Var = new x84();
-        uja ujaVar = this.a;
-        if (ujaVar.a.size() > 0) {
-            Map.Entry d = ujaVar.d(0);
-            if (d.getKey() != null) {
-                fyb.g();
-                return null;
-            }
-            d.getValue();
-            throw null;
-        }
-        Iterator it = ujaVar.e().iterator();
-        if (!it.hasNext()) {
+    public static x84 c() {
+        x84 x84Var = e;
+        if (x84Var != null) {
             return x84Var;
         }
-        Map.Entry entry = (Map.Entry) it.next();
-        if (entry.getKey() != null) {
-            fyb.g();
+        x84 x84Var2 = new x84();
+        e = x84Var2;
+        return x84Var2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final y84 a() {
+        boolean z;
+        v0e v0eVar = new v0e();
+        boolean z2 = this.c;
+        v0eVar.a = z2 ? 1 : 0;
+        boolean z3 = this.a;
+        v0eVar.b = z3 ? 1 : 0;
+        boolean z4 = false;
+        v0eVar.c = 0;
+        v0eVar.d = false;
+        v0eVar.e = this.b;
+        v0eVar.f = -1.0f;
+        if (z2 == 2 || z3 != 2) {
+            z = true;
+        } else {
+            Log.e("FaceDetector", "Contour is not supported for non-SELFIE mode.");
+            z = false;
+        }
+        if (v0eVar.b == 2 && v0eVar.c == 1) {
+            Log.e("FaceDetector", "Classification is not supported with contour.");
+        } else {
+            z4 = z;
+        }
+        if (z4) {
+            return new y84(new ldd((Context) this.d, v0eVar));
+        }
+        u36.j("Invalid build options");
+        return null;
+    }
+
+    public final ivc b(String str) {
+        d();
+        ivc ivcVar = (ivc) ((HashMap) this.d).get(str);
+        if (ivcVar == null) {
             return null;
         }
-        entry.getValue();
-        throw null;
+        ivcVar.a = Math.max(ivcVar.a, System.currentTimeMillis());
+        e();
+        return ivcVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void d() {
+        if (this.a || this.b) {
+            return;
         }
-        if (obj instanceof x84) {
-            return this.a.equals(((x84) obj).a);
+        this.b = true;
+        if (((HashMap) this.d) == null) {
+            this.d = new HashMap();
         }
-        return false;
+        Utilities.e.c(new fvc(this, (byte) 1));
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public final void e() {
+        byte b = 0;
+        gm.r(new fvc(this, b));
+        if (this.c) {
+            return;
+        }
+        fvc fvcVar = new fvc(this, b);
+        boolean z = e21.a;
+        gm.d3(fvcVar, 1000L);
     }
 
-    public x84() {
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void f(int i) {
+        if (i == 0 || i == 1 || i == 2) {
+            this.a = i;
+            return;
+        }
+        StringBuilder sb = new StringBuilder(34);
+        sb.append("Invalid landmark type: ");
+        sb.append(i);
+        throw new IllegalArgumentException(sb.toString());
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void g(int i) {
+        if (i == 0 || i == 1 || i == 2) {
+            this.c = i;
+            return;
+        }
+        StringBuilder sb = new StringBuilder(25);
+        sb.append("Invalid mode: ");
+        sb.append(i);
+        throw new IllegalArgumentException(sb.toString());
     }
 }

@@ -1,21 +1,27 @@
 // default package
 
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ym4 {
-    public final /* synthetic */ bn4 a;
+public final class ym4 implements jm4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e79 b;
 
-    public ym4(bn4 bn4Var) {
-        this.a = bn4Var;
+    public /* synthetic */ ym4(e79 e79Var, byte b) {
+        this.a = b;
+        this.b = e79Var;
     }
 
-    public final void a() {
-        bn4 bn4Var = this.a;
-        bn4Var.h0.e();
-        mcd.b(bn4Var);
-        Bundle bundle = bn4Var.b;
-        bn4Var.h0.f(bundle != null ? bundle.getBundle("registryState") : null);
+    @Override // jm4
+    public final Object c(Object obj, px2 px2Var) {
+        byte b = this.a;
+        e79 e79Var = this.b;
+        switch (b) {
+            case 0:
+                e79Var.a = obj;
+                throw new i1(this);
+            default:
+                e79Var.a = obj;
+                throw new i1(this);
+        }
     }
 }

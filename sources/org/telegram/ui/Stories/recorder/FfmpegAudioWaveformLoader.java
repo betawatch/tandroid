@@ -2,15 +2,15 @@ package org.telegram.ui.Stories.recorder;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class FfmpegAudioWaveformLoader {
-    private i8c onChunkReceived;
+    private jac onChunkReceived;
     private volatile boolean running = true;
 
-    public FfmpegAudioWaveformLoader(String str, int i, i8c i8cVar) {
-        this.onChunkReceived = i8cVar;
-        Utilities.h.c(new va7((Object) this, (Object) str, i, (byte) 25));
+    public FfmpegAudioWaveformLoader(String str, int i, jac jacVar) {
+        this.onChunkReceived = jacVar;
+        Utilities.h.c(new wc7((Object) this, (Object) str, i, (byte) 25));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -28,10 +28,10 @@ public class FfmpegAudioWaveformLoader {
     }
 
     private void receiveChunk(short[] sArr, int i) {
-        gl.d3(new va7((Object) this, (Object) sArr, i, (byte) 26));
+        gm.c3(new wc7((Object) this, (Object) sArr, i, (byte) 26));
     }
 
     public void destroy() {
-        Utilities.h.c(new s54((Object) this, (byte) 4));
+        Utilities.h.c(new a14((Object) this, (byte) 11));
     }
 }

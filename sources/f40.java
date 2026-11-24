@@ -1,27 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.io.File;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f40 implements x56, us2 {
-    public final /* synthetic */ long a;
+public final class f40 {
+    public final long a;
+    public final File b;
+    public long c;
+    public boolean d = true;
+    public boolean e;
 
-    public /* synthetic */ f40(long j) {
+    public f40(long j, File file) {
         this.a = j;
-    }
-
-    @Override // us2
-    public final void accept(Object obj) {
-        ((ad8) obj).f(this.a);
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        u30 u30Var;
-        o93 o93Var = (o93) obj;
-        q93 q93Var = o93Var.a;
-        if (o93Var != q93Var.j || (u30Var = q93Var.n) == null) {
-            return;
-        }
-        u30Var.o(this.a);
+        this.b = file;
     }
 }

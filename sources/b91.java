@@ -1,109 +1,302 @@
 // default package
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class b91 {
-    public static boolean a;
+public final class b91 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public static void a(int i, ArrayList arrayList, boolean z) {
-        fc2 fc2Var;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || i <= 0) {
-            return;
-        }
-        ArrayList arrayList2 = new ArrayList(3);
-        int i2 = 0;
-        if (z && sharedInstance.mutedByAdmin()) {
-            fc2 fc2Var2 = sharedInstance.groupCall;
-            TLRPC.GroupCallParticipant groupCallParticipant = fc2Var2 != null ? (TLRPC.GroupCallParticipant) fc2Var2.d.f(sharedInstance.getSelfId()) : null;
-            boolean z2 = (groupCallParticipant == null || groupCallParticipant.raise_hand_rating == 0) ? false : true;
-            arrayList2.add(new a91(new ra8(1, R.drawable.msg_voice_muted, k96.M0(z2 ? 2131743152 : 2131743048, null), !z2), 100, 0));
-        } else if (sharedInstance.isMicMute()) {
-            arrayList2.add(new a91(new ra8(1, R.drawable.msg_voice_muted, k96.M0(2131742988, null), true), 100, 0));
-        } else {
-            arrayList2.add(new a91(new ra8(1, R.drawable.msg_voice_unmuted, k96.M0(2131743051, null), true), 100, 0));
-        }
-        int videoState = sharedInstance.getVideoState(false);
-        if (videoState == 2) {
-            arrayList2.add(new a91(new ra8(2, R.drawable.pip_camera_on, k96.M0(2131742995, null), true), 90, 1));
-        } else if (a || videoState == 1) {
-            arrayList2.add(new a91(new ra8(2, R.drawable.pip_camera_off, k96.M0(2131742996, null), a.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z || ((fc2Var = sharedInstance.groupCall) != null && fc2Var.c()))), 60, 1));
-        }
-        arrayList2.add(new a91(new ra8(3, R.drawable.msg_endcall, k96.M0(z ? 2131743122 : 2131743170, null), true), 80, 2));
-        Collections.sort(arrayList2, new sa((byte) 15));
-        while (arrayList2.size() > i) {
-            tb4.v(1, arrayList2);
-        }
-        Collections.sort(arrayList2, new sa((byte) 16));
-        int size = arrayList2.size();
-        while (i2 < size) {
-            Object obj = arrayList2.get(i2);
-            i2++;
-            arrayList.add(((a91) obj).a);
+    public b91(m42 m42Var, f69 f69Var) {
+        this.a = (byte) 28;
+        this.b = m42Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 19:
+                ((f62) this.b).a.P = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    public static void b(int i, boolean z) {
-        fc2 fc2Var;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            if (w01.a) {
-                StringBuilder m = de9.m(i, "call pip: action ", ", camera ");
-                m.append(sharedInstance.getVideoState(false));
-                m.append(", mic muted ");
-                m.append(sharedInstance.isMicMute());
-                fa4.b(m.toString());
-            }
-            if (i == 1) {
-                if (z && sharedInstance.mutedByAdmin()) {
-                    sharedInstance.editCallMember(y6c.h(sharedInstance.getAccount()).f(), null, null, null, Boolean.TRUE, null);
-                    return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 1:
+                ((lb1) obj).w = null;
+                break;
+            case 2:
+                pc1 pc1Var = ((jc1) obj).d0;
+                if (pc1Var.g0 == animator) {
+                    pc1Var.g0 = null;
+                    pc1Var.f.getEditText().setScrollY(pc1Var.c0);
+                    break;
+                }
+                break;
+            case 3:
+                vg1 vg1Var = (vg1) ((y) obj).b;
+                if (animator.equals(vg1Var.S)) {
+                    vg1Var.S = null;
+                    break;
+                }
+                break;
+            case 4:
+                vg1 vg1Var2 = (vg1) obj;
+                if (animator.equals(vg1Var2.S)) {
+                    vg1Var2.S = null;
+                    break;
+                }
+                break;
+            case 5:
+                ((sh1) obj).I.setVisibility(8);
+                break;
+            case 6:
+                vi1 vi1Var = (vi1) obj;
+                fi1 fi1Var = vi1Var.n0;
+                if (fi1Var != null) {
+                    if (fi1Var.getParent() != null) {
+                        ((ViewGroup) vi1Var.n0.getParent()).removeView(vi1Var.n0);
+                    }
+                    vi1Var.n0 = null;
+                }
+                vi1Var.p0 = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 7:
+                cq1 cq1Var = (cq1) obj;
+                if (cq1Var.a) {
+                    cq1Var.d.setTranslationY(0.0f);
+                }
+                if (cq1Var.b) {
+                    cq1Var.e.setTranslationY(0.0f);
+                }
+                if (cq1Var.f) {
+                    cq1Var.h.setTranslationY(0.0f);
+                }
+                bf0 bf0Var = cq1Var.c;
+                if (bf0Var != null) {
+                    bf0Var.setTranslationY(0.0f);
+                }
+                cq1Var.n.W2[1] = null;
+                break;
+            case 8:
+                ms1 ms1Var = (ms1) obj;
+                ms1Var.setAnimatedTop(0);
+                View view = ms1Var.w2;
+                if (view != null && view.getVisibility() == 0) {
+                    ms1Var.w2.setTranslationY(((1.0f - ms1Var.getTopViewEnterProgress()) * ms1Var.w2.getLayoutParams().height) + ms1Var.J2);
+                }
+                ms1Var.D7.M9 = null;
+                break;
+            case 9:
+                fu1 fu1Var = (fu1) ((u5) obj).c;
+                q qVar = fu1Var.c.R.q3;
+                if (qVar != null) {
+                    qVar.setIsMessageTransition(false);
+                    fu1Var.c.R.q3.m();
+                    fu1Var.c.R.q3.setVisibility(4);
+                    break;
+                }
+                break;
+            case 10:
+                fu1 fu1Var2 = (fu1) obj;
+                hu1 hu1Var = fu1Var2.c;
+                ArrayList arrayList = hu1Var.R.F6;
+                rc2 rc2Var = fu1Var2.b;
+                arrayList.remove(rc2Var);
+                View view2 = hu1Var.R.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
+                    hu1Var.R.A0.invalidate();
+                }
+                rc2Var.setAlpha(1.0f);
+                rc2Var.getTransitionParams().y0 = false;
+                break;
+            case 11:
+                ((vy1) obj).f.c0.setVisibility(8);
+                break;
+            case 12:
+                ((xz1) obj).g0 = 1.0f;
+                break;
+            case 13:
+                ((i22) ((l12) obj).d).t1.setVisibility(8);
+                break;
+            case 14:
+                ((o12) obj).d.u1.setVisibility(8);
+                break;
+            case 15:
+                i22 i22Var = (i22) obj;
+                i22Var.W2 = null;
+                if (!i22Var.n3) {
+                    if (i22Var.U2.getTag() == null && i22Var.N2 == 0 && !i22Var.Q2) {
+                        i22Var.X2.setVisibility(4);
+                    }
+                    i22Var.f3.setVisibility(4);
+                    break;
                 } else {
-                    sharedInstance.setMicMute(!sharedInstance.isMicMute(), false, true);
-                    return;
-                }
-            }
-            if (i != 2) {
-                if (i == 3) {
-                    if (z) {
-                        h75.l1(a.b, null, false, true);
-                        return;
-                    } else {
-                        sharedInstance.hangUp();
-                        return;
+                    r7 r7Var = i22Var.b3;
+                    if (r7Var != null) {
+                        r7Var.setVisibility(4);
+                        break;
                     }
                 }
-                return;
-            }
-            int videoState = sharedInstance.getVideoState(false);
-            if (videoState == 2) {
-                sharedInstance.setVideoState(false, 0);
-                return;
-            }
-            if (a.b.checkSelfPermission("android.permission.CAMERA") == 0) {
-                if (!z || ((fc2Var = sharedInstance.groupCall) != null && fc2Var.c())) {
-                    if (videoState == 0) {
-                        sharedInstance.createCaptureDevice(false);
-                        sharedInstance.requestVideoCall(false);
-                    }
-                    sharedInstance.setVideoState(false, 2);
+                break;
+            case 16:
+                ((e32) obj).J.setVisibility(8);
+                break;
+            case 17:
+                super.onAnimationEnd(animator);
+                p42 p42Var = (p42) obj;
+                p42Var.s.setVisibility(8);
+                p42Var.n = (byte) 0;
+                d42 d42Var = p42Var.r;
+                d42Var.setAlpha(1.0f);
+                d42Var.setScaleX(1.0f);
+                d42Var.setScaleY(1.0f);
+                d42Var.setTranslationX(0.0f);
+                d42Var.invalidate();
+                break;
+            case 18:
+                p42 p42Var2 = ((o42) obj).Y;
+                if (p42Var2.I.getTag() == null) {
+                    p42Var2.I.setVisibility(4);
                 }
-            }
+                p42Var2.J = null;
+                break;
+            case 19:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((f62) obj).a;
+                if (animator.equals(chatAttachAlertPhotoLayout.P)) {
+                    chatAttachAlertPhotoLayout.d0 = true;
+                    chatAttachAlertPhotoLayout.P = null;
+                    break;
+                }
+                break;
+            case 20:
+                w62 w62Var = (w62) obj;
+                x62 x62Var = w62Var.Q;
+                x62Var.K = null;
+                x62Var.L = false;
+                w62Var.invalidate();
+                break;
+            case 21:
+                u62 u62Var = (u62) obj;
+                u62Var.b.R = true;
+                u62Var.O.z.invalidate();
+                break;
+            case 22:
+                ((n92) obj).w.setVisibility(4);
+                break;
+            case 23:
+                e47 e47Var = (e47) obj;
+                e47Var.j = false;
+                e47Var.i = false;
+                break;
+            case 24:
+                vd2 vd2Var = (vd2) obj;
+                vd2Var.M = 0.0f;
+                vd2Var.L = 1.0f;
+                vr1 vr1Var = vd2Var.b0;
+                if (vr1Var != null) {
+                    vr1Var.invalidate();
+                }
+                vd2Var.U.invalidate();
+                fo1 fo1Var = vd2Var.Z;
+                if (fo1Var != null) {
+                    fo1Var.run();
+                    vd2Var.Z = null;
+                    break;
+                }
+                break;
+            case 25:
+                qe2 qe2Var = (qe2) obj;
+                qe2Var.setVisibility(8);
+                pe2 pe2Var = qe2Var.b;
+                if (pe2Var != null) {
+                    qe2Var.removeView(pe2Var);
+                    qe2Var.b = null;
+                }
+                qe2Var.e = null;
+                break;
+            case 26:
+                if2 if2Var = (if2) obj;
+                vob vobVar = if2Var.K1;
+                if (vobVar != null) {
+                    if (vobVar.getParent() != null) {
+                        ((ViewGroup) if2Var.K1.getParent()).removeView(if2Var.K1);
+                    }
+                    if2Var.K1 = null;
+                }
+                if2Var.M1 = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 27:
+                vob vobVar2 = (vob) obj;
+                vobVar2.c = null;
+                vobVar2.a.setShader(null);
+                vobVar2.n = null;
+                vobVar2.r = null;
+                vobVar2.setImageDrawable(null);
+                gm.B2(vobVar2);
+                break;
+            case 28:
+                m42 m42Var = (m42) obj;
+                tk4 tk4Var = m42Var.b;
+                tk4Var.setAlpha(1.0f);
+                f69.w0(tk4Var);
+                ((wg2) m42Var.d).c.removeView(tk4Var);
+                break;
+            case 29:
+                CheckBox checkBox = (CheckBox) obj;
+                if (animator.equals(checkBox.s)) {
+                    checkBox.s = null;
+                }
+                if (!checkBox.y) {
+                    checkBox.H = null;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                break;
         }
     }
 
-    public static long c() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return 0L;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                k91 k91Var = (k91) this.b;
+                for (int i = 0; i < k91Var.b.getChildCount(); i++) {
+                    h91 h91Var = (h91) k91Var.b.getChildAt(i);
+                    int i2 = k91Var.Q;
+                    int i3 = k91Var.R;
+                    int i4 = h91.E;
+                    h91Var.c(i2, i3);
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        return (((sharedInstance.getVideoState(false) << 1) + (sharedInstance.isMicMute() ? 1L : 0L)) << 1) + (sharedInstance.mutedByAdmin() ? 1L : 0L);
+    }
+
+    public /* synthetic */ b91(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 }

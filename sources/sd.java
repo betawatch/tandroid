@@ -1,69 +1,108 @@
 // default package
 
-import android.app.ApplicationExitInfo;
-import android.system.OsConstants;
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Message;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.view.ViewStub;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+import androidx.appcompat.app.AlertController$RecycleListView;
+import androidx.core.widget.NestedScrollView;
+import java.lang.ref.WeakReference;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class sd implements Predicate {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class sd {
+    public final Context a;
+    public final ie b;
+    public final Window c;
+    public CharSequence d;
+    public AlertController$RecycleListView e;
+    public View f;
+    public Button h;
+    public Button i;
+    public CharSequence j;
+    public Message k;
+    public Button l;
+    public NestedScrollView m;
+    public Drawable n;
+    public ImageView o;
+    public TextView p;
+    public TextView q;
+    public View r;
+    public ListAdapter s;
+    public final int u;
+    public final int v;
+    public final int w;
+    public final int x;
+    public final boolean y;
+    public final qd z;
+    public boolean g = false;
+    public int t = -1;
+    public final g6 A = new g6(this, 1);
 
-    public /* synthetic */ sd(byte b) {
-        this.a = b;
+    public sd(Context context, ie ieVar, Window window) {
+        this.a = context;
+        this.b = ieVar;
+        this.c = window;
+        qd qdVar = new qd();
+        qdVar.b = new WeakReference(ieVar);
+        this.z = qdVar;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, k09.e, R.attr.alertDialogStyle, 0);
+        this.u = obtainStyledAttributes.getResourceId(0, 0);
+        obtainStyledAttributes.getResourceId(2, 0);
+        this.v = obtainStyledAttributes.getResourceId(4, 0);
+        obtainStyledAttributes.getResourceId(5, 0);
+        this.w = obtainStyledAttributes.getResourceId(7, 0);
+        this.x = obtainStyledAttributes.getResourceId(3, 0);
+        this.y = obtainStyledAttributes.getBoolean(6, true);
+        obtainStyledAttributes.getDimensionPixelSize(1, 0);
+        obtainStyledAttributes.recycle();
+        ieVar.c().c(1);
     }
 
-    public final /* synthetic */ Predicate and(Predicate predicate) {
-        byte b = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public final /* synthetic */ Predicate negate() {
-        byte b = this.a;
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public final /* synthetic */ Predicate or(Predicate predicate) {
-        byte b = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                if (((String) obj) != null) {
-                    break;
-                }
-                break;
-            case 3:
-                if (((Integer) obj).intValue() != 0) {
-                    break;
-                }
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                if (((ApplicationExitInfo) obj).getReason() == 6) {
-                    break;
-                }
-                break;
-            default:
-                ApplicationExitInfo applicationExitInfo = (ApplicationExitInfo) obj;
-                boolean z = applicationExitInfo.getReason() == 3 && applicationExitInfo.getDescription() != null && applicationExitInfo.getDescription().contains("OOM");
-                boolean z2 = applicationExitInfo.getReason() == 2 && applicationExitInfo.getStatus() == OsConstants.SIGKILL;
-                if (z || z2) {
-                    break;
-                }
-                break;
+    public static boolean a(View view) {
+        if (view.onCheckIsTextEditor()) {
+            return true;
         }
-        return true;
+        if (!(view instanceof ViewGroup)) {
+            return false;
+        }
+        ViewGroup viewGroup = (ViewGroup) view;
+        int childCount = viewGroup.getChildCount();
+        while (childCount > 0) {
+            childCount--;
+            if (a(viewGroup.getChildAt(childCount))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ViewGroup b(View view, View view2) {
+        if (view == null) {
+            if (view2 instanceof ViewStub) {
+                view2 = ((ViewStub) view2).inflate();
+            }
+            return (ViewGroup) view2;
+        }
+        if (view2 != null) {
+            ViewParent parent = view2.getParent();
+            if (parent instanceof ViewGroup) {
+                ((ViewGroup) parent).removeView(view2);
+            }
+        }
+        if (view instanceof ViewStub) {
+            view = ((ViewStub) view).inflate();
+        }
+        return (ViewGroup) view;
     }
 }

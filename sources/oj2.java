@@ -1,33 +1,22 @@
 // default package
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.app.Activity;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class oj2 extends MetricAffectingSpan {
-    public static final Typeface[] c;
-    public final int a;
-    public final int b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class oj2 extends LinearLayout {
+    public final /* synthetic */ rj2 a;
 
-    static {
-        Typeface typeface = Typeface.MONOSPACE;
-        c = new Typeface[]{typeface, Typeface.create(typeface, 1), Typeface.create(typeface, 2), Typeface.create(typeface, 3)};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oj2(rj2 rj2Var, Activity activity) {
+        super(activity);
+        this.a = rj2Var;
     }
 
-    public oj2(int i) {
-        this.b = i;
-        this.a = ((i & 256) != 0 ? 1 : 0) | ((i & 512) != 0 ? 2 : 0);
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        updateMeasureState(textPaint);
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTypeface(c[this.a]);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.a.D0();
     }
 }

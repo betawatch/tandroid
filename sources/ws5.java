@@ -1,40 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ws5 extends ccb implements eq4 {
-    public /* synthetic */ Object a;
-    public final /* synthetic */ lg8 b;
-    public final /* synthetic */ Long c;
+import android.content.Context;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ws5 extends njb {
+    public final /* synthetic */ xs5 E;
+    public final o04 x;
+    public boolean y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ws5(lg8 lg8Var, Long l, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.b = lg8Var;
-        this.c = l;
+    public ws5(xs5 xs5Var, Context context) {
+        super(context);
+        this.E = xs5Var;
+        this.x = new o04(this, (byte) 16);
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        ws5 ws5Var = new ws5(this.b, this.c, fw2Var);
-        ws5Var.a = obj;
-        return ws5Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        o04 o04Var = this.x;
+        gm.r(o04Var);
+        if (this.y) {
+            gm.d3(o04Var, 500L);
+        }
     }
 
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        ws5 ws5Var = (ws5) create((ih7) obj, (fw2) obj2);
-        g5c g5cVar = g5c.a;
-        ws5Var.invokeSuspend(g5cVar);
-        return g5cVar;
-    }
-
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        qse.b(obj);
-        ih7 ih7Var = (ih7) this.a;
-        ih7Var.getClass();
-        ih7Var.d(this.b, this.c);
-        return g5c.a;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        gm.r(this.x);
     }
 }

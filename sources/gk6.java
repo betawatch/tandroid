@@ -1,21 +1,19 @@
 // default package
 
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface gk6 {
-    void a(int i, o33 o33Var, long j, int i2);
+public abstract class gk6 {
+    public static final fk6 a;
+    public static final fk6 b;
 
-    void b(int i, int i2, int i3, long j);
-
-    void c();
-
-    void flush();
-
-    void setParameters(Bundle bundle);
-
-    void shutdown();
-
-    void start();
+    static {
+        gv8 gv8Var = gv8.c;
+        fk6 fk6Var = null;
+        try {
+            fk6Var = (fk6) Class.forName("androidx.datastore.preferences.protobuf.MapFieldSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        a = fk6Var;
+        b = new fk6();
+    }
 }

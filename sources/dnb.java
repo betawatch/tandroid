@@ -1,18 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class dnb {
-    public static final ThreadLocal a = new ThreadLocal();
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.ui.Components.r;
 
-    public static d44 a() {
-        ThreadLocal threadLocal = a;
-        d44 d44Var = (d44) threadLocal.get();
-        if (d44Var != null) {
-            return d44Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class dnb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ThemeEditorView b;
+
+    public /* synthetic */ dnb(ThemeEditorView themeEditorView, byte b) {
+        this.a = b;
+        this.b = themeEditorView;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        ThemeEditorView themeEditorView = this.b;
+        switch (b) {
+            case 0:
+                r rVar = themeEditorView.c;
+                if (rVar != null) {
+                    rVar.setBackground(null);
+                    themeEditorView.j.removeView(themeEditorView.c);
+                    break;
+                }
+                break;
+            default:
+                cmb.v1(themeEditorView.o, true, false, false);
+                themeEditorView.a();
+                break;
         }
-        pk0 pk0Var = new pk0(Thread.currentThread());
-        threadLocal.set(pk0Var);
-        return pk0Var;
     }
 }

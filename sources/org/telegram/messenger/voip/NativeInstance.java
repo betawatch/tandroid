@@ -9,7 +9,7 @@ import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class NativeInstance {
     private static volatile boolean ownAudioCapture;
@@ -34,28 +34,28 @@ public class NativeInstance {
     private final HashMap<String, VideoSink> incomingSinks = new HashMap<>();
     private final HashMap<Long, String> incomingSinkEndpoints = new HashMap<>();
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface AudioLevelsCallback {
         void run(int[] iArr, float[] fArr, boolean[] zArr);
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface BroadcastStateCallback {
         void onBroadcastStateChanged(boolean z, boolean z2);
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface PayloadCallback {
         void run(int i, String str);
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class SsrcGroup {
         public String semantics;
         public int[] ssrcs;
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface VideoSourcesCallback {
         void run(long j, int[] iArr);
     }
@@ -96,13 +96,13 @@ public class NativeInstance {
     }
 
     public static NativeInstance make(String str, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, AudioLevelsCallback audioLevelsCallback) {
-        if (w01.a) {
-            fa4.b("create new tgvoip instance, version " + str);
+        if (e21.a) {
+            fc4.b("create new tgvoip instance, version " + str);
         }
         NativeInstance nativeInstance = new NativeInstance();
         nativeInstance.persistentStateFilePath = str2;
         nativeInstance.audioLevelsCallback = audioLevelsCallback;
-        Point point = gl.q;
+        Point point = gm.q;
         nativeInstance.nativePtr = makeNativeInstance(str, nativeInstance, config, str2, endpointArr, proxy, i, encryptionKey, videoSink, j, Math.min(point.x, point.y) / Math.max(point.x, point.y));
         return nativeInstance;
     }
@@ -114,7 +114,7 @@ public class NativeInstance {
         nativeInstance.audioLevelsCallback = audioLevelsCallback;
         nativeInstance.unknownParticipantsCallback = videoSourcesCallback;
         nativeInstance.isGroup = true;
-        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, gba.U, j, z, z2, z3);
+        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, gda.U, j, z, z2, z3);
         return nativeInstance;
     }
 
@@ -152,7 +152,7 @@ public class NativeInstance {
         if (this.isGroup && iArr != null && iArr.length == 0) {
             return;
         }
-        gl.d3(new jw6(this, iArr, fArr, zArr, (byte) 12));
+        gm.c3(new jy6(this, iArr, fArr, zArr, (byte) 12));
     }
 
     private void onBroadcastStateChanged(boolean z, boolean z2) {
@@ -164,15 +164,15 @@ public class NativeInstance {
 
     private void onEmitJoinPayload(String str, int i) {
         try {
-            gl.d3(new j45((Object) this, i, (Object) str, (byte) 15));
+            gm.c3(new h65((Object) this, i, (Object) str, (byte) 15));
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
     private void onNetworkStateUpdated(boolean z, boolean z2) {
         if (this.onStateUpdatedListener != null) {
-            gl.d3(new sy3(this, z, z2, (byte) 1));
+            gm.c3(new c04(this, z, z2, (byte) 1));
         }
     }
 
@@ -180,7 +180,7 @@ public class NativeInstance {
         if (this.unknownParticipantsCallback == null) {
             return;
         }
-        gl.d3(new go6((Object) this, j, (Object) iArr, (byte) 20));
+        gm.c3(new hq6((Object) this, j, (Object) iArr, (byte) 20));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -263,7 +263,7 @@ public class NativeInstance {
 
     private static synchronized void updateRecordedSamplesCallback() {
         synchronized (NativeInstance.class) {
-            WebRtcAudioRecord.setOnAudioSamplesReady((ownAudioCapture || ownAudioLevelMeter) ? new fi7((byte) 0) : null);
+            WebRtcAudioRecord.setOnAudioSamplesReady((ownAudioCapture || ownAudioLevelMeter) ? new bh7((byte) 2) : null);
         }
     }
 
@@ -393,7 +393,7 @@ public class NativeInstance {
         try {
             this.stopBarrier.await();
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
         return this.finalState;
     }

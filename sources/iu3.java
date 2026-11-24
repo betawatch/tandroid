@@ -1,75 +1,63 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class iu3 extends OrientationEventListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class iu3 extends ShapeDrawable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ EditTextBoldCursor b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ iu3(byte b, Context context, Object obj) {
-        super(context);
-        this.a = b;
-        this.b = obj;
+    public iu3(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i) {
-        Activity activity;
-        m88 m88Var;
-        Activity activity2;
-        byte b;
-        byte b2 = this.a;
-        Object obj = this.b;
-        switch (b2) {
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        byte b = this.a;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        switch (b) {
             case 0:
-                ou3 ou3Var = (ou3) obj;
-                stc stcVar = ou3Var.m1;
-                if (ou3Var.z1 != null && stcVar.getVisibility() == 0 && (activity = ou3Var.s1) != null && stcVar.U && ou3Var.G1) {
-                    if (i >= 240 && i <= 300) {
-                        ou3Var.H1 = true;
-                        break;
-                    } else if (ou3Var.H1 && i > 0) {
-                        if (i >= 330 || i <= 30) {
-                            activity.setRequestedOrientation(ou3Var.F1);
-                            ou3Var.G1 = false;
-                            ou3Var.H1 = false;
-                            break;
-                        }
-                    }
-                }
+                super.draw(canvas);
+                editTextBoldCursor.H0 = true;
                 break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.W3 != null && (m88Var = photoViewer.z2) != null && m88Var.getVisibility() == 0 && (activity2 = photoViewer.E) != null && (b = photoViewer.Y3) != 0) {
-                    if (b != 1) {
-                        if (i > 0 && (i >= 330 || i <= 30)) {
-                            photoViewer.Z3 = true;
-                            break;
-                        } else if (photoViewer.Z3 && i >= 240 && i <= 300) {
-                            activity2.setRequestedOrientation(photoViewer.X3);
-                            photoViewer.Y3 = (byte) 0;
-                            photoViewer.Z3 = false;
-                            break;
-                        }
-                    } else if (i >= 240 && i <= 300) {
-                        photoViewer.Z3 = true;
-                        break;
-                    } else if (photoViewer.Z3 && i > 0) {
-                        if (i >= 330 || i <= 30) {
-                            activity2.setRequestedOrientation(photoViewer.X3);
-                            photoViewer.Y3 = (byte) 0;
-                            photoViewer.Z3 = false;
-                            break;
-                        }
-                    }
+                if (!editTextBoldCursor.e1) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.H0 = true;
+                    break;
                 }
-                break;
         }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return gm.L(this.b.j0 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return gm.L(this.b.F0);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public iu3(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

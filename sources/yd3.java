@@ -1,13 +1,19 @@
 // default package
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-@Retention(RetentionPolicy.RUNTIME)
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public @interface yd3 {
-    int objectTypeIndication() default -1;
+public final class yd3 implements Comparable {
+    public final boolean a;
+    public final boolean b;
 
-    int[] tags();
+    public yd3(go4 go4Var, int i) {
+        this.a = (go4Var.e & 1) != 0;
+        this.b = kt6.c(i, false);
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        yd3 yd3Var = (yd3) obj;
+        return hq2.a.c(this.b, yd3Var.b).c(this.a, yd3Var.a).e();
+    }
 }

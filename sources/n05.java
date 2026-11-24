@@ -1,26 +1,30 @@
 // default package
 
-import org.telegram.ui.PasscodeActivity;
+import android.os.Bundle;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class n05 extends PasscodeActivity {
-    public final /* synthetic */ boolean[] X;
-    public final /* synthetic */ p8c Y;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class n05 implements f05 {
+    public final /* synthetic */ kj5 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n05(boolean[] zArr, p8c p8cVar) {
-        super(3);
-        this.X = zArr;
-        this.Y = p8cVar;
+    public n05(kj5 kj5Var) {
+        this.a = kj5Var;
     }
 
-    @Override // org.telegram.ui.PasscodeActivity, org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        if (this.X[0]) {
-            return;
+    @Override // f05
+    public final void onConnected(Bundle bundle) {
+        dd6 dd6Var = (dd6) this.a;
+        dd6Var.M = true;
+        try {
+            ((in3) a.i()).checkLocationSettings(dd6Var.O, new xc6(dd6Var, (byte) 1));
+        } catch (Throwable th) {
+            fc4.g(th, true);
         }
-        this.Y.a("PASSCODE_FAILED");
+    }
+
+    @Override // f05
+    public final void onConnectionSuspended(int i) {
+        this.a.getClass();
     }
 }

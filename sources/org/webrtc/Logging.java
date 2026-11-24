@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
@@ -15,7 +15,7 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -24,7 +24,7 @@ public class Logging {
         LS_NONE
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),
@@ -33,7 +33,7 @@ public class Logging {
         TRACE_ERROR(4),
         TRACE_CRITICAL(8),
         TRACE_APICALL(16),
-        TRACE_DEFAULT(kk7.d4),
+        TRACE_DEFAULT(nm7.d4),
         TRACE_MODULECALL(32),
         TRACE_MEMORY(256),
         TRACE_TIMER(512),
@@ -107,7 +107,7 @@ public class Logging {
 
     public static void log(Severity severity, String str, String str2) {
         if (str == null || str2 == null) {
-            w26.j("Logging tag or message may not be null.");
+            u36.j("Logging tag or message may not be null.");
             return;
         }
         if (loggable != null) {

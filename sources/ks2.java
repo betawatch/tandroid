@@ -1,54 +1,37 @@
 // default package
 
-import java.util.concurrent.ExecutorService;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Dictation.DictationAsr;
-import org.telegram.ui.Dictation.DictationLid;
+import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ks2 implements Runnable {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ks2 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ ConferenceCall b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ ks2(Runnable runnable, byte b) {
+    public /* synthetic */ ks2(ConferenceCall conferenceCall, long j, byte b) {
         this.a = b;
-        this.b = runnable;
+        this.b = conferenceCall;
+        this.c = j;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        Runnable runnable = this.b;
+        long j = this.c;
+        ConferenceCall conferenceCall = this.b;
         switch (b) {
             case 0:
-                ConnectionsManager.lambda$cancelRequest$9(runnable);
+                conferenceCall.lambda$updateParticipants$11(j, tLObject, tL_error);
                 break;
             case 1:
-                runnable.run();
-                break;
-            case 2:
-                ExecutorService executorService = DictationLid.a;
-                DictationAsr.O();
-                runnable.run();
-                break;
-            case 3:
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 4:
-                gl.r(runnable);
-                gl.d3(runnable);
-                break;
-            case 5:
-                gl.r(runnable);
-                gl.d3(runnable);
+                conferenceCall.lambda$pull_outbound$6(j, tLObject, tL_error);
                 break;
             default:
-                gl.r(runnable);
-                gl.d3(runnable);
+                conferenceCall.lambda$kick$13(j, tLObject, tL_error);
                 break;
         }
     }

@@ -1,91 +1,63 @@
 // default package
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class d48 implements s58 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ g48 d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class d48 implements u29 {
+    public final /* synthetic */ a58 a;
 
-    public /* synthetic */ d48(g48 g48Var, HashMap hashMap, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.d = g48Var;
-        this.b = hashMap;
-        this.c = arrayList;
+    public d48(a58 a58Var) {
+        this.a = a58Var;
     }
 
-    @Override // s58
-    public final boolean c() {
-        byte b = this.a;
+    @Override // u29
+    public final void g(View view, k39 k39Var, boolean z, boolean z2) {
+        a58 a58Var = this.a;
+        if (z) {
+            ik.X(a58Var.s2, a58Var.r1, 1, new sw1(this, z, k39Var, view));
+        } else {
+            a58Var.d0(new eb7(this, view, k39Var, z, z2));
+        }
+    }
+
+    @Override // u29
+    public final boolean h() {
         return true;
     }
 
-    @Override // s58
-    public final void e() {
-        byte b = this.a;
+    @Override // u29
+    public final boolean l() {
+        return this.a.G0();
     }
 
-    @Override // s58
-    public final void j(Editable editable) {
-        byte b = this.a;
-        g48 g48Var = this.d;
-        switch (b) {
-            case 0:
-                rt3 rt3Var = g48Var.N;
-                g48Var.a = editable;
-                rt3Var.setText(editable);
-                break;
-            default:
-                rt3 rt3Var2 = g48Var.N;
-                g48Var.a = editable;
-                rt3Var2.setText(editable);
-                break;
+    @Override // u29
+    public final void m(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
+        a58 a58Var = this.a;
+        Paint paint = a58Var.d2;
+        eq eqVar = a58Var.F1;
+        float f4 = -f2;
+        float f5 = -f3;
+        eqVar.i(f4, f5, a58Var.getMeasuredWidth() + f4, a58Var.getMeasuredHeight() + f5);
+        if (f > 0.0f) {
+            canvas.drawRoundRect(rectF, f, f, (Paint) eqVar.a);
+            canvas.drawRoundRect(rectF, f, f, paint);
+        } else {
+            canvas.drawRect(rectF, (Paint) eqVar.a);
+            canvas.drawRect(rectF, paint);
         }
     }
 
-    @Override // s58
-    public final void k() {
-        byte b = this.a;
+    @Override // u29
+    public final void o() {
+        ((fab) this.a.G1).b(false);
     }
 
-    @Override // s58
-    public final void l(int i, boolean z, boolean z2) {
-        byte b = this.a;
-        ArrayList arrayList = this.c;
-        HashMap hashMap = this.b;
-        g48 g48Var = this.d;
-        switch (b) {
-            case 0:
-                g48Var.removeSelfFromStack();
-                if (!z) {
-                    g48Var.Z(hashMap, arrayList, z2, i);
-                    break;
-                }
-                break;
-            default:
-                g48Var.removeSelfFromStack();
-                if (!z) {
-                    g48Var.Z(hashMap, arrayList, z2, i);
-                    break;
-                }
-                break;
-        }
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void d() {
-    }
-
-    private final void f() {
+    @Override // u29
+    public final boolean s() {
+        return false;
     }
 }

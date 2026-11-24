@@ -1,65 +1,21 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.SpannableString;
-import android.text.style.ReplacementSpan;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class r41 {
+    public final Object a;
+    public final String b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class r41 extends ReplacementSpan {
-    public final wjb a;
-    public final Paint b = new Paint(1);
-    public final tgb c;
-    public final Runnable d;
-    public n41 e;
-    public Integer f;
-
-    public r41(String str, Runnable runnable, wjb wjbVar) {
-        this.a = wjbVar;
-        this.d = runnable;
-        this.c = new tgb(str, 12.0f, null);
+    public r41(Object obj, String str) {
+        this.a = obj;
+        this.b = str;
     }
 
-    public static SpannableString b(String str, Runnable runnable, wjb wjbVar, Integer num) {
-        SpannableString spannableString = new SpannableString("btn");
-        r41 r41Var = new r41(str, runnable, wjbVar);
-        spannableString.setSpan(r41Var, 0, spannableString.length(), 33);
-        r41Var.f = num;
-        return spannableString;
+    public final String a() {
+        return "[" + this.b + ", " + u41.i(this.a.getClass()) + "]";
     }
 
-    public final int a() {
-        return (int) (this.c.c + gl.L(14.0f));
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        float N = gl.N(17.0f);
-        float f2 = (i3 + i5) / 2.0f;
-        RectF rectF = gl.P;
-        float f3 = N / 2.0f;
-        rectF.set(f, f2 - f3, a() + f, f2 + f3);
-        n41 n41Var = this.e;
-        float a = n41Var == null ? 1.0f : n41Var.a(0.025f);
-        canvas.save();
-        canvas.scale(a, a, rectF.centerX(), rectF.centerY());
-        Integer num = this.f;
-        int intValue = num != null ? num.intValue() : bkb.v0(bkb.Ei, this.a);
-        int p1 = bkb.p1(0.15f, intValue);
-        Paint paint2 = this.b;
-        paint2.setColor(p1);
-        canvas.drawRoundRect(rectF, f3, f3, paint2);
-        this.c.c(f + gl.L(7.0f), f2, 1.0f, intValue, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt != null) {
-            paint.getFontMetricsInt(fontMetricsInt);
-        }
+    public final String toString() {
         return a();
     }
 }

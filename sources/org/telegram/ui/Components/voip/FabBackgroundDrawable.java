@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class FabBackgroundDrawable extends Drawable {
     public final Paint a = new Paint(1);
@@ -31,7 +31,7 @@ public class FabBackgroundDrawable extends Drawable {
             canvas.drawBitmap(bitmap, getBounds().centerX() - (this.c.getWidth() / 2), getBounds().centerY() - (this.c.getHeight() / 2), this.b);
         }
         float f = min / 2;
-        canvas.drawCircle(f, f, r0 - gl.L(4.0f), this.a);
+        canvas.drawCircle(f, f, r0 - gm.L(4.0f), this.a);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -41,7 +41,7 @@ public class FabBackgroundDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean getPadding(Rect rect) {
-        int L = gl.L(4.0f);
+        int L = gm.L(4.0f);
         rect.set(L, L, L, L);
         return true;
     }
@@ -55,7 +55,7 @@ public class FabBackgroundDrawable extends Drawable {
         }
         this.c = Bitmap.createBitmap(min, min, Bitmap.Config.ALPHA_8);
         float f = min / 2;
-        new Canvas(this.c).drawCircle(f, f, r4 - gl.L(4.0f), new Paint(1));
+        new Canvas(this.c).drawCircle(f, f, r4 - gm.L(4.0f), new Paint(1));
     }
 
     public void setColor(int i) {

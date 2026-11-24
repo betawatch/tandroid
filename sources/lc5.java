@@ -1,37 +1,49 @@
 // default package
 
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.Choreographer;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class lc5 {
-    private static volatile Choreographer choreographer;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class lc5 extends a1b {
+    public final /* synthetic */ byte L;
 
-    static {
-        Object sa9Var;
-        try {
-            sa9Var = new kc5(a(Looper.getMainLooper()), false);
-        } catch (Throwable th) {
-            sa9Var = new sa9(th);
-        }
-        if (sa9Var instanceof sa9) {
-            sa9Var = null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ lc5(Context context, View view, int i, ylb ylbVar, byte b) {
+        super(context, view, i, ylbVar);
+        this.L = b;
+    }
+
+    @Override // a1b, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.L) {
+            case 0:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().w0(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().w0(false);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
         }
     }
 
-    public static final Handler a(Looper looper) {
-        if (Build.VERSION.SDK_INT < 28) {
-            try {
-                return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);
-            } catch (NoSuchMethodException unused) {
-                return new Handler(looper);
-            }
+    @Override // a1b, android.view.View
+    public final void setVisibility(int i) {
+        switch (this.L) {
+            case 2:
+                super.setVisibility(i);
+                if (i != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
         }
-        Object invoke = Handler.class.getDeclaredMethod("createAsync", Looper.class).invoke(null, looper);
-        invoke.getClass();
-        return (Handler) invoke;
     }
 }

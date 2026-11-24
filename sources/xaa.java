@@ -1,186 +1,210 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class xaa extends Drawable {
-    public long a = 0;
-    public final float[] b = {0.0f, -0.5f};
-    public final Drawable c;
-    public final Drawable d;
-    public final Drawable e;
-    public final byte f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class xaa extends Drawable implements zy, jm7 {
+    public final Paint a;
+    public final Paint b;
+    public final ImageReceiver c;
+    public final ImageReceiver d;
+    public int e;
+    public final vm[] f;
+    public final uib h;
+    public final RectF n;
+    public final boolean r;
+    public final ln s;
+    public boolean w;
+    public boolean x;
+    public s09 y;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public xaa(Context context, int i) {
-        this.f = i;
-        if (i == 4) {
-            this.c = b00.d(context, R.drawable.filled_extend_location);
-            this.d = b00.d(context, R.drawable.smallanimationpinleft);
-            this.e = b00.d(context, R.drawable.smallanimationpinright);
-        } else if (i == 5) {
-            this.c = b00.d(context, R.drawable.filled_stop_location);
-            this.d = b00.d(context, R.drawable.smallanimationpinleft);
-            this.e = b00.d(context, R.drawable.smallanimationpinright);
-        } else if (i == 1) {
-            this.c = b00.d(context, R.drawable.smallanimationpin);
-            this.d = b00.d(context, R.drawable.smallanimationpinleft);
-            this.e = b00.d(context, R.drawable.smallanimationpinright);
-        } else {
-            this.c = b00.d(context, R.drawable.animationpin);
-            this.d = b00.d(context, R.drawable.animationpinleft);
-            this.e = b00.d(context, R.drawable.animationpinright);
+    public xaa(TLRPC.User user, TLRPC.Document document) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.c = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(null);
+        this.d = imageReceiver2;
+        this.e = 1;
+        this.f = new vm[2];
+        this.n = new RectF();
+        this.s = new ln(new waa(this, (byte) 1), 320L, d53.h, 0);
+        this.r = true;
+        int i = cmb.c6;
+        paint.setColor(cmb.w0(null, i, false));
+        paint2.setColor(cmb.w0(null, i, false));
+        paint2.setShadowLayer(gm.L(2.33f), 0.0f, gm.L(2.0f), cmb.p1(0.18f, -16777216));
+        pc0 pc0Var = new pc0((ylb) null);
+        pc0Var.q(user);
+        imageReceiver.U(user, pc0Var, null);
+        imageReceiver.q0(gm.L(16.0f));
+        imageReceiver2.Z(gn5.b(document), "120_120", gn5.c(bc4.w(document.thumbs, nm7.E1, false, null, false), document), "120_120", eq3.d(document.thumbs, cmb.Z6, 0.35f, false), 0L, null, null, 0);
+        this.h = new uib(m9c.r(user), 14.0f, null);
+    }
+
+    @Override // zy
+    public final void a(s09 s09Var) {
+        this.y = s09Var;
+        this.d.p0(s09Var);
+        this.c.p0(s09Var);
+    }
+
+    @Override // zy
+    public final void b(ImageReceiver imageReceiver) {
+        this.x = false;
+        this.c.K();
+        this.d.K();
+        nm7.f(z8c.t0).n(this, nm7.C1);
+        vm[] vmVarArr = this.f;
+        vm vmVar = vmVarArr[0];
+        if (vmVar != null) {
+            vmVar.o(this.y);
+        }
+        vm vmVar2 = vmVarArr[1];
+        if (vmVar2 != null) {
+            vmVar2.o(this.y);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x016f  */
+    @Override // zy
+    public final void c(ImageReceiver imageReceiver) {
+        this.x = true;
+        this.c.I();
+        this.d.I();
+        nm7.f(z8c.t0).b(this, nm7.C1);
+        vm[] vmVarArr = this.f;
+        vm vmVar = vmVarArr[0];
+        if (vmVar != null) {
+            vmVar.b(this.y);
+        }
+        vm vmVar2 = vmVarArr[1];
+        if (vmVar2 != null) {
+            vmVar2.b(this.y);
+        }
+    }
+
+    public final void d() {
+        vm vmVar;
+        TLRPC.TL_messages_stickerSet n0 = hs6.d0(z8c.t0).n0(new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
+        if (n0 == null || n0.documents.isEmpty()) {
+            this.w = true;
+            return;
+        }
+        TLRPC.Document document = n0.documents.get((int) Math.floor(Math.random() * n0.documents.size()));
+        int i = 1 - this.e;
+        this.e = i;
+        vm[] vmVarArr = this.f;
+        vm vmVar2 = vmVarArr[i];
+        if (vmVar2 != null) {
+            vmVar2.o(this.y);
+        }
+        vmVarArr[this.e] = vm.l(z8c.t0, 9, document);
+        vmVarArr[this.e].setColorFilter(new PorterDuffColorFilter(cmb.w0(null, cmb.Ei, false), PorterDuff.Mode.SRC_IN));
+        if (this.x && (vmVar = vmVarArr[this.e]) != null) {
+            vmVar.b(this.y);
+        }
+        gm.d3(new waa(this, (byte) 0), 2500L);
+    }
+
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == nm7.B0 && this.w && this.x) {
+            this.w = false;
+            d();
+        }
+    }
+
     @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void draw(Canvas canvas) {
-        float[] fArr;
-        int L;
-        int L2;
-        int L3;
-        int L4;
-        int z;
-        int i;
-        int i2;
-        int L5;
-        Drawable drawable = this.c;
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
-        byte b = 3;
-        byte b2 = 5;
-        byte b3 = 1;
-        byte b4 = 2;
-        byte b5 = this.f;
-        byte b6 = 4;
-        int L6 = (b5 == 4 || b5 == 5) ? gl.L(24.0f) : b5 == 3 ? gl.L(44.0f) : b5 == 2 ? gl.L(32.0f) : b5 == 1 ? gl.L(30.0f) : gl.L(120.0f);
-        int intrinsicHeight2 = ((getIntrinsicHeight() - L6) / 2) + getBounds().top;
-        int intrinsicWidth2 = ((getIntrinsicWidth() - L6) / 2) + getBounds().left;
-        int i3 = intrinsicWidth + intrinsicWidth2;
-        drawable.setBounds(intrinsicWidth2, intrinsicHeight2, i3, intrinsicHeight2 + intrinsicHeight);
-        drawable.draw(canvas);
-        int i4 = 0;
-        while (true) {
-            fArr = this.b;
-            if (i4 >= b4) {
-                break;
-            }
-            float f = fArr[i4];
-            if (f >= 0.0f) {
-                float f2 = (f * 0.5f) + 0.5f;
-                if (b5 == b6 || b5 == b2) {
-                    L = gl.L(2.5f * f2);
-                    L2 = gl.L(f2 * 6.5f);
-                    int L7 = gl.L(fArr[i4] * 6.0f);
-                    L3 = (gl.L(3.0f) + intrinsicWidth2) - L7;
-                    L4 = ((intrinsicHeight / 2) + intrinsicHeight2) - gl.L(2.0f);
-                    z = b00.z(3.0f, i3, L7);
-                } else {
-                    if (b5 == b) {
-                        L5 = gl.L(5.0f * f2);
-                        L2 = gl.L(f2 * 18.0f);
-                        int L8 = gl.L(fArr[i4] * 15.0f);
-                        L3 = (gl.L(2.0f) + intrinsicWidth2) - L8;
-                        L4 = ((intrinsicHeight / 2) + intrinsicHeight2) - gl.L(7.0f);
-                        i2 = b00.z(2.0f, i3, L8);
-                    } else if (b5 == b4) {
-                        L5 = gl.L(5.0f * f2);
-                        L2 = gl.L(f2 * 18.0f);
-                        int L9 = gl.L(fArr[i4] * 15.0f);
-                        L3 = (gl.L(2.0f) + intrinsicWidth2) - L9;
-                        L4 = (intrinsicHeight / 2) + intrinsicHeight2;
-                        i2 = b00.z(2.0f, i3, L9);
-                    } else if (b5 == b3) {
-                        L = gl.L(2.5f * f2);
-                        L2 = gl.L(f2 * 6.5f);
-                        int L10 = gl.L(fArr[i4] * 6.0f);
-                        L3 = (gl.L(7.0f) + intrinsicWidth2) - L10;
-                        L4 = (intrinsicHeight / 2) + intrinsicHeight2;
-                        z = b00.z(7.0f, i3, L10);
-                    } else {
-                        L5 = gl.L(5.0f * f2);
-                        L2 = gl.L(f2 * 18.0f);
-                        int L11 = gl.L(fArr[i4] * 15.0f);
-                        L3 = (gl.L(42.0f) + intrinsicWidth2) - L11;
-                        L4 = ((intrinsicHeight / 2) + intrinsicHeight2) - gl.L(7.0f);
-                        i2 = b00.z(42.0f, i3, L11);
-                    }
-                    i = L5;
-                    float f3 = fArr[i4];
-                    int x = (int) ((f3 >= 0.5f ? f3 / 0.5f : tb4.x(f3, 0.5f, 0.5f, 1.0f)) * 255.0f);
-                    Drawable drawable2 = this.d;
-                    drawable2.setAlpha(x);
-                    int i5 = L4 - L2;
-                    int i6 = L4 + L2;
-                    drawable2.setBounds(L3 - i, i5, L3 + i, i6);
-                    drawable2.draw(canvas);
-                    Drawable drawable3 = this.e;
-                    drawable3.setAlpha(x);
-                    drawable3.setBounds(i2 - i, i5, i2 + i, i6);
-                    drawable3.draw(canvas);
-                }
-                int i7 = z;
-                i = L;
-                i2 = i7;
-                float f32 = fArr[i4];
-                int x2 = (int) ((f32 >= 0.5f ? f32 / 0.5f : tb4.x(f32, 0.5f, 0.5f, 1.0f)) * 255.0f);
-                Drawable drawable22 = this.d;
-                drawable22.setAlpha(x2);
-                int i52 = L4 - L2;
-                int i62 = L4 + L2;
-                drawable22.setBounds(L3 - i, i52, L3 + i, i62);
-                drawable22.draw(canvas);
-                Drawable drawable32 = this.e;
-                drawable32.setAlpha(x2);
-                drawable32.setBounds(i2 - i, i52, i2 + i, i62);
-                drawable32.draw(canvas);
-            }
-            i4++;
-            b = 3;
-            b2 = 5;
-            b3 = 1;
-            b4 = 2;
-            b6 = 4;
+        float f;
+        float f2;
+        float f3;
+        float f4;
+        vm vmVar;
+        vm vmVar2;
+        Rect bounds = getBounds();
+        int w0 = cmb.w0(null, cmb.c6, false);
+        Paint paint = this.a;
+        if (paint.getColor() != w0) {
+            paint.setColor(w0);
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        if (j > 16) {
-            j = 16;
+        Paint paint2 = this.b;
+        if (paint2.getColor() != w0) {
+            paint2.setColor(w0);
         }
-        for (int i8 = 0; i8 < 2; i8++) {
-            if (fArr[i8] >= 1.0f) {
-                fArr[i8] = 0.0f;
-            }
-            float f4 = (j / 1300.0f) + fArr[i8];
-            fArr[i8] = f4;
-            if (f4 > 1.0f) {
-                fArr[i8] = 1.0f;
-            }
+        boolean z = this.r;
+        float L = gm.L((z ? 48 : 28) + 38 + 6.66f) + this.h.c;
+        float f5 = L / 2.0f;
+        float L2 = gm.L(32.0f) / 2.0f;
+        RectF rectF = this.n;
+        rectF.set(bounds.centerX() - f5, bounds.centerY() - L2, bounds.centerX() + f5, bounds.centerY() + L2);
+        canvas.drawRoundRect(rectF, L2, L2, paint);
+        float f6 = rectF.left;
+        float f7 = rectF.top;
+        float L3 = gm.L(32.0f);
+        float L4 = gm.L(32.0f);
+        ImageReceiver imageReceiver = this.c;
+        imageReceiver.i0(f6, f7, L3, L4);
+        imageReceiver.h(canvas, null);
+        this.h.c(gm.L(36.0f) + rectF.left, rectF.centerY(), 1.0f, cmb.w0(null, cmb.F6, false), canvas);
+        if (z) {
+            float L5 = rectF.right - gm.L(22.66f);
+            canvas.drawCircle(L5, rectF.centerY(), gm.L(24.0f), paint2);
+            float centerY = rectF.centerY() - gm.L(16.0f);
+            float L6 = gm.L(32.0f);
+            float L7 = gm.L(32.0f);
+            ImageReceiver imageReceiver2 = this.d;
+            imageReceiver2.i0(L5 - gm.L(16.0f), centerY, L6, L7);
+            imageReceiver2.h(canvas, null);
+            return;
         }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        byte b = this.f;
-        return (b == 4 || b == 5) ? gl.L(42.0f) : b == 3 ? gl.L(100.0f) : b == 2 ? gl.L(74.0f) : b == 1 ? gl.L(40.0f) : gl.L(180.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        byte b = this.f;
-        return (b == 4 || b == 5) ? gl.L(42.0f) : b == 3 ? gl.L(100.0f) : b == 2 ? gl.L(74.0f) : b == 1 ? gl.L(40.0f) : gl.L(120.0f);
+        float e = this.s.e(false, this.e);
+        canvas.save();
+        canvas.translate((int) (rectF.right - gm.L(30.66f)), (int) (rectF.centerY() - gm.L(12.0f)));
+        vm[] vmVarArr = this.f;
+        if (e >= 1.0f || (vmVar2 = vmVarArr[0]) == null) {
+            f = 24.0f;
+            f2 = 1.0f;
+            f3 = 12.0f;
+            f4 = 255.0f;
+        } else {
+            canvas.save();
+            f = 24.0f;
+            canvas.translate(0.0f, (this.e == 0 ? -1 : 1) * gm.L(9.0f) * e);
+            float f8 = 1.0f - e;
+            f2 = 1.0f;
+            float f9 = (f8 * 0.4f) + 0.6f;
+            f3 = 12.0f;
+            f4 = 255.0f;
+            canvas.scale(f9, f9, gm.L(12.0f), gm.L(12.0f));
+            vmVar2.setBounds(0, 0, gm.L(24.0f), gm.L(24.0f));
+            vmVar2.setAlpha((int) (f8 * 255.0f));
+            vmVar2.draw(canvas);
+            canvas.restore();
+        }
+        if (e > 0.0f && (vmVar = vmVarArr[1]) != null) {
+            canvas.save();
+            canvas.translate(0.0f, (f2 - e) * gm.L(9.0f) * (this.e != 1 ? 1 : -1));
+            float f10 = (0.4f * e) + 0.6f;
+            canvas.scale(f10, f10, gm.L(f3), gm.L(f3));
+            vmVar.setBounds(0, 0, gm.L(f), gm.L(f));
+            vmVar.setAlpha((int) (e * f4));
+            vmVar.draw(canvas);
+            canvas.restore();
+        }
+        canvas.restore();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -189,13 +213,35 @@ public final class xaa extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
-        this.e.setColorFilter(colorFilter);
+    public final void setAlpha(int i) {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
+    public final void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public xaa(TLRPC.User user) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.c = imageReceiver;
+        this.d = new ImageReceiver(null);
+        this.e = 1;
+        this.f = new vm[2];
+        this.n = new RectF();
+        this.s = new ln(new waa(this, (byte) 1), 320L, d53.h, 0);
+        this.r = false;
+        int i = cmb.c6;
+        paint.setColor(cmb.w0(null, i, false));
+        paint2.setColor(cmb.w0(null, i, false));
+        paint2.setShadowLayer(gm.L(2.33f), 0.0f, gm.L(2.0f), cmb.p1(0.18f, -16777216));
+        pc0 pc0Var = new pc0((ylb) null);
+        pc0Var.q(user);
+        imageReceiver.U(user, pc0Var, null);
+        imageReceiver.q0(gm.L(16.0f));
+        d();
+        this.h = new uib(m9c.r(user), 14.0f, null);
     }
 }

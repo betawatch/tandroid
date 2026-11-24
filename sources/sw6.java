@@ -1,39 +1,49 @@
 // default package
 
-import java.util.List;
+import android.os.Bundle;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sw6 implements ix6, jx6, us2 {
-    public final /* synthetic */ ox6 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class sw6 {
+    public final my6 a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final rw6 e;
+    public final Bundle f;
 
-    public /* synthetic */ sw6(ox6 ox6Var, int i, int i2) {
-        this.a = ox6Var;
+    public sw6(my6 my6Var, int i, int i2, boolean z, rw6 rw6Var, Bundle bundle) {
+        this.a = my6Var;
         this.b = i;
         this.c = i2;
+        this.d = z;
+        this.e = rw6Var;
+        this.f = bundle;
     }
 
-    @Override // us2
-    public final void accept(Object obj) {
-        ox6 ox6Var = this.a;
-        ((tv6) ox6Var.a.get()).getClass();
-        mx6 mx6Var = ox6Var.n;
-        if (mx6Var != null) {
-            mx6Var.setFixedSize(this.b, this.c);
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof sw6)) {
+            return false;
         }
+        if (this == obj) {
+            return true;
+        }
+        sw6 sw6Var = (sw6) obj;
+        rw6 rw6Var = sw6Var.e;
+        rw6 rw6Var2 = this.e;
+        return (rw6Var2 == null && rw6Var == null) ? this.a.equals(sw6Var.a) : Objects.equals(rw6Var2, rw6Var);
     }
 
-    @Override // jx6
-    public final void b(ad8 ad8Var, su6 su6Var, List list) {
-        ox6 ox6Var = this.a;
-        ad8Var.r0(list, ox6Var.f(su6Var, ad8Var, this.b), ox6Var.f(su6Var, ad8Var, this.c));
+    public final int hashCode() {
+        return Objects.hash(this.e, this.a);
     }
 
-    @Override // ix6
-    public final void g(ad8 ad8Var, su6 su6Var) {
-        ox6 ox6Var = this.a;
-        ad8Var.P(ox6Var.f(su6Var, ad8Var, this.b), ox6Var.f(su6Var, ad8Var, this.c));
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("ControllerInfo {pkg=");
+        my6 my6Var = this.a;
+        sb.append(my6Var.a.a);
+        sb.append(", uid=");
+        return hg9.k(sb, my6Var.a.c, "}");
     }
 }

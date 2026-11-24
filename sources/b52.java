@@ -1,82 +1,70 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class b52 extends CameraView {
-    public final s10 a;
+public final class b52 implements TextWatcher {
+    public final /* synthetic */ byte a = 0;
     public boolean b;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout c;
+    public final /* synthetic */ TextView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b52(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z, boolean z2) {
-        super(context, z, z2);
-        this.c = chatAttachAlertPhotoLayout;
-        this.a = new s10(this, (byte) 6);
+    public b52(a52 a52Var, TextView textView) {
+        this.c = textView;
+        this.b = TextUtils.isEmpty(a52Var.getText());
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        RectF rectF;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        x02 x02Var = chatAttachAlertPhotoLayout.b;
-        if (gl.m0) {
-            return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        byte b = this.a;
+        TextView textView = this.c;
+        switch (b) {
+            case 0:
+                boolean isEmpty = TextUtils.isEmpty(editable);
+                if (isEmpty != this.b) {
+                    this.b = isEmpty;
+                    textView.setText(jb6.M0(isEmpty ? 2131746054 : 2131754483, null));
+                    break;
+                }
+                break;
+            default:
+                boolean isEmpty2 = TextUtils.isEmpty(editable);
+                if (isEmpty2 != this.b) {
+                    this.b = isEmpty2;
+                    textView.setText(jb6.M0(isEmpty2 ? 2131746054 : 2131754483, null));
+                    break;
+                }
+                break;
         }
-        if (this.b || (!chatAttachAlertPhotoLayout.e0 && chatAttachAlertPhotoLayout.c0)) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        float translationY = (x02Var.b.getTranslationY() + (x02Var.D2[1] + chatAttachAlertPhotoLayout.X0)) - chatAttachAlertPhotoLayout.Q.getTranslationY();
-        eb1 eb1Var = x02Var.B4;
-        int min = (int) Math.min(translationY - (eb1Var != null ? eb1Var.d() + gl.L(8.0f) : 0.0f), getMeasuredHeight());
-        boolean z = chatAttachAlertPhotoLayout.e0;
-        if (z) {
-            rectF = gl.P;
-            float f = chatAttachAlertPhotoLayout.o1;
-            float f2 = 1.0f - chatAttachAlertPhotoLayout.f0;
-            rectF.set((0.0f * f2) + f, (f2 * chatAttachAlertPhotoLayout.a0) + chatAttachAlertPhotoLayout.l1, chatAttachAlertPhotoLayout.n1, gl.R1(Math.min(min, chatAttachAlertPhotoLayout.m1), getMeasuredHeight(), chatAttachAlertPhotoLayout.f0));
-        } else if (!z && !chatAttachAlertPhotoLayout.c0) {
-            gl.P.set(0.0f, chatAttachAlertPhotoLayout.a0, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
-            return;
-        } else {
-            rectF = gl.P;
-            rectF.set(0.0f, 0.0f, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
-        }
-        canvas.save();
-        canvas.clipRect(rectF);
-        super.dispatchDraw(canvas);
-        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        m21.a(chatAttachAlertPhotoLayout.Q, this.a);
-        chatAttachAlertPhotoLayout.F.invalidate();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        m21.h(this.c.Q);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i) {
-        super.setVisibility(i);
-        this.c.F.invalidate();
+    public b52(a52 a52Var, TextView textView, byte b) {
+        this.c = textView;
+        this.b = TextUtils.isEmpty(a52Var.getText());
     }
 
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void showTexture(boolean z, boolean z2) {
-        super.showTexture(z, z2);
-        this.c.F.invalidate();
+    private final void a(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void b(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void c(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void d(int i, int i2, int i3, CharSequence charSequence) {
     }
 }

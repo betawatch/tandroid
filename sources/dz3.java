@@ -1,34 +1,96 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.media.VolumeProvider;
+import android.os.Build;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class dz3 extends yo {
-    public final /* synthetic */ t14 c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class dz3 {
+    public byte a;
+    public int b;
+    public int c;
+    public final Object d;
+    public Object e;
+    public Object f;
 
-    public dz3(t14 t14Var) {
-        this.c = t14Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public dz3(in3 in3Var, int i, int i2, int i3, String str) {
+        this.f = in3Var;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = str;
     }
 
-    @Override // yo
-    public final int i(int i) {
-        t14 t14Var = this.c;
-        o14 o14Var = t14Var.A0;
-        w39 adapter = t14Var.E0.getAdapter();
-        l14 l14Var = t14Var.z0;
-        if (adapter != l14Var) {
-            if (i == o14Var.y || !(o14Var.r.get(i) == null || (o14Var.r.get(i) instanceof TLRPC.Document))) {
-                return l14Var.d;
+    public final int a(int i) {
+        tf7 tf7Var = (tf7) ((tf7) this.e).a.get(i);
+        int i2 = 1;
+        int i3 = 2;
+        if (this.a == 2) {
+            if (tf7Var != null) {
+                this.e = tf7Var;
+                this.c++;
+            } else if (i == 65038) {
+                c();
+            } else if (i != 65039) {
+                tf7 tf7Var2 = (tf7) this.e;
+                if (tf7Var2.b != null) {
+                    i3 = 3;
+                    if (this.c != 1) {
+                        this.f = tf7Var2;
+                        c();
+                    } else if (d()) {
+                        this.f = (tf7) this.e;
+                        c();
+                    } else {
+                        c();
+                    }
+                } else {
+                    c();
+                }
             }
-            return 1;
+            i2 = i3;
+        } else if (tf7Var == null) {
+            c();
+        } else {
+            this.a = (byte) 2;
+            this.e = tf7Var;
+            this.c = 1;
+            i2 = i3;
         }
-        if (i == 0) {
-            return l14Var.d;
+        this.b = i;
+        return i2;
+    }
+
+    public final VolumeProvider b() {
+        dz3 dz3Var;
+        if (((VolumeProvider) this.e) != null) {
+            dz3Var = this;
+        } else if (Build.VERSION.SDK_INT >= 30) {
+            dz3Var = this;
+            dz3Var.e = new tlc(dz3Var, this.a, this.b, this.c, (String) this.d);
+        } else {
+            dz3Var = this;
+            dz3Var.e = new ulc(dz3Var, dz3Var.a, dz3Var.b, dz3Var.c);
         }
-        if (i == l14Var.s || !(l14Var.h.get(i) == null || (l14Var.h.get(i) instanceof TLRPC.Document))) {
-            return l14Var.d;
-        }
-        return 1;
+        return (VolumeProvider) dz3Var.e;
+    }
+
+    public final void c() {
+        this.a = (byte) 1;
+        this.e = (tf7) this.d;
+        this.c = 0;
+    }
+
+    public final boolean d() {
+        qf7 b = ((tf7) this.e).b.b();
+        int a = b.a(6);
+        return !(a == 0 || b.b.get(a + b.a) == 0) || this.b == 65039;
+    }
+
+    public dz3(tf7 tf7Var) {
+        this.a = (byte) 1;
+        this.d = tf7Var;
+        this.e = tf7Var;
     }
 }

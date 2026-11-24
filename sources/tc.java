@@ -1,72 +1,119 @@
 // default package
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_agent;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hd b;
+public final class tc extends LinearLayout implements jm7 {
+    public static final /* synthetic */ int h = 0;
+    public final int a;
+    public final d b;
+    public final ylb c;
+    public final sc d;
+    public int e;
+    public boolean f;
 
-    public /* synthetic */ tc(hd hdVar, byte b) {
-        this.a = b;
-        this.b = hdVar;
+    public tc(Context context, int i, d dVar, ylb ylbVar) {
+        super(context);
+        this.e = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.a = i;
+        this.b = dVar;
+        this.c = ylbVar;
+        setOrientation(0);
+        setGravity(16);
+        sc scVar = new sc(this, context);
+        this.d = scVar;
+        scVar.setOnClickListener(new j1(this, (byte) 7));
+        rve.b(scVar, 0.05f, 1.2f);
+        addView(scVar, qoe.r(-2, 26, 16));
+        a();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        hd hdVar = this.b;
+    public final void a() {
+        String M0;
+        mc c = mc.c(this.a);
+        TL_agent.settings settingsVar = c.d;
+        int i = cmb.Ke;
+        ylb ylbVar = this.c;
+        int v0 = cmb.v0(i, ylbVar);
+        String str = settingsVar == null ? null : !TextUtils.isEmpty(settingsVar.model_name) ? settingsVar.model_name : settingsVar.model;
+        sc scVar = this.d;
+        TextView textView = scVar.a;
+        TextView textView2 = scVar.b;
+        if (TextUtils.isEmpty(str)) {
+            str = jb6.M0(2131754285, null);
+        }
+        textView.setText(str);
+        scVar.a.setTextColor(v0);
+        String b = c.b();
+        b.getClass();
         switch (b) {
-            case 0:
-                hdVar.dismiss();
+            case "expert":
+                M0 = jb6.M0(2131754291, null);
                 break;
-            case 1:
-                if (!hdVar.isShowing()) {
-                    try {
-                        hdVar.show();
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
+            case "fast":
+                M0 = jb6.M0(2131754290, null);
                 break;
-            case 2:
-                try {
-                    hdVar.dismiss();
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            case 3:
-                hdVar.dismiss();
+            case "ultra":
+                M0 = jb6.M0(2131754287, null);
                 break;
-            case 4:
-                hdVar.dismiss();
-                break;
-            case 5:
-                String[] strArr = MediaController.W1;
-                try {
-                    hdVar.dismiss();
-                    break;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return;
-                }
             default:
-                hdVar.dismiss();
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    m21 Q = u21.b0(S).Q(R.raw.error, 36, k96.M0(2131748360, null));
-                    Q.t = true;
-                    Q.j();
-                    break;
-                }
+                M0 = jb6.M0(2131754289, null);
                 break;
+        }
+        textView2.setText(M0);
+        textView2.setTextColor(cmb.p1(0.5f, v0));
+        textView2.setVisibility((settingsVar == null || !settingsVar.effort_supported) ? 8 : 0);
+        if (!this.f || scVar.getBackground() != null) {
+            this.f = true;
+            int L = gm.L(13.0f);
+            int p1 = cmb.p1(0.06f, cmb.v0(i, ylbVar));
+            int p12 = cmb.p1(0.12f, v0);
+            scVar.setBackground(cmb.i0(L, L, L, L, p1, p12, p12));
+        }
+        scVar.requestLayout();
+    }
+
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        ad adVar;
+        if (i == nm7.c4) {
+            a();
+            d dVar = this.b;
+            if (!(dVar instanceof yv1) || (adVar = ((yv1) dVar).bc) == null) {
+                return;
+            }
+            wc wcVar = adVar.E;
+            if (adVar.c.d(adVar)) {
+                wcVar.c();
+                wcVar.d(true);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        nm7.f(this.a).a(this, nm7.c4);
+        a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        nm7.f(this.a).n(this, nm7.c4);
+    }
+
+    public void setChipMaxWidth(int i) {
+        if (this.e != i) {
+            this.e = i;
+            this.d.requestLayout();
         }
     }
 }

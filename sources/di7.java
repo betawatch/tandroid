@@ -1,19 +1,46 @@
 // default package
 
-import java.io.IOException;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class di7 extends Exception {
-    public final int a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class di7 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ji7 b;
 
-    public di7(String str) {
-        super(str);
-        this.a = 13;
+    public /* synthetic */ di7(ji7 ji7Var, byte b) {
+        this.a = b;
+        this.b = ji7Var;
     }
 
-    public di7(String str, IOException iOException) {
-        super(str, iOException);
-        this.a = 29;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        ji7 ji7Var = this.b;
+        switch (b) {
+            case 0:
+                ii7 ii7Var = ji7Var.l2;
+                HashSet hashSet = ji7Var.Y1;
+                if (hashSet.size() != 0 && ii7Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : ji7Var.d2.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    ii7Var.a(arrayList);
+                    ji7Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                ji7Var.Y1.clear();
+                ji7Var.T1.d.b(true);
+                ji7Var.b1(true, false);
+                break;
+        }
     }
 }

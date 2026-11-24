@@ -1,106 +1,65 @@
 // default package
 
-import android.app.Activity;
 import android.graphics.Canvas;
+import android.graphics.Outline;
 import android.graphics.Path;
-import android.graphics.RectF;
+import android.graphics.Rect;
 import android.os.Build;
-import android.view.KeyEvent;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoIPServiceState;
-import org.webrtc.OrientationHelper;
+import android.os.Looper;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class agc extends eic {
-    public final Path s;
-    public final RectF w;
-    public uo x;
-    public final /* synthetic */ hgc y;
+public abstract class agc {
+    public static final xj a = new xj(21);
+    public static final xj b = new xj(22);
+    public static Path c;
+    public static Outline d;
+    public static Rect e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public agc(Activity activity, boolean z, hgc hgcVar) {
-        super(activity);
-        this.y = hgcVar;
-        this.c = new on(null);
-        this.a = activity;
-        setSystemUiVisibility(1792);
-        gl.e2(activity);
-        OrientationHelper.cameraRotationDisabled = true;
-        if (!z) {
-            this.e = true;
-        }
-        this.s = new Path();
-        this.w = new RectF();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        hgc hgcVar = this.y;
-        if (!hgcVar.E0 || getAlpha() == 0.0f) {
-            super.dispatchDraw(canvas);
+    public static void a(Canvas canvas, r28 r28Var, ci7 ci7Var) {
+        Path path;
+        Outline outline;
+        Rect rect;
+        ViewOutlineProvider outlineProvider = r28Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !r28Var.getClipToOutline() || outlineProvider == null) {
+            ci7Var.a(canvas);
             return;
         }
-        float scaleX = hgcVar.d0.getScaleX() * hgcVar.d0.getWidth();
-        float scaleY = hgcVar.d0.getScaleY() * hgcVar.d0.getHeight();
-        float x = hgcVar.d0.getX() + ((hgcVar.d0.getWidth() - scaleX) / 2.0f);
-        float y = hgcVar.d0.getY() + ((hgcVar.d0.getHeight() - scaleY) / 2.0f);
-        canvas.save();
-        Path path = this.s;
-        path.rewind();
-        RectF rectF = this.w;
-        rectF.set(x, y, scaleX + x, scaleY + y);
-        float L = gl.L(4.0f);
-        path.addRoundRect(rectF, L, L, Path.Direction.CW);
-        path.close();
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        VoIPServiceState sharedState;
-        hgc hgcVar = this.y;
-        if (hgcVar.G0 || hgcVar.E0) {
-            return false;
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            if (c == null) {
+                c = new Path();
+                d = new Outline();
+                e = new Rect();
+            }
+            path = c;
+            outline = d;
+            rect = e;
+            outline.setEmpty();
+            rect.setEmpty();
+        } else {
+            path = new Path();
+            outline = new Outline();
+            rect = new Rect();
         }
-        int keyCode = keyEvent.getKeyCode();
-        if (keyCode == 4 && keyEvent.getAction() == 1) {
-            hgcVar.g();
-            return true;
-        }
-        if ((keyCode != 25 && keyCode != 24) || hgcVar.p0 != 15 || (sharedState = VoIPService.getSharedState()) == null) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        sharedState.stopRinging();
-        return true;
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.y.l1) {
+        Path path2 = path;
+        outlineProvider.getOutline(r28Var, outline);
+        path2.rewind();
+        if (outline.isEmpty() || !outline.getRect(rect)) {
+            ci7Var.a(canvas);
             return;
         }
-        super.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (Build.VERSION.SDK_INT < 33 || this.x != null) {
-            return;
+        float radius = outline.getRadius();
+        float f = rect.left;
+        float f2 = rect.top;
+        if (radius > 0.0f) {
+            path2.addRoundRect(f, f2, rect.right, rect.bottom, radius, radius, Path.Direction.CW);
+        } else {
+            path2.addRect(f, f2, rect.right, rect.bottom, Path.Direction.CW);
         }
-        this.x = s4.j(this, new sfc(this.y, (byte) 14));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        uo uoVar;
-        if (Build.VERSION.SDK_INT >= 33 && (uoVar = this.x) != null) {
-            s4.l(this, uoVar);
-            this.x = null;
-        }
-        super.onDetachedFromWindow();
+        int save = canvas.save();
+        canvas.clipPath(path2);
+        ci7Var.a(canvas);
+        canvas.restoreToCount(save);
     }
 }

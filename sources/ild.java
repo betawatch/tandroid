@@ -1,88 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ild {
-    public abstract void a(ik0 ik0Var);
+public final class ild implements cq7 {
+    public static final ild a = new ild();
 
-    public abstract void b(x01 x01Var);
-
-    public void c(cj2 cj2Var) {
-        v(cj2Var);
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
     }
 
-    public void d(o43 o43Var) {
-        v(o43Var);
-    }
-
-    public void e(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public void f(s84 s84Var) {
-        v(s84Var);
-    }
-
-    public void g(nd5 nd5Var) {
-        v(nd5Var);
-    }
-
-    public void h(cg5 cg5Var) {
-        v(cg5Var);
-    }
-
-    public void i(bk5 bk5Var) {
-        v(bk5Var);
-    }
-
-    public void j(hn5 hn5Var) {
-        v(hn5Var);
-    }
-
-    public abstract void k(y46 y46Var);
-
-    public void l(f56 f56Var) {
-        v(f56Var);
-    }
-
-    public abstract void m(xq7 xq7Var);
-
-    public abstract void n(tu7 tu7Var);
-
-    public void o(ugb ugbVar) {
-        v(ugbVar);
-    }
-
-    public void p(jjb jjbVar) {
-        v(jjbVar);
-    }
-
-    public void q(cj2 cj2Var) {
-        v(cj2Var);
-    }
-
-    public void r(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public void s(bk5 bk5Var) {
-        v(bk5Var);
-    }
-
-    public void t(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public void u(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public final void v(tg6 tg6Var) {
-        tg6 tg6Var2 = (tg6) tg6Var.c;
-        while (tg6Var2 != null) {
-            tg6 tg6Var3 = (tg6) tg6Var2.f;
-            tg6Var2.a(this);
-            tg6Var2 = tg6Var3;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

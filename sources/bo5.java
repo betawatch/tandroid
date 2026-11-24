@@ -1,31 +1,39 @@
 // default package
 
-import android.os.Build;
-import android.os.Bundle;
-import android.view.inputmethod.InputConnection;
-import android.view.inputmethod.InputConnectionWrapper;
-import android.view.inputmethod.InputContentInfo;
+import java.util.Set;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bo5 extends InputConnectionWrapper {
-    public final /* synthetic */ do5 a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bo5(InputConnection inputConnection, do5 do5Var) {
-        super(inputConnection, false);
-        this.a = do5Var;
+public final class bo5 extends kq {
+    public final x79 C() {
+        if (this.b == 0) {
+            return x79.r;
+        }
+        return new x79(this.b, (Object[]) this.c);
     }
 
-    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
-    public final boolean commitContent(InputContentInfo inputContentInfo, int i, Bundle bundle) {
-        gi3 gi3Var = null;
-        if (inputContentInfo != null && Build.VERSION.SDK_INT >= 25) {
-            gi3Var = new gi3(new eo5(inputContentInfo));
-        }
-        if (this.a.a(gi3Var, i, bundle)) {
-            return true;
-        }
-        return super.commitContent(inputContentInfo, i, bundle);
+    public final void D(uzb uzbVar, String str) {
+        super.w(uzbVar, str);
+    }
+
+    public final void E(Set set) {
+        super.x(set);
+    }
+
+    @Override // kq
+    public final qo5 f() {
+        throw new UnsupportedOperationException("Not supported for bimaps");
+    }
+
+    @Override // kq
+    public final kq w(Object obj, Object obj2) {
+        super.w(obj, obj2);
+        return this;
+    }
+
+    @Override // kq
+    public final kq x(Set set) {
+        super.x(set);
+        return this;
     }
 }

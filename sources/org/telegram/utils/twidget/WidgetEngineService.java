@@ -21,43 +21,43 @@ import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipFile;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class WidgetEngineService extends Service {
     public static volatile String b;
     public static String c;
-    public static final ThreadPoolExecutor d = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new x20((byte) 11));
+    public static final ThreadPoolExecutor d = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new y30((byte) 11));
     public static volatile boolean e;
     public static boolean f;
     public static volatile boolean h;
     public final n a = new n(this);
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static final class Forked extends WidgetEngineService {
     }
 
-    public static byte[] c(dkc dkcVar, String str) {
+    public static byte[] c(lcc lccVar, String str) {
         if (str.contains("..") || str.startsWith("/")) {
-            w26.j("Invalid bundle path");
+            u36.j("Invalid bundle path");
             return null;
         }
-        InputStream b2 = dkcVar.b("WidgetJS/".concat(str));
+        InputStream h2 = lccVar.h("WidgetJS/".concat(str));
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] bArr = new byte[TLObject.FLAG_14];
             while (true) {
-                int read = b2.read(bArr);
+                int read = h2.read(bArr);
                 if (read == -1) {
                     byte[] byteArray = byteArrayOutputStream.toByteArray();
-                    b2.close();
+                    h2.close();
                     return byteArray;
                 }
                 byteArrayOutputStream.write(bArr, 0, read);
             }
         } catch (Throwable th) {
-            if (b2 != null) {
+            if (h2 != null) {
                 try {
-                    b2.close();
+                    h2.close();
                 } catch (Throwable th2) {
                     th.addSuppressed(th2);
                 }
@@ -97,12 +97,12 @@ public class WidgetEngineService extends Service {
     public static void e(String str) {
         SystemClock.uptimeMillis();
         if (!WidgetSandboxNative.available()) {
-            sc8.j("libtwidget is missing");
+            dq9.m("libtwidget is missing");
             return;
         }
         ZipFile zipFile = new ZipFile(str);
         try {
-            f(new dkc(zipFile, (byte) 7));
+            f(new lcc(zipFile, (byte) 11));
             zipFile.close();
             String[] strArr = {"WidgetEngineBackend", "WidgetSandboxBackend", "WidgetSandboxIntl", "WidgetPng", "IWidgetEngine$Stub", "IWidgetEngineCallback$Stub$Proxy"};
             for (int i = 0; i < 6; i++) {
@@ -118,17 +118,10 @@ public class WidgetEngineService extends Service {
     /* JADX INFO: Access modifiers changed from: private */
     public static native void exitNow(int i);
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-     */
-    public static synchronized String f(dkc dkcVar) {
+    public static synchronized String f(lcc lccVar) {
         String[] strArr;
         int i;
-        dkc dkcVar2 = dkcVar;
+        lcc lccVar2 = lccVar;
         synchronized (WidgetEngineService.class) {
             String str = c;
             if (str != null) {
@@ -136,31 +129,31 @@ public class WidgetEngineService extends Service {
             }
             try {
                 try {
-                    InputStream b2 = dkcVar2.b("manifest.txt");
+                    InputStream h2 = lccVar2.h("manifest.txt");
                     try {
-                        String a = hwc.a(b2);
-                        b2.close();
+                        String a = iyc.a(h2);
+                        h2.close();
                         String[] split = a.split("\n");
                         int length = split.length;
                         byte[] bArr = null;
                         byte[] bArr2 = null;
                         byte[] bArr3 = null;
-                        byte[] bArr4 = null;
-                        byte[] bArr5 = null;
                         int i2 = 0;
                         while (i2 < length) {
                             String str2 = split[i2];
-                            if (!str2.isEmpty()) {
+                            if (str2.isEmpty()) {
+                                strArr = split;
+                                i = length;
+                            } else {
                                 String[] split2 = str2.split(" ", 2);
-                                byte[] c2 = c(dkcVar2, split2[1]);
+                                byte[] c2 = c(lccVar2, split2[1]);
                                 StringBuilder sb = new StringBuilder();
                                 byte[] digest = MessageDigest.getInstance("SHA-256").digest(c2);
                                 int length2 = digest.length;
                                 int i3 = 0;
                                 while (i3 < length2) {
-                                    int i4 = i3;
-                                    sb.append(String.format("%02x", Integer.valueOf(digest[i4] & 255)));
-                                    i3 = i4 + 1;
+                                    sb.append(String.format("%02x", Integer.valueOf(digest[i3] & 255)));
+                                    i3++;
                                     split = split;
                                     length = length;
                                 }
@@ -170,49 +163,21 @@ public class WidgetEngineService extends Service {
                                     throw new IllegalStateException("Bundle checksum mismatch: " + split2[1]);
                                 }
                                 String str3 = split2[1];
-                                switch (str3.hashCode()) {
-                                    case -1927203231:
-                                        if (str3.equals("validator-bundle.qbc")) {
-                                            bArr5 = c2;
-                                            break;
-                                        } else {
-                                            break;
-                                        }
-                                    case -1818708305:
-                                        if (str3.equals("sandbox-bundle.js")) {
-                                            bArr = c2;
-                                            break;
-                                        } else {
-                                            break;
-                                        }
-                                    case -1529025109:
-                                        if (str3.equals("renderer-bundle.js")) {
-                                            bArr3 = c2;
-                                            break;
-                                        } else {
-                                            break;
-                                        }
-                                    case -754904710:
-                                        if (str3.equals("validator-bundle.js")) {
+                                int hashCode = str3.hashCode();
+                                if (hashCode != -1818708305) {
+                                    if (hashCode != -1529025109) {
+                                        if (hashCode == -754904710 && str3.equals("validator-bundle.js")) {
                                             bArr2 = c2;
-                                            break;
-                                        } else {
-                                            break;
                                         }
-                                    case -545376308:
-                                        if (str3.equals("sandbox-bundle.qbc")) {
-                                            bArr4 = c2;
-                                            break;
-                                        } else {
-                                            break;
-                                        }
+                                    } else if (str3.equals("renderer-bundle.js")) {
+                                        bArr3 = c2;
+                                    }
+                                } else if (str3.equals("sandbox-bundle.js")) {
+                                    bArr = c2;
                                 }
-                            } else {
-                                strArr = split;
-                                i = length;
                             }
                             i2++;
-                            dkcVar2 = dkcVar;
+                            lccVar2 = lccVar;
                             split = strArr;
                             length = i;
                         }
@@ -221,20 +186,20 @@ public class WidgetEngineService extends Service {
                         }
                         byte[] digest2 = MessageDigest.getInstance("SHA-256").digest(a.getBytes(StandardCharsets.UTF_8));
                         StringBuilder sb2 = new StringBuilder("assets:");
-                        for (int i5 = 0; i5 < 12; i5++) {
-                            sb2.append(String.format("%02x", Integer.valueOf(digest2[i5] & 255)));
+                        for (int i4 = 0; i4 < 12; i4++) {
+                            sb2.append(String.format("%02x", Integer.valueOf(digest2[i4] & 255)));
                         }
-                        WidgetSandboxNative.registerResources(sb2.toString().getBytes(StandardCharsets.UTF_8), bArr, bArr2, bArr3, bArr4, bArr5);
+                        WidgetSandboxNative.registerResources(sb2.toString().getBytes(StandardCharsets.UTF_8), bArr, bArr2, bArr3);
                         String sb3 = sb2.toString();
                         c = sb3;
                         return sb3;
                     } finally {
                     }
-                } catch (Exception e2) {
-                    throw new IllegalStateException("Widget bundles: " + e2);
+                } catch (RuntimeException e2) {
+                    throw e2;
                 }
-            } catch (RuntimeException e3) {
-                throw e3;
+            } catch (Exception e3) {
+                throw new IllegalStateException("Widget bundles: " + e3);
             }
         }
     }
@@ -253,10 +218,10 @@ public class WidgetEngineService extends Service {
                 f = true;
                 h = !z;
                 SystemClock.uptimeMillis();
-                odd.a();
+                qfd.a();
                 d.prestartCoreThread();
                 try {
-                    f(new dkc(assets, (byte) 8));
+                    f(new lcc(assets, (byte) 12));
                 } catch (RuntimeException e2) {
                     Log.e("WidgetEngine", "bundles", e2);
                 }
@@ -288,7 +253,7 @@ public class WidgetEngineService extends Service {
         if (WidgetSandboxNative.available()) {
             SystemClock.uptimeMillis();
         } else {
-            sc8.j("libtwidget is missing");
+            dq9.m("libtwidget is missing");
         }
     }
 

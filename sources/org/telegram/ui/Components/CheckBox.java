@@ -13,7 +13,7 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class CheckBox extends View {
     public static Paint I;
@@ -62,12 +62,12 @@ public class CheckBox extends View {
             paint5.setColor(-1);
             L.setStyle(style);
         }
-        K.setStrokeWidth(gl.L(28.0f));
-        L.setStrokeWidth(gl.L(2.0f));
+        K.setStrokeWidth(gm.L(28.0f));
+        L.setStrokeWidth(gm.L(2.0f));
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
-        textPaint.setTextSize(gl.L(18.0f));
-        textPaint.setTypeface(gl.o());
+        textPaint.setTextSize(gm.L(18.0f));
+        textPaint.setTypeface(gm.o());
         this.a = context.getResources().getDrawable(i).mutate();
     }
 
@@ -92,7 +92,7 @@ public class CheckBox extends View {
         this.w = z;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addListener(new bb1((Object) this, (byte) 27));
+        ofFloat.addListener(new b91((Object) this, (byte) 29));
         this.s.setDuration(300L);
         this.s.start();
     }
@@ -134,7 +134,7 @@ public class CheckBox extends View {
             return;
         }
         if (this.h || this.r != 0.0f) {
-            K.setStrokeWidth(gl.L(this.E + 6));
+            K.setStrokeWidth(gm.L(this.E + 6));
             this.c.eraseColor(0);
             float measuredWidth = getMeasuredWidth() / 2;
             float f = this.r;
@@ -145,23 +145,23 @@ public class CheckBox extends View {
             }
             if (f >= 0.2f) {
                 if (f < 0.4f) {
-                    L2 = gl.L(2.0f) - (((f - 0.2f) * gl.L(2.0f)) / 0.2f);
+                    L2 = gm.L(2.0f) - (((f - 0.2f) * gm.L(2.0f)) / 0.2f);
                 }
                 if (this.h) {
                     I.setColor(1140850688);
-                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - gl.L(1.0f), I);
-                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - gl.L(1.0f), L);
+                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - gm.L(1.0f), I);
+                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - gm.L(1.0f), L);
                 }
                 I.setColor(this.G);
                 if (this.n) {
-                    measuredWidth -= gl.L(2.0f);
+                    measuredWidth -= gm.L(2.0f);
                 }
                 this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, I);
                 this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f2) * measuredWidth, J);
                 canvas.drawBitmap(this.c, 0.0f, 0.0f, (Paint) null);
                 this.d.eraseColor(0);
                 if (this.H == null) {
-                    this.f.drawText(this.H, (getMeasuredWidth() - ((int) Math.ceil(r2.measureText(r0)))) / 2, gl.L(this.E == 40 ? 28.0f : 21.0f), this.b);
+                    this.f.drawText(this.H, (getMeasuredWidth() - ((int) Math.ceil(r2.measureText(r0)))) / 2, gm.L(this.E == 40 ? 28.0f : 21.0f), this.b);
                 } else {
                     Drawable drawable = this.a;
                     int intrinsicWidth = drawable.getIntrinsicWidth();
@@ -172,10 +172,10 @@ public class CheckBox extends View {
                     drawable.setBounds(measuredWidth2, measuredHeight + i, intrinsicWidth + measuredWidth2, measuredHeight + intrinsicHeight + i);
                     drawable.draw(this.f);
                 }
-                this.f.drawCircle((getMeasuredWidth() / 2) - gl.L(2.5f), gl.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f3) * ((gl.L(6.0f) + getMeasuredWidth()) / 2), K);
+                this.f.drawCircle((getMeasuredWidth() / 2) - gm.L(2.5f), gm.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f3) * ((gm.L(6.0f) + getMeasuredWidth()) / 2), K);
                 canvas.drawBitmap(this.d, 0.0f, 0.0f, (Paint) null);
             }
-            L2 = (gl.L(2.0f) * f) / 0.2f;
+            L2 = (gm.L(2.0f) * f) / 0.2f;
             measuredWidth -= L2;
             if (this.h) {
             }
@@ -188,7 +188,7 @@ public class CheckBox extends View {
             this.d.eraseColor(0);
             if (this.H == null) {
             }
-            this.f.drawCircle((getMeasuredWidth() / 2) - gl.L(2.5f), gl.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f3) * ((gl.L(6.0f) + getMeasuredWidth()) / 2), K);
+            this.f.drawCircle((getMeasuredWidth() / 2) - gm.L(2.5f), gm.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f3) * ((gm.L(6.0f) + getMeasuredWidth()) / 2), K);
             canvas.drawBitmap(this.d, 0.0f, 0.0f, (Paint) null);
         }
     }
@@ -250,7 +250,7 @@ public class CheckBox extends View {
     public void setSize(int i) {
         this.E = i;
         if (i == 40) {
-            this.b.setTextSize(gl.L(24.0f));
+            this.b.setTextSize(gm.L(24.0f));
         }
     }
 
@@ -263,12 +263,12 @@ public class CheckBox extends View {
         super.setVisibility(i);
         if (i == 0 && this.c == null) {
             try {
-                int L2 = gl.L(this.E);
-                int L3 = gl.L(this.E);
+                int L2 = gm.L(this.E);
+                int L3 = gm.L(this.E);
                 Bitmap.Config config = Bitmap.Config.ARGB_4444;
                 this.c = Bitmap.createBitmap(L2, L3, config);
                 this.e = new Canvas(this.c);
-                this.d = Bitmap.createBitmap(gl.L(this.E), gl.L(this.E), config);
+                this.d = Bitmap.createBitmap(gm.L(this.E), gm.L(this.E), config);
                 this.f = new Canvas(this.d);
             } catch (Throwable unused) {
             }

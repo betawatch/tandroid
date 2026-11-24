@@ -1,40 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pu0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qu0 b;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ pu0(qu0 qu0Var, byte b) {
-        this.a = b;
-        this.b = qu0Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class pu0 extends FrameLayout {
+    public TextView a;
+
+    public TextView getTextView() {
+        return this.a;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        qu0 qu0Var = this.b;
-        switch (b) {
-            case 0:
-                cv0 cv0Var = qu0Var.e;
-                hv0 hv0Var = cv0Var.R;
-                if (hv0Var != null) {
-                    cv0Var.h = false;
-                    hv0Var.B(false, null);
-                    break;
-                }
-                break;
-            case 1:
-                hv0 hv0Var2 = qu0Var.e.R;
-                if (hv0Var2 != null) {
-                    hv0Var2.G(!r2.canGoBack(), !r2.canGoForward());
-                    break;
-                }
-                break;
-            default:
-                d01.t(qu0Var.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(36.0f), TLObject.FLAG_30));
+    }
+
+    public void setText(String str) {
+        this.a.setText(str);
     }
 }

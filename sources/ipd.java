@@ -1,47 +1,38 @@
 // default package
 
-import java.util.concurrent.locks.LockSupport;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ipd {
-    public static Object a(eq4 eq4Var) {
-        Thread currentThread = Thread.currentThread();
-        vi2 vi2Var = vi2.b;
-        d44 a = dnb.a();
-        sw2 a2 = qzd.a(z14.a, a, true);
-        xb3 xb3Var = ko3.a;
-        if (a2 != xb3Var && a2.get(vi2Var) == null) {
-            a2 = a2.plus(xb3Var);
+public final class ipd extends b4 {
+    public static final Parcelable.Creator<ipd> CREATOR = new urd((byte) 15);
+    public final long a;
+    public final le5[] b;
+    public final int c;
+    public final boolean d;
+
+    public ipd(long j, le5[] le5VarArr, int i, boolean z) {
+        this.a = j;
+        this.b = le5VarArr;
+        this.d = z;
+        if (z) {
+            this.c = i;
+        } else {
+            this.c = -1;
         }
-        ok0 ok0Var = new ok0(a2, currentThread, a);
-        ok0Var.R(dx2.a, ok0Var, eq4Var);
-        d44 d44Var = ok0Var.f;
-        if (d44Var != null) {
-            int i = d44.f;
-            d44Var.g(false);
-        }
-        while (!Thread.interrupted()) {
-            try {
-                long h = d44Var != null ? d44Var.h() : Long.MAX_VALUE;
-                if (!(ok0Var.v() instanceof en5)) {
-                    Object a3 = fad.a(ok0Var.v());
-                    fp2 fp2Var = a3 instanceof fp2 ? (fp2) a3 : null;
-                    if (fp2Var == null) {
-                        return a3;
-                    }
-                    throw fp2Var.a;
-                }
-                LockSupport.parkNanos(ok0Var, h);
-            } finally {
-                if (d44Var != null) {
-                    int i2 = d44.f;
-                    d44Var.f(false);
-                }
-            }
-        }
-        InterruptedException interruptedException = new InterruptedException();
-        ok0Var.i(interruptedException);
-        throw interruptedException;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 2, 8);
+        parcel.writeLong(this.a);
+        mve.o(parcel, 3, this.b, i);
+        mve.q(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        mve.q(parcel, 5, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        mve.s(parcel, r);
     }
 }

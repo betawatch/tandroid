@@ -1,19 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mld implements zn7 {
-    public static final mld a = new mld();
+public final class mld extends Throwable {
+    public final /* synthetic */ byte a;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ mld(String str, byte b) {
+        super(str);
+        this.a = b;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.lang.Throwable
+    public final Throwable fillInStackTrace() {
+        byte b = this.a;
+        return this;
     }
 }

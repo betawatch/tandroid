@@ -1,125 +1,114 @@
 // default package
 
-import android.graphics.Bitmap;
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class pk1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ oy8 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class pk1 extends qx9 {
+    public final y11 g;
+    public final /* synthetic */ AtomicReferenceArray h;
 
-    public /* synthetic */ pk1(oy8 oy8Var, byte b) {
-        this.a = b;
-        this.b = oy8Var;
+    public pk1(long j, pk1 pk1Var, y11 y11Var, int i) {
+        super(j, pk1Var, i);
+        this.g = y11Var;
+        this.h = new AtomicReferenceArray(a21.b << 1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i;
-        Bitmap createBitmap;
-        boolean z;
-        byte b = this.a;
-        byte b2 = 1;
-        oy8 oy8Var = this.b;
-        switch (b) {
-            case 0:
-                oy8Var.C(false);
-                break;
-            case 1:
-                oy8Var.getClass();
-                try {
-                    dk0 dk0Var = oy8Var.C0;
-                    if (dk0Var != null) {
-                        dk0Var.b();
-                    }
-                } catch (Throwable unused) {
-                }
-                gl.d3(oy8Var.A0);
-                break;
-            case 2:
-                oy8Var.Q = null;
-                oy8Var.k();
-                break;
-            case 3:
-                oy8Var.Y = true;
-                if ((!oy8Var.l0 && oy8Var.X) || (oy8Var.R == null && oy8Var.S != null)) {
-                    oy8Var.s();
-                }
-                oy8Var.k();
-                break;
-            case 4:
-                if (!oy8Var.m0 && !oy8Var.W && oy8Var.f() && oy8Var.P == null) {
-                    oy8Var.y0 = true;
-                    if (oy8.U0 == null) {
-                        oy8.U0 = new do3("cache generator queue", true);
-                    }
-                    dk0.A++;
-                    do3 do3Var = oy8.U0;
-                    pk1 pk1Var = new pk1(oy8Var, b2);
-                    oy8Var.P = pk1Var;
-                    do3Var.postRunnable(pk1Var);
-                    break;
-                }
-                break;
-            case 5:
-                if (oy8Var.P != null) {
-                    dk0.c();
-                    oy8Var.P = null;
-                }
-                oy8Var.y0 = false;
-                oy8Var.k();
-                Runnable runnable = oy8Var.B0;
-                if (runnable != null) {
-                    runnable.run();
-                    oy8Var.B0 = null;
-                    break;
-                }
-                break;
-            case 6:
-                try {
-                    i = oy8Var.e();
-                    if (i == 1) {
-                        if (oy8Var.T != null) {
-                            createBitmap = oy8Var.T;
-                            z = true;
-                        } else {
-                            createBitmap = Bitmap.createBitmap(oy8Var.b, oy8Var.c, oy8Var.H ? Bitmap.Config.ALPHA_8 : Bitmap.Config.ARGB_8888);
-                            oy8Var.T = createBitmap;
-                            z = false;
-                        }
-                        int w = oy8Var.w(createBitmap, z);
-                        if (w == 1) {
-                            oy8Var.S = createBitmap;
-                            oy8Var.d();
-                        }
-                        i = w;
-                    }
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    i = 2;
-                }
-                if (i == 1) {
-                    oy8Var.H0 = 0;
-                    gl.d3(oy8Var.x0);
-                } else if (i == 2) {
-                    gl.e3(oy8Var.w0, oy8Var.H0);
-                    oy8Var.H0 = Math.min((Math.max(oy8Var.H0, 2) * 3) / 2, 2000);
-                } else if (i == 3) {
-                    gl.d3(oy8Var.w0);
-                }
-                CountDownLatch countDownLatch = oy8Var.V;
-                if (countDownLatch != null) {
-                    countDownLatch.countDown();
-                    break;
-                }
-                break;
-            case 7:
-                oy8Var.h();
-                break;
-            default:
-                oy8Var.start();
-                break;
+    @Override // qx9
+    public final int g() {
+        return a21.b;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0042, code lost:
+    
+        n(r5, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0045, code lost:
+    
+        if (r0 == false) goto L57;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0047, code lost:
+    
+        r2.getClass();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x004a, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:?, code lost:
+    
+        return;
+     */
+    @Override // qx9
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void h(int i, cy2 cy2Var) {
+        int i2 = a21.b;
+        boolean z = i >= i2;
+        if (z) {
+            i -= i2;
         }
+        this.h.get(i << 1);
+        while (true) {
+            Object l = l(i);
+            boolean z2 = l instanceof amc;
+            y11 y11Var = this.g;
+            if (z2 || (l instanceof bmc)) {
+                if (k(i, l, z ? a21.j : a21.k)) {
+                    n(i, null);
+                    m(i, !z);
+                    if (z) {
+                        y11Var.getClass();
+                        return;
+                    }
+                    return;
+                }
+            } else {
+                if (l == a21.j || l == a21.k) {
+                    break;
+                }
+                if (l != a21.g && l != a21.f) {
+                    if (l == a21.i || l == a21.d || l == a21.l) {
+                        return;
+                    }
+                    zo4.p(l, "unexpected state: ");
+                    return;
+                }
+            }
+        }
+    }
+
+    public final boolean k(int i, Object obj, Object obj2) {
+        AtomicReferenceArray atomicReferenceArray;
+        int i2 = (i << 1) + 1;
+        do {
+            atomicReferenceArray = this.h;
+            if (atomicReferenceArray.compareAndSet(i2, obj, obj2)) {
+                return true;
+            }
+        } while (atomicReferenceArray.get(i2) == obj);
+        return false;
+    }
+
+    public final Object l(int i) {
+        return this.h.get((i << 1) + 1);
+    }
+
+    public final void m(int i, boolean z) {
+        if (z) {
+            y11 y11Var = this.g;
+            y11Var.getClass();
+            y11Var.F((this.d * a21.b) + i);
+        }
+        i();
+    }
+
+    public final void n(int i, Object obj) {
+        this.h.set(i << 1, obj);
+    }
+
+    public final void o(int i, du2 du2Var) {
+        this.h.set((i << 1) + 1, du2Var);
     }
 }

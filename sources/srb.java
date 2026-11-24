@@ -1,20 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum srb extends qsb {
+public final class srb extends eu5 {
+    public final StringBuilder e;
+    public final StringBuilder f;
+    public final StringBuilder g;
+
     public srb() {
-        super("CharacterReferenceInRcdata", 3);
+        super(1, (byte) 2);
+        this.e = new StringBuilder();
+        this.f = new StringBuilder();
+        this.g = new StringBuilder();
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        int[] c = aqbVar.c(null, false);
-        if (c == null) {
-            aqbVar.f('&');
-        } else {
-            aqbVar.h(new String(c, 0, c.length));
-        }
-        aqbVar.c = qsb.c;
+    @Override // eu5
+    public final eu5 s() {
+        eu5.t(this.e);
+        eu5.t(this.f);
+        eu5.t(this.g);
+        return this;
     }
 }

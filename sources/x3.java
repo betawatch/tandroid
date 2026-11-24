@@ -1,14 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class x3 implements Runnable {
-    public final ea9 a;
-    public final t56 b;
+    public final ec9 a;
+    public final t76 b;
 
-    public x3(ea9 ea9Var, t56 t56Var) {
-        this.a = ea9Var;
-        this.b = t56Var;
+    public x3(ec9 ec9Var, t76 t76Var) {
+        this.a = ec9Var;
+        this.b = t76Var;
     }
 
     @Override // java.lang.Runnable

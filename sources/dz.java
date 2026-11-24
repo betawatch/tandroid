@@ -1,37 +1,45 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stars;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class dz extends c6 {
-    public final /* synthetic */ TL_stars.StarGift a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ wjb c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum dz implements Parcelable {
+    b("none"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF19("indirect"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF29("direct");
 
-    public dz(wjb wjbVar, Context context, TL_stars.StarGift starGift) {
-        this.a = starGift;
-        this.b = context;
-        this.c = wjbVar;
+    public static final Parcelable.Creator<dz> CREATOR = new lbd((byte) 10);
+    public final String a;
+
+    dz(String str) {
+        this.a = str;
     }
 
-    @Override // c6
-    public final void b(int i) {
-        Context context = this.b;
-        TL_stars.StarGift starGift = this.a;
-        if (i != 3 && i != 2) {
-            if (i == 4) {
-                ez.b1(this.c, context, starGift);
-                return;
+    public static dz a(String str) {
+        for (dz dzVar : values()) {
+            if (str.equals(dzVar.a)) {
+                return dzVar;
             }
-            return;
         }
-        String str = na7.q1(y6c.t0).N2 + "/auction/" + starGift.auction_slug;
-        if (i == 3) {
-            gl.g(str);
-        } else {
-            taa.G0(context, null, str, false, str).show();
-        }
+        throw new cz(kt6.o("Attestation conveyance preference ", str, " not supported"));
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
+        return this.a;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.a);
     }
 }

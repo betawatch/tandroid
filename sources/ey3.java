@@ -1,37 +1,46 @@
 // default package
 
-import android.text.InputFilter;
-import android.widget.TextView;
+import android.text.Editable;
+import android.text.method.KeyListener;
+import android.text.method.MetaKeyKeyListener;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ey3 extends efe {
-    public final dy3 a;
+public final class ey3 implements KeyListener {
+    public final KeyListener a;
 
-    public ey3(TextView textView) {
-        this.a = new dy3(textView);
+    public ey3(KeyListener keyListener) {
+        this.a = keyListener;
     }
 
-    @Override // efe
-    public final InputFilter[] a(InputFilter[] inputFilterArr) {
-        return !(lw3.j != null) ? inputFilterArr : this.a.a(inputFilterArr);
+    @Override // android.text.method.KeyListener
+    public final void clearMetaKeyState(View view, Editable editable, int i) {
+        this.a.clearMetaKeyState(view, editable, i);
     }
 
-    @Override // efe
-    public final void b(boolean z) {
-        if (lw3.j != null) {
-            this.a.b(z);
+    @Override // android.text.method.KeyListener
+    public final int getInputType() {
+        return this.a.getInputType();
+    }
+
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyDown(View view, Editable editable, int i, KeyEvent keyEvent) {
+        if (!(i != 67 ? i != 112 ? false : hi2.j(editable, keyEvent, true) : hi2.j(editable, keyEvent, false))) {
+            return this.a.onKeyDown(view, editable, i, keyEvent);
         }
+        MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
+        return true;
     }
 
-    @Override // efe
-    public final void c(boolean z) {
-        boolean z2 = lw3.j != null;
-        dy3 dy3Var = this.a;
-        if (z2) {
-            dy3Var.c(z);
-        } else {
-            dy3Var.c = z;
-        }
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
+        return this.a.onKeyOther(view, editable, keyEvent);
+    }
+
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyUp(View view, Editable editable, int i, KeyEvent keyEvent) {
+        return this.a.onKeyUp(view, editable, i, keyEvent);
     }
 }

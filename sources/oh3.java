@@ -1,25 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class oh3 extends vf3 {
-    public final /* synthetic */ cj3 P0;
+public final /* synthetic */ class oh3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nk3 b;
+    public final /* synthetic */ float c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oh3(cj3 cj3Var, Context context, cj3 cj3Var2, int i, int i2) {
-        super(context, cj3Var2, i, i2);
-        this.P0 = cj3Var;
+    public /* synthetic */ oh3(nk3 nk3Var, float f, byte b) {
+        this.a = b;
+        this.b = nk3Var;
+        this.c = f;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        a aVar;
-        aVar = ((d) this.P0).actionBar;
-        return !aVar.y() && super.dispatchTouchEvent(motionEvent);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        float f = this.c;
+        nk3 nk3Var = this.b;
+        switch (b) {
+            case 0:
+                nk3Var.f4(f, valueAnimator);
+                break;
+            default:
+                nk3Var.T3(f, valueAnimator);
+                break;
+        }
     }
 }

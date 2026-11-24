@@ -1,51 +1,29 @@
 // default package
 
-import java.util.Map;
-import java.util.Set;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ohf implements fdd {
-    public transient xze a;
-    public transient d3 b;
-
-    public final Map a() {
-        d3 d3Var = this.b;
-        if (d3Var != null) {
-            return d3Var;
+public final class ohf extends f1d implements qhf {
+    public final mhf Z(eq7 eq7Var, whf whfVar) {
+        mhf mhfVar;
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        int i = xid.a;
+        obtain.writeStrongBinder(eq7Var);
+        obtain.writeInt(1);
+        whfVar.writeToParcel(obtain, 0);
+        Parcel T = T(obtain, 1);
+        IBinder readStrongBinder = T.readStrongBinder();
+        if (readStrongBinder == null) {
+            mhfVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenter");
+            mhfVar = queryLocalInterface instanceof mhf ? (mhf) queryLocalInterface : new mhf(readStrongBinder, "com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenter", (byte) 8);
         }
-        vhf vhfVar = (vhf) this;
-        d3 d3Var2 = new d3(vhfVar, vhfVar.c, (byte) 1);
-        this.b = d3Var2;
-        return d3Var2;
-    }
-
-    public final Set b() {
-        xze xzeVar = this.a;
-        if (xzeVar != null) {
-            return xzeVar;
-        }
-        vhf vhfVar = (vhf) this;
-        xze xzeVar2 = new xze(vhfVar, vhfVar.c);
-        this.a = xzeVar2;
-        return xzeVar2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof fdd) {
-            return a().equals(((ohf) ((fdd) obj)).a());
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((so2) ((d3) a()).d).hashCode();
-    }
-
-    public final String toString() {
-        return ((so2) ((d3) a()).d).toString();
+        T.recycle();
+        return mhfVar;
     }
 }

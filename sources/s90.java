@@ -1,32 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.List;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class s90 extends h74 {
-    public final Integer a;
+public final class s90 {
+    public u90 a;
+    public List b;
+    public List c;
+    public Boolean d;
+    public h03 e;
+    public List f;
+    public int g;
+    public byte h;
 
-    public s90(Integer num) {
-        this.a = num;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final t90 a() {
+        u90 u90Var;
+        if (this.h == 1 && (u90Var = this.a) != null) {
+            return new t90(u90Var, this.b, this.c, this.d, this.e, this.f, this.g);
         }
-        if (!(obj instanceof h74)) {
-            return false;
+        StringBuilder sb = new StringBuilder();
+        if (this.a == null) {
+            sb.append(" execution");
         }
-        Integer num = this.a;
-        s90 s90Var = (s90) ((h74) obj);
-        return num == null ? s90Var.a == null : num.equals(s90Var.a);
-    }
-
-    public final int hashCode() {
-        Integer num = this.a;
-        return 1000003 ^ (num == null ? 0 : num.hashCode());
-    }
-
-    public final String toString() {
-        return "ExternalPRequestContext{originAssociatedProductId=" + this.a + "}";
+        if ((this.h & 1) == 0) {
+            sb.append(" uiOrientation");
+        }
+        dq9.m(ts2.n("Missing required properties:", sb));
+        return null;
     }
 }

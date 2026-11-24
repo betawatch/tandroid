@@ -6,7 +6,7 @@ import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -173,7 +173,7 @@ public class TeXParser {
             int i2 = 0;
             while (this.pos < this.len) {
                 if (this.parseString.length() > 65536) {
-                    qm0.g("Formula too large after macro expansion");
+                    qn0.g("Formula too large after macro expansion");
                     return;
                 }
                 char charAt2 = this.parseString.charAt(this.pos);
@@ -221,13 +221,13 @@ public class TeXParser {
                     } else if (NewCommandMacro.isMacro(command)) {
                         i2++;
                         if (i2 > 10000) {
-                            qm0.g("Macro expansion limit exceeded");
+                            qn0.g("Macro expansion limit exceeded");
                             return;
                         }
                         long j = firstpassExpansionWork + this.len;
                         firstpassExpansionWork = j;
                         if (j > MAX_FIRSTPASS_WORK) {
-                            qm0.g("Formula expands too much");
+                            qn0.g("Formula expands too much");
                             return;
                         }
                         MacroInfo macroInfo = MacroInfo.Commands.get(command);
@@ -249,13 +249,13 @@ public class TeXParser {
                         if (macroInfo2 != null) {
                             i2++;
                             if (i2 > 10000) {
-                                qm0.g("Macro expansion limit exceeded");
+                                qn0.g("Macro expansion limit exceeded");
                                 return;
                             }
                             long j2 = firstpassExpansionWork + this.len;
                             firstpassExpansionWork = j2;
                             if (j2 > MAX_FIRSTPASS_WORK) {
-                                qm0.g("Formula expands too much");
+                                qn0.g("Formula expands too much");
                                 return;
                             }
                             try {
@@ -659,7 +659,7 @@ public class TeXParser {
             insert(this.spos, this.pos, (String) macroInfo.invoke(this, optsArgs));
             return null;
         }
-        qm0.g("Macro expansion limit exceeded");
+        qn0.g("Macro expansion limit exceeded");
         return null;
     }
 
@@ -679,7 +679,7 @@ public class TeXParser {
                 if (this.isPartial) {
                     return new ColorAtom(new RomanAtom(new TeXFormula("\\backslash ".concat(command)).root), (Color) null, Color.RED);
                 }
-                qm0.g(tb4.y("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
+                qn0.g(kt6.o("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
                 return null;
             }
         } catch (FormulaNotFoundException unused2) {
@@ -713,7 +713,7 @@ public class TeXParser {
         if (this.arrayMode) {
             ((ArrayOfAtoms) this.formula).addRow();
         } else {
-            qm0.g("You can add a row only in array mode !");
+            qn0.g("You can add a row only in array mode !");
         }
     }
 
@@ -778,7 +778,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!unicodeBlock.equals(of) || TeXFormula.isRegisteredBlock(unicodeBlock)) ? TeXFormula.getExternalFont(of) : null;
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(tb4.n(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(td4.o(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }
@@ -988,7 +988,7 @@ public class TeXParser {
         if (this.isPartial) {
             return stringBuffer.toString();
         }
-        qm0.g(tb4.q("The token ", str, " must be closed by ", str2));
+        qn0.g(td4.r("The token ", str, " must be closed by ", str2));
         return null;
     }
 
@@ -1134,7 +1134,7 @@ public class TeXParser {
             }
         }
         if (i3 >= 2) {
-            qm0.g("Illegal end,  missing '}' !");
+            qn0.g("Illegal end,  missing '}' !");
             return null;
         }
         StringBuffer stringBuffer = this.parseString;

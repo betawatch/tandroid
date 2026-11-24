@@ -3,9 +3,9 @@
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ia extends zde {
+public final class ia extends age {
     public final /* synthetic */ byte a = 0;
     public ArrayList b;
     public ArrayList c;
@@ -15,7 +15,7 @@ public final class ia extends zde {
         this.c = arrayList2;
     }
 
-    @Override // zde
+    @Override // age
     public final boolean a(int i, int i2) {
         switch (this.a) {
             case 0:
@@ -30,7 +30,7 @@ public final class ia extends zde {
         }
     }
 
-    @Override // zde
+    @Override // age
     public final boolean b(int i, int i2) {
         switch (this.a) {
             case 0:
@@ -41,20 +41,20 @@ public final class ia extends zde {
                 }
                 return false;
             default:
-                iwb iwbVar = (iwb) this.b.get(i);
-                iwb iwbVar2 = (iwb) this.c.get(i2);
-                return iwbVar.a == iwbVar2.a && Objects.equals(iwbVar.b, iwbVar2.b);
+                lyb lybVar = (lyb) this.b.get(i);
+                lyb lybVar2 = (lyb) this.c.get(i2);
+                return lybVar.a == lybVar2.a && Objects.equals(lybVar.b, lybVar2.b);
         }
     }
 
-    @Override // zde
+    @Override // age
     public final int c() {
         switch (this.a) {
         }
         return this.c.size();
     }
 
-    @Override // zde
+    @Override // age
     public final int d() {
         switch (this.a) {
         }

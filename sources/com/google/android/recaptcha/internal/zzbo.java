@@ -3,23 +3,23 @@ package com.google.android.recaptcha.internal;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzbo {
-    public bp2 zza;
-    private final d06 zzb;
+    public mq2 zza;
+    private final d26 zzb;
     private zzbp zzc;
-    private final d06 zzd;
+    private final d26 zzd;
     private long zze;
-    private final lh7 zzf;
+    private final oj7 zzf;
     private boolean zzg;
 
     public zzbo(long j) {
         int i = zzby.zza;
-        this.zzb = cne.b(zzbk.zza);
+        this.zzb = fpe.b(zzbk.zza);
         this.zzc = zzbp.zza;
-        this.zzd = cne.b(zzbl.zza);
-        this.zzf = new nh7();
+        this.zzd = fpe.b(zzbl.zza);
+        this.zzf = new qj7();
     }
 
     public static final /* synthetic */ zzcr zzb(zzbo zzboVar) {
@@ -32,11 +32,11 @@ public final class zzbo {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzl(fw2 fw2Var) {
+    public final Object zzl(px2 px2Var) {
         zzbc zzbcVar;
         int i;
-        if (fw2Var instanceof zzbc) {
-            zzbcVar = (zzbc) fw2Var;
+        if (px2Var instanceof zzbc) {
+            zzbcVar = (zzbc) px2Var;
             int i2 = zzbcVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzbcVar.zzc = i2 - TLObject.FLAG_31;
@@ -44,21 +44,21 @@ public final class zzbo {
                 i = zzbcVar.zzc;
                 if (i == 0) {
                     if (i == 1) {
-                        qse.b(obj);
+                        tue.b(obj);
                         return obj;
                     }
-                    sc8.j("call to 'resume' before 'invoke' with coroutine");
+                    dq9.m("call to 'resume' before 'invoke' with coroutine");
                     return null;
                 }
-                qse.b(obj);
-                zc3 zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
+                tue.b(obj);
+                le3 zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
                 zzbcVar.zzc = 1;
                 Object await = zza.await(zzbcVar);
-                bx2 bx2Var = bx2.a;
-                return await == bx2Var ? bx2Var : await;
+                ly2 ly2Var = ly2.a;
+                return await == ly2Var ? ly2Var : await;
             }
         }
-        zzbcVar = new zzbc(this, fw2Var);
+        zzbcVar = new zzbc(this, px2Var);
         Object obj2 = zzbcVar.zza;
         i = zzbcVar.zzc;
         if (i == 0) {
@@ -83,61 +83,61 @@ public final class zzbo {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzm(String str, fw2 fw2Var) {
+    public final Object zzm(String str, px2 px2Var) {
         zzbg zzbgVar;
         int i;
-        if (fw2Var instanceof zzbg) {
-            zzbgVar = (zzbg) fw2Var;
+        if (px2Var instanceof zzbg) {
+            zzbgVar = (zzbg) px2Var;
             int i2 = zzbgVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzbgVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzbgVar.zza;
                 i = zzbgVar.zzc;
-                bx2 bx2Var = bx2.a;
+                ly2 ly2Var = ly2.a;
                 if (i != 0) {
-                    qse.b(obj);
-                    bp2 zzf = zzf();
+                    tue.b(obj);
+                    mq2 zzf = zzf();
                     zzbgVar.zzd = str;
                     zzbgVar.zzc = 1;
-                    obj = ((cp2) zzf).h(zzbgVar);
+                    obj = ((nq2) zzf).h(zzbgVar);
                 } else {
                     if (i != 1) {
                         if (i == 2) {
-                            qse.b(obj);
+                            tue.b(obj);
                             return ((StandardIntegrityManager.StandardIntegrityToken) obj).token();
                         }
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        dq9.m("call to 'resume' before 'invoke' with coroutine");
                         return null;
                     }
                     str = zzbgVar.zzd;
-                    qse.b(obj);
+                    tue.b(obj);
                 }
-                zc3 zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
+                le3 zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
                 zzbgVar.zzd = null;
                 zzbgVar.zzc = 2;
                 obj = zza.await(zzbgVar);
             }
         }
-        zzbgVar = new zzbg(this, fw2Var);
+        zzbgVar = new zzbg(this, px2Var);
         Object obj2 = zzbgVar.zza;
         i = zzbgVar.zzc;
-        bx2 bx2Var2 = bx2.a;
+        ly2 ly2Var2 = ly2.a;
         if (i != 0) {
         }
-        zc3 zza2 = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj2).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
+        le3 zza2 = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj2).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
         zzbgVar.zzd = null;
         zzbgVar.zzc = 2;
         obj2 = zza2.await(zzbgVar);
     }
 
-    public final Object zze(fw2 fw2Var) {
+    public final Object zze(px2 px2Var) {
         return new zzhg(new zzbn(this, null));
     }
 
-    public final bp2 zzf() {
-        bp2 bp2Var = this.zza;
-        if (bp2Var != null) {
-            return bp2Var;
+    public final mq2 zzf() {
+        mq2 mq2Var = this.zza;
+        if (mq2Var != null) {
+            return mq2Var;
         }
         return null;
     }

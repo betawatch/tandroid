@@ -1,41 +1,19 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class h80 extends jy2 {
-    public final String a;
-    public final byte[] b;
+public final class h80 implements cq7 {
+    public static final h80 a = new h80();
 
-    public h80(String str, byte[] bArr) {
-        this.a = str;
-        this.b = bArr;
+    static {
+        wa4.c("messagingClientEventExtension");
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (!(obj instanceof jy2)) {
-            return false;
-        }
-        jy2 jy2Var = (jy2) obj;
-        h80 h80Var = (h80) jy2Var;
-        if (!this.a.equals(h80Var.a)) {
-            return false;
-        }
-        if (jy2Var instanceof h80) {
-            h80Var = (h80) jy2Var;
-        }
-        return Arrays.equals(this.b, h80Var.b);
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
-    }
-
-    public final String toString() {
-        return "File{filename=" + this.a + ", contents=" + Arrays.toString(this.b) + "}";
+        throw null;
     }
 }

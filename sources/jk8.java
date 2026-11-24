@@ -1,54 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jk8 implements eec {
-    public int a = 0;
-    public byte b;
-    public final /* synthetic */ mk8 c;
+public final /* synthetic */ class jk8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lk8 b;
 
-    public jk8(mk8 mk8Var) {
-        this.c = mk8Var;
+    public /* synthetic */ jk8(lk8 lk8Var, byte b) {
+        this.a = b;
+        this.b = lk8Var;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
-    @Override // eec
-    public final void a(int i) {
-        int i2 = this.a;
-        mk8 mk8Var = this.c;
-        ?? r2 = mk8Var.E;
-        if (i2 == 0) {
-            if (i <= r2) {
-                mk8Var.n = (byte) 1;
-            } else {
-                mk8Var.n = (byte) 2;
-            }
-            mk8Var.b();
-            return;
-        }
-        if (i <= r2) {
-            this.b = (byte) 1;
-        } else {
-            this.b = (byte) 2;
-        }
-    }
-
-    @Override // eec
-    public final void b(float f, int i, int i2) {
-        mk8 mk8Var = this.c;
-        mk8Var.y = i;
-        mk8Var.x = f;
-        mk8Var.d();
-    }
-
-    @Override // eec
-    public final void c(int i) {
-        this.a = i;
-        if (i == 0) {
-            byte b = this.b;
-            mk8 mk8Var = this.c;
-            mk8Var.n = b;
-            mk8Var.b();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        lk8 lk8Var = this.b;
+        switch (b) {
+            case 0:
+                String str = "https://t.me/giftcode/" + lk8Var.M2;
+                nk3 nk3Var = new nk3(td4.j(3, "onlySelect", "dialogsType", true));
+                nk3Var.E2 = new cz6(lk8Var, str, (byte) 25);
+                lk8Var.r1.presentFragment(nk3Var);
+                lk8Var.dismiss();
+                break;
+            default:
+                yj8 yj8Var = new yj8(lk8Var.r1, z8c.t0, null, null, null, lk8Var.J0);
+                yj8Var.E2 = true;
+                yj8Var.F2 = true;
+                yj8Var.X1 = true;
+                lk8Var.r1.showDialog(yj8Var);
+                break;
         }
     }
 }

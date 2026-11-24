@@ -1,135 +1,310 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.text.SpannableString;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class yua extends LinearLayout implements gk7 {
-    public long a;
-    public final int b;
-    public final yf2 c;
-    public SpannableString d;
-    public long e;
-    public ValueAnimator f;
+public final class yua {
+    public final int a;
+    public final long b;
+    public boolean c;
+    public boolean d;
+    public ava g;
+    public boolean j;
+    public boolean k;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final HashMap h = new HashMap();
+    public int i = -1;
 
-    public yua(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.e = -1L;
-        this.b = i;
-        this.a = y6c.h(i).e();
-        setOrientation(1);
-        setGravity(21);
-        TextView textView = new TextView(context);
-        int i2 = bkb.F6;
-        zkb.X(textView, i2, wjbVar);
-        ir2.r(13.0f, 1, 2131744918, textView, null);
-        textView.setGravity(5);
-        textView.setTypeface(gl.o());
-        addView(textView, nme.r(-2, -2, 5));
-        yf2 yf2Var = new yf2(this, context, context.getResources().getDrawable(R.drawable.star_small_inner).mutate());
-        this.c = yf2Var;
-        yf2Var.n = true;
-        yf2Var.getDrawable().r(false, true);
-        yf2Var.setTypeface(gl.o());
-        zkb.U(yf2Var, i2, wjbVar);
-        yf2Var.setTextSize(gl.L(13.0f));
-        yf2Var.setGravity(5);
-        yf2Var.setPadding(gl.L(19.0f), 0, 0, 0);
-        addView(yf2Var, nme.t(-2, 20, 5, 0, -2, 0, 0));
-        a(false);
-        setPadding(gl.L(15.0f), gl.L(4.0f), gl.L(15.0f), gl.L(4.0f));
+    public yua(int i, long j) {
+        this.a = i;
+        this.b = j;
+        i();
     }
 
-    public final void a(boolean z) {
-        long j;
-        boolean z2;
-        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
-        int i = this.b;
-        gta v = gta.v(i, false);
-        yf2 yf2Var = this.c;
-        yf2Var.a();
-        if (this.a == y6c.h(i).e()) {
-            z2 = !v.e;
-            j = v.m().amount;
-        } else {
-            TLRPC.TL_payments_starsRevenueStats h = ct0.g(i).h(this.a, false);
-            boolean z3 = h == null || h.status == null;
-            j = (h == null || (tL_starsRevenueStatus = h.status) == null) ? 0L : tL_starsRevenueStatus.current_balance.amount;
-            z2 = z3;
-        }
-        long j2 = this.e;
-        if (j > j2 && j2 != -1) {
-            ValueAnimator valueAnimator = this.f;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.9f, 1.0f);
-            this.f = ofFloat;
-            ofFloat.addUpdateListener(new gja(this, (byte) 6));
-            this.f.addListener(new ng9(this, (byte) 20));
-            this.f.setDuration(320L);
-            this.f.setInterpolator(new OvershootInterpolator());
-            this.f.start();
-        }
-        if (!z2) {
-            yf2Var.setText(k96.E(j, ' '));
-            this.e = j;
+    public final void a(int i, ArrayList arrayList) {
+        if (arrayList.isEmpty()) {
             return;
         }
-        if (this.d == null) {
-            SpannableString spannableString = new SpannableString("x");
-            this.d = spannableString;
-            spannableString.setSpan(new u86(gl.L(48.0f), yf2Var), 0, this.d.length(), 33);
+        ava e = e(i);
+        byte b = 1;
+        int i2 = 0;
+        long j = this.b;
+        int i3 = this.a;
+        if (e != null) {
+            e.l.addAll(0, arrayList);
+            e.n = arrayList.size() + e.n;
+            nm7.f(i3).k(nm7.I3, Long.valueOf(j), e);
+            n(i);
         }
-        yf2Var.c(this.d, z, true);
-        this.e = -1L;
+        TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
+        updatestargiftcollection.peer = oc7.r1(i3).i1(j);
+        updatestargiftcollection.collection_id = i;
+        updatestargiftcollection.flags |= 4;
+        int size = arrayList.size();
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+            l(savedStarGift, i, true);
+            if (savedStarGift.msg_id > 0) {
+                TL_stars.TL_inputSavedStarGiftUser tL_inputSavedStarGiftUser = new TL_stars.TL_inputSavedStarGiftUser();
+                tL_inputSavedStarGiftUser.msg_id = savedStarGift.msg_id;
+                updatestargiftcollection.add_stargift.add(tL_inputSavedStarGiftUser);
+            } else if (savedStarGift.saved_id != 0) {
+                TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
+                tL_inputSavedStarGiftChat.peer = oc7.r1(i3).i1(j);
+                tL_inputSavedStarGiftChat.saved_id = savedStarGift.saved_id;
+                updatestargiftcollection.add_stargift.add(tL_inputSavedStarGiftChat);
+            } else {
+                fc4.l("can't convert gift to inputgift to add into the collection");
+            }
+        }
+        ConnectionsManager.getInstance(i3).sendRequest(updatestargiftcollection, new wua(this, b));
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.z3) {
-            a(true);
-        } else if (i == kk7.D3 && ((Long) objArr[0]).longValue() == this.a) {
-            a(true);
+    public final void b(qac qacVar, String str) {
+        if (this.k) {
+            return;
+        }
+        this.k = true;
+        TL_stars.TL_starGiftCollection tL_starGiftCollection = new TL_stars.TL_starGiftCollection();
+        tL_starGiftCollection.collection_id = -1;
+        tL_starGiftCollection.title = str;
+        this.e.add(tL_starGiftCollection);
+        j();
+        int i = this.a;
+        long j = this.b;
+        ava avaVar = new ava(i, j, false);
+        avaVar.c = true;
+        avaVar.d = -1;
+        avaVar.n = 0;
+        avaVar.j = true;
+        this.h.put(-1, avaVar);
+        TL_stars.createStarGiftCollection createstargiftcollection = new TL_stars.createStarGiftCollection();
+        createstargiftcollection.peer = oc7.r1(i).i1(j);
+        createstargiftcollection.title = str;
+        ConnectionsManager.getInstance(i).sendRequest(createstargiftcollection, new av0((Object) this, (Object) tL_starGiftCollection, (Object) avaVar, (Object) qacVar, (byte) 23));
+    }
+
+    public final TL_stars.TL_starGiftCollection c(int i) {
+        int i2 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i2 >= arrayList.size()) {
+                return null;
+            }
+            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) arrayList.get(i2);
+            if (i == tL_starGiftCollection.collection_id) {
+                return tL_starGiftCollection;
+            }
+            i2++;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a(false);
-        int i = this.b;
-        kk7.f(i).b(this, kk7.z3);
-        kk7.f(i).b(this, kk7.D3);
+    public final ArrayList d() {
+        return h() ? this.e : this.f;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        int i = this.b;
-        kk7.f(i).n(this, kk7.z3);
-        kk7.f(i).n(this, kk7.D3);
+    public final ava e(int i) {
+        return (ava) this.h.get(Integer.valueOf(i));
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(a.getCurrentActionBarHeight(), TLObject.FLAG_30));
+    public final int f(int i) {
+        int i2 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i2 >= arrayList.size()) {
+                return -1;
+            }
+            if (i == ((TL_stars.TL_starGiftCollection) arrayList.get(i2)).collection_id) {
+                return i2;
+            }
+            i2++;
+        }
     }
 
-    public void setDialogId(long j) {
-        if (this.a != j) {
-            this.a = j;
-            a(true);
+    public final void g() {
+        if (this.i != -1) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.i, true);
+            this.i = -1;
+        }
+        this.c = false;
+        this.d = false;
+        if (this.j) {
+            i();
+        }
+    }
+
+    public final boolean h() {
+        long j = this.b;
+        int i = this.a;
+        return j >= 0 ? j == 0 || j == z8c.h(i).e() : sd2.w(5, oc7.r1(i).L0(Long.valueOf(-j)));
+    }
+
+    public final void i() {
+        if (this.c || this.d) {
+            return;
+        }
+        this.c = true;
+        TL_stars.getStarGiftCollections getstargiftcollections = new TL_stars.getStarGiftCollections();
+        int i = this.a;
+        getstargiftcollections.peer = oc7.r1(i).i1(this.b);
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        byte b = 0;
+        long j = 0;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            j = hs6.r(j, ((TL_stars.TL_starGiftCollection) obj).hash);
+        }
+        getstargiftcollections.hash = j;
+        this.i = ConnectionsManager.getInstance(i).sendRequest(getstargiftcollections, new wua(this, b));
+    }
+
+    public final void j() {
+        ArrayList arrayList = this.f;
+        arrayList.clear();
+        int i = 0;
+        while (true) {
+            ArrayList arrayList2 = this.e;
+            if (i >= arrayList2.size()) {
+                return;
+            }
+            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) arrayList2.get(i);
+            if (tL_starGiftCollection.gifts_count > 0) {
+                arrayList.add(tL_starGiftCollection);
+            }
+            i++;
+        }
+    }
+
+    public final void k(int i, TL_stars.SavedStarGift savedStarGift) {
+        boolean z;
+        boolean z2;
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(savedStarGift);
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        ava e = e(i);
+        boolean z3 = true;
+        boolean z4 = false;
+        if (e != null) {
+            ArrayList arrayList2 = e.l;
+            if (!arrayList2.isEmpty()) {
+                int i2 = 0;
+                while (i2 < arrayList2.size()) {
+                    TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) arrayList2.get(i2);
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= arrayList.size()) {
+                            break;
+                        }
+                        if (jva.h(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i3))) {
+                            arrayList2.remove(i2);
+                            e.n = Math.max(0, e.n - 1);
+                            i2--;
+                            break;
+                        }
+                        i3++;
+                    }
+                    i2++;
+                }
+            }
+        }
+        n(i);
+        TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
+        int i4 = this.a;
+        oc7 r1 = oc7.r1(i4);
+        long j = this.b;
+        updatestargiftcollection.peer = r1.i1(j);
+        updatestargiftcollection.collection_id = i;
+        byte b = 2;
+        updatestargiftcollection.flags |= 2;
+        int size = arrayList.size();
+        int i5 = 0;
+        while (i5 < size) {
+            Object obj = arrayList.get(i5);
+            i5++;
+            TL_stars.SavedStarGift savedStarGift3 = (TL_stars.SavedStarGift) obj;
+            l(savedStarGift3, i, z4);
+            if (savedStarGift3.msg_id > 0) {
+                TL_stars.TL_inputSavedStarGiftUser tL_inputSavedStarGiftUser = new TL_stars.TL_inputSavedStarGiftUser();
+                tL_inputSavedStarGiftUser.msg_id = savedStarGift3.msg_id;
+                updatestargiftcollection.delete_stargift.add(tL_inputSavedStarGiftUser);
+                z = z3;
+                z2 = z4;
+            } else if (savedStarGift3.saved_id != 0) {
+                TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
+                tL_inputSavedStarGiftChat.peer = oc7.r1(i4).i1(j);
+                z = z3;
+                z2 = z4;
+                tL_inputSavedStarGiftChat.saved_id = savedStarGift3.saved_id;
+                updatestargiftcollection.delete_stargift.add(tL_inputSavedStarGiftChat);
+            } else {
+                z = z3;
+                z2 = z4;
+                fc4.l("can't convert gift to inputgift to add into the collection");
+            }
+            z3 = z;
+            z4 = z2;
+        }
+        updatestargiftcollection.delete_stargift.size();
+        ConnectionsManager.getInstance(i4).sendRequest(updatestargiftcollection, new wua(this, b));
+        nm7 f = nm7.f(i4);
+        Object[] objArr = new Object[2];
+        objArr[z4 ? 1 : 0] = Long.valueOf(j);
+        objArr[z3 ? 1 : 0] = e;
+        f.k(nm7.I3, objArr);
+    }
+
+    public final void l(TL_stars.SavedStarGift savedStarGift, int i, boolean z) {
+        Iterator it = this.h.values().iterator();
+        while (it.hasNext()) {
+            ((ava) it.next()).r(savedStarGift, i, z);
+        }
+        ava avaVar = this.g;
+        if (avaVar != null) {
+            avaVar.r(savedStarGift, i, z);
+        }
+    }
+
+    public final void m(TL_stars.SavedStarGift savedStarGift, boolean z) {
+        Iterator it = this.h.values().iterator();
+        while (it.hasNext()) {
+            ((ava) it.next()).s(savedStarGift, z);
+        }
+        ava avaVar = this.g;
+        if (avaVar != null) {
+            avaVar.s(savedStarGift, z);
+        }
+    }
+
+    public final void n(int i) {
+        ava e = e(i);
+        TL_stars.TL_starGiftCollection c = c(i);
+        if (e != null) {
+            ArrayList arrayList = e.l;
+            if (c != null) {
+                TL_stars.SavedStarGift savedStarGift = arrayList.isEmpty() ? null : (TL_stars.SavedStarGift) arrayList.get(0);
+                int i2 = c.flags;
+                if (savedStarGift == null) {
+                    c.flags = i2 & (-2);
+                    c.icon = null;
+                } else {
+                    c.flags = i2 | 1;
+                    c.icon = savedStarGift.gift.getDocument();
+                }
+                nm7.f(this.a).k(nm7.J3, Long.valueOf(this.b), this);
+            }
         }
     }
 }

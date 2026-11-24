@@ -1,110 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.content.ServiceConnection;
-import android.os.HandlerThread;
-import android.os.Looper;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class j9f {
-    public static final Object g = new Object();
-    public static j9f h;
-    public static HandlerThread i;
-    public final HashMap a = new HashMap();
-    public final Context b;
-    public volatile o59 c;
-    public final qx4 d;
-    public final short e;
-    public final int f;
+    public Object a;
+    public jgf b;
+    public gif c;
+    public boolean d;
 
-    public j9f(Context context, Looper looper) {
-        f5f f5fVar = new f5f(this, (byte) 1);
-        this.b = context.getApplicationContext();
-        o59 o59Var = new o59(looper, f5fVar);
-        Looper.getMainLooper();
-        this.c = o59Var;
-        this.d = qx4.H();
-        this.e = (short) 5000;
-        this.f = 300000;
-    }
-
-    public static HandlerThread a() {
-        synchronized (g) {
-            HandlerThread handlerThread = i;
-            if (handlerThread != null) {
-                return handlerThread;
+    public final void a(Object obj) {
+        this.d = true;
+        jgf jgfVar = this.b;
+        if (jgfVar != null) {
+            vef vefVar = jgfVar.b;
+            vefVar.getClass();
+            if (obj == null) {
+                obj = a7f.h;
             }
-            HandlerThread handlerThread2 = new HandlerThread("GoogleApiHandler", 9);
-            i = handlerThread2;
-            handlerThread2.start();
-            return i;
+            if (a7f.f.d(vefVar, null, obj)) {
+                a7f.d(vefVar);
+                this.a = null;
+                this.b = null;
+                this.c = null;
+            }
         }
     }
 
-    public final ds2 b(x2f x2fVar, ntd ntdVar, String str) {
-        ds2 ds2Var;
-        HashMap hashMap = this.a;
-        synchronized (hashMap) {
-            h5f h5fVar = (h5f) hashMap.get(x2fVar);
-            if (h5fVar == null) {
-                h5fVar = new h5f(this, x2fVar);
-                h5fVar.a.put(ntdVar, ntdVar);
-                ds2Var = h5fVar.a(str);
-                hashMap.put(x2fVar, h5fVar);
-            } else {
-                this.c.removeMessages(0, x2fVar);
-                if (h5fVar.a.containsKey(ntdVar)) {
-                    String x2fVar2 = x2fVar.toString();
-                    StringBuilder sb = new StringBuilder(x2fVar2.length() + 81);
-                    sb.append("Trying to bind a GmsServiceConnection that was already connected before.  config=");
-                    sb.append(x2fVar2);
-                    throw new IllegalStateException(sb.toString());
+    public final void finalize() {
+        gif gifVar;
+        jgf jgfVar = this.b;
+        if (jgfVar != null) {
+            vef vefVar = jgfVar.b;
+            if (!vefVar.isDone()) {
+                if (a7f.f.d(vefVar, null, new c8e(new i2("The completer object was garbage collected - this future would otherwise never complete. The tag was: ".concat(String.valueOf(this.a)), (byte) 4)))) {
+                    a7f.d(vefVar);
                 }
-                h5fVar.a.put(ntdVar, ntdVar);
-                byte b = h5fVar.b;
-                if (b == 1) {
-                    ntdVar.onServiceConnected(h5fVar.f, h5fVar.d);
-                } else if (b == 2) {
-                    ds2Var = h5fVar.a(str);
-                }
-                ds2Var = null;
-            }
-            if (h5fVar.c) {
-                return ds2.f;
-            }
-            if (ds2Var == null) {
-                ds2Var = new ds2(-1, null, null);
-            }
-            return ds2Var;
-        }
-    }
-
-    public final void c(String str, String str2, ServiceConnection serviceConnection, boolean z) {
-        x2f x2fVar = new x2f(str, str2, z);
-        fre.i(serviceConnection, "ServiceConnection must not be null");
-        HashMap hashMap = this.a;
-        synchronized (hashMap) {
-            h5f h5fVar = (h5f) hashMap.get(x2fVar);
-            if (h5fVar == null) {
-                String x2fVar2 = x2fVar.toString();
-                StringBuilder sb = new StringBuilder(x2fVar2.length() + 50);
-                sb.append("Nonexistent connection status for service config: ");
-                sb.append(x2fVar2);
-                throw new IllegalStateException(sb.toString());
-            }
-            if (!h5fVar.a.containsKey(serviceConnection)) {
-                String x2fVar3 = x2fVar.toString();
-                StringBuilder sb2 = new StringBuilder(x2fVar3.length() + 76);
-                sb2.append("Trying to unbind a GmsServiceConnection  that was not bound before.  config=");
-                sb2.append(x2fVar3);
-                throw new IllegalStateException(sb2.toString());
-            }
-            h5fVar.a.remove(serviceConnection);
-            if (h5fVar.a.isEmpty()) {
-                this.c.sendMessageDelayed(this.c.obtainMessage(0, x2fVar), this.e);
             }
         }
+        if (this.d || (gifVar = this.c) == null) {
+            return;
+        }
+        gifVar.i(null);
     }
 }

@@ -1,28 +1,30 @@
 // default package
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ig7 {
-    public final HashMap a = new HashMap();
+public enum ig7 {
+    c(new int[]{0, 0, 0}, 0),
+    d(new int[]{10, 12, 14}, 1),
+    e(new int[]{9, 11, 13}, 2),
+    f(new int[]{0, 0, 0}, 3),
+    h(new int[]{8, 16, 16}, 4),
+    n(new int[]{0, 0, 0}, 7),
+    r(new int[]{8, 10, 12}, 8),
+    s(new int[]{0, 0, 0}, 5),
+    w(new int[]{0, 0, 0}, 9),
+    x(new int[]{8, 10, 12}, 13);
 
-    public ig7(Set set) {
-        HashMap hashMap = new HashMap();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            hg7 hg7Var = (hg7) it.next();
-            hg7Var.getClass();
-            if (this.a.containsKey(ik5.class)) {
-                Integer num = (Integer) hashMap.get(ik5.class);
-                fre.h(num);
-                if (num.intValue() <= 0) {
-                }
-            }
-            this.a.put(ik5.class, hg7Var.a);
-            hashMap.put(ik5.class, 0);
-        }
+    public final int[] a;
+    public final byte b;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    ig7(int[] iArr, int i) {
+        this.a = iArr;
+        this.b = i;
+    }
+
+    public final int a(ybc ybcVar) {
+        byte b = ybcVar.a;
+        return this.a[b <= 9 ? (char) 0 : b <= 26 ? (char) 1 : (char) 2];
     }
 }

@@ -1,39 +1,29 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final class hb0 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+    public final Integer a;
 
-    public final hb0 a() {
-        hb0 hb0Var = new hb0();
-        hb0Var.c = this.c;
-        hb0Var.d = this.d;
-        hb0Var.e = this.e;
-        hb0Var.f = this.f;
-        hb0Var.b = this.b;
-        return hb0Var;
+    public hb0(Integer num) {
+        this.a = num;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (!(obj instanceof hb0)) {
-            return false;
+        if (obj instanceof hb0) {
+            return this.a.equals(((hb0) obj).a);
         }
-        hb0 hb0Var = (hb0) obj;
-        return this.c == hb0Var.c && this.d == hb0Var.d && this.e == hb0Var.e && this.f == hb0Var.f;
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+        return 1000003 ^ this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "ProductData{productId=" + this.a + "}";
     }
 }

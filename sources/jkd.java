@@ -1,19 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class jkd implements zn7 {
-    public static final jkd a = new jkd();
+import java.util.Iterator;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class jkd extends yhd {
+    public final transient skd c;
+    public final transient mkd d;
+
+    public jkd(skd skdVar, mkd mkdVar) {
+        this.c = skdVar;
+        this.d = mkdVar;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.c.get(obj) != null;
+    }
+
+    @Override // ogd
+    public final int h(Object[] objArr) {
+        return this.d.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.d.listIterator(0);
+    }
+
+    @Override // yhd, ogd
+    public final fhd k() {
+        return this.d;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.c.h;
     }
 }

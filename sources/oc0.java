@@ -1,107 +1,202 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class oc0 implements fv9 {
-    public final /* synthetic */ byte a;
-    public final long b;
-    public final Object c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public oc0(long j, long j2) {
-        this.a = (byte) 2;
-        this.b = j;
-        hv9 hv9Var = j2 == 0 ? hv9.c : new hv9(0L, j2);
-        this.c = new ev9(hv9Var, hv9Var);
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class oc0 extends FrameLayout {
+    public final nc0 E;
+    public vm a;
+    public vm b;
+    public bf0 c;
+    public bf0 d;
+    public j15 e;
+    public j15 f;
+    public final TextView h;
+    public final TLRPC.TL_emojiList n;
+    public final int r;
+    public int s;
+    public int w;
+    public float x;
+    public boolean y;
 
-    @Override // fv9
-    public final boolean c() {
-        switch (this.a) {
-            case 0:
-            case 1:
-                return true;
-            default:
-                return false;
+    public oc0(Context context) {
+        super(context);
+        int i = z8c.t0;
+        this.r = i;
+        this.s = 0;
+        this.w = 0;
+        this.x = 1.0f;
+        this.E = new nc0((o62) this);
+        TLRPC.TL_emojiList a = a(i);
+        this.n = a;
+        this.c = new bf0(context);
+        this.d = new bf0(context);
+        addView(this.c, qoe.e(50, 50, 1));
+        addView(this.d, qoe.e(50, 50, 1));
+        if (!a.document_id.isEmpty()) {
+            vm vmVar = new vm(4, i, a.document_id.get(0).longValue());
+            this.a = vmVar;
+            this.c.setAnimatedEmojiDrawable(vmVar);
+            b();
         }
+        int[] iArr = mc0.d0[this.s];
+        int i2 = iArr[0];
+        int i3 = iArr[1];
+        int i4 = iArr[2];
+        int i5 = iArr[3];
+        j15 j15Var = new j15();
+        this.e = j15Var;
+        j15Var.d(i2, i3, i4, i5);
+        TextView textView = new TextView(context);
+        this.h = textView;
+        textView.setTextSize(1, 12.0f);
+        anb.X(textView, cmb.I7, null);
+        textView.setTypeface(gm.o());
+        textView.setGravity(17);
+        textView.setText(jb6.M0(2131743484, null));
+        addView(textView, qoe.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 
-    @Override // fv9
-    public final boolean d() {
-        byte b = this.a;
-        return false;
-    }
-
-    @Override // fv9
-    public final ev9 f(long j) {
-        long j2;
-        long j3;
-        byte b = this.a;
-        int i = 1;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                qc0 qc0Var = (qc0) obj;
-                ev9 b2 = qc0Var.i[0].b(j);
-                while (true) {
-                    ch2[] ch2VarArr = qc0Var.i;
-                    if (i >= ch2VarArr.length) {
-                        return b2;
+    public static TLRPC.TL_emojiList a(int i) {
+        TLRPC.TL_emojiList tL_emojiList = hs6.d0(i).N1;
+        if (tL_emojiList != null && !tL_emojiList.document_id.isEmpty()) {
+            return tL_emojiList;
+        }
+        ArrayList t0 = hs6.d0(i).t0(5);
+        TLRPC.TL_emojiList tL_emojiList2 = new TLRPC.TL_emojiList();
+        if (t0.isEmpty()) {
+            ArrayList arrayList = hs6.d0(i).t0[1];
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i2);
+                TLRPC.Document document = stickerSetCovered.cover;
+                if (document != null) {
+                    tL_emojiList2.document_id.add(Long.valueOf(document.id));
+                } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+                    TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered;
+                    if (!tL_stickerSetFullCovered.documents.isEmpty()) {
+                        tL_emojiList2.document_id.add(Long.valueOf(tL_stickerSetFullCovered.documents.get(0).id));
                     }
-                    ev9 b3 = ch2VarArr[i].b(j);
-                    if (b3.a.b < b2.a.b) {
-                        b2 = b3;
-                    }
-                    i++;
                 }
-            case 1:
-                ci4 ci4Var = (ci4) obj;
-                ci4Var.k.getClass();
-                lv6 lv6Var = ci4Var.k;
-                long[] jArr = (long[]) lv6Var.b;
-                long[] jArr2 = (long[]) lv6Var.c;
-                int f = g8c.f(jArr, g8c.j((ci4Var.e * j) / 1000000, 0L, ci4Var.j - 1), false);
-                if (f == -1) {
-                    j3 = 0;
-                    j2 = 0;
-                } else {
-                    j2 = jArr[f];
-                    j3 = jArr2[f];
+            }
+        } else {
+            for (int i3 = 0; i3 < t0.size(); i3++) {
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) t0.get(i3);
+                if (!tL_messages_stickerSet.documents.isEmpty()) {
+                    tL_emojiList2.document_id.add(Long.valueOf(tL_messages_stickerSet.documents.get(Math.abs(((int) Utilities.c.nextLong()) % tL_messages_stickerSet.documents.size())).id));
                 }
-                int i2 = ci4Var.e;
-                long j4 = (j2 * 1000000) / i2;
-                long j5 = this.b;
-                hv9 hv9Var = new hv9(j4, j3 + j5);
-                if (j4 == j || f == jArr.length - 1) {
-                    return new ev9(hv9Var, hv9Var);
-                }
-                int i3 = f + 1;
-                return new ev9(hv9Var, new hv9((jArr[i3] * 1000000) / i2, j5 + jArr2[i3]));
-            default:
-                return (ev9) obj;
+            }
         }
+        return tL_emojiList2;
     }
 
-    @Override // fv9
-    public final long h() {
-        switch (this.a) {
-            case 0:
-                return this.b;
-            case 1:
-                return ((ci4) this.c).b();
-            default:
-                return this.b;
+    public final void b() {
+        if (this.y) {
+            return;
         }
+        int i = this.w + 1;
+        TLRPC.TL_emojiList tL_emojiList = this.n;
+        if (i > tL_emojiList.document_id.size() - 1) {
+            this.y = true;
+            return;
+        }
+        vm vmVar = new vm(4, this.r, tL_emojiList.document_id.get(i).longValue());
+        this.b = vmVar;
+        vmVar.m = true;
+        vmVar.u();
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public oc0(long j) {
-        this(j, 0L);
-        this.a = (byte) 2;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        j15 j15Var = this.e;
+        if (j15Var != null) {
+            j15Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        }
+        j15 j15Var2 = this.f;
+        if (j15Var2 != null) {
+            j15Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        }
+        float f = this.x;
+        if (f == 1.0f) {
+            this.e.c.setAlpha(nm7.d4);
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
+            this.c.setAlpha(1.0f);
+            this.c.setScaleX(1.0f);
+            this.c.setScaleY(1.0f);
+            this.d.setAlpha(0.0f);
+        } else {
+            float interpolation = d53.f.getInterpolation(f);
+            this.e.c.setAlpha(nm7.d4);
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
+            this.f.c.setAlpha((int) (255.0f * interpolation));
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.f.c);
+            this.x += 0.064f;
+            float f2 = 1.0f - interpolation;
+            this.c.setAlpha(f2);
+            this.c.setScaleX(f2);
+            this.c.setScaleY(f2);
+            this.c.setPivotY(0.0f);
+            this.d.setAlpha(interpolation);
+            this.d.setScaleX(interpolation);
+            this.d.setScaleY(interpolation);
+            this.d.setPivotY(r1.getMeasuredHeight());
+            if (this.x > 1.0f) {
+                this.x = 1.0f;
+                this.e = this.f;
+                bf0 bf0Var = this.c;
+                this.c = this.d;
+                this.d = bf0Var;
+            }
+            invalidate();
+        }
+        super.dispatchDraw(canvas);
     }
 
-    public /* synthetic */ oc0(Object obj, long j, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = j;
+    public vm getAnimatedEmoji() {
+        return this.a;
+    }
+
+    public hc0 getBackgroundGradient() {
+        hc0 hc0Var = new hc0();
+        int[] iArr = mc0.d0[this.s];
+        hc0Var.c = iArr[0];
+        hc0Var.d = iArr[1];
+        hc0Var.e = iArr[2];
+        hc0Var.f = iArr[3];
+        return hc0Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        gm.d3(this.E, 1000L);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        gm.r(this.E);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int top = (int) (this.h.getTop() * 0.7f);
+        int i3 = (int) ((r3 - top) * 0.7f);
+        ViewGroup.LayoutParams layoutParams = this.c.getLayoutParams();
+        this.c.getLayoutParams().height = top;
+        layoutParams.width = top;
+        ViewGroup.LayoutParams layoutParams2 = this.d.getLayoutParams();
+        this.d.getLayoutParams().height = top;
+        layoutParams2.width = top;
+        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).topMargin = i3;
+        ((FrameLayout.LayoutParams) this.d.getLayoutParams()).topMargin = i3;
     }
 }

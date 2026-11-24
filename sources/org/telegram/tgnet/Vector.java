@@ -4,14 +4,14 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class Vector<T extends TLObject> extends TLObject {
     public static final int constructor = 481674261;
     private final TLDeserializer<T> itemDeserializer;
     public final ArrayList<T> objects = new ArrayList<>();
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Int extends TLObject {
         public int value;
 
@@ -34,7 +34,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Long extends TLObject {
         public long value;
 
@@ -57,7 +57,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Strings extends TLObject {
         public final ArrayList<String> values = new ArrayList<>();
 
@@ -75,7 +75,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     @FunctionalInterface
     public interface TLDeserializer<T extends TLObject> {
         T deserialize(InputSerializedData inputSerializedData, int i, boolean z);
@@ -100,7 +100,7 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "StarGift", i, z);
             return null;
         }
-        Vector<Int> vector = new Vector<>(new fyb((byte) 11));
+        Vector<Int> vector = new Vector<>(new rjb((byte) 17));
         vector.readParams(inputSerializedData, z);
         return vector;
     }
@@ -110,7 +110,7 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "Vector", i, z);
             return null;
         }
-        Vector<Int> vector = new Vector<>(new fyb((byte) 11));
+        Vector<Int> vector = new Vector<>(new rjb((byte) 17));
         vector.readParams(inputSerializedData, z);
         return vector;
     }
@@ -148,22 +148,22 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public static ArrayList<byte[]> deserializeByteArray(InputSerializedData inputSerializedData, boolean z) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new f9c(inputSerializedData, (byte) 3), z);
+        return deserialize(inputSerializedData, new gbc(inputSerializedData, (byte) 3), z);
     }
 
     public static ArrayList<Integer> deserializeInt(InputSerializedData inputSerializedData, boolean z) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new f9c(inputSerializedData, (byte) 1), z);
+        return deserialize(inputSerializedData, new gbc(inputSerializedData, (byte) 1), z);
     }
 
     public static ArrayList<java.lang.Long> deserializeLong(InputSerializedData inputSerializedData, boolean z) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new f9c(inputSerializedData, (byte) 0), z);
+        return deserialize(inputSerializedData, new gbc(inputSerializedData, (byte) 0), z);
     }
 
     public static ArrayList<String> deserializeString(InputSerializedData inputSerializedData, boolean z) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new f9c(inputSerializedData, (byte) 2), z);
+        return deserialize(inputSerializedData, new gbc(inputSerializedData, (byte) 2), z);
     }
 
     public static <T extends TLObject> void serialize(OutputSerializedData outputSerializedData, ArrayList<T> arrayList) {
@@ -176,22 +176,22 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public static void serializeByteArray(OutputSerializedData outputSerializedData, ArrayList<byte[]> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new g9c(outputSerializedData, (byte) 2), arrayList);
+        serialize(outputSerializedData, new hbc(outputSerializedData, (byte) 2), arrayList);
     }
 
     public static void serializeInt(OutputSerializedData outputSerializedData, ArrayList<Integer> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new g9c(outputSerializedData, (byte) 1), arrayList);
+        serialize(outputSerializedData, new hbc(outputSerializedData, (byte) 1), arrayList);
     }
 
     public static void serializeLong(OutputSerializedData outputSerializedData, ArrayList<java.lang.Long> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new g9c(outputSerializedData, (byte) 0), arrayList);
+        serialize(outputSerializedData, new hbc(outputSerializedData, (byte) 0), arrayList);
     }
 
     public static void serializeString(OutputSerializedData outputSerializedData, ArrayList<String> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new g9c(outputSerializedData, (byte) 3), arrayList);
+        serialize(outputSerializedData, new hbc(outputSerializedData, (byte) 3), arrayList);
     }
 
     private static boolean validateSize(int i, int i2, int i3) {
@@ -227,15 +227,15 @@ public class Vector<T extends TLObject> extends TLObject {
         return arrayList;
     }
 
-    public static <T> void serialize(OutputSerializedData outputSerializedData, p8c p8cVar, ArrayList<T> arrayList) {
+    public static <T> void serialize(OutputSerializedData outputSerializedData, qac qacVar, ArrayList<T> arrayList) {
         outputSerializedData.writeInt32(constructor);
         outputSerializedData.writeInt32(arrayList.size());
         for (int i = 0; i < arrayList.size(); i++) {
-            p8cVar.a(arrayList.get(i));
+            qacVar.a(arrayList.get(i));
         }
     }
 
-    private static <T> ArrayList<T> deserialize(InputSerializedData inputSerializedData, q8c q8cVar, boolean z) {
+    private static <T> ArrayList<T> deserialize(InputSerializedData inputSerializedData, rac racVar, boolean z) {
         int readInt32 = inputSerializedData.readInt32(z);
         if (readInt32 != 481674261) {
             TLParseException.doThrowOrLog(inputSerializedData, "Vector", readInt32, z);
@@ -246,10 +246,10 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongSize", readInt32, z);
             return new ArrayList<>();
         }
-        yu7 yu7Var = (ArrayList<T>) new ArrayList(readInt322);
+        zw7 zw7Var = (ArrayList<T>) new ArrayList(readInt322);
         for (int i = 0; i < readInt322; i++) {
-            yu7Var.add(q8cVar.a(Boolean.valueOf(z)));
+            zw7Var.add(racVar.a(Boolean.valueOf(z)));
         }
-        return yu7Var;
+        return zw7Var;
     }
 }

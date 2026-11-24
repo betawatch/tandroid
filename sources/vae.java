@@ -1,44 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vae {
-    public final rrd a;
-    public final String b;
-    public final Object[] c;
-    public final int d;
+public final class vae implements cq7 {
+    public static final vae a = new vae();
 
-    public vae(rrd rrdVar, String str, Object[] objArr) {
-        this.a = rrdVar;
-        this.b = str;
-        this.c = objArr;
-        char charAt = str.charAt(0);
-        if (charAt < 55296) {
-            this.d = charAt;
-            return;
-        }
-        int i = charAt & 8191;
-        int i2 = 1;
-        int i3 = 13;
-        while (true) {
-            int i4 = i2 + 1;
-            char charAt2 = str.charAt(i2);
-            if (charAt2 < 55296) {
-                this.d = i | (charAt2 << i3);
-                return;
-            } else {
-                i |= (charAt2 & 8191) << i3;
-                i3 += 13;
-                i2 = i4;
-            }
-        }
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)));
     }
 
-    public final int a() {
-        int i = this.d;
-        if ((i & 1) != 0) {
-            return 1;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return (i & 4) == 4 ? 3 : 2;
+        throw null;
     }
 }

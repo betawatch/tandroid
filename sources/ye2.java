@@ -1,39 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.graphics.Bitmap;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ye2 extends gb3 {
-    public final on F = new on(null);
-    public final /* synthetic */ kf2 G;
+public final class ye2 extends rob {
+    public final /* synthetic */ byte m2;
 
-    public ye2(kf2 kf2Var) {
-        this.G = kf2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ye2(Object obj, Bitmap bitmap, boolean z, byte b) {
+        super(obj, bitmap, z);
+        this.m2 = b;
     }
 
-    @Override // gb3
-    public final void N() {
-        this.F.e();
-    }
-
-    @Override // gb3
-    public final void O() {
-        this.G.c.invalidate();
-    }
-
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        this.G.c.invalidate();
-    }
-
-    @Override // gb3, b49
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            this.F.d();
-        }
-        super.m();
+    @Override // rob
+    public final boolean W0() {
+        byte b = this.m2;
+        return true;
     }
 }

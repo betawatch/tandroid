@@ -1,315 +1,117 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Map;
+import android.net.Uri;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class aqb {
-    public static final char[] r;
-    public static final int[] s = {8364, kk7.M1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, kk7.W5, 8249, kk7.I5, kk7.W1, 381, kk7.Y1, kk7.Z1, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, kk7.J5, kk7.m2, 382, 376};
-    public final zj1 a;
-    public final yu7 b;
-    public fs5 d;
-    public vpb i;
-    public final upb j;
-    public final tpb k;
-    public final ppb l;
-    public final rpb m;
-    public final qpb n;
-    public String o;
-    public final int[] p;
-    public final int[] q;
-    public qsb c = qsb.a;
-    public boolean e = false;
-    public String f = null;
-    public final StringBuilder g = new StringBuilder(1024);
-    public final StringBuilder h = new StringBuilder(1024);
+    public static final String A;
+    public static final String B;
+    public static final String C;
+    public static final String D;
+    public static final String E;
+    public static final Object p = new Object();
+    public static final bt6 q;
+    public static final String r;
+    public static final String s;
+    public static final String t;
+    public static final String u;
+    public static final String v;
+    public static final String w;
+    public static final String x;
+    public static final String y;
+    public static final String z;
+    public Object a = p;
+    public bt6 b = q;
+    public Object c;
+    public long d;
+    public long e;
+    public long f;
+    public boolean g;
+    public boolean h;
+    public ws6 i;
+    public boolean j;
+    public long k;
+    public long l;
+    public int m;
+    public int n;
+    public long o;
 
     static {
-        char[] cArr = {'\t', '\n', '\r', '\f', ' ', '<', '&'};
-        r = cArr;
-        Arrays.sort(cArr);
+        ps6 ps6Var = new ps6();
+        ps6Var.a = "androidx.media3.common.Timeline";
+        ps6Var.b = Uri.EMPTY;
+        q = ps6Var.a();
+        r = "1";
+        s = "2";
+        t = "3";
+        u = "4";
+        v = "5";
+        w = "6";
+        x = "7";
+        y = "8";
+        z = "9";
+        A = "a";
+        B = "b";
+        C = "c";
+        D = "d";
+        E = "e";
     }
 
-    public aqb(zj1 zj1Var, yu7 yu7Var) {
-        upb upbVar = new upb(2);
-        upbVar.m = new fy();
-        this.j = upbVar;
-        this.k = new tpb(3);
-        this.l = new ppb(5, (byte) 2);
-        this.m = new rpb();
-        this.n = new qpb();
-        this.p = new int[1];
-        this.q = new int[2];
-        this.a = zj1Var;
-        this.b = yu7Var;
+    public final boolean a() {
+        return this.i != null;
     }
 
-    public final void a(qsb qsbVar) {
-        this.a.a();
-        this.c = qsbVar;
-    }
-
-    public final void b(String str) {
-        yu7 yu7Var = this.b;
-        if (yu7Var.size() < 0) {
-            zj1 zj1Var = this.a;
-            yu7Var.add(new ng5(zj1Var.f + zj1Var.e, "Invalid character reference: %s", new Object[]{str}));
+    public final void b(Object obj, bt6 bt6Var, Object obj2, long j, long j2, long j3, boolean z2, boolean z3, ws6 ws6Var, long j4, long j5, int i, int i2, long j6) {
+        this.a = obj;
+        if (bt6Var == null) {
+            bt6Var = q;
         }
+        this.b = bt6Var;
+        this.c = obj2;
+        this.d = j;
+        this.e = j2;
+        this.f = j3;
+        this.g = z2;
+        this.h = z3;
+        this.i = ws6Var;
+        this.k = j4;
+        this.l = j5;
+        this.m = i;
+        this.n = i2;
+        this.o = j6;
+        this.j = false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x002d, code lost:
-    
-        if (java.util.Arrays.binarySearch(aqb.r, r3[r1.e]) >= 0) goto L11;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int[] c(Character ch, boolean z) {
-        int i;
-        char c;
-        int i2;
-        char c2;
-        char c3;
-        char c4;
-        char c5;
-        int[] iArr;
-        int i3;
-        String c6;
-        char c7;
-        int i4;
-        int i5;
-        zj1 zj1Var = this.a;
-        String[] strArr = zj1Var.h;
-        char[] cArr = zj1Var.a;
-        if (!zj1Var.j() && (ch == null || ch.charValue() != zj1Var.i())) {
-            zj1Var.b();
-            if (!zj1Var.j()) {
-            }
-            zj1Var.g = zj1Var.e;
-            boolean k = zj1Var.k("#");
-            int[] iArr2 = this.p;
-            if (k) {
-                boolean l = zj1Var.l("X");
-                if (l) {
-                    zj1Var.b();
-                    int i6 = zj1Var.e;
-                    while (true) {
-                        i5 = zj1Var.e;
-                        iArr = null;
-                        if (i5 >= zj1Var.c) {
-                            c5 = 0;
-                            break;
-                        }
-                        char c8 = cArr[i5];
-                        if (c8 < '0' || c8 > '9') {
-                            c5 = 0;
-                            if (c8 >= 'A') {
-                                if (c8 <= 'F') {
-                                    continue;
-                                }
-                            }
-                            if (c8 < 'a' || c8 > 'f') {
-                                break;
-                            }
-                        }
-                        zj1Var.e = i5 + 1;
-                    }
-                    c6 = zj1.c(cArr, strArr, i6, i5 - i6);
-                } else {
-                    c5 = 0;
-                    iArr = null;
-                    zj1Var.b();
-                    int i7 = zj1Var.e;
-                    while (true) {
-                        i3 = zj1Var.e;
-                        if (i3 >= zj1Var.c || (c7 = cArr[i3]) < '0' || c7 > '9') {
-                            break;
-                        }
-                        zj1Var.e = i3 + 1;
-                    }
-                    c6 = zj1.c(cArr, strArr, i7, i3 - i7);
-                }
-                if (c6.length() == 0) {
-                    b("numeric reference with no numerals");
-                    zj1Var.e = zj1Var.g;
-                    return iArr;
-                }
-                if (!zj1Var.k(";")) {
-                    b("missing semicolon");
-                }
-                try {
-                    i4 = Integer.valueOf(c6, l ? 16 : 10).intValue();
-                } catch (NumberFormatException unused) {
-                    i4 = -1;
-                }
-                if (i4 == -1 || ((i4 >= 55296 && i4 <= 57343) || i4 > 1114111)) {
-                    b("character outside of valid range");
-                    iArr2[c5] = 65533;
-                    return iArr2;
-                }
-                if (i4 >= 128 && i4 < 160) {
-                    b("character is not a valid unicode code point");
-                    i4 = s[i4 - 128];
-                }
-                iArr2[c5] = i4;
-                return iArr2;
-            }
-            zj1Var.b();
-            int i8 = zj1Var.e;
-            while (true) {
-                int i9 = zj1Var.e;
-                if (i9 >= zj1Var.c || (((c4 = cArr[i9]) < 'A' || c4 > 'Z') && ((c4 < 'a' || c4 > 'z') && !Character.isLetter(c4)))) {
-                    break;
-                }
-                zj1Var.e++;
-            }
-            while (true) {
-                i = zj1Var.e;
-                if (i >= zj1Var.c || (c3 = cArr[i]) < '0' || c3 > '9') {
-                    break;
-                }
-                zj1Var.e = i + 1;
-            }
-            String c9 = zj1.c(cArr, strArr, i8, i - i8);
-            boolean m = zj1Var.m(';');
-            Map map = lm2.a;
-            if (!map.containsKey(c9) || !m) {
-                zj1Var.e = zj1Var.g;
-                if (!m) {
-                    return null;
-                }
-                b("invalid named referenece '" + c9 + "'");
-                return null;
-            }
-            if (z && (zj1Var.o() || ((!zj1Var.j() && (c2 = cArr[zj1Var.e]) >= '0' && c2 <= '9') || zj1Var.n('=', '-', '_')))) {
-                zj1Var.e = zj1Var.g;
-                return null;
-            }
-            if (!zj1Var.k(";")) {
-                b("missing semicolon");
-            }
-            String str = (String) map.get(c9);
-            int[] iArr3 = this.q;
-            if (str != null) {
-                i2 = str.length();
-                c = 0;
-                if (i2 == 1) {
-                    iArr3[0] = str.charAt(0);
-                } else {
-                    iArr3[0] = str.charAt(0);
-                    iArr3[1] = str.charAt(1);
-                }
-            } else {
-                c = 0;
-                i2 = 0;
-            }
-            if (i2 == 1) {
-                iArr2[c] = iArr3[c];
-                return iArr2;
-            }
-            if (i2 == 2) {
-                return iArr3;
-            }
-            w26.j("Unexpected characters returned for ".concat(c9));
-            return null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return null;
-    }
-
-    public final vpb d(boolean z) {
-        vpb vpbVar;
-        if (z) {
-            vpbVar = this.j;
-            vpbVar.s();
-        } else {
-            vpbVar = this.k;
-            vpbVar.s();
+        if (obj == null || !aqb.class.equals(obj.getClass())) {
+            return false;
         }
-        this.i = vpbVar;
-        return vpbVar;
+        aqb aqbVar = (aqb) obj;
+        return Objects.equals(this.a, aqbVar.a) && Objects.equals(this.b, aqbVar.b) && Objects.equals(this.c, aqbVar.c) && Objects.equals(this.i, aqbVar.i) && this.d == aqbVar.d && this.e == aqbVar.e && this.f == aqbVar.f && this.g == aqbVar.g && this.h == aqbVar.h && this.j == aqbVar.j && this.k == aqbVar.k && this.l == aqbVar.l && this.m == aqbVar.m && this.n == aqbVar.n && this.o == aqbVar.o;
     }
 
-    public final void e() {
-        fs5.t(this.h);
-    }
-
-    public final void f(char c) {
-        h(String.valueOf(c));
-    }
-
-    public final void g(fs5 fs5Var) {
-        if (this.e) {
-            w26.j("There is an unread token pending!");
-            return;
-        }
-        this.d = fs5Var;
-        this.e = true;
-        int i = fs5Var.b;
-        if (i == 2) {
-            this.o = ((upb) fs5Var).e;
-            return;
-        }
-        if (i != 3 || ((tpb) fs5Var).m == null) {
-            return;
-        }
-        yu7 yu7Var = this.b;
-        if (yu7Var.size() < 0) {
-            zj1 zj1Var = this.a;
-            int i2 = zj1Var.f + zj1Var.e;
-            ng5 ng5Var = new ng5();
-            ng5Var.b = i2;
-            ng5Var.c = "Attributes incorrectly present on end tag";
-            yu7Var.add(ng5Var);
-        }
-    }
-
-    public final void h(String str) {
-        if (this.f == null) {
-            this.f = str;
-            return;
-        }
-        StringBuilder sb = this.g;
-        if (sb.length() == 0) {
-            sb.append(this.f);
-        }
-        sb.append(str);
-    }
-
-    public final void i() {
-        g(this.n);
-    }
-
-    public final void j() {
-        g(this.m);
-    }
-
-    public final void k() {
-        vpb vpbVar = this.i;
-        if (vpbVar.g != null) {
-            vpbVar.A();
-        }
-        g(this.i);
-    }
-
-    public final void l(qsb qsbVar) {
-        yu7 yu7Var = this.b;
-        if (yu7Var.size() < 0) {
-            zj1 zj1Var = this.a;
-            yu7Var.add(new ng5(zj1Var.f + zj1Var.e, "Unexpectedly reached end of file (EOF) in input state [%s]", new Object[]{qsbVar}));
-        }
-    }
-
-    public final void m(qsb qsbVar) {
-        yu7 yu7Var = this.b;
-        if (yu7Var.size() < 0) {
-            zj1 zj1Var = this.a;
-            yu7Var.add(new ng5(zj1Var.f + zj1Var.e, "Unexpected character '%s' in input state [%s]", new Object[]{Character.valueOf(zj1Var.i()), qsbVar}));
-        }
-    }
-
-    public final boolean n() {
-        return this.o != null && this.i.z().equalsIgnoreCase(this.o);
+    public final int hashCode() {
+        int hashCode = (this.b.hashCode() + ((this.a.hashCode() + nm7.t3) * 31)) * 31;
+        Object obj = this.c;
+        int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
+        ws6 ws6Var = this.i;
+        int hashCode3 = (hashCode2 + (ws6Var != null ? ws6Var.hashCode() : 0)) * 31;
+        long j = this.d;
+        int i = (hashCode3 + ((int) (j ^ (j >>> 32)))) * 31;
+        long j2 = this.e;
+        int i2 = (i + ((int) (j2 ^ (j2 >>> 32)))) * 31;
+        long j3 = this.f;
+        int i3 = (((((((i2 + ((int) (j3 ^ (j3 >>> 32)))) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0)) * 31) + (this.j ? 1 : 0)) * 31;
+        long j4 = this.k;
+        int i4 = (i3 + ((int) (j4 ^ (j4 >>> 32)))) * 31;
+        long j5 = this.l;
+        int i5 = (((((i4 + ((int) (j5 ^ (j5 >>> 32)))) * 31) + this.m) * 31) + this.n) * 31;
+        long j6 = this.o;
+        return i5 + ((int) (j6 ^ (j6 >>> 32)));
     }
 }

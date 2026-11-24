@@ -1,45 +1,183 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.scilab.forge.jlatexmath.ParseException;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class qn0 extends pn0 {
-    @Override // pn0, gf0
-    public final void d() {
-        this.c.setLayoutParams(nme.d(40, 40.0f, (k96.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        boolean z = k96.a0;
-        this.d.setLayoutParams(nme.d(-1, -2.0f, (z ? 5 : 3) | 16, z ? 20.0f : 69.0f, 0.0f, z ? 69.0f : 20.0f, 0.0f));
-        boolean z2 = k96.a0;
-        this.e.setLayoutParams(nme.d(-1, -2.0f, (z2 ? 5 : 3) | 16, z2 ? 20.0f : 69.0f, 0.0f, z2 ? 69.0f : 20.0f, 0.0f));
+public final /* synthetic */ class qn0 implements ee, pac, gka, hka, k01, gla, t89, dja, xgc, e59, mm0, gk, ln5 {
+    public final /* synthetic */ byte a;
+
+    public /* synthetic */ qn0(sd1 sd1Var, int i, g41 g41Var) {
+        this.a = (byte) 16;
     }
 
-    public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        zkb.W(this.e, bkb.q5, this.a);
-        boolean z = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        df0 df0Var = this.d;
-        pb0 pb0Var = this.b;
-        if (z) {
-            TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
-            pb0Var.f(26);
-            df0Var.k(k96.H(',', "BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
-            setSubtitle(k96.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]));
-        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            df0Var.k(k96.M0(2131753325, null));
-            pb0Var.f(16);
-            TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
-            int i = tL_prepaidGiveaway.months;
-            if (i == 12) {
-                pb0Var.h(-31392, -2796986);
-            } else if (i == 6) {
-                pb0Var.h(-10703110, -12481584);
-            } else {
-                pb0Var.h(-6631068, -11945404);
-            }
-            setSubtitle(k96.G(prepaidGiveaway.quantity, "BoostingPreparedGiveawaySubscriptionsPlural", k96.G(tL_prepaidGiveaway.months, "Months", new Object[0])));
+    public static /* bridge */ /* synthetic */ RenderNode c(Object obj) {
+        return (RenderNode) obj;
+    }
+
+    public static /* synthetic */ void g(String str) {
+        throw new ParseException(str);
+    }
+
+    @Override // xgc
+    public final void a(View view, RectF rectF) {
+        view.invalidate();
+    }
+
+    @Override // pac
+    public final Object b(c6c c6cVar, View view, Integer num, Float f, Float f2) {
+        byte b = this.a;
+        return Boolean.FALSE;
+    }
+
+    @Override // ln5
+    public final void b0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        Drawable t = imageReceiver.t();
+        if (t instanceof p09) {
+            p09 p09Var = (p09) t;
+            p09Var.K(0);
+            p09Var.stop();
+            p09Var.O(false, 0.0f);
         }
-        be0 be0Var = this.c;
-        be0Var.setImageDrawable(pb0Var);
-        be0Var.setRoundRadius(gl.L(20.0f));
+    }
+
+    @Override // t89
+    public final void call() {
+        throw null;
+    }
+
+    @Override // hka
+    public final void d(Object obj, float f) {
+        switch (this.a) {
+            case 8:
+                wx0 wx0Var = (wx0) obj;
+                wx0Var.c = f;
+                wx0Var.f.invalidate();
+                wx0Var.Y.setAlpha(f);
+                wx0Var.J();
+                wx0Var.H();
+                break;
+            case 27:
+                ((x22) obj).setLoadProgress(f);
+                break;
+            default:
+                ((d32) obj).setSwipeOffsetY(f);
+                break;
+        }
+    }
+
+    @Override // dja
+    public final float f(RecyclerView recyclerView) {
+        return fja.j(recyclerView);
+    }
+
+    @Override // gka
+    public final float get(Object obj) {
+        switch (this.a) {
+            case 7:
+                return ((wx0) obj).c;
+            case 26:
+                return ((x22) obj).c;
+            default:
+                return ((d32) obj).getSwipeOffsetY();
+        }
+    }
+
+    @Override // dja
+    public final RecyclerView h(View view) {
+        return ((ck1) view).a;
+    }
+
+    @Override // gla
+    public final void i(int i) {
+        if (i == 0) {
+            gda.z(3);
+            return;
+        }
+        if (i == 1) {
+            gda.z(0);
+        } else if (i == 2) {
+            gda.z(1);
+        } else if (i == 3) {
+            gda.z(2);
+        }
+    }
+
+    @Override // mm0
+    public final int o(ylb ylbVar, boolean z) {
+        return TLObject.FLAG_31;
+    }
+
+    @Override // dja
+    public final /* synthetic */ void q(RecyclerView recyclerView) {
+        hg9.d(recyclerView);
+    }
+
+    @Override // ee
+    public final void r(he heVar, int i) {
+        switch (this.a) {
+            case 0:
+                heVar.dismiss();
+                break;
+            case 1:
+                heVar.dismiss();
+                break;
+            case 5:
+                heVar.dismiss();
+                break;
+            case 6:
+                heVar.dismiss();
+                break;
+            case 13:
+                heVar.dismiss();
+                break;
+            default:
+                heVar.dismiss();
+                break;
+        }
+    }
+
+    @Override // gk
+    public final void y(int i, int i2, boolean z) {
+        switch (this.a) {
+            case 23:
+                MediaController.w().A0(1, i, z, false);
+                break;
+            default:
+                MediaController.w().A0(1, i, z, false);
+                break;
+        }
+    }
+
+    public /* synthetic */ qn0(byte b) {
+        this.a = b;
+    }
+
+    public /* synthetic */ qn0(Object obj, byte b) {
+        this.a = b;
+    }
+
+    @Override // ln5
+    public final void L(ImageReceiver imageReceiver) {
+    }
+
+    @Override // k01
+    public final void cancel() {
+    }
+
+    @Override // gla
+    public final void m() {
+    }
+
+    @Override // ln5
+    public final void B0(int i, Drawable drawable) {
     }
 }

@@ -3,7 +3,7 @@
 import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class k3 extends c3 implements ListIterator {
     public final /* synthetic */ l3 e;
@@ -19,7 +19,7 @@ public final class k3 extends c3 implements ListIterator {
         l3 l3Var = this.e;
         boolean isEmpty = l3Var.isEmpty();
         c().add(obj);
-        ((wg7) l3Var.h).f++;
+        ((zi7) l3Var.h).f++;
         if (isEmpty) {
             l3Var.h();
         }

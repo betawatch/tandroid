@@ -1,93 +1,143 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import androidx.recyclerview.widget.RecyclerView;
+import java.io.File;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class n62 extends n39 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public String e;
-    public final /* synthetic */ p62 f;
+public final class n62 extends e69 implements vi5 {
+    public Drawable a;
+    public final Path b = new Path();
+    public final Drawable c;
+    public final d62 d;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout e;
 
-    public n62(p62 p62Var, Context context) {
-        this.f = p62Var;
-        this.c = context;
+    public n62(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, d62 d62Var) {
+        this.e = chatAttachAlertPhotoLayout;
+        this.d = d62Var;
+        this.c = chatAttachAlertPhotoLayout.getContext().getResources().getDrawable(R.drawable.camera).mutate();
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f == 0;
+    @Override // vi5
+    public final void a(ucb ucbVar, RectF rectF) {
+        h(null, this.d, ucbVar, rectF);
     }
 
-    @Override // w39
-    public final int b() {
-        return this.d.size() + 2;
+    @Override // e69
+    public final void e(Canvas canvas, RecyclerView recyclerView) {
+        h(canvas, recyclerView, null, null);
     }
 
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 1;
-        }
-        return i == b() - 1 ? 2 : 0;
+    @Override // vi5
+    public final void g(Canvas canvas, RectF rectF) {
+        h(canvas, this.d, null, rectF);
     }
 
-    @Override // w39
-    public final void f() {
-        super.f();
-        this.f.Q();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        Object obj;
-        if (s49Var.f != 0) {
-            return;
-        }
-        jx8 jx8Var = (jx8) s49Var.a;
-        boolean z = i != b() + (-2);
-        int i2 = i - 1;
-        if (i2 >= 0) {
-            ArrayList arrayList = this.d;
-            if (i2 < arrayList.size()) {
-                obj = arrayList.get(i2);
-                if (obj instanceof nx8) {
-                    return;
-                }
-                nx8 nx8Var = (nx8) obj;
-                jx8Var.a(nx8Var, this.e, z);
-                jx8Var.d.a(this.f.x.contains(Integer.valueOf(nx8Var.a)), false);
+    public final void h(Canvas canvas, RecyclerView recyclerView, ucb ucbVar, RectF rectF) {
+        int top;
+        m62 m62Var;
+        m62 m62Var2;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e;
+        if (chatAttachAlertPhotoLayout.e0 || chatAttachAlertPhotoLayout.c0 || !chatAttachAlertPhotoLayout.H.e || chatAttachAlertPhotoLayout.P0 || chatAttachAlertPhotoLayout.Q0) {
+            if (ucbVar != null) {
+                ucbVar.b = true;
                 return;
             }
+            return;
         }
-        obj = null;
-        if (obj instanceof nx8) {
+        u69 K = recyclerView.K(0);
+        if (K != null) {
+            top = K.a.getTop();
+        } else {
+            K = recyclerView.K(chatAttachAlertPhotoLayout.N0);
+            if (K == null) {
+                if (ucbVar != null) {
+                    ucbVar.b = true;
+                    return;
+                }
+                return;
+            }
+            top = (K.a.getTop() - gm.L(2.0f)) - chatAttachAlertPhotoLayout.L0;
+        }
+        int left = K.a.getLeft();
+        int i = chatAttachAlertPhotoLayout.L0;
+        int i2 = left + i;
+        int L = gm.L(2.0f) + (i << 1) + top;
+        if (ucbVar != null) {
+            ucbVar.a(left);
+            ucbVar.a(top);
+            ucbVar.a(i2);
+            ucbVar.a(L);
+        }
+        if (rectF == null || rectF.intersects(left, top, i2, L)) {
+            Drawable drawable = this.c;
+            if (ucbVar != null) {
+                ucbVar.b(this.a != null && ((m62Var2 = chatAttachAlertPhotoLayout.Q) == null || !m62Var2.isInited() || chatAttachAlertPhotoLayout.O));
+                ucbVar.b(chatAttachAlertPhotoLayout.Q != null);
+                ucbVar.b(drawable != null);
+            }
+            if (canvas != null) {
+                float L2 = gm.L(16.0f);
+                Path path = this.b;
+                path.rewind();
+                float f = left;
+                float f2 = top;
+                path.addRoundRect(f, f2, i2 + L2, L + L2, L2, L2, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                if (this.a != null && ((m62Var = chatAttachAlertPhotoLayout.Q) == null || !m62Var.isInited() || chatAttachAlertPhotoLayout.O)) {
+                    this.a.setBounds(left, top, i2, L);
+                    this.a.draw(canvas);
+                }
+                m62 m62Var3 = chatAttachAlertPhotoLayout.Q;
+                if (m62Var3 != null) {
+                    m62Var3.b = true;
+                    canvas.save();
+                    canvas.clipRect(left, top, i2, L);
+                    canvas.translate(f, f2);
+                    chatAttachAlertPhotoLayout.Q.draw(canvas);
+                    canvas.restore();
+                    chatAttachAlertPhotoLayout.Q.b = false;
+                }
+                if (drawable != null) {
+                    int L3 = gm.L(24.0f);
+                    int y = kt6.y(7.0f, i2, L3);
+                    int L4 = gm.L(7.0f) + top;
+                    drawable.setBounds(y, L4, y + L3, L3 + L4);
+                    drawable.draw(canvas);
+                }
+                canvas.restore();
+                chatAttachAlertPhotoLayout.F.invalidate();
+            }
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View jx8Var;
-        Context context = this.c;
-        if (i == 0) {
-            jx8Var = new jx8(this.f.a, context, false);
-        } else if (i != 1) {
-            jx8Var = new View(context);
-            jx8Var.setTag(-33024);
-        } else {
-            jx8Var = new View(context);
-            jx8Var.setLayoutParams(new e49(-1, gl.L(56.0f)));
-            jx8Var.setTag(-33024);
+    public final void i() {
+        Bitmap bitmap;
+        try {
+            bitmap = BitmapFactory.decodeFile(new File(a.h(), "cthumb.jpg").getAbsolutePath());
+        } catch (Throwable unused) {
+            bitmap = null;
         }
-        return new y29(jx8Var);
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e;
+        if (bitmap != null) {
+            this.a = new BitmapDrawable(chatAttachAlertPhotoLayout.getContext().getResources(), bitmap);
+        } else {
+            this.a = chatAttachAlertPhotoLayout.getContext().getResources().getDrawable(R.drawable.icplaceholder).mutate();
+        }
+        d62 d62Var = chatAttachAlertPhotoLayout.F;
+        if (d62Var != null) {
+            d62Var.invalidate();
+        }
     }
 }

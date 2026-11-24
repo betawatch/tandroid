@@ -8,15 +8,15 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class HiddenActivity extends Activity {
     public ResultReceiver a;
     public boolean b;
 
     public final void a(ResultReceiver resultReceiver, String str, String str2) {
-        t13 t13Var = y13.a;
-        t13.c(resultReceiver, str, str2);
+        e33 e33Var = j33.a;
+        e33.c(resultReceiver, str, str2);
         finish();
     }
 
@@ -25,8 +25,8 @@ public class HiddenActivity extends Activity {
         super.onActivityResult(i, i2, intent);
         ResultReceiver resultReceiver = this.a;
         if (resultReceiver != null) {
-            t13 t13Var = y13.a;
-            Bundle j = tb4.j(i, "FAILURE_RESPONSE", "ACTIVITY_REQUEST_CODE", false);
+            e33 e33Var = j33.a;
+            Bundle j = td4.j(i, "FAILURE_RESPONSE", "ACTIVITY_REQUEST_CODE", false);
             j.putParcelable("RESULT_DATA", intent);
             resultReceiver.send(i2, j);
         }

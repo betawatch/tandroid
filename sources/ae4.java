@@ -1,42 +1,73 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ae4 extends u26 {
-    public final /* synthetic */ xe2 r;
+public final /* synthetic */ class ae4 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ me4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ae4(xe2 xe2Var, Context context) {
-        super(context);
-        this.r = xe2Var;
+    public /* synthetic */ ae4(me4 me4Var, byte b) {
+        this.a = b;
+        this.b = me4Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0032, code lost:
-    
-        if ((gl.L(21.0f) + r6.getRight()) > ((he4) r5.r.J).getMeasuredWidth()) goto L12;
-     */
-    @Override // u26, o49
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, n49 n49Var) {
-        int j = j(o(), view);
-        if (j > 0 || (j == 0 && view.getLeft() - gl.L(21.0f) < 0)) {
-            j += gl.L(60.0f);
-        } else {
-            if (j >= 0) {
-                if (j == 0) {
-                }
-            }
-            j -= gl.L(60.0f);
-        }
-        int k = k(p(), view);
-        int max = Math.max(kk7.J2, m((int) Math.sqrt((k * k) + (j * j))));
-        if (max > 0) {
-            n49Var.b(-j, -k, max, this.j);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final me4 me4Var = this.b;
+        switch (b) {
+            case 0:
+                me4Var.getClass();
+                final byte b2 = 1;
+                gm.c3(new Runnable() { // from class: yd4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        me4 me4Var2 = me4Var;
+                        switch (b3) {
+                            case 0:
+                                me4Var2.F = 0;
+                                if (tL_error2 == null) {
+                                    ts2.u(null, 2131750679, c41.b0(me4Var2), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                me4Var2.g0(tL_error2);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b3 = 0;
+                gm.c3(new Runnable() { // from class: yd4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        me4 me4Var2 = me4Var;
+                        switch (b32) {
+                            case 0:
+                                me4Var2.F = 0;
+                                if (tL_error2 == null) {
+                                    ts2.u(null, 2131750679, c41.b0(me4Var2), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                me4Var2.g0(tL_error2);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
     }
 }

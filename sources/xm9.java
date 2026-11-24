@@ -1,41 +1,62 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xm9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ on9 b;
+public final class xm9 extends FrameLayout {
+    public final Paint a;
+    public final xo8 b;
+    public final RectF c;
+    public final float d;
+    public float e;
 
-    public /* synthetic */ xm9(on9 on9Var, byte b) {
-        this.a = b;
-        this.b = on9Var;
+    public xm9(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        xo8 xo8Var = new xo8(this, (byte) 1);
+        this.b = xo8Var;
+        this.c = new RectF();
+        this.d = (gm.L(3.0f) * 0.5f) + gm.L(5.0f);
+        a(paint, 0.2f);
+        a(xo8Var, 1.0f);
+        setWillNotDraw(false);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        on9 on9Var = this.b;
-        switch (b) {
-            case 0:
-                on9Var.n(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                on9Var.a(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 2:
-                on9Var.x0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pha phaVar = on9Var.F;
-                if (phaVar.getTitleTextView() != null) {
-                    phaVar.getTitleTextView().invalidate();
-                    break;
-                }
-                break;
-            default:
-                on9Var.X = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                on9Var.f.requestLayout();
-                break;
+    public static void a(Paint paint, float f) {
+        paint.setColor(-1);
+        paint.setAlpha(Math.round(f * 255.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(gm.L(3.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float width = getWidth();
+        float f = this.d;
+        RectF rectF = this.c;
+        rectF.set(f, f, width - f, getHeight() - f);
+        canvas.drawOval(rectF, this.a);
+        canvas.drawArc(rectF, -90.0f, this.e * 360.0f, false, this.b);
+    }
+
+    public Paint getPaint() {
+        return this.b;
+    }
+
+    public void setProgress(float f) {
+        float max = Math.max(0.0f, Math.min(1.0f, f));
+        if (this.e == max) {
+            return;
         }
+        this.e = max;
+        invalidate();
     }
 }

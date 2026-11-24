@@ -1,101 +1,54 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.text.Editable;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class yib implements ActionMode.Callback {
-    public final ActionMode.Callback a;
-    public final TextView b;
-    public Class c;
-    public Method d;
-    public boolean e;
-    public boolean f = false;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class yib extends FrameLayout {
+    public TextView a;
+    public CheckBoxSquare b;
+    public boolean c;
 
-    public yib(ActionMode.Callback callback, TextView textView) {
-        this.a = callback;
-        this.b = textView;
+    public final void a(String str, boolean z, boolean z2) {
+        this.a.setText(str);
+        this.b.a(z, false);
+        this.c = z2;
+        setWillNotDraw(!z2);
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        return this.a.onActionItemClicked(actionMode, menuItem);
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        return this.a.onCreateActionMode(actionMode, menu);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        this.a.onDestroyActionMode(actionMode);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        TextView textView = this.b;
-        Context context = textView.getContext();
-        PackageManager packageManager = context.getPackageManager();
-        boolean z = this.f;
-        Class<?> cls = Integer.TYPE;
-        if (!z) {
-            this.f = true;
-            try {
-                Class<?> cls2 = Class.forName("com.android.internal.view.menu.MenuBuilder");
-                this.c = cls2;
-                this.d = cls2.getDeclaredMethod("removeItemAt", cls);
-                this.e = true;
-            } catch (ClassNotFoundException | NoSuchMethodException unused) {
-                this.c = null;
-                this.d = null;
-                this.e = false;
-            }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(jb6.a0 ? 0.0f : gm.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (jb6.a0 ? gm.L(20.0f) : 0), getMeasuredHeight() - 1, cmb.j0);
         }
-        try {
-            Method declaredMethod = (this.e && this.c.isInstance(menu)) ? this.d : menu.getClass().getDeclaredMethod("removeItemAt", cls);
-            for (int size = menu.size() - 1; size >= 0; size--) {
-                MenuItem item = menu.getItem(size);
-                if (item.getIntent() != null && "android.intent.action.PROCESS_TEXT".equals(item.getIntent().getAction())) {
-                    declaredMethod.invoke(menu, Integer.valueOf(size));
-                }
-            }
-            ArrayList arrayList = new ArrayList();
-            if (context instanceof Activity) {
-                for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain"), 0)) {
-                    if (!context.getPackageName().equals(resolveInfo.activityInfo.packageName)) {
-                        ActivityInfo activityInfo = resolveInfo.activityInfo;
-                        if (activityInfo.exported) {
-                            String str = activityInfo.permission;
-                            if (str != null && context.checkSelfPermission(str) != 0) {
-                            }
-                        }
-                    }
-                    arrayList.add(resolveInfo);
-                }
-            }
-            for (int i = 0; i < arrayList.size(); i++) {
-                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i);
-                MenuItem add = menu.add(0, 0, i + 100, resolveInfo2.loadLabel(packageManager));
-                Intent putExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
-                ActivityInfo activityInfo2 = resolveInfo2.activityInfo;
-                add.setIntent(putExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);
-            }
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException unused2) {
-        }
-        return this.a.onPrepareActionMode(actionMode, menu);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.h);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setChecked(boolean z) {
+        this.b.a(z, true);
     }
 }

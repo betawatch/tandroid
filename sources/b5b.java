@@ -1,63 +1,38 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class b5b extends oec {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ y5b c;
+public final class b5b extends FrameLayout {
+    public a58 a;
+    public long b;
+    public ArrayList c;
+    public boolean d;
+    public final /* synthetic */ eab e;
 
-    public /* synthetic */ b5b(y5b y5bVar, Context context, byte b) {
-        this.a = b;
-        this.c = y5bVar;
-        this.b = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b5b(eab eabVar, Context context) {
+        super(context);
+        this.e = eabVar;
     }
 
-    @Override // oec
-    public final void b(View view, int i, int i2) {
-        switch (this.a) {
-            case 0:
-                ((t5b) view).b(i2);
-                break;
-            default:
-                ((t5b) view).b(i2);
-                break;
+    public final void a(boolean z) {
+        if (this.d != z) {
+            this.d = z;
+            invalidate();
+            this.a.setIsVisible(z);
+            this.e.A();
         }
     }
 
-    @Override // oec
-    public final View d(int i) {
-        byte b = this.a;
-        Context context = this.b;
-        y5b y5bVar = this.c;
-        switch (b) {
-        }
-        return new t5b(y5bVar, context);
-    }
-
-    @Override // oec
-    public final int e() {
-        switch (this.a) {
-            case 0:
-                return 2;
-            default:
-                return 1;
-        }
-    }
-
-    @Override // oec
-    public final int h(int i) {
-        switch (this.a) {
-            case 0:
-                if (i == 0) {
-                    return 0;
-                }
-                return this.c.G1;
-            default:
-                return 5;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.d) {
+            super.dispatchDraw(canvas);
         }
     }
 }

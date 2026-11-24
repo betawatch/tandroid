@@ -3,7 +3,7 @@
 import android.content.DialogInterface;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class g5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
             case 2:
                 break;
             case 3:
-                aue.a.edit().putInt("dismissed_count", aue.a.getInt("dismissed_count", 0) + 1).apply();
+                dwe.a.edit().putInt("dismissed_count", dwe.a.getInt("dismissed_count", 0) + 1).apply();
                 break;
             case 4:
                 break;
@@ -32,12 +32,12 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
             case 6:
                 break;
             default:
-                vvc.i = false;
+                wxc.i = false;
                 break;
         }
     }
 
-    public /* synthetic */ g5(jc jcVar, boolean[] zArr, byte b) {
+    public /* synthetic */ g5(jd jdVar, boolean[] zArr, byte b) {
         this.a = b;
     }
 

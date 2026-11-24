@@ -6,10 +6,10 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class MediaError extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<MediaError> CREATOR = new j9d(28);
+    public static final Parcelable.Creator<MediaError> CREATOR = new lbd(28);
     public final String a;
     public final long b;
     public final Integer c;
@@ -26,20 +26,20 @@ public class MediaError extends b4 implements ReflectedParcelable {
     }
 
     public static MediaError b(JSONObject jSONObject) {
-        return new MediaError(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, "ERROR"), jSONObject.optLong("requestId"), jSONObject.has("detailedErrorCode") ? Integer.valueOf(jSONObject.optInt("detailedErrorCode")) : null, id1.a("reason", jSONObject), jSONObject.has("customData") ? jSONObject.optJSONObject("customData") : null);
+        return new MediaError(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, "ERROR"), jSONObject.optLong("requestId"), jSONObject.has("detailedErrorCode") ? Integer.valueOf(jSONObject.optInt("detailedErrorCode")) : null, qe1.a("reason", jSONObject), jSONObject.has("customData") ? jSONObject.optJSONObject("customData") : null);
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         JSONObject jSONObject = this.f;
         this.e = jSONObject == null ? null : jSONObject.toString();
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.q(parcel, 3, 8);
+        int r = mve.r(parcel, 20293);
+        mve.l(parcel, 2, this.a);
+        mve.q(parcel, 3, 8);
         parcel.writeLong(this.b);
-        jte.i(parcel, 4, this.c);
-        jte.l(parcel, 5, this.d);
-        jte.l(parcel, 6, this.e);
-        jte.s(parcel, r);
+        mve.i(parcel, 4, this.c);
+        mve.l(parcel, 5, this.d);
+        mve.l(parcel, 6, this.e);
+        mve.s(parcel, r);
     }
 }

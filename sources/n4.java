@@ -20,7 +20,7 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.voip.FabBackgroundDrawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class n4 extends View {
     public boolean E;
@@ -38,12 +38,12 @@ public final class n4 extends View {
     public ValueAnimator Q;
     public m4 R;
     public boolean S;
-    public ff0 T;
+    public fg0 T;
     public final Paint U;
-    public final oy8 V;
+    public final p09 V;
     public final Drawable W;
     public final FabBackgroundDrawable a;
-    public final xl5 a0;
+    public final xn5 a0;
     public final FabBackgroundDrawable b;
     public final Paint b0;
     public final Drawable c;
@@ -52,8 +52,8 @@ public final class n4 extends View {
     public final StaticLayout e;
     public final StaticLayout f;
     public final StaticLayout h;
-    public final n41 n;
-    public final n41 r;
+    public final u51 n;
+    public final u51 r;
     public k4 s;
     public final int w;
     public float x;
@@ -62,8 +62,8 @@ public final class n4 extends View {
     public n4(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.n = new n41(this);
-        this.r = new n41(this);
+        this.n = new u51(this);
+        this.r = new u51(this);
         this.E = true;
         this.F = true;
         this.N = new Rect();
@@ -71,16 +71,16 @@ public final class n4 extends View {
         this.U = new Paint(1);
         Paint paint2 = new Paint(1);
         this.b0 = paint2;
-        xl5 xl5Var = new xl5(gl.L(45.0f), gl.L(50.0f), gl.L(8.0f), 4);
-        this.a0 = xl5Var;
-        xl5Var.h = true;
-        xl5Var.i = 0.0f;
-        xl5Var.d = 0.0f;
-        xl5Var.b(0.0d);
+        xn5 xn5Var = new xn5(gm.L(45.0f), gm.L(50.0f), gm.L(8.0f), 4);
+        this.a0 = xn5Var;
+        xn5Var.h = true;
+        xn5Var.i = 0.0f;
+        xn5Var.d = 0.0f;
+        xn5Var.b(0.0d);
         paint2.setColor(-16777216);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.J = ViewConfiguration.get(activity).getScaledTouchSlop();
-        int L = gl.L(60.0f);
+        int L = gm.L(60.0f);
         this.w = L;
         FabBackgroundDrawable fabBackgroundDrawable = new FabBackgroundDrawable();
         this.a = fabBackgroundDrawable;
@@ -91,11 +91,11 @@ public final class n4 extends View {
         fabBackgroundDrawable2.setBounds(0, 0, L, L);
         fabBackgroundDrawable.setBounds(0, 0, L, L);
         TextPaint textPaint = new TextPaint(1);
-        textPaint.setTextSize(gl.L(11.0f));
+        textPaint.setTextSize(gm.L(11.0f));
         textPaint.setColor(-1);
-        String M0 = k96.M0(2131754715, null);
-        String M02 = k96.M0(2131751591, null);
-        String M03 = k96.M0(2131745858, null);
+        String M0 = jb6.M0(2131754715, null);
+        String M02 = jb6.M0(2131751540, null);
+        String M03 = jb6.M0(2131745784, null);
         int measureText = (int) textPaint.measureText(M0);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         this.e = new StaticLayout(M0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
@@ -105,15 +105,15 @@ public final class n4 extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        oy8 oy8Var = new oy8(R.raw.call_accept, gl.L(48.0f), gl.L(48.0f), true, null);
-        this.V = oy8Var;
-        oy8Var.F(1);
-        oy8Var.K(90);
-        oy8Var.M(this);
+        p09 p09Var = new p09(R.raw.call_accept, gm.L(48.0f), gm.L(48.0f), true, null);
+        this.V = p09Var;
+        p09Var.F(1);
+        p09Var.K(90);
+        p09Var.M(this);
         this.W = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        ff0 h0 = bkb.h0(gl.L(52.0f), 0, bm2.o(-1, 76));
+        fg0 h0 = cmb.h0(gm.L(52.0f), 0, on2.p(-1, 76));
         this.T = h0;
         h0.setCallback(this);
     }
@@ -138,9 +138,9 @@ public final class n4 extends View {
     @Override // android.view.View
     public final void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
-        ff0 ff0Var = this.T;
-        if (ff0Var != null) {
-            ff0Var.jumpToCurrentState();
+        fg0 fg0Var = this.T;
+        if (fg0Var != null) {
+            fg0Var.jumpToCurrentState();
         }
     }
 
@@ -162,14 +162,14 @@ public final class n4 extends View {
             boolean z = this.E;
             float f2 = this.x;
             if (z) {
-                float L = (gl.L(2.0f) * 0.04f) + f2;
+                float L = (gm.L(2.0f) * 0.04f) + f2;
                 this.x = L;
-                if (L > gl.L(4.0f)) {
-                    this.x = gl.L(4.0f);
+                if (L > gm.L(4.0f)) {
+                    this.x = gm.L(4.0f);
                     this.E = false;
                 }
             } else {
-                float L2 = f2 - (gl.L(2.0f) * 0.04f);
+                float L2 = f2 - (gm.L(2.0f) * 0.04f);
                 this.x = L2;
                 if (L2 < 0.0f) {
                     this.x = 0.0f;
@@ -179,38 +179,38 @@ public final class n4 extends View {
             boolean z2 = this.F;
             float f3 = this.y;
             if (z2) {
-                float L3 = (gl.L(4.0f) * 0.03f) + f3;
+                float L3 = (gm.L(4.0f) * 0.03f) + f3;
                 this.y = L3;
-                if (L3 > gl.L(10.0f)) {
-                    this.y = gl.L(10.0f);
+                if (L3 > gm.L(10.0f)) {
+                    this.y = gm.L(10.0f);
                     this.F = false;
                 }
             } else {
-                float L4 = f3 - (gl.L(5.0f) * 0.03f);
+                float L4 = f3 - (gm.L(5.0f) * 0.03f);
                 this.y = L4;
-                if (L4 < gl.L(5.0f)) {
-                    this.y = gl.L(5.0f);
+                if (L4 < gm.L(5.0f)) {
+                    this.y = gm.L(5.0f);
                     this.F = true;
                 }
             }
             invalidate();
         }
-        this.y = (gl.L(8.0f) * 0.005f) + this.y;
+        this.y = (gm.L(8.0f) * 0.005f) + this.y;
         int measuredWidth = getMeasuredWidth();
         int i = this.w;
-        int x = ls6.x(46.0f, measuredWidth, i);
-        int L5 = gl.L(40.0f);
-        int measuredWidth2 = getMeasuredWidth() - gl.L(46.0f);
-        int L6 = gl.L(40.0f) + i;
-        this.O.set(x, L5, measuredWidth2, L6);
+        int y = kt6.y(46.0f, measuredWidth, i);
+        int L5 = gm.L(40.0f);
+        int measuredWidth2 = getMeasuredWidth() - gm.L(46.0f);
+        int L6 = gm.L(40.0f) + i;
+        this.O.set(y, L5, measuredWidth2, L6);
         canvas.save();
-        canvas.translate(0.0f, gl.L(40.0f));
+        canvas.translate(0.0f, gm.L(40.0f));
         canvas.save();
         float a = this.r.a(0.1f);
         float f4 = i;
         float f5 = f4 / 2.0f;
         canvas.scale(a, a, r6.centerX(), r6.top + f5);
-        canvas.translate(((this.L + getMeasuredWidth()) - gl.L(46.0f)) - f4, 0.0f);
+        canvas.translate(((this.L + getMeasuredWidth()) - gm.L(46.0f)) - f4, 0.0f);
         boolean z3 = this.S;
         FabBackgroundDrawable fabBackgroundDrawable = this.b;
         if (z3) {
@@ -232,49 +232,49 @@ public final class n4 extends View {
         }
         canvas.save();
         StaticLayout staticLayout = this.f;
-        canvas.translate(f5 - (staticLayout.getWidth() / f), gl.L(4.0f) + i);
+        canvas.translate(f5 - (staticLayout.getWidth() / f), gm.L(4.0f) + i);
         staticLayout.draw(canvas);
         canvas.restore();
         if (this.H) {
-            this.T.setBounds(gl.L(4.0f), gl.L(4.0f), i - gl.L(4.0f), i - gl.L(4.0f));
+            this.T.setBounds(gm.L(4.0f), gm.L(4.0f), i - gm.L(4.0f), i - gm.L(4.0f));
             this.T.draw(canvas);
         }
         canvas.restore();
-        int L7 = gl.L(46.0f);
-        int L8 = gl.L(40.0f);
-        int L9 = gl.L(46.0f) + i;
-        int L10 = gl.L(40.0f) + i;
+        int L7 = gm.L(46.0f);
+        int L8 = gm.L(40.0f);
+        int L9 = gm.L(46.0f) + i;
+        int L10 = gm.L(40.0f) + i;
         this.N.set(L7, L8, L9, L10);
         canvas.save();
         float a2 = this.n.a(0.1f);
         canvas.scale(a2, a2, r6.centerX(), r6.top + f5);
-        canvas.translate(this.K + gl.L(46.0f), 0.0f);
+        canvas.translate(this.K + gm.L(46.0f), 0.0f);
         if (!this.S) {
-            xl5 xl5Var = this.a0;
-            xl5Var.c();
+            xn5 xn5Var = this.a0;
+            xn5Var.c();
             float f6 = (int) f5;
-            xl5Var.a(canvas, f6, f6, this);
+            xn5Var.a(canvas, f6, f6, this);
         }
         this.a.draw(canvas);
         if (this.S) {
             canvas.save();
             StaticLayout staticLayout2 = this.h;
-            canvas.translate(f5 - (staticLayout2.getWidth() / f), gl.L(4.0f) + i);
+            canvas.translate(f5 - (staticLayout2.getWidth() / f), gm.L(4.0f) + i);
             staticLayout2.draw(canvas);
             canvas.restore();
         } else {
             canvas.save();
             StaticLayout staticLayout3 = this.e;
-            canvas.translate(f5 - (staticLayout3.getWidth() / f), gl.L(4.0f) + i);
+            canvas.translate(f5 - (staticLayout3.getWidth() / f), gm.L(4.0f) + i);
             staticLayout3.draw(canvas);
             canvas.restore();
         }
         canvas.save();
-        canvas.translate(gl.L(6.0f), gl.L(6.0f));
+        canvas.translate(gm.L(6.0f), gm.L(6.0f));
         this.V.draw(canvas);
         canvas.restore();
         if (!this.H) {
-            this.T.setBounds(gl.L(4.0f), gl.L(4.0f), i - gl.L(4.0f), i - gl.L(4.0f));
+            this.T.setBounds(gm.L(4.0f), gm.L(4.0f), i - gm.L(4.0f), i - gm.L(4.0f));
             this.T.draw(canvas);
         }
         canvas.restore();
@@ -321,11 +321,11 @@ public final class n4 extends View {
     public final void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int i3 = this.w;
-        this.M = (getMeasuredWidth() / 2.0f) - ((i3 / 2.0f) + gl.L(46.0f));
-        int D = ug8.D(28.0f, i3, 2);
-        this.c.setBounds(D, D, gl.L(28.0f) + D, gl.L(28.0f) + D);
-        this.d.setBounds(D, D, gl.L(28.0f) + D, gl.L(28.0f) + D);
-        float L = gl.L(3.0f);
+        this.M = (getMeasuredWidth() / 2.0f) - ((i3 / 2.0f) + gm.L(46.0f));
+        int D = wi8.D(28.0f, i3, 2);
+        this.c.setBounds(D, D, gm.L(28.0f) + D, gm.L(28.0f) + D);
+        this.d.setBounds(D, D, gm.L(28.0f) + D, gm.L(28.0f) + D);
+        float L = gm.L(3.0f);
         Paint paint = this.U;
         paint.setStrokeWidth(L);
         paint.setColor(-1);
@@ -342,8 +342,8 @@ public final class n4 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             int action = motionEvent.getAction();
-            n41 n41Var = this.n;
-            n41 n41Var2 = this.r;
+            u51 u51Var = this.n;
+            u51 u51Var2 = this.r;
             if (action != 0) {
                 if (action != 1) {
                     if (action == 2) {
@@ -362,7 +362,7 @@ public final class n4 extends View {
                         ofFloat.start();
                         this.P = ofFloat;
                         if (this.R != null && (Math.abs(y) < f || this.K > this.M * 0.8f)) {
-                            ((fgc) this.R).b();
+                            ((gic) this.R).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.L, 0.0f);
@@ -370,35 +370,35 @@ public final class n4 extends View {
                         ofFloat2.start();
                         this.Q = ofFloat2;
                         if (this.R != null && (Math.abs(y) < f || (-this.L) > this.M * 0.8f)) {
-                            ((fgc) this.R).a();
+                            ((gic) this.R).a();
                         }
                     }
                 }
                 getParent().requestDisallowInterceptTouchEvent(false);
                 this.G = false;
-                n41Var2.c(false);
-                n41Var.c(false);
+                u51Var2.c(false);
+                u51Var.c(false);
                 setPressed(false);
                 return false;
             }
             motionEvent.getX();
             this.I = motionEvent.getY();
             if (this.P == null && this.O.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.T = bkb.h0(gl.L(52.0f), 0, this.S ? bkb.w0(null, bkb.h6, false) : -51130);
+                this.T = cmb.h0(gm.L(52.0f), 0, this.S ? cmb.w0(null, cmb.h6, false) : -51130);
                 this.G = true;
                 this.H = true;
-                n41Var2.c(true);
-                n41Var.c(false);
+                u51Var2.c(true);
+                u51Var.c(false);
                 setPressed(true);
                 invalidate();
                 return true;
             }
             if (this.Q == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.T = bkb.h0(gl.L(52.0f), 0, -11677354);
+                this.T = cmb.h0(gm.L(52.0f), 0, -11677354);
                 this.G = true;
                 this.H = false;
-                n41Var2.c(false);
-                n41Var.c(true);
+                u51Var2.c(false);
+                u51Var.c(true);
                 setPressed(true);
                 ValueAnimator valueAnimator = this.Q;
                 if (valueAnimator != null) {
@@ -423,11 +423,11 @@ public final class n4 extends View {
             return;
         }
         this.V.start();
-        xl5 xl5Var = this.a0;
-        if (!xl5Var.e) {
+        xn5 xn5Var = this.a0;
+        if (!xn5Var.e) {
             invalidate();
         }
-        xl5Var.e = true;
+        xn5Var.e = true;
         fabBackgroundDrawable.setColor(-1041108);
         ValueAnimator ofInt = ValueAnimator.ofInt(0, 60, 0, 0, 60, 0, 0, 0, 0);
         this.c0 = ofInt;

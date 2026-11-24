@@ -1,54 +1,25 @@
 // default package
 
-import android.os.Bundle;
-import java.util.Map;
+import android.content.Context;
+import android.os.Handler;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class yp9 implements cq9 {
-    public final oo a;
-    public boolean b;
-    public Bundle c;
-    public final ycb d;
-
-    public yp9(oo ooVar, tdc tdcVar) {
-        ooVar.getClass();
-        this.a = ooVar;
-        this.d = new ycb(new db4(tdcVar, (byte) 3));
+public final class yp9 extends hd3 {
+    @Override // hd3
+    public final void a(Context context, int i, x40 x40Var, Handler handler, c74 c74Var, ArrayList arrayList) {
+        arrayList.add(new xp9(context, this.b, handler, c74Var, x40Var));
     }
 
-    public final void a() {
-        if (this.b) {
-            return;
-        }
-        Bundle c = this.a.c("androidx.lifecycle.internal.SavedStateHandlesProvider");
-        Bundle bundle = new Bundle();
-        Bundle bundle2 = this.c;
-        if (bundle2 != null) {
-            bundle.putAll(bundle2);
-        }
-        if (c != null) {
-            bundle.putAll(c);
-        }
-        this.c = bundle;
-        this.b = true;
-    }
-
-    @Override // cq9
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        Bundle bundle2 = this.c;
-        if (bundle2 != null) {
-            bundle.putAll(bundle2);
-        }
-        for (Map.Entry entry : ((zp9) this.d.getValue()).b.entrySet()) {
-            String str = (String) entry.getKey();
-            Bundle c = ((wp9) entry.getValue()).e.c();
-            if (!rp5.a(c, Bundle.EMPTY)) {
-                bundle.putBundle(str, c);
-            }
-        }
-        this.b = false;
-        return bundle;
+    @Override // hd3
+    public final void c(Context context, int i, Handler handler, c74 c74Var, ArrayList arrayList) {
+        wm6 wm6Var = new wm6(context);
+        wm6Var.c = this.b;
+        wm6Var.d = (short) 5000;
+        wm6Var.e = handler;
+        wm6Var.f = c74Var;
+        wm6Var.g = (byte) 50;
+        arrayList.add(new zp9(wm6Var));
     }
 }

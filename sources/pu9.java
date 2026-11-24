@@ -1,313 +1,265 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class pu9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class pu9 extends r59 {
+    public final /* synthetic */ byte f3;
+    public final /* synthetic */ Object g3;
 
-    public /* synthetic */ pu9(byte b, Object obj, boolean z) {
-        this.a = b;
-        this.c = obj;
-        this.b = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pu9(byte b, Context context, Object obj) {
+        super(context, null);
+        this.f3 = b;
+        this.g3 = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        byte b = this.a;
-        Object obj = this.c;
-        switch (b) {
-            case 2:
-                ((d8a) obj).n = null;
-                break;
-            case 3:
-                ((nfa) obj).R1 = null;
-                break;
-            case 13:
-                p3c p3cVar = (p3c) obj;
-                AnimatorSet animatorSet = p3cVar.J;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    p3cVar.J = null;
-                    break;
+    @Override // r59
+    public final boolean I0(View view, float f, float f2) {
+        switch (this.f3) {
+            case 4:
+                return true;
+            case 7:
+                if (!((vgc) this.g3).n) {
+                    return true;
                 }
-                break;
-            case 14:
-                j6c j6cVar = (j6c) obj;
-                AnimatorSet animatorSet2 = j6cVar.n1;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    j6cVar.n1 = null;
-                    break;
-                }
-                break;
-            case 15:
-                x7c x7cVar = (x7c) obj;
-                AnimatorSet animatorSet3 = x7cVar.s1;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    x7cVar.s1 = null;
-                    break;
-                }
-                break;
-            case 17:
-                pqc pqcVar = (pqc) obj;
-                AnimatorSet animatorSet4 = pqcVar.f;
-                if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    pqcVar.f = null;
-                    break;
-                }
-                break;
+                int L = gm.L(6.0f);
+                RectF rectF = ((tgc) view).c;
+                float f3 = L;
+                return rectF.left - f3 >= f || rectF.right + f3 <= f;
             default:
-                super.onAnimationCancel(animator);
+                return super.I0(view, f, f2);
+        }
+    }
+
+    @Override // r59
+    public final boolean S0() {
+        switch (this.f3) {
+            case 6:
+                return getAdapter() != null && ((y9c) this.g3).B1 && getAdapter().b() <= 2;
+            default:
+                return super.S0();
+        }
+    }
+
+    @Override // r59
+    public final Integer W0(int i) {
+        int i2;
+        switch (this.f3) {
+            case 0:
+                return 0;
+            case 1:
+            default:
+                return super.W0(i);
+            case 2:
+                i2 = ((SessionsActivity) this.g3).terminateAllSessionsRow;
+                ylb ylbVar = this.o2;
+                return i == i2 ? Integer.valueOf(cmb.p1(0.1f, cmb.v0(cmb.o7, ylbVar))) : Integer.valueOf(cmb.v0(cmb.h6, ylbVar));
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
+        switch (this.f3) {
+            case 7:
+                super.addView(view, i, layoutParams);
+                if (!((vgc) this.g3).W) {
+                    view.setScaleX(1.0f);
+                    view.setScaleY(1.0f);
+                    view.setAlpha(1.0f);
+                    break;
+                } else {
+                    view.setScaleX(0.3f);
+                    view.setScaleY(0.3f);
+                    view.setAlpha(0.0f);
+                    break;
+                }
+            default:
+                super.addView(view, i, layoutParams);
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        u95 u95Var;
-        Drawable[] drawableArr;
-        Drawable drawable;
-        float f;
-        byte b = this.a;
-        boolean z = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                qu9 qu9Var = (qu9) obj;
-                qu9Var.w = z ? 1.0f : 0.0f;
-                if (qu9Var.T) {
-                    qu9Var.O.invalidate();
-                    break;
-                }
-                break;
+    @Override // r59, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.f3) {
             case 1:
-                px9 px9Var = (px9) obj;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = px9Var.w;
-                float f2 = z ? 1.0f : 0.0f;
-                px9Var.M = f2;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(f2);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(s33.g.getInterpolation(px9Var.M));
-                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
-                for (int i = 0; i < itemsCount; i++) {
-                    float s = gl.s(px9Var.M, i, itemsCount, 4.0f);
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i).setTranslationY((1.0f - s) * gl.L(-12.0f));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i).setAlpha(s);
-                }
-                px9Var.O = null;
-                break;
-            case 2:
-                d8a d8aVar = (d8a) obj;
-                if (d8aVar.n != null && (u95Var = d8aVar.r) != null) {
-                    if (!z) {
-                        u95Var.setVisibility(4);
+                sj3 sj3Var = (sj3) this.g3;
+                u46 u46Var = sj3Var.f0;
+                sc3 sc3Var = sj3Var.d0;
+                ov9 ov9Var = sj3Var.e0;
+                if (ov9Var != null && sc3Var != null && u46Var != null && ov9Var.n0) {
+                    canvas.save();
+                    invalidate();
+                    int b = ov9Var.b() - 1;
+                    int i = 0;
+                    while (true) {
+                        if (i < getChildCount()) {
+                            View childAt = getChildAt(i);
+                            if (RecyclerView.R(childAt) == b) {
+                                canvas.clipRect(0.0f, 0.0f, getWidth(), childAt.getTranslationY() + childAt.getBottom());
+                            } else {
+                                i++;
+                            }
+                        }
                     }
-                    d8aVar.n = null;
+                }
+                super.dispatchDraw(canvas);
+                if (ov9Var != null && sc3Var != null && u46Var != null && ov9Var.n0) {
+                    canvas.restore();
+                }
+                if (ov9Var != null && ov9Var.p0 != null) {
+                    canvas.save();
+                    canvas.translate(ov9Var.p0.getLeft(), ov9Var.p0.getTranslationY() + ov9Var.p0.getTop());
+                    ov9Var.p0.draw(canvas);
+                    canvas.restore();
                     break;
                 }
                 break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // r59, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 0:
+                LinearLayout linearLayout = ((xu9) this.g3).f;
+                if (linearLayout == null || linearLayout.getAlpha() <= 0.5f) {
+                    break;
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.f3) {
+            case 5:
+                x2b x2bVar = (x2b) this.g3;
+                eq eqVar = x2bVar.f2;
+                if (!(view instanceof y0b) || !x2bVar.L1) {
+                    break;
+                } else {
+                    int b = x2bVar.m1.T(view).b();
+                    canvas.save();
+                    ArrayList arrayList = (ArrayList) eqVar.d;
+                    canvas.rotate(arrayList.isEmpty() ? 0.0f : ((Float) arrayList.get(b - ((b / 6) * 6))).floatValue(), (view.getMeasuredWidth() / 2.0f) + view.getLeft(), (view.getMeasuredHeight() / 2.0f) + view.getTop());
+                    ArrayList arrayList2 = (ArrayList) eqVar.e;
+                    float floatValue = arrayList2.isEmpty() ? 0.0f : ((Float) arrayList2.get(b - ((b / 6) * 6))).floatValue();
+                    ArrayList arrayList3 = (ArrayList) eqVar.f;
+                    canvas.translate(floatValue, arrayList3.isEmpty() ? 0.0f : ((Float) arrayList3.get(b - ((b / 6) * 6))).floatValue());
+                    boolean drawChild = super.drawChild(canvas, view, j);
+                    canvas.restore();
+                    invalidate();
+                    break;
+                }
+                break;
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        byte b = this.f3;
+        ylb ylbVar = this.o2;
+        Object obj = this.g3;
+        switch (b) {
             case 3:
-                nfa nfaVar = (nfa) obj;
-                if (nfaVar.R1 != null) {
-                    nfaVar.R1 = null;
-                    if (!z) {
-                        nfaVar.E0.setVisibility(4);
-                        break;
-                    }
+                return super.onInterceptTouchEvent(motionEvent) || hx2.e().g(motionEvent, ((mia) obj).l1, null, ylbVar);
+            case 4:
+            default:
+                return super.onInterceptTouchEvent(motionEvent);
+            case 5:
+                x2b x2bVar = (x2b) obj;
+                if (x2bVar.L1) {
+                    return super.onInterceptTouchEvent(motionEvent);
+                }
+                return super.onInterceptTouchEvent(motionEvent) || hx2.e().g(motionEvent, x2bVar.m1, x2bVar.g2, ylbVar);
+        }
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.f3) {
+            case 4:
+                ((kpa) this.g3).D0();
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+        }
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        byte b = this.f3;
+        Object obj = this.g3;
+        switch (b) {
+            case 3:
+                if (!((mia) obj).q1) {
+                    super.requestLayout();
+                    break;
                 }
                 break;
             case 4:
-                qfa qfaVar = (qfa) obj;
-                ValueAnimator valueAnimator = qfaVar.B0;
-                if (valueAnimator != null && valueAnimator.equals(animator)) {
-                    qfaVar.C0 = z ? 1.0f : 0.0f;
-                    qfaVar.B0 = null;
-                    break;
-                }
+            default:
+                super.requestLayout();
                 break;
             case 5:
-                r5b r5bVar = (r5b) obj;
-                if (z) {
-                    r5bVar.setVisibility(8);
-                }
-                r5bVar.c = null;
-                break;
-            case 6:
-                t7b t7bVar = (t7b) obj;
-                if (!z) {
-                    t7bVar.W0.setVisibility(8);
-                }
-                t7bVar.g2 = null;
-                break;
-            case 7:
-                m8b m8bVar = (m8b) obj;
-                m8bVar.J0.e();
-                m8bVar.f0 = z ? m8bVar.x.c : 0.0f;
-                y28 currentPeerView = m8bVar.o0.getCurrentPeerView();
-                if (currentPeerView != null) {
-                    currentPeerView.invalidate();
-                }
-                m8bVar.w.invalidate();
-                m8bVar.v1 = null;
-                break;
-            case 8:
-                super.onAnimationEnd(animator);
-                anb anbVar = (anb) obj;
-                anbVar.N = z ? 1.0f : 0.0f;
-                anbVar.invalidate();
-                break;
-            case 9:
-                ((jpb) obj).E = z ? 1.0f : 0.0f;
-                break;
-            case 10:
-                kxb kxbVar = (kxb) obj;
-                long j = kxbVar.f;
-                if (kxbVar.e0 == animator) {
-                    kxbVar.V = z ? 1.0f : 0.0f;
-                    kxbVar.m();
-                    kxbVar.W = false;
-                    ImageView imageView = kxbVar.I;
-                    boolean z2 = kxbVar.T;
-                    int i2 = R.drawable.menu_sidebar_top;
-                    imageView.setImageResource(z2 ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-                    ImageView imageView2 = kxbVar.H;
-                    if (!kxbVar.T) {
-                        i2 = R.drawable.menu_sidebar_left;
-                    }
-                    imageView2.setImageResource(i2);
-                    kxbVar.e0 = null;
-                    na7.q1(kxbVar.e).X3.edit().putBoolean(ls6.n(j, "topicssidetabs"), kxbVar.U).putBoolean(ls6.n(j, "topicssidetabsb"), kxbVar.T).apply();
-                    Boolean bool = kxbVar.d0;
-                    if (bool != null && z != bool.booleanValue()) {
-                        boolean booleanValue = kxbVar.d0.booleanValue();
-                        kxbVar.d0 = null;
-                        kxbVar.a(booleanValue);
-                    }
-                    gl.d3(new cib(this, (byte) 14));
+                if (!((x2b) obj).a2) {
+                    super.requestLayout();
                     break;
                 }
-                break;
-            case 11:
-                fxb fxbVar = (fxb) obj;
-                fxbVar.G = z ? 1.0f : 0.0f;
-                fxbVar.h();
-                break;
-            case 12:
-                jxb jxbVar = (jxb) obj;
-                jxbVar.V = z ? 1.0f : 0.0f;
-                jxbVar.h();
-                jxbVar.g();
-                break;
-            case 13:
-                p3c p3cVar = (p3c) obj;
-                AnimatorSet animatorSet = p3cVar.J;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (z) {
-                        p3cVar.e.setVisibility(4);
-                        break;
-                    } else {
-                        p3cVar.b.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            case 14:
-                j6c j6cVar = (j6c) obj;
-                AnimatorSet animatorSet2 = j6cVar.n1;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!z) {
-                        j6cVar.o1.setVisibility(4);
-                    }
-                    j6cVar.n1 = null;
-                    break;
-                }
-                break;
-            case 15:
-                x7c x7cVar = (x7c) obj;
-                AnimatorSet animatorSet3 = x7cVar.s1;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    if (!z) {
-                        x7cVar.r1.setVisibility(4);
-                    }
-                    x7cVar.s1 = null;
-                    break;
-                }
-                break;
-            case 16:
-                dic dicVar = (dic) obj;
-                dicVar.w = null;
-                if (z) {
-                    TextView[] textViewArr = dicVar.h;
-                    TextView textView = textViewArr[0];
-                    textViewArr[0] = textViewArr[1];
-                    textViewArr[1] = textView;
-                    textView.setVisibility(8);
-                }
-                if (!dicVar.H && (drawable = (drawableArr = dicVar.e)[1]) != null) {
-                    drawableArr[0] = drawable;
-                    drawableArr[1] = null;
-                }
-                dicVar.H = false;
-                if (!dicVar.P) {
-                    dicVar.n = dicVar.r;
-                }
-                dicVar.s = 0.0f;
-                dicVar.invalidate();
-                break;
-            case 17:
-                pqc pqcVar = (pqc) obj;
-                AnimatorSet animatorSet4 = pqcVar.f;
-                if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    pqcVar.f = null;
-                    if (!z) {
-                        pqcVar.setBackgroundColor(0);
-                        break;
-                    }
-                }
-                break;
-            case 18:
-                nsc nscVar = (nsc) obj;
-                ps0 ps0Var = nscVar.W;
-                if (!nscVar.U) {
-                    ps0Var.setVisibility(8);
-                    ps0Var.setText("");
-                }
-                f = z ? 1.0f : 0.0f;
-                nscVar.V = f;
-                ps0Var.setAlpha(f);
-                nscVar.invalidate();
-                if (nscVar.U) {
-                    ps0Var.requestFocus();
-                    gl.F3(ps0Var);
-                    break;
-                } else {
-                    ps0Var.clearFocus();
-                    gl.t1(ps0Var);
-                    break;
-                }
-            default:
-                wt wtVar = (wt) obj;
-                ps0 ps0Var2 = wtVar.c0;
-                if (!wtVar.a0) {
-                    ps0Var2.setVisibility(8);
-                }
-                f = z ? 1.0f : 0.0f;
-                wtVar.b0 = f;
-                ps0Var2.setAlpha(f);
-                wtVar.j(wtVar.b0);
-                wtVar.S.setTranslationX(gl.L(56.0f) * wtVar.b0);
-                wtVar.P.setTranslationX(gl.L(112.0f) * wtVar.b0);
-                wtVar.invalidate();
                 break;
         }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        switch (this.f3) {
+            case 7:
+                super.setAlpha(f);
+                ((vgc) this.g3).invalidate();
+                break;
+            default:
+                super.setAlpha(f);
+                break;
+        }
+    }
+
+    @Override // r59, android.view.View
+    public final void setTranslationY(float f) {
+        switch (this.f3) {
+            case 6:
+                super.setTranslationY(f);
+                getLocationInWindow(new int[2]);
+                break;
+            default:
+                super.setTranslationY(f);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pu9(KeyEvent.Callback callback, Context context, ylb ylbVar, byte b) {
+        super(context, ylbVar);
+        this.f3 = b;
+        this.g3 = callback;
     }
 }

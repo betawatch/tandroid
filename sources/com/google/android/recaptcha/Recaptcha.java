@@ -6,7 +6,7 @@ import com.google.android.recaptcha.internal.zzdz;
 import com.google.android.recaptcha.internal.zzeq;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class Recaptcha {
     public static final Recaptcha INSTANCE = new Recaptcha();
@@ -18,19 +18,19 @@ public final class Recaptcha {
         return zzdz.zze(application, str);
     }
 
-    public static /* synthetic */ Object getClient-BWLJW6A$default(Recaptcha recaptcha, Application application, String str, long j, fw2 fw2Var, int i, Object obj) {
+    public static /* synthetic */ Object getClient-BWLJW6A$default(Recaptcha recaptcha, Application application, String str, long j, px2 px2Var, int i, Object obj) {
         if ((i & 4) != 0) {
             j = 10000;
         }
-        return recaptcha.getClient-BWLJW6A(application, str, j, fw2Var);
+        return recaptcha.getClient-BWLJW6A(application, str, j, px2Var);
     }
 
     public static final Task<RecaptchaTasksClient> getTasksClient(Application application, String str) {
         return zzdz.zzc(application, str, 10000L);
     }
 
-    public final Object fetchClient(Application application, String str, fw2 fw2Var) {
-        return zzdz.zzd(application, str, fw2Var);
+    public final Object fetchClient(Application application, String str, px2 px2Var) {
+        return zzdz.zzd(application, str, px2Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x002c  */
@@ -38,31 +38,31 @@ public final class Recaptcha {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object getClient-BWLJW6A(Application application, String str, long j, fw2 fw2Var) {
+    public final Object getClient-BWLJW6A(Application application, String str, long j, px2 px2Var) {
         Recaptcha$getClient$1 recaptcha$getClient$1;
         int i;
         try {
-            if (fw2Var instanceof Recaptcha$getClient$1) {
-                recaptcha$getClient$1 = (Recaptcha$getClient$1) fw2Var;
+            if (px2Var instanceof Recaptcha$getClient$1) {
+                recaptcha$getClient$1 = (Recaptcha$getClient$1) px2Var;
                 int i2 = recaptcha$getClient$1.zzc;
                 if ((i2 & TLObject.FLAG_31) != 0) {
                     recaptcha$getClient$1.zzc = i2 - TLObject.FLAG_31;
                     Object obj = recaptcha$getClient$1.zza;
                     i = recaptcha$getClient$1.zzc;
                     if (i != 0) {
-                        qse.b(obj);
+                        tue.b(obj);
                         recaptcha$getClient$1.zzc = 1;
                         obj = zzdz.zzb(application, str, j, recaptcha$getClient$1);
-                        bx2 bx2Var = bx2.a;
-                        if (obj == bx2Var) {
-                            return bx2Var;
+                        ly2 ly2Var = ly2.a;
+                        if (obj == ly2Var) {
+                            return ly2Var;
                         }
                     } else {
                         if (i != 1) {
-                            sc8.j("call to 'resume' before 'invoke' with coroutine");
+                            dq9.m("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        qse.b(obj);
+                        tue.b(obj);
                     }
                     return (zzeq) obj;
                 }
@@ -71,9 +71,9 @@ public final class Recaptcha {
             }
             return (zzeq) obj;
         } catch (Throwable th) {
-            return new sa9(th);
+            return new sc9(th);
         }
-        recaptcha$getClient$1 = new Recaptcha$getClient$1(this, fw2Var);
+        recaptcha$getClient$1 = new Recaptcha$getClient$1(this, px2Var);
         Object obj2 = recaptcha$getClient$1.zza;
         i = recaptcha$getClient$1.zzc;
     }

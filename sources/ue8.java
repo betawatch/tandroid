@@ -1,59 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.os.Handler;
+import android.os.Message;
+import java.util.TreeMap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class ue8 extends gb2 {
-    public final /* synthetic */ byte Ld;
-    public final /* synthetic */ int Md;
-    public final /* synthetic */ int Nd;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ue8 implements Handler.Callback {
+    public final mx6 a;
+    public final sz4 b;
+    public t63 f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
+    public final TreeMap e = new TreeMap();
+    public final Handler d = hac.q(this);
+    public final qs c = new qs((byte) 1);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ue8(Context context, int i, wjb wjbVar, int i2, int i3, byte b) {
-        super(context, i, false, null, wjbVar);
-        this.Ld = b;
-        this.Md = i2;
-        this.Nd = i3;
+    public ue8(t63 t63Var, sz4 sz4Var, mx6 mx6Var) {
+        this.f = t63Var;
+        this.b = sz4Var;
+        this.a = mx6Var;
     }
 
-    @Override // gb2
-    public final void j1(Canvas canvas) {
-        switch (this.Ld) {
-            case 0:
-                this.S4 = 0;
-                this.T4 = this.Q4.size() - 1;
-                super.j1(canvas);
-                break;
-            default:
-                this.S4 = 0;
-                this.T4 = this.Q4.size() - 1;
-                super.j1(canvas);
-                break;
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        if (!this.r) {
+            if (message.what != 1) {
+                return false;
+            }
+            se8 se8Var = (se8) message.obj;
+            long j = se8Var.a;
+            long j2 = se8Var.b;
+            Long valueOf = Long.valueOf(j2);
+            TreeMap treeMap = this.e;
+            Long l = (Long) treeMap.get(valueOf);
+            if (l == null) {
+                treeMap.put(Long.valueOf(j2), Long.valueOf(j));
+                return true;
+            }
+            if (l.longValue() > j) {
+                treeMap.put(Long.valueOf(j2), Long.valueOf(j));
+            }
         }
-    }
-
-    @Override // gb2, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.Ld) {
-            case 0:
-                setMeasuredDimension(this.Md, this.Nd);
-                break;
-            default:
-                setMeasuredDimension(this.Md, this.Nd);
-                break;
-        }
-    }
-
-    @Override // gb2, android.view.View
-    public final void setPressed(boolean z) {
-        byte b = this.Ld;
-    }
-
-    private final void h4(boolean z) {
-    }
-
-    private final void i4(boolean z) {
+        return true;
     }
 }

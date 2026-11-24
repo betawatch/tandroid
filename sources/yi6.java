@@ -1,61 +1,8 @@
 // default package
 
-import android.os.Parcel;
-import android.os.RemoteException;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class yi6 {
-    public final i5d a;
-
-    public yi6(i5d i5dVar) {
-        fre.h(i5dVar);
-        this.a = i5dVar;
-    }
-
-    public final void a(lj9 lj9Var) {
-        i5d i5dVar = this.a;
-        try {
-            yi5 yi5Var = (yi5) lj9Var.b;
-            rhf rhfVar = (rhf) i5dVar;
-            Parcel R = rhfVar.R();
-            sgd.c(R, yi5Var);
-            rhfVar.V(R, 18);
-        } catch (RemoteException e) {
-            fvc.g(e);
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof yi6)) {
-            return false;
-        }
-        try {
-            i5d i5dVar = this.a;
-            i5d i5dVar2 = ((yi6) obj).a;
-            rhf rhfVar = (rhf) i5dVar;
-            Parcel R = rhfVar.R();
-            sgd.c(R, i5dVar2);
-            Parcel Q = rhfVar.Q(R, 16);
-            boolean z = Q.readInt() != 0;
-            Q.recycle();
-            return z;
-        } catch (RemoteException e) {
-            fvc.g(e);
-            return false;
-        }
-    }
-
-    public final int hashCode() {
-        try {
-            rhf rhfVar = (rhf) this.a;
-            Parcel Q = rhfVar.Q(rhfVar.R(), 17);
-            int readInt = Q.readInt();
-            Q.recycle();
-            return readInt;
-        } catch (RemoteException e) {
-            fvc.g(e);
-            return 0;
-        }
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class yi6 extends View {
 }

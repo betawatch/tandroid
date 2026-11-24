@@ -1,80 +1,80 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class x09 extends FrameLayout {
-    public final tl a;
-    public final /* synthetic */ y09 b;
+    public final TextView a;
+    public final TextView b;
+    public final RadioButton c;
+    public byte d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x09(y09 y09Var, Context context) {
+    public x09(Context context, ylb ylbVar) {
         super(context);
-        this.b = y09Var;
+        this.d = (byte) 50;
+        RadioButton radioButton = new RadioButton(context);
+        this.c = radioButton;
+        radioButton.setSize(gm.L(20.0f));
+        anb.O(radioButton, cmb.C5, cmb.D5, ylbVar);
+        boolean z = jb6.a0;
+        addView(radioButton, qoe.d(22, 22.0f, (z ? 5 : 3) | 48, z ? 0 : 18, 14.0f, z ? 18 : 0, 0.0f));
         TextView textView = new TextView(context);
-        textView.setTextSize(1, 16.0f);
-        zkb.X(textView, bkb.F6, y09Var.getResourceProvider());
-        textView.setText(k96.M0(2131751338, null));
-        addView(textView, nme.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
-        this.a = new tl(gl.L(24.0f), this);
+        this.a = textView;
+        anb.X(textView, cmb.i5, ylbVar);
+        wi8.w(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setGravity((jb6.a0 ? 5 : 3) | 16);
+        boolean z2 = jb6.a0;
+        addView(textView, qoe.d(-2, -2.0f, (z2 ? 5 : 3) | 48, z2 ? 21 : 51, 13.0f, z2 ? 51 : 21, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        anb.X(textView2, cmb.x6, ylbVar);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity((jb6.a0 ? 5 : 3) | 16);
+        textView2.setVisibility(8);
+        boolean z3 = jb6.a0;
+        addView(textView2, qoe.d(-2, -2.0f, (z3 ? 5 : 3) | 48, z3 ? 21 : 51, 37.0f, z3 ? 51 : 21, 0.0f));
     }
 
-    public final void a(boolean z) {
-        int i;
-        int i2;
-        y09 y09Var = this.b;
-        i = ((d) y09Var).currentAccount;
-        String S = hq6.d0(i).S();
-        tl tlVar = this.a;
-        if (S != null && S.startsWith("animated_")) {
-            try {
-                tlVar.j(Long.parseLong(S.substring(9)), z);
-                return;
-            } catch (Exception unused) {
-            }
-        }
-        i2 = ((d) y09Var).currentAccount;
-        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hq6.d0(i2).r.get(S);
-        if (tL_availableReaction != null) {
-            tlVar.i(tL_availableReaction.static_icon, z);
-        }
+    public final void a(int i, int i2) {
+        this.c.b(i, i2);
     }
 
-    public final void b() {
-        int width = getWidth();
-        tl tlVar = this.a;
-        tlVar.setBounds((width - tlVar.s) - gl.L(21.0f), (getHeight() - tlVar.s) / 2, getWidth() - gl.L(21.0f), (getHeight() + tlVar.s) / 2);
+    public final void b(CharSequence charSequence, boolean z) {
+        this.a.setText(charSequence);
+        this.b.setVisibility(8);
+        this.c.a(z, false);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        b();
-        this.a.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.c.f);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(50.0f), TLObject.FLAG_30));
+        int i3;
+        TextView textView = this.b;
+        if (textView.getVisibility() == 0) {
+            textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i) - gm.L(72.0f), TLObject.FLAG_30), i2);
+        }
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
+        int L = gm.L(this.d);
+        if (textView.getVisibility() == 0) {
+            i3 = textView.getMeasuredHeight() + gm.L(4.0f);
+        } else {
+            i3 = 0;
+        }
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(L + i3, TLObject.FLAG_30));
     }
 }

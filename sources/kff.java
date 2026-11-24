@@ -1,51 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class kff extends f7f {
-    public static final kff r = new kff(0, new Object[0]);
-    public final transient Object[] h;
-    public final transient int n;
+public abstract class kff {
+    protected int zza;
 
-    public kff(int i, Object[] objArr) {
-        super((byte) 2);
-        this.h = objArr;
-        this.n = i;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i) {
-        q1f.a(i, this.n);
-        Object obj = this.h[i];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // f7f, x8d
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.h;
-        int i = this.n;
-        System.arraycopy(objArr2, 0, objArr, 0, i);
-        return i;
-    }
-
-    @Override // x8d
-    public final int i() {
-        return this.n;
-    }
-
-    @Override // x8d
-    public final int j() {
-        return 0;
-    }
-
-    @Override // x8d
-    public final Object[] k() {
-        return this.h;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.n;
-    }
+    public abstract int a(uif uifVar);
 }

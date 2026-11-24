@@ -1,21 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final class y94 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ ba4 d;
+    public final byte a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final byte e;
 
-    public y94(ba4 ba4Var, boolean z, String str, boolean z2) {
-        this.d = ba4Var;
-        this.a = z;
-        this.b = str;
-        this.c = z2;
+    /* JADX WARN: Multi-variable type inference failed */
+    public y94(int i, int i2, String str, String str2) {
+        this.a = (byte) 1;
+        this.b = i;
+        this.c = str;
+        this.d = str2;
+        this.e = i2;
     }
 
-    public final void a() {
-        ba4.K.c(new s91(this, this.a, this.b, this.c));
+    /* JADX WARN: Multi-variable type inference failed */
+    public y94(int i) {
+        this.a = i;
     }
 }

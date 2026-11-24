@@ -1,81 +1,69 @@
 // default package
 
-import sun.misc.Unsafe;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class uq2 {
-    public static final /* synthetic */ long a;
-    public static final /* synthetic */ long b;
-    public static final /* synthetic */ int c = 0;
-    private volatile /* synthetic */ Object _next$volatile;
-    private volatile /* synthetic */ Object _prev$volatile;
+public final class uq2 extends b4 {
+    public static final Parcelable.Creator<uq2> CREATOR = new jid(6);
+    public final int a;
+    public final int b;
+    public final int c;
+    public final boolean d;
 
-    static {
-        Unsafe unsafe = ex.a;
-        a = unsafe.objectFieldOffset(uq2.class.getDeclaredField("_next$volatile"));
-        b = unsafe.objectFieldOffset(uq2.class.getDeclaredField("_prev$volatile"));
+    public uq2(int i, int i2, int i3, boolean z) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = z;
     }
 
-    public uq2(nv9 nv9Var) {
-        this._prev$volatile = nv9Var;
-    }
-
-    public final void b() {
-        ex.a.putObjectVolatile(this, b, (Object) null);
-    }
-
-    public final uq2 c() {
-        Object objectVolatile = ex.a.getObjectVolatile(this, a);
-        if (objectVolatile == bd3.a) {
-            return null;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof uq2)) {
+            return false;
         }
-        return (uq2) objectVolatile;
+        uq2 uq2Var = (uq2) obj;
+        return this.a == uq2Var.a && this.b == uq2Var.b && this.c == uq2Var.c && this.d == uq2Var.d;
     }
 
-    public abstract boolean d();
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c), Boolean.valueOf(this.d)});
+    }
 
-    public final void e() {
-        uq2 uq2Var;
-        Unsafe unsafe;
-        if (c() == null) {
-            return;
-        }
-        while (true) {
-            Unsafe unsafe2 = ex.a;
-            long j = b;
-            uq2 uq2Var2 = (uq2) unsafe2.getObjectVolatile(this, j);
-            while (uq2Var2 != null && uq2Var2.d()) {
-                uq2Var2 = (uq2) ex.a.getObjectVolatile(uq2Var2, j);
-            }
-            uq2 c2 = c();
-            c2.getClass();
-            do {
-                uq2Var = c2;
-                if (!uq2Var.d()) {
-                    break;
-                } else {
-                    c2 = uq2Var.c();
-                }
-            } while (c2 != null);
-            while (true) {
-                Object objectVolatile = ex.a.getObjectVolatile(uq2Var, j);
-                uq2 uq2Var3 = ((uq2) objectVolatile) == null ? null : uq2Var2;
-                do {
-                    unsafe = ex.a;
-                    if (unsafe.compareAndSwapObject(uq2Var, b, objectVolatile, uq2Var3)) {
-                        break;
-                    }
-                } while (unsafe.getObjectVolatile(uq2Var, j) == objectVolatile);
-            }
-            if (uq2Var2 != null) {
-                unsafe.putObjectVolatile(uq2Var2, a, uq2Var);
-            }
-            if (!uq2Var.d() || uq2Var.c() == null) {
-                if (uq2Var2 == null || !uq2Var2.d()) {
-                    return;
-                }
-            }
-        }
+    public final String toString() {
+        int i = this.a;
+        int length = String.valueOf(i).length();
+        int i2 = this.b;
+        int length2 = String.valueOf(i2).length();
+        int i3 = this.c;
+        int length3 = String.valueOf(i3).length();
+        boolean z = this.d;
+        StringBuilder sb = new StringBuilder(length + 55 + length2 + 19 + length3 + 13 + String.valueOf(z).length() + 1);
+        sb.append("ComplianceOptions{callerProductId=");
+        sb.append(i);
+        sb.append(", dataOwnerProductId=");
+        sb.append(i2);
+        sb.append(", processingReason=");
+        sb.append(i3);
+        sb.append(", isUserData=");
+        sb.append(z);
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        mve.q(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        mve.q(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        mve.q(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        mve.s(parcel, r);
     }
 }

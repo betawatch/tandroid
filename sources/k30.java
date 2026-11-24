@@ -1,41 +1,77 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class k30 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tg2 b;
-    public final /* synthetic */ w83 c;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
-    public /* synthetic */ k30(tg2 tg2Var, w83 w83Var, byte b) {
-        this.a = b;
-        this.b = tg2Var;
-        this.c = w83Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class k30 {
+    public final y79 a;
+    public final ArrayList b = new ArrayList();
+    public ByteBuffer[] c = new ByteBuffer[0];
+    public boolean d;
+
+    public k30(y79 y79Var) {
+        this.a = y79Var;
+        l30 l30Var = l30.e;
+        this.d = false;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                tg2 tg2Var = this.b;
-                w83 w83Var = this.c;
-                synchronized (w83Var) {
+    public final int a() {
+        return this.c.length - 1;
+    }
+
+    public final boolean b() {
+        return this.d && ((p30) this.b.get(a())).a() && !this.c[a()].hasRemaining();
+    }
+
+    public final boolean c() {
+        return !this.b.isEmpty();
+    }
+
+    public final void d(ByteBuffer byteBuffer) {
+        boolean z;
+        for (boolean z2 = true; z2; z2 = z) {
+            z = false;
+            int i = 0;
+            while (i <= a()) {
+                if (!this.c[i].hasRemaining()) {
+                    ArrayList arrayList = this.b;
+                    p30 p30Var = (p30) arrayList.get(i);
+                    if (!p30Var.a()) {
+                        ByteBuffer byteBuffer2 = i > 0 ? this.c[i - 1] : byteBuffer.hasRemaining() ? byteBuffer : p30.a;
+                        long remaining = byteBuffer2.remaining();
+                        p30Var.d(byteBuffer2);
+                        this.c[i] = p30Var.b();
+                        z |= remaining - ((long) byteBuffer2.remaining()) > 0 || this.c[i].hasRemaining();
+                    } else if (!this.c[i].hasRemaining() && i < a()) {
+                        ((p30) arrayList.get(i + 1)).f();
+                    }
                 }
-                o30 o30Var = (o30) tg2Var.c;
-                String str = g8c.a;
-                l93 l93Var = ((t54) o30Var).a.s;
-                tj R = l93Var.R((rx6) l93Var.d.e);
-                l93Var.V(R, 1013, new i93(R, w83Var, (byte) 7));
-                break;
-            default:
-                tg2 tg2Var2 = this.b;
-                w83 w83Var2 = this.c;
-                o30 o30Var2 = (o30) tg2Var2.c;
-                String str2 = g8c.a;
-                l93 l93Var2 = ((t54) o30Var2).a.s;
-                tj U = l93Var2.U();
-                l93Var2.V(U, 1007, new i93(U, w83Var2, (byte) 2));
-                break;
+                i++;
+            }
         }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof k30) {
+            y79 y79Var = ((k30) obj).a;
+            y79 y79Var2 = this.a;
+            if (y79Var2.d == y79Var.d) {
+                for (int i = 0; i < y79Var2.d; i++) {
+                    if (y79Var2.get(i) == y79Var.get(i)) {
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

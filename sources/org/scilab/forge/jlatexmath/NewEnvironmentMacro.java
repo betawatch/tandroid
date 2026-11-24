@@ -1,10 +1,10 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class NewEnvironmentMacro extends NewCommandMacro {
     public static void addNewEnvironment(String str, String str2, String str3, int i) {
-        String o = tb4.o(str, "@env");
+        String p = td4.p(str, "@env");
         StringBuilder sb = new StringBuilder();
         sb.append(str2);
         sb.append(" #");
@@ -12,15 +12,15 @@ public class NewEnvironmentMacro extends NewCommandMacro {
         sb.append(i2);
         sb.append(" ");
         sb.append(str3);
-        NewCommandMacro.addNewCommand(o, sb.toString(), i2);
+        NewCommandMacro.addNewCommand(p, sb.toString(), i2);
     }
 
     public static void addReNewEnvironment(String str, String str2, String str3, int i) {
         if (NewCommandMacro.macrocode.get(str + "@env") == null) {
-            qm0.g(tb4.y("Environment ", str, "is not defined ! Use newenvironment instead ..."));
+            qn0.g(kt6.o("Environment ", str, "is not defined ! Use newenvironment instead ..."));
             return;
         }
-        String o = tb4.o(str, "@env");
+        String p = td4.p(str, "@env");
         StringBuilder sb = new StringBuilder();
         sb.append(str2);
         sb.append(" #");
@@ -28,6 +28,6 @@ public class NewEnvironmentMacro extends NewCommandMacro {
         sb.append(i2);
         sb.append(" ");
         sb.append(str3);
-        NewCommandMacro.addReNewCommand(o, sb.toString(), i2);
+        NewCommandMacro.addReNewCommand(p, sb.toString(), i2);
     }
 }

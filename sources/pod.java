@@ -1,19 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class pod implements zn7 {
-    public static final pod a = new pod();
-
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class pod {
+    public static final int a(st stVar, Object obj, int i) {
+        int i2 = stVar.c;
+        if (i2 == 0) {
+            return -1;
         }
-        throw null;
+        try {
+            int a = ir3.a(i2, i, stVar.a);
+            if (a < 0 || rr5.a(obj, stVar.b[a])) {
+                return a;
+            }
+            int i3 = a + 1;
+            while (i3 < i2 && stVar.a[i3] == i) {
+                if (rr5.a(obj, stVar.b[i3])) {
+                    return i3;
+                }
+                i3++;
+            }
+            for (int i4 = a - 1; i4 >= 0 && stVar.a[i4] == i; i4--) {
+                if (rr5.a(obj, stVar.b[i4])) {
+                    return i4;
+                }
+            }
+            return ~i3;
+        } catch (IndexOutOfBoundsException unused) {
+            zg.b();
+            return 0;
+        }
     }
 }

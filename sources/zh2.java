@@ -1,106 +1,41 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.view.ContextThemeWrapper;
 import android.view.View;
-import androidx.core.widget.NestedScrollView;
-import org.telegram.tgnet.TLObject;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class zh2 extends NestedScrollView {
-    public boolean W;
-    public final /* synthetic */ di2 a0;
+public final class zh2 {
+    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public final LinearLayout b;
+    public final u88 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh2(di2 di2Var, Activity activity) {
-        super(activity);
-        this.a0 = di2Var;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        di2 di2Var = this.a0;
-        int scrollY = (int) ((getScrollY() + (di2Var.q1 - di2Var.t0)) - getTranslationY());
-        Drawable drawable = di2Var.l1;
-        drawable.setBounds(0, scrollY, getMeasuredWidth(), gl.L(19.0f) + di2Var.n1.getMeasuredHeight() + scrollY + di2Var.t0);
-        drawable.draw(canvas);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            di2 di2Var = this.a0;
-            if (di2Var.q1 != 0 && motionEvent.getY() < di2Var.q1) {
-                di2Var.dismiss();
-                return true;
-            }
+    public zh2(ContextThemeWrapper contextThemeWrapper, th8 th8Var, u88 u88Var) {
+        this.c = u88Var;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, null, contextThemeWrapper);
+        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
+        a8 c = r7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, jb6.M0(2131753721, null), false, null);
+        c.setOnClickListener(new w70(th8Var, (byte) 2));
+        c.d(-328966, -328966);
+        c.setSelectorColor(268435455);
+        View a6Var = new a6(contextThemeWrapper, (byte) 7);
+        a6Var.setMinimumWidth(gm.L(196.0f));
+        a6Var.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(a6Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) a6Var.getLayoutParams();
+        if (jb6.a0) {
+            layoutParams.gravity = 5;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.a0.D0();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0049  */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i2);
-        di2 di2Var = this.a0;
-        measureChildWithMargins(di2Var.n1, i, 0, i2, 0);
-        int measuredHeight = di2Var.n1.getMeasuredHeight();
-        int i3 = (size / 5) * 3;
-        int i4 = size - i3;
-        if (!di2Var.p1 && measuredHeight - i4 >= gl.L(90.0f)) {
-            if (measuredHeight >= gl.L(90.0f) + (size / 2)) {
-                int L = gl.L(108.0f) + (measuredHeight / 2);
-                if (i4 < L) {
-                    i3 = size - L;
-                }
-                if (getPaddingTop() != i3) {
-                    this.W = true;
-                    setPadding(0, i3, 0, 0);
-                    this.W = false;
-                }
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-            }
-        }
-        i3 = size - measuredHeight;
-        if (getPaddingTop() != i3) {
-        }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i, int i2, int i3, int i4) {
-        super.onScrollChanged(i, i2, i3, i4);
-        this.a0.D0();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.a0.J && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.W) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        super.setTranslationY(f);
-        this.a0.D0();
+        layoutParams.width = -1;
+        layoutParams.height = gm.L(8.0f);
+        a6Var.setLayoutParams(layoutParams);
+        LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
+        this.b = linearLayout;
+        linearLayout.setOrientation(1);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(linearLayout);
     }
 }

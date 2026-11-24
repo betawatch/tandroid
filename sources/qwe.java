@@ -1,15 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qwe {
-    public final lre a;
-    public final kxe b;
-    public final tqe c;
-
-    public /* synthetic */ qwe(rod rodVar) {
-        this.a = (lre) rodVar.b;
-        this.b = (kxe) rodVar.c;
-        this.c = (tqe) rodVar.d;
+public abstract class qwe {
+    public static String a(String str) {
+        if ("null".equals(str) || "".equals(str)) {
+            return null;
+        }
+        return str;
     }
 }

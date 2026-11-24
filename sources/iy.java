@@ -1,40 +1,38 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class iy implements View.OnClickListener {
+public final class iy implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ty b;
+    public boolean b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ iy(ty tyVar, byte b) {
+    public /* synthetic */ iy(Object obj, byte b) {
         this.a = b;
-        this.b = tyVar;
+        this.c = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        ty tyVar = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                tyVar.dismiss();
+                this.b = false;
                 break;
             case 1:
-                int value = tyVar.X1.getValue();
-                int e = (int) tyVar.g2.e();
-                if (value >= e) {
-                    tyVar.b1(value);
-                    break;
-                } else {
-                    gl.A3(tyVar.V1);
-                    b00.u(k96.G(e, "Gift2AuctionMinimumBidIncreased", new Object[0]), new u21(tyVar.c, tyVar.J0), R.raw.info, 36);
+                if (!this.b) {
+                    this.b = true;
+                    ((yv1) obj).presentFragment(new NotificationsSettingsActivity());
                     break;
                 }
+                break;
             default:
-                tyVar.X1.setValueAnimated((int) tyVar.g2.e());
+                lp7 lp7Var = (lp7) obj;
+                lp7Var.a(this.b);
+                lp7Var.postDelayed(this, lp7Var.N);
                 break;
         }
     }

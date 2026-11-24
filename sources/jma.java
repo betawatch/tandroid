@@ -1,31 +1,209 @@
 // default package
 
-import android.graphics.Paint;
+import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class jma extends k26 {
-    public final Paint q;
-    public int r;
-    public final wjb s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class jma implements kma {
+    public final float[] a;
+    public float[] b;
+    public float[] c;
+    public float[] d;
+    public double e;
+    public double f;
+    public double g;
+    public final /* synthetic */ mma h;
 
-    public jma(ek1 ek1Var, wjb wjbVar) {
-        super(ek1Var, false, null);
-        Paint paint = new Paint();
-        this.q = paint;
-        this.r = 0;
-        this.s = wjbVar;
-        this.c.setStrokeWidth(gl.N(1.0f));
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
+    public jma(mma mmaVar) {
+        this.h = mmaVar;
+        int i = mmaVar.h;
+        this.a = new float[i];
+        int i2 = i * mmaVar.b;
+        this.b = new float[i2];
+        this.c = new float[i2];
+        this.d = new float[i2];
     }
 
-    @Override // k26
-    public final void a() {
-        super.a();
-        this.r = bm2.f(0.3f, bkb.v0(bkb.c6, this.s), this.m);
+    @Override // kma
+    public final void a(int i, ByteBuffer byteBuffer) {
+        FloatBuffer asFloatBuffer = byteBuffer.asFloatBuffer();
+        float[] fArr = this.b;
+        mma mmaVar = this.h;
+        asFloatBuffer.get(fArr, mmaVar.j * mmaVar.b, i / 4);
+        byteBuffer.position(byteBuffer.position() + i);
+    }
+
+    @Override // kma
+    public final void b(int i, ByteBuffer byteBuffer) {
+        FloatBuffer asFloatBuffer = byteBuffer.asFloatBuffer();
+        float[] fArr = this.c;
+        int i2 = this.h.b;
+        asFloatBuffer.put(fArr, 0, i * i2);
+        byteBuffer.position(((i << 2) * i2) + byteBuffer.position());
+    }
+
+    @Override // kma
+    public final void c(int i, int i2) {
+        for (int i3 = 0; i3 < this.h.b * i2; i3++) {
+            this.b[i + i3] = 0.0f;
+        }
+    }
+
+    @Override // kma
+    public final void d(int i, int i2) {
+        mma mmaVar = this.h;
+        int i3 = mmaVar.h / i2;
+        int i4 = mmaVar.b;
+        int i5 = i2 * i4;
+        int i6 = i * i4;
+        for (int i7 = 0; i7 < i3; i7++) {
+            double d = 0.0d;
+            for (int i8 = 0; i8 < i5; i8++) {
+                d += this.b[(i7 * i5) + i6 + i8];
+            }
+            this.a[i7] = (float) (d / i5);
+        }
+    }
+
+    @Override // kma
+    public final int e(int i, int i2, int i3) {
+        return s(i, i2, i3, this.b);
+    }
+
+    @Override // kma
+    public final void f() {
+        this.g = this.e;
+    }
+
+    @Override // kma
+    public final void flush() {
+        this.g = 0.0d;
+        this.e = 0.0d;
+        this.f = 0.0d;
+    }
+
+    @Override // kma
+    public final Object g() {
+        return this.b;
+    }
+
+    @Override // kma
+    public final Object h() {
+        return this.c;
+    }
+
+    @Override // kma
+    public final void i(int i) {
+        this.c = r(this.h.k, i, this.c);
+    }
+
+    @Override // kma
+    public final boolean j() {
+        double d = this.e;
+        return d != 0.0d && this.h.p != 0 && this.f <= d * 3.0d && d * 2.0d > this.g * 3.0d;
+    }
+
+    @Override // kma
+    public final void k(long j, int i, long j2) {
+        int i2 = 0;
+        while (true) {
+            mma mmaVar = this.h;
+            int i3 = mmaVar.b;
+            if (i2 >= i3) {
+                return;
+            }
+            float[] fArr = this.c;
+            int i4 = (mmaVar.k * i3) + i2;
+            float[] fArr2 = this.d;
+            int i5 = (i * i3) + i2;
+            float f = fArr2[i5];
+            float f2 = fArr2[i5 + i3];
+            long j3 = mmaVar.n * j;
+            long j4 = (r1 + 1) * j2;
+            long j5 = j4 - j3;
+            fArr[i4] = (((r10 - j5) * f2) + (j5 * f)) / (j4 - (mmaVar.m * j2));
+            i2++;
+        }
+    }
+
+    @Override // kma
+    public final Object l() {
+        return this.d;
+    }
+
+    @Override // kma
+    public final void m(int i, int i2, int i3, int i4, int i5) {
+        float[] fArr = this.c;
+        float[] fArr2 = this.b;
+        for (int i6 = 0; i6 < i2; i6++) {
+            int i7 = (i3 * i2) + i6;
+            int i8 = (i5 * i2) + i6;
+            int i9 = (i4 * i2) + i6;
+            for (int i10 = 0; i10 < i; i10++) {
+                fArr[i7] = ((fArr2[i8] * i10) + (fArr2[i9] * (i - i10))) / i;
+                i7 += i2;
+                i9 += i2;
+                i8 += i2;
+            }
+        }
+    }
+
+    @Override // kma
+    public final void n(int i) {
+        this.d = r(this.h.l, i, this.d);
+    }
+
+    @Override // kma
+    public final int o() {
+        return 4;
+    }
+
+    @Override // kma
+    public final void p(int i) {
+        this.b = r(this.h.j, i, this.b);
+    }
+
+    @Override // kma
+    public final int q(int i, int i2) {
+        return s(0, i, i2, this.a);
+    }
+
+    public final float[] r(int i, int i2, float[] fArr) {
+        int length = fArr.length;
+        int i3 = this.h.b;
+        int i4 = length / i3;
+        return i + i2 <= i4 ? fArr : Arrays.copyOf(fArr, (((i4 * 3) / 2) + i2) * i3);
+    }
+
+    public final int s(int i, int i2, int i3, float[] fArr) {
+        int i4 = this.h.b * i;
+        double d = 1.0d;
+        int i5 = 0;
+        double d2 = 0.0d;
+        int i6 = 255;
+        int i7 = i2;
+        while (i7 <= i3) {
+            double d3 = 0.0d;
+            for (int i8 = 0; i8 < i7; i8++) {
+                d3 += Math.abs(fArr[i4 + i8] - fArr[(i4 + i7) + i8]);
+            }
+            int i9 = i4;
+            double d4 = i7;
+            if (i5 * d3 < d * d4) {
+                i5 = i7;
+                d = d3;
+            }
+            if (i6 * d3 > d4 * d2) {
+                i6 = i7;
+                d2 = d3;
+            }
+            i7++;
+            i4 = i9;
+        }
+        this.e = d / i5;
+        this.f = d2 / i6;
+        return i5;
     }
 }

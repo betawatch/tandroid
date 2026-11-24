@@ -1,35 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ns8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ts8 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ns8 extends sc3 {
+    public final /* synthetic */ lea F;
 
-    public /* synthetic */ ns8(ts8 ts8Var, byte b) {
-        this.a = b;
-        this.b = ts8Var;
+    public ns8(lea leaVar) {
+        this.F = leaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ts8 ts8Var = this.b;
-        switch (b) {
-            case 0:
-                ts8Var.e0 = true;
-                break;
-            case 1:
-                ts8Var.u();
-                break;
-            default:
-                if (!ts8Var.k0) {
-                    rr6 rr6Var = ts8Var.J;
-                    rr6Var.getClass();
-                    rr6Var.b(ts8Var);
-                    break;
-                }
-                break;
-        }
+    @Override // sc3
+    public final void M() {
+        this.F.p();
+    }
+
+    @Override // sc3
+    public final void O() {
+        this.F.p();
+    }
+
+    @Override // sc3
+    public final void P(u69 u69Var) {
+        this.F.p();
+    }
+
+    @Override // sc3
+    public final void Q() {
+        this.F.p();
     }
 }

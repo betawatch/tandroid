@@ -1,49 +1,21 @@
 // default package
 
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class kv7 extends mx5 {
+    public final /* synthetic */ z8b m;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class kv7 implements ActionMode.Callback {
-    public final /* synthetic */ byte a;
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        byte b = this.a;
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kv7(z8b z8bVar, u9b u9bVar, u35 u35Var) {
+        super(u9bVar, false, u35Var);
+        this.m = z8bVar;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        byte b = this.a;
-        return false;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        byte b = this.a;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        byte b = this.a;
-        return false;
-    }
-
-    private final void a(ActionMode actionMode) {
-    }
-
-    private final void b(ActionMode actionMode) {
-    }
-
-    private final void c(ActionMode actionMode) {
-    }
-
-    private final void d(ActionMode actionMode) {
-    }
-
-    private final void e(ActionMode actionMode) {
+    @Override // mx5
+    public final void b(boolean z) {
+        super.b(z);
+        if (z) {
+            this.m.P0(false);
+        }
     }
 }

@@ -1,29 +1,17 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicReferenceArray;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class t0a extends nv9 {
-    public final /* synthetic */ AtomicReferenceArray g;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class t0a implements qac {
+    public final /* synthetic */ boolean a;
 
-    public t0a(long j, t0a t0aVar, int i) {
-        super(j, t0aVar, i);
-        this.g = new AtomicReferenceArray(s0a.f);
-    }
-
-    @Override // nv9
-    public final int g() {
-        return s0a.f;
-    }
-
-    @Override // nv9
-    public final void h(int i, sw2 sw2Var) {
-        this.g.set(i, s0a.e);
-        i();
-    }
-
-    public final String toString() {
-        return "SemaphoreSegment[id=" + this.d + ", hashCode=" + hashCode() + ']';
+    @Override // qac
+    public final void a(Object obj) {
+        View view = (View) obj;
+        if (view instanceof m1a) {
+            ((m1a) view).g(this.a, true);
+        }
     }
 }

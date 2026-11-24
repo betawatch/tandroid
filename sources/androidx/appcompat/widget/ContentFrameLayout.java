@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -19,7 +19,7 @@ public class ContentFrameLayout extends FrameLayout {
     public TypedValue e;
     public TypedValue f;
     public final Rect h;
-    public av2 n;
+    public kw2 n;
 
     public ContentFrameLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
@@ -89,9 +89,9 @@ public class ContentFrameLayout extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        av2 av2Var = this.n;
-        if (av2Var != null) {
-            av2Var.getClass();
+        kw2 kw2Var = this.n;
+        if (kw2Var != null) {
+            kw2Var.getClass();
         }
     }
 
@@ -99,13 +99,13 @@ public class ContentFrameLayout extends FrameLayout {
     public final void onDetachedFromWindow() {
         b9 b9Var;
         super.onDetachedFromWindow();
-        av2 av2Var = this.n;
-        if (av2Var != null) {
-            bp bpVar = (bp) ((i4d) av2Var).a;
-            ActionBarOverlayLayout actionBarOverlayLayout = bpVar.s;
+        kw2 kw2Var = this.n;
+        if (kw2Var != null) {
+            bq bqVar = (bq) ((k6d) kw2Var).b;
+            ActionBarOverlayLayout actionBarOverlayLayout = bqVar.s;
             if (actionBarOverlayLayout != null) {
                 actionBarOverlayLayout.e();
-                ActionMenuView actionMenuView = ((itb) actionBarOverlayLayout.e).a.a;
+                ActionMenuView actionMenuView = ((jvb) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (b9Var = actionMenuView.K) != null) {
                     b9Var.e();
                     y8 y8Var = b9Var.K;
@@ -114,23 +114,23 @@ public class ContentFrameLayout extends FrameLayout {
                     }
                 }
             }
-            if (bpVar.F != null) {
-                bpVar.f.getDecorView().removeCallbacks(bpVar.G);
-                if (bpVar.F.isShowing()) {
+            if (bqVar.F != null) {
+                bqVar.f.getDecorView().removeCallbacks(bqVar.G);
+                if (bqVar.F.isShowing()) {
                     try {
-                        bpVar.F.dismiss();
+                        bqVar.F.dismiss();
                     } catch (IllegalArgumentException unused) {
                     }
                 }
-                bpVar.F = null;
+                bqVar.F = null;
             }
-            afc afcVar = bpVar.H;
-            if (afcVar != null) {
-                afcVar.b();
+            ahc ahcVar = bqVar.H;
+            if (ahcVar != null) {
+                ahcVar.b();
             }
-            yz6 yz6Var = bpVar.o(0).h;
-            if (yz6Var != null) {
-                yz6Var.c(true);
+            y17 y17Var = bqVar.o(0).h;
+            if (y17Var != null) {
+                y17Var.c(true);
             }
         }
     }
@@ -281,8 +281,8 @@ public class ContentFrameLayout extends FrameLayout {
         }
     }
 
-    public void setAttachListener(av2 av2Var) {
-        this.n = av2Var;
+    public void setAttachListener(kw2 kw2Var) {
+        this.n = kw2Var;
     }
 
     public ContentFrameLayout(Context context) {

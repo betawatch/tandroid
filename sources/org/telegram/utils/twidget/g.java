@@ -1,21 +1,21 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements lvc, kvc {
+public final /* synthetic */ class g implements mxc, lxc {
     public final /* synthetic */ Object a;
 
     public /* synthetic */ g(Object obj) {
         this.a = obj;
     }
 
-    @Override // lvc
+    @Override // mxc
     public final void a(byte[] bArr) {
         ((WidgetEngineBackend) this.a).lambda$selectableText$5(bArr);
     }
 
-    @Override // kvc
+    @Override // lxc
     public final void run() {
-        ((lvc) this.a).a(null);
+        ((mxc) this.a).a(null);
     }
 }

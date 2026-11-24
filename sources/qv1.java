@@ -1,46 +1,48 @@
 // default package
 
-import android.view.KeyEvent;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.util.SparseIntArray;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qv1 implements lq0, ed, et3, k8 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class qv1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wv1 b;
 
-    public /* synthetic */ qv1(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ qv1(wv1 wv1Var, byte b) {
+        this.a = b;
+        this.b = wv1Var;
     }
 
-    @Override // et3
-    public final void m() {
-        int i = ChatActivityEnterView.r7;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.F0.f();
-        hy1 hy1Var = chatActivityEnterView.P3;
-        if (hy1Var != null) {
-            hy1Var.P0(chatActivityEnterView.F0.getTextToUse());
-        }
-    }
-
-    @Override // k8
-    public final void r(KeyEvent keyEvent) {
-        ChatActivityEnterView chatActivityEnterView;
-        zw1 zw1Var;
-        int i = ChatActivityEnterView.r7;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (zw1Var = (chatActivityEnterView = this.a).O0) != null && zw1Var.isShowing()) {
-            chatActivityEnterView.O0.dismiss();
-        }
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        int i2 = ChatActivityEnterView.r7;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.R();
-        ex1 ex1Var = chatActivityEnterView.F0;
-        if (ex1Var != null) {
-            ex1Var.setText("");
+    @Override // java.lang.Runnable
+    public final void run() {
+        tk5 tk5Var;
+        tk5 tk5Var2;
+        byte b = this.a;
+        wv1 wv1Var = this.b;
+        switch (b) {
+            case 0:
+                wv1Var.e = new SparseIntArray();
+                yv1 yv1Var = wv1Var.G;
+                m37 m37Var = (m37) yv1Var.getThemedDrawable("drawableMsgOut");
+                wv1Var.t = m37Var;
+                tk5Var = ((d) yv1Var).parentLayout;
+                m37Var.J = tk5Var.getMessageDrawableOutStart();
+                m37 m37Var2 = (m37) yv1Var.getThemedDrawable("drawableMsgOutMedia");
+                wv1Var.u = m37Var2;
+                tk5Var2 = ((d) yv1Var).parentLayout;
+                m37Var2.J = tk5Var2.getMessageDrawableOutMediaStart();
+                wv1Var.t.K = 0.0f;
+                wv1Var.u.K = 0.0f;
+                yv1Var.cd();
+                wv1Var.t(0.0f);
+                break;
+            default:
+                wv1Var.t.J = null;
+                wv1Var.u.J = null;
+                wv1Var.e = null;
+                wv1Var.t(1.0f);
+                break;
         }
     }
 }

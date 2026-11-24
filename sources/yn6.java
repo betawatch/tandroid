@@ -1,73 +1,26 @@
 // default package
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseArray;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class yn6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hq6 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class yn6 {
+    public final int a;
+    public boolean b;
+    public final String c;
+    public final jo6 d;
+    public final ArrayList e = new ArrayList();
+    public final SparseArray f = new SparseArray();
 
-    public /* synthetic */ yn6(hq6 hq6Var, String str, boolean z, byte b) {
-        this.a = b;
-        this.b = hq6Var;
+    public yn6(int i, String str, jo6 jo6Var) {
+        this.a = i;
         this.c = str;
-        this.d = z;
+        this.d = jo6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
-        SQLiteCursor queryFinalized;
-        int i = 0;
-        switch (this.a) {
-            case 0:
-                this.b.d1(this.c, this.d, false);
-                return;
-            default:
-                hq6 hq6Var = this.b;
-                String str = this.c;
-                SQLiteCursor sQLiteCursor = null;
-                r5 = null;
-                r5 = null;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = null;
-                try {
-                    queryFinalized = hq6Var.getMessagesStorage().b.queryFinalized("SELECT data, date FROM stickers_dice WHERE emoji = ?", str);
-                } catch (Throwable th) {
-                    th = th;
-                    tL_messages_stickerSet = null;
-                }
-                try {
-                    if (queryFinalized.next()) {
-                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                        if (byteBufferValue != null) {
-                            tL_messages_stickerSet2 = TLRPC.messages_StickerSet.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                            byteBufferValue.reuse();
-                        }
-                        i = queryFinalized.intValue(1);
-                    }
-                    queryFinalized.dispose();
-                } catch (Throwable th2) {
-                    th = th2;
-                    tL_messages_stickerSet = tL_messages_stickerSet2;
-                    sQLiteCursor = queryFinalized;
-                    try {
-                        fa4.g(th, true);
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
-                        }
-                        tL_messages_stickerSet2 = tL_messages_stickerSet;
-                        hq6Var.t1(str, this.d, tL_messages_stickerSet2, true, i);
-                        return;
-                    } finally {
-                    }
-                }
-                hq6Var.t1(str, this.d, tL_messages_stickerSet2, true, i);
-                return;
-        }
+    public final void a(jo6 jo6Var) {
+        this.e.add(jo6Var);
+        this.f.put(jo6Var.C, jo6Var);
     }
 }

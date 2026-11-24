@@ -1,108 +1,137 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.animation.PathInterpolator;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class gl3 extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
+public class gl3 extends l7c {
+    public final int Q;
+    public final int R;
+    public final boolean S;
+    public final fl3 T;
+    public final ArrayList U;
+    public final ArrayList V;
+    public final ArrayList W;
+    public boolean X;
+    public boolean Y;
+    public final SpannableStringBuilder Z;
+    public int a0;
+    public int b0;
+    public boolean c0;
+    public boolean d0;
+    public boolean e0;
+    public int f0;
+    public int g0;
+    public String h0;
+    public final bl3 i0;
+    public boolean j0;
+    public final sk3 k0;
 
-    public /* synthetic */ gl3(View view, byte b) {
-        this.a = b;
-        this.b = view;
+    public gl3(r59 r59Var, Context context, int i, int i2, boolean z, ylb ylbVar) {
+        super(r59Var, context, i, 0, true, null, ylbVar);
+        this.U = new ArrayList();
+        this.V = new ArrayList();
+        this.W = new ArrayList();
+        this.i0 = new bl3(this, (byte) 0);
+        this.j0 = true;
+        this.k0 = new sk3(this, (byte) 1);
+        this.w = new h92(this, (byte) 19);
+        this.Q = i;
+        this.R = i2;
+        this.S = z;
+        this.T = new fl3(i, new bl3(this, (byte) 1));
+        this.Z = gm.D2(gm.N2(jb6.M0(2131754142, null), -1, 0, new ff0(this, ylbVar, context), null), true);
+        O(false);
+        hs6.d0(i).O0(true);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 2:
-                smb smbVar = (smb) this.b;
-                int i = smbVar.a6;
-                boolean z = false;
-                if (smbVar.Od == 2 && hq6.d0(i).S() != null) {
-                    boolean G5 = smbVar.getMessageObject().G5(h19.b(hq6.d0(i).S()), false);
-                    smbVar.z3(smbVar.getMessageObject(), null, false, false, false, false);
-                    smbVar.requestLayout();
-                    d19.b(false);
-                    z = true;
-                    if (G5) {
-                        tmb tmbVar = smbVar.Pd;
-                        d19.d(tmbVar.x, null, tmbVar.n[1], null, motionEvent.getX(), motionEvent.getY(), h19.b(hq6.d0(i).S()), smbVar.a6, 0);
-                        d19.f();
+    public final void W() {
+        boolean isEmpty = TextUtils.isEmpty(this.h0);
+        r59 r59Var = this.d;
+        if (isEmpty) {
+            if (!this.j0) {
+                if (r59Var != null) {
+                    for (int i = 0; i < r59Var.getChildCount(); i++) {
+                        if (!(r59Var.getChildAt(i) instanceof tk4)) {
+                        }
                     }
-                    smbVar.getViewTreeObserver().addOnPreDrawListener(new fb(this, (byte) 10));
                 }
-                return z;
-            default:
-                return super.onDoubleTap(motionEvent);
+            }
+            this.T.a();
+            break;
         }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                hl3 hl3Var = (hl3) this.b;
-                hl3Var.n = true;
-                hl3Var.a();
-                return true;
-            case 1:
-                return true;
-            default:
-                return super.onDown(motionEvent);
-        }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        switch (this.a) {
-            case 0:
-                uq4 uq4Var = ((hl3) this.b).a;
-                uq4Var.d -= f * 0.5f;
-                uq4Var.i -= f2 * 0.05f;
-                return true;
-            default:
-                return super.onScroll(motionEvent, motionEvent2, f, f2);
-        }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        byte b = this.a;
-        View view = this.b;
-        switch (b) {
-            case 0:
-                hl3 hl3Var = (hl3) view;
-                uq4 uq4Var = hl3Var.a;
-                if (Math.abs(uq4Var.d) <= 10.0f) {
-                    float max = Math.max(1.0f, hl3Var.getWidth() / 2.0f);
-                    float x = ((max - motionEvent.getX()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
-                    float y = ((max - motionEvent.getY()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
-                    hl3Var.a();
-                    float f = uq4Var.d;
-                    float f2 = uq4Var.i;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    hl3Var.d = ofFloat;
-                    ofFloat.setDuration(220L);
-                    hl3Var.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
-                    hl3Var.d.addUpdateListener(new zl(this, f, x, f2, y, (byte) 3));
-                    hl3Var.d.addListener(new im2(this, (byte) 11));
-                    hl3Var.d.start();
+        if (this.e0 && !this.c0 && r59Var != null) {
+            int i2 = 0;
+            while (true) {
+                if (i2 >= r59Var.getChildCount()) {
                     break;
                 }
-                break;
-            case 1:
-                wy6 wy6Var = ((vy6) view).e;
-                if (!wy6Var.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (wy6Var.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= wy6Var.f.getRight() || wy6Var.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= wy6Var.f.getBottom())) {
-                    wy6Var.e(false);
+                if (!(r59Var.getChildAt(i2) instanceof tk4)) {
+                    i2++;
+                } else if (this.e0 && !this.c0 && !TextUtils.isEmpty(this.h0)) {
+                    X(true);
                 }
-                break;
+            }
         }
-        return super.onSingleTapUp(motionEvent);
+        this.j0 = false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void X(boolean z) {
+        this.c0 = true;
+        int i = this.g0 + 1;
+        this.g0 = i;
+        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
+        tL_messages_searchGlobal.broadcasts_only = false;
+        int i2 = this.R;
+        if (i2 != 0) {
+            tL_messages_searchGlobal.flags |= 1;
+            tL_messages_searchGlobal.folder_id = i2;
+        }
+        tL_messages_searchGlobal.q = this.h0;
+        tL_messages_searchGlobal.limit = 25;
+        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+        int i3 = this.Q;
+        if (z) {
+            ArrayList arrayList = this.W;
+            if (!arrayList.isEmpty()) {
+                k47 k47Var = (k47) b10.f(1, arrayList);
+                tL_messages_searchGlobal.offset_rate = this.f0;
+                tL_messages_searchGlobal.offset_id = k47Var.e1();
+                if (k47Var.k.peer_id == null) {
+                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                } else {
+                    tL_messages_searchGlobal.offset_peer = oc7.r1(i3).l1(k47Var.k.peer_id);
+                }
+                gm.d3(new ot1(this, i, tL_messages_searchGlobal, z, (byte) 2), !z ? 800L : 0L);
+                if (z) {
+                    this.d0 = true;
+                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
+                    tL_contacts_search.limit = 30;
+                    tL_contacts_search.bots = true;
+                    tL_contacts_search.q = this.h0;
+                    ConnectionsManager.getInstance(i3).sendRequestTyped(tL_contacts_search, new kc((byte) 0), new lf2(this, tL_contacts_search, (byte) 13));
+                    return;
+                }
+                return;
+            }
+        }
+        tL_messages_searchGlobal.offset_rate = 0;
+        tL_messages_searchGlobal.offset_id = 0;
+        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+        gm.d3(new ot1(this, i, tL_messages_searchGlobal, z, (byte) 2), !z ? 800L : 0L);
+        if (z) {
+        }
     }
 }

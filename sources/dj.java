@@ -1,25 +1,10 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class dj extends FrameLayout {
-    public final /* synthetic */ ag2[] a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dj(Context context, ag2[] ag2VarArr) {
-        super(context);
-        this.a = ag2VarArr;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        ag2[] ag2VarArr = this.a;
-        if (ag2VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), gl.L(7.0f) + ag2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-        }
+public final class dj extends lp7 {
+    @Override // lp7
+    public final CharSequence d(int i) {
+        return jb6.G(i, "Minutes", new Object[0]);
     }
 }

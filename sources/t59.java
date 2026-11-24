@@ -1,21 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class t59 {
-    public f69 a;
-    public f69 b;
-    public w56 c;
-    public f84[] d;
-    public boolean e;
-    public short f;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-    public final wk4 a() {
-        fre.a("Must set register function", this.a != null);
-        fre.a("Must set unregister function", this.b != null);
-        fre.a("Must set holder", this.c != null);
-        u56 u56Var = this.c.b;
-        fre.i(u56Var, "Key must not be null");
-        return new wk4((Object) new h2d(this, this.c, this.d, this.e, this.f), (Object) new v8b(this, u56Var, (byte) 9), (byte) 22);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class t59 extends r59 {
+    public boolean f3;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // r59
+    public final void K0(Canvas canvas, RectF rectF, long j) {
+        super.K0(canvas, rectF, j);
+        int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = getChildAt(i);
+            if (childAt instanceof s59) {
+                float x = childAt.getX();
+                float y = childAt.getY();
+                if (rectF.intersects(x, y, childAt.getWidth() + x, childAt.getHeight() + y)) {
+                    canvas.save();
+                    canvas.translate(x, y);
+                    y0b y0bVar = (y0b) ((s59) childAt);
+                    if (y0bVar.M) {
+                        y0bVar.b(canvas, this);
+                    }
+                    canvas.restore();
+                }
+            }
+        }
+    }
+
+    @Override // r59, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        this.f3 = false;
+        for (int i = 0; i < getChildCount(); i++) {
+            if (getChildAt(i) instanceof s59) {
+                s59 s59Var = (s59) getChildAt(i);
+                canvas.save();
+                canvas.translate(s59Var.getX(), s59Var.getY());
+                y0b y0bVar = (y0b) s59Var;
+                if (y0bVar.M) {
+                    y0bVar.b(canvas, this);
+                }
+                canvas.restore();
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.f3) {
+            return;
+        }
+        super.invalidate();
+        this.f3 = true;
     }
 }

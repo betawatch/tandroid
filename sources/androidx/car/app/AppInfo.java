@@ -6,7 +6,7 @@ import android.os.Bundle;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class AppInfo {
     public static final String MIN_API_LEVEL_METADATA_KEY = "androidx.car.app.minCarApiLevel";
@@ -22,13 +22,13 @@ public final class AppInfo {
 
     public static AppInfo create(Context context) {
         int retrieveMinCarAppApiLevel = retrieveMinCarAppApiLevel(context);
-        if (retrieveMinCarAppApiLevel >= 1 && retrieveMinCarAppApiLevel <= dc1.b()) {
-            return new AppInfo(retrieveMinCarAppApiLevel, dc1.b(), context.getResources().getString(R.string.car_app_library_version));
+        if (retrieveMinCarAppApiLevel >= 1 && retrieveMinCarAppApiLevel <= ld1.b()) {
+            return new AppInfo(retrieveMinCarAppApiLevel, ld1.b(), context.getResources().getString(R.string.car_app_library_version));
         }
-        StringBuilder m = de9.m(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
-        m.append(dc1.b());
-        m.append(")");
-        throw new IllegalArgumentException(m.toString());
+        StringBuilder l = hg9.l(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
+        l.append(ld1.b());
+        l.append(")");
+        throw new IllegalArgumentException(l.toString());
     }
 
     public static int retrieveMinCarAppApiLevel(Context context) {
@@ -40,7 +40,7 @@ public final class AppInfo {
             }
             throw new IllegalArgumentException("Min API level not declared in manifest (androidx.car.app.minCarApiLevel)");
         } catch (PackageManager.NameNotFoundException unused) {
-            w26.j("Unable to read min API level from manifest");
+            u36.j("Unable to read min API level from manifest");
             return 0;
         }
     }

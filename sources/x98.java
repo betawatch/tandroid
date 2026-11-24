@@ -1,44 +1,48 @@
 // default package
 
-import org.telegram.ui.Components.RadialProgressView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class x98 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z98 b;
+public final class x98 extends pec {
+    public final wm0 h0;
+    public final /* synthetic */ PhotoViewer i0;
 
-    public /* synthetic */ x98(z98 z98Var, byte b) {
-        this.a = b;
-        this.b = z98Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x98(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.i0 = photoViewer;
+        this.h0 = new wm0(photoViewer.c0, this, 0, false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        z98 z98Var = this.b;
-        switch (b) {
-            case 0:
-                x88 x88Var = z98Var.a;
-                RadialProgressView radialProgressView = x88Var.n;
-                a8 a8Var = x88Var.r;
-                radialProgressView.setVisibility(4);
-                if (x88Var.G) {
-                    x88Var.G = false;
-                    x88Var.setPlaybackSpeed(x88Var.F);
-                }
-                a8Var.setEnabled(true);
-                a8Var.setAlpha(1.0f);
-                PhotoViewer photoViewer = x88Var.b;
-                if (photoViewer != null) {
-                    photoViewer.u();
-                    break;
-                }
-                break;
-            default:
-                z98Var.a.h.setVisibility(4);
-                break;
+    @Override // pec
+    public final void b(Canvas canvas, RectF rectF) {
+        canvas.save();
+        canvas.clipRect(rectF);
+        float f = -getX();
+        PhotoViewer photoViewer = this.i0;
+        canvas.translate(f - photoViewer.W7.getX(), (-getY()) - photoViewer.W7.getY());
+        photoViewer.P(canvas, this.h0, -14803426, 855638016, false, true, false);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        byte b;
+        if (gda.Z && ((b = this.i0.m4) == 1 || b == 2 || b == 3)) {
+            return;
+        }
+        super.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        if (getTranslationY() != f) {
+            super.setTranslationY(f);
+            this.i0.f0.invalidate();
         }
     }
 }

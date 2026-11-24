@@ -1,19 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class mw2 {
-    public final byte a;
-    public final String b;
+import android.content.ClipData;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.ContentInfo;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public mw2(int i) {
-        this.a = i;
-        this.b = null;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class mw2 implements nw2 {
+    public final ContentInfo.Builder a;
+
+    public mw2(ClipData clipData, int i) {
+        this.a = lw2.a(clipData, i);
     }
 
-    public mw2(String str) {
-        this.a = (byte) 1;
-        this.b = str;
+    @Override // nw2
+    public final rw2 build() {
+        return new rw2(new pw2(this.a.build()));
+    }
+
+    @Override // nw2
+    public final void c(Uri uri) {
+        this.a.setLinkUri(uri);
+    }
+
+    @Override // nw2
+    public final void d(int i) {
+        this.a.setFlags(i);
+    }
+
+    @Override // nw2
+    public final void setExtras(Bundle bundle) {
+        this.a.setExtras(bundle);
     }
 }

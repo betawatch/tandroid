@@ -21,7 +21,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -39,7 +39,7 @@ public class VideoCapturerDevice {
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -53,14 +53,14 @@ public class VideoCapturerDevice {
 
         @Override // android.media.projection.MediaProjection.Callback
         public void onStop() {
-            gl.d3(new a((byte) 0));
+            gm.c3(new a((byte) 0));
         }
     }
 
     public VideoCapturerDevice(boolean z) {
         Logging.enableLogToDebugOutput(Logging.Severity.LS_VERBOSE);
         Logging.d("VideoCapturerDevice", "device model = " + Build.MANUFACTURER + Build.MODEL);
-        gl.d3(new k08((byte) 25, (Object) this, z));
+        gm.c3(new n28((byte) 25, (Object) this, z));
     }
 
     public static void checkScreenCapturerSize() {
@@ -74,7 +74,7 @@ public class VideoCapturerDevice {
             }
             videoCapturerDevice.currentWidth = i2;
             videoCapturerDevice.currentHeight = screenCaptureSize.y;
-            videoCapturerDevice.handler.post(new l3c(videoCapturerDevice, screenCaptureSize, (byte) 12));
+            videoCapturerDevice.handler.post(new x4c(videoCapturerDevice, screenCaptureSize, (byte) 14));
         }
     }
 
@@ -157,7 +157,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j, String str) {
-        gl.d3(new d2b((Object) this, j, (Object) str, (byte) 10));
+        gm.c3(new e4b((Object) this, j, (Object) str, (byte) 10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,7 +175,7 @@ public class VideoCapturerDevice {
             if (j2 != 0) {
                 this.nativeCapturerObserver = nativeGetJavaVideoCapturerObserver(j2);
                 this.videoCapturer.initialize(this.videoCapturerSurfaceTextureHelper, org.telegram.messenger.a.b, this.nativeCapturerObserver);
-                fa4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture SCREEN");
+                fc4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture SCREEN");
                 this.videoCapturer.startCapture(point.x, point.y, 30);
                 WebRtcAudioRecord webRtcAudioRecord = WebRtcAudioRecord.Instance;
                 if (webRtcAudioRecord != null) {
@@ -192,7 +192,7 @@ public class VideoCapturerDevice {
         }
         this.nativeCapturerObserver = nativeGetJavaVideoCapturerObserver(this.nativePtr);
         this.videoCapturer.initialize(this.videoCapturerSurfaceTextureHelper, org.telegram.messenger.a.b, this.nativeCapturerObserver);
-        fa4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture CAMERA");
+        fc4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture CAMERA");
         this.videoCapturer.startCapture(CAPTURE_WIDTH, CAPTURE_HEIGHT, 30);
     }
 
@@ -212,7 +212,7 @@ public class VideoCapturerDevice {
                     this.currentWidth = screenCaptureSize.x;
                     this.currentHeight = screenCaptureSize.y;
                     this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                    this.handler.post(new d2b((Object) this, j, (Object) screenCaptureSize, (byte) 11));
+                    this.handler.post(new e4b((Object) this, j, (Object) screenCaptureSize, (byte) 11));
                     return;
                 }
                 return;
@@ -237,10 +237,10 @@ public class VideoCapturerDevice {
             if (this.videoCapturer == null) {
                 this.videoCapturer = camera2Enumerator.createCapturer(str2, new 2());
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("VideoCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new sma(this, j, (byte) 8));
+                this.handler.post(new toa(this, j, (byte) 8));
             } else {
-                fa4.b("VideoCapturerDevice init(" + j + "): videoCapturer.switchCamera CAMERA");
-                this.handler.post(new l3c(this, str2, (byte) 13));
+                fc4.b("VideoCapturerDevice init(" + j + "): videoCapturer.switchCamera CAMERA");
+                this.handler.post(new x4c(this, str2, (byte) 15));
             }
         }
     }
@@ -264,13 +264,13 @@ public class VideoCapturerDevice {
             webRtcAudioRecord.stopDeviceAudioRecord();
         }
         if (this.videoCapturer != null) {
-            fa4.b("VideoCapturerDevice onDestroy: videoCapturer.stopCapture");
+            fc4.b("VideoCapturerDevice onDestroy: videoCapturer.stopCapture");
             try {
                 this.videoCapturer.stopCapture();
                 this.videoCapturer.dispose();
                 this.videoCapturer = null;
             } catch (InterruptedException e) {
-                sdb.b(e);
+                rjb.m(e);
                 return;
             }
         }
@@ -296,11 +296,11 @@ public class VideoCapturerDevice {
             }
             i++;
         }
-        this.handler.post(new hac(this, b));
+        this.handler.post(new jcc(this, b));
         try {
             this.thread.quitSafely();
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
@@ -314,15 +314,15 @@ public class VideoCapturerDevice {
             sb.append(j);
             sb.append(", ");
             sb.append(i);
-            de9.s("): videoCapturer.startCapture", sb);
+            hg9.r("): videoCapturer.startCapture", sb);
             this.videoCapturer.startCapture(CAPTURE_WIDTH, CAPTURE_HEIGHT, 30);
             return;
         }
         try {
-            fa4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + "): videoCapturer.stopCapture");
+            fc4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + "): videoCapturer.stopCapture");
             this.videoCapturer.stopCapture();
         } catch (InterruptedException e) {
-            sdb.b(e);
+            rjb.m(e);
         }
     }
 
@@ -331,23 +331,23 @@ public class VideoCapturerDevice {
         if (this.nativePtr != j) {
             return;
         }
-        this.handler.post(new gac(this, i, j));
+        this.handler.post(new icc(this, i, j));
     }
 
     private static native CapturerObserver nativeGetJavaVideoCapturerObserver(long j);
 
     private void onDestroy() {
-        ug8.q(this.nativePtr, new StringBuilder("VideoCapturerDevice onDestroy ptr="));
+        wi8.q(this.nativePtr, new StringBuilder("VideoCapturerDevice onDestroy ptr="));
         this.nativePtr = 0L;
-        gl.d3(new hac(this, (byte) 1));
+        gm.c3(new jcc(this, (byte) 1));
     }
 
     private void onStateChanged(long j, int i) {
-        fa4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + ")");
-        gl.d3(new gac(this, j, i));
+        fc4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + ")");
+        gm.c3(new icc(this, j, i));
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -361,7 +361,7 @@ public class VideoCapturerDevice {
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
         public void onFirstFrameAvailable() {
-            gl.d3(new a((byte) 1));
+            gm.c3(new a((byte) 1));
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
@@ -385,7 +385,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }
@@ -399,7 +399,7 @@ public class VideoCapturerDevice {
 
         @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
         public void onCameraSwitchDone(final boolean z) {
-            gl.d3(new Runnable() { // from class: org.telegram.messenger.voip.b
+            gm.c3(new Runnable() { // from class: org.telegram.messenger.voip.b
                 @Override // java.lang.Runnable
                 public final void run() {
                     VideoCapturerDevice.3.lambda$onCameraSwitchDone$0(z);

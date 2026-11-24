@@ -1,71 +1,64 @@
 // default package
 
-import java.util.Iterator;
+import j$.util.Objects;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class so9 extends vo9 implements Iterator {
-    public to9 a;
-    public to9 b;
-    public final /* synthetic */ byte c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class so9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vo9 b;
 
-    public so9(to9 to9Var, to9 to9Var2, byte b) {
-        this.c = b;
-        this.a = to9Var2;
-        this.b = to9Var;
+    public /* synthetic */ so9(vo9 vo9Var, byte b) {
+        this.a = b;
+        this.b = vo9Var;
     }
 
-    @Override // vo9
-    public final void a(to9 to9Var) {
-        to9 to9Var2;
-        to9 to9Var3 = this.a;
-        to9 to9Var4 = null;
-        if (to9Var3 == to9Var && to9Var == this.b) {
-            this.b = null;
-            this.a = null;
-            to9Var3 = null;
-        }
-        to9 to9Var5 = to9Var3;
-        if (to9Var3 == to9Var) {
-            switch (this.c) {
-                case 0:
-                    to9Var2 = to9Var3.d;
-                    break;
-                default:
-                    to9Var2 = to9Var3.c;
-                    break;
-            }
-            to9Var5 = to9Var2;
-            this.a = to9Var5;
-        }
-        to9 to9Var6 = this.b;
-        if (to9Var6 == to9Var) {
-            if (to9Var6 != to9Var5 && to9Var5 != null) {
-                to9Var4 = b(to9Var6);
-            }
-            this.b = to9Var4;
-        }
-    }
-
-    public final to9 b(to9 to9Var) {
-        switch (this.c) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        vo9 vo9Var = this.b;
+        switch (b) {
             case 0:
-                return to9Var.c;
+                boolean z = vo9Var.w;
+                if (!z) {
+                    bq9 bq9Var = vo9Var.O;
+                    if (bq9Var == null) {
+                        vo9Var.P = false;
+                        if (!z && bq9Var == null) {
+                            if (!vo9Var.G) {
+                                vo9Var.G = true;
+                                gm.c3(new q96(vo9Var, (byte) 8));
+                            }
+                            bq9 bq9Var2 = new bq9(vo9Var.e, vo9Var.f, vo9Var.k(), new to9(vo9Var));
+                            vo9Var.O = bq9Var2;
+                            aq9 aq9Var = vo9Var.U;
+                            uo9 uo9Var = aq9Var != null ? new uo9(vo9Var, aq9Var) : null;
+                            vo9Var.V = uo9Var;
+                            bq9Var2.l(uo9Var, null);
+                            bq9 bq9Var3 = vo9Var.O;
+                            float f = vo9Var.H;
+                            bq9Var3.getClass();
+                            bq9Var3.b.post(new ku(bq9Var3, f, (byte) 5));
+                            vo9Var.O.k(a.o());
+                            bq9 bq9Var4 = vo9Var.O;
+                            bq9Var4.getClass();
+                            bq9Var4.b.post(new ro9(bq9Var4, (byte) 3));
+                            break;
+                        }
+                    } else if (vo9Var.P) {
+                        vo9Var.P = false;
+                        w01 w01Var = bq9Var.e;
+                        Objects.requireNonNull(w01Var);
+                        bq9Var.b.post(new f01(w01Var, (byte) 7));
+                        break;
+                    }
+                }
+                break;
             default:
-                return to9Var.d;
+                vo9Var.Q = null;
+                vo9Var.J();
+                break;
         }
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b != null;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        to9 to9Var = this.b;
-        to9 to9Var2 = this.a;
-        this.b = (to9Var == to9Var2 || to9Var2 == null) ? null : b(to9Var);
-        return to9Var;
     }
 }

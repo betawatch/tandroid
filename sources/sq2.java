@@ -1,29 +1,33 @@
 // default package
 
-import java.util.concurrent.ThreadFactory;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sq2 implements ThreadFactory {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ String b;
+public final class sq2 {
+    public static final sq2 a;
+    public static final /* synthetic */ sq2[] b;
 
-    public /* synthetic */ sq2(String str, byte b) {
-        this.a = b;
-        this.b = str;
+    /* JADX INFO: Fake field, exist only in values array */
+    sq2 EF0;
+
+    static {
+        sq2 sq2Var = new sq2("NOT_SET", 0);
+        sq2 sq2Var2 = new sq2("EVENT_OVERRIDE", 1);
+        a = sq2Var2;
+        b = new sq2[]{sq2Var, sq2Var2};
+        SparseArray sparseArray = new SparseArray();
+        sparseArray.put(0, sq2Var);
+        sparseArray.put(5, sq2Var2);
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        byte b = this.a;
-        String str = this.b;
-        switch (b) {
-            case 0:
-                Thread thread = new Thread(runnable, str);
-                thread.setPriority(10);
-                return thread;
-            default:
-                return new Thread(runnable, str);
-        }
+    public static sq2 valueOf(String str) {
+        return (sq2) Enum.valueOf(sq2.class, str);
+    }
+
+    public static sq2[] values() {
+        return (sq2[]) b.clone();
     }
 }

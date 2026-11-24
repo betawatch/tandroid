@@ -1,30 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ey2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rc1 b;
-    public final /* synthetic */ dv8 c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class ey2 implements by2 {
+    public final rr4 a;
+    public final by2 b;
 
-    public /* synthetic */ ey2(rc1 rc1Var, dv8 dv8Var, byte b) {
-        this.a = b;
-        this.b = rc1Var;
-        this.c = dv8Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        dv8 dv8Var = this.c;
-        rc1 rc1Var = this.b;
-        switch (b) {
-            case 0:
-                rc1Var.a(dv8Var);
-                break;
-            default:
-                rc1Var.a(dv8Var);
-                break;
-        }
+    public ey2(by2 by2Var, rr4 rr4Var) {
+        by2Var.getClass();
+        this.a = rr4Var;
+        this.b = by2Var instanceof ey2 ? ((ey2) by2Var).b : by2Var;
     }
 }

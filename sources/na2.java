@@ -1,39 +1,42 @@
 // default package
 
-import android.text.Spanned;
-import java.util.Comparator;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class na2 implements Comparator {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Spanned b;
+public final class na2 implements f59 {
+    public final /* synthetic */ pa2 a;
 
-    public /* synthetic */ na2(Spanned spanned, byte b) {
-        this.a = b;
-        this.b = spanned;
+    public na2(pa2 pa2Var) {
+        this.a = pa2Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int spanStart;
-        int spanStart2;
-        byte b = this.a;
-        Spanned spanned = this.b;
-        switch (b) {
-            case 0:
-                spanStart = spanned.getSpanStart((nj2) obj2);
-                spanStart2 = spanned.getSpanStart((nj2) obj);
-                break;
-            case 1:
-                spanStart = spanned.getSpanStart((kib) obj2);
-                spanStart2 = spanned.getSpanStart((kib) obj);
-                break;
-            default:
-                spanStart = spanned.getSpanStart((qg9) obj2);
-                spanStart2 = spanned.getSpanStart((qg9) obj);
-                break;
+    @Override // f59
+    public final void g(int i, View view) {
+        TLRPC.TL_username tL_username;
+        pa2 pa2Var = this.a;
+        qa2 qa2Var = pa2Var.i3;
+        if (!(view instanceof qf1) || (tL_username = ((qf1) view).w) == null) {
+            return;
         }
-        return spanStart - spanStart2;
+        if (tL_username.editable) {
+            if (qa2Var.fragmentView instanceof ScrollView) {
+                qa2Var.a.smoothScrollTo(0, qa2Var.E.getTop() - gm.L(128.0f));
+            }
+            qa2Var.b.requestFocus();
+            gm.E3(qa2Var.b);
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, qa2Var.getResourceProvider(), pa2Var.getContext());
+        String M0 = jb6.M0(tL_username.active ? 2131743351 : 2131743358, null);
+        he heVar = alertDialog$Builder.a;
+        heVar.S = M0;
+        heVar.U = jb6.M0(tL_username.active ? 2131743350 : 2131743357, null);
+        alertDialog$Builder.j(jb6.M0(tL_username.active ? 2131749082 : 2131745087, null), new jf((Object) this, (Object) tL_username, (Object) view, (byte) 27));
+        alertDialog$Builder.g(jb6.M0(2131752542, null), new a32((byte) 3));
+        alertDialog$Builder.o();
     }
 }

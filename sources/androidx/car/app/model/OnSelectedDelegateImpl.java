@@ -5,17 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnSelectedListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class OnSelectedDelegateImpl implements hp7 {
+public class OnSelectedDelegateImpl implements kr7 {
     private final IOnSelectedListener mStub;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     static class OnSelectedListenerStub extends IOnSelectedListener.Stub {
-        private final sr5 mListener;
+        private final rt5 mListener;
 
-        public OnSelectedListenerStub(sr5 sr5Var) {
+        public OnSelectedListenerStub(rt5 rt5Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -29,21 +29,21 @@ public class OnSelectedDelegateImpl implements hp7 {
         }
     }
 
-    private OnSelectedDelegateImpl(sr5 sr5Var) {
-        this.mStub = new OnSelectedListenerStub(sr5Var);
+    private OnSelectedDelegateImpl(rt5 rt5Var) {
+        this.mStub = new OnSelectedListenerStub(rt5Var);
     }
 
-    public static hp7 create(sr5 sr5Var) {
-        return new OnSelectedDelegateImpl(sr5Var);
+    public static kr7 create(rt5 rt5Var) {
+        return new OnSelectedDelegateImpl(rt5Var);
     }
 
-    public void sendSelected(int i, cp7 cp7Var) {
+    public void sendSelected(int i, fr7 fr7Var) {
         try {
             IOnSelectedListener iOnSelectedListener = this.mStub;
             Objects.requireNonNull(iOnSelectedListener);
             iOnSelectedListener.onSelected(i, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            rjb.m(e);
         }
     }
 

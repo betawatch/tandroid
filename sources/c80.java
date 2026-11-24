@@ -1,49 +1,13 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class c80 {
-    public int a;
-    public String b;
-    public int c;
-    public int d;
-    public long e;
-    public long f;
-    public long g;
-    public String h;
-    public List i;
-    public byte j;
+public final class c80 implements cq7 {
+    public static final c80 a = new c80();
+    public static final wa4 b = new wa4("storageMetrics", b10.m(b10.l(fv8.class, new wy(1))));
 
-    public final d80 a() {
-        String str;
-        if (this.j == 63 && (str = this.b) != null) {
-            return new d80(this.a, str, this.c, this.d, this.e, this.f, this.g, this.h, this.i);
-        }
-        StringBuilder sb = new StringBuilder();
-        if ((this.j & 1) == 0) {
-            sb.append(" pid");
-        }
-        if (this.b == null) {
-            sb.append(" processName");
-        }
-        if ((this.j & 2) == 0) {
-            sb.append(" reasonCode");
-        }
-        if ((this.j & 4) == 0) {
-            sb.append(" importance");
-        }
-        if ((this.j & 8) == 0) {
-            sb.append(" pss");
-        }
-        if ((this.j & 16) == 0) {
-            sb.append(" rss");
-        }
-        if ((this.j & 32) == 0) {
-            sb.append(" timestamp");
-        }
-        sc8.j(ir2.o("Missing required properties:", sb));
-        return null;
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        ((dq7) obj2).a(b, ((xz4) obj).a);
     }
 }

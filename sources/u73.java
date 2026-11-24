@@ -1,85 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class u73 extends ccb implements eq4 {
-    public a59 a;
-    public byte b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ a59 d;
-    public final /* synthetic */ v73 e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ boolean h;
+import org.telegram.ui.DataSettingsActivity;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u73(a59 a59Var, v73 v73Var, Object obj, boolean z, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.d = a59Var;
-        this.e = v73Var;
-        this.f = obj;
-        this.h = z;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class u73 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ DataSettingsActivity b;
+
+    public /* synthetic */ u73(DataSettingsActivity dataSettingsActivity, byte b) {
+        this.a = b;
+        this.b = dataSettingsActivity;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        u73 u73Var = new u73(this.d, this.e, this.f, this.h, fw2Var);
-        u73Var.c = obj;
-        return u73Var;
-    }
-
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        return ((u73) create((sb4) obj, (fw2) obj2)).invokeSuspend(g5c.a);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
-    
-        if (r6.b(r2, r8) == r7) goto L15;
-     */
-    @Override // of0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        sb4 sb4Var;
-        a59 a59Var;
-        byte b = this.b;
-        Object obj2 = this.f;
-        v73 v73Var = this.e;
-        a59 a59Var2 = this.d;
-        bx2 bx2Var = bx2.a;
-        if (b == 0) {
-            qse.b(obj);
-            sb4 sb4Var2 = (sb4) this.c;
-            kp5 c = v73Var.c();
-            this.c = sb4Var2;
-            this.a = a59Var2;
-            this.b = (byte) 1;
-            Object a = c.a(this);
-            if (a != bx2Var) {
-                sb4Var = sb4Var2;
-                obj = a;
-                a59Var = a59Var2;
-            }
-            return bx2Var;
+    /* JADX WARN: Type inference failed for: r9v3, types: [boolean] */
+    @Override // java.lang.Runnable
+    public final void run() {
+        ?? r9;
+        byte b = this.a;
+        DataSettingsActivity dataSettingsActivity = this.b;
+        byte b2 = 1;
+        switch (b) {
+            case 0:
+                dataSettingsActivity.getMediaDataController().G(true);
+                break;
+            case 1:
+                dataSettingsActivity.X = true;
+                if (dataSettingsActivity.a != null && (r9 = dataSettingsActivity.s) >= 0) {
+                    dataSettingsActivity.s0(r9 == true ? 1 : 0);
+                    break;
+                }
+                break;
+            default:
+                y71.k0 = null;
+                DataSettingsActivity dataSettingsActivity2 = this.b;
+                u73 u73Var = new u73(dataSettingsActivity2, b2);
+                gm.d3(u73Var, 100L);
+                y71.d0(new p2c((Object) dataSettingsActivity2, (Object) u73Var, System.currentTimeMillis(), (byte) 1));
+                break;
         }
-        if (b != 1) {
-            if (b != 2) {
-                sc8.j("call to 'resume' before 'invoke' with coroutine");
-                return null;
-            }
-            qse.b(obj);
-            if (this.h) {
-                v73Var.h.L(new s53(obj2 != null ? obj2.hashCode() : 0, a59Var2.a, obj2));
-            }
-            return g5c.a;
-        }
-        a59Var = this.a;
-        sb4Var = (sb4) this.c;
-        qse.b(obj);
-        a59Var.a = ((Number) obj).intValue();
-        this.c = null;
-        this.a = null;
-        this.b = (byte) 2;
     }
 }

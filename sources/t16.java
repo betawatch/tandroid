@@ -1,46 +1,20 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.PremiumPreviewFragment;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class t16 implements ed, e39 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ h26 b;
-
-    public /* synthetic */ t16(h26 h26Var, byte b) {
-        this.a = b;
-        this.b = h26Var;
+public final class t16 implements Consumer {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ((Boolean) obj).getClass();
+        String str = LaunchActivity.C1;
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        h26 h26Var = this.b;
-        h26Var.n1.getOnItemClickListener().d(i, view);
-        if (h26Var.c2 != 19) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        h26 h26Var = this.b;
-        switch (b) {
-            case 0:
-                h26Var.F2.presentFragment(new PremiumPreviewFragment(0, null));
-                h26Var.dismiss();
-                hdVar.dismiss();
-                break;
-            default:
-                hdVar.dismiss();
-                h26Var.Z0();
-                break;
-        }
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

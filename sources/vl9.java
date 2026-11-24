@@ -1,134 +1,191 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.Locale;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
+import android.hardware.camera2.CameraDevice;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class vl9 extends d {
-    public static final int[] d = {750000, 1000000, 1200000, 2000000};
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class vl9 extends CameraDevice.StateCallback {
     public final /* synthetic */ byte a;
-    public o39 b;
-    public n39 c;
+    public final /* synthetic */ bm9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vl9(Bundle bundle, byte b) {
-        super(bundle);
+    public /* synthetic */ vl9(bm9 bm9Var, byte b) {
         this.a = b;
+        this.b = bm9Var;
     }
 
-    public static String a0(int i) {
-        if (i % 1000000 == 0) {
-            return (i / 1000000) + " Mbps";
-        }
-        if (i > 1000000) {
-            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i / 1000000.0f));
-        }
-        return (i / 1000) + " kbps";
-    }
-
-    public final void b0(int i) {
-        if (i != 1) {
-            if (MediaController.r0(this.currentAccount) && i == 2) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                alertDialog$Builder.a.S = k96.M0(2131753919, null);
-                alertDialog$Builder.e(new CharSequence[]{k96.M0(2131753918, null), k96.M0(2131753917, null)}, new r20(this, (byte) 0));
-                showDialog(alertDialog$Builder.a);
-                return;
-            }
-            return;
-        }
-        im0 im0Var = wcd.b;
-        boolean z = !MediaController.r0(this.currentAccount);
-        synchronized (im0Var) {
-            im0Var.d = z;
-            im0Var.c = true;
-            im0Var.b = true;
-            j8a.a.edit().putBoolean("audio_recorder_v2_enabled", z).apply();
-        }
-        ((s20) this.c).f();
-    }
-
-    public final void c0(int i, CharSequence[] charSequenceArr, sc8 sc8Var) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        String M0 = k96.M0(i, null);
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = M0;
-        alertDialog$Builder.e(charSequenceArr, new fe((Object) this, (Object) sc8Var, (byte) 10));
-        showDialog(hdVar);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        byte b = 0;
-        switch (this.a) {
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onClosed(CameraDevice cameraDevice) {
+        byte b = this.a;
+        bm9 bm9Var = this.b;
+        switch (b) {
             case 0:
-                setHasOwnBackground(true);
-                this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                this.simpleActionBar.setTitle(k96.M0(2131745792, null));
-                this.simpleActionBar.setActionBarMenuOnItemClick(new kk8(this, (byte) 9));
-                FrameLayout frameLayout = new FrameLayout(context);
-                this.fragmentView = frameLayout;
-                o39 o39Var = new o39(context, null);
-                this.b = o39Var;
-                o39Var.r1();
-                this.b.setSectionsDrawBackground(true);
-                this.b.setLayoutManager(new t26());
-                this.b.setVerticalScrollBarEnabled(false);
-                o39 o39Var2 = this.b;
-                gx0 gx0Var = new gx0(context);
-                this.c = gx0Var;
-                o39Var2.setAdapter(gx0Var);
-                this.b.setOnItemClickListener(new f09(this, (byte) 3));
-                frameLayout.addView(this.b, nme.c(-1.0f, -1));
+                bm9Var.F(cameraDevice);
                 break;
             default:
-                setHasOwnBackground(true);
-                this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                this.simpleActionBar.setTitle(k96.M0(2131753916, null));
-                this.simpleActionBar.setActionBarMenuOnItemClick(new r8(this, (byte) 4));
-                FrameLayout frameLayout2 = new FrameLayout(context);
-                this.fragmentView = frameLayout2;
-                o39 o39Var3 = new o39(context, null);
-                this.b = o39Var3;
-                o39Var3.setSectionsDrawBackground(true);
-                this.b.r1();
-                this.b.setLayoutManager(new t26());
-                this.b.setVerticalScrollBarEnabled(false);
-                o39 o39Var4 = this.b;
-                s20 s20Var = new s20(this, context, b);
-                this.c = s20Var;
-                o39Var4.setAdapter(s20Var);
-                this.b.setOnItemClickListener(new u(this, (byte) 5));
-                frameLayout2.addView(this.b, nme.c(-1.0f, -1));
+                bm9Var.F(cameraDevice);
                 break;
         }
-        return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onDisconnected(CameraDevice cameraDevice) {
         switch (this.a) {
+            case 0:
+                this.b.j.b("camera disconnected: id=" + cameraDevice.getId() + ", closing=" + this.b.s0.contains(cameraDevice));
+                if (!this.b.s0.contains(cameraDevice)) {
+                    bm9 bm9Var = this.b;
+                    if (cameraDevice != bm9Var.o0) {
+                        boolean z = (!bm9Var.U || this.b.Y || this.b.V) ? false : true;
+                        bm9 bm9Var2 = this.b;
+                        if (bm9Var2.y == cameraDevice) {
+                            bm9Var2.k();
+                            bm9Var2 = this.b;
+                            bm9Var2.y = null;
+                        }
+                        bm9Var2.l(cameraDevice, 1);
+                        if (z) {
+                            this.b.L(new IllegalStateException("Camera device disconnected"));
+                            break;
+                        }
+                    } else {
+                        bm9Var.B(cameraDevice, "disconnected", null);
+                        break;
+                    }
+                } else {
+                    cameraDevice.close();
+                    break;
+                }
+                break;
+            default:
+                bm9 bm9Var3 = this.b;
+                fm9 fm9Var = bm9Var3.j;
+                StringBuilder sb = new StringBuilder("warm camera disconnected: id=");
+                sb.append(cameraDevice.getId());
+                sb.append(", closing=");
+                ArrayList arrayList = bm9Var3.s0;
+                sb.append(arrayList.contains(cameraDevice));
+                fm9Var.b(sb.toString());
+                if (!arrayList.contains(cameraDevice)) {
+                    bm9Var3.B(cameraDevice, "disconnected", null);
+                    break;
+                } else {
+                    cameraDevice.close();
+                    break;
+                }
         }
-        return this.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onError(CameraDevice cameraDevice, int i) {
         byte b = this.a;
-        return true;
+        bm9 bm9Var = this.b;
+        switch (b) {
+            case 0:
+                fm9 fm9Var = bm9Var.j;
+                StringBuilder sb = new StringBuilder("camera error: id=");
+                sb.append(cameraDevice.getId());
+                sb.append(", error=");
+                sb.append(bm9.e(i));
+                sb.append(" (");
+                sb.append(i);
+                sb.append("), closing=");
+                ArrayList arrayList = bm9Var.s0;
+                sb.append(arrayList.contains(cameraDevice));
+                fm9Var.b(sb.toString());
+                if (!arrayList.contains(cameraDevice)) {
+                    if (cameraDevice != bm9Var.o0) {
+                        if (bm9Var.y == cameraDevice) {
+                            bm9Var.k();
+                            bm9Var.y = null;
+                        }
+                        bm9Var.l(cameraDevice, 1);
+                        bm9Var.L(new IllegalStateException("Camera device error: " + bm9.e(i) + " (" + i + ")"));
+                        break;
+                    } else {
+                        bm9Var.B(cameraDevice, "error=" + bm9.e(i) + " (" + i + ")", null);
+                        break;
+                    }
+                } else {
+                    cameraDevice.close();
+                    break;
+                }
+            default:
+                fm9 fm9Var2 = bm9Var.j;
+                StringBuilder sb2 = new StringBuilder("warm camera error: id=");
+                sb2.append(cameraDevice.getId());
+                sb2.append(", error=");
+                sb2.append(bm9.e(i));
+                sb2.append(" (");
+                sb2.append(i);
+                sb2.append("), closing=");
+                ArrayList arrayList2 = bm9Var.s0;
+                sb2.append(arrayList2.contains(cameraDevice));
+                fm9Var2.b(sb2.toString());
+                if (!arrayList2.contains(cameraDevice)) {
+                    bm9Var.B(cameraDevice, "error=" + bm9.e(i) + " (" + i + ")", new IllegalStateException("Warm camera device error: " + bm9.e(i) + " (" + i + ")"));
+                    break;
+                } else {
+                    cameraDevice.close();
+                    break;
+                }
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        byte b = this.a;
-        return true;
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onOpened(CameraDevice cameraDevice) {
+        String str;
+        switch (this.a) {
+            case 0:
+                fm9 fm9Var = this.b.j;
+                StringBuilder sb = new StringBuilder("camera opened: id=");
+                sb.append(cameraDevice.getId());
+                sb.append(", elapsedMs=");
+                sb.append(bm9.x(this.b.D0));
+                if (this.b.W) {
+                    str = ", switchElapsedMs=" + bm9.x(this.b.F0);
+                } else {
+                    str = "";
+                }
+                sb.append(str);
+                fm9Var.b(sb.toString());
+                if (this.b.U) {
+                    bm9 bm9Var = this.b;
+                    if (!bm9Var.V) {
+                        bm9Var.y = cameraDevice;
+                        if (!bm9Var.k0) {
+                            bm9Var.q();
+                            break;
+                        } else if (bm9Var.v0 == null && bm9Var.o0 != null) {
+                            bm9Var.r();
+                            break;
+                        } else {
+                            bm9Var.j.b("active camera opened; waiting for dual peer before sessions");
+                            break;
+                        }
+                    }
+                }
+                bm9 bm9Var2 = this.b;
+                bm9Var2.l(cameraDevice, bm9Var2.V ? 2 : 1);
+                break;
+            default:
+                if (this.b.U && !this.b.Y) {
+                    bm9 bm9Var3 = this.b;
+                    if (bm9Var3.k0 && bm9Var3.p0 != null && cameraDevice.getId().equals(this.b.p0.a)) {
+                        bm9 bm9Var4 = this.b;
+                        bm9Var4.o0 = cameraDevice;
+                        bm9Var4.j.b("warm camera opened: id=" + cameraDevice.getId() + ", facing=" + this.b.p0.b + ", elapsedMs=" + bm9.x(this.b.y0));
+                        bm9 bm9Var5 = this.b;
+                        if (bm9Var5.y != null && bm9Var5.z == null && !bm9Var5.V) {
+                            bm9Var5.j.b("both camera devices opened; configuring dual sessions");
+                            this.b.r();
+                            break;
+                        }
+                    }
+                }
+                this.b.j.b("stale warm camera open ignored: id=" + cameraDevice.getId());
+                this.b.l(cameraDevice, 1);
+                break;
+        }
     }
 }

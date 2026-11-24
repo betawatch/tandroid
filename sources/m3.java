@@ -2,7 +2,7 @@
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class m3 implements Map.Entry {
     public final /* synthetic */ byte a;
@@ -13,21 +13,21 @@ public abstract class m3 implements Map.Entry {
             case 0:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
-                    if (bqe.a(getKey(), entry.getKey()) && bqe.a(getValue(), entry.getValue())) {
+                    if (ese.a(getKey(), entry.getKey()) && ese.a(getValue(), entry.getValue())) {
                     }
                 }
                 break;
             case 1:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry2 = (Map.Entry) obj;
-                    if (s3f.a(getKey(), entry2.getKey()) && s3f.a(getValue(), entry2.getValue())) {
+                    if (u5f.a(getKey(), entry2.getKey()) && u5f.a(getValue(), entry2.getValue())) {
                     }
                 }
                 break;
             default:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry3 = (Map.Entry) obj;
-                    if (m1f.a(getKey(), entry3.getKey()) && m1f.a(getValue(), entry3.getValue())) {
+                    if (o3f.a(getKey(), entry3.getKey()) && o3f.a(getValue(), entry3.getValue())) {
                     }
                 }
                 break;
@@ -83,7 +83,7 @@ public abstract class m3 implements Map.Entry {
             case 1:
                 return getKey() + "=" + getValue();
             default:
-                return tb4.y(String.valueOf(getKey()), "=", String.valueOf(getValue()));
+                return kt6.o(String.valueOf(getKey()), "=", String.valueOf(getValue()));
         }
     }
 }

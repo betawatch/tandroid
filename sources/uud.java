@@ -1,27 +1,19 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.wearable.ConnectionConfiguration;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class uud extends b4 {
-    public static final Parcelable.Creator<uud> CREATOR = new rpd((byte) 22);
-    public final int a;
-    public final ConnectionConfiguration[] b;
+public final class uud implements cq7 {
+    public static final uud a = new uud();
 
-    public uud(int i, ConnectionConfiguration[] connectionConfigurationArr) {
-        this.a = i;
-        this.b = connectionConfigurationArr;
+    static {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)), 3)));
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.o(parcel, 3, this.b, i);
-        jte.s(parcel, r);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

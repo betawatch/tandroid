@@ -1,74 +1,132 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.regex.Pattern;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class usc extends TLObject {
-    public static final /* synthetic */ int i = 0;
-    public String a;
-    public TLRPC.InputWebFileLocation b;
-    public ArrayList c;
-    public int d;
-    public String e;
-    public boolean f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class usc {
+    public static final Pattern a = Pattern.compile("^(.+_\\d+_.+_v\\d+(_debug)?\\.jpg|-?\\d+_-?\\d+\\.jpg|wallpaper_thumb_-?\\d+\\.png)$");
+    public static final Object b = new Object();
+    public static volatile File c;
 
-    public static usc a(double d, double d2, long j, int i2, int i3, int i4, int i5) {
-        usc uscVar = new usc();
-        TLRPC.TL_inputWebFileGeoPointLocation tL_inputWebFileGeoPointLocation = new TLRPC.TL_inputWebFileGeoPointLocation();
-        uscVar.b = tL_inputWebFileGeoPointLocation;
-        TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
-        tL_inputWebFileGeoPointLocation.geo_point = tL_inputGeoPoint;
-        tL_inputWebFileGeoPointLocation.access_hash = j;
-        tL_inputGeoPoint.lat = d;
-        tL_inputGeoPoint._long = d2;
-        tL_inputWebFileGeoPointLocation.w = i2;
-        tL_inputWebFileGeoPointLocation.h = i3;
-        tL_inputWebFileGeoPointLocation.zoom = i4;
-        tL_inputWebFileGeoPointLocation.scale = i5;
-        uscVar.e = "image/png";
-        uscVar.a = String.format(Locale.US, "maps_%.6f_%.6f_%d_%d_%d_%d.png", Double.valueOf(d), Double.valueOf(d2), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4), Integer.valueOf(i5));
-        uscVar.c = new ArrayList();
-        return uscVar;
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x005c, code lost:
+    
+        if (r1 == false) goto L36;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean a(File file, File file2) {
+        boolean z = false;
+        if (file == null) {
+            return false;
+        }
+        if (file.equals(file2)) {
+            return true;
+        }
+        synchronized (b) {
+            File file3 = new File(file2.getParentFile(), file2.getName() + ".tmp");
+            try {
+                FileInputStream fileInputStream = new FileInputStream(file);
+                try {
+                    FileOutputStream fileOutputStream = new FileOutputStream(file3);
+                    try {
+                        fileOutputStream.getChannel().transferFrom(fileInputStream.getChannel(), 0L, fileInputStream.getChannel().size());
+                        fileOutputStream.getFD().sync();
+                        fileOutputStream.close();
+                        fileInputStream.close();
+                        z = file3.renameTo(file2);
+                    } finally {
+                    }
+                } finally {
+                }
+            } finally {
+                try {
+                    return z;
+                } finally {
+                }
+            }
+        }
+        return z;
     }
 
-    public static usc b(TLRPC.GeoPoint geoPoint, int i2, int i3, int i4, int i5) {
-        return a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, i2, i3, i4, i5);
+    public static File b(String str) {
+        File file = c;
+        if (file == null) {
+            file = new File(a.h(), "wallpaper");
+            file.mkdirs();
+            c = file;
+        }
+        if (str == null) {
+            return new File(file, ".none");
+        }
+        File file2 = new File(file, str);
+        if (file2.exists()) {
+            return file2;
+        }
+        synchronized (b) {
+            File file3 = new File(a.h(), str);
+            return (!file3.isFile() || file2.exists() || file3.renameTo(file2)) ? file2 : file3;
+        }
     }
 
-    public static usc c(TLRPC.WebDocument webDocument) {
-        if (webDocument instanceof TLRPC.TL_webDocument) {
-            usc uscVar = new usc();
-            TLRPC.TL_webDocument tL_webDocument = (TLRPC.TL_webDocument) webDocument;
-            TLRPC.TL_inputWebFileLocation tL_inputWebFileLocation = new TLRPC.TL_inputWebFileLocation();
-            uscVar.b = tL_inputWebFileLocation;
-            String str = webDocument.url;
-            uscVar.a = str;
-            tL_inputWebFileLocation.url = str;
-            tL_inputWebFileLocation.access_hash = tL_webDocument.access_hash;
-            uscVar.d = tL_webDocument.size;
-            uscVar.e = tL_webDocument.mime_type;
-            uscVar.c = tL_webDocument.attributes;
-            return uscVar;
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x004a, code lost:
+    
+        if (r0 == false) goto L28;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean c(Bitmap bitmap, Bitmap.CompressFormat compressFormat, File file) {
+        boolean z = false;
+        if (bitmap == null) {
+            return false;
         }
-        if (!(webDocument instanceof TLRPC.TL_webDocumentNoProxy)) {
-            return null;
+        synchronized (b) {
+            File file2 = new File(file.getParentFile(), file.getName() + ".tmp");
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                try {
+                    if (!bitmap.compress(compressFormat, 87, fileOutputStream)) {
+                        fileOutputStream.close();
+                        return false;
+                    }
+                    fileOutputStream.flush();
+                    fileOutputStream.getFD().sync();
+                    fileOutputStream.close();
+                    z = file2.renameTo(file);
+                } finally {
+                }
+            } finally {
+                try {
+                    return z;
+                } finally {
+                }
+            }
         }
-        usc uscVar2 = new usc();
-        TLRPC.TL_webDocumentNoProxy tL_webDocumentNoProxy = (TLRPC.TL_webDocumentNoProxy) webDocument;
-        TLRPC.TL_inputWebFileLocation tL_inputWebFileLocation2 = new TLRPC.TL_inputWebFileLocation();
-        uscVar2.b = tL_inputWebFileLocation2;
-        String str2 = webDocument.url;
-        uscVar2.a = str2;
-        tL_inputWebFileLocation2.url = str2;
-        tL_inputWebFileLocation2.access_hash = tL_webDocumentNoProxy.access_hash;
-        uscVar2.d = tL_webDocumentNoProxy.size;
-        uscVar2.e = tL_webDocumentNoProxy.mime_type;
-        uscVar2.c = tL_webDocumentNoProxy.attributes;
-        uscVar2.f = true;
-        return uscVar2;
+    }
+
+    public static File d(String str) {
+        String str2;
+        if (TextUtils.isEmpty(str)) {
+            str2 = null;
+        } else {
+            str2 = Utilities.a(str) + ".wp";
+        }
+        return b(str2);
+    }
+
+    public static File e(String str) {
+        if (TextUtils.isEmpty(str)) {
+            str = null;
+        }
+        return b(str);
     }
 }

@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class SectionedItemList {
     private final CarText mHeader;
@@ -19,12 +19,12 @@ public final class SectionedItemList {
     public static SectionedItemList create(ItemList itemList, CharSequence charSequence) {
         Objects.requireNonNull(charSequence);
         CarText create = CarText.create(charSequence);
-        pc1 pc1Var = pc1.b;
-        pc1Var.getClass();
-        pc1Var.a(create.getSpans());
+        xd1 xd1Var = xd1.b;
+        xd1Var.getClass();
+        xd1Var.a(create.getSpans());
         Iterator<List<CarText.SpanWrapper>> it = create.getSpansForVariants().iterator();
         while (it.hasNext()) {
-            pc1Var.a(it.next());
+            xd1Var.a(it.next());
         }
         Objects.requireNonNull(itemList);
         return new SectionedItemList(itemList, create);

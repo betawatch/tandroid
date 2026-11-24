@@ -1,72 +1,153 @@
 // default package
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class n34 extends y2 implements m34, Serializable {
-    public final Enum[] a;
+public final class n34 implements List, Serializable, RandomAccess {
+    public static final n34 a = new n34();
 
-    public n34(Enum[] enumArr) {
-        enumArr.getClass();
-        this.a = enumArr;
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ void add(int i, Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // y2, java.util.List, java.util.Collection
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return false;
-        }
-        Enum r3 = (Enum) obj;
-        int ordinal = r3.ordinal();
-        Enum[] enumArr = this.a;
-        enumArr.getClass();
-        return ((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r3;
+    @Override // java.util.List
+    public final boolean addAll(int i, Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final /* bridge */ boolean contains(Object obj) {
+        return false;
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        collection.getClass();
+        return collection.isEmpty();
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean equals(Object obj) {
+        return (obj instanceof List) && ((List) obj).isEmpty();
     }
 
     @Override // java.util.List
     public final Object get(int i) {
-        Enum[] enumArr = this.a;
-        int length = enumArr.length;
-        if (i >= 0 && i < length) {
-            return enumArr[i];
+        throw new IndexOutOfBoundsException("Empty list doesn't contain element at index " + i + '.');
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final int hashCode() {
+        return 1;
+    }
+
+    @Override // java.util.List
+    public final /* bridge */ int indexOf(Object obj) {
+        return -1;
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean isEmpty() {
+        return true;
+    }
+
+    @Override // java.util.List, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return m34.a;
+    }
+
+    @Override // java.util.List
+    public final /* bridge */ int lastIndexOf(Object obj) {
+        return -1;
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        if (i == 0) {
+            return m34.a;
         }
-        k93.i(b00.g(i, length, "index: ", ", size: "));
+        wa3.i(hg9.j(i, "Index: "));
         return null;
     }
 
-    @Override // y2
-    public final int h() {
-        return this.a.length;
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object remove(int i) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // y2, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return -1;
-        }
-        Enum r4 = (Enum) obj;
-        int ordinal = r4.ordinal();
-        Enum[] enumArr = this.a;
-        enumArr.getClass();
-        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r4) {
-            return ordinal;
-        }
-        return -1;
+    @Override // java.util.List, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // y2, java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return -1;
+    @Override // java.util.List, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object set(int i, Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final int size() {
+        return 0;
+    }
+
+    @Override // java.util.List
+    public final List subList(int i, int i2) {
+        if (i == 0 && i2 == 0) {
+            return this;
         }
-        Enum r4 = (Enum) obj;
-        int ordinal = r4.ordinal();
-        Enum[] enumArr = this.a;
-        enumArr.getClass();
-        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r4) {
-            return ordinal;
-        }
-        return -1;
+        wa3.i(b10.g(i, i2, "fromIndex: ", ", toIndex: "));
+        return null;
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        return ea3.c(this, objArr);
+    }
+
+    public final String toString() {
+        return "[]";
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final Object[] toArray() {
+        return ea3.b(this);
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator() {
+        return m34.a;
     }
 }

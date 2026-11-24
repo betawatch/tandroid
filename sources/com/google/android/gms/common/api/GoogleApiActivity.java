@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -24,12 +24,12 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             this.a = 0;
             setResult(i2, intent);
             if (booleanExtra) {
-                hy4 e = hy4.e(this);
+                i05 e = i05.e(this);
                 if (i2 == -1) {
-                    o59 o59Var = e.y;
-                    o59Var.sendMessage(o59Var.obtainMessage(3));
+                    q79 q79Var = e.y;
+                    q79Var.sendMessage(q79Var.obtainMessage(3));
                 } else if (i2 == 0) {
-                    e.h(new ds2(13, null, null), getIntent().getIntExtra("failing_client_id", -1));
+                    e.h(new ot2(13, null, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
         } else if (i == 2) {
@@ -70,7 +70,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                 finish();
                 return;
             } else {
-                cy4.e.d(this, num.intValue(), this);
+                d05.e.d(this, num.intValue(), this);
                 this.a = 1;
                 return;
             }
@@ -84,14 +84,14 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                 e = e;
                 ActivityNotFoundException activityNotFoundException = e;
                 if (extras.getBoolean("notify_manager", true)) {
-                    hy4.e(googleApiActivity).h(new ds2(22, null, null), googleApiActivity.getIntent().getIntExtra("failing_client_id", -1));
+                    i05.e(googleApiActivity).h(new ot2(22, null, null), googleApiActivity.getIntent().getIntExtra("failing_client_id", -1));
                 } else {
                     String obj = pendingIntent.toString();
-                    String o = ls6.o("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
+                    String p = kt6.p("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
                     if (Build.FINGERPRINT.contains("generic")) {
-                        o = o.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                        p = p.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }
-                    Log.e("GoogleApiActivity", o, activityNotFoundException);
+                    Log.e("GoogleApiActivity", p, activityNotFoundException);
                 }
                 googleApiActivity.a = 1;
                 googleApiActivity.finish();

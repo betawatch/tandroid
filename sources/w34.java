@@ -1,47 +1,200 @@
 // default package
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r4v1 w34, still in use, count: 1, list:
-  (r4v1 w34) from 0x0033: FILLED_NEW_ARRAY (r1v1 w34), (r0v0 w34), (r5v1 w34), (r4v1 w34) A[WRAPPED] (LINE:52) elemType: w34
-	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
-	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
-	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
-	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class w34 {
-    b(1),
-    c(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(3),
-    d(2);
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ShapeDrawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-    public static final w34[] e;
-    public final byte a;
-
-    static {
-        w34 w34Var = b;
-        w34 w34Var2 = c;
-        w34 w34Var3 = d;
-        e = new w34[]{w34Var2, w34Var, w34Var3, r4};
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class w34 extends LinearLayout implements vlb {
+    public final ylb a;
+    public final FrameLayout[] b;
+    public final bf0[] c;
+    public final FrameLayout[] d;
+    public final FrameLayout[] e;
+    public final float[] f;
+    public final int[] h;
+    public qac n;
+    public c6c r;
+    public int s;
+    public ValueAnimator w;
+    public int x;
+    public static final int[] y = {R.raw.topics_tabs, R.raw.topics_list, R.raw.topics_sidebar};
+    public static final int[] E = {2131743672, 2131743673, 2131743669};
 
     /* JADX WARN: Multi-variable type inference failed */
-    public w34(int i) {
-        this.a = i;
+    /* JADX WARN: Type inference failed for: r5v0 */
+    /* JADX WARN: Type inference failed for: r5v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r5v5 */
+    public w34(Context context, ylb ylbVar) {
+        super(context);
+        int i = 3;
+        this.b = new FrameLayout[3];
+        this.c = new bf0[3];
+        this.d = new FrameLayout[3];
+        this.e = new FrameLayout[3];
+        this.f = new float[3];
+        this.h = new int[3];
+        int i2 = -1;
+        this.s = -1;
+        this.a = ylbVar;
+        ?? r5 = 0;
+        setOrientation(0);
+        setPadding(gm.L(8.0f), 0, gm.L(8.0f), 0);
+        setClipChildren(false);
+        int i3 = 0;
+        while (i3 < i) {
+            FrameLayout frameLayout = new FrameLayout(context);
+            frameLayout.setClipChildren(r5);
+            rve.b(frameLayout, 0.05f, 1.25f);
+            frameLayout.setOnClickListener(new v0(this, i3, (byte) 6));
+            addView(frameLayout, qoe.p(r5, i2, 1.0f, nm7.D1));
+            this.b[i3] = frameLayout;
+            bf0 bf0Var = new bf0(context);
+            bf0Var.setImageDrawable(new p09(y[i3], gm.L(160.0f), gm.L(160.0f)));
+            frameLayout.addView(bf0Var, qoe.d(nm7.p2, 160.0f, 49, 0.0f, 12.0f, 0.0f, 0.0f));
+            this.c[i3] = bf0Var;
+            FrameLayout frameLayout2 = new FrameLayout(context);
+            TextView b = jxe.b(context, 14.0f, cmb.y6, true, null);
+            int[] iArr = E;
+            b.setText(jb6.M0(iArr[i3], null));
+            b.setSingleLine();
+            b.setPadding(gm.L(10.0f), r5, gm.L(10.0f), r5);
+            frameLayout2.addView(b, qoe.e(-2, -2, 17));
+            FrameLayout frameLayout3 = new FrameLayout(context);
+            frameLayout3.setPadding(gm.L(10.0f), r5, gm.L(10.0f), r5);
+            int L = gm.L(13.0f);
+            int i4 = cmb.Ei;
+            ShapeDrawable b0 = cmb.b0(L, cmb.v0(i4, ylbVar));
+            wmb M = anb.M(i4);
+            frameLayout3.setBackground(b0);
+            anb.j(frameLayout3, b0, M, null, ylbVar);
+            frameLayout2.addView(frameLayout3, qoe.e(-2, 26, 17));
+            TextView b2 = jxe.b(context, 14.0f, cmb.f6, true, null);
+            b2.setText(jb6.M0(iArr[i3], null));
+            b2.setSingleLine();
+            frameLayout3.addView(b2, qoe.e(-2, -2, 17));
+            frameLayout.addView(frameLayout2, qoe.e(-2, 26, 49));
+            this.d[i3] = frameLayout2;
+            this.e[i3] = frameLayout3;
+            i3++;
+            i = 3;
+            i2 = -1;
+            r5 = 0;
+        }
+        boolean z = r5;
+        b(z ? 1 : 0, z);
     }
 
-    public static w34 valueOf(String str) {
-        return (w34) Enum.valueOf(w34.class, str);
+    public final void a() {
+        for (int i = 0; i < 3; i++) {
+            int i2 = cmb.B6;
+            ylb ylbVar = this.a;
+            int f = on2.f(this.f[i], cmb.v0(i2, ylbVar), cmb.v0(cmb.Ei, ylbVar));
+            int[] iArr = this.h;
+            if (f != iArr[i]) {
+                iArr[i] = f;
+                bf0[] bf0VarArr = this.c;
+                bf0VarArr[i].setColorFilter(new PorterDuffColorFilter(f, PorterDuff.Mode.SRC_IN));
+                bf0VarArr[i].invalidate();
+            }
+        }
     }
 
-    public static w34[] values() {
-        return (w34[]) f.clone();
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(cmb.B6));
+    }
+
+    /* JADX WARN: Type inference failed for: r9v6, types: [float[], java.io.Serializable] */
+    public final void b(int i, boolean z) {
+        if (this.s != i) {
+            this.s = i;
+            ValueAnimator valueAnimator = this.w;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.w = null;
+            }
+            byte b = 0;
+            int i2 = 0;
+            while (true) {
+                if (i2 >= 3) {
+                    break;
+                }
+                float f = i2 != i ? 0.0f : 1.0f;
+                FrameLayout[] frameLayoutArr = this.e;
+                if (z) {
+                    wi8.t(frameLayoutArr[i2].animate().scaleX(f).scaleY(f).alpha(f), d53.h, 320L);
+                } else {
+                    frameLayoutArr[i2].animate().cancel();
+                    frameLayoutArr[i2].setScaleX(f);
+                    frameLayoutArr[i2].setScaleY(f);
+                    frameLayoutArr[i2].setAlpha(f);
+                }
+                i2++;
+            }
+            float[] fArr = this.f;
+            if (z) {
+                ?? r9 = (float[]) fArr.clone();
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.w = ofFloat;
+                ofFloat.addUpdateListener(new u34(this, r9, i, b));
+                this.w.addListener(new kh2(this, (byte) 21));
+                this.w.setInterpolator(d53.h);
+                this.w.setDuration(320L);
+                this.w.start();
+            } else {
+                int i3 = 0;
+                while (i3 < 3) {
+                    fArr[i3] = i3 == i ? 1.0f : 0.0f;
+                    i3++;
+                }
+                a();
+            }
+            p09 y2 = this.c[i].getImageReceiver().y();
+            if (y2 != null) {
+                if (y2.o() > 0.8f) {
+                    y2.O(false, 0.0f);
+                }
+                y2.C(true);
+            }
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int max = Math.max(gm.L(48.0f), Math.min(gm.L(160.0f), (int) (((((size - getPaddingLeft()) - getPaddingRight()) / 3) - gm.L(8.0f)) / 0.61f)));
+        if (max != this.x) {
+            this.x = max;
+            for (int i3 = 0; i3 < 3; i3++) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c[i3].getLayoutParams();
+                layoutParams.height = max;
+                layoutParams.width = max;
+                ((FrameLayout.LayoutParams) this.d[i3].getLayoutParams()).topMargin = gm.L(22.0f) + max;
+            }
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(66.0f) + max, TLObject.FLAG_30));
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        try {
+            ValueAnimator valueAnimator = this.w;
+            if (valueAnimator == null || !valueAnimator.isRunning()) {
+                a();
+            }
+        } catch (Exception e) {
+            fc4.g(e, true);
+        }
     }
 }

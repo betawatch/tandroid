@@ -1,27 +1,60 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class q1b extends TL_stories.StoryItem {
-    public final s1b a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class q1b extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ s1b c;
 
-    public q1b(s1b s1bVar, long j, TL_bots.botPreviewMedia botpreviewmedia) {
-        this.a = s1bVar;
-        this.dialogId = j;
-        TLRPC.MessageMedia messageMedia = botpreviewmedia.media;
-        this.media = messageMedia;
-        TLRPC.Document document = messageMedia.document;
-        if (document != null) {
-            document.date = botpreviewmedia.date;
-            return;
+    public /* synthetic */ q1b(s1b s1bVar, boolean z, byte b) {
+        this.a = b;
+        this.c = s1bVar;
+        this.b = z;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        s1b s1bVar = this.c;
+        boolean z = this.b;
+        switch (b) {
+            case 0:
+                if (!z) {
+                    s1bVar.h.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!z) {
+                    s1bVar.y.setVisibility(4);
+                    break;
+                }
+                break;
         }
-        TLRPC.Photo photo = messageMedia.photo;
-        if (photo != null) {
-            photo.date = botpreviewmedia.date;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        byte b = this.a;
+        s1b s1bVar = this.c;
+        boolean z = this.b;
+        switch (b) {
+            case 0:
+                if (z) {
+                    s1bVar.h.setVisibility(0);
+                    break;
+                }
+                break;
+            default:
+                if (z) {
+                    s1bVar.y.setVisibility(0);
+                    break;
+                }
+                break;
         }
     }
 }

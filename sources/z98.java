@@ -1,75 +1,263 @@
 // default package
 
-import android.webkit.JavascriptInterface;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.widget.ImageView;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class z98 {
-    public final /* synthetic */ x88 a;
+public final class z98 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ PhotoViewer b;
 
-    public z98(x88 x88Var) {
-        this.a = x88Var;
+    public /* synthetic */ z98(PhotoViewer photoViewer, byte b) {
+        this.a = b;
+        this.b = photoViewer;
     }
 
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        gl.d3(new on7((Object) this, Integer.parseInt(str), (byte) 4));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        gl.d3(new x98(this, (byte) 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f) {
-        this.a.K = f;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i) {
-        this.a.J = i * 1000;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i) {
-        x88 x88Var = this.a;
-        x88Var.I = i * 1000;
-        String str = x88Var.s;
-        if (str != null) {
-            x88Var.g(str);
-            x88Var.s = null;
-        }
-    }
-
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int i;
-        int parseInt = Integer.parseInt(str);
-        x88 x88Var = this.a;
-        boolean z = x88Var.H;
-        boolean z2 = false;
-        byte b = 1;
-        x88Var.H = parseInt == 1 || parseInt == 3;
-        x88Var.a(z);
-        if (parseInt != 0) {
-            if (parseInt != 1) {
-                i = 2;
-                if (parseInt == 2) {
-                    i = 3;
-                } else if (parseInt != 3) {
-                    i = 1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        float f;
+        ya8 ya8Var;
+        Bitmap bitmap;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b;
+                if (photoViewer.l3 && photoViewer.P3 && !a.x) {
+                    r7 r7Var = this.b.p0;
+                    if (r7Var == null || !r7Var.y()) {
+                        r7 r7Var2 = this.b.q0;
+                        if (r7Var2 == null || !r7Var2.y()) {
+                            ta8 ta8Var = this.b.U1;
+                            if (ta8Var == null || ta8Var.getScrollY() == 0) {
+                                dj1 dj1Var = this.b.Y0;
+                                if (dj1Var == null || dj1Var.getVisibility() != 0) {
+                                    PhotoViewer photoViewer2 = PhotoViewer.k9;
+                                    PhotoViewer photoViewer3 = this.b;
+                                    if (photoViewer2 != photoViewer3) {
+                                        photoViewer3.t2(false, true);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            } else {
-                i = 3;
-            }
-            z2 = true;
-        } else {
-            i = 4;
+                break;
+            case 1:
+                PhotoViewer photoViewer4 = this.b;
+                if (photoViewer4.G2 != null || ((ya8Var = photoViewer4.g0) != null && ya8Var.y)) {
+                    if (!photoViewer4.s1) {
+                        float m0 = photoViewer4.m0() / this.b.z0();
+                        if (this.b.g5) {
+                            f = 1.0f;
+                        } else {
+                            long elapsedRealtime = SystemClock.elapsedRealtime();
+                            if (Math.abs(elapsedRealtime - this.b.S3) >= 500) {
+                                PhotoViewer photoViewer5 = this.b;
+                                ya8 ya8Var2 = photoViewer5.g0;
+                                if (ya8Var2 != null && ya8Var2.y) {
+                                    f = ya8Var2.getBufferedPosition();
+                                } else if (photoViewer5.Q3) {
+                                    bc4 G = bc4.G(photoViewer5.U);
+                                    PhotoViewer photoViewer6 = this.b;
+                                    float f2 = photoViewer6.a3;
+                                    if (f2 == 0.0f) {
+                                        f2 = m0;
+                                    }
+                                    f = G.t(photoViewer6.b5[0], f2);
+                                } else {
+                                    f = 1.0f;
+                                }
+                                this.b.S3 = elapsedRealtime;
+                            } else {
+                                f = -1.0f;
+                            }
+                        }
+                        PhotoViewer photoViewer7 = this.b;
+                        if (photoViewer7.G8 || photoViewer7.W7.getVisibility() != 0) {
+                            PhotoViewer photoViewer8 = this.b;
+                            if (photoViewer8.a3 == 0.0f) {
+                                jc2 jc2Var = photoViewer8.a4;
+                                if (jc2Var.rewindCount == 0 || (!jc2Var.rewindByBackSeek && !photoViewer8.c4.rewindByBackSeek)) {
+                                    photoViewer8.q3.h(false, m0);
+                                }
+                            }
+                            if (f != -1.0f) {
+                                this.b.q3.f(f);
+                                this.b.V8 = f;
+                            }
+                        } else {
+                            float rightProgress = this.b.X7.getRightProgress();
+                            PhotoViewer photoViewer9 = this.b;
+                            if (m0 >= rightProgress) {
+                                photoViewer9.H2 = false;
+                                photoViewer9.p1();
+                                this.b.q3.h(false, 0.0f);
+                                this.b.C1((int) (r1.X7.getLeftProgress() * this.b.z0()));
+                                this.b.f0.invalidate();
+                            } else {
+                                float leftProgress = m0 - photoViewer9.X7.getLeftProgress();
+                                if (leftProgress < 0.0f) {
+                                    leftProgress = 0.0f;
+                                }
+                                m0 = leftProgress / (this.b.X7.getRightProgress() - this.b.X7.getLeftProgress());
+                                if (m0 > 1.0f) {
+                                    m0 = 1.0f;
+                                }
+                                this.b.q3.h(false, m0);
+                            }
+                        }
+                        this.b.r3.invalidate();
+                        if (this.b.b3 != null && m0 >= 0.0f) {
+                            long elapsedRealtime2 = SystemClock.elapsedRealtime();
+                            PhotoViewer photoViewer10 = this.b;
+                            if (elapsedRealtime2 - photoViewer10.d3 >= 1000) {
+                                String str = photoViewer10.b3;
+                                photoViewer10.d3 = SystemClock.elapsedRealtime();
+                                k47 k47Var = this.b.S4;
+                                if (k47Var != null) {
+                                    k47Var.l3 = Float.valueOf(m0);
+                                }
+                                Utilities.e.c(new wn6(str, m0, (byte) 1));
+                            }
+                        }
+                        this.b.Q2();
+                    } else if (!photoViewer4.X7.r) {
+                        float m02 = photoViewer4.m0() / this.b.z0();
+                        PhotoViewer photoViewer11 = this.b;
+                        if (photoViewer11.G8 || (photoViewer11.t4 == 0 && photoViewer11.W7.getVisibility() != 0)) {
+                            PhotoViewer photoViewer12 = this.b;
+                            if (photoViewer12.d2 != 1) {
+                                photoViewer12.X7.setProgress(m02);
+                            }
+                        } else {
+                            float rightProgress2 = this.b.X7.getRightProgress();
+                            x98 x98Var = this.b.X7;
+                            if (m02 >= rightProgress2) {
+                                x98Var.setProgress(x98Var.getLeftProgress());
+                                this.b.G2.o0((int) (r0.X7.getLeftProgress() * this.b.z0()));
+                                PhotoViewer photoViewer13 = this.b;
+                                photoViewer13.H2 = false;
+                                photoViewer13.m();
+                                PhotoViewer photoViewer14 = this.b;
+                                if (photoViewer14.r || photoViewer14.d2 == 1 || photoViewer14.t4 != 0 || photoViewer14.n6 > 0) {
+                                    photoViewer14.r1();
+                                } else {
+                                    photoViewer14.p1();
+                                }
+                                this.b.f0.invalidate();
+                            } else {
+                                x98Var.setProgress(m02);
+                            }
+                        }
+                        this.b.Q2();
+                    }
+                }
+                kb8 kb8Var = this.b.F2;
+                if (kb8Var != null) {
+                    int i = kb8.r;
+                    kb8Var.a();
+                }
+                PhotoViewer photoViewer15 = this.b;
+                if (photoViewer15.P3) {
+                    gm.d3(photoViewer15.h4, 17L);
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer16 = this.b;
+                ad8 a = yc3.c().a();
+                if (a != null && a != photoViewer16.U8) {
+                    a.b();
+                    gm.d3(this, 250L);
+                    break;
+                } else {
+                    photoViewer16.L3 = false;
+                    Bitmap bitmap2 = photoViewer16.C3;
+                    if (bitmap2 != null) {
+                        bitmap2.recycle();
+                        photoViewer16.C3 = null;
+                    }
+                    photoViewer16.F3 = true;
+                    try {
+                    } catch (Throwable th) {
+                        Bitmap bitmap3 = photoViewer16.C3;
+                        if (bitmap3 != null) {
+                            bitmap3.recycle();
+                            photoViewer16.C3 = null;
+                        }
+                        fc4.g(th, true);
+                    }
+                    if (photoViewer16.E2) {
+                        Drawable drawable = photoViewer16.x3.getDrawable();
+                        if (drawable instanceof BitmapDrawable) {
+                            Bitmap bitmap4 = ((BitmapDrawable) drawable).getBitmap();
+                            photoViewer16.C3 = bitmap4;
+                            if (bitmap4 != null) {
+                                ImageView imageView = photoViewer16.x3;
+                                if (imageView != null) {
+                                    imageView.setVisibility(0);
+                                    photoViewer16.x3.setImageBitmap(photoViewer16.C3);
+                                }
+                                bitmap = photoViewer16.C3;
+                            }
+                        }
+                        bitmap = null;
+                    } else {
+                        int width = photoViewer16.C2.getWidth();
+                        int height = photoViewer16.C2.getHeight();
+                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
+                        Bitmap a2 = ld1.a(width, height);
+                        photoViewer16.C3 = a2;
+                        photoViewer16.C2.getBitmap(a2);
+                        if (photoViewer16.C3 != null) {
+                            ImageView imageView2 = photoViewer16.x3;
+                            if (imageView2 != null) {
+                                imageView2.setVisibility(0);
+                                photoViewer16.x3.setImageBitmap(photoViewer16.C3);
+                            }
+                            bitmap = photoViewer16.C3;
+                        }
+                        bitmap = null;
+                    }
+                    photoViewer16.J3 = true;
+                    photoViewer16.W();
+                    photoViewer16.w3 = photoViewer16.U8.h(photoViewer16.E, bitmap, !photoViewer16.K3);
+                    photoViewer16.K3 = true;
+                    if (!photoViewer16.E2) {
+                        photoViewer16.C3 = null;
+                        photoViewer16.G2.z0(null);
+                        oa8 oa8Var = photoViewer16.z2;
+                        if (oa8Var != null) {
+                            oa8Var.removeView(photoViewer16.C2);
+                            photoViewer16.z2.removeView(photoViewer16.D2);
+                        }
+                        photoViewer16.G2.z0(photoViewer16.w3);
+                        photoViewer16.F3 = false;
+                        photoViewer16.q(true);
+                        break;
+                    } else {
+                        oa8 oa8Var2 = photoViewer16.z2;
+                        if (oa8Var2 != null) {
+                            oa8Var2.removeView(photoViewer16.C2);
+                            photoViewer16.z2.removeView(photoViewer16.D2);
+                        }
+                        photoViewer16.G2.y0(null);
+                        photoViewer16.G2.z0(null);
+                        photoViewer16.G2.g0();
+                        photoViewer16.G2.z0(photoViewer16.w3);
+                        photoViewer16.q(true);
+                        photoViewer16.w3.setVisibility(0);
+                        break;
+                    }
+                }
+                break;
         }
-        if (i == 3 && x88Var.h.getVisibility() != 4) {
-            gl.e3(new x98(this, b), 300L);
-        }
-        gl.d3(new sp6(this, z2, i, b));
     }
 }

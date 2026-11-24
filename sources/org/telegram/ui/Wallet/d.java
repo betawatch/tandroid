@@ -2,7 +2,7 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ byte a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class d implements Runnable {
         Object obj3 = this.b;
         switch (b) {
             case 0:
-                ((WalletEngine2) obj3).lambda$prepareRotateKey$37((m8c) obj2, (WalletEngine2.PreparedRotation) obj, str);
+                ((WalletEngine2) obj3).lambda$prepareRotateKey$37((nac) obj2, (WalletEngine2.PreparedRotation) obj, str);
                 break;
             case 1:
                 ((WalletEngine2) obj3).lambda$rotateKey$55((WalletEngine2.RotationCallbacks) obj2, (byte[]) obj, str);

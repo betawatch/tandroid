@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class m extends s64 {
+public final class m extends b84 {
     public final int[] o;
     public final /* synthetic */ ChatActivityEnterView.RecordCircle p;
 
@@ -18,7 +18,7 @@ public final class m extends s64 {
         this.o = new int[2];
     }
 
-    @Override // s64
+    @Override // b84
     public final int g(float f, float f2) {
         Rect rect;
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
@@ -35,7 +35,7 @@ public final class m extends s64 {
         if (slideTextView == null || (rect = slideTextView.I) == null) {
             return -1;
         }
-        RectF rectF = gl.P;
+        RectF rectF = gm.P;
         rectF.set(rect);
         ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.a2;
         int[] iArr = this.o;
@@ -46,7 +46,7 @@ public final class m extends s64 {
         return rectF.contains(f, f2) ? 3 : -1;
     }
 
-    @Override // s64
+    @Override // b84
     public final void h(ArrayList arrayList) {
         if (ChatActivityEnterView.this.h5) {
             arrayList.add(1);
@@ -54,18 +54,18 @@ public final class m extends s64 {
         }
     }
 
-    @Override // s64
+    @Override // b84
     public final boolean k(int i, int i2) {
         return true;
     }
 
-    @Override // s64
+    @Override // b84
     public final void l(int i, u4 u4Var) {
         Rect rect;
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
         if (i == 1) {
             u4Var.h(chatActivityEnterView.I4);
-            u4Var.o(k96.M0(2131745448, "Send"));
+            u4Var.o(jb6.M0(2131745374, "Send"));
             return;
         }
         if (i == 2) {
@@ -73,7 +73,7 @@ public final class m extends s64 {
             RectF rectF = chatActivityEnterView.H4;
             rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             u4Var.h(chatActivityEnterView.J4);
-            u4Var.o(k96.M0(2131744604, null));
+            u4Var.o(jb6.M0(2131744530, null));
             return;
         }
         if (i != 3 || chatActivityEnterView.D2 == null) {
@@ -81,7 +81,7 @@ public final class m extends s64 {
         }
         ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.a2;
         if (slideTextView != null && (rect = slideTextView.I) != null) {
-            Rect rect3 = gl.Q;
+            Rect rect3 = gm.Q;
             rect3.set(rect);
             ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.a2;
             int[] iArr = this.o;
@@ -91,6 +91,6 @@ public final class m extends s64 {
             rect3.offset(-iArr[0], -iArr[1]);
             u4Var.h(rect3);
         }
-        u4Var.o(k96.M0(2131752577, "Cancel"));
+        u4Var.o(jb6.M0(2131752542, "Cancel"));
     }
 }

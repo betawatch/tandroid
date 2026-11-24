@@ -1,77 +1,69 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class k20 {
-    public final w59 a;
-    public final ArrayList b = new ArrayList();
-    public ByteBuffer[] c = new ByteBuffer[0];
-    public boolean d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class k20 extends FrameLayout {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ i30 b;
 
-    public k20(w59 w59Var) {
-        this.a = w59Var;
-        l20 l20Var = l20.e;
-        this.d = false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k20(i30 i30Var, Activity activity, byte b) {
+        super(activity);
+        this.a = b;
+        this.b = i30Var;
     }
 
-    public final int a() {
-        return this.c.length - 1;
-    }
-
-    public final boolean b() {
-        return this.d && ((p20) this.b.get(a())).a() && !this.c[a()].hasRemaining();
-    }
-
-    public final boolean c() {
-        return !this.b.isEmpty();
-    }
-
-    public final void d(ByteBuffer byteBuffer) {
-        boolean z;
-        for (boolean z2 = true; z2; z2 = z) {
-            z = false;
-            int i = 0;
-            while (i <= a()) {
-                if (!this.c[i].hasRemaining()) {
-                    ArrayList arrayList = this.b;
-                    p20 p20Var = (p20) arrayList.get(i);
-                    if (!p20Var.a()) {
-                        ByteBuffer byteBuffer2 = i > 0 ? this.c[i - 1] : byteBuffer.hasRemaining() ? byteBuffer : p20.a;
-                        long remaining = byteBuffer2.remaining();
-                        p20Var.d(byteBuffer2);
-                        this.c[i] = p20Var.b();
-                        z |= remaining - ((long) byteBuffer2.remaining()) > 0 || this.c[i].hasRemaining();
-                    } else if (!this.c[i].hasRemaining() && i < a()) {
-                        ((p20) arrayList.get(i + 1)).f();
-                    }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        TextView textView;
+        byte b = this.a;
+        i30 i30Var = this.b;
+        switch (b) {
+            case 0:
+                View[] viewArr = i30Var.g2;
+                int D = wi8.D(248.0f, i3 - i, 4);
+                for (int i5 = 0; i5 < 5; i5++) {
+                    int L = (D * i5) + gm.L((i5 * 48) + 4);
+                    int L2 = gm.L(9.0f);
+                    View view = viewArr[i5];
+                    view.layout(L, L2, view.getMeasuredWidth() + L, viewArr[i5].getMeasuredHeight() + L2);
                 }
-                i++;
-            }
+                break;
+            case 1:
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+            case 2:
+                super.onLayout(z, i, i2, i3, i4);
+                r7 r7Var = i30Var.O1;
+                if (r7Var != null && (textView = i30Var.T1) != null) {
+                    int left = (textView.getLeft() - gm.L(4.0f)) - r7Var.getMeasuredWidth();
+                    r7Var.layout(left, r7Var.getTop(), r7Var.getMeasuredWidth() + left, r7Var.getBottom());
+                    break;
+                }
+                break;
         }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof k20) {
-            w59 w59Var = ((k20) obj).a;
-            w59 w59Var2 = this.a;
-            if (w59Var2.d == w59Var.d) {
-                for (int i = 0; i < w59Var2.d; i++) {
-                    if (w59Var2.get(i) == w59Var.get(i)) {
-                    }
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                i30 i30Var = this.b;
+                if (i30Var.b2.getTag() != null) {
+                    i30Var.Q0(false, true);
                 }
                 return true;
-            }
+            case 2:
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
     }
 }

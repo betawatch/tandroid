@@ -1,30 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class agd extends ncd {
-    public final transient Object[] h;
-    public final transient boolean n;
-    public final transient boolean r;
+public final class agd extends sfd {
+    public final pw8 a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public agd(int i, Object[] objArr) {
-        super((byte) 1);
-        this.h = objArr;
-        this.n = i;
-        this.r = true;
+    public agd(pw8 pw8Var) {
+        this.a = pw8Var;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        i4f.a(i, this.r ? 1 : 0);
-        Object obj = this.h[(i << 1) + (this.n ? 1 : 0)];
-        obj.getClass();
-        return obj;
+    @Override // sfd
+    public final Object a() {
+        return this.a;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.r ? 1 : 0;
+    @Override // sfd
+    public final boolean b() {
+        return true;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof agd) {
+            return this.a.equals(((agd) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() + 1502476572;
+    }
+
+    public final String toString() {
+        return kt6.o("Optional.of(", this.a.toString(), ")");
     }
 }

@@ -1,234 +1,82 @@
 // default package
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Point;
-import android.widget.LinearLayout;
+import android.content.DialogInterface;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class zh extends LinearLayout {
+public final /* synthetic */ class zh implements DialogInterface.OnClickListener {
     public final /* synthetic */ byte a;
-    public boolean b;
-    public final Object c;
-    public Object d;
-    public final /* synthetic */ hn7 e;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh(Activity activity, yh yhVar) {
-        super(activity);
-        this.a = (byte) 0;
-        this.e = yhVar;
-        this.c = new tgb(":", 18.0f, null);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        tgb tgbVar;
-        switch (this.a) {
-            case 0:
-                Object obj = this.c;
-                int i = bkb.F6;
-                ((tgb) obj).c((getWidth() - ((tgb) obj).c) / 2.0f, getHeight() / 2.0f, 1.0f, bkb.w0(null, i, false), canvas);
-                if (!k96.c0) {
-                    boolean z = ((yh) this.e).getValue() % 24 < 12;
-                    if (this.b != z || (tgbVar = (tgb) this.d) == null) {
-                        this.b = z;
-                        tgbVar = new tgb(z ? "AM" : "PM", 18.0f, null);
-                        this.d = tgbVar;
-                    }
-                    tgbVar.c((getWidth() / 2.0f) + gl.L(43.0f), (getHeight() / 2.0f) + gl.L(1.0f), 1.0f, bkb.w0(null, i, false), canvas);
-                }
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3;
-        byte b = this.a;
-        Object obj = this.c;
-        hn7 hn7Var = this.e;
-        switch (b) {
-            case 1:
-                di diVar = (di) hn7Var;
-                ci ciVar = (ci) this.d;
-                hn7 hn7Var2 = (hn7) obj;
-                this.b = true;
-                Point point = gl.q;
-                i3 = point.x > point.y ? 3 : 5;
-                hn7Var2.setItemCount(i3);
-                ciVar.setItemCount(i3);
-                diVar.setItemCount(i3);
-                hn7Var2.getLayoutParams().height = gl.L(42.0f) * i3;
-                ciVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                diVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            case 2:
-                gi giVar = (gi) hn7Var;
-                ei eiVar = (ei) this.d;
-                hn7 hn7Var3 = (hn7) obj;
-                this.b = true;
-                Point point2 = gl.q;
-                i3 = point2.x > point2.y ? 3 : 5;
-                hn7Var3.setItemCount(i3);
-                eiVar.setItemCount(i3);
-                giVar.setItemCount(i3);
-                hn7Var3.getLayoutParams().height = gl.L(42.0f) * i3;
-                eiVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                giVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            case 3:
-                li liVar = (li) hn7Var;
-                ki kiVar = (ki) this.d;
-                hn7 hn7Var4 = (hn7) obj;
-                this.b = true;
-                Point point3 = gl.q;
-                i3 = point3.x > point3.y ? 3 : 5;
-                hn7Var4.setItemCount(i3);
-                kiVar.setItemCount(i3);
-                liVar.setItemCount(i3);
-                hn7Var4.getLayoutParams().height = gl.L(42.0f) * i3;
-                kiVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                liVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            case 4:
-                oi oiVar = (oi) hn7Var;
-                ni niVar = (ni) this.d;
-                hn7 hn7Var5 = (hn7) obj;
-                this.b = true;
-                Point point4 = gl.q;
-                i3 = point4.x > point4.y ? 3 : 5;
-                hn7Var5.setItemCount(i3);
-                niVar.setItemCount(i3);
-                oiVar.setItemCount(i3);
-                hn7Var5.getLayoutParams().height = gl.L(42.0f) * i3;
-                niVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                oiVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            case 5:
-                ti tiVar = (ti) this.d;
-                si siVar = (si) obj;
-                this.b = true;
-                Point point5 = gl.q;
-                i3 = point5.x > point5.y ? 3 : 5;
-                siVar.setItemCount(i3);
-                siVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                tiVar.setItemCount(i3);
-                tiVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                hn7Var.setItemCount(i3);
-                hn7Var.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            case 6:
-                hn7 hn7Var6 = (hn7) this.d;
-                hn7 hn7Var7 = (hn7) obj;
-                this.b = true;
-                Point point6 = gl.q;
-                i3 = point6.x > point6.y ? 3 : 5;
-                hn7Var7.setItemCount(i3);
-                hn7Var6.setItemCount(i3);
-                hn7Var.setItemCount(i3);
-                hn7Var7.getLayoutParams().height = gl.L(42.0f) * i3;
-                hn7Var6.getLayoutParams().height = gl.L(42.0f) * i3;
-                hn7Var.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            case 7:
-                bj bjVar = (bj) hn7Var;
-                aj ajVar = (aj) this.d;
-                hn7 hn7Var8 = (hn7) obj;
-                this.b = true;
-                Point point7 = gl.q;
-                i3 = point7.x > point7.y ? 3 : 5;
-                hn7Var8.setItemCount(i3);
-                ajVar.setItemCount(i3);
-                bjVar.setItemCount(i3);
-                hn7Var8.getLayoutParams().height = gl.L(42.0f) * i3;
-                ajVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                bjVar.getLayoutParams().height = gl.L(42.0f) * i3;
-                this.b = false;
-                super.onMeasure(i, i2);
-                break;
-            default:
-                super.onMeasure(i, i2);
-                break;
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        switch (this.a) {
-            case 1:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 2:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 3:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 4:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 5:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 6:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 7:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.requestLayout();
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zh(Context context, hn7 hn7Var, hn7 hn7Var2, hn7 hn7Var3, byte b) {
-        super(context);
+    public /* synthetic */ zh(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
         this.a = b;
-        this.c = hn7Var;
-        this.d = hn7Var2;
-        this.e = hn7Var3;
-        this.b = false;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+    }
+
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i) {
+        byte b = this.a;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        Object obj4 = this.b;
+        switch (b) {
+            case 0:
+                Context context = (Context) obj3;
+                r63 r63Var = (r63) obj2;
+                yh yhVar = (yh) obj;
+                int i2 = ((int[]) obj4)[i];
+                if (i2 != 100) {
+                    yhVar.a(Integer.valueOf(i2), "");
+                    break;
+                } else {
+                    new wj(context, i2, r63Var, yhVar).show();
+                    break;
+                }
+            default:
+                p pVar = (p) obj4;
+                ArrayList arrayList = (ArrayList) obj2;
+                ArrayList arrayList2 = (ArrayList) obj;
+                m18 m18Var = new m18(pVar, (Runnable) obj3);
+                TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard = pVar.z0;
+                int i3 = (tL_paymentSavedCredentialsCard == null && pVar.y0 == null) ? 0 : 1;
+                if ((tL_paymentSavedCredentialsCard == null && pVar.y0 == null) || i != 0) {
+                    if (i >= i3 && i < arrayList.size() + i3) {
+                        TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard2 = (TLRPC.TL_paymentSavedCredentialsCard) arrayList.get(i - i3);
+                        pVar.z0 = tL_paymentSavedCredentialsCard2;
+                        m18Var.c(null, tL_paymentSavedCredentialsCard2.title, true, null, tL_paymentSavedCredentialsCard2);
+                        break;
+                    } else if (i >= arrayList2.size() - 1) {
+                        if (i == arrayList2.size() - 1) {
+                            p pVar2 = new p(pVar.c1, pVar.D0, pVar.O0, pVar.P0, 2, pVar.F0, pVar.H0, pVar.I0, null, pVar.y0, pVar.J0, pVar.V0, null, pVar.s0, pVar.X0);
+                            pVar2.d1 = pVar.d1;
+                            pVar2.e1 = pVar.e1;
+                            pVar2.U = m18Var;
+                            pVar.presentFragment(pVar2);
+                            break;
+                        }
+                    } else {
+                        TLRPC.TL_paymentFormMethod tL_paymentFormMethod = pVar.D0.additional_methods.get((i - arrayList.size()) - i3);
+                        p pVar3 = new p(pVar.c1, pVar.D0, pVar.O0, pVar.P0, 2, pVar.F0, pVar.H0, pVar.I0, null, pVar.y0, pVar.J0, pVar.V0, null, pVar.s0, pVar.X0);
+                        pVar3.d1 = pVar.d1;
+                        pVar3.e1 = pVar.e1;
+                        pVar3.G0 = tL_paymentFormMethod;
+                        pVar3.U = m18Var;
+                        pVar.presentFragment(pVar3);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

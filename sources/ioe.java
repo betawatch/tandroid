@@ -1,18 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ioe {
-    public static void a(long j, String str) {
-        if (j >= 0) {
-            return;
-        }
-        throw new IllegalArgumentException(str + " (" + j + ") must be >= 0");
-    }
+public final class ioe {
+    public final rye a;
+    public final wne b;
+    public final zme c;
 
-    public static void b(boolean z) {
-        if (!z) {
-            throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
-        }
+    public /* synthetic */ ioe(uqd uqdVar) {
+        this.a = (rye) uqdVar.b;
+        this.b = (wne) uqdVar.c;
+        this.c = (zme) uqdVar.d;
     }
 }

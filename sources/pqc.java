@@ -1,268 +1,437 @@
 // default package
 
-import android.animation.AnimatorSet;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BlendMode;
-import android.graphics.Canvas;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
-import android.view.MotionEvent;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import java.io.File;
-import java.util.HashSet;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class pqc extends FrameLayout implements tjb {
-    public final kb0 a;
-    public final ImageView b;
-    public final CheckBox c;
-    public final View d;
-    public boolean e;
-    public AnimatorSet f;
-    public Object h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class pqc extends d {
+    public byte a;
+    public boc b;
+    public LinearLayout c;
+    public b61 d;
+    public ImageView e;
+    public ScrollView f;
+    public l66 h;
     public int n;
-    public int r;
-    public final /* synthetic */ qqc s;
+    public boolean r;
+    public byte[] s;
+    public final ArrayList w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pqc(qqc qqcVar, Context context) {
-        super(context);
-        this.s = qqcVar;
-        setWillNotDraw(false);
-        kb0 kb0Var = new kb0((byte) 11, context, this);
-        this.a = kb0Var;
-        addView(kb0Var, nme.e(-1, -1, 51));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setImageResource(R.drawable.ic_gallery_background);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, nme.e(-1, -1, 51));
-        View view = new View(context);
-        this.d = view;
-        view.setBackgroundDrawable(bkb.L0(false));
-        addView(view, nme.c(-1.0f, -1));
-        CheckBox checkBox = new CheckBox(context, R.drawable.round_check2);
-        this.c = checkBox;
-        checkBox.setVisibility(4);
-        checkBox.c(bkb.w0(null, bkb.h7, false), bkb.w0(null, bkb.j7, false));
-        addView(checkBox, nme.d(22, 22.0f, 53, 0.0f, 2.0f, 2.0f, 0.0f));
+    public pqc() {
+        super(null);
+        this.a = (byte) 12;
+        this.w = new ArrayList();
     }
 
-    public final void a(Object obj, Object obj2) {
-        TLRPC.PhotoSize photoSize;
-        int U0;
-        int U02;
-        kb0 kb0Var;
-        this.h = obj;
-        kb0 kb0Var2 = this.a;
-        kb0Var2.setVisibility(0);
-        this.b.setVisibility(4);
-        kb0Var2.setBackgroundDrawable(null);
-        kb0Var2.getImageReceiver().p1 = null;
-        kb0Var2.getImageReceiver().setAlpha(1.0f);
-        kb0Var2.getImageReceiver().P(null);
-        kb0Var2.getImageReceiver().W(null);
-        this.e = obj == obj2;
-        if (obj instanceof TLRPC.TL_wallPaper) {
-            TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
-            TLRPC.PhotoSize w = ba4.w(tL_wallPaper.document.thumbs, gl.L(100.0f), false, null, false);
-            TLRPC.PhotoSize w2 = ba4.w(tL_wallPaper.document.thumbs, gl.L(180.0f), false, null, false);
-            photoSize = w2 != w ? w2 : null;
-            long j = photoSize != null ? photoSize.size : tL_wallPaper.document.size;
-            if (!tL_wallPaper.pattern) {
-                TLRPC.Document document = tL_wallPaper.document;
-                if (photoSize != null) {
-                    kb0Var2.g(1, j, gl5.c(photoSize, document), gl5.c(w, tL_wallPaper.document), tL_wallPaper, "180_180", "100_100_b", "jpg");
-                    return;
-                } else {
-                    kb0Var2.g(1, j, gl5.b(document), gl5.c(w, tL_wallPaper.document), tL_wallPaper, "180_180", "100_100_b", "jpg");
-                    return;
+    public static SpannableStringBuilder a0(String str) {
+        if (str == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        int i = 0;
+        int i2 = 0;
+        for (int i3 = 0; i3 < str.length(); i3++) {
+            if (i3 > 0 && i3 % 4 == 0) {
+                int i4 = i3 % 24;
+                spannableStringBuilder.append(i4 == 0 ? '\n' : ' ');
+                if (i4 == 0) {
+                    i2++;
+                }
+                i = spannableStringBuilder.length();
+            }
+            spannableStringBuilder.append(str.charAt(i3));
+            if (i3 % 4 == 3) {
+                int i5 = i2 + 1;
+                if (i2 % 2 == 1) {
+                    rl rlVar = new rl(false);
+                    rlVar.b = nm7.U2;
+                    spannableStringBuilder.setSpan(rlVar, i, spannableStringBuilder.length(), 33);
+                }
+                i = spannableStringBuilder.length();
+                i2 = i5;
+            }
+        }
+        return spannableStringBuilder;
+    }
+
+    public final void Z(Context context) {
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = this.w;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            arrayList.add(((nsc) obj).getWord());
+        }
+        this.c.removeAllViews();
+        arrayList2.clear();
+        int i2 = 0;
+        while (i2 < this.a) {
+            byte b = 1;
+            nsc nscVar = new nsc(i2, this.resourceProvider, context, i2 == 0);
+            nscVar.setOnTextChangedListener(new oqc(this, b));
+            nscVar.setOnPasteListener(new ge7(this, i2, (byte) 29));
+            nscVar.setOnNextListener(new bnc(this, i2, nscVar, (byte) 2));
+            this.c.addView(nscVar, qoe.t(-1, 50, 1, 0, i2 == 0 ? 0 : 12, 0, 0));
+            arrayList2.add(nscVar);
+            i2++;
+        }
+        for (int i3 = 0; i3 < arrayList.size() && i3 < arrayList2.size(); i3++) {
+            if (!((String) arrayList.get(i3)).isEmpty()) {
+                ((nsc) arrayList2.get(i3)).setText((String) arrayList.get(i3));
+            }
+        }
+    }
+
+    public final void b0(String str, c cVar, d dVar, String str2) {
+        this.d.setLoading(false);
+        if ("WRONG_CONTRACT".equalsIgnoreCase(str2) || "INVALID_PHRASE".equalsIgnoreCase(str2)) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getResourceProvider(), getParentActivity());
+            String M0 = jb6.M0(2131742765, null);
+            he heVar = alertDialog$Builder.a;
+            heVar.S = M0;
+            heVar.U = jb6.M0(2131742764, null);
+            b10.t(null, 2131742745, alertDialog$Builder, null);
+            return;
+        }
+        if (str2 != null) {
+            c41.b0(this).f0(str2, false);
+            return;
+        }
+        if (this.r && !TextUtils.isEmpty(str) && !TextUtils.equals(str, cVar.x())) {
+            new g35(this.currentAccount, getParentActivity(), str).C();
+        }
+        gm.d3(new qhc((Object) this, (Object) dVar, (byte) 23), 300L);
+    }
+
+    /* JADX WARN: Finally extract failed */
+    public final void c0() {
+        byte[] bArr;
+        String str;
+        FrameLayout frameLayout;
+        if (this.d.R) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = this.w;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            arrayList.add(((nsc) obj).getWord().toLowerCase().trim());
+        }
+        int max = Math.max(0, arrayList.size() - 1);
+        ArrayList arrayList3 = new ArrayList();
+        try {
+            int size2 = arrayList.size();
+            int i2 = 0;
+            while (i2 < size2) {
+                Object obj2 = arrayList.get(i2);
+                i2++;
+                arrayList3.add(((String) obj2).getBytes(StandardCharsets.UTF_8));
+                long length = max + r8.length;
+                max = (int) length;
+                if (length != max) {
+                    throw new ArithmeticException();
                 }
             }
-            TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
-            if (wallPaperSettings.third_background_color != 0) {
-                TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
-                ye7 ye7Var = new ye7(wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color, true, false);
-                if (tL_wallPaper.settings.intensity >= 0 || !bkb.I.o()) {
-                    kb0Var2.setBackground(ye7Var);
-                    if (Build.VERSION.SDK_INT >= 29) {
-                        kb0Var2.getImageReceiver().P(BlendMode.SOFT_LIGHT);
+            byte[] bArr2 = new byte[max];
+            int i3 = 0;
+            for (int i4 = 0; i4 < arrayList3.size(); i4++) {
+                try {
+                    if (i4 > 0) {
+                        bArr2[i3] = 32;
+                        i3++;
+                    }
+                    byte[] bArr3 = (byte[]) arrayList3.get(i4);
+                    System.arraycopy(bArr3, 0, bArr2, i3, bArr3.length);
+                    i3 += bArr3.length;
+                } finally {
+                    Arrays.fill(bArr2, (byte) 0);
+                }
+            }
+            y25 y25Var = new y25(bArr2);
+            try {
+                this.d.setLoading(true);
+                if (this.s != null) {
+                    try {
+                        bArr = WalletEngine2.secretPhraseToPublicKey(y25Var);
+                    } catch (Exception e) {
+                        fc4.g(e, true);
+                        bArr = null;
+                    }
+                    if (bArr == null) {
+                        this.d.setLoading(false);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getResourceProvider(), getParentActivity());
+                        he heVar = alertDialog$Builder.a;
+                        heVar.S = jb6.M0(2131742765, null);
+                        heVar.U = jb6.M0(2131742764, null);
+                        alertDialog$Builder.j(jb6.M0(2131742745, null), null);
+                        alertDialog$Builder.o();
+                    } else if (Arrays.equals(bArr, this.s)) {
+                        c C = c.C(this.currentAccount);
+                        C.c.q(z8c.h(this.currentAccount).e(), bArr, y25Var, new ts9(this, C, (byte) 22));
+                    } else {
+                        try {
+                            str = WalletEngine2.secretPhraseToAddress(y25Var);
+                        } catch (Exception e2) {
+                            fc4.g(e2, true);
+                            str = null;
+                        }
+                        if (TextUtils.isEmpty(str)) {
+                            frameLayout = null;
+                        } else {
+                            frameLayout = new FrameLayout(getParentActivity());
+                            TextView textView = new TextView(getParentActivity());
+                            textView.setTextSize(1, 14.0f);
+                            anb.X(textView, cmb.F6, this.resourceProvider);
+                            textView.setText(a0(str));
+                            textView.setPadding(gm.L(10.0f), gm.L(12.0f), gm.L(10.0f), gm.L(12.0f));
+                            textView.setTypeface(gm.n1("fonts/rmono.ttf"));
+                            int L = gm.L(10.0f);
+                            int i5 = cmb.Z6;
+                            ShapeDrawable b0 = cmb.b0(L, cmb.v0(i5, this.resourceProvider));
+                            wmb M = anb.M(i5);
+                            ylb ylbVar = this.resourceProvider;
+                            textView.setBackground(b0);
+                            anb.j(textView, b0, M, null, ylbVar);
+                            textView.setGravity(17);
+                            frameLayout.addView(textView, qoe.d(-1, -2.0f, 7, 16.0f, 0.0f, 16.0f, 0.0f));
+                        }
+                        this.d.setLoading(false);
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getResourceProvider(), getParentActivity());
+                        he heVar2 = alertDialog$Builder2.a;
+                        heVar2.S = jb6.M0(2131742620, null);
+                        heVar2.U = jb6.M0(2131742619, null);
+                        alertDialog$Builder2.n(frameLayout);
+                        alertDialog$Builder2.j(jb6.M0(2131747564, null), null);
+                        alertDialog$Builder2.o();
                     }
                 } else {
-                    kb0Var2.getImageReceiver().W(ye7Var.k);
+                    this.d.setLoading(true);
+                    c C2 = c.C(this.currentAccount);
+                    d dVar = null;
+                    String x = C2.x();
+                    if (getParentLayout() != null && getParentLayout().getFragmentStack().size() > 1) {
+                        dVar = (d) getParentLayout().getFragmentStack().get(getParentLayout().getFragmentStack().size() - 2);
+                    }
+                    C2.H(false, true, y25Var, new jv0((Object) this, x, (Object) C2, (Object) dVar, (byte) 22));
                 }
-                TLRPC.WallPaperSettings wallPaperSettings3 = tL_wallPaper.settings;
-                U02 = ye7.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
-            } else {
-                kb0Var2.setBackgroundColor(bkb.Y0(wallPaperSettings.background_color));
-                U02 = gl.U0(tL_wallPaper.settings.background_color, false);
-            }
-            if (Build.VERSION.SDK_INT < 29 || tL_wallPaper.settings.third_background_color == 0) {
-                kb0Var2.getImageReceiver().p1 = new PorterDuffColorFilter(gl.U0(U02, false), PorterDuff.Mode.SRC_IN);
-            }
-            TLRPC.Document document2 = tL_wallPaper.document;
-            long j2 = j;
-            if (photoSize != null) {
-                gl5 c = gl5.c(photoSize, document2);
-                gl5 c2 = gl5.c(w, tL_wallPaper.document);
-                kb0Var = kb0Var2;
-                kb0Var.g(1, j2, c, c2, tL_wallPaper, "180_180", null, "jpg");
-            } else {
-                gl5 c3 = gl5.c(w, document2);
-                kb0Var = kb0Var2;
-                kb0Var.g(1, j2, c3, null, tL_wallPaper, "180_180", null, "jpg");
-            }
-            kb0Var.getImageReceiver().setAlpha(Math.abs(tL_wallPaper.settings.intensity) / 100.0f);
-            return;
-        }
-        if (!(obj instanceof krc)) {
-            if (!(obj instanceof lrc)) {
-                if (!(obj instanceof nm6)) {
-                    this.e = false;
-                    return;
+                y25Var.close();
+            } catch (Throwable th) {
+                try {
+                    y25Var.close();
+                    throw th;
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                    throw th;
                 }
-                nm6 nm6Var = (nm6) obj;
-                TLRPC.Photo photo = nm6Var.K;
-                if (photo == null) {
-                    kb0Var2.o(nm6Var.D, "180_180", null);
-                    return;
-                }
-                TLRPC.PhotoSize w3 = ba4.w(photo.sizes, gl.L(100.0f), false, null, false);
-                TLRPC.PhotoSize w4 = ba4.w(nm6Var.K.sizes, gl.L(180.0f), false, null, false);
-                photoSize = w4 != w3 ? w4 : null;
-                kb0Var2.g(1, photoSize != null ? photoSize.size : 0, gl5.i(photoSize, nm6Var.K), gl5.i(w3, nm6Var.K), nm6Var, "180_180", "100_100_b", "jpg");
-                return;
             }
-            lrc lrcVar = (lrc) obj;
-            File file = lrcVar.e;
-            if (file != null) {
-                kb0Var2.o(file.getAbsolutePath(), "180_180", null);
-                return;
-            }
-            File file2 = lrcVar.d;
-            if (file2 != null) {
-                kb0Var2.o(file2.getAbsolutePath(), "180_180", null);
-                return;
-            } else if ("t".equals(lrcVar.a)) {
-                kb0Var2.setImageDrawable(bkb.X0(true));
-                return;
-            } else {
-                kb0Var2.setImageResource(lrcVar.c);
-                return;
+        } finally {
+            int size3 = arrayList3.size();
+            int i6 = 0;
+            while (i6 < size3) {
+                Object obj3 = arrayList3.get(i6);
+                i6++;
+                Arrays.fill((byte[]) obj3, (byte) 0);
             }
         }
-        krc krcVar = (krc) obj;
-        int i = krcVar.d;
-        int i2 = krcVar.c;
-        int i3 = krcVar.b;
-        if (krcVar.g == null && !"d".equals(krcVar.a)) {
-            kb0Var2.setImageBitmap(null);
-            if (krcVar.j) {
-                kb0Var2.setBackground(new ye7(krcVar.b, krcVar.c, krcVar.d, krcVar.e, true, false));
-                return;
-            } else if (i2 != 0) {
-                kb0Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i3 | (-16777216), i2 | (-16777216)}));
-                return;
-            } else {
-                kb0Var2.setBackgroundColor(i3 | (-16777216));
-                return;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final View createView(Context context) {
+        final byte b = 0;
+        this.actionBar.setAddToContainer(false);
+        this.actionBar.setOccupyStatusBar(false);
+        ela elaVar = new ela(context, null);
+        this.fragmentView = elaVar;
+        anb.h(cmb.c6, this.resourceProvider, elaVar);
+        ScrollView scrollView = new ScrollView(context);
+        final byte b2 = 1;
+        scrollView.setFillViewport(true);
+        scrollView.setVerticalScrollBarEnabled(false);
+        scrollView.setClipToPadding(false);
+        scrollView.setPadding(0, gm.L(96.0f), 0, 0);
+        this.f = scrollView;
+        scrollView.addOnLayoutChangeListener(new ol1(this, (byte) 9));
+        ((FrameLayout) this.fragmentView).addView(scrollView, qoe.c(-1.0f, -1));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(gm.L(36.0f), 0, gm.L(36.0f), gm.L(24.0f));
+        linearLayout.setClipToPadding(false);
+        scrollView.addView(linearLayout, qoe.o(-1, -2));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        ImageView imageView2 = this.e;
+        int i = cmb.F6;
+        anb.s(imageView2, i, this.resourceProvider, PorterDuff.Mode.SRC_IN);
+        this.e.setImageResource(R.drawable.ic_ab_close);
+        ImageView imageView3 = this.e;
+        int i2 = cmb.h6;
+        anb.R(imageView3, cmb.f0(cmb.v0(i2, this.resourceProvider), 3, -1), null, anb.M(i2), this.resourceProvider);
+        this.e.setOnClickListener(new View.OnClickListener(this) { // from class: nqc
+            public final /* synthetic */ pqc b;
+
+            {
+                this.b = this;
             }
-        }
-        if (i != 0) {
-            ye7 ye7Var2 = new ye7(krcVar.b, krcVar.c, krcVar.d, krcVar.e, true, false);
-            if (krcVar.h >= 0.0f) {
-                kb0Var2.setBackground(new ye7(krcVar.b, krcVar.c, krcVar.d, krcVar.e, true, false));
-                if (Build.VERSION.SDK_INT >= 29) {
-                    kb0Var2.getImageReceiver().P(BlendMode.SOFT_LIGHT);
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b3 = b;
+                pqc pqcVar = this.b;
+                switch (b3) {
+                    case 0:
+                        pqcVar.finishFragment();
+                        break;
+                    default:
+                        pqcVar.c0();
+                        break;
                 }
-            } else {
-                kb0Var2.getImageReceiver().W(ye7Var2.k);
             }
-            U0 = ye7.g(i3, i2, i, krcVar.e);
+        });
+        ((FrameLayout) this.fragmentView).addView(this.e, qoe.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
+        bf0 bf0Var = new bf0(context);
+        bf0Var.setAspectFit(true);
+        bf0Var.getImageReceiver().d = gm.t0();
+        hs6.d0(gm.t0()).e2(bf0Var, "RestrictedEmoji", "📝", "100_100");
+        bf0Var.getImageReceiver().N(1);
+        linearLayout.addView(bf0Var, qoe.t(100, 100, 1, 0, 0, 0, 12));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(gm.o());
+        textView.setGravity(1);
+        anb.X(textView, i, this.resourceProvider);
+        textView.setText(jb6.M0(this.s != null ? 2131742687 : 2131742777, null));
+        linearLayout.addView(textView, qoe.t(-1, -2, 1, 32, 0, 32, 10));
+        l66 l66Var = new l66(context, null);
+        this.h = l66Var;
+        l66Var.setTextSize(1, 14.0f);
+        this.h.setGravity(1);
+        anb.X(this.h, cmb.y6, this.resourceProvider);
+        anb.G(this.h, cmb.Wc, this.resourceProvider);
+        byte[] bArr = this.s;
+        l66 l66Var2 = this.h;
+        if (bArr != null) {
+            l66Var2.setText(gm.N2(jb6.M0(2131742808, null), -1, 0, new oqc(this, b), null));
         } else {
-            kb0Var2.setBackground(new ye7(krcVar.b, krcVar.c, 0, 0, true, false));
-            U0 = gl.U0(i3, false);
+            l66Var2.setText(jb6.V(null, null, 2131742773, 12));
         }
-        int i4 = U0;
-        if ("d".equals(krcVar.a)) {
-            Bitmap bitmap = krcVar.l;
-            if (bitmap == null) {
-                bitmap = lcb.d(R.raw.default_pattern, 100, kk7.J2, -16777216);
-                krcVar.l = bitmap;
+        linearLayout.addView(this.h, qoe.t(-1, -2, 1, 32, 0, 32, 8));
+        boc bocVar = new boc(context, new CharSequence[]{jb6.G(12, "WalletPhraseWords", new Object[0]), jb6.G(24, "WalletPhraseWords", new Object[0])}, new eg9(this, (byte) 28), this.resourceProvider);
+        this.b = bocVar;
+        bocVar.e = true;
+        bocVar.updateColors();
+        this.b.setPadding(gm.L(8.0f), gm.L(8.0f), gm.L(8.0f), gm.L(8.0f));
+        this.b.setClipToPadding(false);
+        linearLayout.addView(this.b, qoe.t(-1, -2, 1, 0, 0, 0, 4));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        this.c = linearLayout2;
+        linearLayout2.setOrientation(1);
+        this.c.setGravity(1);
+        this.c.setClipChildren(false);
+        linearLayout.addView(this.c, qoe.t(-1, -2, 1, 0, 16, 0, 0));
+        b61 b61Var = new b61(this.resourceProvider, context, true);
+        this.d = b61Var;
+        b61Var.f();
+        this.d.setText(jb6.M0(2131742776, null));
+        this.d.setEnabled(false);
+        this.d.setOnClickListener(new View.OnClickListener(this) { // from class: nqc
+            public final /* synthetic */ pqc b;
+
+            {
+                this.b = this;
             }
-            kb0Var2.setImageBitmap(bitmap);
-            kb0Var2.getImageReceiver().setAlpha(Math.abs(krcVar.h));
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b3 = b2;
+                pqc pqcVar = this.b;
+                switch (b3) {
+                    case 0:
+                        pqcVar.finishFragment();
+                        break;
+                    default:
+                        pqcVar.c0();
+                        break;
+                }
+            }
+        });
+        linearLayout.addView(this.d, qoe.t(-1, 48, 1, 0, 24, 0, 0));
+        Z(context);
+        d0();
+        return this.fragmentView;
+    }
+
+    public final void d0() {
+        ArrayList arrayList = this.w;
+        int size = arrayList.size();
+        boolean z = false;
+        int i = 0;
+        while (true) {
+            if (i >= size) {
+                z = true;
+                break;
+            }
+            Object obj = arrayList.get(i);
+            i++;
+            if (((nsc) obj).getWord().isEmpty()) {
+                break;
+            }
+        }
+        this.d.setEnabled(z);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d
+    public final void onInsets(int i, int i2, int i3, int i4) {
+        FrameLayout.LayoutParams layoutParams;
+        ScrollView scrollView = this.f;
+        if (scrollView != null) {
+            scrollView.setPadding(i, gm.L(96.0f) + i2, i3, 0);
+            FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.f.getLayoutParams();
+            int max = Math.max(i4, this.n);
+            if (layoutParams2.bottomMargin != max) {
+                layoutParams2.bottomMargin = max;
+                this.f.setLayoutParams(layoutParams2);
+            }
+        }
+        ImageView imageView = this.e;
+        if (imageView == null || (layoutParams = (FrameLayout.LayoutParams) imageView.getLayoutParams()) == null) {
             return;
         }
-        TLRPC.PhotoSize w5 = ba4.w(krcVar.g.document.thumbs, 100, false, null, false);
-        kb0Var2.g(1, w5 != null ? w5.size : krcVar.g.document.size, gl5.c(w5, krcVar.g.document), null, krcVar.g, "180_180", null, "jpg");
-        kb0Var2.getImageReceiver().setAlpha(Math.abs(krcVar.h));
-        if (Build.VERSION.SDK_INT < 29 || i == 0) {
-            kb0Var2.getImageReceiver().p1 = new PorterDuffColorFilter(gl.U0(i4, false), PorterDuff.Mode.SRC_IN);
-        }
+        layoutParams.topMargin = gm.L(12.0f) + i2;
+        this.e.setLayoutParams(layoutParams);
     }
 
-    @Override // android.view.View
-    public final void clearAnimation() {
-        super.clearAnimation();
-        AnimatorSet animatorSet = this.f;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.f = null;
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        qqc qqcVar = this.s;
-        if (!qqcVar.b || !this.c.y) {
-            kb0 kb0Var = this.a;
-            if (kb0Var.getImageReceiver().B() && kb0Var.getImageReceiver().i1 == 1.0f) {
-                return;
-            }
-        }
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), qqcVar.s);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            int w0 = bkb.w0(null, bkb.h7, false);
-            int w02 = bkb.w0(null, bkb.j7, false);
-            CheckBox checkBox = this.c;
-            if (checkBox != null && (w0 != this.n || w02 != this.r)) {
-                this.n = w0;
-                this.r = w02;
-                checkBox.c(w0, w02);
-            }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.ActionBar.d
+    public final wzc onInsetsInternal(View view, wzc wzcVar) {
+        this.n = wzcVar.a.f(8).d;
+        return super.onInsetsInternal(view, wzcVar);
     }
 }

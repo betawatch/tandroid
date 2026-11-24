@@ -1,6 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class ho5 {
+public final class ho5 extends m3 implements Serializable {
+    public final Object b;
+    public final Object c;
+
+    public ho5(Object obj, Object obj2) {
+        super((byte) 0, false);
+        this.b = obj;
+        this.c = obj2;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.c;
+    }
+
+    @Override // m3, java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
+    }
 }

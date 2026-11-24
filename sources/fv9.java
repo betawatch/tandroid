@@ -1,13 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface fv9 {
-    boolean c();
+public final class fv9 extends w1 {
+    public static final Parcelable.Creator<fv9> CREATOR = new v1((byte) 2);
+    public boolean c;
 
-    boolean d();
+    public fv9(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = ((Boolean) parcel.readValue(null)).booleanValue();
+    }
 
-    ev9 f(long j);
+    public final String toString() {
+        return "SearchView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " isIconified=" + this.c + "}";
+    }
 
-    long h();
+    @Override // w1, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeValue(Boolean.valueOf(this.c));
+    }
 }

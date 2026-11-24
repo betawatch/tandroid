@@ -1,151 +1,697 @@
 // default package
 
-import android.media.AudioDescriptor;
-import android.os.SystemClock;
-import android.view.View;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.media.MediaMetadataCompat;
+import android.text.TextUtils;
+import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class wz implements x56, ed, wkb, xkb, ml0, dn7 {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class wz implements Runnable {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ wz(byte b) {
-        this.a = b;
+    public /* synthetic */ wz(a6a a6aVar, k47 k47Var, TLRPC.Message message, long j, int i) {
+        this.a = (byte) 11;
+        this.d = a6aVar;
+        this.e = k47Var;
+        this.f = message;
+        this.b = j;
+        this.c = i;
     }
 
-    public static /* bridge */ /* synthetic */ AudioDescriptor a(Object obj) {
-        return (AudioDescriptor) obj;
-    }
-
-    @Override // dn7
-    public final String c(int i) {
-        switch (this.a) {
-            case 28:
-                return String.valueOf(i);
-            default:
-                return String.format("%02d", Integer.valueOf(i * 5));
+    private final void a() {
+        SQLitePreparedStatement executeFast;
+        boolean z;
+        cf7 cf7Var = (cf7) this.d;
+        ArrayList arrayList = (ArrayList) this.e;
+        ArrayList arrayList2 = (ArrayList) this.f;
+        int i = this.c;
+        long j = this.b;
+        vh6 vh6Var = cf7Var.K;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        try {
+            try {
+                cf7Var.b.beginTransaction();
+                executeFast = cf7Var.b.executeFast("UPDATE dialogs SET folder_id = ?, pinned = ? WHERE did = ?");
+            } catch (Exception e) {
+                e = e;
+            }
+        } catch (Throwable th) {
+            th = th;
         }
-    }
-
-    @Override // xkb
-    public final void d(int i, View view) {
-        ((a8) view).d(i, i);
-    }
-
-    @Override // wkb
-    public final int e(View view) {
-        a8 a8Var = (a8) view;
-        if (a8Var.getTextView() != null) {
-            return a8Var.getTextView().getCurrentTextColor();
-        }
-        return 0;
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        long j;
-        u30 u30Var;
-        switch (this.a) {
-            case 2:
-                o93 o93Var = (o93) obj;
-                q93 q93Var = o93Var.a;
-                if (o93Var == q93Var.j && q93Var.n != null) {
-                    wg2 wg2Var = q93Var.p;
-                    int i = wg2Var.b;
-                    if (i != -1) {
-                        long j2 = ((r00) wg2Var.e).f / i;
-                        j40 j40Var = q93Var.t;
-                        j40Var.getClass();
-                        j = g8c.Z(j40Var.a.getSampleRate(), j2);
-                    } else {
-                        j = -9223372036854775807L;
+        try {
+            if (arrayList != null) {
+                int size = arrayList.size();
+                z = false;
+                for (int i2 = 0; i2 < size; i2++) {
+                    TLRPC.TL_folderPeer tL_folderPeer = (TLRPC.TL_folderPeer) arrayList.get(i2);
+                    long n = pg3.n(tL_folderPeer.peer);
+                    executeFast.requery();
+                    executeFast.bindInteger(1, tL_folderPeer.folder_id);
+                    if (tL_folderPeer.folder_id == 1) {
+                        z = true;
                     }
-                    q93Var.n.A2(g8c.i0(j), ((r00) q93Var.p.e).f, SystemClock.elapsedRealtime() - q93Var.Z);
-                    break;
+                    executeFast.bindInteger(2, 0);
+                    executeFast.bindLong(3, n);
+                    executeFast.step();
+                    vh6Var.l(n);
                 }
-                break;
-            case 3:
-                u30 u30Var2 = ((o93) obj).a.n;
-                if (u30Var2 != null) {
-                    u30Var2.A(new pd5((byte) 14));
-                    break;
+            } else if (arrayList2 != null) {
+                int size2 = arrayList2.size();
+                z = false;
+                for (int i3 = 0; i3 < size2; i3++) {
+                    TLRPC.TL_inputFolderPeer tL_inputFolderPeer = (TLRPC.TL_inputFolderPeer) arrayList2.get(i3);
+                    long m = pg3.m(tL_inputFolderPeer.peer);
+                    executeFast.requery();
+                    executeFast.bindInteger(1, tL_inputFolderPeer.folder_id);
+                    if (tL_inputFolderPeer.folder_id == 1) {
+                        z = true;
+                    }
+                    executeFast.bindInteger(2, 0);
+                    executeFast.bindLong(3, m);
+                    executeFast.step();
+                    vh6Var.l(m);
                 }
-                break;
-            case 4:
-                o93 o93Var2 = (o93) obj;
-                q93 q93Var2 = o93Var2.a;
-                if (o93Var2 == q93Var2.j && (u30Var = q93Var2.n) != null && q93Var2.R) {
-                    u30Var.p2();
-                    break;
-                }
-                break;
-            case 5:
-                o93 o93Var3 = (o93) obj;
-                q93 q93Var3 = o93Var3.a;
-                if (o93Var3 == q93Var3.j && q93Var3.P) {
-                    q93Var3.Q = true;
-                    break;
-                }
-                break;
-            default:
-                u30 u30Var3 = ((n93) obj).a.n;
-                if (u30Var3 != null) {
-                    u30Var3.f1();
-                    break;
-                }
-                break;
+            } else {
+                executeFast.requery();
+                executeFast.bindInteger(1, i);
+                boolean z2 = i == 1;
+                executeFast.bindInteger(2, 0);
+                executeFast.bindLong(3, j);
+                executeFast.step();
+                z = z2;
+            }
+            executeFast.dispose();
+            cf7Var.b.commitTransaction();
+            if (!z) {
+                cf7Var.k(1);
+            }
+            cf7Var.q1(false);
+            SQLiteDatabase sQLiteDatabase = cf7Var.b;
+            if (sQLiteDatabase != null) {
+                sQLiteDatabase.commitTransaction();
+            }
+        } catch (Exception e2) {
+            e = e2;
+            sQLitePreparedStatement = executeFast;
+            cf7Var.n(e, true);
+            SQLiteDatabase sQLiteDatabase2 = cf7Var.b;
+            if (sQLiteDatabase2 != null) {
+                sQLiteDatabase2.commitTransaction();
+            }
+            if (sQLitePreparedStatement != null) {
+                sQLitePreparedStatement.dispose();
+            }
+        } catch (Throwable th2) {
+            th = th2;
+            sQLitePreparedStatement = executeFast;
+            SQLiteDatabase sQLiteDatabase3 = cf7Var.b;
+            if (sQLiteDatabase3 != null) {
+                sQLiteDatabase3.commitTransaction();
+            }
+            if (sQLitePreparedStatement != null) {
+                sQLitePreparedStatement.dispose();
+            }
+            throw th;
         }
     }
 
-    @Override // ml0
-    public final int k(wjb wjbVar, boolean z) {
+    private final void b() {
+        b61 b61Var = (b61) this.d;
+        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.e;
+        my0[] my0VarArr = (my0[]) this.f;
+        b61Var.setLoading(true);
+        TL_stars.TL_fulfillStarsSubscription tL_fulfillStarsSubscription = new TL_stars.TL_fulfillStarsSubscription();
+        tL_fulfillStarsSubscription.subscription_id = starsSubscription.id;
+        tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
+        int i = this.c;
+        ConnectionsManager.getInstance(i).sendRequest(tL_fulfillStarsSubscription, new mh((Object) b61Var, (Object) my0VarArr, i, this.b, (byte) 6));
+    }
+
+    private final void c() {
+        TL_stories.StoryItem storyItem;
+        h4b h4bVar = (h4b) this.d;
+        TLObject tLObject = (TLObject) this.e;
+        String str = (String) this.f;
+        int i = h4bVar.a;
+        HashSet hashSet = h4bVar.t;
+        int i2 = this.c;
+        if (tLObject != null) {
+            TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+            oc7.r1(i).d4(tL_stories_stories.users, false);
+            oc7.r1(i).X3(tL_stories_stories.chats, false);
+            for (int i3 = 0; i3 < tL_stories_stories.stories.size(); i3++) {
+                if (tL_stories_stories.stories.get(i3).id == i2) {
+                    storyItem = tL_stories_stories.stories.get(i3);
+                    break;
+                }
+            }
+        }
+        storyItem = null;
+        h4bVar.W.remove(str);
+        long j = this.b;
+        if (storyItem != null) {
+            storyItem.dialogId = j;
+            TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
+            tL_updateStory.peer = oc7.r1(i).x1(j);
+            tL_updateStory.story = storyItem;
+            h4bVar.b0(tL_updateStory);
+            return;
+        }
+        Iterator it = hashSet.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                break;
+            }
+            String str2 = (String) it.next();
+            if (str2.endsWith(":" + j + ":" + i2)) {
+                hashSet.remove(str2);
+                break;
+            }
+        }
+        hashSet.add(str);
+        h4bVar.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
+    }
+
+    private final void d() {
+        iib iibVar = (iib) this.d;
+        ArrayList arrayList = (ArrayList) this.e;
+        ArrayList arrayList2 = (ArrayList) this.f;
+        vh6 vh6Var = iibVar.l;
+        vh6 vh6Var2 = iibVar.k;
+        vh6 vh6Var3 = iibVar.j;
+        if (this.c == iibVar.c) {
+            long j = this.b;
+            vh6Var3.k(arrayList, j);
+            vh6Var2.k(arrayList2, j);
+            ArrayList arrayList3 = (ArrayList) vh6Var.f(j);
+            vh6Var.l(j);
+            if (j == iibVar.d) {
+                mx6 mx6Var = iibVar.b;
+                if (j != 0) {
+                    ArrayList arrayList4 = (ArrayList) vh6Var3.f(j);
+                    ArrayList arrayList5 = (ArrayList) vh6Var2.f(j);
+                    if (arrayList4 != null && !arrayList4.isEmpty() && arrayList5 != null) {
+                        mx6Var.s0(arrayList5);
+                        zw6 zw6Var = (zw6) mx6Var.b;
+                        if (pg3.D(j)) {
+                            TLRPC.User user = (TLRPC.User) iibVar.h.f(j);
+                            zw6Var.a.setQueueTitle(user != null ? bw2.m(0, user.first_name, user.last_name) : "DELETED USER");
+                        } else {
+                            TLRPC.Chat chat = (TLRPC.Chat) iibVar.i.f(-j);
+                            zw6Var.a.setQueueTitle(chat != null ? chat.title : "DELETED CHAT");
+                        }
+                        k47 k47Var = (k47) arrayList4.get(0);
+                        k44 k44Var = new k44((byte) 17);
+                        k44Var.T((long) (k47Var.L0() * 1000.0d));
+                        k44Var.U("android.media.metadata.ARTIST", k47Var.w1(true));
+                        k44Var.U("android.media.metadata.TITLE", k47Var.y1(true));
+                        mx6Var.q0(new MediaMetadataCompat((Bundle) k44Var.b));
+                    }
+                }
+            }
+            if (arrayList3 != null) {
+                for (int i = 0; i < arrayList3.size(); i++) {
+                    ((Runnable) arrayList3.get(i)).run();
+                }
+            }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:142:0x04ce  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x04d3  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0423  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x042d  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLiteDatabase sQLiteDatabase;
+        SQLiteCursor sQLiteCursor;
+        boolean z;
+        int i;
+        SQLiteCursor queryFinalized;
+        boolean z2;
         switch (this.a) {
-            case 10:
-                return z ? bkb.p1(0.9f, -15658735) : nod.m(e66.e(262144) ? 0.82f : 0.76f, bkb.v0(bkb.c6, wjbVar), -14145496);
-            case 11:
-                return bkb.p1(e66.e(262144) ? 0.85f : 0.76f, bkb.v0(bkb.c6, wjbVar));
-            case 12:
-                if (!e66.e(256)) {
-                    return bkb.w0(null, bkb.F8, false);
+            case 0:
+                new j3a((Context) this.d, this.c, ((hv4) this.e).d, null, this.b, (bx4) this.f, false, false).show();
+                return;
+            case 1:
+                wq0 wq0Var = (wq0) this.d;
+                long[] jArr = (long[]) this.e;
+                long j = this.b;
+                int i2 = this.c;
+                Runnable runnable = (Runnable) this.f;
+                for (long j2 : jArr) {
+                    cf7 messagesStorage = wq0Var.getMessagesStorage();
+                    messagesStorage.getClass();
+                    messagesStorage.H(new ae7(messagesStorage, i2, j, j2, (byte) 4));
                 }
-                return bkb.p1(z ? 0.85f : 0.825f, bkb.w0(null, bkb.F8, false));
+                gm.c3(runnable);
+                return;
+            case 2:
+                ku0 ku0Var = (ku0) this.d;
+                ju0 ju0Var = (ju0) this.e;
+                int i3 = this.c;
+                TLObject tLObject = (TLObject) this.f;
+                long j3 = this.b;
+                int i4 = ku0Var.a;
+                boolean[] zArr = ju0Var.d;
+                boolean[] zArr2 = ju0Var.b;
+                ArrayList[] arrayListArr = ju0Var.a;
+                zArr[i3] = false;
+                if (tLObject instanceof TL_stars.StarsStatus) {
+                    TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
+                    oc7.r1(i4).d4(starsStatus.users, false);
+                    oc7.r1(i4).X3(starsStatus.chats, false);
+                    arrayListArr[i3].addAll(starsStatus.history);
+                    zArr2[i3] = !arrayListArr[i3].isEmpty() || zArr2[i3];
+                    boolean[] zArr3 = ju0Var.e;
+                    boolean z3 = (starsStatus.flags & 1) == 0;
+                    zArr3[i3] = z3;
+                    ju0Var.c[i3] = z3 ? null : starsStatus.next_offset;
+                    nm7.f(i4).k(nm7.F3, Long.valueOf(j3));
+                    return;
+                }
+                return;
+            case 3:
+                rc2 rc2Var = (rc2) this.d;
+                TLRPC.User user = (TLRPC.User) this.e;
+                int i5 = this.c;
+                TLRPC.Chat chat = (TLRPC.Chat) this.f;
+                long j4 = this.b;
+                pc0[] pc0VarArr = rc2Var.l7;
+                if (user != null) {
+                    pc0VarArr[i5].q(user);
+                    rc2Var.k7[i5].U(user, rc2Var.l7[i5], null);
+                    return;
+                } else if (chat == null) {
+                    pc0VarArr[i5].j(j4, "", "", null);
+                    return;
+                } else {
+                    pc0VarArr[i5].p(chat);
+                    rc2Var.k7[i5].U(chat, rc2Var.l7[i5], null);
+                    return;
+                }
+            case 4:
+                ts9 ts9Var = (ts9) this.d;
+                int i6 = this.c;
+                long j5 = this.b;
+                d dVar = (d) this.e;
+                u06 u06Var = (u06) this.f;
+                ts9Var.a(Boolean.TRUE);
+                c41.Y().Q(R.raw.contact_check, 36, jb6.M0(2131749282, null)).j();
+                u15.a(i6, j5, System.currentTimeMillis() + 180000, 0, new rp2(ts9Var, dVar, i6, u06Var));
+                return;
+            case 5:
+                byte b = 5;
+                byte b2 = 4;
+                hs6 hs6Var = (hs6) this.d;
+                TLObject tLObject2 = (TLObject) this.e;
+                int i7 = this.c;
+                qac qacVar = (qac) this.f;
+                long j6 = this.b;
+                if (tLObject2 instanceof TLRPC.TL_messages_allStickers) {
+                    hs6Var.s1(i7, (TLRPC.TL_messages_allStickers) tLObject2, new mo0(qacVar, b2));
+                    return;
+                } else {
+                    hs6Var.A1(i7, null, false, (int) (System.currentTimeMillis() / 1000), j6, new mo0(qacVar, b));
+                    return;
+                }
+            case 6:
+                cf7 cf7Var = (cf7) this.d;
+                int i8 = this.c;
+                long j7 = this.b;
+                TLRPC.Message message = (TLRPC.Message) this.e;
+                String str = (String) this.f;
+                try {
+                    cf7Var.b.beginTransaction();
+                    TLRPC.TL_message c0 = cf7Var.c0(i8, j7);
+                    c0.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
+                    c0.voiceTranscriptionRated = message.voiceTranscriptionRated;
+                    c0.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
+                    c0.voiceTranscriptionForce = message.voiceTranscriptionForce;
+                    c0.voiceTranscriptionId = message.voiceTranscriptionId;
+                    c0.voiceTranscription = str;
+                    c0.voiceTranscriptionLocal = message.voiceTranscriptionLocal;
+                    c0.voiceTranscriptionWords = message.voiceTranscriptionWords;
+                    int i9 = 0;
+                    while (i9 < 2) {
+                        SQLiteDatabase sQLiteDatabase2 = cf7Var.b;
+                        SQLitePreparedStatement executeFast = i9 == 0 ? sQLiteDatabase2.executeFast("UPDATE messages_v2 SET custom_params = ? WHERE mid = ? AND uid = ?") : sQLiteDatabase2.executeFast("UPDATE messages_topics SET custom_params = ? WHERE mid = ? AND uid = ?");
+                        try {
+                            executeFast.requery();
+                            NativeByteBuffer c = l37.c(c0);
+                            if (c != null) {
+                                executeFast.bindByteBuffer(1, c);
+                            } else {
+                                executeFast.bindNull(1);
+                            }
+                            executeFast.bindInteger(2, i8);
+                            executeFast.bindLong(3, j7);
+                            executeFast.step();
+                            executeFast.dispose();
+                            cf7Var.b.commitTransaction();
+                            if (c != null) {
+                                c.reuse();
+                            }
+                            i9++;
+                        } catch (Exception e) {
+                            e = e;
+                            sQLitePreparedStatement = executeFast;
+                            try {
+                                cf7Var.n(e, true);
+                                SQLiteDatabase sQLiteDatabase3 = cf7Var.b;
+                                if (sQLiteDatabase3 != null) {
+                                    sQLiteDatabase3.commitTransaction();
+                                }
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                    return;
+                                }
+                                return;
+                            } catch (Throwable th) {
+                                th = th;
+                                sQLiteDatabase = cf7Var.b;
+                                if (sQLiteDatabase != null) {
+                                    sQLiteDatabase.commitTransaction();
+                                }
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Throwable th2) {
+                            th = th2;
+                            sQLitePreparedStatement = executeFast;
+                            sQLiteDatabase = cf7Var.b;
+                            if (sQLiteDatabase != null) {
+                            }
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            throw th;
+                        }
+                    }
+                    SQLiteDatabase sQLiteDatabase4 = cf7Var.b;
+                    if (sQLiteDatabase4 != null) {
+                        sQLiteDatabase4.commitTransaction();
+                        return;
+                    }
+                    return;
+                } catch (Exception e2) {
+                    e = e2;
+                    sQLitePreparedStatement = null;
+                } catch (Throwable th3) {
+                    th = th3;
+                    sQLitePreparedStatement = null;
+                }
+            case 7:
+                cf7 cf7Var2 = (cf7) this.d;
+                long j8 = this.b;
+                int i10 = this.c;
+                TLRPC.TL_updates_channelDifferenceTooLong tL_updates_channelDifferenceTooLong = (TLRPC.TL_updates_channelDifferenceTooLong) this.e;
+                r77 r77Var = (r77) this.f;
+                long j9 = -j8;
+                try {
+                    try {
+                        i = 0;
+                        queryFinalized = cf7Var2.b.queryFinalized("SELECT pinned FROM dialogs WHERE did = " + j9, new Object[0]);
+                    } catch (Exception e3) {
+                        e = e3;
+                        z = true;
+                    }
+                } catch (Throwable th4) {
+                    th = th4;
+                    sQLiteCursor = null;
+                }
+                try {
+                    if (queryFinalized.next()) {
+                        i = queryFinalized.intValue(0);
+                        z2 = false;
+                    } else {
+                        z2 = i10 != 0;
+                    }
+                    queryFinalized.dispose();
+                    cf7Var2.b.executeFast("DELETE FROM chat_pinned_count WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM chat_pinned_v2 WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM messages_v2 WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM bot_keyboard WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM bot_keyboard_topics WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("UPDATE media_counts_v2 SET old = 1 WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM media_v4 WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM messages_holes WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM media_holes_v2 WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM topics WHERE did = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM media_topics WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM media_holes_topics WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM messages_topics WHERE uid = " + j9).stepThis().dispose();
+                    cf7Var2.b.executeFast("DELETE FROM messages_holes_topics WHERE uid = " + j9).stepThis().dispose();
+                    hs6 mediaDataController = cf7Var2.getMediaDataController();
+                    mediaDataController.getClass();
+                    gm.c3(new lq6(mediaDataController, j9, (byte) 0));
+                    TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                    tL_messages_dialogs.chats.addAll(tL_updates_channelDifferenceTooLong.chats);
+                    tL_messages_dialogs.users.addAll(tL_updates_channelDifferenceTooLong.users);
+                    tL_messages_dialogs.messages.addAll(tL_updates_channelDifferenceTooLong.messages);
+                    TLRPC.Dialog dialog = tL_updates_channelDifferenceTooLong.dialog;
+                    dialog.id = j9;
+                    z = true;
+                    try {
+                        dialog.flags = 1;
+                        dialog.notify_settings = null;
+                        dialog.pinned = i != 0;
+                        dialog.pinnedNum = i;
+                        tL_messages_dialogs.dialogs.add(dialog);
+                        cf7Var2.b1(tL_messages_dialogs, 0);
+                        try {
+                            cf7Var2.O1(j9, j8, new ArrayList(), null);
+                        } catch (Exception e4) {
+                            e = e4;
+                            z = true;
+                            cf7Var2 = cf7Var2;
+                        }
+                    } catch (Exception e5) {
+                        e = e5;
+                    }
+                    try {
+                        gm.c3(new hq6((Object) cf7Var2, j9, (Object) tL_updates_channelDifferenceTooLong, (byte) 17));
+                        if (z2) {
+                            if (i10 == 1) {
+                                cf7Var2.getMessagesController().C(j8, true);
+                            } else {
+                                cf7Var2.getMessagesController().z0(j8, false);
+                            }
+                        }
+                        if (i10 != 1) {
+                            qwb qwbVar = cf7Var2.getMessagesController().g4;
+                            qwbVar.getClass();
+                            z = true;
+                            gm.c3(new vp2((Object) qwbVar, j8, z, (byte) 4));
+                        }
+                    } catch (Exception e6) {
+                        e = e6;
+                        z = true;
+                        sQLiteCursor = null;
+                        try {
+                            cf7Var2.n(e, z);
+                            if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
+                            }
+                            r77Var.run();
+                            return;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
+                            }
+                            throw th;
+                        }
+                    }
+                } catch (Exception e7) {
+                    e = e7;
+                    z = true;
+                    sQLiteCursor = queryFinalized;
+                    cf7Var2.n(e, z);
+                    if (sQLiteCursor != null) {
+                    }
+                    r77Var.run();
+                    return;
+                } catch (Throwable th6) {
+                    th = th6;
+                    sQLiteCursor = queryFinalized;
+                    if (sQLiteCursor != null) {
+                    }
+                    throw th;
+                }
+                r77Var.run();
+                return;
+            case 8:
+                a();
+                return;
+            case 9:
+                e6a e6aVar = (e6a) this.d;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.e;
+                long j10 = this.b;
+                String str2 = (String) this.f;
+                int i11 = this.c;
+                e6aVar.run();
+                fs7.s(tL_starGiftUnique, j10 != 0 ? jb6.a0(null, null, 2131749605, str2, pg3.r(i11, j10)) : jb6.a0(null, null, 2131749606, str2));
+                return;
+            case 10:
+                npa npaVar = (npa) this.d;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) this.e;
+                String str3 = (String) this.f;
+                int i12 = this.c;
+                long j11 = this.b;
+                npaVar.run();
+                fs7.s(tL_starGiftUnique2, jb6.a0(null, null, 2131749600, str3));
+                String str4 = tL_starGiftUnique2.slug;
+                if (TextUtils.isEmpty(str4)) {
+                    return;
+                }
+                gm.d3(new tw1(i12, 0, j11, str4, true), fs7.a[0]);
+                return;
+            case 11:
+                a6a a6aVar = (a6a) this.d;
+                k47 k47Var = (k47) this.e;
+                TLRPC.Message message2 = (TLRPC.Message) this.f;
+                long j12 = this.b;
+                int i13 = this.c;
+                int e1 = k47Var.e1();
+                k47Var.k = message2;
+                k47Var.M1 = true;
+                nm7 notificationCenter = a6aVar.getNotificationCenter();
+                Integer valueOf = Integer.valueOf(e1);
+                Integer valueOf2 = Integer.valueOf(message2.id);
+                Long valueOf3 = Long.valueOf(j12);
+                Boolean bool = Boolean.FALSE;
+                notificationCenter.k(21, valueOf, valueOf2, message2, valueOf3, 0L, 0, bool);
+                a6aVar.getNotificationCenter().k(22, Integer.valueOf(e1), Integer.valueOf(message2.id), message2, Long.valueOf(j12), 0L, 0, bool);
+                a6aVar.c0(i13);
+                a6aVar.h0(i13, false);
+                return;
+            case 12:
+                b();
+                return;
             case 13:
-                return nod.m(e66.e(262144) ? 0.85f : 0.76f, bkb.v0(bkb.c6, wjbVar), bkb.v0(bkb.Pl, wjbVar));
+                c();
+                return;
             case 14:
-                return nod.m(e66.e(262144) ? 0.85f : 0.76f, bkb.v0(bkb.c6, wjbVar), bkb.v0(bkb.Ie, wjbVar));
-            case 15:
-                return nod.m(e66.e(262144) ? 0.85f : 0.8f, bkb.v0(bkb.Z6, wjbVar), bkb.v0(bkb.c6, wjbVar));
-            case 16:
-                return 855638016;
-            case 17:
-                return TLObject.FLAG_30;
-            case 18:
-                return bkb.p1(z ? 0.82f : 0.78f, bkb.v0(bkb.g5, wjbVar));
-            case 19:
-                return bkb.p1(0.075f, -16777216);
-            case 20:
-                return bkb.p1(e66.e(262144) ? 0.85f : 0.76f, bkb.v0(bkb.vj, wjbVar));
-            case 21:
-                return bkb.p1(0.88f, bkb.v0(bkb.c6, wjbVar));
-            case 22:
-                return bkb.p1(z ? 0.85f : 0.825f, bkb.v0(bkb.F8, wjbVar));
-            case 23:
-                return nod.m(e66.e(262144) ? 0.85f : 0.76f, bkb.v0(bkb.c6, wjbVar), bkb.v0(bkb.Ol, wjbVar));
-            case 24:
-                return bkb.p1(e66.e(262144) ? 0.85f : 0.76f, bkb.v0(bkb.c6, wjbVar));
-            case 25:
-                return bkb.p1(0.78f, bkb.v0(bkb.g5, wjbVar));
-            case 26:
-                return bkb.p1(0.7f, bkb.v0(bkb.c6, wjbVar));
+                d();
+                return;
             default:
-                e66.e(262144);
-                return 0;
+                z zVar = (z) this.d;
+                long j13 = this.b;
+                int i14 = this.c;
+                String str5 = (String) this.e;
+                String str6 = (String) this.f;
+                if (zVar.A) {
+                    iyc.a.execute(new toa(zVar, j13, (byte) 10));
+                    return;
+                }
+                zVar.v = j13;
+                int i15 = zVar.M;
+                if (i15 != i14 && i15 > 0) {
+                    zVar.c.m(j13, i15 / zVar.l);
+                }
+                if (!zVar.H.equals(str5)) {
+                    zVar.c.i(j13, zVar.H.getBytes(StandardCharsets.UTF_8));
+                }
+                if (zVar.k != null && !zVar.k.equals(str6)) {
+                    zVar.c.h(j13, zVar.k.getBytes(StandardCharsets.UTF_8));
+                }
+                zVar.I = true;
+                zVar.c.l(j13, zVar.L);
+                zVar.e();
+                return;
         }
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        hdVar.dismiss();
+    public /* synthetic */ wz(wq0 wq0Var, long[] jArr, long j, int i, Runnable runnable) {
+        this.a = (byte) 1;
+        this.d = wq0Var;
+        this.e = jArr;
+        this.b = j;
+        this.c = i;
+        this.f = runnable;
+    }
+
+    public /* synthetic */ wz(e6a e6aVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, String str, int i) {
+        this.a = (byte) 9;
+        this.d = e6aVar;
+        this.e = tL_starGiftUnique;
+        this.b = j;
+        this.f = str;
+        this.c = i;
+    }
+
+    public /* synthetic */ wz(Context context, int i, hv4 hv4Var, long j, bx4 bx4Var) {
+        this.a = (byte) 0;
+        this.d = context;
+        this.c = i;
+        this.e = hv4Var;
+        this.b = j;
+        this.f = bx4Var;
+    }
+
+    public /* synthetic */ wz(Object obj, int i, long j, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.c = i;
+        this.b = j;
+        this.e = obj2;
+        this.f = obj3;
+    }
+
+    public /* synthetic */ wz(Object obj, long j, int i, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.b = j;
+        this.c = i;
+        this.e = obj2;
+        this.f = obj3;
+    }
+
+    public /* synthetic */ wz(Object obj, Object obj2, int i, Object obj3, long j, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.e = obj2;
+        this.c = i;
+        this.f = obj3;
+        this.b = j;
+    }
+
+    public /* synthetic */ wz(Object obj, Object obj2, Serializable serializable, int i, long j, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.e = obj2;
+        this.f = serializable;
+        this.c = i;
+        this.b = j;
     }
 }

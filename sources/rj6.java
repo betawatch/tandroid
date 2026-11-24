@@ -1,111 +1,52 @@
 // default package
 
-import android.animation.ObjectAnimator;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class rj6 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ty0 c;
-    public long d;
+public final class rj6 implements r56 {
+    public final /* synthetic */ ak6 a;
 
-    public final void a(ArrayList arrayList, boolean z) {
-        TextView textView = this.b;
-        ty0 ty0Var = this.c;
-        super.setEnabled(z);
-        TextView textView2 = this.a;
-        if (arrayList != null) {
-            arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(ty0Var, "alpha", z ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z ? 1.0f : 0.5f));
-        } else {
-            textView2.setAlpha(z ? 1.0f : 0.5f);
-            ty0Var.setAlpha(z ? 1.0f : 0.5f);
-            textView.setAlpha(z ? 1.0f : 0.5f);
-        }
+    public rj6(ak6 ak6Var) {
+        this.a = ak6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return true;
+    @Override // r56
+    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+        this.a.j0(tL_chatInviteExported);
     }
 
-    public long getSize() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawLine(k96.a0 ? 0.0f : gl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(20.0f) : 0), getMeasuredHeight() - 1, bkb.j0);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        return true;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(80.0f), TLObject.FLAG_30));
-        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(80.0f));
-        int measuredWidth = getMeasuredWidth() - gl.L(42.0f);
-        TextView textView = this.b;
-        textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(b00.c(8.0f, measuredWidth - textView.getMeasuredWidth(), gl.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
-        this.c.measure(ug8.f(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        return true;
-    }
-
-    public void setSize(long j) {
-        float max;
-        float f;
-        float f2;
-        this.d = j;
-        this.b.setText(k96.a0("AutodownloadSizeLimitUpTo", null, 2131753769, gl.i0(j, false, false)));
-        long j2 = j - 512000;
-        if (j2 < 536576) {
-            f2 = Math.max(0.0f, j2 / 536576.0f) * 0.25f;
-        } else {
-            long j3 = j - 1048576;
-            if (j3 < 9437184) {
-                f2 = (Math.max(0.0f, j3 / 9437184.0f) * 0.25f) + 0.25f;
-            } else {
-                long j4 = j - 10485760;
-                if (j4 < 94371840) {
-                    max = Math.max(0.0f, j4 / 9.437184E7f) * 0.25f;
-                    f = 0.5f;
-                } else {
-                    max = Math.max(0.0f, (j - 104857600) / 1.9922944E9f) * 0.25f;
-                    f = 0.75f;
+    @Override // r56
+    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
+        ak6 ak6Var = this.a;
+        ArrayList arrayList = ak6Var.j0;
+        if (tLObject instanceof TLRPC.TL_messages_exportedChatInvite) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvite) tLObject).invite;
+            ak6Var.f0(tL_chatInviteExported2);
+            for (int i = 0; i < arrayList.size(); i++) {
+                if (((TLRPC.TL_chatInviteExported) arrayList.get(i)).link.equals(tL_chatInviteExported.link)) {
+                    if (!tL_chatInviteExported2.revoked) {
+                        arrayList.set(i, tL_chatInviteExported2);
+                        ak6Var.o0(true);
+                        return;
+                    } else {
+                        sj6 l0 = ak6Var.l0();
+                        arrayList.remove(i);
+                        ak6Var.k0.add(0, tL_chatInviteExported2);
+                        ak6Var.n0(l0);
+                        return;
+                    }
                 }
-                f2 = max + f;
             }
         }
-        this.c.setProgress(Math.min(1.0f, f2));
     }
 
-    public void setText(String str) {
-        this.a.setText(str);
+    @Override // r56
+    public final void c(TLObject tLObject) {
+        if (tLObject instanceof TLRPC.TL_chatInviteExported) {
+            gm.d3(new lj6((Object) this, (Object) tLObject, (byte) 1), 200L);
+        }
     }
 }

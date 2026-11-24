@@ -1,43 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class a9c {
-    public float a;
-    public float b;
-    public float c;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.PrivacyControlActivity;
+import org.telegram.ui.UserInfoActivity;
 
-    public a9c(float f) {
-        d(f);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class a9c implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ UserInfoActivity b;
+
+    public /* synthetic */ a9c(UserInfoActivity userInfoActivity, byte b) {
+        this.a = b;
+        this.b = userInfoActivity;
     }
 
-    public final boolean a(float f) {
-        float f2 = this.b;
-        float A = tb4.A(this.c, f2, f, f2);
-        if (this.a == A) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        UserInfoActivity userInfoActivity = this.b;
+        switch (b) {
+            case 0:
+                userInfoActivity.presentFragment(new PrivacyControlActivity(9, true));
+                break;
+            case 1:
+                va vaVar = userInfoActivity.y;
+                if (vaVar != null) {
+                    vaVar.g3.O(true);
+                    break;
+                }
+                break;
+            case 2:
+                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
+                break;
+            default:
+                userInfoActivity.presentFragment(new PremiumPreviewFragment(0, "add_account"));
+                break;
         }
-        this.a = A;
-        return true;
-    }
-
-    public final boolean b(float f) {
-        return this.c != f;
-    }
-
-    public final void c(boolean z) {
-        if (!z) {
-            this.b = this.a;
-            return;
-        }
-        float f = this.c;
-        this.a = f;
-        this.b = f;
-    }
-
-    public final void d(float f) {
-        this.b = f;
-        this.c = f;
-        this.a = f;
     }
 }

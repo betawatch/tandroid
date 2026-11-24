@@ -1,35 +1,660 @@
 // default package
 
-import org.telegram.tgnet.NativeByteBuffer;
+import android.text.TextUtils;
+import j$.util.Comparator$-CC;
+import j$.util.Objects;
+import java.util.AbstractSet;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.TreeSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class z3b {
-    public static void a(TL_stories.StoryItem storyItem, NativeByteBuffer nativeByteBuffer) {
-        if (nativeByteBuffer == null) {
-            return;
-        }
-        int readInt32 = nativeByteBuffer.readInt32(true);
-        if (readInt32 == 1) {
-            new y3b(storyItem).readParams(nativeByteBuffer, true);
+public class z3b {
+    public static HashMap B;
+    public final int c;
+    public final long d;
+    public final byte e;
+    public final int f;
+    public final AbstractSet k;
+    public final AbstractSet l;
+    public boolean r;
+    public boolean t;
+    public boolean u;
+    public boolean v;
+    public boolean w;
+    public final uva x;
+    public y3b y;
+    public boolean z;
+    public int a = 0;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final HashMap h = new HashMap();
+    public final ArrayList i = new ArrayList();
+    public final HashMap j = new HashMap();
+    public final HashSet m = new HashSet();
+    public boolean n = true;
+    public boolean o = true;
+    public final ArrayList p = new ArrayList();
+    public final w3b q = new w3b(this, 0);
+    public int s = -1;
+    public int A = -1;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public z3b(int i, long j, int i2, int i3, qac qacVar) {
+        this.c = i;
+        this.d = j;
+        this.e = i2;
+        this.f = i3;
+        this.x = new uva(this, qacVar, (byte) 11);
+        if (i2 != 0 || i3 <= 0) {
+            this.k = new TreeSet(Comparator$-CC.reverseOrder());
+            this.l = new TreeSet(Comparator$-CC.reverseOrder());
         } else {
-            wn4.j(de9.k(readInt32, "(story) can't read params version = "));
+            this.k = new LinkedHashSet();
+            this.l = new LinkedHashSet();
+        }
+        s();
+    }
+
+    public static long b(k47 k47Var) {
+        if (k47Var == null) {
+            return 0L;
+        }
+        long j = k47Var.k.date;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(j * 1000);
+        return (calendar.get(2) * 100) + (calendar.get(1) * 10000) + calendar.get(5);
+    }
+
+    public static boolean e(k47 k47Var, boolean z, boolean z2) {
+        if (k47Var == null || !k47Var.w4()) {
+            return false;
+        }
+        if (z && k47.R3(k47Var.k)) {
+            return true;
+        }
+        return (z2 && k47.K4(k47Var.k)) || (k47Var.l.media instanceof TLRPC.TL_messageMediaUnsupported);
+    }
+
+    public static void v(AbstractSet abstractSet, ArrayList arrayList) {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            Integer num = (Integer) obj;
+            if (abstractSet.contains(num)) {
+                linkedHashSet.add(num);
+            }
+        }
+        Iterator it = abstractSet.iterator();
+        while (it.hasNext()) {
+            Integer num2 = (Integer) it.next();
+            if (!linkedHashSet.contains(num2)) {
+                linkedHashSet.add(num2);
+            }
+        }
+        abstractSet.clear();
+        abstractSet.addAll(linkedHashSet);
+    }
+
+    public final void A(List list) {
+        StringBuilder sb = new StringBuilder("StoriesList ");
+        sb.append((int) this.e);
+        sb.append("{");
+        sb.append(this.d);
+        sb.append("} updateDeletedStories {");
+        sb.append(h4b.j0(list));
+        hg9.r("}", sb);
+        if (list != null) {
+            boolean z = false;
+            for (int i = 0; i < list.size(); i++) {
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) list.get(i);
+                if (storyItem != null) {
+                    Integer valueOf = Integer.valueOf(storyItem.id);
+                    AbstractSet abstractSet = this.l;
+                    boolean contains = abstractSet.contains(valueOf);
+                    AbstractSet abstractSet2 = this.k;
+                    if (contains || abstractSet2.contains(Integer.valueOf(storyItem.id))) {
+                        abstractSet.remove(Integer.valueOf(storyItem.id));
+                        abstractSet2.remove(Integer.valueOf(storyItem.id));
+                        int i2 = this.s;
+                        if (i2 != -1) {
+                            this.s = i2 - 1;
+                        }
+                        z = true;
+                    }
+                    u(storyItem.id, true);
+                }
+            }
+            if (z) {
+                d(true);
+                x();
+            }
         }
     }
 
-    public static NativeByteBuffer b(TL_stories.StoryItem storyItem) {
-        if (storyItem.detectedLng == null && storyItem.translatedLng == null && !storyItem.translated && storyItem.translatedText == null) {
-            return null;
+    public final void B(ArrayList arrayList, boolean z) {
+        v(this.k, arrayList);
+        v(this.l, arrayList);
+        d(false);
+        if (z) {
+            TL_stories.TL_updateAlbum tL_updateAlbum = new TL_stories.TL_updateAlbum();
+            int i = this.c;
+            tL_updateAlbum.peer = oc7.r1(i).i1(this.d);
+            tL_updateAlbum.album_id = this.f;
+            tL_updateAlbum.order = new ArrayList<>(arrayList);
+            ConnectionsManager.getInstance(i).sendRequest(tL_updateAlbum, null);
         }
-        y3b y3bVar = new y3b(storyItem);
-        try {
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(y3bVar.getObjectSize());
-            y3bVar.serializeToStream(nativeByteBuffer);
-            return nativeByteBuffer;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    }
+
+    public void C(ArrayList arrayList, boolean z) {
+        if (this.f > 0) {
+            B(arrayList, z);
+            return;
         }
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        int i = this.c;
+        int f = oc7.r1(i).l4.p2.f();
+        if (arrayList2.size() > f) {
+            arrayList2.subList(f, arrayList2.size()).clear();
+        }
+        ArrayList arrayList3 = this.g;
+        if (arrayList3.size() == arrayList2.size()) {
+            for (int i2 = 0; i2 < arrayList3.size() && arrayList3.get(i2) == arrayList2.get(i2); i2++) {
+            }
+        }
+        arrayList3.clear();
+        arrayList3.addAll(arrayList2);
+        d(false);
+        if (z) {
+            TL_stories.TL_togglePinnedToTop tL_togglePinnedToTop = new TL_stories.TL_togglePinnedToTop();
+            tL_togglePinnedToTop.id.addAll(arrayList3);
+            tL_togglePinnedToTop.peer = oc7.r1(i).i1(this.d);
+            ConnectionsManager.getInstance(i).sendRequest(tL_togglePinnedToTop, new nf2((byte) 11));
+        }
+    }
+
+    public final void D(List list, boolean z) {
+        int i;
+        k47 k47Var;
+        TL_stories.StoryItem storyItem;
+        StringBuilder sb = new StringBuilder("StoriesList ");
+        byte b = this.e;
+        sb.append((int) b);
+        sb.append("{");
+        sb.append(this.d);
+        sb.append("} updateStories {");
+        sb.append(h4b.j0(list));
+        hg9.r("}", sb);
+        if (list != null) {
+            ArrayList arrayList = new ArrayList();
+            int i2 = 0;
+            boolean z2 = false;
+            while (true) {
+                int size = list.size();
+                i = this.f;
+                if (i2 >= size) {
+                    break;
+                }
+                TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) list.get(i2);
+                if (storyItem2 != null) {
+                    Integer valueOf = Integer.valueOf(storyItem2.id);
+                    AbstractSet abstractSet = this.l;
+                    boolean contains = abstractSet.contains(valueOf);
+                    AbstractSet abstractSet2 = this.k;
+                    boolean z3 = contains || abstractSet2.contains(Integer.valueOf(storyItem2.id));
+                    boolean z4 = b == 1 || storyItem2.pinned;
+                    if (i > 0) {
+                        ArrayList<Integer> arrayList2 = storyItem2.albums;
+                        z4 = arrayList2 != null && arrayList2.contains(Integer.valueOf(i));
+                    }
+                    if (storyItem2 instanceof TL_stories.TL_storyItemDeleted) {
+                        z4 = false;
+                    }
+                    HashMap hashMap = this.j;
+                    if (z3 != z4) {
+                        if (!z4) {
+                            b10.p(storyItem2.id, new StringBuilder("StoriesList remove story "));
+                            u(storyItem2.id, true);
+                            int i3 = this.s;
+                            if (i3 != -1) {
+                                this.s = i3 - 1;
+                            }
+                        } else if (this.r) {
+                            fc4.b("StoriesList put story " + storyItem2.id);
+                            t(y(storyItem2), false);
+                            arrayList.add(Integer.valueOf(storyItem2.id));
+                            int i4 = this.s;
+                            if (i4 != -1) {
+                                this.s = i4 + 1;
+                            }
+                        } else if (!this.u) {
+                            fc4.b("StoriesList cannot put story " + storyItem2.id + " -> reload");
+                            if (this.A != -1) {
+                                ConnectionsManager.getInstance(this.c).cancelRequest(this.A, true);
+                                this.A = -1;
+                            }
+                            w();
+                            int size2 = this.i.size();
+                            hashMap.clear();
+                            abstractSet.clear();
+                            abstractSet2.clear();
+                            j();
+                            this.r = false;
+                            this.w = false;
+                            p(Utilities.j(size2, 50, 10), true);
+                        }
+                    } else if (z3 && z4 && ((k47Var = (k47) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z || (storyItem = k47Var.l) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
+                        b10.p(storyItem2.id, new StringBuilder("StoriesList update story "));
+                        hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
+                    }
+                    z2 = true;
+                }
+                i2++;
+            }
+            if (i > 0 && !arrayList.isEmpty()) {
+                B(arrayList, false);
+            }
+            if (z2) {
+                d(true);
+                x();
+            }
+        }
+    }
+
+    public final void E(int i, ArrayList arrayList, boolean z) {
+        TL_stories.StoryItem storyItem;
+        int size = arrayList.size();
+        boolean z2 = false;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            Integer num = (Integer) obj;
+            num.getClass();
+            k47 k47Var = (k47) this.j.get(num);
+            if (k47Var != null && (storyItem = k47Var.l) != null) {
+                HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
+                Integer valueOf = Integer.valueOf(i);
+                boolean remove = z ? hashSet.remove(valueOf) : hashSet.add(valueOf);
+                storyItem.albums = !hashSet.isEmpty() ? new ArrayList<>(hashSet) : null;
+                z2 |= remove;
+            }
+        }
+        if (z2) {
+            d(true);
+            x();
+        }
+    }
+
+    public final boolean a() {
+        Long l;
+        return B == null || (l = (Long) B.get(Integer.valueOf(Objects.hash(Integer.valueOf(this.c), Integer.valueOf(this.e), Long.valueOf(this.d), Integer.valueOf(this.f))))) == null || System.currentTimeMillis() - l.longValue() > 120000;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x009d, code lost:
+    
+        if (r9 >= r7) goto L68;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(ArrayList arrayList, boolean z, boolean z2) {
+        ArrayList arrayList2 = this.p;
+        arrayList2.clear();
+        HashMap hashMap = this.j;
+        ArrayList arrayList3 = this.g;
+        int i = this.f;
+        byte b = this.e;
+        if (b == 0 && i <= 0) {
+            int size = arrayList3.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList3.get(i2);
+                i2++;
+                Integer num = (Integer) obj;
+                num.getClass();
+                k47 k47Var = (k47) hashMap.get(num);
+                if (e(k47Var, z, z2)) {
+                    arrayList2.add(k47Var);
+                }
+            }
+        }
+        int i3 = Integer.MAX_VALUE;
+        for (Integer num2 : this.l) {
+            int intValue = num2.intValue();
+            k47 k47Var2 = (k47) hashMap.get(num2);
+            if (b != 0 || i > 0 || !arrayList3.contains(num2)) {
+                if (e(k47Var2, z, z2)) {
+                    arrayList2.add(k47Var2);
+                }
+                if (intValue < i3) {
+                    i3 = intValue;
+                }
+            }
+        }
+        if (!this.r) {
+            Iterator it = this.k.iterator();
+            while (it.hasNext() && (this.s == -1 || arrayList2.size() < this.s)) {
+                Integer num3 = (Integer) it.next();
+                int intValue2 = num3.intValue();
+                if (b != 0 || i > 0 || !arrayList3.contains(num3)) {
+                    k47 k47Var3 = (k47) hashMap.get(num3);
+                    if (e(k47Var3, z, z2)) {
+                        arrayList2.add(k47Var3);
+                    }
+                }
+            }
+        }
+        arrayList.clear();
+        arrayList.addAll(arrayList2);
+    }
+
+    public final void d(boolean z) {
+        c(this.i, this.n, this.o);
+        if (z) {
+            w3b w3bVar = this.q;
+            gm.r(w3bVar);
+            gm.c3(w3bVar);
+        }
+    }
+
+    public k47 f(int i) {
+        return (k47) this.j.get(Integer.valueOf(i));
+    }
+
+    public int g() {
+        boolean z = this.o;
+        ArrayList arrayList = this.i;
+        return (z && this.n) ? this.s < 0 ? arrayList.size() : Math.max(arrayList.size(), this.s) : arrayList.size();
+    }
+
+    public ArrayList h() {
+        HashMap hashMap = this.h;
+        ArrayList arrayList = new ArrayList(hashMap.keySet());
+        Collections.sort(arrayList, new zua((byte) 2));
+        ArrayList arrayList2 = new ArrayList();
+        int i = 0;
+        ArrayList arrayList3 = this.g;
+        byte b = this.e;
+        if (b == 0) {
+            if (this.f > 0) {
+                ArrayList arrayList4 = new ArrayList();
+                ArrayList arrayList5 = this.i;
+                int size = arrayList5.size();
+                while (i < size) {
+                    Object obj = arrayList5.get(i);
+                    i++;
+                    arrayList4.add(Integer.valueOf(((k47) obj).l.id));
+                }
+                arrayList2.add(arrayList4);
+                return arrayList2;
+            }
+            if (!arrayList3.isEmpty()) {
+                arrayList2.add(new ArrayList(arrayList3));
+            }
+        }
+        int size2 = arrayList.size();
+        int i2 = 0;
+        while (i2 < size2) {
+            Object obj2 = arrayList.get(i2);
+            i2++;
+            TreeSet treeSet = (TreeSet) hashMap.get((Long) obj2);
+            if (treeSet != null) {
+                ArrayList arrayList6 = new ArrayList(treeSet);
+                if (b == 0 && !arrayList3.isEmpty()) {
+                    int size3 = arrayList3.size();
+                    int i3 = 0;
+                    while (i3 < size3) {
+                        Object obj3 = arrayList3.get(i3);
+                        i3++;
+                        Integer num = (Integer) obj3;
+                        num.getClass();
+                        arrayList6.remove(num);
+                    }
+                }
+                if (!arrayList6.isEmpty()) {
+                    arrayList2.add(arrayList6);
+                }
+            }
+        }
+        return arrayList2;
+    }
+
+    public int i() {
+        return this.l.size();
+    }
+
+    public void j() {
+        byte b = 1;
+        if (this.t) {
+            this.v = true;
+            return;
+        }
+        w();
+        cf7 Y = cf7.Y(this.c);
+        Y.a.c(new x3b(this, Y, b));
+    }
+
+    public boolean k() {
+        return this.t || this.u;
+    }
+
+    public boolean l() {
+        return this.l.isEmpty() && a();
+    }
+
+    public final boolean m(int i) {
+        if (this.e != 0 || this.f > 0) {
+            return false;
+        }
+        return this.g.contains(Integer.valueOf(i));
+    }
+
+    public final int n() {
+        AbstractSet abstractSet = this.l;
+        if (abstractSet.isEmpty()) {
+            return -1;
+        }
+        ArrayList arrayList = new ArrayList(abstractSet);
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            Integer num = (Integer) arrayList.get(size);
+            int intValue = num.intValue();
+            if (!this.g.contains(num)) {
+                return intValue;
+            }
+        }
+        return -1;
+    }
+
+    public final int o() {
+        int i = this.a;
+        this.a = i + 1;
+        this.b.add(Integer.valueOf(i));
+        uva uvaVar = this.x;
+        if (uvaVar != null) {
+            gm.r(uvaVar);
+        }
+        return i;
+    }
+
+    public final void p(int i, boolean z) {
+        q(i, Collections.EMPTY_LIST, z);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public boolean q(int i, List list, boolean z) {
+        int n;
+        TL_stories.TL_stories_getStoriesArchive tL_stories_getStoriesArchive;
+        if (this.u || ((this.r || this.w || !a()) && !z)) {
+            return false;
+        }
+        if (this.t) {
+            this.y = new y3b(this, z, i, list);
+            return false;
+        }
+        byte b = this.e;
+        long j = this.d;
+        int i2 = this.c;
+        if (b == 0) {
+            int i3 = this.f;
+            if (i3 > 0) {
+                TL_stories.TL_stories_getAlbumStories tL_stories_getAlbumStories = new TL_stories.TL_stories_getAlbumStories();
+                tL_stories_getAlbumStories.album_id = i3;
+                tL_stories_getAlbumStories.peer = oc7.r1(i2).i1(j);
+                n = this.l.size();
+                tL_stories_getAlbumStories.offset = n;
+                tL_stories_getAlbumStories.limit = i;
+                tL_stories_getStoriesArchive = tL_stories_getAlbumStories;
+            } else {
+                TL_stories.TL_stories_getPinnedStories tL_stories_getPinnedStories = new TL_stories.TL_stories_getPinnedStories();
+                tL_stories_getPinnedStories.peer = oc7.r1(i2).i1(j);
+                n = n();
+                tL_stories_getPinnedStories.offset_id = n;
+                tL_stories_getPinnedStories.limit = i;
+                tL_stories_getStoriesArchive = tL_stories_getPinnedStories;
+            }
+        } else if (b == 2) {
+            TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
+            tL_stories_getStoriesByID.peer = oc7.r1(i2).i1(j);
+            tL_stories_getStoriesByID.id.addAll(list);
+            n = -1;
+            tL_stories_getStoriesArchive = tL_stories_getStoriesByID;
+        } else {
+            TL_stories.TL_stories_getStoriesArchive tL_stories_getStoriesArchive2 = new TL_stories.TL_stories_getStoriesArchive();
+            tL_stories_getStoriesArchive2.peer = oc7.r1(i2).i1(j);
+            n = n();
+            tL_stories_getStoriesArchive2.offset_id = n;
+            tL_stories_getStoriesArchive2.limit = i;
+            tL_stories_getStoriesArchive = tL_stories_getStoriesArchive2;
+        }
+        StringBuilder sb = new StringBuilder("StoriesList ");
+        sb.append((int) b);
+        sb.append("{");
+        sb.append(j);
+        hg9.r("} load", sb);
+        this.u = true;
+        this.A = ConnectionsManager.getInstance(i2).sendRequest(tL_stories_getStoriesArchive, new w22(this, n, (byte) 8));
+        return true;
+    }
+
+    public boolean r(int i) {
+        Integer valueOf = Integer.valueOf(i);
+        HashSet hashSet = this.m;
+        byte b = 0;
+        if (hashSet.contains(valueOf)) {
+            return false;
+        }
+        hashSet.add(Integer.valueOf(i));
+        x();
+        TL_stories.TL_stories_incrementStoryViews tL_stories_incrementStoryViews = new TL_stories.TL_stories_incrementStoryViews();
+        int i2 = this.c;
+        tL_stories_incrementStoryViews.peer = oc7.r1(i2).i1(this.d);
+        tL_stories_incrementStoryViews.id.add(Integer.valueOf(i));
+        ConnectionsManager.getInstance(i2).sendRequest(tL_stories_incrementStoryViews, new nf2(b));
+        nm7.f(i2).k(nm7.J5, new Object[0]);
+        return true;
+    }
+
+    public void s() {
+        if (this.t || this.u || this.w) {
+            return;
+        }
+        this.t = true;
+        cf7 Y = cf7.Y(this.c);
+        Y.a.c(new x3b(this, Y, (byte) 0));
+    }
+
+    public final void t(k47 k47Var, boolean z) {
+        if (k47Var == null) {
+            return;
+        }
+        this.j.put(Integer.valueOf(k47Var.e1()), k47Var);
+        (z ? this.k : this.l).add(Integer.valueOf(k47Var.e1()));
+        long b = b(k47Var);
+        Long valueOf = Long.valueOf(b);
+        HashMap hashMap = this.h;
+        TreeSet treeSet = (TreeSet) hashMap.get(valueOf);
+        if (treeSet == null) {
+            Long valueOf2 = Long.valueOf(b);
+            TreeSet treeSet2 = new TreeSet(Comparator$-CC.reverseOrder());
+            hashMap.put(valueOf2, treeSet2);
+            treeSet = treeSet2;
+        }
+        treeSet.add(Integer.valueOf(k47Var.e1()));
+    }
+
+    public final void u(int i, boolean z) {
+        k47 k47Var = (k47) this.j.remove(Integer.valueOf(i));
+        if (z) {
+            this.k.remove(Integer.valueOf(i));
+        }
+        this.l.remove(Integer.valueOf(i));
+        this.g.remove(Integer.valueOf(i));
+        if (k47Var != null) {
+            long b = b(k47Var);
+            Long valueOf = Long.valueOf(b);
+            HashMap hashMap = this.h;
+            Collection collection = (Collection) hashMap.get(valueOf);
+            if (collection != null) {
+                collection.remove(Integer.valueOf(i));
+                if (collection.isEmpty()) {
+                    hashMap.remove(Long.valueOf(b));
+                }
+            }
+        }
+    }
+
+    public final void w() {
+        HashMap hashMap = B;
+        if (hashMap != null) {
+            hashMap.remove(Integer.valueOf(Objects.hash(Integer.valueOf(this.c), Integer.valueOf(this.e), Long.valueOf(this.d), Integer.valueOf(this.f))));
+        }
+    }
+
+    public void x() {
+        if (this.z) {
+            return;
+        }
+        this.z = true;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList(this.g);
+        c(arrayList, true, true);
+        cf7 Y = cf7.Y(this.c);
+        Y.a.c(new hza((Object) this, (Object) arrayList, (Object) Y, (Object) arrayList2, (byte) 7));
+    }
+
+    public final k47 y(TL_stories.StoryItem storyItem) {
+        storyItem.dialogId = this.d;
+        storyItem.messageId = storyItem.id;
+        k47 k47Var = new k47(this.c, storyItem);
+        k47Var.r0(false);
+        return k47Var;
+    }
+
+    public final void z(int i) {
+        uva uvaVar;
+        Integer valueOf = Integer.valueOf(i);
+        ArrayList arrayList = this.b;
+        arrayList.remove(valueOf);
+        if (!arrayList.isEmpty() || (uvaVar = this.x) == null) {
+            return;
+        }
+        gm.r(uvaVar);
+        gm.d3(uvaVar, 300000L);
     }
 }

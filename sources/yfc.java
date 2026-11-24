@@ -1,22 +1,27 @@
 // default package
 
-import org.webrtc.RendererCommon;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class yfc implements RendererCommon.RendererEvents {
-    public final /* synthetic */ hgc a;
+public final class yfc extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
 
-    public yfc(hgc hgcVar) {
-        this.a = hgcVar;
+    public yfc(int i, float f) {
+        this.a = i;
+        this.b = f;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        gl.d3(new kbc(this, (byte) 6));
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i, int i2, int i3) {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        int width = view.getWidth();
+        int i = this.a;
+        int height = view.getHeight() - i;
+        float f = this.b;
+        int i2 = this.a;
+        outline.setRoundRect(i2, i2, width - i, height, f);
     }
 }

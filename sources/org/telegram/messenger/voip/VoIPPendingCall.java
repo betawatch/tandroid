@@ -7,24 +7,24 @@ import android.provider.Settings;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class VoIPPendingCall {
     private j5 accountInstance;
     private final Activity activity;
     private Handler handler;
-    private kk7 notificationCenter;
-    private final gk7 observer;
+    private nm7 notificationCenter;
+    private final jm7 observer;
     private final Runnable releaseRunnable;
     private boolean released;
     private final long userId;
     private final boolean video;
 
     private VoIPPendingCall(Activity activity, long j, boolean z, long j2, j5 j5Var) {
-        su2 su2Var = new su2(this, (byte) 5);
-        this.observer = su2Var;
-        kbc kbcVar = new kbc(this, (byte) 11);
-        this.releaseRunnable = kbcVar;
+        dw2 dw2Var = new dw2(this, (byte) 5);
+        this.observer = dw2Var;
+        f8c f8cVar = new f8c(this, (byte) 19);
+        this.releaseRunnable = f8cVar;
         this.activity = activity;
         this.userId = j;
         this.video = z;
@@ -32,12 +32,12 @@ public final class VoIPPendingCall {
         if (onConnectionStateUpdated(false)) {
             return;
         }
-        kk7 f = kk7.f(y6c.t0);
+        nm7 f = nm7.f(z8c.t0);
         this.notificationCenter = f;
-        f.a(su2Var, kk7.S1);
+        f.a(dw2Var, nm7.T1);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
-        handler.postDelayed(kbcVar, j2);
+        handler.postDelayed(f8cVar, j2);
     }
 
     private boolean isAirplaneMode() {
@@ -50,7 +50,7 @@ public final class VoIPPendingCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(int i, int i2, Object[] objArr) {
-        if (i == kk7.S1) {
+        if (i == nm7.T1) {
             onConnectionStateUpdated(false);
         }
     }
@@ -64,13 +64,13 @@ public final class VoIPPendingCall {
         if (this.released || !(z || isConnected(this.accountInstance) || isAirplaneMode())) {
             return false;
         }
-        na7 q1 = na7.q1(this.accountInstance.a);
-        TLRPC.User V1 = q1.V1(Long.valueOf(this.userId));
-        if (V1 != null) {
-            TLRPC.UserFull W1 = q1.W1(V1.id);
-            rgc.m(V1, this.video, W1 != null && W1.video_calls_available, this.activity, W1, this.accountInstance);
+        oc7 r1 = oc7.r1(this.accountInstance.a);
+        TLRPC.User W1 = r1.W1(Long.valueOf(this.userId));
+        if (W1 != null) {
+            TLRPC.UserFull X1 = r1.X1(W1.id);
+            sic.m(W1, this.video, X1 != null && X1.video_calls_available, this.activity, X1, this.accountInstance);
         } else if (isAirplaneMode()) {
-            rgc.m(null, this.video, false, this.activity, null, this.accountInstance);
+            sic.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;
@@ -84,9 +84,9 @@ public final class VoIPPendingCall {
         if (this.released) {
             return;
         }
-        kk7 kk7Var = this.notificationCenter;
-        if (kk7Var != null) {
-            kk7Var.n(this.observer, kk7.S1);
+        nm7 nm7Var = this.notificationCenter;
+        if (nm7Var != null) {
+            nm7Var.n(this.observer, nm7.T1);
         }
         Handler handler = this.handler;
         if (handler != null) {

@@ -1,53 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class t99 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ x99 b;
+    public final /* synthetic */ yv1 b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ ylb d;
+    public final /* synthetic */ k47 e;
 
-    public /* synthetic */ t99(x99 x99Var, byte b) {
+    public /* synthetic */ t99(yv1 yv1Var, Activity activity, ylb ylbVar, k47 k47Var, byte b) {
         this.a = b;
-        this.b = x99Var;
+        this.b = yv1Var;
+        this.c = activity;
+        this.d = ylbVar;
+        this.e = k47Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        x99 x99Var = this.b;
+        k47 k47Var = this.e;
+        ylb ylbVar = this.d;
+        Activity activity = this.c;
+        yv1 yv1Var = this.b;
+        byte b2 = 2;
         switch (b) {
             case 0:
-                q99 q99Var = x99Var.c;
-                if (!q99Var.j.isEmpty()) {
-                    q99Var.j.clear();
-                    q99Var.m();
-                    break;
-                }
+                c41.b0(yv1Var).c(gm.N2(jb6.M0(2131754484, null), -1, 2, new m9(activity, (byte) 3), ylbVar)).j();
+                yv1Var.Za(k47Var);
+                yv1Var.bb(k47Var);
                 break;
             case 1:
-                q99 q99Var2 = x99Var.c;
-                if (!q99Var2.k.isEmpty()) {
-                    q99Var2.k.clear();
-                    q99Var2.m();
-                    break;
-                }
-                break;
-            case 2:
-                q99 q99Var3 = x99Var.c;
-                if (!q99Var3.l.isEmpty()) {
-                    q99Var3.l.clear();
-                    q99Var3.m();
-                    break;
-                }
-                break;
-            case 3:
-                x99Var.c.p(p99.a);
-                break;
-            case 4:
-                x99Var.c.p(p99.b);
+                c41.b0(yv1Var).c(gm.N2(jb6.M0(2131754484, null), -1, 2, new m9(activity, b2), ylbVar)).j();
+                yv1Var.Za(k47Var);
+                yv1Var.bb(k47Var);
                 break;
             default:
-                x99Var.c.p(p99.c);
+                c41.b0(yv1Var).c(gm.N2(jb6.M0(2131754484, null), -1, 2, new m9(activity, (byte) 4), ylbVar)).j();
+                yv1Var.Za(k47Var);
+                yv1Var.bb(k47Var);
                 break;
         }
     }

@@ -1,45 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class a9b {
-    public static final a9b e;
-    public boolean a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+import android.content.Context;
+import org.telegram.messenger.Utilities;
 
-    static {
-        a9b a9bVar = new a9b();
-        a9bVar.a = true;
-        a9bVar.b = true;
-        a9bVar.c = false;
-        a9bVar.d = false;
-        e = a9bVar;
-        a9bVar.a = true;
-        a9bVar.b = true;
-        a9bVar.c = false;
-        a9bVar.d = false;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class a9b extends ss3 {
+    public final /* synthetic */ v9b c0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9b(v9b v9bVar, Context context, boolean z) {
+        super(context, z);
+        this.c0 = v9bVar;
     }
 
-    public static String a(String str, Class cls, boolean z) {
-        if (cls == null) {
-            return "ANONYMOUS";
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void receivedAmplitude(double d) {
+        j49 j49Var = this.c0.P0;
+        if (j49Var != null) {
+            j49Var.h0 = Utilities.i((float) (d / 1800.0d), 1.0f, 0.0f);
         }
-        if (cls.isArray()) {
-            Class<?> componentType = cls.getComponentType();
-            StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append(a(componentType.getName(), componentType, z));
-            stringBuffer.append("[]");
-            return stringBuffer.toString();
-        }
-        if (!z) {
-            return str.replace('$', '.');
-        }
-        int lastIndexOf = str.lastIndexOf(46);
-        if (lastIndexOf != -1) {
-            str = str.substring(lastIndexOf + 1);
-        }
-        return str.replace('$', '.');
+    }
+
+    @Override // ss3
+    public final void s(boolean z) {
+        v9b v9bVar = this.c0;
+        v9bVar.p1.b(v9bVar.d1.getText());
+        v9bVar.p1.a(false, z, v9bVar.l0);
+    }
+
+    @Override // ss3, org.telegram.messenger.camera.CameraView
+    public final void toggleDual() {
+        super.toggleDual();
+        v9b v9bVar = this.c0;
+        v9bVar.G0.setValue(isDual());
+        v9bVar.G0.setContentDescription(jb6.M0(isDual() ? 2131754886 : 2131754887, null));
+        v9bVar.d0(v9bVar.A());
     }
 }

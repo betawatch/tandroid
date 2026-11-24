@@ -1,9 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public abstract class afe {
-    public abstract void a(Throwable th);
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
-    public abstract void b(wtc wtcVar);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class afe {
+    public static final byte[] a;
+
+    static {
+        Charset.forName("US-ASCII");
+        Charset.forName("UTF-8");
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        a = bArr;
+        ByteBuffer.wrap(bArr);
+    }
 }

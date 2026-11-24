@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzlg extends ccb implements eq4 {
+final class zzlg extends eeb implements fs4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
@@ -12,21 +12,21 @@ final class zzlg extends ccb implements eq4 {
     final /* synthetic */ String zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlg(zzly zzlyVar, zzhk zzhkVar, String str, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzlg(zzly zzlyVar, zzhk zzhkVar, String str, px2 px2Var) {
+        super(2, px2Var);
         this.zzc = zzlyVar;
         this.zzd = zzhkVar;
         this.zze = str;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzlg(this.zzc, this.zzd, this.zze, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        return new zzlg(this.zzc, this.zzd, this.zze, px2Var);
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlg) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzlg) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0052, code lost:
@@ -45,28 +45,28 @@ final class zzlg extends ccb implements eq4 {
     
         if (r6 != r4) goto L11;
      */
-    @Override // of0
+    @Override // og0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         int i = this.zzb;
-        bx2 bx2Var = bx2.a;
+        ly2 ly2Var = ly2.a;
         if (i == 0) {
-            qse.b(obj);
+            tue.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
         } else if (i == 1) {
-            qse.b(obj);
+            tue.b(obj);
         } else {
             if (i != 2) {
-                qse.b(obj);
-                return g5c.a;
+                tue.b(obj);
+                return g7c.a;
             }
             zzhkVar = (zzhk) this.zza;
-            qse.b(obj);
+            tue.b(obj);
             this.zza = null;
             this.zzb = 3;
         }

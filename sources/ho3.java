@@ -1,89 +1,63 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ho3 extends jo3 implements cx2, fw2 {
-    public static final /* synthetic */ long n = ex.a.objectFieldOffset(ho3.class.getDeclaredField("_reusableCancellableContinuation$volatile"));
-    private volatile /* synthetic */ Object _reusableCancellableContinuation$volatile;
-    public final vw2 d;
-    public final gw2 e;
-    public Object f;
-    public final Object h;
+import android.os.SystemClock;
+import android.util.Log;
+import java.io.File;
+import java.util.concurrent.CountDownLatch;
 
-    public ho3(vw2 vw2Var, gw2 gw2Var) {
-        super(-1);
-        this.d = vw2Var;
-        this.e = gw2Var;
-        this.f = r3c.a;
-        this.h = edd.b(gw2Var.getContext());
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ho3 implements jm7 {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ long[] b;
+    public final /* synthetic */ io3 c;
+    public final /* synthetic */ File[] d;
+    public final /* synthetic */ File e;
+    public final /* synthetic */ CountDownLatch f;
+
+    public ho3(String str, long[] jArr, io3 io3Var, File[] fileArr, File file, CountDownLatch countDownLatch) {
+        this.a = str;
+        this.b = jArr;
+        this.c = io3Var;
+        this.d = fileArr;
+        this.e = file;
+        this.f = countDownLatch;
     }
 
-    @Override // cx2
-    public final cx2 getCallerFrame() {
-        return this.e;
-    }
-
-    @Override // fw2
-    public final sw2 getContext() {
-        return this.e.getContext();
-    }
-
-    @Override // jo3
-    public final Object i() {
-        Object obj = this.f;
-        this.f = r3c.a;
-        return obj;
-    }
-
-    @Override // fw2
-    public final void resumeWith(Object obj) {
-        Throwable a = ta9.a(obj);
-        Object fp2Var = a == null ? obj : new fp2(a, false);
-        gw2 gw2Var = this.e;
-        sw2 context = gw2Var.getContext();
-        vw2 vw2Var = this.d;
-        if (vw2Var.d(context)) {
-            this.f = fp2Var;
-            this.c = 0;
-            vw2Var.c(gw2Var.getContext(), this);
-            return;
-        }
-        d44 a2 = dnb.a();
-        if (a2.c >= 4294967296L) {
-            this.f = fp2Var;
-            this.c = 0;
-            ks ksVar = a2.e;
-            if (ksVar == null) {
-                ksVar = new ks();
-                a2.e = ksVar;
-            }
-            ksVar.addLast(this);
-            return;
-        }
-        a2.g(true);
-        try {
-            sw2 context2 = gw2Var.getContext();
-            Object c = edd.c(context2, this.h);
-            try {
-                gw2Var.resumeWith(obj);
-                while (a2.i()) {
+    @Override // jm7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        File file;
+        if (objArr.length != 0) {
+            Object obj = objArr[0];
+            String str = this.a;
+            if (str.equals(obj)) {
+                this.b[0] = SystemClock.elapsedRealtime();
+                if (i == nm7.X1) {
+                    this.c.c(((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue());
+                    return;
                 }
-            } finally {
-                edd.a(context2, c);
-            }
-        } finally {
-            try {
-            } finally {
+                if (i == nm7.Y1) {
+                    if (objArr.length > 1) {
+                        Object obj2 = objArr[1];
+                        if (obj2 instanceof File) {
+                            file = (File) obj2;
+                            this.d[0] = file;
+                        }
+                    }
+                    file = this.e;
+                    this.d[0] = file;
+                } else {
+                    if (i != nm7.Z1) {
+                        return;
+                    }
+                    StringBuilder p = wi8.p("speech models: ", str, " download failed (");
+                    p.append(objArr.length > 1 ? objArr[1] : "");
+                    p.append(")");
+                    Log.d("Dictation", p.toString());
+                    oc7.d1().edit().remove("speech_models_checked").apply();
+                }
+                this.f.countDown();
             }
         }
-    }
-
-    public final String toString() {
-        return "DispatchedContinuation[" + this.d + ", " + s83.d(this.e) + ']';
-    }
-
-    @Override // jo3
-    public final fw2 d() {
-        return this;
     }
 }

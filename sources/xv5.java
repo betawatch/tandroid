@@ -1,29 +1,22 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xv5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rw5 b;
+public final class xv5 extends FrameLayout {
+    public View a;
+    public TextView b;
 
-    public /* synthetic */ xv5(rw5 rw5Var, byte b) {
-        this.a = b;
-        this.b = rw5Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        rw5 rw5Var = this.b;
-        switch (b) {
-            case 0:
-                rw5Var.Z1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                rw5Var.Z1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-        }
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

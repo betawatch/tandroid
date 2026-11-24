@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class m8 extends PopupWindow {
     public static Method k;
@@ -32,7 +32,7 @@ public class m8 extends PopupWindow {
     public boolean g;
     public ViewTreeObserver.OnScrollChangedListener h;
     public ViewTreeObserver i;
-    public on j;
+    public po j;
 
     static {
         Field field = null;
@@ -50,7 +50,7 @@ public class m8 extends PopupWindow {
         this.b = true;
         this.c = (short) 150;
         this.f = -1L;
-        this.j = new on(null);
+        this.j = new po(null);
         e();
     }
 
@@ -90,8 +90,8 @@ public class m8 extends PopupWindow {
         ofFloat.addUpdateListener(new f0(actionBarPopupWindow$ActionBarPopupWindowLayout, b));
         actionBarPopupWindow$ActionBarPopupWindowLayout.a = false;
         actionBarPopupWindow$ActionBarPopupWindowLayout.b = true;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, kk7.d4), ofFloat);
-        animatorSet.setDuration((i << 4) + kk7.f2);
+        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, nm7.d4), ofFloat);
+        animatorSet.setDuration((i << 4) + nm7.f2);
         animatorSet.addListener(new g0(actionBarPopupWindow$ActionBarPopupWindowLayout, b));
         animatorSet.start();
     }
@@ -178,7 +178,7 @@ public class m8 extends PopupWindow {
             animatorSet3.playTogether(ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.SCALE_Y, 0.8f), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.SCALE_X, 0.8f), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, 0.0f));
             this.a.setDuration(this.c);
         } else {
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.TRANSLATION_Y, viewGroup.getTranslationY() + gl.L((actionBarPopupWindow$ActionBarPopupWindowLayout == null || !actionBarPopupWindow$ActionBarPopupWindowLayout.w) ? -5.0f : 5.0f)), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, 0.0f));
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.TRANSLATION_Y, viewGroup.getTranslationY() + gm.L((actionBarPopupWindow$ActionBarPopupWindowLayout == null || !actionBarPopupWindow$ActionBarPopupWindowLayout.w) ? -5.0f : 5.0f)), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, 0.0f));
             this.a.setDuration(this.c);
         }
         this.a.addListener(new g8(this, b));
@@ -237,7 +237,7 @@ public class m8 extends PopupWindow {
             }
             k.invoke(this, Boolean.TRUE);
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
@@ -287,8 +287,8 @@ public class m8 extends PopupWindow {
             }
             AnimatorSet animatorSet = new AnimatorSet();
             this.a = animatorSet;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, kk7.d4));
-            this.a.setDuration((i2 << 4) + kk7.f2);
+            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, nm7.d4));
+            this.a.setDuration((i2 << 4) + nm7.f2);
             this.a.addListener(new g8(this, b));
             this.a.start();
         }
@@ -311,7 +311,7 @@ public class m8 extends PopupWindow {
             super.showAsDropDown(view, i, i2);
             f(view);
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 

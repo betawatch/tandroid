@@ -10,17 +10,17 @@ import android.os.SystemClock;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class FirebaseInitProvider extends ContentProvider {
-    public static final la0 a = new la0(System.currentTimeMillis(), SystemClock.elapsedRealtime(), SystemClock.uptimeMillis());
+    public static final lb0 a = new lb0(System.currentTimeMillis(), SystemClock.elapsedRealtime(), SystemClock.uptimeMillis());
     public static final AtomicBoolean b = new AtomicBoolean(false);
 
     @Override // android.content.ContentProvider
     public final void attachInfo(Context context, ProviderInfo providerInfo) {
-        fre.i(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
+        ite.i(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
         if ("com.google.firebase.firebaseinitprovider".equals(providerInfo.authority)) {
-            sc8.j("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
+            dq9.m("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
         } else {
             super.attachInfo(context, providerInfo);
         }
@@ -46,7 +46,7 @@ public class FirebaseInitProvider extends ContentProvider {
         AtomicBoolean atomicBoolean = b;
         try {
             atomicBoolean.set(true);
-            if (jg4.f(getContext()) == null) {
+            if (li4.f(getContext()) == null) {
                 Log.i("FirebaseInitProvider", "FirebaseApp initialization unsuccessful");
             } else {
                 Log.i("FirebaseInitProvider", "FirebaseApp initialization successful");

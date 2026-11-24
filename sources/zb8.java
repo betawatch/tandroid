@@ -1,55 +1,30 @@
 // default package
 
-import java.util.Locale;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class zb8 {
-    public static final zb8 d = new zb8(1.0f);
-    public static final String e;
-    public static final String f;
-    public final float a;
-    public final float b;
-    public final int c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class zb8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ac8 b;
 
-    static {
-        String str = g8c.a;
-        e = "0";
-        f = "1";
+    public /* synthetic */ zb8(ac8 ac8Var, byte b) {
+        this.a = b;
+        this.b = ac8Var;
     }
 
-    public zb8(float f2, float f3) {
-        gre.f(f2 > 0.0f);
-        gre.f(f3 > 0.0f);
-        this.a = f2;
-        this.b = f3;
-        this.c = Math.round(f2 * 1000.0f);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        ac8 ac8Var = this.b;
+        switch (b) {
+            case 0:
+                ac8Var.a.n.setVisibility(8);
+                break;
+            default:
+                ac8Var.a.h.setVisibility(8);
+                break;
         }
-        if (obj != null && zb8.class == obj.getClass()) {
-            zb8 zb8Var = (zb8) obj;
-            if (this.a == zb8Var.a && this.b == zb8Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Float.floatToRawIntBits(this.b) + ((Float.floatToRawIntBits(this.a) + 527) * 31);
-    }
-
-    public final String toString() {
-        Object[] objArr = {Float.valueOf(this.a), Float.valueOf(this.b)};
-        String str = g8c.a;
-        return String.format(Locale.US, "PlaybackParameters(speed=%.2f, pitch=%.2f)", objArr);
-    }
-
-    public zb8(float f2) {
-        this(f2, 1.0f);
     }
 }

@@ -1,82 +1,98 @@
 // default package
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ndb implements Vector.TLDeserializer {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ndb extends Drawable {
+    public boolean a;
+    public final ln b;
+    public final Drawable c;
+    public final Drawable d;
+    public int e = nm7.d4;
 
-    public /* synthetic */ ndb(byte b) {
-        this.a = b;
+    public ndb(rc2 rc2Var) {
+        this.b = new ln(420L, rc2Var, d53.h);
+        this.c = rc2Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
+        this.d = rc2Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-        switch (this.a) {
-            case 0:
-                return TLRPC.MessagePeerReaction.TLdeserialize(inputSerializedData, i, z);
-            case 1:
-                return TLRPC.MessageReactor.TLdeserialize(inputSerializedData, i, z);
-            case 2:
-                return TLRPC.StickerSet.TLdeserialize(inputSerializedData, i, z);
-            case 3:
-                return TLRPC.StickerSetCovered.TLdeserialize(inputSerializedData, i, z);
-            case 4:
-                return TLRPC.TL_availableEffect.TLdeserialize(inputSerializedData, i, z);
-            case 5:
-                return TLRPC.TL_availableReaction.TLdeserialize(inputSerializedData, i, z);
-            case 6:
-                return TLRPC.BotInlineResult.TLdeserialize(inputSerializedData, i, z);
-            case 7:
-                return TLRPC.Message.TLdeserialize(inputSerializedData, i, z);
-            case 8:
-                return TLRPC.TL_forumTopic.TLdeserialize(inputSerializedData, i, z);
-            case 9:
-                return TLRPC.TL_chatAdminWithInvites.TLdeserialize(inputSerializedData, i, z);
-            case 10:
-                return TLRPC.TL_chatInviteImporter.TLdeserialize(inputSerializedData, i, z);
-            case 11:
-                return TLRPC.DialogFilter.TLdeserialize(inputSerializedData, i, z);
-            case 12:
-                return TLRPC.ForumTopic.TLdeserialize(inputSerializedData, i, z);
-            case 13:
-                return TLRPC.Dialog.TLdeserialize(inputSerializedData, i, z);
-            case 14:
-                return TLRPC.EmojiGroup.TLdeserialize(inputSerializedData, i, z);
-            case 15:
-                return TLRPC.ExportedChatInvite.TLdeserialize(inputSerializedData, i, z);
-            case 16:
-                return TLRPC.TL_stickerPack.TLdeserialize(inputSerializedData, i, z);
-            case 17:
-                return TLRPC.DialogPeer.TLdeserialize(inputSerializedData, i, z);
-            case 18:
-                return TLRPC.TL_emojiLanguage.TLdeserialize(inputSerializedData, i, z);
-            case 19:
-                return TLRPC.TL_readParticipantDate.TLdeserialize(inputSerializedData, i, z);
-            case 20:
-                return TLRPC.TL_messages_searchCounter.TLdeserialize(inputSerializedData, i, z);
-            case 21:
-                return TLRPC.TL_dialogFilterSuggested.TLdeserialize(inputSerializedData, i, z);
-            case 22:
-                return TLRPC.TL_transcriptionModel.TLdeserialize(inputSerializedData, i, z);
-            case 23:
-                return TLRPC.TL_highScore.TLdeserialize(inputSerializedData, i, z);
-            case 24:
-                return TLRPC.TL_missingInvitee.TLdeserialize(inputSerializedData, i, z);
-            case 25:
-                return TLRPC.TL_messageViews.TLdeserialize(inputSerializedData, i, z);
-            case 26:
-                return TLRPC.InlineQueryPeerType.TLdeserialize(inputSerializedData, i, z);
-            case 27:
-                return TLRPC.TL_quickReply.TLdeserialize(inputSerializedData, i, z);
-            case 28:
-                return TLRPC.savedDialog.TLdeserialize(inputSerializedData, i, z);
-            default:
-                return TLRPC.TL_savedReactionTag.TLdeserialize(inputSerializedData, i, z);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        Drawable drawable = this.d;
+        drawable.setBounds(bounds);
+        drawable.setAlpha(this.e);
+        drawable.draw(canvas);
+        float d = this.b.d(this.a);
+        float centerX = getBounds().centerX();
+        float centerY = getBounds().centerY();
+        float width = getBounds().width();
+        canvas.save();
+        if (d < 0.5f) {
+            float abs = Math.abs(d - 0.5f) + 0.5f;
+            canvas.scale(abs, abs, centerX, centerY);
         }
+        canvas.save();
+        if (d > 0.5f) {
+            float abs2 = Math.abs(d - 0.5f) + 0.5f;
+            float f = -abs2;
+            float f2 = width * 0.32f;
+            canvas.scale(f, f, getBounds().left + f2, getBounds().bottom - f2);
+            float f3 = 1.0f - abs2;
+            canvas.translate((-width) * f3 * 0.4f, f3 * width * 0.4f);
+        }
+        Rect bounds2 = getBounds();
+        Drawable drawable2 = this.c;
+        drawable2.setBounds(bounds2);
+        drawable2.setAlpha(this.e);
+        drawable2.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        if (d > 0.5f) {
+            float f4 = -(Math.abs(d - 0.5f) + 0.5f);
+            float f5 = 0.32f * width;
+            canvas.scale(f4, f4, getBounds().right - f5, getBounds().top + f5);
+        }
+        canvas.rotate(180.0f, centerX, centerY);
+        if (d > 0.5f) {
+            float abs3 = 1.0f - (Math.abs(d - 0.5f) + 0.5f);
+            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
+        }
+        drawable2.setBounds(getBounds());
+        drawable2.setAlpha(this.e);
+        drawable2.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.c.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.c.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.e = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
     }
 }

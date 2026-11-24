@@ -1,60 +1,26 @@
 // default package
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.RunnableFuture;
-import java.util.concurrent.locks.LockSupport;
+import android.util.LruCache;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class edf extends vbf implements RunnableFuture {
-    public volatile h2c n;
+public final class edf extends LruCache {
+    public final /* synthetic */ xt6 a;
 
-    public edf(Callable callable) {
-        this.n = new h2c(this, callable);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public edf(xt6 xt6Var) {
+        super(20);
+        this.a = xt6Var;
     }
 
-    @Override // vbf
-    public final String a() {
-        h2c h2cVar = this.n;
-        return h2cVar != null ? tb4.y("task=[", h2cVar.toString(), "]") : super.a();
-    }
-
-    @Override // vbf
-    public final void d() {
-        h2c h2cVar;
-        Object obj = this.a;
-        if ((obj instanceof nbf) && ((nbf) obj).a && (h2cVar = this.n) != null) {
-            sv svVar = h2c.h;
-            sv svVar2 = h2c.f;
-            Runnable runnable = (Runnable) h2cVar.get();
-            if (runnable instanceof Thread) {
-                jcf jcfVar = new jcf(h2cVar);
-                jcfVar.setExclusiveOwnerThread(Thread.currentThread());
-                if (h2cVar.compareAndSet(runnable, jcfVar)) {
-                    try {
-                        Thread thread = (Thread) runnable;
-                        thread.interrupt();
-                        if (((Runnable) h2cVar.getAndSet(svVar2)) == svVar) {
-                            LockSupport.unpark(thread);
-                        }
-                    } catch (Throwable th) {
-                        if (((Runnable) h2cVar.getAndSet(svVar2)) == svVar) {
-                            LockSupport.unpark((Thread) runnable);
-                        }
-                        throw th;
-                    }
-                }
-            }
+    @Override // android.util.LruCache
+    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z, Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = this.a.g;
+        Integer num = (Integer) obj;
+        if (z) {
+            ite.h(arrayList);
+            arrayList.add(num);
         }
-        this.n = null;
-    }
-
-    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
-    public final void run() {
-        h2c h2cVar = this.n;
-        if (h2cVar != null) {
-            h2cVar.run();
-        }
-        this.n = null;
     }
 }

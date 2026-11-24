@@ -1,303 +1,126 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import java.io.Serializable;
 import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class kf1 extends w39 {
-    public final Context c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-    public final /* synthetic */ nf1 n;
+public final /* synthetic */ class kf1 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ TLObject h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public kf1(nf1 nf1Var, Context context) {
-        this.n = nf1Var;
-        this.c = context;
-        C(true);
+    public /* synthetic */ kf1(lf1 lf1Var, String str, TLObject tLObject, int i, boolean z, TLRPC.TL_error tL_error, TLRPC.TL_username tL_username, boolean z2) {
+        this.e = lf1Var;
+        this.f = str;
+        this.h = tLObject;
+        this.d = i;
+        this.b = z;
+        this.n = tL_error;
+        this.r = tL_username;
+        this.c = z2;
     }
 
-    public final void D(boolean z) {
-        this.d = 0;
-        nf1 nf1Var = this.n;
-        ArrayList arrayList = nf1Var.p0;
-        if (arrayList.isEmpty()) {
-            this.e = -1;
-            this.f = -1;
-            this.h = -1;
-            return;
-        }
-        if (nf1Var.r0) {
-            this.e = -1;
-        } else {
-            int i = this.d;
-            this.d = i + 1;
-            this.e = i;
-        }
-        int i2 = this.d;
-        this.f = i2;
-        int size = arrayList.size() + i2;
-        this.d = size;
-        this.h = size;
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.d;
-    }
-
-    @Override // w39
-    public final long c(int i) {
-        if (i < this.f || i >= this.h) {
-            return i == this.e ? 2L : 5L;
-        }
-        ArrayList arrayList = this.n.p0;
-        return ((k27) arrayList.get((arrayList.size() - (i - this.f)) - 1)).m1;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        if (i < this.f || i >= this.h) {
-            return 4;
-        }
-        return ((k27) this.n.p0.get((r0.size() - (i - this.f)) - 1)).U;
-    }
-
-    @Override // w39
-    public final void f() {
-        D(true);
-        try {
-            super.f();
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // w39
-    public final void g(int i) {
-        D(false);
-        try {
-            super.g(i);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // w39
-    public final void j(int i, int i2) {
-        D(false);
-        try {
-            super.j(i, i2);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // w39
-    public final void l(int i, int i2) {
-        D(false);
-        try {
-            super.l(i, i2);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // w39
-    public final void p(int i, int i2) {
-        D(false);
-        try {
-            super.p(i, i2);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // w39
-    public final void q(int i, int i2) {
-        D(false);
-        try {
-            super.q(i, i2);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00bb, code lost:
-    
-        if (r13 != r7) goto L38;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0136  */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        gb2 gb2Var;
-        boolean z;
-        boolean z2;
-        boolean z3;
-        long j;
-        long j2;
-        int i2;
-        int i3;
-        long j3;
-        long j4;
-        int i4;
-        int i5;
-        View view = s49Var.a;
-        nf1 nf1Var = this.n;
-        ArrayList arrayList = nf1Var.p0;
-        if (i == this.e) {
-            ((ma2) view).setProgressVisible(true);
-            return;
-        }
-        if (i < this.f || i >= this.h) {
-            return;
-        }
-        k27 k27Var = (k27) arrayList.get((arrayList.size() - (i - this.f)) - 1);
-        if (!(view instanceof gb2)) {
-            if (view instanceof uk1) {
-                uk1 uk1Var = (uk1) view;
-                uk1Var.setMessageObject(k27Var);
-                uk1Var.setAlpha(1.0f);
-                return;
-            }
-            return;
-        }
-        gb2 gb2Var2 = (gb2) view;
-        gb2Var2.f6 = true;
-        int i6 = i + 1;
-        int d = d(i6);
-        int d2 = d(i - 1);
-        if (!(k27Var.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && d == s49Var.f) {
-            k27 k27Var2 = (k27) arrayList.get((arrayList.size() - (i6 - this.f)) - 1);
-            z = k27Var2.O3() == k27Var.O3() && k27Var2.Z0() == k27Var.Z0() && Math.abs(k27Var2.k.date - k27Var.k.date) <= 300;
-            if (z) {
-                TLRPC.TL_forumTopic tL_forumTopic = k27Var.j1;
-                if (tL_forumTopic == null) {
-                    i5 = ((d) nf1Var).currentAccount;
-                    j3 = k27.b2(i5, k27Var.k, true, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i;
+        byte b = this.a;
+        Object obj = this.r;
+        Object obj2 = this.n;
+        TLObject tLObject = this.h;
+        Serializable serializable = this.f;
+        Object obj3 = this.e;
+        switch (b) {
+            case 0:
+                lf1 lf1Var = (lf1) obj3;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                TLRPC.TL_username tL_username = (TLRPC.TL_username) obj;
+                uf1 uf1Var = lf1Var.a;
+                ArrayList arrayList = uf1Var.x;
+                ArrayList arrayList2 = uf1Var.w;
+                arrayList.remove((String) serializable);
+                boolean z = tLObject instanceof TLRPC.TL_boolTrue;
+                int i2 = this.d;
+                boolean z2 = this.b;
+                TLRPC.TL_username tL_username2 = null;
+                if (z) {
+                    uf1Var.n0(i2, z2, false);
                 } else {
-                    j3 = tL_forumTopic.id;
-                }
-                TLRPC.TL_forumTopic tL_forumTopic2 = k27Var2.j1;
-                if (tL_forumTopic2 == null) {
-                    i4 = ((d) nf1Var).currentAccount;
-                    gb2Var = gb2Var2;
-                    j4 = k27.b2(i4, k27Var2.k, true, false);
-                } else {
-                    gb2Var = gb2Var2;
-                    j4 = tL_forumTopic2.id;
-                }
-            } else {
-                gb2Var = gb2Var2;
-            }
-            if (d2 != s49Var.f) {
-                k27 k27Var3 = (k27) arrayList.get(arrayList.size() - (i - this.f));
-                boolean z4 = !(k27Var3.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && k27Var3.O3() == k27Var.O3() && k27Var3.Z0() == k27Var.Z0() && Math.abs(k27Var3.k.date - k27Var.k.date) <= 300;
-                if (z4) {
-                    TLRPC.TL_forumTopic tL_forumTopic3 = k27Var.j1;
-                    if (tL_forumTopic3 == null) {
-                        i3 = ((d) nf1Var).currentAccount;
-                        z3 = true;
-                        j = k27.b2(i3, k27Var.k, true, false);
+                    boolean z3 = this.c;
+                    if (tL_error == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error.text)) {
+                        uf1Var.o0(tL_username, z3, true);
                     } else {
-                        z3 = true;
-                        j = tL_forumTopic3.id;
-                    }
-                    TLRPC.TL_forumTopic tL_forumTopic4 = k27Var3.j1;
-                    if (tL_forumTopic4 == null) {
-                        i2 = ((d) nf1Var).currentAccount;
-                        j2 = k27.b2(i2, k27Var3.k, z3, false);
-                    } else {
-                        j2 = tL_forumTopic4.id;
-                    }
-                    if (j != j2) {
-                        z4 = false;
+                        tL_username.active = z2;
+                        uf1Var.n0(i2, z2, false);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, uf1Var.getResourceProvider(), uf1Var.getParentActivity());
+                        String M0 = jb6.M0(2131743359, null);
+                        he heVar = alertDialog$Builder.a;
+                        heVar.S = M0;
+                        heVar.U = jb6.M0(2131743360, null);
+                        alertDialog$Builder.j(jb6.M0(2131747564, null), new ci(lf1Var, tL_username, z3, (byte) 4));
+                        alertDialog$Builder.o();
                     }
                 }
-                z2 = z4;
-            } else {
-                z2 = false;
-            }
-            gb2 gb2Var3 = gb2Var;
-            gb2Var3.z3(k27Var, null, z, z2, false, false);
-            gb2Var3.setHighlighted(false);
-            gb2Var3.v3(nf1Var.w0);
+                i = ((d) uf1Var).currentAccount;
+                TLRPC.User W1 = oc7.r1(i).W1(Long.valueOf(uf1Var.f0()));
+                uf1Var.getMessagesController().B5(W1, tL_username.username, tL_username.active);
+                if (uf1Var.y != 0 && arrayList2 != null) {
+                    int size = arrayList2.size();
+                    int i3 = 0;
+                    while (i3 < size) {
+                        Object obj4 = arrayList2.get(i3);
+                        i3++;
+                        if (((TLRPC.TL_username) obj4).active) {
+                            break;
+                        }
+                    }
+                    int size2 = arrayList2.size();
+                    int i4 = 0;
+                    while (true) {
+                        if (i4 < size2) {
+                            Object obj5 = arrayList2.get(i4);
+                            i4++;
+                            TLRPC.TL_username tL_username3 = (TLRPC.TL_username) obj5;
+                            if (tL_username3.editable) {
+                                tL_username2 = tL_username3;
+                            }
+                        }
+                    }
+                    if (tL_username2 != null) {
+                        uf1Var.o0(tL_username2, true, false);
+                        uf1Var.getMessagesController().B5(W1, tL_username2.username, tL_username2.active);
+                        break;
+                    }
+                }
+                break;
+            default:
+                a6a a6aVar = (a6a) obj3;
+                cf7 messagesStorage = a6aVar.getMessagesStorage();
+                boolean z4 = this.b;
+                messagesStorage.g1((ArrayList) serializable, true, false, false, 0, false, !z4 ? 1 : 0, 0L);
+                gm.c3(new jn9(a6aVar, this.c, (TLRPC.Message) tLObject, (ArrayList) obj2, z4, (ArrayList) obj, this.d));
+                break;
         }
-        gb2Var = gb2Var2;
-        z = false;
-        if (d2 != s49Var.f) {
-        }
-        gb2 gb2Var32 = gb2Var;
-        gb2Var32.z3(k27Var, null, z, z2, false, false);
-        gb2Var32.setHighlighted(false);
-        gb2Var32.v3(nf1Var.w0);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v10, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r5v2, types: [ob2] */
-    /* JADX WARN: Type inference failed for: r5v4, types: [uk1] */
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        wjb wjbVar;
-        ViewGroup viewGroup2;
-        int i2;
-        ViewGroup viewGroup3;
-        nf1 nf1Var = this.n;
-        ArrayList arrayList = nf1Var.h;
-        Context context = this.c;
-        if (i == 0) {
-            if (arrayList.isEmpty()) {
-                i2 = ((d) nf1Var).currentAccount;
-                viewGroup3 = new gb2(context, i2);
-            } else {
-                ?? r5 = (View) arrayList.get(0);
-                arrayList.remove(0);
-                viewGroup3 = r5;
-            }
-            gb2 gb2Var = (gb2) viewGroup3;
-            gb2Var.setDelegate(new ff1(this));
-            gb2Var.setAllowAssistant(true);
-            viewGroup2 = viewGroup3;
-        } else if (i == 1) {
-            ?? gf1Var = new gf1(context);
-            gf1Var.setDelegate(new if1(this));
-            viewGroup2 = gf1Var;
-        } else if (i == 2) {
-            viewGroup2 = new ke2(context, null);
-        } else if (i == 10) {
-            wjbVar = ((d) nf1Var).resourceProvider;
-            ?? ob2Var = new ob2(context, wjbVar);
-            ob2Var.setDelegate(new i4d(this));
-            viewGroup2 = ob2Var;
-        } else {
-            viewGroup2 = new ma2(context, null);
-        }
-        return ls6.h(viewGroup2, viewGroup2, -1, -2);
-    }
-
-    @Override // w39
-    public final void y(s49 s49Var) {
-        View view = s49Var.a;
-        if ((view instanceof gb2) || (view instanceof uk1)) {
-            view.getViewTreeObserver().addOnPreDrawListener(new jf1(this, view, s49Var));
-        }
-        if (view instanceof gb2) {
-            gb2 gb2Var = (gb2) view;
-            gb2Var.getMessageObject();
-            gb2Var.setBackgroundDrawable(null);
-            gb2Var.n3(true, false);
-            gb2Var.setHighlighted(false);
-        }
+    public /* synthetic */ kf1(a6a a6aVar, ArrayList arrayList, boolean z, boolean z2, TLRPC.Message message, ArrayList arrayList2, ArrayList arrayList3, int i) {
+        this.e = a6aVar;
+        this.f = arrayList;
+        this.b = z;
+        this.c = z2;
+        this.h = message;
+        this.n = arrayList2;
+        this.r = arrayList3;
+        this.d = i;
     }
 }

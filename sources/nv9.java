@@ -1,54 +1,29 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import sun.misc.Unsafe;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class nv9 extends uq2 implements tj7 {
-    public static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(nv9.class, "cleanedAndPointers$volatile");
-    public static final /* synthetic */ long f = ex.a.objectFieldOffset(nv9.class.getDeclaredField("cleanedAndPointers$volatile"));
-    private volatile /* synthetic */ int cleanedAndPointers$volatile;
-    public final long d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class nv9 extends k69 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sj3 b;
 
-    public nv9(long j, nv9 nv9Var, int i) {
-        super(nv9Var);
-        this.d = j;
-        this.cleanedAndPointers$volatile = i << 16;
+    public /* synthetic */ nv9(sj3 sj3Var, byte b) {
+        this.a = b;
+        this.b = sj3Var;
     }
 
-    @Override // uq2
-    public final boolean d() {
-        return ex.a.getIntVolatile(this, f) == g() && c() != null;
-    }
-
-    public final boolean f() {
-        return e.addAndGet(this, -65536) == g() && c() != null;
-    }
-
-    public abstract int g();
-
-    public abstract void h(int i, sw2 sw2Var);
-
-    public final void i() {
-        if (e.incrementAndGet(this) == g()) {
-            e();
-        }
-    }
-
-    public final boolean j() {
-        while (true) {
-            Unsafe unsafe = ex.a;
-            long j = f;
-            int intVolatile = unsafe.getIntVolatile(this, j);
-            if (intVolatile == this.g() && this.c() != null) {
-                return false;
-            }
-            nv9 nv9Var = this;
-            if (unsafe.compareAndSwapInt(nv9Var, j, intVolatile, intVolatile + 65536)) {
-                return true;
-            }
-            this = nv9Var;
+    @Override // k69
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        byte b = this.a;
+        sj3 sj3Var = this.b;
+        switch (b) {
+            case 0:
+                sj3Var.T();
+                break;
+            default:
+                sj3Var.T();
+                break;
         }
     }
 }

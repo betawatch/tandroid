@@ -1,83 +1,110 @@
 // default package
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fi1 implements Runnable {
+public final class fi1 extends View {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ zi1 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Canvas b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Paint f;
+    public final /* synthetic */ Bitmap h;
+    public final /* synthetic */ Paint n;
+    public final /* synthetic */ float r;
+    public final /* synthetic */ float s;
+    public final /* synthetic */ d w;
 
-    public /* synthetic */ fi1(zi1 zi1Var, int i, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fi1(d dVar, Activity activity, Canvas canvas, float f, float f2, float f3, Paint paint, Bitmap bitmap, Paint paint2, float f4, float f5, byte b) {
+        super(activity);
         this.a = b;
-        this.b = zi1Var;
-        this.c = i;
+        this.w = dVar;
+        this.b = canvas;
+        this.c = f;
+        this.d = f2;
+        this.e = f3;
+        this.f = paint;
+        this.h = bitmap;
+        this.n = paint2;
+        this.r = f4;
+        this.s = f5;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        long f;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
         byte b = this.a;
-        int i = this.c;
-        zi1 zi1Var = this.b;
+        float f = this.s;
+        float f2 = this.r;
+        Bitmap bitmap = this.h;
+        Paint paint = this.f;
+        Canvas canvas2 = this.b;
+        d dVar = this.w;
+        float f3 = this.c;
+        float f4 = this.d;
+        float f5 = this.e;
+        Paint paint2 = this.n;
         switch (b) {
             case 0:
-                d01.t(zi1Var.getContext(), k96.M0(i, null));
+                super.onDraw(canvas);
+                vi1 vi1Var = (vi1) dVar;
+                boolean z = vi1Var.K;
+                float f6 = vi1Var.o0;
+                if (z) {
+                    if (f6 > 0.0f) {
+                        canvas2.drawCircle(f3, f4, f5 * f6, paint);
+                    }
+                    canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);
+                } else {
+                    canvas.drawCircle(f3, f4, (1.0f - f6) * f5, paint2);
+                }
+                canvas.save();
+                canvas.translate(f2, f);
+                vi1Var.M.draw(canvas);
+                canvas.restore();
                 break;
             case 1:
-                fi1 fi1Var = zi1Var.f1;
-                ps0 ps0Var = zi1Var.O0;
-                m21.e();
-                if (zi1Var.D0.amount < na7.q1(i).k4.q2.f()) {
-                    zi1Var.M0 = true;
-                    f = zi1Var.D0.amount;
-                    zi1Var.N0 = f;
+                super.onDraw(canvas);
+                d38 d38Var = (d38) dVar;
+                boolean z2 = d38Var.T;
+                float f7 = d38Var.Z;
+                if (z2) {
+                    if (f7 > 0.0f) {
+                        canvas2.drawCircle(f3, f4, f5 * f7, paint);
+                    }
+                    canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);
                 } else {
-                    zi1Var.M0 = false;
-                    f = na7.q1(i).k4.q2.f();
-                    zi1Var.N0 = f;
+                    canvas.drawCircle(f3, f4, (1.0f - f7) * f5, paint2);
                 }
-                zi1Var.L0 = true;
-                ps0Var.setText(Long.toString(f));
-                ps0Var.setSelection(ps0Var.getText().length());
-                zi1Var.L0 = false;
-                gl.r(fi1Var);
-                fi1Var.run();
+                canvas.save();
+                canvas.translate(f2, f);
+                d38Var.L.draw(canvas);
+                canvas.restore();
                 break;
             default:
-                fi1 fi1Var2 = zi1Var.f1;
-                int currentTime = ConnectionsManager.getInstance(i).getCurrentTime();
-                oi1 oi1Var = zi1Var.G0;
-                oi1Var.setEnabled(zi1Var.N0 > 0 || zi1Var.B0 > currentTime);
-                if (currentTime >= zi1Var.B0) {
-                    oi1Var.g(null, true);
-                    oi1Var.i(jva.Y0(false, zi1Var.M0 ? k96.M0(2131748176, null) : k96.H(' ', "MonetizationStarsWithdraw", (int) zi1Var.N0), zi1Var.H0), true, true);
-                    break;
+                super.onDraw(canvas);
+                rob robVar = (rob) dVar;
+                boolean a = robVar.a.a();
+                float f8 = robVar.k2;
+                if (a) {
+                    if (f8 > 0.0f) {
+                        canvas2.drawCircle(f3, f4, f5 * f8, paint);
+                    }
+                    canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);
                 } else {
-                    oi1Var.i(k96.M0(2131748175, null), true, true);
-                    if (zi1Var.e1 == null) {
-                        zi1Var.e1 = new SpannableStringBuilder("l");
-                        cm2 cm2Var = new cm2(R.drawable.mini_switch_lock, 0);
-                        cm2Var.n = 1;
-                        zi1Var.e1.setSpan(cm2Var, 0, 1, 33);
-                    }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) zi1Var.e1).append((CharSequence) ss0.w0(zi1Var.B0 - currentTime));
-                    oi1Var.g(spannableStringBuilder, true);
-                    m21 m21Var = zi1Var.P0;
-                    if (m21Var != null) {
-                        q11 q11Var = m21Var.e;
-                        if ((q11Var instanceof t11) && q11Var.isAttachedToWindow()) {
-                            de9.r(null, null, 2131752940, new Object[]{ss0.w0(zi1Var.B0 - currentTime)}, ((t11) zi1Var.P0.e).b);
-                        }
-                    }
-                    gl.r(fi1Var2);
-                    gl.e3(fi1Var2, 1000L);
-                    break;
+                    canvas.drawCircle(f3, f4, (1.0f - f8) * f5, paint2);
                 }
+                canvas.save();
+                canvas.translate(f2, f);
+                robVar.Q1.draw(canvas);
+                canvas.restore();
                 break;
         }
     }

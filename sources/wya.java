@@ -1,40 +1,26 @@
 // default package
 
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class wya extends ImageReceiver {
-    public final /* synthetic */ wjb K1;
-    public final /* synthetic */ xya L1;
+public final class wya extends r59 {
+    public int f3;
+    public final /* synthetic */ xza g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wya(xya xyaVar, wjb wjbVar) {
-        super(null);
-        this.L1 = xyaVar;
-        this.K1 = wjbVar;
+    public wya(xza xzaVar, Context context) {
+        super(context, null);
+        this.g3 = xzaVar;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean h0(Drawable drawable, String str, int i, boolean z, int i2) {
-        xya xyaVar = this.L1;
-        ImageView imageView = xyaVar.K;
-        if ((drawable instanceof BitmapDrawable) && xyaVar.L == 0) {
-            int I0 = gl.I0(((BitmapDrawable) drawable).getBitmap());
-            xyaVar.L = I0;
-            if (I0 == -1 || I0 == 0) {
-                int i3 = bkb.p5;
-                wjb wjbVar = this.K1;
-                xyaVar.L = bkb.v0(i3, wjbVar);
-                zkb.B(imageView, bkb.b0(gl.L(12.0f), xyaVar.L), zkb.M(i3), wjbVar);
-            } else {
-                imageView.setBackground(bkb.b0(gl.L(12.0f), xyaVar.L));
-            }
-            invalidate();
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        bza bzaVar;
+        super.onMeasure(i, i2);
+        if (this.f3 != getMeasuredHeight() && (bzaVar = this.g3.X) != null) {
+            bzaVar.f();
         }
-        return super.h0(drawable, str, i, z, i2);
+        this.f3 = getMeasuredHeight();
     }
 }

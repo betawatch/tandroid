@@ -1,35 +1,48 @@
 // default package
 
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class obc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VideoPlayerHolderBase b;
-    public final /* synthetic */ float c;
+public abstract class obc extends nbc {
+    public m08[] a;
+    public String b;
+    public int c;
 
-    public /* synthetic */ obc(VideoPlayerHolderBase videoPlayerHolderBase, float f, byte b) {
-        this.a = b;
-        this.b = videoPlayerHolderBase;
-        this.c = f;
+    public obc(obc obcVar) {
+        this.a = null;
+        this.c = 0;
+        this.b = obcVar.b;
+        this.a = pse.e(obcVar.a);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        float f = this.c;
-        VideoPlayerHolderBase videoPlayerHolderBase = this.b;
-        switch (b) {
-            case 0:
-                videoPlayerHolderBase.lambda$setSpeed$5(f);
-                break;
-            case 1:
-                videoPlayerHolderBase.lambda$play$7(f);
-                break;
-            default:
-                videoPlayerHolderBase.lambda$setVolume$10(f);
-                break;
+    public m08[] getPathData() {
+        return this.a;
+    }
+
+    public String getPathName() {
+        return this.b;
+    }
+
+    public void setPathData(m08[] m08VarArr) {
+        if (!pse.a(this.a, m08VarArr)) {
+            this.a = pse.e(m08VarArr);
+            return;
         }
+        m08[] m08VarArr2 = this.a;
+        for (int i = 0; i < m08VarArr.length; i++) {
+            m08VarArr2[i].a = m08VarArr[i].a;
+            int i2 = 0;
+            while (true) {
+                float[] fArr = m08VarArr[i].b;
+                if (i2 < fArr.length) {
+                    m08VarArr2[i].b[i2] = fArr[i2];
+                    i2++;
+                }
+            }
+        }
+    }
+
+    public obc() {
+        this.a = null;
+        this.c = 0;
     }
 }

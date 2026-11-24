@@ -1,231 +1,227 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class lc0 extends y1 {
-    public static final /* synthetic */ z24 E;
-    public static final /* synthetic */ z24 b;
-    public static final /* synthetic */ z24 c;
-    public static final /* synthetic */ z24 d;
-    public static final /* synthetic */ z24 e;
-    public static final /* synthetic */ z24 f;
-    public static final /* synthetic */ z24 h;
-    public static final /* synthetic */ z24 n;
-    public static final /* synthetic */ z24 r;
-    public static final /* synthetic */ z24 s;
-    public static final /* synthetic */ z24 w;
-    public static final /* synthetic */ z24 x;
-    public static final /* synthetic */ z24 y;
-    public mc0 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class lc0 extends FrameLayout {
+    public float E;
+    public float F;
+    public final /* synthetic */ mc0 G;
+    public long a;
+    public TLRPC.Document b;
+    public final kc0 c;
+    public final j15 d;
+    public final j15 e;
+    public float f;
+    public hc0 h;
+    public boolean n;
+    public final PorterDuffColorFilter r;
+    public final ln s;
+    public boolean w;
+    public float x;
+    public float y;
 
-    static {
-        z74 z74Var = new z74(lc0.class, "AvcConfigurationBox.java");
-        z74Var.e(z74Var.d("getConfigurationVersion", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        z74Var.e(z74Var.d("getAvcProfileIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        e = z74Var.e(z74Var.d("setAvcLevelIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "avcLevelIndication", "void"));
-        f = z74Var.e(z74Var.d("setLengthSizeMinusOne", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "lengthSizeMinusOne", "void"));
-        h = z74Var.e(z74Var.d("setSequenceParameterSets", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "java.util.List", "sequenceParameterSets", "void"));
-        n = z74Var.e(z74Var.d("setPictureParameterSets", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "java.util.List", "pictureParameterSets", "void"));
-        z74Var.e(z74Var.d("getChromaFormat", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        r = z74Var.e(z74Var.d("setChromaFormat", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "chromaFormat", "void"));
-        z74Var.e(z74Var.d("getBitDepthLumaMinus8", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        s = z74Var.e(z74Var.d("setBitDepthLumaMinus8", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "bitDepthLumaMinus8", "void"));
-        z74Var.e(z74Var.d("getBitDepthChromaMinus8", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        w = z74Var.e(z74Var.d("setBitDepthChromaMinus8", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "bitDepthChromaMinus8", "void"));
-        z74Var.e(z74Var.d("getProfileCompatibility", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        z74Var.e(z74Var.d("getSequenceParameterSetExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.util.List"));
-        z74Var.e(z74Var.d("setSequenceParameterSetExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "java.util.List", "sequenceParameterSetExts", "void"));
-        z74Var.e(z74Var.d("hasExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "boolean"));
-        z74Var.e(z74Var.d("setHasExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "boolean", "hasExts", "void"));
-        x = z74Var.e(z74Var.d("getContentSize", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "long"));
-        y = z74Var.e(z74Var.d("getContent", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "java.nio.ByteBuffer", "byteBuffer", "void"));
-        z74Var.e(z74Var.d("getSPS", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "[Ljava.lang.String;"));
-        z74Var.e(z74Var.d("getPPS", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "[Ljava.lang.String;"));
-        z74Var.e(z74Var.d("getavcDecoderConfigurationRecord", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "com.mp4parser.iso14496.part15.AvcDecoderConfigurationRecord"));
-        E = z74Var.e(z74Var.d("toString", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.lang.String"));
-        z74Var.e(z74Var.d("getAvcLevelIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        z74Var.e(z74Var.d("getLengthSizeMinusOne", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
-        z74Var.e(z74Var.d("getSequenceParameterSets", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.util.List"));
-        z74Var.e(z74Var.d("getPictureParameterSets", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.util.List"));
-        b = z74Var.e(z74Var.d("setConfigurationVersion", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "configurationVersion", "void"));
-        c = z74Var.e(z74Var.d("setAvcProfileIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "avcProfileIndication", "void"));
-        d = z74Var.e(z74Var.d("setProfileCompatibility", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "profileCompatibility", "void"));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lc0(mc0 mc0Var, Activity activity) {
+        super(activity);
+        this.G = mc0Var;
+        this.d = new j15();
+        this.e = new j15();
+        this.f = 1.0f;
+        this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+        this.s = new ln(200L, this, d53.g);
+        this.x = -1.0f;
+        kc0 kc0Var = new kc0((byte) 0, activity, this);
+        this.c = kc0Var;
+        kc0Var.getImageReceiver().N(1);
+        kc0Var.getImageReceiver().S0 = true;
+        setClipChildren(false);
+        addView(kc0Var, qoe.e(70, 70, 17));
     }
 
-    @Override // y1
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        int i;
-        mc0 mc0Var = new mc0();
-        mc0Var.f = new ArrayList();
-        mc0Var.g = new ArrayList();
-        mc0Var.h = true;
-        mc0Var.i = 1;
-        mc0Var.j = 0;
-        mc0Var.k = 0;
-        mc0Var.l = new ArrayList();
-        mc0Var.m = 63;
-        mc0Var.n = 7;
-        mc0Var.o = 31;
-        mc0Var.p = 31;
-        mc0Var.q = 31;
-        mc0Var.a = hle.i(byteBuffer);
-        mc0Var.b = hle.a(byteBuffer.get());
-        mc0Var.c = hle.a(byteBuffer.get());
-        mc0Var.d = hle.a(byteBuffer.get());
-        io7 io7Var = new io7(byteBuffer, (byte) 1);
-        mc0Var.m = io7Var.a(6);
-        mc0Var.e = io7Var.a(2);
-        mc0Var.n = io7Var.a(3);
-        int a = io7Var.a(5);
-        for (int i2 = 0; i2 < a; i2++) {
-            byte[] bArr = new byte[hle.f(byteBuffer)];
-            byteBuffer.get(bArr);
-            mc0Var.f.add(bArr);
+    public final void a(Canvas canvas, float f, float f2, float f3, float f4, Paint paint) {
+        float f5 = this.s.c;
+        if (f5 == 0.0f) {
+            canvas.drawCircle(f, f2, f4, paint);
+            return;
         }
-        long a2 = hle.a(byteBuffer.get());
-        for (int i3 = 0; i3 < a2; i3++) {
-            byte[] bArr2 = new byte[hle.f(byteBuffer)];
-            byteBuffer.get(bArr2);
-            mc0Var.g.add(bArr2);
+        float R1 = gm.R1(f3, 0.0f, f5);
+        RectF rectF = gm.P;
+        rectF.set(f - f4, f2 - f4, f + f4, f2 + f4);
+        canvas.drawRoundRect(rectF, R1, R1, paint);
+    }
+
+    public final void b(hc0 hc0Var, boolean z) {
+        hc0 hc0Var2 = this.h;
+        if (hc0Var2 != null) {
+            this.e.d(hc0Var2.c, hc0Var2.d, hc0Var2.e, hc0Var2.f);
+            this.f = 0.0f;
+            this.G.n = true;
         }
-        if (byteBuffer.remaining() < 4) {
-            mc0Var.h = false;
+        this.h = hc0Var;
+        this.n = z;
+        nm7.e().k(nm7.v4, new Object[0]);
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        lc0 lc0Var;
+        Canvas canvas2;
+        this.E = getMeasuredWidth() / 2.0f;
+        this.F = getMeasuredHeight() / 2.0f;
+        mc0 mc0Var = this.G;
+        float measuredWidth = mc0Var.V ? getMeasuredWidth() * 0.3f : gm.L(50.0f);
+        float f = this.w ? 1.0f : 0.0f;
+        ln lnVar = this.s;
+        lnVar.e(false, f);
+        float f2 = this.x;
+        if (f2 >= 0.0f) {
+            lnVar.e(true, f2);
         }
-        if (mc0Var.h && ((i = mc0Var.b) == 100 || i == 110 || i == 122 || i == 144)) {
-            io7 io7Var2 = new io7(byteBuffer, (byte) 1);
-            mc0Var.o = io7Var2.a(6);
-            mc0Var.i = io7Var2.a(2);
-            mc0Var.p = io7Var2.a(5);
-            mc0Var.j = io7Var2.a(3);
-            mc0Var.q = io7Var2.a(5);
-            mc0Var.k = io7Var2.a(3);
-            long a3 = hle.a(byteBuffer.get());
-            for (int i4 = 0; i4 < a3; i4++) {
-                byte[] bArr3 = new byte[hle.f(byteBuffer)];
-                byteBuffer.get(bArr3);
-                mc0Var.l.add(bArr3);
+        float R1 = gm.R1(measuredWidth, getMeasuredWidth() / 2.0f, lnVar.c);
+        this.y = R1;
+        this.y = gm.R1(R1, gm.L(21.0f), mc0Var.O);
+        this.E = gm.R1(this.E, (getMeasuredWidth() - gm.L(12.0f)) - gm.L(21.0f), mc0Var.O);
+        canvas.save();
+        canvas.clipRect(0.0f, (-r2) / 2.0f, getMeasuredWidth(), (((mc0Var.d - mc0Var.c) / 2.0f) * mc0Var.F) + getMeasuredHeight());
+        hc0 hc0Var = this.h;
+        if (hc0Var != null) {
+            int i = hc0Var.c;
+            int i2 = hc0Var.d;
+            int i3 = hc0Var.e;
+            int i4 = hc0Var.f;
+            j15 j15Var = this.d;
+            j15Var.d(i, i2, i3, i4);
+            Paint paint = j15Var.c;
+            float f3 = this.E;
+            float f4 = this.y;
+            float f5 = this.F;
+            j15Var.b(f3 - f4, f5 - f4, f3 + f4, f5 + f4);
+            if (this.f != 1.0f) {
+                float f6 = this.E;
+                float f7 = this.y;
+                float f8 = f6 - f7;
+                float f9 = this.F;
+                float f10 = f9 - f7;
+                float f11 = f6 + f7;
+                float f12 = f9 + f7;
+                j15 j15Var2 = this.e;
+                j15Var2.b(f8, f10, f11, f12);
+                Paint paint2 = j15Var2.c;
+                paint2.setAlpha(nm7.d4);
+                lc0Var = this;
+                lc0Var.a(canvas, this.E, this.F, measuredWidth, this.y, paint2);
+                paint.setAlpha((int) (lc0Var.f * 255.0f));
+                lc0Var.a(canvas, lc0Var.E, lc0Var.F, measuredWidth, lc0Var.y, paint);
+                float f13 = lc0Var.f + 0.064f;
+                lc0Var.f = f13;
+                if (f13 > 1.0f) {
+                    lc0Var.f = 1.0f;
+                }
+                lc0Var.invalidate();
+                canvas2 = canvas;
+            } else {
+                lc0Var = this;
+                paint.setAlpha(nm7.d4);
+                canvas2 = canvas;
+                lc0Var.a(canvas2, lc0Var.E, lc0Var.F, measuredWidth, lc0Var.y, paint);
             }
         } else {
-            mc0Var.i = -1;
-            mc0Var.j = -1;
-            mc0Var.k = -1;
+            lc0Var = this;
+            canvas2 = canvas;
         }
-        this.a = mc0Var;
+        float R12 = gm.R1(gm.U1(lnVar.c, mc0Var.V ? (int) ((measuredWidth * 2.0f) * 0.7f) : gm.L(70.0f), (int) (lc0Var.getMeasuredWidth() * 0.7f)), (int) (gm.L(42.0f) * 0.7f), mc0Var.O) / 2.0f;
+        kc0 kc0Var = lc0Var.c;
+        vm vmVar = kc0Var.e;
+        if (vmVar == null) {
+            ImageReceiver imageReceiver = kc0Var.a;
+            float f14 = lc0Var.E - R12;
+            float f15 = lc0Var.F - R12;
+            float f16 = R12 * 2.0f;
+            imageReceiver.i0(f14, f15, f16, f16);
+            kc0Var.a.q0((int) (f16 * 0.13f));
+            kc0Var.a.h(canvas2, null);
+            return;
+        }
+        mm mmVar = vmVar.k;
+        if (mmVar != null) {
+            mmVar.q0((int) (2.0f * R12 * 0.13f));
+        }
+        vm vmVar2 = kc0Var.e;
+        float f17 = lc0Var.E;
+        float f18 = lc0Var.F;
+        vmVar2.setBounds((int) (f17 - R12), (int) (f18 - R12), (int) (f17 + R12), (int) (f18 + R12));
+        kc0Var.e.setColorFilter(lc0Var.r);
+        kc0Var.e.draw(canvas2);
     }
 
-    public final void d(int i) {
-        oo1.r(z74.c(e, this, this, new Integer(i)));
-        this.a.d = i;
+    public long getDuration() {
+        kc0 kc0Var = this.c;
+        ImageReceiver imageReceiver = kc0Var.getImageReceiver();
+        vm vmVar = kc0Var.e;
+        if (vmVar != null) {
+            imageReceiver = vmVar.k;
+        }
+        if (imageReceiver == null || imageReceiver.y() == null) {
+            return 5000L;
+        }
+        return imageReceiver.y().m();
     }
 
-    public final void e(int i) {
-        oo1.r(z74.c(c, this, this, new Integer(i)));
-        this.a.b = i;
+    public ImageReceiver getImageReceiver() {
+        kc0 kc0Var = this.c;
+        ImageReceiver imageReceiver = kc0Var.getImageReceiver();
+        vm vmVar = kc0Var.e;
+        if (vmVar == null) {
+            return imageReceiver;
+        }
+        mm mmVar = vmVar.k;
+        vmVar.setColorFilter(this.r);
+        return mmVar;
     }
 
-    @Override // y1
-    public final void getContent(ByteBuffer byteBuffer) {
-        oo1.r(z74.c(y, this, this, byteBuffer));
-        mc0 mc0Var = this.a;
-        ile.f(mc0Var.a, byteBuffer);
-        byteBuffer.put((byte) (mc0Var.b & kk7.d4));
-        byteBuffer.put((byte) (mc0Var.c & kk7.d4));
-        byteBuffer.put((byte) (mc0Var.d & kk7.d4));
-        io7 io7Var = new io7(byteBuffer, (byte) 2);
-        io7Var.c(mc0Var.m, 6);
-        io7Var.c(mc0Var.e, 2);
-        io7Var.c(mc0Var.n, 3);
-        io7Var.c(mc0Var.g.size(), 5);
-        ArrayList arrayList = mc0Var.f;
-        int size = arrayList.size();
-        int i = 0;
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            byte[] bArr = (byte[]) obj;
-            ile.d(bArr.length, byteBuffer);
-            byteBuffer.put(bArr);
+    @Override // android.view.View
+    public void invalidate() {
+        super.invalidate();
+        this.G.fragmentView.invalidate();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (this.G.V) {
+            super.onMeasure(i, i2);
+        } else {
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(140.0f), TLObject.FLAG_30));
         }
-        byteBuffer.put((byte) (mc0Var.g.size() & kk7.d4));
-        ArrayList arrayList2 = mc0Var.g;
-        int size2 = arrayList2.size();
-        int i3 = 0;
-        while (i3 < size2) {
-            Object obj2 = arrayList2.get(i3);
-            i3++;
-            byte[] bArr2 = (byte[]) obj2;
-            ile.d(bArr2.length, byteBuffer);
-            byteBuffer.put(bArr2);
+    }
+
+    public void setExpanded(boolean z) {
+        mm mmVar;
+        if (this.w == z) {
+            return;
         }
-        if (mc0Var.h) {
-            int i4 = mc0Var.b;
-            if (i4 == 100 || i4 == 110 || i4 == 122 || i4 == 144) {
-                io7 io7Var2 = new io7(byteBuffer, (byte) 2);
-                io7Var2.c(mc0Var.o, 6);
-                io7Var2.c(mc0Var.i, 2);
-                io7Var2.c(mc0Var.p, 5);
-                io7Var2.c(mc0Var.j, 3);
-                io7Var2.c(mc0Var.q, 5);
-                io7Var2.c(mc0Var.k, 3);
-                ArrayList arrayList3 = mc0Var.l;
-                int size3 = arrayList3.size();
-                while (i < size3) {
-                    Object obj3 = arrayList3.get(i);
-                    i++;
-                    byte[] bArr3 = (byte[]) obj3;
-                    ile.d(bArr3.length, byteBuffer);
-                    byteBuffer.put(bArr3);
-                }
+        this.w = z;
+        if (z) {
+            kc0 kc0Var = this.c;
+            vm vmVar = kc0Var.e;
+            if (vmVar != null && (mmVar = vmVar.k) != null) {
+                mmVar.w0(false);
             }
+            kc0Var.a.w0(false);
         }
-    }
-
-    @Override // y1
-    public final long getContentSize() {
-        int i;
-        oo1.r(z74.b(x, this, this));
-        mc0 mc0Var = this.a;
-        ArrayList arrayList = mc0Var.f;
-        int size = arrayList.size();
-        long j = 6;
-        int i2 = 0;
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            j = j + 2 + ((byte[]) obj).length;
-        }
-        long j2 = j + 1;
-        ArrayList arrayList2 = mc0Var.g;
-        int size2 = arrayList2.size();
-        int i4 = 0;
-        while (i4 < size2) {
-            Object obj2 = arrayList2.get(i4);
-            i4++;
-            j2 = j2 + 2 + ((byte[]) obj2).length;
-        }
-        if (!mc0Var.h || ((i = mc0Var.b) != 100 && i != 110 && i != 122 && i != 144)) {
-            return j2;
-        }
-        long j3 = j2 + 4;
-        ArrayList arrayList3 = mc0Var.l;
-        int size3 = arrayList3.size();
-        while (i2 < size3) {
-            Object obj3 = arrayList3.get(i2);
-            i2++;
-            j3 = j3 + 2 + ((byte[]) obj3).length;
-        }
-        return j3;
-    }
-
-    public final String toString() {
-        c5a b2 = z74.b(E, this, this);
-        n89.a().getClass();
-        n89.b(b2);
-        return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';
+        nm7.e().k(nm7.v4, new Object[0]);
+        invalidate();
     }
 }

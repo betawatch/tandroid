@@ -1,20 +1,30 @@
 // default package
 
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class c19 {
-    public ImageReceiver a;
-    public int b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public boolean k;
-    public float l;
+public final /* synthetic */ class c19 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jp0 b;
+    public final /* synthetic */ s09 c;
+
+    public /* synthetic */ c19(jp0 jp0Var, s09 s09Var, byte b) {
+        this.a = b;
+        this.b = jp0Var;
+        this.c = s09Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        s09 s09Var = this.c;
+        jp0 jp0Var = this.b;
+        switch (b) {
+            case 0:
+                gm.c3(new c19(jp0Var, s09Var, (byte) 1));
+                break;
+            default:
+                jp0Var.removeView(s09Var);
+                break;
+        }
+    }
 }

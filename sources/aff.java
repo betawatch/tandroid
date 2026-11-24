@@ -1,28 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class aff {
-    public static xye a;
+public final class aff extends wdf implements Runnable {
+    public final Runnable n;
 
-    public static synchronized sef a(gef gefVar) {
-        sef sefVar;
-        synchronized (aff.class) {
-            xye xyeVar = a;
-            if (xyeVar == null) {
-                xyeVar = new xye((byte) 4);
-                a = xyeVar;
-            }
-            sefVar = (sef) xyeVar.c(gefVar);
-        }
-        return sefVar;
+    public aff(Runnable runnable) {
+        runnable.getClass();
+        this.n = runnable;
     }
 
-    public static synchronized sef b() {
-        sef a2;
-        synchronized (aff.class) {
-            a2 = a(new gef());
+    @Override // wdf
+    public final String a() {
+        return kt6.o("task=[", this.n.toString(), "]");
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        try {
+            this.n.run();
+        } catch (Error | RuntimeException e) {
+            if (wdf.f.f(this, null, new pdf(e))) {
+                wdf.g(this);
+            }
+            throw e;
         }
-        return a2;
     }
 }

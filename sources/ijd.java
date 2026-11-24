@@ -1,25 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.StrictMode;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ijd {
-    public static final ijd c;
-    public static final ijd d;
-    public final boolean a;
-    public final RuntimeException b;
-
-    static {
-        if (akd.f) {
-            d = null;
-            c = null;
-        } else {
-            d = new ijd(false, null);
-            c = new ijd(true, null);
-        }
-    }
-
-    public ijd(boolean z, RuntimeException runtimeException) {
-        this.a = z;
-        this.b = runtimeException;
+public abstract class ijd {
+    public static StrictMode.VmPolicy.Builder a(StrictMode.VmPolicy.Builder builder) {
+        return builder.permitUnsafeIntentLaunch();
     }
 }

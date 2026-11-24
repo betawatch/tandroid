@@ -1,22 +1,56 @@
 // default package
 
-import java.util.concurrent.Callable;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ixe implements Callable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sfa b;
-
-    public /* synthetic */ ixe(sfa sfaVar, byte b) {
-        this.a = b;
-        this.b = sfaVar;
-    }
-
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        switch (this.a) {
+public abstract class ixe {
+    public static String a(m61 m61Var) {
+        StringBuilder sb = new StringBuilder(m61Var.size());
+        for (int i = 0; i < m61Var.size(); i++) {
+            byte h = m61Var.h(i);
+            if (h == 34) {
+                sb.append("\\\"");
+            } else if (h == 39) {
+                sb.append("\\'");
+            } else if (h != 92) {
+                switch (h) {
+                    case 7:
+                        sb.append("\\a");
+                        break;
+                    case 8:
+                        sb.append("\\b");
+                        break;
+                    case 9:
+                        sb.append("\\t");
+                        break;
+                    case 10:
+                        sb.append("\\n");
+                        break;
+                    case 11:
+                        sb.append("\\v");
+                        break;
+                    case 12:
+                        sb.append("\\f");
+                        break;
+                    case 13:
+                        sb.append("\\r");
+                        break;
+                    default:
+                        if (h < 32 || h > 126) {
+                            sb.append('\\');
+                            sb.append((char) (((h >>> 6) & 3) + 48));
+                            sb.append((char) (((h >>> 3) & 7) + 48));
+                            sb.append((char) ((h & 7) + 48));
+                            break;
+                        } else {
+                            sb.append((char) h);
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                sb.append("\\\\");
+            }
         }
-        return this.b.a();
+        return sb.toString();
     }
 }

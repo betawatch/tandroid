@@ -1,38 +1,15 @@
 // default package
 
-import android.media.session.MediaSession;
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class s6a {
-    public static final String b;
-    public static final String c;
-    public final t6a a;
+public interface s6a {
+    boolean f();
 
-    static {
-        cr6.a("media3.session");
-        String str = g8c.a;
-        b = "0";
-        c = "1";
-    }
+    long g();
 
-    public s6a(int i, String str, ox6 ox6Var, Bundle bundle, MediaSession.Token token) {
-        this.a = new t6a(i, str, ox6Var, bundle, token);
-    }
+    boolean r(sa6 sa6Var);
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof s6a) {
-            return this.a.equals(((s6a) obj).a);
-        }
-        return false;
-    }
+    long s();
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a.toString();
-    }
+    void t(long j);
 }

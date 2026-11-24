@@ -2,140 +2,37 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
+import android.graphics.drawable.Drawable;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class st7 extends e34 {
-    public final Paint h;
-    public long n;
-    public float r;
-    public float s;
-    public int w;
-    public int x;
-    public final /* synthetic */ x6b y;
+public final class st7 extends TextView {
+    public final /* synthetic */ tt7 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public st7(x6b x6bVar, Context context, s34 s34Var) {
-        super(context, s34Var);
-        this.y = x6bVar;
-        Paint paint = new Paint();
-        this.h = paint;
-        setWillNotDraw(false);
-        paint.setStrokeWidth(gl.L(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-1);
+    public st7(tt7 tt7Var, Context context, int i) {
+        super(context);
+        this.a = tt7Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.y.g2) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
+    @Override // android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
-        int i;
-        int i2;
-        Canvas canvas2;
-        int measuredWidth;
-        float measuredWidth2;
-        int measuredHeight;
-        float measuredHeight2;
         super.onDraw(canvas);
-        long min = Math.min(16L, System.currentTimeMillis() - this.n);
-        this.n = System.currentTimeMillis();
-        x6b x6bVar = this.y;
-        l34 l34Var = x6bVar.z0;
-        if (l34Var == null || l34Var.r || !l34Var.n) {
-            i = 0;
-            i2 = 0;
-        } else {
-            i = l34Var.getStickyX();
-            i2 = x6bVar.z0.getStickyY();
-        }
-        if (i != 0) {
-            this.w = i;
-        }
-        if (i2 != 0) {
-            this.x = i2;
-        }
-        float f = this.r;
-        if (i != 0) {
-            if (f != 1.0f) {
-                this.r = ls6.z(min, 150.0f, f, 1.0f);
-                invalidate();
-            }
-        } else if (f != 0.0f) {
-            this.r = oo1.x(min, 150.0f, f, 0.0f);
-            invalidate();
-        }
-        float f2 = this.s;
-        if (i2 != 0) {
-            if (f2 != 1.0f) {
-                this.s = ls6.z(min, 150.0f, f2, 1.0f);
-                invalidate();
-            }
-        } else if (f2 != 0.0f) {
-            this.s = oo1.x(min, 150.0f, f2, 0.0f);
-            invalidate();
-        }
-        float f3 = this.s;
-        Paint paint = this.h;
-        if (f3 != 0.0f) {
-            paint.setAlpha((int) (f3 * 255.0f));
-            int i3 = this.x;
-            if (i3 == 1) {
-                measuredHeight = gl.L(64.0f);
-            } else if (i3 == 2) {
-                measuredHeight2 = getMeasuredHeight() / 2.0f;
-                float f4 = measuredHeight2;
-                canvas2 = canvas;
-                canvas2.drawLine(0.0f, f4, getMeasuredWidth(), f4, paint);
-            } else {
-                measuredHeight = getMeasuredHeight() - gl.L(64.0f);
-            }
-            measuredHeight2 = measuredHeight;
-            float f42 = measuredHeight2;
-            canvas2 = canvas;
-            canvas2.drawLine(0.0f, f42, getMeasuredWidth(), f42, paint);
-        } else {
-            canvas2 = canvas;
-        }
-        float f5 = this.r;
-        if (f5 != 0.0f) {
-            paint.setAlpha((int) (f5 * 255.0f));
-            int i4 = this.w;
-            if (i4 == 1) {
-                measuredWidth = gl.L(8.0f);
-            } else {
-                if (i4 == 2) {
-                    measuredWidth2 = getMeasuredWidth() / 2.0f;
-                    float f6 = measuredWidth2;
-                    canvas2.drawLine(f6, 0.0f, f6, getMeasuredHeight(), paint);
-                }
-                measuredWidth = getMeasuredWidth() - gl.L(8.0f);
-            }
-            measuredWidth2 = measuredWidth;
-            float f62 = measuredWidth2;
-            canvas2.drawLine(f62, 0.0f, f62, getMeasuredHeight(), paint);
+        tt7 tt7Var = this.a;
+        if (tt7Var.e.getAdapter() instanceof y14) {
+            ((y14) tt7Var.e.getAdapter()).getClass();
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        x6b x6bVar = this.y;
-        st7 st7Var = x6bVar.H0;
-        if (x6bVar.H1 <= 0) {
-            x6bVar.H1 = st7Var.getMeasuredWidth();
+    @Override // android.widget.TextView, android.view.View
+    public final void setSelected(boolean z) {
+        super.setSelected(z);
+        Drawable background = getBackground();
+        tt7 tt7Var = this.a;
+        if (background != null) {
+            cmb.F1(background, tt7Var.b(z ? 0.1f : 0.05f), true);
         }
-        if (x6bVar.I1 <= 0) {
-            x6bVar.I1 = st7Var.getMeasuredHeight();
-        }
-        x6bVar.H0();
+        setTextColor(tt7Var.b(z ? 0.8f : 0.6f));
     }
 }

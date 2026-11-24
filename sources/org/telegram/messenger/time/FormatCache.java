@@ -9,14 +9,14 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 abstract class FormatCache<F extends Format> {
     static final int NONE = -1;
     private static final ConcurrentMap<MultipartKey, String> cDateTimeInstanceCache = new ConcurrentHashMap(7);
     private final ConcurrentMap<MultipartKey, F> cInstanceCache = new ConcurrentHashMap(7);
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private static class MultipartKey {
         private int hashCode;
         private final Object[] keys;
@@ -64,7 +64,7 @@ abstract class FormatCache<F extends Format> {
             String putIfAbsent = concurrentMap.putIfAbsent(multipartKey, pattern);
             return putIfAbsent != null ? putIfAbsent : pattern;
         } catch (ClassCastException unused) {
-            w26.i(locale, "No date time pattern for locale: ");
+            u36.i(locale, "No date time pattern for locale: ");
             return null;
         }
     }
@@ -77,7 +77,7 @@ abstract class FormatCache<F extends Format> {
 
     public F getInstance(String str, TimeZone timeZone, Locale locale) {
         if (str == null) {
-            fvc.f("pattern must not be null");
+            gxc.d("pattern must not be null");
             return null;
         }
         if (timeZone == null) {

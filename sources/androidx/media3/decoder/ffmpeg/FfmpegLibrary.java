@@ -1,6 +1,6 @@
 package androidx.media3.decoder.ffmpeg;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class FfmpegLibrary {
     public static String a;
@@ -8,7 +8,7 @@ public final class FfmpegLibrary {
     public static String c;
 
     static {
-        cr6.a("media3.decoder.ffmpeg");
+        ct6.a("media3.decoder.ffmpeg");
         b = -1;
     }
 
@@ -123,7 +123,7 @@ public final class FfmpegLibrary {
         if (ffmpegHasDecoder(a2)) {
             return true;
         }
-        lad.f("FfmpegLibrary", "No " + a2 + " decoder available. Check the FFmpeg build configuration.");
+        ncd.f("FfmpegLibrary", "No " + a2 + " decoder available. Check the FFmpeg build configuration.");
         return false;
     }
 

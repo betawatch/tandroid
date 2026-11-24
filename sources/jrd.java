@@ -1,25 +1,19 @@
 // default package
 
-import android.net.Uri;
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class jrd {
-    public static Uri a(Uri uri) {
-        if (!uri.isHierarchical() || uri.getQueryParameter("CMCD") == null) {
-            return uri;
+public final class jrd implements cq7 {
+    public static final jrd a = new jrd();
+
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)), 4)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        Uri.Builder buildUpon = uri.buildUpon();
-        buildUpon.clearQuery();
-        for (String str : uri.getQueryParameterNames()) {
-            if (!str.equals("CMCD")) {
-                Iterator<String> it = uri.getQueryParameters(str).iterator();
-                while (it.hasNext()) {
-                    buildUpon.appendQueryParameter(str, it.next());
-                }
-            }
-        }
-        return buildUpon.build();
+        throw null;
     }
 }

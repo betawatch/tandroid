@@ -5,15 +5,15 @@ import androidx.car.app.g;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class ProjectedCarAudioRecord extends gc1 {
+public class ProjectedCarAudioRecord extends od1 {
     private InputStream mInputStream;
 
     public ProjectedCarAudioRecord(g gVar) {
     }
 
-    @Override // gc1
+    @Override // od1
     public int readInternal(byte[] bArr, int i, int i2) {
         InputStream inputStream = this.mInputStream;
         if (inputStream == null) {
@@ -31,7 +31,7 @@ public class ProjectedCarAudioRecord extends gc1 {
         this.mInputStream = openMicrophoneResponse.getCarMicrophoneInputStream();
     }
 
-    @Override // gc1
+    @Override // od1
     public void stopRecordingInternal() {
         try {
             InputStream inputStream = this.mInputStream;

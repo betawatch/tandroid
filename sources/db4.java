@@ -1,46 +1,33 @@
 // default package
 
-import java.io.File;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class db4 extends vw5 implements op4 {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class db4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lb4 b;
+    public final /* synthetic */ kb4 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ db4(Object obj, byte b) {
-        super(0);
-        this.b = b;
-        this.c = obj;
+    public /* synthetic */ db4(lb4 lb4Var, kb4 kb4Var, byte b) {
+        this.a = b;
+        this.b = lb4Var;
+        this.c = kb4Var;
     }
 
-    @Override // op4
-    public final Object invoke() {
-        switch (this.b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        kb4 kb4Var = this.c;
+        lb4 lb4Var = this.b;
+        switch (b) {
             case 0:
-                Object obj = eb4.e;
-                File file = (File) this.c;
-                synchronized (obj) {
-                    eb4.d.remove(file.getAbsolutePath());
-                }
-                return g5c.a;
-            case 1:
-                ((jc5) this.c).dispose();
-                return g5c.a;
-            case 2:
-                File file2 = (File) ((kg8) this.c).invoke();
-                String name = file2.getName();
-                name.getClass();
-                int lastIndexOf = name.lastIndexOf(46, name.length() - 1);
-                if ((lastIndexOf != -1 ? name.substring(lastIndexOf + 1, name.length()) : "").equals("preferences_pb")) {
-                    File absoluteFile = file2.getAbsoluteFile();
-                    absoluteFile.getClass();
-                    return absoluteFile;
-                }
-                throw new IllegalStateException(("File extension for file: " + file2 + " does not match required extension for Preferences file: preferences_pb").toString());
+                kb4Var.l = null;
+                lb4Var.H0.remove(kb4Var);
+                kb4Var.k = true;
+                break;
             default:
-                return mcd.c((tdc) this.c);
+                lb4Var.k(kb4Var, null);
+                kb4Var.f.freeResources();
+                break;
         }
     }
 }

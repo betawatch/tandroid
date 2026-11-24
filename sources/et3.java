@@ -1,7 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface et3 {
-    void m();
+import android.util.SparseArray;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class et3 {
+    public final int a;
+    public final int b;
+    public final SparseArray c = new SparseArray();
+    public final SparseArray d = new SparseArray();
+    public final SparseArray e = new SparseArray();
+    public final SparseArray f = new SparseArray();
+    public final SparseArray g = new SparseArray();
+    public zs3 h;
+    public rk0 i;
+
+    public et3(int i, int i2) {
+        this.a = i;
+        this.b = i2;
+    }
 }

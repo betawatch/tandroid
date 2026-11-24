@@ -1,128 +1,75 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.method.TransformationMethod;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class m3c implements TextWatcher {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p3c b;
+public final class m3c extends k69 {
+    public final /* synthetic */ byte a = 1;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ m3c(p3c p3cVar, byte b) {
-        this.a = b;
-        this.b = p3cVar;
+    public m3c(bo0 bo0Var, int i) {
+        this.c = bo0Var;
+        this.b = i;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        oy8 oy8Var;
-        byte b = this.a;
-        p3c p3cVar = this.b;
-        switch (b) {
+    @Override // k69
+    public final void a(RecyclerView recyclerView, int i) {
+        brc brcVar;
+        switch (this.a) {
             case 0:
-                if (!p3cVar.N) {
-                    byte b2 = p3cVar.P;
-                    if (b2 != 0) {
-                        if (b2 != 1) {
-                            if (b2 == 8 && editable.length() > 0) {
-                                p3cVar.L0(true);
-                                break;
-                            }
-                        } else {
-                            try {
-                                p3cVar.g0[6].K((int) ((Math.min(1.0f, p3cVar.n.getLayout().getLineWidth(0) / p3cVar.n.getWidth()) * 142.0f) + 18.0f));
-                                p3cVar.a.d();
-                                break;
-                            } catch (Exception e) {
-                                fa4.g(e, true);
-                                return;
-                            }
-                        }
-                    } else {
-                        oy8 animatedDrawable = p3cVar.a.getAnimatedDrawable();
-                        if (p3cVar.n.length() <= 0) {
-                            if (animatedDrawable != p3cVar.g0[3] || p3cVar.n.getTransformationMethod() != null) {
-                                oy8[] oy8VarArr = p3cVar.g0;
-                                if (animatedDrawable != oy8VarArr[5]) {
-                                    oy8VarArr[2].K(-1);
-                                    oy8 oy8Var2 = p3cVar.g0[2];
-                                    if (animatedDrawable != oy8Var2) {
-                                        p3cVar.a.setAnimation(oy8Var2);
-                                        p3cVar.g0[2].I(49, false, false);
-                                    }
-                                    p3cVar.a.d();
-                                    break;
-                                }
-                            }
-                            p3cVar.a.setAnimation(p3cVar.g0[4]);
-                            p3cVar.g0[4].O(false, 0.0f);
-                            p3cVar.a.d();
-                            break;
-                        } else {
-                            TransformationMethod transformationMethod = p3cVar.n.getTransformationMethod();
-                            oy8[] oy8VarArr2 = p3cVar.g0;
-                            if (transformationMethod != null) {
-                                if (animatedDrawable != oy8VarArr2[3]) {
-                                    oy8 oy8Var3 = oy8VarArr2[2];
-                                    if (animatedDrawable == oy8Var3) {
-                                        if (oy8Var3.b0 < 49) {
-                                            oy8Var3.K(49);
-                                            break;
-                                        }
-                                    } else {
-                                        p3cVar.a.setAnimation(oy8Var3);
-                                        p3cVar.g0[2].K(49);
-                                        p3cVar.g0[2].O(false, 0.0f);
-                                        p3cVar.a.d();
-                                        break;
-                                    }
-                                }
-                            } else if (animatedDrawable != oy8VarArr2[3] && animatedDrawable != (oy8Var = oy8VarArr2[5])) {
-                                p3cVar.a.setAnimation(oy8Var);
-                                p3cVar.g0[5].O(false, 0.0f);
-                                p3cVar.a.d();
-                                break;
-                            }
-                        }
-                    }
+                if (i == 0) {
+                    this.b = 0;
+                    break;
                 }
                 break;
             default:
-                if (p3cVar.G) {
-                    if (p3cVar.F.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        gl.U3(p3cVar.F, true, 0.1f, true, true);
-                        break;
-                    } else if (p3cVar.F.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        gl.U3(p3cVar.F, false, 0.1f, true, true);
-                        break;
-                    }
+                if (i == 1 && (brcVar = ((goc) ((bo0) this.c).c).j0) != null) {
+                    brcVar.a();
+                    break;
                 }
                 break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    @Override // k69
+    public final void b(RecyclerView recyclerView, int i, int i2) {
         byte b = this.a;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                p3c p3cVar = (p3c) obj;
+                d4c d4cVar = p3cVar.n1;
+                this.b += i2;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > gm.L(96.0f)) {
+                    View findFocus = d4cVar.findFocus();
+                    if (findFocus == null) {
+                        findFocus = d4cVar;
+                    }
+                    gm.t1(findFocus);
+                }
+                if (i2 != 0 && d4cVar.c()) {
+                    p3cVar.o1 = d4cVar.getContentTopOffset();
+                    p3cVar.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                int i3 = this.b;
+                goc gocVar = (goc) ((bo0) obj).c;
+                if (i3 != 0) {
+                    recyclerView.post(new pmc(gocVar, (byte) 14));
+                    break;
+                } else {
+                    gocVar.H0();
+                    break;
+                }
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    private final void a(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void b(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void c(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void d(int i, int i2, int i3, CharSequence charSequence) {
+    public m3c(p3c p3cVar) {
+        this.c = p3cVar;
     }
 }

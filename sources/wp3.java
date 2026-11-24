@@ -1,39 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class wp3 implements sp3 {
-    public long a;
-    public long b;
-    public final String c;
-    public final /* synthetic */ xp3 d;
+import java.util.concurrent.ScheduledFuture;
 
-    public wp3(xp3 xp3Var, String str) {
-        this.d = xp3Var;
-        this.c = str;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class wp3 implements xp3 {
+    public final ScheduledFuture a;
+
+    public wp3(ScheduledFuture scheduledFuture) {
+        this.a = scheduledFuture;
     }
 
-    @Override // sp3
-    public final int getObserverTag() {
-        return 0;
+    @Override // xp3
+    public final void dispose() {
+        this.a.cancel(false);
     }
 
-    @Override // sp3
-    public final void i(long j, long j2) {
-        this.b = j;
-        this.a = j2;
-        this.d.b();
-    }
-
-    @Override // sp3
-    public final void B(boolean z) {
-    }
-
-    @Override // sp3
-    public final void N(String str) {
-    }
-
-    @Override // sp3
-    public final void l(long j, long j2) {
+    public final String toString() {
+        return "DisposableFutureHandle[" + this.a + ']';
     }
 }

@@ -1,10 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class q58 extends r35 {
-    @Override // r35, t26, d49
-    public final boolean x0() {
-        return false;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class q58 {
+    public final yw7 a = new yw7();
+    public final int[] b = new int[256];
+    public boolean c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
 }

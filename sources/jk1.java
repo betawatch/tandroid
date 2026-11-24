@@ -1,30 +1,41 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jk1 {
-    public final byte a;
-    public int b;
-    public float c;
-    public float d;
-    public ValueAnimator e;
-    public float f = 0.0f;
-    public final /* synthetic */ lk1 g;
+public final class jk1 extends u51 {
+    public final /* synthetic */ byte k;
+    public final /* synthetic */ Object l;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public jk1(lk1 lk1Var, int i) {
-        this.g = lk1Var;
-        this.a = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jk1(vq8 vq8Var) {
+        super((View) null);
+        this.k = (byte) 2;
+        this.l = vq8Var;
     }
 
-    public final void a() {
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.e = ofFloat;
-        ofFloat.setDuration(600L);
-        this.e.setInterpolator(nf0.D1);
-        this.e.addUpdateListener(new f0(this, (byte) 26));
-        this.e.start();
+    @Override // u51
+    public final void b() {
+        byte b = this.k;
+        Object obj = this.l;
+        switch (b) {
+            case 0:
+                ((rc2) obj).r2();
+                break;
+            case 1:
+                ((rc2) obj).r2();
+                break;
+            default:
+                ((vq8) obj).invalidateSelf();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jk1(rc2 rc2Var, rc2 rc2Var2, byte b) {
+        super(rc2Var);
+        this.k = b;
+        this.l = rc2Var2;
     }
 }

@@ -1,84 +1,61 @@
 // default package
 
-import android.util.Property;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class bw1 extends Property {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class bw1 extends FrameLayout {
+    public final ylb a;
+    public aw1 b;
+    public uy2 c;
+    public boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bw1(ChatActivityEnterView chatActivityEnterView, byte b) {
-        super(Float.class, "attach_scale");
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.b = chatActivityEnterView;
-                super(Float.class, "emoji_button_alpha");
-                break;
-            case 2:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_layout_translation_x");
-                break;
-            case 3:
-                this.b = chatActivityEnterView;
-                super(Float.class, "message_text_translation_x");
-                break;
-            case 4:
-                this.b = chatActivityEnterView;
-                super(Float.class, "emoji_button_scale");
-                break;
-            default:
-                this.b = chatActivityEnterView;
-                break;
-        }
+    public bw1(Context context, ylb ylbVar) {
+        super(context);
+        this.a = ylbVar;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (b) {
-            case 0:
-                return Float.valueOf(chatActivityEnterView.F);
-            case 1:
-                return Float.valueOf(chatActivityEnterView.n);
-            case 2:
-                return Float.valueOf(chatActivityEnterView.y);
-            case 3:
-                return Float.valueOf(chatActivityEnterView.H);
-            default:
-                return Float.valueOf(chatActivityEnterView.h);
+    public final void a(int i, boolean z) {
+        if (this.c == null) {
+            uy2 uy2Var = new uy2(getContext(), this.a);
+            this.c = uy2Var;
+            uy2Var.setReverse(this.d);
+            addView(this.c, qoe.e(-1, 28, 48));
         }
+        this.c.a.c(i, z);
     }
 
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (b) {
-            case 0:
-                chatActivityEnterView.F = ((Float) obj2).floatValue();
-                chatActivityEnterView.g2();
-                break;
-            case 1:
-                chatActivityEnterView.n = ((Float) obj2).floatValue();
-                chatActivityEnterView.l2();
-                break;
-            case 2:
-                chatActivityEnterView.y = ((Float) obj2).floatValue();
-                chatActivityEnterView.g2();
-                break;
-            case 3:
-                chatActivityEnterView.H = ((Float) obj2).floatValue();
-                chatActivityEnterView.p2();
-                break;
-            default:
-                chatActivityEnterView.h = ((Float) obj2).floatValue();
-                chatActivityEnterView.l2();
-                break;
+    public final void b(boolean z, boolean z2) {
+        super.setEnabled(z);
+        this.b.e(z, z2);
+    }
+
+    public final void c(boolean z, boolean z2) {
+        aw1 aw1Var = this.b;
+        if (aw1Var.d == null) {
+            if (!z) {
+                return;
+            }
+            wi2 wi2Var = new wi2(gm.L(18.0f), gm.L(1.7f), -9079435);
+            aw1Var.e = wi2Var;
+            wi2Var.f = 90.0f;
+            ImageView imageView = new ImageView(aw1Var.getContext());
+            aw1Var.d = imageView;
+            imageView.setBackground(aw1Var.e);
+            aw1Var.d.setVisibility(8);
+            aw1Var.addView(aw1Var.d, qoe.e(46, 46, 17));
         }
+        fn0 fn0Var = aw1Var.a;
+        if (!fn0Var.f && fn0Var.e == 0.0f) {
+            aw1Var.e.c = -1L;
+        }
+        fn0Var.a(z, z2);
+    }
+
+    @Override // android.view.View
+    public void setEnabled(boolean z) {
+        b(z, false);
     }
 }

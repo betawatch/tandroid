@@ -1,30 +1,42 @@
 // default package
 
-import android.media.AudioManager;
+import android.view.View;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoipAudioManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class rhc implements Runnable {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rhc implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ AudioManager b;
+    public final /* synthetic */ iic b;
+    public final /* synthetic */ VoIPService c;
 
-    public /* synthetic */ rhc(AudioManager audioManager, byte b) {
+    public /* synthetic */ rhc(iic iicVar, VoIPService voIPService, byte b) {
         this.a = b;
-        this.b = audioManager;
+        this.b = iicVar;
+        this.c = voIPService;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        AudioManager audioManager = this.b;
+        VoIPService voIPService = this.c;
+        iic iicVar = this.b;
         switch (b) {
             case 0:
-                VoIPService.lambda$onDestroy$94(audioManager);
+                gm.c3(new thc(iicVar, (byte) 8));
+                int i = iicVar.M;
+                if (i > 0) {
+                    voIPService.sendCallRating(i);
+                    break;
+                }
                 break;
             default:
-                VoipAudioManager.lambda$stopBluetooth$2(audioManager);
+                gm.c3(new thc(iicVar, (byte) 10));
+                int i2 = iicVar.M;
+                if (i2 > 0) {
+                    voIPService.sendCallRating(i2);
+                    break;
+                }
                 break;
         }
     }

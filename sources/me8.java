@@ -1,87 +1,48 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.View;
+import android.util.SparseBooleanArray;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class me8 extends xd8 {
-    public final gn d;
-    public final ty8 e;
-    public final fm0 f;
-    public float h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class me8 {
+    public static final lk4 b;
+    public static final lk4 c;
+    public final m41 a;
 
-    public me8(View view, wjb wjbVar) {
-        super(wjbVar);
-        ty8 ty8Var = new ty8(view);
-        this.e = ty8Var;
-        ty8Var.d(null, true, false);
-        ty8Var.t = 650.0f;
-        ty8Var.e(false, 0.69f);
-        ty8Var.p.setStrokeWidth(gl.L(1.5f));
-        this.f = new fm0(260L, view, s33.h);
-        gn gnVar = new gn(true, false, false);
-        this.d = gnVar;
-        gnVar.x(gl.o());
-        gnVar.w(gl.L(13.0f));
-        gnVar.b = 17;
-        int v0 = bkb.v0(bkb.h6, wjbVar);
-        if (this.b != v0) {
-            bkb.F1(this.a, v0, false);
-            this.b = v0;
+    static {
+        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+        for (int i : new int[]{16, 17, 18, 21, 22, 23, 28, 30}) {
+            jte.p(!false);
+            sparseBooleanArray.append(i, true);
+        }
+        jte.p(!false);
+        b = new lk4(sparseBooleanArray);
+        SparseBooleanArray sparseBooleanArray2 = new SparseBooleanArray();
+        for (int i2 : new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 19, 31, 20, 24, 25, 33, 26, 34, 35, 27, 29, 32}) {
+            jte.p(!false);
+            sparseBooleanArray2.append(i2, true);
+        }
+        jte.p(!false);
+        c = new lk4(sparseBooleanArray2);
+    }
+
+    public me8(ne8 ne8Var) {
+        m41 m41Var = new m41();
+        this.a = m41Var;
+        m41Var.c(ne8Var.a);
+    }
+
+    public final void a(int i, boolean z) {
+        if (z) {
+            this.a.b(i);
         }
     }
 
-    @Override // xd8
-    public final void a(int i) {
-        this.a.setAlpha(i);
-        this.d.C = i;
+    public final ne8 b() {
+        return new ne8(this.a.f());
     }
 
-    public final float b() {
-        return this.f.e;
-    }
-
-    public final void c(int i) {
-        this.d.u(i);
-        this.e.o = i;
-    }
-
-    public final void d(float f) {
-        if (this.h != f) {
-            this.h = f;
-            Rect bounds = getBounds();
-            int i = (int) this.h;
-            this.d.setBounds(bounds.left, bounds.top + i, bounds.right, bounds.bottom + i);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f = this.f.e;
-        if (f < 1.0f) {
-            kq3.b(canvas, this.d, 1.0f - f);
-        }
-        if (f > 0.0f) {
-            float exactCenterX = getBounds().exactCenterX();
-            float exactCenterY = getBounds().exactCenterY();
-            canvas.save();
-            canvas.scale(f, f, exactCenterX, exactCenterY);
-            this.e.a(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // xd8, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        Rect bounds = getBounds();
-        int i = (int) this.h;
-        this.d.setBounds(bounds.left, bounds.top + i, bounds.right, bounds.bottom + i);
-        int L = gl.L(11.0f);
-        int centerX = rect.centerX();
-        int centerY = rect.centerY();
-        this.e.f(centerX - L, centerY - L, centerX + L, centerY + L);
+    public me8() {
+        this.a = new m41();
     }
 }

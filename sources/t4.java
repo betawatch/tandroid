@@ -12,30 +12,30 @@ import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class t4 {
-    public static d03 a(Intent intent) {
+    public static o13 a(Intent intent) {
         CreateCredentialException createCredentialException = (CreateCredentialException) intent.getSerializableExtra("android.service.credentials.extra.CREATE_CREDENTIAL_EXCEPTION", CreateCredentialException.class);
         if (createCredentialException == null) {
             return null;
         }
         String type = createCredentialException.getType();
         type.getClass();
-        return dud.a(createCredentialException.getMessage(), type);
+        return gwd.a(createCredentialException.getMessage(), type);
     }
 
-    public static k03 b(String str, Intent intent) {
+    public static w13 b(String str, Intent intent) {
         CreateCredentialResponse createCredentialResponse = (CreateCredentialResponse) intent.getParcelableExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE", CreateCredentialResponse.class);
         if (createCredentialResponse == null) {
             return null;
         }
         Bundle data = createCredentialResponse.getData();
         data.getClass();
-        return s9e.a(str, data);
+        return tbe.a(str, data);
     }
 
-    public static us4 c(Intent intent) {
+    public static vu4 c(Intent intent) {
         intent.getClass();
         GetCredentialException getCredentialException = (GetCredentialException) intent.getSerializableExtra("android.service.credentials.extra.GET_CREDENTIAL_EXCEPTION", GetCredentialException.class);
         if (getCredentialException == null) {
@@ -43,10 +43,10 @@ public abstract class t4 {
         }
         String type = getCredentialException.getType();
         type.getClass();
-        return dud.b(getCredentialException.getMessage(), type);
+        return gwd.b(getCredentialException.getMessage(), type);
     }
 
-    public static xs4 d(Intent intent) {
+    public static yu4 d(Intent intent) {
         intent.getClass();
         GetCredentialResponse getCredentialResponse = (GetCredentialResponse) intent.getParcelableExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE", GetCredentialResponse.class);
         if (getCredentialResponse == null) {
@@ -58,7 +58,7 @@ public abstract class t4 {
         type.getClass();
         Bundle data = credential.getData();
         data.getClass();
-        return new xs4(fae.a(type, data));
+        return new yu4(gce.a(type, data));
     }
 
     public static AccessibilityNodeInfo.AccessibilityAction e() {

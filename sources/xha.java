@@ -1,186 +1,103 @@
 // default package
 
 import android.content.Context;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.SharedPreferences;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class xha extends r7 {
-    public final wha A0;
-    public boolean B0;
-    public n7 C0;
-    public boolean D0;
-    public boolean E0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class xha {
+    public final p83 a;
+    public final yha b;
+    public final Context c;
+    public final String d;
+    public final zeb e;
+    public final LinkedHashSet f;
 
-    public xha(Context context, wha whaVar, int i, int i2, boolean z, wjb wjbVar) {
-        super(context, null, i, i2, z, wjbVar);
-        this.D0 = true;
-        this.E0 = true;
-        this.A0 = whaVar;
-        setDelegate(new tha(whaVar));
+    public xha(Context context, String str, Set set, p83 p83Var, yha yhaVar) {
+        set.getClass();
+        mi8 mi8Var = new mi8((byte) 1, context, str);
+        this.a = p83Var;
+        this.b = yhaVar;
+        this.c = context;
+        this.d = str;
+        this.e = new zeb(mi8Var);
+        this.f = set == aia.a ? null : new LinkedHashSet(set);
     }
 
-    @Override // r7
-    public final void F() {
-        n7 n7Var = this.C0;
-        if (n7Var != null) {
-            n7Var.k(getSearchField());
-        }
-    }
-
-    @Override // r7
-    public final void G(boolean z) {
-        this.A0.a.C(z, true);
-    }
-
-    @Override // r7
-    public final r7 K(n7 n7Var) {
-        this.C0 = n7Var;
-        return this;
-    }
-
-    @Override // r7
-    public final r7 M() {
-        N();
-        return this;
-    }
-
-    @Override // r7
-    public final r7 N() {
-        this.B0 = true;
-        this.A0.a.setSearchItem(this);
-        return this;
-    }
-
-    @Override // r7
-    public final void P(CharSequence charSequence, boolean z) {
-        this.A0.a.setSearchFieldText(charSequence);
-    }
-
-    @Override // r7
-    public final boolean T(boolean z) {
-        pha phaVar = this.A0.a;
-        if (!phaVar.G) {
-            return phaVar.C(z, true);
-        }
-        phaVar.n(z);
-        return false;
-    }
-
-    public final void X() {
-        if (this.D0) {
-            return;
-        }
-        super.setVisibility(8);
-    }
-
-    public final void Y(boolean z, boolean z2) {
-        boolean z3 = this.D0;
-        wha whaVar = this.A0;
-        if (z3 == z) {
-            if (!z && !z2 && getVisibility() != 8) {
-                super.setVisibility(8);
-                whaVar.f = true;
-                whaVar.requestLayout();
-                return;
-            } else {
-                if (!z || getVisibility() == 0) {
-                    return;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0063, code lost:
+    
+        if (r4.isEmpty() == false) goto L35;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object a(Object obj, qx2 qx2Var) {
+        wha whaVar;
+        Object obj2;
+        int i;
+        if (qx2Var instanceof wha) {
+            whaVar = (wha) qx2Var;
+            int i2 = whaVar.d;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                whaVar.d = i2 - TLObject.FLAG_31;
+                obj2 = whaVar.b;
+                i = whaVar.d;
+                boolean z = true;
+                if (i != 0) {
+                    tue.b(obj2);
+                    whaVar.a = this;
+                    whaVar.d = 1;
+                    obj2 = this.a.invoke(obj, whaVar);
+                    ly2 ly2Var = ly2.a;
+                    if (obj2 == ly2Var) {
+                        return ly2Var;
+                    }
+                } else {
+                    if (i != 1) {
+                        dq9.m("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    this = whaVar.a;
+                    tue.b(obj2);
                 }
-                super.setVisibility(0);
-                return;
+                if (((Boolean) obj2).booleanValue()) {
+                    return Boolean.FALSE;
+                }
+                LinkedHashSet linkedHashSet = this.f;
+                zeb zebVar = this.e;
+                if (linkedHashSet != null) {
+                    SharedPreferences sharedPreferences = (SharedPreferences) zebVar.getValue();
+                    if (!linkedHashSet.isEmpty()) {
+                        Iterator it = linkedHashSet.iterator();
+                        while (it.hasNext()) {
+                            if (sharedPreferences.contains((String) it.next())) {
+                                break;
+                            }
+                        }
+                    }
+                    z = false;
+                    return Boolean.valueOf(z);
+                }
+                Map<String, ?> all = ((SharedPreferences) zebVar.getValue()).getAll();
+                all.getClass();
             }
         }
-        this.D0 = z;
-        if (z) {
-            setEnabled(this.E0);
-            super.setVisibility(0);
-        } else {
-            this.E0 = isEnabled();
-            setEnabled(false);
-            if (!z2 || !isLaidOut() || !whaVar.isLaidOut()) {
-                super.setVisibility(8);
-            }
+        whaVar = new wha(this, qx2Var);
+        obj2 = whaVar.b;
+        i = whaVar.d;
+        boolean z2 = true;
+        if (i != 0) {
         }
-        if (!z2 || !whaVar.a.y()) {
-            whaVar.f = true;
+        if (((Boolean) obj2).booleanValue()) {
         }
-        whaVar.requestLayout();
-    }
-
-    public wha getParentMenu() {
-        return this.A0;
-    }
-
-    @Override // r7
-    public EditTextBoldCursor getSearchField() {
-        return this.A0.a.getSearchField();
-    }
-
-    public n7 getSearchListener() {
-        return this.C0;
-    }
-
-    @Override // r7
-    public zha getSubMenuOverlay() {
-        return this.A0.a.getMenuOverlay();
-    }
-
-    @Override // r7
-    public h07 getSubMenuOverlayHost() {
-        return this.A0.a;
-    }
-
-    @Override // r7
-    public final boolean j() {
-        wha whaVar = this.A0;
-        return !whaVar.b || whaVar.a.x();
-    }
-
-    @Override // r7
-    public final void o() {
-        this.A0.a.setSearchFieldText("");
-    }
-
-    @Override // r7
-    public void setSearchFieldCaption(CharSequence charSequence) {
-        this.A0.a.setSearchFieldCaption(charSequence);
-    }
-
-    @Override // r7
-    public void setSearchFieldHint(CharSequence charSequence) {
-        this.A0.a.setSearchFieldHint(charSequence);
-        setContentDescription(charSequence);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i) {
-        wha whaVar = this.A0;
-        if (whaVar == null || i == 4) {
-            super.setVisibility(i);
-            return;
-        }
-        boolean z = false;
-        boolean z2 = i == 0;
-        pha phaVar = whaVar.a;
-        if (whaVar.isLaidOut() && phaVar.y() && (!whaVar.b || (phaVar.x() && phaVar.getActionModeFactor() > 0.0f))) {
-            z = true;
-        }
-        Y(z2, z);
-    }
-
-    @Override // r7
-    public final boolean v() {
-        return this.B0;
-    }
-
-    @Override // r7
-    public final boolean w() {
-        return this.A0.a.G;
-    }
-
-    @Override // r7
-    public final boolean x() {
-        return this.A0.a.G;
     }
 }

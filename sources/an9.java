@@ -1,32 +1,41 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.voip.VoIPService;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class an9 implements ed, no7 {
-    public final /* synthetic */ on9 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class an9 extends CameraView {
+    public final Path a;
+    public final /* synthetic */ bn9 b;
 
-    public /* synthetic */ an9(on9 on9Var) {
-        this.a = on9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public an9(bn9 bn9Var, Context context) {
+        super(context, true, false);
+        this.b = bn9Var;
+        this.a = new Path();
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        io5 g = vxcVar.a.g(647);
-        on9 on9Var = this.a;
-        on9Var.R = g;
-        on9Var.f.requestLayout();
-        return vxc.b;
+    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.a;
+        path.rewind();
+        path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth() / 2.0f, getHeight() / 2.0f), Path.Direction.CW);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        if (VoIPService.getSharedInstance() != null) {
-            VoIPService.getSharedInstance().hangUp(1);
-        }
-        this.a.dismiss();
-        kk7.e().k(kk7.u2, new Object[0]);
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void receivedAmplitude(double d) {
+        ((wc1) this.b).G.setAmplitude(d);
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView
+    public final boolean square() {
+        return true;
     }
 }

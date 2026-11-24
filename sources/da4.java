@@ -1,65 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ da4(Throwable th, byte b) {
-        this.a = b;
-        this.b = th;
+    public /* synthetic */ da4(int[] iArr, int i) {
+        this.a = (byte) 0;
+        this.c = i;
+        this.b = iArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        int i = 0;
-        Throwable th = this.b;
+        int i = this.c;
+        int[] iArr = this.b;
         switch (b) {
             case 0:
-                try {
-                    fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + th + "\n");
-                    StackTraceElement[] stackTrace = th.getStackTrace();
-                    for (int i2 = 0; i2 < stackTrace.length; i2++) {
-                        fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace[i2] + "\n");
-                    }
-                    Throwable cause = th.getCause();
-                    if (cause != null) {
-                        fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause + "\n");
-                        StackTraceElement[] stackTrace2 = cause.getStackTrace();
-                        while (i < stackTrace2.length) {
-                            fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace2[i] + "\n");
-                            i++;
-                        }
-                    }
-                    fa4.j().a.flush();
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                ia4.i.d(i, iArr[0], 0, false);
+                break;
+            case 1:
+                gm.c3(new da4((byte) 2, i, iArr));
+                break;
             default:
-                try {
-                    fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: " + th + "\n");
-                    StackTraceElement[] stackTrace3 = th.getStackTrace();
-                    for (int i3 = 0; i3 < stackTrace3.length; i3++) {
-                        fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: \tat " + stackTrace3[i3] + "\n");
-                    }
-                    Throwable cause2 = th.getCause();
-                    if (cause2 != null) {
-                        fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause2 + "\n");
-                        StackTraceElement[] stackTrace4 = cause2.getStackTrace();
-                        while (i < stackTrace4.length) {
-                            fa4.j().a.write(fa4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace4[i] + "\n");
-                            i++;
-                        }
-                    }
-                    fa4.j().a.flush();
-                } catch (Exception e2) {
-                    e2.printStackTrace();
+                int i2 = iArr[0];
+                if (i2 != 0) {
+                    ia4.a(ia4.i.d(i, i2, 0, false));
+                    break;
                 }
-                boolean z = w01.a;
                 break;
         }
+    }
+
+    public /* synthetic */ da4(byte b, int i, int[] iArr) {
+        this.a = b;
+        this.b = iArr;
+        this.c = i;
     }
 }

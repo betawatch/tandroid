@@ -1,22 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class nwe {
-    public static final dc6 k = new dc6("ApplicationAnalyticsSession", null);
-    public static long l = System.currentTimeMillis();
-    public final p6d a;
-    public String b;
-    public String c;
-    public long d = l;
-    public int e = 1;
-    public String f;
-    public int g;
-    public String h;
-    public boolean i;
-    public int j;
+public final class nwe implements cq7 {
+    public static final nwe a = new nwe();
 
-    public nwe(p6d p6dVar) {
-        this.a = p6dVar;
+    static {
+        mlb.z(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, mlb.u(mlb.q(ikd.class, new cid(1)), 2)), 3)), 4)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

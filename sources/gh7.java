@@ -1,68 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class gh7 {
-    public int[] a;
-    public int b;
+    public final String a;
+    public final String b;
+    public final long c;
+    public final long d;
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof gh7) {
-            gh7 gh7Var = (gh7) obj;
-            int i = gh7Var.b;
-            int i2 = this.b;
-            if (i == i2) {
-                int[] iArr = this.a;
-                int[] iArr2 = gh7Var.a;
-                fp5 a = ise.a(0, i2);
-                int i3 = a.a;
-                int i4 = a.b;
-                if (i3 > i4) {
-                    return true;
-                }
-                while (iArr[i3] == iArr2[i3]) {
-                    if (i3 == i4) {
-                        return true;
-                    }
-                    i3++;
-                }
-                return false;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int[] iArr = this.a;
-        int i = this.b;
-        int i2 = 0;
-        for (int i3 = 0; i3 < i; i3++) {
-            i2 += iArr[i3] * 31;
-        }
-        return i2;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        int[] iArr = this.a;
-        int i = this.b;
-        int i2 = 0;
-        while (true) {
-            if (i2 >= i) {
-                sb.append((CharSequence) "]");
-                break;
-            }
-            int i3 = iArr[i2];
-            if (i2 == -1) {
-                sb.append((CharSequence) "...");
-                break;
-            }
-            if (i2 != 0) {
-                sb.append((CharSequence) ", ");
-            }
-            sb.append(i3);
-            i2++;
-        }
-        return sb.toString();
+    public gh7(String str, String str2, long j, long j2) {
+        this.a = str;
+        this.b = str2;
+        this.c = j;
+        this.d = j2;
     }
 }

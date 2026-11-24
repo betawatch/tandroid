@@ -1,166 +1,95 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.os.StatFs;
-import java.io.File;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.LaunchActivity;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.util.Pair;
+import java.util.List;
+import java.util.Random;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class sv1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ byte b;
+public final /* synthetic */ class sv1 implements ResultCallback, ee {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ sv1(Object obj, int i, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
+    public /* synthetic */ sv1(wv1 wv1Var, tz3 tz3Var, boolean z, ah7 ah7Var, int i) {
+        this.c = wv1Var;
+        this.d = tz3Var;
+        this.b = z;
+        this.e = ah7Var;
+        this.a = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0083  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i;
-        File z;
-        boolean z2;
-        NativeByteBuffer byteBufferValue;
-        byte b = this.a;
-        byte b2 = 2;
-        byte b3 = 1;
-        byte b4 = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i2 = ChatActivityEnterView.r7;
-                if (b4 == 0) {
-                    chatActivityEnterView.q3 = 0;
-                }
-                chatActivityEnterView.W0 = null;
-                wx1 wx1Var = chatActivityEnterView.V0;
-                if (wx1Var != null) {
-                    if (chatActivityEnterView.d7 == null) {
-                        wx1Var.setTranslationY(0.0f);
-                    }
-                    chatActivityEnterView.V0.setVisibility(8);
-                    chatActivityEnterView.d2.removeView(chatActivityEnterView.V0);
-                    if (chatActivityEnterView.w4) {
-                        chatActivityEnterView.w4 = false;
-                        chatActivityEnterView.V0 = null;
-                    }
-                }
-                hy1 hy1Var = chatActivityEnterView.P3;
-                if (hy1Var != null) {
-                    hy1Var.k(0.0f);
-                }
-                chatActivityEnterView.requestLayout();
-                break;
-            case 1:
-                h75 h75Var = (h75) obj;
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    sharedInstance.setAudioOutput(b4);
-                    h75Var.n5 = Integer.valueOf(b4);
-                }
-                u21 u21Var = new u21(h75Var.F, new e53());
-                Resources resources = h75Var.getContext().getResources();
-                if (b4 == 2) {
-                    i = R.drawable.msg_voice_bluetooth;
-                } else if (b4 == 0) {
-                    i = R.drawable.msg_voice_speaker;
-                } else {
-                    VoIPService sharedInstance2 = VoIPService.getSharedInstance();
-                    i = (sharedInstance2 == null || !sharedInstance2.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
-                }
-                u21Var.M(resources.getDrawable(i).mutate(), h75.X0(b4)).k(h75Var.f1());
-                break;
-            case 2:
-                LaunchActivity launchActivity = (LaunchActivity) obj;
-                String str = LaunchActivity.C1;
-                if (y6c.h(launchActivity.P).o()) {
-                    try {
-                        SharedPreferences c1 = na7.c1();
-                        if ((((b4 == 2 || b4 == 1) && Math.abs(launchActivity.x1 - System.currentTimeMillis()) > 240000) || Math.abs(c1.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z = ba4.z(4)) != null) {
-                            StatFs statFs = new StatFs(z.getAbsolutePath());
-                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
-                            if (b4 > 0) {
-                                launchActivity.x1 = System.currentTimeMillis();
-                            } else if (availableBlocksLong < 52428800) {
-                            }
-                            c1.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
-                            gl.d3(new rx5(launchActivity, b2));
-                            break;
-                        }
-                    } catch (Throwable unused) {
-                        return;
-                    }
-                }
-                break;
-            case 3:
-                qa6 qa6Var = (qa6) obj;
-                qa6Var.V.g1(0, -gl.L(b4));
-                qa6Var.M0(false);
-                break;
-            case 4:
-                MediaController mediaController = (MediaController) obj;
-                String[] strArr = MediaController.W1;
-                kk7.f(mediaController.i1).k(kk7.m2, Integer.valueOf(mediaController.h1), Integer.valueOf(b4 == 2 ? 1 : 0));
-                break;
-            default:
-                hq6 hq6Var = (hq6) obj;
-                try {
-                    SQLiteCursor queryFinalized = hq6Var.getMessagesStorage().b.queryFinalized("SELECT data FROM emoji_statuses WHERE type = " + ((int) b4) + " LIMIT 1", new Object[0]);
-                    if (!queryFinalized.next() || queryFinalized.getColumnCount() <= 0 || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
-                        z2 = false;
-                    } else {
-                        TL_account.EmojiStatuses TLdeserialize = TL_account.EmojiStatuses.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        if (TLdeserialize instanceof TL_account.TL_emojiStatuses) {
-                            hq6Var.E0[b4] = TLdeserialize.hash;
-                            hq6Var.F0[b4] = TLdeserialize.statuses;
-                            z2 = true;
-                        } else {
-                            z2 = false;
-                        }
-                        try {
-                            byteBufferValue.reuse();
-                        } catch (Exception e) {
-                            e = e;
-                            fa4.g(e, true);
-                            hq6Var.H0[b4] = true;
-                            hq6Var.I0[b4] = false;
-                            if (!z2) {
-                            }
-                        }
-                    }
-                    queryFinalized.dispose();
-                } catch (Exception e2) {
-                    e = e2;
-                    z2 = false;
-                }
-                hq6Var.H0[b4] = true;
-                hq6Var.I0[b4] = false;
-                if (!z2) {
-                    gl.d3(new un6(hq6Var, b3));
-                    break;
-                } else {
-                    hq6Var.N(b4, false);
-                    break;
-                }
-                break;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        wv1 wv1Var = (wv1) this.c;
+        tz3 tz3Var = (tz3) this.d;
+        ah7 ah7Var = (ah7) this.e;
+        Pair pair = (Pair) obj;
+        if (pair != null) {
+            long longValue = ((Long) pair.first).longValue();
+            Bitmap bitmap = ((osc) pair.second).a;
+            tz3 tz3Var2 = wv1Var.f;
+            if (tz3Var2 == null || longValue != tz3Var2.h(wv1Var.q ? 1 : 0) || bitmap == null) {
+                return;
+            }
+            ValueAnimator valueAnimator = wv1Var.i;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            int i = tz3Var.j(this.b ? 1 : 0).settings.intensity;
+            List list = ((osc) pair.second).b;
+            ah7Var.R = list;
+            long j = wv1Var.G.ob;
+            if (list != null) {
+                ah7Var.S = new Random(j).nextInt(ah7Var.R.size());
+            }
+            ah7Var.r(i, bitmap);
+            ah7Var.s(this.a);
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            wv1Var.i = ofFloat;
+            ofFloat.addUpdateListener(new rv1(ah7Var, (byte) 2));
+            wv1Var.i.setDuration(250L);
+            wv1Var.i.start();
         }
+    }
+
+    @Override // ee
+    public final void r(he heVar, int i) {
+        e94 e94Var = (e94) this.c;
+        a94 a94Var = (a94) this.d;
+        k47 k47Var = (k47) this.e;
+        if (a94Var.getText().toString().length() > this.a) {
+            gm.z3(a94Var);
+            return;
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        CharSequence[] charSequenceArr = {a94Var.getText()};
+        tL_textWithEntities.entities = hs6.d0(e94Var.a).Y(charSequenceArr, true, true);
+        CharSequence charSequence = charSequenceArr[0];
+        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
+        e94Var.a(k47Var, tL_textWithEntities, this.b);
+        heVar.dismiss();
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+    }
+
+    public /* synthetic */ sv1(e94 e94Var, a94 a94Var, int i, k47 k47Var, boolean z) {
+        this.c = e94Var;
+        this.d = a94Var;
+        this.a = i;
+        this.e = k47Var;
+        this.b = z;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(Throwable th) {
     }
 }

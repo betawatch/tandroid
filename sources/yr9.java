@@ -1,17 +1,40 @@
 // default package
 
-import java.util.ArrayList;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public interface yr9 {
-    vf6 O0();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class yr9 implements b36, Closeable {
+    public final String a;
+    public final xr9 b;
+    public boolean c;
 
-    boolean U1(int i);
+    public yr9(String str, xr9 xr9Var) {
+        this.a = str;
+        this.b = xr9Var;
+    }
 
-    void m2(ArrayList arrayList);
+    public final void a(op opVar, w26 w26Var) {
+        opVar.getClass();
+        w26Var.getClass();
+        if (this.c) {
+            dq9.m("Already attached to lifecycleOwner");
+            return;
+        }
+        this.c = true;
+        w26Var.a(this);
+        opVar.f(this.a, this.b.e);
+    }
 
-    void r(int i);
+    @Override // b36
+    public final void b(e36 e36Var, u26 u26Var) {
+        if (u26Var == u26.ON_DESTROY) {
+            this.c = false;
+            e36Var.m().b(this);
+        }
+    }
 
-    vf6 t1();
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+    }
 }

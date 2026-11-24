@@ -1,44 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.concurrent.atomic.AtomicReference;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class r82 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ f92 b;
+    public final /* synthetic */ z82 b;
 
-    public /* synthetic */ r82(f92 f92Var, byte b) {
+    public /* synthetic */ r82(z82 z82Var, byte b) {
         this.a = b;
-        this.b = f92Var;
+        this.b = z82Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        f92 f92Var = this.b;
+        z82 z82Var = this.b;
         switch (b) {
             case 0:
-                f92Var.d0 = true;
-                f92Var.g0();
+                AtomicReference atomicReference = z82Var.n;
+                lka lkaVar = (lka) atomicReference.get();
+                if (lkaVar != null) {
+                    z82Var.removeView(lkaVar);
+                    atomicReference.set(null);
+                    break;
+                }
                 break;
             case 1:
-                f92Var.Y = f92Var.getMessagesController().K0(Long.valueOf(f92Var.a0));
-                f92Var.d0();
-                break;
-            case 2:
-                f92Var.f0(false);
-                break;
-            case 3:
-                f92Var.d0 = true;
-                if (f92Var.b.length() > 0) {
-                    f92Var.b0(f92Var.b.getText().toString());
+                AtomicReference atomicReference2 = z82Var.w;
+                lka lkaVar2 = (lka) atomicReference2.get();
+                if (lkaVar2 != null) {
+                    z82Var.removeView(lkaVar2);
+                    atomicReference2.set(null);
+                    if (!z82Var.b) {
+                        z82Var.setClipChildren(true);
+                        break;
+                    }
                 }
-                f92Var.g0();
-                break;
-            case 4:
-                f92Var.d0();
                 break;
             default:
-                f92Var.f0(true);
+                z82Var.k0 = false;
+                z82Var.i0.c(false);
+                if (z82Var.a()) {
+                    z82Var.f();
+                    break;
+                }
                 break;
         }
     }

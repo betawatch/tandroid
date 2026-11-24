@@ -1,77 +1,266 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.SharedPreferences;
+import android.util.Property;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.q;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ho1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
+    public final /* synthetic */ yv1 b;
 
-    public /* synthetic */ ho1(mu1 mu1Var, byte b) {
+    public /* synthetic */ ho1(yv1 yv1Var, byte b) {
         this.a = b;
-        this.b = mu1Var;
+        this.b = yv1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        ms1 ms1Var;
+        View sendButton;
+        View sendButton2;
         byte b = this.a;
-        mu1 mu1Var = this.b;
+        byte b2 = 0;
+        yv1 yv1Var = this.b;
         switch (b) {
             case 0:
-                mu1Var.f5(false);
-                break;
-            case 1:
-                int i = mu1.md;
-                mu1Var.e5();
-                break;
-            case 2:
-                int i2 = mu1.md;
-                mu1Var.e5();
-                break;
-            case 3:
-                int i3 = mu1.md;
-                mu1Var.M4();
-                break;
-            case 4:
-                int i4 = mu1.md;
-                mu1Var.M4();
-                break;
-            case 5:
-                int i5 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 6:
-                int i6 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 7:
-                int i7 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 8:
-                int i8 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 9:
-                int i9 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 10:
-                int i10 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 11:
-                int i11 = mu1.md;
-                mu1Var.Ua();
-                break;
-            case 12:
-                int i12 = mu1.md;
-                mu1Var.Ua();
-                break;
-            default:
-                if (mu1Var.getParentLayout() != null) {
-                    qvb.L0(mu1Var);
+                ps1 ps1Var = yv1Var.J8;
+                if (ps1Var != null && ps1Var.getParent() != null) {
+                    yv1Var.A0.h1();
+                    yv1Var.L8.setDrawingReady(false);
+                    yv1Var.J8.setTag(null);
+                    yv1Var.m1.removeView(yv1Var.J8);
                     break;
                 }
+                break;
+            case 1:
+                yv1Var.Tb = null;
+                break;
+            case 2:
+                yv1Var.L9 = false;
+                yv1Var.E7(true);
+                break;
+            case 3:
+                yv1Var.I7 = null;
+                q qVar = yv1Var.q3;
+                if (qVar != null) {
+                    wq5 cameraContainer = qVar.getCameraContainer();
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<wq5, Float>) View.SCALE_X, 0.5f);
+                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<wq5, Float>) View.SCALE_Y, 0.5f);
+                    Property property = View.ALPHA;
+                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<wq5, Float>) property, 0.0f), ObjectAnimator.ofFloat(yv1Var.q3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(yv1Var.q3.getPaint(), so.b, 0), ObjectAnimator.ofFloat(yv1Var.q3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
+                    animatorSet.addListener(new yq1(yv1Var, b2));
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            case 4:
+                if (yv1Var.getParentActivity() != null && yv1Var.fragmentView != null && (ms1Var = yv1Var.a0) != null && (sendButton = ms1Var.getSendButton()) != null && yv1Var.a0.getEditField() != null && yv1Var.a0.getEditField().getText().length() >= 5) {
+                    boolean z = gda.a;
+                    SharedPreferences.Editor edit = oc7.d1().edit();
+                    gda.K = System.currentTimeMillis();
+                    int i = gda.J + 1;
+                    gda.J = i;
+                    edit.putInt("scheduledOrNoSoundHintShows", i);
+                    edit.putLong("scheduledOrNoSoundHintSeenAt", gda.K);
+                    edit.apply();
+                    if (yv1Var.v2 == null) {
+                        hg5 x4 = yv1Var.x4(280.0f, 3, -1, true);
+                        yv1Var.v2 = x4;
+                        x4.v0 = 0.0f;
+                        x4.w0 = gm.L(56.0f) / 2.0f;
+                        yv1Var.v2.t(jb6.M0(2131745581, null));
+                    }
+                    yv1Var.v2.x(sendButton, true);
+                    yv1Var.w2 = true;
+                    break;
+                }
+                break;
+            case 5:
+                yv1Var.y6(false, true, 0.0f);
+                break;
+            case 6:
+                yv1Var.y6(false, true, 0.0f);
+                break;
+            case 7:
+                ms1 ms1Var2 = yv1Var.a0;
+                if (ms1Var2 != null && yv1Var.vd != null) {
+                    boolean R0 = ms1Var2.R0();
+                    ms1 ms1Var3 = yv1Var.a0;
+                    if (R0) {
+                        ms1Var3.J0(false);
+                        gm.E3(yv1Var.vd.a);
+                        ((fn0) yv1Var.vd.b.b).a(false, true);
+                        break;
+                    } else {
+                        ms1Var3.z1(false, false, false);
+                        yv1Var.a0.Y1();
+                        ((fn0) yv1Var.vd.b.b).a(true, true);
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                yv1Var.Ja();
+                break;
+            case 9:
+                if (yv1Var.getParentActivity() != null && yv1Var.fragmentView != null && yv1Var.a0 != null && yv1Var.cb == null && yv1Var.getMessagesController().L1(yv1Var.a()) <= 0 && (sendButton2 = yv1Var.a0.getSendButton()) != null && yv1Var.a0.getEditField() != null && yv1Var.a0.getEditField().getText().length() != 0) {
+                    boolean z2 = gda.a;
+                    SharedPreferences.Editor edit2 = oc7.d1().edit();
+                    gda.M = System.currentTimeMillis();
+                    int i2 = gda.L + 1;
+                    gda.L = i2;
+                    edit2.putInt("scheduledHintShows", i2);
+                    edit2.putLong("scheduledHintSeenAt", gda.M);
+                    edit2.apply();
+                    if (yv1Var.x2 == null) {
+                        hg5 x42 = yv1Var.x4(280.0f, 3, -1, true);
+                        yv1Var.x2 = x42;
+                        x42.v0 = 0.0f;
+                        x42.t(jb6.M0(2131745583, null));
+                    }
+                    yv1Var.x2.x(sendButton2, true);
+                    yv1Var.y2 = true;
+                    break;
+                }
+                break;
+            case 10:
+                yv1Var.C7();
+                yv1Var.gd(0, true);
+                break;
+            case 11:
+                yv1Var.y6(false, true, 0.0f);
+                break;
+            case 12:
+                ArrayList arrayList = yv1Var.M6;
+                yv1Var.vc = System.currentTimeMillis();
+                if (yv1Var.A0 != null && yv1Var.D0 != null) {
+                    int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    int i4 = TLObject.FLAG_31;
+                    for (int i5 = 0; i5 < yv1Var.A0.getChildCount(); i5++) {
+                        View childAt = yv1Var.A0.getChildAt(i5);
+                        if (childAt instanceof rc2) {
+                            rc2 rc2Var = (rc2) childAt;
+                            if (rc2Var.getCurrentMessagesGroup() != null) {
+                                for (int i6 = 0; i6 < rc2Var.getCurrentMessagesGroup().d.size(); i6++) {
+                                    int e1 = ((k47) rc2Var.getCurrentMessagesGroup().d.get(i6)).e1();
+                                    i3 = Math.min(i3, e1);
+                                    i4 = Math.max(i4, e1);
+                                }
+                            } else if (rc2Var.getMessageObject() != null) {
+                                int e12 = rc2Var.getMessageObject().e1();
+                                i3 = Math.min(i3, e12);
+                                i4 = Math.max(i4, e12);
+                            }
+                        }
+                    }
+                    if (i3 <= i4) {
+                        ArrayList arrayList2 = new ArrayList();
+                        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                            k47 k47Var = (k47) arrayList.get(i7);
+                            f47 f47Var = (f47) yv1Var.P6.f(k47Var.c1());
+                            if (f47Var != null) {
+                                ArrayList arrayList3 = f47Var.d;
+                                if (!arrayList2.contains(Long.valueOf(f47Var.a))) {
+                                    for (int i8 = 0; i8 < arrayList3.size(); i8++) {
+                                        k47 k47Var2 = (k47) arrayList3.get(i8);
+                                        if (k47Var2 != null) {
+                                            int e13 = k47Var2.e1();
+                                            yv1Var.getMessagesController().i4.g(k47Var2, e13 >= i3 + (-7) && e13 <= i4 + 7, false);
+                                        }
+                                    }
+                                    arrayList2.add(Long.valueOf(f47Var.a));
+                                }
+                            } else {
+                                int e14 = k47Var.e1();
+                                yv1Var.getMessagesController().i4.g(k47Var, e14 >= i3 + (-7) && e14 <= i4 + 7, false);
+                            }
+                        }
+                    }
+                }
+                if (yv1Var.Z4 > 0 && yv1Var.X4 != null) {
+                    yv1Var.getMessagesController().i4.g((k47) yv1Var.X4.get(Integer.valueOf(yv1Var.Z4)), true, false);
+                }
+                yv1Var.Ed();
+                break;
+            case 13:
+                yv1Var.y6(false, true, 0.0f);
+                break;
+            case 14:
+                yv1Var.ha();
+                break;
+            case 15:
+                yv1Var.w9();
+                break;
+            case 16:
+                yv1Var.finishFragment();
+                break;
+            case 17:
+                yv1Var.y6(false, true, 0.0f);
+                break;
+            case 18:
+                yv1Var.getClass();
+                he heVar = new he(3, yv1Var.Ba, yv1Var.getParentActivity());
+                yv1Var.dc = heVar;
+                heVar.setOnShowListener(new dn1(yv1Var, (byte) 1));
+                yv1Var.dc.setOnCancelListener(yv1Var.Ja);
+                yv1Var.dc.q(500L);
+                break;
+            case 19:
+                yv1Var.Y5 = null;
+                yv1Var.D6();
+                break;
+            case 20:
+                yv1Var.Y5 = null;
+                yv1Var.D6();
+                break;
+            case 21:
+                gm.B2(yv1Var.a1);
+                break;
+            case 22:
+                yv1Var.a5();
+                break;
+            case 23:
+                yv1Var.a = (yv1Var.a + 1) % 3;
+                break;
+            case 24:
+                yv1Var.b = !yv1Var.b;
+                break;
+            case 25:
+                yv1Var.N5(true);
+                ts2.u(null, 2131743657, c41.b0(yv1Var), R.raw.chats_infotip, 36);
+                break;
+            case 26:
+                yv1Var.D0.N.clear();
+                hu1 hu1Var = yv1Var.D0;
+                hu1Var.M = false;
+                hu1Var.J(true);
+                yv1Var.sc(false);
+                break;
+            case 27:
+                yv1Var.D0.N.clear();
+                hu1 hu1Var2 = yv1Var.D0;
+                hu1Var2.M = false;
+                hu1Var2.J(true);
+                yv1Var.sc(false);
+                break;
+            case 28:
+                yv1Var.ad = 0;
+                yv1Var.bd = false;
+                yv1Var.A0.h1();
+                break;
+            default:
+                yv1Var.Va = false;
+                yv1Var.cd();
                 break;
         }
     }

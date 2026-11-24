@@ -1,78 +1,130 @@
 // default package
 
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.l;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class on1 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ mu1 b;
+public final /* synthetic */ class on1 implements b29 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yv1 b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ k47 d;
 
-    public /* synthetic */ on1(mu1 mu1Var, long j, boolean z) {
-        this.b = mu1Var;
-        this.d = j;
+    public /* synthetic */ on1(yv1 yv1Var, boolean z, k47 k47Var, byte b) {
+        this.a = b;
+        this.b = yv1Var;
         this.c = z;
+        this.d = k47Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // b29
+    public final void i(long j, TLRPC.MessagePeerReaction messagePeerReaction) {
         byte b = this.a;
-        long j = this.d;
+        byte b2 = 0;
+        k47 k47Var = this.d;
         boolean z = this.c;
-        mu1 mu1Var = this.b;
         switch (b) {
             case 0:
-                mu1Var.d9(j, z);
-                break;
-            default:
-                ar1 ar1Var = mu1Var.a0;
-                if (ar1Var != null) {
-                    MediaController w = MediaController.w();
-                    if (!ar1Var.O2 && !ar1Var.v3 && w.E() && !w.F() && w.h1 == ar1Var.w3) {
-                        ar1Var.d1 = false;
-                        mw1 mw1Var = ar1Var.c1;
-                        if (mw1Var != null) {
-                            mw1Var.j(oy1.a, false);
-                        }
-                        ar1Var.y4 = true;
-                        ar1Var.v3 = true;
-                        hy1 hy1Var = ar1Var.P3;
-                        if (hy1Var != null) {
-                            hy1Var.n0(1);
-                        }
-                        ar1Var.r2(0, true);
-                        if (z) {
-                            ar1Var.P = true;
-                            l lVar = ar1Var.E2;
-                            if (lVar != null) {
-                                lVar.E.d(1, true, false);
+                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
+                    final yv1 yv1Var = this.b;
+                    if (j != yv1Var.getUserConfig().e() && z) {
+                        final ArrayList arrayList = new ArrayList(1);
+                        arrayList.add(k47Var);
+                        TLObject a2 = yv1Var.getMessagesController().a2(j);
+                        final ArrayList arrayList2 = new ArrayList(1);
+                        arrayList2.add(a2);
+                        final TLRPC.ChannelParticipant[] channelParticipantArr = new TLRPC.ChannelParticipant[1];
+                        TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
+                        tL_channels_getParticipant.channel = oc7.h1(yv1Var.e);
+                        tL_channels_getParticipant.participant = oc7.j1(a2);
+                        final byte b3 = 0;
+                        yv1Var.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new kc(b2), new jac() { // from class: bp1
+                            @Override // jac
+                            public final void a(Object obj, Object obj2) {
+                                switch (b3) {
+                                    case 0:
+                                        TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
+                                        yv1 yv1Var2 = yv1Var;
+                                        TLRPC.ChannelParticipant[] channelParticipantArr2 = channelParticipantArr;
+                                        if (tL_channels_channelParticipant != null) {
+                                            yv1Var2.getMessagesController().d4(tL_channels_channelParticipant.users, false);
+                                            yv1Var2.getMessagesController().X3(tL_channels_channelParticipant.chats, false);
+                                            channelParticipantArr2[0] = tL_channels_channelParticipant.participant;
+                                        }
+                                        new ef3(yv1Var2, yv1Var2.e, arrayList, arrayList2, channelParticipantArr2, yv1Var2.d7, (int) yv1Var2.d(), yv1Var2.g4, true, new jd((byte) 10)).show();
+                                        break;
+                                    default:
+                                        TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) obj;
+                                        yv1 yv1Var3 = yv1Var;
+                                        TLRPC.ChannelParticipant[] channelParticipantArr3 = channelParticipantArr;
+                                        if (tL_channels_channelParticipant2 != null) {
+                                            yv1Var3.getMessagesController().d4(tL_channels_channelParticipant2.users, false);
+                                            yv1Var3.getMessagesController().X3(tL_channels_channelParticipant2.chats, false);
+                                            channelParticipantArr3[0] = tL_channels_channelParticipant2.participant;
+                                        } else {
+                                            yv1Var3.getClass();
+                                        }
+                                        new ef3(yv1Var3, yv1Var3.e, arrayList, arrayList2, channelParticipantArr3, yv1Var3.d7, (int) yv1Var3.d(), yv1Var3.g4, true, new jd((byte) 10)).show();
+                                        break;
+                                }
                             }
-                            hq6 d0 = hq6.d0(ar1Var.R);
-                            long j2 = ar1Var.G3;
-                            mu1 mu1Var2 = ar1Var.F3;
-                            d0.g2(j2, (mu1Var2 == null || !mu1Var2.x4) ? 0L : mu1Var2.d(), true);
-                        }
-                        long currentTimeMillis = j > 0 ? System.currentTimeMillis() - j : w.l1;
-                        ar1Var.Y1 = currentTimeMillis;
-                        my1 my1Var = ar1Var.Z0;
-                        if (my1Var != null) {
-                            my1Var.a(currentTimeMillis);
-                        }
-                        ar1Var.h5 = true;
-                        ar1Var.c2();
+                        });
+                        yv1Var.N5(true);
                         break;
                     }
                 }
                 break;
+            default:
+                final yv1 yv1Var2 = this.b;
+                yv1Var2.getClass();
+                if (messagePeerReaction != null && messagePeerReaction.reaction != null && j != yv1Var2.getUserConfig().e() && z) {
+                    final ArrayList arrayList3 = new ArrayList(1);
+                    arrayList3.add(k47Var);
+                    TLObject a22 = yv1Var2.getMessagesController().a2(j);
+                    final ArrayList arrayList4 = new ArrayList(1);
+                    arrayList4.add(a22);
+                    final TLRPC.ChannelParticipant[] channelParticipantArr2 = new TLRPC.ChannelParticipant[1];
+                    TLRPC.TL_channels_getParticipant tL_channels_getParticipant2 = new TLRPC.TL_channels_getParticipant();
+                    tL_channels_getParticipant2.channel = oc7.h1(yv1Var2.e);
+                    tL_channels_getParticipant2.participant = oc7.j1(a22);
+                    final byte b4 = 1;
+                    yv1Var2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new kc(b2), new jac() { // from class: bp1
+                        @Override // jac
+                        public final void a(Object obj, Object obj2) {
+                            switch (b4) {
+                                case 0:
+                                    TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
+                                    yv1 yv1Var22 = yv1Var2;
+                                    TLRPC.ChannelParticipant[] channelParticipantArr22 = channelParticipantArr2;
+                                    if (tL_channels_channelParticipant != null) {
+                                        yv1Var22.getMessagesController().d4(tL_channels_channelParticipant.users, false);
+                                        yv1Var22.getMessagesController().X3(tL_channels_channelParticipant.chats, false);
+                                        channelParticipantArr22[0] = tL_channels_channelParticipant.participant;
+                                    }
+                                    new ef3(yv1Var22, yv1Var22.e, arrayList3, arrayList4, channelParticipantArr22, yv1Var22.d7, (int) yv1Var22.d(), yv1Var22.g4, true, new jd((byte) 10)).show();
+                                    break;
+                                default:
+                                    TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) obj;
+                                    yv1 yv1Var3 = yv1Var2;
+                                    TLRPC.ChannelParticipant[] channelParticipantArr3 = channelParticipantArr2;
+                                    if (tL_channels_channelParticipant2 != null) {
+                                        yv1Var3.getMessagesController().d4(tL_channels_channelParticipant2.users, false);
+                                        yv1Var3.getMessagesController().X3(tL_channels_channelParticipant2.chats, false);
+                                        channelParticipantArr3[0] = tL_channels_channelParticipant2.participant;
+                                    } else {
+                                        yv1Var3.getClass();
+                                    }
+                                    new ef3(yv1Var3, yv1Var3.e, arrayList3, arrayList4, channelParticipantArr3, yv1Var3.d7, (int) yv1Var3.d(), yv1Var3.g4, true, new jd((byte) 10)).show();
+                                    break;
+                            }
+                        }
+                    });
+                    yv1Var2.N5(true);
+                    break;
+                }
+                break;
         }
-    }
-
-    public /* synthetic */ on1(mu1 mu1Var, boolean z, long j) {
-        this.b = mu1Var;
-        this.c = z;
-        this.d = j;
     }
 }

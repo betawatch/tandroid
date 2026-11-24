@@ -1,107 +1,108 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import org.telegram.ui.Dictation.DictationLid;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class p66 {
-    public final int a;
-    public int c;
-    public zl3 d;
-    public long e;
-    public long f;
-    public int g;
-    public int h;
-    public boolean i;
-    public String k;
-    public int l;
-    public String m;
-    public int n;
-    public int o;
-    public int r;
-    public int s;
-    public int t;
-    public boolean u;
-    public boolean v;
-    public int w;
-    public final /* synthetic */ q66 x;
-    public final byte[] b = new byte[gc1.AUDIO_CONTENT_SAMPLING_RATE];
-    public String j = "";
-    public final ByteArrayOutputStream p = new ByteArrayOutputStream();
-    public final ByteArrayOutputStream q = new ByteArrayOutputStream();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class p66 implements y6a {
+    public final y6a a;
+    public final y6a b;
 
-    public p66(q66 q66Var, int i) {
-        this.x = q66Var;
-        this.a = i;
+    public p66(y6a y6aVar, y6a y6aVar2) {
+        y6aVar.getClass();
+        y6aVar2.getClass();
+        this.a = y6aVar;
+        this.b = y6aVar2;
     }
 
-    public final void a() {
-        ByteArrayOutputStream byteArrayOutputStream = this.p;
-        if (this.s < 0 || this.u || this.d == null || DictationLid.c == 0) {
-            return;
-        }
-        int size = byteArrayOutputStream.size();
-        if (size - this.t >= 16000) {
-            this.t = size;
-            this.u = true;
-            int i = this.r;
-            DictationLid.h(DictationLid.j[this.s], new jh((Object) this, i, (byte) 12), null, byteArrayOutputStream.toByteArray());
-        }
+    @Override // y6a
+    public final String a() {
+        return "kotlin.collections.LinkedHashMap";
     }
 
-    public final void b() {
-        p66 p66Var;
-        if (this.j.isEmpty()) {
-            p66Var = this;
-        } else {
-            p66Var = this;
-            gl.d3(new b61((Object) p66Var, this.f, (Object) this.j, true, (byte) 2));
-            p66Var.j = "";
-        }
-        q66 q66Var = p66Var.x;
-        long j = q66Var.f;
-        q66Var.f = 1 + j;
-        p66Var.f = j;
-        p66Var.q.reset();
+    @Override // y6a
+    public final boolean c() {
+        return false;
     }
 
-    public final void c(int i, int i2, byte[] bArr) {
-        ByteArrayOutputStream byteArrayOutputStream = this.q;
-        ByteArrayOutputStream byteArrayOutputStream2 = this.p;
-        if (this.s < 0 || DictationLid.c == 0) {
-            return;
+    @Override // y6a
+    public final int d(String str) {
+        str.getClass();
+        Integer b = obb.b(str);
+        if (b != null) {
+            return b.intValue();
         }
-        if (byteArrayOutputStream2.size() <= 1920000) {
-            byteArrayOutputStream2.write(bArr, i, i2);
-            byteArrayOutputStream.write(bArr, i, i2);
-        } else {
-            this.s = -1;
-            byteArrayOutputStream2.reset();
-            byteArrayOutputStream.reset();
-        }
+        u36.j(str.concat(" is not a valid map index"));
+        return 0;
     }
 
-    public final void d(int i, int i2, byte[] bArr) {
-        byte[] bArr2 = this.b;
-        if (i2 >= 16000) {
-            System.arraycopy(bArr, (i + i2) - gc1.AUDIO_CONTENT_SAMPLING_RATE, bArr2, 0, gc1.AUDIO_CONTENT_SAMPLING_RATE);
-            this.c = gc1.AUDIO_CONTENT_SAMPLING_RATE;
-        } else {
-            int min = Math.min(this.c, 16000 - i2);
-            System.arraycopy(bArr2, this.c - min, bArr2, 0, min);
-            System.arraycopy(bArr, i, bArr2, min, i2);
-            this.c = min + i2;
-        }
+    @Override // y6a
+    public final yve e() {
+        return xbb.d;
     }
 
-    public final void e() {
-        this.r++;
-        this.p.reset();
-        this.q.reset();
-        this.s = this.x.c ? 0 : -1;
-        this.t = 0;
-        this.o = 0;
-        this.v = false;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof p66)) {
+            return false;
+        }
+        p66 p66Var = (p66) obj;
+        return rr5.a(this.a, p66Var.a) && rr5.a(this.b, p66Var.b);
+    }
+
+    @Override // y6a
+    public final int f() {
+        return 2;
+    }
+
+    @Override // y6a
+    public final String g(int i) {
+        return String.valueOf(i);
+    }
+
+    @Override // y6a
+    public final List getAnnotations() {
+        return n34.a;
+    }
+
+    @Override // y6a
+    public final List h(int i) {
+        if (i >= 0) {
+            return n34.a;
+        }
+        c1b.a(td4.o(i, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices"));
+        return null;
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + ((this.a.hashCode() + 710441009) * 31);
+    }
+
+    @Override // y6a
+    public final y6a i(int i) {
+        if (i < 0) {
+            c1b.a(td4.o(i, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices"));
+            return null;
+        }
+        int i2 = i % 2;
+        if (i2 == 0) {
+            return this.a;
+        }
+        if (i2 == 1) {
+            return this.b;
+        }
+        dq9.m("Unreached");
+        return null;
+    }
+
+    @Override // y6a
+    public final boolean isInline() {
+        return false;
+    }
+
+    public final String toString() {
+        return "kotlin.collections.LinkedHashMap(" + this.a + ", " + this.b + ')';
     }
 }

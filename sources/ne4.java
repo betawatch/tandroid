@@ -1,29 +1,60 @@
 // default package
 
-import android.content.Context;
+import java.util.Comparator;
+import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ne4 extends pi4 {
-    public final /* synthetic */ byte V;
-    public final /* synthetic */ Object W;
+public final /* synthetic */ class ne4 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ LongSparseIntArray b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ne4(byte b, Context context, Object obj) {
-        super(context, null);
-        this.V = b;
-        this.W = obj;
+    public /* synthetic */ ne4(LongSparseIntArray longSparseIntArray, byte b) {
+        this.a = b;
+        this.b = longSparseIntArray;
     }
 
-    @Override // pi4
-    public final int getColumnsCount() {
-        byte b = this.V;
-        Object obj = this.W;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        byte b = this.a;
+        LongSparseIntArray longSparseIntArray = this.b;
+        Long l = (Long) obj;
+        Long l2 = (Long) obj2;
         switch (b) {
             case 0:
-                return ((af4) obj).s;
+                int i = longSparseIntArray.get(l.longValue());
+                int i2 = longSparseIntArray.get(l2.longValue());
+                if (i <= i2) {
+                    if (i < i2) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                break;
+            case 1:
+                int i3 = longSparseIntArray.get(l.longValue());
+                int i4 = longSparseIntArray.get(l2.longValue());
+                if (i3 <= i4) {
+                    if (i3 < i4) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                break;
             default:
-                return ((ye4) obj).d.s;
+                int i5 = longSparseIntArray.get(l.longValue());
+                int i6 = longSparseIntArray.get(l2.longValue());
+                if (i5 >= i6) {
+                    if (i5 > i6) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                break;
         }
+        return -1;
     }
 }

@@ -1,116 +1,100 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
+import android.graphics.SurfaceTexture;
+import java.nio.FloatBuffer;
+import java.util.ArrayList;
+import org.telegram.messenger.video.MediaCodecPlayer;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class qcc extends View {
-    public ShapeDrawable a;
-    public Drawable b;
-    public StaticLayout c;
-    public TextPaint d;
-    public long e;
-    public float f;
-    public float h;
-    public boolean n;
-    public int r;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class qcc extends TLObject {
+    public static final /* synthetic */ int C = 0;
+    public MediaCodecPlayer B;
+    public int a;
+    public boolean b;
+    public boolean c;
+    public String d;
+    public float e = 1.0f;
+    public long f = 0;
+    public boolean i = true;
+    public float j;
+    public float k;
+    public int l;
+    public int m;
+    public long o;
+    public rl2 r;
+    public FloatBuffer s;
+    public FloatBuffer t;
+    public kn u;
+    public float v;
+    public SurfaceTexture z;
 
-    public final void a(boolean z) {
-        this.n = z;
-        invalidate();
-    }
-
-    public final void b() {
-        int i;
-        Drawable drawable = this.b;
-        this.d.setColor(bkb.w0(null, bkb.fg, false));
-        ShapeDrawable shapeDrawable = this.a;
-        if (shapeDrawable != null) {
-            i = bkb.gg;
-            bkb.A1(bkb.w0(null, i, false), shapeDrawable);
-        } else {
-            int L = gl.L(5.0f);
-            i = bkb.gg;
-            this.a = bkb.b0(L, bkb.w0(null, i, false));
+    public static ArrayList a(g6b g6bVar) {
+        if (g6bVar == null || g6bVar.T == null) {
+            return null;
         }
-        int w0 = bkb.w0(null, i, false);
-        if (w0 != this.r || drawable.getColorFilter() == null) {
-            this.r = w0;
-            drawable.setColorFilter(new PorterDuffColorFilter(w0, PorterDuff.Mode.MULTIPLY));
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < g6bVar.T.size(); i++) {
+            g6b g6bVar2 = (g6b) g6bVar.T.get(i);
+            qcc qccVar = new qcc();
+            qccVar.e = 1.0f;
+            qccVar.f = 0L;
+            qccVar.i = true;
+            qccVar.b = g6bVar2.K;
+            qccVar.c = g6bVar2.Y;
+            qccVar.d = g6bVar2.L.getAbsolutePath();
+            qccVar.e = g6bVar2.P;
+            qccVar.i = g6bVar2.U;
+            qccVar.f = g6bVar2.X;
+            qccVar.j = g6bVar2.V;
+            qccVar.k = g6bVar2.W;
+            qccVar.l = g6bVar2.k0;
+            qccVar.m = g6bVar2.l0;
+            qccVar.o = g6bVar2.h0;
+            qccVar.r = (rl2) g6bVar.S.e.get(i);
+            arrayList.add(qccVar);
         }
+        return arrayList;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable drawable = this.b;
-        if (this.c != null) {
-            boolean z = this.n;
-            float f = this.h;
-            if (!z) {
-                if (f != 0.0f) {
-                    float f2 = f - 0.12f;
-                    this.h = f2;
-                    if (f2 < 0.0f) {
-                        this.h = 0.0f;
-                    }
-                    invalidate();
-                }
-                if (this.h == 0.0f) {
-                    return;
-                }
-            } else if (f != 1.0f) {
-                float f3 = f + 0.12f;
-                this.h = f3;
-                if (f3 > 1.0f) {
-                    this.h = 1.0f;
-                }
-                invalidate();
-            }
-            float f4 = this.h;
-            int i = (int) ((f4 > 0.5f ? 1.0f : f4 / 0.5f) * 255.0f);
-            canvas.save();
-            float f5 = this.h;
-            canvas.scale(f5, f5, this.f, getMeasuredHeight());
-            canvas.translate(this.f - (this.c.getWidth() / 2.0f), 0.0f);
-            this.a.setBounds(-gl.L(8.0f), 0, gl.L(8.0f) + this.c.getWidth(), (int) (gl.N(4.0f) + this.c.getHeight()));
-            drawable.setBounds(oo1.A(2, this.c.getWidth() / 2, drawable), (int) (gl.N(4.0f) + this.c.getHeight()), oo1.w(2, this.c.getWidth() / 2, drawable), drawable.getIntrinsicHeight() + ((int) (gl.N(4.0f) + this.c.getHeight())));
-            drawable.setAlpha(i);
-            this.a.setAlpha(i);
-            this.d.setAlpha(i);
-            drawable.draw(canvas);
-            this.a.draw(canvas);
-            canvas.translate(0.0f, gl.N(1.0f));
-            this.c.draw(canvas);
-            canvas.restore();
-        }
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
+        int readInt32 = inputSerializedData.readInt32(z);
+        this.a = readInt32;
+        this.b = (readInt32 & 1) != 0;
+        this.i = (readInt32 & 2) != 0;
+        this.c = (readInt32 & 4) != 0;
+        this.d = inputSerializedData.readString(z);
+        this.e = inputSerializedData.readFloat(z);
+        this.f = inputSerializedData.readInt64(z);
+        this.j = inputSerializedData.readFloat(z);
+        this.k = inputSerializedData.readFloat(z);
+        this.l = inputSerializedData.readInt32(z);
+        this.m = inputSerializedData.readInt32(z);
+        this.o = inputSerializedData.readInt64(z);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.b.getIntrinsicHeight() + gl.L(4.0f) + this.c.getHeight(), TLObject.FLAG_30));
-    }
-
-    public void setCx(float f) {
-        this.f = f;
-        invalidate();
-    }
-
-    public void setTime(int i) {
-        long j = i;
-        if (j != this.e) {
-            this.e = j;
-            String g0 = gl.g0(i, false, false);
-            TextPaint textPaint = this.d;
-            this.c = new StaticLayout(g0, textPaint, (int) textPaint.measureText(g0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, true);
-        }
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        boolean z = this.b;
+        int i = this.a;
+        int i2 = z ? i | 1 : i & (-2);
+        this.a = i2;
+        int i3 = this.i ? i2 | 2 : i2 & (-3);
+        this.a = i3;
+        int i4 = this.c ? i3 | 4 : i3 & (-5);
+        this.a = i4;
+        outputSerializedData.writeInt32(i4);
+        outputSerializedData.writeString(this.d);
+        outputSerializedData.writeFloat(this.e);
+        outputSerializedData.writeInt64(this.f);
+        outputSerializedData.writeFloat(this.j);
+        outputSerializedData.writeFloat(this.k);
+        outputSerializedData.writeInt32(this.l);
+        outputSerializedData.writeInt32(this.m);
+        outputSerializedData.writeInt64(this.o);
     }
 }

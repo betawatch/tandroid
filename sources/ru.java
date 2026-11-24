@@ -1,104 +1,55 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.WebChromeClient;
-import android.widget.FrameLayout;
-import org.telegram.ui.j;
+import android.content.Context;
+import android.net.Uri;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ru extends WebChromeClient {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final /* synthetic */ class ru implements RequestDelegate {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ ru(KeyEvent.Callback callback, byte b) {
-        this.a = b;
-        this.b = callback;
+    public /* synthetic */ ru(k11 k11Var, he[] heVarArr, int i, Uri uri, Context context, boolean z) {
+        this.d = k11Var;
+        this.e = heVarArr;
+        this.b = i;
+        this.f = uri;
+        this.g = context;
+        this.c = z;
     }
 
-    @Override // android.webkit.WebChromeClient
-    public final void onHideCustomView() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        KeyEvent.Callback callback = this.b;
+        Object obj = this.g;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
         switch (b) {
             case 0:
-                super.onHideCustomView();
-                o oVar = ((j) callback).y;
-                if (oVar.P != null) {
-                    oVar.Q.setVisibility(4);
-                    oVar.Q.removeView(oVar.P);
-                    WebChromeClient.CustomViewCallback customViewCallback = oVar.T;
-                    if (customViewCallback != null && !customViewCallback.getClass().getName().contains(".chromium.")) {
-                        oVar.T.onCustomViewHidden();
-                    }
-                    oVar.P = null;
-                    break;
-                }
+                gm.c3(new gu((o) obj4, tLObject, this.b, (TLRPC.WebPage) obj3, (k47) obj2, this.c, (String) obj));
                 break;
             default:
-                super.onHideCustomView();
-                ou3 ou3Var = (ou3) callback;
-                FrameLayout frameLayout = ou3Var.o1;
-                if (ou3Var.n1 != null) {
-                    ou3Var.b.setVisibility(0);
-                    frameLayout.setVisibility(4);
-                    frameLayout.removeView(ou3Var.n1);
-                    WebChromeClient.CustomViewCallback customViewCallback2 = ou3Var.p1;
-                    if (customViewCallback2 != null && !customViewCallback2.getClass().getName().contains(".chromium.")) {
-                        ou3Var.p1.onCustomViewHidden();
-                    }
-                    ou3Var.n1 = null;
-                    break;
-                }
+                gm.c3(new gu((k11) obj4, (he[]) obj3, tLObject, this.b, (Uri) obj2, (Context) obj, this.c));
                 break;
         }
     }
 
-    @Override // android.webkit.WebChromeClient
-    public final void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {
-        byte b = this.a;
-        KeyEvent.Callback callback = this.b;
-        switch (b) {
-            case 0:
-                o oVar = ((j) callback).y;
-                if (oVar.P == null) {
-                    oVar.P = view;
-                    oVar.T = customViewCallback;
-                    gl.e3(new b1(this, (byte) 21), 100L);
-                    break;
-                } else {
-                    customViewCallback.onCustomViewHidden();
-                    break;
-                }
-            default:
-                ou3 ou3Var = (ou3) callback;
-                FrameLayout frameLayout = ou3Var.o1;
-                if (ou3Var.n1 == null && !ou3Var.H0()) {
-                    ou3Var.F0();
-                    ou3Var.n1 = view;
-                    ou3Var.b.setVisibility(4);
-                    frameLayout.setVisibility(0);
-                    frameLayout.addView(view, nme.c(-1.0f, -1));
-                    ou3Var.p1 = customViewCallback;
-                    break;
-                } else {
-                    customViewCallback.onCustomViewHidden();
-                    break;
-                }
-        }
-    }
-
-    @Override // android.webkit.WebChromeClient
-    public final void onShowCustomView(View view, int i, WebChromeClient.CustomViewCallback customViewCallback) {
-        switch (this.a) {
-            case 0:
-                onShowCustomView(view, customViewCallback);
-                break;
-            default:
-                onShowCustomView(view, customViewCallback);
-                break;
-        }
+    public /* synthetic */ ru(o oVar, int i, TLRPC.WebPage webPage, k47 k47Var, boolean z, String str) {
+        this.d = oVar;
+        this.b = i;
+        this.e = webPage;
+        this.f = k47Var;
+        this.c = z;
+        this.g = str;
     }
 }

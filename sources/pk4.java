@@ -1,18 +1,14 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class pk4 extends gw2 {
-    public c59 a;
-    public /* synthetic */ Object b;
-    public int c;
-
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.c |= TLObject.FLAG_31;
-        return ghe.a(null, null, this);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class pk4 extends ImageView implements qk4 {
+    @Override // qk4
+    public void setInvert(float f) {
+        setColorFilter(new PorterDuffColorFilter(on2.f(f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
     }
 }

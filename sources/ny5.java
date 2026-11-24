@@ -1,36 +1,36 @@
 // default package
 
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ny5 implements tz7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ y0a b;
+public final class ny5 extends bu7 {
+    public final Path o3;
+    public final /* synthetic */ sa8 p3;
 
-    public /* synthetic */ ny5(y0a y0aVar, byte b) {
-        this.a = b;
-        this.b = y0aVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ny5(sa8 sa8Var, Context context) {
+        super(context);
+        this.p3 = sa8Var;
+        this.o3 = new Path();
     }
 
-    @Override // tz7
-    public final void c(int i) {
-        byte b = this.a;
-        y0a y0aVar = this.b;
-        switch (b) {
-            case 0:
-                String str = LaunchActivity.C1;
-                if (i == 1) {
-                    y0aVar.run();
-                    break;
-                }
-                break;
-            default:
-                if (i == 1) {
-                    y0aVar.run();
-                    break;
-                }
-                break;
-        }
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        ViewGroup barView;
+        barView = this.p3.getBarView();
+        RectF rectF = gm.P;
+        rectF.set(gm.U1(r0.D1, barView.getLeft() - getLeft(), 0), gm.U1(r0.D1, barView.getTop() - getTop(), 0), gm.U1(r0.D1, barView.getRight() - getLeft(), getWidth()), gm.U1(r0.D1, barView.getBottom() - getTop(), getHeight()));
+        Path path = this.o3;
+        path.rewind();
+        path.addRoundRect(rectF, gm.L(32.0f), gm.L(32.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        super.draw(canvas);
+        canvas.restore();
     }
 }

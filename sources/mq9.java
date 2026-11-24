@@ -1,30 +1,141 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabaseLockedException;
+import android.os.SystemClock;
+import android.util.Base64;
+import j$.util.Objects;
+import java.io.Closeable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mq9 {
-    public static final mq9 a;
-    public static final mq9 b;
-    public static final mq9 c;
-    public static final /* synthetic */ mq9[] d;
+public final class mq9 implements Closeable {
+    public static final d44 f = new d44("proto");
+    public final qs9 a;
+    public final hk2 b;
+    public final hk2 c;
+    public final qa0 d;
+    public final mv8 e;
 
-    static {
-        mq9 mq9Var = new mq9("NETWORK_UNMETERED", 0);
-        a = mq9Var;
-        mq9 mq9Var2 = new mq9("DEVICE_IDLE", 1);
-        b = mq9Var2;
-        mq9 mq9Var3 = new mq9("DEVICE_CHARGING", 2);
-        c = mq9Var3;
-        d = new mq9[]{mq9Var, mq9Var2, mq9Var3};
+    public mq9(hk2 hk2Var, hk2 hk2Var2, qa0 qa0Var, qs9 qs9Var, mv8 mv8Var) {
+        this.a = qs9Var;
+        this.b = hk2Var;
+        this.c = hk2Var2;
+        this.d = qa0Var;
+        this.e = mv8Var;
     }
 
-    public static mq9 valueOf(String str) {
-        return (mq9) Enum.valueOf(mq9.class, str);
+    public static Long b(SQLiteDatabase sQLiteDatabase, rb0 rb0Var) {
+        StringBuilder sb = new StringBuilder("backend_name = ? and priority = ?");
+        ArrayList arrayList = new ArrayList(Arrays.asList(rb0Var.a, String.valueOf(gl8.a(rb0Var.c))));
+        byte[] bArr = rb0Var.b;
+        if (bArr != null) {
+            sb.append(" and extras = ?");
+            arrayList.add(Base64.encodeToString(bArr, 0));
+        } else {
+            sb.append(" and extras is null");
+        }
+        Cursor query = sQLiteDatabase.query("transport_contexts", new String[]{"_id"}, sb.toString(), (String[]) arrayList.toArray(new String[0]), null, null, null);
+        try {
+            return !query.moveToNext() ? null : Long.valueOf(query.getLong(0));
+        } finally {
+            query.close();
+        }
     }
 
-    public static mq9[] values() {
-        return (mq9[]) d.clone();
+    public static String g(Iterable iterable) {
+        StringBuilder sb = new StringBuilder("(");
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            sb.append(((eb0) it.next()).a);
+            if (it.hasNext()) {
+                sb.append(',');
+            }
+        }
+        sb.append(')');
+        return sb.toString();
+    }
+
+    public static Object h(Cursor cursor, kq9 kq9Var) {
+        try {
+            return kq9Var.apply(cursor);
+        } finally {
+            cursor.close();
+        }
+    }
+
+    public final SQLiteDatabase a() {
+        qs9 qs9Var = this.a;
+        Objects.requireNonNull(qs9Var);
+        hk2 hk2Var = this.c;
+        long a = hk2Var.a();
+        while (true) {
+            try {
+                return qs9Var.getWritableDatabase();
+            } catch (SQLiteDatabaseLockedException e) {
+                if (hk2Var.a() >= this.d.c + a) {
+                    throw new xeb("Timed out while trying to open db.", e);
+                }
+                SystemClock.sleep(50L);
+            }
+        }
+    }
+
+    public final Object c(kq9 kq9Var) {
+        SQLiteDatabase a = a();
+        a.beginTransaction();
+        try {
+            Object apply = kq9Var.apply(a);
+            a.setTransactionSuccessful();
+            return apply;
+        } finally {
+            a.endTransaction();
+        }
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.a.close();
+    }
+
+    public final ArrayList d(SQLiteDatabase sQLiteDatabase, rb0 rb0Var, int i) {
+        ArrayList arrayList = new ArrayList();
+        Long b = b(sQLiteDatabase, rb0Var);
+        if (b == null) {
+            return arrayList;
+        }
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", "product_id", "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{b.toString()}, null, null, null, String.valueOf(i)), new jq9(this, arrayList, rb0Var, (byte) 0));
+        return arrayList;
+    }
+
+    public final void e(long j, wd6 wd6Var, String str) {
+        c(new pt0((Object) str, (Object) wd6Var, j, (byte) 7));
+    }
+
+    public final Object f(yeb yebVar) {
+        SQLiteDatabase a = a();
+        hk2 hk2Var = this.c;
+        long a2 = hk2Var.a();
+        while (true) {
+            try {
+                a.beginTransaction();
+                try {
+                    Object e = yebVar.e();
+                    a.setTransactionSuccessful();
+                    return e;
+                } finally {
+                    a.endTransaction();
+                }
+            } catch (SQLiteDatabaseLockedException e2) {
+                if (hk2Var.a() >= this.d.c + a2) {
+                    throw new xeb("Timed out while trying to acquire the lock.", e2);
+                }
+                SystemClock.sleep(50L);
+            }
+        }
     }
 }

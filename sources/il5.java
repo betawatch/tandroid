@@ -1,70 +1,33 @@
 // default package
 
-import android.graphics.BitmapShader;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class il5 {
-    public Paint A;
-    public Path B;
-    public boolean a;
-    public float b;
-    public long c;
-    public int d;
-    public BitmapShader e;
-    public km f;
-    public oy8 g;
-    public int[] h;
-    public BitmapShader i;
-    public Drawable j;
-    public BitmapShader k;
-    public Drawable l;
-    public Drawable m;
-    public BitmapShader n;
-    public Drawable o;
-    public float p;
-    public float q;
-    public BitmapShader r;
-    public float s;
-    public float t;
-    public float u;
-    public float v;
-    public boolean w;
-    public Drawable x;
-    public RectF y;
-    public ColorFilter z;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public interface il5 extends IInterface {
+    void B(int i, byte[] bArr);
 
-    public final void a() {
-        this.f = null;
-        this.g = null;
-        for (int i = 0; i < 4; i++) {
-            int[] iArr = this.h;
-            iArr[i] = iArr[i];
-        }
-        this.j = null;
-        this.i = null;
-        this.l = null;
-        this.k = null;
-        this.m = null;
-        this.n = null;
-        this.e = null;
-        this.o = null;
-        this.x = null;
-        this.z = null;
-    }
+    void E(int i, int i2, byte[] bArr);
 
-    public final void b(Rect rect) {
-        if (rect != null) {
-            this.u = rect.left;
-            this.v = rect.top;
-            this.t = rect.width();
-            this.s = rect.height();
-        }
-    }
+    void I(byte[] bArr);
+
+    void J(int i, float f);
+
+    void O(int i);
+
+    void m(int i, int i2, int i3, byte[] bArr);
+
+    byte[] n(int i, int i2, int i3, int i4, int i5);
+
+    void o(int i);
+
+    void p(byte[] bArr, byte[] bArr2, double d, int i, int i2, float f, float f2, int i3, int i4);
+
+    float[] q(int i, byte[] bArr, float f, int i2, boolean z, byte[] bArr2);
+
+    void w(byte[] bArr);
+
+    float y(int i, byte[] bArr);
+
+    void z(int i, int i2, int i3, int[] iArr);
 }

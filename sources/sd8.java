@@ -1,32 +1,57 @@
 // default package
 
-import android.graphics.Canvas;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class sd8 extends gi6 {
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class sd8 extends ld8 {
-    public final TLRPC.MessageMedia b;
-
-    public sd8(TLRPC.MessageMedia messageMedia) {
-        this.b = messageMedia;
-        this.a.q0(gl.L(7.0f));
-        ImageReceiver imageReceiver = this.a;
-        TLRPC.GeoPoint geoPoint = messageMedia.geo;
-        if (geoPoint == null) {
-            imageReceiver.f();
-            return;
+    public sd8(int i, int i2, int i3, int i4, int i5, int i6) {
+        super(i5, i6);
+        if (i5 + i3 > i || i6 + i4 > i2) {
+            u36.j("Crop rectangle does not fit within image data.");
+            throw null;
         }
-        int min = Math.min(2, (int) Math.ceil(gl.p));
-        int i = usc.i;
-        imageReceiver.a0(gl5.p(usc.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 38, 38, 13, min)), null, null, null, null, null, 0);
+        this.c = i;
+        this.d = i2;
+        this.e = i3;
+        this.f = i4;
     }
 
-    @Override // ld8
-    public final void c(Canvas canvas, int i, int i2) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.i0(0.0f, 0.0f, i, i2);
-        imageReceiver.h(canvas, null);
+    @Override // gi6
+    public final byte[] a() {
+        int i = this.a;
+        int i2 = this.b;
+        int i3 = this.c;
+        if (i == i3 && i2 == this.d) {
+            return null;
+        }
+        int i4 = i * i2;
+        byte[] bArr = new byte[i4];
+        int i5 = (this.f * i3) + this.e;
+        if (i == i3) {
+            System.arraycopy(null, i5, bArr, 0, i4);
+            throw null;
+        }
+        if (i2 <= 0) {
+            return bArr;
+        }
+        System.arraycopy(null, i5, bArr, 0, i);
+        throw null;
+    }
+
+    @Override // gi6
+    public final byte[] b(int i, byte[] bArr) {
+        if (i < 0 || i >= this.b) {
+            throw new IllegalArgumentException(hg9.j(i, "Requested row is outside the image: "));
+        }
+        int i2 = this.a;
+        if (bArr == null || bArr.length < i2) {
+            bArr = new byte[i2];
+        }
+        System.arraycopy(null, ((i + this.f) * this.c) + this.e, bArr, 0, i2);
+        throw null;
     }
 }

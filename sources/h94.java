@@ -1,52 +1,126 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import android.os.Build;
+import android.os.Looper;
+import android.util.Log;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class h94 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ l94 b;
-    public final /* synthetic */ m94 c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class h94 {
+    public final byte a;
+    public final g94 b;
+    public Interpolator c;
+    public long d;
+    public byte e;
+    public float f;
+    public float g;
+    public boolean h;
+    public ValueAnimator i;
 
-    public /* synthetic */ h94(l94 l94Var, m94 m94Var, byte b) {
-        this.a = b;
-        this.b = l94Var;
-        this.c = m94Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public h94(int i, g94 g94Var, Interpolator interpolator, long j, float f) {
+        this.a = i;
+        this.b = g94Var;
+        this.c = interpolator;
+        this.d = j;
+        this.f = f;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l94 l94Var = this.b;
-                m94 m94Var = this.c;
-                if (l94Var.m != null) {
-                    fa4.d("FileLoadOperation " + l94Var.r + " removing stream listener " + m94Var);
-                    l94Var.m.remove(m94Var);
-                    break;
-                }
-                break;
-            default:
-                l94 l94Var2 = this.b;
-                m94 m94Var2 = this.c;
-                ArrayList arrayList = l94Var2.m;
-                if (arrayList == null) {
-                    arrayList = new ArrayList();
-                    l94Var2.m = arrayList;
-                }
-                if (m94Var2 != null && !arrayList.contains(m94Var2)) {
-                    l94Var2.m.add(m94Var2);
-                }
-                if (!l94Var2.m.isEmpty()) {
-                    Utilities.d.a(l94Var2.f1);
-                }
-                if (m94Var2 != null && l94Var2.Y != 1 && l94Var2.Y != 0) {
-                    m94Var2.a();
-                    break;
-                }
-                break;
+    public final void a(float f) {
+        if (Looper.myLooper() != Looper.getMainLooper()) {
+            zo4.f();
+            return;
         }
+        if (this.h) {
+            b();
+        }
+        float f2 = this.f;
+        byte b = this.a;
+        g94 g94Var = this.b;
+        if (f2 == f) {
+            g94Var.V(f2, b);
+            return;
+        }
+        if (!this.h) {
+            this.h = true;
+        }
+        float f3 = f - f2;
+        long j = this.d;
+        if (Build.VERSION.SDK_INT >= 26 && !ValueAnimator.areAnimatorsEnabled()) {
+            j = 0;
+        }
+        byte b2 = 0;
+        if (j <= 0) {
+            d(f, 1.0f);
+            if (this.h) {
+                this.h = false;
+            }
+            g94Var.V(f, b);
+            return;
+        }
+        this.g = f;
+        DecelerateInterpolator decelerateInterpolator = uo.a;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.i = ofFloat;
+        ofFloat.setDuration(j);
+        this.i.setInterpolator(this.c);
+        this.i.addUpdateListener(new dz1(this, f2, f3, (byte) 3));
+        this.i.addListener(new f94(this, f2, f3, b2));
+        long j2 = this.e;
+        if (j2 != 0) {
+            this.i.setStartDelay(j2);
+        }
+        try {
+            this.i.start();
+        } catch (Throwable th) {
+            Log.e("tgx", "Cannot start animation", th);
+            c(f);
+        }
+    }
+
+    public final boolean b() {
+        if (this.h) {
+            if (Looper.myLooper() == Looper.getMainLooper()) {
+                if (this.h) {
+                    this.h = false;
+                }
+                ValueAnimator valueAnimator = this.i;
+                if (valueAnimator == null) {
+                    return true;
+                }
+                valueAnimator.cancel();
+                this.i = null;
+                return true;
+            }
+            zo4.f();
+        }
+        return false;
+    }
+
+    public final void c(float f) {
+        boolean b = b();
+        if (d(f, 1.0f) || b) {
+            this.b.V(f, this.a);
+        }
+    }
+
+    public final boolean d(float f, float f2) {
+        if (this.f == f) {
+            return false;
+        }
+        this.f = f;
+        this.b.D(this.a, f, f2, this);
+        return true;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public h94(int i, g94 g94Var, Interpolator interpolator, long j) {
+        this.a = i;
+        this.b = g94Var;
+        this.c = interpolator;
+        this.d = j;
     }
 }

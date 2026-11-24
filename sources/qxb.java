@@ -1,73 +1,266 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class qxb {
-    public final boolean a;
-    public final String b;
-    public final vxb c;
-    public final short d;
-    public final byte[] e;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.HashSet;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ActionBar.d;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x004d, code lost:
-    
-        if (r6.equals("cbc1") == false) goto L25;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public qxb(boolean z, String str, int i, byte[] bArr, int i2, int i3, byte[] bArr2) {
-        char c = 0;
-        int i4 = 1;
-        gre.f((i == 0) ^ (bArr2 == null));
-        this.a = z;
-        this.b = str;
-        this.d = i;
-        this.e = bArr2;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case 3046605:
-                    break;
-                case 3046671:
-                    if (str.equals("cbcs")) {
-                        c = 1;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 3049879:
-                    if (str.equals("cenc")) {
-                        c = 2;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 3049895:
-                    if (str.equals("cens")) {
-                        c = 3;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                default:
-                    c = 65535;
-                    break;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class qxb extends rm0 {
+    public static final /* synthetic */ int o3 = 0;
+    public boolean k3;
+    public boolean l3;
+    public float m3;
+    public final /* synthetic */ sxb n3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qxb(sxb sxbVar, Context context) {
+        super(context, null);
+        this.n3 = sxbVar;
+        this.k3 = true;
+        this.g1 = true;
+        this.i3 = gm.L(200.0f);
+    }
+
+    public final void B1(boolean z, hg3 hg3Var) {
+        byte b;
+        sxb sxbVar = this.n3;
+        sxbVar.F = z;
+        if (z) {
+            sxbVar.G.g1(0, 0);
+            b = sxbVar.F ? (byte) 0 : (byte) 2;
+            sxbVar.E = b;
+            pi3 pi3Var = sxbVar.x;
+            if (pi3Var != null) {
+                pi3Var.X = b != 0;
             }
-            switch (c) {
-                case 0:
-                case 1:
-                    i4 = 2;
-                    break;
-                case 2:
-                case 3:
-                    break;
-                default:
-                    lad.f("TrackEncryptionBox", "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
-                    break;
+            if (hg3Var != null) {
+                hg3Var.c0();
+                hg3Var.invalidate();
+            }
+        } else if (hg3Var != null) {
+            sxbVar.G.g1(1, 0);
+            b = sxbVar.F ? (byte) 0 : (byte) 2;
+            sxbVar.E = b;
+            pi3 pi3Var2 = sxbVar.x;
+            if (pi3Var2 != null) {
+                pi3Var2.X = b != 0;
             }
         }
-        this.c = new vxb(i4, i2, i3, bArr);
+        hxb hxbVar = sxbVar.F0;
+        if (hxbVar != null) {
+            hxbVar.forceLayout();
+        }
+    }
+
+    @Override // r59
+    public final boolean G0(View view) {
+        return !(view instanceof jf5) || view.isClickable();
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i, layoutParams);
+        view.setTranslationY(this.m3);
+        view.setTranslationX(0.0f);
+        view.setAlpha(1.0f);
+    }
+
+    @Override // rm0, r59, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        sxb sxbVar = this.n3;
+        if (sxbVar.d1 != null) {
+            canvas.save();
+            canvas.translate(sxbVar.d1.getLeft(), sxbVar.d1.getY());
+            sxbVar.d1.draw(canvas);
+            canvas.restore();
+        }
+        super.dispatchDraw(canvas);
+        if (getItemAnimator() != null) {
+            getItemAnimator().k();
+        }
+    }
+
+    @Override // rm0, r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        if (getItemAnimator() != null) {
+            getItemAnimator().k();
+        }
+        if (this.n3.d1 == view) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        sxb sxbVar = this.n3;
+        if (sxbVar.x != null && this.m3 != 0.0f) {
+            int paddingTop = getPaddingTop();
+            if (paddingTop != 0) {
+                canvas.save();
+                canvas.translate(0.0f, paddingTop);
+            }
+            sxbVar.x.c(canvas, true);
+            if (paddingTop != 0) {
+                canvas.restore();
+            }
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        a aVar;
+        if (!this.W1) {
+            HashSet hashSet = sxb.s1;
+            sxb sxbVar = this.n3;
+            if (sxbVar.getParentLayout() == null || !((ActionBarLayout) sxbVar.getParentLayout()).w()) {
+                if (motionEvent.getAction() == 0) {
+                    aVar = ((d) sxbVar).actionBar;
+                    aVar.getClass();
+                    y59 adapter = getAdapter();
+                    if (sxbVar.c != adapter.b()) {
+                        this.l3 = true;
+                        adapter.f();
+                        this.l3 = false;
+                    }
+                }
+                return super.onInterceptTouchEvent(motionEvent);
+            }
+        }
+        return false;
+    }
+
+    @Override // rm0, r59, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        a aVar;
+        if (this.k3) {
+            sxb sxbVar = this.n3;
+            if (sxbVar.getMessagesController().R1) {
+                if (sxbVar.y > 0) {
+                    this.l3 = true;
+                    u46 u46Var = (u46) getLayoutManager();
+                    aVar = ((d) sxbVar).actionBar;
+                    u46Var.g1(1, (int) aVar.getTranslationY());
+                    this.l3 = false;
+                }
+                this.k3 = false;
+            }
+        }
+        super.onMeasure(i, i2);
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        u46 u46Var;
+        int K0;
+        if (!this.W1) {
+            HashSet hashSet = sxb.s1;
+            sxb sxbVar = this.n3;
+            if (sxbVar.getParentLayout() == null || !((ActionBarLayout) sxbVar.getParentLayout()).w()) {
+                int action = motionEvent.getAction();
+                if (action == 0) {
+                    setOverScrollMode(0);
+                }
+                byte b = 1;
+                if (action == 1 || action == 3) {
+                    wwb wwbVar = sxbVar.P;
+                    if (wwbVar.E != 0 && sxbVar.Q.e && wwbVar.i(null, 4) != 0) {
+                        sxbVar.Q.getClass();
+                    }
+                }
+                boolean onTouchEvent = super.onTouchEvent(motionEvent);
+                if ((action == 1 || action == 3) && sxbVar.E == 2 && sxbVar.y > 0 && (K0 = (u46Var = (u46) getLayoutManager()).K0()) == 0) {
+                    int paddingTop = getPaddingTop();
+                    View m = u46Var.m(K0);
+                    int L = (int) (gm.L(gda.l1 ? 78.0f : 72.0f) * 0.85f);
+                    int measuredHeight = m.getMeasuredHeight() + (m.getTop() - paddingTop);
+                    long currentTimeMillis = System.currentTimeMillis() - sxbVar.Z;
+                    if (measuredHeight < L || currentTimeMillis < 200) {
+                        x0(0, measuredHeight, d53.h);
+                        sxbVar.E = (byte) 2;
+                    } else if (sxbVar.E != 1) {
+                        if (this.m3 == 0.0f) {
+                            x0(0, m.getTop() - paddingTop, d53.h);
+                        }
+                        if (!sxbVar.a0) {
+                            sxbVar.a0 = true;
+                            try {
+                                performHapticFeedback(3, 2);
+                            } catch (Exception unused) {
+                            }
+                            pi3 pi3Var = sxbVar.x;
+                            if (pi3Var != null) {
+                                pi3Var.a(true);
+                            }
+                        }
+                        ((hg3) m).i0();
+                        sxbVar.E = (byte) 1;
+                    }
+                    float f = this.m3;
+                    if (f != 0.0f) {
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(f, 0.0f);
+                        ofFloat.addUpdateListener(new oxb(this, b));
+                        ofFloat.setDuration(Math.max(100L, (long) hg9.x(this.m3, gm.L(72.0f), 120.0f, 350.0f)));
+                        ofFloat.setInterpolator(d53.h);
+                        setScrollEnabled(false);
+                        ofFloat.addListener(new q7b(this, (byte) 8));
+                        ofFloat.start();
+                    }
+                }
+                return onTouchEvent;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        super.removeView(view);
+        view.setTranslationY(0.0f);
+        view.setTranslationX(0.0f);
+        view.setAlpha(1.0f);
+    }
+
+    @Override // rm0, r59, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.l3) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // r59, androidx.recyclerview.widget.RecyclerView
+    public final void setAdapter(y59 y59Var) {
+        super.setAdapter(y59Var);
+        this.k3 = true;
+    }
+
+    public final void setViewsOffset(float f) {
+        View m;
+        this.m3 = f;
+        int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            getChildAt(i).setTranslationY(f);
+        }
+        if (this.D1 != -1 && (m = getLayoutManager().m(this.D1)) != null) {
+            int left = m.getLeft();
+            int top = (int) (m.getTop() + f);
+            int right = m.getRight();
+            int bottom = (int) (m.getBottom() + f);
+            Rect rect = this.F1;
+            rect.set(left, top, right, bottom);
+            this.C1.setBounds(rect);
+        }
+        invalidate();
     }
 }

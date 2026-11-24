@@ -1,56 +1,34 @@
 // default package
 
-import android.os.Build;
-import android.util.SparseBooleanArray;
+import android.content.Context;
+import android.hardware.fingerprint.FingerprintManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gi4 {
-    public final SparseBooleanArray a;
-
-    public gi4(SparseBooleanArray sparseBooleanArray) {
-        this.a = sparseBooleanArray;
-    }
-
-    public final int a(int i) {
-        SparseBooleanArray sparseBooleanArray = this.a;
-        gre.j(i, sparseBooleanArray.size());
-        return sparseBooleanArray.keyAt(i);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof gi4) {
-            gi4 gi4Var = (gi4) obj;
-            SparseBooleanArray sparseBooleanArray = gi4Var.a;
-            int i = Build.VERSION.SDK_INT;
-            SparseBooleanArray sparseBooleanArray2 = this.a;
-            if (i >= 24) {
-                return sparseBooleanArray2.equals(sparseBooleanArray);
+public abstract class gi4 {
+    public static boolean a(Context context) {
+        try {
+            FingerprintManager fingerprintManager = (FingerprintManager) context.getSystemService("fingerprint");
+            if (fingerprintManager == null) {
+                return false;
             }
-            if (sparseBooleanArray2.size() == sparseBooleanArray.size()) {
-                for (int i2 = 0; i2 < sparseBooleanArray2.size(); i2++) {
-                    if (a(i2) == gi4Var.a(i2)) {
-                    }
-                }
-                return true;
-            }
+            return fingerprintManager.hasEnrolledFingerprints();
+        } catch (Exception e) {
+            fc4.g(e, true);
+            return false;
         }
-        return false;
     }
 
-    public final int hashCode() {
-        int i = Build.VERSION.SDK_INT;
-        SparseBooleanArray sparseBooleanArray = this.a;
-        if (i >= 24) {
-            return sparseBooleanArray.hashCode();
+    public static boolean b(Context context) {
+        try {
+            FingerprintManager fingerprintManager = (FingerprintManager) context.getSystemService("fingerprint");
+            if (fingerprintManager == null) {
+                return false;
+            }
+            return fingerprintManager.isHardwareDetected();
+        } catch (Exception e) {
+            fc4.g(e, true);
+            return false;
         }
-        int size = sparseBooleanArray.size();
-        for (int i2 = 0; i2 < sparseBooleanArray.size(); i2++) {
-            size = (size * 31) + a(i2);
-        }
-        return size;
     }
 }

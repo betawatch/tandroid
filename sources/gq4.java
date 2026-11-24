@@ -1,7 +1,71 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface gq4 extends fq4 {
-    Object a(Object obj, Object obj2, Object obj3);
+public final class gq4 implements eq4 {
+    public final /* synthetic */ hq4 a;
+
+    public gq4(hq4 hq4Var) {
+        this.a = hq4Var;
+    }
+
+    @Override // eq4
+    public final boolean a(ArrayList arrayList, ArrayList arrayList2) {
+        boolean U;
+        hq4 hq4Var = this.a;
+        ArrayList arrayList3 = hq4Var.n;
+        if (hq4.K(2)) {
+            Log.v("FragmentManager", "FragmentManager has the following pending actions inside of prepareBackStackState: " + hq4Var.a);
+        }
+        if (hq4Var.d.isEmpty()) {
+            Log.i("FragmentManager", "Ignoring call to start back stack pop because the back stack is empty.");
+            U = false;
+        } else {
+            ie0 ie0Var = (ie0) b10.f(1, hq4Var.d);
+            hq4Var.h = ie0Var;
+            ArrayList arrayList4 = ie0Var.a;
+            int size = arrayList4.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList4.get(i);
+                i++;
+                dp4 dp4Var = ((xq4) obj).b;
+                if (dp4Var != null) {
+                    dp4Var.y = true;
+                }
+            }
+            U = hq4Var.U(arrayList, arrayList2, -1, 0);
+        }
+        if (!arrayList3.isEmpty() && arrayList.size() > 0) {
+            ((Boolean) arrayList2.get(arrayList.size() - 1)).getClass();
+            LinkedHashSet linkedHashSet = new LinkedHashSet();
+            int size2 = arrayList.size();
+            int i2 = 0;
+            while (i2 < size2) {
+                Object obj2 = arrayList.get(i2);
+                i2++;
+                linkedHashSet.addAll(hq4.F((ie0) obj2));
+            }
+            int size3 = arrayList3.size();
+            int i3 = 0;
+            while (i3 < size3) {
+                Object obj3 = arrayList3.get(i3);
+                i3++;
+                if (obj3 != null) {
+                    rjb.p();
+                    return false;
+                }
+                Iterator it = linkedHashSet.iterator();
+                if (it.hasNext()) {
+                    throw null;
+                }
+            }
+        }
+        return U;
+    }
 }

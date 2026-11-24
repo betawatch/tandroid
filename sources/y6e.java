@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class y6e implements zn7 {
-    public static final y6e a = new y6e();
+public final class y6e extends v7c {
+    public boolean b;
+    public final /* synthetic */ Object c;
 
-    static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)));
+    public y6e(Object obj) {
+        super((byte) 12);
+        this.c = obj;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return !this.b;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.b) {
+            u36.g();
+            return null;
         }
-        throw null;
+        this.b = true;
+        return this.c;
     }
 }

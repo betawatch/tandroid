@@ -1,20 +1,15 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ax5 {
-    public static final ax5 a = new ax5();
+public interface ax5 extends yw5, gs4 {
+    boolean isExternal();
 
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            return (obj instanceof ax5) && cqe.a(null, null) && cqe.a(null, null);
-        }
-        return true;
-    }
+    boolean isInfix();
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{null, null});
-    }
+    boolean isInline();
+
+    boolean isOperator();
+
+    boolean isSuspend();
 }

@@ -1,36 +1,15 @@
 // default package
 
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.view.ViewParent;
+import android.media.AudioAttributes;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class n00 {
-    public Object a;
-    public Object b;
-    public Object c;
-    public boolean d;
-    public int e;
-    public int f;
-    public boolean g;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class n00 {
+    public static void a(AudioAttributes.Builder builder, boolean z) {
+        builder.setIsContentSpatialized(z);
+    }
 
-    public final void a(TextureView textureView) {
-        TextureView textureView2 = (TextureView) this.a;
-        if (textureView2 != textureView) {
-            if (textureView2 != null) {
-                ViewParent parent = textureView2.getParent();
-                if (parent instanceof ViewGroup) {
-                    ((ViewGroup) parent).removeView((TextureView) this.a);
-                }
-                this.a = null;
-            }
-            this.d = false;
-            this.a = textureView;
-            hj3 hj3Var = (hj3) this.b;
-            if (hj3Var != null) {
-                hj3Var.a(textureView);
-            }
-        }
+    public static void b(AudioAttributes.Builder builder, int i) {
+        builder.setSpatializationBehavior(i);
     }
 }

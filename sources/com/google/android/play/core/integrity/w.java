@@ -2,38 +2,38 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 final class w implements aw {
-    private final uzc a;
-    private final uzc b;
-    private final uzc c;
-    private final uzc d;
-    private final uzc e;
-    private final uzc f;
+    private final v1d a;
+    private final v1d b;
+    private final v1d c;
+    private final v1d d;
+    private final v1d e;
+    private final v1d f;
 
     public w(Context context, v vVar) {
         bc bcVar;
         o oVar;
         o oVar2;
         if (context == null) {
-            fvc.f("instance cannot be null");
+            gxc.d("instance cannot be null");
             throw null;
         }
-        uj0 uj0Var = new uj0(context, (char) 0);
-        this.a = uj0Var;
+        uk0 uk0Var = new uk0(context, 0);
+        this.a = uk0Var;
         bcVar = bb.a;
-        qzc b = qzc.b(bcVar);
+        r1d b = r1d.b(bcVar);
         this.b = b;
         oVar = n.a;
-        au auVar = new au(uj0Var, oVar);
+        au auVar = new au(uk0Var, oVar);
         this.c = auVar;
         oVar2 = n.a;
-        qzc b2 = qzc.b(new bp(uj0Var, b, auVar, oVar2));
+        r1d b2 = r1d.b(new bp(uk0Var, b, auVar, oVar2));
         this.d = b2;
-        qzc b3 = qzc.b(new bu(b2));
+        r1d b3 = r1d.b(new bu(b2));
         this.e = b3;
-        this.f = qzc.b(new ba(b2, b3));
+        this.f = r1d.b(new ba(b2, b3));
     }
 
     @Override // com.google.android.play.core.integrity.aw

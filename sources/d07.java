@@ -1,24 +1,27 @@
 // default package
 
-import android.view.ActionProvider;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class d07 implements ActionProvider.VisibilityListener {
-    public final ActionProvider a;
-    public z24 b;
+public final class d07 implements wz6 {
+    public final kl6 a;
+    public int d;
+    public boolean e;
+    public final ArrayList c = new ArrayList();
+    public final Object b = new Object();
 
-    public d07(g07 g07Var, ActionProvider actionProvider) {
-        this.a = actionProvider;
+    public d07(rh0 rh0Var, boolean z) {
+        this.a = new kl6(rh0Var, z);
     }
 
-    @Override // android.view.ActionProvider.VisibilityListener
-    public final void onActionProviderVisibilityChanged(boolean z) {
-        z24 z24Var = this.b;
-        if (z24Var != null) {
-            yz6 yz6Var = ((c07) z24Var.b).n;
-            yz6Var.h = true;
-            yz6Var.p(true);
-        }
+    @Override // wz6
+    public final Object a() {
+        return this.b;
+    }
+
+    @Override // wz6
+    public final bqb b() {
+        return this.a.o;
     }
 }

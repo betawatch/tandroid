@@ -1,12 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ny4 implements ph5 {
-    public m1d a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ny4 {
+    public boolean a;
+    public final /* synthetic */ sy4 b;
 
-    public final boolean a() {
-        z1d z1dVar = this.a.d;
-        return z1dVar != null && z1dVar.g();
+    public ny4(sy4 sy4Var) {
+        this.b = sy4Var;
     }
 }

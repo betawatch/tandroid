@@ -1,28 +1,78 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public class b26 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public boolean f;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.regex.Pattern;
 
-    public b26(int i, int i2, int i3, String str, String str2) {
-        this.a = i;
-        this.b = i2;
-        this.c = str;
-        this.d = str2;
-        this.e = i3;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class b26 extends b4 {
+    public static final Parcelable.Creator<b26> CREATOR = new lbd((byte) 26);
+    public final boolean a;
+    public final String b;
+    public final boolean c;
+    public final y33 d;
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b26() {
+        this(false, r1.toString(), false, null);
+        Locale locale = Locale.getDefault();
+        Pattern pattern = qe1.a;
+        StringBuilder sb = new StringBuilder(20);
+        sb.append(locale.getLanguage());
+        String country = locale.getCountry();
+        if (!TextUtils.isEmpty(country)) {
+            sb.append('-');
+            sb.append(country);
+        }
+        String variant = locale.getVariant();
+        if (!TextUtils.isEmpty(variant)) {
+            sb.append('-');
+            sb.append(variant);
+        }
     }
 
-    public static b26 a(int i, int i2) {
-        return new b26(i, i2, -1, null, null);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof b26)) {
+            return false;
+        }
+        b26 b26Var = (b26) obj;
+        return this.a == b26Var.a && qe1.d(this.b, b26Var.b) && this.c == b26Var.c && qe1.d(this.d, b26Var.d);
     }
 
-    public static b26 b(int i, int i2, String str) {
-        return new b26(i, -1, i2, null, str);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, Boolean.valueOf(this.c), this.d});
+    }
+
+    public final String toString() {
+        return "LaunchOptions(relaunchIfRunning=" + this.a + ", language=" + this.b + ", androidReceiverCompatible: " + this.c + ")";
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 2, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        mve.l(parcel, 3, this.b);
+        mve.q(parcel, 4, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        mve.k(parcel, 5, this.d, i);
+        mve.s(parcel, r);
+    }
+
+    public b26(boolean z, String str, boolean z2, y33 y33Var) {
+        this.a = z;
+        this.b = str;
+        this.c = z2;
+        this.d = y33Var;
     }
 }

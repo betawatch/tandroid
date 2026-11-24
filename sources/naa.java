@@ -1,350 +1,94 @@
 // default package
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class naa implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qaa b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ String d;
+public final class naa extends ImageSpan {
+    public static u0c b;
+    public final /* synthetic */ byte a = 1;
 
-    public /* synthetic */ naa(qaa qaaVar, int i, String str) {
-        this.a = (byte) 1;
-        this.b = qaaVar;
-        this.c = i;
-        this.d = str;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:201:0x03b3, code lost:
-    
-        if (r6.contains(" " + r9) == false) goto L164;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0172, code lost:
-    
-        if (r5.contains(" " + r12) == false) goto L63;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x0428 A[Catch: Exception -> 0x044f, LOOP:7: B:192:0x0379->B:207:0x0428, LOOP_END, TryCatch #1 {Exception -> 0x044f, blocks: (B:5:0x0010, B:12:0x0036, B:19:0x0052, B:22:0x005a, B:23:0x0079, B:47:0x00c5, B:50:0x00d8, B:51:0x0102, B:53:0x0108, B:56:0x0122, B:58:0x0129, B:61:0x0136, B:63:0x0140, B:66:0x0159, B:68:0x015f, B:71:0x0176, B:77:0x0186, B:79:0x018d, B:85:0x01ba, B:86:0x01ee, B:89:0x01c5, B:75:0x01fe, B:105:0x0215, B:106:0x022d, B:108:0x0233, B:109:0x025c, B:111:0x0262, B:116:0x027a, B:118:0x0282, B:121:0x0299, B:123:0x029f, B:157:0x02b4, B:126:0x02b7, B:129:0x02be, B:132:0x02cb, B:135:0x02d1, B:137:0x02d7, B:139:0x02db, B:141:0x02df, B:147:0x02e3, B:144:0x02e7, B:164:0x0306, B:165:0x0309, B:166:0x0311, B:168:0x0317, B:170:0x0321, B:172:0x0325, B:174:0x0328, B:178:0x032b, B:179:0x033c, B:181:0x0342, B:184:0x034d, B:188:0x0368, B:190:0x036f, B:193:0x037b, B:195:0x0383, B:198:0x039a, B:200:0x03a0, B:203:0x03b7, B:209:0x03c2, B:211:0x03c9, B:213:0x03dd, B:214:0x03e4, B:216:0x03f0, B:217:0x0424, B:221:0x03fb, B:207:0x0428, B:229:0x0432), top: B:4:0x0010 }] */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x03c2 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01fe A[Catch: Exception -> 0x044f, LOOP:2: B:60:0x0134->B:75:0x01fe, LOOP_END, TryCatch #1 {Exception -> 0x044f, blocks: (B:5:0x0010, B:12:0x0036, B:19:0x0052, B:22:0x005a, B:23:0x0079, B:47:0x00c5, B:50:0x00d8, B:51:0x0102, B:53:0x0108, B:56:0x0122, B:58:0x0129, B:61:0x0136, B:63:0x0140, B:66:0x0159, B:68:0x015f, B:71:0x0176, B:77:0x0186, B:79:0x018d, B:85:0x01ba, B:86:0x01ee, B:89:0x01c5, B:75:0x01fe, B:105:0x0215, B:106:0x022d, B:108:0x0233, B:109:0x025c, B:111:0x0262, B:116:0x027a, B:118:0x0282, B:121:0x0299, B:123:0x029f, B:157:0x02b4, B:126:0x02b7, B:129:0x02be, B:132:0x02cb, B:135:0x02d1, B:137:0x02d7, B:139:0x02db, B:141:0x02df, B:147:0x02e3, B:144:0x02e7, B:164:0x0306, B:165:0x0309, B:166:0x0311, B:168:0x0317, B:170:0x0321, B:172:0x0325, B:174:0x0328, B:178:0x032b, B:179:0x033c, B:181:0x0342, B:184:0x034d, B:188:0x0368, B:190:0x036f, B:193:0x037b, B:195:0x0383, B:198:0x039a, B:200:0x03a0, B:203:0x03b7, B:209:0x03c2, B:211:0x03c9, B:213:0x03dd, B:214:0x03e4, B:216:0x03f0, B:217:0x0424, B:221:0x03fb, B:207:0x0428, B:229:0x0432), top: B:4:0x0010 }] */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0186 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r3v23 */
-    /* JADX WARN: Type inference failed for: r3v24 */
-    /* JADX WARN: Type inference failed for: r3v35 */
-    /* JADX WARN: Type inference failed for: r3v37 */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        boolean z;
-        int i;
-        qaa qaaVar;
-        String str;
-        String[] strArr;
-        int i2;
-        int i3;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        int i4;
-        qaa qaaVar2;
-        String str2;
-        ?? r3;
-        byte b = this.a;
-        int i5 = this.c;
-        String str3 = this.d;
-        qaa qaaVar3 = this.b;
-        switch (b) {
+    public naa() {
+        super(r0, 0);
+        u0c u0cVar = b;
+        if (u0cVar == null) {
+            u0cVar = new u0c(cmb.n2);
+            b = u0cVar;
+        }
+        float textSize = cmb.n2.getTextSize() * 0.89f;
+        int i = (int) (0.02f * textSize);
+        getDrawable().setBounds(0, i, (int) textSize, ((int) (textSize * 1.25f)) + i);
+    }
+
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        switch (this.a) {
             case 0:
-                qaaVar3.f = null;
-                ad7.Y(qaaVar3.L.a).a.c(new naa(qaaVar3, str3, i5, (byte) 2));
-                naa naaVar = new naa(qaaVar3, i5, str3);
-                qaaVar3.h = naaVar;
-                gl.d3(naaVar);
-                break;
-            case 1:
-                qaaVar3.h = null;
-                int i6 = qaaVar3.r;
-                int i7 = this.c;
-                if (i7 == i6) {
-                    qaaVar3.e.g(this.d, true, true, true, true, 0L, false, 0, i7);
-                    break;
+                Drawable drawable = getDrawable();
+                canvas.save();
+                int i6 = paint.getFontMetricsInt().descent;
+                canvas.translate(f, ((i4 + i6) - ((i6 - r3.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
+                if (jb6.a0) {
+                    canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
                 }
+                drawable.draw(canvas);
+                canvas.restore();
                 break;
             default:
-                taa taaVar = qaaVar3.L;
-                try {
-                    String lowerCase = str3.trim().toLowerCase();
-                    byte b2 = 4;
-                    try {
-                        if (lowerCase.length() == 0) {
-                            qaaVar3.r = -1;
-                            gl.d3(new t79(qaaVar3, qaaVar3.r, new ArrayList(), b2));
-                            break;
-                        } else {
-                            String S0 = k96.D0().S0(lowerCase, true, false);
-                            if (lowerCase.equals(S0) || S0.length() == 0) {
-                                S0 = null;
-                            }
-                            int i8 = (S0 != null ? 1 : 0) + 1;
-                            String[] strArr2 = new String[i8];
-                            strArr2[0] = lowerCase;
-                            if (S0 != null) {
-                                strArr2[1] = S0;
-                            }
-                            ArrayList arrayList = new ArrayList();
-                            ArrayList arrayList2 = new ArrayList();
-                            vf6 vf6Var = new vf6();
-                            SQLiteCursor queryFinalized = ad7.Y(taaVar.a).b.queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
-                            while (queryFinalized.next()) {
-                                long longValue = queryFinalized.longValue(0);
-                                iaa iaaVar = new iaa();
-                                iaaVar.c = queryFinalized.intValue(1);
-                                vf6Var.k(iaaVar, longValue);
-                                if (cf3.D(longValue)) {
-                                    if (!arrayList.contains(Long.valueOf(longValue))) {
-                                        arrayList.add(Long.valueOf(longValue));
-                                    }
-                                } else if (cf3.y(longValue)) {
-                                    long j = -longValue;
-                                    if (!arrayList2.contains(Long.valueOf(j))) {
-                                        arrayList2.add(Long.valueOf(j));
-                                    }
-                                }
-                            }
-                            queryFinalized.dispose();
-                            String str4 = ";;;";
-                            if (arrayList.isEmpty()) {
-                                i = i5;
-                                qaaVar = qaaVar3;
-                                str = ";;;";
-                                strArr = strArr2;
-                                i2 = 0;
-                            } else {
-                                SQLiteDatabase sQLiteDatabase = ad7.Y(taaVar.a).b;
-                                Locale locale = Locale.US;
-                                SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT data, status, name FROM users WHERE uid IN(" + TextUtils.join(",", arrayList) + ")", new Object[0]);
-                                int i9 = 0;
-                                while (queryFinalized2.next()) {
-                                    String stringValue = queryFinalized2.stringValue(2);
-                                    int i10 = i9;
-                                    String[] strArr3 = strArr2;
-                                    String S02 = k96.D0().S0(stringValue, true, false);
-                                    if (stringValue.equals(S02)) {
-                                        S02 = null;
-                                    }
-                                    int lastIndexOf = stringValue.lastIndexOf(str4);
-                                    String substring = lastIndexOf != -1 ? stringValue.substring(lastIndexOf + 3) : null;
-                                    int i11 = 0;
-                                    boolean z2 = false;
-                                    while (true) {
-                                        if (i11 < i8) {
-                                            int i12 = i11;
-                                            String str5 = strArr3[i12];
-                                            if (stringValue.startsWith(str5)) {
-                                                i4 = i5;
-                                            } else {
-                                                i4 = i5;
-                                                if (!stringValue.contains(" " + str5)) {
-                                                    if (S02 != null) {
-                                                        if (!S02.startsWith(str5)) {
-                                                            break;
-                                                        }
-                                                    }
-                                                    r3 = (substring == null || !substring.startsWith(str5)) ? z2 : 2;
-                                                    if (r3 == 0) {
-                                                        NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(0);
-                                                        if (byteBufferValue != null) {
-                                                            TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                                            byteBufferValue.reuse();
-                                                            iaa iaaVar2 = (iaa) vf6Var.f(TLdeserialize.id);
-                                                            TLRPC.UserStatus userStatus = TLdeserialize.status;
-                                                            if (userStatus != null) {
-                                                                qaaVar2 = qaaVar3;
-                                                                str2 = str4;
-                                                                z = true;
-                                                                try {
-                                                                    userStatus.expires = queryFinalized2.intValue(1);
-                                                                } catch (Exception e) {
-                                                                    e = e;
-                                                                    fa4.g(e, z);
-                                                                }
-                                                            } else {
-                                                                qaaVar2 = qaaVar3;
-                                                                str2 = str4;
-                                                                z = true;
-                                                            }
-                                                            if (r3 == z) {
-                                                                iaaVar2.d = gl.r0(TLdeserialize.first_name, TLdeserialize.last_name, str5);
-                                                            } else {
-                                                                iaaVar2.d = gl.r0("@" + l7c.o(TLdeserialize), null, "@" + str5);
-                                                            }
-                                                            iaaVar2.b = TLdeserialize;
-                                                            iaaVar2.a.id = TLdeserialize.id;
-                                                            i9 = i10 + 1;
-                                                        }
-                                                    } else {
-                                                        i11 = i12 + 1;
-                                                        z2 = r3;
-                                                        i5 = i4;
-                                                    }
-                                                }
-                                            }
-                                            r3 = 1;
-                                            if (r3 == 0) {
-                                            }
-                                        } else {
-                                            i4 = i5;
-                                        }
-                                    }
-                                    qaaVar2 = qaaVar3;
-                                    str2 = str4;
-                                    i9 = i10;
-                                    strArr2 = strArr3;
-                                    i5 = i4;
-                                    qaaVar3 = qaaVar2;
-                                    str4 = str2;
-                                }
-                                i = i5;
-                                i2 = i9;
-                                qaaVar = qaaVar3;
-                                str = str4;
-                                strArr = strArr2;
-                                queryFinalized2.dispose();
-                            }
-                            if (!arrayList2.isEmpty()) {
-                                SQLiteDatabase sQLiteDatabase2 = ad7.Y(taaVar.a).b;
-                                Locale locale2 = Locale.US;
-                                SQLiteCursor queryFinalized3 = sQLiteDatabase2.queryFinalized("SELECT data, name FROM chats WHERE uid IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
-                                while (queryFinalized3.next()) {
-                                    String stringValue2 = queryFinalized3.stringValue(1);
-                                    String S03 = k96.D0().S0(stringValue2, true, false);
-                                    if (stringValue2.equals(S03)) {
-                                        S03 = null;
-                                    }
-                                    for (int i13 = 0; i13 < i8; i13++) {
-                                        String str6 = strArr[i13];
-                                        if (!stringValue2.startsWith(str6)) {
-                                            if (!stringValue2.contains(" " + str6)) {
-                                                if (S03 != null) {
-                                                    if (!S03.startsWith(str6)) {
-                                                        if (!S03.contains(" " + str6)) {
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        NativeByteBuffer byteBufferValue2 = queryFinalized3.byteBufferValue(0);
-                                        if (byteBufferValue2 != null) {
-                                            TLRPC.Chat TLdeserialize2 = TLRPC.Chat.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
-                                            byteBufferValue2.reuse();
-                                            if (TLdeserialize2 != null && !hc2.r0(TLdeserialize2) && (!hc2.T(TLdeserialize2) || TLdeserialize2.creator || (((tL_chatAdminRights = TLdeserialize2.admin_rights) != null && tL_chatAdminRights.post_messages) || TLdeserialize2.megagroup))) {
-                                                iaa iaaVar3 = (iaa) vf6Var.f(-TLdeserialize2.id);
-                                                iaaVar3.d = gl.r0(TLdeserialize2.title, null, str6);
-                                                iaaVar3.b = TLdeserialize2;
-                                                iaaVar3.a.id = -TLdeserialize2.id;
-                                                i2++;
-                                            }
-                                        }
-                                    }
-                                }
-                                queryFinalized3.dispose();
-                            }
-                            ArrayList arrayList3 = new ArrayList(i2);
-                            for (int i14 = 0; i14 < vf6Var.m(); i14++) {
-                                iaa iaaVar4 = (iaa) vf6Var.n(i14);
-                                if (iaaVar4.b != null && iaaVar4.d != null) {
-                                    arrayList3.add(iaaVar4);
-                                }
-                            }
-                            SQLiteCursor queryFinalized4 = ad7.Y(taaVar.a).b.queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
-                            while (queryFinalized4.next()) {
-                                if (vf6Var.h(queryFinalized4.longValue(3)) < 0) {
-                                    String stringValue3 = queryFinalized4.stringValue(2);
-                                    String S04 = k96.D0().S0(stringValue3, true, false);
-                                    String str7 = stringValue3.equals(S04) ? null : S04;
-                                    String str8 = str;
-                                    int lastIndexOf2 = stringValue3.lastIndexOf(str8);
-                                    String substring2 = lastIndexOf2 != -1 ? stringValue3.substring(lastIndexOf2 + 3) : null;
-                                    int i15 = 0;
-                                    char c = 0;
-                                    while (true) {
-                                        if (i15 < i8) {
-                                            String str9 = strArr[i15];
-                                            if (!stringValue3.startsWith(str9)) {
-                                                if (!stringValue3.contains(" " + str9)) {
-                                                    if (str7 != null) {
-                                                        if (!str7.startsWith(str9)) {
-                                                            break;
-                                                        }
-                                                    }
-                                                    if (substring2 != null && substring2.startsWith(str9)) {
-                                                        c = 2;
-                                                    }
-                                                    if (c == 0) {
-                                                        NativeByteBuffer byteBufferValue3 = queryFinalized4.byteBufferValue(0);
-                                                        if (byteBufferValue3 != null) {
-                                                            TLRPC.User TLdeserialize3 = TLRPC.User.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(false), false);
-                                                            byteBufferValue3.reuse();
-                                                            iaa iaaVar5 = new iaa();
-                                                            TLRPC.UserStatus userStatus2 = TLdeserialize3.status;
-                                                            if (userStatus2 != null) {
-                                                                userStatus2.expires = queryFinalized4.intValue(1);
-                                                            }
-                                                            i3 = i8;
-                                                            iaaVar5.a.id = TLdeserialize3.id;
-                                                            iaaVar5.b = TLdeserialize3;
-                                                            if (c == 1) {
-                                                                iaaVar5.d = gl.r0(TLdeserialize3.first_name, TLdeserialize3.last_name, str9);
-                                                            } else {
-                                                                iaaVar5.d = gl.r0("@" + l7c.o(TLdeserialize3), null, "@" + str9);
-                                                            }
-                                                            arrayList3.add(iaaVar5);
-                                                        }
-                                                    } else {
-                                                        i15++;
-                                                    }
-                                                }
-                                            }
-                                            c = 1;
-                                            if (c == 0) {
-                                            }
-                                        }
-                                    }
-                                    i3 = i8;
-                                    str = str8;
-                                    i8 = i3;
-                                }
-                            }
-                            queryFinalized4.dispose();
-                            Collections.sort(arrayList3, new fx7((byte) 23));
-                            gl.d3(new t79((Object) qaaVar, i, (Object) arrayList3, (byte) 4));
-                            break;
-                        }
-                    } catch (Exception e2) {
-                        e = e2;
-                        z = true;
-                    }
-                } catch (Exception e3) {
-                    e = e3;
-                    z = true;
-                }
+                super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
                 break;
         }
     }
 
-    public /* synthetic */ naa(qaa qaaVar, String str, int i, byte b) {
-        this.a = b;
-        this.b = qaaVar;
-        this.d = str;
-        this.c = i;
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getDrawable().getBounds();
+                if (fontMetricsInt != null) {
+                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
+                    int i3 = fontMetricsInt2.descent;
+                    int i4 = fontMetricsInt2.ascent;
+                    int i5 = ((i3 - i4) / 2) + i4;
+                    int i6 = (bounds.bottom - bounds.top) / 2;
+                    int i7 = i5 - i6;
+                    fontMetricsInt.ascent = i7;
+                    fontMetricsInt.top = i7;
+                    int i8 = i5 + i6;
+                    fontMetricsInt.bottom = i8;
+                    fontMetricsInt.descent = i8;
+                }
+                return bounds.right;
+            default:
+                return super.getSize(paint, charSequence, i, i2, fontMetricsInt);
+        }
+    }
+
+    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 1:
+                float textSize = textPaint.getTextSize() * 0.89f;
+                int i = (int) (0.02f * textSize);
+                getDrawable().setBounds(0, i, (int) textSize, ((int) (textSize * 1.25f)) + i);
+                super.updateDrawState(textPaint);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                break;
+        }
+    }
+
+    public /* synthetic */ naa(Drawable drawable) {
+        super(drawable);
     }
 }

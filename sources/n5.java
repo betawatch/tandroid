@@ -3,17 +3,17 @@
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class n5 extends FrameLayout {
     public static final /* synthetic */ int c = 0;
-    public final wjb a;
+    public final ylb a;
     public final int b;
 
-    public n5(int i, wjb wjbVar, Context context) {
+    public n5(int i, ylb ylbVar, Context context) {
         super(context);
         this.b = i;
-        this.a = wjbVar;
-        setPadding(gl.L(18.0f), gl.L(9.0f), gl.L(18.0f), gl.L(9.0f));
+        this.a = ylbVar;
+        setPadding(gm.L(18.0f), gm.L(9.0f), gm.L(18.0f), gm.L(9.0f));
     }
 }

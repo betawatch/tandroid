@@ -1,139 +1,87 @@
 // default package
 
-import android.content.Context;
-import android.os.SystemClock;
-import java.io.File;
-import org.json.JSONObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.text.TextUtils;
 import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class vr0 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ i22 b;
 
-    public /* synthetic */ vr0(hd hdVar, Context context, int i, long j, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, wjb wjbVar, st0 st0Var, p pVar) {
-        this.d = hdVar;
-        this.e = context;
-        this.c = i;
-        this.b = j;
-        this.f = tL_messages_preparedInlineMessage;
-        this.h = fileArr;
-        this.n = wjbVar;
-        this.r = st0Var;
-        this.s = pVar;
+    public /* synthetic */ vr0(i22 i22Var, byte b) {
+        this.a = b;
+        this.b = i22Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        String h;
-        s25 s25Var;
+        a22 a22Var;
+        x62 x62Var;
         byte b = this.a;
-        Object obj = this.s;
-        Object obj2 = this.r;
-        Object obj3 = this.e;
-        Object obj4 = this.n;
-        Object obj5 = this.h;
-        TLObject tLObject = this.f;
-        Object obj6 = this.d;
+        boolean z = false;
+        i22 i22Var = this.b;
         switch (b) {
             case 0:
-                ((hd) obj6).dismiss();
-                new ds0((Context) obj3, this.c, this.b, (TLRPC.TL_messages_preparedInlineMessage) tLObject, ((File[]) obj5)[0], null, (wjb) obj4, (st0) obj2, (p) obj).show();
+                i22Var.hide();
                 break;
             case 1:
-                w25 w25Var = (w25) obj6;
-                TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj3;
-                TL_wallet.tonConnectRequest tonconnectrequest = (TL_wallet.tonConnectRequest) tLObject;
-                y05 y05Var = (y05) obj5;
-                String str = (String) obj4;
-                byte[] bArr = (byte[]) obj2;
-                ae2 ae2Var = (ae2) obj;
-                w25Var.getClass();
-                try {
-                } catch (Exception e) {
-                    e = e;
+                cv3 cv3Var = i22Var.W1 ? i22Var.M2 : i22Var.B2;
+                i22Var.w1(cv3Var.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(cv3Var.getText().toString().trim()));
+                break;
+            case 2:
+                i22Var.A0 = null;
+                i22Var.B0 = (byte) 0;
+                i22Var.H();
+                break;
+            case 3:
+                i22 i22Var2 = this.b;
+                oy1 oy1Var = i22Var2.b2;
+                long i = oy1Var != null ? oy1Var.i() : 0L;
+                p12 p12Var = i22Var2.F2;
+                i22Var2.K2 = i;
+                p12Var.setEffect(i);
+                a22 a22Var2 = i22Var2.v2;
+                if (a22Var2 == i22Var2.d2 || a22Var2 == i22Var2.k2) {
+                    z = i22Var2.p1(false, 0, 0, i, i22Var2.a1());
+                } else if (!a22Var2.K(false, 0, 0, i, i22Var2.a1())) {
+                    i22Var2.dismiss();
                 }
-                try {
-                    JSONObject f = w25.f(y05Var, tonconnectpending.session, str, bArr, tonconnectrequest.body, w25Var.f.getCurrentTime());
-                    y05Var = y05Var;
-                    h = null;
-                    s25Var = new s25(tonconnectpending, tonconnectrequest, f, str, bArr);
-                } catch (Exception e2) {
-                    e = e2;
-                    y05Var = y05Var;
-                    h = w25.h("decode request", e);
-                    s25Var = null;
-                    gl.d3(new pe(w25Var, s25Var, ae2Var, h, this.b, this.c, y05Var, (byte) 1));
-                    return;
-                }
-                gl.d3(new pe(w25Var, s25Var, ae2Var, h, this.b, this.c, y05Var, (byte) 1));
-            default:
-                j5 j5Var = (j5) obj5;
-                vt5 vt5Var = (vt5) obj4;
-                Context context = (Context) obj3;
-                d dVar = (d) obj2;
-                TLRPC.Peer peer = (TLRPC.Peer) obj;
-                try {
-                    ((hd) obj6).dismiss();
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
-                }
-                if (tLObject != null) {
-                    TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject;
-                    if (joinaspeers.peers.size() != 1) {
-                        xt5.C1 = joinaspeers.peers;
-                        long j = this.b;
-                        xt5.E1 = j;
-                        xt5.D1 = SystemClock.elapsedRealtime();
-                        int i = j5Var.a;
-                        xt5.F1 = i;
-                        na7.q1(i).U3(joinaspeers.chats, false);
-                        na7.q1(j5Var.a).a4(joinaspeers.users, false);
-                        xt5.F0(context, j, joinaspeers.peers, dVar, this.c, peer, vt5Var);
-                        break;
-                    } else {
-                        vt5Var.a(na7.q1(j5Var.a).h1(k27.B1(joinaspeers.peers.get(0))), false, false, false);
-                        break;
-                    }
+                oy1 oy1Var2 = i22Var2.b2;
+                if (oy1Var2 != null) {
+                    oy1Var2.f(!z);
+                    i22Var2.b2 = null;
+                    break;
                 }
                 break;
+            case 4:
+                i22Var.a(true);
+                d dVar = i22Var.Z1;
+                if (dVar != null) {
+                    dVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                    break;
+                }
+                break;
+            case 5:
+                i22Var.o1();
+                break;
+            default:
+                i22Var.q3 = null;
+                a22 a22Var3 = i22Var.v2;
+                if (a22Var3 != i22Var.d2 && (a22Var = i22Var.w2) != (x62Var = i22Var.k2) && a22Var3 != a22Var && a22Var3 != x62Var) {
+                    i22Var.b.removeView(a22Var3);
+                }
+                i22Var.v2.setVisibility(8);
+                i22Var.v2.t();
+                i22Var.w2.I();
+                i22Var.v2 = i22Var.w2;
+                i22Var.w2 = null;
+                int[] iArr = i22Var.Y3;
+                iArr[0] = iArr[1];
+                i22Var.q1(i22Var.W1, false);
+                i22Var.G1();
+                break;
         }
-    }
-
-    public /* synthetic */ vr0(hd hdVar, TLObject tLObject, j5 j5Var, vt5 vt5Var, long j, Context context, d dVar, int i, TLRPC.Peer peer) {
-        this.d = hdVar;
-        this.f = tLObject;
-        this.h = j5Var;
-        this.n = vt5Var;
-        this.b = j;
-        this.e = context;
-        this.r = dVar;
-        this.c = i;
-        this.s = peer;
-    }
-
-    public /* synthetic */ vr0(w25 w25Var, TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, y05 y05Var, String str, byte[] bArr, ae2 ae2Var, long j, int i) {
-        this.d = w25Var;
-        this.e = tonconnectpending;
-        this.f = tonconnectrequest;
-        this.h = y05Var;
-        this.n = str;
-        this.r = bArr;
-        this.s = ae2Var;
-        this.b = j;
-        this.c = i;
     }
 }

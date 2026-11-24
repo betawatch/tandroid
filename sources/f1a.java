@@ -1,25 +1,39 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class f1a extends FrameLayout {
-    public final /* synthetic */ float a;
+    public final ylb a;
+    public final TextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f1a(Context context, float f) {
+    public f1a(Context context, ylb ylbVar) {
         super(context);
-        this.a = f;
+        this.a = ylbVar;
+        anb.h(cmb.d7, ylbVar, this);
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        ts2.s(textView, 1, 14.0f);
+        anb.X(textView, cmb.e7, ylbVar);
+        textView.setGravity((jb6.a0 ? 5 : 3) | 16);
+        addView(textView, qoe.d(-1, -1.0f, (jb6.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(32.0f), TLObject.FLAG_30));
+    }
+
+    public void setLetter(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
+
+    public void setTextColor(int i) {
+        anb.X(this.b, i, this.a);
     }
 }

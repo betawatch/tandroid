@@ -1,30 +1,46 @@
 // default package
 
-import android.view.View;
+import android.app.Application;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class gs9 implements View.OnClickListener {
-    public final /* synthetic */ gx0 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class gs9 {
+    public static final List a = lm2.b(Application.class, xr9.class);
+    public static final List b = lm2.a(xr9.class);
 
-    public gs9(gx0 gx0Var) {
-        this.a = gx0Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        hs9 hs9Var = (hs9) this.a.d;
-        for (int i = 0; i < hs9Var.e.size(); i++) {
-            k27 k27Var = (k27) hs9Var.e.get(i);
-            boolean z = hs9Var.I;
-            int i2 = y6c.t0;
-            if (z) {
-                ba4.G(j5.a(i2).a).f(k27Var.F0());
-            } else {
-                ba4.G(j5.a(i2).a).X(k27Var.F0(), k27Var, 0, 0);
-                up3.q(hs9Var.d).y();
+    public static final Constructor a(Class cls, List list) {
+        list.getClass();
+        Constructor<?>[] constructors = cls.getConstructors();
+        constructors.getClass();
+        for (Constructor<?> constructor : constructors) {
+            Class<?>[] parameterTypes = constructor.getParameterTypes();
+            parameterTypes.getClass();
+            List h = tt.h(parameterTypes);
+            if (list.equals(h)) {
+                return constructor;
+            }
+            if (list.size() == h.size() && h.containsAll(list)) {
+                throw new UnsupportedOperationException("Class " + cls.getSimpleName() + " must have parameters in the proper order: " + list);
             }
         }
-        hs9Var.d(true);
+        return null;
+    }
+
+    public static final pfc b(Class cls, Constructor constructor, Object... objArr) {
+        try {
+            return (pfc) constructor.newInstance(Arrays.copyOf(objArr, objArr.length));
+        } catch (IllegalAccessException e) {
+            dq9.n("Failed to access ", cls, e);
+            return null;
+        } catch (InstantiationException e2) {
+            throw new RuntimeException("A " + cls + " cannot be instantiated.", e2);
+        } catch (InvocationTargetException e3) {
+            rjb.k("An exception happened in constructor of " + cls, e3.getCause());
+            return null;
+        }
     }
 }

@@ -1,20 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class m9f {
-    public final String a;
-    public final long b;
-    public final int c;
-    public final long d;
-    public final long e;
-    public long f;
-
-    public m9f(n7f n7fVar) {
-        this.a = n7fVar.a;
-        this.b = n7fVar.b;
-        this.c = n7fVar.c;
-        this.d = n7fVar.d;
-        this.e = n7fVar.e;
-    }
+public final class m9f extends f1d implements cdf {
 }

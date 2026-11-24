@@ -1,60 +1,302 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.tgnet.tl.TL_iv;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class qb9 implements pib {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ sb9 d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class qb9 implements bva {
+    public final int a;
+    public final long b;
+    public final qac c;
+    public int e;
+    public long i;
+    public String q;
+    public boolean r;
+    public boolean s;
+    public boolean t;
+    public int u;
+    public boolean v;
+    public boolean w;
+    public boolean x;
+    public boolean y;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet j = new HashSet();
+    public final HashSet k = new HashSet();
+    public final HashSet l = new HashSet();
+    public final HashMap m = new HashMap();
+    public final HashMap n = new HashMap();
+    public final HashMap o = new HashMap();
+    public pb9 p = pb9.a;
+    public boolean z = false;
+    public int A = -1;
 
-    public qb9(sb9 sb9Var, Layout layout, int i, int i2) {
-        this.d = sb9Var;
-        this.a = layout;
-        this.b = i;
-        this.c = i2;
+    public qb9(int i, long j, qac qacVar) {
+        this.a = i;
+        this.b = j;
+        this.c = qacVar;
+        j();
+        for (int size = zb9.U.size() - 1; size >= 0; size--) {
+            ArrayList arrayList = zb9.U;
+            if (((WeakReference) arrayList.get(size)).get() == null) {
+                arrayList.remove(size);
+            }
+        }
+        zb9.U.add(new WeakReference(this));
     }
 
-    @Override // pib, jg7
-    public final Layout a() {
-        return this.a;
+    @Override // bva
+    public final void a() {
+        l(false);
     }
 
-    @Override // pib
-    public final Rect c() {
-        return null;
+    @Override // bva
+    public final int b(int i) {
+        return -1;
     }
 
-    @Override // pib
-    public final CharSequence getPrefix() {
-        return null;
+    @Override // bva
+    public final int c() {
+        return this.e;
     }
 
-    @Override // pib
-    public final int getRow() {
-        return 0;
+    @Override // bva
+    public final int e() {
+        return this.d.size();
     }
 
-    @Override // pib
-    public final CharSequence getText() {
-        TL_iv.PageBlock pageBlock;
-        TL_iv.PageCaption pageCaption;
-        TL_iv.RichText richText;
-        lk0 I0 = this.d.c.I0();
-        return (I0 == null || (pageBlock = I0.b) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : yi9.r(richText, null, true);
+    public final boolean f() {
+        return !this.x && !this.v && oc7.r1(this.a).l4.s.f && oc7.r1(this.a).l4.n0.f;
     }
 
-    @Override // pib
-    public final int getX() {
-        return this.b;
+    public final boolean g() {
+        return !"hidden".equals(gs.a(oc7.r1(this.a).l4.u));
     }
 
-    @Override // pib
-    public final int getY() {
-        return this.c;
+    @Override // bva
+    public final Object get(int i) {
+        return this.d.get(i);
+    }
+
+    public final boolean h() {
+        return !"hidden".equals(gs.a(oc7.r1(this.a).l4.v));
+    }
+
+    public final void i() {
+        if (this.A >= 0) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.A, true);
+            this.A = -1;
+        }
+        this.y = false;
+    }
+
+    @Override // bva
+    public final int indexOf(Object obj) {
+        return this.d.indexOf(obj);
+    }
+
+    public final void j() {
+        gs gsVar = oc7.r1(this.a).l4;
+        this.r = "default".equals(gs.a(gsVar.u));
+        this.s = "default".equals(gs.a(gsVar.v));
+        boolean f = f();
+        this.t = f;
+        if (this.r || this.s || f) {
+            return;
+        }
+        this.r = g();
+        this.s = h();
+    }
+
+    public final boolean k() {
+        return (!this.r || this.s || this.t) ? false : true;
+    }
+
+    public final void l(boolean z) {
+        if (this.y) {
+            return;
+        }
+        if (z || !this.z) {
+            int i = 0;
+            if (!this.x && !this.w && ((!this.r || !g()) && ((!this.s || !h()) && (!this.t || !f())))) {
+                boolean z2 = this.z;
+                ArrayList arrayList = this.d;
+                boolean z3 = (z2 && arrayList.isEmpty() && this.e == 0) ? false : true;
+                this.z = true;
+                this.q = null;
+                arrayList.clear();
+                this.e = 0;
+                this.u = 0;
+                this.m.clear();
+                this.n.clear();
+                this.o.clear();
+                if (!z3 || this.c == null) {
+                    return;
+                }
+                gm.c3(new pp8(this, (byte) 25));
+                return;
+            }
+            this.y = true;
+            TL_stars.getResaleStarGifts getresalestargifts = new TL_stars.getResaleStarGifts();
+            getresalestargifts.gift_id = this.b;
+            String str = this.q;
+            if (str == null) {
+                str = "";
+            }
+            getresalestargifts.offset = str;
+            getresalestargifts.limit = 15;
+            boolean z4 = this.x;
+            getresalestargifts.for_craft = z4;
+            if (!z4 && !this.w) {
+                getresalestargifts.stars_only = this.r && g();
+                getresalestargifts.ton_only = this.s && h();
+                getresalestargifts.fragment_only = this.t && f();
+            }
+            pb9 pb9Var = this.p;
+            if (pb9Var == pb9.c) {
+                getresalestargifts.sort_by_num = true;
+                getresalestargifts.sort_by_price = false;
+            } else if (pb9Var == pb9.b) {
+                getresalestargifts.sort_by_num = false;
+                getresalestargifts.sort_by_price = false;
+            } else if (pb9Var == pb9.a) {
+                getresalestargifts.sort_by_num = false;
+                getresalestargifts.sort_by_price = true;
+            }
+            long j = this.i;
+            ArrayList arrayList2 = this.h;
+            ArrayList arrayList3 = this.g;
+            ArrayList arrayList4 = this.f;
+            if (j != 0) {
+                getresalestargifts.flags |= 1;
+                getresalestargifts.attributes_hash = j;
+            } else if (arrayList4.isEmpty() && arrayList3.isEmpty() && arrayList2.isEmpty()) {
+                getresalestargifts.flags |= 1;
+                getresalestargifts.attributes_hash = 0L;
+            }
+            HashSet hashSet = this.j;
+            boolean isEmpty = hashSet.isEmpty();
+            HashSet hashSet2 = this.l;
+            HashSet hashSet3 = this.k;
+            if (!isEmpty || !hashSet3.isEmpty() || !hashSet2.isEmpty()) {
+                getresalestargifts.flags |= 8;
+                if (!hashSet.isEmpty()) {
+                    int size = arrayList4.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        Object obj = arrayList4.get(i2);
+                        i2++;
+                        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj;
+                        if (!hashSet.contains(Long.valueOf(stargiftattributemodel.document.id))) {
+                            TL_stars.starGiftAttributeIdModel stargiftattributeidmodel = new TL_stars.starGiftAttributeIdModel();
+                            stargiftattributeidmodel.document_id = stargiftattributemodel.document.id;
+                            getresalestargifts.attributes.add(stargiftattributeidmodel);
+                        }
+                    }
+                }
+                if (!hashSet3.isEmpty()) {
+                    int size2 = arrayList3.size();
+                    int i3 = 0;
+                    while (i3 < size2) {
+                        Object obj2 = arrayList3.get(i3);
+                        i3++;
+                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj2;
+                        if (!hashSet3.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id))) {
+                            TL_stars.starGiftAttributeIdBackdrop stargiftattributeidbackdrop = new TL_stars.starGiftAttributeIdBackdrop();
+                            stargiftattributeidbackdrop.backdrop_id = stargiftattributebackdrop.backdrop_id;
+                            getresalestargifts.attributes.add(stargiftattributeidbackdrop);
+                        }
+                    }
+                }
+                if (!hashSet2.isEmpty()) {
+                    int size3 = arrayList2.size();
+                    while (i < size3) {
+                        Object obj3 = arrayList2.get(i);
+                        i++;
+                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
+                        if (!hashSet2.contains(Long.valueOf(stargiftattributepattern.document.id))) {
+                            TL_stars.starGiftAttributeIdPattern stargiftattributeidpattern = new TL_stars.starGiftAttributeIdPattern();
+                            stargiftattributeidpattern.document_id = stargiftattributepattern.document.id;
+                            getresalestargifts.attributes.add(stargiftattributeidpattern);
+                        }
+                    }
+                }
+            }
+            this.A = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new jl7(this, getresalestargifts, (byte) 16));
+        }
+    }
+
+    public final void m() {
+        i();
+        this.q = null;
+        this.d.clear();
+        l(true);
+        qac qacVar = this.c;
+        if (qacVar != null) {
+            qacVar.a(Boolean.TRUE);
+        }
+    }
+
+    public final void n(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        ArrayList arrayList;
+        String str;
+        int i = 0;
+        while (true) {
+            arrayList = this.d;
+            if (i >= arrayList.size()) {
+                return;
+            }
+            TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList.get(i);
+            if (tL_starGiftUnique2 == tL_starGiftUnique || ((str = tL_starGiftUnique2.slug) != null && str.equals(tL_starGiftUnique.slug))) {
+                break;
+            } else {
+                i++;
+            }
+        }
+        arrayList.remove(i);
+        int i2 = this.e;
+        if (i2 > 0) {
+            this.e = i2 - 1;
+        }
+        qac qacVar = this.c;
+        if (qacVar != null) {
+            qacVar.a(Boolean.FALSE);
+        }
+    }
+
+    public final void o(boolean z, boolean z2, boolean z3) {
+        boolean z4 = false;
+        boolean z5 = z && g();
+        boolean z6 = z2 && h();
+        if (z3 && f()) {
+            z4 = true;
+        }
+        if (z5 || z6 || z4) {
+            if (this.r == z5 && this.s == z6 && this.t == z4) {
+                return;
+            }
+            this.r = z5;
+            this.s = z6;
+            this.t = z4;
+            m();
+        }
+    }
+
+    public final void p(pb9 pb9Var) {
+        if (this.p != pb9Var) {
+            this.p = pb9Var;
+            m();
+        }
+    }
+
+    @Override // bva
+    public final void d() {
     }
 }

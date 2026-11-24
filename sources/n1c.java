@@ -1,30 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class n1c implements bja {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ o1c c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 
-    public n1c(o1c o1cVar) {
-        this.c = o1cVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class n1c extends io {
+    public final Paint s;
+    public final i66 w;
+    public final /* synthetic */ p1c x;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n1c(p1c p1cVar, Context context) {
+        super(context, false, false, false);
+        this.x = p1cVar;
+        this.s = new Paint(1);
+        this.w = new i66();
     }
 
-    @Override // bja
-    public final void L(int i, boolean z) {
-        if (this.a == i && this.b == z) {
-            return;
+    @Override // io, android.view.View
+    public final void onDraw(Canvas canvas) {
+        RectF rectF;
+        if (jb6.a0) {
+            rectF = gm.P;
+            rectF.set(getWidth() - d(), (getHeight() - gm.L(18.0f)) / 2.0f, getWidth(), (gm.L(18.0f) + getHeight()) / 2.0f);
+        } else {
+            rectF = gm.P;
+            rectF.set(0.0f, (getHeight() - gm.L(18.0f)) / 2.0f, d(), (gm.L(18.0f) + getHeight()) / 2.0f);
         }
-        this.a = i;
-        this.b = z;
-        if (i > gl.L(20.0f)) {
-            o1c o1cVar = this.c;
-            if (o1cVar.n0) {
-                return;
+        s1c s1cVar = this.x.n;
+        int i = cmb.Fj;
+        String[] strArr = s1c.R1;
+        int p1 = cmb.p1(0.1175f, cmb.v0(i, s1cVar.J0));
+        Paint paint = this.s;
+        paint.setColor(p1);
+        canvas.drawRoundRect(rectF, gm.L(4.0f), gm.L(4.0f), paint);
+        if (this.w.g(canvas)) {
+            invalidate();
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        RectF rectF;
+        s1c s1cVar = this.x.n;
+        int action = motionEvent.getAction();
+        i66 i66Var = this.w;
+        if (action != 0) {
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (motionEvent.getAction() == 1) {
+                    performClick();
+                }
+                i66Var.e(true);
+                invalidate();
             }
-            o1cVar.u0.r0 = false;
-            o1cVar.n0 = true;
+            return super.onTouchEvent(motionEvent);
         }
+        String[] strArr = s1c.R1;
+        m66 m66Var = new m66(null, s1cVar.J0, motionEvent.getX(), motionEvent.getY(), 0);
+        m66Var.d(cmb.p1(0.1175f, cmb.v0(cmb.Fj, s1cVar.J0)));
+        b66 b = m66Var.b();
+        if (jb6.a0) {
+            rectF = gm.P;
+            rectF.set(getWidth() - d(), (getHeight() - gm.L(18.0f)) / 2.0f, getWidth(), (gm.L(18.0f) + getHeight()) / 2.0f);
+        } else {
+            rectF = gm.P;
+            rectF.set(0.0f, (getHeight() - gm.L(18.0f)) / 2.0f, d(), (gm.L(18.0f) + getHeight()) / 2.0f);
+        }
+        b.addRect(rectF, Path.Direction.CW);
+        i66Var.a(m66Var, null);
+        invalidate();
+        return true;
     }
 }

@@ -1,114 +1,157 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Paint;
+import android.os.Build;
+import android.text.InputFilter;
+import android.text.SpannableStringBuilder;
+import android.view.ActionMode;
+import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MotionEvent;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class f63 extends ccb implements eq4 {
-    public Iterator a;
-    public vfa b;
-    public Object c;
-    public byte d;
-    public /* synthetic */ Object e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ ArrayList h;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class f63 extends qu3 implements vlb {
+    public final ylb e2;
+    public final lj4 f2;
+    public Runnable g2;
+    public int h2;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f63(List list, ArrayList arrayList, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.f = list;
-        this.h = arrayList;
-    }
-
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        f63 f63Var = new f63(this.f, this.h, fw2Var);
-        f63Var.e = obj;
-        return f63Var;
-    }
-
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        return ((f63) create(obj, (fw2) obj2)).invokeSuspend(g5c.a);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0095 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0043  */
-    @Override // of0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        Iterator it;
-        List list;
-        vfa vfaVar;
-        Iterator it2;
-        Object obj2;
-        byte b = this.d;
-        bx2 bx2Var = bx2.a;
-        if (b == 0) {
-            qse.b(obj);
-            obj = this.e;
-            it = this.f.iterator();
-            list = this.h;
-        } else if (b == 1) {
-            obj2 = this.c;
-            vfa vfaVar2 = this.b;
-            it2 = this.a;
-            List list2 = (List) this.e;
-            qse.b(obj);
-            vfaVar = vfaVar2;
-            list = list2;
-            if (!((Boolean) obj).booleanValue()) {
-                list.add(new e63(vfaVar, null, (byte) 0));
-                this.e = list;
-                this.a = it2;
-                this.b = null;
-                this.c = null;
-                this.d = (byte) 2;
-                obj = vfaVar.b.a(new zfa((SharedPreferences) vfaVar.e.getValue(), vfaVar.f), obj2, this);
-                if (obj != bx2Var) {
-                    it = it2;
-                }
-                return bx2Var;
-            }
-            obj = obj2;
-            it = it2;
-        } else {
-            if (b != 2) {
-                sc8.j("call to 'resume' before 'invoke' with coroutine");
-                return null;
-            }
-            it = this.a;
-            list = (List) this.e;
-            qse.b(obj);
+    public f63(int i, ylb ylbVar, Context context) {
+        super(context, ylbVar);
+        this.e2 = ylbVar;
+        this.f2 = new lj4(getContext(), new e63());
+        setBackground(null);
+        setIncludeFontPadding(true);
+        setShowSoftInputOnFocus(false);
+        setSingleLine(false);
+        setMaxLines(50);
+        this.h2 = i;
+        setFilters(new InputFilter[]{new InputFilter.LengthFilter(i)});
+        setTextSize(1, 22.0f);
+        setGravity(80);
+        setPadding(gm.L(18.0f), gm.L(4.0f), gm.L(18.0f), gm.L(12.0f));
+        anb.X(this, cmb.Ke, ylbVar);
+        anb.G(this, cmb.Xc, ylbVar);
+        anb.C(this, cmb.kg, ylbVar);
+        int i2 = cmb.Le;
+        anb.l(this, 34, i2, ylbVar);
+        anb.D(this, i2, ylbVar);
+        anb.l(this, 30, cmb.Me, ylbVar);
+        anb.l(this, 36, cmb.lg, ylbVar);
+        if (Build.VERSION.SDK_INT >= 28) {
+            setFallbackLineSpacing(false);
         }
-        if (!it.hasNext()) {
-            vfa vfaVar3 = (vfa) it.next();
-            this.e = list;
-            this.a = it;
-            this.b = vfaVar3;
-            this.c = obj;
-            this.d = (byte) 1;
-            Object a = vfaVar3.a(obj, this);
-            if (a != bx2Var) {
-                Iterator it3 = it;
-                obj2 = obj;
-                obj = a;
-                vfaVar = vfaVar3;
-                it2 = it3;
-                if (!((Boolean) obj).booleanValue()) {
-                }
-                if (!it.hasNext()) {
-                    return obj;
-                }
-            }
-            return bx2Var;
+        setOnFocusChangeListener(new tt0((k92) this, (byte) 4));
+        setTextIsSelectable(true);
+        setLongClickable(false);
+        setFocusableInTouchMode(false);
+    }
+
+    public final void J() {
+        setLongClickable(false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
+        if (((pa[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), pa.class)).length == 0) {
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
+            pa paVar = new pa(this.e2);
+            ValueAnimator ofInt = ValueAnimator.ofInt(paVar.f, nm7.d4);
+            ofInt.addUpdateListener(new oa(paVar, this, (byte) 0));
+            ofInt.setDuration(200L);
+            ofInt.start();
+            spannableStringBuilder2.setSpan(paVar, 0, spannableStringBuilder2.length(), 33);
+            setText(getText().append((CharSequence) spannableStringBuilder2));
         }
+    }
+
+    public final void K(boolean z) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
+        for (pa paVar : (pa[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), pa.class)) {
+            mv2 mv2Var = new mv2(this, paVar, (byte) 25);
+            if (z) {
+                setCursorVisible(false);
+                ValueAnimator ofInt = ValueAnimator.ofInt(paVar.f, 0);
+                ofInt.addUpdateListener(new oa(paVar, this, (byte) 1));
+                ofInt.addListener(new g0(mv2Var, (byte) 4));
+                ofInt.setDuration(200L);
+                ofInt.start();
+            } else {
+                mv2Var.run();
+            }
+        }
+    }
+
+    @Override // vu3, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (!((GestureDetector) this.f2.a).onTouchEvent(motionEvent) || isLongClickable()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    public int getEditTextSelectionEnd() {
+        int selectionEnd = getSelectionEnd();
+        if (selectionEnd < 0) {
+            return 0;
+        }
+        return selectionEnd;
+    }
+
+    public int getEditTextSelectionStart() {
+        int selectionStart = getSelectionStart();
+        if (selectionStart < 0) {
+            return 0;
+        }
+        return selectionStart;
+    }
+
+    public Paint.FontMetricsInt getFontMetricsInt() {
+        return getPaint().getFontMetricsInt();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void o(ActionMode actionMode, Menu menu) {
+        menu.clear();
+        menu.add(R.id.menu_delete, R.id.menu_delete, 0, jb6.M0(2131751535, null));
+    }
+
+    @Override // vu3, android.widget.TextView
+    public final void onSelectionChanged(int i, int i2) {
+        super.onSelectionChanged(i, i2);
+        if (!hasSelection() || ((pa[]) getText().getSpans(i, i2, pa.class)).length == 0) {
+            return;
+        }
+        setSelection(i, i2 - 1);
+    }
+
+    public void setMaxLength(int i) {
+        if (this.h2 != i) {
+            this.h2 = i;
+            setFilters(new InputFilter[]{new InputFilter.LengthFilter(i)});
+        }
+    }
+
+    public void setOnFocused(Runnable runnable) {
+        this.g2 = runnable;
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        ylb ylbVar = this.e2;
+        try {
+            setHintColor(cmb.v0(cmb.Le, ylbVar));
+            setCursorColor(cmb.v0(cmb.Me, ylbVar));
+            setHandlesColor(cmb.v0(cmb.lg, ylbVar));
+            invalidate();
+        } catch (Exception e) {
+            fc4.g(e, true);
+        }
+    }
+
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

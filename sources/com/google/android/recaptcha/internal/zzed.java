@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzed extends ccb implements eq4 {
+final class zzed extends eeb implements fs4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ String zzc;
@@ -12,8 +12,8 @@ final class zzed extends ccb implements eq4 {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzed(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzed(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, px2 px2Var) {
+        super(2, px2Var);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
@@ -21,22 +21,22 @@ final class zzed extends ccb implements eq4 {
         this.zzf = j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzed zzedVar = new zzed(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        zzed zzedVar = new zzed(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, px2Var);
         zzedVar.zzg = obj;
         return zzedVar;
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzed) create((zzhh) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzed) create((zzhh) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        qse.b(obj);
+        tue.b(obj);
         if (i != 0) {
             return obj;
         }
@@ -44,7 +44,7 @@ final class zzed extends ccb implements eq4 {
         zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, zzhhVar, null);
         this.zza = 1;
         Object zza = zzhj.zza(zzhhVar, zzecVar, this);
-        bx2 bx2Var = bx2.a;
-        return zza == bx2Var ? bx2Var : zza;
+        ly2 ly2Var = ly2.a;
+        return zza == ly2Var ? ly2Var : zza;
     }
 }

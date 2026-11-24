@@ -1,32 +1,24 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class z36 extends mu1 {
-    public boolean vd;
-    public final /* synthetic */ TLRPC.User wd;
-    public final /* synthetic */ TLRPC.User[] xd;
-    public final /* synthetic */ long yd;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class z36 implements View.OnClickListener {
+    public final /* synthetic */ a46 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z36(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j) {
-        super(bundle);
-        this.wd = user;
-        this.xd = userArr;
-        this.yd = j;
+    public z36(a46 a46Var) {
+        this.a = a46Var;
     }
 
-    @Override // mu1, org.telegram.ui.ActionBar.d
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.vd) {
-            return;
-        }
-        this.vd = true;
-        u21.b0(this).I(R.raw.contact_check, k96.a0(null, null, 2131751727, l7c.q(this.wd)), gl.O2(k96.a0(null, null, 2131751728, l7c.q(this.xd[0])), -1, 0, new et((Object) this, this.yd, (byte) 18), null)).j();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        jb jbVar = (jb) view.getParent();
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(jbVar.getCurrentChannel());
+        i46 i46Var = this.a.c;
+        int i = i46.R2;
+        i46Var.o1(arrayList);
     }
 }

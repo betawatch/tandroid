@@ -8,7 +8,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class z implements TextWatcher {
     public final /* synthetic */ ImageView a;
@@ -56,12 +56,12 @@ public final class z implements TextWatcher {
             if (i5 >= arrayList.size() || (i2 = i + i5) >= linearLayout.getChildCount()) {
                 break;
             }
-            u0c u0cVar = (u0c) arrayList.get(i5);
-            String str2 = u0cVar.d;
+            u2c u2cVar = (u2c) arrayList.get(i5);
+            String str2 = u2cVar.d;
             if (str2 == null) {
-                str2 = (u0cVar.b + " " + u0cVar.c).toLowerCase();
+                str2 = (u2cVar.b + " " + u2cVar.c).toLowerCase();
             }
-            boolean z = isEmpty || str2.contains(lowerCase) || ((str = u0cVar.a) != null && str.toLowerCase().startsWith(lowerCase));
+            boolean z = isEmpty || str2.contains(lowerCase) || ((str = u2cVar.a) != null && str.toLowerCase().startsWith(lowerCase));
             linearLayout.getChildAt(i2).setVisibility(z ? 0 : 8);
             if (z) {
                 i6++;

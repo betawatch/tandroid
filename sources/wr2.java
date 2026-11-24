@@ -1,107 +1,129 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class wr2 extends q01 {
-    public final o01 G;
+import java.util.List;
 
-    public wr2(int i, o01 o01Var) {
-        super(i);
-        this.G = o01Var;
-        if (o01Var != o01.a) {
-            if (i >= 1) {
-                return;
-            }
-            v0b.a(tb4.n(i, "Buffered channel capacity must be at least 1, but ", " was specified"));
-            throw null;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class wr2 implements s6a {
+    public final y79 a;
+    public long b;
+
+    public wr2(List list, List list2) {
+        jo5 p = mo5.p();
+        jte.f(list.size() == list2.size());
+        for (int i = 0; i < list.size(); i++) {
+            p.c(new vr2((s6a) list.get(i), (List) list2.get(i)));
         }
-        throw new IllegalArgumentException(("This implementation does not support suspension for senders, use " + f59.a(q01.class).b() + " instead").toString());
+        this.a = p.f();
+        this.b = -9223372036854775807L;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00b2, code lost:
-    
-        return r8;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object G(Object obj, boolean z) {
-        o01 o01Var = this.G;
-        o01 o01Var2 = o01.c;
-        g5c g5cVar = g5c.a;
-        if (o01Var == o01Var2) {
-            Object d = super.d(obj);
-            return (!(d instanceof fj1) || (d instanceof ej1)) ? d : g5cVar;
-        }
-        Object obj2 = s01.d;
-        hj1 hj1Var = (hj1) ex.a.getObjectVolatile(this, q01.E);
+    @Override // s6a
+    public final boolean f() {
+        int i = 0;
         while (true) {
-            long andIncrement = q01.b.getAndIncrement(this);
-            long j = 1152921504606846975L & andIncrement;
-            boolean r = r(andIncrement, false);
-            int i = s01.b;
-            long j2 = i;
-            long j3 = j / j2;
-            int i2 = (int) (j % j2);
-            if (hj1Var.d != j3) {
-                hj1 i3 = i(j3, hj1Var);
-                if (i3 != null) {
-                    hj1Var = i3;
-                } else if (r) {
-                    return new ej1(n());
-                }
+            y79 y79Var = this.a;
+            if (i >= y79Var.d) {
+                return false;
             }
-            int D = D(hj1Var, i2, obj, j, obj2, r);
-            if (D == 0) {
-                hj1Var.b();
-                return g5cVar;
+            if (((vr2) y79Var.get(i)).a.f()) {
+                return true;
             }
-            if (D == 1) {
+            i++;
+        }
+    }
+
+    @Override // s6a
+    public final long g() {
+        int i = 0;
+        long j = Long.MAX_VALUE;
+        while (true) {
+            y79 y79Var = this.a;
+            if (i >= y79Var.d) {
                 break;
             }
-            if (D != 2) {
-                if (D == 3) {
-                    sc8.j("unexpected");
-                    return null;
-                }
-                if (D == 4) {
-                    if (j < m()) {
-                        hj1Var.b();
-                    }
-                    return new ej1(n());
-                }
-                if (D == 5) {
-                    hj1Var.b();
-                }
-            } else {
-                if (r) {
-                    hj1Var.i();
-                    return new ej1(n());
-                }
-                akc akcVar = obj2 instanceof akc ? (akc) obj2 : null;
-                if (akcVar != null) {
-                    akcVar.a(hj1Var, i2 + i);
-                }
-                f((hj1Var.d * j2) + i2);
+            long g = ((vr2) y79Var.get(i)).a.g();
+            if (g != Long.MIN_VALUE) {
+                j = Math.min(j, g);
             }
+            i++;
         }
-    }
-
-    @Override // q01, v0a
-    public final Object a(fw2 fw2Var, Object obj) {
-        if (G(obj, true) instanceof ej1) {
-            throw n();
+        if (j == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
         }
-        return g5c.a;
+        return j;
     }
 
-    @Override // q01, v0a
-    public final Object d(Object obj) {
-        return G(obj, false);
+    @Override // s6a
+    public final boolean r(sa6 sa6Var) {
+        boolean z;
+        boolean z2 = false;
+        do {
+            long g = g();
+            if (g == Long.MIN_VALUE) {
+                return z2;
+            }
+            int i = 0;
+            z = false;
+            while (true) {
+                y79 y79Var = this.a;
+                if (i >= y79Var.d) {
+                    break;
+                }
+                long g2 = ((vr2) y79Var.get(i)).a.g();
+                boolean z3 = g2 != Long.MIN_VALUE && g2 <= sa6Var.a;
+                if (g2 == g || z3) {
+                    z |= ((vr2) y79Var.get(i)).a.r(sa6Var);
+                }
+                i++;
+            }
+            z2 |= z;
+        } while (z);
+        return z2;
     }
 
-    @Override // q01
-    public final boolean u() {
-        return this.G == o01.b;
+    @Override // s6a
+    public final long s() {
+        int i = 0;
+        long j = Long.MAX_VALUE;
+        long j2 = Long.MAX_VALUE;
+        while (true) {
+            y79 y79Var = this.a;
+            if (i >= y79Var.d) {
+                break;
+            }
+            vr2 vr2Var = (vr2) y79Var.get(i);
+            long s = vr2Var.a.s();
+            mo5 mo5Var = vr2Var.b;
+            if ((mo5Var.contains(1) || mo5Var.contains(2) || mo5Var.contains(4)) && s != Long.MIN_VALUE) {
+                j = Math.min(j, s);
+            }
+            if (s != Long.MIN_VALUE) {
+                j2 = Math.min(j2, s);
+            }
+            i++;
+        }
+        if (j != Long.MAX_VALUE) {
+            this.b = j;
+            return j;
+        }
+        if (j2 == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        long j3 = this.b;
+        return j3 != -9223372036854775807L ? j3 : j2;
+    }
+
+    @Override // s6a
+    public final void t(long j) {
+        int i = 0;
+        while (true) {
+            y79 y79Var = this.a;
+            if (i >= y79Var.d) {
+                return;
+            }
+            ((vr2) y79Var.get(i)).t(j);
+            i++;
+        }
     }
 }

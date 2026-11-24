@@ -1,64 +1,58 @@
 // default package
 
-import android.view.View;
-import android.widget.TextView;
-import java.util.HashMap;
+import android.os.IBinder;
+import android.os.IInterface;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class eq7 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ iq7 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class eq7 extends e1d implements xk5 {
+    public final Object b;
 
-    public /* synthetic */ eq7(iq7 iq7Var, byte b) {
-        this.a = b;
-        this.b = iq7Var;
+    public eq7(Object obj) {
+        super("com.google.android.gms.dynamic.IObjectWrapper", (byte) 6);
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        iq7 iq7Var = this.b;
-        byte b2 = 1;
-        switch (b) {
-            case 0:
-                TextView textView = iq7Var.u1;
-                cs5 G = cs5.G(iq7Var.c, iq7Var.J0, textView);
-                int[] iArr = iq7.z1;
-                for (int i = 0; i < 6; i++) {
-                    int i2 = iArr[i];
-                    G.h(new on7(iq7Var, i2, b2), k96.G(i2 / 3600, "GiftOfferHours", new Object[0]), i2 == iq7Var.x1);
-                }
-                G.W(5);
-                iq7Var.B0(textView, G, true);
-                break;
-            case 1:
-                iq7 iq7Var2 = this.b;
-                u41 u41Var = iq7Var2.v1;
-                if (u41Var.e0 && !u41Var.R) {
-                    if (na7.q1(iq7Var2.a).t2()) {
-                        h5.b(iq7Var2.a);
-                        break;
-                    } else {
-                        gl.t1(iq7Var2.r1);
-                        long j = iq7Var2.w1;
-                        int i3 = iq7Var2.x1;
-                        u41Var.setLoading(true);
-                        int i4 = iq7Var2.a;
-                        String str = iq7Var2.l1.slug;
-                        gq7 gq7Var = new gq7(iq7Var2, j, i3, (byte) 0);
-                        HashMap hashMap = vp7.a;
-                        z3a.B(i4);
-                        long D = z3a.D();
-                        ad7 Y = ad7.Y(i4);
-                        Y.a.c(new sb2(Y, D, str, j, i3, gq7Var));
-                        break;
-                    }
-                }
-                break;
-            default:
-                hmc.L0(iq7Var.a, iq7Var.J0, iq7Var.getContext());
-                break;
+    public static xk5 T(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.dynamic.IObjectWrapper");
+        return queryLocalInterface instanceof xk5 ? (xk5) queryLocalInterface : new sdd(iBinder, "com.google.android.gms.dynamic.IObjectWrapper", (byte) 4);
+    }
+
+    public static Object U(xk5 xk5Var) {
+        if (xk5Var instanceof eq7) {
+            return ((eq7) xk5Var).b;
+        }
+        IBinder asBinder = xk5Var.asBinder();
+        Field[] declaredFields = asBinder.getClass().getDeclaredFields();
+        Field field = null;
+        int i = 0;
+        for (Field field2 : declaredFields) {
+            if (!field2.isSynthetic()) {
+                i++;
+                field = field2;
+            }
+        }
+        if (i != 1) {
+            int length = declaredFields.length;
+            i2d.c(String.valueOf(length).length() + 53, length, "Unexpected number of IObjectWrapper declared fields: ");
+            return null;
+        }
+        ite.h(field);
+        if (field.isAccessible()) {
+            u36.j("IObjectWrapper declared field not private!");
+            return null;
+        }
+        field.setAccessible(true);
+        try {
+            return field.get(asBinder);
+        } catch (IllegalAccessException e) {
+            throw new IllegalArgumentException("Could not access the field in remoteBinder.", e);
+        } catch (NullPointerException e2) {
+            throw new IllegalArgumentException("Binder object is null.", e2);
         }
     }
 }

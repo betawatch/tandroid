@@ -1,39 +1,85 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class bx9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ dx9 b;
+public abstract class bx9 extends View.AccessibilityDelegate {
+    public static final String c = "android.widget.SeekBar";
+    public final HashMap a = new HashMap(4);
+    public final wd b = new wd(this, 16);
 
-    public /* synthetic */ bx9(dx9 dx9Var, byte b) {
-        this.a = b;
-        this.b = dx9Var;
+    public boolean a() {
+        return true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        dx9 dx9Var = this.b;
-        switch (b) {
-            case 0:
-                super.onAnimationEnd(animator);
-                dx9Var.J = null;
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                dx9Var.J = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                dx9Var.O = 0.0f;
-                dx9Var.J = null;
-                dx9Var.N = false;
-                dx9Var.d(true, false);
-                break;
+    public boolean b() {
+        return true;
+    }
+
+    public abstract void c(boolean z);
+
+    public CharSequence d() {
+        return null;
+    }
+
+    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        accessibilityNodeInfo.setClassName(c);
+        CharSequence d = d();
+        if (!TextUtils.isEmpty(d)) {
+            accessibilityNodeInfo.setText(d);
         }
+        if (a()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
+        }
+        if (b()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
+        }
+    }
+
+    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
+        e(null, accessibilityNodeInfo);
+    }
+
+    public boolean g(View view, int i, Bundle bundle) {
+        if (i != 4096 && i != 8192) {
+            return false;
+        }
+        c(i == 8192);
+        if (view != null) {
+            WeakHashMap weakHashMap = kfc.a;
+            if (view.isAttachedToWindow()) {
+                HashMap hashMap = this.a;
+                Runnable runnable = (Runnable) hashMap.get(view);
+                if (runnable == null) {
+                    runnable = new il9(this, view, (byte) 20);
+                    hashMap.put(view, runnable);
+                    view.addOnAttachStateChangeListener(this.b);
+                } else {
+                    view.removeCallbacks(runnable);
+                }
+                view.postDelayed(runnable, 400L);
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        e(view, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final boolean performAccessibilityAction(View view, int i, Bundle bundle) {
+        if (super.performAccessibilityAction(view, i, bundle)) {
+            return true;
+        }
+        return g(view, i, bundle);
     }
 }

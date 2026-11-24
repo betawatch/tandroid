@@ -1,19 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public enum nqb extends qsb {
-    public nqb() {
-        super("ScriptDataEscapeStartDash", 20);
-    }
+import java.util.concurrent.CancellationException;
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        if (!zj1Var.m('-')) {
-            aqbVar.c = qsb.f;
-        } else {
-            aqbVar.f('-');
-            aqbVar.a(qsb.N);
-        }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class nqb extends CancellationException {
+    public final transient oqb a;
+
+    public nqb(String str, oqb oqbVar) {
+        super(str);
+        this.a = oqbVar;
     }
 }

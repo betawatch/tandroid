@@ -1,22 +1,19 @@
 // default package
 
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mjd {
-    public static final mjd d = new mjd();
-    public final Runnable a;
-    public final Executor b;
-    public mjd c;
+public final class mjd implements cq7 {
+    public static final mjd a = new mjd();
 
-    public mjd() {
-        this.a = null;
-        this.b = null;
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
     }
 
-    public mjd(Runnable runnable, Executor executor) {
-        this.a = runnable;
-        this.b = executor;
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

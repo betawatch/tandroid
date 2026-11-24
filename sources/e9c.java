@@ -1,70 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class e9c implements kv9 {
-    public final long[] a;
-    public final long[] b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final int f;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-    public e9c(long[] jArr, long[] jArr2, long j, long j2, long j3) {
-        this.a = jArr;
-        this.b = jArr2;
-        this.c = j;
-        this.d = j2;
-        this.e = j3;
-        this.f = gpe.a(j3 - j2, j);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class e9c extends b6c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        b6c.h(new e9c());
     }
 
-    @Override // kv9
-    public final long a() {
-        return this.e;
-    }
-
-    @Override // kv9
-    public final long b() {
-        return this.d;
-    }
-
-    @Override // fv9
-    public final boolean c() {
-        return true;
-    }
-
-    @Override // fv9
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // kv9
-    public final long e(long j) {
-        return this.a[g8c.f(this.b, j, true)];
-    }
-
-    @Override // fv9
-    public final ev9 f(long j) {
-        long[] jArr = this.a;
-        int f = g8c.f(jArr, j, true);
-        long j2 = jArr[f];
-        long[] jArr2 = this.b;
-        hv9 hv9Var = new hv9(j2, jArr2[f]);
-        if (j2 >= j || f == jArr.length - 1) {
-            return new ev9(hv9Var, hv9Var);
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        f9c f9cVar = (f9c) view;
+        int i = c6cVar.k;
+        CharSequence charSequence = c6cVar.m;
+        CharSequence charSequence2 = c6cVar.n;
+        boolean z2 = c6cVar.r;
+        boolean z3 = c6cVar.s;
+        int i2 = c6cVar.A;
+        TextView textView = f9cVar.e;
+        f9cVar.h = z2;
+        f9cVar.n = z3;
+        f9cVar.b.setImageResource(i);
+        ImageView imageView = f9cVar.f;
+        if (i2 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i2);
+        } else {
+            imageView.setVisibility(8);
         }
-        int i = f + 1;
-        return new ev9(hv9Var, new hv9(jArr[i], jArr2[i]));
+        f9cVar.d.setText(charSequence);
+        textView.setText(charSequence2);
+        textView.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int L = gm.L(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        f9cVar.c.setPadding(0, L, 0, L);
+        f9cVar.updateColors();
     }
 
-    @Override // kv9
-    public final int g() {
-        return this.f;
-    }
-
-    @Override // fv9
-    public final long h() {
-        return this.c;
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        return new f9c(context, ylbVar);
     }
 }

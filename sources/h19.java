@@ -1,135 +1,51 @@
 // default package
 
-import android.text.TextUtils;
-import j$.util.Objects;
-import org.telegram.tgnet.TLRPC;
+import android.media.Rating;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class h19 {
-    public boolean a;
-    public boolean b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public String f;
-    public long g;
-    public long h;
-
-    public static h19 b(String str) {
-        if (str == null) {
-            str = "";
-        }
-        h19 h19Var = new h19();
-        if (!str.startsWith("animated_")) {
-            h19Var.f = str;
-            h19Var.h = str.hashCode();
-            return h19Var;
-        }
-        try {
-            long parseLong = Long.parseLong(str.substring(9));
-            h19Var.g = parseLong;
-            h19Var.h = parseLong;
-            return h19Var;
-        } catch (Exception unused) {
-            h19Var.f = str;
-            h19Var.h = str.hashCode();
-            return h19Var;
-        }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class h19 {
+    public static float a(Rating rating) {
+        return rating.getPercentRating();
     }
 
-    public static h19 c(TLRPC.TL_availableReaction tL_availableReaction) {
-        h19 h19Var = new h19();
-        h19Var.f = tL_availableReaction.reaction;
-        h19Var.h = r3.hashCode();
-        return h19Var;
+    public static int b(Rating rating) {
+        return rating.getRatingStyle();
     }
 
-    public static h19 d(TLRPC.Reaction reaction) {
-        h19 h19Var = new h19();
-        if (reaction instanceof TLRPC.TL_reactionPaid) {
-            h19Var.a = true;
-            return h19Var;
-        }
-        if (reaction instanceof TLRPC.TL_reactionEmoji) {
-            h19Var.f = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
-            h19Var.h = r3.hashCode();
-            return h19Var;
-        }
-        if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
-            long j = ((TLRPC.TL_reactionCustomEmoji) reaction).document_id;
-            h19Var.g = j;
-            h19Var.h = j;
-        }
-        return h19Var;
+    public static float c(Rating rating) {
+        return rating.getStarRating();
     }
 
-    public static h19 e(TLRPC.TL_availableEffect tL_availableEffect) {
-        h19 h19Var = new h19();
-        h19Var.b = true;
-        long j = tL_availableEffect.id;
-        h19Var.c = j;
-        h19Var.e = tL_availableEffect.effect_animation_id == 0;
-        h19Var.g = tL_availableEffect.effect_sticker_id;
-        h19Var.h = j;
-        h19Var.d = tL_availableEffect.premium_required;
-        h19Var.f = tL_availableEffect.emoticon;
-        return h19Var;
+    public static boolean d(Rating rating) {
+        return rating.hasHeart();
     }
 
-    public final h19 a() {
-        String V;
-        long j = this.g;
-        return (j == 0 || (V = k27.V(vl.e(y6c.t0, j), null, null)) == null) ? this : b(V);
+    public static boolean e(Rating rating) {
+        return rating.isRated();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && h19.class == obj.getClass()) {
-            h19 h19Var = (h19) obj;
-            if (this.g == h19Var.g && Objects.equals(this.f, h19Var.f)) {
-                return true;
-            }
-        }
-        return false;
+    public static boolean f(Rating rating) {
+        return rating.isThumbUp();
     }
 
-    public final boolean f(TLRPC.Reaction reaction) {
-        return reaction instanceof TLRPC.TL_reactionEmoji ? TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, this.f) : (reaction instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == this.g;
+    public static Rating g(boolean z) {
+        return Rating.newHeartRating(z);
     }
 
-    public final TLRPC.Reaction g() {
-        if (this.a) {
-            return new TLRPC.TL_reactionPaid();
-        }
-        if (this.f != null) {
-            TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
-            tL_reactionEmoji.emoticon = this.f;
-            return tL_reactionEmoji;
-        }
-        TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = new TLRPC.TL_reactionCustomEmoji();
-        tL_reactionCustomEmoji.document_id = this.g;
-        return tL_reactionCustomEmoji;
+    public static Rating h(float f) {
+        return Rating.newPercentageRating(f);
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.f, Long.valueOf(this.g));
+    public static Rating i(int i, float f) {
+        return Rating.newStarRating(i, f);
     }
 
-    public final String toString() {
-        TLRPC.Document e;
-        if (!TextUtils.isEmpty(this.f)) {
-            return this.f;
-        }
-        long j = this.g;
-        if (j != 0 && (e = vl.e(y6c.t0, j)) != null) {
-            return k27.V(e, null, null);
-        }
-        StringBuilder sb = new StringBuilder("VisibleReaction{");
-        sb.append(this.g);
-        sb.append(", ");
-        return b00.j(sb, this.f, "}");
+    public static Rating j(boolean z) {
+        return Rating.newThumbRating(z);
+    }
+
+    public static Rating k(int i) {
+        return Rating.newUnratedRating(i);
     }
 }

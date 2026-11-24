@@ -1,19 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class rge implements zn7 {
-    public static final rge a = new rge();
-
-    static {
-        yjb.y(yjb.q(kkd.class, new cjd(1)));
+public abstract class rge {
+    public static long a(double d) {
+        jte.e("not a normal value", b(d));
+        int exponent = Math.getExponent(d);
+        long doubleToRawLongBits = Double.doubleToRawLongBits(d) & 4503599627370495L;
+        return exponent == -1023 ? doubleToRawLongBits << 1 : doubleToRawLongBits | 4503599627370496L;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public static boolean b(double d) {
+        return Math.getExponent(d) <= 1023;
     }
 }

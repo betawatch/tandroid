@@ -1,55 +1,31 @@
 // default package
 
-import android.animation.ValueAnimator;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class xq4 {
+    public int a;
+    public dp4 b;
+    public boolean c = false;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public v26 h;
+    public v26 i;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class xq4 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ xq4(Object obj, float f, float f2, float f3, byte b) {
-        this.a = b;
-        this.e = obj;
-        this.b = f;
-        this.c = f2;
-        this.d = f3;
+    public xq4(int i, dp4 dp4Var) {
+        this.a = i;
+        this.b = dp4Var;
+        v26 v26Var = v26.e;
+        this.h = v26Var;
+        this.i = v26Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        float f = this.d;
-        float f2 = this.c;
-        float f3 = this.b;
-        Object obj = this.e;
-        switch (b) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uq4 uq4Var = ((er4) obj).b;
-                uq4Var.d = f3 * floatValue;
-                uq4Var.e = f2 * floatValue;
-                uq4Var.i = floatValue * f;
-                break;
-            case 1:
-                l95 l95Var = (l95) obj;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l95Var.z0 = tb4.A(1.0f, floatValue2, 1.0f, f3 * floatValue2);
-                l95Var.s0 = f2 * floatValue2;
-                l95Var.t0 = f * floatValue2;
-                l95Var.invalidate();
-                break;
-            default:
-                hgc hgcVar = (hgc) obj;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hgcVar.f1 = tb4.A(1.0f, floatValue3, 1.0f, f3 * floatValue3);
-                hgcVar.Y0 = f2 * floatValue3;
-                hgcVar.Z0 = f * floatValue3;
-                hgcVar.s.invalidate();
-                break;
-        }
+    public xq4(int i, dp4 dp4Var, int i2) {
+        this.a = i;
+        this.b = dp4Var;
+        v26 v26Var = v26.e;
+        this.h = v26Var;
+        this.i = v26Var;
     }
 }

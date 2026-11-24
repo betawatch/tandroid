@@ -1,91 +1,30 @@
 // default package
 
-import java.util.concurrent.CancellationException;
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class fl8 extends b2 implements oe1, v0a {
-    public final q01 e;
+public final class fl8 {
+    public static final fl8 a;
+    public static final fl8 b;
+    public static final fl8 c;
+    public static final /* synthetic */ fl8[] d;
 
-    public fl8(sw2 sw2Var, q01 q01Var) {
-        super(sw2Var, true);
-        this.e = q01Var;
+    static {
+        fl8 fl8Var = new fl8("DEFAULT", 0);
+        a = fl8Var;
+        fl8 fl8Var2 = new fl8("VERY_LOW", 1);
+        b = fl8Var2;
+        fl8 fl8Var3 = new fl8("HIGHEST", 2);
+        c = fl8Var3;
+        d = new fl8[]{fl8Var, fl8Var2, fl8Var3};
     }
 
-    @Override // b2
-    public final void P(Throwable th, boolean z) {
-        if (this.e.c(th, false) || z) {
-            return;
-        }
-        c9e.a(this.d, th);
+    public static fl8 valueOf(String str) {
+        return (fl8) Enum.valueOf(fl8.class, str);
     }
 
-    @Override // b2
-    public final void Q(Object obj) {
-        this.e.c(null, false);
-    }
-
-    public final void S(n13 n13Var) {
-        Unsafe unsafe;
-        Unsafe unsafe2;
-        q01 q01Var = this.e;
-        q01Var.getClass();
-        long j = q01.s;
-        do {
-            unsafe = ex.a;
-            if (unsafe.compareAndSwapObject(q01Var, q01.s, (Object) null, n13Var)) {
-                return;
-            }
-        } while (unsafe.getObjectVolatile(q01Var, j) == null);
-        while (true) {
-            Object objectVolatile = ex.a.getObjectVolatile(q01Var, j);
-            lo5 lo5Var = s01.q;
-            if (objectVolatile != lo5Var) {
-                if (objectVolatile == s01.r) {
-                    sc8.j("Another handler was already registered and successfully invoked");
-                    return;
-                } else {
-                    wn4.n(objectVolatile, "Another handler is already registered: ");
-                    return;
-                }
-            }
-            lo5 lo5Var2 = s01.r;
-            do {
-                unsafe2 = ex.a;
-                if (unsafe2.compareAndSwapObject(q01Var, q01.s, lo5Var, lo5Var2)) {
-                    n13Var.invoke(q01Var.k());
-                    return;
-                }
-            } while (unsafe2.getObjectVolatile(q01Var, j) == lo5Var);
-        }
-    }
-
-    @Override // v0a
-    public final Object a(fw2 fw2Var, Object obj) {
-        return this.e.a(fw2Var, obj);
-    }
-
-    @Override // pt5, bt5
-    public final void cancel(CancellationException cancellationException) {
-        if (isCancelled()) {
-            return;
-        }
-        if (cancellationException == null) {
-            cancellationException = new ct5(l(), null, this);
-        }
-        j(cancellationException);
-    }
-
-    @Override // v0a
-    public final Object d(Object obj) {
-        return this.e.d(g5c.a);
-    }
-
-    @Override // pt5
-    public final void j(CancellationException cancellationException) {
-        CancellationException M = pt5.M(this, cancellationException);
-        this.e.c(M, true);
-        i(M);
+    public static fl8[] values() {
+        return (fl8[]) d.clone();
     }
 }

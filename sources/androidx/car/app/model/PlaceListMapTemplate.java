@@ -2,15 +2,15 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class PlaceListMapTemplate implements ogb {
+public final class PlaceListMapTemplate implements pib {
     private final ActionStrip mActionStrip;
     private final Place mAnchor;
     private final Action mHeaderAction;
     private final boolean mIsLoading;
     private final ItemList mItemList;
-    private final ap7 mOnContentRefreshDelegate;
+    private final dr7 mOnContentRefreshDelegate;
     private final boolean mShowCurrentLocation;
     private final CarText mTitle;
 
@@ -57,7 +57,7 @@ public final class PlaceListMapTemplate implements ogb {
         return this.mItemList;
     }
 
-    public ap7 getOnContentRefreshDelegate() {
+    public dr7 getOnContentRefreshDelegate() {
         return this.mOnContentRefreshDelegate;
     }
 
@@ -81,7 +81,7 @@ public final class PlaceListMapTemplate implements ogb {
         return "PlaceListMapTemplate";
     }
 
-    public PlaceListMapTemplate(kb8 kb8Var) {
+    public PlaceListMapTemplate(nd8 nd8Var) {
         throw null;
     }
 }

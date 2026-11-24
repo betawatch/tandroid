@@ -1,43 +1,19 @@
 // default package
 
-import android.os.Looper;
-import android.util.SparseArray;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.atomic.AtomicInteger;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ehd implements OnCompleteListener, Runnable {
-    public static final o59 d = new o59(Looper.getMainLooper());
-    public static final SparseArray e = new SparseArray(2);
-    public static final AtomicInteger f = new AtomicInteger();
-    public int a;
-    public gnd b;
-    public Task c;
+public final class ehd implements cq7 {
+    public static final ehd a = new ehd();
 
-    public final void a() {
-        if (this.c == null || this.b == null) {
-            return;
-        }
-        e.delete(this.a);
-        d.removeCallbacks(this);
-        gnd gndVar = this.b;
-        if (gndVar != null) {
-            Task task = this.c;
-            int i = gnd.d;
-            gndVar.a(task);
-        }
+    static {
+        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)), 3)), 4)), 5)), 6)), 7)));
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public final void onComplete(Task task) {
-        this.c = task;
-        a();
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        e.delete(this.a);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

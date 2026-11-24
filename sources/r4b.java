@@ -1,49 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.tgnet.TLRPC;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class r4b extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class r4b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ t4b b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    static {
-        b4c.h(new r4b());
+    public /* synthetic */ r4b(t4b t4bVar, long j, int i, byte b) {
+        this.a = b;
+        this.b = t4bVar;
+        this.c = j;
+        this.d = i;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        s4b s4bVar = (s4b) view;
-        Object obj = c4cVar.H;
-        TLRPC.WebPage webPage = obj instanceof TLRPC.WebPage ? (TLRPC.WebPage) obj : null;
-        View.OnClickListener onClickListener = c4cVar.E;
-        hn hnVar = s4bVar.e;
-        ImageView imageView = s4bVar.b;
-        ImageView imageView2 = s4bVar.c;
-        boolean z2 = (webPage == null || (webPage instanceof TLRPC.TL_webPagePending)) ? false : true;
-        imageView.setAlpha(z2 ? 1.0f : 0.0f);
-        imageView.setScaleX(z2 ? 1.0f : 0.4f);
-        imageView.setScaleY(z2 ? 1.0f : 0.4f);
-        imageView2.setAlpha(z2 ? 0.0f : 1.0f);
-        imageView2.setScaleX(z2 ? 0.4f : 1.0f);
-        imageView2.setScaleY(z2 ? 0.4f : 1.0f);
-        hn hnVar2 = s4bVar.d;
-        if (z2) {
-            hnVar2.c(TextUtils.isEmpty(webPage.site_name) ? webPage.title : webPage.site_name, false, true);
-            hnVar.c(webPage.description, false, true);
-        } else {
-            hnVar2.c(s4bVar.h, false, true);
-            hnVar.c(s4bVar.n, false, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.d;
+        long j = this.c;
+        t4b t4bVar = this.b;
+        switch (b) {
+            case 0:
+                cf7 cf7Var = t4bVar.b;
+                SQLiteDatabase sQLiteDatabase = cf7Var.b;
+                try {
+                    Locale locale = Locale.US;
+                    sQLiteDatabase.executeFast("REPLACE INTO stories_counter VALUES(" + j + ", 0, " + i + ")").stepThis().dispose();
+                    break;
+                } catch (Throwable th) {
+                    cf7Var.n(th, true);
+                    return;
+                }
+            default:
+                cf7 cf7Var2 = t4bVar.b;
+                SQLiteDatabase sQLiteDatabase2 = cf7Var2.b;
+                try {
+                    Locale locale2 = Locale.US;
+                    sQLiteDatabase2.executeFast("DELETE FROM stories WHERE dialog_id = " + j + " AND story_id = " + i).stepThis().dispose();
+                    break;
+                } catch (Throwable th2) {
+                    cf7Var2.n(th2, true);
+                }
         }
-        s4bVar.f.setOnClickListener(onClickListener);
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new s4b(context);
     }
 }

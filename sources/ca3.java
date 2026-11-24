@@ -1,24 +1,23 @@
 // default package
 
-import android.os.Handler;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ca3 implements xq3 {
-    public final vq3 a;
-    public sq3 b;
-    public boolean c;
-    public final /* synthetic */ da3 d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ca3 extends tca {
+    public final /* synthetic */ da3 U2;
 
-    public ca3(da3 da3Var, vq3 vq3Var) {
-        this.d = da3Var;
-        this.a = vq3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ca3(da3 da3Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.U2 = da3Var;
     }
 
-    @Override // xq3
-    public final void release() {
-        Handler handler = this.d.K;
-        handler.getClass();
-        g8c.X(handler, new mk2(this, (byte) 20));
+    @Override // tca
+    public final void L0(vh6 vh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        if (z) {
+            gm.d3(new mv2(this, vh6Var, i), 250L);
+        }
     }
 }

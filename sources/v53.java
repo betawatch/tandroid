@@ -1,53 +1,37 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.ui.DataAutoDownloadActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class v53 extends rj6 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ mhb f;
-    public final /* synthetic */ ahb[] h;
-    public final /* synthetic */ AnimatorSet[] n;
-    public final /* synthetic */ DataAutoDownloadActivity r;
+public final class v53 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ x53 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v53(DataAutoDownloadActivity dataAutoDownloadActivity, Activity activity, int i, mhb mhbVar, ahb[] ahbVarArr, AnimatorSet[] animatorSetArr) {
-        super(activity);
-        this.r = dataAutoDownloadActivity;
-        this.e = i;
-        this.f = mhbVar;
-        this.h = ahbVarArr;
-        this.n = animatorSetArr;
-        setWillNotDraw(false);
-        TextView textView = new TextView(activity);
-        this.a = textView;
-        zkb.X(textView, bkb.i5, null);
-        ug8.w(textView, 1, 16.0f, 1, 1);
-        textView.setSingleLine(true);
-        textView.setGravity((k96.a0 ? 5 : 3) | 48);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setImportantForAccessibility(2);
-        addView(textView, nme.d(-1, -1.0f, (k96.a0 ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-        TextView textView2 = new TextView(activity);
-        this.b = textView2;
-        zkb.X(textView2, bkb.m5, null);
-        ug8.w(textView2, 1, 16.0f, 1, 1);
-        textView2.setSingleLine(true);
-        textView2.setGravity((k96.a0 ? 3 : 5) | 48);
-        textView2.setImportantForAccessibility(2);
-        addView(textView2, nme.d(-2, -1.0f, (k96.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-        ty0 ty0Var = new ty0(activity);
-        this.c = ty0Var;
-        ty0Var.setReportChanges(true);
-        ty0Var.setDelegate(new gi3(this));
-        ty0Var.setImportantForAccessibility(2);
-        addView(ty0Var, nme.d(-1, 38.0f, 51, 6.0f, 36.0f, 6.0f, 0.0f));
-        setImportantForAccessibility(1);
-        setAccessibilityDelegate(ty0Var.getSeekBarAccessibilityDelegate());
+    public /* synthetic */ v53(x53 x53Var, byte b) {
+        this.a = b;
+        this.b = x53Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        x53 x53Var = this.b;
+        switch (b) {
+            case 0:
+                x53Var.f();
+                break;
+            default:
+                x53Var.a(false);
+                x53Var.j = 0.0f;
+                v29 v29Var = x53Var.n;
+                v29Var.setCustomEmojiEnterProgress(Utilities.i(0.0f, 1.0f, 0.0f));
+                v29Var.setSkipDraw(false);
+                x53Var.c.setVisibility(8);
+                x53Var.f();
+                break;
+        }
     }
 }

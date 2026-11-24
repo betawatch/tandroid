@@ -6,10 +6,10 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new igd(23);
+    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new jid(23);
     public final String a;
     public final String b;
     public final int c;
@@ -43,7 +43,7 @@ public class ConnectionConfiguration extends b4 implements ReflectedParcelable {
             return false;
         }
         ConnectionConfiguration connectionConfiguration = (ConnectionConfiguration) obj;
-        return cqe.a(this.a, connectionConfiguration.a) && cqe.a(this.b, connectionConfiguration.b) && cqe.a(Integer.valueOf(this.c), Integer.valueOf(connectionConfiguration.c)) && cqe.a(Integer.valueOf(this.d), Integer.valueOf(connectionConfiguration.d)) && cqe.a(Boolean.valueOf(this.e), Boolean.valueOf(connectionConfiguration.e)) && cqe.a(Boolean.valueOf(this.n), Boolean.valueOf(connectionConfiguration.n));
+        return fse.a(this.a, connectionConfiguration.a) && fse.a(this.b, connectionConfiguration.b) && fse.a(Integer.valueOf(this.c), Integer.valueOf(connectionConfiguration.c)) && fse.a(Integer.valueOf(this.d), Integer.valueOf(connectionConfiguration.d)) && fse.a(Boolean.valueOf(this.e), Boolean.valueOf(connectionConfiguration.e)) && fse.a(Boolean.valueOf(this.n), Boolean.valueOf(connectionConfiguration.n));
     }
 
     public final int hashCode() {
@@ -56,31 +56,31 @@ public class ConnectionConfiguration extends b4 implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
+        int r = mve.r(parcel, 20293);
+        mve.l(parcel, 2, this.a);
+        mve.l(parcel, 3, this.b);
         int i2 = this.c;
-        jte.q(parcel, 4, 4);
+        mve.q(parcel, 4, 4);
         parcel.writeInt(i2);
         int i3 = this.d;
-        jte.q(parcel, 5, 4);
+        mve.q(parcel, 5, 4);
         parcel.writeInt(i3);
         boolean z = this.e;
-        jte.q(parcel, 6, 4);
+        mve.q(parcel, 6, 4);
         parcel.writeInt(z ? 1 : 0);
         boolean z2 = this.f;
-        jte.q(parcel, 7, 4);
+        mve.q(parcel, 7, 4);
         parcel.writeInt(z2 ? 1 : 0);
-        jte.l(parcel, 8, this.h);
+        mve.l(parcel, 8, this.h);
         boolean z3 = this.n;
-        jte.q(parcel, 9, 4);
+        mve.q(parcel, 9, 4);
         parcel.writeInt(z3 ? 1 : 0);
-        jte.l(parcel, 10, this.r);
-        jte.l(parcel, 11, this.s);
+        mve.l(parcel, 10, this.r);
+        mve.l(parcel, 11, this.s);
         int i4 = this.w;
-        jte.q(parcel, 12, 4);
+        mve.q(parcel, 12, 4);
         parcel.writeInt(i4);
-        jte.n(parcel, 13, this.x);
-        jte.s(parcel, r);
+        mve.n(parcel, 13, this.x);
+        mve.s(parcel, r);
     }
 }

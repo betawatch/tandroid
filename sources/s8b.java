@@ -1,16 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class s8b implements nc0 {
-    public final fm4 a;
+import android.app.Activity;
 
-    public s8b(fm4 fm4Var) {
-        this.a = fm4Var;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class s8b extends a7b {
+    public final /* synthetic */ v9b E;
 
-    @Override // nc0
-    public final int getType() {
-        return 1718776947;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s8b(v9b v9bVar, Activity activity) {
+        super(activity);
+        this.E = v9bVar;
     }
 }

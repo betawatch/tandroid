@@ -1,116 +1,33 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ym1 implements he8, wi3 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class ym1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yv1 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ ym1(mu1 mu1Var, boolean z, k27 k27Var, int i) {
-        this.c = mu1Var;
-        this.a = z;
-        this.d = k27Var;
-        this.b = i;
+    public /* synthetic */ ym1(yv1 yv1Var, long j, long j2, byte b) {
+        this.a = b;
+        this.b = yv1Var;
+        this.c = j;
+        this.d = j2;
     }
 
-    @Override // wi3
-    public final boolean F() {
-        return false;
-    }
-
-    @Override // he8
-    public final void c(TLRPC.MessageMedia messageMedia) {
-        int i;
-        mu1 mu1Var = (mu1) this.c;
-        k27 k27Var = (k27) this.d;
-        if (!this.a) {
-            if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-                TLRPC.MessageMedia messageMedia2 = k27Var.k.media;
-                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
-                    ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
-                }
-            }
-            k27Var.k.media = messageMedia;
-            mu1Var.getSendMessagesHelper().s(k27Var, null, null, null, null, null, null, null, false, false, null);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.d;
+        long j2 = this.c;
+        yv1 yv1Var = this.b;
+        switch (b) {
+            case 0:
+                yv1Var.s9(j2, j);
+                break;
+            default:
+                yv1Var.U9(j2, j);
+                break;
         }
-        TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
-        tL_messages_appendTodoList.peer = mu1Var.getMessagesController().h1(k27.B0(k27Var.k));
-        tL_messages_appendTodoList.msg_id = k27Var.e1();
-        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
-            int i2 = 0;
-            int i3 = 0;
-            while (true) {
-                i = this.b;
-                if (i2 >= i) {
-                    break;
-                }
-                i3 = Math.max(i3, tL_messageMediaToDo.todo.list.get(i2).id);
-                i2++;
-            }
-            while (i < tL_messageMediaToDo.todo.list.size()) {
-                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i);
-                if (todoItem.id <= i3) {
-                    todoItem.id = i3 + 1;
-                }
-                tL_messages_appendTodoList.list.add(todoItem);
-                i3 = Math.max(i3, todoItem.id);
-                i++;
-            }
-            TLRPC.MessageMedia messageMedia3 = k27Var.k.media;
-            if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
-                tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
-            }
-        }
-        k27Var.k.media = messageMedia;
-        mu1Var.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
-    }
-
-    @Override // wi3
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
-        LaunchActivity launchActivity = (LaunchActivity) this.c;
-        String str = (String) this.d;
-        String str2 = LaunchActivity.C1;
-        long j = ((zc7) arrayList.get(0)).a;
-        Bundle bundle = new Bundle();
-        bundle.putBoolean("scrollToTopOnResume", true);
-        bundle.putBoolean("hasUrl", this.a);
-        if (cf3.B(j)) {
-            bundle.putInt("enc_id", (int) (4294967295L & j));
-        } else if (cf3.D(j)) {
-            bundle.putLong("user_id", j);
-        } else {
-            bundle.putLong("chat_id", -j);
-        }
-        int i3 = this.b;
-        if (!na7.q1(i3).A(bundle, cj3Var, null, null)) {
-            return true;
-        }
-        kk7.f(i3).k(kk7.s, new Object[0]);
-        hq6.d0(i3).T1(j, 0L, str, null, null, null, null, 0L, false, false, null);
-        ui5 N = launchActivity.N();
-        ((ActionBarLayout) N).U(new mu1(bundle), true, false);
-        return true;
-    }
-
-    @Override // wi3
-    public final boolean t(cj3 cj3Var) {
-        return false;
-    }
-
-    public /* synthetic */ ym1(LaunchActivity launchActivity, boolean z, int i, String str) {
-        this.c = launchActivity;
-        this.a = z;
-        this.b = i;
-        this.d = str;
     }
 }

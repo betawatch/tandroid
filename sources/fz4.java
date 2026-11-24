@@ -1,20 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class fz4 extends mh8 {
-    public final /* synthetic */ byte r;
+public final class fz4 {
+    public byte a;
+    public final int[] b = new int[8];
+    public float c;
+    public float d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public boolean j;
+    public boolean k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fz4(int i, int i2, int i3, int i4, wjb wjbVar, byte b) {
-        super(i, i2, i3, i4, wjbVar);
-        this.r = b;
+    public static long b(int i, long j) {
+        return (j ^ i) * 1099511628211L;
     }
 
-    @Override // mh8
-    public final int c(int i) {
-        switch (this.r) {
+    public final long a() {
+        long b = b(this.a, -3750763034362895579L);
+        for (int i : this.b) {
+            b = b(i, b);
         }
-        return bkb.D0(i);
+        return b(this.q, b(this.p, b(this.o, b(this.n, b(this.m, b(this.l, b(this.k ? -1 : this.i, b(this.j ? -1 : this.h, b(Float.floatToIntBits(this.d), b(Float.floatToIntBits(this.c), b))))))))));
     }
 }

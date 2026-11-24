@@ -1,173 +1,90 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import java.util.ArrayList;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.util.Base64;
+import org.json.JSONObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jy7 {
-    public Path a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public ArrayList g;
+public final class jy7 implements a33 {
+    public final /* synthetic */ fh6 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
 
-    public final void a(String str, float f) {
-        float f2 = this.e;
-        float f3 = this.d;
-        float f4 = this.c;
-        try {
-            gy7 gy7Var = new gy7();
-            gy7Var.a = new ArrayList();
-            gy7Var.b = f * this.f;
-            String[] split = str.split(" ");
-            int i = 0;
-            while (i < split.length) {
-                char charAt = split[i].charAt(0);
-                if (charAt == 'C') {
-                    fy7 fy7Var = new fy7();
-                    fy7Var.c = (Float.parseFloat(split[i + 1]) + f3) * f4;
-                    fy7Var.d = (Float.parseFloat(split[i + 2]) + f2) * f4;
-                    fy7Var.e = (Float.parseFloat(split[i + 3]) + f3) * f4;
-                    fy7Var.f = (Float.parseFloat(split[i + 4]) + f2) * f4;
-                    fy7Var.a = (Float.parseFloat(split[i + 5]) + f3) * f4;
-                    i += 6;
-                    fy7Var.b = (Float.parseFloat(split[i]) + f2) * f4;
-                    gy7Var.a.add(fy7Var);
-                } else if (charAt == 'L') {
-                    hy7 hy7Var = new hy7();
-                    hy7Var.a = (Float.parseFloat(split[i + 1]) + f3) * f4;
-                    i += 2;
-                    hy7Var.b = (Float.parseFloat(split[i]) + f2) * f4;
-                    gy7Var.a.add(hy7Var);
-                } else if (charAt == 'M') {
-                    iy7 iy7Var = new iy7();
-                    iy7Var.a = (Float.parseFloat(split[i + 1]) + f3) * f4;
-                    i += 2;
-                    iy7Var.b = (Float.parseFloat(split[i]) + f2) * f4;
-                    gy7Var.a.add(iy7Var);
-                }
-                i++;
-            }
-            this.g.add(gy7Var);
-        } catch (Exception e) {
-            fa4.g(e, true);
+    public jy7(fh6 fh6Var, Context context, int i) {
+        this.a = fh6Var;
+        this.b = context;
+        this.c = i;
+    }
+
+    @Override // a33
+    public final void A(Object obj) {
+        vu4 vu4Var = (vu4) obj;
+        boolean z = vu4Var instanceof sl7;
+        fh6 fh6Var = this.a;
+        if (z) {
+            fh6Var.a(0L, null, "EMPTY");
+            return;
+        }
+        if (vu4Var instanceof su4) {
+            fh6Var.a(0L, null, "CANCELLED");
+        } else if (vu4Var instanceof wu4) {
+            fh6Var.a(0L, null, "CANCELLED");
+        } else if (vu4Var != null) {
+            fh6Var.a(0L, null, vu4Var.getMessage());
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0028, code lost:
-    
-        if (r9 < r11) goto L10;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(Canvas canvas, Paint paint, float f) {
-        gy7 gy7Var;
-        gy7 gy7Var2;
-        float f2;
-        float f3;
-        ArrayList arrayList = this.g;
-        Path path = this.a;
-        if (this.b != f) {
-            this.b = f;
-            int size = arrayList.size();
-            gy7 gy7Var3 = null;
-            gy7 gy7Var4 = null;
-            for (int i = 0; i < size; i++) {
-                gy7 gy7Var5 = (gy7) arrayList.get(i);
-                if (gy7Var4 != null) {
-                    float f4 = gy7Var4.b;
-                    f3 = gy7Var5.b;
-                }
-                f3 = gy7Var5.b;
-                if (f3 <= f) {
-                    gy7Var4 = gy7Var5;
-                }
-                if ((gy7Var3 == null || gy7Var3.b > f3) && f3 >= f) {
-                    gy7Var3 = gy7Var5;
-                }
+    @Override // a33
+    public final void onResult(Object obj) {
+        final fh6 fh6Var = this.a;
+        x23 x23Var = ((yu4) obj).a;
+        TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
+        finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
+        try {
+            JSONObject jSONObject = new JSONObject(((Bundle) x23Var.a).getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON"));
+            finishpasskeylogin.credential.id = jSONObject.getString("id");
+            finishpasskeylogin.credential.raw_id = jSONObject.getString("rawId");
+            JSONObject jSONObject2 = jSONObject.getJSONObject("response");
+            TL_account.inputPasskeyResponseLogin inputpasskeyresponselogin = new TL_account.inputPasskeyResponseLogin();
+            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+            inputpasskeyresponselogin.client_data = tL_dataJSON;
+            tL_dataJSON.data = new String(Base64.decode(jSONObject2.getString("clientDataJSON"), 8));
+            inputpasskeyresponselogin.authenticator_data = Base64.decode(jSONObject2.getString("authenticatorData"), 8);
+            inputpasskeyresponselogin.signature = Base64.decode(jSONObject2.getString("signature"), 8);
+            String str = new String(Base64.decode(jSONObject2.getString("userHandle"), 8));
+            inputpasskeyresponselogin.user_handle = str;
+            int parseInt = Integer.parseInt(str.split(":")[0]);
+            final long parseLong = Long.parseLong(inputpasskeyresponselogin.user_handle.split(":")[1]);
+            finishpasskeylogin.credential.response = inputpasskeyresponselogin;
+            he heVar = new he(3, null, this.b);
+            heVar.q(500L);
+            int i = this.c;
+            if (parseInt != ConnectionsManager.getInstance(i).getCurrentDatacenterId()) {
+                int currentDatacenterId = ConnectionsManager.getInstance(i).getCurrentDatacenterId();
+                long currentAuthKeyId = ConnectionsManager.getInstance(i).getCurrentAuthKeyId();
+                ConnectionsManager.getInstance(i).setDefaultDatacenterId(parseInt);
+                finishpasskeylogin.flags |= 1;
+                finishpasskeylogin.from_dc_id = currentDatacenterId;
+                finishpasskeylogin.from_auth_key_id = currentAuthKeyId;
             }
-            if (gy7Var3 == gy7Var4) {
-                gy7Var4 = null;
-            }
-            if (gy7Var4 == null || gy7Var3 != null) {
-                gy7Var = gy7Var3;
-                gy7Var2 = gy7Var4;
-            } else {
-                gy7Var = gy7Var4;
-                gy7Var2 = null;
-            }
-            if (gy7Var == null) {
-                return;
-            }
-            ArrayList arrayList2 = gy7Var.a;
-            if (gy7Var2 != null && gy7Var2.a.size() != arrayList2.size()) {
-                return;
-            }
-            path.reset();
-            int size2 = arrayList2.size();
-            for (int i2 = 0; i2 < size2; i2++) {
-                Object obj = gy7Var2 != null ? gy7Var2.a.get(i2) : null;
-                Object obj2 = arrayList2.get(i2);
-                if (obj != null && obj.getClass() != obj2.getClass()) {
-                    return;
+            final int sendRequestTyped = ConnectionsManager.getInstance(i).sendRequestTyped(finishpasskeylogin, new kc((byte) 0), new fv4(heVar, fh6Var, parseLong, (byte) 4), parseInt, 72);
+            final int i2 = this.c;
+            heVar.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: iy7
+                @Override // android.content.DialogInterface.OnCancelListener
+                public final void onCancel(DialogInterface dialogInterface) {
+                    ConnectionsManager.getInstance(i2).cancelRequest(sendRequestTyped, true);
+                    fh6Var.a(Long.valueOf(parseLong), null, "CANCELLED");
                 }
-                if (gy7Var2 != null) {
-                    float f5 = gy7Var2.b;
-                    f2 = (f - f5) / (gy7Var.b - f5);
-                } else {
-                    f2 = 1.0f;
-                }
-                if (obj2 instanceof iy7) {
-                    iy7 iy7Var = (iy7) obj2;
-                    iy7 iy7Var2 = (iy7) obj;
-                    if (iy7Var2 != null) {
-                        float f6 = iy7Var2.a;
-                        float N = gl.N(((iy7Var.a - f6) * f2) + f6);
-                        float f7 = iy7Var2.b;
-                        path.moveTo(N, gl.N(((iy7Var.b - f7) * f2) + f7));
-                    } else {
-                        path.moveTo(gl.N(iy7Var.a), gl.N(iy7Var.b));
-                    }
-                } else if (obj2 instanceof hy7) {
-                    hy7 hy7Var = (hy7) obj2;
-                    hy7 hy7Var2 = (hy7) obj;
-                    if (hy7Var2 != null) {
-                        float f8 = hy7Var2.a;
-                        float N2 = gl.N(((hy7Var.a - f8) * f2) + f8);
-                        float f9 = hy7Var2.b;
-                        path.lineTo(N2, gl.N(((hy7Var.b - f9) * f2) + f9));
-                    } else {
-                        path.lineTo(gl.N(hy7Var.a), gl.N(hy7Var.b));
-                    }
-                } else if (obj2 instanceof fy7) {
-                    fy7 fy7Var = (fy7) obj2;
-                    fy7 fy7Var2 = (fy7) obj;
-                    if (fy7Var2 != null) {
-                        float f10 = fy7Var2.c;
-                        float N3 = gl.N(((fy7Var.c - f10) * f2) + f10);
-                        float f11 = fy7Var2.d;
-                        float N4 = gl.N(((fy7Var.d - f11) * f2) + f11);
-                        float f12 = fy7Var2.e;
-                        float N5 = gl.N(((fy7Var.e - f12) * f2) + f12);
-                        float f13 = fy7Var2.f;
-                        float N6 = gl.N(((fy7Var.f - f13) * f2) + f13);
-                        float f14 = fy7Var2.a;
-                        float N7 = gl.N(((fy7Var.a - f14) * f2) + f14);
-                        float f15 = fy7Var2.b;
-                        path.cubicTo(N3, N4, N5, N6, N7, gl.N(((fy7Var.b - f15) * f2) + f15));
-                    } else {
-                        path.cubicTo(gl.N(fy7Var.c), gl.N(fy7Var.d), gl.N(fy7Var.e), gl.N(fy7Var.f), gl.N(fy7Var.a), gl.N(fy7Var.b));
-                    }
-                }
-            }
-            path.close();
+            });
+        } catch (Exception e) {
+            fc4.g(e, true);
+            fh6Var.a(0L, null, e.getMessage());
         }
-        canvas.drawPath(path, paint);
     }
 }

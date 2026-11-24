@@ -1,9 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class tu4 {
-    public String a;
-    public String b;
-    public jq0 c;
+import android.content.Context;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class tu4 extends j33 {
+    public final Context e;
+    public a33 f;
+    public Executor g;
+    public CancellationSignal h;
+    public final j23 i;
+
+    public tu4(Context context) {
+        context.getClass();
+        this.e = context;
+        this.i = new j23(this, new Handler(Looper.getMainLooper()), (byte) 4);
+    }
 }

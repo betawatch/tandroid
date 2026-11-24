@@ -1,44 +1,46 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class to1 implements y60 {
-    public final /* synthetic */ mu1 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class to1 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bu5 b;
 
-    public to1(mu1 mu1Var) {
-        this.a = mu1Var;
+    public /* synthetic */ to1(bu5 bu5Var, jd jdVar) {
+        this.a = (byte) 1;
+        this.b = bu5Var;
     }
 
-    @Override // y60
-    public final void dismiss() {
-        m8 m8Var = this.a.g9;
-        if (m8Var != null) {
-            m8Var.dismiss();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        bu5 bu5Var = this.b;
+        switch (b) {
+            case 0:
+                bu5Var.r();
+                break;
+            case 1:
+                if (bu5Var.J) {
+                    bu5Var.u();
+                    break;
+                }
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                bu5Var.r();
+                break;
+            default:
+                bu5Var.r();
+                break;
         }
     }
 
-    @Override // y60
-    public final void n(int i, int i2) {
-        mu1 mu1Var = this.a;
-        mu1Var.getMessagesController().M4(i, mu1Var.l6);
-        if (mu1Var.s8 == null && mu1Var.r8 == null) {
-            return;
-        }
-        mu1Var.Z5();
-        UndoView undoView = mu1Var.N3;
-        if (undoView == null) {
-            return;
-        }
-        long j = mu1Var.l6;
-        TLRPC.User user = mu1Var.f;
-        TLRPC.UserFull userFull = mu1Var.s8;
-        undoView.k(j, i2, user, Integer.valueOf(userFull != null ? userFull.ttl_period : mu1Var.r8.ttl_period), null, null);
-    }
-
-    @Override // y60
-    public final void F() {
+    public /* synthetic */ to1(bu5 bu5Var, byte b) {
+        this.a = b;
+        this.b = bu5Var;
     }
 }

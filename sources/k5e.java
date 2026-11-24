@@ -1,19 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class k5e implements zn7 {
-    public static final k5e a = new k5e();
+public abstract class k5e {
+    public static final Charset a;
+    public static final byte[] b;
 
     static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)), 10)), 11)), 12)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+        Charset.forName("US-ASCII");
+        a = Charset.forName("UTF-8");
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        b = bArr;
+        ByteBuffer.wrap(bArr);
     }
 }

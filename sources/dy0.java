@@ -1,113 +1,54 @@
 // default package
 
 import android.content.Context;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class dy0 extends n39 {
-    public final /* synthetic */ byte c;
-    public final Context d;
-    public final Object e;
-    public final /* synthetic */ KeyEvent.Callback f;
+public final class dy0 extends ky0 {
+    public final /* synthetic */ my0 I;
 
-    public dy0(v12 v12Var, Context context) {
-        this.c = (byte) 1;
-        this.f = v12Var;
-        this.e = new ArrayList();
-        this.d = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dy0(my0 my0Var, Context context) {
+        super(my0Var, context);
+        this.I = my0Var;
     }
 
-    @Override // w39
-    public final void B(y39 y39Var) {
-        switch (this.c) {
-            case 0:
-                ((n39) this.e).B(new cy0(this, y39Var));
-                break;
-            default:
-                super.B(y39Var);
-                break;
+    @Override // ky0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.I.W(canvas);
+    }
+
+    @Override // ky0, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        try {
+            return super.drawChild(canvas, view, j);
+        } catch (Exception e) {
+            fc4.g(e, true);
+            return true;
         }
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        switch (this.c) {
-            case 0:
-                return ((n39) this.e).D(s49Var);
-            default:
-                return s49Var.f == 0;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setTag(R.id.bulletin_delegate_tag, new oz((byte) 3));
     }
 
-    @Override // w39
-    public final int b() {
-        byte b = this.c;
-        Object obj = this.e;
-        switch (b) {
-            case 0:
-                return ((n39) obj).b() + 1;
-            default:
-                return ((ArrayList) obj).size();
-        }
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        my0 my0Var = this.I;
+        my0Var.h = null;
+        my0Var.c.requestApplyInsets();
     }
 
-    @Override // w39
-    public final int d(int i) {
-        switch (this.c) {
-            case 0:
-                fy0 fy0Var = (fy0) this.f;
-                if (i == (fy0Var.J1 ? b() - 1 : 0)) {
-                    return -1000;
-                }
-                return ((n39) this.e).d(i - (!fy0Var.J1 ? 1 : 0));
-            default:
-                return 0;
-        }
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        byte b = this.c;
-        Object obj = this.e;
-        KeyEvent.Callback callback = this.f;
-        switch (b) {
-            case 0:
-                fy0 fy0Var = (fy0) callback;
-                if (i != (fy0Var.J1 ? b() - 1 : 0)) {
-                    ((n39) obj).t(s49Var, i - (!fy0Var.J1 ? 1 : 0));
-                    break;
-                }
-                break;
-            default:
-                qqc qqcVar = (qqc) s49Var.a;
-                qqcVar.d(1, false, false);
-                qqcVar.setSize(((v12) callback).r);
-                qqcVar.e(((ArrayList) obj).get(i), 1, 0, null);
-                break;
-        }
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        byte b = this.c;
-        Context context = this.d;
-        switch (b) {
-            case 0:
-                return i == -1000 ? new y29(new sb((fy0) this.f, context)) : ((n39) this.e).x(viewGroup, i);
-            default:
-                u12 u12Var = new u12(this, context);
-                u12Var.b = false;
-                return new y29(u12Var);
-        }
-    }
-
-    public dy0(fy0 fy0Var, n39 n39Var, Context context) {
-        this.c = (byte) 0;
-        this.f = fy0Var;
-        this.e = n39Var;
-        this.d = context;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setTag(R.id.bulletin_delegate_tag, null);
     }
 }

@@ -1,137 +1,60 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class n96 implements o96 {
-    public static final Locale[] c = new Locale[0];
-    public final Locale[] a;
-    public final String b;
+public abstract class n96 {
+    public final fq7 a;
+    public boolean b;
+    public int c = -1;
+    public final /* synthetic */ kj7 d;
 
-    static {
-        new Locale("en", "XA");
-        new Locale("ar", "XB");
-        m96 m96Var = m96.b;
-        String[] split = "en-Latn".split("-", -1);
-        if (split.length > 2) {
-            new Locale(split[0], split[1], split[2]);
-            return;
-        }
-        if (split.length > 1) {
-            new Locale(split[0], split[1]);
-        } else if (split.length == 1) {
-            new Locale(split[0]);
-        } else {
-            w26.j("Can not parse language tag: [en-Latn]");
-        }
+    public n96(kj7 kj7Var, fq7 fq7Var) {
+        this.d = kj7Var;
+        this.a = fq7Var;
     }
 
-    public n96(Locale... localeArr) {
-        if (localeArr.length == 0) {
-            this.a = c;
-            this.b = "";
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        HashSet hashSet = new HashSet();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < localeArr.length; i++) {
-            Locale locale = localeArr[i];
-            if (locale == null) {
-                fvc.f(tb4.n(i, "list[", "] is null"));
-                throw null;
-            }
-            if (!hashSet.contains(locale)) {
-                Locale locale2 = (Locale) locale.clone();
-                arrayList.add(locale2);
-                sb.append(locale2.getLanguage());
-                String country = locale2.getCountry();
-                if (country != null && !country.isEmpty()) {
-                    sb.append('-');
-                    sb.append(locale2.getCountry());
+    public final void a(boolean z) {
+        if (z != this.b) {
+            this.b = z;
+            int i = z ? 1 : -1;
+            kj7 kj7Var = this.d;
+            int i2 = kj7Var.c;
+            kj7Var.c = i + i2;
+            if (!kj7Var.d) {
+                kj7Var.d = true;
+                while (true) {
+                    try {
+                        int i3 = kj7Var.c;
+                        if (i2 == i3) {
+                            break;
+                        }
+                        boolean z2 = i2 == 0 && i3 > 0;
+                        boolean z3 = i2 > 0 && i3 == 0;
+                        if (z2) {
+                            kj7Var.e();
+                        } else if (z3) {
+                            kj7Var.f();
+                        }
+                        i2 = i3;
+                    } finally {
+                        kj7Var.d = false;
+                    }
                 }
-                if (i < localeArr.length - 1) {
-                    sb.append(',');
-                }
-                hashSet.add(locale2);
+            }
+            if (this.b) {
+                kj7Var.c(this);
             }
         }
-        this.a = (Locale[]) arrayList.toArray(new Locale[0]);
-        this.b = sb.toString();
     }
 
-    @Override // o96
-    public final String a() {
-        return this.b;
+    public boolean d(e36 e36Var) {
+        return false;
     }
 
-    @Override // o96
-    public final Object b() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof n96)) {
-            return false;
-        }
-        Locale[] localeArr = ((n96) obj).a;
-        Locale[] localeArr2 = this.a;
-        if (localeArr2.length != localeArr.length) {
-            return false;
-        }
-        for (int i = 0; i < localeArr2.length; i++) {
-            if (!localeArr2[i].equals(localeArr[i])) {
-                return false;
-            }
-        }
+    public boolean e() {
         return true;
     }
 
-    @Override // o96
-    public final Locale get(int i) {
-        if (i < 0) {
-            return null;
-        }
-        Locale[] localeArr = this.a;
-        if (i < localeArr.length) {
-            return localeArr[i];
-        }
-        return null;
-    }
-
-    public final int hashCode() {
-        int i = 1;
-        for (Locale locale : this.a) {
-            i = (i * 31) + locale.hashCode();
-        }
-        return i;
-    }
-
-    @Override // o96
-    public final int size() {
-        return this.a.length;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        int i = 0;
-        while (true) {
-            Locale[] localeArr = this.a;
-            if (i >= localeArr.length) {
-                sb.append("]");
-                return sb.toString();
-            }
-            sb.append(localeArr[i]);
-            if (i < localeArr.length - 1) {
-                sb.append(',');
-            }
-            i++;
-        }
+    public void c() {
     }
 }

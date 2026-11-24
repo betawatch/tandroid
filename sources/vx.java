@@ -1,49 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class vx implements et8 {
-    public final byte a;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_iv;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public vx(int i) {
-        this.a = i;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return et8.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof et8)) {
-            return false;
-        }
-        et8 et8Var = (et8) obj;
-        return this.a == et8Var.tag() && dt8.a.equals(et8Var.intEncoding());
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (dt8.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // et8
-    public final dt8 intEncoding() {
-        return dt8.a;
-    }
-
-    @Override // et8
-    public final int tag() {
-        return this.a;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + dt8.a + ')';
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class vx extends TL_iv.PageBlock {
+    public boolean a;
+    public boolean b;
+    public wx c;
+    public TL_iv.PageBlock d;
+    public TL_iv.RichText e;
+    public String f;
+    public bx i;
+    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
 }

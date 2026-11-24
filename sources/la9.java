@@ -1,11 +1,20 @@
 // default package
 
-import android.util.LongSparseArray;
+import android.os.Process;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class la9 {
-    public static void a(LongSparseArray longSparseArray) {
-        longSparseArray.clear();
+public final class la9 extends Thread {
+    public final byte a;
+
+    public la9(Runnable runnable) {
+        super(runnable, "fonts-androidx");
+        this.a = (byte) 10;
+    }
+
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        Process.setThreadPriority(this.a);
+        super.run();
     }
 }

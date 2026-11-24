@@ -1,11 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
 /* loaded from: classes.dex */
 public abstract class hsd {
-    public static cp2 a() {
-        cp2 cp2Var = new cp2(true);
-        cp2Var.y(null);
-        return cp2Var;
+    public static final bsd a;
+    public static final bsd b;
+
+    static {
+        bsd bsdVar = null;
+        try {
+            bsdVar = (bsd) Class.forName("com.google.protobuf.MapFieldSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        a = bsdVar;
+        b = new bsd();
     }
 }

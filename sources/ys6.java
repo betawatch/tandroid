@@ -1,77 +1,53 @@
 // default package
 
-import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.HashSet;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class ys6 {
-    public final Bundle a;
-    public final ArrayList b;
-    public final ArrayList c;
-    public final HashSet d;
+    public static final ys6 d = new ys6(new in3((byte) 16, false));
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final Uri a;
+    public final String b;
+    public final Bundle c;
 
-    public ys6(String str, String str2) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = new HashSet();
-        Bundle bundle = new Bundle();
-        this.a = bundle;
-        if (str == null) {
-            fvc.f("id must not be null");
-            throw null;
-        }
-        bundle.putString("id", str);
-        if (str2 != null) {
-            bundle.putString("name", str2);
-        } else {
-            fvc.f("name must not be null");
-            throw null;
-        }
+    static {
+        String str = hac.a;
+        e = "0";
+        f = "1";
+        g = "2";
     }
 
-    public final void a(ArrayList arrayList) {
-        if (arrayList == null) {
-            w26.j("filters must not be null");
-            return;
+    public ys6(in3 in3Var) {
+        this.a = (Uri) in3Var.b;
+        this.b = (String) in3Var.c;
+        this.c = (Bundle) in3Var.d;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (arrayList.isEmpty()) {
-            return;
+        if (!(obj instanceof ys6)) {
+            return false;
         }
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            IntentFilter intentFilter = (IntentFilter) obj;
-            if (intentFilter != null) {
-                ArrayList arrayList2 = this.c;
-                if (!arrayList2.contains(intentFilter)) {
-                    arrayList2.add(intentFilter);
-                }
+        ys6 ys6Var = (ys6) obj;
+        if (Objects.equals(this.a, ys6Var.a) && Objects.equals(this.b, ys6Var.b)) {
+            if ((this.c == null) == (ys6Var.c == null)) {
+                return true;
             }
         }
+        return false;
     }
 
-    public final zs6 b() {
-        ArrayList<? extends Parcelable> arrayList = new ArrayList<>(this.c);
-        Bundle bundle = this.a;
-        bundle.putParcelableArrayList("controlFilters", arrayList);
-        bundle.putStringArrayList("groupMemberIds", new ArrayList<>(this.b));
-        bundle.putStringArrayList("allowedPackages", new ArrayList<>(this.d));
-        return new zs6(bundle);
-    }
-
-    public ys6(zs6 zs6Var) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = new HashSet();
-        this.a = new Bundle(zs6Var.a);
-        this.b = zs6Var.c();
-        this.c = zs6Var.b();
-        this.d = zs6Var.a();
+    public final int hashCode() {
+        Uri uri = this.a;
+        int hashCode = (uri == null ? 0 : uri.hashCode()) * 31;
+        String str = this.b;
+        return ((hashCode + (str == null ? 0 : str.hashCode())) * 31) + (this.c != null ? 1 : 0);
     }
 }

@@ -1,32 +1,28 @@
 // default package
 
+import android.content.Context;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class l1a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z3a b;
-    public final /* synthetic */ TLRPC.Updates c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class l1a extends b6c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ l1a(z3a z3aVar, TLRPC.Updates updates, byte b) {
-        this.a = b;
-        this.b = z3aVar;
-        this.c = updates;
+    static {
+        b6c.h(new l1a());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.Updates updates = this.c;
-        z3a z3aVar = this.b;
-        switch (b) {
-            case 0:
-                z3aVar.getMessagesController().Q3(updates, false);
-                break;
-            default:
-                z3aVar.getMessagesController().Q3(updates, false);
-                break;
-        }
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        m1a m1aVar = (m1a) view;
+        m1aVar.setUser((TLRPC.User) c6cVar.H);
+        m1aVar.c(c6cVar.e, false);
+        m1aVar.setDivider(z);
+    }
+
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        return new m1a(context, true, false, ylbVar, false);
     }
 }

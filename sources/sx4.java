@@ -1,38 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class sx4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tx3 b;
-    public final /* synthetic */ int c;
+import android.graphics.Bitmap;
+import android.graphics.drawable.NinePatchDrawable;
+import java.util.Arrays;
 
-    public /* synthetic */ sx4(tx3 tx3Var, int i, byte b) {
-        this.a = b;
-        this.b = tx3Var;
-        this.c = i;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class sx4 {
+    public NinePatchDrawable b;
+    public NinePatchDrawable d;
+    public NinePatchDrawable f;
+    public final float[] g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public final Bitmap[] a = new Bitmap[1];
+    public final Bitmap[] c = new Bitmap[1];
+    public final Bitmap[] e = new Bitmap[1];
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        tx3 tx3Var = this.b;
-        switch (b) {
-            case 0:
-                eu6 eu6Var = ((ux4) ((xl3) tx3Var.f).d).d;
-                if (eu6Var != null) {
-                    eu6Var.j(i);
-                    break;
-                }
-                break;
-            default:
-                eu6 eu6Var2 = ((ux4) ((xl3) tx3Var.f).d).d;
-                if (eu6Var2 != null) {
-                    eu6Var2.k(i);
-                    break;
-                }
-                break;
-        }
+    public sx4() {
+        float[] fArr = new float[8];
+        this.g = fArr;
+        Arrays.fill(fArr, gm.L(11.0f));
     }
 }

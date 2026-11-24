@@ -1,54 +1,78 @@
 // default package
 
-import android.app.Notification;
-import android.os.Parcel;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ll7 {
-    public final String a;
-    public final int b;
-    public final String c;
-    public final Notification d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ll7 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ byte c2;
+    public final /* synthetic */ ml7 d2;
 
-    public ll7(String str, int i, String str2, Notification notification) {
-        this.a = str;
-        this.b = i;
-        this.c = str2;
-        this.d = notification;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ll7(ml7 ml7Var, Context context, byte b) {
+        super(context);
+        this.c2 = b;
+        this.d2 = ml7Var;
     }
 
-    public final void a(xi5 xi5Var) {
-        String str = this.a;
-        int i = this.b;
-        String str2 = this.c;
-        vi5 vi5Var = (vi5) xi5Var;
-        vi5Var.getClass();
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken(xi5.g);
-            obtain.writeString(str);
-            obtain.writeInt(i);
-            obtain.writeString(str2);
-            Notification notification = this.d;
-            if (notification != null) {
-                obtain.writeInt(1);
-                notification.writeToParcel(obtain, 0);
-            } else {
-                obtain.writeInt(0);
-            }
-            vi5Var.a.transact(1, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    @Override // dg5, org.telegram.ui.Components.EditTextBoldCursor, vu3, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.c2) {
+            case 1:
+                this.M1.setColor(cmb.w0(null, cmb.G6, false));
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("NotifyTask[packageName:");
-        sb.append(this.a);
-        sb.append(", id:");
-        sb.append(this.b);
-        sb.append(", tag:");
-        return b00.j(sb, this.c, "]");
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z, int i, Rect rect) {
+        byte b = this.c2;
+        float f = 1.0f;
+        ml7 ml7Var = this.d2;
+        switch (b) {
+            case 0:
+                super.onFocusChanged(z, i, rect);
+                gt7 gt7Var = ml7Var.s1;
+                if (!z && !ml7Var.J1.isFocused()) {
+                    f = 0.0f;
+                }
+                gt7Var.b(f, f, true);
+                break;
+            default:
+                super.onFocusChanged(z, i, rect);
+                gt7 gt7Var2 = ml7Var.s1;
+                if (!z && !ml7Var.H1.isFocused()) {
+                    f = 0.0f;
+                }
+                gt7Var2.b(f, f, true);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i, KeyEvent keyEvent) {
+        switch (this.c2) {
+            case 1:
+                if (i == 67) {
+                    ml7 ml7Var = this.d2;
+                    if (ml7Var.J1.length() == 0) {
+                        ml7Var.H1.requestFocus();
+                        ll7 ll7Var = ml7Var.H1;
+                        ll7Var.setSelection(ll7Var.length());
+                        ml7Var.H1.dispatchKeyEvent(keyEvent);
+                    }
+                }
+                return super.onKeyDown(i, keyEvent);
+            default:
+                return super.onKeyDown(i, keyEvent);
+        }
     }
 }

@@ -3,33 +3,33 @@ package com.google.android.recaptcha.internal;
 import android.content.Context;
 import android.webkit.WebView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzma extends ccb implements eq4 {
+final class zzma extends eeb implements fs4 {
     final /* synthetic */ zzmb zza;
     final /* synthetic */ Context zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzma(zzmb zzmbVar, Context context, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzma(zzmb zzmbVar, Context context, px2 px2Var) {
+        super(2, px2Var);
         this.zza = zzmbVar;
         this.zzb = context;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzma(this.zza, this.zzb, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        return new zzma(this.zza, this.zzb, px2Var);
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzma) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzma) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
         WebView webView;
-        qse.b(obj);
+        tue.b(obj);
         zzmb zzmbVar = this.zza;
         webView = zzmbVar.zza;
         if (webView == null) {

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class IdentityCredentialApiHiddenActivity extends Activity {
     public ResultReceiver a;
@@ -17,8 +17,8 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
         super.onActivityResult(i, i2, intent);
         ResultReceiver resultReceiver = this.a;
         if (resultReceiver != null) {
-            t13 t13Var = y13.a;
-            Bundle j = tb4.j(i, "FAILURE_RESPONSE", "ACTIVITY_REQUEST_CODE", false);
+            e33 e33Var = j33.a;
+            Bundle j = td4.j(i, "FAILURE_RESPONSE", "ACTIVITY_REQUEST_CODE", false);
             j.putParcelable("RESULT_DATA", intent);
             resultReceiver.send(i2, j);
         }
@@ -49,13 +49,13 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
         PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("EXTRA_FLOW_PENDING_INTENT");
         if (pendingIntent != null) {
             this.b = true;
-            startIntentSenderForResult(pendingIntent.getIntentSender(), y13.c ? 1 : 0, null, 0, 0, 0, null);
+            startIntentSenderForResult(pendingIntent.getIntentSender(), j33.c ? 1 : 0, null, 0, 0, 0, null);
             return;
         }
         ResultReceiver resultReceiver2 = this.a;
         if (resultReceiver2 != null) {
-            t13 t13Var = y13.a;
-            t13.c(resultReceiver2, stringExtra, "Internal error");
+            e33 e33Var = j33.a;
+            e33.c(resultReceiver2, stringExtra, "Internal error");
         }
         finish();
     }

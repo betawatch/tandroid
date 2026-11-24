@@ -1,29 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ym2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ en2 b;
-    public final /* synthetic */ long c;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ColorPicker$RadioButton;
+import org.telegram.ui.Components.p;
 
-    public /* synthetic */ ym2(en2 en2Var, long j, byte b) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ym2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ p b;
+
+    public /* synthetic */ ym2(p pVar, byte b) {
         this.a = b;
-        this.b = en2Var;
-        this.c = j;
+        this.b = pVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        long j = this.c;
-        en2 en2Var = this.b;
+        p pVar = this.b;
         switch (b) {
             case 0:
-                en2Var.Z(j);
+                if (pVar.L == pVar.M) {
+                    pVar.H.setVisibility(4);
+                }
+                pVar.E = null;
                 break;
             default:
-                en2Var.presentFragment(mu1.U9(j));
+                ColorPicker$RadioButton[] colorPicker$RadioButtonArr = pVar.w;
+                if (pVar.L == 1) {
+                    pVar.G.setVisibility(4);
+                }
+                for (int i = 0; i < colorPicker$RadioButtonArr.length; i++) {
+                    if (colorPicker$RadioButtonArr[i].getTag(R.id.index_tag) == null) {
+                        colorPicker$RadioButtonArr[i].setVisibility(4);
+                    }
+                }
+                pVar.E = null;
                 break;
         }
     }

@@ -1,154 +1,41 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.view.animation.DecelerateInterpolator;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class a4c extends bya {
-    public final int a = y6c.t0;
-    public boolean b = false;
-    public final float[] c = new float[3];
-    public final float[] d = {0.0f, 150.0f, 300.0f};
-    public final float[] e = {0.0f, 0.0f, 0.0f};
-    public long f = 0;
-    public boolean g = false;
-    public final DecelerateInterpolator h = new DecelerateInterpolator();
-    public boolean i;
-    public final Paint j;
+public abstract class a4c {
+    public String[] a = new String[0];
 
-    public a4c(boolean z) {
-        if (z) {
-            this.j = new Paint(1);
-        }
+    public boolean a() {
+        return false;
     }
 
-    @Override // bya
-    public final void b(int i) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColor(i);
-        }
+    public String[] b() {
+        return this.a;
     }
 
-    @Override // bya
-    public final void c(boolean z) {
-        this.b = z;
+    public boolean c() {
+        return false;
     }
 
-    @Override // bya
-    public final void d() {
-        this.f = System.currentTimeMillis();
-        this.g = true;
-        invalidateSelf();
+    public boolean d(t3c t3cVar, MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int L;
-        int i;
-        int i2 = getBounds().left;
-        if (this.b) {
-            L = gl.L(8.5f);
-            i = getBounds().top;
-        } else {
-            L = gl.L(9.3f);
-            i = getBounds().top;
-        }
-        int i3 = L + i;
-        Paint paint = this.j;
-        if (paint == null) {
-            paint = bkb.b2;
-            paint.setAlpha(kk7.d4);
-        }
-        float L2 = gl.L(3.0f) + i2;
-        float f = i3;
-        float[] fArr = this.c;
-        canvas.drawCircle(L2, f, fArr[0] * gl.p, paint);
-        canvas.drawCircle(gl.L(9.0f) + i2, f, fArr[1] * gl.p, paint);
-        canvas.drawCircle(gl.L(15.0f) + i2, f, fArr[2] * gl.p, paint);
-        f();
+    public boolean e(t3c t3cVar, s19 s19Var, MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // bya
-    public final void e() {
-        for (int i = 0; i < 3; i++) {
-            this.e[i] = 0.0f;
-            this.c[i] = 1.33f;
-        }
-        float[] fArr = this.d;
-        fArr[0] = 0.0f;
-        fArr[1] = 150.0f;
-        fArr[2] = 300.0f;
-        this.g = false;
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
     }
 
-    public final void f() {
-        if (this.g) {
-            if (kk7.f(this.a).g() && !this.i) {
-                gl.e3(new cib(this, (byte) 19), 100L);
-                return;
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j = currentTimeMillis - this.f;
-            this.f = currentTimeMillis;
-            if (j > 50) {
-                j = 50;
-            }
-            for (int i = 0; i < 3; i++) {
-                float[] fArr = this.e;
-                float f = fArr[i] + j;
-                fArr[i] = f;
-                float[] fArr2 = this.d;
-                float f2 = f - fArr2[i];
-                float[] fArr3 = this.c;
-                if (f2 > 0.0f) {
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f2 <= 320.0f) {
-                        fArr3[i] = decelerateInterpolator.getInterpolation(f2 / 320.0f) + 1.33f;
-                    } else if (f2 <= 640.0f) {
-                        fArr3[i] = (1.0f - decelerateInterpolator.getInterpolation((f2 - 320.0f) / 320.0f)) + 1.33f;
-                    } else if (f2 >= 800.0f) {
-                        fArr[i] = 0.0f;
-                        fArr2[i] = 0.0f;
-                        fArr3[i] = 1.33f;
-                    } else {
-                        fArr3[i] = 1.33f;
-                    }
-                } else {
-                    fArr3[i] = 1.33f;
-                }
-            }
-            a();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColorFilter(colorFilter);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
+    public void f(int i, Object obj, TLRPC.Document document, boolean z) {
     }
 }

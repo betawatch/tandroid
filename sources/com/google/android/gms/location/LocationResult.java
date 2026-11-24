@@ -10,12 +10,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class LocationResult extends b4 implements ReflectedParcelable {
     public final List a;
     public static final List b = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new xff((byte) 12);
+    public static final Parcelable.Creator<LocationResult> CREATOR = new yhf((byte) 12);
 
     public LocationResult(List list) {
         this.a = list;
@@ -37,7 +37,7 @@ public final class LocationResult extends b4 implements ReflectedParcelable {
         Iterator it = list.iterator();
         for (Location location : list2) {
             Location location2 = (Location) it.next();
-            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !cqe.a(location.getProvider(), location2.getProvider())) {
+            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !fse.a(location.getProvider(), location2.getProvider())) {
                 return false;
             }
         }
@@ -54,8 +54,8 @@ public final class LocationResult extends b4 implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.p(parcel, 1, this.a);
-        jte.s(parcel, r);
+        int r = mve.r(parcel, 20293);
+        mve.p(parcel, 1, this.a);
+        mve.s(parcel, r);
     }
 }

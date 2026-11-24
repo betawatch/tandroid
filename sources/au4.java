@@ -1,247 +1,86 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class au4 implements hy1 {
-    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
-    public final /* synthetic */ du4 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class au4 {
+    public static final Pattern c = Pattern.compile("^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})");
+    public int a = -1;
+    public int b = -1;
 
-    public au4(du4 du4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        this.b = du4Var;
-        this.a = tL_starGiftUnique;
-    }
-
-    @Override // hy1
-    public final void C0(CharSequence charSequence, boolean z, boolean z2) {
-        b(charSequence);
-    }
-
-    @Override // hy1
-    public final bu1 G() {
-        return null;
-    }
-
-    @Override // hy1
-    public final boolean H0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final void P0(CharSequence charSequence) {
-        b(charSequence);
-    }
-
-    @Override // hy1
-    public final boolean Q0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final boolean R() {
-        return true;
-    }
-
-    public final void b(CharSequence charSequence) {
-        int i;
-        du4 du4Var = this.b;
-        hn hnVar = du4Var.v1;
-        du4Var.l1.a(this.a, y6c.h(du4Var.a).e(), du4Var.r1.getTextWithEntities(), k96.M0(2131749728, null), true);
-        int codePointCount = Character.codePointCount(charSequence, 0, charSequence.length());
-        du4Var.z1 = codePointCount;
-        int i2 = du4Var.y1;
-        if (i2 <= 0 || (i = i2 - codePointCount) > 15) {
-            hnVar.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new im2(this, (byte) 26));
-            return;
+    public final boolean a(String str) {
+        Matcher matcher = c.matcher(str);
+        if (!matcher.find()) {
+            return false;
         }
-        if (i < -9999) {
-            i = -9999;
-        }
-        hnVar.c(k96.E(i, ','), hnVar.getVisibility() == 0, true);
-        if (hnVar.getVisibility() != 0) {
-            hnVar.setVisibility(0);
-            hnVar.setAlpha(0.0f);
-            hnVar.setScaleX(0.5f);
-            hnVar.setScaleY(0.5f);
-        }
-        hnVar.animate().setListener(null).cancel();
-        hnVar.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-        if (i < 0) {
-            zkb.U(hnVar, bkb.o7, du4Var.J0);
-        } else {
-            zkb.U(hnVar, bkb.x6, du4Var.J0);
+        try {
+            String group = matcher.group(1);
+            String str2 = hac.a;
+            int parseInt = Integer.parseInt(group, 16);
+            int parseInt2 = Integer.parseInt(matcher.group(2), 16);
+            if (parseInt <= 0 && parseInt2 <= 0) {
+                return false;
+            }
+            this.a = parseInt;
+            this.b = parseInt2;
+            return true;
+        } catch (NumberFormatException unused) {
+            return false;
         }
     }
 
-    @Override // hy1
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // hy1
-    public final int h() {
-        return 0;
-    }
-
-    @Override // hy1
-    public final TLRPC.Peer i() {
-        return null;
-    }
-
-    @Override // hy1
-    public final int o0() {
-        return 0;
-    }
-
-    @Override // hy1
-    public final TL_stories.StoryItem t0() {
-        return null;
-    }
-
-    @Override // hy1
-    public final TLRPC.TL_channels_sendAsPeers v() {
-        return null;
-    }
-
-    @Override // hy1
-    public final boolean x0(long j) {
-        return false;
-    }
-
-    @Override // hy1
-    public final boolean y0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final void B() {
-    }
-
-    @Override // hy1
-    public final void G0() {
-    }
-
-    @Override // hy1
-    public final void I0() {
-    }
-
-    @Override // hy1
-    public final void J() {
-    }
-
-    @Override // hy1
-    public final void K0() {
-    }
-
-    @Override // hy1
-    public final void L0() {
-    }
-
-    @Override // hy1
-    public final void R0() {
-    }
-
-    @Override // hy1
-    public final void T() {
-    }
-
-    @Override // hy1
-    public final void W0() {
-    }
-
-    @Override // hy1
-    public final void Z() {
-    }
-
-    @Override // hy1
-    public final void a() {
-    }
-
-    @Override // hy1
-    public final void e() {
-    }
-
-    @Override // hy1
-    public final void e1() {
-    }
-
-    @Override // hy1
-    public final void f0() {
-    }
-
-    @Override // hy1
-    public final void g1() {
-    }
-
-    @Override // hy1
-    public final void j() {
-    }
-
-    @Override // hy1
-    public final void n() {
-    }
-
-    @Override // hy1
-    public final void o1() {
-    }
-
-    @Override // hy1
-    public final void p1() {
-    }
-
-    @Override // hy1
-    public final void r() {
-    }
-
-    @Override // hy1
-    public final void s1() {
-    }
-
-    @Override // hy1
-    public final void y() {
-    }
-
-    @Override // hy1
-    public final void A(boolean z) {
-    }
-
-    @Override // hy1
-    public final void f1(int i) {
-    }
-
-    @Override // hy1
-    public final void j1(boolean z) {
-    }
-
-    @Override // hy1
-    public final void k(float f) {
-    }
-
-    @Override // hy1
-    public final void m(boolean z) {
-    }
-
-    @Override // hy1
-    public final void n0(int i) {
-    }
-
-    @Override // hy1
-    public final void w(float f, int i) {
-    }
-
-    @Override // hy1
-    public final void O0(View view, CharSequence charSequence, boolean z) {
-    }
-
-    @Override // hy1
-    public final void u(CharSequence charSequence, boolean z, int i, int i2, long j) {
-    }
-
-    @Override // hy1
-    public final void k1(int i, int i2, int i3, long j, long j2, boolean z) {
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x007e, code lost:
+    
+        if (r0.apply(r6) == false) goto L25;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(nf7 nf7Var) {
+        lf7 lf7Var;
+        nf7Var.getClass();
+        jo5 p = mo5.p();
+        lf7[] lf7VarArr = nf7Var.a;
+        int length = lf7VarArr.length;
+        int i = 0;
+        while (true) {
+            lf7 lf7Var2 = null;
+            if (i >= length) {
+                break;
+            }
+            lf7 lf7Var3 = lf7VarArr[i];
+            if (wn2.class.isAssignableFrom(lf7Var3.getClass())) {
+                lf7 lf7Var4 = (lf7) wn2.class.cast(lf7Var3);
+                if (((wn2) lf7Var4).c.equals("iTunSMPB")) {
+                    lf7Var2 = lf7Var4;
+                }
+            }
+            if (lf7Var2 != null) {
+                p.c(lf7Var2);
+            }
+            i++;
+        }
+        ko5 listIterator = p.f().listIterator(0);
+        while (listIterator.hasNext()) {
+            if (a(((wn2) listIterator.next()).d)) {
+                return;
+            }
+        }
+        gc3 gc3Var = new gc3((byte) 2);
+        jo5 p2 = mo5.p();
+        for (lf7 lf7Var5 : nf7Var.a) {
+            if (nr5.class.isAssignableFrom(lf7Var5.getClass())) {
+                lf7Var = (lf7) nr5.class.cast(lf7Var5);
+            }
+            lf7Var = null;
+            if (lf7Var != null) {
+                p2.c(lf7Var);
+            }
+        }
+        ko5 listIterator2 = p2.f().listIterator(0);
+        while (listIterator2.hasNext() && !a(((nr5) listIterator2.next()).d)) {
+        }
     }
 }

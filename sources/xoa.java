@@ -1,114 +1,112 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MenuItem;
+import android.view.View;
+import androidx.appcompat.widget.ActionBarContextView;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class xoa implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vqa b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class xoa extends f9 implements w17 {
+    public Context c;
+    public ActionBarContextView d;
+    public lx6 e;
+    public WeakReference f;
+    public boolean h;
+    public y17 n;
 
-    public /* synthetic */ xoa(vqa vqaVar, byte b) {
-        this.a = b;
-        this.b = vqaVar;
+    @Override // w17
+    public final boolean B(y17 y17Var, MenuItem menuItem) {
+        return ((e7a) this.e.b).B(this, menuItem);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        final vqa vqaVar = this.b;
-        switch (b) {
-            case 0:
-                vqaVar.getClass();
-                final byte b2 = 1;
-                gl.d3(new Runnable() { // from class: una
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b3 = b2;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        TLObject tLObject2 = tLObject;
-                        vqa vqaVar2 = vqaVar;
-                        switch (b3) {
-                            case 0:
-                                nna nnaVar = vqaVar2.s3;
-                                vqaVar2.p3 = false;
-                                if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    m21 Z = vqaVar2.j().Z(tL_error2);
-                                    Z.t = true;
-                                    Z.j();
-                                    break;
-                                } else {
-                                    TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                                    na7.q1(vqaVar2.a).a4(paymentForm.users, false);
-                                    vqaVar2.q3 = paymentForm;
-                                    gl.r(nnaVar);
-                                    gl.d3(nnaVar);
-                                    break;
-                                }
-                            default:
-                                vqaVar2.p3 = false;
-                                if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    m21 Z2 = vqaVar2.j().Z(tL_error2);
-                                    Z2.t = true;
-                                    Z2.j();
-                                    break;
-                                } else {
-                                    TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject2;
-                                    na7.q1(vqaVar2.a).a4(paymentForm2.users, false);
-                                    vqaVar2.q3 = paymentForm2;
-                                    vqaVar2.e2();
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            default:
-                final byte b3 = 0;
-                gl.d3(new Runnable() { // from class: una
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b32 = b3;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        TLObject tLObject2 = tLObject;
-                        vqa vqaVar2 = vqaVar;
-                        switch (b32) {
-                            case 0:
-                                nna nnaVar = vqaVar2.s3;
-                                vqaVar2.p3 = false;
-                                if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    m21 Z = vqaVar2.j().Z(tL_error2);
-                                    Z.t = true;
-                                    Z.j();
-                                    break;
-                                } else {
-                                    TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                                    na7.q1(vqaVar2.a).a4(paymentForm.users, false);
-                                    vqaVar2.q3 = paymentForm;
-                                    gl.r(nnaVar);
-                                    gl.d3(nnaVar);
-                                    break;
-                                }
-                            default:
-                                vqaVar2.p3 = false;
-                                if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    m21 Z2 = vqaVar2.j().Z(tL_error2);
-                                    Z2.t = true;
-                                    Z2.j();
-                                    break;
-                                } else {
-                                    TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject2;
-                                    na7.q1(vqaVar2.a).a4(paymentForm2.users, false);
-                                    vqaVar2.q3 = paymentForm2;
-                                    vqaVar2.e2();
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
+    @Override // w17
+    public final void T1(y17 y17Var) {
+        h();
+        b9 b9Var = this.d.d;
+        if (b9Var != null) {
+            b9Var.l();
         }
+    }
+
+    @Override // f9
+    public final void b() {
+        if (this.h) {
+            return;
+        }
+        this.h = true;
+        this.e.B(this);
+    }
+
+    @Override // f9
+    public final View c() {
+        WeakReference weakReference = this.f;
+        if (weakReference != null) {
+            return (View) weakReference.get();
+        }
+        return null;
+    }
+
+    @Override // f9
+    public final y17 d() {
+        return this.n;
+    }
+
+    @Override // f9
+    public final zdb e() {
+        return new zdb(this.d.getContext());
+    }
+
+    @Override // f9
+    public final CharSequence f() {
+        return this.d.getSubtitle();
+    }
+
+    @Override // f9
+    public final CharSequence g() {
+        return this.d.getTitle();
+    }
+
+    @Override // f9
+    public final void h() {
+        this.e.J(this, this.n);
+    }
+
+    @Override // f9
+    public final boolean i() {
+        return this.d.J;
+    }
+
+    @Override // f9
+    public final void l(View view) {
+        this.d.setCustomView(view);
+        this.f = view != null ? new WeakReference(view) : null;
+    }
+
+    @Override // f9
+    public final void m(int i) {
+        n(this.c.getString(i));
+    }
+
+    @Override // f9
+    public final void n(CharSequence charSequence) {
+        this.d.setSubtitle(charSequence);
+    }
+
+    @Override // f9
+    public final void o(int i) {
+        p(this.c.getString(i));
+    }
+
+    @Override // f9
+    public final void p(CharSequence charSequence) {
+        this.d.setTitle(charSequence);
+    }
+
+    @Override // f9
+    public final void q(boolean z) {
+        this.a = z;
+        this.d.setTitleOptional(z);
     }
 }

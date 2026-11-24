@@ -1,99 +1,79 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_account;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class d41 extends FrameLayout {
-    public final jia a;
-    public final wla b;
-    public final jia c;
-    public final wjb d;
-    public boolean e;
-    public TL_account.TL_businessChatLink f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class d41 {
+    public static final byte[] a = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
 
-    public d41(Context context, wjb wjbVar) {
-        super(context);
-        this.d = wjbVar;
-        setWillNotDraw(false);
-        ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.msg_limit_links);
-        imageView.setPadding(gl.L(9.0f), gl.L(9.0f), gl.L(9.0f), gl.L(9.0f));
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        int L = gl.L(36.0f);
-        int i = bkb.Ei;
-        ShapeDrawable K = bkb.K(L, bkb.w0(null, i, false));
-        vkb M = zkb.M(i);
-        imageView.setBackground(K);
-        zkb.j(imageView, K, M, null, null);
-        imageView.setOnClickListener(new j1(this, (byte) 24));
-        addView(imageView, nme.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        jia jiaVar = new jia(context);
-        this.a = jiaVar;
-        jiaVar.setTextSize(15);
-        zkb.W(jiaVar, bkb.F6, null);
-        jiaVar.setGravity(k96.a0 ? 5 : 3);
-        addView(jiaVar, nme.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        jia jiaVar2 = new jia(context);
-        this.c = jiaVar2;
-        jiaVar2.setTextSize(14);
-        int i2 = bkb.y6;
-        zkb.W(jiaVar2, i2, null);
-        jiaVar2.setGravity(k96.a0 ? 3 : 5);
-        addView(jiaVar2, nme.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
-        wla wlaVar = new wla(context);
-        this.b = wlaVar;
-        wlaVar.setTextSize(1, 13.0f);
-        wlaVar.setMaxLines(1);
-        wlaVar.setEllipsize(TextUtils.TruncateAt.END);
-        zkb.X(wlaVar, i2, wjbVar);
-        wlaVar.setGravity(k96.a0 ? 5 : 3);
-        wlaVar.r = false;
-        wlaVar.setUseAlphaForEmoji(false);
-        kk7.i(wlaVar);
-        addView(wlaVar, nme.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e) {
-            Paint U0 = bkb.U0("paintDivider", this.d);
-            if (U0 == null) {
-                U0 = bkb.j0;
+    public static String a(byte[] bArr) {
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        if (bArr == 0) {
+            return null;
+        }
+        int length = (((((bArr.length << 3) + 5) / 6) + 3) / 4) << 2;
+        StringBuilder sb = new StringBuilder(length);
+        int i5 = 0;
+        while (true) {
+            int i6 = i5 / 8;
+            if (bArr.length <= i6) {
+                i2 = -1;
+            } else {
+                int i7 = bArr.length - 1 == i6 ? 0 : bArr[i6 + 1];
+                int i8 = (i5 % 24) / 6;
+                if (i8 != 0) {
+                    if (i8 == 1) {
+                        i3 = (bArr[i6] << 4) & 48;
+                        i4 = (i7 >> 4) & 15;
+                    } else if (i8 == 2) {
+                        i3 = (bArr[i6] << 2) & 60;
+                        i4 = (i7 >> 6) & 3;
+                    } else if (i8 != 3) {
+                        i2 = 0;
+                    } else {
+                        i = bArr[i6];
+                    }
+                    i2 = i3 | i4;
+                } else {
+                    i = bArr[i6] >> 2;
+                }
+                i2 = i & 63;
             }
-            canvas.drawRect(gl.L(k96.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - gl.L(k96.a0 ? 64.0f : 0.0f), getMeasuredHeight(), U0);
+            if (i2 < 0) {
+                break;
+            }
+            sb.append((char) a[i2]);
+            i5 += 6;
         }
+        for (int length2 = sb.length(); length2 < length; length2++) {
+            sb.append('=');
+        }
+        return sb.toString();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        boolean z2 = k96.a0;
-        jia jiaVar = this.c;
-        jia jiaVar2 = this.a;
-        if (z2) {
-            jiaVar2.setPadding(jiaVar.getTextWidth(), 0, 0, 0);
-        } else {
-            jiaVar2.setPadding(0, 0, jiaVar.getTextWidth(), 0);
+    public static y79 b(bs4 bs4Var, ArrayList arrayList) {
+        jo5 p = mo5.p();
+        for (int i = 0; i < arrayList.size(); i++) {
+            Bundle bundle = (Bundle) arrayList.get(i);
+            bundle.getClass();
+            p.c(bs4Var.apply(bundle));
         }
+        return p.f();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
+    public static ArrayList c(Collection collection, bs4 bs4Var) {
+        ArrayList arrayList = new ArrayList(collection.size());
+        Iterator it = collection.iterator();
+        while (it.hasNext()) {
+            arrayList.add((Bundle) bs4Var.apply(it.next()));
+        }
+        return arrayList;
     }
 }

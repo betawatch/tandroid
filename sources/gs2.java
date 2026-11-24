@@ -1,49 +1,81 @@
 // default package
 
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gs2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class gs2 {
+    public final bfb a;
+    public boolean b;
 
-    public /* synthetic */ gs2(int i, int i2, byte b) {
-        this.a = b;
-        this.b = i;
-        this.c = i2;
+    public gs2() {
+        this(bfb.a);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        int i2 = this.b;
-        switch (b) {
-            case 0:
-                ConnectionsManager.lambda$onConnectionStateChanged$15(i2, i);
-                break;
-            case 1:
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(i2, i);
-                break;
-            case 2:
-                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
-                break;
-            case 3:
-                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
-                break;
-            case 4:
-                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
-                break;
-            case 5:
-                String[] strArr = MediaController.W1;
-                kk7.f(i2).k(kk7.l2, Integer.valueOf(i));
-                break;
-            default:
-                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
-                break;
+    public final synchronized void a() {
+        while (!this.b) {
+            this.a.getClass();
+            wait();
         }
+    }
+
+    public final synchronized void b() {
+        boolean z = false;
+        while (!this.b) {
+            try {
+                this.a.getClass();
+                wait();
+            } catch (InterruptedException unused) {
+                z = true;
+            }
+        }
+        if (z) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public final synchronized boolean c(long j) {
+        if (j <= 0) {
+            return this.b;
+        }
+        this.a.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j2 = j + elapsedRealtime;
+        if (j2 < elapsedRealtime) {
+            b();
+        } else {
+            boolean z = false;
+            while (!this.b && elapsedRealtime < j2) {
+                try {
+                    this.a.getClass();
+                    wait(j2 - elapsedRealtime);
+                } catch (InterruptedException unused) {
+                    z = true;
+                }
+                this.a.getClass();
+                elapsedRealtime = SystemClock.elapsedRealtime();
+            }
+            if (z) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        return this.b;
+    }
+
+    public final synchronized void d() {
+        this.b = false;
+    }
+
+    public final synchronized boolean e() {
+        if (this.b) {
+            return false;
+        }
+        this.b = true;
+        notifyAll();
+        return true;
+    }
+
+    public gs2(bfb bfbVar) {
+        this.a = bfbVar;
     }
 }

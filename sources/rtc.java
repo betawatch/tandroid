@@ -1,532 +1,193 @@
 // default package
 
-import android.os.AsyncTask;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.concurrent.CountDownLatch;
-import java.util.regex.Matcher;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class rtc extends AsyncTask {
-    public static final /* synthetic */ int f = 0;
-    public final String a;
-    public final CountDownLatch b = new CountDownLatch(1);
-    public final String[] c = new String[2];
-    public String d;
-    public final /* synthetic */ stc e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class rtc implements stc {
+    public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
+    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, nm7.r1, nm7.C1, nm7.N1, nm7.Y1, nm7.m2, nm7.C2, nm7.T2, nm7.m3, 230, nm7.b4, nm7.B4, nm7.d5, nm7.H5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
+    public final u84 a;
+    public final yzb b;
+    public final tm9 c;
+    public final int d;
+    public final byte[] e;
+    public final yw7 f;
+    public final int g;
+    public final go4 h;
+    public int i;
+    public long j;
+    public int k;
+    public long l;
 
-    public rtc(stc stcVar, String str) {
-        this.e = stcVar;
-        this.a = str;
+    public rtc(u84 u84Var, yzb yzbVar, tm9 tm9Var) {
+        this.a = u84Var;
+        this.b = yzbVar;
+        this.c = tm9Var;
+        int i = tm9Var.b;
+        int max = Math.max(1, i / 10);
+        this.g = max;
+        yw7 yw7Var = new yw7((byte[]) tm9Var.f);
+        yw7Var.t();
+        int t = yw7Var.t();
+        this.d = t;
+        int i2 = tm9Var.a;
+        int i3 = tm9Var.c;
+        int i4 = (((i3 - (i2 << 2)) << 3) / (tm9Var.d * i2)) + 1;
+        if (t != i4) {
+            throw bx7.a("Expected frames per block: " + i4 + "; got: " + t, null);
+        }
+        int g = hac.g(max, t);
+        this.e = new byte[g * i3];
+        this.f = new yw7((t << 1) * i2 * g);
+        int i5 = ((i3 * i) << 3) / t;
+        fo4 fo4Var = new fo4();
+        fo4Var.s = wf7.n("audio/raw");
+        fo4Var.i = i5;
+        fo4Var.j = i5;
+        fo4Var.t = (max << 1) * i2;
+        fo4Var.M = i2;
+        int i6 = tm9Var.e;
+        fo4Var.N = i6 == 0 ? -1 : i6 << 2;
+        fo4Var.O = i;
+        fo4Var.P = 2;
+        this.h = new go4(fo4Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x023e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0021, code lost:
     
-        r2 = r24.c;
+        r9 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x0242, code lost:
-    
-        if (r2[r19] != null) goto L101;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x0244, code lost:
-    
-        if (r10 == null) goto L101;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x0246, code lost:
-    
-        r2[r19] = r10;
-        r2[1] = "other";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x024e, code lost:
-    
-        r2 = r2[r19];
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x0250, code lost:
-    
-        if (r2 == null) goto L168;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x0252, code lost:
-    
-        if (r0 != 0) goto L106;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x0258, code lost:
-    
-        if (r2.contains("/s/") == false) goto L168;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x025a, code lost:
-    
-        if (r4 == null) goto L168;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x025c, code lost:
-    
-        r0 = r24.c[r19].indexOf("/s/");
-        r2 = r24.c[r19].indexOf(47, r0 + 10);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x0271, code lost:
-    
-        if (r0 == (-1)) goto L166;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x0273, code lost:
-    
-        if (r2 != (-1)) goto L111;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x0275, code lost:
-    
-        r2 = r24.c[r19].length();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x027d, code lost:
-    
-        r24.d = r24.c[r19].substring(r0, r2);
-        r0 = stc.v0.matcher(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x0291, code lost:
-    
-        if (r0.find() == false) goto L121;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x02b1, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x02b2, code lost:
-    
-        r0 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x02b3, code lost:
-    
-        if (r0 != null) goto L124;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x02b5, code lost:
-    
-        r2 = stc.B0.matcher(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:142:0x02bf, code lost:
-    
-        if (r2.find() != false) goto L126;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x02c1, code lost:
-    
-        r2 = r2.group(r3) + r2.group(2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x02db, code lost:
-    
-        r5 = r19;
-        r3 = org.telegram.messenger.a.b.getSharedPreferences("youtubecode", r5);
-        r6 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x02e8, code lost:
-    
-        if (r2 != null) goto L130;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x02ea, code lost:
-    
-        r7 = r3.getString(r2, null);
-        r8 = r3.getString(r2.concat("n"), null);
-        r6 = r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x02f9, code lost:
-    
-        if (r6 == null) goto L133;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x0301, code lost:
-    
-        if (r0.startsWith("//") != false) goto L135;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0303, code lost:
-    
-        r0 = "https:".concat(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x0318, code lost:
-    
-        r24.e.getClass();
-        r7 = null;
-        r0 = stc.c(r24, r0, null, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x0327, code lost:
-    
-        if (isCancelled() == false) goto L141;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x0329, code lost:
-    
-        if (r0 != null) goto L142;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:154:0x032b, code lost:
-    
-        r10 = stc.w0.matcher(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x0335, code lost:
-    
-        if (r10.find() != false) goto L144;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x0337, code lost:
-    
-        r8 = r10.group(1);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x034c, code lost:
-    
-        if (r8 != null) goto L175;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x034e, code lost:
-    
-        r6 = new c5a(r0).n(r8);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x035b, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r6) == false) goto L151;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x035f, code lost:
-    
-        r3.edit().putString(r2, r6).putString(r2 + "n", r8).commit();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x037e, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x037f, code lost:
-    
-        fa4.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x033c, code lost:
-    
-        r10 = stc.x0.matcher(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x0346, code lost:
-    
-        if (r10.find() != false) goto L147;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x0348, code lost:
-    
-        r8 = r10.group(1);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x0389, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r6) == false) goto L159;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:173:0x03ae, code lost:
-    
-        gl.d3(new isc((java.lang.Object) r24, (java.lang.Object) (r6 + r8 + "('" + r24.d.substring(3) + "');"), (byte) 5));
-        r24.b.await();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x03d1, code lost:
-    
-        if (isCancelled() == false) goto L171;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:178:?, code lost:
-    
-        return r24.c;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x03bd, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x03be, code lost:
-    
-        r3 = 1;
-        fa4.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x03c9, code lost:
-    
-        r5 = r3;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x03c3, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x03d9, code lost:
-    
-        return r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x0310, code lost:
-    
-        if (r0.startsWith("/") != false) goto L138;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x0312, code lost:
-    
-        r0 = "https://www.youtube.com".concat(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0384, code lost:
-    
-        r7 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:190:0x02f8, code lost:
-    
-        r8 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x02da, code lost:
-    
-        r2 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:192:0x03c5, code lost:
-    
-        r7 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x0293, code lost:
-    
-        r0 = new org.json.JSONTokener(r0.group(1)).nextValue();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x02a3, code lost:
-    
-        if ((r0 instanceof java.lang.String) == false) goto L117;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x02a5, code lost:
-    
-        r0 = (java.lang.String) r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x02a9, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:199:0x02a8, code lost:
-    
-        r0 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x02ab, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:201:0x02ac, code lost:
-    
-        r3 = 1;
-        fa4.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:202:0x03c7, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:203:0x03cb, code lost:
-    
-        r7 = null;
-        r5 = r0;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x03d3 A[ADDED_TO_REGION] */
-    /* JADX WARN: Type inference failed for: r16v0 */
-    /* JADX WARN: Type inference failed for: r16v1 */
-    /* JADX WARN: Type inference failed for: r16v3, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r16v4 */
-    /* JADX WARN: Type inference failed for: r16v5 */
-    /* JADX WARN: Type inference failed for: r3v42, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v14, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v28 */
-    /* JADX WARN: Type inference failed for: r5v29 */
-    @Override // android.os.AsyncTask
+    @Override // stc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object doInBackground(Object[] objArr) {
+    public final boolean a(vb3 vb3Var, long j) {
+        boolean z;
+        byte[] bArr;
         int i;
+        yw7 yw7Var;
         int i2;
-        int i3;
-        String str;
-        int i4;
-        int i5;
-        stc stcVar = this.e;
-        String str2 = "https://www.youtube.com/embed/" + this.a;
-        stcVar.getClass();
-        HashMap hashMap = null;
-        boolean z = true;
-        String c = stc.c(this, str2, null, true);
-        if (!isCancelled()) {
-            String j = b00.j(new StringBuilder("video_id="), this.a, "&ps=default&gl=US&hl=en");
-            try {
-                StringBuilder sb = new StringBuilder();
-                sb.append(j);
-                sb.append("&eurl=");
-                sb.append(URLEncoder.encode("https://youtube.googleapis.com/v/" + this.a, "UTF-8"));
-                j = sb.toString();
-            } catch (Exception e) {
-                fa4.g(e, true);
-            }
-            if (c != null) {
-                Matcher matcher = stc.u0.matcher(c);
-                if (matcher.find()) {
-                    StringBuilder k = b00.k(j, "&sts=");
-                    k.append(c.substring(matcher.start() + 6, matcher.end()));
-                    j = k.toString();
-                } else {
-                    j = j.concat("&sts=");
-                }
-            }
-            this.c[1] = "dash";
-            String[] strArr = {"", "&el=leanback", "&el=embedded", "&el=detailpage", "&el=vevo"};
-            int i6 = 0;
-            String str3 = null;
-            int i7 = 0;
-            int i8 = 0;
+        int i3 = this.k;
+        tm9 tm9Var = this.c;
+        boolean z2 = true;
+        int i4 = i3 / (tm9Var.a << 1);
+        int i5 = this.g;
+        int i6 = this.d;
+        int g = hac.g(i5 - i4, i6);
+        int i7 = tm9Var.c;
+        int i8 = g * i7;
+        if (j != 0) {
+            z = false;
             while (true) {
-                int i9 = 2;
-                if (i8 >= 5) {
-                    i = i6;
+                bArr = this.e;
+                if (z || (i2 = this.i) >= i8) {
                     break;
                 }
-                stc stcVar2 = this.e;
-                StringBuilder k2 = b00.k("https://www.youtube.com/get_video_info?", j);
-                k2.append(strArr[i8]);
-                String sb2 = k2.toString();
-                stcVar2.getClass();
-                String c2 = stc.c(this, sb2, hashMap, z);
-                if (!isCancelled()) {
-                    if (c2 != null) {
-                        String[] split = c2.split("&");
-                        ?? r16 = hashMap;
-                        int i10 = i6;
-                        i2 = i10;
-                        i3 = i2;
-                        String str4 = str3;
-                        int i11 = i7;
-                        ?? r5 = z;
-                        while (i10 < split.length) {
-                            if (split[i10].startsWith("dashmpd")) {
-                                String[] split2 = split[i10].split("=");
-                                if (split2.length == i9) {
-                                    try {
-                                        this.c[i6] = URLDecoder.decode(split2[r5], "UTF-8");
-                                    } catch (Exception e2) {
-                                        fa4.g(e2, r5);
-                                    }
-                                }
-                                i3 = r5;
-                                i4 = i6;
-                            } else {
-                                i4 = i6;
-                                if (split[i10].startsWith("url_encoded_fmt_stream_map")) {
-                                    String[] split3 = split[i10].split("=");
-                                    if (split3.length == i9) {
-                                        try {
-                                            String[] split4 = URLDecoder.decode(split3[r5], "UTF-8").split("[&,]");
-                                            i5 = r5;
-                                            int i12 = i4;
-                                            int i13 = i12;
-                                            String str5 = null;
-                                            while (true) {
-                                                try {
-                                                    if (i12 < split4.length) {
-                                                        String[] split5 = split4[i12].split("=");
-                                                        String[] strArr2 = split4;
-                                                        if (split5[i4].startsWith(TeXSymbolParser.TYPE_ATTR)) {
-                                                            if (URLDecoder.decode(split5[i5], "UTF-8").contains("video/mp4")) {
-                                                                i13 = i5;
-                                                            }
-                                                        } else if (split5[i4].startsWith("url")) {
-                                                            str5 = URLDecoder.decode(split5[i5], "UTF-8");
-                                                        } else if (split5[i4].startsWith("itag")) {
-                                                            i13 = i4;
-                                                            str5 = null;
-                                                        }
-                                                        if (i13 != 0 && str5 != null) {
-                                                            str4 = str5;
-                                                            break;
-                                                        }
-                                                        i12++;
-                                                        split4 = strArr2;
-                                                    }
-                                                } catch (Exception e3) {
-                                                    e = e3;
-                                                    fa4.g(e, i5);
-                                                    i10++;
-                                                    i6 = i4;
-                                                    r5 = 1;
-                                                    i9 = 2;
-                                                    r16 = r16;
-                                                }
-                                            }
-                                        } catch (Exception e4) {
-                                            e = e4;
-                                            i5 = r5;
-                                        }
-                                    }
-                                } else if (split[i10].startsWith("use_cipher_signature")) {
-                                    String[] split6 = split[i10].split("=");
-                                    if (split6.length == 2 && split6[1].toLowerCase().equals("true")) {
-                                        i11 = 1;
-                                    }
-                                } else if (split[i10].startsWith("hlsvp")) {
-                                    String[] split7 = split[i10].split("=");
-                                    if (split7.length == 2) {
-                                        try {
-                                            r16 = URLDecoder.decode(split7[1], "UTF-8");
-                                        } catch (Exception e5) {
-                                            fa4.g(e5, true);
-                                        }
-                                    }
-                                } else if (split[i10].startsWith("livestream")) {
-                                    String[] split8 = split[i10].split("=");
-                                    if (split8.length == 2 && split8[1].toLowerCase().equals("1")) {
-                                        i2 = 1;
-                                    }
-                                }
-                            }
-                            i10++;
-                            i6 = i4;
-                            r5 = 1;
-                            i9 = 2;
-                            r16 = r16;
-                        }
-                        i = i6;
-                        i7 = i11;
-                        str3 = str4;
-                        str = r16;
-                    } else {
-                        i = i6;
-                        i2 = i;
-                        i3 = i2;
-                        str = null;
-                    }
-                    if (i2 != 0) {
-                        if (str == null || i7 != 0 || str.contains("/s/")) {
-                            break;
-                        }
-                        String[] strArr3 = this.c;
-                        strArr3[i] = str;
-                        strArr3[1] = "hls";
-                    }
-                    if (i3 != 0) {
-                        break;
-                    }
-                    i8++;
-                    i6 = i;
-                    hashMap = null;
-                    z = true;
-                } else {
-                    return hashMap;
+                int read = vb3Var.read(bArr, this.i, (int) Math.min(i8 - i2, j));
+                if (read != -1) {
+                    this.i += read;
                 }
             }
-        } else {
-            return null;
+            int i9 = this.i / i7;
+            if (i9 > 0) {
+                int i10 = 0;
+                while (true) {
+                    yw7Var = this.f;
+                    if (i10 >= i9) {
+                        break;
+                    }
+                    int i11 = 0;
+                    while (true) {
+                        int i12 = tm9Var.a;
+                        if (i11 < i12) {
+                            byte[] bArr2 = yw7Var.a;
+                            int i13 = (i10 * i7) + (i11 << 2);
+                            int i14 = i13 + (i12 << 2);
+                            int i15 = (i7 / i12) - 4;
+                            boolean z3 = z2;
+                            int i16 = (short) (((bArr[i13 + 1] & 255) << 8) | (bArr[i13] & 255));
+                            int min = Math.min(bArr[i13 + 2] & 255, 88);
+                            int[] iArr = n;
+                            int i17 = iArr[min];
+                            int i18 = (((i10 * i6) * i12) + i11) << 1;
+                            bArr2[i18] = (byte) (i16 & nm7.d4);
+                            int i19 = i9;
+                            bArr2[i18 + 1] = (byte) (i16 >> 8);
+                            int i20 = 0;
+                            while (i20 < (i15 << 1)) {
+                                byte b = bArr[i14 + (((i20 / 8) * i12) << 2) + ((i20 / 2) % 4)];
+                                int i21 = i20;
+                                int i22 = i21 % 2 == 0 ? b & 15 : (b & 255) >> 4;
+                                int i23 = ((((i22 & 7) << 1) + 1) * i17) >> 3;
+                                if ((i22 & 8) != 0) {
+                                    i23 = -i23;
+                                }
+                                i16 = hac.i(i16 + i23, -32768, 32767);
+                                i18 += i12 << 1;
+                                bArr2[i18] = (byte) (i16 & nm7.d4);
+                                bArr2[i18 + 1] = (byte) (i16 >> 8);
+                                min = hac.i(min + m[i22], 0, 88);
+                                i10 = i10;
+                                i17 = iArr[min];
+                                i20 = i21 + 1;
+                            }
+                            i11++;
+                            i9 = i19;
+                            z2 = z3;
+                        }
+                    }
+                    i10++;
+                }
+                int i24 = i9;
+                int i25 = ((i6 * i24) << 1) * tm9Var.a;
+                yw7Var.N(0);
+                yw7Var.M(i25);
+                this.i -= i24 * i7;
+                int i26 = yw7Var.c;
+                this.b.e(i26, yw7Var);
+                int i27 = this.k + i26;
+                this.k = i27;
+                if (i27 / (tm9Var.a << 1) >= i5) {
+                    d(i5);
+                }
+            }
+            if (z && (i = this.k / (tm9Var.a << 1)) > 0) {
+                d(i);
+            }
+            return z;
         }
+        z = true;
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String[] strArr = (String[]) obj;
-        String str = strArr[0];
-        stc stcVar = this.e;
-        if (str == null) {
-            if (isCancelled()) {
-                return;
-            }
-            stcVar.h();
-            return;
-        }
-        if (w01.a) {
-            StringBuilder sb = new StringBuilder("start play youtube video ");
-            sb.append(strArr[1]);
-            sb.append(" ");
-            de9.s(strArr[0], sb);
-        }
-        stcVar.x = true;
-        stcVar.y = strArr[0];
-        String str2 = strArr[1];
-        stcVar.E = str2;
-        if (str2.equals("hls")) {
-            stcVar.I = true;
-        }
-        if (stcVar.s) {
-            stcVar.i();
-        }
-        stcVar.j(false, true);
-        stcVar.g0.d(true, true);
+    @Override // stc
+    public final void b(long j) {
+        this.i = 0;
+        this.j = j;
+        this.k = 0;
+        this.l = 0L;
+    }
+
+    @Override // stc
+    public final void c(int i, long j) {
+        wtc wtcVar = new wtc(this.c, this.d, i, j);
+        this.a.f0(wtcVar);
+        go4 go4Var = this.h;
+        yzb yzbVar = this.b;
+        yzbVar.g(go4Var);
+        yzbVar.d(wtcVar.e);
+    }
+
+    public final void d(int i) {
+        long j = this.j;
+        long j2 = this.l;
+        tm9 tm9Var = this.c;
+        long j3 = tm9Var.b;
+        String str = hac.a;
+        long b0 = j + hac.b0(j2, 1000000L, j3, RoundingMode.DOWN);
+        int i2 = (i << 1) * tm9Var.a;
+        this.b.a(b0, 1, i2, this.k - i2, null);
+        this.l += i;
+        this.k -= i2;
     }
 }

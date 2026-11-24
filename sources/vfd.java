@@ -1,19 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class vfd implements zn7 {
-    public static final vfd a = new vfd();
+public final class vfd extends ccd {
+    public static final vfd r = new vfd(0, new Object[0]);
+    public final transient Object[] h;
+    public final transient int n;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)), 5)));
+    public vfd(int i, Object[] objArr) {
+        super((byte) 0);
+        this.h = objArr;
+        this.n = i;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.util.List
+    public final Object get(int i) {
+        n4f.a(i, this.n);
+        Object obj = this.h[i];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // ccd, zad
+    public final int h(Object[] objArr) {
+        Object[] objArr2 = this.h;
+        int i = this.n;
+        System.arraycopy(objArr2, 0, objArr, 0, i);
+        return i;
+    }
+
+    @Override // zad
+    public final int i() {
+        return this.n;
+    }
+
+    @Override // zad
+    public final int j() {
+        return 0;
+    }
+
+    @Override // zad
+    public final Object[] k() {
+        return this.h;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.n;
     }
 }

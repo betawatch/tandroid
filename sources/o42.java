@@ -1,351 +1,581 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.Choreographer;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.text.TextUtils;
+import android.util.Property;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import java.util.HashMap;
+import java.util.Locale;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o42 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class o42 extends m59 {
+    public sh4 E;
+    public long F;
+    public long G;
+    public int H;
+    public String J;
+    public String K;
+    public String L;
+    public boolean T;
+    public int U;
+    public boolean W;
+    public final /* synthetic */ p42 Y;
+    public final Context r;
+    public j42 w;
+    public lx1 x;
+    public long y;
+    public ArrayList s = new ArrayList();
+    public final ug4 I = new ug4(0, 0);
+    public final ArrayList M = new ArrayList();
+    public final ArrayList N = new ArrayList();
+    public final ArrayList O = new ArrayList();
+    public final SparseArray P = new SparseArray();
+    public final ArrayList Q = new ArrayList();
+    public final HashMap R = new HashMap();
+    public final ArrayList S = new ArrayList();
+    public final po V = new po(null);
+    public final o1 X = new o1(this, 15);
 
-    public /* synthetic */ o42(Object obj, Object obj2, boolean z, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.b = z;
+    public o42(p42 p42Var, Context context) {
+        this.Y = p42Var;
+        this.r = context;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:148:0x048e  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0490  */
-    @Override // p8c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj) {
-        int i;
-        int i2;
-        jza[] jzaVarArr;
-        float f;
-        Bitmap bitmap;
-        byte b;
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        byte b2 = 0;
-        switch (this.a) {
-            case 0:
-                q42 q42Var = (q42) this.c;
-                File file = (File) this.d;
-                boolean z = this.b;
-                Integer num = (Integer) obj;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = q42Var.e;
-                chatAttachAlertPhotoLayout.t0 = false;
-                if (file != null && !chatAttachAlertPhotoLayout.b.P1) {
-                    ChatAttachAlertPhotoLayout.r1 = false;
-                    try {
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        options.inJustDecodeBounds = true;
-                        BitmapFactory.decodeFile(new File(file.getAbsolutePath()).getAbsolutePath(), options);
-                        i = options.outWidth;
-                        try {
-                            i2 = options.outHeight;
-                        } catch (Exception unused) {
-                            i2 = 0;
-                            int i3 = i;
-                            int i4 = ChatAttachAlertPhotoLayout.v1;
-                            ChatAttachAlertPhotoLayout.v1 = i4 - 1;
-                            jm6 jm6Var = new jm6(i4, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i3, i2);
-                            jm6Var.L = true;
-                            chatAttachAlertPhotoLayout.m0(jm6Var, z, false);
-                            return;
-                        }
-                    } catch (Exception unused2) {
-                        i = 0;
-                    }
-                    int i32 = i;
-                    int i42 = ChatAttachAlertPhotoLayout.v1;
-                    ChatAttachAlertPhotoLayout.v1 = i42 - 1;
-                    jm6 jm6Var2 = new jm6(i42, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i32, i2);
-                    jm6Var2.L = true;
-                    chatAttachAlertPhotoLayout.m0(jm6Var2, z, false);
-                }
-                break;
-            case 1:
-                n14 n14Var = (n14) this.c;
-                boolean z2 = this.b;
-                Runnable runnable = (Runnable) this.d;
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = n14Var.r;
-                o14 o14Var = n14Var.x;
-                if (o14Var.N == n14Var.b) {
-                    if (z2) {
-                        int size = arrayList2.size();
-                        arrayList2.clear();
-                        o14Var.E = size == arrayList.size();
-                    }
-                    arrayList2.addAll(arrayList);
-                    int size2 = arrayList.size();
-                    int i5 = 0;
-                    while (i5 < size2) {
-                        Object obj2 = arrayList.get(i5);
-                        i5++;
-                        TLRPC.Document document = (TLRPC.Document) obj2;
-                        n14Var.w.put(document.id, document);
-                    }
-                    n14Var.f.put(arrayList2, o14Var.O);
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                c cVar = (c) this.c;
-                i8c i8cVar = (i8c) this.d;
-                boolean z3 = this.b;
-                y05 y05Var = (y05) obj;
-                if (y05Var == null) {
-                    Exception exc = cVar.c.f;
-                    String message = exc != null ? exc.getMessage() : null;
-                    if (!"AUTH_CANCELED".equals(message)) {
-                        c.m("getSecretPhrase: local phrase unavailable: " + message);
-                        i8cVar.a(null, (message == null || !message.startsWith("AUTH_")) ? "LOCAL_STORAGE_ERROR" : "WALLET_UNLOCK_FAILED");
-                        break;
-                    } else {
-                        c.O("getSecretPhrase: unlock canceled");
-                        if (z3) {
-                            i8cVar.a(null, "WALLET_SEND_CANCELLED");
-                            break;
-                        }
-                    }
+    @Override // z49
+    public final String F(int i) {
+        return null;
+    }
+
+    @Override // z49
+    public final void G(r59 r59Var, float f, int[] iArr) {
+        iArr[0] = 0;
+        iArr[1] = 0;
+    }
+
+    @Override // m59
+    public final int M(int i) {
+        if (i == 0) {
+            return this.s.size();
+        }
+        int i2 = i - 1;
+        ArrayList arrayList = this.Q;
+        int i3 = 1;
+        if (i2 >= arrayList.size()) {
+            return 1;
+        }
+        ArrayList arrayList2 = (ArrayList) this.R.get(arrayList.get(i2));
+        if (arrayList2 == null) {
+            return 0;
+        }
+        int size = arrayList2.size();
+        if (i2 == 0 && this.s.isEmpty()) {
+            i3 = 0;
+        }
+        return size + i3;
+    }
+
+    @Override // m59
+    public final Object O(int i, int i2) {
+        ArrayList arrayList;
+        if (i == 0) {
+            if (i2 < this.s.size()) {
+                return this.s.get(i2);
+            }
+            return null;
+        }
+        int i3 = i - 1;
+        ArrayList arrayList2 = this.Q;
+        if (i3 >= arrayList2.size() || (arrayList = (ArrayList) this.R.get(arrayList2.get(i3))) == null) {
+            return null;
+        }
+        int i4 = i2 - ((i3 == 0 && this.s.isEmpty()) ? 0 : 1);
+        if (i4 < 0 || i4 >= arrayList.size()) {
+            return null;
+        }
+        return arrayList.get(i4);
+    }
+
+    @Override // m59
+    public final int P(int i, int i2) {
+        if (i == 0) {
+            return 1;
+        }
+        if (i == R() - 1) {
+            return 3;
+        }
+        int i3 = i - 1;
+        if (i3 < this.Q.size()) {
+            return (!(i3 == 0 && this.s.isEmpty()) && i2 == 0) ? 0 : 4;
+        }
+        return 2;
+    }
+
+    @Override // m59
+    public final int R() {
+        ArrayList arrayList = this.Q;
+        if (arrayList.isEmpty()) {
+            return 2;
+        }
+        return arrayList.size() + (!this.W ? 1 : 0) + 2;
+    }
+
+    @Override // m59
+    public final View T(int i, View view) {
+        ylb ylbVar = this.Y.a;
+        l55 l55Var = (l55) view;
+        if (l55Var == null) {
+            l55Var = new l55(this.r, ylbVar);
+            l55Var.setBackgroundColor(cmb.v0(cmb.d7, ylbVar) & (-218103809));
+        }
+        if (i == 0 || (i == 1 && this.s.isEmpty())) {
+            l55Var.setAlpha(0.0f);
+            return l55Var;
+        }
+        int i2 = i - 1;
+        ArrayList arrayList = this.Q;
+        if (i2 < arrayList.size()) {
+            l55Var.setAlpha(1.0f);
+            if (((ArrayList) this.R.get((String) arrayList.get(i2))) != null) {
+                l55Var.setText((i2 != 0 || this.s.isEmpty()) ? jb6.e0(((k47) r0.get(0)).k.date, false) : jb6.M0(2131749309, null));
+            }
+        }
+        return view;
+    }
+
+    @Override // m59
+    public final void W(int i, int i2, u69 u69Var) {
+        int i3 = i2;
+        int i4 = u69Var.f;
+        View view = u69Var.a;
+        if (i4 == 2 || i4 == 3) {
+            return;
+        }
+        HashMap hashMap = this.R;
+        ArrayList arrayList = this.Q;
+        boolean z = false;
+        if (i4 == 0) {
+            int i5 = i - 1;
+            if (((ArrayList) hashMap.get((String) arrayList.get(i5))) != null) {
+                ((l55) view).setText((i5 != 0 || this.s.isEmpty()) ? jb6.e0(((k47) r3.get(0)).k.date, false) : jb6.M0(2131749309, null));
+                return;
+            }
+            return;
+        }
+        if (i4 == 1 || i4 == 4) {
+            ida idaVar = (ida) view;
+            if (i == 0) {
+                i42 i42Var = (i42) O(S(i3), Q(i3));
+                int i6 = i42Var.a;
+                if (i6 != 0) {
+                    idaVar.d(i42Var.b, i42Var.c, null, null, i6, false);
                 } else {
-                    i8cVar.a(y05Var, null);
-                    break;
+                    idaVar.d(i42Var.b, i42Var.c, i42Var.d.toUpperCase().substring(0, Math.min(i42Var.d.length(), 4)), i42Var.e, 0, false);
                 }
-                break;
-            case 3:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                boolean z4 = this.b;
-                bm6 bm6Var = (bm6) this.d;
-                jza jzaVar = (jza) obj;
-                Drawable[] drawableArr = PhotoViewer.f9;
-                mza mzaVar = photoViewer.p5;
-                if (!mzaVar.E || (jzaVarArr = mzaVar.I) == null || jzaVarArr.length <= 0) {
-                    photoViewer.t5.setCutOutState(true);
-                    photoViewer.f2(false, true);
+                File file = i42Var.f;
+                p42 p42Var = this.Y;
+                if (file != null) {
+                    idaVar.b(p42Var.S.containsKey(file.toString()), !p42Var.V);
+                    return;
                 } else {
-                    ijb thanosEffect = photoViewer.p5.getThanosEffect();
-                    mza mzaVar2 = photoViewer.p5;
-                    mzaVar2.M = true;
-                    mzaVar2.F = jzaVar;
-                    Bitmap n = photoViewer.C4.n();
-                    int i6 = photoViewer.C4.V;
-                    jza jzaVar2 = mzaVar2.F;
-                    Bitmap b3 = jzaVar2 == null ? mzaVar2.J : (!z4 || n == null) ? jzaVar2.b() : mzaVar2.e(n);
-                    jm6 jm6Var3 = (jm6) photoViewer.g7.get(photoViewer.P4);
-                    if (thanosEffect == null) {
-                        Utilities.i.c(new t68(photoViewer, b3, b2));
-                        photoViewer.p5.f();
-                        photoViewer.f0.invalidate();
-                        break;
-                    } else {
-                        mza mzaVar3 = photoViewer.p5;
-                        int i7 = photoViewer.C4.V;
-                        mzaVar3.getClass();
-                        String str = jm6Var3.i;
-                        Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : mzaVar3.getSourceBitmap();
-                        Bitmap decodeFile2 = BitmapFactory.decodeFile(jm6Var3.j);
-                        int width = decodeFile.getWidth();
-                        int height = decodeFile.getHeight();
-                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                        Bitmap createBitmap = Bitmap.createBitmap(width, height, config);
-                        Canvas canvas = new Canvas(createBitmap);
-                        Paint paint = new Paint(3);
-                        Paint paint2 = new Paint(3);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                        canvas.drawBitmap(decodeFile, 0.0f, 0.0f, paint2);
-                        Rect rect = new Rect();
-                        rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
-                        jza jzaVar3 = mzaVar3.F;
-                        if (jzaVar3 == null) {
-                            jza[] jzaVarArr2 = mzaVar3.I;
-                            if (jzaVarArr2.length > 0) {
-                                jzaVar3 = jzaVarArr2[0];
-                            }
-                        }
-                        if (jzaVar3 == null) {
-                            createBitmap = null;
-                            f = 2.0f;
-                            b = 2;
-                        } else {
-                            f = 2.0f;
-                            if (jzaVar3.c == 0 || !jm6Var3.u) {
-                                bitmap = decodeFile;
-                                b = 2;
-                                canvas.drawBitmap(jzaVar3.a(), (Rect) null, rect, paint);
-                            } else {
-                                Matrix matrix = new Matrix();
-                                b = 2;
-                                bitmap = decodeFile;
-                                matrix.postRotate(jzaVar3.c, jzaVar3.a().getWidth() / 2.0f, jzaVar3.a().getHeight() / 2.0f);
-                                if ((jzaVar3.c / 90) % 2 != 0) {
-                                    float height2 = (jzaVar3.a().getHeight() - jzaVar3.a().getWidth()) / 2.0f;
-                                    matrix.postTranslate(height2, -height2);
-                                }
-                                matrix.postScale(bitmap.getWidth() / jzaVar3.a().getHeight(), bitmap.getHeight() / jzaVar3.a().getWidth());
-                                canvas.drawBitmap(jzaVar3.a(), matrix, paint);
-                            }
-                            if (decodeFile2 != null) {
-                                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                if (jzaVar3.c == 0 || jm6Var3.u) {
-                                    canvas.drawBitmap(decodeFile2, (Rect) null, rect, paint);
-                                } else {
-                                    Matrix matrix2 = new Matrix();
-                                    matrix2.postRotate(-jzaVar3.c, decodeFile2.getWidth() / 2.0f, decodeFile2.getHeight() / 2.0f);
-                                    if ((jzaVar3.c / 90) % 2 != 0) {
-                                        float height3 = (decodeFile2.getHeight() - decodeFile2.getWidth()) / 2.0f;
-                                        matrix2.postTranslate(height3, -height3);
-                                    }
-                                    matrix2.postScale(bitmap.getWidth() / decodeFile2.getHeight(), bitmap.getHeight() / decodeFile2.getWidth());
-                                    canvas.drawBitmap(decodeFile2, matrix2, paint);
-                                }
-                            }
-                        }
-                        if (createBitmap == null) {
-                            Utilities.i.c(new t68(photoViewer, b3, (byte) 1));
-                            photoViewer.p5.f();
-                            photoViewer.f0.invalidate();
-                            break;
-                        } else {
-                            zl6 zl6Var = bm6Var.A;
-                            if (zl6Var != null) {
-                                ImageReceiver imageReceiver = photoViewer.C4;
-                                createBitmap = PhotoViewer.F(createBitmap, zl6Var, new int[]{imageReceiver.V, imageReceiver.W}, true);
-                            }
-                            if (createBitmap == null) {
-                                Utilities.i.c(new t68(photoViewer, b3, b));
-                                photoViewer.p5.f();
-                                photoViewer.f0.invalidate();
-                                break;
-                            } else {
-                                Matrix matrix3 = new Matrix();
-                                int width2 = createBitmap.getWidth();
-                                int height4 = createBitmap.getHeight();
-                                if (!jm6Var3.w && (photoViewer.C4.V / 90) % 2 != 0) {
-                                    width2 = createBitmap.getHeight();
-                                    height4 = createBitmap.getWidth();
-                                }
-                                float f6 = width2;
-                                float f7 = height4;
-                                float min = Math.min(photoViewer.i0(photoViewer.u4) / f6, photoViewer.g0() / f7);
-                                float f8 = f6 * min;
-                                float f9 = f7 * min;
-                                if ((photoViewer.C4.V == 0 || jm6Var3.w) && photoViewer.b6 == 0.0f) {
-                                    f2 = 0.0f;
-                                    f3 = 0.0f;
-                                    f4 = f8;
-                                    f5 = f9;
-                                } else {
-                                    float width3 = createBitmap.getWidth();
-                                    float height5 = createBitmap.getHeight();
-                                    float f10 = width3 / f;
-                                    float f11 = height5 / f;
-                                    float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
-                                    float f12 = sqrt * f;
-                                    int i8 = (int) f12;
-                                    Bitmap createBitmap2 = Bitmap.createBitmap(i8, i8, config);
-                                    Canvas canvas2 = new Canvas(createBitmap2);
-                                    canvas2.save();
-                                    canvas2.rotate((jm6Var3.w ? 0 : photoViewer.C4.V) + photoViewer.b6, sqrt, sqrt);
-                                    canvas2.drawBitmap(createBitmap, (f12 - width3) / f, (f12 - height5) / f, (Paint) null);
-                                    createBitmap.recycle();
-                                    float f13 = f8 / f;
-                                    float f14 = f9 / f;
-                                    f4 = ((float) Math.sqrt((f14 * f14) + (f13 * f13))) * f;
-                                    f2 = (-(f4 - f8)) / f;
-                                    f3 = (-(f4 - f9)) / f;
-                                    f5 = f4;
-                                    createBitmap = createBitmap2;
-                                }
-                                matrix3.postScale(f4, f5);
-                                float f15 = photoViewer.a6;
-                                matrix3.postScale(f15, f15, f4 / f, f5 / f);
-                                matrix3.postTranslate(photoViewer.X5 + f2 + Math.max(0, (int) ((photoViewer.i0(photoViewer.u4) - f8) / f)), photoViewer.Y5 + f3 + Math.max(0, (int) ((photoViewer.g0() - f9) / f)));
-                                photoViewer.p5.W = true;
-                                Utilities.i.c(new t68(photoViewer, b3, (byte) 3));
-                                l68 l68Var = new l68(photoViewer, (byte) 8);
-                                pc7 pc7Var = new pc7((Object) photoViewer, (Object) b3, (Object) l68Var, (byte) 22);
-                                am6 am6Var = new am6((byte) 11);
-                                gjb gjbVar = thanosEffect.a;
-                                if (gjbVar != null) {
-                                    gjbVar.c(matrix3, createBitmap, pc7Var, am6Var);
-                                    Choreographer.getInstance().postFrameCallback(thanosEffect.b);
-                                } else {
-                                    thanosEffect.c.add(new hjb(matrix3, createBitmap, pc7Var, am6Var));
-                                }
-                                gl.e3(l68Var, 1200L);
-                            }
-                        }
-                    }
+                    idaVar.b(false, !p42Var.V);
+                    return;
                 }
-                photoViewer.p5.f();
-                photoViewer.f0.invalidate();
-                break;
-            case 4:
-                boolean z5 = this.b;
-                String str2 = (String) this.c;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) this.d;
-                Runnable runnable2 = (Runnable) obj;
-                if (!z5) {
-                    runnable2.run();
-                    break;
-                } else {
-                    tya.G3.c(y6c.t0, str2, new dw9(linkedHashSet, runnable2, (byte) 1));
-                    break;
+            }
+            int i7 = i - 1;
+            if (i7 != 0 || !this.s.isEmpty()) {
+                i3--;
+            }
+            ArrayList arrayList2 = (ArrayList) hashMap.get((String) arrayList.get(i7));
+            if (arrayList2 != null) {
+                k47 k47Var = (k47) arrayList2.get(i3);
+                boolean z2 = idaVar.getMessage() != null && idaVar.getMessage().e1() == k47Var.e1();
+                if (i3 != arrayList2.size() - 1 || (i7 == arrayList.size() - 1 && this.T)) {
+                    z = true;
                 }
-            default:
-                boolean z6 = this.b;
-                hd hdVar = (hd) this.c;
-                p8c p8cVar = (p8c) this.d;
-                fsc fscVar = (fsc) obj;
-                if (z6) {
-                    hdVar.b(350L);
-                }
-                p8cVar.a(fscVar);
-                break;
+                idaVar.c(k47Var, z);
+                idaVar.getViewTreeObserver().addOnPreDrawListener(new n42(this, idaVar, k47Var, z2, (byte) 0));
+            }
         }
     }
 
-    public /* synthetic */ o42(Object obj, boolean z, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = z;
-        this.d = obj2;
+    public final void Y(String str, boolean z) {
+        long j;
+        p42 p42Var = this.Y;
+        h42 h42Var = p42Var.w;
+        d42 d42Var = p42Var.r;
+        lx1 lx1Var = this.x;
+        if (lx1Var != null) {
+            gm.r(lx1Var);
+            this.x = null;
+        }
+        if (TextUtils.isEmpty(str)) {
+            if (!this.s.isEmpty()) {
+                this.s.clear();
+            }
+            if (d42Var.getAdapter() != h42Var) {
+                d42Var.setAdapter(h42Var);
+            }
+            f();
+        } else {
+            lx1 lx1Var2 = new lx1(this, str, (byte) 15);
+            this.x = lx1Var2;
+            gm.d3(lx1Var2, 300L);
+        }
+        if (p42Var.a0 || !h42Var.f.isEmpty()) {
+            return;
+        }
+        int i = 0;
+        long j2 = 0;
+        long j3 = 0;
+        long j4 = 0;
+        while (true) {
+            ArrayList arrayList = this.S;
+            if (i >= arrayList.size()) {
+                Z(j2, j3, j4, uh4.k3[2], str, z);
+                return;
+            }
+            sh4 sh4Var = (sh4) arrayList.get(i);
+            byte b = sh4Var.d;
+            if (b == 4) {
+                TLObject tLObject = sh4Var.f;
+                if (tLObject instanceof TLRPC.User) {
+                    j = ((TLRPC.User) tLObject).id;
+                } else if (tLObject instanceof TLRPC.Chat) {
+                    j = -((TLRPC.Chat) tLObject).id;
+                }
+                j2 = j;
+            } else if (b == 6) {
+                qh4 qh4Var = sh4Var.g;
+                j3 = qh4Var.b;
+                j4 = qh4Var.c;
+            }
+            i++;
+        }
     }
 
-    public /* synthetic */ o42(boolean z, Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.b = z;
-        this.c = obj;
-        this.d = obj2;
+    /* JADX WARN: Type inference failed for: r0v6, types: [j42, java.lang.Runnable] */
+    public final void Z(final long j, final long j2, final long j3, sh4 sh4Var, final String str, boolean z) {
+        p42 p42Var = this.Y;
+        d42 d42Var = p42Var.r;
+        c42 c42Var = p42Var.M;
+        Locale locale = Locale.ENGLISH;
+        final String str2 = j + j2 + j3 + ((int) sh4Var.d) + str;
+        String str3 = this.J;
+        final boolean z2 = str3 != null && str3.equals(str2);
+        boolean z3 = !z2 && z;
+        this.E = sh4Var;
+        this.y = j;
+        this.F = j2;
+        this.G = j3;
+        j42 j42Var = this.w;
+        if (j42Var != null) {
+            gm.r(j42Var);
+        }
+        o1 o1Var = this.X;
+        gm.r(o1Var);
+        if (z2 && z) {
+            return;
+        }
+        ArrayList arrayList = this.N;
+        ArrayList arrayList2 = this.M;
+        ArrayList arrayList3 = this.O;
+        if (z3) {
+            arrayList3.clear();
+            this.Q.clear();
+            this.R.clear();
+            this.T = true;
+            c42Var.setVisibility(0);
+            f();
+            this.U++;
+            if (d42Var.getPinnedHeader() != null) {
+                d42Var.getPinnedHeader().setAlpha(0.0f);
+            }
+            arrayList2.clear();
+            arrayList.clear();
+        }
+        this.T = true;
+        f();
+        if (!z2) {
+            o1Var.run();
+            c42Var.e(true, !z);
+        }
+        if (TextUtils.isEmpty(str)) {
+            arrayList.clear();
+            arrayList2.clear();
+            a0(null, null, false);
+            return;
+        }
+        final int i = 1 + this.U;
+        this.U = i;
+        final j5 a = j5.a(z8c.t0);
+        ?? r0 = new Runnable() { // from class: j42
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // java.lang.Runnable
+            public final void run() {
+                j5 j5Var;
+                int i2;
+                long j4;
+                final ArrayList arrayList4;
+                long j5;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal;
+                j5 j5Var2 = a;
+                int i3 = j5Var2.a;
+                final o42 o42Var = o42.this;
+                ArrayList arrayList5 = o42Var.O;
+                final long j6 = j;
+                final String str4 = str;
+                final long j7 = j2;
+                long j8 = j3;
+                final boolean z4 = z2;
+                if (j6 != 0) {
+                    TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
+                    tL_messages_search.q = str4;
+                    tL_messages_search.limit = 20;
+                    tL_messages_search.filter = o42Var.E.e;
+                    tL_messages_search.peer = oc7.r1(i3).i1(j6);
+                    if (j7 > 0) {
+                        tL_messages_search.min_date = (int) (j7 / 1000);
+                    }
+                    if (j8 > 0) {
+                        tL_messages_search.max_date = (int) (j8 / 1000);
+                    }
+                    if (z4 && str4.equals(o42Var.K) && !arrayList5.isEmpty()) {
+                        tL_messages_search.offset_id = ((k47) b10.f(1, arrayList5)).e1();
+                    } else {
+                        tL_messages_search.offset_id = 0;
+                    }
+                    j5Var = j5Var2;
+                    arrayList4 = null;
+                    tL_messages_searchGlobal = tL_messages_search;
+                } else {
+                    if (TextUtils.isEmpty(str4)) {
+                        j5Var = j5Var2;
+                        i2 = 20;
+                        j4 = j8;
+                        arrayList4 = null;
+                    } else {
+                        ArrayList arrayList6 = new ArrayList();
+                        j4 = j8;
+                        j5Var = j5Var2;
+                        i2 = 20;
+                        cf7.Y(i3).J0(0, str4, arrayList6, new ArrayList(), new ArrayList(), null, -1);
+                        arrayList4 = arrayList6;
+                    }
+                    TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = new TLRPC.TL_messages_searchGlobal();
+                    tL_messages_searchGlobal2.limit = i2;
+                    tL_messages_searchGlobal2.q = str4;
+                    tL_messages_searchGlobal2.filter = o42Var.E.e;
+                    if (j7 > 0) {
+                        tL_messages_searchGlobal2.min_date = (int) (j7 / 1000);
+                    }
+                    if (j4 > 0) {
+                        tL_messages_searchGlobal2.max_date = (int) (j4 / 1000);
+                    }
+                    if (z4 && str4.equals(o42Var.K) && !arrayList5.isEmpty()) {
+                        k47 k47Var = (k47) b10.f(1, arrayList5);
+                        tL_messages_searchGlobal2.offset_id = k47Var.e1();
+                        tL_messages_searchGlobal2.offset_rate = o42Var.H;
+                        TLRPC.Peer peer = k47Var.k.peer_id;
+                        long j9 = peer.channel_id;
+                        if (j9 == 0) {
+                            j9 = peer.chat_id;
+                            if (j9 == 0) {
+                                j5 = peer.user_id;
+                                tL_messages_searchGlobal2.offset_peer = oc7.r1(i3).i1(j5);
+                                tL_messages_searchGlobal = tL_messages_searchGlobal2;
+                            }
+                        }
+                        j5 = -j9;
+                        tL_messages_searchGlobal2.offset_peer = oc7.r1(i3).i1(j5);
+                        tL_messages_searchGlobal = tL_messages_searchGlobal2;
+                    } else {
+                        tL_messages_searchGlobal2.offset_rate = 0;
+                        tL_messages_searchGlobal2.offset_id = 0;
+                        tL_messages_searchGlobal2.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                        tL_messages_searchGlobal = tL_messages_searchGlobal2;
+                    }
+                }
+                o42Var.K = str4;
+                o42Var.J = str2;
+                final ArrayList arrayList7 = new ArrayList();
+                uh4.B1(o42Var.K, arrayList7);
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i3);
+                final int i4 = i;
+                final j5 j5Var3 = j5Var;
+                connectionsManager.sendRequest(tL_messages_searchGlobal, new RequestDelegate() { // from class: k42
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        ArrayList arrayList8 = new ArrayList();
+                        j5 j5Var4 = j5Var3;
+                        String str5 = str4;
+                        if (tL_error == null) {
+                            TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                            int size = messages_messages.messages.size();
+                            for (int i5 = 0; i5 < size; i5++) {
+                                k47 k47Var2 = new k47(j5Var4.a, messages_messages.messages.get(i5), false, true);
+                                k47Var2.J5(str5, true);
+                                arrayList8.add(k47Var2);
+                            }
+                        }
+                        gm.c3(new bh1(o42.this, i4, tL_error, tLObject, j5Var4, z4, str5, arrayList8, j6, j7, arrayList4, arrayList7));
+                    }
+                });
+            }
+        };
+        this.w = r0;
+        gm.d3(r0, (!z2 || arrayList3.isEmpty()) ? 350L : 0L);
+        p42Var.K.setViewType(3);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:29:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0089  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a0(ArrayList arrayList, ArrayList arrayList2, boolean z) {
+        boolean z2;
+        AnimatorSet animatorSet;
+        p42 p42Var = this.Y;
+        uh4 uh4Var = p42Var.I;
+        int i = 0;
+        boolean z3 = false;
+        boolean z4 = false;
+        boolean z5 = false;
+        while (true) {
+            ArrayList arrayList3 = this.S;
+            if (i >= arrayList3.size()) {
+                break;
+            }
+            if (((sh4) arrayList3.get(i)).a()) {
+                z3 = true;
+            } else if (((sh4) arrayList3.get(i)).d == 4) {
+                z4 = true;
+            } else if (((sh4) arrayList3.get(i)).d == 6) {
+                z5 = true;
+            }
+            i++;
+        }
+        boolean z6 = ((arrayList == null || arrayList.isEmpty()) && (arrayList2 == null || arrayList2.isEmpty())) ? false : true;
+        if ((z3 || z6 || !z) && z6) {
+            if (arrayList == null || arrayList.isEmpty() || z4) {
+                arrayList = null;
+            }
+            if (arrayList2 == null || arrayList2.isEmpty() || z5) {
+                arrayList2 = null;
+            }
+            if (arrayList != null || arrayList2 != null) {
+                uh4Var.D1(arrayList, arrayList2, false);
+                z2 = true;
+                if (!z2) {
+                    uh4Var.D1(null, null, false);
+                }
+                uh4Var.setEnabled(z2);
+                Object tag = uh4Var.getTag();
+                if (z2) {
+                    if (tag == null) {
+                        return;
+                    }
+                } else if (tag != null) {
+                    return;
+                }
+                uh4Var.setTag(z2 ? 1 : null);
+                animatorSet = p42Var.J;
+                if (animatorSet != null) {
+                    animatorSet.cancel();
+                }
+                if (z2) {
+                    uh4Var.setVisibility(0);
+                }
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                p42Var.J = animatorSet2;
+                d42 d42Var = p42Var.r;
+                Property property = View.TRANSLATION_Y;
+                animatorSet2.playTogether(ObjectAnimator.ofFloat(d42Var, (Property<d42, Float>) property, !z2 ? gm.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(uh4Var, (Property<uh4, Float>) property, !z2 ? 0.0f : -gm.L(44.0f)), ObjectAnimator.ofFloat(p42Var.K, (Property<tk4, Float>) property, !z2 ? gm.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(p42Var.M, (Property<c42, Float>) property, z2 ? gm.L(44.0f) : 0.0f));
+                p42Var.J.addListener(new b91((Object) this, (byte) 18));
+                p42Var.J.setInterpolator(d53.g);
+                p42Var.J.setDuration(180L);
+                p42Var.J.start();
+            }
+        }
+        z2 = false;
+        if (!z2) {
+        }
+        uh4Var.setEnabled(z2);
+        Object tag2 = uh4Var.getTag();
+        if (z2) {
+        }
+        uh4Var.setTag(z2 ? 1 : null);
+        animatorSet = p42Var.J;
+        if (animatorSet != null) {
+        }
+        if (z2) {
+        }
+        AnimatorSet animatorSet22 = new AnimatorSet();
+        p42Var.J = animatorSet22;
+        d42 d42Var2 = p42Var.r;
+        Property property2 = View.TRANSLATION_Y;
+        animatorSet22.playTogether(ObjectAnimator.ofFloat(d42Var2, (Property<d42, Float>) property2, !z2 ? gm.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(uh4Var, (Property<uh4, Float>) property2, !z2 ? 0.0f : -gm.L(44.0f)), ObjectAnimator.ofFloat(p42Var.K, (Property<tk4, Float>) property2, !z2 ? gm.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(p42Var.M, (Property<c42, Float>) property2, z2 ? gm.L(44.0f) : 0.0f));
+        p42Var.J.addListener(new b91((Object) this, (byte) 18));
+        p42Var.J.setInterpolator(d53.g);
+        p42Var.J.setDuration(180L);
+        p42Var.J.start();
+    }
+
+    @Override // m59, y59
+    public final void f() {
+        X(false);
+        this.Y.Y();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        l55 l55Var;
+        View view;
+        ylb ylbVar = this.Y.a;
+        Context context = this.r;
+        if (i != 0) {
+            if (i != 1) {
+                if (i == 2) {
+                    tk4 tk4Var = new tk4(context, ylbVar);
+                    tk4Var.setViewType(3);
+                    tk4Var.setIsSingleCell(true);
+                    l55Var = tk4Var;
+                } else if (i != 4) {
+                    view = new View(context);
+                    view.setTag(-33024);
+                    return kt6.h(view, view, -1, -2);
+                }
+            }
+            ida idaVar = new ida(i == 1 ? 1 : 2, ylbVar, context);
+            idaVar.setDrawDownloadIcon(false);
+            view = idaVar;
+            return kt6.h(view, view, -1, -2);
+        }
+        l55Var = new l55(context, ylbVar);
+        view = l55Var;
+        return kt6.h(view, view, -1, -2);
     }
 }

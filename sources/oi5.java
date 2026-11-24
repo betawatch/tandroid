@@ -1,21 +1,64 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.view.View;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class oi5 extends ActionBarLayout {
-    public final /* synthetic */ l0 z1;
+public abstract class oi5 {
+    public static Runnable c;
+    public static Boolean h;
+    public static final HashSet a = new HashSet();
+    public static volatile boolean b = false;
+    public static boolean d = true;
+    public static boolean e = false;
+    public static boolean f = false;
+    public static boolean g = false;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi5(Activity activity, l0 l0Var) {
-        super(activity, false);
-        this.z1 = l0Var;
+    public static void a() {
+        ix2 ix2Var = fn5.z().p;
+        CountDownLatch countDownLatch = (CountDownLatch) ix2Var.c;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+            ix2Var.c = null;
+        }
+        b = false;
+        e = false;
+        g = false;
+        c = null;
+        Iterator it = a.iterator();
+        while (it.hasNext()) {
+            ((View) it.next()).invalidate();
+        }
+        a.clear();
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarLayout, ui5
-    public final fx0 getBottomSheet() {
-        return ((fx0[]) this.z1.b)[0];
+    public static boolean b(View view) {
+        if (b) {
+            a.add(view);
+        }
+        return b;
+    }
+
+    public static boolean c(View... viewArr) {
+        Boolean bool = h;
+        if (bool == null) {
+            bool = Boolean.valueOf(gda.o() != 2);
+            h = bool;
+        }
+        if (!bool.booleanValue()) {
+            return false;
+        }
+        if (b) {
+            a.addAll(Arrays.asList(viewArr));
+        }
+        return b;
+    }
+
+    public static boolean d() {
+        return b || e || g;
     }
 }

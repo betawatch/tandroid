@@ -1,84 +1,55 @@
 // default package
 
-import android.text.InputFilter;
-import android.text.Spanned;
-import android.text.TextUtils;
-import java.math.BigDecimal;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class g32 implements InputFilter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class g32 extends ssc {
+    public final /* synthetic */ byte x;
+    public final /* synthetic */ q59 y;
 
-    public /* synthetic */ g32(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g32(kz0 kz0Var, Context context) {
+        super(context, 1);
+        this.x = (byte) 0;
+        this.y = kz0Var;
     }
 
-    @Override // android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        byte b = this.a;
-        Object obj = this.b;
+    @Override // ssc
+    public final void a(int i, Object obj) {
+        byte b = this.x;
+        q59 q59Var = this.y;
         switch (b) {
             case 0:
+                gu2 gu2Var = ((h32) ((kz0) q59Var).f).y;
+                if (gu2Var != null) {
+                    gu2Var.accept(obj);
+                    break;
+                }
                 break;
             case 1:
-                mc9 mc9Var = (mc9) obj;
-                if (mc9Var.m2 && !mc9Var.i2) {
-                    lc9 lc9Var = mc9Var.e2;
-                    if (lc9Var != null && charSequence != null && i2 > i && i3 == i4) {
-                        lc9Var.O(charSequence.subSequence(i, i2));
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                y0b y0bVar = (y0b) obj;
-                if (charSequence.length() > 0 && Character.isWhitespace(charSequence.charAt(0))) {
-                    if (TextUtils.isEmpty(y0bVar.getText()) || i3 == 0) {
-                    }
-                }
+                ((otc) q59Var).d.F0(this, obj, i);
                 break;
             default:
-                qpc qpcVar = (qpc) obj;
-                String str = spanned.subSequence(0, i3).toString() + ((Object) charSequence.subSequence(i, i2)) + ((Object) spanned.subSequence(i4, spanned.length()));
-                int i5 = 9;
-                BigDecimal valueOf = BigDecimal.valueOf(Long.MAX_VALUE, 9);
-                if (qpcVar.l0) {
-                    BigDecimal i0 = qpcVar.i0();
-                    valueOf = valueOf.multiply(i0);
-                    i5 = qpc.h0(i0);
-                }
-                int max = Math.max(str.indexOf(46), str.indexOf(44));
-                if (max < 0 || (str.length() - max) - 1 <= i5) {
-                    if (qpc.t0(str).compareTo(valueOf) > 0) {
-                        break;
-                    } else if (i != i2) {
-                        boolean z = false;
-                        for (int i6 = 0; i6 < str.length(); i6++) {
-                            char charAt = str.charAt(i6);
-                            if (charAt == '.' || charAt == ',') {
-                                if (z) {
-                                    break;
-                                } else {
-                                    z = true;
-                                }
-                            }
-                        }
-                        if (i3 != 0 || (!str.startsWith(".") && !str.startsWith(","))) {
-                            if (str.startsWith("00")) {
-                                break;
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                } else {
-                    break;
-                }
+                ((qtc) q59Var).F.presentFragment(new rob(obj, null, true));
                 break;
         }
-        return spanned.subSequence(i3, i4);
+    }
+
+    @Override // ssc
+    public final boolean b(Object obj, int i) {
+        switch (this.x) {
+            case 1:
+                return ((otc) this.y).d.G0(this, obj, i);
+            default:
+                return super.b(obj, i);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g32(q59 q59Var, Context context, byte b) {
+        super(context, 5);
+        this.x = b;
+        this.y = q59Var;
     }
 }

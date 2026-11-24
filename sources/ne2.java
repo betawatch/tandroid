@@ -1,61 +1,62 @@
 // default package
 
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ne2 implements vc7, ed, d39, e39 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ kf2 b;
+public abstract class ne2 extends FrameLayout {
+    public vgc a;
+    public float b;
+    public boolean c;
+    public float d;
+    public ValueAnimator e;
 
-    public /* synthetic */ ne2(kf2 kf2Var, byte b) {
-        this.a = b;
-        this.b = kf2Var;
-    }
+    public abstract void a(boolean z);
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        kf2 kf2Var = this.b;
-        if (kf2Var.getParentActivity() != null) {
-            w39 adapter = kf2Var.c.getAdapter();
-            gf2 gf2Var = kf2Var.a;
-            if (adapter == gf2Var) {
-                return kf2Var.h0(gf2Var.E(i), false, view);
-            }
+    public final void b(boolean z) {
+        this.c = z;
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            this.e = null;
+            valueAnimator.cancel();
         }
-        return false;
-    }
-
-    @Override // d39
-    public final void e(float f, float f2, int i, View view) {
-        this.b.r0(i, view);
-    }
-
-    @Override // d39
-    public final boolean q(View view) {
-        return false;
-    }
-
-    @Override // vc7
-    public final void run(long j) {
-        this.b.s0(j);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        kf2 kf2Var = this.b;
-        switch (b) {
-            case 1:
-                kf2Var.x0();
-                break;
-            default:
-                kf2Var.finishFragment();
-                break;
+        if (z) {
+            setVisibility(0);
         }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z ? 1.0f : 0.0f);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new et1(this, (byte) 9));
+        this.e.setInterpolator(d53.h);
+        this.e.setDuration(320L);
+        this.e.addListener(new y7((byte) 19, (Object) this, z));
+        this.e.start();
     }
 
-    @Override // d39
-    public final void l(View view, float f, float f2) {
+    public int getCurrentHeight() {
+        return (int) (getMeasuredHeight() * this.b);
+    }
+
+    @Override // android.view.View
+    public final boolean isShown() {
+        return this.c;
+    }
+
+    public void setShown(float f) {
+        this.b = f;
+        vgc vgcVar = this.a;
+        if (vgcVar != null) {
+            vgcVar.setPivotX(vgcVar.getWidth() / 2.0f);
+            this.a.setPivotY(0.0f);
+            this.a.setScaleX(gm.R1(0.8f, 1.0f, f));
+            this.a.setScaleY(gm.R1(0.8f, 1.0f, f));
+        }
+        setAlpha(f);
+        invalidate();
+    }
+
+    public void setTabs(vgc vgcVar) {
+        this.a = vgcVar;
+        addView(vgcVar, qoe.c(-1.0f, -1));
     }
 }

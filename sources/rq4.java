@@ -1,7 +1,161 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public interface rq4 extends hk4 {
-    hk4 C(int i, o01 o01Var);
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Point;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class rq4 extends ViewGroup {
+    public AnimatorSet a;
+    public boolean b;
+    public final ArrayList c;
+    public wc5 d;
+    public final ArrayList e;
+    public int f;
+    public int h;
+    public int n;
+    public final /* synthetic */ sq4 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rq4(sq4 sq4Var, Context context) {
+        super(context);
+        this.r = sq4Var;
+        this.c = new ArrayList();
+        this.e = new ArrayList();
+        this.f = -1;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int childCount = getChildCount();
+        for (int i5 = 0; i5 < childCount; i5++) {
+            View childAt = getChildAt(i5);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        ArrayList arrayList;
+        int D;
+        byte b;
+        byte b2;
+        int childCount = getChildCount();
+        int size = View.MeasureSpec.getSize(i);
+        int L = size - gm.L(26.0f);
+        int L2 = gm.L(10.0f);
+        int L3 = gm.L(10.0f);
+        byte b3 = 0;
+        if (!this.b) {
+            this.n = 0;
+        }
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i3 >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i3);
+            if (childAt instanceof wc5) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(gm.L(32.0f), TLObject.FLAG_30));
+                ArrayList arrayList2 = this.e;
+                boolean contains = arrayList2.contains(childAt);
+                if (contains) {
+                    b2 = b3;
+                } else {
+                    b2 = b3;
+                    if (childAt.getMeasuredWidth() + i4 > L) {
+                        L2 = hg9.v(8.0f, childAt.getMeasuredHeight(), L2);
+                        i4 = b2;
+                    }
+                }
+                if (childAt.getMeasuredWidth() + i5 > L) {
+                    L3 = hg9.v(8.0f, childAt.getMeasuredHeight(), L3);
+                    i5 = b2;
+                }
+                int L4 = gm.L(13.0f) + i4;
+                if (!this.b) {
+                    if (contains) {
+                        childAt.setTranslationX(gm.L(13.0f) + i5);
+                        childAt.setTranslationY(L3);
+                    } else if (arrayList2.isEmpty()) {
+                        childAt.setTranslationX(L4);
+                        childAt.setTranslationY(L2);
+                        this.n = Math.max(this.n, L2);
+                    } else {
+                        float f = L4;
+                        if (childAt.getTranslationX() != f) {
+                            float[] fArr = new float[1];
+                            fArr[b2] = f;
+                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, fArr));
+                        }
+                        float f2 = L2;
+                        if (childAt.getTranslationY() != f2) {
+                            float[] fArr2 = new float[1];
+                            fArr2[b2] = f2;
+                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr2));
+                        }
+                        this.n = Math.max(this.n, L2);
+                    }
+                }
+                if (!contains) {
+                    i4 = hg9.v(9.0f, childAt.getMeasuredWidth(), i4);
+                }
+                i5 = hg9.v(9.0f, childAt.getMeasuredWidth(), i5);
+            } else {
+                b2 = b3;
+            }
+            i3++;
+            b3 = b2;
+        }
+        byte b4 = b3;
+        if (gm.O1()) {
+            D = gm.L(372.0f) / 3;
+        } else {
+            Point point = gm.q;
+            D = wi8.D(158.0f, Math.min(point.x, point.y), 3);
+        }
+        if (L - i4 < D) {
+            L2 += gm.L(40.0f);
+        }
+        if (L - i5 < D) {
+            L3 += gm.L(40.0f);
+        }
+        boolean z = this.b;
+        sq4 sq4Var = this.r;
+        if (z) {
+            b = b4;
+        } else {
+            int L5 = gm.L(42.0f) + L3;
+            sq4Var.n = L2;
+            if (this.a != null) {
+                this.h = gm.L(42.0f) + L2;
+                this.a.playTogether(arrayList);
+                b = b4;
+                this.a.addListener(new qq4(this, b));
+                this.f = nm7.f(sq4Var.a).p(null, this.f, true);
+                this.a.start();
+                this.b = true;
+            } else {
+                b = b4;
+                this.h = L5;
+            }
+        }
+        int i6 = this.n;
+        sq4Var.e = i6 > 0 ? gm.L(40.0f) + i6 : b;
+        setMeasuredDimension(size, this.h);
+        pq4 pq4Var = sq4Var.f;
+        if (pq4Var != null) {
+            pq4Var.a(sq4Var.e);
+        }
+    }
 }

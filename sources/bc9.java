@@ -1,29 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class bc9 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum bc9 implements Parcelable {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0("discouraged"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1("preferred"),
+    b("required");
 
-    static {
-        b4c.h(new bc9());
+    public static final Parcelable.Creator<bc9> CREATOR = new lbd((byte) 5);
+    public final String a;
+
+    bc9(String str) {
+        this.a = str;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        ((cc9) view).c = (lk0) c4cVar.H;
+    public static bc9 a(String str) {
+        for (bc9 bc9Var : values()) {
+            if (str.equals(bc9Var.a)) {
+                return bc9Var;
+            }
+        }
+        throw new ac9(kt6.o("Resident key requirement ", str, " not supported"));
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new cc9(context, wjbVar);
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    @Override // java.lang.Enum
+    public final String toString() {
+        return this.a;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.a);
     }
 }

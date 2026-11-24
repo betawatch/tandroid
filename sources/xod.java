@@ -1,27 +1,19 @@
 // default package
 
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class xod implements pqd {
-    public pqd[] a;
+public final class xod implements cq7 {
+    public static final xod a = new xod();
 
-    @Override // pqd
-    public final boolean zza(Class cls) {
-        for (pqd pqdVar : this.a) {
-            if (pqdVar.zza(cls)) {
-                return true;
-            }
-        }
-        return false;
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
     }
 
-    @Override // pqd
-    public final fud zzb(Class cls) {
-        for (pqd pqdVar : this.a) {
-            if (pqdVar.zza(cls)) {
-                return pqdVar.zzb(cls);
-            }
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        String name = cls.getName();
-        throw new UnsupportedOperationException(name.length() != 0 ? "No factory is available for message type: ".concat(name) : new String("No factory is available for message type: "));
+        throw null;
     }
 }

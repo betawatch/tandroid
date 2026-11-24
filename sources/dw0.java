@@ -1,88 +1,49 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.webkit.GeolocationPermissions;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class dw0 extends AnimatorListenerAdapter {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class dw0 implements gu2 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ jw0 b;
+    public final /* synthetic */ GeolocationPermissions.Callback c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ dw0(Object obj, int i, int i2, byte b) {
+    public /* synthetic */ dw0(jw0 jw0Var, GeolocationPermissions.Callback callback, String str, byte b) {
         this.a = b;
-        this.d = obj;
-        this.b = i;
-        this.c = i2;
+        this.b = jw0Var;
+        this.c = callback;
+        this.d = str;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i;
-        w39 adapter;
+    @Override // gu2
+    public final void accept(Object obj) {
         byte b = this.a;
-        Object obj = this.d;
-        int i2 = this.c;
-        int i3 = this.b;
+        byte b2 = 1;
+        String str = this.d;
+        GeolocationPermissions.Callback callback = this.c;
+        jw0 jw0Var = this.b;
+        Boolean bool = (Boolean) obj;
         switch (b) {
             case 0:
-                ow0 ow0Var = (ow0) obj;
-                ow0Var.T = bm2.f(1.0f, i3, i2);
-                ow0Var.h();
-                break;
-            case 1:
-                m75 m75Var = (m75) obj;
-                m75Var.M = i3;
-                m75Var.N = i2;
-                m75Var.G.setColorFilter(new PorterDuffColorFilter(m75Var.M, PorterDuff.Mode.MULTIPLY));
-                m75Var.F.setColor(m75Var.M);
-                m75Var.r.setColor(m75Var.N);
-                m75Var.K.d(bm2.o(m75Var.N, 38));
-                break;
-            case 2:
-                h85 h85Var = (h85) obj;
-                h85Var.B0 = i3;
-                h85Var.C0 = i3;
-                h85Var.D0 = i2;
-                h85Var.T.setColor(i2);
-                if (h85Var.S > 0.0f) {
-                    h85Var.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                nfa nfaVar = (nfa) obj;
-                iea[] ieaVarArr = nfaVar.n0;
-                nfaVar.M1.e();
-                nfaVar.r1 = false;
-                int[] iArr = nfaVar.p1;
-                iArr[i3] = i2;
-                for (int i4 = 0; i4 < ieaVarArr.length; i4++) {
-                    iea ieaVar = ieaVarArr[i4];
-                    if (ieaVar != null && ieaVar.h != null && (((i = ieaVar.F) == 0 || nfa.j0(i)) && (adapter = ieaVarArr[i4].h.getAdapter()) != null)) {
-                        int b2 = adapter.b();
-                        if (i4 == 0) {
-                            nfaVar.w1[0].g(false);
-                        }
-                        ieaVarArr[i4].x.x1(iArr[i3]);
-                        ieaVarArr[i4].h.b0();
-                        if (adapter.b() == b2) {
-                            gl.W3(ieaVarArr[i4].h);
-                        } else {
-                            adapter.f();
-                        }
-                        ieaVarArr[i4].n.setVisibility(8);
+                if (jw0Var.a != null) {
+                    jw0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        callback.invoke(str, false, false);
+                        break;
+                    } else {
+                        dw0 dw0Var = new dw0(jw0Var, callback, str, b2);
+                        boolean z = qw0.R0;
+                        jw0Var.e.R.R(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, dw0Var);
+                        break;
                     }
                 }
-                nfaVar.e1();
                 break;
             default:
-                if (i3 != i2) {
-                    ((t7b) obj).P(i3, i2);
+                callback.invoke(str, bool.booleanValue(), false);
+                if (bool.booleanValue()) {
+                    jw0Var.e.R.U = true;
                     break;
                 }
                 break;

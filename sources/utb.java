@@ -1,49 +1,43 @@
 // default package
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class utb extends tx9 {
-    public boolean f2;
-    public final /* synthetic */ vtb g2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public utb(vtb vtbVar, vtb vtbVar2, Activity activity) {
-        super(vtbVar2, activity, false, null, 3, null);
-        this.g2 = vtbVar;
-        this.f2 = true;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum utb extends rub {
+    public utb() {
+        super("CommentEndBang", 49);
     }
 
-    @Override // tx9
-    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i;
-        int i2;
-        vtb vtbVar = this.g2;
-        i = ((d) vtbVar).currentAccount;
-        boolean z = false;
-        if (!TextUtils.isEmpty(y6c.h(i).f0)) {
-            hq6 mediaDataController = vtbVar.getMediaDataController();
-            i2 = ((d) vtbVar).currentAccount;
-            TLRPC.TL_messages_stickerSet o0 = mediaDataController.o0(y6c.h(i2).f0);
-            if ((o0 == null ? 0L : o0.set.id) == hq6.r0(document)) {
-                z = true;
-            }
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        rrb rrbVar = bsbVar.n;
+        char d = hl1Var.d();
+        qtb qtbVar = rub.k0;
+        if (d == 0) {
+            bsbVar.m(this);
+            StringBuilder sb = rrbVar.e;
+            sb.append("--!");
+            sb.append((char) 65533);
+            bsbVar.c = qtbVar;
+            return;
         }
-        vtbVar.f0(l, z);
-    }
-
-    @Override // tx9, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (this.f2) {
-            this.f2 = false;
-            this.g2.f.r(null);
+        if (d == '-') {
+            rrbVar.e.append("--!");
+            bsbVar.c = rub.l0;
+            return;
+        }
+        msb msbVar = rub.a;
+        if (d == '>') {
+            bsbVar.i();
+            bsbVar.c = msbVar;
+        } else if (d == 65535) {
+            bsbVar.l(this);
+            bsbVar.i();
+            bsbVar.c = msbVar;
+        } else {
+            StringBuilder sb2 = rrbVar.e;
+            sb2.append("--!");
+            sb2.append(d);
+            bsbVar.c = qtbVar;
         }
     }
 }

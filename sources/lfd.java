@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class lfd implements zn7 {
-    public static final lfd a = new lfd();
+import android.content.Context;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)));
+/* loaded from: classes.dex */
+public final class lfd implements red, lt3, lr2, ahf {
+    @Override // lr2
+    public final Object X(sm2 sm2Var) {
+        return new m89(sm2Var.d(f8e.class));
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // lt3
+    public final int a(Context context, String str, boolean z) {
+        return nt3.d(context, str, z);
+    }
+
+    @Override // lt3
+    public final int b(Context context, String str) {
+        return nt3.a(context, str);
+    }
+
+    @Override // red
+    public final byte[] c(int i, int i2, byte[] bArr) {
+        byte[] bArr2 = new byte[i2];
+        System.arraycopy(bArr, i, bArr2, 0, i2);
+        return bArr2;
     }
 }

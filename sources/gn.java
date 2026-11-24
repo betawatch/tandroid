@@ -2,1027 +2,937 @@
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.style.CharacterStyle;
+import android.text.style.ReplacementSpan;
+import android.util.LongSparseArray;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class gn extends Drawable {
-    public static final LinearInterpolator d0 = new LinearInterpolator();
-    public boolean A;
-    public float B;
-    public int C;
-    public final Rect D;
-    public boolean E;
-    public boolean F;
-    public boolean G;
-    public boolean H;
-    public boolean I;
-    public b1 J;
-    public boolean K;
-    public boolean L;
-    public boolean M;
-    public int N;
-    public float O;
-    public boolean P;
-    public LinearGradient Q;
-    public Matrix R;
-    public Paint S;
-    public boolean T;
-    public boolean U;
-    public boolean V;
-    public float W;
-    public float X;
-    public int Y;
-    public ValueAnimator Z;
-    public final TextPaint a;
-    public int a0;
-    public int b;
-    public ColorFilter b0;
-    public boolean c;
-    public Runnable c0;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public dn[] h;
-    public CharSequence i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public dn[] n;
-    public CharSequence o;
-    public int p;
-    public float q;
-    public float r;
-    public boolean s;
-    public ValueAnimator t;
-    public CharSequence u;
-    public boolean v;
-    public short w;
-    public s33 x;
-    public float y;
-    public float z;
+public class gn extends ReplacementSpan {
+    private static boolean lockPositionChanging;
+    private boolean animateChanges;
+    public int cacheType;
+    public TLRPC.Document document;
+    public String documentAbsolutePath;
+    public long documentId;
+    public String emoji;
+    public float extraScale;
+    private Paint.FontMetricsInt fontMetrics;
+    public boolean fromEmojiKeyboard;
+    public boolean full;
+    public boolean invert;
+    private boolean isAdded;
+    private boolean isRemoved;
+    float lastDrawnCx;
+    float lastDrawnCy;
+    protected int measuredSize;
+    private int minimumLineHeight;
+    private ValueAnimator moveAnimator;
+    boolean positionChanged;
+    private boolean preserveFontMetrics;
+    private boolean recordPositions;
+    private Runnable removedAction;
+    private float scale;
+    private ValueAnimator scaleAnimator;
+    public float size;
+    boolean spanDrawn;
+    public boolean standard;
+    public boolean top;
 
-    public gn(boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
-        this.a = new TextPaint(1);
-        this.b = 0;
-        this.c = false;
-        this.p = 0;
-        this.q = 0.0f;
-        this.r = 0.0f;
-        this.s = true;
-        this.w = (short) 320;
-        this.x = s33.h;
-        this.y = -1.0f;
-        this.z = 0.3f;
-        this.B = 0.0f;
-        this.C = kk7.d4;
-        this.D = new Rect();
-        this.T = true;
-        this.U = true;
-        this.V = false;
-        this.E = z;
-        this.F = z2;
-        this.G = z3;
-        this.H = z4;
-        this.I = z5;
+    public gn(long j, float f, Paint.FontMetricsInt fontMetricsInt) {
+        this.extraScale = 1.0f;
+        this.full = false;
+        this.top = false;
+        this.invert = false;
+        this.size = gm.L(20.0f);
+        this.cacheType = -1;
+        this.recordPositions = true;
+        this.documentId = j;
+        this.scale = f;
+        this.fontMetrics = fontMetricsInt;
+        if (fontMetricsInt != null) {
+            float abs = Math.abs(fontMetricsInt.ascent) + Math.abs(fontMetricsInt.descent);
+            this.size = abs;
+            if (abs == 0.0f) {
+                this.size = gm.L(20.0f);
+            }
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x001a  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0023  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0026  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean l(int i, int i2, CharSequence charSequence, CharSequence charSequence2) {
-        CharSequence charSequence3;
-        if (!(charSequence instanceof fn) || !(charSequence2 instanceof fn)) {
-            return charSequence.charAt(i) == charSequence2.charAt(i2);
+    public static boolean a(Layout layout, int i, int i2) {
+        if (layout.getText() instanceof Spanned) {
+            xkb[] xkbVarArr = (xkb[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i), Math.min(layout.getText().length() - 1, i2), xkb.class);
+            for (int i3 = 0; xkbVarArr != null && i3 < xkbVarArr.length; i3++) {
+                xkb xkbVar = xkbVarArr[i3];
+                if (xkbVar != null && xkbVar.b()) {
+                    return true;
+                }
+            }
         }
-        fn fnVar = (fn) charSequence;
-        CharSequence charSequence4 = null;
-        if (i >= 0) {
-            CharSequence[] charSequenceArr = fnVar.a;
-            if (i < charSequenceArr.length) {
-                charSequence3 = charSequenceArr[i];
-                fn fnVar2 = (fn) charSequence2;
-                if (i2 >= 0) {
-                    CharSequence[] charSequenceArr2 = fnVar2.a;
-                    if (i2 < charSequenceArr2.length) {
-                        charSequence4 = charSequenceArr2[i2];
+        return false;
+    }
+
+    public static boolean access$400(gn gnVar) {
+        return (gnVar.moveAnimator == null && gnVar.scaleAnimator == null) ? false : true;
+    }
+
+    public static void applyFontMetricsForString(CharSequence charSequence, Paint paint) {
+        if (charSequence instanceof Spannable) {
+            gn[] gnVarArr = (gn[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), gn.class);
+            if (gnVarArr != null) {
+                for (gn gnVar : gnVarArr) {
+                    gnVar.applyFontMetrics(paint.getFontMetricsInt());
+                }
+            }
+        }
+    }
+
+    public static gn cloneSpan(gn gnVar, Paint.FontMetricsInt fontMetricsInt) {
+        gn gnVar2;
+        TLRPC.Document document = gnVar.document;
+        if (document != null) {
+            gnVar2 = new gn(document, gnVar.scale, fontMetricsInt != null ? fontMetricsInt : gnVar.fontMetrics);
+        } else {
+            gnVar2 = new gn(gnVar.documentId, gnVar.scale, fontMetricsInt != null ? fontMetricsInt : gnVar.fontMetrics);
+        }
+        if (fontMetricsInt != null) {
+            gnVar2.size = gnVar.size;
+        }
+        gnVar2.fromEmojiKeyboard = gnVar.fromEmojiKeyboard;
+        gnVar2.isAdded = gnVar.isAdded;
+        gnVar2.isRemoved = gnVar.isRemoved;
+        return gnVar2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v2, types: [android.text.SpannableString] */
+    public static CharSequence cloneSpans(CharSequence charSequence, int i, Paint.FontMetricsInt fontMetricsInt, float f) {
+        gn[] gnVarArr;
+        if (!(charSequence instanceof Spanned)) {
+            return charSequence;
+        }
+        Spanned spanned = (Spanned) charSequence;
+        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spanned.getSpans(0, spanned.length(), CharacterStyle.class);
+        if (characterStyleArr != null && characterStyleArr.length > 0 && ((gnVarArr = (gn[]) spanned.getSpans(0, spanned.length(), gn.class)) == null || gnVarArr.length > 0)) {
+            charSequence = new SpannableString(spanned);
+            for (int i2 = 0; i2 < characterStyleArr.length; i2++) {
+                CharacterStyle characterStyle = characterStyleArr[i2];
+                if (characterStyle != null && (characterStyle instanceof gn)) {
+                    int spanStart = spanned.getSpanStart(characterStyle);
+                    int spanEnd = spanned.getSpanEnd(characterStyleArr[i2]);
+                    gn gnVar = (gn) characterStyleArr[i2];
+                    charSequence.removeSpan(gnVar);
+                    gn cloneSpan = cloneSpan(gnVar, fontMetricsInt);
+                    if (i != -1) {
+                        cloneSpan.cacheType = i;
                     }
-                }
-                return charSequence3 != null ? charSequence4 == null : charSequence3.equals(charSequence4);
-            }
-        }
-        charSequence3 = null;
-        fn fnVar22 = (fn) charSequence2;
-        if (i2 >= 0) {
-        }
-        if (charSequence3 != null) {
-        }
-    }
-
-    public final void a() {
-        ValueAnimator valueAnimator = this.t;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-    }
-
-    public final void b() {
-        if (this.n != null) {
-            int i = 0;
-            while (true) {
-                dn[] dnVarArr = this.n;
-                if (i >= dnVarArr.length) {
-                    break;
-                }
-                dn dnVar = dnVarArr[i];
-                gn gnVar = dnVar.i;
-                if (gnVar.getCallback() instanceof View) {
-                    gm.release((View) gnVar.getCallback(), dnVar.a);
-                }
-                i++;
-            }
-        }
-        this.n = null;
-    }
-
-    public final float c() {
-        return (this.h == null || this.n == null) ? this.d : gl.R1(this.j, this.d, this.r);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0044, code lost:
-    
-        if (r2 != false) goto L24;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final float d(dn dnVar, float f) {
-        float f2 = 0.0f;
-        if (this.y <= 0.0f) {
-            return this.r;
-        }
-        float max = Math.max(this.j, this.d);
-        float textSize = this.a.getTextSize() * this.y;
-        if (max <= 0.0f || textSize <= 0.0f) {
-            return this.r;
-        }
-        boolean z = this.c && !this.L;
-        float f3 = max - f;
-        int i = this.b;
-        if ((i | (-4)) != -1) {
-            if ((i | (-6)) != -1) {
-                if ((i | (-2)) == -1) {
-                    f2 = f3 / 2.0f;
+                    cloneSpan.scale = gnVar.scale * f;
+                    charSequence.setSpan(cloneSpan, spanStart, spanEnd, 33);
                 }
             }
-            f2 = f3;
         }
-        float f4 = dnVar.c;
-        if (z) {
-            f2 = f3 - f2;
-        }
-        float s = gl.s(this.q, f4 + f2, max, textSize);
-        s33 s33Var = this.x;
-        return s33Var == null ? s : s33Var.getInterpolation(s);
+        return charSequence;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0100, code lost:
-    
-        if (r22.L == false) goto L51;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0291  */
-    /* JADX WARN: Removed duplicated region for block: B:121:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x013b  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x013e  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float f;
-        float f2;
-        TextPaint textPaint;
-        float f3;
-        float f4;
-        float f5;
+    /* JADX WARN: Type inference failed for: r8v12 */
+    /* JADX WARN: Type inference failed for: r8v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r8v3 */
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, cn cnVar, float f, List<rna> list, float f2, float f3, float f4, float f5, ColorFilter colorFilter) {
+        boolean z;
         float f6;
         float f7;
-        float f8;
-        boolean z = this.P;
-        Rect rect = this.D;
-        if (z) {
-            RectF rectF = gl.P;
-            rectF.set(rect);
-            rectF.right -= this.O;
-            canvas.saveLayerAlpha(rectF, kk7.d4, 31);
-        }
-        canvas.save();
-        canvas.translate(rect.left, rect.top);
-        int width = rect.width();
-        int height = rect.height();
-        float f9 = 0.0f;
-        float f10 = 1.0f;
-        if (this.h != null && this.n != null) {
-            float f11 = this.r;
-            if (f11 != 1.0f) {
-                float R1 = gl.R1(this.j, this.d, f11);
-                float R12 = gl.R1(this.k, this.e, this.r);
-                float R13 = gl.R1(this.l, this.f, this.r);
-                if (this.U) {
-                    canvas.translate(0.0f, (height - R12) / 2.0f);
-                }
-                int i = 0;
-                while (true) {
-                    dn[] dnVarArr = this.h;
-                    int length = dnVarArr.length;
-                    textPaint = this.a;
-                    if (i >= length) {
-                        break;
-                    }
-                    dn dnVar = dnVarArr[i];
-                    int i2 = dnVar.d;
-                    float f12 = dnVar.c;
-                    float f13 = R13 - dnVar.g;
-                    float f14 = f9;
-                    if (!this.c || this.L) {
-                        f6 = f10;
-                    } else {
-                        f6 = f10;
-                        f12 = this.d - (f12 + dnVar.f);
-                    }
-                    float d = d(dnVar, this.d);
-                    if (i2 >= 0) {
-                        dn dnVar2 = this.n[i2];
-                        float f15 = dnVar2.c;
-                        if (this.c && !this.L) {
-                            f15 = this.j - (f15 + dnVar2.f);
-                        }
-                        f7 = gl.R1(f15 - dnVar2.e, f12 - dnVar.e, this.r);
-                    } else {
-                        float f16 = f12 - dnVar.e;
-                        f13 -= ((f6 - d) * (textPaint.getTextSize() * this.z)) * (this.s ? f6 : -1.0f);
-                        f7 = f16;
-                    }
-                    canvas.save();
-                    float f17 = i2 >= 0 ? R1 : this.d;
-                    int i3 = this.b;
-                    if ((i3 | (-4)) != -1) {
-                        if ((i3 | (-6)) != -1) {
-                            if ((i3 | (-2)) == -1) {
-                                f7 = oo1.z(width, f17, 2.0f, f7);
-                            } else if (this.c) {
-                            }
-                        }
-                        f7 += width - f17;
-                    }
-                    canvas.translate(f7, f13);
-                    if (i2 < 0) {
-                        float f18 = this.B;
-                        if (f18 > f14) {
-                            float f19 = f6 - f18;
-                            float f20 = f6;
-                            float R14 = gl.R1(f19, f20, d);
-                            if (Math.abs(f20 - R14) < 0.001f) {
-                                R14 = 1.0f;
-                            }
-                            f8 = 2.0f;
-                            canvas.scale(R14, R14, dnVar.f / 2.0f, dnVar.b.getHeight() / 2.0f);
-                            if (i2 < 0) {
-                                d = 1.0f;
-                            } else if (this.A) {
-                                d = Math.max(f14, (d * f8) - 1.0f);
-                            }
-                            dnVar.a(canvas, d);
-                            canvas.restore();
-                            i++;
-                            f9 = 0.0f;
-                            f10 = 1.0f;
-                        }
-                    }
-                    f8 = 2.0f;
-                    if (i2 < 0) {
-                    }
-                    dnVar.a(canvas, d);
-                    canvas.restore();
-                    i++;
-                    f9 = 0.0f;
-                    f10 = 1.0f;
-                }
-                int i4 = 0;
-                while (true) {
-                    dn[] dnVarArr2 = this.n;
-                    if (i4 >= dnVarArr2.length) {
-                        break;
-                    }
-                    dn dnVar3 = dnVarArr2[i4];
-                    if (dnVar3.d < 0) {
-                        float d2 = d(dnVar3, this.j);
-                        float f21 = dnVar3.c;
-                        float textSize = (textPaint.getTextSize() * this.z * d2 * (this.s ? 1.0f : -1.0f)) + (R13 - dnVar3.g);
-                        canvas.save();
-                        boolean z2 = this.c;
-                        if (z2 && !this.L) {
-                            f21 = this.j - (f21 + dnVar3.f);
-                        }
-                        float f22 = f21 - dnVar3.e;
-                        int i5 = this.b;
-                        if ((i5 | (-4)) != -1) {
-                            if ((i5 | (-6)) == -1) {
-                                f4 = width;
-                                f5 = this.j;
-                            } else if ((i5 | (-2)) == -1) {
-                                f22 = oo1.z(width, this.j, 2.0f, f22);
-                            } else if (z2 && !this.L) {
-                                f4 = width;
-                                f5 = this.j;
-                            }
-                            f22 += f4 - f5;
-                        }
-                        canvas.translate(f22, textSize);
-                        float f23 = this.B;
-                        if (f23 > 0.0f) {
-                            float R15 = gl.R1(1.0f, 1.0f - f23, d2);
-                            if (Math.abs(1.0f - R15) < 0.001f) {
-                                R15 = 1.0f;
-                            }
-                            f3 = 2.0f;
-                            canvas.scale(R15, R15, dnVar3.f / 2.0f, dnVar3.b.getHeight() / 2.0f);
-                        } else {
-                            f3 = 2.0f;
-                        }
-                        dnVar3.a(canvas, this.A ? Math.max(0.0f, 1.0f - (d2 * f3)) : 1.0f - d2);
-                        canvas.restore();
-                    }
-                    i4++;
-                }
-                canvas.restore();
-                if (this.P) {
-                    return;
-                }
-                float L = gl.L(16.0f);
-                if (this.Q == null) {
-                    this.Q = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{16711680, -65536}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                    this.R = new Matrix();
-                    Paint paint = new Paint(1);
-                    this.S = paint;
-                    paint.setShader(this.Q);
-                    this.S.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                }
-                this.R.reset();
-                this.R.postTranslate((rect.right - this.O) - L, 0.0f);
-                this.Q.setLocalMatrix(this.R);
-                float f24 = rect.right - this.O;
-                canvas.drawRect(f24 - L, rect.top, f24 + gl.L(1.0f), rect.bottom, this.S);
-                canvas.restore();
-                return;
-            }
-        }
-        if (this.U) {
-            canvas.translate(0.0f, (height - this.e) / 2.0f);
-        }
-        if (this.h != null) {
-            for (int i6 = 0; i6 < this.h.length; i6++) {
-                canvas.save();
-                dn dnVar4 = this.h[i6];
-                float f25 = dnVar4.c;
-                boolean z3 = this.c;
-                if (z3 && !this.L) {
-                    f25 = this.d - (f25 + dnVar4.f);
-                }
-                float f26 = f25 - dnVar4.e;
-                int i7 = this.b;
-                if ((i7 | (-4)) != -1) {
-                    if ((i7 | (-6)) == -1) {
-                        f = width;
-                        f2 = this.d;
-                    } else if ((i7 | (-2)) == -1) {
-                        f26 = oo1.z(width, this.d, 2.0f, f26);
-                    } else if (z3 && !this.L) {
-                        f = width;
-                        f2 = this.d;
-                    }
-                    f26 += f - f2;
-                }
-                canvas.translate(f26, this.f - dnVar4.g);
-                dnVar4.a(canvas, 1.0f);
-                canvas.restore();
-            }
-        }
-        canvas.restore();
-        if (this.P) {
-        }
-    }
-
-    public final float e() {
-        return Math.max(this.d, this.j);
-    }
-
-    public final void f(dn dnVar) {
-        this.f = Math.max(this.f, dnVar.g);
-        float max = Math.max(this.g, dnVar.h);
-        this.g = max;
-        this.e = this.f + max;
-    }
-
-    public final void g(dn dnVar) {
-        this.l = Math.max(this.l, dnVar.g);
-        float max = Math.max(this.m, dnVar.h);
-        this.m = max;
-        this.k = this.l + max;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Rect getDirtyBounds() {
-        return this.D;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final boolean h() {
-        ValueAnimator valueAnimator = this.t;
-        return valueAnimator != null && valueAnimator.isRunning();
-    }
-
-    public final float i() {
-        CharSequence charSequence = this.o;
-        float f = 0.0f;
-        float f2 = (charSequence == null || charSequence.length() <= 0) ? 0.0f : 1.0f;
-        CharSequence charSequence2 = this.i;
-        if (charSequence2 != null && charSequence2.length() > 0) {
-            f = 1.0f;
-        }
-        return gl.R1(f2, f, this.o != null ? this.r : 1.0f);
-    }
-
-    public final StaticLayout j(int i, CharSequence charSequence) {
-        if (i <= 0) {
-            Point point = gl.q;
-            i = Math.min(point.x, point.y);
-        }
-        return StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), this.a, i).setMaxLines(1).setLineSpacing(0.0f, 1.0f).setAlignment(Layout.Alignment.ALIGN_NORMAL).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(i).setIncludePad(this.T).build();
-    }
-
-    public final void k(en enVar, CharSequence charSequence, int i, int i2) {
-        if (!this.H || charSequence.length() <= 1) {
-            enVar.e(charSequence);
+        if (canvas == null || layout == null || cnVar == null) {
             return;
         }
-        int i3 = 0;
-        while (i3 < charSequence.length()) {
-            int i4 = i3 + 1;
-            enVar.e(charSequence.subSequence(i3, i4));
-            i3 = i4;
+        ArrayList arrayList = cnVar.c;
+        boolean z2 = false;
+        if (gw3.m == 0.0f && f == 0.0f) {
+            z = false;
+        } else {
+            canvas.save();
+            canvas.translate(0.0f, gw3.m + gm.L(20.0f * f));
+            z = true;
         }
-    }
-
-    /* JADX WARN: Type inference failed for: r1v1, types: [int, short] */
-    public final void m(float f, long j, float f2, s33 s33Var) {
-        this.z = f;
-        this.w = (int) j;
-        this.y = f2;
-        this.x = s33Var;
-    }
-
-    public final void n(float f, long j, s33 s33Var) {
-        m(f, j, 1.0f, s33Var);
-    }
-
-    public final void o(float f, float f2, float f3, float f4) {
-        int i = (int) f;
-        int i2 = (int) f2;
-        int i3 = (int) f3;
-        int i4 = (int) f4;
-        super.setBounds(i, i2, i3, i4);
-        this.D.set(i, i2, i3, i4);
-    }
-
-    public final void p(RectF rectF) {
-        setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-    }
-
-    public final void q(boolean z) {
-        this.P = z;
-        invalidateSelf();
-    }
-
-    public final void r(boolean z, boolean z2) {
-        this.E = z;
-        this.F = true;
-        this.G = z2;
-        this.H = false;
-        this.I = false;
-    }
-
-    public final void s(float f, float f2, int i) {
-        this.V = true;
-        this.W = f;
-        this.X = f2;
-        this.Y = i;
-        this.a.setShadowLayer(f, 0.0f, f2, i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.C = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(Rect rect) {
-        super.setBounds(rect);
-        this.D.set(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x00ea, code lost:
-    
-        r0.e(r13.subSequence(0, r8));
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(CharSequence charSequence, boolean z, boolean z2) {
-        float f;
-        int i;
-        int i2;
-        final byte b = 0;
-        boolean z3 = (this.i == null || charSequence == null) ? false : z;
-        CharSequence charSequence2 = charSequence == null ? "" : charSequence;
-        int i3 = this.N;
-        if (i3 <= 0) {
-            i3 = this.D.width();
-        }
-        final byte b2 = 1;
-        if (!z3) {
-            ValueAnimator valueAnimator = this.t;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+        long currentTimeMillis = System.currentTimeMillis();
+        int i = 0;
+        while (true) {
+            if (i >= arrayList.size()) {
+                break;
             }
-            this.t = null;
-            this.u = null;
-            this.v = false;
-            this.r = 0.0f;
-            this.q = 0.0f;
-            if (charSequence2.equals(this.i)) {
-                f = 0.0f;
-            } else {
-                if (this.n != null) {
-                    int i4 = 0;
-                    while (true) {
-                        dn[] dnVarArr = this.n;
-                        if (i4 >= dnVarArr.length) {
-                            break;
+            en enVar = (en) arrayList.get(i);
+            if (enVar.a == layout) {
+                ArrayList arrayList2 = enVar.b;
+                int i2 = z2 ? 1 : 0;
+                ?? r8 = z2;
+                while (i2 < arrayList2.size()) {
+                    bn bnVar = (bn) arrayList2.get(i2);
+                    if (bnVar != null) {
+                        vm vmVar = bnVar.f;
+                        if (vmVar != null) {
+                            vmVar.setColorFilter(colorFilter);
                         }
-                        dn dnVar = dnVarArr[i4];
-                        gn gnVar = dnVar.i;
-                        if (gnVar.getCallback() instanceof View) {
-                            gm.release((View) gnVar.getCallback(), dnVar.a);
-                        }
-                        i4++;
-                    }
-                }
-                this.n = null;
-                this.h = new dn[]{new dn(this, j(i3, charSequence2), 0.0f, -1)};
-                this.i = charSequence2;
-                f = 0.0f;
-                dn dnVar2 = this.h[0];
-                this.d = dnVar2.f;
-                this.g = 0.0f;
-                this.f = 0.0f;
-                this.e = 0.0f;
-                f(dnVar2);
-                this.c = gl.J1(this.i);
-            }
-            b();
-            this.o = null;
-            this.j = f;
-            this.m = f;
-            this.l = f;
-            this.k = f;
-            invalidateSelf();
-            Runnable runnable = this.c0;
-            if (runnable != null) {
-                runnable.run();
-                return;
-            }
-            return;
-        }
-        if (TextUtils.equals(charSequence2, this.i)) {
-            return;
-        }
-        if (this.K) {
-            ValueAnimator valueAnimator2 = this.t;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-                this.t = null;
-            }
-        } else if (h()) {
-            this.u = charSequence2;
-            this.v = z2;
-            return;
-        }
-        this.o = this.i;
-        this.i = charSequence2;
-        final ArrayList arrayList = new ArrayList();
-        final int i5 = i3;
-        final ArrayList arrayList2 = new ArrayList();
-        this.d = 0.0f;
-        this.j = 0.0f;
-        this.g = 0.0f;
-        this.f = 0.0f;
-        this.e = 0.0f;
-        this.m = 0.0f;
-        this.l = 0.0f;
-        this.k = 0.0f;
-        this.c = gl.J1(this.i);
-        zm zmVar = new zm((Object) this, i5, (Object) arrayList2, (Object) arrayList, (byte) 0);
-        en enVar = new en(this) { // from class: an
-            public final /* synthetic */ gn b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // en
-            public final void e(CharSequence charSequence3) {
-                byte b3 = b;
-                ArrayList arrayList3 = arrayList;
-                int i6 = i5;
-                gn gnVar2 = this.b;
-                switch (b3) {
-                    case 0:
-                        dn dnVar3 = new dn(gnVar2, gnVar2.j(i6 - ((int) Math.ceil(gnVar2.d)), charSequence3), gnVar2.d, -1);
-                        arrayList3.add(dnVar3);
-                        gnVar2.d += dnVar3.f;
-                        gnVar2.f(dnVar3);
-                        break;
-                    default:
-                        dn dnVar4 = new dn(gnVar2, gnVar2.j(i6 - ((int) Math.ceil(gnVar2.j)), charSequence3), gnVar2.j, -1);
-                        arrayList3.add(dnVar4);
-                        gnVar2.j += dnVar4.f;
-                        gnVar2.g(dnVar4);
-                        break;
-                }
-            }
-        };
-        en enVar2 = new en(this) { // from class: an
-            public final /* synthetic */ gn b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // en
-            public final void e(CharSequence charSequence3) {
-                byte b3 = b2;
-                ArrayList arrayList3 = arrayList2;
-                int i6 = i5;
-                gn gnVar2 = this.b;
-                switch (b3) {
-                    case 0:
-                        dn dnVar3 = new dn(gnVar2, gnVar2.j(i6 - ((int) Math.ceil(gnVar2.d)), charSequence3), gnVar2.d, -1);
-                        arrayList3.add(dnVar3);
-                        gnVar2.d += dnVar3.f;
-                        gnVar2.f(dnVar3);
-                        break;
-                    default:
-                        dn dnVar4 = new dn(gnVar2, gnVar2.j(i6 - ((int) Math.ceil(gnVar2.j)), charSequence3), gnVar2.j, -1);
-                        arrayList3.add(dnVar4);
-                        gnVar2.j += dnVar4.f;
-                        gnVar2.g(dnVar4);
-                        break;
-                }
-            }
-        };
-        boolean z4 = this.E;
-        CharSequence charSequence3 = this.o;
-        if (z4) {
-            charSequence3 = new fn(charSequence3);
-        }
-        boolean z5 = this.E;
-        CharSequence charSequence4 = this.i;
-        if (z5) {
-            charSequence4 = new fn(charSequence4);
-        }
-        if (this.M) {
-            k(enVar2, charSequence3, 0, charSequence3.length());
-            k(enVar, charSequence4, 0, charSequence4.length());
-        } else if (this.I) {
-            int min = Math.min(charSequence4.length(), charSequence3.length());
-            int i6 = 0;
-            while (i6 < min && l(i6, i6, charSequence4, charSequence3)) {
-                i6++;
-            }
-            int length = charSequence4.length();
-            int length2 = charSequence3.length();
-            while (length > i6 && length2 > i6 && l(length - 1, length2 - 1, charSequence4, charSequence3)) {
-                length--;
-                length2--;
-            }
-            if (length > i6) {
-                k(enVar, charSequence4.subSequence(i6, length), i6, length);
-            }
-            if (length2 > i6) {
-                k(enVar2, charSequence3.subSequence(i6, length2), i6, length2);
-            }
-            if (length < charSequence4.length()) {
-                CharSequence subSequence = charSequence4.subSequence(length, charSequence4.length());
-                charSequence4.length();
-                zmVar.e(subSequence);
-            }
-        } else if (this.F) {
-            int min2 = Math.min(charSequence4.length(), charSequence3.length());
-            if (this.G) {
-                ArrayList arrayList3 = new ArrayList();
-                int i7 = 0;
-                byte b3 = 1;
-                for (int i8 = 0; i8 <= min2; i8++) {
-                    int length3 = (charSequence4.length() - i8) - 1;
-                    int length4 = (charSequence3.length() - i8) - 1;
-                    byte b4 = (length3 < 0 || length4 < 0 || !l(length3, length4, charSequence4, charSequence3)) ? (byte) 0 : (byte) 1;
-                    if (b3 != b4 || i8 == min2) {
-                        int i9 = i8 - i7;
-                        if (i9 > 0) {
-                            if (arrayList3.size() != 0) {
-                                b3 = b2;
-                            }
-                            arrayList3.add(Integer.valueOf(i9));
-                            b2 = b3;
-                        }
-                        b3 = b4;
-                        i7 = i8;
-                    }
-                }
-                int length5 = charSequence4.length() - min2;
-                int length6 = charSequence3.length() - min2;
-                if (length5 > 0) {
-                    k(enVar, charSequence4.subSequence(0, length5), 0, length5);
-                }
-                if (length6 > 0) {
-                    k(enVar2, charSequence3.subSequence(0, length6), 0, length6);
-                }
-                int size = arrayList3.size() - 1;
-                while (size >= 0) {
-                    int intValue = ((Integer) arrayList3.get(size)).intValue();
-                    if ((size % 2 == 0 ? (byte) 1 : (byte) 0) == b2) {
-                        i2 = size;
-                        if (charSequence4.length() > charSequence3.length()) {
-                            zmVar.e(charSequence4.subSequence(length5, length5 + intValue));
-                        } else {
-                            zmVar.e(charSequence3.subSequence(length6, length6 + intValue));
-                        }
-                    } else {
-                        i2 = size;
-                        int i10 = length5 + intValue;
-                        k(enVar, charSequence4.subSequence(length5, i10), length5, i10);
-                        int i11 = length6 + intValue;
-                        k(enVar2, charSequence3.subSequence(length6, i11), length6, i11);
-                    }
-                    length5 += intValue;
-                    length6 += intValue;
-                    size = i2 - 1;
-                }
-            } else {
-                boolean z6 = true;
-                int i12 = 0;
-                int i13 = 0;
-                while (i12 <= min2) {
-                    boolean z7 = i12 < min2 && l(i12, i12, charSequence4, charSequence3);
-                    if (z6 != z7 || i12 == min2) {
-                        if (i12 - i13 > 0) {
-                            if (z6) {
-                                k(zmVar, charSequence4.subSequence(i13, i12), i13, i12);
+                        gn gnVar = bnVar.d;
+                        if (gnVar.spanDrawn) {
+                            float f8 = gnVar.measuredSize / 2.0f;
+                            float f9 = gnVar.lastDrawnCx;
+                            float f10 = gnVar.lastDrawnCy;
+                            bnVar.e.set((int) (f9 - f8), (int) (f10 - f8), (int) (f9 + f8), (int) (f10 + f8));
+                            if (list == null || list.isEmpty() || !bnVar.w) {
+                                f6 = 0.0f;
+                                f7 = 1.0f;
                             } else {
-                                k(enVar, charSequence4.subSequence(i13, i12), i13, i12);
-                                k(enVar2, charSequence3.subSequence(i13, i12), i13, i12);
+                                f6 = 0.0f;
+                                f7 = Math.max(0.0f, list.get(r8).n);
+                            }
+                            bnVar.r = f4;
+                            bnVar.s = f7;
+                            if (f2 != f6 || f3 != f6) {
+                                Rect rect = bnVar.e;
+                                if (rect.bottom < f2 || rect.top > f3) {
+                                    bnVar.n = true;
+                                }
+                            }
+                            bnVar.n = r8;
+                            vm vmVar2 = bnVar.f;
+                            if (vmVar2 == null) {
+                                if (bnVar.h != null) {
+                                    float extraScale = bnVar.d.getExtraScale();
+                                    bnVar.h.setAlpha((int) (bnVar.s * 255.0f * f5));
+                                    bnVar.h.setBounds(bnVar.e);
+                                    if (extraScale != 1.0f || bnVar.d.invert) {
+                                        canvas.save();
+                                        canvas.scale((bnVar.d.invert ? -1 : 1) * extraScale, extraScale, bnVar.e.centerX(), bnVar.e.centerY());
+                                        bnVar.h.draw(canvas);
+                                        canvas.restore();
+                                    } else {
+                                        bnVar.h.draw(canvas);
+                                    }
+                                }
+                            } else if (vmVar2.k != null) {
+                                vmVar2.setColorFilter(colorFilter == null ? cmb.u3 : colorFilter);
+                                bnVar.f.p(currentTimeMillis);
+                                float extraScale2 = bnVar.d.getExtraScale();
+                                if (extraScale2 != 1.0f || bnVar.d.invert) {
+                                    canvas.save();
+                                    canvas.scale((bnVar.d.invert ? -1 : 1) * extraScale2, extraScale2, bnVar.e.centerX(), bnVar.e.centerY());
+                                    vm vmVar3 = bnVar.f;
+                                    Rect rect2 = bnVar.e;
+                                    float f11 = bnVar.s * f5;
+                                    mm mmVar = vmVar3.k;
+                                    if (mmVar != null) {
+                                        mmVar.j0(rect2);
+                                        vmVar3.k.setAlpha(f11);
+                                        vmVar3.k.h(canvas, null);
+                                    }
+                                    canvas.restore();
+                                } else {
+                                    vm vmVar4 = bnVar.f;
+                                    Rect rect3 = bnVar.e;
+                                    float f12 = bnVar.s * f5;
+                                    mm mmVar2 = vmVar4.k;
+                                    if (mmVar2 != null) {
+                                        mmVar2.j0(rect3);
+                                        vmVar4.k.setAlpha(f12);
+                                        vmVar4.k.h(canvas, null);
+                                    }
+                                }
+                                if (access$400(bnVar.d)) {
+                                    bnVar.invalidate();
+                                }
                             }
                         }
-                        i13 = i12;
-                        z6 = z7;
+                    }
+                    i2++;
+                    r8 = 0;
+                }
+            } else {
+                i++;
+                z2 = false;
+            }
+        }
+        if (z) {
+            canvas.restore();
+        }
+    }
+
+    public static CharSequence onlyEmojiSpans(CharSequence charSequence) {
+        if (charSequence == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+        for (CharacterStyle characterStyle : (CharacterStyle[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), CharacterStyle.class)) {
+            if (!(characterStyle instanceof gn) && !(characterStyle instanceof dw3)) {
+                spannableStringBuilder.removeSpan(characterStyle);
+            }
+        }
+        return spannableStringBuilder;
+    }
+
+    public static void release(View view, LongSparseArray<vm> longSparseArray) {
+        if (longSparseArray == null) {
+            return;
+        }
+        for (int i = 0; i < longSparseArray.size(); i++) {
+            vm valueAt = longSparseArray.valueAt(i);
+            if (valueAt != null) {
+                valueAt.o(view);
+            }
+        }
+        longSparseArray.clear();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static cn update(int i, View view, boolean z, cn cnVar, boolean z2, Layout... layoutArr) {
+        int i2;
+        int i3;
+        gn[] gnVarArr;
+        int i4;
+        bn bnVar;
+        int i5;
+        int i6;
+        cn cnVar2 = cnVar;
+        Paint.FontMetricsInt fontMetricsInt = null;
+        int i7 = 0;
+        if (layoutArr == null || layoutArr.length <= 0) {
+            if (cnVar2 == null) {
+                return null;
+            }
+            ArrayList arrayList = cnVar2.a;
+            arrayList.clear();
+            while (arrayList.size() > 0) {
+                cnVar2.b(0);
+            }
+            return null;
+        }
+        int i8 = 0;
+        while (i8 < layoutArr.length) {
+            Layout layout = layoutArr[i8];
+            if (layout == null || !(layout.getText() instanceof Spanned)) {
+                i3 = i8;
+                gnVarArr = null;
+            } else {
+                Spanned spanned = (Spanned) layout.getText();
+                gnVarArr = (gn[]) spanned.getSpans(i7, spanned.length(), gn.class);
+                int i9 = i7;
+                while (gnVarArr != null && i9 < gnVarArr.length) {
+                    gn gnVar = gnVarArr[i9];
+                    if (gnVar == null) {
+                        i5 = i8;
+                    } else {
+                        if (z2 && (layout.getText() instanceof Spannable)) {
+                            int spanStart = spanned.getSpanStart(gnVar);
+                            int spanEnd = spanned.getSpanEnd(gnVar);
+                            Spannable spannable = (Spannable) spanned;
+                            spannable.removeSpan(gnVar);
+                            gnVar = cloneSpan(gnVar, fontMetricsInt);
+                            gnVarArr[i9] = gnVar;
+                            spannable.setSpan(gnVar, spanStart, spanEnd, 33);
+                        }
+                        if (cnVar2 == null) {
+                            cnVar2 = new cn();
+                            cnVar2.a = new ArrayList();
+                            cnVar2.b = new HashMap();
+                            cnVar2.c = new ArrayList();
+                        }
+                        ArrayList arrayList2 = cnVar2.a;
+                        int i10 = i7;
+                        while (true) {
+                            if (i10 >= arrayList2.size()) {
+                                bnVar = fontMetricsInt;
+                                break;
+                            }
+                            if (((bn) arrayList2.get(i10)).d == gnVar && ((bn) arrayList2.get(i10)).c == layout) {
+                                bnVar = (bn) arrayList2.get(i10);
+                                break;
+                            }
+                            i10++;
+                        }
+                        if (bnVar == 0) {
+                            bn bnVar2 = new bn(view, z);
+                            bnVar2.c = layout;
+                            if (gnVar.standard) {
+                                i6 = 8;
+                            } else {
+                                i6 = gnVar.cacheType;
+                                if (i6 < 0) {
+                                    i6 = i;
+                                }
+                            }
+                            if (gnVar.documentAbsolutePath != null) {
+                                i5 = i8;
+                                bnVar2.f = vm.m(z8c.t0, gnVar.getDocumentId(), gnVar.documentAbsolutePath, i6);
+                            } else {
+                                i5 = i8;
+                                TLRPC.Document document = gnVar.document;
+                                if (document != null) {
+                                    bnVar2.f = vm.l(z8c.t0, i6, document);
+                                } else {
+                                    long j = gnVar.documentId;
+                                    if (j != 0) {
+                                        bnVar2.f = vm.m(z8c.t0, j, null, i6);
+                                    }
+                                }
+                            }
+                            int i11 = gnVar.cacheType;
+                            if ((i11 == 20 || i11 == 21) && !TextUtils.isEmpty(gnVar.emoji)) {
+                                vm vmVar = bnVar2.f;
+                                String str = gnVar.emoji;
+                                if (vmVar != null) {
+                                    vmVar.q(str);
+                                } else {
+                                    bnVar2.h = gw3.g(str);
+                                }
+                            }
+                            bnVar2.w = a(layout, spanned.getSpanStart(gnVar), spanned.getSpanEnd(gnVar));
+                            bnVar2.e = new Rect();
+                            bnVar2.d = gnVar;
+                            arrayList2.add(bnVar2);
+                            HashMap hashMap = cnVar2.b;
+                            en enVar = (en) hashMap.get(layout);
+                            if (enVar == null) {
+                                enVar = new en(bnVar2.a, layout);
+                                hashMap.put(layout, enVar);
+                                cnVar2.c.add(enVar);
+                            }
+                            enVar.b.add(bnVar2);
+                            enVar.a();
+                            vm vmVar2 = bnVar2.f;
+                            if (vmVar2 != null) {
+                                vmVar2.a(bnVar2);
+                            }
+                        } else {
+                            i5 = i8;
+                            bnVar.w = a(layout, spanned.getSpanStart(gnVar), spanned.getSpanEnd(gnVar));
+                        }
+                    }
+                    i9++;
+                    i8 = i5;
+                    fontMetricsInt = null;
+                    i7 = 0;
+                }
+                i3 = i8;
+            }
+            if (cnVar2 != null) {
+                ArrayList arrayList3 = cnVar2.a;
+                int i12 = 0;
+                while (i12 < arrayList3.size()) {
+                    if (((bn) arrayList3.get(i12)).c == layout) {
+                        gn gnVar2 = ((bn) arrayList3.get(i12)).d;
+                        while (gnVarArr != null && i4 < gnVarArr.length) {
+                            i4 = gnVarArr[i4] != gnVar2 ? i4 + 1 : 0;
+                        }
+                        cnVar2.b(i12);
+                        i12--;
                     }
                     i12++;
                 }
-                if (charSequence4.length() - min2 > 0) {
-                    k(enVar, charSequence4.subSequence(min2, charSequence4.length()), min2, charSequence4.length());
-                }
-                if (charSequence3.length() - min2 > 0) {
-                    k(enVar2, charSequence3.subSequence(min2, charSequence3.length()), min2, charSequence3.length());
-                }
             }
-        } else {
-            int min3 = Math.min(charSequence4.length(), charSequence3.length());
-            boolean z8 = true;
-            int i14 = 0;
-            int i15 = 0;
-            int i16 = 0;
-            int i17 = 0;
-            while (i14 <= min3) {
-                boolean z9 = i14 < min3 && l(i14, i15, charSequence4, charSequence3);
-                if (z8 != z9 || i14 == min3) {
-                    if (i14 == min3) {
-                        i14 = charSequence4.length();
-                        i15 = charSequence3.length();
+            i8 = i3 + 1;
+            fontMetricsInt = null;
+            i7 = 0;
+        }
+        if (cnVar2 != null) {
+            ArrayList arrayList4 = cnVar2.a;
+            int i13 = 0;
+            while (i13 < arrayList4.size()) {
+                Layout layout2 = ((bn) arrayList4.get(i13)).c;
+                while (true) {
+                    if (i2 >= layoutArr.length) {
+                        cnVar2.b(i13);
+                        i13--;
+                        break;
                     }
-                    i = min3;
-                    int i18 = i14 - i16;
-                    boolean z10 = z8;
-                    int i19 = i15 - i17;
-                    if (i18 > 0 || i19 > 0) {
-                        if (i18 == i19 && z10) {
-                            zmVar.e(charSequence4.subSequence(i16, i14));
-                        } else {
-                            if (i18 > 0) {
-                                k(enVar, charSequence4.subSequence(i16, i14), i16, i14);
-                            }
-                            if (i19 > 0) {
-                                k(enVar2, charSequence3.subSequence(i17, i15), i17, i15);
-                            }
-                        }
-                    }
-                    i16 = i14;
-                    i17 = i15;
-                    z8 = z9;
-                } else {
-                    i = min3;
+                    i2 = layoutArr[i2] != layout2 ? i2 + 1 : 0;
                 }
-                if (z9) {
-                    i15++;
-                }
-                i14++;
-                min3 = i;
+                i13++;
             }
         }
-        if (this.n != null) {
-            int i20 = 0;
-            while (true) {
-                dn[] dnVarArr2 = this.n;
-                if (i20 >= dnVarArr2.length) {
-                    break;
-                }
-                dn dnVar3 = dnVarArr2[i20];
-                gn gnVar2 = dnVar3.i;
-                if (gnVar2.getCallback() instanceof View) {
-                    gm.release((View) gnVar2.getCallback(), dnVar3.a);
-                }
-                i20++;
-            }
-        }
-        this.n = null;
-        dn[] dnVarArr3 = this.h;
-        if (dnVarArr3 == null || dnVarArr3.length != arrayList.size()) {
-            this.h = new dn[arrayList.size()];
-        }
-        arrayList.toArray(this.h);
-        b();
-        dn[] dnVarArr4 = this.n;
-        if (dnVarArr4 == null || dnVarArr4.length != arrayList2.size()) {
-            this.n = new dn[arrayList2.size()];
-        }
-        arrayList2.toArray(this.n);
-        ValueAnimator valueAnimator3 = this.t;
-        if (valueAnimator3 != null) {
-            valueAnimator3.cancel();
-        }
-        this.s = z2;
-        this.r = 0.0f;
-        this.q = 0.0f;
-        this.t = ValueAnimator.ofFloat(0.0f, 1.0f);
-        Runnable runnable2 = this.c0;
-        if (runnable2 != null) {
-            runnable2.run();
-        }
-        this.t.addUpdateListener(new f0(this, (byte) 5));
-        this.t.addListener(new g0(this, (byte) 9));
-        this.t.setStartDelay(0L);
-        this.t.setDuration(this.w);
-        this.t.setInterpolator(d0);
-        this.t.start();
+        return cnVar2;
     }
 
-    public final void u(int i) {
-        this.a.setColor(i);
-        this.C = Color.alpha(i);
+    public void applyFontMetrics(Paint.FontMetricsInt fontMetricsInt, int i) {
+        this.fontMetrics = fontMetricsInt;
+        this.cacheType = i;
     }
 
-    public final void v(int i, boolean z) {
-        ValueAnimator valueAnimator = this.Z;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.Z = null;
-        }
-        if (!z) {
-            u(i);
+    public final /* synthetic */ void b(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.extraScale = floatValue;
+        this.scale = gm.R1(0.2f, 1.0f, floatValue);
+        lockPositionChanging = false;
+    }
+
+    public final /* synthetic */ void c(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.extraScale = floatValue;
+        this.scale = gm.R1(0.0f, 1.0f, floatValue);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0029, code lost:
+    
+        if (r11 != 0.0f) goto L12;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
+    @Override // android.text.style.ReplacementSpan
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        if (!this.recordPositions) {
             return;
         }
-        int color = this.a.getColor();
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.Z = ofFloat;
-        byte b = 0;
-        ofFloat.addUpdateListener(new bn(this, color, i, b));
-        this.Z.addListener(new cn(this, i, b));
-        this.Z.setDuration(240L);
-        this.Z.setInterpolator(s33.h);
-        this.Z.start();
-    }
-
-    public final void w(float f) {
-        TextPaint textPaint = this.a;
-        float textSize = textPaint.getTextSize();
-        textPaint.setTextSize(f);
-        if (Math.abs(textSize - f) > 0.5f) {
-            int i = this.N;
-            if (i <= 0) {
-                i = this.D.width();
+        this.spanDrawn = true;
+        float f2 = (this.measuredSize / 2.0f) + f;
+        float f3 = ((i5 - i3) / 2.0f) + i3;
+        float f4 = this.lastDrawnCy;
+        if (f3 == f4 || f4 == 0.0f) {
+            float f5 = this.lastDrawnCx;
+            if (f2 != f5) {
             }
-            int i2 = 0;
-            if (this.h != null) {
-                this.d = 0.0f;
-                this.g = 0.0f;
-                this.f = 0.0f;
-                this.e = 0.0f;
-                int i3 = 0;
-                while (true) {
-                    dn[] dnVarArr = this.h;
-                    if (i3 >= dnVarArr.length) {
-                        break;
-                    }
-                    StaticLayout j = j(i - ((int) Math.ceil(Math.min(this.d, this.j))), dnVarArr[i3].b.getText());
-                    dn[] dnVarArr2 = this.h;
-                    dn dnVar = dnVarArr2[i3];
-                    dnVarArr2[i3] = new dn(this, j, dnVar.c, dnVar.d);
-                    float f2 = this.d;
-                    dn dnVar2 = this.h[i3];
-                    this.d = f2 + dnVar2.f;
-                    f(dnVar2);
-                    i3++;
+            if (lockPositionChanging) {
+                if (f2 == this.lastDrawnCx && f3 == f4) {
+                    return;
                 }
+                this.lastDrawnCx = f2;
+                this.lastDrawnCy = f3;
+                this.positionChanged = true;
+                return;
             }
-            if (this.n != null) {
-                this.j = 0.0f;
-                this.m = 0.0f;
-                this.l = 0.0f;
-                this.k = 0.0f;
-                while (true) {
-                    dn[] dnVarArr3 = this.n;
-                    if (i2 >= dnVarArr3.length) {
-                        break;
-                    }
-                    StaticLayout j2 = j(i - ((int) Math.ceil(Math.min(this.d, this.j))), dnVarArr3[i2].b.getText());
-                    dn[] dnVarArr4 = this.n;
-                    dn dnVar3 = dnVarArr4[i2];
-                    dnVarArr4[i2] = new dn(this, j2, dnVar3.c, dnVar3.d);
-                    float f3 = this.j;
-                    dn dnVar4 = this.n[i2];
-                    this.j = f3 + dnVar4.f;
-                    g(dnVar4);
-                    i2++;
-                }
-            }
-            invalidateSelf();
+            return;
+        }
+        if (this.moveAnimator != null) {
+            return;
+        }
+        if (this.animateChanges) {
+            this.animateChanges = false;
+            float f6 = this.lastDrawnCx;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.moveAnimator = ofFloat;
+            ofFloat.addUpdateListener(new zm(this, f4, f3, f6, f2, (byte) 0));
+            this.moveAnimator.addListener(new an(this, (byte) 2));
+            this.moveAnimator.setDuration(140L);
+            this.moveAnimator.setInterpolator(d53.f);
+            this.moveAnimator.start();
+            return;
+        }
+        if (lockPositionChanging) {
         }
     }
 
-    public final void x(Typeface typeface) {
-        this.a.setTypeface(typeface);
+    public long getDocumentId() {
+        TLRPC.Document document = this.document;
+        return document != null ? document.id : this.documentId;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i, int i2, int i3, int i4) {
-        super.setBounds(i, i2, i3, i4);
-        this.D.set(i, i2, i3, i4);
+    public float getExtraScale() {
+        final byte b = 1;
+        final byte b2 = 0;
+        if (this.isAdded) {
+            lockPositionChanging = true;
+            this.isAdded = false;
+            this.extraScale = 0.0f;
+            ValueAnimator valueAnimator = this.scaleAnimator;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.scaleAnimator.cancel();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.extraScale, 1.0f);
+            this.scaleAnimator = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: ym
+                public final /* synthetic */ gn b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    byte b3 = b2;
+                    gn gnVar = this.b;
+                    switch (b3) {
+                        case 0:
+                            gnVar.b(valueAnimator2);
+                            break;
+                        default:
+                            gnVar.c(valueAnimator2);
+                            break;
+                    }
+                }
+            });
+            this.scaleAnimator.addListener(new an(this, b2));
+            this.scaleAnimator.setDuration(130L);
+            this.scaleAnimator.setInterpolator(d53.f);
+            this.scaleAnimator.start();
+        } else if (this.isRemoved) {
+            this.isRemoved = false;
+            this.extraScale = 1.0f;
+            ValueAnimator valueAnimator2 = this.scaleAnimator;
+            if (valueAnimator2 != null) {
+                valueAnimator2.removeAllListeners();
+                this.scaleAnimator.cancel();
+            }
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.extraScale, 0.0f);
+            this.scaleAnimator = ofFloat2;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: ym
+                public final /* synthetic */ gn b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator22) {
+                    byte b3 = b;
+                    gn gnVar = this.b;
+                    switch (b3) {
+                        case 0:
+                            gnVar.b(valueAnimator22);
+                            break;
+                        default:
+                            gnVar.c(valueAnimator22);
+                            break;
+                    }
+                }
+            });
+            this.scaleAnimator.addListener(new an(this, b));
+            this.scaleAnimator.setInterpolator(d53.f);
+            this.scaleAnimator.setDuration(130L);
+            this.scaleAnimator.start();
+        }
+        return this.extraScale;
     }
 
-    public gn(boolean z, boolean z2, boolean z3) {
-        this(z, z2, z3, false, false);
+    @Override // android.text.style.ReplacementSpan
+    public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        Paint.FontMetricsInt fontMetricsInt2 = fontMetricsInt;
+        boolean z = this.preserveFontMetrics && fontMetricsInt2 != null;
+        if (z) {
+            i3 = fontMetricsInt2.top;
+            i4 = fontMetricsInt2.ascent;
+            i5 = fontMetricsInt2.descent;
+            i6 = fontMetricsInt2.bottom;
+            i7 = fontMetricsInt2.leading;
+        } else {
+            i3 = 0;
+            i4 = 0;
+            i5 = 0;
+            i6 = 0;
+            i7 = 0;
+        }
+        if (fontMetricsInt2 == null && this.top) {
+            fontMetricsInt2 = paint.getFontMetricsInt();
+        }
+        if (fontMetricsInt2 == null) {
+            i8 = 0;
+            i9 = 0;
+        } else {
+            i8 = fontMetricsInt2.ascent;
+            i9 = fontMetricsInt2.descent;
+        }
+        Paint.FontMetricsInt fontMetricsInt3 = this.fontMetrics;
+        float f = this.size;
+        if (fontMetricsInt3 == null) {
+            int i10 = (int) f;
+            int L = gm.L(8.0f);
+            int L2 = gm.L(10.0f);
+            if (fontMetricsInt2 != null) {
+                float f2 = (-L2) - L;
+                float f3 = this.scale;
+                fontMetricsInt2.top = (int) (f2 * f3);
+                float f4 = L2 - L;
+                fontMetricsInt2.bottom = (int) (f4 * f3);
+                fontMetricsInt2.ascent = (int) (f2 * f3);
+                fontMetricsInt2.descent = (int) (f4 * f3);
+                fontMetricsInt2.leading = 0;
+            }
+            this.measuredSize = (int) (i10 * this.scale);
+        } else {
+            this.measuredSize = (int) (f * this.scale);
+            if (fontMetricsInt2 != null) {
+                if (this.full) {
+                    float abs = Math.abs(this.fontMetrics.top) + Math.abs(fontMetricsInt3.bottom);
+                    fontMetricsInt2.ascent = (int) Math.ceil((this.fontMetrics.top / abs) * this.measuredSize);
+                    fontMetricsInt2.descent = (int) Math.ceil((this.fontMetrics.bottom / abs) * this.measuredSize);
+                    fontMetricsInt2.top = (int) Math.ceil((this.fontMetrics.top / abs) * this.measuredSize);
+                    fontMetricsInt2.bottom = (int) Math.ceil((this.fontMetrics.bottom / abs) * this.measuredSize);
+                } else {
+                    fontMetricsInt2.ascent = fontMetricsInt3.ascent;
+                    fontMetricsInt2.descent = fontMetricsInt3.descent;
+                    fontMetricsInt2.top = fontMetricsInt3.top;
+                    fontMetricsInt2.bottom = fontMetricsInt3.bottom;
+                }
+            }
+        }
+        if (fontMetricsInt2 != null && this.top) {
+            int i11 = fontMetricsInt2.ascent;
+            int i12 = fontMetricsInt2.descent;
+            int i13 = ((i9 - i12) + (i8 - i11)) / 2;
+            fontMetricsInt2.ascent = i11 + i13;
+            fontMetricsInt2.descent = i12 - i13;
+        }
+        if (z) {
+            fontMetricsInt2.top = i3;
+            fontMetricsInt2.ascent = i4;
+            fontMetricsInt2.descent = i5;
+            fontMetricsInt2.bottom = i6;
+            fontMetricsInt2.leading = i7;
+            int i14 = this.minimumLineHeight;
+            int i15 = i5 - i4;
+            if (i14 > i15) {
+                int i16 = i14 - i15;
+                int i17 = (i16 + 1) / 2;
+                int i18 = i4 - i17;
+                fontMetricsInt2.ascent = i18;
+                fontMetricsInt2.descent = i5 + (i16 - i17);
+                fontMetricsInt2.top = Math.min(i3, i18);
+                fontMetricsInt2.bottom = Math.max(fontMetricsInt2.bottom, fontMetricsInt2.descent);
+            }
+        }
+        return Math.max(0, this.measuredSize - 1);
+    }
+
+    public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
+        this.fontMetrics = fontMetricsInt;
+        if (fontMetricsInt != null) {
+            float abs = Math.abs(this.fontMetrics.ascent) + Math.abs(fontMetricsInt.descent);
+            this.size = abs;
+            if (abs == 0.0f) {
+                this.size = gm.L(20.0f);
+            }
+        }
+    }
+
+    public void setAdded() {
+        this.isAdded = true;
+        this.extraScale = 0.0f;
+    }
+
+    public void setAnimateChanges() {
+        this.animateChanges = true;
+    }
+
+    public gn setMinimumLineHeight(int i) {
+        this.minimumLineHeight = i;
+        return this;
+    }
+
+    public gn setPreserveFontMetrics(boolean z) {
+        this.preserveFontMetrics = z;
+        return this;
+    }
+
+    public void setRemoved(Runnable runnable) {
+        this.removedAction = runnable;
+        this.isRemoved = true;
+        this.extraScale = 1.0f;
+    }
+
+    public gn setSize(int i) {
+        this.size = i;
+        return this;
+    }
+
+    public void applyFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
+        this.fontMetrics = fontMetricsInt;
+    }
+
+    public static void release(View view, cn cnVar) {
+        if (cnVar != null) {
+            while (cnVar.a.size() > 0) {
+                cnVar.b(0);
+            }
+        }
+    }
+
+    public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt, int i, int i2) {
+        this.fontMetrics = fontMetricsInt;
+        this.size = i;
+        this.cacheType = i2;
+    }
+
+    public gn(TLRPC.Document document, float f, Paint.FontMetricsInt fontMetricsInt) {
+        this(document.id, f, fontMetricsInt);
+        this.document = document;
+    }
+
+    public gn(long j, Paint.FontMetricsInt fontMetricsInt) {
+        this(j, 1.2f, fontMetricsInt);
+    }
+
+    public gn(TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        this(document.id, 1.2f, fontMetricsInt);
+        this.document = document;
+    }
+
+    public static CharSequence cloneSpans(CharSequence charSequence, int i) {
+        return cloneSpans(charSequence, i, null);
+    }
+
+    public static CharSequence cloneSpans(CharSequence charSequence, int i, Paint.FontMetricsInt fontMetricsInt) {
+        return cloneSpans(charSequence, i, fontMetricsInt, 1.0f);
+    }
+
+    public static CharSequence cloneSpans(CharSequence charSequence) {
+        return cloneSpans(charSequence, -1, null);
+    }
+
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, cn cnVar, float f, List<rna> list, float f2, float f3, float f4, float f5) {
+        drawAnimatedEmojis(canvas, layout, cnVar, f, list, f2, f3, f4, f5, null);
+    }
+
+    public static cn update(int i, View view, cn cnVar, ArrayList<h47> arrayList, boolean z) {
+        return update(i, view, false, cnVar, arrayList, z);
+    }
+
+    public static cn update(int i, View view, boolean z, cn cnVar, ArrayList<h47> arrayList) {
+        return update(i, view, z, cnVar, arrayList, false);
+    }
+
+    public static cn update(int i, View view, boolean z, cn cnVar, ArrayList<h47> arrayList, boolean z2) {
+        Layout[] layoutArr = new Layout[arrayList == null ? 0 : arrayList.size()];
+        if (arrayList != null) {
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                layoutArr[i2] = arrayList.get(i2).e;
+            }
+        }
+        return update(i, view, z, cnVar, z2, layoutArr);
+    }
+
+    public static cn update(int i, View view, cn cnVar, Layout... layoutArr) {
+        return update(i, view, false, cnVar, layoutArr);
+    }
+
+    public static cn update(int i, View view, boolean z, cn cnVar, Layout... layoutArr) {
+        return update(i, view, z, cnVar, false, layoutArr);
+    }
+
+    public static cn update(int i, View view, cn cnVar, ArrayList<h47> arrayList) {
+        return update(i, view, cnVar, arrayList, false);
+    }
+
+    public static LongSparseArray<vm> update(View view, gn[] gnVarArr, LongSparseArray<vm> longSparseArray) {
+        return update(0, view, gnVarArr, longSparseArray);
+    }
+
+    public static LongSparseArray<vm> update(int i, View view, gn[] gnVarArr, LongSparseArray<vm> longSparseArray) {
+        int i2;
+        vm m;
+        int i3;
+        if (gnVarArr == null) {
+            return longSparseArray;
+        }
+        if (longSparseArray == null) {
+            longSparseArray = new LongSparseArray<>();
+        }
+        int i4 = 0;
+        while (i4 < longSparseArray.size()) {
+            long keyAt = longSparseArray.keyAt(i4);
+            vm vmVar = longSparseArray.get(keyAt);
+            if (vmVar == null) {
+                longSparseArray.remove(keyAt);
+            } else {
+                for (gn gnVar : gnVarArr) {
+                    i3 = (gnVar == null || gnVar.getDocumentId() != keyAt) ? i3 + 1 : 0;
+                }
+                vmVar.o(view);
+                longSparseArray.remove(keyAt);
+            }
+            i4--;
+            i4++;
+        }
+        for (gn gnVar2 : gnVarArr) {
+            if (gnVar2 != null && longSparseArray.get(gnVar2.getDocumentId()) == null) {
+                if (gnVar2.standard) {
+                    i2 = 8;
+                } else {
+                    i2 = gnVar2.cacheType;
+                    if (i2 < 0) {
+                        i2 = i;
+                    }
+                }
+                TLRPC.Document document = gnVar2.document;
+                int i5 = z8c.t0;
+                if (document != null) {
+                    m = vm.l(i5, i2, document);
+                } else {
+                    m = vm.m(i5, gnVar2.documentId, null, i2);
+                }
+                m.b(view);
+                longSparseArray.put(gnVar2.getDocumentId(), m);
+            }
+        }
+        return longSparseArray;
+    }
+
+    public static LongSparseArray<vm> update(View view, ArrayList<gn> arrayList, LongSparseArray<vm> longSparseArray) {
+        return update(0, view, arrayList, longSparseArray);
+    }
+
+    public static LongSparseArray<vm> update(int i, View view, ArrayList<gn> arrayList, LongSparseArray<vm> longSparseArray) {
+        int i2;
+        int i3;
+        if (arrayList == null) {
+            return longSparseArray;
+        }
+        if (longSparseArray == null) {
+            longSparseArray = new LongSparseArray<>();
+        }
+        int i4 = 0;
+        while (i4 < longSparseArray.size()) {
+            long keyAt = longSparseArray.keyAt(i4);
+            vm vmVar = longSparseArray.get(keyAt);
+            if (vmVar == null) {
+                longSparseArray.remove(keyAt);
+            } else {
+                for (0; i3 < arrayList.size(); i3 + 1) {
+                    i3 = (arrayList.get(i3) == null || arrayList.get(i3).getDocumentId() != keyAt) ? i3 + 1 : 0;
+                }
+                vmVar.b(view);
+                longSparseArray.remove(keyAt);
+            }
+            i4--;
+            i4++;
+        }
+        for (int i5 = 0; i5 < arrayList.size(); i5++) {
+            gn gnVar = arrayList.get(i5);
+            if (gnVar != null && longSparseArray.get(gnVar.getDocumentId()) == null) {
+                if (gnVar.standard) {
+                    i2 = 8;
+                } else {
+                    i2 = gnVar.cacheType;
+                    if (i2 < 0) {
+                        i2 = i;
+                    }
+                }
+                vm m = vm.m(z8c.t0, gnVar.documentId, null, i2);
+                m.b(view);
+                longSparseArray.put(gnVar.getDocumentId(), m);
+            }
+        }
+        return longSparseArray;
     }
 }

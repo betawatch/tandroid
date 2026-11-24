@@ -1,37 +1,29 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qme extends b4 {
-    public static final Parcelable.Creator<qme> CREATOR = new rhe((byte) 14);
-    public final int a;
-    public final float b;
-    public final int c;
+public enum qme implements y8d {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF23(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF31(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF39(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF47(5);
 
-    public qme(int i, int i2, float f, int i3) {
-        if (i != 1) {
-            w26.j("Unknown language.");
-            throw null;
-        }
-        this.a = i2;
-        this.b = f;
-        this.c = i3;
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    qme(int i) {
+        this.a = i;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(1);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 4, 4);
-        parcel.writeFloat(this.b);
-        jte.q(parcel, 5, 4);
-        parcel.writeInt(this.c);
-        jte.s(parcel, r);
+    @Override // y8d
+    public final int zza() {
+        return this.a;
     }
 }

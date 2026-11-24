@@ -1,26 +1,56 @@
 // default package
 
-import android.net.Uri;
-import java.net.URL;
+import android.util.Log;
+import android.view.animation.Interpolator;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class p69 {
-    public final sr a;
-    public final sw2 b;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public Interpolator e;
+    public boolean f;
+    public int g;
 
-    public p69(sr srVar, sw2 sw2Var) {
-        srVar.getClass();
-        sw2Var.getClass();
-        this.a = srVar;
-        this.b = sw2Var;
+    public final void a(RecyclerView recyclerView) {
+        int i = this.d;
+        if (i >= 0) {
+            this.d = -1;
+            recyclerView.e0(i);
+            this.f = false;
+            return;
+        }
+        if (!this.f) {
+            this.g = 0;
+            return;
+        }
+        Interpolator interpolator = this.e;
+        if (interpolator != null && this.c < 1) {
+            dq9.m("If you provide an interpolator, you must set a positive duration");
+            return;
+        }
+        int i2 = this.c;
+        if (i2 < 1) {
+            dq9.m("Scroll duration must be a positive number");
+            return;
+        }
+        recyclerView.s0.b(this.a, this.b, i2, interpolator);
+        int i3 = this.g + 1;
+        this.g = i3;
+        if (i3 > 10) {
+            Log.e("RecyclerView", "Smooth Scroll action is being updated too frequently. Make sure you are not changing it unless necessary");
+        }
+        this.f = false;
     }
 
-    public final URL a() {
-        Uri.Builder appendPath = new Uri.Builder().scheme("https").authority("firebase-settings.crashlytics.com").appendPath("spi").appendPath("v2").appendPath("platforms").appendPath("android").appendPath("gmp");
-        sr srVar = this.a;
-        Uri.Builder appendPath2 = appendPath.appendPath(srVar.a).appendPath("settings");
-        xj xjVar = srVar.b;
-        return new URL(appendPath2.appendQueryParameter("build_version", xjVar.c).appendQueryParameter("display_version", xjVar.b).build().toString());
+    public final void b(int i, int i2, int i3, Interpolator interpolator) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.e = interpolator;
+        this.f = true;
     }
 }

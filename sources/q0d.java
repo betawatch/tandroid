@@ -1,48 +1,73 @@
 // default package
 
-import android.os.Process;
-import android.os.RemoteException;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.IllegalFormatException;
-import java.util.Locale;
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+import java.util.concurrent.atomic.AtomicReferenceArray;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class q0d {
-    public final String a;
+    public static final /* synthetic */ AtomicIntegerFieldUpdater b;
+    public static final /* synthetic */ AtomicIntegerFieldUpdater c;
+    public static final /* synthetic */ long d;
+    public static final /* synthetic */ long e;
+    public static final /* synthetic */ long f;
+    public static final /* synthetic */ long g;
+    public final AtomicReferenceArray a = new AtomicReferenceArray(128);
+    private volatile /* synthetic */ int blockingTasksInBuffer$volatile;
+    private volatile /* synthetic */ int consumerIndex$volatile;
+    private volatile /* synthetic */ Object lastScheduledTask$volatile;
+    private volatile /* synthetic */ int producerIndex$volatile;
 
-    public q0d(String str) {
-        this.a = ("UID: [" + Process.myUid() + "]  PID: [" + Process.myPid() + "] ").concat(str);
+    static {
+        Unsafe unsafe = fy.a;
+        f = unsafe.objectFieldOffset(q0d.class.getDeclaredField("lastScheduledTask$volatile"));
+        b = AtomicIntegerFieldUpdater.newUpdater(q0d.class, "producerIndex$volatile");
+        g = unsafe.objectFieldOffset(q0d.class.getDeclaredField("producerIndex$volatile"));
+        e = unsafe.objectFieldOffset(q0d.class.getDeclaredField("consumerIndex$volatile"));
+        c = AtomicIntegerFieldUpdater.newUpdater(q0d.class, "blockingTasksInBuffer$volatile");
+        d = unsafe.objectFieldOffset(q0d.class.getDeclaredField("blockingTasksInBuffer$volatile"));
     }
 
-    public static String d(String str, String str2, Object... objArr) {
-        if (objArr.length > 0) {
-            try {
-                str2 = String.format(Locale.US, str2, objArr);
-            } catch (IllegalFormatException e) {
-                Log.e("PlayCore", "Unable to format ".concat(str2), e);
-                str2 = tb4.q(str2, " [", TextUtils.join(", ", objArr), "]");
+    public final int a() {
+        return fy.a.getIntVolatile(this, g) - fy.a.getIntVolatile(this, e);
+    }
+
+    public final aib b() {
+        aib aibVar;
+        while (true) {
+            Unsafe unsafe = fy.a;
+            long j = e;
+            int intVolatile = unsafe.getIntVolatile(this, j);
+            if (intVolatile - unsafe.getIntVolatile(this, g) == 0) {
+                return null;
             }
-        }
-        return tb4.y(str, " : ", str2);
-    }
-
-    public final void a(RemoteException remoteException, String str, Object... objArr) {
-        if (Log.isLoggable("PlayCore", 6)) {
-            Log.e("PlayCore", d(this.a, str, objArr), remoteException);
-        }
-    }
-
-    public final void b(String str, Object... objArr) {
-        if (Log.isLoggable("PlayCore", 4)) {
-            Log.i("PlayCore", d(this.a, str, objArr));
+            int i = intVolatile & nm7.K1;
+            q0d q0dVar = this;
+            if (unsafe.compareAndSwapInt(q0dVar, j, intVolatile, intVolatile + 1) && (aibVar = (aib) q0dVar.a.getAndSet(i, null)) != null) {
+                if (aibVar.b) {
+                    c.decrementAndGet(q0dVar);
+                }
+                return aibVar;
+            }
+            this = q0dVar;
         }
     }
 
-    public final void c(String str, Object... objArr) {
-        if (Log.isLoggable("PlayCore", 5)) {
-            Log.w("PlayCore", d(this.a, str, objArr));
+    public final aib c(int i, boolean z) {
+        int i2 = i & nm7.K1;
+        AtomicReferenceArray atomicReferenceArray = this.a;
+        aib aibVar = (aib) atomicReferenceArray.get(i2);
+        if (aibVar != null && aibVar.b == z) {
+            while (!atomicReferenceArray.compareAndSet(i2, aibVar, null)) {
+                if (atomicReferenceArray.get(i2) != aibVar) {
+                }
+            }
+            if (z) {
+                c.decrementAndGet(this);
+            }
+            return aibVar;
         }
+        return null;
     }
 }

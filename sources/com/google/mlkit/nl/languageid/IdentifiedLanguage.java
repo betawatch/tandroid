@@ -2,7 +2,7 @@ package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -37,20 +37,20 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        rod rodVar = new rod("IdentifiedLanguage");
+        uqd uqdVar = new uqd("IdentifiedLanguage");
         byte b = 28;
         boolean z = false;
-        vk9 vk9Var = new vk9(b, z);
-        ((vk9) rodVar.d).d = vk9Var;
-        rodVar.d = vk9Var;
-        vk9Var.c = this.a;
-        vk9Var.b = "languageTag";
+        wm9 wm9Var = new wm9(b, z);
+        ((wm9) uqdVar.d).d = wm9Var;
+        uqdVar.d = wm9Var;
+        wm9Var.c = this.a;
+        wm9Var.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        ugd ugdVar = new ugd(b, z);
-        ((vk9) rodVar.d).d = ugdVar;
-        rodVar.d = ugdVar;
-        ugdVar.c = valueOf;
-        ugdVar.b = "confidence";
-        return rodVar.toString();
+        vid vidVar = new vid(b, z);
+        ((wm9) uqdVar.d).d = vidVar;
+        uqdVar.d = vidVar;
+        vidVar.c = valueOf;
+        vidVar.b = "confidence";
+        return uqdVar.toString();
     }
 }

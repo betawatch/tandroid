@@ -1,196 +1,190 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageInstaller;
-import android.content.pm.PackageManager;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.common.GooglePlayServicesIncorrectManifestValueException;
-import com.google.android.gms.common.GooglePlayServicesMissingManifestValueException;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class yy4 {
-    public static boolean b = false;
-    public static boolean c = false;
-    public static final /* synthetic */ int e = 0;
-    public static final AtomicBoolean a = new AtomicBoolean();
-    public static final AtomicBoolean d = new AtomicBoolean();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class yy4 extends hy4 {
+    public zy4 E;
+    public zy4 F;
+    public zy4 G;
+    public kz4 H;
+    public int I;
+    public short J;
+    public int K;
+    public short L;
+    public final RectF M;
+    public final iz4 f;
+    public final ty4 h;
+    public final yke n;
+    public final yke r;
+    public yke s;
+    public boolean w = true;
+    public boolean x = true;
+    public int y = 1;
 
-    public static int a(Context context) {
-        try {
-            return context.getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode;
-        } catch (PackageManager.NameNotFoundException unused) {
-            Log.w("GooglePlayServicesUtil", "Google Play services is missing.");
-            return 0;
+    public yy4(iz4 iz4Var) {
+        zy4 zy4Var = zy4.b;
+        this.E = zy4Var;
+        this.F = zy4Var;
+        this.G = zy4Var;
+        this.J = (short) 255;
+        this.L = (short) 255;
+        this.M = new RectF();
+        this.f = iz4Var;
+        this.h = iz4Var instanceof ty4 ? (ty4) iz4Var : null;
+        char c = iz4Var instanceof mz4 ? (char) 2 : (char) 1;
+        int i = Build.VERSION.SDK_INT;
+        if (c == 2) {
+            yke vy4Var = i >= 29 ? new vy4(this) : new uy4(this, false);
+            this.n = vy4Var;
+            this.r = vy4Var;
+        } else if (i >= 33) {
+            this.n = new xy4(this);
+            this.r = new vy4(this);
+        } else if (i >= 31) {
+            this.n = new wy4(this);
+            this.r = new vy4(this);
+        } else {
+            this.n = new uy4(this, true);
+            this.r = new uy4(this, false);
         }
+        g(this.b);
     }
 
-    public static boolean b(Context context) {
-        try {
-            if (!c) {
-                PackageInfo e2 = ryc.a(context).e(Build.VERSION.SDK_INT >= 28 ? 134217792 : 64, "com.google.android.gms");
-                cz4.a(context);
-                if (e2 == null || cz4.b(e2, false) || !cz4.b(e2, true)) {
-                    b = false;
-                } else {
-                    b = true;
-                }
-            }
-        } catch (PackageManager.NameNotFoundException e3) {
-            Log.w("GooglePlayServicesUtil", "Cannot find Google Play services package name.", e3);
-        } finally {
-            c = true;
-        }
-        return b || !"user".equals(Build.TYPE);
+    public static float k(float f, int i, int i2) {
+        return (((float) Math.floor((f - r3) / r4)) * i2) + i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x00fc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // hy4
+    public final void a() {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty()) {
+            this.s.b();
+            return;
+        }
+        RectF rectF = this.M;
+        rectF.set(bounds);
+        rectF.offset(this.d, this.e);
+        this.s.a(bounds, rectF);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x002a, code lost:
+    
+        if ((r0 instanceof uy4) != false) goto L10;
+     */
+    @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int c(Context context, int i) {
-        boolean z;
-        String packageName;
-        PackageInfo packageInfo;
-        PackageInfo packageInfo2;
-        Bundle bundle;
-        try {
-            context.getResources().getString(R.string.common_google_play_services_unknown_issue);
-        } catch (Throwable unused) {
-            Log.e("GooglePlayServicesUtil", "The Google Play services resources were not found. Check your project configuration to ensure that the resources are included.");
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.c <= 0) {
+            return;
         }
-        if (!"com.google.android.gms".equals(context.getPackageName()) && !d.get()) {
-            synchronized (fed.a) {
-                if (!fed.b) {
-                    fed.b = true;
-                    try {
-                        bundle = ryc.a(context).a.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
-                    } catch (PackageManager.NameNotFoundException e2) {
-                        Log.wtf("MetadataValueReader", "This should never happen.", e2);
-                    }
-                    if (bundle != null) {
-                        bundle.getString("com.google.app.id");
-                        fed.c = bundle.getInt("com.google.android.gms.version");
-                    }
-                }
-            }
-            int i2 = fed.c;
-            if (i2 == 0) {
-                throw new GooglePlayServicesMissingManifestValueException();
-            }
-            if (i2 != 12451000) {
-                int i3 = dy4.a;
-                StringBuilder sb = new StringBuilder(String.valueOf(i3).length() + kk7.o1 + String.valueOf(i2).length() + kk7.X2);
-                sb.append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ");
-                sb.append(i3);
-                sb.append(" but found ");
-                sb.append(i2);
-                sb.append(".  You must have the following declaration within the <application> element:     <meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />");
-                throw new GooglePlayServicesIncorrectManifestValueException(sb.toString());
-            }
+        canvas.save();
+        canvas.clipRect(bounds);
+        canvas.translate(bounds.left, bounds.top);
+        if (!canvas.isHardwareAccelerated()) {
+            yke ykeVar = this.s;
+            ykeVar.getClass();
         }
-        try {
-            if (!mde.a(context)) {
-                Boolean bool = mde.c;
-                if (bool == null) {
-                    bool = Boolean.valueOf(xqe.a() ? context.getPackageManager().hasSystemFeature("android.hardware.type.embedded") : context.getPackageManager().hasSystemFeature("android.hardware.type.iot"));
-                    mde.c = bool;
-                }
-                if (!bool.booleanValue()) {
-                    z = true;
-                    fre.b(i < 0);
-                    packageName = context.getPackageName();
-                    PackageManager packageManager = context.getPackageManager();
-                    if (z) {
-                        packageInfo = null;
-                    } else {
-                        try {
-                            packageInfo = packageManager.getPackageInfo("com.android.vending", Build.VERSION.SDK_INT >= 28 ? 134225984 : 8256);
-                        } catch (PackageManager.NameNotFoundException unused2) {
-                            Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires the Google Play Store, but it is missing."));
-                        }
-                    }
-                    packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", Build.VERSION.SDK_INT < 28 ? 134217792 : 64);
-                    cz4.a(context);
-                    if (!cz4.b(packageInfo2, true)) {
-                        if (z) {
-                            fre.h(packageInfo);
-                            if (!cz4.b(packageInfo, true)) {
-                                Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
-                            } else if (!packageInfo.signatures[0].equals(packageInfo2.signatures[0])) {
-                                Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature doesn't match that of Google Play services."));
-                            }
-                        }
-                        int i4 = packageInfo2.versionCode;
-                        if ((i4 == -1 ? -1 : i4 / 1000) >= (i != -1 ? i / 1000 : -1)) {
-                            ApplicationInfo applicationInfo = packageInfo2.applicationInfo;
-                            if (applicationInfo == null) {
-                                try {
-                                    applicationInfo = packageManager.getApplicationInfo("com.google.android.gms", 0);
-                                } catch (PackageManager.NameNotFoundException e3) {
-                                    Log.wtf("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they're missing when getting application info."), e3);
-                                    return 1;
-                                }
-                            }
-                            return !applicationInfo.enabled ? 3 : 0;
-                        }
-                        StringBuilder sb2 = new StringBuilder(String.valueOf(packageName).length() + 49 + String.valueOf(i).length() + 11 + String.valueOf(i4).length());
-                        sb2.append("Google Play services out of date for ");
-                        sb2.append(packageName);
-                        sb2.append(".  Requires ");
-                        sb2.append(i);
-                        sb2.append(" but found ");
-                        sb2.append(i4);
-                        Log.w("GooglePlayServicesUtil", sb2.toString());
-                        return 2;
-                    }
-                    Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
-                    return 9;
-                }
+        this.s.c(canvas);
+        canvas.restore();
+    }
+
+    @Override // hy4
+    public final boolean e() {
+        return this.s.d();
+    }
+
+    @Override // hy4
+    public final void f(int i) {
+        this.s.e(i / 255.0f);
+        invalidateSelf();
+    }
+
+    @Override // hy4
+    public final void g(hz4 hz4Var) {
+        boolean z = hz4Var.a;
+        yke ykeVar = this.r;
+        yke ykeVar2 = z ? this.n : ykeVar;
+        yke ykeVar3 = this.s;
+        if (ykeVar3 != ykeVar2) {
+            if (ykeVar3 != null) {
+                ykeVar3.b();
             }
-            packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", Build.VERSION.SDK_INT < 28 ? 134217792 : 64);
-            cz4.a(context);
-            if (!cz4.b(packageInfo2, true)) {
+            this.s = ykeVar2;
+            ykeVar2.e(this.c / 255.0f);
+            if (this.s == ykeVar) {
+                this.x = true;
+            } else {
+                this.w = true;
             }
-            return 9;
-        } catch (PackageManager.NameNotFoundException unused3) {
-            Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they are missing."));
-            return 1;
-        }
-        z = false;
-        fre.b(i < 0);
-        packageName = context.getPackageName();
-        PackageManager packageManager2 = context.getPackageManager();
-        if (z) {
+            invalidateSelf();
         }
     }
 
-    public static boolean d(Context context) {
-        try {
-            Iterator<PackageInstaller.SessionInfo> it = context.getPackageManager().getPackageInstaller().getAllSessions().iterator();
-            while (it.hasNext()) {
-                if ("com.google.android.gms".equals(it.next().getAppPackageName())) {
-                    return true;
-                }
-            }
-            return context.getPackageManager().getApplicationInfo("com.google.android.gms", TLObject.FLAG_13).enabled;
-        } catch (PackageManager.NameNotFoundException | Exception unused) {
-            return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // hy4
+    public final boolean j() {
+        this.s.getClass();
+        return !(r0 instanceof uy4);
+    }
+
+    public final LinearGradient l(zy4 zy4Var, float f, float f2, int i, int i2) {
+        int i3 = zy4Var == null ? -1 : zy4Var.a;
+        float f3 = 0.0f;
+        float f4 = f - 0.0f;
+        float max = Math.max(0.0f, f4 - f2);
+        if (i3 != -1) {
+            max = Math.min(i3, max);
         }
+        float f5 = 1.0f / i2;
+        int i4 = this.y;
+        boolean z = i4 == 1 || i4 == 2;
+        if (z) {
+            f3 = -0.0f;
+        } else {
+            f4 = 0.0f;
+        }
+        float f6 = (f4 + f3) * f5;
+        float max2 = (Math.max(max * f5, 0.001f) * (z ? -1.0f : 1.0f)) + f6;
+        int[] iArr = new int[8];
+        i15.a(i15.i, i, iArr);
+        int i5 = this.y;
+        return (i5 == 1 || i5 == 4) ? new LinearGradient(0.0f, max2, 0.0f, f6, iArr, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(max2, 0.0f, f6, 0.0f, iArr, (float[]) null, Shader.TileMode.CLAMP);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.w = true;
+        this.x = true;
+    }
+
+    @Override // hy4, vlb
+    public final void updateColors() {
+        kz4 kz4Var = this.H;
+        if (kz4Var != null) {
+            this.I = cmb.p1(this.J / 255.0f, kz4Var.b);
+            this.K = cmb.p1(this.L / 255.0f, this.H.b);
+        }
+        this.w = true;
+        this.x = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

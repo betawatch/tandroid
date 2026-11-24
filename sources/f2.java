@@ -2,24 +2,24 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class f2 extends gw2 {
-    public oo9 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class f2 extends qx2 {
+    public pq9 a;
     public /* synthetic */ Object b;
-    public final /* synthetic */ v39 c;
+    public final /* synthetic */ oo8 c;
     public int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(v39 v39Var, fw2 fw2Var) {
-        super(fw2Var);
-        this.c = v39Var;
+    public f2(oo8 oo8Var, px2 px2Var) {
+        super(px2Var);
+        this.c = oo8Var;
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
         this.b = obj;
         this.d |= TLObject.FLAG_31;
-        return this.c.h(null, this);
+        return this.c.g(null, this);
     }
 }

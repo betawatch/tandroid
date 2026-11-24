@@ -1,61 +1,67 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import android.os.Looper;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class lk0 {
-    public static long u = 1;
-    public final long a;
-    public TL_iv.PageBlock b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public iy6 g;
-    public ArrayList h;
-    public boolean i;
-    public final ArrayList j;
-    public final ArrayList k;
-    public int l;
-    public int m;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public class lk0 extends pfc {
+    public Executor b;
+    public dqd c;
+    public hk0 d;
+    public gk0 e;
+    public u50 f;
+    public lx6 g;
+    public kk0 h;
+    public String i;
+    public boolean k;
+    public boolean l;
+    public boolean m;
     public boolean n;
     public boolean o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public long t;
+    public kj7 p;
+    public kj7 q;
+    public kj7 r;
+    public kj7 s;
+    public kj7 t;
+    public kj7 v;
+    public kj7 x;
+    public kj7 y;
+    public byte j = 0;
+    public boolean u = true;
+    public int w = 0;
 
-    public lk0(TL_iv.PageBlock pageBlock, int i, int i2, long j) {
-        this.j = new ArrayList();
-        this.k = new ArrayList();
-        this.b = pageBlock;
-        this.c = i;
-        this.d = i2;
-        this.a = j;
+    public static void f(kj7 kj7Var, Object obj) {
+        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+            kj7Var.i(obj);
+        } else {
+            kj7Var.g(obj);
+        }
     }
 
-    public final boolean a() {
-        return this.c > 0 && this.e;
+    public final int c() {
+        hk0 hk0Var = this.d;
+        if (hk0Var != null) {
+            return zod.a(hk0Var, this.e);
+        }
+        return 0;
     }
 
-    public final boolean b() {
-        return this.c > 0;
+    public final void d(int i) {
+        kj7 kj7Var = this.x;
+        if (kj7Var == null) {
+            kj7Var = new kj7();
+            this.x = kj7Var;
+        }
+        f(kj7Var, Integer.valueOf(i));
     }
 
-    public final boolean c() {
-        return this.d > 0;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public lk0(TL_iv.PageBlock pageBlock, int i, int i2) {
-        this(pageBlock, i, i2, r4);
-        long j = u;
-        u = 1 + j;
+    public final void e(boolean z) {
+        kj7 kj7Var = this.t;
+        if (kj7Var == null) {
+            kj7Var = new kj7();
+            this.t = kj7Var;
+        }
+        f(kj7Var, Boolean.valueOf(z));
     }
 }

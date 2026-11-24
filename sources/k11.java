@@ -1,42 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class k11 extends ri4 {
-    public final /* synthetic */ byte a;
+public class k11 {
+    public Runnable a;
+    public Runnable b;
+    public Runnable c;
 
-    public /* synthetic */ k11(byte b) {
-        this.a = b;
+    public final void a(boolean z) {
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
+        }
+        c(z);
     }
 
-    @Override // ri4
-    public final float a(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((q11) obj).inOutOffset;
-            case 1:
-                return ((ch6) obj).O;
-            default:
-                return ((ch6) obj).N;
+    public void b() {
+        c(false);
+    }
+
+    public void c(boolean z) {
+        Runnable runnable = this.c;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 
-    @Override // ri4
-    public final void b(Object obj, float f) {
-        switch (this.a) {
-            case 0:
-                ((q11) obj).setInOutOffset(f);
-                break;
-            case 1:
-                ch6 ch6Var = (ch6) obj;
-                ch6Var.O = f;
-                ch6Var.invalidate();
-                break;
-            default:
-                ch6 ch6Var2 = (ch6) obj;
-                ch6Var2.N = f;
-                ch6Var2.invalidate();
-                break;
+    public void d() {
+        Runnable runnable = this.a;
+        if (runnable != null) {
+            runnable.run();
+            this.a = null;
         }
     }
 }

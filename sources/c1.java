@@ -17,51 +17,51 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class c1 extends Handler {
     public final /* synthetic */ byte a;
     public final Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c1(bs6 bs6Var) {
+    public c1(cu6 cu6Var) {
         super(Looper.getMainLooper());
         this.a = (byte) 6;
-        this.b = bs6Var;
+        this.b = cu6Var;
     }
 
     private final void a(Message message) {
-        vi2 vi2Var;
+        jk2 jk2Var;
         Pair pair = (Pair) message.obj;
         Object obj = pair.first;
         Object obj2 = pair.second;
         int i = message.what;
         if (i == 1) {
-            aa3 aa3Var = (aa3) this.b;
-            lv6 lv6Var = aa3Var.c;
-            if (obj == aa3Var.z) {
-                if (aa3Var.p == 2 || aa3Var.k()) {
-                    aa3Var.z = null;
+            mb3 mb3Var = (mb3) this.b;
+            hi2 hi2Var = mb3Var.c;
+            if (obj == mb3Var.z) {
+                if (mb3Var.p == 2 || mb3Var.k()) {
+                    mb3Var.z = null;
                     if (obj2 instanceof Exception) {
-                        lv6Var.D((Exception) obj2, false);
+                        hi2Var.K((Exception) obj2, false);
                         return;
                     }
                     try {
-                        aa3Var.b.s(((lq6) obj2).a);
-                        lv6Var.c = null;
-                        HashSet hashSet = (HashSet) lv6Var.b;
-                        mm5 q = mm5.q(hashSet);
+                        mb3Var.b.o(((ls6) obj2).a);
+                        hi2Var.c = null;
+                        HashSet hashSet = (HashSet) hi2Var.b;
+                        mo5 q = mo5.q(hashSet);
                         hashSet.clear();
-                        km5 listIterator = q.listIterator(0);
+                        ko5 listIterator = q.listIterator(0);
                         while (listIterator.hasNext()) {
-                            aa3 aa3Var2 = (aa3) listIterator.next();
-                            if (aa3Var2.n()) {
-                                aa3Var2.j(true);
+                            mb3 mb3Var2 = (mb3) listIterator.next();
+                            if (mb3Var2.n()) {
+                                mb3Var2.j(true);
                             }
                         }
                         return;
                     } catch (Exception e) {
-                        lv6Var.D(e, true);
+                        hi2Var.K(e, true);
                         return;
                     }
                 }
@@ -70,69 +70,69 @@ public final class c1 extends Handler {
             return;
         }
         if (i == 2) {
-            aa3 aa3Var3 = (aa3) this.b;
-            if (obj == aa3Var3.x && aa3Var3.k()) {
-                aa3Var3.x = null;
-                synchronized (aa3Var3.o) {
-                    z24 z24Var = aa3Var3.y;
-                    z24Var.getClass();
-                    vi2Var = new vi2((byte) 21);
-                    ((jm5) z24Var.b).f();
-                    aa3Var3.y = null;
+            mb3 mb3Var3 = (mb3) this.b;
+            if (obj == mb3Var3.x && mb3Var3.k()) {
+                mb3Var3.x = null;
+                synchronized (mb3Var3.o) {
+                    ai4 ai4Var = mb3Var3.y;
+                    ai4Var.getClass();
+                    jk2Var = new jk2((byte) 21);
+                    ((jo5) ai4Var.b).f();
+                    mb3Var3.y = null;
                 }
                 if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
-                    aa3Var3.m((Throwable) obj2, false);
+                    mb3Var3.m((Throwable) obj2, false);
                     return;
                 }
                 try {
-                    byte[] p = aa3Var3.b.p(aa3Var3.v, ((lq6) obj2).a);
-                    if (aa3Var3.w != null && p != null && p.length != 0) {
-                        aa3Var3.w = p;
+                    byte[] l = mb3Var3.b.l(mb3Var3.v, ((ls6) obj2).a);
+                    if (mb3Var3.w != null && l != null && l.length != 0) {
+                        mb3Var3.w = l;
                     }
-                    aa3Var3.p = (byte) 4;
-                    aa3Var3.i(new vu2(vi2Var, (byte) 17));
+                    mb3Var3.p = (byte) 4;
+                    mb3Var3.i(new wm2(jk2Var, (byte) 20));
                 } catch (Exception | NoSuchMethodError e2) {
-                    aa3Var3.m(e2, true);
+                    mb3Var3.m(e2, true);
                 }
             }
         }
     }
 
     private final void b(Message message) {
-        zu6 zu6Var;
-        yu6 yu6Var;
+        zw6 zw6Var;
+        yw6 yw6Var;
         c1 c1Var;
         if (message.what == 1) {
-            synchronized (((yu6) this.b).b) {
-                zu6Var = (zu6) ((yu6) this.b).d.get();
-                yu6Var = (yu6) this.b;
-                c1Var = (c1) yu6Var.f;
+            synchronized (((yw6) this.b).b) {
+                zw6Var = (zw6) ((yw6) this.b).d.get();
+                yw6Var = (yw6) this.b;
+                c1Var = (c1) yw6Var.f;
             }
-            if (zu6Var == null || yu6Var != zu6Var.b() || c1Var == null) {
+            if (zw6Var == null || yw6Var != zw6Var.b() || c1Var == null) {
                 return;
             }
-            zu6Var.e((nw6) message.obj);
-            ((yu6) this.b).a(zu6Var, c1Var);
-            zu6Var.e(null);
+            zw6Var.e((ny6) message.obj);
+            ((yw6) this.b).a(zw6Var, c1Var);
+            zw6Var.e(null);
         }
     }
 
     private final void c(Message message) {
-        bv6 bv6Var;
-        yu6 yu6Var;
+        bx6 bx6Var;
+        yw6 yw6Var;
         c1 c1Var;
         if (message.what == 1) {
-            synchronized (((yu6) this.b).b) {
-                bv6Var = (bv6) ((yu6) this.b).d.get();
-                yu6Var = (yu6) this.b;
-                c1Var = (c1) yu6Var.f;
+            synchronized (((yw6) this.b).b) {
+                bx6Var = (bx6) ((yw6) this.b).d.get();
+                yw6Var = (yw6) this.b;
+                c1Var = (c1) yw6Var.f;
             }
-            if (bv6Var == null || yu6Var != bv6Var.b() || c1Var == null) {
+            if (bx6Var == null || yw6Var != bx6Var.b() || c1Var == null) {
                 return;
             }
-            bv6Var.d((mw6) message.obj);
-            ((yu6) this.b).b(bv6Var, c1Var);
-            bv6Var.d(null);
+            bx6Var.d((my6) message.obj);
+            ((yw6) this.b).b(bx6Var, c1Var);
+            bx6Var.d(null);
         }
     }
 
@@ -143,13 +143,13 @@ public final class c1 extends Handler {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void handleMessage(Message message) {
-        sx sxVar;
-        sx sxVar2 = null;
-        sxVar2 = null;
-        sxVar2 = null;
-        sxVar2 = null;
-        sxVar2 = null;
-        sxVar2 = null;
+        ty tyVar;
+        ty tyVar2 = null;
+        tyVar2 = null;
+        tyVar2 = null;
+        tyVar2 = null;
+        tyVar2 = null;
+        tyVar2 = null;
         switch (this.a) {
             case 0:
                 if (message.what == 1) {
@@ -159,62 +159,62 @@ public final class c1 extends Handler {
                 }
                 return;
             case 1:
-                tx txVar = (tx) this.b;
+                uy uyVar = (uy) this.b;
                 int i = message.what;
                 if (i == 1) {
-                    sxVar = (sx) message.obj;
+                    tyVar = (ty) message.obj;
                     try {
-                        txVar.a.queueInputBuffer(sxVar.a, 0, sxVar.b, sxVar.d, sxVar.e);
+                        uyVar.a.queueInputBuffer(tyVar.a, 0, tyVar.b, tyVar.d, tyVar.e);
                     } catch (RuntimeException e) {
-                        AtomicReference atomicReference = txVar.d;
+                        AtomicReference atomicReference = uyVar.d;
                         while (!atomicReference.compareAndSet(null, e) && atomicReference.get() == null) {
                         }
                     }
                 } else {
                     if (i != 2) {
                         if (i == 3) {
-                            txVar.e.e();
+                            uyVar.e.e();
                         } else if (i != 4) {
-                            AtomicReference atomicReference2 = txVar.d;
+                            AtomicReference atomicReference2 = uyVar.d;
                             IllegalStateException illegalStateException = new IllegalStateException(String.valueOf(i));
                             while (!atomicReference2.compareAndSet(null, illegalStateException) && atomicReference2.get() == null) {
                             }
                         } else {
                             try {
-                                txVar.a.setParameters((Bundle) message.obj);
+                                uyVar.a.setParameters((Bundle) message.obj);
                             } catch (RuntimeException e2) {
-                                AtomicReference atomicReference3 = txVar.d;
+                                AtomicReference atomicReference3 = uyVar.d;
                                 while (!atomicReference3.compareAndSet(null, e2) && atomicReference3.get() == null) {
                                 }
                             }
                         }
-                        if (sxVar2 == null) {
-                            tx.e(sxVar2);
+                        if (tyVar2 == null) {
+                            uy.e(tyVar2);
                             return;
                         }
                         return;
                     }
-                    sxVar = (sx) message.obj;
-                    int i2 = sxVar.a;
-                    MediaCodec.CryptoInfo cryptoInfo = sxVar.c;
-                    long j = sxVar.d;
-                    int i3 = sxVar.e;
+                    tyVar = (ty) message.obj;
+                    int i2 = tyVar.a;
+                    MediaCodec.CryptoInfo cryptoInfo = tyVar.c;
+                    long j = tyVar.d;
+                    int i3 = tyVar.e;
                     try {
                         if (Build.VERSION.SDK_INT >= 31) {
-                            txVar.a.queueSecureInputBuffer(i2, 0, cryptoInfo, j, i3);
+                            uyVar.a.queueSecureInputBuffer(i2, 0, cryptoInfo, j, i3);
                         } else {
-                            synchronized (tx.n) {
-                                txVar.a.queueSecureInputBuffer(i2, 0, cryptoInfo, j, i3);
+                            synchronized (uy.n) {
+                                uyVar.a.queueSecureInputBuffer(i2, 0, cryptoInfo, j, i3);
                             }
                         }
                     } catch (RuntimeException e3) {
-                        AtomicReference atomicReference4 = txVar.d;
+                        AtomicReference atomicReference4 = uyVar.d;
                         while (!atomicReference4.compareAndSet(null, e3) && atomicReference4.get() == null) {
                         }
                     }
                 }
-                sxVar2 = sxVar;
-                if (sxVar2 == null) {
+                tyVar2 = tyVar;
+                if (tyVar2 == null) {
                 }
             case 2:
                 a(message);
@@ -222,18 +222,18 @@ public final class c1 extends Handler {
             case 3:
                 byte[] bArr = (byte[]) message.obj;
                 if (bArr != null) {
-                    ArrayList arrayList = ((da3) this.b).x;
+                    ArrayList arrayList = ((pb3) this.b).x;
                     int size = arrayList.size();
                     int i4 = 0;
                     while (i4 < size) {
                         Object obj = arrayList.get(i4);
                         i4++;
-                        aa3 aa3Var = (aa3) obj;
-                        aa3Var.p();
-                        if (Arrays.equals(aa3Var.v, bArr)) {
-                            if (message.what == 2 && aa3Var.p == 4) {
-                                String str = g8c.a;
-                                aa3Var.j(false);
+                        mb3 mb3Var = (mb3) obj;
+                        mb3Var.p();
+                        if (Arrays.equals(mb3Var.v, bArr)) {
+                            if (message.what == 2 && mb3Var.p == 4) {
+                                String str = hac.a;
+                                mb3Var.j(false);
                                 return;
                             }
                             return;
@@ -243,61 +243,61 @@ public final class c1 extends Handler {
                 }
                 return;
             case 4:
-                ns4 ns4Var = (ns4) this.b;
-                ms4 ms4Var = ns4Var.g;
+                ou4 ou4Var = (ou4) this.b;
+                nu4 nu4Var = ou4Var.g;
                 int i5 = message.what;
                 if (i5 == 1) {
-                    ms4Var.getClass();
+                    nu4Var.getClass();
                     return;
                 }
                 if (i5 == 2) {
-                    ns4Var.f.removeMessages(3);
-                    ns4Var.j = false;
-                    ns4Var.k = true;
-                    ms4Var.onLongPress(ns4Var.n);
+                    ou4Var.f.removeMessages(3);
+                    ou4Var.j = false;
+                    ou4Var.k = true;
+                    nu4Var.onLongPress(ou4Var.n);
                     return;
                 }
                 if (i5 != 3) {
-                    fyb.h(message, "Unknown message ");
+                    rjb.i(message, "Unknown message ");
                     return;
                 }
-                ls4 ls4Var = ns4Var.h;
-                if (ls4Var != null) {
-                    if (ns4Var.i) {
-                        ns4Var.j = true;
+                mu4 mu4Var = ou4Var.h;
+                if (mu4Var != null) {
+                    if (ou4Var.i) {
+                        ou4Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) ls4Var).e1(ns4Var.n);
+                        ((PhotoViewer) mu4Var).f1(ou4Var.n);
                         return;
                     }
                 }
                 return;
             case 5:
-                os4 os4Var = (os4) this.b;
-                ps4 ps4Var = os4Var.f;
+                pu4 pu4Var = (pu4) this.b;
+                qu4 qu4Var = pu4Var.f;
                 int i6 = message.what;
                 if (i6 == 1) {
-                    ps4Var.onShowPress(os4Var.m);
+                    qu4Var.onShowPress(pu4Var.m);
                     return;
                 }
                 if (i6 == 2) {
-                    os4Var.e.removeMessages(3);
-                    os4Var.i = false;
-                    os4Var.j = true;
-                    ps4Var.onLongPress(os4Var.m);
+                    pu4Var.e.removeMessages(3);
+                    pu4Var.i = false;
+                    pu4Var.j = true;
+                    qu4Var.onLongPress(pu4Var.m);
                     return;
                 }
                 if (i6 != 3) {
-                    fyb.h(message, "Unknown message ");
+                    rjb.i(message, "Unknown message ");
                     return;
                 }
-                ps4 ps4Var2 = os4Var.g;
-                if (ps4Var2 != null) {
-                    if (os4Var.h) {
-                        os4Var.i = true;
+                qu4 qu4Var2 = pu4Var.g;
+                if (qu4Var2 != null) {
+                    if (pu4Var.h) {
+                        pu4Var.i = true;
                         return;
                     } else {
-                        ps4Var2.onSingleTapConfirmed(os4Var.m);
+                        qu4Var2.onSingleTapConfirmed(pu4Var.m);
                         return;
                     }
                 }
@@ -307,34 +307,34 @@ public final class c1 extends Handler {
                 int i8 = message.arg1;
                 Object obj2 = message.obj;
                 Bundle peekData = message.peekData();
-                SparseArray sparseArray = ((bs6) this.b).j;
-                p59 p59Var = (p59) sparseArray.get(i8);
-                if (p59Var == null) {
+                SparseArray sparseArray = ((cu6) this.b).j;
+                r79 r79Var = (r79) sparseArray.get(i8);
+                if (r79Var == null) {
                     Log.w("MR2Provider", "Pending callback not found for control request.");
                     return;
                 }
                 sparseArray.remove(i8);
                 if (i7 == 3) {
-                    p59Var.b((Bundle) obj2);
+                    r79Var.b((Bundle) obj2);
                     return;
                 } else {
                     if (i7 == 4) {
-                        p59.a(peekData != null ? peekData.getString("error") : null, (Bundle) obj2);
+                        r79.a(peekData != null ? peekData.getString("error") : null, (Bundle) obj2);
                         return;
                     }
                     return;
                 }
             case 7:
-                js6 js6Var = (js6) this.b;
-                c1 c1Var = js6Var.N;
+                ku6 ku6Var = (ku6) this.b;
+                c1 c1Var = ku6Var.N;
                 int i9 = message.what;
                 if (i9 == 1) {
-                    js6Var.e((List) message.obj);
+                    ku6Var.e((List) message.obj);
                     return;
                 }
                 if (i9 == 2) {
-                    if (js6Var.r.isEmpty()) {
-                        js6Var.i(2);
+                    if (ku6Var.r.isEmpty()) {
+                        ku6Var.i(2);
                         c1Var.removeMessages(2);
                         c1Var.removeMessages(3);
                         c1Var.sendMessageDelayed(c1Var.obtainMessage(3), 15000L);
@@ -342,59 +342,59 @@ public final class c1 extends Handler {
                     }
                     return;
                 }
-                if (i9 == 3 && js6Var.r.isEmpty()) {
-                    js6Var.i(3);
+                if (i9 == 3 && ku6Var.r.isEmpty()) {
+                    ku6Var.i(3);
                     c1Var.removeMessages(2);
                     c1Var.removeMessages(3);
                     c1Var.removeMessages(1);
-                    js6Var.f.h(js6Var.h);
+                    ku6Var.f.h(ku6Var.h);
                     return;
                 }
                 return;
             case 8:
                 if (message.what == 1) {
-                    gt6 gt6Var = (gt6) this.b;
+                    gv6 gv6Var = (gv6) this.b;
                     List list = (List) message.obj;
-                    gt6Var.G = SystemClock.uptimeMillis();
-                    gt6Var.s.clear();
-                    gt6Var.s.addAll(list);
-                    gt6Var.w.D();
+                    gv6Var.G = SystemClock.uptimeMillis();
+                    gv6Var.s.clear();
+                    gv6Var.s.addAll(list);
+                    gv6Var.w.D();
                     return;
                 }
                 return;
             case 9:
-                rt6 rt6Var = (rt6) this.b;
+                rv6 rv6Var = (rv6) this.b;
                 int i10 = message.what;
                 if (i10 == 1) {
-                    rt6Var.n();
+                    rv6Var.n();
                     return;
                 } else {
-                    if (i10 != 2 || rt6Var.N == null) {
+                    if (i10 != 2 || rv6Var.N == null) {
                         return;
                     }
-                    rt6Var.N = null;
-                    rt6Var.o();
+                    rv6Var.N = null;
+                    rv6Var.o();
                     return;
                 }
             case 10:
-                wt6 wt6Var = (wt6) this.b;
+                wv6 wv6Var = (wv6) this.b;
                 int i11 = message.what;
                 if (i11 != 1) {
                     if (i11 == 2) {
-                        wt6Var.b = false;
-                        wt6Var.f((bt6) wt6Var.h);
+                        wv6Var.b = false;
+                        wv6Var.f((bv6) wv6Var.h);
                         return;
                     }
                     return;
                 }
-                wt6Var.c = false;
-                z24 z24Var = (z24) wt6Var.f;
-                if (z24Var != null) {
-                    am4 am4Var = (am4) wt6Var.n;
-                    ux4 ux4Var = (ux4) z24Var.b;
-                    du6 d = ux4Var.d(wt6Var);
+                wv6Var.c = false;
+                ai4 ai4Var = (ai4) wv6Var.f;
+                if (ai4Var != null) {
+                    bo4 bo4Var = (bo4) wv6Var.n;
+                    wz4 wz4Var = (wz4) ai4Var.b;
+                    dw6 d = wz4Var.d(wv6Var);
                     if (d != null) {
-                        ux4Var.m(d, am4Var);
+                        wz4Var.m(d, bo4Var);
                         return;
                     }
                     return;
@@ -407,13 +407,13 @@ public final class c1 extends Handler {
                 b(message);
                 return;
             default:
-                su6 su6Var = (su6) message.obj;
-                mv6 mv6Var = (mv6) this.b;
-                if (mv6Var.V(su6Var)) {
-                    ru6 ru6Var = su6Var.e;
-                    ru6Var.getClass();
-                    ru6Var.e();
-                    mv6Var.e0(su6Var);
+                sw6 sw6Var = (sw6) message.obj;
+                mx6 mx6Var = (mx6) this.b;
+                if (mx6Var.X(sw6Var)) {
+                    rw6 rw6Var = sw6Var.e;
+                    rw6Var.getClass();
+                    rw6Var.e();
+                    mx6Var.i0(sw6Var);
                     return;
                 }
                 return;
@@ -433,9 +433,9 @@ public final class c1 extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c1(Looper looper, mv6 mv6Var) {
+    public c1(Looper looper, mx6 mx6Var) {
         super(looper);
         this.a = (byte) 13;
-        this.b = mv6Var;
+        this.b = mx6Var;
     }
 }

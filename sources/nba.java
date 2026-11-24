@@ -1,28 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nba implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ nfa b;
+import android.view.View;
 
-    public /* synthetic */ nba(nfa nfaVar, byte b) {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class nba implements it3 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ jm7 c;
+    public final /* synthetic */ View d;
+
+    public /* synthetic */ nba(jm7 jm7Var, View view, int[] iArr, byte b) {
         this.a = b;
-        this.b = nfaVar;
+        this.c = jm7Var;
+        this.d = view;
+        this.b = iArr;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // it3
+    public final void a(zna znaVar, float f, float f2) {
         byte b = this.a;
-        nfa nfaVar = this.b;
-        z1b z1bVar = (z1b) obj;
+        int[] iArr = this.b;
+        View view = this.d;
+        jm7 jm7Var = this.c;
         switch (b) {
             case 0:
-                gl.e3(new t7a(nfaVar, z1bVar, (byte) 2), 100L);
+                ((tca) jm7Var).K0((wca) view, iArr, f / 1000.0f);
                 break;
             default:
-                int[] iArr = nfa.t2;
-                gl.e3(new t7a(nfaVar, z1bVar, (byte) 2), 100L);
+                ((cca) jm7Var).d.K0(view, iArr, f / 1000.0f);
                 break;
         }
     }

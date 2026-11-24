@@ -1,38 +1,32 @@
 // default package
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gi0 extends TLObject {
-    public int a;
-    public long b;
-    public TLRPC.InputStorePaymentPurpose c;
+public final class gi0 extends b4 {
+    public static final Parcelable.Creator<gi0> CREATOR = new d3d((byte) 22);
+    public final boolean a;
 
-    public static gi0 a(int i, SerializedData serializedData) {
-        return (gi0) TLObject.TLdeserialize(gi0.class, i != 495638674 ? null : new gi0(), serializedData, i, true);
+    public gi0(boolean z) {
+        this.a = z;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
-        this.a = inputSerializedData.readInt32(z);
-        this.b = inputSerializedData.readInt64(z);
-        if ((this.a & 1) != 0) {
-            this.c = TLRPC.InputStorePaymentPurpose.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
+    public final boolean equals(Object obj) {
+        return (obj instanceof gi0) && this.a == ((gi0) obj).a;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(495638674);
-        outputSerializedData.writeInt32(this.a);
-        outputSerializedData.writeInt64(this.b);
-        if ((this.a & 1) != 0) {
-            this.c.serializeToStream(outputSerializedData);
-        }
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        mve.s(parcel, r);
     }
 }

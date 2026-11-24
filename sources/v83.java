@@ -1,82 +1,27 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Logger;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class v83 extends rf0 {
-    public static final Logger m = Logger.getLogger(v83.class.getName());
-    public int d;
-    public int e;
+public final class v83 extends qx2 {
+    public Object a;
+    public h93 b;
+    public nq2 c;
+    public /* synthetic */ Object d;
+    public final /* synthetic */ h93 e;
     public int f;
-    public int g;
-    public long h;
-    public long i;
-    public y30 j;
-    public ArrayList k;
-    public byte[] l;
 
-    @Override // rf0
-    public final void b(ByteBuffer byteBuffer) {
-        this.d = hle.a(byteBuffer.get());
-        int a = hle.a(byteBuffer.get());
-        this.e = a >>> 2;
-        this.f = (a >> 1) & 1;
-        this.g = hle.a(byteBuffer.get()) + (hle.f(byteBuffer) << 8);
-        this.h = hle.g(byteBuffer);
-        this.i = hle.g(byteBuffer);
-        int remaining = byteBuffer.remaining();
-        Logger logger = m;
-        if (remaining > 2) {
-            int position = byteBuffer.position();
-            rf0 a2 = yn7.a(this.d, byteBuffer);
-            int position2 = byteBuffer.position() - position;
-            logger.finer(a2 + " - DecoderConfigDescr1 read: " + position2 + ", size: " + Integer.valueOf(a2.a()));
-            int a3 = a2.a();
-            if (position2 < a3) {
-                byte[] bArr = new byte[a3 - position2];
-                this.l = bArr;
-                byteBuffer.get(bArr);
-            }
-            if (a2 instanceof y30) {
-                this.j = (y30) a2;
-            }
-        }
-        while (byteBuffer.remaining() > 2) {
-            long position3 = byteBuffer.position();
-            rf0 a4 = yn7.a(this.d, byteBuffer);
-            logger.finer(a4 + " - DecoderConfigDescr2 read: " + (byteBuffer.position() - position3) + ", size: " + Integer.valueOf(a4.a()));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v83(h93 h93Var, qx2 qx2Var) {
+        super(qx2Var);
+        this.e = h93Var;
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("DecoderConfigDescriptor{objectTypeIndication=");
-        sb.append(this.d);
-        sb.append(", streamType=");
-        sb.append(this.e);
-        sb.append(", upStream=");
-        sb.append(this.f);
-        sb.append(", bufferSizeDB=");
-        sb.append(this.g);
-        sb.append(", maxBitRate=");
-        sb.append(this.h);
-        sb.append(", avgBitRate=");
-        sb.append(this.i);
-        sb.append(", decoderSpecificInfo=null, audioSpecificInfo=");
-        sb.append(this.j);
-        sb.append(", configDescriptorDeadBytes=");
-        byte[] bArr = this.l;
-        if (bArr == null) {
-            bArr = new byte[0];
-        }
-        sb.append(ead.a(0, bArr));
-        sb.append(", profileLevelIndicationDescriptors=");
-        ArrayList arrayList = this.k;
-        sb.append(arrayList == null ? "null" : Arrays.asList(arrayList).toString());
-        sb.append('}');
-        return sb.toString();
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        this.d = obj;
+        this.f |= TLObject.FLAG_31;
+        return this.e.d(null, this);
     }
 }

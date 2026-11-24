@@ -1,178 +1,39 @@
 // default package
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import java.util.ArrayList;
-import java.util.List;
+import android.content.ClipData;
+import android.view.ContentInfo;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public class pw2 extends Path {
-    public static ArrayList g;
-    public int e;
-    public int f;
-    public boolean b = false;
-    public boolean c = true;
-    public float d = 0.0f;
-    public final ArrayList a = new ArrayList(1);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class pw2 implements qw2 {
+    public final ContentInfo a;
 
-    public pw2(int i) {
+    public pw2(ContentInfo contentInfo) {
+        contentInfo.getClass();
+        this.a = contentInfo;
     }
 
-    public final void a() {
-        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
-            return;
-        }
-        b(this.a);
-        this.b = true;
+    @Override // qw2
+    public final int a() {
+        return this.a.getFlags();
     }
 
-    @Override // android.graphics.Path
-    public final void addRect(RectF rectF, Path.Direction direction) {
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            float f = rectF.left;
-            int i = this.e;
-            float f2 = f - i;
-            float f3 = rectF.top;
-            int i2 = this.f;
-            super.addRect(f2, f3 - i2, rectF.right + i, rectF.bottom + i2, direction);
-            return;
-        }
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 0 || !((RectF) b00.f(1, arrayList)).contains(rectF)) {
-            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) b00.f(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) b00.f(1, arrayList)).bottom) > this.d) {
-                ArrayList arrayList2 = g;
-                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
-                rectF2.set(rectF);
-                arrayList.add(rectF2);
-            } else {
-                ((RectF) b00.f(1, arrayList)).union(rectF);
-            }
-            this.b = false;
-        }
+    @Override // qw2
+    public final ClipData b() {
+        return this.a.getClip();
     }
 
-    public final void b(List list) {
-        if (list.isEmpty()) {
-            return;
-        }
-        boolean z = false;
-        if (list.size() == 1) {
-            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
-            return;
-        }
-        RectF rectF = (RectF) list.get(0);
-        int size = list.size() - 1;
-        super.moveTo(rectF.left - this.e, rectF.top - this.f);
-        for (int i = 1; i < list.size(); i++) {
-            RectF rectF2 = (RectF) list.get(i);
-            if (rectF2.width() != 0.0f) {
-                float f = rectF.bottom;
-                int i2 = this.f;
-                float f2 = f + i2;
-                float f3 = rectF2.top;
-                if (f2 >= f3 - i2) {
-                    float f4 = rectF.left;
-                    if (f4 <= rectF2.right) {
-                        float f5 = rectF.right;
-                        float f6 = rectF2.left;
-                        if (f5 >= f6) {
-                            if (f4 != f6) {
-                                super.lineTo(f4 - this.e, f3);
-                                super.lineTo(rectF2.left - this.e, rectF2.top);
-                            }
-                            rectF = rectF2;
-                        }
-                    }
-                }
-                z = true;
-                size = i;
-                break;
-            }
-        }
-        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
-        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
-        for (int i3 = size - 1; i3 >= 0; i3--) {
-            RectF rectF3 = (RectF) list.get(i3);
-            if (rectF3.width() != 0.0f) {
-                float f7 = rectF.right;
-                if (f7 != rectF3.right) {
-                    super.lineTo(f7 + this.e, rectF.top);
-                    super.lineTo(rectF3.right + this.e, rectF.top);
-                }
-                rectF = rectF3;
-            }
-        }
-        super.lineTo(rectF.right + this.e, rectF.top - this.f);
-        super.close();
-        if (z) {
-            b(list.subList(size, list.size()));
-        }
+    @Override // qw2
+    public final ContentInfo e() {
+        return this.a;
     }
 
-    @Override // android.graphics.Path
-    public void reset() {
-        super.reset();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            arrayList = new ArrayList(arrayList2.size());
-            g = arrayList;
-        }
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
+    @Override // qw2
+    public final int f() {
+        return this.a.getSource();
     }
 
-    @Override // android.graphics.Path
-    public final void rewind() {
-        super.rewind();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            arrayList = new ArrayList(arrayList2.size());
-            g = arrayList;
-        }
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    public pw2() {
-    }
-
-    @Override // android.graphics.Path
-    public void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
-        RectF rectF;
-        if (Build.VERSION.SDK_INT >= 34 && this.c) {
-            ArrayList arrayList = this.a;
-            if (arrayList.size() <= 0 || !((RectF) b00.f(1, arrayList)).contains(f, f2, f3, f4)) {
-                if (arrayList.size() > 0 && Math.abs(f2 - ((RectF) b00.f(1, arrayList)).top) <= this.d && Math.abs(f4 - ((RectF) b00.f(1, arrayList)).bottom) <= this.d) {
-                    ((RectF) b00.f(1, arrayList)).union(f, f2, f3, f4);
-                } else {
-                    ArrayList arrayList2 = g;
-                    if (arrayList2 != null && arrayList2.size() > 0) {
-                        rectF = (RectF) g.remove(0);
-                    } else {
-                        rectF = new RectF();
-                    }
-                    rectF.set(f, f2, f3, f4);
-                    arrayList.add(rectF);
-                }
-                this.b = false;
-                return;
-            }
-            return;
-        }
-        int i = this.e;
-        int i2 = this.f;
-        super.addRect(f - i, f2 - i2, f3 + i, f4 + i2, direction);
+    public final String toString() {
+        return "ContentInfoCompat{" + this.a + "}";
     }
 }

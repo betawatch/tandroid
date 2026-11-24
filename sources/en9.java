@@ -1,20 +1,36 @@
 // default package
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class en9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ un9 b;
+    public final /* synthetic */ Exception c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class en9 extends ViewOutlineProvider {
-    public final /* synthetic */ on9 a;
-
-    public en9(on9 on9Var) {
-        this.a = on9Var;
+    public /* synthetic */ en9(un9 un9Var, Exception exc, byte b) {
+        this.a = b;
+        this.b = un9Var;
+        this.c = exc;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), (1.0f - this.a.U) * gl.L(12.0f));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Exception exc = this.c;
+        un9 un9Var = this.b;
+        switch (b) {
+            case 0:
+                un9Var.h(exc);
+                break;
+            case 1:
+                un9Var.h(exc);
+                break;
+            case 2:
+                un9Var.h(exc);
+                break;
+            default:
+                un9Var.h(exc);
+                break;
+        }
     }
 }

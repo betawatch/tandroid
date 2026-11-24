@@ -1,30 +1,29 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.messenger.a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class my4 implements Runnable {
+    public int a;
+    public int b;
+    public final /* synthetic */ ww9 c;
+    public final /* synthetic */ sy4 d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class my4 implements ey4 {
-    public final /* synthetic */ lh5 a;
-
-    public my4(lh5 lh5Var) {
-        this.a = lh5Var;
+    public my4(sy4 sy4Var, ww9 ww9Var) {
+        this.d = sy4Var;
+        this.c = ww9Var;
     }
 
-    @Override // ey4
-    public final void onConnected(Bundle bundle) {
-        eb6 eb6Var = (eb6) this.a;
-        eb6Var.M = true;
-        try {
-            ((xl3) a.i()).checkLocationSettings(eb6Var.O, new ya6(eb6Var, (byte) 1));
-        } catch (Throwable th) {
-            fa4.g(th, true);
-        }
-    }
-
-    @Override // ey4
-    public final void onConnectionSuspended(int i) {
-        this.a.getClass();
+    @Override // java.lang.Runnable
+    public final void run() {
+        ww9 ww9Var = this.c;
+        int scrollX = ww9Var.getScrollX();
+        int scrollY = ww9Var.getScrollY();
+        int i = scrollX - this.a;
+        sy4 sy4Var = this.d;
+        sy4Var.k += i;
+        sy4Var.l += scrollY - this.b;
+        this.a = scrollX;
+        this.b = scrollY;
+        sy4Var.g++;
     }
 }

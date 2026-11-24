@@ -2,7 +2,7 @@
 
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class w2 extends v2 implements ListIterator {
     public final /* synthetic */ y2 d;
@@ -13,7 +13,7 @@ public final class w2 extends v2 implements ListIterator {
         this.d = y2Var;
         int h = y2Var.h();
         if (i < 0 || i > h) {
-            k93.i(b00.g(i, h, "index: ", ", size: "));
+            wa3.i(b10.g(i, h, "index: ", ", size: "));
             throw null;
         }
         this.b = i;
@@ -37,7 +37,7 @@ public final class w2 extends v2 implements ListIterator {
     @Override // java.util.ListIterator
     public final Object previous() {
         if (!hasPrevious()) {
-            w26.g();
+            u36.g();
             return null;
         }
         int i = this.b - 1;

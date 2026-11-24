@@ -1,70 +1,25 @@
 // default package
 
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_agent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bd implements ViewTreeObserver.OnScrollChangedListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class bd extends b6c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ bd(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    static {
+        b6c.h(new bd());
     }
 
-    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
-    public final void onScrollChanged() {
-        xr5 xr5Var;
-        byte b = this.a;
-        boolean z = false;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                hd hdVar = ((cd) obj).d;
-                hdVar.i(0, hdVar.f != null && hdVar.w.getScrollY() > hdVar.x.getTop());
-                if (hdVar.u0 != null) {
-                    if (hdVar.w.getHeight() + hdVar.w.getScrollY() < hdVar.x.getBottom()) {
-                        z = true;
-                    }
-                }
-                hdVar.i(1, z);
-                hdVar.w.invalidate();
-                break;
-            case 1:
-                ((jf4) obj).run();
-                break;
-            case 2:
-                cs5 cs5Var = (cs5) obj;
-                if (cs5Var.h0 != null && (xr5Var = cs5Var.m) != null && xr5Var.isShowing()) {
-                    int[] iArr = new int[2];
-                    cs5Var.h0.getLocationOnScreen(iArr);
-                    int i = iArr[0];
-                    int[] iArr2 = cs5Var.k0;
-                    if (i != iArr2[0] || iArr[1] != iArr2[1]) {
-                        iArr2[0] = i;
-                        iArr2[1] = iArr[1];
-                        cs5Var.P();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                koc kocVar = (koc) obj;
-                if (kocVar.i1) {
-                    kocVar.f0();
-                    break;
-                }
-                break;
-            default:
-                lqc lqcVar = (lqc) obj;
-                PopupWindow popupWindow = lqcVar.s;
-                if (popupWindow != null && popupWindow.isShowing()) {
-                    lqcVar.c();
-                    break;
-                }
-                break;
-        }
+    @Override // b6c
+    public final void b(View view, c6c c6cVar, boolean z, l7c l7cVar, q7c q7cVar) {
+        ((cd) view).a((TL_agent.agentProvider) c6cVar.H, null, false, c6cVar.e, c6cVar.A == 1, z);
+    }
+
+    @Override // b6c
+    public final View d(Context context, r59 r59Var, int i, ylb ylbVar) {
+        return new cd(i, ylbVar, context);
     }
 }

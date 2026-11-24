@@ -1,71 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ow9 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ wjb e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ tx9 h;
+public final /* synthetic */ class ow9 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tw9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ow9(tx9 tx9Var, Context context, boolean z, boolean z2, wjb wjbVar, Integer num) {
-        super(context);
-        this.h = tx9Var;
-        this.c = z;
-        this.d = z2;
-        this.e = wjbVar;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public /* synthetic */ ow9(tw9 tw9Var, byte b) {
+        this.a = b;
+        this.b = tw9Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        RectF rectF;
-        tx9 tx9Var = this.h;
-        if (!tx9Var.R0) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        tw9 tw9Var = this.b;
+        switch (b) {
+            case 0:
+                if (tw9Var.Z == null) {
+                    tw9Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                tw9Var.dismiss();
+                break;
         }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        canvas.save();
-        boolean z = this.d;
-        Paint paint = this.b;
-        if (z) {
-            bkb.m(paint);
-        }
-        paint.setColor(bkb.v0(bkb.F8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + gl.L(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (tx9Var.m()) {
-            rectF = gl.P;
-            rectF.set((width - (tx9Var.b1 * width)) + getPaddingLeft(), tb4.A(1.0f, tx9Var.c1, height, getPaddingTop()), ((width2 - width) * tx9Var.b1) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            rectF = gl.P;
-            rectF.set((width - (tx9Var.b1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * tx9Var.b1) + getPaddingLeft() + width, (height * tx9Var.c1) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(rectF, gl.L(12.0f), gl.L(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
     }
 }

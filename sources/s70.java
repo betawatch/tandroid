@@ -1,20 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class s70 implements zn7 {
-    public static final s70 a = new s70();
-    public static final w84 b = w84.c("eventType");
-    public static final w84 c = w84.c("sessionData");
-    public static final w84 d = w84.c("applicationInfo");
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Set;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        c6a c6aVar = (c6a) obj;
-        ao7 ao7Var = (ao7) obj2;
-        c6aVar.getClass();
-        ao7Var.a(b, n44.b);
-        ao7Var.a(c, c6aVar.a);
-        ao7Var.a(d, c6aVar.b);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract class s70 {
+    public static final Set a = Collections.newSetFromMap(new ConcurrentHashMap());
+
+    public static void a(File file, ArrayList arrayList) {
+        File[] listFiles;
+        if (file == null || (listFiles = file.listFiles()) == null) {
+            return;
+        }
+        for (File file2 : listFiles) {
+            if (file2.isDirectory()) {
+                a(file2, arrayList);
+            } else if (!file2.getName().equals(".nomedia") && !a.contains(file2.getAbsolutePath())) {
+                arrayList.add(new r70(file2));
+            }
+        }
+    }
+
+    public static void b(File file) {
+        String absolutePath;
+        if (file == null || (absolutePath = file.getAbsolutePath()) == null) {
+            return;
+        }
+        a.remove(absolutePath);
     }
 }

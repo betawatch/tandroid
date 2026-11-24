@@ -1,80 +1,22 @@
 // default package
 
-import java.util.ListIterator;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class b4d extends v5c implements ListIterator {
-    public final int b;
-    public int c;
-    public final e4d d;
+public interface b4d {
+    void a();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b4d(e4d e4dVar, int i) {
-        super((byte) 2);
-        int size = e4dVar.size();
-        if (i < 0 || i > size) {
-            k93.i(yye.c(i, size, "index"));
-            throw null;
-        }
-        this.b = size;
-        this.c = i;
-        this.d = e4dVar;
-    }
+    boolean b(x5d x5dVar);
 
-    public final Object a(int i) {
-        return this.d.get(i);
-    }
+    void c();
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
+    void d(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
+    jh0 e(jh0 jh0Var);
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
+    void f();
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            w26.g();
-            return null;
-        }
-        int i = this.c;
-        this.c = i + 1;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            w26.g();
-            return null;
-        }
-        int i = this.c - 1;
-        this.c = i;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
-    }
+    boolean g();
 }

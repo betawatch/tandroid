@@ -1,33 +1,30 @@
 // default package
 
-import org.telegram.ui.Wallet.c;
+import com.google.android.gms.location.LocationRequest;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class o05 implements Runnable {
-    public volatile boolean a;
-    public Runnable b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ byte[] f;
-    public final /* synthetic */ i8c h;
-    public final /* synthetic */ c n;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class o05 implements nj5 {
+    public LocationRequest a;
 
-    public o05(c cVar, String str, long j, String str2, byte[] bArr, i8c i8cVar) {
-        this.n = cVar;
-        this.c = str;
-        this.d = j;
-        this.e = str2;
-        this.f = bArr;
-        this.h = i8cVar;
+    public final void a() {
+        this.a.c = 1000L;
     }
 
-    @Override // java.lang.Runnable
-    public final synchronized void run() {
-        if (this.a) {
-            return;
+    public final void b() {
+        LocationRequest locationRequest = this.a;
+        long j = locationRequest.c;
+        long j2 = locationRequest.b;
+        if (j == j2 / 6) {
+            locationRequest.c = 166L;
         }
-        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new ae2((Object) this, (Object) this.h, (byte) 20));
+        if (locationRequest.r == j2) {
+            locationRequest.r = 1000L;
+        }
+        locationRequest.b = 1000L;
+    }
+
+    public final void c() {
+        this.a.a = 100;
     }
 }

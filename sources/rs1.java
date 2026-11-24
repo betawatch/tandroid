@@ -2,21 +2,19 @@
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class rs1 extends eq0 {
-    public final /* synthetic */ vs1 M;
+public final class rs1 extends y7c {
+    public final /* synthetic */ yv1 O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rs1(vs1 vs1Var, Context context, int i, wjb wjbVar) {
-        super(i, wjbVar, context);
-        this.M = vs1Var;
+    public rs1(yv1 yv1Var, Context context) {
+        super(context);
+        this.O = yv1Var;
     }
 
-    @Override // eq0
-    public final int getSideMenuWidth() {
-        mu1 mu1Var = this.M.R;
-        int i = mu1.md;
-        return mu1Var.e7();
+    @Override // y7c
+    public final ylb getResourceProvider() {
+        return this.O.Ba;
     }
 }

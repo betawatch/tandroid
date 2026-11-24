@@ -1,177 +1,63 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class iv3 extends View {
-    public fm2 a;
-    public boolean b;
-    public final int c;
-    public vl d;
-    public final jv3 e;
-    public ImageReceiver f;
-    public long h;
-    public final il5[] n;
-    public ImageReceiver r;
-    public final n41 s;
-    public boolean w;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class iv3 extends eu5 {
+    public boolean e;
+    public final /* synthetic */ kv3 f;
 
-    public iv3(Context context, jv3 jv3Var) {
-        super(context);
-        this.c = y6c.t0;
-        this.n = new il5[2];
-        this.s = new n41(this);
-        setPadding(gl.L(2.0f), gl.L(2.0f), gl.L(2.0f), gl.L(2.0f));
-        this.e = jv3Var;
+    public iv3(kv3 kv3Var) {
+        this.f = kv3Var;
     }
 
-    public final void a(TLRPC.Document document, boolean z) {
-        if (this.h != (document == null ? 0L : document.id)) {
-            vl vlVar = this.d;
-            if (vlVar != null) {
-                vlVar.o(this);
+    @Override // eu5
+    public final void a(RecyclerView recyclerView, u69 u69Var) {
+        super.a(recyclerView, u69Var);
+        u69Var.a.setPressed(false);
+    }
+
+    @Override // eu5
+    public final boolean o(RecyclerView recyclerView, u69 u69Var, u69 u69Var2) {
+        if (u69Var.f != u69Var2.f) {
+            return false;
+        }
+        int b = u69Var.b();
+        int b2 = u69Var2.b();
+        kv3 kv3Var = this.f;
+        hv3 hv3Var = kv3Var.a;
+        kv3 kv3Var2 = hv3Var.f;
+        int i = kv3Var2.n;
+        ArrayList arrayList = kv3Var2.e;
+        int i2 = b - i;
+        int i3 = b2 - i;
+        int i4 = kv3Var2.r - i;
+        if (i2 >= 0 && i3 >= 0 && i2 < i4 && i3 < i4) {
+            Long l = (Long) arrayList.get(i2);
+            arrayList.set(i2, (Long) arrayList.get(i3));
+            arrayList.set(i3, l);
+            hv3Var.j(b, b2);
+            ((xc5) u69Var.a).setDrawDivider(b2 != kv3Var.r - 1);
+            ((xc5) u69Var2.a).setDrawDivider(b != kv3Var.r - 1);
+            this.e = true;
+        }
+        return true;
+    }
+
+    @Override // eu5
+    public final void q(u69 u69Var, int i) {
+        kv3 kv3Var = this.f;
+        if (i != 0) {
+            kv3Var.b.J0(false);
+            u69Var.a.setPressed(true);
+        } else if (this.e) {
+            jv3 jv3Var = kv3Var.f;
+            if (jv3Var != null) {
+                jv3Var.a();
             }
-            if (document == null) {
-                this.b = false;
-                this.h = 0L;
-                this.d = null;
-                return;
-            }
-            this.b = true;
-            this.h = document.id;
-            int i = ew3.C1;
-            vl l = vl.l(this.c, e66.e(z ? 1 : 16388) ? 3 : 13, document);
-            this.d = l;
-            if (this.w) {
-                l.b(this);
-            }
-        }
-    }
-
-    public float getScale() {
-        return this.s.a(0.15f);
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        this.e.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.w = true;
-        vl vlVar = this.d;
-        if (vlVar != null) {
-            vlVar.b(this);
-        }
-        ImageReceiver imageReceiver = this.f;
-        if (imageReceiver != null) {
-            imageReceiver.I();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.w = false;
-        vl vlVar = this.d;
-        if (vlVar != null) {
-            vlVar.o(this);
-        }
-        ImageReceiver imageReceiver = this.f;
-        if (imageReceiver != null) {
-            imageReceiver.K();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ImageReceiver imageReceiver = this.f;
-        if (imageReceiver != null) {
-            imageReceiver.i0(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-            this.f.h(canvas, null);
-            return;
-        }
-        vl vlVar = this.d;
-        if (vlVar != null) {
-            vlVar.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-            this.d.draw(canvas);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
-        super.onMeasure(makeMeasureSpec, makeMeasureSpec);
-    }
-
-    public void setDrawable(Drawable drawable) {
-        vl vlVar = this.d;
-        if (vlVar != null) {
-            vlVar.o(this);
-        }
-        this.d = null;
-        this.h = 0L;
-        this.b = false;
-        if (this.f == null) {
-            ImageReceiver imageReceiver = new ImageReceiver(null);
-            this.f = imageReceiver;
-            imageReceiver.m0(7);
-            ImageReceiver imageReceiver2 = this.f;
-            imageReceiver2.S0 = true;
-            if (this.w) {
-                imageReceiver2.I();
-            }
-        }
-        this.f.g0(drawable);
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z) {
-        super.setPressed(z);
-        this.s.c(z);
-    }
-
-    public void setSticker(TLRPC.Document document) {
-        this.b = false;
-        if (document == null) {
-            ImageReceiver imageReceiver = this.f;
-            if (imageReceiver != null) {
-                this.h = 0L;
-                imageReceiver.f();
-                return;
-            }
-            return;
-        }
-        long j = this.h;
-        long j2 = document.id;
-        if (j != j2) {
-            this.h = j2;
-            if (this.f == null) {
-                ImageReceiver imageReceiver2 = new ImageReceiver(null);
-                this.f = imageReceiver2;
-                imageReceiver2.m0(7);
-                ImageReceiver imageReceiver3 = this.f;
-                imageReceiver3.S0 = true;
-                if (this.w) {
-                    imageReceiver3.I();
-                }
-            }
-            this.f.p0(!this.b ? this : this.e);
-            TLRPC.PhotoSize w = ba4.w(document.thumbs, 90, false, null, false);
-            String str = "video/webm".equals(document.mime_type) ? "80_80_g" : "80_80";
-            if (!e66.e(1)) {
-                str = str.concat("_firstframe");
-            }
-            this.f.Z(gl5.b(document), str, gl5.c(w, document), "80_80", null, 0L, null, document, 0);
+            this.e = false;
         }
     }
 }

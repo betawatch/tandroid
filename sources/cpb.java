@@ -1,30 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class cpb implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jpb b;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ cpb(jpb jpbVar, byte b) {
-        this.a = b;
-        this.b = jpbVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class cpb extends FrameLayout {
+    public TextView a;
+    public ImageView b;
+    public boolean c;
+
+    public final void a(String str, boolean z, boolean z2) {
+        this.a.setText(str);
+        this.b.setVisibility(z ? 0 : 4);
+        this.c = z2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        jpb jpbVar = this.b;
-        switch (b) {
-            case 0:
-                jpbVar.b(false);
-                break;
-            case 1:
-                jpbVar.c();
-                break;
-            default:
-                jpbVar.b(false);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(jb6.a0 ? 0.0f : gm.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (jb6.a0 ? gm.L(20.0f) : 0), getMeasuredHeight() - 1, cmb.j0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setTypeChecked(boolean z) {
+        this.b.setVisibility(z ? 0 : 4);
     }
 }

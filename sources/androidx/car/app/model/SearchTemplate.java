@@ -2,15 +2,15 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class SearchTemplate implements ogb {
+public final class SearchTemplate implements pib {
     private final ActionStrip mActionStrip;
     private final Action mHeaderAction;
     private final String mInitialSearchText;
     private final boolean mIsLoading;
     private final ItemList mItemList;
-    private final as9 mSearchCallbackDelegate;
+    private final cu9 mSearchCallbackDelegate;
     private final String mSearchHint;
     private final boolean mShowKeyboardByDefault;
 
@@ -52,10 +52,10 @@ public final class SearchTemplate implements ogb {
         return this.mItemList;
     }
 
-    public as9 getSearchCallbackDelegate() {
-        as9 as9Var = this.mSearchCallbackDelegate;
-        Objects.requireNonNull(as9Var);
-        return as9Var;
+    public cu9 getSearchCallbackDelegate() {
+        cu9 cu9Var = this.mSearchCallbackDelegate;
+        Objects.requireNonNull(cu9Var);
+        return cu9Var;
     }
 
     public String getSearchHint() {
@@ -78,7 +78,7 @@ public final class SearchTemplate implements ogb {
         return "SearchTemplate";
     }
 
-    public SearchTemplate(ws9 ws9Var) {
+    public SearchTemplate(yu9 yu9Var) {
         throw null;
     }
 }

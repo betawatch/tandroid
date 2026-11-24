@@ -1,77 +1,79 @@
 // default package
 
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Wallet.c;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class k87 implements i8c {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ gk7 d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class k87 implements jac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ oc7 b;
 
-    public /* synthetic */ k87(na7 na7Var, long j, d dVar, TLRPC.TL_messages_editChatDefaultBannedRights tL_messages_editChatDefaultBannedRights, boolean z) {
-        this.d = na7Var;
-        this.c = j;
-        this.e = dVar;
-        this.f = tL_messages_editChatDefaultBannedRights;
-        this.b = z;
+    public /* synthetic */ k87(oc7 oc7Var, byte b) {
+        this.a = b;
+        this.b = oc7Var;
     }
 
-    @Override // i8c
+    @Override // jac
     public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        Object obj3 = this.f;
-        boolean z = this.b;
-        Object obj4 = this.e;
-        gk7 gk7Var = this.d;
+        byte b2 = 1;
+        int i = 0;
+        oc7 oc7Var = this.b;
         switch (b) {
             case 0:
-                na7 na7Var = (na7) gk7Var;
-                d dVar = (d) obj4;
-                TLRPC.TL_messages_editChatDefaultBannedRights tL_messages_editChatDefaultBannedRights = (TLRPC.TL_messages_editChatDefaultBannedRights) obj3;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (tL_error != null) {
-                    ij.c0(na7Var.currentAccount, tL_error, dVar, tL_messages_editChatDefaultBannedRights, Boolean.valueOf(z));
-                    break;
-                } else {
-                    na7Var.getClass();
-                    gl.e3(new r57(na7Var, this.c, (byte) 21), 1000L);
+                gm.c3(new r87(oc7Var, (TL_account.TL_webBrowserSettings) obj2, b2));
+                break;
+            case 1:
+                TL_account.WebBrowserSettings webBrowserSettings = (TL_account.WebBrowserSettings) obj;
+                if (webBrowserSettings instanceof TL_account.TL_webBrowserSettings) {
+                    oc7Var.Y4((TL_account.TL_webBrowserSettings) webBrowserSettings);
                     break;
                 }
+                break;
+            case 2:
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                if (updates != null) {
+                    oc7Var.T3(updates, false);
+                    break;
+                }
+                break;
+            case 3:
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
+                if (updates2 != null) {
+                    oc7Var.T3(updates2, false);
+                }
+                gm.c3(new g87(oc7Var, (byte) 29));
+                break;
+            case 4:
+                TLRPC.Updates updates3 = (TLRPC.Updates) obj;
+                if (updates3 != null) {
+                    oc7Var.T3(updates3, false);
+                }
+                gm.c3(new ba7(oc7Var, (byte) 1));
+                break;
+            case 5:
+                TLRPC.EmojiGameInfo emojiGameInfo = (TLRPC.EmojiGameInfo) obj;
+                if (emojiGameInfo != null) {
+                    oc7Var.m5 = emojiGameInfo;
+                }
+                ArrayList arrayList = oc7Var.l5;
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj3 = arrayList.get(i);
+                    i++;
+                    ((qac) obj3).a(Boolean.valueOf(oc7Var.m5 instanceof TLRPC.TL_emojiGameDiceInfo));
+                }
+                oc7Var.l5 = null;
+                break;
             default:
-                qpc qpcVar = (qpc) gk7Var;
-                String str = (String) obj4;
-                c cVar = (c) obj3;
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                String str2 = (String) obj2;
-                if (str2 == null) {
-                    wallettransaction.peer = c.h(qpcVar.f, qpcVar.h, qpcVar.n);
-                    wallettransaction.comment = str;
-                    wallettransaction.comment_encrypted = z;
-                    wallettransaction.date = qpcVar.getConnectionsManager().getCurrentTime();
-                    gl.t1(qpcVar.I);
-                    hmc.I0(qpcVar.getParentActivity(), qpcVar.getCurrentAccount(), wallettransaction, new hpc(qpcVar, cVar, this.c, (byte) 1), new fpc(qpcVar, (byte) 4), qpcVar.m0(), null, qpcVar.getResourceProvider());
-                    gl.e3(new dpc(qpcVar, (byte) 3), 1000L);
-                    break;
-                } else {
-                    qpcVar.e0.setLoading(false);
-                    u21.b0(qpcVar).f0(str2, false);
+                TL_account.WebBrowserSettings webBrowserSettings2 = (TL_account.WebBrowserSettings) obj;
+                if (webBrowserSettings2 instanceof TL_account.TL_webBrowserSettings) {
+                    oc7Var.Y4((TL_account.TL_webBrowserSettings) webBrowserSettings2);
                     break;
                 }
+                break;
         }
-    }
-
-    public /* synthetic */ k87(qpc qpcVar, String str, boolean z, c cVar, long j) {
-        this.d = qpcVar;
-        this.e = str;
-        this.b = z;
-        this.f = cVar;
-        this.c = j;
     }
 }

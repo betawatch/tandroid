@@ -1,24 +1,15 @@
 // default package
 
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicReference;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class rs2 extends ns2 {
+    public float d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class rs2 implements n4a {
-    public final AtomicReference a;
-
-    public rs2(t4a t4aVar) {
-        this.a = new AtomicReference(t4aVar);
-    }
-
-    @Override // n4a
-    public final Iterator iterator() {
-        n4a n4aVar = (n4a) this.a.getAndSet(null);
-        if (n4aVar != null) {
-            return n4aVar.iterator();
-        }
-        sc8.j("This sequence can be consumed only once.");
-        return null;
+    public final ss2 u(bt2 bt2Var) {
+        float f = this.d;
+        r(f >= -3.4028235E38f && f <= Float.MAX_VALUE, Float.valueOf(f));
+        ss2 ss2Var = new ss2(s(), this.a, this.d);
+        q(bt2Var, ss2Var);
+        return ss2Var;
     }
 }

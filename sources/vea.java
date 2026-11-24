@@ -1,42 +1,39 @@
 // default package
 
-import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class vea extends gb2 {
-    public final /* synthetic */ byte Ld = 1;
+public final class vea extends e69 {
+    public final /* synthetic */ pea a;
 
-    public /* synthetic */ vea(Context context, int i) {
-        super(context, i);
+    public vea(pea peaVar) {
+        this.a = peaVar;
     }
 
-    @Override // gb2
-    public final int getParentWidth() {
-        int i;
-        int L;
-        switch (this.Ld) {
-            case 1:
-                if (getMeasuredWidth() != 0) {
-                    i = getMeasuredWidth();
-                    L = gl.L(24.0f);
-                } else {
-                    i = gl.q.x;
-                    L = gl.L(24.0f);
-                }
-                return i - L;
-            default:
-                return super.getParentWidth();
+    @Override // e69
+    public final void d(Rect rect, View view, RecyclerView recyclerView, r69 r69Var) {
+        if (!(view instanceof sha)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        byte b = this.Ld;
-        return false;
-    }
-
-    public /* synthetic */ vea(Context context, int i, boolean z, mv6 mv6Var, wjb wjbVar) {
-        super(context, i, z, mv6Var, wjbVar);
+        sha shaVar = (sha) view;
+        pea peaVar = this.a;
+        peaVar.n.getClass();
+        int R = RecyclerView.R(shaVar);
+        int i = peaVar.r.J;
+        shaVar.b0 = R < i;
+        int i2 = R % i;
+        shaVar.W = i2 == 0;
+        shaVar.a0 = i2 == i - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

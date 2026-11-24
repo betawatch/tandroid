@@ -1,7 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public interface fp9 {
-    void a();
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class fp9 extends ViewOutlineProvider {
+    public final /* synthetic */ pp9 a;
+
+    public fp9(pp9 pp9Var) {
+        this.a = pp9Var;
+    }
+
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), (1.0f - this.a.U) * gm.L(12.0f));
+    }
 }

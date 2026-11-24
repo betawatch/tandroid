@@ -1,42 +1,53 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.ui.ProfileActivity;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class n82 extends wgb {
-    public final /* synthetic */ byte a0 = 0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class n82 implements f42 {
+    public final /* synthetic */ i22 a;
+    public final /* synthetic */ p82 b;
 
-    public n82(ko8 ko8Var, Context context, wjb wjbVar) {
-        super(18, wjbVar, context, false, false);
+    public n82(p82 p82Var, i22 i22Var) {
+        this.b = p82Var;
+        this.a = i22Var;
     }
 
-    @Override // wgb
-    public final int e(int i) {
-        switch (this.a0) {
-            case 1:
-                RectF rectF = ProfileActivity.Z6;
-                break;
+    @Override // f42
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2) {
+        ch9 ch9Var = this.b.r;
+        if (!arrayList.isEmpty()) {
+            ch9Var.X1((String) arrayList.get(0));
+        } else if (!arrayList3.isEmpty()) {
+            k47 k47Var = (k47) arrayList3.get(0);
+            ch9Var.getClass();
+            if (k47Var != null && k47Var.F0() != null) {
+                TLRPC.Document F0 = k47Var.F0();
+                TLRPC.Message message = k47Var.k;
+                ch9Var.Y1(F0, message != null ? message.attachPath : null);
+            }
         }
-        return i;
+        this.a.a(true);
     }
 
-    @Override // wgb, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a0) {
-            case 0:
-                canvas.drawLine(k96.a0 ? 0.0f : gl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(20.0f) : 0), getMeasuredHeight() - 1, bkb.j0);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // f42
+    public final void y() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.b.b.Z1.startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            fc4.g(e, true);
         }
     }
 
-    public /* synthetic */ n82(Context context) {
-        super(context);
+    @Override // f42
+    public final void S() {
+    }
+
+    @Override // f42
+    public final void m(ArrayList arrayList, boolean z, int i, long j) {
     }
 }

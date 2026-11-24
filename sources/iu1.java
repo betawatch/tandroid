@@ -1,20 +1,11 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class iu1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ye7 a;
+public interface iu1 {
+    void E(boolean z, boolean z2);
 
-    public iu1(ye7 ye7Var) {
-        this.a = ye7Var;
-    }
+    void N(String str);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        this.a.q(1.0f);
-    }
+    void Z(int i);
 }

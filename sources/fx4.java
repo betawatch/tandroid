@@ -1,30 +1,22 @@
 // default package
 
-import j$.util.Objects;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class fx4 {
-    public final boolean a;
-    public final boolean b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class fx4 extends j3a {
+    public final /* synthetic */ ux4 u2;
 
-    public fx4(boolean z, boolean z2) {
-        this.a = z;
-        this.b = z2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fx4(ux4 ux4Var, Context context, int i, TL_stars.StarGift starGift, long j, bx4 bx4Var, boolean z, boolean z2) {
+        super(context, i, starGift, null, j, bx4Var, z, z2);
+        this.u2 = ux4Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof fx4)) {
-            return false;
-        }
-        fx4 fx4Var = (fx4) obj;
-        return this.a == fx4Var.a && this.b == fx4Var.b;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b));
+    @Override // j3a
+    public final c41 Z0() {
+        ux4 ux4Var = this.u2;
+        return new c41(ux4Var.c, ux4Var.J0);
     }
 }

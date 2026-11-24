@@ -1,625 +1,371 @@
 // default package
 
 import android.animation.ValueAnimator;
-import android.content.Context;
+import android.app.Activity;
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.util.SparseIntArray;
-import android.view.View;
+import android.graphics.RectF;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.PowerManager;
+import android.view.Choreographer;
+import android.view.TextureView;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
-import org.telegram.messenger.ImageReceiver;
+import java.util.WeakHashMap;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class tw9 extends n39 {
-    public final /* synthetic */ tx9 c;
+public final class tw9 extends Dialog {
+    public TextView E;
+    public final ut3 F;
+    public float G;
+    public float H;
+    public boolean I;
+    public float J;
+    public boolean K;
+    public float L;
+    public ylb M;
+    public k47 N;
+    public rw9 O;
+    public rc2 P;
+    public TextureView Q;
+    public boolean R;
+    public final RectF S;
+    public boolean T;
+    public float U;
+    public float V;
+    public n50 W;
+    public boolean X;
+    public jm1 Y;
+    public of2 Z;
+    public final Activity a;
+    public final nw9 a0;
+    public final ne6 b;
+    public float b0;
+    public final qw9 c;
+    public boolean c0;
+    public jlb d;
+    public he d0;
+    public iq5 e;
+    public ValueAnimator e0;
+    public Bitmap f;
+    public ValueAnimator f0;
+    public BitmapShader h;
+    public Paint n;
+    public Matrix r;
+    public float s;
+    public float w;
+    public ndc x;
+    public hg5 y;
 
-    public tw9(tx9 tx9Var) {
-        this.c = tx9Var;
+    public tw9(Activity activity) {
+        super(activity, R.style.TransparentDialog);
+        this.e = iq5.e;
+        this.S = new RectF();
+        this.U = 0.0f;
+        this.V = 0.0f;
+        byte b = 0;
+        this.a0 = new nw9(this, b);
+        this.b0 = 0.0f;
+        this.c0 = false;
+        this.a = activity;
+        gm.S(getWindow());
+        ne6 ne6Var = new ne6((byte) 18, activity, this);
+        this.b = ne6Var;
+        ne6Var.setOnClickListener(new ow9(this, b));
+        qw9 qw9Var = new qw9(this, activity);
+        this.c = qw9Var;
+        qw9Var.setClipToPadding(false);
+        ne6Var.addView(qw9Var, qoe.e(-1, -1, nm7.D1));
+        pw9 pw9Var = new pw9(this, b);
+        WeakHashMap weakHashMap = kfc.a;
+        cfc.i(ne6Var, pw9Var);
+        if (gda.p0) {
+            this.F = new ut3();
+        }
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i = s49Var.f;
-        return i == 2 || i == 1 || i == 3 || i == 8;
+    public final void a(boolean z, nw9 nw9Var) {
+        ValueAnimator valueAnimator = this.e0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator valueAnimator2 = this.f0;
+        if (valueAnimator2 != null) {
+            valueAnimator2.cancel();
+        }
+        d();
+        byte b = 0;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, z ? 1.0f : 0.0f);
+        this.e0 = ofFloat;
+        ofFloat.addUpdateListener(new d30((byte) 8, this, z));
+        this.e0.addListener(new qx((Object) this, z, (Object) nw9Var, (byte) 12));
+        long j = (z || this.Z != null) ? 520L : 330L;
+        ValueAnimator valueAnimator3 = this.e0;
+        d53 d53Var = d53.h;
+        valueAnimator3.setInterpolator(d53Var);
+        this.e0.setDuration(j);
+        this.e0.start();
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.w, z ? 1.0f : 0.0f);
+        this.f0 = ofFloat2;
+        ofFloat2.addUpdateListener(new p29(this, (byte) 17));
+        this.f0.addListener(new sw9(b, this, z));
+        this.f0.setDuration((long) (j * 1.5f));
+        this.f0.setInterpolator(d53Var);
+        this.f0.start();
     }
 
-    @Override // w39
-    public final int b() {
-        return this.c.v0;
+    public final /* synthetic */ void b() {
+        super.dismiss();
     }
 
-    @Override // w39
-    public final long c(int i) {
-        return Math.abs(((Long) this.c.w0.get(i)).longValue());
+    public final /* synthetic */ void c() {
+        super.dismiss();
     }
 
-    @Override // w39
-    public final int d(int i) {
-        tx9 tx9Var = this.c;
-        if (i == tx9Var.a) {
-            return 7;
-        }
-        if (i >= tx9Var.b && i < tx9Var.c) {
-            return 1;
-        }
-        if (i >= tx9Var.d && i < tx9Var.e) {
-            return 1;
-        }
-        if (i >= tx9Var.F && i < tx9Var.G) {
-            return 1;
-        }
-        if (i >= tx9Var.r && i < tx9Var.s) {
-            return 3;
-        }
-        if (tx9Var.z0.indexOfKey(i) >= 0) {
-            return 4;
-        }
-        if (tx9Var.A0.indexOfKey(i) >= 0) {
-            return 5;
-        }
-        if (i == tx9Var.w) {
-            return 6;
-        }
-        if (tx9Var.x0.indexOfKey(i) >= 0 || i == tx9Var.f || i == tx9Var.E || i == tx9Var.n || i == tx9Var.h || i == tx9Var.y) {
-            return 0;
-        }
-        return i == tx9Var.x ? 8 : 3;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x0799  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x07dd  */
-    /* JADX WARN: Type inference failed for: r11v1 */
-    /* JADX WARN: Type inference failed for: r11v2, types: [android.animation.ValueAnimator, java.lang.String] */
-    /* JADX WARN: Type inference failed for: r11v3 */
-    /* JADX WARN: Type inference failed for: r3v11 */
-    /* JADX WARN: Type inference failed for: r3v12, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r3v26 */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        boolean z;
-        TLRPC.Document document;
-        int i2;
-        boolean z2;
-        gm gmVar;
-        int cacheType;
-        int cacheType2;
-        h04 h04Var;
-        ?? r3;
-        int i3;
-        ?? r11;
-        boolean z3;
-        String a0;
-        h19 h19Var;
-        int cacheType3;
-        int i4;
-        String str;
-        tx9 tx9Var = this.c;
-        ArrayList arrayList = tx9Var.H0;
-        ArrayList arrayList2 = tx9Var.L0;
-        ArrayList arrayList3 = tx9Var.G0;
-        SparseIntArray sparseIntArray = tx9Var.x0;
-        boolean z4 = tx9Var.O0;
-        ArrayList arrayList4 = tx9Var.E0;
-        int i5 = tx9Var.a0;
-        ArrayList arrayList5 = tx9Var.N0;
-        rw9 rw9Var = tx9Var.i0;
-        HashSet hashSet = tx9Var.L;
-        int i6 = tx9Var.W;
-        ArrayList arrayList6 = tx9Var.F0;
-        int i7 = s49Var.f;
-        View view = s49Var.a;
-        if (i7 == 8) {
-            dx9 dx9Var = (dx9) view;
-            dx9Var.c = i;
-            dx9Var.M = hashSet.contains(0L);
+    public final void d() {
+        if (this.I) {
             return;
         }
-        ValueAnimator valueAnimator = tx9Var.W1;
-        if (valueAnimator == null || !valueAnimator.isRunning()) {
-            view.setScaleX(1.0f);
-            view.setScaleY(1.0f);
-        }
-        if (i7 == 6) {
-            TextView textView = (TextView) view;
-            if (tx9Var.Q0 != null) {
-                long intValue = r0.intValue() * 1000;
-                try {
-                    Calendar calendar = Calendar.getInstance();
-                    int i8 = calendar.get(6);
-                    int i9 = calendar.get(1);
-                    calendar.setTimeInMillis(intValue);
-                    str = (calendar.get(6) == i8 && i9 == calendar.get(1)) ? k96.a0(null, null, 2131743870, k96.D0().o0().format(new Date(intValue))) : Math.abs(System.currentTimeMillis() - intValue) < 31536000000L ? k96.D0().v0().format(new Date(intValue)) : k96.D0().h0().format(new Date(intValue));
-                    i4 = 1;
-                } catch (Exception e) {
-                    i4 = 1;
-                    fa4.g(e, true);
-                    str = "LOC_ERR";
-                }
-                Object[] objArr = new Object[i4];
-                objArr[0] = str;
-                textView.setText(k96.a0("EmojiStatusExpireHint", null, 2131751153, objArr));
-                return;
-            }
-            return;
-        }
-        if (i7 == 0) {
-            zw9 zw9Var = (zw9) view;
-            if (i == tx9Var.y) {
-                zw9Var.a(k96.M0(2131745456, null), false);
-                zw9Var.c.setVisibility(8);
-                return;
-            }
-            if (i == tx9Var.f) {
-                zw9Var.a(k96.M0(2131746168, null), false);
-                zw9Var.c.setVisibility(8);
-                return;
-            }
-            if (i == tx9Var.E) {
-                zw9Var.a(k96.M0(2131744639, null), false);
-                zw9Var.c.setVisibility(8);
-                return;
-            }
-            zw9Var.c.setVisibility(8);
-            if (i == tx9Var.h) {
-                zw9Var.a(k96.M0(2131746908, null), false);
-                return;
-            }
-            if (i == tx9Var.n) {
-                zw9Var.a(k96.M0(2131751163, null), false);
-                return;
-            }
-            int i10 = sparseIntArray.get(i);
-            if (i10 < 0) {
-                zw9Var.a(null, false);
-                return;
-            }
-            h04 h04Var2 = (h04) arrayList5.get(i10);
-            if (h04Var2.d != null) {
-                hq6.d0(i6).n0(h04Var2.d, false);
-                h04Var2.d = null;
-            }
-            zw9Var.a(h04Var2.b.title, (i5 == 5 || i5 == 7 || i5 == 6 || h04Var2.e || y6c.h(i6).p()) ? false : true);
-            return;
-        }
-        if (i7 == 1) {
-            dx9 dx9Var2 = (dx9) view;
-            dx9Var2.c = i;
-            ImageReceiver imageReceiver = dx9Var2.n;
-            int i11 = tx9Var.b;
-            if (i < i11 || i >= tx9Var.c) {
-                int i12 = tx9Var.F;
-                h19Var = (i < i12 || i >= tx9Var.G) ? (h19) tx9Var.I0.get(i - tx9Var.d) : (h19) tx9Var.K0.get(i - i12);
-            } else {
-                h19Var = (h19) tx9Var.J0.get(i - i11);
-            }
-            if (i5 == 13) {
-                dx9Var2.b = false;
-                dx9Var2.E = true;
-                dx9Var2.y = h19Var;
-                dx9Var2.setDrawable(vu3.g(h19Var.f));
-                dx9Var2.d(tx9Var.K.contains(h19Var), false);
-                return;
-            }
-            dx9Var2.a(rw9Var);
-            dx9Var2.E = true;
-            dx9Var2.y = h19Var;
-            dx9Var2.d(tx9Var.K.contains(h19Var), false);
-            dx9Var2.b = false;
-            if (h19Var.b || h19Var.f == null) {
-                dx9Var2.s = false;
-                dx9Var2.e = new gm(h19Var.g, (Paint.FontMetricsInt) null);
-                dx9Var2.d = null;
-                dx9Var2.h.f();
-                imageReceiver.f();
-                Drawable drawable = (Drawable) rw9Var.l3.get(dx9Var2.e.getDocumentId());
-                if (drawable == null) {
-                    cacheType3 = tx9Var.getCacheType();
-                    if (cacheType3 == 3 && h19Var.e) {
-                        cacheType3 = 27;
-                    }
-                    drawable = vl.m(i6, dx9Var2.e.getDocumentId(), null, cacheType3);
-                    rw9Var.l3.put(dx9Var2.e.getDocumentId(), drawable);
-                }
-                dx9Var2.setDrawable(drawable);
-            } else {
-                dx9Var2.s = true;
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hq6.d0(i6).r.get(h19Var.f);
-                if (tL_availableReaction != null) {
-                    kcb f = uo3.f(tL_availableReaction.activate_animation, bkb.l6, 0.2f, null);
-                    boolean e2 = e66.e(8200);
-                    ImageReceiver imageReceiver2 = dx9Var2.h;
-                    TLRPC.Document document2 = tL_availableReaction.select_animation;
-                    if (e2) {
-                        h19 h19Var2 = h19Var;
-                        imageReceiver2.Y(gl5.b(document2), "60_60_pcache", gl5.b(tL_availableReaction.select_animation), "30_30_firstframe", null, null, f, 0L, "tgs", h19Var2, 0);
-                        h19Var = h19Var2;
+        ne6 ne6Var = this.b;
+        if (ne6Var.getWidth() > 0) {
+            rc2 rc2Var = this.P;
+            if (rc2Var != null) {
+                int[] iArr = new int[2];
+                rc2Var.getLocationOnScreen(iArr);
+                float f = iArr[0] - this.e.a;
+                int width = ne6Var.getWidth();
+                iq5 iq5Var = this.e;
+                this.G = f - ((((width - iq5Var.a) - iq5Var.c) - this.P.getWidth()) / 2.0f);
+                float f2 = iArr[1] - this.e.b;
+                int height = ne6Var.getHeight();
+                iq5 iq5Var2 = this.e;
+                this.H = td4.y(((height - iq5Var2.b) - iq5Var2.d) - this.P.getHeight(), this.L, 2.0f, f2);
+                if (!this.K) {
+                    this.K = true;
+                    float i = (Utilities.i((this.P.getHeight() / 2.0f) + iArr[1], ne6Var.getHeight() * 0.7f, ne6Var.getHeight() * 0.3f) - (this.P.getHeight() / 2.0f)) - ((ne6Var.getHeight() - this.P.getHeight()) / 2.0f);
+                    this.J = i;
+                    if (this.T) {
+                        this.J = 0.0f;
                     } else {
-                        imageReceiver2.Z(gl5.b(document2), "60_60_firstframe", null, null, f, 0L, "tgs", h19Var, 0);
+                        this.J = gm.R1(0.0f, i, 0.78f);
                     }
-                    hq6.d0(i6);
-                    hq6.n1(imageReceiver, gl5.b(tL_availableReaction.around_animation), d19.a());
-                } else {
-                    dx9Var2.h.f();
-                    imageReceiver.f();
                 }
-                dx9Var2.e = null;
-                dx9Var2.d = null;
-                dx9Var2.setDrawable(null);
-                cx9 cx9Var = dx9Var2.K;
-                if (cx9Var != null) {
-                    cx9Var.setVisibility(8);
-                    dx9Var2.K.setImageReceiver(null);
-                }
-            }
-            if (!y6c.h(i6).p() && i5 == 14 && h19Var.b && h19Var.d) {
-                dx9Var2.b();
-                dx9Var2.K.setVisibility(0);
-                dx9Var2.setEmojicon(null);
-                return;
-            }
-            if (h19Var.e) {
-                dx9Var2.setEmojicon(h19Var.f);
+                e();
             } else {
-                dx9Var2.setEmojicon(null);
+                this.H = 0.0f;
+                this.G = 0.0f;
             }
-            cx9 cx9Var2 = dx9Var2.K;
-            if (cx9Var2 != null) {
-                cx9Var2.setVisibility(4);
-                return;
-            }
+            this.I = true;
+        }
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        rw9 rw9Var;
+        if (this.c0) {
             return;
         }
-        if (i7 == 4) {
-            yw9 yw9Var = (yw9) view;
-            int i13 = tx9Var.z0.get(i);
-            h04 h04Var3 = (i13 < 0 || i13 >= arrayList5.size()) ? null : (h04) arrayList5.get(i13);
-            if (i13 == -1) {
-                tx9Var.H = yw9Var;
-                yw9Var.a.setText("+" + ((arrayList4.size() - 40) + (z4 ? 1 : 0) + 1));
-                return;
+        he heVar = this.d0;
+        if (heVar != null) {
+            heVar.dismiss();
+            this.d0 = null;
+        }
+        byte b = 1;
+        this.c0 = true;
+        hg5 hg5Var = this.y;
+        if (hg5Var != null) {
+            hg5Var.f(true);
+        }
+        ndc ndcVar = this.x;
+        if (ndcVar != null) {
+            ndcVar.f0();
+            this.x.l0();
+            this.x = null;
+        }
+        if (!this.T && (rw9Var = this.O) != null && rw9Var.getSeekBarWaveform() != null) {
+            gx9 seekBarWaveform = this.O.getSeekBarWaveform();
+            seekBarWaveform.L = this.s;
+            rc2 rc2Var = seekBarWaveform.n;
+            if (rc2Var != null) {
+                rc2Var.invalidate();
             }
-            yw9 yw9Var2 = tx9Var.H;
-            if (h04Var3 == null) {
-                if (yw9Var2 == yw9Var) {
-                    tx9Var.H = null;
+        }
+        this.I = false;
+        d();
+        a(false, new nw9(this, (byte) 3));
+        ne6 ne6Var = this.b;
+        ne6Var.invalidate();
+        of2 of2Var = this.Z;
+        if (of2Var != null) {
+            rc2 rc2Var2 = this.P;
+            if (rc2Var2 != null) {
+                rc2Var2.Ab = true;
+            }
+            gm.c3(of2Var);
+            this.Z = null;
+            jlb jlbVar = new jlb(this.a, null);
+            this.d = jlbVar;
+            ne6Var.addView(jlbVar, qoe.e(-1, -1, nm7.D1));
+            jlb jlbVar2 = this.d;
+            rw9 rw9Var2 = this.O;
+            nw9 nw9Var = new nw9(this, b);
+            hlb hlbVar = jlbVar2.a;
+            if (hlbVar != null) {
+                hlbVar.b(1.5f, rw9Var2, nw9Var);
+                Choreographer.getInstance().postFrameCallback(jlbVar2.b);
+            } else {
+                ilb ilbVar = new ilb(rw9Var2, nw9Var);
+                ilbVar.g = 1.5f;
+                jlbVar2.c.add(ilbVar);
+            }
+            WindowManager.LayoutParams attributes = getWindow().getAttributes();
+            attributes.flags |= 16;
+            getWindow().setAttributes(attributes);
+        }
+        ut3 ut3Var = this.F;
+        if (ut3Var != null) {
+            PowerManager.WakeLock wakeLock = ut3Var.h;
+            SensorManager sensorManager = ut3Var.a;
+            if (ut3Var.n) {
+                Sensor sensor = ut3Var.f;
+                if (sensor != null) {
+                    sensorManager.unregisterListener(ut3Var, sensor);
+                }
+                Sensor sensor2 = ut3Var.e;
+                if (sensor2 != null) {
+                    sensorManager.unregisterListener(ut3Var, sensor2);
+                }
+                Sensor sensor3 = ut3Var.d;
+                if (sensor3 != null) {
+                    sensorManager.unregisterListener(ut3Var, sensor3);
+                }
+                sensorManager.unregisterListener(ut3Var, ut3Var.c);
+                if (wakeLock != null && wakeLock.isHeld()) {
+                    wakeLock.release();
+                }
+                ut3Var.n = false;
+            }
+        }
+    }
+
+    public final void e() {
+        if (this.d == null) {
+            this.O.setTranslationX(gm.R1(this.G, 0.0f, this.s));
+            this.O.setTranslationY(gm.R1(this.H, this.J, this.s));
+            hg5 hg5Var = this.y;
+            if (hg5Var != null) {
+                hg5Var.setTranslationX(gm.R1(this.G, 0.0f, this.s));
+                this.y.setTranslationY(gm.R1(this.H, this.J, this.s));
+            }
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        k47 k47Var;
+        he heVar = this.d0;
+        if (heVar != null) {
+            heVar.dismiss();
+            this.d0 = null;
+            return;
+        }
+        if (this.c0 || (k47Var = this.N) == null || k47Var.O3()) {
+            super.onBackPressed();
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.M, getContext());
+        String M0 = jb6.M0(this.T ? 2131743279 : 2131743201, null);
+        he heVar2 = alertDialog$Builder.a;
+        heVar2.S = M0;
+        heVar2.U = jb6.M0(this.T ? 2131743280 : 2131743202, null);
+        alertDialog$Builder.j(jb6.M0(2131751708, null), new pw9(this, (byte) 1));
+        alertDialog$Builder.g(jb6.M0(2131751535, null), new pw9(this, (byte) 2));
+        this.d0 = heVar2;
+        heVar2.show();
+        TextView textView = (TextView) this.d0.c(-2);
+        if (textView != null) {
+            anb.X(textView, cmb.p7, null);
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
+        ne6 ne6Var = this.b;
+        setContentView(ne6Var, layoutParams);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = nm7.D1;
+        attributes.dimAmount = 0.0f;
+        int i = attributes.flags & (-3);
+        attributes.softInputMode = 48;
+        attributes.flags = (-2013069056) | i;
+        boolean z = e21.a;
+        attributes.flags = i | (-2013060864);
+        gm.f2();
+        attributes.flags |= 1152;
+        window.setAttributes(attributes);
+        ne6Var.setSystemUiVisibility(1284);
+        gm.j3(ne6Var, !cmb.I.o());
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        if (gm.K1(getContext())) {
+            super.show();
+            rc2 rc2Var = this.P;
+            if (rc2Var != null) {
+                rc2Var.setVisibility(4);
+            }
+            gm.j2(new ts9(this, rc2Var), 14.0f);
+            this.X = true;
+            a(true, null);
+            jm1 jm1Var = this.Y;
+            if (jm1Var != null) {
+                gm.c3(jm1Var);
+                this.Y = null;
+            }
+            ut3 ut3Var = this.F;
+            if (ut3Var != null) {
+                PowerManager.WakeLock wakeLock = ut3Var.h;
+                SensorManager sensorManager = ut3Var.a;
+                if (ut3Var.n) {
                     return;
                 }
-                return;
-            } else {
-                if (yw9Var2 == yw9Var) {
-                    tx9Var.H = null;
+                Sensor sensor = ut3Var.f;
+                if (sensor != null) {
+                    sensorManager.registerListener(ut3Var, sensor, 30000);
                 }
-                TextView textView2 = yw9Var.a;
-                StringBuilder sb = new StringBuilder("+");
-                sb.append(h04Var3.c.size() - 23);
-                textView2.setText(sb.toString());
-                return;
+                Sensor sensor2 = ut3Var.e;
+                if (sensor2 != null) {
+                    sensorManager.registerListener(ut3Var, sensor2, 30000);
+                }
+                Sensor sensor3 = ut3Var.d;
+                if (sensor3 != null) {
+                    sensorManager.registerListener(ut3Var, sensor3, 30000);
+                }
+                sensorManager.registerListener(ut3Var, ut3Var.c, 3);
+                if (wakeLock != null && Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
+                    wakeLock.acquire();
+                }
+                ut3Var.n = true;
             }
         }
-        if (i7 == 5) {
-            xw9 xw9Var = (xw9) view;
-            int i14 = tx9Var.A0.get(i);
-            if (i14 < 0 || i14 >= arrayList5.size() || (h04Var = (h04) arrayList5.get(i14)) == null) {
-                return;
-            }
-            String str2 = h04Var.b.title;
-            boolean z5 = (h04Var.e || y6c.h(i6).p()) ? false : true;
-            boolean z6 = h04Var.f;
-            wg wgVar = new wg((Object) this, (Object) h04Var, i14, (byte) 15);
-            ah8 ah8Var = xw9Var.c;
-            FrameLayout frameLayout = xw9Var.a;
-            xw9Var.d = str2;
-            if (z5) {
-                i3 = 8;
-                frameLayout.setVisibility(8);
-                r3 = 0;
-                ah8Var.setVisibility(0);
-                r11 = 0;
-                ah8Var.b(k96.a0("UnlockPremiumEmojiPack", null, 2131743623, str2), wgVar, false);
-            } else {
-                r3 = 0;
-                i3 = 8;
-                r11 = 0;
-                ah8Var.setVisibility(8);
-                frameLayout.setVisibility(0);
-                frameLayout.setOnClickListener(wgVar);
-            }
-            if (z6) {
-                a0 = k96.M0(2131754359, r11);
-                z3 = true;
-            } else {
-                z3 = true;
-                Object[] objArr2 = new Object[1];
-                objArr2[r3] = xw9Var.d;
-                a0 = k96.a0("AddStickersCount", r11, 2131754385, objArr2);
-            }
-            xw9Var.b.c(a0, r3, z3);
-            frameLayout.setContentDescription(a0);
-            ValueAnimator valueAnimator2 = xw9Var.e;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-                xw9Var.e = r11;
-            }
-            frameLayout.setEnabled(!z6);
-            frameLayout.setAlpha(z6 ? 0.6f : 1.0f);
-            ValueAnimator valueAnimator3 = xw9Var.n;
-            if (valueAnimator3 != null) {
-                valueAnimator3.cancel();
-                xw9Var.n = null;
-            }
-            Boolean bool = xw9Var.h;
-            if (bool == null || bool.booleanValue() != z5) {
-                xw9Var.h = Boolean.valueOf(z5);
-                float f2 = z5 ? 1.0f : 0.0f;
-                xw9Var.f = f2;
-                frameLayout.setAlpha(1.0f - f2);
-                ah8Var.setAlpha(xw9Var.f);
-                ah8Var.setScaleX(xw9Var.f);
-                ah8Var.setScaleY(xw9Var.f);
-                ah8Var.setVisibility(xw9Var.h.booleanValue() ? 0 : i3);
-                return;
-            }
-            return;
-        }
-        if (i7 == 7 || i7 == 9) {
-            return;
-        }
-        dx9 dx9Var3 = (dx9) view;
-        dx9Var3.w = null;
-        dx9Var3.x = null;
-        dx9Var3.a = false;
-        dx9Var3.c = i;
-        dx9Var3.setPadding(gl.L(1.0f), gl.L(1.0f), gl.L(1.0f), gl.L(1.0f));
-        int size = ((i5 == 4 && tx9Var.R) || i5 == 6) ? arrayList3.size() : (i5 == 4 || i5 == 3) ? arrayList4.size() : (arrayList4.size() <= 40 || tx9Var.D0) ? arrayList4.size() + (z4 ? 1 : 0) : 40;
-        if (z4) {
-            if (i == (tx9Var.a != -1 ? 1 : 0) + (tx9Var.w != -1 ? 1 : 0)) {
-                z2 = hashSet.contains(null);
-                dx9Var3.a = true;
-                dx9Var3.setPadding(gl.L(5.0f), gl.L(5.0f), gl.L(5.0f), gl.L(5.0f));
-                dx9Var3.e = null;
-                dx9Var3.d = null;
-                dx9Var3.R = false;
-                ImageReceiver imageReceiver3 = dx9Var3.h;
-                if (imageReceiver3 != null) {
-                    imageReceiver3.f();
-                }
-                gmVar = dx9Var3.e;
-                if (gmVar == null) {
-                    vl vlVar = (vl) rw9Var.l3.get(gmVar.getDocumentId());
-                    if (vlVar == null) {
-                        if (dx9Var3.e.document != null) {
-                            cacheType2 = tx9Var.getCacheType();
-                            vlVar = vl.l(i6, cacheType2, dx9Var3.e.document);
-                        } else {
-                            cacheType = tx9Var.getCacheType();
-                            vlVar = vl.m(i6, dx9Var3.e.getDocumentId(), null, cacheType);
-                        }
-                        rw9Var.l3.put(dx9Var3.e.getDocumentId(), vlVar);
-                    }
-                    dx9Var3.setDrawable(vlVar);
-                } else {
-                    dx9Var3.setDrawable(null);
-                }
-                dx9Var3.d(z2, false);
-            }
-        }
-        if (i5 == 13) {
-            if ((i - (tx9Var.a != -1 ? 1 : 0)) - (tx9Var.w != -1 ? 1 : 0) < arrayList.size()) {
-                String str3 = (String) arrayList.get(((i - (tx9Var.a != -1 ? 1 : 0)) - (tx9Var.w != -1 ? 1 : 0)) - (z4 ? 1 : 0));
-                dx9Var3.b = false;
-                dx9Var3.E = false;
-                dx9Var3.y = h19.b(str3);
-                dx9Var3.setDrawable(vu3.g(str3));
-                dx9Var3.d(tx9Var.K.contains(dx9Var3.y), false);
-                return;
-            }
-        }
-        int i15 = tx9Var.a;
-        int i16 = i - (i15 != -1 ? 1 : 0);
-        int i17 = tx9Var.w;
-        if (i16 - (i17 != -1 ? 1 : 0) < size) {
-            int i18 = ((i - (i15 != -1 ? 1 : 0)) - (i17 != -1 ? 1 : 0)) - (z4 ? 1 : 0);
-            if (i5 == 4 && tx9Var.R) {
-                dx9Var3.c((TLRPC.Document) arrayList3.get(i18), rw9Var);
-            } else {
-                if (i5 == 6) {
-                    TLRPC.Document document3 = (TLRPC.Document) arrayList3.get(i18);
-                    dx9Var3.c(document3, rw9Var);
-                    if (document3 != null && hashSet.contains(Long.valueOf(document3.id))) {
-                        z = true;
-                    }
-                } else {
-                    gm gmVar2 = (gm) arrayList4.get(i18);
-                    dx9Var3.e = gmVar2;
-                    dx9Var3.d = gmVar2 == null ? null : gmVar2.document;
-                    z = gmVar2 != null && hashSet.contains(Long.valueOf(gmVar2.getDocumentId()));
-                    dx9Var3.R = false;
-                    ImageReceiver imageReceiver4 = dx9Var3.h;
-                    if (imageReceiver4 != null) {
-                        imageReceiver4.f();
-                    }
-                }
-                z2 = z;
-            }
-            z = false;
-            z2 = z;
-        } else {
-            if (arrayList6.isEmpty() || (i2 = i - tx9Var.r) < 0 || i2 >= arrayList6.size()) {
-                if (!arrayList2.isEmpty()) {
-                    if (tb4.f(i - (tx9Var.a != -1 ? 1 : 0), tx9Var.w != -1 ? 1 : 0, size, 1) - (arrayList6.isEmpty() ? 0 : arrayList6.size() + 1) >= 0) {
-                        if (tb4.f(i - (tx9Var.a != -1 ? 1 : 0), tx9Var.w != -1 ? 1 : 0, size, 1) - (arrayList6.isEmpty() ? 0 : arrayList6.size() + 1) < arrayList2.size()) {
-                            gm gmVar3 = (gm) arrayList2.get(tb4.f(i - (tx9Var.a != -1 ? 1 : 0), tx9Var.w != -1 ? 1 : 0, size, 1) - (arrayList6.isEmpty() ? 0 : arrayList6.size() + 1));
-                            dx9Var3.e = gmVar3;
-                            dx9Var3.d = gmVar3 == null ? null : gmVar3.document;
-                            z = gmVar3 != null && hashSet.contains(Long.valueOf(gmVar3.getDocumentId()));
-                            dx9Var3.R = false;
-                            ImageReceiver imageReceiver5 = dx9Var3.h;
-                            if (imageReceiver5 != null) {
-                                imageReceiver5.f();
-                            }
-                        }
-                    }
-                }
-                for (int i19 = 0; i19 < sparseIntArray.size(); i19++) {
-                    int keyAt = sparseIntArray.keyAt(i19);
-                    int valueAt = sparseIntArray.valueAt(i19);
-                    h04 h04Var4 = valueAt >= 0 ? (h04) arrayList5.get(valueAt) : null;
-                    if (h04Var4 != null) {
-                        boolean z7 = h04Var4.h;
-                        ArrayList arrayList7 = h04Var4.c;
-                        int size2 = z7 ? arrayList7.size() : Math.min(arrayList7.size(), 24);
-                        int i20 = (i - keyAt) - 1;
-                        if (i20 >= 0 && i20 < size2 && (document = (TLRPC.Document) h04Var4.c.get(i20)) != null) {
-                            if (tx9Var.R) {
-                                dx9Var3.c(document, tx9Var.j0);
-                            } else {
-                                dx9Var3.R = false;
-                                ImageReceiver imageReceiver6 = dx9Var3.h;
-                                if (imageReceiver6 != null) {
-                                    imageReceiver6.f();
-                                }
-                                dx9Var3.e = new gm(document, (Paint.FontMetricsInt) null);
-                            }
-                            dx9Var3.d = document;
-                        }
-                    }
-                }
-                gm gmVar4 = dx9Var3.e;
-                if (gmVar4 != null && hashSet.contains(Long.valueOf(gmVar4.getDocumentId()))) {
-                    z = true;
-                }
-                z = false;
-            } else {
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) arrayList6.get(i - tx9Var.r);
-                TLRPC.Document document4 = tL_starGiftUnique.getDocument();
-                dx9Var3.e = new gm(document4, (Paint.FontMetricsInt) null);
-                dx9Var3.d = document4;
-                dx9Var3.w = tL_starGiftUnique;
-                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) gta.i(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-                if (stargiftattributebackdrop != null) {
-                    dx9Var3.x = Integer.valueOf(stargiftattributebackdrop.pattern_color | (-1879048192));
-                }
-                z = dx9Var3.e != null && hashSet.contains(Long.valueOf(tL_starGiftUnique.id));
-                dx9Var3.R = false;
-                ImageReceiver imageReceiver7 = dx9Var3.h;
-                if (imageReceiver7 != null) {
-                    imageReceiver7.f();
-                }
-            }
-            z2 = z;
-        }
-        gmVar = dx9Var3.e;
-        if (gmVar == null) {
-        }
-        dx9Var3.d(z2, false);
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View view;
-        tx9 tx9Var = this.c;
-        int i2 = tx9Var.a0;
-        wjb wjbVar = tx9Var.a1;
-        if (i == 0) {
-            view = new zw9(tx9Var, tx9Var.getContext(), i2 == 6);
-        } else if (i == 2) {
-            view = new ImageView(tx9Var.getContext());
-        } else if (i == 3 || i == 1 || i == 8) {
-            dx9 dx9Var = new dx9(tx9Var, tx9Var.getContext());
-            if (i == 8) {
-                dx9Var.R = true;
-                ImageReceiver imageReceiver = new ImageReceiver(dx9Var);
-                dx9Var.h = imageReceiver;
-                dx9Var.r = imageReceiver;
-                imageReceiver.g0(tx9Var.O);
-                tx9Var.P = dx9Var;
-                dx9Var.setPadding(gl.L(8.0f), gl.L(8.0f), gl.L(8.0f), gl.L(8.0f));
-            }
-            view = dx9Var;
-        } else if (i == 4) {
-            Context context = tx9Var.getContext();
-            yw9 yw9Var = new yw9(context);
-            TextView textView = new TextView(context);
-            yw9Var.a = textView;
-            textView.setTextSize(1, 12.0f);
-            textView.setTextColor(-1);
-            int v = tx9Var.h1 ? bkb.v(tx9Var.g1, bkb.p1(0.4f, bkb.w0(null, bkb.c6, false))) : bm2.o(bkb.w0(null, bkb.Kf, false), 99);
-            if (tx9Var.h1) {
-                textView.setBackground(bkb.b0(gl.L(11.0f), v));
-            } else {
-                ShapeDrawable b0 = bkb.b0(gl.L(11.0f), v);
-                vkb g = zkb.g(bkb.Kf, 99);
-                textView.setBackground(b0);
-                zkb.j(textView, b0, g, null, null);
-            }
-            textView.setTypeface(gl.o());
-            textView.setPadding(gl.L(4.0f), gl.L(1.66f), gl.L(4.0f), gl.L(2.0f));
-            yw9Var.addView(textView, nme.e(-2, -2, 17));
-            view = yw9Var;
-        } else if (i == 5) {
-            xw9 xw9Var = new xw9(tx9Var.getContext());
-            ri riVar = new ri(xw9Var.getContext(), false, false, false, (byte) 3);
-            xw9Var.b = riVar;
-            riVar.b(0.3f, 250L, s33.h);
-            riVar.setTextSize(gl.L(14.0f));
-            riVar.setTypeface(gl.o());
-            zkb.U(riVar, bkb.Ii, wjbVar);
-            riVar.setGravity(17);
-            FrameLayout frameLayout = new FrameLayout(xw9Var.getContext());
-            xw9Var.a = frameLayout;
-            int i3 = bkb.Ei;
-            ff0 e = sjb.e(bkb.v0(i3, wjbVar), 8.0f);
-            vkb M = zkb.M(i3);
-            vkb e2 = zkb.e(i3);
-            frameLayout.setBackground(e);
-            zkb.j(frameLayout, e, M, e2, wjbVar);
-            frameLayout.addView(riVar, nme.e(-1, -2, 17));
-            xw9Var.addView(frameLayout, nme.c(-1.0f, -1));
-            ah8 ah8Var = new ah8(wjbVar, xw9Var.getContext(), false);
-            xw9Var.c = ah8Var;
-            ah8Var.setIcon(R.raw.unlock_icon);
-            xw9Var.addView(ah8Var, nme.c(-1.0f, -1));
-            view = xw9Var;
-        } else if (i == 6) {
-            px8 px8Var = new px8(tx9Var.getContext(), (byte) 1);
-            px8Var.setTextSize(1, 13.0f);
-            if (i2 == 3) {
-                px8Var.setText(k96.M0(2131745456, null));
-            } else if (i2 == 0 || i2 == 12 || i2 == 9 || i2 == 10) {
-                px8Var.setText(k96.M0(2131751164, null));
-            } else {
-                px8Var.setText(k96.M0(2131746187, null));
-            }
-            px8Var.setGravity(17);
-            zkb.X(px8Var, bkb.x6, wjbVar);
-            view = px8Var;
-        } else if (i == 7) {
-            View wh4Var = new wh4(tx9Var.getContext(), 52, (byte) 0);
-            wh4Var.setTag("searchbox");
-            view = wh4Var;
-        } else {
-            view = new dx9(tx9Var, tx9Var.getContext());
-        }
-        if (tx9Var.g()) {
-            view.setScaleX(0.0f);
-            view.setScaleY(0.0f);
-        }
-        return new y29(view);
     }
 }

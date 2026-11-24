@@ -1,20 +1,42 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.graphics.drawable.GradientDrawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ue0 extends b4 {
-    public static final Parcelable.Creator<ue0> CREATOR = new rhe((byte) 15);
-    public String a;
-    public String b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public abstract /* synthetic */ class ue0 {
+    public static final /* synthetic */ int[] a;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
-        jte.s(parcel, r);
+    static {
+        int[] iArr = new int[GradientDrawable.Orientation.values().length];
+        a = iArr;
+        try {
+            iArr[GradientDrawable.Orientation.TOP_BOTTOM.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            a[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            a[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
     }
 }

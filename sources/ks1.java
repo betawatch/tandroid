@@ -1,21 +1,23 @@
 // default package
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ks1 extends je5 {
-    public final /* synthetic */ mu1 X0;
+public final class ks1 implements Runnable {
+    public final /* synthetic */ yv1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ks1(mu1 mu1Var, Activity activity) {
-        super(activity, 3);
-        this.X0 = mu1Var;
+    public ks1(yv1 yv1Var) {
+        this.a = yv1Var;
     }
 
-    @Override // je5, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        setTranslationY(((-getTop()) - gl.L(120.0f)) + this.X0.R1);
+    @Override // java.lang.Runnable
+    public final void run() {
+        yv1 yv1Var = this.a;
+        k47 k47Var = yv1Var.v5;
+        if (k47Var == null || yv1Var.l9 == null) {
+            return;
+        }
+        int max = Math.max(0, k47Var.k.ttl_period - (yv1Var.getConnectionsManager().getCurrentTime() - yv1Var.v5.k.date));
+        yv1Var.l9.setSubtext(jb6.a0(null, null, 2131753818, max < 86400 ? gm.g0(max, false, true) : jb6.G(Math.round(max / 86400.0f), "Days", new Object[0])));
+        gm.d3(yv1Var.m9, 1000L);
     }
 }

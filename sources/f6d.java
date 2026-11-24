@@ -1,55 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import java.io.IOException;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f6d implements Continuation, v56, aq2, ohe {
-    public static final /* synthetic */ f6d b = new f6d(0);
-    public final /* synthetic */ byte a;
+public final class f6d extends g6d {
+    public final transient int r;
+    public final transient int s;
+    public final /* synthetic */ g6d w;
 
-    public /* synthetic */ f6d(byte b2) {
-        this.a = b2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f6d(g6d g6dVar, int i, int i2) {
+        super((byte) 1);
+        this.w = g6dVar;
+        this.r = i;
+        this.s = i2;
     }
 
-    @Override // v56
-    public final void G(Object obj) {
-        ((ly4) obj).getClass();
+    @Override // java.util.List
+    public final Object get(int i) {
+        a1f.a(i, this.s);
+        return this.w.get(i + this.r);
     }
 
-    @Override // aq2
-    public final Object K(gl2 gl2Var) {
-        switch (this.a) {
-            case 2:
-                synchronized (zdf.class) {
-                    zdf.a(new kcf());
-                }
-                return new c6e();
-            default:
-                return new sfa((Context) gl2Var.a(Context.class));
-        }
+    @Override // l1d
+    public final int m() {
+        return this.w.n() + this.r + this.s;
     }
 
-    @Override // ohe
-    public final byte[] a(int i, int i2, byte[] bArr) {
-        byte[] bArr2 = new byte[i2];
-        System.arraycopy(bArr, i, bArr2, 0, i2);
-        return bArr2;
+    @Override // l1d
+    public final int n() {
+        return this.w.n() + this.r;
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public final /* synthetic */ Object then(Task task) {
-        if (task.isSuccessful()) {
-            return (Bundle) task.getResult();
-        }
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
-        }
-        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+    @Override // l1d
+    public final Object[] o() {
+        return this.w.o();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s;
+    }
+
+    @Override // g6d, java.util.List
+    /* renamed from: y, reason: merged with bridge method [inline-methods] */
+    public final g6d subList(int i, int i2) {
+        a1f.b(i, i2, this.s);
+        int i3 = this.r;
+        return this.w.subList(i + i3, i2 + i3);
     }
 }

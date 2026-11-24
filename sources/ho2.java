@@ -1,48 +1,76 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ho2 implements vc7, sc7 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ gk7 d;
-    public final /* synthetic */ Object e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class ho2 extends FrameLayout implements vlb {
+    public final bf0 a;
+    public final ylb b;
+    public final TextView c;
+    public final TextView d;
 
-    public /* synthetic */ ho2(hd hdVar, d dVar, int i, long j, boolean z) {
-        this.d = hdVar;
-        this.e = dVar;
-        this.a = i;
-        this.b = j;
-        this.c = z;
+    public ho2(Context context, ylb ylbVar) {
+        super(context);
+        this.b = ylbVar;
+        bf0 bf0Var = new bf0(context);
+        this.a = bf0Var;
+        bf0Var.setRoundRadius(gm.L(20.0f));
+        addView(bf0Var, qoe.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(gm.o());
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(17);
+        addView(textView, qoe.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setLineSpacing(gm.L(2.0f), 1.0f);
+        addView(textView2, qoe.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        updateColors();
     }
 
-    @Override // sc7
-    public final void k(boolean z) {
-        cj3 cj3Var = (cj3) this.d;
-        TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        cj3Var.W3(this.a, this.b, chat, this.c, z);
+    @Override // vlb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(cmb.F6));
+        hashSet.add(Integer.valueOf(cmb.y6));
     }
 
-    @Override // vc7
-    public final void run(long j) {
-        hd hdVar = (hd) this.d;
-        d dVar = (d) this.e;
-        hdVar.dismiss();
-        if (j == 0) {
-            return;
-        }
-        na7.q1(this.a).S2(-j, this.b, false, this.c, new jy((Object) dVar, j, (byte) 1));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = cmb.R0;
+        bf0 bf0Var = this.a;
+        ur3.a(canvas, drawable, (bf0Var.getWidth() / 2.0f) + bf0Var.getLeft(), (bf0Var.getHeight() / 2.0f) + bf0Var.getTop(), bf0Var.getHeight());
     }
 
-    public /* synthetic */ ho2(cj3 cj3Var, int i, TLRPC.Chat chat, long j, boolean z) {
-        this.d = cj3Var;
-        this.a = i;
-        this.e = chat;
-        this.b = j;
-        this.c = z;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(218.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
+
+    @Override // vlb
+    public final void updateColors() {
+        int i = cmb.F6;
+        ylb ylbVar = this.b;
+        this.c.setTextColor(cmb.v0(i, ylbVar));
+        this.d.setTextColor(cmb.v0(cmb.y6, ylbVar));
     }
 }

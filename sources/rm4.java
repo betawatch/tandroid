@@ -1,31 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class rm4 implements fv9 {
-    public final fv9 a;
+public final class rm4 extends qx2 {
+    public sm4 a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ sm4 c;
+    public int d;
 
-    public rm4(fv9 fv9Var) {
-        this.a = fv9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rm4(sm4 sm4Var, px2 px2Var) {
+        super(px2Var);
+        this.c = sm4Var;
     }
 
-    @Override // fv9
-    public final boolean c() {
-        return this.a.c();
-    }
-
-    @Override // fv9
-    public final boolean d() {
-        return this.a.d();
-    }
-
-    @Override // fv9
-    public ev9 f(long j) {
-        return this.a.f(j);
-    }
-
-    @Override // fv9
-    public long h() {
-        return this.a.h();
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.d |= TLObject.FLAG_31;
+        return this.c.c(null, this);
     }
 }

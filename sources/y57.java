@@ -1,89 +1,209 @@
 // default package
 
-import org.telegram.messenger.support.LongSparseIntArray;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y57 implements Runnable {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class y57 extends FrameLayout {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+    public final /* synthetic */ j67 b;
 
-    public /* synthetic */ y57(na7 na7Var, long j, int i, boolean z, int i2, int i3, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y57(j67 j67Var, Context context, byte b) {
+        super(context);
         this.a = b;
-        this.b = na7Var;
-        this.c = j;
-        this.d = i;
-        this.e = z;
-        this.f = i2;
-        this.h = i3;
+        this.b = j67Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x007f  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z;
-        int i;
-        switch (this.a) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        byte b = this.a;
+        j67 j67Var = this.b;
+        switch (b) {
             case 0:
-                na7 na7Var = this.b;
-                im7 notificationsController = na7Var.getNotificationsController();
-                long j = this.c;
-                notificationsController.L(null, j, this.d, 0, this.e);
-                TLRPC.Dialog dialog = (TLRPC.Dialog) na7Var.R.f(j);
-                if (dialog != null) {
-                    int i2 = dialog.unread_count;
-                    int i3 = this.f;
-                    if (i3 != 0) {
-                        int i4 = dialog.top_message;
-                        int i5 = this.h;
-                        if (i5 > i4) {
-                            int max = Math.max(i2 - i3, 0);
-                            dialog.unread_count = max;
-                            if (i5 != Integer.MAX_VALUE && max > (i = i5 - dialog.top_message)) {
-                                dialog.unread_count = i;
+                super.dispatchDraw(canvas);
+                z57 z57Var = j67Var.a0;
+                z57Var.e(canvas);
+                ArrayList arrayList = z57Var.G;
+                float f = -1.0f;
+                if (!arrayList.isEmpty()) {
+                    jw3 jw3Var = (jw3) b10.f(1, arrayList);
+                    ImageReceiver imageReceiver = jw3Var.r;
+                    gn5 gn5Var = imageReceiver.g0;
+                    if (gn5Var == null) {
+                        gn5Var = imageReceiver.P;
+                    }
+                    if (gn5Var == null) {
+                        gn5Var = imageReceiver.X;
+                    }
+                    if (gn5Var != null) {
+                        String str = jw3Var.s;
+                        if (str == null) {
+                            TLRPC.Document document = gn5Var.i;
+                            if (document != null) {
+                                str = bc4.r("tgs", document);
+                                jw3Var.s = str;
+                            } else {
+                                str = bc4.r("tgs", gn5Var.f);
+                                jw3Var.s = str;
                             }
-                            z = dialog.unread_mark;
-                            if (z) {
-                                dialog.unread_mark = false;
-                                na7Var.getMessagesStorage().C1(dialog.id, false);
+                        }
+                        if (str != null) {
+                            Float s = fn5.z().s(jw3Var.s);
+                            if (s == null) {
+                                s = Float.valueOf(1.0f);
                             }
-                            if ((i2 == 0 || z) && dialog.unread_count == 0) {
-                                na7Var.n2(j, 0L, null);
-                                if (na7Var.j0()) {
-                                    na7Var.Y4(null);
-                                    na7Var.getNotificationCenter().k(3, new Object[0]);
-                                }
-                            }
-                            na7Var.getNotificationCenter().k(2, 256);
+                            f = (s.floatValue() * 0.55f) + 0.15f + (s.floatValue() * 0.3f);
                         }
                     }
-                    dialog.unread_count = 0;
-                    z = dialog.unread_mark;
-                    if (z) {
-                    }
-                    if (i2 == 0) {
-                    }
-                    na7Var.n2(j, 0L, null);
-                    if (na7Var.j0()) {
-                    }
-                    na7Var.getNotificationCenter().k(2, 256);
                 }
-                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
-                longSparseIntArray.put(j, 0);
-                na7Var.getNotificationsController().J(longSparseIntArray);
+                if (f != -2.0f) {
+                    j67Var.X.h(f >= 0.0f && f < 1.0f);
+                }
+                if (!z57Var.G.isEmpty()) {
+                    invalidate();
+                    break;
+                }
                 break;
             default:
-                gl.d3(new y57(this.b, this.c, this.d, this.e, this.f, this.h, (byte) 0));
+                if (j67Var.E <= 0.0f || j67Var.h == null) {
+                    canvas2 = canvas;
+                } else {
+                    j67Var.n.reset();
+                    float width = getWidth() / j67Var.e.getWidth();
+                    j67Var.n.postScale(width, width);
+                    j67Var.f.setLocalMatrix(j67Var.n);
+                    j67Var.h.setAlpha((int) (j67Var.E * 255.0f));
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), j67Var.h);
+                }
+                super.dispatchDraw(canvas2);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
+        switch (this.a) {
+            case 1:
+                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
+                    return super.dispatchKeyEventPreIme(keyEvent);
+                }
+                this.b.onBackPressed();
+                return true;
+            default:
+                return super.dispatchKeyEventPreIme(keyEvent);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 1:
+                super.onLayout(z, i, i2, i3, i4);
+                j67 j67Var = this.b;
+                if (!j67Var.g0 || j67Var.h0) {
+                    ArrayList arrayList = j67Var.N;
+                    f67 f67Var = j67Var.K;
+                    if (j67Var.F.getWidth() > 0) {
+                        int[] iArr = new int[2];
+                        j67Var.b(iArr);
+                        j67Var.X.setScaleX(j67Var.W.getScaleX());
+                        j67Var.X.setScaleY(j67Var.W.getScaleY());
+                        int[] iArr2 = j67Var.r0;
+                        iArr2[0] = iArr[0];
+                        iArr2[1] = iArr[1];
+                        int measuredHeight = (f67Var.getMeasuredHeight() - j67Var.X.getHeight()) + (j67Var.e0 != null ? gm.L(320.0f) : 0);
+                        int L = gm.L(8.0f) + j67Var.d.b;
+                        int L2 = gm.L(arrayList.isEmpty() ? -6.0f : 48.0f);
+                        ViewGroup viewGroup = j67Var.Z;
+                        int measuredHeight2 = L2 + (viewGroup == null ? 0 : viewGroup.getMeasuredHeight());
+                        int measuredHeight3 = (j67Var.G.getMeasuredHeight() - gm.L(8.0f)) - j67Var.d.d;
+                        if (iArr[1] + measuredHeight2 > measuredHeight3) {
+                            iArr[1] = measuredHeight3 - measuredHeight2;
+                        }
+                        if (iArr[1] - measuredHeight < L) {
+                            iArr[1] = L + measuredHeight;
+                        }
+                        if (j67Var.W.getHeight() + iArr[1] + measuredHeight2 > measuredHeight3) {
+                            iArr[1] = (measuredHeight3 - measuredHeight2) - j67Var.W.getHeight();
+                        }
+                        j67Var.X.setX(gm.L(6.0f) + (iArr[0] - (r11.getWidth() - j67Var.X.l())));
+                        j67Var.X.setY(iArr[1]);
+                        if (j67Var.p0) {
+                            iArr[0] = iArr[0] - (j67Var.Y - j67Var.W.l());
+                        }
+                        f67Var.setX((gm.L(7.0f) + iArr[0]) - f67Var.getMeasuredWidth());
+                        if (j67Var.g0) {
+                            wi8.t(f67Var.animate().translationY(((j67Var.X.getHeight() + iArr[1]) - f67Var.getMeasuredHeight()) - f67Var.getTop()), wb2.V, 250L);
+                        } else {
+                            f67Var.setY((j67Var.X.getHeight() + iArr[1]) - f67Var.getMeasuredHeight());
+                        }
+                        ViewGroup viewGroup2 = j67Var.Z;
+                        if (viewGroup2 != null) {
+                            viewGroup2.setX((gm.L(7.0f) + iArr[0]) - j67Var.Z.getMeasuredWidth());
+                            j67Var.Z.setY(iArr[1] + (arrayList.isEmpty() ? -gm.L(6.0f) : j67Var.X.getHeight()));
+                        }
+                        FrameLayout frameLayout = j67Var.d0;
+                        if (frameLayout != null) {
+                            frameLayout.setX(b10.c(6.0f, (j67Var.X.l() + iArr[0]) - j67Var.d0.getMeasuredWidth(), 0));
+                            RectF rectF = j67Var.l0;
+                            if (rectF != null) {
+                                FrameLayout frameLayout2 = j67Var.d0;
+                                float max = Math.max(j67Var.d.b, rectF.top - frameLayout2.getMeasuredWidth());
+                                j67Var.c0 = max;
+                                frameLayout2.setY(max);
+                                b67 b67Var = j67Var.e0;
+                                if (b67Var != null) {
+                                    b67Var.setY(Math.max(j67Var.d.b, (j67Var.l0.top - gm.L(24.0f)) - j67Var.e0.getMeasuredHeight()));
+                                }
+                            } else {
+                                float height = (j67Var.X.getHeight() + iArr[1]) - f67Var.getMeasuredHeight();
+                                FrameLayout frameLayout3 = j67Var.d0;
+                                float max2 = Math.max(j67Var.d.b, height - frameLayout3.getMeasuredHeight()) + gm.L(24.0f);
+                                j67Var.c0 = max2;
+                                frameLayout3.setY(max2);
+                                b67 b67Var2 = j67Var.e0;
+                                if (b67Var2 != null) {
+                                    b67Var2.setY(Math.max(0.0f, (height - b67Var2.getMeasuredHeight()) - j67Var.c0));
+                                }
+                            }
+                        }
+                    }
+                    j67Var.g0 = true;
+                    break;
+                }
+                break;
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 1:
+                super.onSizeChanged(i, i2, i3, i4);
+                j67 j67Var = this.b;
+                tl0.c(j67Var.j0, j67Var.F);
+                ViewGroup viewGroup = j67Var.Z;
+                if (viewGroup != null) {
+                    viewGroup.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.onSizeChanged(i, i2, i3, i4);
                 break;
         }
     }

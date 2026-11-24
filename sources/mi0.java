@@ -1,16 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mi0 {
-    public static final mi0 d = new mi0(-9223372036854775807L, -3, -1);
-    public final int a;
-    public final long b;
-    public final long c;
+public final /* synthetic */ class mi0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ oi0 b;
 
-    public mi0(long j, int i, long j2) {
-        this.a = i;
-        this.b = j;
-        this.c = j2;
+    public /* synthetic */ mi0(oi0 oi0Var, byte b) {
+        this.a = b;
+        this.b = oi0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        oi0 oi0Var = this.b;
+        switch (b) {
+            case 0:
+                oi0Var.a(null, false);
+                break;
+            default:
+                oi0Var.b(true);
+                break;
+        }
     }
 }

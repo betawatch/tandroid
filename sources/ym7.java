@@ -1,48 +1,13 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.IOException;
-import org.telegram.tgnet.TLRPC;
+import android.app.PendingIntent;
+import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final class ym7 {
-    public boolean a;
-    public boolean b;
+    public PendingIntent a;
+    public IconCompat b;
     public int c;
     public int d;
-    public TLRPC.Document e;
-    public String f;
-    public String g;
-
-    public final Uri a(int i) {
-        if (!TextUtils.isEmpty(this.g)) {
-            return Uri.fromFile(new File(this.g));
-        }
-        TLRPC.Document document = this.e;
-        if (document == null) {
-            return null;
-        }
-        String str = document.file_name_fixed;
-        String A = ba4.A(document);
-        if (A == null) {
-            return null;
-        }
-        String lowerCase = A.toLowerCase();
-        if (!str.endsWith(lowerCase)) {
-            str = tb4.y(str, ".", lowerCase);
-        }
-        File file = new File(gl.D0(), str);
-        if (!file.exists()) {
-            try {
-                ba4.G(i);
-                gl.E(ba4.I(this.e), file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return Uri.fromFile(file);
-    }
 }

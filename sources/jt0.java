@@ -1,43 +1,33 @@
 // default package
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.PasscodeActivity;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jt0 implements View.OnFocusChangeListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ EditTextBoldCursor c;
+public final class jt0 extends nk3 {
+    public final /* synthetic */ p I4;
+    public final /* synthetic */ lt0 J4;
 
-    public /* synthetic */ jt0(Object obj, EditTextBoldCursor editTextBoldCursor, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = editTextBoldCursor;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jt0(lt0 lt0Var, Bundle bundle, p pVar) {
+        super(bundle);
+        this.J4 = lt0Var;
+        this.I4 = pVar;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z) {
-        byte b = this.a;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((er7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
-            case 1:
-                ((er7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
-            case 2:
-                ((er7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
-            default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                passcodeActivity.w.setEditText((sj2) editTextBoldCursor);
-                passcodeActivity.w.setDispatchBackWhenEmpty(true);
-                break;
+    @Override // nk3
+    public final boolean e3() {
+        return true;
+    }
+
+    @Override // nk3, org.telegram.ui.ActionBar.d
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        lt0 lt0Var = this.J4;
+        if (lt0Var.X1) {
+            return;
         }
+        lt0Var.X1 = true;
+        this.I4.a("USER_DECLINED", null);
     }
 }

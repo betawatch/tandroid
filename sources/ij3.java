@@ -1,125 +1,191 @@
 // default package
 
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.os.Bundle;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ij3 extends zde {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ Object c;
+public final class ij3 implements tc5 {
+    public final /* synthetic */ he a;
+    public final /* synthetic */ nk3 b;
 
-    public /* synthetic */ ij3(Object obj, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = arrayList;
+    public ij3(nk3 nk3Var, he heVar) {
+        this.b = nk3Var;
+        this.a = heVar;
     }
 
-    @Override // zde
-    public final boolean a(int i, int i2) {
-        switch (this.a) {
-            case 0:
-                return ((mj3) ((oj3) this.c).O.get(i)).a == ((mj3) this.b.get(i2)).a;
-            case 1:
-            case 2:
-                return true;
-            case 3:
-                return b(i, i2);
-            case 4:
-                return true;
-            default:
-                return false;
-        }
-    }
+    @Override // tc5
+    public final void a(uc5 uc5Var, final long j) {
+        final byte b = 0;
+        final byte b2 = 1;
+        final d[] dVarArr = {uc5Var, null};
+        final byte b3 = 0;
+        qac qacVar = new qac(this) { // from class: gj3
+            public final /* synthetic */ ij3 b;
 
-    @Override // zde
-    public final boolean b(int i, int i2) {
-        TLRPC.TL_contact tL_contact;
-        String str;
-        byte b = this.a;
-        Object obj = this.c;
-        ArrayList arrayList = this.b;
-        switch (b) {
-            case 0:
-                mj3 mj3Var = (mj3) ((oj3) obj).O.get(i);
-                mj3 mj3Var2 = (mj3) arrayList.get(i2);
-                TLRPC.Dialog dialog = mj3Var.c;
-                int i3 = mj3Var.a;
-                int i4 = mj3Var2.a;
-                TLRPC.Dialog dialog2 = mj3Var2.c;
-                if (i3 == i4) {
-                    if (i3 == 0) {
-                        if (dialog != null && dialog2 != null && dialog.id == dialog2.id && mj3Var.h == mj3Var2.h && mj3Var.f == mj3Var2.f && mj3Var.g == mj3Var2.g) {
-                            return true;
+            {
+                this.b = this;
+            }
+
+            @Override // qac
+            public final void a(Object obj) {
+                byte b4 = b3;
+                d[] dVarArr2 = dVarArr;
+                long j2 = j;
+                ij3 ij3Var = this.b;
+                Runnable runnable = (Runnable) obj;
+                switch (b4) {
+                    case 0:
+                        nk3 nk3Var = ij3Var.b;
+                        Boolean bool = nk3Var.H.has_username;
+                        if (bool != null && bool.booleanValue()) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("step", 1);
+                            bundle.putLong("chat_id", j2);
+                            bundle.putBoolean("forcePublic", nk3Var.H.has_username.booleanValue());
+                            fj1 fj1Var = new fj1(bundle);
+                            fj1Var.v0 = new h92(runnable, (byte) 18);
+                            nk3Var.presentFragment(fj1Var);
+                            dVarArr2[1] = fj1Var;
+                            break;
+                        } else {
+                            runnable.run();
+                            break;
                         }
-                    } else if (i3 == 14) {
-                        if (dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder) {
-                            return true;
-                        }
-                    } else if (i3 == 4) {
-                        TLRPC.RecentMeUrl recentMeUrl = mj3Var.d;
-                        if (recentMeUrl != null && mj3Var2.d != null && (str = recentMeUrl.url) != null && str.equals(str)) {
-                            return true;
-                        }
-                    } else if (i3 == 6) {
-                        TLRPC.TL_contact tL_contact2 = mj3Var.e;
-                        if (tL_contact2 != null && (tL_contact = mj3Var2.e) != null && tL_contact2.user_id == tL_contact.user_id) {
-                            return true;
-                        }
-                    } else if (i3 == 5) {
-                        if (mj3Var.j == mj3Var2.j) {
-                            return true;
-                        }
-                    } else if (i3 != 10) {
-                        return true;
-                    }
+                    default:
+                        nk3 nk3Var2 = ij3Var.b;
+                        nk3Var2.m5(nk3Var2.getMessagesController().L0(Long.valueOf(j2)), runnable, new rd3(ij3Var, dVarArr2, (byte) 7));
+                        break;
                 }
-                return false;
-            case 1:
-                return ((Integer) arrayList.get(i)).equals(((d04) obj).n.get(i2));
-            case 2:
-                r95 r95Var = (r95) obj;
-                if (i >= arrayList.size() || i2 >= r95Var.e.size()) {
-                    return false;
+            }
+        };
+        final byte b4 = 1;
+        qac qacVar2 = new qac(this) { // from class: gj3
+            public final /* synthetic */ ij3 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // qac
+            public final void a(Object obj) {
+                byte b42 = b4;
+                d[] dVarArr2 = dVarArr;
+                long j2 = j;
+                ij3 ij3Var = this.b;
+                Runnable runnable = (Runnable) obj;
+                switch (b42) {
+                    case 0:
+                        nk3 nk3Var = ij3Var.b;
+                        Boolean bool = nk3Var.H.has_username;
+                        if (bool != null && bool.booleanValue()) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("step", 1);
+                            bundle.putLong("chat_id", j2);
+                            bundle.putBoolean("forcePublic", nk3Var.H.has_username.booleanValue());
+                            fj1 fj1Var = new fj1(bundle);
+                            fj1Var.v0 = new h92(runnable, (byte) 18);
+                            nk3Var.presentFragment(fj1Var);
+                            dVarArr2[1] = fj1Var;
+                            break;
+                        } else {
+                            runnable.run();
+                            break;
+                        }
+                    default:
+                        nk3 nk3Var2 = ij3Var.b;
+                        nk3Var2.m5(nk3Var2.getMessagesController().L0(Long.valueOf(j2)), runnable, new rd3(ij3Var, dVarArr2, (byte) 7));
+                        break;
                 }
-                return ((gc2) arrayList.get(i)).equals(r95Var.e.get(i2));
-            case 3:
-                return Objects.equals(arrayList.get(i), ((j39) obj).n.get(i2));
-            case 4:
-                return ((Long) arrayList.get(i)).equals(((tx9) obj).w0.get(i2));
-            default:
-                return ((hwb) arrayList.get(i)).a() == ((hwb) ((gwb) obj).c.get(i2)).a();
-        }
-    }
+            }
+        };
+        he heVar = this.a;
+        Utilities.u(0, qacVar, qacVar2, new p2c((Object) this, (Object) heVar, j, (byte) 2), new qac(this) { // from class: hj3
+            public final /* synthetic */ ij3 b;
 
-    @Override // zde
-    public final int c() {
-        byte b = this.a;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                return this.b.size();
-            case 1:
-                return ((d04) obj).n.size();
-            case 2:
-                return ((r95) obj).e.size();
-            case 3:
-                return ((j39) obj).n.size();
-            case 4:
-                return ((tx9) obj).w0.size();
-            default:
-                return ((gwb) obj).c.size();
-        }
-    }
+            {
+                this.b = this;
+            }
 
-    @Override // zde
-    public final int d() {
-        byte b = this.a;
-        ArrayList arrayList = this.b;
-        switch (b) {
-        }
-        return arrayList.size();
+            @Override // qac
+            public final void a(Object obj) {
+                byte b5 = b;
+                ij3 ij3Var = this.b;
+                switch (b5) {
+                    case 0:
+                        Runnable runnable = (Runnable) obj;
+                        nk3 nk3Var = ij3Var.b;
+                        if (nk3Var.H.bot_admin_rights == null) {
+                            runnable.run();
+                            break;
+                        } else {
+                            TLRPC.User W1 = nk3Var.getMessagesController().W1(Long.valueOf(nk3Var.I));
+                            oc7 messagesController = nk3Var.getMessagesController();
+                            TLRPC.RequestPeerType requestPeerType = nk3Var.H;
+                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
+                            Boolean bool = requestPeerType.bot_participant;
+                            messagesController.X4(j, W1, tL_chatAdminRights, null, false, nk3Var, bool == null || !bool.booleanValue(), true, null, runnable, new cf(runnable, (byte) 14));
+                            break;
+                        }
+                        break;
+                    default:
+                        Runnable runnable2 = (Runnable) obj;
+                        nk3 nk3Var2 = ij3Var.b;
+                        if (nk3Var2.H.user_admin_rights == null) {
+                            runnable2.run();
+                            break;
+                        } else {
+                            oc7 messagesController2 = nk3Var2.getMessagesController();
+                            long j2 = j;
+                            nk3Var2.getMessagesController().X4(j2, z8c.h(nk3Var2.getAccountInstance().a).f(), ke2.p0(messagesController2.L0(Long.valueOf(j2)).admin_rights, nk3Var2.H.user_admin_rights), null, false, nk3Var2, false, true, null, runnable2, new cf(runnable2, (byte) 13));
+                            break;
+                        }
+                }
+            }
+        }, new qac(this) { // from class: hj3
+            public final /* synthetic */ ij3 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // qac
+            public final void a(Object obj) {
+                byte b5 = b2;
+                ij3 ij3Var = this.b;
+                switch (b5) {
+                    case 0:
+                        Runnable runnable = (Runnable) obj;
+                        nk3 nk3Var = ij3Var.b;
+                        if (nk3Var.H.bot_admin_rights == null) {
+                            runnable.run();
+                            break;
+                        } else {
+                            TLRPC.User W1 = nk3Var.getMessagesController().W1(Long.valueOf(nk3Var.I));
+                            oc7 messagesController = nk3Var.getMessagesController();
+                            TLRPC.RequestPeerType requestPeerType = nk3Var.H;
+                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
+                            Boolean bool = requestPeerType.bot_participant;
+                            messagesController.X4(j, W1, tL_chatAdminRights, null, false, nk3Var, bool == null || !bool.booleanValue(), true, null, runnable, new cf(runnable, (byte) 14));
+                            break;
+                        }
+                        break;
+                    default:
+                        Runnable runnable2 = (Runnable) obj;
+                        nk3 nk3Var2 = ij3Var.b;
+                        if (nk3Var2.H.user_admin_rights == null) {
+                            runnable2.run();
+                            break;
+                        } else {
+                            oc7 messagesController2 = nk3Var2.getMessagesController();
+                            long j2 = j;
+                            nk3Var2.getMessagesController().X4(j2, z8c.h(nk3Var2.getAccountInstance().a).f(), ke2.p0(messagesController2.L0(Long.valueOf(j2)).admin_rights, nk3Var2.H.user_admin_rights), null, false, nk3Var2, false, true, null, runnable2, new cf(runnable2, (byte) 13));
+                            break;
+                        }
+                }
+            }
+        }, new s2c((Object) this, (Object) heVar, j, (Object) dVarArr, (byte) 3));
     }
 }

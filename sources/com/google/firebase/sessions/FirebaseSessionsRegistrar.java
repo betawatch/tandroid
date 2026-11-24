@@ -4,97 +4,98 @@ import android.content.Context;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
     @Deprecated
     public static final String LIBRARY_NAME = "fire-sessions";
-    private static final mh4 Companion = new mh4();
-    private static final xw8 appContext = xw8.a(Context.class);
-    private static final xw8 firebaseApp = xw8.a(jg4.class);
-    private static final xw8 firebaseInstallationsApi = xw8.a(rg4.class);
-    private static final xw8 backgroundDispatcher = new xw8(md0.class, vw2.class);
-    private static final xw8 blockingDispatcher = new xw8(nk0.class, vw2.class);
-    private static final xw8 transportFactory = xw8.a(f1c.class);
-    private static final xw8 firebaseSessionsComponent = xw8.a(ih4.class);
+    private static final qj4 Companion = new qj4();
+    private static final yy8 appContext = yy8.a(Context.class);
+    private static final yy8 firebaseApp = yy8.a(li4.class);
+    private static final yy8 firebaseInstallationsApi = yy8.a(ti4.class);
+    private static final yy8 backgroundDispatcher = new yy8(me0.class, fy2.class);
+    private static final yy8 blockingDispatcher = new yy8(nl0.class, fy2.class);
+    private static final yy8 transportFactory = yy8.a(f3c.class);
+    private static final yy8 firebaseSessionsComponent = yy8.a(kj4.class);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final fh4 getComponents$lambda$0(xp2 xp2Var) {
-        return (fh4) ((b53) ((ih4) xp2Var.i(firebaseSessionsComponent))).p.get();
+    public static final hj4 getComponents$lambda$0(ir2 ir2Var) {
+        return (hj4) ((m63) ((kj4) ir2Var.i(firebaseSessionsComponent))).p.get();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ih4 getComponents$lambda$1(xp2 xp2Var) {
-        Object i = xp2Var.i(appContext);
+    public static final kj4 getComponents$lambda$1(ir2 ir2Var) {
+        Object i = ir2Var.i(appContext);
         i.getClass();
-        Object i2 = xp2Var.i(backgroundDispatcher);
+        Object i2 = ir2Var.i(backgroundDispatcher);
         i2.getClass();
-        Object i3 = xp2Var.i(blockingDispatcher);
+        Object i3 = ir2Var.i(blockingDispatcher);
         i3.getClass();
-        Object i4 = xp2Var.i(firebaseApp);
+        Object i4 = ir2Var.i(firebaseApp);
         i4.getClass();
-        Object i5 = xp2Var.i(firebaseInstallationsApi);
+        Object i5 = ir2Var.i(firebaseInstallationsApi);
         i5.getClass();
-        mt8 g = xp2Var.g(transportFactory);
-        g.getClass();
-        b53 b53Var = new b53();
-        b53Var.a = mo5.a((jg4) i4);
-        mo5 a = mo5.a((Context) i);
-        b53Var.b = a;
-        b53Var.c = yo3.a(new z24((Object) a, (byte) 13));
-        b53Var.d = yo3.a(q9d.a);
-        b53Var.e = mo5.a((rg4) i5);
-        b53Var.f = yo3.a(new gi3(b53Var.a));
-        mo5 a2 = mo5.a((sw2) i3);
-        b53Var.g = a2;
-        b53Var.h = yo3.a(new yk8(b53Var.f, a2));
-        b53Var.i = mo5.a((sw2) i2);
-        byte b = 3;
-        b53Var.j = yo3.a(new sk4(b53Var.c, yo3.a(new gl2(b53Var.d, b53Var.e, b53Var.f, b53Var.h, yo3.a(new vk9(b53Var.i, b53Var.d, yo3.a(new tg2(b53Var.b, b53Var.g, (byte) 28)), b)), (byte) 11)), (byte) 23));
-        kt8 a3 = yo3.a(r9d.a);
-        b53Var.k = a3;
-        b53Var.l = yo3.a(new wk4((Object) b53Var.d, (Object) a3, (byte) 26));
-        b53Var.m = yo3.a(new gl2(b53Var.a, b53Var.e, b53Var.j, yo3.a(new qx4(mo5.a(g))), b53Var.i, (byte) 15));
-        b53Var.n = yo3.a(new xl3(b53Var.b, b53Var.g, yo3.a(new v39(b53Var.l, (byte) 8)), b));
-        kt8 a4 = yo3.a(new yk8(b53Var.b, b53Var.k));
-        kt8 kt8Var = b53Var.j;
-        kt8 kt8Var2 = b53Var.l;
-        kt8 kt8Var3 = b53Var.m;
-        kt8 kt8Var4 = b53Var.d;
-        kt8 kt8Var5 = b53Var.n;
-        mo5 mo5Var = b53Var.i;
-        ntb ntbVar = new ntb();
-        ntbVar.a = kt8Var;
-        ntbVar.b = kt8Var2;
-        ntbVar.c = kt8Var3;
-        ntbVar.d = kt8Var4;
-        ntbVar.e = kt8Var5;
-        ntbVar.f = a4;
-        ntbVar.h = mo5Var;
-        kt8 a5 = yo3.a(ntbVar);
-        b53Var.o = a5;
-        b53Var.p = yo3.a(new c5a(b53Var.a, b53Var.j, b53Var.i, yo3.a(new g29((Object) a5, (byte) 9)), (byte) 5));
-        return b53Var;
+        nv8 f = ir2Var.f(transportFactory);
+        f.getClass();
+        m63 m63Var = new m63();
+        m63Var.a = lq5.a((li4) i4);
+        lq5 a = lq5.a((Context) i);
+        m63Var.b = a;
+        m63Var.c = iq3.a(new n54(a, (byte) 1));
+        m63Var.d = iq3.a(sbd.a);
+        m63Var.e = lq5.a((ti4) i5);
+        m63Var.f = iq3.a(new lj4(m63Var.a));
+        lq5 a2 = lq5.a((cy2) i3);
+        m63Var.g = a2;
+        m63Var.h = iq3.a(new an8(m63Var.f, a2));
+        m63Var.i = lq5.a((cy2) i2);
+        byte b = 0;
+        byte b2 = 3;
+        m63Var.j = iq3.a(new mj4(m63Var.c, iq3.a(new sm2(m63Var.d, m63Var.e, m63Var.f, m63Var.h, iq3.a(new wm9(m63Var.i, m63Var.d, iq3.a(new mj4(m63Var.b, m63Var.g, b)), b2)), (byte) 12)), (byte) 25));
+        lv8 a3 = iq3.a(tbd.a);
+        m63Var.k = a3;
+        m63Var.l = iq3.a(new wm4((Object) m63Var.d, (Object) a3, (byte) 26));
+        m63Var.m = iq3.a(new sm2(m63Var.a, m63Var.e, m63Var.j, iq3.a(new n54(lq5.a(f), b)), m63Var.i, (byte) 16));
+        m63Var.n = iq3.a(new in3(m63Var.b, m63Var.g, iq3.a(new oo8(m63Var.l, (byte) 11)), b2));
+        lv8 a4 = iq3.a(new an8(m63Var.b, m63Var.k));
+        lv8 lv8Var = m63Var.j;
+        lv8 lv8Var2 = m63Var.l;
+        lv8 lv8Var3 = m63Var.m;
+        lv8 lv8Var4 = m63Var.d;
+        lv8 lv8Var5 = m63Var.n;
+        lq5 lq5Var = m63Var.i;
+        ovb ovbVar = new ovb();
+        ovbVar.a = lv8Var;
+        ovbVar.b = lv8Var2;
+        ovbVar.c = lv8Var3;
+        ovbVar.d = lv8Var4;
+        ovbVar.e = lv8Var5;
+        ovbVar.f = a4;
+        ovbVar.h = lq5Var;
+        lv8 a5 = iq3.a(ovbVar);
+        m63Var.o = a5;
+        m63Var.p = iq3.a(new xvc(m63Var.a, m63Var.j, m63Var.i, iq3.a(new et8((Object) a5, (byte) 10)), (byte) 5));
+        return m63Var;
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<mp2> getComponents() {
-        lp2 b = mp2.b(fh4.class);
+    public List<xq2> getComponents() {
+        wq2 b = xq2.b(hj4.class);
         b.a = LIBRARY_NAME;
-        b.a(wd3.a(firebaseSessionsComponent));
-        b.f = new w44((byte) 21);
+        b.a(if3.a(firebaseSessionsComponent));
+        b.f = new h64((byte) 23);
         b.c(2);
-        mp2 b2 = b.b();
-        lp2 b3 = mp2.b(ih4.class);
+        xq2 b2 = b.b();
+        wq2 b3 = xq2.b(kj4.class);
         b3.a = "fire-sessions-component";
-        b3.a(wd3.a(appContext));
-        b3.a(wd3.a(backgroundDispatcher));
-        b3.a(wd3.a(blockingDispatcher));
-        b3.a(wd3.a(firebaseApp));
-        b3.a(wd3.a(firebaseInstallationsApi));
-        b3.a(new wd3(transportFactory, 1, 1));
-        b3.f = new w44((byte) 22);
-        return zk2.b(b2, b3.b(), one.a(LIBRARY_NAME, "3.0.8"));
+        b3.a(if3.a(appContext));
+        b3.a(if3.a(backgroundDispatcher));
+        b3.a(if3.a(blockingDispatcher));
+        b3.a(if3.a(firebaseApp));
+        b3.a(if3.a(firebaseInstallationsApi));
+        b3.a(new if3(transportFactory, 1, 1));
+        b3.f = new h64((byte) 24);
+        return lm2.b(b2, b3.b(), rpe.a(LIBRARY_NAME, "3.0.8"));
     }
 }

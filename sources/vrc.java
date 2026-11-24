@@ -1,30 +1,39 @@
 // default package
 
-import com.google.android.gms.tasks.OnFailureListener;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vrc implements OnFailureListener {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class vrc implements qac {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ u41 b;
+    public final /* synthetic */ asc b;
 
-    public /* synthetic */ vrc(u41 u41Var, byte b) {
+    public /* synthetic */ vrc(asc ascVar, byte b) {
         this.a = b;
-        this.b = u41Var;
+        this.b = ascVar;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
+    @Override // qac
+    public final void a(Object obj) {
+        l7 l7Var;
         byte b = this.a;
-        u41 u41Var = this.b;
+        asc ascVar = this.b;
         switch (b) {
             case 0:
-                fa4.d("wear-auth: /answer send failed: " + exc.getMessage());
-                u41Var.setLoading(false);
+                ascVar.f0((String) obj);
                 break;
             default:
-                fa4.d("wear-auth: /token send failed: " + exc.getMessage());
-                u41Var.setLoading(false);
+                TLRPC.User user = (TLRPC.User) obj;
+                if (!ascVar.isFinished && (l7Var = ascVar.O) != null) {
+                    if (user != null) {
+                        gm.t1(l7Var);
+                        ascVar.m0(null, user);
+                        break;
+                    } else {
+                        gm.c3(new wrc(ascVar, (byte) 1));
+                        break;
+                    }
+                }
                 break;
         }
     }

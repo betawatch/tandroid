@@ -1,22 +1,34 @@
 // default package
 
-import java.util.concurrent.ScheduledFuture;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class mo3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vo3 b;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class mo3 implements no3 {
-    public final ScheduledFuture a;
-
-    public mo3(ScheduledFuture scheduledFuture) {
-        this.a = scheduledFuture;
+    public /* synthetic */ mo3(vo3 vo3Var, byte b) {
+        this.a = b;
+        this.b = vo3Var;
     }
 
-    @Override // no3
-    public final void dispose() {
-        this.a.cancel(false);
-    }
-
-    public final String toString() {
-        return "DisposableFutureHandle[" + this.a + ']';
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        vo3 vo3Var = this.b;
+        switch (b) {
+            case 0:
+                vo3Var.d(null);
+                break;
+            case 1:
+                vo3Var.g = true;
+                vo3Var.d(null);
+                break;
+            case 2:
+                vo3Var.d(null);
+                break;
+            default:
+                vo3Var.f(2, "I recorded it this morning on my way to the office.");
+                break;
+        }
     }
 }

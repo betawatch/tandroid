@@ -1,36 +1,52 @@
 // default package
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class qw8 implements SensorEventListener {
-    public final /* synthetic */ vw8 a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class qw8 extends b4 {
+    public static final Parcelable.Creator<qw8> CREATOR = new v6d((byte) 29);
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public qw8(vw8 vw8Var) {
-        this.a = vw8Var;
+    public qw8(String str, String str2, String str3) {
+        ite.h(str);
+        this.a = str;
+        ite.h(str2);
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        float[] fArr = sensorEvent.values;
-        float f = fArr[0];
-        vw8 vw8Var = this.a;
-        vw8Var.H6 = f;
-        float f2 = fArr[1];
-        vw8Var.I6 = f2;
-        float f3 = fArr[2];
-        if (vw8Var.L6) {
-            return;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof qw8)) {
+            return false;
         }
-        vw8Var.J6 = f;
-        vw8Var.K6 = f2;
-        vw8Var.L6 = true;
+        qw8 qw8Var = (qw8) obj;
+        return fse.a(this.a, qw8Var.a) && fse.a(this.b, qw8Var.b) && fse.a(this.c, qw8Var.c);
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i) {
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c});
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("PublicKeyCredentialRpEntity{\n id='");
+        sb.append(this.a);
+        sb.append("', \n name='");
+        sb.append(this.b);
+        sb.append("', \n icon='");
+        return b10.j(sb, this.c, "'}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.l(parcel, 2, this.a);
+        mve.l(parcel, 3, this.b);
+        mve.l(parcel, 4, this.c);
+        mve.s(parcel, r);
     }
 }

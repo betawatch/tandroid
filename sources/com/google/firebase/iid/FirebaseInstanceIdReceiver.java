@@ -11,7 +11,7 @@ import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -37,10 +37,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!xoe.d(putExtras)) {
+        if (!are.d(putExtras)) {
             return -1;
         }
-        xoe.c("_nd", putExtras.getExtras());
+        are.c("_nd", putExtras.getExtras());
         return -1;
     }
 
@@ -56,7 +56,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             SoftReference softReference = a;
             ExecutorService executorService2 = softReference != null ? (ExecutorService) softReference.get() : null;
             if (executorService2 == null) {
-                executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new kn7("firebase-iid-executor")));
+                executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new op7("firebase-iid-executor")));
                 a = new SoftReference(executorService2);
             }
             executorService = executorService2;

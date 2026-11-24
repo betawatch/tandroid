@@ -1,16 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class p93 {
-    public final zb8 a;
-    public final long b;
-    public final long c;
-    public long d;
-
-    public p93(zb8 zb8Var, long j, long j2) {
-        this.a = zb8Var;
-        this.b = j;
-        this.c = j2;
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class p93 extends x61 {
+    public int d;
+    public long e;
+    public long f;
+    public int g;
+    public int h;
 }

@@ -1,32 +1,32 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ph3 extends rl0 {
-    @Override // o39, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final /* synthetic */ class ph3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nk3 b;
+
+    public /* synthetic */ ph3(nk3 nk3Var, byte b) {
+        this.a = b;
+        this.b = nk3Var;
     }
 
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // rl0
-    public final int z1() {
-        return gl.L(48.0f);
-    }
-
-    @Override // rl0, o39, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        nk3 nk3Var = this.b;
+        switch (b) {
+            case 0:
+                nk3Var.X4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                nk3Var.Z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                nk3Var.T4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

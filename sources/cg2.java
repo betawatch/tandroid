@@ -1,106 +1,108 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
+import java.util.Comparator;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class cg2 extends je5 {
-    public final /* synthetic */ byte X0 = 0;
-    public final Object Y0;
-    public final Object Z0;
+public final /* synthetic */ class cg2 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cg2(Activity activity) {
-        super(activity, 3);
-        int i = 0;
-        this.Y0 = new oy8[2];
-        this.Z0 = new int[2];
-        p(true);
-        this.L = Layout.Alignment.ALIGN_NORMAL;
-        this.d = 3200L;
-        this.U = true;
-        this.e = true;
-        m(8.0f, 6.0f, 10.0f, 6.0f);
-        this.v0 = 0.0f;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        while (i < 2) {
-            ((oy8[]) this.Y0)[i] = new oy8(i == 0 ? R.raw.ticks_single : R.raw.ticks_double, gl.L(24.0f), gl.L(24.0f));
-            ((oy8[]) this.Y0)[i].setCallback(this);
-            if (i > 0) {
-                spannableStringBuilder.append((CharSequence) "\n");
-            }
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) "x");
-            spannableStringBuilder.setSpan(new bg2(((oy8[]) this.Y0)[i]), length, spannableStringBuilder.length(), 33);
-            spannableStringBuilder.append((CharSequence) k96.M0(i == 0 ? 2131749106 : 2131749107, null));
-            i++;
-        }
-        t(spannableStringBuilder);
+    public /* synthetic */ cg2(Object obj, int i, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
     }
 
-    @Override // je5
-    public final void c(Canvas canvas, float f) {
-        switch (this.X0) {
-            case 1:
-                Paint paint = (Paint) this.Y0;
-                lfc lfcVar = (lfc) this.Z0;
-                paint.setShader(lfcVar.b().getShader());
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.G.getAlpha(), lfcVar.b().getAlpha()) * f), 31);
-                Path path = this.F0;
-                canvas.drawPath(path, paint);
-                if (lfcVar.e) {
-                    paint.setShader(((Paint) lfcVar.d.a).getShader());
-                    canvas.drawPath(path, paint);
-                }
-                canvas.restore();
-                break;
-            default:
-                super.c(canvas, f);
-                break;
-        }
-    }
-
-    @Override // je5, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.X0) {
-            case 1:
-                ((lfc) this.Z0).d(getX(), getY());
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // je5, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        switch (this.X0) {
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x007a, code lost:
+    
+        if (r6 <= 0) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x010d, code lost:
+    
+        if (r9 <= 0) goto L75;
+     */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        int i;
+        TLRPC.UserStatus userStatus;
+        TLRPC.UserStatus userStatus2;
+        TLRPC.UserStatus userStatus3;
+        TLRPC.UserStatus userStatus4;
+        byte b = this.a;
+        int i2 = this.b;
+        Object obj3 = this.c;
+        switch (b) {
             case 0:
-                oy8[] oy8VarArr = (oy8[]) this.Y0;
-                return (oy8VarArr != null && (drawable == oy8VarArr[0] || drawable == oy8VarArr[1])) || super.verifyDrawable(drawable);
+                wg2 wg2Var = (wg2) obj3;
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
+                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
+                long B1 = k47.B1(channelParticipant.peer);
+                long B12 = k47.B1(channelParticipant2.peer);
+                int i3 = -100;
+                if (B1 > 0) {
+                    TLRPC.User W1 = wg2Var.getMessagesController().W1(Long.valueOf(k47.B1(channelParticipant.peer)));
+                    i = (W1 == null || (userStatus2 = W1.status) == null) ? 0 : W1.self ? i2 + 50000 : userStatus2.expires;
+                } else {
+                    i = -100;
+                }
+                if (B12 > 0) {
+                    TLRPC.User W12 = wg2Var.getMessagesController().W1(Long.valueOf(k47.B1(channelParticipant2.peer)));
+                    i3 = (W12 == null || (userStatus = W12.status) == null) ? 0 : W12.self ? i2 + 50000 : userStatus.expires;
+                }
+                if (i <= 0 || i3 <= 0) {
+                    if (i < 0) {
+                        if (i3 < 0) {
+                            if (i <= i3) {
+                                if (i >= i3) {
+                                }
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    if (i != 0 || i3 == 0) {
+                        if ((i3 >= 0 || i <= 0) && (i3 != 0 || i == 0)) {
+                        }
+                    }
+                } else if (i <= i3) {
+                    if (i >= i3) {
+                    }
+                }
+                break;
             default:
-                return super.verifyDrawable(drawable);
+                pd5 pd5Var = (pd5) obj3;
+                TLRPC.User W13 = oc7.r1(pd5Var.a).W1(Long.valueOf(k47.B1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
+                TLRPC.User W14 = oc7.r1(pd5Var.a).W1(Long.valueOf(k47.B1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
+                int i4 = (W13 == null || (userStatus4 = W13.status) == null) ? 0 : W13.self ? i2 + 50000 : userStatus4.expires;
+                int i5 = (W14 == null || (userStatus3 = W14.status) == null) ? 0 : W14.self ? i2 + 50000 : userStatus3.expires;
+                if (i4 <= 0 || i5 <= 0) {
+                    if (i4 < 0) {
+                        if (i5 < 0) {
+                            if (i4 <= i5) {
+                                if (i4 >= i5) {
+                                }
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    if (i4 != 0 || i5 == 0) {
+                        if ((i5 >= 0 || i4 <= 0) && (i5 != 0 || i4 == 0)) {
+                        }
+                    }
+                } else if (i4 <= i5) {
+                    if (i4 >= i5) {
+                    }
+                }
+                break;
         }
-    }
-
-    public cg2(Activity activity, int i, lfc lfcVar, boolean z) {
-        super(activity, i);
-        Paint paint = new Paint(1);
-        this.Y0 = paint;
-        this.Z0 = lfcVar;
-        lfcVar.a(this);
-        paint.setPathEffect(new CornerPathEffect(this.w));
-        if (z) {
-            j(true);
-        }
+        return 1;
     }
 }

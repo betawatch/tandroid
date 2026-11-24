@@ -1,31 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class j55 implements eec {
-    public final /* synthetic */ h75 a;
+import android.os.SystemClock;
 
-    public j55(h75 h75Var) {
-        this.a = h75Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class j55 {
+    public final mk7 a;
+    public final h55 b;
+    public final long c = SystemClock.uptimeMillis();
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public Runnable g;
+    public bm3 h;
+
+    public j55(mk7 mk7Var, h55 h55Var) {
+        this.a = mk7Var;
+        this.b = h55Var;
     }
 
-    @Override // eec
-    public final void a(int i) {
-        h75 h75Var = this.a;
-        h75Var.l1.E0.k(i);
-        f55 f55Var = h75Var.t4;
-        f55Var.K = f55Var.M;
-        f55Var.L = f55Var.N;
-        f55Var.O = 0.0f;
-        f55Var.P = 1;
-        f55Var.invalidate();
-    }
-
-    @Override // eec
-    public final void c(int i) {
-    }
-
-    @Override // eec
-    public final void b(float f, int i, int i2) {
+    public final boolean a() {
+        return SystemClock.uptimeMillis() - this.c < 700;
     }
 }

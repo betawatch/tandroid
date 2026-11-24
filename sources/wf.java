@@ -1,31 +1,29 @@
 // default package
 
-import java.util.HashMap;
+import android.content.DialogInterface;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wf implements Runnable {
+public final /* synthetic */ class wf implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ p8c b;
-    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ EditText b;
 
-    public /* synthetic */ wf(p8c p8cVar, HashMap hashMap, byte b) {
+    public /* synthetic */ wf(EditText editText, byte b) {
         this.a = b;
-        this.b = p8cVar;
-        this.c = hashMap;
+        this.b = editText;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         byte b = this.a;
-        HashMap hashMap = this.c;
-        p8c p8cVar = this.b;
+        EditText editText = this.b;
         switch (b) {
             case 0:
-                p8cVar.a(hashMap);
+                gm.t1(editText);
                 break;
             default:
-                p8cVar.a(hashMap);
+                gm.t1(editText);
                 break;
         }
     }

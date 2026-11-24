@@ -1,23 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public interface xwe {
-    boolean a(Object obj);
-
-    void b(Object obj);
-
-    void c(Object obj, byte[] bArr, int i, int i2, sad sadVar);
-
-    void d(Object obj, g6e g6eVar);
-
-    void e(nne nneVar, nne nneVar2);
-
-    boolean f(nne nneVar, nne nneVar2);
-
-    int g(nne nneVar);
-
-    Object zza();
-
-    int zzb(Object obj);
+public abstract class xwe {
+    public static sdb a(sdb sdbVar) {
+        return !(sdbVar instanceof udb) ? sdbVar instanceof tdb ? sdbVar : sdbVar instanceof Serializable ? new tdb(sdbVar) : new udb(sdbVar) : sdbVar;
+    }
 }

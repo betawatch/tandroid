@@ -1,19 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class gge implements zn7 {
-    public static final gge a = new gge();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class gge {
+    public static Exception a(h1 h1Var, String str, Exception exc) {
+        if (exc instanceof l23) {
+            return new l23(h1Var, str);
         }
-        throw null;
+        if (exc instanceof bv4) {
+            return new bv4(h1Var, str);
+        }
+        throw new kr4();
     }
 }

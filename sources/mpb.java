@@ -1,168 +1,40 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.concurrent.atomic.AtomicBoolean;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class mpb implements lf7 {
+    public final long a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public class mpb extends View implements li4 {
-    public final Path a;
-    public final Paint b;
-    public final Paint c;
-    public boolean d;
-    public final lm e;
-    public Drawable f;
-    public Bitmap h;
-    public int n;
-    public ValueAnimator r;
-
-    public mpb(Context context) {
-        super(context);
-        this.a = new Path();
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(3);
-        this.c = paint2;
-        this.e = new lm(this, 0L, 380L, s33.h);
-        paint.setColor(-1);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+    public mpb(long j) {
+        this.a = j;
     }
 
-    public final void a(gk2 gk2Var, boolean z) {
-        if (this.f == gk2Var) {
-            return;
-        }
-        ValueAnimator valueAnimator = this.r;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.r = null;
-        }
-        if (!z) {
-            setDrawable(gk2Var);
-            return;
-        }
-        this.r = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-        this.r.addUpdateListener(new nk(this, new AtomicBoolean(), gk2Var, (byte) 7));
-        this.r.start();
+    @Override // lf7
+    public final go4 a() {
+        return null;
     }
 
-    public final void b(boolean z, boolean z2) {
-        this.d = z;
-        if (!z2) {
-            this.e.e(true, z ? 1.0f : 0.0f);
-        }
-        invalidate();
+    @Override // lf7
+    public final byte[] c() {
+        return null;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.f != null) {
-            float d = this.e.d(this.d);
-            int intrinsicWidth = this.f.getIntrinsicWidth();
-            int intrinsicHeight = this.f.getIntrinsicHeight();
-            Rect rect = gl.Q;
-            rect.set((getWidth() - intrinsicWidth) / 2, (getHeight() - intrinsicHeight) / 2, (getWidth() + intrinsicWidth) / 2, (getHeight() + intrinsicHeight) / 2);
-            if (d <= 0.0f) {
-                this.f.setBounds(rect);
-                this.f.draw(canvas);
-            } else if (d < 1.0f) {
-                canvas.save();
-                Path path = this.a;
-                path.rewind();
-                path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, gl.L(16.0f) * d, Path.Direction.CW);
-                canvas.clipPath(path, Region.Op.DIFFERENCE);
-                this.f.setBounds(rect);
-                this.f.draw(canvas);
-                canvas.restore();
-            }
-            if (d > 0.0f) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), kk7.d4, 31);
-                canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, gl.L(16.0f) * d, this.b);
-                canvas.save();
-                Bitmap bitmap = this.h;
-                if (bitmap != null) {
-                    canvas.drawBitmap(bitmap, (Rect) null, rect, this.c);
-                }
-                canvas.restore();
-                canvas.restore();
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        return obj != null && mpb.class == obj.getClass() && this.a == ((mpb) obj).a;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.h != null || this.n == 0) {
-            return;
-        }
-        this.h = BitmapFactory.decodeResource(getResources(), this.n);
+    public final int hashCode() {
+        return cqe.b(this.a) + 527;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        Bitmap bitmap = this.h;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.h = null;
-        }
+    public final String toString() {
+        return "ThumbnailMetadata: presentationTimeUs=" + this.a;
     }
 
-    public void setDrawable(Drawable drawable) {
-        this.f = drawable;
-        Bitmap bitmap = this.h;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.h = null;
-        }
-        if (this.h == null && drawable != null && drawable.getIntrinsicWidth() > 0 && drawable.getIntrinsicHeight() > 0) {
-            Bitmap createBitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-            this.h = createBitmap;
-            drawable.setBounds(0, 0, createBitmap.getWidth(), this.h.getHeight());
-            drawable.draw(new Canvas(this.h));
-        }
-        invalidate();
-    }
-
-    @Override // li4
-    public void setInvert(float f) {
-        Drawable drawable = this.f;
-        if (drawable != null) {
-            drawable.setColorFilter(new PorterDuffColorFilter(bm2.f(f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
-        }
-        this.b.setColor(bm2.f(f, -1, -16777216));
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setSelected(boolean z) {
-        this.d = z;
-        invalidate();
-    }
-
-    public void setDrawable(int i) {
-        this.f = getContext().getResources().getDrawable(i).mutate();
-        Bitmap bitmap = this.h;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.h = null;
-        }
-        if (this.h == null && i != 0) {
-            this.h = BitmapFactory.decodeResource(getResources(), i);
-        }
-        invalidate();
+    @Override // lf7
+    public final void b(ht6 ht6Var) {
     }
 }

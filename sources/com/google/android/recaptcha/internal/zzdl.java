@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzdl {
     public zzdl(Context context) {
@@ -47,16 +47,16 @@ public final class zzdl {
                 } else {
                     int read2 = fileInputStream.read();
                     if (read2 != -1) {
-                        u64 u64Var = new u64(8193);
-                        u64Var.write(read2);
-                        cqd.a(fileInputStream, u64Var);
-                        int size = u64Var.size() + i;
+                        d84 d84Var = new d84(8193);
+                        d84Var.write(read2);
+                        fsd.a(fileInputStream, d84Var);
+                        int size = d84Var.size() + i;
                         if (size < 0) {
                             throw new OutOfMemoryError("File " + file + " is too big to fit in memory.");
                         }
-                        byte[] a = u64Var.a();
+                        byte[] a = d84Var.a();
                         bArr = Arrays.copyOf(bArr, size);
-                        System.arraycopy(a, 0, bArr, i, u64Var.size());
+                        System.arraycopy(a, 0, bArr, i, d84Var.size());
                     }
                 }
             }
@@ -64,7 +64,7 @@ public final class zzdl {
             try {
                 throw th;
             } catch (Throwable th2) {
-                erd.a(fileInputStream, th);
+                htd.a(fileInputStream, th);
                 throw th2;
             }
         }
@@ -72,7 +72,7 @@ public final class zzdl {
 
     public static final void zzb(File file, byte[] bArr) {
         if (file.exists() && !file.delete()) {
-            k93.f("Unable to delete existing encrypted file");
+            wa3.d("Unable to delete existing encrypted file");
             return;
         }
         bArr.getClass();

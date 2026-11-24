@@ -1,27 +1,39 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ak4 extends AnimatorListenerAdapter {
+public final class ak4 extends View {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ek4 b;
+    public final byte b;
 
-    public /* synthetic */ ak4(ek4 ek4Var, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public ak4(Context context, int i, byte b) {
+        super(context);
         this.a = b;
-        this.b = ek4Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                kk7.f(y6c.t0).d(new s54((Object) this, (byte) 21));
+        switch (b) {
+            case 1:
+                this.b = i;
+                super(context);
                 break;
             default:
-                kk7.f(y6c.t0).d(new s54((Object) this, (byte) 22));
+                this.b = i;
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(this.b), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gm.L(this.b), TLObject.FLAG_30));
                 break;
         }
     }

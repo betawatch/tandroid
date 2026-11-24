@@ -1,149 +1,156 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.opengl.GLUtils;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL10;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class dr4 extends Thread {
-    public final SurfaceTexture a;
-    public volatile boolean b;
-    public boolean c;
-    public final /* synthetic */ er4 d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class dr4 {
+    public final yzb a;
+    public zzb d;
+    public id3 e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public go4 l;
+    public go4 m;
+    public boolean n;
+    public final tzb b = new tzb();
+    public final yw7 c = new yw7();
+    public final yw7 j = new yw7(1);
+    public final yw7 k = new yw7();
 
-    public dr4(er4 er4Var, SurfaceTexture surfaceTexture) {
-        this.d = er4Var;
-        this.a = surfaceTexture;
+    public dr4(yzb yzbVar, zzb zzbVar, id3 id3Var, go4 go4Var) {
+        this.a = yzbVar;
+        this.d = zzbVar;
+        this.e = id3Var;
+        this.m = go4Var;
+        if (c1d.e(go4Var.t)) {
+            this.l = go4Var;
+        }
+        this.d = zzbVar;
+        this.e = id3Var;
+        if (this.l == null) {
+            yzbVar.g(this.m);
+        }
+        e();
     }
 
-    public final void a() {
-        er4 er4Var;
-        uq4 uq4Var;
-        er4 er4Var2 = this.d;
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        er4Var2.r = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        er4Var2.f = eglGetDisplay;
-        EGLDisplay eGLDisplay = EGL10.EGL_NO_DISPLAY;
-        EGL10 egl102 = er4Var2.r;
-        if (eglGetDisplay == eGLDisplay) {
-            k93.c(GLUtils.getEGLErrorString(egl102.eglGetError()), "eglGetDisplay failed ");
-            return;
-        }
-        if (!egl102.eglInitialize(eglGetDisplay, new int[2])) {
-            k93.c(GLUtils.getEGLErrorString(er4Var2.r.eglGetError()), "eglInitialize failed ");
-            return;
-        }
-        byte b = 1;
-        int[] iArr = new int[1];
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = h24.m(er4Var2.getContext()).h() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12337, er4Var2.getMsaaSamples(), 12344};
-        er4Var2.s = null;
-        if (!h24.m(er4Var2.getContext()).h() && er4Var2.r.eglChooseConfig(er4Var2.f, iArr2, eGLConfigArr, 1, iArr) && iArr[0] != 0) {
-            er4Var2.s = eGLConfigArr[0];
-        } else if (!er4Var2.r.eglChooseConfig(er4Var2.f, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
-            k32.e(GLUtils.getEGLErrorString(er4Var2.r.eglGetError()), "eglChooseConfig failed ");
-            return;
-        } else if (iArr[0] > 0) {
-            er4Var2.s = eGLConfigArr[0];
-        }
-        EGLConfig eGLConfig = er4Var2.s;
-        if (eGLConfig == null) {
-            wn4.j("eglConfig not initialized");
-            return;
-        }
-        int i = er4Var2.T == 4 ? 3 : 2;
-        EGL10 egl103 = er4Var2.r;
-        EGLDisplay eGLDisplay2 = er4Var2.f;
-        EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
-        EGLContext eglCreateContext = egl103.eglCreateContext(eGLDisplay2, eGLConfig, eGLContext, new int[]{12440, i, 12344});
-        er4Var2.n = eglCreateContext;
-        if (eglCreateContext == null || eglCreateContext == eGLContext) {
-            fvc.d(er4Var2.r.eglGetError(), "eglCreateContext failed: ");
-            return;
-        }
-        er4Var2.c();
-        er4Var2.h = er4Var2.r.eglCreateWindowSurface(er4Var2.f, er4Var2.s, er4Var2.c, null);
-        er4Var2.c();
-        EGLSurface eGLSurface = er4Var2.h;
-        if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
-            int eglGetError = er4Var2.r.eglGetError();
-            if (eglGetError != 12299) {
-                k93.c(GLUtils.getEGLErrorString(eglGetError), "eglCreateWindowSurface failed ");
-                return;
+    public final int a() {
+        int i = !this.n ? this.d.g[this.f] : this.b.j[this.f] ? 1 : 0;
+        return b() != null ? i | TLObject.FLAG_30 : i;
+    }
+
+    public final szb b() {
+        if (this.n) {
+            tzb tzbVar = this.b;
+            id3 id3Var = tzbVar.a;
+            String str = hac.a;
+            int i = id3Var.a;
+            szb szbVar = tzbVar.m;
+            if (szbVar == null) {
+                szb[] szbVarArr = this.d.a.n;
+                szbVar = szbVarArr == null ? null : szbVarArr[i];
             }
-            fa4.d("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
-        } else if (!er4Var2.r.eglMakeCurrent(er4Var2.f, eGLSurface, eGLSurface, er4Var2.n)) {
-            k93.c(GLUtils.getEGLErrorString(er4Var2.r.eglGetError()), "eglMakeCurrent failed ");
-            return;
+            if (szbVar != null && szbVar.a) {
+                return szbVar;
+            }
+        }
+        return null;
+    }
+
+    public final boolean c() {
+        this.f++;
+        if (!this.n) {
+            return false;
+        }
+        int i = this.g + 1;
+        this.g = i;
+        int[] iArr = this.b.g;
+        int i2 = this.h;
+        if (i != iArr[i2]) {
+            return true;
+        }
+        this.h = i2 + 1;
+        this.g = 0;
+        return false;
+    }
+
+    public final int d(int i, int i2) {
+        yw7 yw7Var;
+        szb b = b();
+        if (b == null) {
+            return 0;
+        }
+        int i3 = b.d;
+        tzb tzbVar = this.b;
+        if (i3 != 0) {
+            yw7Var = tzbVar.n;
         } else {
-            er4Var2.c();
-            er4Var2.w = (GL10) er4Var2.n.getGL();
-            er4Var2.c();
+            byte[] bArr = b.e;
+            String str = hac.a;
+            int length = bArr.length;
+            yw7 yw7Var2 = this.k;
+            yw7Var2.L(length, bArr);
+            i3 = bArr.length;
+            yw7Var = yw7Var2;
         }
-        this.d.d();
-        long nanoTime = System.nanoTime();
-        while (!this.b) {
-            synchronized (this.d) {
-                if (this.d.I && (uq4Var = (er4Var = this.d).b) != null) {
-                    er4Var.f(uq4Var);
-                    this.d.I = false;
-                }
-            }
-            er4 er4Var3 = this.d;
-            if (er4Var3.b != null && !er4Var3.H) {
-                long nanoTime2 = System.nanoTime();
-                this.d.e((nanoTime2 - nanoTime) / 1.0E9f);
-                if (!this.c) {
-                    this.c = true;
-                    gl.d3(new cr4(this, b));
-                }
-                nanoTime = nanoTime2;
-            }
-            try {
-                er4 er4Var4 = this.d;
-                if (er4Var4.b == null || er4Var4.H) {
-                    Thread.sleep(100L);
-                } else {
-                    long nanoTime3 = this.d.x - (System.nanoTime() - nanoTime);
-                    if (nanoTime3 > 0) {
-                        Thread.sleep(nanoTime3 / 1000000, (int) (nanoTime3 % 1000000));
-                    }
-                }
-            } catch (InterruptedException unused) {
-            }
+        boolean z = tzbVar.k && tzbVar.l[this.f];
+        boolean z2 = z || i2 != 0;
+        yw7 yw7Var3 = this.j;
+        yw7Var3.a[0] = (byte) ((z2 ? 128 : 0) | i3);
+        yw7Var3.N(0);
+        yzb yzbVar = this.a;
+        yzbVar.b(yw7Var3, 1, 1);
+        yzbVar.b(yw7Var, i3, 1);
+        if (!z2) {
+            return i3 + 1;
         }
+        yw7 yw7Var4 = this.c;
+        if (!z) {
+            yw7Var4.K(8);
+            byte[] bArr2 = yw7Var4.a;
+            bArr2[0] = 0;
+            bArr2[1] = 1;
+            bArr2[2] = 0;
+            bArr2[3] = (byte) (i2 & nm7.d4);
+            bArr2[4] = (byte) ((i >> 24) & nm7.d4);
+            bArr2[5] = (byte) ((i >> 16) & nm7.d4);
+            bArr2[6] = (byte) ((i >> 8) & nm7.d4);
+            bArr2[7] = (byte) (i & nm7.d4);
+            yzbVar.b(yw7Var4, 8, 1);
+            return i3 + 9;
+        }
+        yw7 yw7Var5 = tzbVar.n;
+        int H = yw7Var5.H();
+        yw7Var5.O(-2);
+        int i4 = (H * 6) + 2;
+        if (i2 != 0) {
+            yw7Var4.K(i4);
+            byte[] bArr3 = yw7Var4.a;
+            yw7Var5.k(0, i4, bArr3);
+            int i5 = (((bArr3[2] & 255) << 8) | (bArr3[3] & 255)) + i2;
+            bArr3[2] = (byte) ((i5 >> 8) & nm7.d4);
+            bArr3[3] = (byte) (i5 & nm7.d4);
+        } else {
+            yw7Var4 = yw7Var5;
+        }
+        yzbVar.b(yw7Var4, i4, 1);
+        return i3 + 1 + i4;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v4, types: [er4] */
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        synchronized (this.d.d) {
-            if (this.b) {
-                return;
-            }
-            er4 er4Var = this.d;
-            er4Var.c = this.a;
-            er4Var.I = true;
-            try {
-                try {
-                    a();
-                } catch (Exception e) {
-                    if (!this.b) {
-                        fa4.g(e, true);
-                        gl.d3(new cr4(this, (byte) 0));
-                    }
-                }
-            } finally {
-                this.d.i();
-            }
-        }
+    public final void e() {
+        tzb tzbVar = this.b;
+        tzbVar.d = 0;
+        tzbVar.p = 0L;
+        tzbVar.q = false;
+        tzbVar.k = false;
+        tzbVar.o = false;
+        tzbVar.m = null;
+        this.f = 0;
+        this.h = 0;
+        this.g = 0;
+        this.i = 0;
+        this.n = false;
     }
 }

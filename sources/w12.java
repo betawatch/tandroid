@@ -1,45 +1,20 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class w12 implements e39, b22 {
-    public final /* synthetic */ k22 a;
+public final class w12 implements dla {
+    public final /* synthetic */ i22 a;
 
-    public /* synthetic */ w12(k22 k22Var) {
-        this.a = k22Var;
+    public w12(i22 i22Var) {
+        this.a = i22Var;
     }
 
-    @Override // b22
-    public final void b(TLRPC.TL_userContact_old2 tL_userContact_old2, boolean z, int i, long j) {
-        k22 k22Var = this.a;
-        k22Var.b.a(true);
-        k22Var.K.b(tL_userContact_old2, z, i, j);
-    }
-
-    @Override // e39
-    public final boolean d(int i, View view) {
-        Object O;
-        k22 k22Var = this.a;
-        w39 adapter = k22Var.s.getAdapter();
-        g22 g22Var = k22Var.G;
-        if (adapter == g22Var) {
-            O = g22Var.E(i);
-        } else {
-            e22 e22Var = k22Var.F;
-            O = e22Var.O(e22Var.S(i), e22Var.Q(i));
+    @Override // dla
+    public final void L(int i, boolean z) {
+        i22 i22Var = this.a;
+        a22 a22Var = i22Var.v2;
+        if (a22Var == i22Var.k2) {
+            a22Var.invalidate();
         }
-        if (O == null) {
-            return false;
-        }
-        k22Var.Q((j22) view, O);
-        return true;
-    }
-
-    @Override // b22
-    public final void a(ArrayList arrayList, String str, boolean z, int i, long j, boolean z2) {
     }
 }

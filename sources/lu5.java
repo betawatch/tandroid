@@ -1,62 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class lu5 {
-    public static final lu5 d = new lu5();
-    public final xl3 a = new xl3((byte) 13);
-    public final cff b = rcd.a;
-    public final i4d c = new i4d((byte) 27);
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-    public final Object a(cv5 cv5Var, String str) {
-        byte b;
-        cv5Var.getClass();
-        cyb cybVar = new cyb(str);
-        Object l = new igf(this, uyc.c, cybVar, cv5Var.d()).l(cv5Var);
-        String str2 = (String) cybVar.f;
-        int i = cybVar.b;
-        while (i != -1 && i < str2.length()) {
-            int i2 = i + 1;
-            char charAt = str2.charAt(i);
-            if (charAt != ' ' && charAt != '\n' && charAt != '\r' && charAt != '\t') {
-                cybVar.b = i2;
-                b = ukd.a(charAt);
-                break;
-            }
-            i = i2;
-        }
-        cybVar.b = str2.length();
-        b = 10;
-        if (b == 10) {
-            return l;
-        }
-        cyb.m(cybVar, "Expected EOF after parsing, but had " + str.charAt(cybVar.b - 1) + " instead", 0, 6);
-        throw null;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class lu5 implements Iterator {
+    public static final lu5 a;
+    public static final /* synthetic */ lu5[] b;
+
+    static {
+        lu5 lu5Var = new lu5("INSTANCE", 0);
+        a = lu5Var;
+        b = new lu5[]{lu5Var};
     }
 
-    public final String b(cv5 cv5Var, Object obj) {
-        char[] cArr;
-        cv5Var.getClass();
-        nj1 nj1Var = new nj1((byte) 1);
-        mj1 mj1Var = mj1.c;
-        synchronized (mj1Var) {
-            ks ksVar = mj1Var.a;
-            cArr = null;
-            char[] cArr2 = (char[]) (ksVar.isEmpty() ? null : ksVar.removeLast());
-            if (cArr2 != null) {
-                mj1Var.b -= cArr2.length;
-                cArr = cArr2;
-            }
-        }
-        if (cArr == null) {
-            cArr = new char[128];
-        }
-        nj1Var.b = cArr;
-        try {
-            new c30(new e31(nj1Var, (byte) 3), this, uyc.c, new c30[uyc.n.h()]).j(cv5Var, obj);
-            return nj1Var.toString();
-        } finally {
-            nj1Var.b();
-        }
+    public static lu5 valueOf(String str) {
+        return (lu5) Enum.valueOf(lu5.class, str);
+    }
+
+    public static lu5[] values() {
+        return (lu5[]) b.clone();
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        throw new NoSuchElementException();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        jte.o("no calls to next() since the last call to remove()", false);
     }
 }

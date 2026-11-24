@@ -1,15 +1,18 @@
 // default package
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
-public final class f7b extends y23 {
-    public final /* synthetic */ t7b G;
+public final class f7b extends k69 {
+    public final /* synthetic */ h7b a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f7b(t7b t7bVar, Context context, i7b i7bVar) {
-        super(context, i7bVar);
-        this.G = t7bVar;
+    public f7b(h7b h7bVar) {
+        this.a = h7bVar;
+    }
+
+    @Override // k69
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        this.a.b.invalidate();
     }
 }

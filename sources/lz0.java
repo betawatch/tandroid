@@ -1,22 +1,28 @@
 // default package
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public final class lz0 {
-    public final long a;
-    public final int b;
-    public final byte[] c;
-    public final int d;
-    public final int e;
-    public final ArrayList f = new ArrayList();
+    public boolean a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public ylb g;
 
-    public lz0(long j, int i, byte[] bArr, int i2, int i3) {
-        this.a = j;
-        this.b = i;
-        this.c = bArr;
-        this.d = i2;
-        this.e = i3;
+    public lz0(lz0 lz0Var) {
+        this.a = lz0Var.a;
+        this.b = lz0Var.b;
+        this.c = lz0Var.c;
+        this.d = lz0Var.d;
+        this.e = lz0Var.e;
+        this.f = lz0Var.f;
+        this.g = lz0Var.g;
+    }
+
+    public lz0() {
+        this.b = 1;
+        this.f = 1;
     }
 }

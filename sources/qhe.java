@@ -1,22 +1,34 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import android.util.Log;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class qhe extends b4 {
-    public static final Parcelable.Creator<qhe> CREATOR = new rhe((byte) 6);
-    public final byte[] a;
-
-    public qhe(byte[] bArr) {
-        this.a = bArr;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.c(parcel, 2, this.a);
-        jte.s(parcel, r);
+public abstract class qhe {
+    public static String a(Context context, int i) {
+        if (context == null) {
+            return "";
+        }
+        if (i == 1) {
+            return context.getString(R.string.fingerprint_error_hw_not_available);
+        }
+        if (i != 7) {
+            switch (i) {
+                case 9:
+                    break;
+                case 10:
+                    return context.getString(R.string.fingerprint_error_user_canceled);
+                case 11:
+                    return context.getString(R.string.fingerprint_error_no_fingerprints);
+                case 12:
+                    return context.getString(R.string.fingerprint_error_hw_not_present);
+                default:
+                    Log.e("BiometricUtils", "Unknown error code: " + i);
+                    return context.getString(R.string.default_error_msg);
+            }
+        }
+        return context.getString(R.string.fingerprint_error_lockout);
     }
 }

@@ -1,298 +1,118 @@
 // default package
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.telephony.TelephonyManager;
-import android.text.TextUtils;
-import java.util.Locale;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MusicPlayerService;
-import org.telegram.messenger.a;
-import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.PhotoViewer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vl6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class vl6 implements lf7 {
+    public final String a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
 
-    public /* synthetic */ vl6(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public vl6(String str, byte[] bArr, int i, int i2) {
+        boolean z;
+        byte b;
+        str.getClass();
+        switch (str) {
+            case "com.android.capture.fps":
+                if (i2 == 23 && bArr.length == 4) {
+                    z = true;
+                }
+                jte.f(z);
+                break;
+            case "auxiliary.tracks.interleaved":
+                if (i2 == 75 && bArr.length == 1 && ((b = bArr[0]) == 0 || b == 1)) {
+                    z = true;
+                }
+                jte.f(z);
+                break;
+            case "auxiliary.tracks.length":
+            case "auxiliary.tracks.offset":
+                if (i2 == 78 && bArr.length == 8) {
+                    z = true;
+                }
+                jte.f(z);
+                break;
+            case "auxiliary.tracks.map":
+                jte.f(i2 == 0);
+                break;
+        }
+        this.a = str;
+        this.b = bArr;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        float f;
-        int i;
-        yla ylaVar;
-        String d;
-        TelephonyManager telephonyManager;
-        byte b = this.a;
-        byte b2 = 2;
-        Integer num = null;
-        byte b3 = 1;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((wl6) obj).e.l(true, true, false, false);
-                return;
-            case 1:
-                hd1 hd1Var = (hd1) obj;
-                if (!PhotoViewer.r0().U0()) {
-                    MediaController.Z1 = null;
-                    MediaController.N(0);
-                    return;
-                } else {
-                    vl6 vl6Var = new vl6(hd1Var, b3);
-                    MediaController.Z1 = vl6Var;
-                    gl.e3(vl6Var, 2000L);
-                    return;
-                }
-            case 2:
-                ((gm6) obj).d();
-                return;
-            case 3:
-                om6 om6Var = (om6) obj;
-                try {
-                    ez3 ez3Var = new ez3();
-                    ez3Var.b = om6Var;
-                    Thread thread = new Thread(ez3Var, "VideoConvertRunnable");
-                    thread.start();
-                    thread.join();
-                    return;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            case 4:
-                kk7.e().k(kk7.R4, 0, (TLRPC.Document) obj, 7);
-                return;
-            case 5:
-                ((k21) obj).f();
-                return;
-            case 6:
-                e77 e77Var = (e77) obj;
-                if (e77Var != null) {
-                    e77Var.a(null);
-                    return;
-                }
-                return;
-            case 7:
-                ((bs6) obj).n = -1;
-                return;
-            case 8:
-                wy6 wy6Var = (wy6) obj;
-                wy6Var.f();
-                wy6Var.e(true);
-                return;
-            case 9:
-                final uz6 uz6Var = (uz6) obj;
-                boolean z = uz6Var.J;
-                boolean z2 = !z;
-                or7 or7Var = uz6Var.e;
-                tz6 tz6Var = uz6Var.b;
-                if (tz6Var == null || or7Var == null) {
-                    uz6Var.P = 0;
-                    return;
-                }
-                if (uz6Var.M && (ylaVar = uz6Var.L) != null && ylaVar.f && !z) {
-                    uz6Var.P = 0;
-                    return;
-                }
-                boolean g = uz6Var.g();
-                if (z) {
-                    int computeVerticalScrollRange = tz6Var.computeVerticalScrollRange();
-                    f = (computeVerticalScrollRange - or7Var.h) + uz6Var.s;
-                    if (computeVerticalScrollRange <= 0 && uz6Var.f.K() > 0 && (i = uz6Var.P) < 3) {
-                        uz6Var.P = i + 1;
-                        uz6Var.o(true);
-                        return;
-                    }
-                } else {
-                    f = (-uz6Var.s) - gl.L(6.0f);
-                }
-                uz6Var.P = 0;
-                float f2 = uz6Var.w;
-                float max = g ? -Math.max(0.0f, f2 - f) : Math.max(0.0f, f2 - f) + (-f2);
-                if (!z && !g) {
-                    max += tz6Var.computeVerticalScrollOffset();
-                }
-                final float f3 = max;
-                yla ylaVar2 = uz6Var.L;
-                if (ylaVar2 != null) {
-                    ylaVar2.d();
-                }
-                uz6Var.M = z2;
-                final float translationY = tz6Var.getTranslationY();
-                final float f4 = uz6Var.N;
-                final float f5 = z ? 0.0f : 1.0f;
-                if (translationY == f3) {
-                    uz6Var.L = null;
-                    num = Integer.valueOf(z ? 0 : 8);
-                    if (uz6Var.O && !z) {
-                        uz6Var.O = false;
-                        tz6Var.setLayoutManager(uz6Var.getNeededLayoutManager());
-                        uz6Var.J = true;
-                        uz6Var.o(true);
-                    }
-                } else {
-                    yla ylaVar3 = new yla(new ti4(translationY));
-                    zla zlaVar = new zla(f3);
-                    zlaVar.a(1.0f);
-                    zlaVar.b(550.0f);
-                    ylaVar3.m = zlaVar;
-                    uz6Var.L = ylaVar3;
-                    ylaVar3.b(new yr3() { // from class: lz6
-                        @Override // yr3
-                        public final void a(yla ylaVar4, float f6, float f7) {
-                            uz6 uz6Var2 = uz6.this;
-                            uz6Var2.b.setTranslationY(f6);
-                            uz6Var2.i();
-                            float f8 = translationY;
-                            uz6Var2.N = gl.R1(f4, f5, (f6 - f8) / (f3 - f8));
-                        }
-                    });
-                    if (!z) {
-                        uz6Var.L.a(new aw5(uz6Var, z2, b2));
-                    }
-                    uz6Var.L.a(new mz6());
-                    uz6Var.L.h();
-                }
-                if (num == null || uz6Var.getVisibility() == num.intValue()) {
-                    return;
-                }
-                uz6Var.setVisibility(num.intValue());
-                return;
-            case 10:
-                ((w02) obj).setVisibility(8);
-                return;
-            case 11:
-                ot7 ot7Var = (ot7) obj;
-                ot7Var.z0 = true;
-                ot7Var.s();
-                return;
-            case 12:
-                ((f37) ((s17) obj).T).n.f();
-                return;
-            case 13:
-                ((n37) obj).a();
-                return;
-            case 14:
-                gl.F3(((t47) obj).p1);
-                return;
-            case 15:
-                ((vm1) obj).run();
-                return;
-            case 16:
-                t1b t1bVar = ((ra7) obj).E;
-                if (t1bVar != null) {
-                    t1bVar.p(3, true);
-                    return;
-                }
-                return;
-            case 17:
-                ((be2) obj).a(null);
-                return;
-            case 18:
-                ((gk2) obj).invalidateSelf();
-                return;
-            case 19:
-                p6b p6bVar = (p6b) obj;
-                if (p6bVar.J) {
-                    p6bVar.J = false;
-                    p6bVar.invalidate();
-                    return;
-                }
-                return;
-            case 20:
-                ((MusicPlayerService) obj).stopSelf();
-                return;
-            case 21:
-                ((za2) obj).invalidateSelf();
-                return;
-            case 22:
-                aj7 aj7Var = (aj7) obj;
-                r93 r93Var = (r93) aj7Var.a.get();
-                if (r93Var != null) {
-                    int h = aj7Var.c.h();
-                    s93 s93Var = r93Var.a;
-                    synchronized (s93Var) {
-                        int i2 = s93Var.n;
-                        if (i2 == 0 || s93Var.e) {
-                            if (i2 != h || s93Var.o == null) {
-                                s93Var.n = h;
-                                if (h == 1 || h == 0 || h == 8) {
-                                    return;
-                                }
-                                if (s93Var.o == null) {
-                                    Context context = s93Var.a;
-                                    String str = g8c.a;
-                                    if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
-                                        String networkCountryIso = telephonyManager.getNetworkCountryIso();
-                                        if (!TextUtils.isEmpty(networkCountryIso)) {
-                                            d = smd.d(networkCountryIso);
-                                            s93Var.o = d;
-                                        }
-                                    }
-                                    d = smd.d(Locale.getDefault().getCountry());
-                                    s93Var.o = d;
-                                }
-                                s93Var.l = s93Var.c(h);
-                                s93Var.d.getClass();
-                                long elapsedRealtime = SystemClock.elapsedRealtime();
-                                s93Var.e(s93Var.i, s93Var.g > 0 ? (int) (elapsedRealtime - s93Var.h) : 0, s93Var.l);
-                                s93Var.h = elapsedRealtime;
-                                s93Var.i = 0L;
-                                s93Var.k = 0L;
-                                s93Var.j = 0L;
-                                nja njaVar = s93Var.f;
-                                njaVar.a.clear();
-                                njaVar.c = -1;
-                                njaVar.d = 0;
-                                njaVar.e = 0;
-                                return;
-                            }
-                            return;
-                        }
-                        return;
-                    }
-                }
-                return;
-            case 23:
-                gl.F3(((jj7) ((pj4) obj).b).J1);
-                return;
-            case 24:
-                try {
-                    a.b.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, (Bundle) obj);
-                    return;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return;
-                }
-            case 25:
-                ((NotificationsSettingsActivity) obj).z0();
-                return;
-            case 26:
-                kk7.f(((wm7) obj).a).k(42, new Object[0]);
-                return;
-            case 27:
-                ((OldVideoPlayerRewinder) obj).lambda$incrementRewindCount$0();
-                return;
-            case 28:
-                ((fq7) obj).run();
-                return;
-            default:
-                EditTextBoldCursor editTextBoldCursor = ((jq7) obj).n1;
-                editTextBoldCursor.requestFocus();
-                gl.F3(editTextBoldCursor);
-                return;
+    @Override // lf7
+    public final go4 a() {
+        return null;
+    }
+
+    @Override // lf7
+    public final byte[] c() {
+        return null;
+    }
+
+    public final ArrayList d() {
+        jte.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
+        byte[] bArr = this.b;
+        byte b = bArr[1];
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < b; i = td4.g(bArr[i + 2] & 255, i, 1, arrayList)) {
         }
+        return arrayList;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || vl6.class != obj.getClass()) {
+            return false;
+        }
+        vl6 vl6Var = (vl6) obj;
+        return this.a.equals(vl6Var.a) && Arrays.equals(this.b, vl6Var.b) && this.c == vl6Var.c && this.d == vl6Var.d;
+    }
+
+    public final int hashCode() {
+        return ((((Arrays.hashCode(this.b) + ts2.j(527, 31, this.a)) * 31) + this.c) * 31) + this.d;
+    }
+
+    public final String toString() {
+        String sb;
+        String str = this.a;
+        byte[] bArr = this.b;
+        int i = this.d;
+        if (i == 0) {
+            if (str.equals("auxiliary.tracks.map")) {
+                ArrayList d = d();
+                StringBuilder s = td4.s("track types = ");
+                new jw5(String.valueOf(','), (byte) 0).a(s, d.iterator());
+                sb = s.toString();
+            }
+            sb = hac.g0(bArr);
+        } else if (i == 1) {
+            sb = hac.r(bArr);
+        } else if (i == 23) {
+            jte.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb = String.valueOf(Float.intBitsToFloat(ine.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+        } else if (i == 67) {
+            jte.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb = String.valueOf(ine.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+        } else if (i != 75) {
+            if (i == 78) {
+                sb = String.valueOf(new yw7(bArr).G());
+            }
+            sb = hac.g0(bArr);
+        } else {
+            sb = String.valueOf(bArr[0] & 255);
+        }
+        return td4.r("mdta: key=", str, ", value=", sb);
+    }
+
+    @Override // lf7
+    public final void b(ht6 ht6Var) {
     }
 }

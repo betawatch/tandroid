@@ -1,15 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public interface gs3 {
-    int b(int i);
+    void I(int i, rz6 rz6Var);
 
-    boolean c(int i);
+    void N(int i, rz6 rz6Var, jk2 jk2Var);
 
-    char charAt(int i);
+    void i(int i, rz6 rz6Var, Exception exc);
 
-    int length();
+    void n(int i, rz6 rz6Var, int i2);
 
-    CharSequence subSequence(int i, int i2);
+    void y(int i, rz6 rz6Var);
 }

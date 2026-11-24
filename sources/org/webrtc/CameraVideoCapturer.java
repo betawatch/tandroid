@@ -2,11 +2,11 @@ package org.webrtc;
 
 import android.media.MediaRecorder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public interface CameraVideoCapturer extends VideoCapturer {
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface CameraEventsHandler {
         void onCameraClosed();
 
@@ -21,7 +21,7 @@ public interface CameraVideoCapturer extends VideoCapturer {
         void onFirstFrameAvailable();
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class CameraStatistics {
         private static final int CAMERA_FREEZE_REPORT_TIMOUT_MS = 4000;
         private static final int CAMERA_OBSERVER_PERIOD_MS = 2000;
@@ -62,7 +62,7 @@ public interface CameraVideoCapturer extends VideoCapturer {
             };
             this.cameraObserver = runnable;
             if (surfaceTextureHelper == null) {
-                w26.j("SurfaceTextureHelper is null");
+                u36.j("SurfaceTextureHelper is null");
                 throw null;
             }
             this.surfaceTextureHelper = surfaceTextureHelper;
@@ -82,7 +82,7 @@ public interface CameraVideoCapturer extends VideoCapturer {
             if (Thread.currentThread() == this.surfaceTextureHelper.getHandler().getLooper().getThread()) {
                 return;
             }
-            sc8.j("Wrong thread");
+            dq9.m("Wrong thread");
         }
 
         public void addFrame() {
@@ -95,14 +95,14 @@ public interface CameraVideoCapturer extends VideoCapturer {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface CameraSwitchHandler {
         void onCameraSwitchDone(boolean z);
 
         void onCameraSwitchError(String str);
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     @Deprecated
     public interface MediaRecorderHandler {
         void onMediaRecorderError(String str);

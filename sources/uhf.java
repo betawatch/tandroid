@@ -1,59 +1,47 @@
 // default package
 
-import java.util.HashSet;
-import java.util.Iterator;
+import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class uhf {
-    public final /* synthetic */ ed1 a;
+public final class uhf extends b4 {
+    public static final Parcelable.Creator<uhf> CREATOR = new e2f(29);
+    public final ArrayList a;
+    public final float[] b;
+    public final Bitmap c;
+    public final ArrayList d;
 
-    public uhf(ed1 ed1Var) {
-        this.a = ed1Var;
+    public uhf(ArrayList arrayList, float[] fArr, Bitmap bitmap, ArrayList arrayList2) {
+        this.a = arrayList;
+        this.b = fArr;
+        this.c = bitmap;
+        this.d = arrayList2;
     }
 
-    public final void a() {
-        Iterator it = new HashSet(this.a.d).iterator();
-        while (it.hasNext()) {
-            ((uhf) it.next()).a();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.p(parcel, 1, this.a);
+        float[] fArr = this.b;
+        if (fArr != null) {
+            int r2 = mve.r(parcel, 2);
+            parcel.writeFloatArray(fArr);
+            mve.s(parcel, r2);
         }
-    }
-
-    public final void b(int i) {
-        ed1 ed1Var = this.a;
-        ed1.g(ed1Var, i);
-        ed1Var.d(i);
-        Iterator it = new HashSet(ed1Var.d).iterator();
-        while (it.hasNext()) {
-            ((uhf) it.next()).b(i);
+        mve.k(parcel, 3, this.c, i);
+        ArrayList arrayList = this.d;
+        if (arrayList != null) {
+            int r3 = mve.r(parcel, 4);
+            int size = arrayList.size();
+            parcel.writeInt(size);
+            for (int i2 = 0; i2 < size; i2++) {
+                parcel.writeFloat(((Float) arrayList.get(i2)).floatValue());
+            }
+            mve.s(parcel, r3);
         }
-    }
-
-    public final void c() {
-        Iterator it = new HashSet(this.a.d).iterator();
-        while (it.hasNext()) {
-            ((uhf) it.next()).c();
-        }
-    }
-
-    public final void d() {
-        Iterator it = new HashSet(this.a.d).iterator();
-        while (it.hasNext()) {
-            ((uhf) it.next()).d();
-        }
-    }
-
-    public final void e() {
-        Iterator it = new HashSet(this.a.d).iterator();
-        while (it.hasNext()) {
-            ((uhf) it.next()).e();
-        }
-    }
-
-    public final void f() {
-        Iterator it = new HashSet(this.a.d).iterator();
-        while (it.hasNext()) {
-            ((uhf) it.next()).f();
-        }
+        mve.s(parcel, r);
     }
 }

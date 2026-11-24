@@ -1,24 +1,24 @@
 // default package
 
-import android.os.Bundle;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class fv5 extends vb1 {
+    public final ov5 r;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class fv5 extends v51 {
-    public final /* synthetic */ cj3 f;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fv5(Bundle bundle, cj3 cj3Var) {
-        super(bundle);
-        this.f = cj3Var;
+    public fv5(px2 px2Var, ov5 ov5Var) {
+        super(1, px2Var);
+        this.r = ov5Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
-        super.onTransitionAnimationEnd(z, z2);
-        if (!z || z2) {
-            return;
-        }
-        this.f.removeSelfFromStack();
+    @Override // vb1
+    public final Throwable p(ov5 ov5Var) {
+        Throwable c;
+        Object v = this.r.v();
+        return (!(v instanceof hv5) || (c = ((hv5) v).c()) == null) ? v instanceof qq2 ? ((qq2) v).a : ov5Var.getCancellationException() : c;
+    }
+
+    @Override // vb1
+    public final String y() {
+        return "AwaitContinuation";
     }
 }

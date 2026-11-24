@@ -1,39 +1,27 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class l2c {
-    public final String a;
-    public final int b;
-    public final short c;
-    public int d;
-    public String e;
+public final /* synthetic */ class l2c implements zy5, yy5 {
+    public final /* synthetic */ b3c a;
+    public final /* synthetic */ k47 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public l2c(int i, int i2, int i3) {
-        this.a = i != Integer.MIN_VALUE ? oo1.n(i, "/") : "";
-        this.b = i2;
-        this.c = i3;
-        this.d = TLObject.FLAG_31;
-        this.e = "";
+    public /* synthetic */ l2c(b3c b3cVar, k47 k47Var, long j, int i) {
+        this.a = b3cVar;
+        this.b = k47Var;
+        this.c = j;
+        this.d = i;
     }
 
-    public final void a() {
-        int i = this.d;
-        this.d = i == Integer.MIN_VALUE ? this.b : i + this.c;
-        this.e = this.a + this.d;
+    @Override // zy5
+    public final void a(String str) {
+        gm.c3(new i2c(this.a, str, this.b, this.c, this.d, (byte) 1));
     }
 
-    public final void b() {
-        if (this.d != Integer.MIN_VALUE) {
-            return;
-        }
-        sc8.j("generateNewId() must be called before retrieving ids.");
-    }
-
-    public l2c(int i, int i2) {
-        this(TLObject.FLAG_31, i, i2);
+    @Override // yy5
+    public final void o(Exception exc) {
+        gm.c3(new o77((Object) this.a, (Object) this.b, this.c, this.d, (byte) 20));
     }
 }

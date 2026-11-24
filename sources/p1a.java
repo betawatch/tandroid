@@ -1,419 +1,320 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import java.io.File;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.drawable.GradientDrawable;
+import android.text.SpannableStringBuilder;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Scroller;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class p1a implements Runnable {
-    public final /* synthetic */ TL_stories.StoryItem E;
-    public final /* synthetic */ j1a F;
-    public final /* synthetic */ long G;
-    public final /* synthetic */ boolean H;
-    public final /* synthetic */ long I;
-    public final /* synthetic */ d2a J;
-    public final /* synthetic */ we8 a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ j5 d;
-    public final /* synthetic */ CharSequence e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ ArrayList h;
-    public final /* synthetic */ k27 n;
-    public final /* synthetic */ k27 r;
-    public final /* synthetic */ k27 s;
-    public final /* synthetic */ boolean w;
-    public final /* synthetic */ int x;
-    public final /* synthetic */ int y;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public abstract class p1a extends View {
+    public float E;
+    public ArrayList F;
+    public ArrayList G;
+    public ArrayList H;
+    public GradientDrawable I;
+    public GestureDetector J;
+    public float K;
+    public int L;
+    public boolean M;
+    public ValueAnimator N;
+    public int a;
+    public int b;
+    public int c;
+    public Scroller d;
+    public float e;
+    public float f;
+    public float h;
+    public int n;
+    public int r;
+    public int s;
+    public boolean w;
+    public int x;
+    public float y;
 
-    public /* synthetic */ p1a(we8 we8Var, ArrayList arrayList, long j, j5 j5Var, CharSequence charSequence, boolean z, ArrayList arrayList2, k27 k27Var, k27 k27Var2, k27 k27Var3, boolean z2, int i, int i2, TL_stories.StoryItem storyItem, j1a j1aVar, long j2, boolean z3, long j3, d2a d2aVar) {
-        this.a = we8Var;
-        this.b = arrayList;
-        this.c = j;
-        this.d = j5Var;
-        this.e = charSequence;
-        this.f = z;
-        this.h = arrayList2;
-        this.n = k27Var;
-        this.r = k27Var2;
-        this.s = k27Var3;
-        this.w = z2;
-        this.x = i;
-        this.y = i2;
-        this.E = storyItem;
-        this.F = j1aVar;
-        this.G = j2;
-        this.H = z3;
-        this.I = j3;
-        this.J = d2aVar;
+    public static void a(SpannableStringBuilder spannableStringBuilder, TL_stories.StoryViews storyViews, boolean z) {
+        int i = storyViews == null ? 0 : storyViews.views_count;
+        if (i > 0) {
+            spannableStringBuilder.append("d");
+            spannableStringBuilder.setSpan(new pn2(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.append(" ").append((CharSequence) gm.o0(i, 0));
+            if (storyViews == null || storyViews.reactions_count <= 0) {
+                return;
+            }
+            spannableStringBuilder.append((CharSequence) (z ? "\n" : "  "));
+            spannableStringBuilder.append("d");
+            spannableStringBuilder.setSpan(new pn2(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.append(" ").append((CharSequence) gm.o0(storyViews.reactions_count, 0));
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0162, code lost:
-    
-        if (r15 == (r11 - 1)) goto L78;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00e9  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0155  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0181  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x016c  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00c7  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        long j;
-        boolean z;
+    public abstract void b(int i);
+
+    public final void c(int i, boolean z, boolean z2) {
+        if ((this.L != i || z2) && getMeasuredHeight() > 0) {
+            if (this.L != i) {
+                this.L = i;
+                b(i);
+            }
+            this.d.abortAnimation();
+            this.M = false;
+            ValueAnimator valueAnimator = this.N;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.N.cancel();
+                this.N = null;
+            }
+            if (!z) {
+                this.e = (this.s / 2.0f) + ((-getMeasuredWidth()) / 2.0f) + ((r6 + this.n) * i);
+                invalidate();
+                return;
+            }
+            float f = (this.s / 2.0f) + ((-getMeasuredWidth()) / 2.0f) + ((r1 + this.n) * i);
+            float f2 = this.e;
+            if (f == f2) {
+                return;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f2, f);
+            this.N = ofFloat;
+            ofFloat.addUpdateListener(new af0(this, (byte) 12));
+            this.N.addListener(new c39((Object) this, (byte) 11));
+            this.N.setInterpolator(d53.f);
+            this.N.setDuration(200L);
+            this.N.start();
+        }
+    }
+
+    public final void d() {
+        int measuredWidth = getMeasuredWidth();
+        int i = this.s;
+        this.f = (-(measuredWidth - i)) / 2.0f;
+        this.h = ((getMeasuredWidth() - this.s) / 2.0f) + (((this.F.size() * (i + this.n)) - this.n) - getMeasuredWidth());
+    }
+
+    public o1a getCenteredImageReciever() {
+        ArrayList arrayList = this.H;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (((o1a) arrayList.get(i)).b == this.L) {
+                return (o1a) arrayList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public int getClosestPosition() {
+        return this.L;
+    }
+
+    public float getFinalHeight() {
+        return gm.L(180.0f);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.w = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        ArrayList arrayList = this.H;
+        super.onDetachedFromWindow();
+        this.w = false;
+        for (int i = 0; i < arrayList.size(); i++) {
+            ((o1a) arrayList.get(i)).a.K();
+        }
+        arrayList.clear();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
         int i;
+        float f;
+        float f2;
+        float f3;
+        ArrayList arrayList;
+        float f4;
+        float f5;
         int i2;
-        String str;
-        TLRPC.TL_document tL_document;
-        TLRPC.TL_document tL_document2;
+        float f6;
+        o1a o1aVar;
+        ArrayList arrayList2;
         int i3;
-        TLRPC.TL_document tL_document3;
-        TLRPC.TL_document tL_document4;
-        int i4;
-        final k27 k27Var;
-        final long j2;
-        String str2;
-        final ArrayList arrayList;
-        int i5;
-        Bitmap bitmap;
-        we8 we8Var = this.a;
-        int i6 = 1;
-        if (we8Var != null) {
-            j = we8Var.c;
-            z = true;
-        } else {
-            j = 0;
-            z = false;
+        GradientDrawable gradientDrawable = this.I;
+        ArrayList arrayList3 = this.H;
+        ArrayList arrayList4 = this.G;
+        super.onDraw(canvas);
+        if (this.d.computeScrollOffset()) {
+            this.e = r5.getCurrX();
+            invalidate();
+            this.M = true;
+        } else if (this.M && (i = this.L) >= 0) {
+            c(i, true, true);
         }
-        ArrayList arrayList2 = this.b;
-        int size = arrayList2.size();
-        long j3 = j != 0 ? j : 0L;
-        int i7 = 0;
-        int i8 = 0;
-        while (i7 < size) {
-            k27 k27Var2 = (k27) arrayList2.get(i7);
-            String str3 = k27Var2.k.attachPath;
-            File file = new File(str3);
-            long j4 = this.c;
-            boolean B = cf3.B(j4);
-            if (!B && size > i6 && i8 % 10 == 0 && we8Var == null) {
-                j3 = Utilities.b.nextLong();
-                i8 = 0;
-            }
-            long j5 = j3;
-            if (str3 == null || str3.length() <= 0) {
-                i = i6;
-                i2 = i7;
+        float f7 = 2.0f;
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        arrayList4.clear();
+        arrayList4.addAll(arrayList3);
+        arrayList3.clear();
+        int i4 = -1;
+        float f8 = 2.1474836E9f;
+        int i5 = -1;
+        int i6 = 0;
+        while (i6 < this.F.size()) {
+            float f9 = -this.e;
+            float f10 = f9 + ((this.n + r13) * i6);
+            float f11 = ((this.s / f7) + f10) - measuredWidth;
+            float abs = Math.abs(f11);
+            int i7 = this.s;
+            if (abs < i7) {
+                float abs2 = Math.abs(f11);
+                i7 = this.s;
+                f = 1.0f;
+                f2 = 1.0f - (abs2 / i7);
+                f3 = (0.2f * f2) + 1.0f;
             } else {
-                StringBuilder k = b00.k(str3, MediaStreamTrack.AUDIO_TRACK_KIND);
-                i = i6;
-                i2 = i7;
-                k.append(file.length());
-                str3 = k.toString();
+                f = 1.0f;
+                f2 = 0.0f;
+                f3 = 1.0f;
             }
-            final j5 j5Var = this.d;
-            if (!B && !TextUtils.isEmpty(str3) && !z) {
-                Object[] e0 = ad7.Y(j5Var.a).e0(!B ? i : 4, str3);
-                if (e0 != null) {
-                    Object obj = e0[0];
-                    if (obj instanceof TLRPC.TL_document) {
-                        tL_document = (TLRPC.TL_document) obj;
-                        str = (String) e0[i];
-                        z3a.v(j5Var, B, tL_document, str3, null, 0L, false);
-                        if (tL_document == null) {
-                            tL_document = (TLRPC.TL_document) k27Var2.k.media.document;
+            if (i5 == i4 || abs < f8) {
+                i5 = i6;
+                f8 = abs;
+            }
+            float B = f11 < 0.0f ? kt6.B(f, f2, i7 * 0.1f, f10) : td4.A(f, f2, i7 * 0.1f, f10);
+            if (B > getMeasuredWidth() || this.s + B < 0.0f) {
+                arrayList = arrayList4;
+                f4 = measuredWidth;
+                f5 = f8;
+                i2 = i5;
+                f6 = 2.0f;
+            } else {
+                int i8 = 0;
+                while (true) {
+                    if (i8 >= arrayList4.size()) {
+                        o1aVar = new o1a(this);
+                        o1aVar.a(i6);
+                        o1aVar.b = i6;
+                        break;
+                    } else {
+                        if (((o1a) arrayList4.get(i8)).b == i6) {
+                            o1aVar = (o1a) arrayList4.remove(i8);
+                            break;
                         }
-                        tL_document2 = tL_document;
-                        if (tL_document2 != null && tL_document2.thumbs.isEmpty()) {
-                            g00 a = g00.a(file);
-                            bitmap = a == null ? a.o : null;
-                            if (bitmap != null) {
-                                i3 = i;
-                                TLRPC.PhotoSize U = fl5.U(bitmap, 132.0f, 132.0f, 55, B);
-                                if (U != null) {
-                                    tL_document2.thumbs.add(U);
-                                    tL_document2.flags |= 1;
-                                }
-                                bitmap.recycle();
-                                if (B) {
-                                    tL_document3 = tL_document2;
-                                    if (na7.q1(j5Var.a).Y0(Integer.valueOf((int) (j4 & 4294967295L))) == null) {
-                                        return;
-                                    }
-                                } else {
-                                    tL_document3 = tL_document2;
-                                }
-                                int i9 = i3;
-                                CharSequence[] charSequenceArr = new CharSequence[i9];
-                                charSequenceArr[0] = this.e;
-                                if (i2 == 0) {
-                                    ArrayList Y = hq6.d0(j5Var.a).Y(charSequenceArr, i9, i9);
-                                    str2 = charSequenceArr[0].toString();
-                                    tL_document4 = tL_document3;
-                                    k27Var = k27Var2;
-                                    arrayList = Y;
-                                    i4 = size;
-                                    j2 = j4;
-                                } else {
-                                    tL_document4 = tL_document3;
-                                    i4 = size;
-                                    k27Var = k27Var2;
-                                    j2 = j4;
-                                    str2 = null;
-                                    arrayList = null;
-                                }
-                                int i10 = i8;
-                                final HashMap hashMap = new HashMap();
-                                if (str3 != null) {
-                                    hashMap.put("originalPath", str3);
-                                }
-                                if (str != null) {
-                                    hashMap.put("parentObject", str);
-                                }
-                                int i11 = i10 + 1;
-                                hashMap.put("groupId", String.valueOf(j5));
-                                if (this.f) {
-                                    i5 = i2;
-                                } else {
-                                    if (we8Var == null && i11 == 10) {
-                                        i5 = i2;
-                                    } else {
-                                        i5 = i2;
-                                    }
-                                    hashMap.put("final", "1");
-                                }
-                                ArrayList arrayList3 = this.h;
-                                final int intValue = arrayList3 != null ? ((Integer) arrayList3.get(i5)).intValue() : 0;
-                                final we8 we8Var2 = we8Var;
-                                ArrayList arrayList4 = arrayList2;
-                                final String str4 = str;
-                                final k27 k27Var3 = this.n;
-                                final k27 k27Var4 = this.r;
-                                int i12 = i4;
-                                final k27 k27Var5 = this.s;
-                                final boolean z2 = this.w;
-                                int i13 = i5;
-                                final int i14 = this.x;
-                                final int i15 = this.y;
-                                final TL_stories.StoryItem storyItem = this.E;
-                                final j1a j1aVar = this.F;
-                                final long j6 = this.G;
-                                final boolean z3 = this.H;
-                                final long j7 = this.I;
-                                final String str5 = str2;
-                                final TLRPC.TL_document tL_document5 = tL_document4;
-                                gl.d3(new Runnable() { // from class: e2a
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        k27 k27Var6 = k27.this;
-                                        j5 j5Var2 = j5Var;
-                                        TLRPC.TL_document tL_document6 = tL_document5;
-                                        k27 k27Var7 = k27Var;
-                                        HashMap hashMap2 = hashMap;
-                                        String str6 = str4;
-                                        if (k27Var6 != null) {
-                                            z3a.B(j5Var2.a).s(k27Var6, null, null, null, tL_document6, k27Var7.k.attachPath, null, hashMap2, false, false, str6);
-                                            return;
-                                        }
-                                        x3a e = x3a.e(tL_document6, null, k27Var7.k.attachPath, j2, k27Var4, k27Var5, str5, arrayList, hashMap2, z2, i14, i15, 0, str6, false);
-                                        e.H = storyItem;
-                                        e.K = j1aVar;
-                                        e.O = j6;
-                                        e.L = z3;
-                                        e.Q = j7;
-                                        e.j = we8Var2;
-                                        e.k = intValue;
-                                        z3a.B(j5Var2.a).q0(e);
-                                    }
-                                });
-                                i7 = i13 + 1;
-                                we8Var = we8Var2;
-                                j3 = j5;
-                                size = i12;
-                                i8 = i11;
-                                arrayList2 = arrayList4;
-                                i6 = 1;
-                            }
-                        }
-                        i3 = i;
-                        if (B) {
-                        }
-                        int i92 = i3;
-                        CharSequence[] charSequenceArr2 = new CharSequence[i92];
-                        charSequenceArr2[0] = this.e;
-                        if (i2 == 0) {
-                        }
-                        int i102 = i8;
-                        final HashMap hashMap2 = new HashMap();
-                        if (str3 != null) {
-                        }
-                        if (str != null) {
-                        }
-                        int i112 = i102 + 1;
-                        hashMap2.put("groupId", String.valueOf(j5));
-                        if (this.f) {
-                        }
-                        ArrayList arrayList32 = this.h;
-                        if (arrayList32 != null) {
-                        }
-                        final we8 we8Var22 = we8Var;
-                        ArrayList arrayList42 = arrayList2;
-                        final String str42 = str;
-                        final k27 k27Var32 = this.n;
-                        final k27 k27Var42 = this.r;
-                        int i122 = i4;
-                        final k27 k27Var52 = this.s;
-                        final boolean z22 = this.w;
-                        int i132 = i5;
-                        final int i142 = this.x;
-                        final int i152 = this.y;
-                        final TL_stories.StoryItem storyItem2 = this.E;
-                        final j1a j1aVar2 = this.F;
-                        final long j62 = this.G;
-                        final boolean z32 = this.H;
-                        final long j72 = this.I;
-                        final String str52 = str2;
-                        final TLRPC.TL_document tL_document52 = tL_document4;
-                        gl.d3(new Runnable() { // from class: e2a
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                k27 k27Var6 = k27.this;
-                                j5 j5Var2 = j5Var;
-                                TLRPC.TL_document tL_document6 = tL_document52;
-                                k27 k27Var7 = k27Var;
-                                HashMap hashMap22 = hashMap2;
-                                String str6 = str42;
-                                if (k27Var6 != null) {
-                                    z3a.B(j5Var2.a).s(k27Var6, null, null, null, tL_document6, k27Var7.k.attachPath, null, hashMap22, false, false, str6);
-                                    return;
-                                }
-                                x3a e = x3a.e(tL_document6, null, k27Var7.k.attachPath, j2, k27Var42, k27Var52, str52, arrayList, hashMap22, z22, i142, i152, 0, str6, false);
-                                e.H = storyItem2;
-                                e.K = j1aVar2;
-                                e.O = j62;
-                                e.L = z32;
-                                e.Q = j72;
-                                e.j = we8Var22;
-                                e.k = intValue;
-                                z3a.B(j5Var2.a).q0(e);
-                            }
-                        });
-                        i7 = i132 + 1;
-                        we8Var = we8Var22;
-                        j3 = j5;
-                        size = i122;
-                        i8 = i112;
-                        arrayList2 = arrayList42;
-                        i6 = 1;
+                        i8++;
                     }
                 }
-            }
-            str = null;
-            tL_document = null;
-            if (tL_document == null) {
-            }
-            tL_document2 = tL_document;
-            if (tL_document2 != null) {
-                g00 a2 = g00.a(file);
-                if (a2 == null) {
+                float f12 = this.s;
+                float f13 = f12 * f3;
+                float f14 = this.r;
+                float f15 = f3 * f14;
+                f4 = measuredWidth;
+                float y = td4.y(f13, f12, 2.0f, B);
+                float y2 = td4.y(f15, f14, 2.0f, this.y);
+                if (this.E == 0.0f || i6 == (i3 = this.L)) {
+                    arrayList2 = arrayList3;
+                    arrayList = arrayList4;
+                    f5 = f8;
+                    i2 = i5;
+                    o1aVar.a.i0(y, y2, f13, f15);
+                } else {
+                    f5 = f8;
+                    i2 = i5;
+                    arrayList = arrayList4;
+                    arrayList2 = arrayList3;
+                    o1aVar.a.i0(gm.R1(getMeasuredWidth() * (i6 - i3), y, this.E), gm.R1(this.a, y2, this.E), gm.R1(this.b, f13, this.E), gm.R1(this.c, f15, this.E));
                 }
-                if (bitmap != null) {
-                }
-            }
-            i3 = i;
-            if (B) {
-            }
-            int i922 = i3;
-            CharSequence[] charSequenceArr22 = new CharSequence[i922];
-            charSequenceArr22[0] = this.e;
-            if (i2 == 0) {
-            }
-            int i1022 = i8;
-            final HashMap hashMap22 = new HashMap();
-            if (str3 != null) {
-            }
-            if (str != null) {
-            }
-            int i1122 = i1022 + 1;
-            hashMap22.put("groupId", String.valueOf(j5));
-            if (this.f) {
-            }
-            ArrayList arrayList322 = this.h;
-            if (arrayList322 != null) {
-            }
-            final we8 we8Var222 = we8Var;
-            ArrayList arrayList422 = arrayList2;
-            final String str422 = str;
-            final k27 k27Var322 = this.n;
-            final k27 k27Var422 = this.r;
-            int i1222 = i4;
-            final k27 k27Var522 = this.s;
-            final boolean z222 = this.w;
-            int i1322 = i5;
-            final int i1422 = this.x;
-            final int i1522 = this.y;
-            final TL_stories.StoryItem storyItem22 = this.E;
-            final j1a j1aVar22 = this.F;
-            final long j622 = this.G;
-            final boolean z322 = this.H;
-            final long j722 = this.I;
-            final String str522 = str2;
-            final TLRPC.TL_document tL_document522 = tL_document4;
-            gl.d3(new Runnable() { // from class: e2a
-                @Override // java.lang.Runnable
-                public final void run() {
-                    k27 k27Var6 = k27.this;
-                    j5 j5Var2 = j5Var;
-                    TLRPC.TL_document tL_document6 = tL_document522;
-                    k27 k27Var7 = k27Var;
-                    HashMap hashMap222 = hashMap22;
-                    String str6 = str422;
-                    if (k27Var6 != null) {
-                        z3a.B(j5Var2.a).s(k27Var6, null, null, null, tL_document6, k27Var7.k.attachPath, null, hashMap222, false, false, str6);
-                        return;
+                if (this.E == 1.0f || i6 != this.L) {
+                    ImageReceiver imageReceiver = o1aVar.a;
+                    imageReceiver.h(canvas, null);
+                    if (o1aVar.c != null) {
+                        int A = (int) mlb.A(f2, 0.3f, 0.7f, 255.0f);
+                        gradientDrawable.setAlpha(A);
+                        gradientDrawable.setBounds((int) imageReceiver.L0, (int) (imageReceiver.x() - gm.L(24.0f)), (int) imageReceiver.w(), ((int) imageReceiver.x()) + 2);
+                        gradientDrawable.draw(canvas);
+                        canvas.save();
+                        f6 = 2.0f;
+                        canvas.translate(imageReceiver.r() - (this.K / 2.0f), (imageReceiver.x() - gm.L(8.0f)) - o1aVar.c.getHeight());
+                        o1aVar.d.setAlpha(A);
+                        o1aVar.c.draw(canvas);
+                        canvas.restore();
+                    } else {
+                        f6 = 2.0f;
                     }
-                    x3a e = x3a.e(tL_document6, null, k27Var7.k.attachPath, j2, k27Var422, k27Var522, str522, arrayList, hashMap222, z222, i1422, i1522, 0, str6, false);
-                    e.H = storyItem22;
-                    e.K = j1aVar22;
-                    e.O = j622;
-                    e.L = z322;
-                    e.Q = j722;
-                    e.j = we8Var222;
-                    e.k = intValue;
-                    z3a.B(j5Var2.a).q0(e);
+                    arrayList3 = arrayList2;
+                } else {
+                    arrayList3 = arrayList2;
+                    f6 = 2.0f;
                 }
-            });
-            i7 = i1322 + 1;
-            we8Var = we8Var222;
-            j3 = j5;
-            size = i1222;
-            i8 = i1122;
-            arrayList2 = arrayList422;
-            i6 = 1;
+                arrayList3.add(o1aVar);
+            }
+            i6++;
+            f8 = f5;
+            f7 = f6;
+            measuredWidth = f4;
+            i5 = i2;
+            arrayList4 = arrayList;
+            i4 = -1;
         }
-        d2a d2aVar = this.J;
-        if (d2aVar != null) {
-            gl.d3(d2aVar);
+        ArrayList arrayList5 = arrayList4;
+        if (this.N == null && this.L != i5) {
+            this.L = i5;
+            b(i5);
         }
+        for (int i9 = 0; i9 < arrayList5.size(); i9++) {
+            ((o1a) arrayList5.get(i9)).a.K();
+        }
+        arrayList5.clear();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        ArrayList arrayList = this.H;
+        super.onMeasure(i, i2);
+        this.n = gm.L(8.0f);
+        int L = (int) (gm.L(180.0f) / 1.2f);
+        this.r = L;
+        int i3 = (int) ((L / 16.0f) * 9.0f);
+        this.s = i3;
+        float L2 = i3 - gm.L(8.0f);
+        this.y = ((gm.L(180.0f) - this.r) / 2.0f) + gm.L(20.0f);
+        d();
+        if (this.x >= 0 && getMeasuredWidth() > 0) {
+            this.L = -1;
+            c(this.x, false, false);
+            this.x = -1;
+        }
+        if (this.K != L2) {
+            this.K = L2;
+            for (int i4 = 0; i4 < arrayList.size(); i4++) {
+                ((o1a) arrayList.get(i4)).a(((o1a) arrayList.get(i4)).b);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i;
+        this.J.onTouchEvent(motionEvent);
+        if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && this.d.isFinished() && (i = this.L) >= 0) {
+            c(i, true, true);
+        }
+        return true;
+    }
+
+    public void setProgressToOpen(float f) {
+        if (this.E == f) {
+            return;
+        }
+        this.E = f;
+        invalidate();
     }
 }

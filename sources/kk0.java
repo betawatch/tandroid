@@ -1,12 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class kk0 extends x1 {
-    public final ik0 a = new ik0();
+import android.content.DialogInterface;
+import java.lang.ref.WeakReference;
 
-    @Override // x1
-    public final gk0 e() {
-        return this.a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class kk0 implements DialogInterface.OnClickListener {
+    public final /* synthetic */ byte a = 1;
+    public final Object b;
+
+    public kk0(lk0 lk0Var) {
+        this.b = new WeakReference(lk0Var);
+    }
+
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                WeakReference weakReference = (WeakReference) obj;
+                if (weakReference.get() != null) {
+                    ((lk0) weakReference.get()).e(true);
+                    break;
+                }
+                break;
+            default:
+                ((di4) obj).D0.e(true);
+                break;
+        }
+    }
+
+    public kk0(di4 di4Var) {
+        this.b = di4Var;
     }
 }

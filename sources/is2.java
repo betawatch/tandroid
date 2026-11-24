@@ -1,41 +1,32 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.voip.ConferenceCall;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final /* synthetic */ class is2 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ ConferenceCall b;
 
-    public /* synthetic */ is2(boolean z, int i, int i2) {
-        this.a = (byte) 1;
-        this.b = z;
-        this.c = i;
-        this.d = i2;
+    public /* synthetic */ is2(ConferenceCall conferenceCall, byte b) {
+        this.a = b;
+        this.b = conferenceCall;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        byte b = this.a;
+        ConferenceCall conferenceCall = this.b;
+        switch (b) {
             case 0:
-                ConnectionsManager.lambda$onPremiumFloodWait$24(this.c, this.b, this.d);
+                conferenceCall.lambda$checkParticipants$1();
                 break;
             case 1:
-                ConnectionsManager.lambda$onPremiumFloodWait$23(this.b, this.c, this.d);
+                conferenceCall.lambda$checkEmojiHash$0();
                 break;
             default:
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$17(this.c, this.b, this.d);
+                conferenceCall.poll();
                 break;
         }
-    }
-
-    public /* synthetic */ is2(int i, boolean z, int i2, byte b) {
-        this.a = b;
-        this.c = i;
-        this.b = z;
-        this.d = i2;
     }
 }

@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class f0 implements TextWatcher {
     public final /* synthetic */ g0 a;
@@ -24,16 +24,16 @@ public final class f0 implements TextWatcher {
         int length = obj.length();
         ThemeEditorView.EditorAlert editorAlert = this.a.c;
         if (length != 0) {
-            g24 g24Var = editorAlert.o1;
-            if (g24Var != null) {
-                g24Var.setText(k96.M0(2131747975, null));
+            r34 r34Var = editorAlert.o1;
+            if (r34Var != null) {
+                r34Var.setText(jb6.M0(2131747901, null));
             }
         } else {
-            w39 adapter = editorAlert.m1.getAdapter();
+            y59 adapter = editorAlert.m1.getAdapter();
             ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
             if (adapter != editorAlert2.r1) {
                 int D0 = editorAlert2.D0();
-                this.a.c.o1.setText(k96.M0(2131748038, null));
+                this.a.c.o1.setText(jb6.M0(2131747964, null));
                 this.a.c.o1.c();
                 ThemeEditorView.EditorAlert editorAlert3 = this.a.c;
                 editorAlert3.m1.setAdapter(editorAlert3.r1);
@@ -55,7 +55,7 @@ public final class f0 implements TextWatcher {
         if (obj.length() != 0) {
             int i = c0Var.d + 1;
             c0Var.d = i;
-            c0Var.h = new t79(c0Var, obj, i, (byte) 23);
+            c0Var.h = new v99(c0Var, obj, i, (byte) 23);
             Utilities.g.d(c0Var.h, 300L);
             return;
         }

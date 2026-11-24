@@ -1,22 +1,62 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class vrd {
-    public static int a(int i) {
-        if (i == 0) {
-            return 0;
+    public static final StringBuilder a;
+
+    static {
+        Locale locale = Locale.ROOT;
+        new SimpleDateFormat("MM-dd HH:mm:ss.SSS", locale);
+        new SimpleDateFormat("MM-dd HH:mm:ss", locale);
+        a = new StringBuilder(33);
+    }
+
+    public static void a(long j, StringBuilder sb) {
+        if (j == 0) {
+            sb.append("0s");
+            return;
         }
-        if (i == 90) {
-            return 1;
+        sb.ensureCapacity(sb.length() + 27);
+        boolean z = false;
+        if (j < 0) {
+            sb.append("-");
+            if (j != Long.MIN_VALUE) {
+                j = -j;
+            } else {
+                j = Long.MAX_VALUE;
+                z = true;
+            }
         }
-        if (i == 180) {
-            return 2;
+        if (j >= 86400000) {
+            sb.append(j / 86400000);
+            sb.append("d");
+            j %= 86400000;
         }
-        if (i == 270) {
-            return 3;
+        if (true == z) {
+            j = 25975808;
         }
-        w26.j(de9.k(i, "Invalid rotation: "));
-        return 0;
+        if (j >= 3600000) {
+            sb.append(j / 3600000);
+            sb.append("h");
+            j %= 3600000;
+        }
+        if (j >= 60000) {
+            sb.append(j / 60000);
+            sb.append("m");
+            j %= 60000;
+        }
+        if (j >= 1000) {
+            sb.append(j / 1000);
+            sb.append("s");
+            j %= 1000;
+        }
+        if (j > 0) {
+            sb.append(j);
+            sb.append("ms");
+        }
     }
 }

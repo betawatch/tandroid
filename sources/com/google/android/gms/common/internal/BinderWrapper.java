@@ -4,10 +4,10 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class BinderWrapper implements Parcelable {
-    public static final Parcelable.Creator<BinderWrapper> CREATOR = new qyd(25);
+    public static final Parcelable.Creator<BinderWrapper> CREATOR = new t0e(25);
     public final IBinder a;
 
     public /* synthetic */ BinderWrapper(Parcel parcel) {
@@ -24,7 +24,7 @@ public final class BinderWrapper implements Parcelable {
         parcel.writeStrongBinder(this.a);
     }
 
-    public BinderWrapper(hgf hgfVar) {
-        this.a = hgfVar;
+    public BinderWrapper(iif iifVar) {
+        this.a = iifVar;
     }
 }

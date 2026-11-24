@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzuw {
     private static final zzuw zza = new zzuw(0, new int[0], new Object[0], false);
@@ -131,7 +131,7 @@ public final class zzuw {
                     zzB = ((zzuw) this.zzd[i3]).zza();
                 } else {
                     if (i6 != 5) {
-                        ho9.n(new zzsw("Protocol message tag had invalid wire type."));
+                        dq9.o(new zzsw("Protocol message tag had invalid wire type."));
                         return 0;
                     }
                     ((Integer) this.zzd[i3]).getClass();
@@ -162,7 +162,7 @@ public final class zzuw {
             int zzA2 = zzqv.zzA(i4) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zzd = zzqmVar.zzd();
-            i2 += zzA + zzA2 + mue.e(zzd, zzd, zzA3);
+            i2 += zzA + zzA2 + mle.f(zzd, zzd, zzA3);
         }
         this.zze = i2;
         return i2;
@@ -185,7 +185,7 @@ public final class zzuw {
         if (this.zzf) {
             return;
         }
-        fvc.b();
+        gxc.b();
     }
 
     public final void zzh() {
@@ -235,7 +235,7 @@ public final class zzuw {
                     zzviVar.zzh(i4);
                 } else {
                     if (i3 != 5) {
-                        sdb.b(new zzsw("Protocol message tag had invalid wire type."));
+                        rjb.m(new zzsw("Protocol message tag had invalid wire type."));
                         return;
                     }
                     zzviVar.zzk(i4, ((Integer) obj).intValue());

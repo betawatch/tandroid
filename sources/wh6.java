@@ -1,33 +1,78 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class wh6 implements e36 {
-    public final /* synthetic */ f36 a;
-    public final /* synthetic */ xh6 b;
+import android.content.SharedPreferences;
+import java.util.function.LongSupplier;
+import org.telegram.tgnet.TLRPC;
 
-    public wh6(xh6 xh6Var, f36 f36Var) {
-        this.b = xh6Var;
-        this.a = f36Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public abstract class wh6 extends qs2 {
+    public final LongSupplier d;
+    public final long e;
+    public final long f;
+    public final int g;
+    public volatile boolean h;
+    public volatile long i;
+
+    public wh6(String str, LongSupplier longSupplier, long j, long j2, int i) {
+        super(str);
+        this.d = longSupplier;
+        this.e = j;
+        this.f = j2;
+        this.g = i;
     }
 
-    @Override // e36
-    public final void c() {
-        this.b.d.j0();
+    @Override // qs2
+    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+            return false;
+        }
+        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+        if (d != Math.rint(d) || d < -9.223372036854776E18d || d >= 9.223372036854776E18d) {
+            return false;
+        }
+        long max = Math.max(this.e, Math.min(this.f, (long) d));
+        if (max == f()) {
+            return false;
+        }
+        this.i = max;
+        this.h = true;
+        editor.putLong(e(), max);
+        return true;
     }
 
-    @Override // e36
-    public final void i() {
-        yh6 yh6Var = this.b.d;
-        yh6Var.m0 = new zq5(this.a.getContext(), yh6Var.e, yh6Var.d, yh6Var.l0, yh6Var, yh6Var.n, true, yh6Var.h);
-        yh6Var.m0.show();
+    @Override // qs2
+    public final boolean c(SharedPreferences.Editor editor) {
+        if (this.g == 2 && this.h) {
+            long j = this.i;
+            this.h = false;
+            editor.remove(e());
+            if (j != f()) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // e36
-    public final void a() {
+    @Override // qs2
+    public final void d(SharedPreferences sharedPreferences) {
+        try {
+            if (!sharedPreferences.contains(e())) {
+                this.h = false;
+                return;
+            }
+            this.i = Math.max(this.e, Math.min(this.f, sharedPreferences.getLong(e(), 0L)));
+            this.h = true;
+        } catch (ClassCastException e) {
+            fc4.g(e, true);
+            this.h = false;
+        }
     }
 
-    @Override // e36
-    public final void k() {
+    public final long f() {
+        if (this.h) {
+            return this.i;
+        }
+        return Math.max(this.e, Math.min(this.f, this.d.getAsLong()));
     }
 }

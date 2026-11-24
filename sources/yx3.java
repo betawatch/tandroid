@@ -1,21 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class yx3 extends oh8 {
-    @Override // android.view.View
-    public final void invalidate() {
-        if (pg5.b(this)) {
-            return;
-        }
-        super.invalidate();
+import java.util.concurrent.ThreadPoolExecutor;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class yx3 extends bhe {
+    public final /* synthetic */ bhe a;
+    public final /* synthetic */ ThreadPoolExecutor b;
+
+    public yx3(bhe bheVar, ThreadPoolExecutor threadPoolExecutor) {
+        this.a = bheVar;
+        this.b = threadPoolExecutor;
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        if (pg5.b(this)) {
-            return;
+    @Override // bhe
+    public final void a(Throwable th) {
+        ThreadPoolExecutor threadPoolExecutor = this.b;
+        try {
+            this.a.a(th);
+        } finally {
+            threadPoolExecutor.shutdown();
         }
-        super.invalidate(i, i2, i3, i4);
+    }
+
+    @Override // bhe
+    public final void b(e7a e7aVar) {
+        ThreadPoolExecutor threadPoolExecutor = this.b;
+        try {
+            this.a.b(e7aVar);
+        } finally {
+            threadPoolExecutor.shutdown();
+        }
     }
 }

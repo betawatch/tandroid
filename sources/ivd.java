@@ -1,19 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ivd implements zn7 {
-    public static final ivd a = new ivd();
-    public static final w84 b = new w84("logEventKey", b00.m(yjb.q(kkd.class, new cjd(1))));
-    public static final w84 c = new w84("eventCount", b00.m(yjb.q(kkd.class, new cjd(2))));
-    public static final w84 d = new w84("inferenceDurationStats", b00.m(yjb.q(kkd.class, new cjd(3))));
+import java.util.logging.Logger;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        opd opdVar = (opd) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, opdVar.a);
-        ao7Var.a(c, opdVar.b);
-        ao7Var.a(d, opdVar.c);
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class ivd {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        Logger.getLogger(ivd.class.getName());
     }
 }

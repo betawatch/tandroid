@@ -1,67 +1,31 @@
 // default package
 
-import java.util.List;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class w80 extends ry2 {
-    public final String a;
-    public final String b;
-    public final List c;
-    public final ry2 d;
-    public final int e;
+public final class w80 extends ai0 {
+    public final ArrayList a;
 
-    public w80(String str, String str2, List list, ry2 ry2Var, int i) {
-        this.a = str;
-        this.b = str2;
-        this.c = list;
-        this.d = ry2Var;
-        this.e = i;
+    public w80(ArrayList arrayList) {
+        this.a = arrayList;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ry2) {
-            w80 w80Var = (w80) ((ry2) obj);
-            if (this.a.equals(w80Var.a)) {
-                String str = w80Var.b;
-                String str2 = this.b;
-                if (str2 != null ? str2.equals(str) : str == null) {
-                    if (this.c.equals(w80Var.c)) {
-                        ry2 ry2Var = w80Var.d;
-                        ry2 ry2Var2 = this.d;
-                        if (ry2Var2 != null ? ry2Var2.equals(ry2Var) : ry2Var == null) {
-                            if (this.e == w80Var.e) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
+        if (!(obj instanceof ai0)) {
+            return false;
         }
-        return false;
+        return this.a.equals(((w80) ((ai0) obj)).a);
     }
 
     public final int hashCode() {
-        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
-        String str = this.b;
-        int hashCode2 = (((hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003) ^ this.c.hashCode()) * 1000003;
-        ry2 ry2Var = this.d;
-        return ((hashCode2 ^ (ry2Var != null ? ry2Var.hashCode() : 0)) * 1000003) ^ this.e;
+        return 1000003 ^ this.a.hashCode();
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("Exception{type=");
-        sb.append(this.a);
-        sb.append(", reason=");
-        sb.append(this.b);
-        sb.append(", frames=");
-        sb.append(this.c);
-        sb.append(", causedBy=");
-        sb.append(this.d);
-        sb.append(", overflowCount=");
-        return de9.l(sb, this.e, "}");
+        return "BatchedLogRequest{logRequests=" + this.a + "}";
     }
 }

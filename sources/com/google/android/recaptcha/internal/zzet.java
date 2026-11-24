@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzet extends ccb implements eq4 {
+final class zzet extends eeb implements fs4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ String zzc;
@@ -10,23 +10,23 @@ final class zzet extends ccb implements eq4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzet(zzfp zzfpVar, String str, long j, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzet(zzfp zzfpVar, String str, long j, px2 px2Var) {
+        super(2, px2Var);
         this.zzb = zzfpVar;
         this.zzc = str;
         this.zzd = j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, px2Var);
         zzetVar.zze = obj;
         return zzetVar;
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzet) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzet) create((zzgr) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0041, code lost:
@@ -41,17 +41,17 @@ final class zzet extends ccb implements eq4 {
     
         if (r8 != r2) goto L13;
      */
-    @Override // of0
+    @Override // og0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        ly2 ly2Var = ly2.a;
         try {
             if (i == 0) {
-                qse.b(obj);
+                tue.b(obj);
                 zzgrVar = (zzgr) this.zze;
                 zzq zzb = zzfp.zzb(this.zzb);
                 String str = this.zzc;
@@ -61,18 +61,18 @@ final class zzet extends ccb implements eq4 {
                 obj = zzb.zzb(str, j, this);
             } else {
                 if (i != 1) {
-                    qse.b(obj);
+                    tue.b(obj);
                     return (zzxx) obj;
                 }
                 zzgrVar = (zzgr) this.zze;
-                qse.b(obj);
+                tue.b(obj);
             }
             this.zze = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } catch (zzcg e) {
             throw e;
-        } catch (mob e2) {
+        } catch (nqb e2) {
             throw new zzcg(zzce.zzb, zzcd.zzb, e2.getMessage(), null, 8, null);
         } catch (Exception e3) {
             throw new zzcg(zzce.zzb, zzcd.zzaa, e3.getMessage(), null, 8, null);

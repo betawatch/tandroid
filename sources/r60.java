@@ -1,15 +1,17 @@
 // default package
 
-import java.io.File;
-import org.telegram.messenger.Utilities;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class r60 implements cq7 {
+    public static final r60 a = new r60();
+    public static final wa4 b = wa4.c("key");
+    public static final wa4 c = wa4.c("value");
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class r60 extends n51 {
-    public final long e;
-
-    public r60(File file) {
-        super(file);
-        this.e = Utilities.getLastUsageFileTime(file.getAbsolutePath());
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        tz2 tz2Var = (tz2) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.a(b, ((f90) tz2Var).a);
+        dq7Var.a(c, ((f90) tz2Var).b);
     }
 }

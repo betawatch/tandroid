@@ -1,21 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mr5 extends ft5 {
-    public final qp4 e;
+public abstract class mr5 {
+    public static final Charset a;
+    public static final byte[] b;
 
-    public mr5(qp4 qp4Var) {
-        this.e = qp4Var;
+    static {
+        Charset.forName("US-ASCII");
+        a = Charset.forName("UTF-8");
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        b = bArr;
+        ByteBuffer.wrap(bArr);
+        try {
+            new ll2(bArr, 0, 0, false).e(0);
+        } catch (yr5 e) {
+            throw new IllegalArgumentException(e);
+        }
     }
 
-    @Override // ft5
-    public final boolean k() {
-        return false;
+    public static void a(Object obj, String str) {
+        if (obj != null) {
+            return;
+        }
+        gxc.d(str);
     }
 
-    @Override // ft5
-    public final void l(Throwable th) {
-        this.e.invoke(th);
+    public static int b(long j) {
+        return (int) (j ^ (j >>> 32));
     }
 }

@@ -1,41 +1,14 @@
 // default package
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class sgb extends FrameLayout {
-    public TextView a;
-    public rgb b;
-    public TLRPC.TL_help_termsOfService c;
-    public int d;
+public final class sgb {
+    public final ygb a;
+    public final ahb b;
+    public boolean c = true;
 
-    public final void a() {
-        rgb rgbVar = this.b;
-        int i = this.d;
-        oz5 oz5Var = (oz5) rgbVar;
-        oz5Var.getClass();
-        y6c.h(i).a0 = null;
-        byte b = 0;
-        y6c.h(i).u(false);
-        LaunchActivity launchActivity = oz5Var.a;
-        ArrayList arrayList = launchActivity.e0;
-        if (!arrayList.isEmpty()) {
-            ((d) b00.f(1, arrayList)).onResume();
-        }
-        launchActivity.B0.animate().alpha(0.0f).setDuration(150L).setInterpolator(gl.G).withEndAction(new tp5(oz5Var, (byte) 8)).start();
-        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
-        tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new ce2(b));
-    }
-
-    public void setDelegate(rgb rgbVar) {
-        this.b = rgbVar;
+    public sgb(ygb ygbVar, ahb ahbVar) {
+        this.a = ygbVar;
+        this.b = ahbVar;
     }
 }

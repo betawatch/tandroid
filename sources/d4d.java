@@ -1,51 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class d4d extends e4d {
-    public final transient int r;
-    public final transient int s;
-    public final /* synthetic */ e4d w;
+public final class d4d {
+    public final uf7 a;
+    public final int b;
+    public final long c;
+    public final int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d4d(e4d e4dVar, int i, int i2) {
-        super((byte) 1);
-        this.w = e4dVar;
-        this.r = i;
-        this.s = i2;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i) {
-        yye.a(i, this.s);
-        return this.w.get(i + this.r);
-    }
-
-    @Override // kzc
-    public final int m() {
-        return this.w.n() + this.r + this.s;
-    }
-
-    @Override // kzc
-    public final int n() {
-        return this.w.n() + this.r;
-    }
-
-    @Override // kzc
-    public final Object[] o() {
-        return this.w.o();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.s;
-    }
-
-    @Override // e4d, java.util.List
-    /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public final e4d subList(int i, int i2) {
-        yye.b(i, i2, this.s);
-        int i3 = this.r;
-        return this.w.subList(i + i3, i2 + i3);
+    public d4d(uf7 uf7Var, int i, long j, int i2) {
+        this.a = uf7Var;
+        this.b = i;
+        this.c = j;
+        this.d = i2;
     }
 }

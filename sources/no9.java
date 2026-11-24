@@ -1,31 +1,23 @@
 // default package
 
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.os.Parcelable;
-import com.google.android.gms.common.data.DataHolder;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class no9 extends b4 {
-    public static final Parcelable.Creator<no9> CREATOR = new rhe((byte) 8);
-    public String a;
-    public DataHolder b;
-    public ParcelFileDescriptor c;
-    public long d;
-    public byte[] e;
+public final class no9 implements vp9 {
+    public final /* synthetic */ oo9 a;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.k(parcel, 3, this.b, i);
-        jte.k(parcel, 4, this.c, i);
-        long j = this.d;
-        jte.q(parcel, 5, 8);
-        parcel.writeLong(j);
-        jte.c(parcel, 6, this.e);
-        jte.s(parcel, r);
-        this.c = null;
+    public no9(oo9 oo9Var) {
+        this.a = oo9Var;
+    }
+
+    @Override // vp9
+    public final void onRejoinRequested() {
+        gm.c3(new kf9(this, (byte) 11));
+    }
+
+    @Override // vp9
+    public final void onStreamChannels(ArrayList arrayList) {
+        gm.c3(new il9(this, arrayList, (byte) 9));
     }
 }

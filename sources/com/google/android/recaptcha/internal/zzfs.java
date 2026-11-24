@@ -1,41 +1,41 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzfs extends ccb implements eq4 {
+final class zzfs extends eeb implements fs4 {
     int zza;
     final /* synthetic */ zzgb zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfs(zzgb zzgbVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzfs(zzgb zzgbVar, px2 px2Var) {
+        super(2, px2Var);
         this.zzb = zzgbVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzfs(this.zzb, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        return new zzfs(this.zzb, px2Var);
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfs) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzfs) create((ky2) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
-        bp2 bp2Var;
+        mq2 mq2Var;
         int i = this.zza;
-        qse.b(obj);
+        tue.b(obj);
         if (i == 0) {
-            bp2Var = this.zzb.zzb;
+            mq2Var = this.zzb.zzb;
             this.zza = 1;
-            Object h = ((cp2) bp2Var).h(this);
-            bx2 bx2Var = bx2.a;
-            if (h == bx2Var) {
-                return bx2Var;
+            Object h = ((nq2) mq2Var).h(this);
+            ly2 ly2Var = ly2.a;
+            if (h == ly2Var) {
+                return ly2Var;
             }
         }
-        return g5c.a;
+        return g7c.a;
     }
 }

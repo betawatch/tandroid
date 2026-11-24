@@ -1,99 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.SpannableString;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class s4b extends FrameLayout {
-    public final Paint a;
-    public final ImageView b;
-    public final ImageView c;
-    public final hn d;
-    public final hn e;
-    public final ImageView f;
-    public final SpannableString h;
-    public final SpannableString n;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class s4b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ t4b b;
+    public final /* synthetic */ TL_stories.PeerStories c;
 
-    public s4b(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        setWillNotDraw(false);
-        paint.setColor(-16777216);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.filled_link);
-        imageView.setColorFilter(new PorterDuffColorFilter(-15033089, PorterDuff.Mode.SRC_IN));
-        addView(imageView, nme.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        imageView2.setBackground(new tf2(gl.L(20.0f), gl.L(2.4f), -15033089));
-        addView(imageView2, nme.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
-        hn hnVar = new hn(context, false, false, false);
-        this.d = hnVar;
-        hnVar.setTextColor(-15033089);
-        hnVar.setTextSize(gl.L(14.21f));
-        hnVar.setTypeface(gl.o());
-        hnVar.setEllipsizeByGradient(true);
-        gn drawable = hnVar.getDrawable();
-        Point point = gl.q;
-        drawable.N = point.x;
-        addView(hnVar, nme.d(-1, 24.0f, 55, 57.0f, 2.33f, 48.0f, 0.0f));
-        hn hnVar2 = new hn(context, false, false, false);
-        this.e = hnVar2;
-        hnVar2.setTextColor(-8355712);
-        hnVar2.setTextSize(gl.L(14.21f));
-        hnVar2.setEllipsizeByGradient(true);
-        hnVar2.getDrawable().N = point.x;
-        addView(hnVar2, nme.d(-1, 24.0f, 55, 57.0f, 20.66f, 48.0f, 0.0f));
-        int textColor = hnVar.getTextColor();
-        SpannableString spannableString = new SpannableString("x");
-        this.h = spannableString;
-        u86 u86Var = new u86(gl.L(200.0f), hnVar);
-        u86Var.e = 0.8f;
-        u86Var.a(bkb.p1(0.4f, textColor), bkb.p1(0.08f, textColor));
-        spannableString.setSpan(u86Var, 0, spannableString.length(), 33);
-        int textColor2 = hnVar2.getTextColor();
-        SpannableString spannableString2 = new SpannableString("x");
-        this.n = spannableString2;
-        u86 u86Var2 = new u86(gl.L(140.0f), hnVar2);
-        u86Var2.e = 0.8f;
-        u86Var2.a(bkb.p1(0.4f, textColor2), bkb.p1(0.08f, textColor2));
-        spannableString2.setSpan(u86Var2, 0, spannableString2.length(), 33);
-        ImageView imageView3 = new ImageView(context);
-        this.f = imageView3;
-        imageView3.setColorFilter(new PorterDuffColorFilter(1694498815, PorterDuff.Mode.MULTIPLY));
-        imageView3.setImageResource(R.drawable.input_clear);
-        imageView3.setScaleType(scaleType);
-        imageView3.setBackground(bkb.f0(436207615, 1, gl.L(18.0f)));
-        addView(imageView3, nme.d(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+    public /* synthetic */ s4b(t4b t4bVar, TL_stories.PeerStories peerStories, byte b) {
+        this.a = b;
+        this.b = t4bVar;
+        this.c = peerStories;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float width = getWidth();
-        float e1 = gl.e1();
-        Paint paint = this.a;
-        canvas.drawRect(0.0f, 0.0f, width, e1, paint);
-        canvas.drawRect(0.0f, getHeight() - gl.e1(), getWidth(), getHeight(), paint);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(48.0f), TLObject.FLAG_30));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TL_stories.PeerStories peerStories = this.c;
+        t4b t4bVar = this.b;
+        switch (b) {
+            case 0:
+                for (int i = 0; i < peerStories.stories.size(); i++) {
+                    t4bVar.l(pg3.n(peerStories.peer), peerStories.stories.get(i));
+                }
+                break;
+            default:
+                t4bVar.g(pg3.n(peerStories.peer), peerStories);
+                break;
+        }
     }
 }

@@ -1,73 +1,39 @@
 // default package
 
-import android.view.View;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class us1 extends qn {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ ts1 c;
+public final class us1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yv1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public us1(ts1 ts1Var, byte b) {
-        super("p2", (byte) 0);
-        this.b = b;
-        switch (b) {
-            case 1:
-                this.c = ts1Var;
-                super("progress", (byte) 0);
-                break;
-            case 2:
-                this.c = ts1Var;
-                super("alpha", (byte) 0);
-                break;
-            default:
-                this.c = ts1Var;
-                break;
-        }
+    public /* synthetic */ us1(yv1 yv1Var, byte b) {
+        this.a = b;
+        this.b = yv1Var;
     }
 
-    @Override // qn
-    public final void c(Object obj, float f) {
-        byte b = this.b;
-        ts1 ts1Var = this.c;
+    @Override // java.lang.Runnable
+    public final void run() {
+        r02 r02Var;
+        FrameLayout frameLayout;
+        byte b = this.a;
+        yv1 yv1Var = this.b;
         switch (b) {
             case 0:
-                ((g27) obj).e = f;
-                View view = ts1Var.c.R.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                ((g27) obj).g = f;
-                View view2 = ts1Var.c.R.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
+                AnimatorSet animatorSet = yv1Var.sa;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    yv1Var.sa.start();
                     break;
                 }
                 break;
             default:
-                ((g27) obj).f = f;
-                View view3 = ts1Var.c.R.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
+                if (yv1Var.d3 == this && (r02Var = yv1Var.b1) != null && (frameLayout = yv1Var.c3) != null) {
+                    r02Var.j(frameLayout, false, true);
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(((g27) obj).e);
-            case 1:
-                return Float.valueOf(((g27) obj).g);
-            default:
-                return Float.valueOf(((g27) obj).f);
         }
     }
 }

@@ -1,39 +1,24 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.ProfileActivity;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class wf0 implements h8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class wf0 extends b4 {
+    public static final Parcelable.Creator<wf0> CREATOR = new sje((byte) 27);
+    public String a;
+    public String b;
+    public int c;
 
-    public /* synthetic */ wf0(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    @Override // h8c
-    public final Object run() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((d) obj).getSimpleMenuOverlay();
-            case 1:
-                return Boolean.valueOf(((EditTextBoldCursor) obj).w());
-            case 2:
-                return ((vl5) obj).getCloseIntoObject();
-            case 3:
-                return Boolean.valueOf(((gt3) obj).w());
-            case 4:
-                return ((ProfileActivity) obj).getSimpleMenuOverlay();
-            case 5:
-                return ((on9) obj).K;
-            default:
-                return ((vqa) obj).j();
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = mve.r(parcel, 20293);
+        mve.l(parcel, 2, this.a);
+        mve.l(parcel, 3, this.b);
+        int i2 = this.c;
+        mve.q(parcel, 4, 4);
+        parcel.writeInt(i2);
+        mve.s(parcel, r);
     }
 }

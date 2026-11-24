@@ -8,7 +8,7 @@ import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.car.app.ISurfaceCallback;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public interface IAppHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IAppHost".replace('$', '.');
@@ -17,17 +17,17 @@ public interface IAppHost extends IInterface {
 
     void invalidate();
 
-    y21 openMicrophone(y21 y21Var);
+    g41 openMicrophone(g41 g41Var);
 
     void sendLocation(Location location);
 
     void setSurfaceCallback(ISurfaceCallback iSurfaceCallback);
 
-    void showAlert(y21 y21Var);
+    void showAlert(g41 g41Var);
 
     void showToast(CharSequence charSequence, int i);
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static class Default implements IAppHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -35,7 +35,7 @@ public interface IAppHost extends IInterface {
         }
 
         @Override // androidx.car.app.IAppHost
-        public y21 openMicrophone(y21 y21Var) {
+        public g41 openMicrophone(g41 g41Var) {
             return null;
         }
 
@@ -56,7 +56,7 @@ public interface IAppHost extends IInterface {
         }
 
         @Override // androidx.car.app.IAppHost
-        public void showAlert(y21 y21Var) {
+        public void showAlert(g41 g41Var) {
         }
 
         @Override // androidx.car.app.IAppHost
@@ -64,7 +64,7 @@ public interface IAppHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public static abstract class Stub extends Binder implements IAppHost {
         static final int TRANSACTION_dismissAlert = 7;
         static final int TRANSACTION_invalidate = 2;
@@ -74,7 +74,7 @@ public interface IAppHost extends IInterface {
         static final int TRANSACTION_showAlert = 6;
         static final int TRANSACTION_showToast = 3;
 
-        /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+        /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
         private static class Proxy implements IAppHost {
             private IBinder mRemote;
 
@@ -121,15 +121,15 @@ public interface IAppHost extends IInterface {
             }
 
             @Override // androidx.car.app.IAppHost
-            public y21 openMicrophone(y21 y21Var) {
+            public g41 openMicrophone(g41 g41Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    rje.b(obtain, y21Var, 0);
+                    tle.b(obtain, g41Var, 0);
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    return (y21) rje.a(obtain2, y21.CREATOR);
+                    return (g41) tle.a(obtain2, g41.CREATOR);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -142,7 +142,7 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    rje.b(obtain, location, 0);
+                    tle.b(obtain, location, 0);
                     this.mRemote.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -167,12 +167,12 @@ public interface IAppHost extends IInterface {
             }
 
             @Override // androidx.car.app.IAppHost
-            public void showAlert(y21 y21Var) {
+            public void showAlert(g41 g41Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    rje.b(obtain, y21Var, 0);
+                    tle.b(obtain, g41Var, 0);
                     this.mRemote.transact(6, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -231,7 +231,7 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 3:
-                    showToast((CharSequence) rje.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR), parcel.readInt());
+                    showToast((CharSequence) tle.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 4:
@@ -239,11 +239,11 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 5:
-                    sendLocation((Location) rje.a(parcel, Location.CREATOR));
+                    sendLocation((Location) tle.a(parcel, Location.CREATOR));
                     parcel2.writeNoException();
                     return true;
                 case 6:
-                    showAlert((y21) rje.a(parcel, y21.CREATOR));
+                    showAlert((g41) tle.a(parcel, g41.CREATOR));
                     parcel2.writeNoException();
                     return true;
                 case 7:
@@ -251,9 +251,9 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 8:
-                    y21 openMicrophone = openMicrophone((y21) rje.a(parcel, y21.CREATOR));
+                    g41 openMicrophone = openMicrophone((g41) tle.a(parcel, g41.CREATOR));
                     parcel2.writeNoException();
-                    rje.b(parcel2, openMicrophone, 1);
+                    tle.b(parcel2, openMicrophone, 1);
                     return true;
                 default:
                     return super.onTransact(i, parcel, parcel2, i2);

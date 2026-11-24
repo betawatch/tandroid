@@ -1,57 +1,40 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class wn2 implements TextWatcher {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eo2 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class wn2 extends tl5 {
+    public final String b;
+    public final String c;
+    public final String d;
 
-    public /* synthetic */ wn2(eo2 eo2Var, byte b) {
-        this.a = b;
-        this.b = eo2Var;
+    public wn2(String str, String str2, String str3) {
+        super("COMM");
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        byte b = this.a;
-        eo2 eo2Var = this.b;
-        switch (b) {
-            case 0:
-                String obj = editable.toString();
-                boolean isEmpty = TextUtils.isEmpty(eo2Var.L1);
-                eo2Var.L1 = obj;
-                eo2Var.z1.h(0L, eo2Var.o1, 0L, 0L, null, false, obj, isEmpty);
-                break;
-            default:
-                eo2Var.M1 = editable.toString();
-                eo2Var.A1.g3.O(true);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || wn2.class != obj.getClass()) {
+            return false;
+        }
+        wn2 wn2Var = (wn2) obj;
+        return this.c.equals(wn2Var.c) && this.b.equals(wn2Var.b) && Objects.equals(this.d, wn2Var.d);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
+    public final int hashCode() {
+        int j = ts2.j(ts2.j(527, 31, this.b), 31, this.c);
+        String str = this.d;
+        return j + (str != null ? str.hashCode() : 0);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    private final void a(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void b(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void c(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void d(int i, int i2, int i3, CharSequence charSequence) {
+    @Override // tl5
+    public final String toString() {
+        return this.a + ": language=" + this.b + ", description=" + this.c + ", text=" + this.d;
     }
 }

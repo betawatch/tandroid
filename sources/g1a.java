@@ -1,53 +1,38 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.PointF;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class g1a extends c49 {
-    public final PointF a = new PointF();
-    public final /* synthetic */ h1a b;
+public final class g1a implements View.OnKeyListener {
+    public boolean a;
+    public final /* synthetic */ HashSet b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ j1a d;
 
-    public g1a(h1a h1aVar) {
-        this.b = h1aVar;
+    public g1a(j1a j1aVar, HashSet hashSet, Runnable runnable) {
+        this.d = j1aVar;
+        this.b = hashSet;
+        this.c = runnable;
     }
 
-    @Override // c49
-    public final void f(Canvas canvas, RecyclerView recyclerView) {
-        float f;
-        si9 si9Var;
-        float height = recyclerView.getHeight();
-        float width = recyclerView.getWidth();
-        h1a h1aVar = this.b;
-        c1a c1aVar = h1aVar.o2;
-        b1a b1aVar = h1aVar.c2;
-        o39 o39Var = h1aVar.n1;
-        PointF pointF = this.a;
-        float f2 = 0.0f;
-        if (zec.b(b1aVar, o39Var, pointF)) {
-            float f3 = pointF.x;
-            height = Math.min(height, pointF.y);
-            f2 = Math.max(0.0f, pointF.y + b1aVar.getMeasuredHeight());
-            f = f3;
-            width = b1aVar.getMeasuredWidth() + f3;
-        } else {
-            f = 0.0f;
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
+        j1a j1aVar = this.d;
+        ArrayList arrayList = j1aVar.e;
+        if (i == 67) {
+            if (keyEvent.getAction() == 0) {
+                this.a = j1aVar.b.length() == 0;
+                return false;
+            }
+            if (keyEvent.getAction() == 1 && this.a && !arrayList.isEmpty()) {
+                j1aVar.a((wc5) b10.f(1, arrayList), this.b, this.c);
+                return true;
+            }
         }
-        if (zec.b(c1aVar, o39Var, pointF)) {
-            height = Math.min(height, pointF.y);
-            f2 = Math.max(f2, pointF.y + c1aVar.getMeasuredHeight() + gl.L(12.0f));
-        }
-        if (height >= f2 || (si9Var = b1aVar.M) == null) {
-            return;
-        }
-        float height2 = (f2 - height) / si9Var.getHeight();
-        canvas.save();
-        canvas.clipRect(f, height, width, f2);
-        canvas.translate(f, height);
-        canvas.scale(height2, height2);
-        b1aVar.M.draw(canvas);
-        canvas.restore();
+        return false;
     }
 }

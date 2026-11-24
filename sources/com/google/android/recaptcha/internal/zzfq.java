@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzfq extends ccb implements eq4 {
+final class zzfq extends eeb implements fs4 {
     Object zza;
     double zzb;
     int zzc;
@@ -15,24 +15,24 @@ final class zzfq extends ccb implements eq4 {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfq(zzgb zzgbVar, long j, String str, RecaptchaAction recaptchaAction, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzfq(zzgb zzgbVar, long j, String str, RecaptchaAction recaptchaAction, px2 px2Var) {
+        super(2, px2Var);
         this.zzd = zzgbVar;
         this.zze = j;
         this.zzf = str;
         this.zzg = recaptchaAction;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzfq zzfqVar = new zzfq(this.zzd, this.zze, this.zzf, this.zzg, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        zzfq zzfqVar = new zzfq(this.zzd, this.zze, this.zzf, this.zzg, px2Var);
         zzfqVar.zzh = obj;
         return zzfqVar;
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfq) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzfq) create((zzhk) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x011e, code lost:
@@ -45,7 +45,7 @@ final class zzfq extends ccb implements eq4 {
     /* JADX WARN: Removed duplicated region for block: B:38:0x00d2  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00c0  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0094  */
-    @Override // of0
+    @Override // og0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -67,11 +67,11 @@ final class zzfq extends ccb implements eq4 {
         Object zzo;
         zzyg zzygVar2;
         int i = this.zzc;
-        bx2 bx2Var = bx2.a;
+        ly2 ly2Var = ly2.a;
         try {
             switch (i) {
                 case 0:
-                    qse.b(obj);
+                    tue.b(obj);
                     zzhkVar = (zzhk) this.zzh;
                     zzgb zzgbVar = this.zzd;
                     long j = this.zze;
@@ -79,13 +79,13 @@ final class zzfq extends ccb implements eq4 {
                     this.zza = zzhkVar;
                     this.zzc = 1;
                     obj = new zzhg(new zzfu(zzgbVar, j, null));
-                    if (obj != bx2Var) {
+                    if (obj != ly2Var) {
                         zzhkVar2 = zzhkVar;
                         this.zzh = zzhkVar2;
                         this.zza = null;
                         this.zzc = 2;
                         obj = ((zzhg) obj).zza(zzhkVar, this);
-                        if (obj != bx2Var) {
+                        if (obj != ly2Var) {
                             zzhkVar3 = zzhkVar2;
                             double longValue = ((Number) obj).longValue();
                             zzfpVar = this.zzd.zza;
@@ -97,14 +97,14 @@ final class zzfq extends ccb implements eq4 {
                             this.zzb = d;
                             this.zzc = 3;
                             obj = zzfpVar.zzl(str, (long) d2, this);
-                            if (obj != bx2Var) {
+                            if (obj != ly2Var) {
                                 zzhkVar4 = zzhkVar3;
                                 this.zzh = zzhkVar4;
                                 this.zza = null;
                                 this.zzb = d;
                                 this.zzc = 4;
                                 obj = ((zzhf) obj).zza(zzhkVar3, this);
-                                if (obj != bx2Var) {
+                                if (obj != ly2Var) {
                                     zzhkVar5 = zzhkVar4;
                                     zzxx zzxxVar = (zzxx) obj;
                                     zzgb zzgbVar2 = this.zzd;
@@ -120,13 +120,13 @@ final class zzfq extends ccb implements eq4 {
                                     this.zza = zzhkVar5;
                                     this.zzc = 5;
                                     obj = zzfpVar3.zzm(zzk, (long) d, this);
-                                    if (obj != bx2Var) {
+                                    if (obj != ly2Var) {
                                         zzhkVar6 = zzhkVar5;
                                         this.zzh = zzhkVar6;
                                         this.zza = null;
                                         this.zzc = 6;
                                         obj = ((zzhf) obj).zza(zzhkVar5, this);
-                                        if (obj != bx2Var) {
+                                        if (obj != ly2Var) {
                                             zzhkVar7 = zzhkVar6;
                                             zzygVar = (zzyg) obj;
                                             zzfpVar4 = this.zzd.zza;
@@ -141,21 +141,21 @@ final class zzfq extends ccb implements eq4 {
                             }
                         }
                     }
-                    return bx2Var;
+                    return ly2Var;
                 case 1:
                     zzhkVar = (zzhk) this.zza;
                     zzhkVar2 = (zzhk) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     this.zzh = zzhkVar2;
                     this.zza = null;
                     this.zzc = 2;
                     obj = ((zzhg) obj).zza(zzhkVar, this);
-                    if (obj != bx2Var) {
+                    if (obj != ly2Var) {
                     }
-                    return bx2Var;
+                    return ly2Var;
                 case 2:
                     zzhkVar3 = (zzhk) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     double longValue2 = ((Number) obj).longValue();
                     zzfpVar = this.zzd.zza;
                     String str2 = this.zzf;
@@ -166,26 +166,26 @@ final class zzfq extends ccb implements eq4 {
                     this.zzb = d;
                     this.zzc = 3;
                     obj = zzfpVar.zzl(str2, (long) d22, this);
-                    if (obj != bx2Var) {
+                    if (obj != ly2Var) {
                     }
-                    return bx2Var;
+                    return ly2Var;
                 case 3:
                     d = this.zzb;
                     zzhkVar3 = (zzhk) this.zza;
                     zzhkVar4 = (zzhk) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     this.zzh = zzhkVar4;
                     this.zza = null;
                     this.zzb = d;
                     this.zzc = 4;
                     obj = ((zzhf) obj).zza(zzhkVar3, this);
-                    if (obj != bx2Var) {
+                    if (obj != ly2Var) {
                     }
-                    return bx2Var;
+                    return ly2Var;
                 case 4:
                     d = this.zzb;
                     zzhkVar5 = (zzhk) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     zzxx zzxxVar2 = (zzxx) obj;
                     zzgb zzgbVar22 = this.zzd;
                     zzfpVar2 = zzgbVar22.zza;
@@ -199,23 +199,23 @@ final class zzfq extends ccb implements eq4 {
                     this.zza = zzhkVar5;
                     this.zzc = 5;
                     obj = zzfpVar3.zzm(zzk2, (long) d, this);
-                    if (obj != bx2Var) {
+                    if (obj != ly2Var) {
                     }
-                    return bx2Var;
+                    return ly2Var;
                 case 5:
                     zzhkVar5 = (zzhk) this.zza;
                     zzhkVar6 = (zzhk) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     this.zzh = zzhkVar6;
                     this.zza = null;
                     this.zzc = 6;
                     obj = ((zzhf) obj).zza(zzhkVar5, this);
-                    if (obj != bx2Var) {
+                    if (obj != ly2Var) {
                     }
-                    return bx2Var;
+                    return ly2Var;
                 case 6:
                     zzhkVar7 = (zzhk) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     zzygVar = (zzyg) obj;
                     zzfpVar4 = this.zzd.zza;
                     this.zzh = zzygVar;
@@ -226,20 +226,20 @@ final class zzfq extends ccb implements eq4 {
                 case 7:
                     zzhkVar7 = (zzhk) this.zza;
                     zzyg zzygVar3 = (zzyg) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     zzo = obj;
                     zzygVar = zzygVar3;
                     this.zzh = zzygVar;
                     this.zza = null;
                     this.zzc = 8;
-                    if (zzhj.zzb(zzhkVar7, (zzhf) zzo, this) != bx2Var) {
+                    if (zzhj.zzb(zzhkVar7, (zzhf) zzo, this) != ly2Var) {
                         zzygVar2 = zzygVar;
                         return zzygVar2.zzj();
                     }
-                    return bx2Var;
+                    return ly2Var;
                 default:
                     zzygVar2 = (zzyg) this.zzh;
-                    qse.b(obj);
+                    tue.b(obj);
                     return zzygVar2.zzj();
             }
         } catch (zzcg e) {

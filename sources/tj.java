@@ -1,46 +1,10 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class tj {
-    public final long a;
-    public final aob b;
-    public final int c;
-    public final rx6 d;
-    public final long e;
-    public final aob f;
-    public final int g;
-    public final rx6 h;
-    public final long i;
-    public final long j;
-
-    public tj(long j, aob aobVar, int i, rx6 rx6Var, long j2, aob aobVar2, int i2, rx6 rx6Var2, long j3, long j4) {
-        this.a = j;
-        this.b = aobVar;
-        this.c = i;
-        this.d = rx6Var;
-        this.e = j2;
-        this.f = aobVar2;
-        this.g = i2;
-        this.h = rx6Var2;
-        this.i = j3;
-        this.j = j4;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || tj.class != obj.getClass()) {
-            return false;
-        }
-        tj tjVar = (tj) obj;
-        return this.a == tjVar.a && this.c == tjVar.c && this.e == tjVar.e && this.g == tjVar.g && this.i == tjVar.i && this.j == tjVar.j && this.b.equals(tjVar.b) && Objects.equals(this.d, tjVar.d) && Objects.equals(this.f, tjVar.f) && Objects.equals(this.h, tjVar.h);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class tj extends lp7 {
+    @Override // lp7
+    public final CharSequence d(int i) {
+        return jb6.G(i + 1, "Times", new Object[0]);
     }
 }

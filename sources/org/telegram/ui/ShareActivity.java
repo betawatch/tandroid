@@ -13,17 +13,17 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public taa a;
+    public tca a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
         org.telegram.messenger.a.v();
-        gl.v(this, getResources().getConfiguration());
-        gl.s3(getWindow());
+        gm.v(this, getResources().getConfiguration());
+        gm.r3(getWindow());
         requestWindowFeature(1);
         setTheme(R.style.Theme_TMessages_Transparent);
         super.onCreate(bundle);
@@ -56,16 +56,16 @@ public class ShareActivity extends Activity {
         TLdeserialize.readAttachPath(serializedData, 0L);
         serializedData.cleanup();
         String string2 = sharedPreferences.getString(queryParameter + "_link", null);
-        k27 k27Var = new k27(y6c.t0, TLdeserialize, false, true);
-        k27Var.k.with_my_score = true;
+        k47 k47Var = new k47(z8c.t0, TLdeserialize, false, true);
+        k47Var.k.with_my_score = true;
         try {
-            taa G0 = taa.G0(this, k27Var, null, false, string2);
+            tca G0 = tca.G0(this, k47Var, null, false, string2);
             this.a = G0;
             G0.setCanceledOnTouchOutside(true);
-            this.a.setOnDismissListener(new ph8(this, (byte) 7));
+            this.a.setOnDismissListener(new qj8(this, (byte) 7));
             this.a.show();
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
             finish();
         }
     }
@@ -74,14 +74,14 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            taa taaVar = this.a;
-            if (taaVar == null || !taaVar.isShowing()) {
+            tca tcaVar = this.a;
+            if (tcaVar == null || !tcaVar.isShowing()) {
                 return;
             }
             this.a.dismiss();
             this.a = null;
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 }

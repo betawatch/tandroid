@@ -3,36 +3,36 @@ package com.google.android.recaptcha.internal;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-final class zzfe extends ccb implements eq4 {
+final class zzfe extends eeb implements fs4 {
     final /* synthetic */ zzyg zza;
     final /* synthetic */ zzfp zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfe(zzyg zzygVar, zzfp zzfpVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzfe(zzyg zzygVar, zzfp zzfpVar, px2 px2Var) {
+        super(2, px2Var);
         this.zza = zzygVar;
         this.zzb = zzfpVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzfe(this.zza, this.zzb, fw2Var);
+    @Override // og0
+    public final px2 create(Object obj, px2 px2Var) {
+        return new zzfe(this.zza, this.zzb, px2Var);
     }
 
-    @Override // eq4
+    @Override // fs4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfe) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzfe) create((zzgr) obj, (px2) obj2)).invokeSuspend(g7c.a);
     }
 
-    @Override // of0
+    @Override // og0
     public final Object invokeSuspend(Object obj) {
-        qse.b(obj);
+        tue.b(obj);
         try {
             zzyg zzygVar = this.zza;
             List<zzyi> zzk = zzygVar.zzk();
-            int b = qi6.b(al2.c(zzk, 10));
+            int b = sk6.b(mm2.c(zzk, 10));
             if (b < 16) {
                 b = 16;
             }
@@ -43,7 +43,7 @@ final class zzfe extends ccb implements eq4 {
             zzfp zzfpVar = this.zzb;
             zzfp.zze(zzfpVar).zzb(linkedHashMap);
             zzfp.zzb(zzfpVar).zze(zzygVar);
-            return g5c.a;
+            return g7c.a;
         } catch (zzcg e) {
             throw e;
         } catch (Exception e2) {

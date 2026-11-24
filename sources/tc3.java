@@ -1,47 +1,40 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class tc3 {
-    public final String a;
-    public final qx4 b;
+public abstract /* synthetic */ class tc3 {
+    public static final /* synthetic */ int[] a;
 
-    public tc3(Set set, qx4 qx4Var) {
-        this.a = b(set);
-        this.b = qx4Var;
-    }
-
-    public static String b(Set set) {
-        StringBuilder sb = new StringBuilder();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            y90 y90Var = (y90) it.next();
-            sb.append(y90Var.a);
-            sb.append('/');
-            sb.append(y90Var.b);
-            if (it.hasNext()) {
-                sb.append(' ');
-            }
+    static {
+        int[] iArr = new int[u26.values().length];
+        try {
+            iArr[u26.ON_CREATE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        return sb.toString();
-    }
-
-    public final String a() {
-        Set unmodifiableSet;
-        qx4 qx4Var = this.b;
-        synchronized (((HashSet) qx4Var.a)) {
-            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) qx4Var.a);
+        try {
+            iArr[u26.ON_START.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-        boolean isEmpty = unmodifiableSet.isEmpty();
-        String str = this.a;
-        if (isEmpty) {
-            return str;
+        try {
+            iArr[u26.ON_RESUME.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
         }
-        return str + ' ' + b(qx4Var.K());
+        try {
+            iArr[u26.ON_PAUSE.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            iArr[u26.ON_STOP.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            iArr[u26.ON_DESTROY.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            iArr[u26.ON_ANY.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        a = iArr;
     }
 }

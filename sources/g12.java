@@ -1,61 +1,77 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class g12 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final TextView b;
-    public final TextView c;
+public final class g12 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ n12 c;
 
-    public g12(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        setPadding(0, gl.L(42.0f), 0, gl.L(42.0f));
-        setTag(-33024);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, nme.r(-1, -2, 17));
-        be0 be0Var = new be0(context);
-        be0Var.setImageDrawable(new oy8(R.raw.utyan_empty, gl.L(120.0f), gl.L(120.0f)));
-        linearLayout.addView(be0Var, nme.t(120, 120, 17, 0, 0, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(gl.o());
-        textView.setGravity(17);
-        TextView m = ug8.m(linearLayout, textView, nme.t(-1, -2, 17, 32, 12, 32, 8), context);
-        this.c = m;
-        m.setTextSize(1, 14.0f);
-        m.setGravity(17);
-        linearLayout.addView(m, nme.t(-1, -2, 17, 32, 0, 32, 0));
-        updateColors();
+    public /* synthetic */ g12(n12 n12Var, boolean z, byte b) {
+        this.a = b;
+        this.c = n12Var;
+        this.b = z;
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.F6));
-        hashSet.add(Integer.valueOf(bkb.x6));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int L;
+        byte b = this.a;
+        boolean z = this.b;
+        n12 n12Var = this.c;
+        switch (b) {
+            case 0:
+                i22 i22Var = n12Var.e;
+                if (z) {
+                    i22Var.u3.setVisibility(8);
+                    L = gm.L(36.0f);
+                } else {
+                    i22Var.B3.setVisibility(8);
+                    L = 0;
+                }
+                for (int i = 0; i < i22Var.u2.size(); i++) {
+                    ((e32) i22Var.u2.valueAt(i)).setMeasureOffsetY(L);
+                }
+                if (n12Var.a == animator) {
+                    n12Var.a = null;
+                    break;
+                }
+                break;
+            default:
+                i22 i22Var2 = n12Var.e;
+                i22Var2.y3 = z;
+                if (!z) {
+                    i22Var2.z3.setVisibility(8);
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        int i = bkb.F6;
-        wjb wjbVar = this.a;
-        this.b.setTextColor(bkb.v0(i, wjbVar));
-        this.c.setTextColor(bkb.v0(bkb.x6, wjbVar));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                i22 i22Var = this.c.e;
+                if (this.b) {
+                    i22Var.B3.setAlpha(0.0f);
+                    i22Var.B3.setVisibility(0);
+                    int L = gm.L(36.0f);
+                    for (int i = 0; i < i22Var.u2.size(); i++) {
+                        ((e32) i22Var.u2.valueAt(i)).setMeasureOffsetY(L);
+                    }
+                    break;
+                } else {
+                    i22Var.u3.setAlpha(0.0f);
+                    i22Var.u3.setVisibility(0);
+                    break;
+                }
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

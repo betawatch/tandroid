@@ -1,33 +1,20 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.NotificationsSettingsActivity;
+import android.app.Notification;
+import android.graphics.drawable.Icon;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class tm7 implements d39, ed {
-    public final /* synthetic */ NotificationsSettingsActivity a;
-
-    public /* synthetic */ tm7(NotificationsSettingsActivity notificationsSettingsActivity) {
-        this.a = notificationsSettingsActivity;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class tm7 {
+    public static void a(Notification.BigPictureStyle bigPictureStyle, Icon icon) {
+        bigPictureStyle.bigPicture(icon);
     }
 
-    @Override // d39
-    public final void e(float f, float f2, int i, View view) {
-        this.a.y0(f, i, view);
+    public static void b(Notification.BigPictureStyle bigPictureStyle, CharSequence charSequence) {
+        bigPictureStyle.setContentDescription(charSequence);
     }
 
-    @Override // d39
-    public final boolean q(View view) {
-        return false;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        this.a.A0();
-    }
-
-    @Override // d39
-    public final void l(View view, float f, float f2) {
+    public static void c(Notification.BigPictureStyle bigPictureStyle, boolean z) {
+        bigPictureStyle.showBigPictureWhenCollapsed(z);
     }
 }

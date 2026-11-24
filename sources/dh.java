@@ -1,58 +1,45 @@
 // default package
 
-import android.view.View;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class dh implements View.OnClickListener {
+public final /* synthetic */ class dh implements ee {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ fx0 b;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ d c;
 
-    public /* synthetic */ dh(fx0 fx0Var, byte b) {
+    public /* synthetic */ dh(byte b, String str, d dVar) {
         this.a = b;
-        this.b = fx0Var;
+        this.b = str;
+        this.c = dVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // ee
+    public final void r(he heVar, int i) {
         byte b = this.a;
-        fx0 fx0Var = this.b;
+        d dVar = this.c;
+        String str = this.b;
         switch (b) {
             case 0:
-                fx0Var.dismiss();
-                break;
-            case 1:
-                fx0Var.J(((Integer) view.getTag()).intValue());
-                break;
-            case 2:
-                fx0Var.dismiss();
-                break;
-            case 3:
-                fx0Var.dismiss();
-                break;
-            case 4:
-                d Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Q.presentFragment(new PremiumPreviewFragment(0, "contact"));
-                    fx0Var.dismiss();
+                try {
+                    Intent intent = new Intent("android.intent.action.VIEW", Uri.fromParts("sms", str, null));
+                    intent.putExtra("sms_body", bw2.r(dVar.getCurrentAccount()).s(1));
+                    dVar.getParentActivity().startActivityForResult(intent, 500);
                     break;
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                    return;
                 }
-                break;
-            case 5:
-                fx0Var.dismiss();
-                break;
-            case 6:
-                fx0Var.dismiss();
-                break;
-            case 7:
-                fx0Var.dismiss();
-                break;
             default:
-                fx0Var.dismiss();
-                break;
+                try {
+                    dVar.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + str)), 500);
+                    break;
+                } catch (Exception e2) {
+                    fc4.g(e2, true);
+                }
         }
     }
 }

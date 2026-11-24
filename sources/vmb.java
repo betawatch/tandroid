@@ -1,0 +1,15 @@
+// default package
+
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class vmb {
+    public final umb[] a = new umb[6];
+    public ArrayList b;
+    public ArrayList c;
+    public Drawable d;
+    public umb e;
+    public umb f;
+}

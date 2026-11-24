@@ -1,27 +1,94 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class q6a {
-    public static final q6a a;
-    public static final q6a b;
-    public static final /* synthetic */ q6a[] c;
+public final class q6a implements Iterator, px2 {
+    public byte a;
+    public Object b;
+    public px2 c;
 
-    static {
-        q6a q6aVar = new q6a("CRASHLYTICS", 0);
-        a = q6aVar;
-        q6a q6aVar2 = new q6a("PERFORMANCE", 1);
-        b = q6aVar2;
-        c = new q6a[]{q6aVar, q6aVar2, new q6a("MATT_SAYS_HI", 2)};
+    public final RuntimeException a() {
+        byte b = this.a;
+        if (b == 4) {
+            return new NoSuchElementException();
+        }
+        if (b == 5) {
+            return new IllegalStateException("Iterator has failed.");
+        }
+        return new IllegalStateException("Unexpected state of the iterator: " + ((int) this.a));
     }
 
-    public static q6a valueOf(String str) {
-        return (q6a) Enum.valueOf(q6a.class, str);
+    public final void c(Object obj, rc9 rc9Var) {
+        this.b = obj;
+        this.a = (byte) 3;
+        this.c = rc9Var;
     }
 
-    public static q6a[] values() {
-        return (q6a[]) c.clone();
+    @Override // px2
+    public final cy2 getContext() {
+        return k34.a;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        byte b;
+        while (true) {
+            b = this.a;
+            if (b != 0) {
+                break;
+            }
+            this.a = (byte) 5;
+            px2 px2Var = this.c;
+            px2Var.getClass();
+            this.c = null;
+            px2Var.resumeWith(g7c.a);
+        }
+        if (b == 1) {
+            throw null;
+        }
+        if (b == 2 || b == 3) {
+            return true;
+        }
+        if (b == 4) {
+            return false;
+        }
+        throw a();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        byte b = this.a;
+        if (b == 0 || b == 1) {
+            if (hasNext()) {
+                return next();
+            }
+            u36.g();
+            return null;
+        }
+        if (b == 2) {
+            this.a = (byte) 1;
+            throw null;
+        }
+        if (b != 3) {
+            throw a();
+        }
+        this.a = (byte) 0;
+        Object obj = this.b;
+        this.b = null;
+        return obj;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // px2
+    public final void resumeWith(Object obj) {
+        tue.b(obj);
+        this.a = (byte) 4;
     }
 }

@@ -1,28 +1,25 @@
 // default package
 
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class di5 implements ei5 {
-    public IBinder a;
+public final class di5 extends tp5 {
+    public static final Pattern e = Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>]|<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->|[<][?].*?[?][>]|<![A-Z]+\\s+[^>]*>|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>)", 2);
 
-    public final void a(int i, Bundle bundle) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
-            obtain.writeInt(i);
-            wje.a(obtain, bundle);
-            this.a.transact(3001, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    @Override // tp5
+    public final ui6 b() {
+        String a = a(e);
+        if (a == null) {
+            return null;
         }
+        qk2 qk2Var = new qk2((byte) 1);
+        qk2Var.h = a;
+        return qk2Var;
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    @Override // tp5
+    public final char c() {
+        return '<';
     }
 }

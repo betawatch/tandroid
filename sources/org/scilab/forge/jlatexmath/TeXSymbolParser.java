@@ -8,7 +8,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class TeXSymbolParser {
     public static final String DELIMITER_ATTR = "del";
@@ -34,7 +34,7 @@ public class TeXSymbolParser {
         if (!attribute.equals("")) {
             return attribute;
         }
-        k93.g(RESOURCE_NAME, element.getTagName(), str, null);
+        wa3.f(RESOURCE_NAME, element.getTagName(), str, null);
         return null;
     }
 
@@ -60,7 +60,7 @@ public class TeXSymbolParser {
             boolean z = attribute != null && attribute.equals("true");
             Integer num = typeMappings.get(attrValueAndCheckIfNotNull2);
             if (num == null) {
-                k93.g(RESOURCE_NAME, "Symbol", TYPE_ATTR, tb4.y("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                wa3.f(RESOURCE_NAME, "Symbol", TYPE_ATTR, kt6.o("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
                 return null;
             }
             hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z));

@@ -12,7 +12,7 @@ import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.ThreadUtils;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class WebRtcAudioTrack {
     private static final long AUDIO_TRACK_THREAD_JOIN_TIMEOUT_MS = 2000;
@@ -35,13 +35,13 @@ public class WebRtcAudioTrack {
     private final long nativeAudioTrack;
     private final ThreadUtils.ThreadChecker threadChecker;
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public enum AudioTrackStartErrorCode {
         AUDIO_TRACK_START_EXCEPTION,
         AUDIO_TRACK_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     private class AudioTrackThread extends Thread {
         private volatile boolean keepAlive;
         private long lastPlaybackHeadPosition;
@@ -101,7 +101,7 @@ public class WebRtcAudioTrack {
                         try {
                             Thread.sleep(nanoTime / 1000000, (int) (nanoTime % 1000000));
                         } catch (InterruptedException e) {
-                            fa4.g(e, true);
+                            fc4.g(e, true);
                         }
                     } else {
                         this.targetTimeNs = System.nanoTime();
@@ -127,7 +127,7 @@ public class WebRtcAudioTrack {
         }
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     public interface ErrorCallback {
         void onWebRtcAudioTrackError(String str);
 
@@ -136,7 +136,7 @@ public class WebRtcAudioTrack {
         void onWebRtcAudioTrackStartError(AudioTrackStartErrorCode audioTrackStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+    /* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
     @Deprecated
     public interface WebRtcAudioTrackErrorCallback {
         void onWebRtcAudioTrackError(String str);
@@ -167,7 +167,7 @@ public class WebRtcAudioTrack {
         if (z) {
             return;
         }
-        fi7.g("Expected condition to be true");
+        bh7.j("Expected condition to be true");
     }
 
     private int channelCountToConfiguration(int i) {
@@ -297,7 +297,7 @@ public class WebRtcAudioTrack {
             try {
                 audioTrack.release();
             } catch (Throwable th) {
-                fa4.g(th, true);
+                fc4.g(th, true);
             }
         }
     }
@@ -425,7 +425,7 @@ public class WebRtcAudioTrack {
         try {
             releaseAudioResources();
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
         }
         return true;
     }

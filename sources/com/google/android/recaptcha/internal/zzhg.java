@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzhg {
-    private final eq4 zza;
+    private final fs4 zza;
 
-    public zzhg(eq4 eq4Var) {
-        this.zza = eq4Var;
+    public zzhg(fs4 fs4Var) {
+        this.zza = fs4Var;
     }
 
-    public final Object zza(zzhk zzhkVar, fw2 fw2Var) {
-        return this.zza.invoke(zzhkVar, fw2Var);
+    public final Object zza(zzhk zzhkVar, px2 px2Var) {
+        return this.zza.invoke(zzhkVar, px2Var);
     }
 }

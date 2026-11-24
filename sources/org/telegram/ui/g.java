@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -31,17 +31,17 @@ public final class g extends AnimatorListenerAdapter {
             oVar.i0.i();
             oVar.b1.a(oVar.v0[0].getBackgroundColor(), true);
             oVar.c1.a(oVar.v0[1].getBackgroundColor(), true);
-            sw swVar = oVar.L;
-            if (swVar != null) {
-                swVar.y();
+            sx sxVar = oVar.L;
+            if (sxVar != null) {
+                sxVar.z();
             }
             for (int size = arrayList.size() - 1; size > this.a; size--) {
                 arrayList2.add(arrayList.remove(size));
             }
             oVar.Q0.Q(oVar.v0[0].b);
-            fib fibVar = oVar.Q0;
-            fibVar.z0 = oVar.v0[0].d;
-            fibVar.e(true);
+            gkb gkbVar = oVar.Q0;
+            gkbVar.z0 = oVar.v0[0].d;
+            gkbVar.e(true);
             oVar.g0(false);
             oVar.d0();
             oVar.v0[1].a();
@@ -51,11 +51,11 @@ public final class g extends AnimatorListenerAdapter {
             while (i < size2) {
                 Object obj = arrayList2.get(i);
                 i++;
-                if (obj instanceof zv) {
-                    ((zv) obj).a();
+                if (obj instanceof zw) {
+                    ((zw) obj).a();
                 }
                 if (obj instanceof TLRPC.WebPage) {
-                    ctc.o((TLRPC.WebPage) obj);
+                    dvc.o((TLRPC.WebPage) obj);
                 }
             }
         } else {

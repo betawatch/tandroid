@@ -1,60 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class q6d extends a7d {
-    public final transient a7d r;
+import android.os.Process;
 
-    public q6d(a7d a7dVar) {
-        super((byte) 3);
-        this.r = a7dVar;
-    }
-
-    @Override // a7d, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return this.r.contains(obj);
-    }
-
-    @Override // java.util.List
-    public final Object get(int i) {
-        a7d a7dVar = this.r;
-        u3f.a(i, a7dVar.size());
-        return a7dVar.get((a7dVar.size() - 1) - i);
-    }
-
-    @Override // a7d, java.util.List
-    public final int indexOf(Object obj) {
-        int lastIndexOf = this.r.lastIndexOf(obj);
-        if (lastIndexOf >= 0) {
-            return (r1.size() - 1) - lastIndexOf;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class q6d extends Thread {
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        Process.setThreadPriority(19);
+        synchronized (this) {
+            while (true) {
+                try {
+                    wait();
+                } catch (InterruptedException unused) {
+                    return;
+                }
+            }
         }
-        return -1;
-    }
-
-    @Override // a7d, java.util.List
-    public final int lastIndexOf(Object obj) {
-        int indexOf = this.r.indexOf(obj);
-        if (indexOf >= 0) {
-            return (r1.size() - 1) - indexOf;
-        }
-        return -1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.r.size();
-    }
-
-    @Override // a7d
-    public final a7d y() {
-        return this.r;
-    }
-
-    @Override // a7d, java.util.List
-    /* renamed from: z, reason: merged with bridge method [inline-methods] */
-    public final a7d subList(int i, int i2) {
-        a7d a7dVar = this.r;
-        u3f.b(i, i2, a7dVar.size());
-        return a7dVar.subList(a7dVar.size() - i2, a7dVar.size() - i).y();
     }
 }

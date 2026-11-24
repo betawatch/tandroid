@@ -1,16 +1,19 @@
 // default package
 
-import android.app.Notification;
-import android.net.Uri;
+import android.telephony.TelephonyCallback;
+import android.telephony.TelephonyDisplayInfo;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class cl7 {
-    public static Notification.MessagingStyle.Message a(CharSequence charSequence, long j, CharSequence charSequence2) {
-        return new Notification.MessagingStyle.Message(charSequence, j, charSequence2);
+public final class cl7 extends TelephonyCallback implements TelephonyCallback.DisplayInfoListener {
+    public final ow2 a;
+
+    public cl7(ow2 ow2Var) {
+        this.a = ow2Var;
     }
 
-    public static Notification.MessagingStyle.Message b(Notification.MessagingStyle.Message message, String str, Uri uri) {
-        return message.setData(str, uri);
+    public final void onDisplayInfoChanged(TelephonyDisplayInfo telephonyDisplayInfo) {
+        int overrideNetworkType = telephonyDisplayInfo.getOverrideNetworkType();
+        this.a.i(overrideNetworkType == 3 || overrideNetworkType == 4 || overrideNetworkType == 5 ? 10 : 5);
     }
 }

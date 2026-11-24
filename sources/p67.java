@@ -1,42 +1,49 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class p67 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class p67 extends z82 {
+    public final /* synthetic */ t67 B0;
 
-    public /* synthetic */ p67(na7 na7Var, TL_account.TL_webBrowserSettings tL_webBrowserSettings, byte b) {
-        this.a = b;
-        this.b = na7Var;
-        this.c = tL_webBrowserSettings;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p67(t67 t67Var, Context context) {
+        super(context, null, false, null);
+        this.B0 = t67Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
-            case 0:
-                f67 f67Var = na7Var.l5;
-                if (tL_webBrowserSettings != null) {
-                    na7Var.m5 = tL_webBrowserSettings;
-                    na7Var.getNotificationCenter().k(kk7.T5, new Object[0]);
-                }
-                gl.r(f67Var);
-                gl.e3(f67Var, 3600010L);
-                break;
-            default:
-                if (tL_webBrowserSettings != null) {
-                    na7Var.m5 = tL_webBrowserSettings;
-                    na7Var.getNotificationCenter().k(kk7.T5, new Object[0]);
-                    break;
-                }
-                break;
+    @Override // z82, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        t67 t67Var = this.B0;
+        t67Var.X.i0(t67Var.c0.getAvatarImageView().getX(), t67Var.c0.getAvatarImageView().getY(), t67Var.c0.getAvatarImageView().getWidth(), t67Var.c0.getAvatarImageView().getHeight());
+        if (t67Var.Z) {
+            canvas.save();
+            canvas.scale(0.9f, 0.9f, t67Var.X.r(), t67Var.X.s());
+            t67Var.X.h(canvas, null);
+            canvas.restore();
         }
+        if (t67Var.Y) {
+            int r = (int) (t67Var.X.r() - (cmb.T0.getIntrinsicWidth() / 2));
+            int s = (int) (t67Var.X.s() - (cmb.T0.getIntrinsicHeight() / 2));
+            Drawable drawable = cmb.T0;
+            drawable.setBounds(r, s, drawable.getIntrinsicWidth() + r, cmb.T0.getIntrinsicHeight() + s);
+            cmb.T0.draw(canvas);
+        }
+    }
+
+    @Override // z82, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.B0.X.I();
+    }
+
+    @Override // z82, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.B0.X.K();
     }
 }

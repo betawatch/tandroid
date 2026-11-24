@@ -1,19 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class uqd implements zn7 {
-    public static final uqd a = new uqd();
+import java.util.Arrays;
 
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)), 10)));
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class uqd {
+    public final /* synthetic */ byte a;
+    public Object b;
+    public Object c;
+    public Object d;
+
+    public /* synthetic */ uqd(String str) {
+        this.a = (byte) 4;
+        wm9 wm9Var = new wm9((byte) 28, false);
+        this.c = wm9Var;
+        this.d = wm9Var;
+        this.b = str;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public final String toString() {
+        switch (this.a) {
+            case 4:
+                StringBuilder sb = new StringBuilder(32);
+                sb.append((String) this.b);
+                sb.append('{');
+                wm9 wm9Var = (wm9) ((wm9) this.c).d;
+                String str = "";
+                while (wm9Var != null) {
+                    Object obj = wm9Var.c;
+                    sb.append(str);
+                    String str2 = (String) wm9Var.b;
+                    if (str2 != null) {
+                        sb.append(str2);
+                        sb.append('=');
+                    }
+                    if (obj == null || !obj.getClass().isArray()) {
+                        sb.append(obj);
+                    } else {
+                        sb.append((CharSequence) Arrays.deepToString(new Object[]{obj}), 1, r2.length() - 1);
+                    }
+                    wm9Var = (wm9) wm9Var.d;
+                    str = ", ";
+                }
+                sb.append('}');
+                return sb.toString();
+            default:
+                return super.toString();
         }
-        throw null;
     }
 }

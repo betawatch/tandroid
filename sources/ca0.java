@@ -1,48 +1,37 @@
 // default package
 
-import android.util.JsonReader;
-import android.util.JsonToken;
-import java.io.BufferedReader;
-import java.io.IOException;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class ca0 {
-    public final long a;
+    public Double a;
+    public int b;
+    public boolean c;
+    public int d;
+    public long e;
+    public long f;
+    public byte g;
 
-    public ca0(long j) {
-        this.a = j;
-    }
-
-    public static ca0 a(BufferedReader bufferedReader) {
-        JsonReader jsonReader = new JsonReader(bufferedReader);
-        try {
-            jsonReader.beginObject();
-            while (jsonReader.hasNext()) {
-                if (jsonReader.nextName().equals("nextRequestWaitMillis")) {
-                    return jsonReader.peek() == JsonToken.STRING ? new ca0(Long.parseLong(jsonReader.nextString())) : new ca0(jsonReader.nextLong());
-                }
-                jsonReader.skipValue();
-            }
-            throw new IOException("Response is missing nextRequestWaitMillis field.");
-        } finally {
-            jsonReader.close();
+    public final da0 a() {
+        if (this.g == 31) {
+            return new da0(this.a, this.b, this.c, this.d, this.e, this.f);
         }
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+        StringBuilder sb = new StringBuilder();
+        if ((this.g & 1) == 0) {
+            sb.append(" batteryVelocity");
         }
-        return (obj instanceof ca0) && this.a == ((ca0) obj).a;
-    }
-
-    public final int hashCode() {
-        long j = this.a;
-        return 1000003 ^ ((int) ((j >>> 32) ^ j));
-    }
-
-    public final String toString() {
-        return ls6.p(new StringBuilder("LogResponse{nextRequestWaitMillis="), this.a, "}");
+        if ((this.g & 2) == 0) {
+            sb.append(" proximityOn");
+        }
+        if ((this.g & 4) == 0) {
+            sb.append(" orientation");
+        }
+        if ((this.g & 8) == 0) {
+            sb.append(" ramUsed");
+        }
+        if ((this.g & 16) == 0) {
+            sb.append(" diskUsed");
+        }
+        dq9.m(ts2.n("Missing required properties:", sb));
+        return null;
     }
 }

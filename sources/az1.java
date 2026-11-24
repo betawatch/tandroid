@@ -1,407 +1,192 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.RectF;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import android.util.Log;
-import android.util.LongSparseArray;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.c;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class az1 extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
-    public static final RectF I = new RectF();
-    public final yy1 E;
-    public ViewTreeObserver F;
-    public boolean G;
-    public TextPaint H;
-    public final boolean a;
-    public final RectF b;
-    public final RectF c;
-    public long d;
-    public int e;
-    public ViewGroup f;
-    public jq1 h;
-    public long n;
-    public yy1 r;
-    public long s;
-    public final ArrayList w;
-    public final LongSparseArray x;
-    public final LongSparseArray y;
+public final /* synthetic */ class az1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public az1(Context context) {
-        super(context);
-        this.b = new RectF();
-        this.c = new RectF();
-        this.w = new ArrayList();
-        this.x = new LongSparseArray();
-        this.y = new LongSparseArray();
-        this.E = new yy1(this, (byte) 1);
-        this.a = gba.d1;
+    public /* synthetic */ az1(wg6 wg6Var, TLObject tLObject, TLRPC.TL_error tL_error, in8 in8Var, int i, ln8 ln8Var, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, String str, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+        this.a = (byte) 3;
+        this.c = wg6Var;
+        this.d = tLObject;
+        this.e = tL_error;
+        this.f = in8Var;
+        this.b = i;
+        this.h = ln8Var;
+        this.n = tL_inputStorePaymentAuthCode;
+        this.r = str;
+        this.s = tL_payments_canPurchaseStore;
     }
 
-    public final void a() {
-        yy1 yy1Var = this.r;
-        if (yy1Var != null) {
-            gl.r(yy1Var);
-            this.r = null;
-        }
-        ArrayList arrayList = this.w;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        TLRPC.TL_messages_reportReadMetrics tL_messages_reportReadMetrics = new TLRPC.TL_messages_reportReadMetrics();
-        tL_messages_reportReadMetrics.peer = na7.q1(this.e).h1(this.d);
-        tL_messages_reportReadMetrics.metrics = new ArrayList<>(arrayList);
-        ConnectionsManager.getInstance(this.e).sendRequestTyped(tL_messages_reportReadMetrics, null, new np0((byte) 0));
-        arrayList.clear();
-    }
-
-    public final void b(int i, long j, ViewGroup viewGroup, jq1 jq1Var) {
-        this.d = j;
-        this.e = i;
-        this.f = viewGroup;
-        this.h = jq1Var;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x027e  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x0204  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0175  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c() {
-        String str;
-        LongSparseArray longSparseArray;
-        ArrayList arrayList;
-        boolean z;
-        long j;
-        String str2;
-        LongSparseArray longSparseArray2;
-        LongSparseArray longSparseArray3;
-        RectF rectF;
-        int i;
-        k27 messageObject;
-        RectF rectF2;
-        long j2;
-        if (this.f == null || this.h == null) {
-            return;
-        }
-        long uptimeMillis = SystemClock.uptimeMillis();
-        long j3 = this.s;
-        long j4 = 0;
-        long j5 = j3 == 0 ? 0L : uptimeMillis - j3;
-        this.s = uptimeMillis;
-        LongSparseArray longSparseArray4 = this.y;
-        int size = longSparseArray4.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            ((RectF) longSparseArray4.valueAt(i2)).set(0.0f, 0.0f, 0.0f, 0.0f);
-        }
-        int childCount = this.h.getChildCount();
-        int i3 = 0;
-        while (true) {
-            str = "ViewMetrics";
-            longSparseArray = this.x;
-            if (i3 >= childCount) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.b;
+        Object obj = this.s;
+        Object obj2 = this.r;
+        Object obj3 = this.n;
+        Object obj4 = this.h;
+        Object obj5 = this.f;
+        Object obj6 = this.e;
+        Object obj7 = this.d;
+        Object obj8 = this.c;
+        switch (b) {
+            case 0:
+                c cVar = (c) obj8;
+                FrameLayout frameLayout = (FrameLayout) obj6;
+                View view = (View) obj5;
+                RectF rectF = (RectF) obj4;
+                cVar.getClass();
+                ((ykc) obj7).getLocationInWindow(new int[2]);
+                frameLayout.getLocationInWindow(new int[2]);
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
+                layoutParams.leftMargin = Math.round((rectF.left + r8[0]) - r1[0]);
+                layoutParams.topMargin = Math.round((rectF.top + r8[1]) - r1[1]);
+                view.setLayoutParams(layoutParams);
+                view.post(new bz1(cVar, view, frameLayout, layoutParams, (ArrayList) obj3, (ArrayList) obj2, this.b, (zkc) obj));
                 break;
-            }
-            View childAt = this.h.getChildAt(i3);
-            long j6 = j4;
-            ViewGroup viewGroup = this.f;
-            RectF rectF3 = I;
-            if (zec.c(childAt, viewGroup, rectF3)) {
-                if (childAt instanceof gb2) {
-                    messageObject = ((gb2) childAt).getMessageObject();
-                } else if (childAt instanceof uk1) {
-                    messageObject = ((uk1) childAt).getMessageObject();
-                }
-                if (messageObject != null) {
-                    long B0 = k27.B0(messageObject.k);
-                    i = i3;
-                    if (B0 == this.d) {
-                        int e1 = messageObject.e1();
-                        long c1 = messageObject.c1();
-                        if (B0 != j6 && e1 > 0) {
-                            long j7 = e1;
-                            zy1 zy1Var = (zy1) longSparseArray.get(j7);
-                            if (zy1Var == null) {
-                                rectF2 = rectF3;
-                                j2 = c1;
-                                zy1Var = new zy1(e1, j2);
-                                longSparseArray.put(j7, zy1Var);
-                                if (w01.a) {
-                                    Log.d("ViewMetrics", e1 + " " + j2 + " in screen");
-                                }
-                            } else {
-                                rectF2 = rectF3;
-                                j2 = c1;
-                            }
-                            RectF rectF4 = zy1Var.c;
-                            rectF4.set(rectF2);
-                            if (j2 != j6) {
-                                RectF rectF5 = (RectF) longSparseArray4.get(j2);
-                                if (rectF5 == null) {
-                                    rectF5 = new RectF();
-                                    longSparseArray4.put(j2, rectF5);
-                                }
-                                rectF5.union(rectF4);
-                            }
-                            zy1Var.e = uptimeMillis;
-                        }
+            case 1:
+                LaunchActivity launchActivity = (LaunchActivity) obj8;
+                TLObject tLObject = (TLObject) obj7;
+                int[] iArr = (int[]) obj6;
+                k16 k16Var = (k16) obj5;
+                Integer num = (Integer) obj4;
+                Integer num2 = (Integer) obj3;
+                Long l = (Long) obj2;
+                Integer num3 = (Integer) obj;
+                String str = LaunchActivity.C1;
+                if (tLObject instanceof TLRPC.TL_messages_chats) {
+                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
+                    if (!tL_messages_chats.chats.isEmpty()) {
+                        oc7.r1(launchActivity.P).X3(tL_messages_chats.chats, false);
+                        iArr[0] = launchActivity.z0(this.b, k16Var, num, num2, l, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
+                        break;
                     }
-                    i3 = i + 1;
-                    j4 = j6;
                 }
-            }
-            i = i3;
-            i3 = i + 1;
-            j4 = j6;
-        }
-        long j8 = j4;
-        for (int size2 = longSparseArray4.size() - 1; size2 >= 0; size2--) {
-            if (((RectF) longSparseArray4.valueAt(size2)).isEmpty()) {
-                longSparseArray4.removeAt(size2);
-            }
-        }
-        int size3 = longSparseArray.size();
-        for (int i4 = 0; i4 < size3; i4++) {
-            zy1 zy1Var2 = (zy1) longSparseArray.valueAt(i4);
-            long j9 = zy1Var2.b;
-            if (j9 != j8 && (rectF = (RectF) longSparseArray4.get(j9)) != null) {
-                zy1Var2.c.set(rectF);
-            }
-        }
-        int size4 = longSparseArray.size() - 1;
-        while (true) {
-            arrayList = this.w;
-            if (size4 < 0) {
+                try {
+                    k16Var.run();
+                } catch (Exception e) {
+                    fc4.g(e, true);
+                }
+                launchActivity.F0(ik.E(launchActivity, jb6.M0(2131751391, null), jb6.M0(2131748652, null)));
                 break;
-            }
-            zy1 zy1Var3 = (zy1) longSparseArray.valueAt(size4);
-            int i5 = zy1Var3.a;
-            LongSparseArray longSparseArray5 = longSparseArray4;
-            long j10 = zy1Var3.b;
-            RectF rectF6 = zy1Var3.c;
-            long j11 = j5;
-            long j12 = i5;
-            RectF rectF7 = j10 != j8 ? (RectF) longSparseArray5.get(j10) : null;
-            long j13 = zy1Var3.e;
-            RectF rectF8 = this.c;
-            if (j13 == uptimeMillis || rectF7 != null) {
-                if (RectF.intersects(rectF8, rectF7 != null ? rectF7 : rectF6)) {
-                    z = true;
-                    if (z) {
-                        j = uptimeMillis;
-                        str2 = str;
-                        longSparseArray2 = longSparseArray;
-                    } else {
-                        String str3 = str;
-                        longSparseArray2 = longSparseArray;
-                        if (zy1Var3.f != j8) {
-                            zy1Var3.g += j11;
-                            if (uptimeMillis - this.n < 15000) {
-                                zy1Var3.h += j11;
-                            }
-                        }
-                        zy1Var3.f = uptimeMillis;
-                        float height = rectF6.height();
-                        j = uptimeMillis;
-                        float f = rectF8.top - rectF6.top;
-                        float f2 = height - (rectF6.bottom - rectF8.bottom);
-                        zy1Var3.l = Math.min(zy1Var3.l, moe.a(f, 0.0f, height));
-                        zy1Var3.m = Math.max(zy1Var3.m, moe.a(f2, 0.0f, height));
-                        zy1Var3.k = Math.max(zy1Var3.k, rectF8.height());
-                        zy1Var3.j = Math.max(zy1Var3.j, height);
-                        if (zy1Var3.i || zy1Var3.g <= 300) {
-                            str2 = str3;
-                        } else {
-                            if (w01.a) {
-                                StringBuilder sb = new StringBuilder();
-                                sb.append(j12);
-                                sb.append(" ");
-                                sb.append(j10);
-                                str2 = str3;
-                                ir2.x(sb, " in viewport", str2);
-                            } else {
-                                str2 = str3;
-                            }
-                            zy1Var3.i = true;
-                        }
-                    }
-                    if (!z || zy1Var3.g <= j8 || j - 300 <= zy1Var3.f) {
-                        longSparseArray3 = longSparseArray2;
-                        if (zy1Var3.i) {
-                            if (zy1Var3.e != j && (j10 == j8 || rectF7 == null)) {
-                                longSparseArray3.removeAt(size4);
-                                if (w01.a) {
-                                    StringBuilder sb2 = new StringBuilder();
-                                    sb2.append(j12);
-                                    sb2.append(" ");
-                                    sb2.append(j10);
-                                    ir2.x(sb2, " out of screen", str2);
-                                }
-                            }
-                        } else if (zy1Var3.g > 300000) {
-                            arrayList.add(zy1Var3.a());
-                            longSparseArray3.removeAt(size4);
-                            if (w01.a) {
-                                StringBuilder sb3 = new StringBuilder();
-                                sb3.append(j12);
-                                sb3.append(" ");
-                                sb3.append(j10);
-                                ir2.x(sb3, " out of time", str2);
-                            }
+            case 2:
+                LaunchActivity launchActivity2 = (LaunchActivity) obj8;
+                k16 k16Var2 = (k16) obj7;
+                TLObject tLObject2 = (TLObject) obj6;
+                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj5;
+                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
+                String str2 = (String) obj3;
+                String str3 = (String) obj2;
+                String str4 = (String) obj;
+                String str5 = LaunchActivity.C1;
+                try {
+                    k16Var2.run();
+                } catch (Exception e2) {
+                    fc4.g(e2, true);
+                }
+                if (tLObject2 != null) {
+                    oc7.r1(i).d4(authorizationform.users, false);
+                    launchActivity2.t0(new xz7(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str2, str3, str4, authorizationform, (TL_account.Password) tLObject2));
+                    break;
+                }
+                break;
+            case 3:
+                wg6 wg6Var = (wg6) obj8;
+                TLObject tLObject3 = (TLObject) obj7;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
+                in8 in8Var = (in8) obj5;
+                ln8 ln8Var = (ln8) obj4;
+                TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
+                String str6 = (String) obj2;
+                TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
+                mh6 mh6Var = wg6Var.w;
+                b61 b61Var = wg6Var.b;
+                fc4.b("LoginBilling canPurchaseStore returned " + tLObject3 + " " + tL_error);
+                if (!(tLObject3 instanceof TLRPC.TL_boolTrue)) {
+                    if (!(tLObject3 instanceof TLRPC.TL_boolFalse)) {
+                        if (tL_error != null) {
+                            wg6Var.e = tL_error.text;
+                            new c41(mh6Var.a0, null).g0(tL_error, false);
+                            break;
                         }
                     } else {
-                        if (zy1Var3.i) {
-                            arrayList.add(zy1Var3.a());
-                        }
-                        longSparseArray3 = longSparseArray2;
-                        longSparseArray3.removeAt(size4);
-                        if (w01.a) {
-                            Log.d(str2, j12 + " " + j10 + " out of viewport: " + zy1Var3.g);
-                        }
+                        wg6Var.e = "RESPONSE_FALSE";
+                        new c41(mh6Var.a0, null).H(R.raw.error, jb6.a0(null, null, 2131743565, "RESPONSE_FALSE"));
+                        break;
                     }
-                    size4--;
-                    longSparseArray = longSparseArray3;
-                    str = str2;
-                    j5 = j11;
-                    longSparseArray4 = longSparseArray5;
-                    uptimeMillis = j;
+                } else {
+                    b61Var.i(jb6.a0(null, null, 2131745701, in8Var.a), false, true);
+                    b61Var.g(i == 7 ? jb6.M0(2131745705, null) : jb6.H(',', "SMSFeePurchaseTextDays", i), false);
+                    b61Var.setLoading(false);
+                    b61Var.setOnClickListener(new oh(wg6Var, ln8Var, tL_inputStorePaymentAuthCode, str6, tL_payments_canPurchaseStore, (byte) 9));
+                    break;
                 }
-            }
-            z = false;
-            if (z) {
-            }
-            if (z) {
-            }
-            longSparseArray3 = longSparseArray2;
-            if (zy1Var3.i) {
-            }
-            size4--;
-            longSparseArray = longSparseArray3;
-            str = str2;
-            j5 = j11;
-            longSparseArray4 = longSparseArray5;
-            uptimeMillis = j;
-        }
-        if (!arrayList.isEmpty() && this.r == null) {
-            yy1 yy1Var = new yy1(this, (byte) 0);
-            this.r = yy1Var;
-            gl.e3(yy1Var, 5000L);
-        }
-        if (this.a) {
-            invalidate();
+                break;
+            default:
+                jva jvaVar = (jva) obj8;
+                ((boolean[]) obj7)[0] = true;
+                jvaVar.X((k47) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new pta(jvaVar, (boolean[]) obj3, this.b, (qac) obj2, (qac) obj));
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.s = 0L;
-        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-        this.F = viewTreeObserver;
-        viewTreeObserver.addOnPreDrawListener(this);
-        this.F.addOnGlobalLayoutListener(this);
-        this.F.addOnScrollChangedListener(this);
-        gl.e3(this.E, 400L);
-        if (w01.a) {
-            Log.d("ViewMetrics", "attach");
-        }
+    public /* synthetic */ az1(jva jvaVar, boolean[] zArr, k47 k47Var, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i, qac qacVar, qac qacVar2) {
+        this.a = (byte) 4;
+        this.c = jvaVar;
+        this.d = zArr;
+        this.e = k47Var;
+        this.f = inputInvoice;
+        this.h = tL_payments_paymentFormStars;
+        this.n = zArr2;
+        this.b = i;
+        this.r = qacVar;
+        this.s = qacVar2;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        ViewTreeObserver viewTreeObserver = this.F;
-        if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
-            this.F.removeOnPreDrawListener(this);
-            this.F.removeOnGlobalLayoutListener(this);
-            this.F.removeOnScrollChangedListener(this);
-        }
-        this.F = null;
-        this.s = 0L;
-        gl.r(this.E);
-        if (w01.a) {
-            Log.d("ViewMetrics", "detach");
-        }
-        super.onDetachedFromWindow();
+    public /* synthetic */ az1(c cVar, ykc ykcVar, FrameLayout frameLayout, View view, RectF rectF, ArrayList arrayList, ArrayList arrayList2, int i, zkc zkcVar) {
+        this.a = (byte) 0;
+        this.c = cVar;
+        this.d = ykcVar;
+        this.e = frameLayout;
+        this.f = view;
+        this.h = rectF;
+        this.n = arrayList;
+        this.r = arrayList2;
+        this.b = i;
+        this.s = zkcVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.a) {
-            if (this.H == null) {
-                TextPaint textPaint = new TextPaint(1);
-                this.H = textPaint;
-                textPaint.setColor(-16776961);
-                this.H.setTextSize(gl.L(10.0f));
-            }
-            super.onDraw(canvas);
-            Paint paint = bkb.Im;
-            RectF rectF = this.c;
-            canvas.drawRect(rectF, paint);
-            LongSparseArray longSparseArray = this.x;
-            int size = longSparseArray.size();
-            for (int i = 0; i < size; i++) {
-                zy1 zy1Var = (zy1) longSparseArray.valueAt(i);
-                RectF rectF2 = zy1Var.c;
-                canvas.drawRect(rectF2, bkb.Jm);
-                canvas.save();
-                canvas.translate(rectF2.left, moe.a(moe.a(rectF2.centerY() - gl.L(20.0f), rectF.top - gl.L(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - gl.L(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), gl.L(40.0f), bkb.Hm);
-                canvas.translate(gl.L(10.0f), gl.L(16.0f));
-                canvas.save();
-                canvas.drawText("time_in_view_ms: " + zy1Var.g, 0.0f, 0.0f, this.H);
-                canvas.translate(0.0f, (float) gl.L(16.0f));
-                canvas.drawText("active_time_in_view_ms: " + zy1Var.h, 0.0f, 0.0f, this.H);
-                canvas.restore();
-                canvas.save();
-                canvas.translate(getWidth() / 2.0f, 0.0f);
-                StringBuilder sb = new StringBuilder("height_to_viewport_ratio_permille: ");
-                float f = zy1Var.k;
-                sb.append(f == 0.0f ? 1000 : Math.round((zy1Var.j / f) * 1000.0f));
-                canvas.drawText(sb.toString(), 0.0f, 0.0f, this.H);
-                canvas.translate(0.0f, gl.L(16.0f));
-                canvas.drawText("seen_range_ratio_permille: " + zy1Var.b(), 0.0f, 0.0f, this.H);
-                canvas.restore();
-                canvas.restore();
-            }
-        }
-    }
-
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        this.G = true;
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        RectF rectF = this.b;
-        this.c.set(rectF.left, rectF.top, getMeasuredWidth() - rectF.right, getMeasuredHeight() - rectF.bottom);
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        if (!this.G) {
-            return true;
-        }
-        c();
-        this.G = false;
-        return true;
-    }
-
-    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
-    public final void onScrollChanged() {
-        this.G = true;
+    public /* synthetic */ az1(LaunchActivity launchActivity, Object obj, Object obj2, int i, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, byte b) {
+        this.a = b;
+        this.c = launchActivity;
+        this.d = obj;
+        this.e = obj2;
+        this.b = i;
+        this.f = obj3;
+        this.h = obj4;
+        this.n = obj5;
+        this.r = obj6;
+        this.s = obj7;
     }
 }

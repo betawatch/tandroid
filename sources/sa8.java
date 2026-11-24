@@ -1,82 +1,90 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.SurfaceTexture;
-import android.view.View;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.widget.FrameLayout;
+import java.io.File;
 import java.util.ArrayList;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public interface sa8 {
-    void A0(SurfaceTexture surfaceTexture);
+public final class sa8 extends ry5 {
+    public boolean i2;
+    public final /* synthetic */ PhotoViewer j2;
 
-    View C0();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sa8(PhotoViewer photoViewer, Context context, Activity activity, int i, Bitmap bitmap, Bitmap bitmap2, int i2, ArrayList arrayList, ao6 ao6Var, n88 n88Var, ylb ylbVar) {
+        super(context, activity, i, bitmap, bitmap2, i2, arrayList, ao6Var, n88Var, ylbVar);
+        this.j2 = photoViewer;
+    }
 
-    boolean F2();
+    @Override // ry5
+    public final FrameLayout getCaptionsBulletinContainer() {
+        return this.j2.f0;
+    }
 
-    boolean G0();
+    @Override // ry5
+    public final long getCaptionsTrimEnd() {
+        x98 x98Var = this.j2.X7;
+        if (x98Var == null) {
+            return 0L;
+        }
+        return (long) (x98Var.getRightProgress() * r3.z0());
+    }
 
-    void G2(int i);
+    @Override // ry5
+    public final long getCaptionsTrimStart() {
+        x98 x98Var = this.j2.X7;
+        if (x98Var == null) {
+            return 0L;
+        }
+        return (long) (x98Var.getLeftProgress() * r3.z0());
+    }
 
-    void H0(ya8 ya8Var);
+    @Override // ry5
+    public final File getCaptionsVideoFile() {
+        int i;
+        PhotoViewer photoViewer = this.j2;
+        if (!photoViewer.s1 || photoViewer.d5 == null || (i = photoViewer.d2) == 1 || i == 11) {
+            return null;
+        }
+        return new File(photoViewer.d5);
+    }
 
-    void L0();
+    @Override // ry5
+    public final long getCaptionsVideoPosition() {
+        ndc ndcVar = this.j2.G2;
+        if (ndcVar != null) {
+            return ndcVar.S();
+        }
+        return 0L;
+    }
 
-    void L1(View view);
+    @Override // ry5
+    public final int getPKeyboardHeight() {
+        mx5 mx5Var = this.j2.L1;
+        if (mx5Var != null) {
+            return mx5Var.l;
+        }
+        return 0;
+    }
 
-    void P1();
-
-    int Q0();
-
-    void S0(float f);
-
-    int S1();
-
-    boolean T();
-
-    boolean Z(boolean z, float f, iv9 iv9Var);
-
-    boolean a0();
-
-    boolean a1();
-
-    float a2();
-
-    boolean d1();
-
-    void e();
-
-    void f(long j);
-
-    long getDuration();
-
-    boolean j();
-
-    void k();
-
-    oc8 k1();
-
-    long m();
-
-    void m0(Rect rect);
-
-    void n(View view);
-
-    View o0(LaunchActivity launchActivity);
-
-    void o2(int i, ArrayList arrayList);
-
-    void p0(View view);
-
-    boolean p1();
-
-    void r2(Canvas canvas, int i, int i2);
-
-    int u();
-
-    void u1();
-
-    void x0(View view);
+    @Override // ry5
+    public final void q0(boolean z) {
+        PhotoViewer photoViewer = this.j2;
+        if (photoViewer.G2 != null) {
+            photoViewer.H2 = false;
+            photoViewer.m();
+            if (z) {
+                photoViewer.G2.f0();
+            } else {
+                if (photoViewer.T0()) {
+                    return;
+                }
+                photoViewer.G2.g0();
+            }
+        }
+    }
 }

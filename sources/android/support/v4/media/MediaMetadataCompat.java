@@ -9,11 +9,11 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
-    public static final ps d;
+    public static final qt d;
     public static final String[] e;
     public static final String[] f;
     public static final String[] h;
@@ -22,47 +22,47 @@ public final class MediaMetadataCompat implements Parcelable {
     public MediaDescriptionCompat c;
 
     static {
-        ps psVar = new ps(0);
-        d = psVar;
-        psVar.put("android.media.metadata.TITLE", 1);
-        psVar.put("android.media.metadata.ARTIST", 1);
-        psVar.put("android.media.metadata.DURATION", 0);
-        psVar.put("android.media.metadata.ALBUM", 1);
-        psVar.put("android.media.metadata.AUTHOR", 1);
-        psVar.put("android.media.metadata.WRITER", 1);
-        psVar.put("android.media.metadata.COMPOSER", 1);
-        psVar.put("android.media.metadata.COMPILATION", 1);
-        psVar.put("android.media.metadata.DATE", 1);
-        psVar.put("android.media.metadata.YEAR", 0);
-        psVar.put("android.media.metadata.GENRE", 1);
-        psVar.put("android.media.metadata.TRACK_NUMBER", 0);
-        psVar.put("android.media.metadata.NUM_TRACKS", 0);
-        psVar.put("android.media.metadata.DISC_NUMBER", 0);
-        psVar.put("android.media.metadata.ALBUM_ARTIST", 1);
-        psVar.put("android.media.metadata.ART", 2);
-        psVar.put("android.media.metadata.ART_URI", 1);
-        psVar.put("android.media.metadata.ALBUM_ART", 2);
-        psVar.put("android.media.metadata.ALBUM_ART_URI", 1);
-        psVar.put("android.media.metadata.USER_RATING", 3);
-        psVar.put("android.media.metadata.RATING", 3);
-        psVar.put("android.media.metadata.DISPLAY_TITLE", 1);
-        psVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
-        psVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
-        psVar.put("android.media.metadata.DISPLAY_ICON", 2);
-        psVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
-        psVar.put("android.media.metadata.MEDIA_ID", 1);
-        psVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
-        psVar.put("android.media.metadata.MEDIA_URI", 1);
-        psVar.put("android.media.metadata.ADVERTISEMENT", 0);
-        psVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
+        qt qtVar = new qt(0);
+        d = qtVar;
+        qtVar.put("android.media.metadata.TITLE", 1);
+        qtVar.put("android.media.metadata.ARTIST", 1);
+        qtVar.put("android.media.metadata.DURATION", 0);
+        qtVar.put("android.media.metadata.ALBUM", 1);
+        qtVar.put("android.media.metadata.AUTHOR", 1);
+        qtVar.put("android.media.metadata.WRITER", 1);
+        qtVar.put("android.media.metadata.COMPOSER", 1);
+        qtVar.put("android.media.metadata.COMPILATION", 1);
+        qtVar.put("android.media.metadata.DATE", 1);
+        qtVar.put("android.media.metadata.YEAR", 0);
+        qtVar.put("android.media.metadata.GENRE", 1);
+        qtVar.put("android.media.metadata.TRACK_NUMBER", 0);
+        qtVar.put("android.media.metadata.NUM_TRACKS", 0);
+        qtVar.put("android.media.metadata.DISC_NUMBER", 0);
+        qtVar.put("android.media.metadata.ALBUM_ARTIST", 1);
+        qtVar.put("android.media.metadata.ART", 2);
+        qtVar.put("android.media.metadata.ART_URI", 1);
+        qtVar.put("android.media.metadata.ALBUM_ART", 2);
+        qtVar.put("android.media.metadata.ALBUM_ART_URI", 1);
+        qtVar.put("android.media.metadata.USER_RATING", 3);
+        qtVar.put("android.media.metadata.RATING", 3);
+        qtVar.put("android.media.metadata.DISPLAY_TITLE", 1);
+        qtVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
+        qtVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
+        qtVar.put("android.media.metadata.DISPLAY_ICON", 2);
+        qtVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
+        qtVar.put("android.media.metadata.MEDIA_ID", 1);
+        qtVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
+        qtVar.put("android.media.metadata.MEDIA_URI", 1);
+        qtVar.put("android.media.metadata.ADVERTISEMENT", 0);
+        qtVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
         e = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER"};
         f = new String[]{"android.media.metadata.DISPLAY_ICON", "android.media.metadata.ART", "android.media.metadata.ALBUM_ART"};
         h = new String[]{"android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART_URI"};
-        CREATOR = new x21((byte) 29);
+        CREATOR = new f41((byte) 29);
     }
 
     public MediaMetadataCompat(Parcel parcel) {
-        this.a = parcel.readBundle(mv6.class.getClassLoader());
+        this.a = parcel.readBundle(mx6.class.getClassLoader());
     }
 
     public final MediaDescriptionCompat a() {
@@ -169,6 +169,6 @@ public final class MediaMetadataCompat implements Parcelable {
     public MediaMetadataCompat(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        mv6.B(bundle2);
+        mx6.D(bundle2);
     }
 }

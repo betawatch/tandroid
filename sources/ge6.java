@@ -1,27 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ge6 implements ed {
+public final /* synthetic */ class ge6 implements ee {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ qe6 b;
+    public final /* synthetic */ mh6 b;
 
-    public /* synthetic */ ge6(qe6 qe6Var, byte b) {
+    public /* synthetic */ ge6(mh6 mh6Var, byte b) {
         this.a = b;
-        this.b = qe6Var;
+        this.b = mh6Var;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
+    @Override // ee
+    public final void r(he heVar, int i) {
         byte b = this.a;
-        qe6 qe6Var = this.b;
+        mh6 mh6Var = this.b;
         switch (b) {
             case 0:
-                qe6Var.d(true);
-                qe6Var.v0.I1(0, true, null, true);
+                mh6Var.b[mh6Var.a].e();
+                mh6Var.y1(true, true);
                 break;
             default:
-                qe6Var.v0.I1(0, true, null, true);
+                mh6Var.m0 = true;
+                if (mh6Var.a != 0) {
+                    mh6Var.J1(0, true, null, true);
+                    break;
+                }
                 break;
         }
     }

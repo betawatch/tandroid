@@ -1,55 +1,80 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class itd extends ezc {
-    public final hbd Z() {
-        hbd hbdVar;
-        Parcel Q = Q(R(), 4);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        if (readStrongBinder == null) {
-            hbdVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
-            hbdVar = queryLocalInterface instanceof hbd ? (hbd) queryLocalInterface : new hbd(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", (byte) 6);
+public final class itd extends v7c implements ListIterator {
+    public final int b;
+    public int c;
+    public final qtd d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public itd(qtd qtdVar, int i) {
+        super((byte) 11);
+        int size = qtdVar.size();
+        if (i < 0 || i > size) {
+            wa3.i(k3f.c(i, size, "index"));
+            throw null;
         }
-        Q.recycle();
-        return hbdVar;
+        this.b = size;
+        this.c = i;
+        this.d = qtdVar;
     }
 
-    public final kwe a0(bo7 bo7Var) {
-        kwe kweVar;
-        Parcel R = R();
-        sgd.c(R, bo7Var);
-        R.writeInt(0);
-        Parcel Q = Q(R, 3);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        if (readStrongBinder == null) {
-            kweVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
-            kweVar = queryLocalInterface instanceof kwe ? (kwe) queryLocalInterface : new kwe(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return kweVar;
+    public final Object a(int i) {
+        return this.d.get(i);
     }
 
-    public final phe b0() {
-        phe x5eVar;
-        Parcel Q = Q(R(), 5);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        int i = cce.b;
-        if (readStrongBinder == null) {
-            x5eVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
-            x5eVar = queryLocalInterface instanceof phe ? (phe) queryLocalInterface : new x5e(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", (byte) 6);
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            u36.g();
+            return null;
         }
-        Q.recycle();
-        return x5eVar;
+        int i = this.c;
+        this.c = i + 1;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            u36.g();
+            return null;
+        }
+        int i = this.c - 1;
+        this.c = i;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

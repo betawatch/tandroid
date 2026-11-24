@@ -1,44 +1,24 @@
 // default package
 
-import java.util.List;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class rab extends b93 implements kab {
-    public kab a;
-    public long b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final class rab extends gd6 {
+    public final /* synthetic */ sab R;
 
-    @Override // kab
-    public final int b(long j) {
-        kab kabVar = this.a;
-        kabVar.getClass();
-        return kabVar.b(j - this.b);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rab(sab sabVar, Context context, float f) {
+        super(context, f);
+        this.R = sabVar;
     }
 
-    @Override // b93, n01
-    public final void clear() {
-        super.clear();
-        this.a = null;
-    }
-
-    @Override // kab
-    public final long h(int i) {
-        kab kabVar = this.a;
-        kabVar.getClass();
-        return kabVar.h(i) + this.b;
-    }
-
-    @Override // kab
-    public final List l(long j) {
-        kab kabVar = this.a;
-        kabVar.getClass();
-        return kabVar.l(j - this.b);
-    }
-
-    @Override // kab
-    public final int t() {
-        kab kabVar = this.a;
-        kabVar.getClass();
-        return kabVar.t();
+    @Override // android.view.View
+    public final void invalidate() {
+        View view = this.R.c;
+        if (view != null) {
+            view.invalidate();
+        }
     }
 }

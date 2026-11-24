@@ -1,20 +1,21 @@
 // default package
 
-import android.content.ComponentName;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class og2 implements Comparable {
-    public final oga a;
-    public final ComponentName b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class og2 extends yx4 {
+    public final /* synthetic */ wg2 m1;
 
-    public og2(oga ogaVar, ComponentName componentName) {
-        this.a = ogaVar;
-        this.b = componentName;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public og2(wg2 wg2Var, Activity activity, wg2 wg2Var2) {
+        super(activity, wg2Var2);
+        this.m1 = wg2Var;
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return this.a.m - ((og2) obj).a.m;
+    @Override // yx4
+    public final void E0() {
+        wg2 wg2Var = this.m1;
+        wg2Var.getMessagesController().O(wg2Var.getParentActivity(), wg2Var.n, wg2Var, new cd1(this, (byte) 28));
     }
 }

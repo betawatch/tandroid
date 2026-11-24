@@ -1,40 +1,42 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.TimeUnit;
+import android.os.Looper;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class g3d implements b38 {
-    public final /* synthetic */ BasePendingResult a;
-    public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ c38 c;
+public final class g3d implements fh0 {
+    public final WeakReference a;
+    public final zo b;
+    public final boolean c;
 
-    public g3d(BasePendingResult basePendingResult, TaskCompletionSource taskCompletionSource, c38 c38Var) {
-        this.a = basePendingResult;
-        this.b = taskCompletionSource;
-        this.c = c38Var;
+    public g3d(l3d l3dVar, zo zoVar, boolean z) {
+        this.a = new WeakReference(l3dVar);
+        this.b = zoVar;
+        this.c = z;
     }
 
-    @Override // b38
-    public final void a(Status status) {
-        if (!status.b()) {
-            this.b.setException(bmd.a(status));
+    @Override // fh0
+    public final void a(ot2 ot2Var) {
+        l3d l3dVar = (l3d) this.a.get();
+        if (l3dVar == null) {
             return;
         }
-        BasePendingResult basePendingResult = this.a;
-        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-        fre.j("Result has already been consumed.", !basePendingResult.j);
+        ReentrantLock reentrantLock = l3dVar.b;
+        ite.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == l3dVar.a.o.h);
+        reentrantLock.lock();
         try {
-            if (!basePendingResult.d.await(0L, timeUnit)) {
-                basePendingResult.e(Status.n);
+            if (l3dVar.i(0)) {
+                if (!ot2Var.c()) {
+                    l3dVar.d(ot2Var, this.b, this.c);
+                }
+                if (l3dVar.j()) {
+                    l3dVar.b();
+                }
             }
-        } catch (InterruptedException unused) {
-            basePendingResult.e(Status.f);
+        } finally {
+            reentrantLock.unlock();
         }
-        fre.j("Result is not ready.", basePendingResult.g());
-        this.b.setResult(this.c.n0(basePendingResult.j()));
     }
 }

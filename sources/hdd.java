@@ -1,124 +1,92 @@
 // default package
 
-import android.os.Parcel;
+import java.util.Arrays;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class hdd extends dzc {
-    public final k6a b;
-    public final Class c;
+public enum hdd {
+    b(-999),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF18(-3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF27(-2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF36(-1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF44(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF52(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF60(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF70(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF83(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF96(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF109(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF122(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF133(8),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF148(11),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF163(12);
 
-    public hdd(k6a k6aVar) {
-        super("com.google.android.gms.cast.framework.ISessionManagerListener", (byte) 4);
-        this.b = k6aVar;
-        this.c = ed1.class;
+    public static final skd c;
+    public final int a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v8 */
+    /* JADX WARN: Type inference failed for: r2v9 */
+    static {
+        boolean z = false;
+        kq kqVar = new kq((byte) 19, z);
+        kqVar.c = new Object[8];
+        kqVar.b = 0;
+        hdd[] values = values();
+        int length = values.length;
+        for (?? r2 = z; r2 < length; r2++) {
+            hdd hddVar = values[r2];
+            Integer valueOf = Integer.valueOf(hddVar.a);
+            int i = kqVar.b + 1;
+            Object[] objArr = (Object[]) kqVar.c;
+            int length2 = objArr.length;
+            int i2 = i << 1;
+            if (i2 > length2) {
+                if (i2 > length2) {
+                    length2 = length2 + (length2 >> 1) + 1;
+                    length2 = length2 < i2 ? Integer.highestOneBit(i2 - 1) << 1 : length2;
+                    if (length2 < 0) {
+                        length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    }
+                }
+                objArr = Arrays.copyOf(objArr, length2);
+                kqVar.c = objArr;
+            }
+            int i3 = kqVar.b;
+            int i4 = i3 << 1;
+            objArr[i4] = valueOf;
+            objArr[i4 + 1] = hddVar;
+            kqVar.b = i3 + 1;
+        }
+        jhd jhdVar = (jhd) kqVar.d;
+        if (jhdVar != null) {
+            throw jhdVar.a();
+        }
+        skd c2 = skd.c(kqVar.b, (Object[]) kqVar.c, kqVar);
+        jhd jhdVar2 = (jhd) kqVar.d;
+        if (jhdVar2 != null) {
+            throw jhdVar2.a();
+        }
+        c = c2;
     }
 
-    @Override // dzc
-    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
-        Class cls = this.c;
-        k6a k6aVar = this.b;
-        switch (i) {
-            case 1:
-                bo7 bo7Var = new bo7(k6aVar);
-                parcel2.writeNoException();
-                jgd.d(parcel2, bo7Var);
-                return true;
-            case 2:
-                yi5 T = bo7.T(parcel.readStrongBinder());
-                jgd.b(parcel);
-                d5a d5aVar = (d5a) bo7.U(T);
-                if (cls.isInstance(d5aVar) && k6aVar != null) {
-                    k6aVar.p((d5a) cls.cast(d5aVar));
-                }
-                parcel2.writeNoException();
-                return true;
-            case 3:
-                yi5 T2 = bo7.T(parcel.readStrongBinder());
-                String readString = parcel.readString();
-                jgd.b(parcel);
-                d5a d5aVar2 = (d5a) bo7.U(T2);
-                if (cls.isInstance(d5aVar2) && k6aVar != null) {
-                    k6aVar.T((d5a) cls.cast(d5aVar2), readString);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 4:
-                yi5 T3 = bo7.T(parcel.readStrongBinder());
-                int readInt = parcel.readInt();
-                jgd.b(parcel);
-                d5a d5aVar3 = (d5a) bo7.U(T3);
-                if (cls.isInstance(d5aVar3) && k6aVar != null) {
-                    k6aVar.L((d5a) cls.cast(d5aVar3), readInt);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 5:
-                yi5 T4 = bo7.T(parcel.readStrongBinder());
-                jgd.b(parcel);
-                d5a d5aVar4 = (d5a) bo7.U(T4);
-                if (cls.isInstance(d5aVar4) && k6aVar != null) {
-                    k6aVar.y((d5a) cls.cast(d5aVar4));
-                }
-                parcel2.writeNoException();
-                return true;
-            case 6:
-                yi5 T5 = bo7.T(parcel.readStrongBinder());
-                int readInt2 = parcel.readInt();
-                jgd.b(parcel);
-                d5a d5aVar5 = (d5a) bo7.U(T5);
-                if (cls.isInstance(d5aVar5) && k6aVar != null) {
-                    k6aVar.n((d5a) cls.cast(d5aVar5), readInt2);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 7:
-                yi5 T6 = bo7.T(parcel.readStrongBinder());
-                String readString2 = parcel.readString();
-                jgd.b(parcel);
-                d5a d5aVar6 = (d5a) bo7.U(T6);
-                if (cls.isInstance(d5aVar6) && k6aVar != null) {
-                    k6aVar.R((d5a) cls.cast(d5aVar6), readString2);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 8:
-                yi5 T7 = bo7.T(parcel.readStrongBinder());
-                int i2 = jgd.a;
-                boolean z = parcel.readInt() != 0;
-                jgd.b(parcel);
-                d5a d5aVar7 = (d5a) bo7.U(T7);
-                if (cls.isInstance(d5aVar7) && k6aVar != null) {
-                    k6aVar.E((d5a) cls.cast(d5aVar7), z);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 9:
-                yi5 T8 = bo7.T(parcel.readStrongBinder());
-                int readInt3 = parcel.readInt();
-                jgd.b(parcel);
-                d5a d5aVar8 = (d5a) bo7.U(T8);
-                if (cls.isInstance(d5aVar8) && k6aVar != null) {
-                    k6aVar.F((d5a) cls.cast(d5aVar8), readInt3);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 10:
-                yi5 T9 = bo7.T(parcel.readStrongBinder());
-                int readInt4 = parcel.readInt();
-                jgd.b(parcel);
-                d5a d5aVar9 = (d5a) bo7.U(T9);
-                if (cls.isInstance(d5aVar9) && k6aVar != null) {
-                    k6aVar.q((d5a) cls.cast(d5aVar9), readInt4);
-                }
-                parcel2.writeNoException();
-                return true;
-            case 11:
-                parcel2.writeNoException();
-                parcel2.writeInt(12451000);
-                return true;
-            default:
-                return false;
-        }
+    hdd(int i) {
+        this.a = i;
     }
 }

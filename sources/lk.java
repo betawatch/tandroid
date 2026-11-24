@@ -1,60 +1,119 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class lk implements xr3 {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class lk {
+    public final qk0 a;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final float g;
+    public final ArrayList b = new ArrayList(5);
+    public final int[] h = new int[3];
 
-    public /* synthetic */ lk(float f, View view, Runnable runnable) {
-        this.c = runnable;
-        this.d = view;
-        this.b = f;
+    public lk(qk0 qk0Var, int i, int i2, int i3, int i4, float f) {
+        this.a = qk0Var;
+        this.c = i;
+        this.d = i2;
+        this.e = i3;
+        this.f = i4;
+        this.g = f;
     }
 
-    @Override // xr3
-    public final void a(yla ylaVar, boolean z, float f, float f2) {
-        byte b = this.a;
-        Object obj = this.d;
-        float f3 = this.b;
-        Object obj2 = this.c;
-        switch (b) {
-            case 0:
-                Runnable runnable = (Runnable) obj2;
-                View view = (View) obj;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                view.setTranslationX(f3);
-                view.setTag(R.id.spring_tag, null);
-                view.setTag(R.id.spring_was_translation_x_tag, null);
+    public final boolean a(int[] iArr) {
+        float f = this.g;
+        float f2 = f / 2.0f;
+        for (int i = 0; i < 3; i++) {
+            if (Math.abs(f - iArr[i]) >= f2) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final kk b(int i, int i2, int[] iArr) {
+        int i3 = 0;
+        int i4 = iArr[0];
+        int i5 = iArr[1];
+        int i6 = i4 + i5 + iArr[2];
+        float f = (i2 - r5) - (i5 / 2.0f);
+        int i7 = (int) f;
+        int i8 = i5 << 1;
+        qk0 qk0Var = this.a;
+        int i9 = qk0Var.b;
+        int[] iArr2 = this.h;
+        iArr2[0] = 0;
+        iArr2[1] = 0;
+        iArr2[2] = 0;
+        int i10 = i;
+        while (i10 >= 0 && qk0Var.b(i7, i10)) {
+            int i11 = iArr2[1];
+            if (i11 > i8) {
                 break;
-            default:
-                wr4 wr4Var = (wr4) obj2;
-                tr4 tr4Var = (tr4) obj;
-                vr4 vr4Var = wr4Var.l1;
-                if (!z) {
-                    vr4Var.setTranslationY(f3);
-                    vr4Var.L = false;
-                    wr4Var.n1 = null;
-                    wr4Var.o1 = null;
-                    if (tr4Var != null) {
-                        tr4Var.run();
+            }
+            iArr2[1] = i11 + 1;
+            i10--;
+        }
+        float f2 = Float.NaN;
+        if (i10 >= 0 && iArr2[1] <= i8) {
+            while (i10 >= 0 && !qk0Var.b(i7, i10)) {
+                int i12 = iArr2[0];
+                if (i12 > i8) {
+                    break;
+                }
+                iArr2[0] = i12 + 1;
+                i10--;
+            }
+            if (iArr2[0] <= i8) {
+                int i13 = i + 1;
+                while (i13 < i9 && qk0Var.b(i7, i13)) {
+                    int i14 = iArr2[1];
+                    if (i14 > i8) {
                         break;
                     }
+                    iArr2[1] = i14 + 1;
+                    i13++;
                 }
-                break;
+                if (i13 != i9 && iArr2[1] <= i8) {
+                    while (i13 < i9 && !qk0Var.b(i7, i13)) {
+                        int i15 = iArr2[2];
+                        if (i15 > i8) {
+                            break;
+                        }
+                        iArr2[2] = i15 + 1;
+                        i13++;
+                    }
+                    int i16 = iArr2[2];
+                    if (i16 <= i8 && Math.abs(((iArr2[0] + iArr2[1]) + i16) - i6) * 5 < (i6 << 1) && a(iArr2)) {
+                        f2 = (i13 - iArr2[2]) - (iArr2[1] / 2.0f);
+                    }
+                }
+            }
         }
-    }
-
-    public /* synthetic */ lk(wr4 wr4Var, float f, tr4 tr4Var) {
-        this.c = wr4Var;
-        this.b = f;
-        this.d = tr4Var;
+        if (Float.isNaN(f2)) {
+            return null;
+        }
+        float f3 = ((iArr[0] + iArr[1]) + iArr[2]) / 3.0f;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            kk kkVar = (kk) obj;
+            float f4 = kkVar.c;
+            float f5 = kkVar.a;
+            float f6 = kkVar.b;
+            if (Math.abs(f2 - f6) <= f3 && Math.abs(f - f5) <= f3) {
+                float abs = Math.abs(f3 - f4);
+                if (abs <= 1.0f || abs <= f4) {
+                    return new kk((f5 + f) / 2.0f, (f6 + f2) / 2.0f, (kkVar.c + f3) / 2.0f);
+                }
+            }
+        }
+        arrayList.add(new kk(f, f2, f3));
+        return null;
     }
 }

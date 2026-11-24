@@ -1,35 +1,17 @@
 // default package
 
-import android.graphics.RuntimeShader;
-import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class ze7 {
-    public final RuntimeShader a;
-    public final float[] b = {1.0f, 1.0f, 0.0f, 0.0f};
-    public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
+    public final long a;
+    public final TLRPC.TL_messageReactions b;
+    public final TLRPC.TL_messageReactions c;
 
-    public ze7(int i) {
-        nm3.c();
-        this.a = nm3.b(gl.v2(null, i));
-    }
-
-    public final void a(float[] fArr) {
-        float[] fArr2 = this.b;
-        if (Arrays.equals(fArr, fArr2)) {
-            return;
-        }
-        System.arraycopy(fArr, 0, fArr2, 0, 4);
-        this.a.setFloatUniform("transformGradient", fArr2);
-    }
-
-    public final void b(float[] fArr) {
-        float[] fArr2 = this.c;
-        if (Arrays.equals(fArr, fArr2)) {
-            return;
-        }
-        System.arraycopy(fArr, 0, fArr2, 0, 4);
-        this.a.setFloatUniform("transformPattern", fArr2);
+    public ze7(long j, TLRPC.Message message, TLRPC.Message message2) {
+        this.a = k47.Q1(j, message2);
+        this.b = message.reactions;
+        this.c = message2.reactions;
     }
 }

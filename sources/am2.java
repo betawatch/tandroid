@@ -1,320 +1,85 @@
 // default package
 
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
-import android.graphics.Color;
-import android.os.Build;
-import android.util.AttributeSet;
-import android.util.StateSet;
-import android.util.TypedValue;
-import android.util.Xml;
-import java.lang.reflect.Array;
-import org.telegram.messenger.beta.R;
-import org.xmlpull.v1.XmlPullParserException;
+import android.view.TextureView;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public abstract class am2 {
-    public static final ThreadLocal a = new ThreadLocal();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class am2 extends VideoPlayerHolderBase {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public static ColorStateList a(Resources resources, XmlResourceParser xmlResourceParser, Resources.Theme theme) {
-        int next;
-        AttributeSet asAttributeSet = Xml.asAttributeSet(xmlResourceParser);
-        do {
-            next = xmlResourceParser.next();
-            if (next == 2) {
-                return b(resources, xmlResourceParser, asAttributeSet, theme);
-            }
-        } while (next != 1);
-        throw new XmlPullParserException("No start tag found");
+    public /* synthetic */ am2(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x02a9  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x02bb  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x012a  */
-    /* JADX WARN: Type inference failed for: r0v0 */
-    /* JADX WARN: Type inference failed for: r0v2, types: [android.content.res.Resources] */
-    /* JADX WARN: Type inference failed for: r0v4 */
-    /* JADX WARN: Type inference failed for: r0v48 */
-    /* JADX WARN: Type inference failed for: r0v5 */
-    /* JADX WARN: Type inference failed for: r1v38, types: [java.lang.Object, java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r4v2 */
-    /* JADX WARN: Type inference failed for: r4v3, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r4v4 */
-    /* JADX WARN: Type inference failed for: r4v5 */
-    /* JADX WARN: Type inference failed for: r4v9 */
-    /* JADX WARN: Type inference failed for: r9v19 */
-    /* JADX WARN: Type inference failed for: r9v20 */
-    /* JADX WARN: Type inference failed for: r9v5, types: [android.content.res.TypedArray] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static ColorStateList b(Resources resources, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) {
-        int depth;
-        int color;
-        float f;
-        int attributeCount;
-        int i;
-        char c;
-        int[] iArr;
-        int i2;
-        int a2;
-        float f2;
-        int i3;
-        TypedValue typedValue;
-        ?? r0 = resources;
-        AttributeSet attributeSet2 = attributeSet;
-        Resources.Theme theme2 = theme;
-        String name = xmlResourceParser.getName();
-        if (!name.equals("selector")) {
-            throw new XmlPullParserException(xmlResourceParser.getPositionDescription() + ": invalid color state list tag " + name);
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final boolean needRepeat() {
+        switch (this.a) {
+            case 0:
+                return !((bm2) this.b).p.o0;
+            default:
+                return super.needRepeat();
         }
-        boolean z = 1;
-        int depth2 = xmlResourceParser.getDepth() + 1;
-        int[][] iArr2 = new int[20][];
-        int[] iArr3 = new int[20];
-        int i4 = 0;
-        int i5 = 0;
-        while (true) {
-            int next = xmlResourceParser.next();
-            if (next == z || ((depth = xmlResourceParser.getDepth()) < depth2 && next == 3)) {
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onRenderedFirstFrame() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                bm2 bm2Var = (bm2) obj;
+                bm2Var.f = true;
+                bm2Var.p.invalidate();
                 break;
-            }
-            if (next == 2 && depth <= depth2 && xmlResourceParser.getName().equals("item")) {
-                int[] iArr4 = gy8.a;
-                ?? obtainAttributes = theme2 == null ? r0.obtainAttributes(attributeSet2, iArr4) : theme2.obtainStyledAttributes(attributeSet2, iArr4, i4, i4);
-                int resourceId = obtainAttributes.getResourceId(i4, -1);
-                if (resourceId != -1) {
-                    ThreadLocal threadLocal = a;
-                    TypedValue typedValue2 = (TypedValue) threadLocal.get();
-                    if (typedValue2 == null) {
-                        typedValue = new TypedValue();
-                        threadLocal.set(typedValue);
-                    } else {
-                        typedValue = typedValue2;
-                    }
-                    r0.getValue(resourceId, typedValue, z);
-                    int i6 = typedValue.type;
-                    if (i6 < 28 || i6 > 31) {
-                        try {
-                            color = a(r0, r0.getXml(resourceId), theme2).getDefaultColor();
-                        } catch (Exception unused) {
-                            color = obtainAttributes.getColor(i4, -65281);
-                        }
-                        f = !obtainAttributes.hasValue(z) ? obtainAttributes.getFloat(z, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
-                        char c2 = z;
-                        float f3 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
-                        obtainAttributes.recycle();
-                        attributeCount = attributeSet2.getAttributeCount();
-                        int[] iArr5 = new int[attributeCount];
-                        i = i4;
-                        int i7 = i;
-                        while (i < attributeCount) {
-                            int attributeNameResource = attributeSet2.getAttributeNameResource(i);
-                            if (attributeNameResource != 16843173 && attributeNameResource != 16843551 && attributeNameResource != R.attr.alpha && attributeNameResource != R.attr.lStar) {
-                                int i8 = i7 + 1;
-                                if (!attributeSet2.getAttributeBooleanValue(i, false)) {
-                                    attributeNameResource = -attributeNameResource;
-                                }
-                                iArr5[i7] = attributeNameResource;
-                                i7 = i8;
-                            }
-                            i++;
-                        }
-                        int[] trimStateSet = StateSet.trimStateSet(iArr5, i7);
-                        float f4 = 0.0f;
-                        float f5 = 100.0f;
-                        c = (f3 >= 0.0f || f3 > 100.0f) ? (char) 0 : c2;
-                        if (f == 1.0f || c != 0) {
-                            int b = moe.b((int) ((Color.alpha(color) * f) + 0.5f), 0, kk7.d4);
-                            if (c == 0) {
-                                o91 a3 = o91.a(color);
-                                float f6 = a3.a;
-                                float f7 = a3.b;
-                                hfc hfcVar = hfc.k;
-                                if (f7 < 1.0d || Math.round(f3) <= 0.0d || Math.round(f3) >= 100.0d) {
-                                    iArr = trimStateSet;
-                                    i2 = depth2;
-                                    a2 = ny2.a(f3);
-                                } else {
-                                    float min = f6 < 0.0f ? 0.0f : Math.min(360.0f, f6);
-                                    float f8 = f7;
-                                    char c3 = c2;
-                                    o91 o91Var = null;
-                                    while (true) {
-                                        if (Math.abs(f4 - f7) >= 0.4f) {
-                                            float f9 = 1000.0f;
-                                            iArr = trimStateSet;
-                                            float f10 = f5;
-                                            float f11 = 0.0f;
-                                            float f12 = 1000.0f;
-                                            o91 o91Var2 = null;
-                                            while (true) {
-                                                if (Math.abs(f11 - f10) <= 0.01f) {
-                                                    i2 = depth2;
-                                                    break;
-                                                }
-                                                float z2 = oo1.z(f10, f11, 2.0f, f11);
-                                                float f13 = f10;
-                                                int c4 = o91.b(z2, f8, min).c(hfc.k);
-                                                float b2 = ny2.b(Color.red(c4));
-                                                float b3 = ny2.b(Color.green(c4));
-                                                float b4 = ny2.b(Color.blue(c4));
-                                                float[] fArr = ny2.d[c2];
-                                                float f14 = (b3 * fArr[c2]) + (b2 * fArr[0]);
-                                                float f15 = fArr[2];
-                                                i2 = depth2;
-                                                float y = b00.y(b4, f15, f14, 100.0f);
-                                                float cbrt = y <= 0.008856452f ? y * 903.2963f : (((float) Math.cbrt(y)) * 116.0f) - 16.0f;
-                                                float abs = Math.abs(f3 - cbrt);
-                                                if (abs < 0.2f) {
-                                                    o91 a4 = o91.a(c4);
-                                                    f2 = cbrt;
-                                                    o91 b5 = o91.b(a4.c, a4.b, min);
-                                                    float f16 = a4.d - b5.d;
-                                                    float f17 = a4.e - b5.e;
-                                                    float f18 = a4.f - b5.f;
-                                                    float pow = (float) (Math.pow(Math.sqrt((f18 * f18) + (f17 * f17) + (f16 * f16)), 0.63d) * 1.41d);
-                                                    if (pow <= 1.0f) {
-                                                        f12 = pow;
-                                                        f9 = abs;
-                                                        o91Var2 = a4;
-                                                    }
-                                                } else {
-                                                    f2 = cbrt;
-                                                }
-                                                if (f9 == 0.0f && f12 == 0.0f) {
-                                                    break;
-                                                }
-                                                if (f2 < f3) {
-                                                    f10 = f13;
-                                                    f11 = z2;
-                                                } else {
-                                                    f10 = z2;
-                                                }
-                                                depth2 = i2;
-                                            }
-                                            o91 o91Var3 = o91Var2;
-                                            if (c3 == 0) {
-                                                if (o91Var3 == null) {
-                                                    f7 = f8;
-                                                } else {
-                                                    o91Var = o91Var3;
-                                                    f4 = f8;
-                                                }
-                                                f8 = oo1.z(f7, f4, 2.0f, f4);
-                                                trimStateSet = iArr;
-                                                depth2 = i2;
-                                                f5 = 100.0f;
-                                            } else {
-                                                if (o91Var3 != null) {
-                                                    a2 = o91Var3.c(hfcVar);
-                                                    break;
-                                                }
-                                                f8 = oo1.z(f7, f4, 2.0f, f4);
-                                                trimStateSet = iArr;
-                                                depth2 = i2;
-                                                f5 = 100.0f;
-                                                c3 = 0;
-                                            }
-                                        } else {
-                                            iArr = trimStateSet;
-                                            i2 = depth2;
-                                            a2 = o91Var == null ? ny2.a(f3) : o91Var.c(hfcVar);
-                                        }
-                                    }
-                                }
-                                color = a2;
-                            } else {
-                                iArr = trimStateSet;
-                                i2 = depth2;
-                            }
-                            color = (color & 16777215) | (b << 24);
-                        } else {
-                            iArr = trimStateSet;
-                            i2 = depth2;
-                        }
-                        i3 = i5 + 1;
-                        if (i3 > iArr3.length) {
-                            int[] iArr6 = new int[i5 <= 4 ? 8 : i5 << 1];
-                            System.arraycopy(iArr3, 0, iArr6, 0, i5);
-                            iArr3 = iArr6;
-                        }
-                        iArr3[i5] = color;
-                        if (i3 > iArr2.length) {
-                            ?? r1 = (Object[]) Array.newInstance(iArr2.getClass().getComponentType(), i5 > 4 ? i5 << 1 : 8);
-                            System.arraycopy(iArr2, 0, r1, 0, i5);
-                            iArr2 = r1;
-                        }
-                        iArr2[i5] = iArr;
-                        iArr2 = iArr2;
-                        attributeSet2 = attributeSet;
-                        theme2 = theme;
-                        i5 = i3;
-                        z = c2;
-                        depth2 = i2;
-                        i4 = 0;
-                        r0 = resources;
-                    }
+            default:
+                bec becVar = (bec) obj;
+                TextureView textureView = becVar.K;
+                if (textureView != null && !becVar.G) {
+                    textureView.setAlpha(0.0f);
+                    textureView.animate().alpha(1.0f).setListener(new q7b(this, (byte) 18)).setDuration(200L);
+                    break;
                 }
-                color = obtainAttributes.getColor(i4, -65281);
-                if (!obtainAttributes.hasValue(z)) {
-                }
-                char c22 = z;
-                if (Build.VERSION.SDK_INT >= 31) {
-                }
-                obtainAttributes.recycle();
-                attributeCount = attributeSet2.getAttributeCount();
-                int[] iArr52 = new int[attributeCount];
-                i = i4;
-                int i72 = i;
-                while (i < attributeCount) {
-                }
-                int[] trimStateSet2 = StateSet.trimStateSet(iArr52, i72);
-                float f42 = 0.0f;
-                float f52 = 100.0f;
-                if (f3 >= 0.0f) {
-                }
-                if (f == 1.0f) {
-                }
-                int b6 = moe.b((int) ((Color.alpha(color) * f) + 0.5f), 0, kk7.d4);
-                if (c == 0) {
-                }
-                color = (color & 16777215) | (b6 << 24);
-                i3 = i5 + 1;
-                if (i3 > iArr3.length) {
-                }
-                iArr3[i5] = color;
-                if (i3 > iArr2.length) {
-                }
-                iArr2[i5] = iArr;
-                iArr2 = iArr2;
-                attributeSet2 = attributeSet;
-                theme2 = theme;
-                i5 = i3;
-                z = c22;
-                depth2 = i2;
-                i4 = 0;
-                r0 = resources;
-            } else {
-                r0 = resources;
-                attributeSet2 = attributeSet;
-                theme2 = theme;
-                z = z;
-                depth2 = depth2;
-                i4 = 0;
-            }
+                break;
         }
-        int[] iArr7 = new int[i5];
-        int[][] iArr8 = new int[i5][];
-        System.arraycopy(iArr3, 0, iArr7, 0, i5);
-        System.arraycopy(iArr2, 0, iArr8, 0, i5);
-        return new ColorStateList(iArr8, iArr7);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onStateChanged(boolean z, int i) {
+        switch (this.a) {
+            case 1:
+                bec becVar = (bec) this.b;
+                am2 am2Var = becVar.I;
+                if (am2Var != null) {
+                    if (i != 4) {
+                        if (i == 1) {
+                            am2Var.play();
+                            break;
+                        }
+                    } else {
+                        am2Var.seekTo(0L);
+                        becVar.I.play();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onStateChanged(z, i);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onVideoSizeChanged(int i, int i2, int i3, float f) {
+        switch (this.a) {
+            case 0:
+                gm.c3(new zl2(this, i, i2, i3, (byte) 0));
+                break;
+            default:
+                super.onVideoSizeChanged(i, i2, i3, f);
+                break;
+        }
     }
 }

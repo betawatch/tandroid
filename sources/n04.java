@@ -1,50 +1,34 @@
 // default package
 
-import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class n04 extends pr7 {
-    public final /* synthetic */ t14 c;
+public final class n04 extends yp {
+    public final /* synthetic */ e34 c;
 
-    public n04(t14 t14Var) {
-        this.c = t14Var;
+    public n04(e34 e34Var) {
+        this.c = e34Var;
     }
 
-    @Override // pr7
-    public final void a(gec gecVar, Object obj) {
-        gecVar.removeView((View) obj);
-    }
-
-    @Override // pr7
-    public final int b() {
-        return this.c.e.size();
-    }
-
-    @Override // pr7
-    public final CharSequence d(int i) {
+    @Override // yp
+    public final int i(int i) {
+        e34 e34Var = this.c;
+        z24 z24Var = e34Var.A0;
+        y59 adapter = e34Var.E0.getAdapter();
+        w24 w24Var = e34Var.z0;
+        if (adapter != w24Var) {
+            if (i == z24Var.y || !(z24Var.r.get(i) == null || (z24Var.r.get(i) instanceof TLRPC.Document))) {
+                return w24Var.d;
+            }
+            return 1;
+        }
         if (i == 0) {
-            return k96.M0(2131751184, null);
+            return w24Var.d;
         }
-        if (i == 1) {
-            return k96.M0(2131754879, null);
+        if (i == w24Var.s || !(w24Var.h.get(i) == null || (w24Var.h.get(i) instanceof TLRPC.Document))) {
+            return w24Var.d;
         }
-        if (i != 2) {
-            return null;
-        }
-        return k96.M0(2131754755, null);
-    }
-
-    @Override // pr7
-    public final Object e(gec gecVar, int i) {
-        FrameLayout frameLayout = ((p14) this.c.e.get(i)).b;
-        gecVar.addView(frameLayout);
-        return frameLayout;
-    }
-
-    @Override // pr7
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+        return 1;
     }
 }

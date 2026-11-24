@@ -1,11 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class jhd {
-    public static final /* synthetic */ int a = 0;
+public final class jhd {
+    public final Object a;
+    public final Object b;
+    public final Object c;
 
-    static {
-        jhd.class.getClassLoader();
+    public jhd(Object obj, Object obj2, Object obj3) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = obj3;
+    }
+
+    public final IllegalArgumentException a() {
+        Object obj = this.a;
+        return new IllegalArgumentException(kt6.p(String.valueOf(obj), "=", String.valueOf(this.c), mlb.m("Multiple entries with same key: ", String.valueOf(obj), "=", String.valueOf(this.b), " and ")));
     }
 }

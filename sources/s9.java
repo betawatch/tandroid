@@ -4,7 +4,7 @@ import android.content.Intent;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class s9 {
     public final /* synthetic */ byte a;
@@ -28,9 +28,9 @@ public final class s9 {
                         }
                         Iterator it = arrayList2.iterator();
                         Iterator it2 = arrayList.iterator();
-                        ArrayList arrayList3 = new ArrayList(Math.min(al2.c(arrayList2, 10), al2.c(arrayList, 10)));
+                        ArrayList arrayList3 = new ArrayList(Math.min(mm2.c(arrayList2, 10), mm2.c(arrayList, 10)));
                         while (it.hasNext() && it2.hasNext()) {
-                            arrayList3.add(new ku7(it.next(), it2.next()));
+                            arrayList3.add(new lw7(it.next(), it2.next()));
                         }
                         break;
                     }

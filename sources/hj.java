@@ -1,43 +1,49 @@
 // default package
 
-import java.util.HashSet;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.graphics.Point;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public class hj extends EditTextBoldCursor implements tjb {
-    public boolean M1;
-    public int N1;
-    public wjb O1;
-    public int P1;
+public final class hj extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ lp7 b;
+    public final /* synthetic */ lp7 c;
+    public final /* synthetic */ lp7 d;
 
-    public final void A(int i, wjb wjbVar) {
-        this.M1 = true;
-        this.N1 = i;
-        this.O1 = wjbVar;
-        int v0 = bkb.v0(i, wjbVar);
-        this.P1 = v0;
-        setCursorColor(v0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hj(Context context, lp7 lp7Var, lp7 lp7Var2, lp7 lp7Var3) {
+        super(context);
+        this.b = lp7Var;
+        this.c = lp7Var2;
+        this.d = lp7Var3;
+        this.a = false;
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        if (this.M1) {
-            hashSet.add(Integer.valueOf(this.N1));
-        }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        this.a = true;
+        Point point = gm.q;
+        int i3 = point.x > point.y ? 3 : 5;
+        lp7 lp7Var = this.b;
+        lp7Var.setItemCount(i3);
+        lp7 lp7Var2 = this.c;
+        lp7Var2.setItemCount(i3);
+        lp7 lp7Var3 = this.d;
+        lp7Var3.setItemCount(i3);
+        lp7Var.getLayoutParams().height = gm.L(42.0f) * i3;
+        lp7Var2.getLayoutParams().height = gm.L(42.0f) * i3;
+        lp7Var3.getLayoutParams().height = gm.L(42.0f) * i3;
+        this.a = false;
+        super.onMeasure(i, i2);
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        int v0;
-        try {
-            if (!this.M1 || (v0 = bkb.v0(this.N1, this.O1)) == this.P1) {
-                return;
-            }
-            this.P1 = v0;
-            setCursorColor(v0);
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

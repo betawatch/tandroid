@@ -2,11 +2,11 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class TabContents {
     public static final String CONTENT_ID = "TAB_CONTENTS_CONTENT_ID";
-    private final ogb mTemplate;
+    private final pib mTemplate;
 
     private TabContents() {
         this.mTemplate = null;
@@ -26,10 +26,10 @@ public class TabContents {
         return CONTENT_ID;
     }
 
-    public ogb getTemplate() {
-        ogb ogbVar = this.mTemplate;
-        Objects.requireNonNull(ogbVar);
-        return ogbVar;
+    public pib getTemplate() {
+        pib pibVar = this.mTemplate;
+        Objects.requireNonNull(pibVar);
+        return pibVar;
     }
 
     public int hashCode() {
@@ -40,7 +40,7 @@ public class TabContents {
         return "[template: " + this.mTemplate + "]";
     }
 
-    public TabContents(beb bebVar) {
+    public TabContents(bgb bgbVar) {
         throw null;
     }
 }

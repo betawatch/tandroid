@@ -1,46 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gc6 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ mf6 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+public final class gc6 extends View {
+    public final Drawable a;
+    public final ImageReceiver b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ gc6(mf6 mf6Var, int i, boolean z, boolean z2) {
-        this.b = mf6Var;
-        this.c = i;
-        this.d = z;
-        this.e = z2;
+    public gc6(oc6 oc6Var, Context context) {
+        super(context);
+        this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
+        pc0 pc0Var = new pc0((ylb) null);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        pc0Var.q(oc6Var.getUserConfig().f());
+        imageReceiver.U(oc6Var.getUserConfig().f(), pc0Var, null);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.e;
-        boolean z2 = this.d;
-        boolean z3 = this.c;
-        mf6 mf6Var = this.b;
-        switch (b) {
-            case 0:
-                mf6Var.K1(z3, z2, z);
-                break;
-            default:
-                boolean z4 = mf6Var.K;
-                mf6Var.K = z3;
-                mf6Var.K1(z2, z, true);
-                mf6Var.K = z4;
-                break;
-        }
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int L = gm.L(62.0f);
+        int L2 = gm.L(85.0f);
+        Drawable drawable = this.a;
+        drawable.setBounds(0, 0, L, L2);
+        drawable.draw(canvas);
+        int L3 = gm.L(62.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.q0(L3);
+        imageReceiver.i0(gm.L(6.0f), gm.L(6.0f), gm.L(50.0f), gm.L(50.0f));
+        imageReceiver.h(canvas, null);
     }
 
-    public /* synthetic */ gc6(mf6 mf6Var, boolean z, boolean z2, boolean z3) {
-        this.b = mf6Var;
-        this.c = z;
-        this.d = z2;
-        this.e = z3;
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gm.L(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(85.0f), TLObject.FLAG_30));
     }
 }

@@ -1,282 +1,259 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.BatteryManager;
+import android.os.Looper;
 import android.os.SystemClock;
-import android.text.Layout;
-import java.util.Arrays;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.CallReceiver;
+import org.telegram.messenger.KeepAliveJob;
+import org.telegram.messenger.LocationSharingService;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.support.JobIntentService;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.Dictation.DictationLid;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class bn3 {
-    public static final s33 J = new s33(0.42d, 0.0d, 0.22d, 1.0d);
-    public final int[] A;
-    public final float B;
-    public boolean C;
-    public boolean D;
-    public float E;
-    public float F;
-    public int[] G;
-    public Runnable H;
-    public boolean I;
-    public final ex1 b;
-    public boolean d;
-    public long e;
-    public float f;
-    public float g;
-    public Bitmap h;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public final Paint p;
-    public final Paint q;
-    public final LinearGradient r;
-    public final LinearGradient s;
-    public final LinearGradient t;
-    public final Matrix u;
-    public int v;
-    public int w;
-    public int x;
-    public float y;
-    public float z;
-    public long a = 900;
-    public final kra c = new kra(2600);
-    public float[] i = new float[0];
-    public float[] j = new float[0];
-    public final Paint o = new Paint(2);
+public final /* synthetic */ class bn3 implements Runnable {
+    public final /* synthetic */ byte a;
 
-    public bn3(ex1 ex1Var) {
-        Paint paint = new Paint();
-        this.p = paint;
-        Paint paint2 = new Paint();
-        this.q = paint2;
-        this.u = new Matrix();
-        this.A = new int[2];
-        this.F = 0.06f;
-        this.b = ex1Var;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.r = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 0, -16777216, tileMode);
-        this.s = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, -16777216, 0, tileMode);
-        this.t = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 16777215, -1, tileMode);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        this.B = gl.L(22.0f);
+    public /* synthetic */ bn3(byte b) {
+        this.a = b;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x004b, code lost:
-    
-        if (r1 != null) goto L12;
-     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x01ce  */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(long j) {
-        this.a = j;
-        ex1 ex1Var = this.b;
-        Layout layout = ex1Var.getLayout();
-        this.l = 0;
-        if (layout != null && layout.getWidth() > 0 && layout.getHeight() > 0) {
-            Bitmap bitmap = null;
-            try {
-                bitmap = Bitmap.createBitmap(layout.getWidth() + gl.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(bitmap);
-                ex1Var.getPaint().setColor(ex1Var.getCurrentTextColor());
-                layout.draw(canvas);
-                this.l = f(1100, bitmap, false);
-            } catch (Throwable unused) {
-            }
-            bitmap.recycle();
-        }
-        this.n = 0;
-        this.m = 0;
-        this.e = SystemClock.uptimeMillis();
-        this.I = false;
-        this.d = true;
-        ex1Var.invalidate();
-    }
-
-    public final boolean b(float f, float f2, int i, boolean z) {
-        c();
-        ex1 ex1Var = this.b;
-        Layout layout = ex1Var.getLayout();
-        if (layout == null || layout.getWidth() <= 0 || layout.getHeight() <= 0) {
-            return false;
-        }
-        try {
-            this.h = Bitmap.createBitmap(layout.getWidth() + gl.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(this.h);
-            ex1Var.getPaint().setColor(ex1Var.getCurrentTextColor());
-            layout.draw(canvas);
-            this.w = ex1Var.getScrollY();
-            this.x = Math.max(1, (ex1Var.getHeight() - ex1Var.getTotalPaddingTop()) - ex1Var.getTotalPaddingBottom());
-            this.k = f(1200, this.h, true);
-            ex1Var.getLocationInWindow(this.A);
-            this.y = (ug8.A(ex1Var) ? ex1Var.getOffsetY() : 0.0f) + ((ex1Var.getTotalPaddingTop() + r1[1]) - this.w);
-            this.f = f;
-            this.g = f2;
-            int i2 = this.v;
-            Paint paint = this.q;
-            if (i2 != i || paint.getColorFilter() == null) {
-                this.v = i;
-                paint.setColorFilter(new PorterDuffColorFilter(this.v, PorterDuff.Mode.SRC_IN));
-            }
-            kra kraVar = this.c;
-            kraVar.a();
-            kraVar.e(z);
-            kraVar.a = om3.k(z);
-            kraVar.Q = gl.L(10.0f);
-            return true;
-        } catch (Throwable unused) {
-            return false;
-        }
-    }
-
-    public final void c() {
-        this.d = false;
-        this.e = 0L;
-        Bitmap bitmap = this.h;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.h = null;
-        }
-        this.c.a();
-    }
-
-    public final float d(float f) {
-        float interpolation = J.getInterpolation(Math.max(0.0f, Math.min(1.0f, (f * 1000.0f) / (this.a - (this.F * 1000.0f)))));
-        float f2 = this.f;
-        return tb4.A(this.g, f2, interpolation, f2);
-    }
-
-    public final void e(LinearGradient linearGradient, float f, float f2) {
-        float f3 = f / 1.3453624f;
-        Matrix matrix = this.u;
-        matrix.reset();
-        matrix.setScale(Math.max(0.01f, (f2 / 1.3453624f) - f3), 1.0f);
-        matrix.postRotate(41.987213f);
-        matrix.postTranslate(0.7432941f * f3, f3 * 0.6689647f);
-        linearGradient.setLocalMatrix(matrix);
-    }
-
-    public final int f(int i, Bitmap bitmap, boolean z) {
-        int i2;
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-        int[] iArr = this.G;
-        if (iArr == null || iArr.length < width * height) {
-            iArr = new int[width * height];
-            this.G = iArr;
-        }
-        int[] iArr2 = iArr;
-        bitmap.getPixels(iArr2, 0, width, 0, 0, width, height);
-        int max = Math.max(1, Math.round(gl.p * 0.8f));
-        int i3 = 0;
-        int i4 = 0;
-        while (true) {
-            i2 = 90;
-            if (i3 >= height) {
-                break;
-            }
-            for (int i5 = 0; i5 < width; i5 += max) {
-                if ((iArr2[(i3 * width) + i5] >>> 24) > 90) {
-                    i4++;
+    public final void run() {
+        byte b = 0;
+        switch (this.a) {
+            case 0:
+                gn3[] gn3VarArr = DictationAsr.a;
+                ArrayList arrayList = new ArrayList(DictationAsr.g);
+                int size = arrayList.size();
+                while (b < size) {
+                    ((Runnable) arrayList.get(b)).run();
+                    b++;
                 }
-            }
-            i3 += max;
-        }
-        float f = i4 > i ? i / i4 : 1.0f;
-        float[] fArr = z ? this.i : this.j;
-        int i6 = i + 32;
-        if (fArr.length < Math.min(i4, i6) * 3) {
-            fArr = new float[Math.min(i4, i6) * 3];
-        }
-        int i7 = 0;
-        int i8 = 0;
-        while (i7 < height) {
-            int i9 = 0;
-            while (i9 < width) {
-                if ((iArr2[(i7 * width) + i9] >>> 24) > i2) {
-                    if (z) {
-                        int i10 = this.w;
-                        if (i7 >= i10 - max) {
-                            if (i7 > i10 + this.x + max) {
-                            }
-                        }
-                    }
-                    kra kraVar = this.c;
-                    if (kraVar.d() <= f) {
-                        int i11 = i8 + 1;
-                        if (i11 * 3 <= fArr.length) {
-                            float f2 = max;
-                            float d = ((kraVar.d() - 0.5f) * f2) + i9;
-                            float d2 = ((kraVar.d() - 0.5f) * f2) + i7;
-                            int i12 = i8 * 3;
-                            fArr[i12] = d;
-                            fArr[i12 + 1] = d2;
-                            fArr[i12 + 2] = (d2 * 0.9f) + d;
-                            i8 = i11;
-                        }
+                return;
+            case 1:
+                DictationAsr.a0(true);
+                return;
+            case 2:
+                DictationLid.b();
+                return;
+            case 3:
+                return;
+            case 4:
+                nm7.e().k(nm7.m4, new Object[0]);
+                return;
+            case 5:
+                gda.z1 = !gda.z1;
+                a.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", gda.z1);
+                gm.c0(LaunchActivity.H1.y0.getRootView(), new bn0((byte) 12));
+                return;
+            case 6:
+                String str = "Dark Blue";
+                SharedPreferences sharedPreferences = a.b.getSharedPreferences("themeconfig", 0);
+                String str2 = "Blue";
+                String string = sharedPreferences.getString("lastDayTheme", "Blue");
+                if (cmb.O0(string) == null || cmb.O0(string).o()) {
+                    string = "Blue";
+                }
+                String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+                if (cmb.O0(string2) == null || !cmb.O0(string2).o()) {
+                    string2 = "Dark Blue";
+                }
+                bmb bmbVar = cmb.I;
+                if (!string.equals(string2)) {
+                    str = string2;
+                } else if (bmbVar.o() || string.equals("Dark Blue") || string.equals("Night")) {
+                    str = string2;
+                    gm.d3(new fl4(cmb.I.o() ? cmb.O0(str) : cmb.O0(str2), b), 200L);
+                    return;
+                }
+                str2 = string;
+                gm.d3(new fl4(cmb.I.o() ? cmb.O0(str) : cmb.O0(str2), b), 200L);
+                return;
+            case 7:
+                d Q = LaunchActivity.Q();
+                if (Q != null) {
+                    bh0 bh0Var = new bh0();
+                    bh0Var.a = true;
+                    Q.showAsSheet(new PremiumPreviewFragment(0, "gifts"), bh0Var);
+                    return;
+                }
+                return;
+            case 8:
+                d S = LaunchActivity.S();
+                if (S != null) {
+                    u31 I = c41.b0(S).I(R.raw.contact_check, jb6.M0(2131742874, null), jb6.M0(2131742872, null));
+                    I.j = 5000;
+                    I.j();
+                    return;
+                }
+                return;
+            case 9:
+                CopyOnWriteArrayList copyOnWriteArrayList = g35.j;
+                Iterator it = copyOnWriteArrayList.iterator();
+                while (it.hasNext()) {
+                    WeakReference weakReference = (WeakReference) it.next();
+                    Runnable runnable = (Runnable) weakReference.get();
+                    if (runnable == null) {
+                        copyOnWriteArrayList.remove(weakReference);
+                    } else {
+                        runnable.run();
                     }
                 }
-                i9 += max;
-                i2 = 90;
-            }
-            i7 += max;
-            i2 = 90;
+                return;
+            case 10:
+                g95 g95Var = g95.s5;
+                if (g95Var != null) {
+                    g95Var.show();
+                    return;
+                }
+                return;
+            case 11:
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    return;
+                }
+                return;
+            case 12:
+                nm7.e().k(nm7.F2, new Object[0]);
+                return;
+            case 13:
+                if (VoIPService.getSharedInstance() == null || !VoIPService.getSharedInstance().isMicMute()) {
+                    return;
+                }
+                VoIPService.getSharedInstance().setMicMute(false, true, false);
+                return;
+            case 14:
+                za5.f();
+                return;
+            case 15:
+                return;
+            case 16:
+                KeepAliveJob.a();
+                return;
+            case 17:
+                if (KeepAliveJob.b || KeepAliveJob.a != null) {
+                    return;
+                }
+                try {
+                    if (e21.a) {
+                        fc4.b("starting keep-alive job");
+                    }
+                    synchronized (KeepAliveJob.c) {
+                        KeepAliveJob.b = true;
+                    }
+                    JobIntentService.enqueueWork(a.b, KeepAliveJob.class, 1000, new Intent());
+                    return;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 18:
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    return;
+                }
+                return;
+            case 19:
+                String str3 = LaunchActivity.C1;
+                a.F = false;
+                a.H = System.currentTimeMillis();
+                return;
+            case 20:
+                return;
+            case 21:
+                int i = -1;
+                try {
+                    BatteryManager batteryManager = (BatteryManager) a.b.getSystemService("batterymanager");
+                    if (batteryManager != null) {
+                        i = batteryManager.getIntProperty(4);
+                    }
+                } catch (Throwable th) {
+                    fc4.g(th, true);
+                }
+                e86.l = SystemClock.elapsedRealtime();
+                e86.m = false;
+                if (i < 0 || i > 100) {
+                    return;
+                }
+                e86.l = SystemClock.elapsedRealtime();
+                if (e86.k != i) {
+                    e86.k = i;
+                    gm.c3(new bn3((byte) 22));
+                    return;
+                }
+                return;
+            case 22:
+                e86.d(false);
+                return;
+            case 23:
+                nm7.e().k(nm7.B4, new Object[0]);
+                return;
+            case 24:
+                nm7.e().k(nm7.I4, new Object[0]);
+                return;
+            case 25:
+                int i2 = LocationSharingService.d;
+                for (int i3 = 0; i3 < 4; i3++) {
+                    dd6.f(i3).t();
+                }
+                return;
+            case 26:
+                return;
+            case 27:
+                CallReceiver.a();
+                return;
+            case 28:
+                CallReceiver.a();
+                return;
+            default:
+                Looper myLooper2 = Looper.myLooper();
+                if (myLooper2 != null) {
+                    myLooper2.quit();
+                    return;
+                }
+                return;
         }
-        Integer[] numArr = new Integer[i8];
-        for (int i13 = 0; i13 < i8; i13++) {
-            numArr[i13] = Integer.valueOf(i13);
-        }
-        Arrays.sort(numArr, new ml3(fArr, (byte) 1));
-        float[] copyOf = Arrays.copyOf(fArr, i8 * 3);
-        for (int i14 = 0; i14 < i8; i14++) {
-            int i15 = i14 * 3;
-            int intValue = numArr[i14].intValue() * 3;
-            fArr[i15] = copyOf[intValue];
-            fArr[i15 + 1] = copyOf[intValue + 1];
-            fArr[i15 + 2] = copyOf[intValue + 2];
-        }
-        if (z) {
-            this.i = fArr;
-            return i8;
-        }
-        this.j = fArr;
-        return i8;
     }
 
-    public final float g() {
-        if (!this.d) {
-            return -1.0f;
-        }
-        if (this.e == 0) {
-            return 0.0f;
-        }
-        return J.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - this.e) / this.a));
+    public /* synthetic */ bn3(View view, m66 m66Var, ClickableSpan clickableSpan, byte b) {
+        this.a = b;
     }
 
-    public final long h(float f) {
-        if (this.g <= this.f) {
-            return 0L;
-        }
-        float f2 = this.a / 1000.0f;
-        float f3 = 0.0f;
-        for (int i = 0; i < 24; i++) {
-            float f4 = (f3 + f2) / 2.0f;
-            if (d(f4) < f) {
-                f3 = f4;
-            } else {
-                f2 = f4;
-            }
-        }
-        return (long) (f2 * 1000.0f);
+    public /* synthetic */ bn3(Object obj, byte b) {
+        this.a = b;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

@@ -1,38 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum isb extends qsb {
+public enum isb extends rub {
     public isb() {
-        super("DoctypeSystemIdentifier_singleQuoted", 63);
+        super("RawtextEndTagName", 15);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        rpb rpbVar = aqbVar.m;
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            rpbVar.g.append((char) 65533);
-            return;
-        }
-        if (d == '\'') {
-            aqbVar.c = qsb.C0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else {
-            if (d != 65535) {
-                rpbVar.g.append(d);
-                return;
-            }
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        }
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        rub.b(bsbVar, hl1Var, rub.e);
     }
 }

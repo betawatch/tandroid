@@ -1,15 +1,15 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class ab implements rzc {
-    private final vzc a;
+public final class ab implements s1d {
+    private final w1d a;
 
-    public ab(vzc vzcVar) {
-        this.a = vzcVar;
+    public ab(w1d w1dVar) {
+        this.a = w1dVar;
     }
 
-    @Override // vzc
+    @Override // w1d
     public final /* bridge */ /* synthetic */ Object a() {
         return new aa((aj) this.a.a());
     }

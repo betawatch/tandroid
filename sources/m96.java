@@ -1,49 +1,46 @@
 // default package
 
-import android.os.Build;
-import java.util.Locale;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class m96 {
-    public static final m96 b = a(new Locale[0]);
-    public final o96 a;
+public final class m96 extends n96 implements b36 {
+    public final e36 e;
+    public final /* synthetic */ kj7 f;
 
-    public m96(o96 o96Var) {
-        this.a = o96Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m96(kj7 kj7Var, e36 e36Var, fq7 fq7Var) {
+        super(kj7Var, fq7Var);
+        this.f = kj7Var;
+        this.e = e36Var;
     }
 
-    public static m96 a(Locale... localeArr) {
-        return Build.VERSION.SDK_INT >= 24 ? new m96(new p96(kh0.e(localeArr))) : new m96(new n96(localeArr));
-    }
-
-    public static m96 b(String str) {
-        if (str == null || str.isEmpty()) {
-            return b;
+    @Override // b36
+    public final void b(e36 e36Var, u26 u26Var) {
+        e36 e36Var2 = this.e;
+        v26 v26Var = e36Var2.m().b;
+        if (v26Var == v26.a) {
+            this.f.h(this.a);
+            return;
         }
-        String[] split = str.split(",", -1);
-        int length = split.length;
-        Locale[] localeArr = new Locale[length];
-        for (int i = 0; i < length; i++) {
-            String str2 = split[i];
-            int i2 = l96.a;
-            localeArr[i] = Locale.forLanguageTag(str2);
+        v26 v26Var2 = null;
+        while (v26Var2 != v26Var) {
+            a(e());
+            v26Var2 = v26Var;
+            v26Var = e36Var2.m().b;
         }
-        return a(localeArr);
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof m96) {
-            return this.a.equals(((m96) obj).a);
-        }
-        return false;
+    @Override // n96
+    public final void c() {
+        this.e.m().b(this);
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // n96
+    public final boolean d(e36 e36Var) {
+        return this.e == e36Var;
     }
 
-    public final String toString() {
-        return this.a.toString();
+    @Override // n96
+    public final boolean e() {
+        return this.e.m().b.compareTo(v26.d) >= 0;
     }
 }

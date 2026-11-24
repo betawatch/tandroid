@@ -1,56 +1,35 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Map;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class fg5 extends hg5 {
-    public final fg5 e;
-    public ArrayList f;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class fg5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ig5 b;
 
-    public fg5(String str, int i, Map map, fg5 fg5Var) {
-        super(i, str, map);
-        this.e = fg5Var;
+    public /* synthetic */ fg5(ig5 ig5Var, byte b) {
+        this.a = b;
+        this.b = ig5Var;
     }
 
-    @Override // hg5
-    public final Map a() {
-        return this.c;
-    }
-
-    public final void b(int i) {
-        if (this.d > -1) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        ig5 ig5Var = this.b;
+        switch (b) {
+            case 0:
+                ig5Var.d = null;
+                qn4 qn4Var = new qn4(this, (byte) 29);
+                ig5Var.e = qn4Var;
+                gm.d3(qn4Var, ig5Var.w);
+                break;
+            default:
+                ig5Var.setVisibility(4);
+                ig5Var.c = null;
+                ig5Var.d = null;
+                break;
         }
-        this.d = i;
-        ArrayList arrayList = this.f;
-        if (arrayList != null) {
-            int size = arrayList.size();
-            int i2 = 0;
-            while (i2 < size) {
-                Object obj = arrayList.get(i2);
-                i2++;
-                ((fg5) obj).b(i);
-            }
-        }
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("BlockImpl{name='");
-        sb.append(this.a);
-        sb.append("', start=");
-        sb.append(this.b);
-        sb.append(", end=");
-        sb.append(this.d);
-        sb.append(", attributes=");
-        sb.append(this.c);
-        sb.append(", parent=");
-        fg5 fg5Var = this.e;
-        sb.append(fg5Var != null ? fg5Var.a : null);
-        sb.append(", children=");
-        sb.append(this.f);
-        sb.append('}');
-        return sb.toString();
     }
 }

@@ -1,14 +1,16 @@
 // default package
 
-import android.os.Binder;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class z21 extends b31 {
+    public l66 d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class z21 extends Binder {
-    public static final /* synthetic */ int b = 0;
-    public final /* synthetic */ c31 a;
-
-    public z21(c31 c31Var) {
-        this.a = c31Var;
+    @Override // b31
+    public void setTextColor(int i) {
+        super.setTextColor(i);
+        l66 l66Var = this.d;
+        if (l66Var != null) {
+            l66Var.setTextColor(i);
+        }
     }
 }

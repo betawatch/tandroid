@@ -1,65 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public enum irb extends qsb {
-    public irb() {
-        super("AttributeValue_unquoted", 39);
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class irb extends rc2 {
+    public final Path Ld;
+    public final Paint Md;
+    public final /* synthetic */ int Nd;
+    public final /* synthetic */ int Od;
+    public final /* synthetic */ int Pd;
+    public final /* synthetic */ krb Qd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public irb(krb krbVar, Context context, int i, ylb ylbVar, int i2, int i3, int i4) {
+        super(context, i, false, null, ylbVar);
+        this.Qd = krbVar;
+        this.Nd = i2;
+        this.Od = i3;
+        this.Pd = i4;
+        this.Ld = new Path();
+        this.Md = new Paint(1);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        String h = zj1Var.h(qsb.I0);
-        if (h.length() > 0) {
-            aqbVar.i.w(h);
-        }
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            aqbVar.i.v((char) 65533);
-            return;
-        }
-        if (d != ' ') {
-            if (d != '\"' && d != '`') {
-                lqb lqbVar = qsb.a;
-                if (d == 65535) {
-                    aqbVar.l(this);
-                    aqbVar.c = lqbVar;
-                    return;
-                }
-                if (d != '\t' && d != '\n' && d != '\f' && d != '\r') {
-                    if (d == '&') {
-                        int[] c = aqbVar.c('>', true);
-                        vpb vpbVar = aqbVar.i;
-                        if (c != null) {
-                            vpbVar.x(c);
-                            return;
-                        } else {
-                            vpbVar.v('&');
-                            return;
-                        }
-                    }
-                    if (d != '\'') {
-                        switch (d) {
-                            case kk7.w0 /* 60 */:
-                            case kk7.x0 /* 61 */:
-                                break;
-                            case kk7.y0 /* 62 */:
-                                aqbVar.k();
-                                aqbVar.c = lqbVar;
-                                break;
-                            default:
-                                aqbVar.i.v(d);
-                                break;
-                        }
-                        return;
-                    }
-                }
-            }
-            aqbVar.m(this);
-            aqbVar.i.v(d);
-            return;
-        }
-        aqbVar.c = qsb.X;
+    @Override // rc2
+    public final void j1(Canvas canvas) {
+        this.S4 = 0;
+        this.T4 = this.Q4.size() - 1;
+        super.j1(canvas);
+    }
+
+    @Override // rc2, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int e2 = e2(this.Nd);
+        float X1 = X1(e2);
+        float W1 = W1(e2);
+        RectF rectF = gm.P;
+        rectF.set(getPollButtonsLeft(), X1, getPollButtonsRight(), W1);
+        Path path = this.Ld;
+        path.rewind();
+        path.addRoundRect(rectF, gm.L(8.0f), gm.L(8.0f), Path.Direction.CW);
+        Paint paint = this.Md;
+        paint.setColor(0);
+        paint.setShadowLayer(gm.L(2.0f), 0.0f, gm.L(0.66f), cmb.p1(this.Qd.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, gm.L(8.0f), gm.L(8.0f), paint);
+        canvas.clipPath(path);
+        d1(canvas);
+        canvas.restore();
+    }
+
+    @Override // rc2, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(this.Od, this.Pd);
+    }
+
+    @Override // rc2, android.view.View
+    public final void setPressed(boolean z) {
     }
 }

@@ -1,45 +1,64 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.PopupWindow;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class dc4 implements PopupWindow.OnDismissListener {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class dc4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
+    public final /* synthetic */ Throwable b;
 
-    public /* synthetic */ dc4(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, byte b) {
+    public /* synthetic */ dc4(Throwable th, byte b) {
         this.a = b;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
+        this.b = th;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        View view = this.c;
-        ViewGroup viewGroup = this.e;
+        int i = 0;
+        Throwable th = this.b;
         switch (b) {
             case 0:
-                ((kc4) viewGroup).y = null;
-                s71 s71Var = (s71) view;
-                s71Var.animate().cancel();
-                s71Var.animate().alpha(0.0f).setDuration(150L).setListener(new im2(this, (byte) 20));
-                break;
+                try {
+                    fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + th + "\n");
+                    StackTraceElement[] stackTrace = th.getStackTrace();
+                    for (int i2 = 0; i2 < stackTrace.length; i2++) {
+                        fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace[i2] + "\n");
+                    }
+                    Throwable cause = th.getCause();
+                    if (cause != null) {
+                        fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause + "\n");
+                        StackTraceElement[] stackTrace2 = cause.getStackTrace();
+                        while (i < stackTrace2.length) {
+                            fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace2[i] + "\n");
+                            i++;
+                        }
+                    }
+                    fc4.j().a.flush();
+                    break;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             default:
-                ((f36) viewGroup).s = null;
-                s71 s71Var2 = (s71) view;
-                s71Var2.animate().cancel();
-                s71Var2.animate().alpha(0.0f).setDuration(150L).setListener(new v85(this, (byte) 11));
+                try {
+                    fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: " + th + "\n");
+                    StackTraceElement[] stackTrace3 = th.getStackTrace();
+                    for (int i3 = 0; i3 < stackTrace3.length; i3++) {
+                        fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: \tat " + stackTrace3[i3] + "\n");
+                    }
+                    Throwable cause2 = th.getCause();
+                    if (cause2 != null) {
+                        fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause2 + "\n");
+                        StackTraceElement[] stackTrace4 = cause2.getStackTrace();
+                        while (i < stackTrace4.length) {
+                            fc4.j().a.write(fc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace4[i] + "\n");
+                            i++;
+                        }
+                    }
+                    fc4.j().a.flush();
+                } catch (Exception e2) {
+                    e2.printStackTrace();
+                }
+                boolean z = e21.a;
                 break;
         }
     }

@@ -1,167 +1,90 @@
 // default package
 
-import java.util.Locale;
-import java.util.Map;
-import java.util.regex.Pattern;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.Random;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ui2 extends tn5 {
-    public static final Pattern e = bj6.n;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class ui2 {
+    public float g;
+    public float j;
+    public final Path a = new Path();
+    public final float[] b = new float[4];
+    public final float[] c = new float[4];
+    public final Matrix d = new Matrix();
+    public final Random h = new Random();
+    public final byte f = 6;
+    public final float e = (float) (Math.tan(0.2617993877991494d) * 1.3333333333333333d);
+    public final float[] i = new float[6];
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01cf  */
-    @Override // tn5
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final tg6 b() {
-        boolean z;
-        String str;
-        String str2;
-        int i = this.d + 1;
-        this.d = i;
-        bj6 bj6Var = this.a;
-        sy0 sy0Var = bj6Var.i;
-        if (sy0Var == null) {
-            return e("]");
-        }
-        ugb ugbVar = (ugb) sy0Var.e;
-        boolean z2 = sy0Var.a;
-        if (!sy0Var.c) {
-            bj6Var.i = (sy0) sy0Var.f;
-            return e("]");
-        }
-        bj6Var.g = i;
-        if (bj6Var.d() == '(') {
-            this.d++;
-            d();
-            bj6 bj6Var2 = this.a;
-            int i2 = this.d;
-            bj6Var2.g = i2;
-            int a = sne.a(i2, bj6Var2.f);
-            if (a == -1) {
-                str = null;
-            } else {
-                char d = bj6Var2.d();
-                String str3 = bj6Var2.f;
-                int i3 = bj6Var2.g;
-                String substring = d == '<' ? str3.substring(i3 + 1, a - 1) : str3.substring(i3, a);
-                bj6Var2.g = a;
-                str = z34.a(substring);
-            }
-            this.d = this.a.g;
-            if (str != null) {
-                d();
-                String str4 = this.c;
-                int i4 = this.d;
-                if (e.matcher(str4.substring(i4 - 1, i4)).matches()) {
-                    bj6 bj6Var3 = this.a;
-                    int i5 = this.d;
-                    bj6Var3.g = i5;
-                    int c = sne.c(i5, bj6Var3.f);
-                    if (c == -1) {
-                        str2 = null;
-                    } else {
-                        String substring2 = bj6Var3.f.substring(bj6Var3.g + 1, c - 1);
-                        bj6Var3.g = c;
-                        str2 = z34.a(substring2);
-                    }
-                    this.d = this.a.g;
-                    d();
-                } else {
-                    str2 = null;
-                }
-                bj6 bj6Var4 = this.a;
-                bj6Var4.g = this.d;
-                if (bj6Var4.d() == ')') {
-                    this.d++;
-                    z = true;
-                } else {
-                    this.d = i;
-                    z = false;
-                }
-                if (!z) {
-                    int i6 = this.d;
-                    bj6 bj6Var5 = this.a;
-                    bj6Var5.g = i6;
-                    if (i6 < bj6Var5.f.length() && bj6Var5.f.charAt(bj6Var5.g) == '[') {
-                        int i7 = bj6Var5.g + 1;
-                        int b = sne.b(i7, bj6Var5.f);
-                        int i8 = b - i7;
-                        if (b != -1 && i8 <= 999 && b < bj6Var5.f.length() && bj6Var5.f.charAt(b) == ']') {
-                            bj6Var5.g = b + 1;
-                        }
-                    }
-                    int i9 = this.a.g;
-                    this.d = i9;
-                    int i10 = i9 - i6;
-                    String substring3 = i10 > 2 ? this.c.substring(i6, i10 + i6) : !sy0Var.d ? this.c.substring(sy0Var.b, i) : null;
-                    if (substring3 != null) {
-                        Pattern pattern = z34.a;
-                        String replaceAll = z34.c.matcher(substring3.substring(1, substring3.length() - 1).trim().toLowerCase(Locale.ROOT)).replaceAll(" ");
-                        bj6 bj6Var6 = this.a;
-                        bj6Var6.getClass();
-                        e46 e46Var = (e46) ((Map) bj6Var6.a.c).get(replaceAll);
-                        if (e46Var != null) {
-                            str = e46Var.h;
-                            str2 = e46Var.i;
-                            z = true;
-                        }
-                    }
-                }
-                if (z) {
-                    this.d = i;
-                    bj6 bj6Var7 = this.a;
-                    bj6Var7.i = (sy0) bj6Var7.i.f;
-                    return e("]");
-                }
-                bk5 bk5Var = z2 ? new bk5(str, str2, (byte) 0) : new bk5(str, str2, (byte) 1);
-                tg6 tg6Var = (tg6) ugbVar.f;
-                while (tg6Var != null) {
-                    tg6 tg6Var2 = (tg6) tg6Var.f;
-                    bk5Var.b(tg6Var);
-                    tg6Var = tg6Var2;
-                }
-                ud3 ud3Var = (ud3) sy0Var.g;
-                bj6 bj6Var8 = this.a;
-                bj6Var8.g = this.d;
-                bj6Var8.e(ud3Var);
-                this.d = this.a.g;
-                tg6 tg6Var3 = (tg6) bk5Var.c;
-                tg6 tg6Var4 = (tg6) bk5Var.d;
-                if (tg6Var3 != tg6Var4) {
-                    yke.b(tg6Var3, tg6Var4);
-                }
-                ugbVar.g();
-                bj6 bj6Var9 = this.a;
-                sy0 sy0Var2 = (sy0) bj6Var9.i.f;
-                bj6Var9.i = sy0Var2;
-                if (!z2) {
-                    while (sy0Var2 != null) {
-                        if (!sy0Var2.a) {
-                            sy0Var2.c = false;
-                        }
-                        sy0Var2 = (sy0) sy0Var2.f;
-                    }
-                }
-                return bk5Var;
-            }
-            z = false;
-        } else {
-            z = false;
-            str = null;
-        }
-        str2 = null;
-        if (!z) {
-        }
-        if (z) {
+    public ui2() {
+        for (int i = 0; i < this.f; i++) {
+            this.i[i] = (this.h.nextInt() % 100) / 100.0f;
         }
     }
 
-    @Override // tn5
-    public final char c() {
-        return ']';
+    public final void a(float f, float f2, Canvas canvas, Paint paint) {
+        ui2 ui2Var = this;
+        float f3 = ui2Var.g;
+        float f4 = (f3 - 0.0f) - 0.0f;
+        float f5 = f3 + 0.0f + 0.0f;
+        float max = Math.max(f4, f5);
+        float f6 = ui2Var.e;
+        float f7 = max * f6 * 1.0f;
+        Path path = ui2Var.a;
+        path.reset();
+        int i = 0;
+        while (true) {
+            byte b = ui2Var.f;
+            if (i >= b) {
+                canvas.save();
+                canvas.rotate(0.0f, f, f2);
+                canvas.drawPath(path, paint);
+                canvas.restore();
+                return;
+            }
+            Matrix matrix = ui2Var.d;
+            matrix.reset();
+            float f8 = 360.0f / b;
+            matrix.setRotate(i * f8, f, f2);
+            float f9 = i % 2 == 0 ? f4 : f5;
+            float f10 = ui2Var.j;
+            float[] fArr = ui2Var.i;
+            float f11 = (fArr[i] * f10) + f9;
+            float[] fArr2 = ui2Var.b;
+            fArr2[0] = f;
+            float f12 = f2 - f11;
+            fArr2[1] = f12;
+            float f13 = f5;
+            fArr2[2] = b10.w(f10, fArr[i], f6, f + f7);
+            fArr2[3] = f12;
+            matrix.mapPoints(fArr2);
+            int i2 = i + 1;
+            int i3 = i2 >= b ? 0 : i2;
+            float f14 = i3 % 2 == 0 ? f4 : f13;
+            float f15 = ui2Var.j;
+            float f16 = (fArr[i3] * f15) + f14;
+            float[] fArr3 = ui2Var.c;
+            fArr3[0] = f;
+            float f17 = f2 - f16;
+            fArr3[1] = f17;
+            float f18 = f4;
+            fArr3[2] = b10.w(f15, fArr[i3], f6, f - f7);
+            fArr3[3] = f17;
+            matrix.reset();
+            matrix.setRotate(f8 * i3, f, f2);
+            matrix.mapPoints(fArr3);
+            if (i == 0) {
+                path.moveTo(fArr2[0], fArr2[1]);
+            }
+            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
+            i = i2;
+            f5 = f13;
+            f4 = f18;
+            ui2Var = this;
+        }
     }
 }

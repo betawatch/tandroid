@@ -1,43 +1,126 @@
 // default package
 
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Looper;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class t3d implements Runnable {
-    public static final lh0 c = new lh0("RevokeAccessOperation", new String[0]);
-    public final String a;
-    public final cya b;
+public final class t3d implements b4d, f05 {
+    public final ReentrantLock a;
+    public final Condition b;
+    public final Context c;
+    public final e05 d;
+    public final m3d e;
+    public final qt f;
+    public final HashMap i = new HashMap();
+    public final ovb j;
+    public final qt k;
+    public final or5 l;
+    public volatile r3d m;
+    public int n;
+    public final o3d o;
+    public final a4d p;
 
-    public t3d(String str) {
-        fre.f(str);
-        this.a = str;
-        this.b = new cya(null, (byte) 0);
+    public t3d(Context context, o3d o3dVar, ReentrantLock reentrantLock, Looper looper, e05 e05Var, qt qtVar, ovb ovbVar, qt qtVar2, or5 or5Var, ArrayList arrayList, a4d a4dVar) {
+        this.c = context;
+        this.a = reentrantLock;
+        this.d = e05Var;
+        this.f = qtVar;
+        this.j = ovbVar;
+        this.k = qtVar2;
+        this.l = or5Var;
+        this.o = o3dVar;
+        this.p = a4dVar;
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            ((j5d) arrayList.get(i)).c = this;
+        }
+        this.e = new m3d(this, looper, (byte) 1);
+        this.b = reentrantLock.newCondition();
+        this.m = new oo8(this, (byte) 24);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        lh0 lh0Var = c;
-        Status status = Status.h;
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://accounts.google.com/o/oauth2/revoke?token=".concat(this.a)).openConnection();
-            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode == 200) {
-                status = Status.e;
-            } else {
-                Log.e(lh0Var.b, lh0Var.b("Unable to revoke access!", new Object[0]));
-            }
-            lh0Var.a("Response Code: " + responseCode, new Object[0]);
-        } catch (IOException e) {
-            Log.e(lh0Var.b, lh0Var.b("IOException when revoking access: ".concat(String.valueOf(e.toString())), new Object[0]));
-        } catch (Exception e2) {
-            Log.e(lh0Var.b, lh0Var.b("Exception when revoking access: ".concat(String.valueOf(e2.toString())), new Object[0]));
+    @Override // b4d
+    public final void a() {
+        this.m.a();
+    }
+
+    @Override // b4d
+    public final boolean b(x5d x5dVar) {
+        return false;
+    }
+
+    @Override // b4d
+    public final void c() {
+        if (this.m.p1()) {
+            this.i.clear();
         }
-        this.b.a(status);
+    }
+
+    @Override // b4d
+    public final void d(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        printWriter.append((CharSequence) str).append("mState=").println(this.m);
+        Iterator it = ((ot) this.k.keySet()).iterator();
+        while (it.hasNext()) {
+            zo zoVar = (zo) it.next();
+            printWriter.append((CharSequence) str).append((CharSequence) zoVar.c).println(":");
+            zz4 zz4Var = (zz4) this.f.get(zoVar.b);
+            ite.h(zz4Var);
+            zz4Var.e(str.concat("  "), fileDescriptor, printWriter, strArr);
+        }
+    }
+
+    @Override // b4d
+    public final jh0 e(jh0 jh0Var) {
+        jh0Var.l();
+        return this.m.e(jh0Var);
+    }
+
+    @Override // b4d
+    public final boolean g() {
+        return this.m instanceof f3d;
+    }
+
+    public final void h() {
+        this.a.lock();
+        try {
+            this.m = new oo8(this, (byte) 24);
+            this.m.K1();
+            this.b.signalAll();
+        } finally {
+            this.a.unlock();
+        }
+    }
+
+    @Override // f05
+    public final void onConnected(Bundle bundle) {
+        this.a.lock();
+        try {
+            this.m.J(bundle);
+        } finally {
+            this.a.unlock();
+        }
+    }
+
+    @Override // f05
+    public final void onConnectionSuspended(int i) {
+        this.a.lock();
+        try {
+            this.m.I0(i);
+        } finally {
+            this.a.unlock();
+        }
+    }
+
+    @Override // b4d
+    public final void f() {
     }
 }

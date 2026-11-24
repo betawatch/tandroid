@@ -1,30 +1,44 @@
 // default package
 
-import android.content.res.Configuration;
-import android.os.LocaleList;
+import android.animation.TypeEvaluator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class to {
-    public static void a(Configuration configuration, Configuration configuration2, Configuration configuration3) {
-        LocaleList locales = configuration.getLocales();
-        LocaleList locales2 = configuration2.getLocales();
-        if (locales.equals(locales2)) {
-            return;
+public final class to implements TypeEvaluator {
+    public m08[] a;
+
+    @Override // android.animation.TypeEvaluator
+    public final Object evaluate(float f, Object obj, Object obj2) {
+        m08[] m08VarArr = (m08[]) obj;
+        m08[] m08VarArr2 = (m08[]) obj2;
+        if (!pse.a(m08VarArr, m08VarArr2)) {
+            u36.j("Can't interpolate between two incompatible pathData");
+            return null;
         }
-        configuration3.setLocales(locales2);
-        configuration3.locale = configuration2.locale;
-    }
-
-    public static m96 b(Configuration configuration) {
-        return m96.b(configuration.getLocales().toLanguageTags());
-    }
-
-    public static void c(m96 m96Var) {
-        LocaleList.setDefault(LocaleList.forLanguageTags(m96Var.a.a()));
-    }
-
-    public static void d(Configuration configuration, m96 m96Var) {
-        configuration.setLocales(LocaleList.forLanguageTags(m96Var.a.a()));
+        if (!pse.a(this.a, m08VarArr)) {
+            this.a = pse.e(m08VarArr);
+        }
+        int i = 0;
+        while (true) {
+            int length = m08VarArr.length;
+            m08[] m08VarArr3 = this.a;
+            if (i >= length) {
+                return m08VarArr3;
+            }
+            m08 m08Var = m08VarArr3[i];
+            m08 m08Var2 = m08VarArr[i];
+            m08 m08Var3 = m08VarArr2[i];
+            m08Var.getClass();
+            m08Var.a = m08Var2.a;
+            int i2 = 0;
+            while (true) {
+                float[] fArr = m08Var2.b;
+                if (i2 < fArr.length) {
+                    m08Var.b[i2] = (m08Var3.b[i2] * f) + ((1.0f - f) * fArr[i2]);
+                    i2++;
+                }
+            }
+            i++;
+        }
     }
 }

@@ -2,22 +2,22 @@
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class f4 implements gu3 {
+public final class f4 implements rv3 {
     public final /* synthetic */ byte a;
-    public final qd1 b;
-    public final xu7 c;
+    public final ye1 b;
+    public final yw7 c;
     public final String d;
     public final int e;
     public final String f;
     public String g;
-    public wxb h;
+    public yzb h;
     public byte i;
     public int j;
     public boolean k;
     public long l;
-    public fm4 m;
+    public go4 m;
     public int n;
     public long o;
 
@@ -25,9 +25,9 @@ public final class f4 implements gu3 {
         this.a = b;
         switch (b) {
             case 1:
-                qd1 qd1Var = new qd1(16, new byte[16]);
-                this.b = qd1Var;
-                this.c = new xu7(qd1Var.b);
+                ye1 ye1Var = new ye1(16, new byte[16]);
+                this.b = ye1Var;
+                this.c = new yw7(ye1Var.b);
                 this.i = (byte) 0;
                 this.j = 0;
                 this.k = false;
@@ -37,9 +37,9 @@ public final class f4 implements gu3 {
                 this.f = str2;
                 break;
             default:
-                qd1 qd1Var2 = new qd1(128, new byte[128]);
-                this.b = qd1Var2;
-                this.c = new xu7(qd1Var2.b);
+                ye1 ye1Var2 = new ye1(128, new byte[128]);
+                this.b = ye1Var2;
+                this.c = new yw7(ye1Var2.b);
                 this.i = (byte) 0;
                 this.o = -9223372036854775807L;
                 this.d = str;
@@ -54,11 +54,11 @@ public final class f4 implements gu3 {
     /* JADX WARN: Removed duplicated region for block: B:153:0x0381  */
     /* JADX WARN: Removed duplicated region for block: B:158:0x03a7  */
     /* JADX WARN: Removed duplicated region for block: B:210:0x03d8  */
-    @Override // gu3
+    @Override // rv3
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(xu7 xu7Var) {
+    public final void b(yw7 yw7Var) {
         int i;
         int i2;
         int i3;
@@ -78,286 +78,286 @@ public final class f4 implements gu3 {
         int i16;
         int i17;
         long j;
-        xu7 xu7Var2 = xu7Var;
+        yw7 yw7Var2 = yw7Var;
         byte b = this.a;
         int i18 = this.e;
         String str2 = this.d;
         String str3 = this.f;
-        qd1 qd1Var = this.b;
+        ye1 ye1Var = this.b;
         long j2 = -9223372036854775807L;
         byte b2 = 0;
         byte b3 = 1;
         int i19 = 2;
-        xu7 xu7Var3 = this.c;
+        yw7 yw7Var3 = this.c;
         int i20 = 16;
         switch (b) {
             case 0:
                 this.h.getClass();
-                while (xu7Var2.a() > 0) {
+                while (yw7Var2.a() > 0) {
                     int i21 = this.i;
                     if (i21 == 0) {
                         while (true) {
-                            if (xu7Var.a() <= 0) {
-                                xu7Var2 = xu7Var;
+                            if (yw7Var.a() <= 0) {
+                                yw7Var2 = yw7Var;
                                 b2 = 0;
                                 b3 = 1;
                                 i19 = 2;
                             } else if (this.k) {
-                                int A = xu7Var.A();
+                                int A = yw7Var.A();
                                 if (A == 119) {
                                     this.k = false;
                                     b3 = 1;
                                     this.i = (byte) 1;
-                                    byte[] bArr = xu7Var3.a;
+                                    byte[] bArr = yw7Var3.a;
                                     bArr[0] = 11;
                                     bArr[1] = 119;
                                     this.j = 2;
-                                    xu7Var2 = xu7Var;
+                                    yw7Var2 = yw7Var;
                                     i19 = 2;
                                     b2 = 0;
                                 } else {
                                     this.k = A == 11;
                                 }
                             } else {
-                                this.k = xu7Var.A() == 11;
+                                this.k = yw7Var.A() == 11;
                             }
                         }
                     } else if (i21 == b3) {
-                        byte[] bArr2 = xu7Var3.a;
-                        int min = Math.min(xu7Var2.a(), 128 - this.j);
-                        xu7Var2.k(this.j, min, bArr2);
+                        byte[] bArr2 = yw7Var3.a;
+                        int min = Math.min(yw7Var2.a(), 128 - this.j);
+                        yw7Var2.k(this.j, min, bArr2);
                         int i22 = this.j + min;
                         this.j = i22;
                         if (i22 == 128) {
-                            qd1Var.l(b2);
-                            int[] iArr = cd3.e;
-                            int[] iArr2 = cd3.c;
-                            int i23 = (qd1Var.c << 3) + qd1Var.d;
-                            qd1Var.n(40);
-                            byte b4 = qd1Var.f(5) > 10 ? b3 : (byte) 0;
-                            qd1Var.l(i23);
+                            ye1Var.l(b2);
+                            int[] iArr = oe3.e;
+                            int[] iArr2 = oe3.c;
+                            int i23 = (ye1Var.c << 3) + ye1Var.d;
+                            ye1Var.n(40);
+                            byte b4 = ye1Var.f(5) > 10 ? b3 : (byte) 0;
+                            ye1Var.l(i23);
                             if (b4 != 0) {
-                                qd1Var.n(i20);
-                                int f = qd1Var.f(i19);
+                                ye1Var.n(i20);
+                                int f = ye1Var.f(i19);
                                 int i24 = f != 0 ? f != b3 ? f != i19 ? -1 : i19 : b3 : 0;
-                                qd1Var.n(3);
-                                i4 = (qd1Var.f(11) + b3) << b3;
-                                int f2 = qd1Var.f(i19);
+                                ye1Var.n(3);
+                                i4 = (ye1Var.f(11) + b3) << b3;
+                                int f2 = ye1Var.f(i19);
                                 if (f2 == 3) {
-                                    i6 = cd3.d[qd1Var.f(i19)];
+                                    i6 = oe3.d[ye1Var.f(i19)];
                                     i7 = 3;
                                     i8 = 6;
                                 } else {
-                                    int f3 = qd1Var.f(i19);
-                                    int i25 = cd3.b[f3];
+                                    int f3 = ye1Var.f(i19);
+                                    int i25 = oe3.b[f3];
                                     i6 = iArr2[f2];
                                     i7 = f3;
                                     i8 = i25;
                                 }
                                 i3 = i8 << 8;
                                 int i26 = (i4 * i6) / (i8 << 5);
-                                int f4 = qd1Var.f(3);
-                                boolean e = qd1Var.e();
+                                int f4 = ye1Var.f(3);
+                                boolean e = ye1Var.e();
                                 i2 = iArr[f4] + (e ? 1 : 0);
-                                qd1Var.n(10);
-                                if (qd1Var.e()) {
-                                    qd1Var.n(8);
+                                ye1Var.n(10);
+                                if (ye1Var.e()) {
+                                    ye1Var.n(8);
                                 }
                                 if (f4 == 0) {
-                                    qd1Var.n(5);
-                                    if (qd1Var.e()) {
-                                        qd1Var.n(8);
+                                    ye1Var.n(5);
+                                    if (ye1Var.e()) {
+                                        ye1Var.n(8);
                                     }
                                 }
-                                if (i24 == 1 && qd1Var.e()) {
-                                    qd1Var.n(16);
+                                if (i24 == 1 && ye1Var.e()) {
+                                    ye1Var.n(16);
                                 }
-                                if (qd1Var.e()) {
+                                if (ye1Var.e()) {
                                     if (f4 > 2) {
-                                        qd1Var.n(2);
+                                        ye1Var.n(2);
                                     }
                                     if ((f4 & 1) == 0 || f4 <= 2) {
                                         i13 = 6;
                                     } else {
                                         i13 = 6;
-                                        qd1Var.n(6);
+                                        ye1Var.n(6);
                                     }
                                     if ((f4 & 4) != 0) {
-                                        qd1Var.n(i13);
+                                        ye1Var.n(i13);
                                     }
-                                    if (e && qd1Var.e()) {
-                                        qd1Var.n(5);
+                                    if (e && ye1Var.e()) {
+                                        ye1Var.n(5);
                                     }
                                     if (i24 == 0) {
-                                        if (qd1Var.e()) {
+                                        if (ye1Var.e()) {
                                             i14 = 6;
-                                            qd1Var.n(6);
+                                            ye1Var.n(6);
                                         } else {
                                             i14 = 6;
                                         }
-                                        if (f4 == 0 && qd1Var.e()) {
-                                            qd1Var.n(i14);
+                                        if (f4 == 0 && ye1Var.e()) {
+                                            ye1Var.n(i14);
                                         }
-                                        if (qd1Var.e()) {
-                                            qd1Var.n(i14);
+                                        if (ye1Var.e()) {
+                                            ye1Var.n(i14);
                                         }
-                                        int f5 = qd1Var.f(2);
+                                        int f5 = ye1Var.f(2);
                                         if (f5 == 1) {
-                                            qd1Var.n(5);
+                                            ye1Var.n(5);
                                         } else if (f5 == 2) {
-                                            qd1Var.n(12);
+                                            ye1Var.n(12);
                                         } else if (f5 == 3) {
-                                            int f6 = qd1Var.f(5);
-                                            if (qd1Var.e()) {
-                                                qd1Var.n(5);
-                                                if (qd1Var.e()) {
+                                            int f6 = ye1Var.f(5);
+                                            if (ye1Var.e()) {
+                                                ye1Var.n(5);
+                                                if (ye1Var.e()) {
                                                     i16 = 4;
-                                                    qd1Var.n(4);
+                                                    ye1Var.n(4);
                                                 } else {
                                                     i16 = 4;
                                                 }
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(i16);
                                                 }
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(i16);
                                                 }
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(i16);
                                                 }
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(i16);
                                                 }
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(i16);
                                                 }
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(i16);
                                                 }
-                                                if (qd1Var.e()) {
-                                                    if (qd1Var.e()) {
-                                                        qd1Var.n(i16);
+                                                if (ye1Var.e()) {
+                                                    if (ye1Var.e()) {
+                                                        ye1Var.n(i16);
                                                     }
-                                                    if (qd1Var.e()) {
-                                                        qd1Var.n(i16);
+                                                    if (ye1Var.e()) {
+                                                        ye1Var.n(i16);
                                                     }
                                                 }
                                             }
-                                            if (qd1Var.e()) {
-                                                qd1Var.n(5);
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(7);
-                                                    if (qd1Var.e()) {
-                                                        qd1Var.n(8);
+                                            if (ye1Var.e()) {
+                                                ye1Var.n(5);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(7);
+                                                    if (ye1Var.e()) {
+                                                        ye1Var.n(8);
                                                     }
                                                 }
                                             }
                                             i15 = 2;
-                                            qd1Var.n((f6 + 2) << 3);
-                                            qd1Var.c();
+                                            ye1Var.n((f6 + 2) << 3);
+                                            ye1Var.c();
                                             if (f4 < i15) {
-                                                if (qd1Var.e()) {
-                                                    qd1Var.n(14);
+                                                if (ye1Var.e()) {
+                                                    ye1Var.n(14);
                                                 }
-                                                if (f4 == 0 && qd1Var.e()) {
-                                                    qd1Var.n(14);
+                                                if (f4 == 0 && ye1Var.e()) {
+                                                    ye1Var.n(14);
                                                 }
                                             }
-                                            if (qd1Var.e()) {
+                                            if (ye1Var.e()) {
                                                 i9 = i7;
                                                 if (i9 == 0) {
-                                                    qd1Var.n(5);
+                                                    ye1Var.n(5);
                                                 } else {
                                                     int i27 = 0;
                                                     while (i27 < i8) {
-                                                        if (qd1Var.e()) {
+                                                        if (ye1Var.e()) {
                                                             i17 = i27;
-                                                            qd1Var.n(5);
+                                                            ye1Var.n(5);
                                                         } else {
                                                             i17 = i27;
                                                         }
                                                         i27 = i17 + 1;
                                                     }
                                                 }
-                                                if (qd1Var.e()) {
+                                                if (ye1Var.e()) {
                                                     i10 = 3;
                                                 } else {
-                                                    qd1Var.n(5);
+                                                    ye1Var.n(5);
                                                     if (f4 == 2) {
-                                                        qd1Var.n(4);
+                                                        ye1Var.n(4);
                                                     }
                                                     if (f4 >= 6) {
-                                                        qd1Var.n(2);
+                                                        ye1Var.n(2);
                                                     }
-                                                    if (qd1Var.e()) {
+                                                    if (ye1Var.e()) {
                                                         i12 = 8;
-                                                        qd1Var.n(8);
+                                                        ye1Var.n(8);
                                                     } else {
                                                         i12 = 8;
                                                     }
-                                                    if (f4 == 0 && qd1Var.e()) {
-                                                        qd1Var.n(i12);
+                                                    if (f4 == 0 && ye1Var.e()) {
+                                                        ye1Var.n(i12);
                                                     }
                                                     i10 = 3;
                                                     if (f2 < 3) {
-                                                        qd1Var.m();
+                                                        ye1Var.m();
                                                     }
                                                 }
                                                 if (i24 == 0 && i9 != i10) {
-                                                    qd1Var.m();
+                                                    ye1Var.m();
                                                 }
-                                                if (i24 == 2 || !(i9 == i10 || qd1Var.e())) {
+                                                if (i24 == 2 || !(i9 == i10 || ye1Var.e())) {
                                                     i11 = 6;
                                                 } else {
                                                     i11 = 6;
-                                                    qd1Var.n(6);
+                                                    ye1Var.n(6);
                                                 }
-                                                str = (!qd1Var.e() && qd1Var.f(i11) == 1 && qd1Var.f(8) == 1) ? "audio/eac3-joc" : "audio/eac3";
+                                                str = (!ye1Var.e() && ye1Var.f(i11) == 1 && ye1Var.f(8) == 1) ? "audio/eac3-joc" : "audio/eac3";
                                                 i5 = i26;
                                             }
                                         }
                                         i15 = 2;
                                         if (f4 < i15) {
                                         }
-                                        if (qd1Var.e()) {
+                                        if (ye1Var.e()) {
                                         }
                                     }
                                 }
                                 i9 = i7;
-                                if (qd1Var.e()) {
+                                if (ye1Var.e()) {
                                 }
                                 if (i24 == 0) {
-                                    qd1Var.m();
+                                    ye1Var.m();
                                 }
                                 if (i24 == 2) {
                                 }
                                 i11 = 6;
-                                if (!qd1Var.e()) {
+                                if (!ye1Var.e()) {
                                 }
                                 i5 = i26;
                             } else {
-                                qd1Var.n(32);
-                                int f7 = qd1Var.f(2);
+                                ye1Var.n(32);
+                                int f7 = ye1Var.f(2);
                                 String str4 = f7 == 3 ? null : "audio/ac3";
-                                int f8 = qd1Var.f(6);
-                                int i28 = cd3.f[f8 / 2] * 1000;
-                                int a = cd3.a(f7, f8);
-                                qd1Var.n(8);
-                                int f9 = qd1Var.f(3);
+                                int f8 = ye1Var.f(6);
+                                int i28 = oe3.f[f8 / 2] * 1000;
+                                int a = oe3.a(f7, f8);
+                                ye1Var.n(8);
+                                int f9 = ye1Var.f(3);
                                 if ((f9 & 1) == 0 || f9 == 1) {
                                     i = 2;
                                 } else {
                                     i = 2;
-                                    qd1Var.n(2);
+                                    ye1Var.n(2);
                                 }
                                 if ((f9 & 4) != 0) {
-                                    qd1Var.n(i);
+                                    ye1Var.n(i);
                                 }
                                 if (f9 == i) {
-                                    qd1Var.n(i);
+                                    ye1Var.n(i);
                                 }
                                 int i29 = f7 < 3 ? iArr2[f7] : -1;
-                                i2 = iArr[f9] + (qd1Var.e() ? 1 : 0);
+                                i2 = iArr[f9] + (ye1Var.e() ? 1 : 0);
                                 i3 = 1536;
                                 i4 = a;
                                 i5 = i28;
@@ -365,43 +365,43 @@ public final class f4 implements gu3 {
                                 i6 = i29;
                             }
                             int i30 = i3;
-                            fm4 fm4Var = this.m;
-                            if (fm4Var == null || i2 != fm4Var.N || i6 != fm4Var.P || !Objects.equals(str, fm4Var.t)) {
-                                em4 em4Var = new em4();
-                                em4Var.a = this.g;
-                                em4Var.r = ud7.n(str3);
-                                em4Var.s = ud7.n(str);
-                                em4Var.M = i2;
-                                em4Var.O = i6;
-                                em4Var.d = str2;
-                                em4Var.f = i18;
-                                em4Var.j = i5;
+                            go4 go4Var = this.m;
+                            if (go4Var == null || i2 != go4Var.N || i6 != go4Var.P || !Objects.equals(str, go4Var.t)) {
+                                fo4 fo4Var = new fo4();
+                                fo4Var.a = this.g;
+                                fo4Var.r = wf7.n(str3);
+                                fo4Var.s = wf7.n(str);
+                                fo4Var.M = i2;
+                                fo4Var.O = i6;
+                                fo4Var.d = str2;
+                                fo4Var.f = i18;
+                                fo4Var.j = i5;
                                 if ("audio/ac3".equals(str)) {
-                                    em4Var.i = i5;
+                                    fo4Var.i = i5;
                                 }
-                                fm4 fm4Var2 = new fm4(em4Var);
-                                this.m = fm4Var2;
-                                this.h.g(fm4Var2);
+                                go4 go4Var2 = new go4(fo4Var);
+                                this.m = go4Var2;
+                                this.h.g(go4Var2);
                             }
                             this.n = i4;
                             this.l = (i30 * 1000000) / this.m.P;
-                            xu7Var3.N(0);
-                            this.h.e(128, xu7Var3);
+                            yw7Var3.N(0);
+                            this.h.e(128, yw7Var3);
                             this.i = (byte) 2;
-                            xu7Var2 = xu7Var;
+                            yw7Var2 = yw7Var;
                             i19 = 2;
                             b2 = 0;
                             b3 = 1;
                         } else {
-                            xu7Var2 = xu7Var;
+                            yw7Var2 = yw7Var;
                         }
                     } else if (i21 == i19) {
-                        int min2 = Math.min(xu7Var2.a(), this.n - this.j);
-                        this.h.e(min2, xu7Var2);
+                        int min2 = Math.min(yw7Var2.a(), this.n - this.j);
+                        this.h.e(min2, yw7Var2);
                         int i31 = this.j + min2;
                         this.j = i31;
                         if (i31 == this.n) {
-                            gre.p(this.o != -9223372036854775807L ? b3 : b2);
+                            jte.p(this.o != -9223372036854775807L ? b3 : b2);
                             this.h.a(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = b2;
@@ -412,64 +412,64 @@ public final class f4 implements gu3 {
                 break;
             default:
                 this.h.getClass();
-                while (xu7Var2.a() > 0) {
+                while (yw7Var2.a() > 0) {
                     byte b5 = this.i;
                     if (b5 == 0) {
                         j = j2;
-                        while (xu7Var2.a() > 0) {
+                        while (yw7Var2.a() > 0) {
                             if (this.k) {
-                                int A2 = xu7Var2.A();
+                                int A2 = yw7Var2.A();
                                 this.k = A2 == 172;
                                 if (A2 == 64 || A2 == 65) {
                                     Object[] objArr = A2 == 65;
                                     this.i = (byte) 1;
-                                    byte[] bArr3 = xu7Var3.a;
+                                    byte[] bArr3 = yw7Var3.a;
                                     bArr3[0] = -84;
                                     bArr3[1] = (byte) (objArr == true ? 65 : 64);
                                     this.j = 2;
                                 }
                             } else {
-                                this.k = xu7Var2.A() == 172;
+                                this.k = yw7Var2.A() == 172;
                             }
                         }
                     } else if (b5 == 1) {
                         j = j2;
-                        byte[] bArr4 = xu7Var3.a;
-                        int min3 = Math.min(xu7Var2.a(), 16 - this.j);
-                        xu7Var2.k(this.j, min3, bArr4);
+                        byte[] bArr4 = yw7Var3.a;
+                        int min3 = Math.min(yw7Var2.a(), 16 - this.j);
+                        yw7Var2.k(this.j, min3, bArr4);
                         int i32 = this.j + min3;
                         this.j = i32;
                         if (i32 == 16) {
-                            qd1Var.l(0);
-                            i4 e2 = gi7.e(qd1Var);
+                            ye1Var.l(0);
+                            i4 e2 = ik7.e(ye1Var);
                             char c = e2.a;
-                            fm4 fm4Var3 = this.m;
-                            if (fm4Var3 == null || 2 != fm4Var3.N || c != fm4Var3.P || !"audio/ac4".equals(fm4Var3.t)) {
-                                em4 em4Var2 = new em4();
-                                em4Var2.a = this.g;
-                                em4Var2.r = ud7.n(str3);
-                                em4Var2.s = ud7.n("audio/ac4");
-                                em4Var2.M = 2;
-                                em4Var2.O = c;
-                                em4Var2.d = str2;
-                                em4Var2.f = i18;
-                                fm4 fm4Var4 = new fm4(em4Var2);
-                                this.m = fm4Var4;
-                                this.h.g(fm4Var4);
+                            go4 go4Var3 = this.m;
+                            if (go4Var3 == null || 2 != go4Var3.N || c != go4Var3.P || !"audio/ac4".equals(go4Var3.t)) {
+                                fo4 fo4Var2 = new fo4();
+                                fo4Var2.a = this.g;
+                                fo4Var2.r = wf7.n(str3);
+                                fo4Var2.s = wf7.n("audio/ac4");
+                                fo4Var2.M = 2;
+                                fo4Var2.O = c;
+                                fo4Var2.d = str2;
+                                fo4Var2.f = i18;
+                                go4 go4Var4 = new go4(fo4Var2);
+                                this.m = go4Var4;
+                                this.h.g(go4Var4);
                             }
                             this.n = e2.b;
                             this.l = (e2.c * 1000000) / this.m.P;
-                            xu7Var3.N(0);
-                            this.h.e(16, xu7Var3);
+                            yw7Var3.N(0);
+                            this.h.e(16, yw7Var3);
                             this.i = (byte) 2;
                         }
                     } else if (b5 == 2) {
-                        int min4 = Math.min(xu7Var2.a(), this.n - this.j);
-                        this.h.e(min4, xu7Var2);
+                        int min4 = Math.min(yw7Var2.a(), this.n - this.j);
+                        this.h.e(min4, yw7Var2);
                         int i33 = this.j + min4;
                         this.j = i33;
                         if (i33 == this.n) {
-                            gre.p(this.o != j2);
+                            jte.p(this.o != j2);
                             j = j2;
                             this.h.a(this.o, 1, this.n, 0, null);
                             this.o += this.l;
@@ -482,7 +482,7 @@ public final class f4 implements gu3 {
         }
     }
 
-    @Override // gu3
+    @Override // rv3
     public final void d() {
         switch (this.a) {
             case 0:
@@ -500,17 +500,17 @@ public final class f4 implements gu3 {
         }
     }
 
-    @Override // gu3
+    @Override // rv3
     public final void e() {
         byte b = this.a;
     }
 
-    @Override // gu3
+    @Override // rv3
     public final void f() {
         byte b = this.a;
     }
 
-    @Override // gu3
+    @Override // rv3
     public final void g(int i, long j) {
         switch (this.a) {
             case 0:
@@ -522,22 +522,22 @@ public final class f4 implements gu3 {
         }
     }
 
-    @Override // gu3
-    public final void h(l74 l74Var, l2c l2cVar) {
+    @Override // rv3
+    public final void h(u84 u84Var, l4c l4cVar) {
         switch (this.a) {
             case 0:
-                l2cVar.a();
-                l2cVar.b();
-                this.g = l2cVar.e;
-                l2cVar.b();
-                this.h = l74Var.T(l2cVar.d, 1);
+                l4cVar.a();
+                l4cVar.b();
+                this.g = l4cVar.e;
+                l4cVar.b();
+                this.h = u84Var.c0(l4cVar.d, 1);
                 break;
             default:
-                l2cVar.a();
-                l2cVar.b();
-                this.g = l2cVar.e;
-                l2cVar.b();
-                this.h = l74Var.T(l2cVar.d, 1);
+                l4cVar.a();
+                l4cVar.b();
+                this.g = l4cVar.e;
+                l4cVar.b();
+                this.h = u84Var.c0(l4cVar.d, 1);
                 break;
         }
     }

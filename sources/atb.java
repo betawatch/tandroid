@@ -1,14 +1,20 @@
 // default package
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum atb extends rub {
+    public atb() {
+        super("ScriptDataDoubleEscapedLessthanSign", 31);
+    }
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class atb extends FrameLayout {
-    public TextView a;
-
-    public void setMessageText(String str) {
-        this.a.setText(str);
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        if (!hl1Var.m('/')) {
+            bsbVar.c = rub.S;
+            return;
+        }
+        bsbVar.f('/');
+        bsbVar.e();
+        bsbVar.a(rub.W);
     }
 }

@@ -1,32 +1,170 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.io.ByteArrayInputStream;
+import java.io.Serializable;
+import java.util.Iterator;
+import java.util.Locale;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum rce implements boe {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(4),
-    h(5),
-    n(6),
-    r(7),
-    s(8),
-    w(9),
-    x(10),
-    y(11),
-    E(12),
-    F(13);
+public class rce implements Iterable, Serializable {
+    public static final rce c = new rce(afe.a);
+    public int a = 0;
+    public final byte[] b;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    rce(int i) {
-        this.a = i;
+    static {
+        int i = cbe.a;
     }
 
-    @Override // java.lang.Enum
+    public rce(byte[] bArr) {
+        bArr.getClass();
+        this.b = bArr;
+    }
+
+    public static int n(int i, int i2, int i3) {
+        int i4 = i2 - i;
+        if ((i | i2 | i4 | (i3 - i2)) >= 0) {
+            return i4;
+        }
+        if (i < 0) {
+            wa3.i(td4.o(i, "Beginning index: ", " < 0"));
+            return 0;
+        }
+        if (i2 < i) {
+            wa3.i(b10.g(i, i2, "Beginning index larger than ending index: ", ", "));
+            return 0;
+        }
+        wa3.i(b10.g(i2, i3, "End index: ", " >= "));
+        return 0;
+    }
+
+    public static rce o(int i, byte[] bArr) {
+        n(0, i, bArr.length);
+        byte[] bArr2 = new byte[i];
+        System.arraycopy(bArr, 0, bArr2, 0, i);
+        return new rce(bArr2);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if ((obj instanceof rce) && k() == ((rce) obj).k()) {
+            if (k() == 0) {
+                return true;
+            }
+            if (!(obj instanceof rce)) {
+                return obj.equals(this);
+            }
+            rce rceVar = (rce) obj;
+            int i = this.a;
+            int i2 = rceVar.a;
+            if (i == 0 || i2 == 0 || i == i2) {
+                int k = k();
+                if (k > rceVar.k()) {
+                    i2d.b(k, k());
+                    return false;
+                }
+                if (k > rceVar.k()) {
+                    u36.j(b10.g(k, rceVar.k(), "Ran off end of other: 0, ", ", "));
+                    return false;
+                }
+                byte[] bArr = rceVar.b;
+                int j = j() + k;
+                int j2 = j();
+                int j3 = rceVar.j();
+                while (j2 < j) {
+                    if (this.b[j2] == bArr[j3]) {
+                        j2++;
+                        j3++;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public byte h(int i) {
+        return this.b[i];
+    }
+
+    public final int hashCode() {
+        int i = this.a;
+        if (i != 0) {
+            return i;
+        }
+        int k = k();
+        int j = j();
+        byte[] bArr = afe.a;
+        int i2 = k;
+        for (int i3 = j; i3 < j + k; i3++) {
+            i2 = (i2 * 31) + this.b[i3];
+        }
+        if (i2 == 0) {
+            i2 = 1;
+        }
+        this.a = i2;
+        return i2;
+    }
+
+    public byte i(int i) {
+        return this.b[i];
+    }
+
+    @Override // java.lang.Iterable
+    public final /* synthetic */ Iterator iterator() {
+        return new j61(this);
+    }
+
+    public int j() {
+        return 0;
+    }
+
+    public int k() {
+        return this.b.length;
+    }
+
+    public void l(int i, byte[] bArr) {
+        System.arraycopy(this.b, 0, bArr, 0, i);
+    }
+
+    public final ByteArrayInputStream m() {
+        return new ByteArrayInputStream(this.b, j(), k());
+    }
+
+    public final byte[] p() {
+        int k = k();
+        if (k == 0) {
+            return afe.a;
+        }
+        byte[] bArr = new byte[k];
+        l(k, bArr);
+        return bArr;
+    }
+
     public final String toString() {
-        return "<" + rce.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + ((int) this.a) + " name=" + name() + '>';
+        rce aceVar;
+        String concat;
+        Locale locale = Locale.ROOT;
+        String hexString = Integer.toHexString(System.identityHashCode(this));
+        int k = k();
+        if (k() <= 50) {
+            concat = f4f.a(this);
+        } else {
+            int n = n(0, 47, k());
+            if (n == 0) {
+                aceVar = c;
+            } else {
+                aceVar = new ace(this.b, j(), n);
+            }
+            concat = f4f.a(aceVar).concat("...");
+        }
+        StringBuilder sb = new StringBuilder("<ByteString@");
+        sb.append(hexString);
+        sb.append(" size=");
+        sb.append(k);
+        sb.append(" contents=\"");
+        return b10.j(sb, concat, "\">");
     }
 }

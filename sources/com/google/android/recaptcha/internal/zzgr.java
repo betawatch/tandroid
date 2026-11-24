@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzgr {
     private final zzhk zza;
     private final Integer zzb;
     private final String zzc;
     private final long zzd;
-    private final d06 zze;
+    private final d26 zze;
     private final int zzf;
 
     public zzgr(zzhk zzhkVar, int i, Integer num) {
@@ -15,7 +15,7 @@ public final class zzgr {
         this.zzf = i;
         this.zzb = num;
         int i2 = zzby.zza;
-        this.zze = cne.b(zzgq.zza);
+        this.zze = fpe.b(zzgq.zza);
         zzd();
         this.zzc = zzvl.zzc(zzvl.zzb(System.currentTimeMillis()));
         zzd();

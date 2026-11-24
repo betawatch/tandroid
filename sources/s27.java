@@ -1,103 +1,23 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Point;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class s27 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final gn b;
-    public final gn c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public interface s27 {
+    boolean b(dcb dcbVar);
 
-    public s27(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        gn gnVar = new gn(true, true, true);
-        this.b = gnVar;
-        s33 s33Var = s33.h;
-        gnVar.n(0.3f, 430L, s33Var);
-        gnVar.x(gl.o());
-        gnVar.u(bkb.v0(bkb.z8, wjbVar));
-        gnVar.w(gl.L(18.0f));
-        gnVar.q(!k96.a0);
-        gnVar.setCallback(this);
-        Point point = gl.q;
-        gnVar.N = point.x;
-        gn gnVar2 = new gn(true, true, true);
-        this.c = gnVar2;
-        gnVar2.n(0.3f, 430L, s33Var);
-        gnVar2.u(bkb.v0(bkb.A8, wjbVar));
-        gnVar2.w(gl.L(14.0f));
-        gnVar2.q(!k96.a0);
-        gnVar2.setCallback(this);
-        gnVar2.N = point.x;
-    }
+    boolean c();
 
-    public final void a(CharSequence charSequence, boolean z) {
-        this.c.t(charSequence, z && !k96.a0, true);
-    }
+    void d(y17 y17Var, boolean z);
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.z8));
-        hashSet.add(Integer.valueOf(bkb.A8));
-    }
+    boolean g(c27 c27Var);
 
-    public final void b(CharSequence charSequence, boolean z) {
-        this.b.t(charSequence, z && !k96.a0, true);
-    }
+    void h(r27 r27Var);
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int L = gl.L(29.0f);
-        int L2 = gl.L(18.83f);
-        gn gnVar = this.c;
-        float U1 = gl.U1(gnVar.i(), L, L2);
-        int paddingLeft = getPaddingLeft();
-        int i = (int) U1;
-        int L3 = i - gl.L(32.0f);
-        int measuredWidth = getMeasuredWidth() - getPaddingRight();
-        int L4 = gl.L(32.0f) + i;
-        gn gnVar2 = this.b;
-        gnVar2.setBounds(paddingLeft, L3, measuredWidth, L4);
-        gnVar2.draw(canvas);
-        gnVar.setBounds(getPaddingLeft(), r0 - gl.L(32.0f), getMeasuredWidth() - getPaddingRight(), gl.L(32.0f) + r0);
-        gnVar.draw(canvas);
-    }
+    boolean i(c27 c27Var);
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(56.0f), TLObject.FLAG_30));
-        setPadding(gl.L(18.0f), 0, gl.L(18.0f), 0);
-    }
+    void j();
 
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            gn gnVar = this.b;
-            wjb wjbVar = this.a;
-            if (gnVar != null) {
-                gnVar.u(bkb.v0(bkb.z8, wjbVar));
-            }
-            gn gnVar2 = this.c;
-            if (gnVar2 != null) {
-                gnVar2.u(bkb.v0(bkb.A8, wjbVar));
-            }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.b == drawable || this.c == drawable || super.verifyDrawable(drawable);
-    }
+    void k(Context context, y17 y17Var);
 }

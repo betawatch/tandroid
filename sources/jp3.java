@@ -1,44 +1,64 @@
 // default package
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
+import android.os.Handler;
+import android.os.Message;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jp3 implements Runnable {
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class jp3 implements Handler.Callback {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ op3 b;
-    public final /* synthetic */ File c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ jp3(op3 op3Var, File file, byte b) {
+    public /* synthetic */ jp3(Object obj, byte b) {
         this.a = b;
-        this.b = op3Var;
-        this.c = file;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
         byte b = this.a;
-        byte b2 = 2;
-        File file = this.c;
-        op3 op3Var = this.b;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                if (op3Var.c && op3Var.r != null) {
-                    MediaController.d0(file.getAbsolutePath(), op3Var.getContext(), 1, null, null, new kp3(op3Var, (byte) 1));
-                    break;
-                }
-                break;
+                ((np3) obj).handleMessage(message);
+                return true;
             case 1:
-                op3Var.r.c(file);
-                if (op3Var.c && op3Var.r != null) {
-                    gl.d3(new jp3(op3Var, file, b2));
-                    break;
+                a86 a86Var = (a86) obj;
+                y76 y76Var = a86Var.c;
+                y76Var.getClass();
+                Iterator it = a86Var.d.iterator();
+                while (it.hasNext()) {
+                    z76 z76Var = (z76) it.next();
+                    if (!z76Var.d && z76Var.c) {
+                        lk4 f = z76Var.b.f();
+                        z76Var.b = new m41();
+                        z76Var.c = false;
+                        y76Var.c(z76Var.a, f);
+                    }
+                    dfb dfbVar = a86Var.b;
+                    dfbVar.getClass();
+                    if (dfbVar.a.hasMessages(1)) {
+                        return true;
+                    }
                 }
-                break;
+                return true;
             default:
-                MediaController.d0(file.getAbsolutePath(), op3Var.getContext(), 0, null, null, new kp3(op3Var, (byte) 2));
-                break;
+                oa0 oa0Var = (oa0) obj;
+                int i = message.what;
+                if (i == 1) {
+                    ((ybb) oa0Var.g).a();
+                } else if (i == 2) {
+                    ((zbb) oa0Var.h).a();
+                } else if (i == 3) {
+                    ((acb) oa0Var.i).a();
+                } else {
+                    if (i != 4) {
+                        return false;
+                    }
+                    ((bcb) oa0Var.j).a();
+                }
+                return true;
         }
     }
 }

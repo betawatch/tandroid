@@ -1,106 +1,65 @@
 // default package
 
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.d;
+import android.view.View;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class cm3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jm3 b;
+public final /* synthetic */ class cm3 implements km3, h59 {
+    public final /* synthetic */ mm3 a;
 
-    public /* synthetic */ cm3(jm3 jm3Var, byte b) {
-        this.a = b;
-        this.b = jm3Var;
+    public /* synthetic */ cm3(mm3 mm3Var) {
+        this.a = mm3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        mm3 mm3Var;
-        mm3 mm3Var2;
-        mm3 mm3Var3;
-        byte b = this.a;
-        byte b2 = 1;
-        jm3 jm3Var = this.b;
-        switch (b) {
-            case 0:
-                if (!jm3Var.q() && (mm3Var = jm3Var.s) != null) {
-                    mm3Var.setShown(false);
-                    break;
-                }
-                break;
-            case 1:
-                if (!jm3Var.q() && (mm3Var2 = jm3Var.s) != null) {
-                    mm3Var2.e();
-                    break;
-                }
-                break;
-            case 2:
-                ex1 ex1Var = jm3Var.f.a.F0;
-                if (ex1Var != null) {
-                    ex1Var.requestFocus();
-                    break;
-                }
-                break;
-            case 3:
-                ChatActivityEnterView chatActivityEnterView = jm3Var.f.a;
-                chatActivityEnterView.G1 = 0L;
-                chatActivityEnterView.H1 = null;
-                break;
-            case 4:
-                d dVar = jm3Var.f;
-                String z = jm3Var.z();
-                hj3 hj3Var = new hj3(jm3Var, (byte) 3);
-                dVar.getClass();
-                ChatActivityEnterView chatActivityEnterView2 = dVar.a;
-                a1 a1Var = new a1(chatActivityEnterView2.getContext(), chatActivityEnterView2.L4);
-                a1Var.o1(z);
-                a1Var.e2 = hj3Var;
-                a1Var.show();
-                break;
-            case 5:
-                ex1 ex1Var2 = jm3Var.f.a.F0;
-                if (ex1Var2 != null) {
-                    ex1Var2.requestFocus();
-                    break;
-                }
-                break;
-            case 6:
-                if (jm3Var.r == 3 && (mm3Var3 = jm3Var.s) != null) {
-                    mm3Var3.e();
-                    break;
-                }
-                break;
-            case 7:
-                byte b3 = jm3Var.r;
-                if (b3 == 3 || b3 == 4) {
-                    jm3Var.w.setIsland(true);
-                    break;
-                }
-                break;
-            case 8:
-                if (jm3Var.r == 1) {
-                    jm3Var.M(true);
-                    break;
-                }
-                break;
-            case 9:
-                if (jm3Var.r == 1) {
-                    jm3Var.M(false);
-                    break;
-                }
-                break;
-            case 10:
-                jm3Var.b(0.0f, 320L, s33.h);
-                gl.e3(new cm3(jm3Var, b2), 360L);
-                break;
-            default:
-                if (!jm3Var.q()) {
-                    jm3Var.f.a.L1(null, true);
-                    jm3Var.b(0.0f, 240L, s33.g);
-                    break;
-                }
-                break;
+    @Override // km3
+    public final void a(vh6 vh6Var, ArrayList arrayList) {
+        mm3 mm3Var = this.a;
+        int i = mm3Var.t0;
+        mm3Var.u0 = arrayList;
+        mm3Var.y0 = vh6Var;
+        for (int i2 = 0; i2 < mm3Var.u0.size(); i2++) {
+            lm3 lm3Var = (lm3) mm3Var.u0.get(i2);
+            TLObject tLObject = lm3Var.a;
+            if (tLObject instanceof TLRPC.User) {
+                oc7.r1(i).c4((TLRPC.User) lm3Var.a, true, false);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                oc7.r1(i).V3((TLRPC.Chat) lm3Var.a, true);
+            } else if (tLObject instanceof TLRPC.EncryptedChat) {
+                oc7.r1(i).Z3((TLRPC.EncryptedChat) lm3Var.a, true);
+            }
         }
+        mm3Var.G(null);
+        mm3Var.f();
+    }
+
+    @Override // h59
+    public final boolean g(int i, View view) {
+        TLRPC.User W1;
+        uj3 uj3Var = this.a.V;
+        if (uj3Var != null) {
+            Long l = (Long) view.getTag();
+            long longValue = l.longValue();
+            nk3 nk3Var = uj3Var.a;
+            if (nk3Var.getParentActivity() != null && (W1 = nk3Var.getMessagesController().W1(l)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(nk3Var.getParentActivity());
+                String M0 = jb6.M0(2131752171, null);
+                he heVar = alertDialog$Builder.a;
+                heVar.S = M0;
+                heVar.U = gm.S2(jb6.a0("ChatHintsDeleteAlert", null, 2131752172, bw2.m(0, W1.first_name, W1.last_name)));
+                alertDialog$Builder.j(jb6.M0(2131744544, null), new d12((Object) uj3Var, longValue, (byte) 2));
+                alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                nk3Var.showDialog(heVar);
+                TextView textView = (TextView) heVar.c(-1);
+                if (textView != null) {
+                    anb.X(textView, cmb.p7, nk3Var.getResourceProvider());
+                }
+            }
+        }
+        return true;
     }
 }

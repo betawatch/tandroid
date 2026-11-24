@@ -1,45 +1,15 @@
 // default package
 
-import android.content.Context;
-import com.google.android.gms.tasks.TaskExecutors;
-import org.telegram.messenger.a;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class cme {
-    public static void a(String str, zw5 zw5Var, yw5 yw5Var) {
-        b(str, zw5Var, yw5Var, false);
-    }
-
-    public static void b(String str, zw5 zw5Var, yw5 yw5Var, boolean z) {
-        if (z) {
-            try {
-                Context context = a.b;
-                synchronized (ae7.b) {
-                    try {
-                        ae7.d(context, TaskExecutors.MAIN_THREAD);
-                    } finally {
-                    }
-                }
-            } catch (IllegalStateException e) {
-                if (!z) {
-                    b(str, zw5Var, yw5Var, true);
-                    return;
-                } else {
-                    yw5Var.n(e);
-                    fa4.g(e, false);
-                    return;
-                }
-            } catch (Exception e2) {
-                yw5Var.n(e2);
-                fa4.g(e2, true);
-                return;
-            } catch (Throwable th) {
-                yw5Var.n(null);
-                fa4.g(th, false);
-                return;
-            }
+    public static Object a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() != 0) {
+            return creator.createFromParcel(parcel);
         }
-        gme.a().c(str).addOnSuccessListener(new ry4((Object) zw5Var, (byte) 18)).addOnFailureListener(new ry4((Object) yw5Var, (byte) 19));
+        return null;
     }
 }

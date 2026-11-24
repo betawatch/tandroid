@@ -1,23 +1,19 @@
 // default package
 
-import android.os.Build;
-import android.widget.EdgeEffect;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class wee {
-    public static float a(EdgeEffect edgeEffect) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            return ns3.b(edgeEffect);
-        }
-        return 0.0f;
+public final class wee implements cq7 {
+    public static final wee a = new wee();
+
+    static {
+        mlb.z(mlb.o(i9d.class, mlb.s(mlb.o(i9d.class, new f8d(1)), 2)));
     }
 
-    public static float b(EdgeEffect edgeEffect, float f, float f2) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            return ns3.c(edgeEffect, f, f2);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        ms3.a(edgeEffect, f, f2);
-        return f;
+        throw null;
     }
 }

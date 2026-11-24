@@ -1,57 +1,31 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class vc5 extends FrameLayout {
-    public final int a;
-    public final wjb b;
-    public ArrayList c;
-    public final FrameLayout d;
-    public final q5c e;
-    public final l5c f;
-    public p8c h;
+    public Drawable a;
+    public TextView b;
 
-    public vc5(int i, wjb wjbVar, Activity activity) {
-        super(activity);
-        this.a = i;
-        this.b = wjbVar;
-        q5c q5cVar = new q5c(activity, i, 0, false, new ur4((Object) this, (byte) 10), new uc5(this), new uc5(this), wjbVar);
-        this.e = q5cVar;
-        q5cVar.setClipToPadding(false);
-        l5c l5cVar = (l5c) q5cVar.getAdapter();
-        this.f = l5cVar;
-        l5cVar.r = false;
-        addView(q5cVar, -1, -1);
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.d = frameLayout;
-        ImageView imageView = new ImageView(activity);
-        int i2 = bkb.l6;
-        zkb.s(imageView, i2, wjbVar, PorterDuff.Mode.MULTIPLY);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.large_hashtags);
-        frameLayout.addView(imageView, nme.e(56, 56, 49));
-        TextView textView = new TextView(activity);
-        zkb.X(textView, i2, wjbVar);
-        textView.setText(k96.M0(2131749161, null));
-        textView.setGravity(17);
-        frameLayout.addView(textView, nme.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
-        addView(frameLayout, nme.e(210, -2, 17));
-        q5cVar.setEmptyView(frameLayout);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.a;
+        drawable.setBounds(0, getMeasuredHeight() - gm.L(3.0f), getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
     }
 
-    public void setOnHashtagClickListener(p8c p8cVar) {
-        this.h = p8cVar;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(40.0f), TLObject.FLAG_30));
     }
 
-    public void setOnScrollListener(i49 i49Var) {
-        this.e.j(i49Var);
+    public void setText(String str) {
+        this.b.setText(str);
     }
 }

@@ -1,768 +1,535 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.os.Bundle;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.view.ViewGroup;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Scope;
+import android.widget.ImageView;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class b95 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class b95 extends q59 {
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public int I;
+    public int J;
+    public int K;
+    public int L;
+    public boolean M;
+    public final /* synthetic */ g95 N;
+    public final LaunchActivity c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public int y;
 
-    public /* synthetic */ b95(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public b95(g95 g95Var, LaunchActivity launchActivity) {
+        this.N = g95Var;
+        this.c = launchActivity;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        final byte b2 = 2;
-        Object[] objArr = 0;
-        Object[] objArr2 = 0;
-        char c = 1;
-        char c2 = 1;
-        char c3 = 1;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                f65 f65Var = (f65) obj;
-                f65Var.E0(f65Var.q1);
-                f65Var.dismiss();
-                break;
-            case 1:
-                wf2 wf2Var = (wf2) obj;
-                CheckBoxBase checkBoxBase = wf2Var.a;
-                wf2Var.a(!checkBoxBase.q, true);
-                na7.c1().edit().putBoolean("callmiconstart", checkBoxBase.q).apply();
-                break;
-            case 2:
-                y95 y95Var = (y95) obj;
-                y95Var.d(y95Var);
-                break;
-            case 3:
-                ((aa5) obj).b.Z0(19);
-                break;
-            case 4:
-                qa5 qa5Var = ((oa5) obj).J;
-                qa5Var.Y = null;
-                qa5Var.a0.b();
-                qa5Var.h.b();
-                qa5Var.l0();
-                qa5Var.v0();
-                break;
-            case 5:
-                ((kb5) obj).d.h0(null);
-                break;
-            case 6:
-                ((wb5) obj).dismiss();
-                break;
-            case 7:
-                tc5 tc5Var = (tc5) obj;
-                tc5Var.Z(!tc5Var.E, true);
-                qa7 qa7Var = tc5Var.r;
-                boolean z = tc5Var.E;
-                ValueAnimator valueAnimator = qa7Var.f;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
+    @Override // q59
+    public final boolean D(u69 u69Var) {
+        int i = u69Var.f;
+        return (i == 3 || i == 4 || i == 5 || i == 6) ? false : true;
+    }
+
+    public final void E() {
+        TLRPC.Chat chat;
+        TLRPC.Chat chat2;
+        g95 g95Var = this.N;
+        ArrayList arrayList = g95Var.j2;
+        qd2 qd2Var = g95Var.T2;
+        if (qd2Var == null || qd2Var.k() || g95Var.l2) {
+            return;
+        }
+        this.x = -1;
+        this.y = -1;
+        this.E = -1;
+        this.J = -1;
+        this.K = -1;
+        this.L = -1;
+        this.G = 0;
+        this.M = g95Var.T2.d.h(k47.B1(g95Var.u2)) >= 0;
+        if (g95Var.g1()) {
+            int i = this.G;
+            this.G = i + 1;
+            this.L = i;
+        }
+        int i2 = this.G;
+        this.H = i2;
+        int size = arrayList.size() + i2;
+        this.G = size;
+        this.I = size;
+        if (arrayList.size() > 0) {
+            int i3 = this.G;
+            this.G = i3 + 1;
+            this.J = i3;
+        }
+        if (!arrayList.isEmpty() && g95Var.G0() && g95Var.T2.b.participants_count > oc7.r1(g95Var.n1.a).l4.M0.f()) {
+            int i4 = this.G;
+            this.G = i4 + 1;
+            this.K = i4;
+        }
+        int i5 = this.G;
+        this.d = i5;
+        int size2 = g95Var.T2.g.size() + i5;
+        this.G = size2;
+        this.e = size2;
+        if (g95Var.T2.j.isEmpty()) {
+            this.f = -1;
+            this.h = -1;
+        } else {
+            int i6 = this.G;
+            this.f = i6;
+            int size3 = g95Var.T2.j.size() + i6;
+            this.G = size3;
+            this.h = size3;
+        }
+        if (g95Var.T2.m.isEmpty()) {
+            this.n = -1;
+            this.r = -1;
+        } else {
+            int i7 = this.G;
+            this.n = i7;
+            int size4 = g95Var.T2.m.size() + i7;
+            this.G = size4;
+            this.r = size4;
+        }
+        if (g95Var.T2.l.isEmpty()) {
+            this.s = -1;
+            this.w = -1;
+        } else {
+            int i8 = this.G;
+            this.s = i8;
+            int size5 = g95Var.T2.l.size() + i8;
+            this.G = size5;
+            this.w = size5;
+        }
+        if (g95Var.g1()) {
+            int i9 = this.G;
+            this.y = i9;
+            this.G = i9 + 2;
+            this.E = i9 + 1;
+        } else if (((!sd2.T(g95Var.S2) || ((chat2 = g95Var.S2) != null && chat2.megagroup)) && sd2.B(g95Var.S2)) || (sd2.T(g95Var.S2) && (chat = g95Var.S2) != null && !chat.megagroup && sd2.t0(chat))) {
+            int i10 = this.G;
+            this.G = i10 + 1;
+            this.x = i10;
+        }
+        int i11 = this.G;
+        this.G = i11 + 1;
+        this.F = i11;
+    }
+
+    @Override // y59
+    public final int b() {
+        return this.G;
+    }
+
+    @Override // y59
+    public final int d(int i) {
+        if (i == this.F) {
+            return 3;
+        }
+        if (i == this.x || i == this.y || i == this.E) {
+            return 0;
+        }
+        if (i == this.J) {
+            return 5;
+        }
+        if (i >= this.d && i < this.e) {
+            return 1;
+        }
+        if (i >= this.H && i < this.I) {
+            return 4;
+        }
+        if (i == this.K) {
+            return 6;
+        }
+        return i == this.L ? 7 : 2;
+    }
+
+    @Override // y59
+    public final void f() {
+        E();
+        super.f();
+    }
+
+    @Override // y59
+    public final void g(int i) {
+        E();
+        super.g(i);
+    }
+
+    @Override // y59
+    public final void j(int i, int i2) {
+        E();
+        super.j(i, i2);
+    }
+
+    @Override // y59
+    public final void l(int i, int i2) {
+        E();
+        super.l(i, i2);
+    }
+
+    @Override // y59
+    public final void n(int i, int i2, Object obj) {
+        E();
+        super.n(i, i2, obj);
+    }
+
+    @Override // y59
+    public final void p(int i, int i2) {
+        E();
+        super.p(i, i2);
+    }
+
+    @Override // y59
+    public final void q(int i, int i2) {
+        E();
+        super.q(i, i2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:85:? A[RETURN, SYNTHETIC] */
+    @Override // y59
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(u69 u69Var, int i) {
+        TLRPC.Chat chat;
+        TLRPC.GroupCallParticipant groupCallParticipant;
+        r85 r85Var;
+        Long l;
+        boolean z;
+        boolean z2;
+        boolean z3;
+        rd2 rd2Var;
+        r85 r85Var2;
+        g95 g95Var = this.N;
+        ArrayList arrayList = g95Var.x2;
+        ArrayList arrayList2 = g95Var.z2;
+        ArrayList arrayList3 = g95Var.j2;
+        ArrayList arrayList4 = g95Var.y2;
+        int i2 = u69Var.f;
+        View view = u69Var.a;
+        TLRPC.FileLocation fileLocation = null;
+        if (i2 == 0) {
+            qb5 qb5Var = (qb5) view;
+            if (i == this.y) {
+                int v0 = cmb.v0(cmb.u6, g95Var.J0);
+                qb5Var.a(v0, v0);
+                qb5Var.b(R.drawable.msg_contact_add, jb6.M0(2131743109, null), true);
+                return;
+            } else {
+                if (i == this.E) {
+                    int v02 = cmb.v0(cmb.u6, g95Var.J0);
+                    qb5Var.a(v02, v02);
+                    qb5Var.b(R.drawable.msg_link2, jb6.M0(2131743104, null), false);
+                    return;
                 }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(qa7Var.e, z ? 1.0f : 0.0f);
-                qa7Var.f = ofFloat;
-                ofFloat.addUpdateListener(new ae0(qa7Var, (byte) 9));
-                qa7Var.f.addListener(new id4((byte) 15, qa7Var, z));
-                qa7Var.f.setDuration(320L);
-                qa7Var.f.setInterpolator(s33.h);
-                qa7Var.f.start();
-                break;
-            case 8:
-                ((bn5) obj).dismiss();
-                break;
-            case 9:
-                ((gq5) obj).e0();
-                break;
-            case 10:
-                ((kr5) obj).performClick();
-                break;
-            case 11:
-                xt5 xt5Var = (xt5) obj;
-                xt5Var.y1 = na7.q1(xt5Var.a).h1(k27.B1(xt5Var.w1));
-                xt5Var.z1 = true;
-                xt5Var.dismiss();
-                break;
-            case 12:
-                zt5 zt5Var = (zt5) obj;
-                zt5Var.l1 = true;
-                zt5Var.dismiss();
-                break;
-            case 13:
-                ((fu5) obj).dismiss();
-                break;
-            case 14:
-                ((j45) obj).run();
-                break;
-            case 15:
-                LaunchActivity launchActivity = (LaunchActivity) obj;
-                String str = LaunchActivity.C1;
-                ArrayList arrayList = launchActivity.D0;
-                launchActivity.G0 = null;
-                launchActivity.t0(new LanguageSelectActivity());
-                for (int i = 0; i < arrayList.size(); i++) {
-                    if (((Dialog) arrayList.get(i)).isShowing()) {
-                        ((Dialog) arrayList.get(i)).dismiss();
+                int R0 = gm.R0(g95Var.H1.getTag() != null ? 1.0f : 0.0f, 1.0f, cmb.w0(null, cmb.bh, false), cmb.w0(null, cmb.eh, false));
+                qb5Var.a(R0, R0);
+                if (!sd2.T(g95Var.S2) || (chat = g95Var.S2) == null || chat.megagroup || !sd2.t0(chat)) {
+                    qb5Var.b(R.drawable.msg_contact_add, jb6.M0(2131743057, null), false);
+                    return;
+                } else {
+                    qb5Var.b(R.drawable.msg_link, jb6.M0(2131743020, null), false);
+                    return;
+                }
+            }
+        }
+        if (i2 == 1) {
+            wb5 wb5Var = (wb5) view;
+            int i3 = i - this.d;
+            if (g95Var.l2) {
+                if (i3 >= 0 && i3 < arrayList.size()) {
+                    groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList.get(i3);
+                }
+                groupCallParticipant = null;
+            } else {
+                if (i3 >= 0 && i3 < g95Var.T2.g.size()) {
+                    groupCallParticipant = (TLRPC.GroupCallParticipant) g95Var.T2.g.get(i3);
+                }
+                groupCallParticipant = null;
+            }
+            if (groupCallParticipant != null) {
+                long B1 = k47.B1(groupCallParticipant.peer);
+                long B12 = k47.B1(g95Var.u2);
+                if (B1 == B12 && (r85Var = g95Var.b4) != null) {
+                    fileLocation = r85Var.c;
+                }
+                float f = fileLocation != null ? g95Var.b4.a : 1.0f;
+                boolean z4 = wb5Var.getParticipant() != null && k47.B1(wb5Var.getParticipant().peer) == B1;
+                wb5Var.e(g95Var.n1, groupCallParticipant, g95Var.T2, B12, fileLocation, z4);
+                sb5 sb5Var = wb5Var.y;
+                sb5Var.setProgress(f);
+                if (f < 1.0f) {
+                    gm.T3(sb5Var, true, 1.0f, true, z4);
+                    return;
+                } else {
+                    gm.T3(sb5Var, false, 1.0f, true, z4);
+                    return;
+                }
+            }
+            return;
+        }
+        if (i2 != 2) {
+            if (i2 == 4) {
+                n95 n95Var = (n95) view;
+                rd2 participant = n95Var.getParticipant();
+                int i4 = i - this.H;
+                n95Var.a = g95Var.m1.i(i);
+                if (g95Var.l2) {
+                    if (i4 >= 0 && i4 < arrayList4.size()) {
+                        rd2Var = (rd2) arrayList4.get(i4);
                     }
-                }
-                arrayList.clear();
-                break;
-            case 16:
-                ((l46) obj).performClick();
-                break;
-            case 17:
-                s36 s36Var = (s36) obj;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(s36Var.getParentActivity());
-                String M0 = k96.M0(2131745833, null);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.U = M0;
-                hdVar.S = k96.M0(2131745830, null);
-                alertDialog$Builder.j(k96.M0(2131745831, null), new i36(s36Var, c == true ? 1 : 0));
-                alertDialog$Builder.g(k96.M0(2131752577, null), null);
-                s36Var.showDialog(hdVar);
-                break;
-            case 18:
-                ((l18) obj).p(!r12.g0, true);
-                break;
-            case 19:
-                ((ra6) obj).J();
-                break;
-            case 20:
-                final td6 td6Var = (td6) obj;
-                mf6 mf6Var = td6Var.E;
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(mf6Var.getParentActivity());
-                String M02 = k96.M0(2131745878, "RestorePasswordNoEmailTitle");
-                hd hdVar2 = alertDialog$Builder2.a;
-                hdVar2.S = M02;
-                hdVar2.U = k96.M0(2131745882, "RestoreEmailTroubleText");
-                String M03 = k96.M0(2131747638, null);
-                final Object[] objArr3 = objArr == true ? 1 : 0;
-                alertDialog$Builder2.j(M03, new ed() { // from class: sd6
-                    @Override // ed
-                    public final void u(hd hdVar3, int i2) {
-                        byte b3 = objArr3;
-                        td6 td6Var2 = td6Var;
-                        switch (b3) {
-                            case 0:
-                                td6Var2.E.I1(6, true, new Bundle(), true);
-                                break;
-                            default:
-                                td6Var2.E.N1(td6Var2.r, td6Var2.s, td6Var2.w);
-                                break;
-                        }
+                    rd2Var = null;
+                } else {
+                    if (i4 >= 0 && i4 < arrayList3.size()) {
+                        rd2Var = (rd2) arrayList3.get(i4);
                     }
-                });
-                String M04 = k96.M0(2131745924, null);
-                final char c4 = c2 == true ? 1 : 0;
-                alertDialog$Builder2.g(M04, new ed() { // from class: sd6
-                    @Override // ed
-                    public final void u(hd hdVar3, int i2) {
-                        byte b3 = c4;
-                        td6 td6Var2 = td6Var;
-                        switch (b3) {
-                            case 0:
-                                td6Var2.E.I1(6, true, new Bundle(), true);
-                                break;
-                            default:
-                                td6Var2.E.N1(td6Var2.r, td6Var2.s, td6Var2.w);
-                                break;
-                        }
+                    rd2Var = null;
+                }
+                if (rd2Var != null) {
+                    if (k47.B1(rd2Var.a.peer) == k47.B1(g95Var.u2) && (r85Var2 = g95Var.b4) != null) {
+                        fileLocation = r85Var2.c;
                     }
-                });
-                Dialog showDialog = mf6Var.showDialog(hdVar2);
-                if (showDialog != null) {
-                    showDialog.setCanceledOnTouchOutside(false);
-                    showDialog.setCancelable(false);
-                    break;
-                }
-                break;
-            case 21:
-                be6 be6Var = (be6) obj;
-                mf6 mf6Var2 = be6Var.H;
-                if (mf6Var2.W.getTag() == null) {
-                    AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(mf6Var2.getParentActivity());
-                    String M05 = k96.M0(2131745906, "ResetMyAccountWarning");
-                    hd hdVar3 = alertDialog$Builder3.a;
-                    hdVar3.S = M05;
-                    hdVar3.U = k96.M0(2131745904, "ResetMyAccountWarningText");
-                    alertDialog$Builder3.j(k96.M0(2131745905, "ResetMyAccountWarningReset"), new ry4((Object) be6Var, (byte) 26));
-                    alertDialog$Builder3.g(k96.M0(2131752577, "Cancel"), null);
-                    mf6Var2.showDialog(hdVar3);
-                    break;
-                }
-                break;
-            case 22:
-                de6 de6Var = (de6) obj;
-                kk7.e().a(new xb0(de6Var, b2), kk7.e5);
-                Context context = de6Var.getContext();
-                HashSet hashSet = new HashSet();
-                HashMap hashMap = new HashMap();
-                String str2 = w01.h;
-                fre.f(str2);
-                hashSet.add(GoogleSignInOptions.x);
-                if (hashSet.contains(GoogleSignInOptions.F)) {
-                    Scope scope = GoogleSignInOptions.E;
-                    if (hashSet.contains(scope)) {
-                        hashSet.remove(scope);
+                    if (fileLocation != null) {
+                        float f2 = g95Var.b4.a;
                     }
-                }
-                hashSet.add(GoogleSignInOptions.y);
-                u84 a = aje.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str2, null, hashMap, null));
-                a.k().addOnCompleteListener(new h45(de6Var, a, (byte) 20));
-                break;
-            case 23:
-                gh6 gh6Var = (gh6) obj;
-                gh6Var.M.a(gh6Var, true);
-                break;
-            case 24:
-                final vh6 vh6Var = (vh6) obj;
-                yh6 yh6Var = vh6Var.L;
-                if (vh6Var.n != null) {
-                    View view2 = yh6Var.fragmentView;
-                    if (view2 instanceof ViewGroup) {
-                        cs5 G = cs5.G((ViewGroup) view2, null, vh6Var);
-                        if (vh6Var.n.revoked) {
-                            String M06 = k96.M0(2131751586, null);
-                            final Object[] objArr4 = objArr2 == true ? 1 : 0;
-                            G.b(R.drawable.msg_delete, M06, new Runnable() { // from class: sh6
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    final byte b3 = 1;
-                                    switch (objArr4) {
-                                        case 0:
-                                            final vh6 vh6Var2 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = vh6Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(vh6Var2.L.getParentActivity());
-                                            alertDialog$Builder4.a.S = k96.M0(2131751522, null);
-                                            alertDialog$Builder4.a.U = k96.M0(2131751521, null);
-                                            alertDialog$Builder4.j(k96.M0(2131751586, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b4 = b3;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported2 = tL_chatInviteExported;
-                                                    vh6 vh6Var3 = vh6Var2;
-                                                    switch (b4) {
-                                                        case 0:
-                                                            vh6Var3.L.i0(tL_chatInviteExported2);
-                                                            break;
-                                                        default:
-                                                            vh6Var3.L.d0(tL_chatInviteExported2);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder4, null);
-                                            break;
-                                        case 1:
-                                            vh6 vh6Var3 = vh6Var;
-                                            try {
-                                                if (vh6Var3.n.link != null) {
-                                                    ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vh6Var3.n.link));
-                                                    u21.j(vh6Var3.L).j();
-                                                    break;
-                                                }
-                                            } catch (Exception e) {
-                                                fa4.g(e, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 2:
-                                            vh6 vh6Var4 = vh6Var;
-                                            yh6 yh6Var2 = vh6Var4.L;
-                                            try {
-                                                if (vh6Var4.n.link != null) {
-                                                    Context context2 = vh6Var4.getContext();
-                                                    String str3 = vh6Var4.n.link;
-                                                    yh6Var2.showDialog(new uh6(vh6Var4, context2, str3, str3, yh6Var2.getResourceProvider()));
-                                                    break;
-                                                }
-                                            } catch (Exception e2) {
-                                                fa4.g(e2, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 3:
-                                            vh6 vh6Var5 = vh6Var;
-                                            yh6 yh6Var3 = vh6Var5.L;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = vh6Var5.n;
-                                            s36 s36Var2 = new s36(1, yh6Var3.n);
-                                            s36Var2.T = yh6Var3.t0;
-                                            s36Var2.c0(tL_chatInviteExported2);
-                                            yh6Var3.presentFragment(s36Var2);
-                                            break;
-                                        default:
-                                            final vh6 vh6Var6 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = vh6Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(vh6Var6.L.getParentActivity());
-                                            alertDialog$Builder5.a.U = k96.M0(2131745833, null);
-                                            alertDialog$Builder5.a.S = k96.M0(2131745830, null);
-                                            final byte b4 = 0;
-                                            alertDialog$Builder5.j(k96.M0(2131745831, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b4;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported3;
-                                                    vh6 vh6Var32 = vh6Var6;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder5, null);
-                                            break;
-                                    }
-                                }
-                            }, true);
-                        } else {
-                            String M07 = k96.M0(2131751750, null);
-                            final char c5 = c3 == true ? 1 : 0;
-                            G.b(R.drawable.msg_copy, M07, new Runnable() { // from class: sh6
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    final byte b3 = 1;
-                                    switch (c5) {
-                                        case 0:
-                                            final vh6 vh6Var2 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = vh6Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(vh6Var2.L.getParentActivity());
-                                            alertDialog$Builder4.a.S = k96.M0(2131751522, null);
-                                            alertDialog$Builder4.a.U = k96.M0(2131751521, null);
-                                            alertDialog$Builder4.j(k96.M0(2131751586, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b3;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported;
-                                                    vh6 vh6Var32 = vh6Var2;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder4, null);
-                                            break;
-                                        case 1:
-                                            vh6 vh6Var3 = vh6Var;
-                                            try {
-                                                if (vh6Var3.n.link != null) {
-                                                    ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vh6Var3.n.link));
-                                                    u21.j(vh6Var3.L).j();
-                                                    break;
-                                                }
-                                            } catch (Exception e) {
-                                                fa4.g(e, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 2:
-                                            vh6 vh6Var4 = vh6Var;
-                                            yh6 yh6Var2 = vh6Var4.L;
-                                            try {
-                                                if (vh6Var4.n.link != null) {
-                                                    Context context2 = vh6Var4.getContext();
-                                                    String str3 = vh6Var4.n.link;
-                                                    yh6Var2.showDialog(new uh6(vh6Var4, context2, str3, str3, yh6Var2.getResourceProvider()));
-                                                    break;
-                                                }
-                                            } catch (Exception e2) {
-                                                fa4.g(e2, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 3:
-                                            vh6 vh6Var5 = vh6Var;
-                                            yh6 yh6Var3 = vh6Var5.L;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = vh6Var5.n;
-                                            s36 s36Var2 = new s36(1, yh6Var3.n);
-                                            s36Var2.T = yh6Var3.t0;
-                                            s36Var2.c0(tL_chatInviteExported2);
-                                            yh6Var3.presentFragment(s36Var2);
-                                            break;
-                                        default:
-                                            final vh6 vh6Var6 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = vh6Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(vh6Var6.L.getParentActivity());
-                                            alertDialog$Builder5.a.U = k96.M0(2131745833, null);
-                                            alertDialog$Builder5.a.S = k96.M0(2131745830, null);
-                                            final byte b4 = 0;
-                                            alertDialog$Builder5.j(k96.M0(2131745831, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b4;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported3;
-                                                    vh6 vh6Var32 = vh6Var6;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder5, null);
-                                            break;
-                                    }
-                                }
-                            }, false);
-                            G.b(R.drawable.msg_share, k96.M0(2131745266, null), new Runnable() { // from class: sh6
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    final byte b3 = 1;
-                                    switch (b2) {
-                                        case 0:
-                                            final vh6 vh6Var2 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = vh6Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(vh6Var2.L.getParentActivity());
-                                            alertDialog$Builder4.a.S = k96.M0(2131751522, null);
-                                            alertDialog$Builder4.a.U = k96.M0(2131751521, null);
-                                            alertDialog$Builder4.j(k96.M0(2131751586, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b3;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported;
-                                                    vh6 vh6Var32 = vh6Var2;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder4, null);
-                                            break;
-                                        case 1:
-                                            vh6 vh6Var3 = vh6Var;
-                                            try {
-                                                if (vh6Var3.n.link != null) {
-                                                    ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vh6Var3.n.link));
-                                                    u21.j(vh6Var3.L).j();
-                                                    break;
-                                                }
-                                            } catch (Exception e) {
-                                                fa4.g(e, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 2:
-                                            vh6 vh6Var4 = vh6Var;
-                                            yh6 yh6Var2 = vh6Var4.L;
-                                            try {
-                                                if (vh6Var4.n.link != null) {
-                                                    Context context2 = vh6Var4.getContext();
-                                                    String str3 = vh6Var4.n.link;
-                                                    yh6Var2.showDialog(new uh6(vh6Var4, context2, str3, str3, yh6Var2.getResourceProvider()));
-                                                    break;
-                                                }
-                                            } catch (Exception e2) {
-                                                fa4.g(e2, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 3:
-                                            vh6 vh6Var5 = vh6Var;
-                                            yh6 yh6Var3 = vh6Var5.L;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = vh6Var5.n;
-                                            s36 s36Var2 = new s36(1, yh6Var3.n);
-                                            s36Var2.T = yh6Var3.t0;
-                                            s36Var2.c0(tL_chatInviteExported2);
-                                            yh6Var3.presentFragment(s36Var2);
-                                            break;
-                                        default:
-                                            final vh6 vh6Var6 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = vh6Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(vh6Var6.L.getParentActivity());
-                                            alertDialog$Builder5.a.U = k96.M0(2131745833, null);
-                                            alertDialog$Builder5.a.S = k96.M0(2131745830, null);
-                                            final byte b4 = 0;
-                                            alertDialog$Builder5.j(k96.M0(2131745831, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b4;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported3;
-                                                    vh6 vh6Var32 = vh6Var6;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder5, null);
-                                            break;
-                                    }
-                                }
-                            }, false);
-                            final byte b3 = 3;
-                            G.k(R.drawable.msg_edit, k96.M0(2131751265, null), new Runnable() { // from class: sh6
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    final byte b32 = 1;
-                                    switch (b3) {
-                                        case 0:
-                                            final vh6 vh6Var2 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = vh6Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(vh6Var2.L.getParentActivity());
-                                            alertDialog$Builder4.a.S = k96.M0(2131751522, null);
-                                            alertDialog$Builder4.a.U = k96.M0(2131751521, null);
-                                            alertDialog$Builder4.j(k96.M0(2131751586, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b32;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported;
-                                                    vh6 vh6Var32 = vh6Var2;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder4, null);
-                                            break;
-                                        case 1:
-                                            vh6 vh6Var3 = vh6Var;
-                                            try {
-                                                if (vh6Var3.n.link != null) {
-                                                    ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vh6Var3.n.link));
-                                                    u21.j(vh6Var3.L).j();
-                                                    break;
-                                                }
-                                            } catch (Exception e) {
-                                                fa4.g(e, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 2:
-                                            vh6 vh6Var4 = vh6Var;
-                                            yh6 yh6Var2 = vh6Var4.L;
-                                            try {
-                                                if (vh6Var4.n.link != null) {
-                                                    Context context2 = vh6Var4.getContext();
-                                                    String str3 = vh6Var4.n.link;
-                                                    yh6Var2.showDialog(new uh6(vh6Var4, context2, str3, str3, yh6Var2.getResourceProvider()));
-                                                    break;
-                                                }
-                                            } catch (Exception e2) {
-                                                fa4.g(e2, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 3:
-                                            vh6 vh6Var5 = vh6Var;
-                                            yh6 yh6Var3 = vh6Var5.L;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = vh6Var5.n;
-                                            s36 s36Var2 = new s36(1, yh6Var3.n);
-                                            s36Var2.T = yh6Var3.t0;
-                                            s36Var2.c0(tL_chatInviteExported2);
-                                            yh6Var3.presentFragment(s36Var2);
-                                            break;
-                                        default:
-                                            final vh6 vh6Var6 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = vh6Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(vh6Var6.L.getParentActivity());
-                                            alertDialog$Builder5.a.U = k96.M0(2131745833, null);
-                                            alertDialog$Builder5.a.S = k96.M0(2131745830, null);
-                                            final byte b4 = 0;
-                                            alertDialog$Builder5.j(k96.M0(2131745831, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b4;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported3;
-                                                    vh6 vh6Var32 = vh6Var6;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder5, null);
-                                            break;
-                                    }
-                                }
-                            }, !vh6Var.n.permanent && yh6Var.q0);
-                            final byte b4 = 4;
-                            G.l(R.drawable.msg_delete, new Runnable() { // from class: sh6
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    final byte b32 = 1;
-                                    switch (b4) {
-                                        case 0:
-                                            final vh6 vh6Var2 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported = vh6Var2.n;
-                                            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(vh6Var2.L.getParentActivity());
-                                            alertDialog$Builder4.a.S = k96.M0(2131751522, null);
-                                            alertDialog$Builder4.a.U = k96.M0(2131751521, null);
-                                            alertDialog$Builder4.j(k96.M0(2131751586, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b42 = b32;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported;
-                                                    vh6 vh6Var32 = vh6Var2;
-                                                    switch (b42) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder4, null);
-                                            break;
-                                        case 1:
-                                            vh6 vh6Var3 = vh6Var;
-                                            try {
-                                                if (vh6Var3.n.link != null) {
-                                                    ((ClipboardManager) a.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vh6Var3.n.link));
-                                                    u21.j(vh6Var3.L).j();
-                                                    break;
-                                                }
-                                            } catch (Exception e) {
-                                                fa4.g(e, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 2:
-                                            vh6 vh6Var4 = vh6Var;
-                                            yh6 yh6Var2 = vh6Var4.L;
-                                            try {
-                                                if (vh6Var4.n.link != null) {
-                                                    Context context2 = vh6Var4.getContext();
-                                                    String str3 = vh6Var4.n.link;
-                                                    yh6Var2.showDialog(new uh6(vh6Var4, context2, str3, str3, yh6Var2.getResourceProvider()));
-                                                    break;
-                                                }
-                                            } catch (Exception e2) {
-                                                fa4.g(e2, true);
-                                                return;
-                                            }
-                                            break;
-                                        case 3:
-                                            vh6 vh6Var5 = vh6Var;
-                                            yh6 yh6Var3 = vh6Var5.L;
-                                            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = vh6Var5.n;
-                                            s36 s36Var2 = new s36(1, yh6Var3.n);
-                                            s36Var2.T = yh6Var3.t0;
-                                            s36Var2.c0(tL_chatInviteExported2);
-                                            yh6Var3.presentFragment(s36Var2);
-                                            break;
-                                        default:
-                                            final vh6 vh6Var6 = vh6Var;
-                                            final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = vh6Var6.n;
-                                            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(vh6Var6.L.getParentActivity());
-                                            alertDialog$Builder5.a.U = k96.M0(2131745833, null);
-                                            alertDialog$Builder5.a.S = k96.M0(2131745830, null);
-                                            final byte b42 = 0;
-                                            alertDialog$Builder5.j(k96.M0(2131745831, null), new ed() { // from class: th6
-                                                @Override // ed
-                                                public final void u(hd hdVar4, int i2) {
-                                                    byte b422 = b42;
-                                                    TLRPC.TL_chatInviteExported tL_chatInviteExported22 = tL_chatInviteExported3;
-                                                    vh6 vh6Var32 = vh6Var6;
-                                                    switch (b422) {
-                                                        case 0:
-                                                            vh6Var32.L.i0(tL_chatInviteExported22);
-                                                            break;
-                                                        default:
-                                                            vh6Var32.L.d0(tL_chatInviteExported22);
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            ug8.y(null, 2131752577, alertDialog$Builder5, null);
-                                            break;
-                                    }
-                                }
-                            }, k96.M0(2131745830, null), yh6Var.q0, true);
-                        }
-                        G.X(yh6Var.b.V0(vh6Var, false));
-                        G.a0();
-                        break;
+                    if (n95Var.getParticipant() != null) {
+                        n95Var.getParticipant().equals(rd2Var);
                     }
+                    n95Var.d = rd2Var;
                 }
-                break;
-            case 25:
-                ((js6) obj).dismiss();
-                break;
-            case 26:
-                n37 n37Var = (n37) obj;
-                n37.b(n37Var.getContext(), n37Var.a, n37Var.n, false, n37Var.y, new vl6(n37Var, (byte) 13), n37Var.c);
-                break;
-            case 27:
-                s47 s47Var = (s47) obj;
-                long j = s47Var.b;
-                if (!s47Var.n.w4()) {
-                    if (s47Var.getParentLayout().getFragmentStack().size() > 1) {
-                        d dVar = (d) s47Var.getParentLayout().getFragmentStack().get(s47Var.getParentLayout().getFragmentStack().size() - 2);
-                        if ((dVar instanceof mu1) && ((mu1) dVar).e.id == j) {
-                            s47Var.finishFragment();
-                            break;
-                        }
+                if (participant == null || participant.equals(rd2Var) || !n95Var.e || n95Var.getRenderer() == null) {
+                    return;
+                }
+                g95Var.E0(n95Var, false);
+                g95Var.E0(n95Var, true);
+                return;
+            }
+            return;
+        }
+        o95 o95Var = (o95) view;
+        int i5 = i - this.f;
+        int i6 = i - this.n;
+        if (i6 < 0 || i6 >= g95Var.T2.m.size()) {
+            int i7 = i - this.s;
+            if (i7 < 0 || i7 >= g95Var.T2.l.size()) {
+                if (g95Var.l2) {
+                    if (i5 >= 0 && i5 < arrayList2.size()) {
+                        l = (Long) arrayList2.get(i5);
+                        z2 = false;
+                        z3 = false;
                     }
-                    Bundle k = ls6.k(j, "chat_id");
-                    k.putInt("message_id", s47Var.c);
-                    k.putBoolean("need_remove_previous_same_chat_activity", false);
-                    s47Var.presentFragment(new mu1(k));
-                    break;
+                } else if (i5 >= 0 && i5 < g95Var.T2.j.size()) {
+                    l = (Long) g95Var.T2.j.get(i5);
+                    pd2 pd2Var = (pd2) g95Var.T2.k.get(l);
+                    z = pd2Var != null && pd2Var.a();
+                    z2 = false;
+                    z3 = false;
                 }
-                break;
-            case 28:
-                ((t47) obj).dismiss();
-                break;
-            default:
-                ((ahb) obj).setChecked(!r12.e.h);
-                break;
+                z2 = false;
+                z3 = false;
+                z = false;
+                l = null;
+            } else {
+                l = (Long) g95Var.T2.l.get(i - this.s);
+                z3 = true;
+                z2 = false;
+                z = false;
+            }
+            if (l == null) {
+                int i8 = g95Var.a;
+                lka lkaVar = o95Var.c;
+                lka lkaVar2 = o95Var.b;
+                bf0 bf0Var = o95Var.a;
+                TLRPC.User W1 = oc7.r1(i8).W1(l);
+                o95Var.f = W1;
+                pc0 pc0Var = o95Var.e;
+                if (W1 == null) {
+                    pc0Var.f(21);
+                } else {
+                    pc0Var.q(W1);
+                }
+                lkaVar2.l(m9c.r(o95Var.f), false);
+                bf0Var.getImageReceiver().d = i8;
+                bf0Var.f(o95Var.f, pc0Var);
+                lkaVar.l(jb6.M0(z3 ? 2131745197 : z2 ? 2131745198 : z ? 2131751761 : 2131748862, null), false);
+                float f3 = 0.5f;
+                bf0Var.setAlpha((z2 || z3) ? 0.5f : 1.0f);
+                lkaVar2.setAlpha((z2 || z3) ? 0.5f : 1.0f);
+                if (!z2 && !z3) {
+                    f3 = 1.0f;
+                }
+                lkaVar.setAlpha(f3);
+                ImageView imageView = o95Var.d;
+                if (!z2 && !z3) {
+                    r9 = 1.0f;
+                }
+                imageView.setAlpha(r9);
+                return;
+            }
+            return;
+        }
+        l = (Long) g95Var.T2.m.get(i - this.n);
+        z2 = true;
+        z3 = false;
+        z = z3;
+        if (l == null) {
+        }
+    }
+
+    @Override // y59
+    public final u69 x(ViewGroup viewGroup, int i) {
+        View view;
+        View view2;
+        LaunchActivity launchActivity = this.c;
+        if (i != 0) {
+            if (i == 1) {
+                view2 = new y85(this, launchActivity);
+            } else if (i == 2) {
+                z85 z85Var = new z85(launchActivity);
+                z85Var.n = cmb.hh;
+                Paint paint = new Paint();
+                z85Var.h = paint;
+                paint.setColor(cmb.w0(null, cmb.Wg, false));
+                z85Var.e = new pc0((ylb) null);
+                bf0 bf0Var = new bf0(launchActivity);
+                z85Var.a = bf0Var;
+                bf0Var.setRoundRadius(gm.L(24.0f));
+                boolean z = jb6.a0;
+                z85Var.addView(bf0Var, qoe.d(46, 46.0f, (z ? 5 : 3) | 48, z ? 0.0f : 11.0f, 6.0f, z ? 11.0f : 0.0f, 0.0f));
+                lka lkaVar = new lka(launchActivity);
+                z85Var.b = lkaVar;
+                anb.W(lkaVar, cmb.dh, null);
+                lkaVar.setTypeface(gm.o());
+                lkaVar.setTextSize(16);
+                lkaVar.setGravity((jb6.a0 ? 5 : 3) | 48);
+                boolean z2 = jb6.a0;
+                z85Var.addView(lkaVar, qoe.d(-1, 20.0f, (z2 ? 5 : 3) | 48, z2 ? 54.0f : 67.0f, 10.0f, z2 ? 67.0f : 54.0f, 0.0f));
+                lka lkaVar2 = new lka(launchActivity);
+                z85Var.c = lkaVar2;
+                lkaVar2.setTextSize(15);
+                lkaVar2.setGravity((jb6.a0 ? 5 : 3) | 48);
+                lkaVar2.setTextColor(cmb.w0(null, z85Var.n, false));
+                lkaVar2.l(jb6.M0(2131748862, null), false);
+                boolean z3 = jb6.a0;
+                z85Var.addView(lkaVar2, qoe.d(-1, 20.0f, (z3 ? 5 : 3) | 48, z3 ? 54.0f : 67.0f, 32.0f, z3 ? 67.0f : 54.0f, 0.0f));
+                ImageView imageView = new ImageView(launchActivity);
+                z85Var.d = imageView;
+                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                imageView.setImageResource(R.drawable.msg_invited);
+                imageView.setImportantForAccessibility(2);
+                imageView.setPadding(0, 0, gm.L(4.0f), 0);
+                imageView.setColorFilter(new PorterDuffColorFilter(cmb.w0(null, z85Var.n, false), PorterDuff.Mode.MULTIPLY));
+                z85Var.addView(imageView, qoe.d(48, -1.0f, (jb6.a0 ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
+                z85Var.setWillNotDraw(false);
+                z85Var.setFocusable(true);
+                view = z85Var;
+            } else if (i == 4) {
+                view2 = new a95(this, launchActivity);
+            } else if (i != 5) {
+                g95 g95Var = this.N;
+                if (i == 6) {
+                    TextView textView = new TextView(launchActivity);
+                    textView.setTextColor(-8682615);
+                    textView.setTextSize(1, 13.0f);
+                    textView.setGravity(1);
+                    textView.setPadding(0, 0, 0, gm.L(10.0f));
+                    boolean W = sd2.W(g95Var.S2);
+                    j5 j5Var = g95Var.n1;
+                    if (W) {
+                        textView.setText(jb6.a0(null, null, 2131743133, jb6.G(oc7.r1(j5Var.a).l4.M0.f(), "Participants", new Object[0])));
+                        view2 = textView;
+                    } else {
+                        textView.setText(jb6.a0(null, null, 2131742909, jb6.G(oc7.r1(j5Var.a).l4.M0.f(), "Members", new Object[0])));
+                        view2 = textView;
+                    }
+                } else if (i != 7) {
+                    view = new View(launchActivity);
+                } else {
+                    if (g95Var.i2 == null) {
+                        g95Var.i2 = new pd();
+                    }
+                    view2 = new sb(launchActivity, g95Var.i2);
+                }
+            } else {
+                view = new o72(launchActivity, (byte) 9);
+            }
+            view = view2;
+        } else {
+            x85 x85Var = new x85(launchActivity);
+            x85Var.h = 67;
+            x85Var.n = (byte) 18;
+            Paint paint2 = new Paint();
+            x85Var.r = paint2;
+            paint2.setColor(cmb.w0(null, cmb.Wg, false));
+            x85Var.e = (byte) 23;
+            lka lkaVar3 = new lka(launchActivity);
+            x85Var.a = lkaVar3;
+            anb.W(lkaVar3, cmb.F6, null);
+            lkaVar3.setTextSize(16);
+            lkaVar3.setGravity(jb6.a0 ? 5 : 3);
+            lkaVar3.setImportantForAccessibility(2);
+            x85Var.addView(lkaVar3);
+            lka lkaVar4 = new lka(launchActivity);
+            x85Var.b = lkaVar4;
+            anb.W(lkaVar4, cmb.H6, null);
+            lkaVar4.setTextSize(16);
+            lkaVar4.setGravity(jb6.a0 ? 3 : 5);
+            lkaVar4.setImportantForAccessibility(2);
+            x85Var.addView(lkaVar4);
+            ImageView imageView2 = new ImageView(launchActivity);
+            x85Var.c = imageView2;
+            ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+            imageView2.setScaleType(scaleType);
+            anb.s(imageView2, cmb.l6, null, PorterDuff.Mode.MULTIPLY);
+            x85Var.addView(imageView2);
+            ImageView imageView3 = new ImageView(launchActivity);
+            x85Var.d = imageView3;
+            imageView3.setScaleType(scaleType);
+            x85Var.addView(imageView3);
+            x85Var.setFocusable(true);
+            view = x85Var;
+        }
+        return kt6.h(view, view, -1, -2);
+    }
+
+    @Override // y59
+    public final void y(u69 u69Var) {
+        a85 a85Var = this.N.H1;
+        int i = u69Var.f;
+        View view = u69Var.a;
+        if (i == 1) {
+            wb5 wb5Var = (wb5) view;
+            int i2 = a85Var.getTag() != null ? cmb.hh : cmb.ch;
+            wb5Var.f(i2, cmb.w0(null, i2, false));
+            wb5Var.setDrawDivider(u69Var.b() != this.G - 2);
+            return;
+        }
+        if (i == 2) {
+            o95 o95Var = (o95) view;
+            int i3 = a85Var.getTag() != null ? cmb.hh : cmb.ch;
+            o95Var.a(i3, cmb.w0(null, i3, false));
+            o95Var.setDrawDivider(u69Var.b() != this.G - 2);
         }
     }
 }

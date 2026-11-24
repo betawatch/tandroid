@@ -1,19 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class fi8 {
-    public final byte a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public int e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public enum fi8 extends ji8 {
+    public fi8() {
+        super("ALWAYS_TRUE", 0);
+    }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public fi8(int i, int i2, String str, String str2) {
-        this.a = i;
-        this.b = i2;
-        this.c = str;
-        this.d = str2;
+    @Override // di8
+    public final boolean apply(Object obj) {
+        return true;
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
+        return "Predicates.alwaysTrue()";
     }
 }

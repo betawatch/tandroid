@@ -10,7 +10,7 @@ import java.io.ObjectOutput;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes4.dex */
 public final class a implements Externalizable {
     private static final long serialVersionUID = -8885321777449118786L;
@@ -36,13 +36,13 @@ public final class a implements Externalizable {
 
     public static void c(long j, DataOutput dataOutput) {
         if (j < -4575744000L || j >= 10413792000L || j % 900 != 0) {
-            dataOutput.writeByte(kk7.d4);
+            dataOutput.writeByte(nm7.d4);
             dataOutput.writeLong(j);
         } else {
             int i = (int) ((j + 4575744000L) / 900);
-            dataOutput.writeByte((i >>> 16) & kk7.d4);
-            dataOutput.writeByte((i >>> 8) & kk7.d4);
-            dataOutput.writeByte(i & kk7.d4);
+            dataOutput.writeByte((i >>> 16) & nm7.d4);
+            dataOutput.writeByte((i >>> 8) & nm7.d4);
+            dataOutput.writeByte(i & nm7.d4);
         }
     }
 

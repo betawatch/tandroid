@@ -1,25 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum vge implements x7d {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    b(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3);
+public final class vge extends the {
+    public final long a;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    vge(int i) {
-        this.a = i;
+    public vge(long j) {
+        this.a = j;
     }
 
-    @Override // x7d
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
+        the theVar = (the) obj;
+        if (zza() != theVar.zza()) {
+            return zza() - theVar.zza();
+        }
+        long abs = Math.abs(this.a);
+        long abs2 = Math.abs(((vge) theVar).a);
+        if (abs < abs2) {
+            return -1;
+        }
+        return abs > abs2 ? 1 : 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return obj != null && vge.class == obj.getClass() && this.a == ((vge) obj).a;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(zza()), Long.valueOf(this.a)});
+    }
+
+    public final String toString() {
+        return Long.toString(this.a);
+    }
+
+    @Override // the
     public final int zza() {
-        return this.a;
+        return the.c(this.a >= 0 ? (byte) 0 : (byte) 32);
     }
 }

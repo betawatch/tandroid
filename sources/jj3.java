@@ -1,103 +1,156 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import android.view.View;
-import android.widget.TextView;
+import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class jj3 extends lk3 {
-    public final /* synthetic */ oj3 f;
+public final class jj3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ nk3 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jj3(oj3 oj3Var, Context context) {
-        super(context);
-        this.f = oj3Var;
-        this.a = y6c.t0;
-        final byte b = 1;
-        setOrientation(1);
-        zkb.h(bkb.Z6, null, this);
-        f7 f7Var = new f7(context, (byte) 2);
-        f7Var.b = new Path();
-        Paint paint = new Paint(1);
-        f7Var.c = paint;
-        final byte b2 = 0;
-        paint.setColor(bkb.w0(null, bkb.c6, false));
-        paint.setShadowLayer(gl.L(1.33f), 0.0f, gl.L(0.33f), 503316480);
-        f7Var.setWillNotDraw(false);
-        f7Var.setOrientation(1);
-        f7Var.setPadding(gl.L(32.0f), gl.L(16.0f), gl.L(32.0f), gl.L(32.0f));
-        be0 be0Var = new be0(context);
-        this.b = be0Var;
-        be0Var.setOnClickListener(new View.OnClickListener(this) { // from class: kk3
-            public final /* synthetic */ jj3 b;
+    public /* synthetic */ jj3(nk3 nk3Var, boolean z, byte b) {
+        this.a = b;
+        this.c = nk3Var;
+        this.b = z;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b3 = b2;
-                jj3 jj3Var = this.b;
-                switch (b3) {
-                    case 0:
-                        jj3Var.b.getImageReceiver().w0(false);
-                        break;
-                    default:
-                        jj3Var.f.L();
-                        break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                nk3 nk3Var = this.c;
+                nk3Var.r3.e();
+                if (nk3Var.y1 == animator) {
+                    mk3[] mk3VarArr = nk3Var.f0;
+                    if (this.b) {
+                        mk3VarArr[0].a.d1();
+                    } else {
+                        jk3 jk3Var = mk3VarArr[0].a;
+                        if (jk3Var.h1) {
+                            jk3Var.h1 = false;
+                            jk3Var.L0(false);
+                        }
+                    }
+                    nk3Var.y1 = null;
+                    break;
                 }
-            }
-        });
-        a();
-        f7Var.addView(be0Var, nme.r(kk7.N1, kk7.N1, 49));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setGravity(17);
-        textView.setTextSize(1, 18.0f);
-        zkb.X(textView, bkb.F6, null);
-        textView.setTypeface(gl.o());
-        f7Var.addView(textView, nme.t(-1, -2, 49, 0, 6, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setGravity(17);
-        textView2.setTextSize(1, 14.0f);
-        zkb.X(textView2, bkb.x6, null);
-        f7Var.addView(textView2, nme.t(-1, -2, 49, 0, 7, 0, 0));
-        TextView textView3 = new TextView(context);
-        this.e = textView3;
-        textView3.setGravity(17);
-        textView3.setBackground(sjb.f(bkb.Ei, 8.0f));
-        textView3.setTextSize(1, 14.0f);
-        zkb.X(textView3, bkb.Ii, null);
-        textView3.setTypeface(gl.o());
-        textView3.setPadding(gl.L(14.0f), gl.L(14.0f), gl.L(14.0f), gl.L(14.0f));
-        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: kk3
-            public final /* synthetic */ jj3 b;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b3 = b;
-                jj3 jj3Var = this.b;
-                switch (b3) {
-                    case 0:
-                        jj3Var.b.getImageReceiver().w0(false);
-                        break;
-                    default:
-                        jj3Var.f.L();
-                        break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i;
+        r7 r7Var;
+        byte b = this.a;
+        int i2 = 0;
+        boolean z = this.b;
+        nk3 nk3Var = this.c;
+        switch (b) {
+            case 0:
+                nk3Var.r3.e();
+                if (nk3Var.y1 == animator) {
+                    nk3Var.U4(false, true);
+                    if (z) {
+                        nk3Var.f0[0].a.d1();
+                        aj3 aj3Var = nk3Var.F0;
+                        if (aj3Var != null) {
+                            aj3Var.setVisibility(8);
+                        }
+                        nk3Var.t3 = true;
+                        Activity parentActivity = nk3Var.getParentActivity();
+                        i = ((d) nk3Var).classGuid;
+                        gm.V2(parentActivity, i);
+                        nk3Var.k0.setVisibility(8);
+                        dj3 dj3Var = nk3Var.H3;
+                        if (dj3Var != null) {
+                            dj3Var.setVisibility(8);
+                        }
+                    } else {
+                        nk3Var.u3 = false;
+                        sj3 sj3Var = nk3Var.D0;
+                        if (sj3Var != null) {
+                            sj3Var.setVisibility(8);
+                        }
+                        zj3 zj3Var = nk3Var.Y;
+                        if (zj3Var != null) {
+                            zj3Var.c();
+                        }
+                        sj3 sj3Var2 = nk3Var.D0;
+                        if (sj3Var2 != null) {
+                            sj3Var2.D0.clear();
+                            sj3Var2.L();
+                        }
+                        jk3 jk3Var = nk3Var.f0[0].a;
+                        if (jk3Var.h1) {
+                            jk3Var.h1 = false;
+                            jk3Var.L0(false);
+                        }
+                        nk3Var.t3 = false;
+                        dj3 dj3Var2 = nk3Var.H3;
+                        if (dj3Var2 != null) {
+                            dj3Var2.setVisibility(0);
+                        }
+                    }
+                    View view = nk3Var.fragmentView;
+                    if (view != null) {
+                        view.requestLayout();
+                    }
+                    nk3Var.X4(z ? 1.0f : 0.0f);
+                    nk3Var.f0[0].a.setVerticalScrollBarEnabled(true);
+                    sj3 sj3Var3 = nk3Var.D0;
+                    if (sj3Var3 != null) {
+                        sj3Var3.setBackground(null);
+                    }
+                    nk3Var.y1 = null;
+                    break;
                 }
-            }
-        });
-        f7Var.addView(textView3, nme.t(-1, -2, 49, 0, 18, 0, 0));
-        addView(f7Var, nme.o(-1, -2));
-        set(null);
+                break;
+            case 1:
+                nk3Var.V3 = null;
+                if (!z && (r7Var = nk3Var.n0) != null) {
+                    r7Var.setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                nk3Var.J = null;
+                nk3Var.L = z;
+                if (!z && !nk3Var.M) {
+                    nk3Var.F0.setVisibility(8);
+                }
+                if (z) {
+                    nk3Var.A3 = -gm.L(81.0f);
+                    nk3Var.W4(-nk3Var.r3());
+                } else {
+                    nk3Var.W4(0.0f);
+                    nk3Var.A3 = gm.L(81.0f);
+                }
+                while (true) {
+                    mk3[] mk3VarArr = nk3Var.f0;
+                    if (i2 >= mk3VarArr.length) {
+                        View view2 = nk3Var.fragmentView;
+                        if (view2 != null) {
+                            view2.requestLayout();
+                            break;
+                        }
+                    } else {
+                        mk3 mk3Var = mk3VarArr[i2];
+                        if (mk3Var != null) {
+                            mk3Var.a.requestLayout();
+                        }
+                        i2++;
+                    }
+                }
+                break;
+        }
     }
 }

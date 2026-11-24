@@ -1,24 +1,22 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class i90 extends cz2 {
-    public final List a;
+public final class i90 extends xz2 {
+    public final j90 a;
 
-    public i90(List list) {
-        this.a = list;
+    public i90(j90 j90Var) {
+        this.a = j90Var;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof cz2)) {
+        if (!(obj instanceof xz2)) {
             return false;
         }
-        return this.a.equals(((i90) ((cz2) obj)).a);
+        return this.a.equals(((i90) ((xz2) obj)).a);
     }
 
     public final int hashCode() {
@@ -26,6 +24,6 @@ public final class i90 extends cz2 {
     }
 
     public final String toString() {
-        return "RolloutsState{rolloutAssignments=" + this.a + "}";
+        return "ProfilingManagerInfo{profilingTrigger=" + this.a + "}";
     }
 }

@@ -4,9 +4,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class GridTemplate implements ogb {
+public final class GridTemplate implements pib {
     public static final int ITEM_IMAGE_SHAPE_CIRCLE = 2;
     public static final int ITEM_IMAGE_SHAPE_UNSET = 1;
     public static final int ITEM_SIZE_LARGE = 4;
@@ -83,7 +83,7 @@ public final class GridTemplate implements ogb {
         return "GridTemplate";
     }
 
-    public GridTemplate(t35 t35Var) {
+    public GridTemplate(s55 s55Var) {
         throw null;
     }
 }

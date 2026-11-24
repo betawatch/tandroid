@@ -1,61 +1,85 @@
 // default package
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class vba implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ nfa b;
-    public final /* synthetic */ wjb c;
-    public final /* synthetic */ k27 d;
-    public final /* synthetic */ int e;
+public final class vba extends r59 {
+    public final /* synthetic */ byte f3;
+    public final /* synthetic */ tca g3;
 
-    public /* synthetic */ vba(nfa nfaVar, wjb wjbVar, int i, k27 k27Var) {
-        this.b = nfaVar;
-        this.c = wjbVar;
-        this.e = i;
-        this.d = k27Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vba(tca tcaVar, Context context, ylb ylbVar, byte b) {
+        super(context, ylbVar);
+        this.f3 = b;
+        this.g3 = tcaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // r59
+    public final boolean F0(float f) {
+        byte b = this.f3;
+        float f2 = 58.0f;
+        tca tcaVar = this.g3;
+        switch (b) {
             case 0:
-                hd[] hdVarArr = {new hd(3, this.c, this.b.getContext())};
-                int i = this.e;
-                int v0 = z3a.B(i).v0(this.d, null, new wh0(hdVarArr, (byte) 9));
-                if (v0 != 0) {
-                    gl.e3(new fca(hdVarArr, i, v0, (byte) 0), 500L);
+                if (tcaVar.c2 && tcaVar.j2[1] != null) {
+                    f2 = 111.0f;
+                }
+                if (f >= gm.L(f2) + tcaVar.B2.b) {
                     break;
                 }
                 break;
             default:
-                nfa nfaVar = this.b;
-                Context context = nfaVar.getContext();
-                wjb wjbVar = this.c;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wjbVar, context);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.Q0 = false;
-                k27 k27Var = this.d;
-                if (k27Var.b4()) {
-                    hdVar.S = k96.M0(2131744587, null);
-                    hdVar.U = k96.M0(2131744588, null);
-                } else {
-                    hdVar.S = k96.M0(2131744592, null);
-                    hdVar.U = k96.M0(2131744593, null);
+                if (tcaVar.c2 && tcaVar.j2[1] != null) {
+                    f2 = 111.0f;
                 }
-                alertDialog$Builder.j(k96.M0(2131744604, null), new zm(nfaVar, wjbVar, k27Var, this.e, (byte) 10));
-                ug8.y(null, 2131752577, alertDialog$Builder, null);
+                if (f >= gm.L(f2) + tcaVar.B2.b) {
+                    break;
+                }
                 break;
         }
+        return true;
     }
 
-    public /* synthetic */ vba(nfa nfaVar, wjb wjbVar, k27 k27Var, int i) {
-        this.b = nfaVar;
-        this.c = wjbVar;
-        this.d = k27Var;
-        this.e = i;
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        byte b = this.f3;
+        float f = 58.0f;
+        tca tcaVar = this.g3;
+        switch (b) {
+            case 0:
+                r59 r59Var = tcaVar.z1;
+                if (r59Var.getVisibility() != 8) {
+                    canvas.save();
+                    int i = tcaVar.k2;
+                    if (tcaVar.c2 && tcaVar.j2[1] != null) {
+                        f = 111.0f;
+                    }
+                    canvas.clipRect(0, gm.L(f) + i, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (r59Var.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                r59 r59Var2 = tcaVar.z1;
+                if (r59Var2.getVisibility() != 8) {
+                    canvas.save();
+                    int i2 = tcaVar.k2;
+                    if (tcaVar.c2 && tcaVar.j2[1] != null) {
+                        f = 111.0f;
+                    }
+                    canvas.clipRect(0, gm.L(f) + i2, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (r59Var2.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
+        }
     }
 }

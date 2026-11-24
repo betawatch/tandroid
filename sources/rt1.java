@@ -1,27 +1,60 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextPaint;
+import android.view.animation.OvershootInterpolator;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class rt1 implements ca7 {
-    public final /* synthetic */ pp1 a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ wt1 c;
+public final class rt1 extends ukb {
+    public final /* synthetic */ yv1 L;
 
-    public rt1(wt1 wt1Var, pp1 pp1Var, mu1 mu1Var) {
-        this.c = wt1Var;
-        this.a = pp1Var;
-        this.b = mu1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rt1(yv1 yv1Var, ylb ylbVar, Activity activity) {
+        super(activity);
+        this.L = yv1Var;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = gm.L(24.0f);
+        this.e = new OvershootInterpolator();
+        this.I = new zcb(this, (byte) 9);
+        this.K = new Path();
+        int v0 = cmb.v0(cmb.xj, ylbVar);
+        int alpha = Color.alpha(v0);
+        textPaint.setTextSize(gm.L(15.0f));
+        textPaint.setColor(v0);
+        paint.setColor(v0);
+        paint.setAlpha((int) (alpha * 0.14d));
+        int L = gm.L(6.0f);
+        int i = cmb.vj;
+        ShapeDrawable b0 = cmb.b0(L, cmb.v0(i, ylbVar));
+        wmb M = anb.M(i);
+        setBackground(b0);
+        anb.j(this, b0, M, null, ylbVar);
     }
 
-    @Override // ca7
-    public final void a() {
-        this.a.c(false);
-        this.c.a.presentFragment(this.b);
+    public final void d() {
+        int i = -(gm.L(16.0f) + getMeasuredHeight());
+        yv1 yv1Var = this.L;
+        setTranslationY((yv1Var.a0.getTop() - yv1Var.m1.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i)));
     }
 
-    @Override // ca7
-    public final void m(boolean z) {
-        this.a.c(false);
-        this.c.a.presentFragment(this.b);
+    @Override // ukb, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        d();
+    }
+
+    @Override // ukb, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        d();
     }
 }

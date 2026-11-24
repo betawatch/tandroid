@@ -1,77 +1,79 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class xk2 extends pi4 {
-    public static int W;
-    public final /* synthetic */ byte V;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class xk2 extends CharacterStyle {
+    public final int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xk2(Context context, wjb wjbVar, byte b) {
-        super(context, wjbVar);
-        this.V = b;
+    public xk2(int i) {
+        this.a = i;
     }
 
-    @Override // pi4
-    public final int getColumnsCount() {
-        switch (this.V) {
-            case 1:
-            case 3:
-                return 3;
-            case 2:
-            default:
-                return super.getColumnsCount();
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i;
+        HashMap hashMap = nl8.b;
+        int i2 = this.a & nm7.d4;
+        switch (i2) {
+            case 8:
+            case 18:
+                i2 = 1;
+                break;
+            case 9:
+            case 10:
+            case 14:
+            case 15:
+                i2 = 3;
+                break;
+            case 11:
+            case 13:
+                i2 = 7;
+                break;
+            case 12:
+            case 16:
+            case 17:
+            case 19:
+                i2 = 4;
+                break;
+            case 20:
+                i2 = 6;
+                break;
+            case 21:
+                i2 = 2;
+                break;
         }
-    }
-
-    @Override // pi4
-    public final int getViewType() {
-        switch (this.V) {
-            case 3:
-                return 2;
-            default:
-                return super.getViewType();
-        }
-    }
-
-    @Override // pi4, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.V) {
-            case 0:
-                int i3 = 0;
-                if (getParent() instanceof ViewGroup) {
-                    ViewGroup viewGroup = (ViewGroup) getParent();
-                    int i4 = 0;
-                    while (i3 < viewGroup.getChildCount()) {
-                        View childAt = viewGroup.getChildAt(i3);
-                        if ((childAt instanceof ync) && childAt.getMeasuredHeight() > 0) {
-                            i4 = Math.max(i4, childAt.getMeasuredHeight());
-                        }
-                        i3++;
-                    }
-                    i3 = i4;
-                }
-                if (i3 <= 0) {
-                    i3 = W;
-                }
-                if (i3 > 0) {
-                    setMeasuredDimension(View.MeasureSpec.getSize(i), i3);
-                    break;
-                } else {
-                    super.onMeasure(i, i2);
-                    break;
-                }
+        switch (i2) {
             case 1:
-            default:
-                super.onMeasure(i, i2);
+                i = cmb.yl;
                 break;
             case 2:
-                setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(104.0f));
+                i = cmb.zl;
                 break;
+            case 3:
+                i = cmb.Al;
+                break;
+            case 4:
+                i = cmb.Bl;
+                break;
+            case 5:
+                i = cmb.Cl;
+                break;
+            case 6:
+                i = cmb.Dl;
+                break;
+            case 7:
+                i = cmb.El;
+                break;
+            default:
+                i = -1;
+                break;
+        }
+        if (i >= 0) {
+            textPaint.setColor(cmb.w0(null, i, false));
         }
     }
 }

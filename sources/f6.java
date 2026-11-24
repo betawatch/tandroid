@@ -12,7 +12,7 @@ import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class f6 extends Drawable {
     public final /* synthetic */ byte a;
@@ -21,7 +21,7 @@ public final class f6 extends Drawable {
     public f6(Context context) {
         this.a = (byte) 2;
         this.b = new Drawable[]{r4, context.getResources().getDrawable(R.drawable.verified_check).mutate()};
-        Drawable d = b00.d(context, R.drawable.verified_area);
+        Drawable d = b10.d(context, R.drawable.verified_area);
         d.setColorFilter(new PorterDuffColorFilter(-9063442, PorterDuff.Mode.MULTIPLY));
     }
 
@@ -52,10 +52,10 @@ public final class f6 extends Drawable {
                 break;
             case 1:
                 canvas.save();
-                canvas.translate(0.0f, gl.L(1.0f));
-                ow0 ow0Var = (ow0) obj;
-                ow0Var.N0.setBounds(getBounds());
-                ow0Var.N0.draw(canvas);
+                canvas.translate(0.0f, gm.L(1.0f));
+                wx0 wx0Var = (wx0) obj;
+                wx0Var.N0.setBounds(getBounds());
+                wx0Var.N0.draw(canvas);
                 canvas.restore();
                 break;
             case 2:
@@ -66,30 +66,30 @@ public final class f6 extends Drawable {
                 }
                 break;
             case 3:
-                mh8 mh8Var = (mh8) obj;
+                nj8 nj8Var = (nj8) obj;
                 Rect bounds = getBounds();
-                mh8Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
-                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, mh8Var.f);
+                nj8Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, nj8Var.f);
                 break;
             case 4:
                 canvas.save();
-                je5 je5Var = (je5) obj;
-                canvas.drawPath(je5Var.F0, je5Var.c0);
+                hg5 hg5Var = (hg5) obj;
+                canvas.drawPath(hg5Var.F0, hg5Var.c0);
                 canvas.restore();
                 break;
             case 5:
                 canvas.save();
-                ru3 ru3Var = (ru3) obj;
-                if (ru3Var.getBounds() != null) {
-                    canvas.scale(0.8333333f, 0.8333333f, ru3Var.getBounds().centerX(), ru3Var.getBounds().centerY());
+                cw3 cw3Var = (cw3) obj;
+                if (cw3Var.getBounds() != null) {
+                    canvas.scale(0.8333333f, 0.8333333f, cw3Var.getBounds().centerX(), cw3Var.getBounds().centerY());
                 }
-                ru3Var.draw(canvas);
+                cw3Var.draw(canvas);
                 canvas.restore();
                 break;
             case 6:
                 canvas.save();
                 canvas.translate(getBounds().left, getBounds().top);
-                ((i7b) obj).draw(canvas);
+                ((k9b) obj).draw(canvas);
                 canvas.restore();
                 break;
             case 7:
@@ -98,7 +98,7 @@ public final class f6 extends Drawable {
                 imageReceiver.h(canvas, null);
                 break;
             default:
-                ((tgb) obj).c(getBounds().centerX() - (((tgb) obj).c / 2.0f), getBounds().centerY(), 1.0f, bkb.w0(null, bkb.F6, false), canvas);
+                ((uib) obj).c(getBounds().centerX() - (((uib) obj).c / 2.0f), getBounds().centerY(), 1.0f, cmb.w0(null, cmb.F6, false), canvas);
                 break;
         }
     }
@@ -107,7 +107,7 @@ public final class f6 extends Drawable {
     public final int getIntrinsicHeight() {
         switch (this.a) {
             case 1:
-                return gl.L(20.0f);
+                return gm.L(20.0f);
             case 2:
                 return ((Drawable[]) this.b)[0].getIntrinsicHeight();
             case 3:
@@ -116,9 +116,9 @@ public final class f6 extends Drawable {
             default:
                 return super.getIntrinsicHeight();
             case 6:
-                return ((i7b) this.b).getHeight();
+                return ((k9b) this.b).getHeight();
             case 7:
-                return gl.L(30.0f);
+                return gm.L(30.0f);
         }
     }
 
@@ -126,7 +126,7 @@ public final class f6 extends Drawable {
     public final int getIntrinsicWidth() {
         switch (this.a) {
             case 1:
-                return gl.L(20.0f);
+                return gm.L(20.0f);
             case 2:
                 return ((Drawable[]) this.b)[0].getIntrinsicWidth();
             case 3:
@@ -135,9 +135,9 @@ public final class f6 extends Drawable {
             default:
                 return super.getIntrinsicWidth();
             case 6:
-                return ((i7b) this.b).getWidth();
+                return ((k9b) this.b).getWidth();
             case 7:
-                return gl.L(30.0f);
+                return gm.L(30.0f);
         }
     }
 
@@ -152,7 +152,7 @@ public final class f6 extends Drawable {
             case 4:
                 return -2;
             case 5:
-                return ((ru3) this.b).getOpacity();
+                return ((cw3) this.b).getOpacity();
             case 6:
             case 7:
             default:
@@ -188,7 +188,7 @@ public final class f6 extends Drawable {
         Object obj = this.b;
         switch (b) {
             case 1:
-                ((ow0) obj).N0.setAlpha(i);
+                ((wx0) obj).N0.setAlpha(i);
                 break;
             case 2:
                 int i2 = 0;
@@ -202,7 +202,7 @@ public final class f6 extends Drawable {
                     }
                 }
             case 5:
-                ((ru3) obj).setAlpha(i);
+                ((cw3) obj).setAlpha(i);
                 break;
             case 7:
                 ((ImageReceiver) obj).setAlpha(i / 255.0f);
@@ -214,7 +214,7 @@ public final class f6 extends Drawable {
     public final void setBounds(Rect rect) {
         switch (this.a) {
             case 5:
-                ((ru3) this.b).setBounds(rect);
+                ((cw3) this.b).setBounds(rect);
                 break;
             default:
                 super.setBounds(rect);
@@ -228,10 +228,10 @@ public final class f6 extends Drawable {
         Object obj = this.b;
         switch (b) {
             case 1:
-                ((ow0) obj).N0.setColorFilter(colorFilter);
+                ((wx0) obj).N0.setColorFilter(colorFilter);
                 break;
             case 5:
-                ((ru3) obj).setColorFilter(colorFilter);
+                ((cw3) obj).setColorFilter(colorFilter);
                 break;
             case 7:
                 ((ImageReceiver) obj).p1 = colorFilter;
@@ -243,7 +243,7 @@ public final class f6 extends Drawable {
     public final void setBounds(int i, int i2, int i3, int i4) {
         switch (this.a) {
             case 5:
-                ((ru3) this.b).setBounds(i, i2, i3, i4);
+                ((cw3) this.b).setBounds(i, i2, i3, i4);
                 break;
             default:
                 super.setBounds(i, i2, i3, i4);
@@ -296,6 +296,6 @@ public final class f6 extends Drawable {
 
     public f6(String str) {
         this.a = (byte) 8;
-        this.b = new tgb(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, gl.o());
+        this.b = new uib(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, gm.o());
     }
 }

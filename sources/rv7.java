@@ -1,186 +1,199 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.Point;
-import android.util.Property;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.DecelerateInterpolator;
 import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class rv7 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ hb5 c;
-    public final /* synthetic */ yv7 d;
+public final class rv7 implements f24 {
+    public final /* synthetic */ xv7 a;
 
-    public rv7(yv7 yv7Var, int i, int i2, hb5 hb5Var) {
-        this.d = yv7Var;
-        this.a = i;
-        this.b = i2;
-        this.c = hb5Var;
+    public rv7(xv7 xv7Var) {
+        this.a = xv7Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        float f;
-        int L;
-        a6 a6Var;
-        int[] iArr;
-        double d;
-        View view;
-        AnimatorSet animatorSet;
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        yv7 yv7Var = this.d;
-        a6 a6Var2 = yv7Var.e;
-        ArrayList arrayList = yv7Var.a0;
-        int[] iArr2 = yv7Var.i0;
-        ry8 ry8Var = yv7Var.N;
-        yv7Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        if (yv7Var.Q || !yv7Var.isAttachedToWindow()) {
+    @Override // f24
+    public final boolean A() {
+        return false;
+    }
+
+    @Override // f24
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // f24
+    public final boolean b() {
+        return false;
+    }
+
+    @Override // f24
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // f24
+    public final int f() {
+        return 0;
+    }
+
+    @Override // f24
+    public final boolean h() {
+        return false;
+    }
+
+    @Override // f24
+    public final boolean k() {
+        return false;
+    }
+
+    @Override // f24
+    public final boolean l() {
+        dv3 editText = ((xjb) this.a.z0).getEditText();
+        if (editText == null || editText.length() == 0) {
+            return false;
+        }
+        editText.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // f24
+    public final void m(String str) {
+        xjb xjbVar;
+        dv3 editText;
+        dw3[] dw3VarArr;
+        w44 w44Var = this.a.z0;
+        if (!(w44Var instanceof xjb) || (editText = (xjbVar = (xjb) w44Var).getEditText()) == null) {
             return;
         }
-        yv7Var.setAlpha(1.0f);
-        byte b = 0;
-        ry8Var.getAnimatedDrawable().I(0, false, false);
-        ry8Var.getAnimatedDrawable().K(37);
-        ry8Var.d();
-        yv7Var.o(true);
-        gl.e3(new oq7(this, (byte) 5), 350L);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        yv7Var.R = animatorSet2;
-        ArrayList arrayList2 = new ArrayList();
-        Point point = gl.q;
-        int i = point.x;
-        int i2 = point.y + gl.m;
-        int i3 = this.a;
-        int i4 = i - i3;
-        int i5 = i4 * i4;
-        int i6 = this.b;
-        int i7 = i2 - i6;
-        int i8 = i7 * i7;
-        int i9 = i3 * i3;
-        int i10 = 1;
-        int i11 = i6 * i6;
-        double max = Math.max(Math.max(Math.max(Math.sqrt(i8 + i5), Math.sqrt(i8 + i9)), Math.sqrt(i9 + i11)), Math.sqrt(i11 + i5));
-        arrayList.clear();
-        int childCount = a6Var2.getChildCount();
-        int i12 = 0;
-        while (i12 < childCount) {
-            View childAt = a6Var2.getChildAt(i12);
-            childAt.setScaleX(0.7f);
-            childAt.setScaleY(0.7f);
-            childAt.setAlpha(0.0f);
-            uv7 uv7Var = new uv7();
-            childAt.getLocationInWindow(iArr2);
-            int measuredWidth = i3 - ((childAt.getMeasuredWidth() / 2) + iArr2[0]);
-            int measuredHeight = i6 - ((childAt.getMeasuredHeight() / 2) + iArr2[i10]);
-            uv7Var.b = ((float) Math.sqrt((measuredHeight * measuredHeight) + (measuredWidth * measuredWidth))) - gl.L(40.0f);
-            if (i12 != -1) {
-                animatorSet = new AnimatorSet();
-                Property property = View.SCALE_X;
-                a6Var = a6Var2;
-                float[] fArr = new float[i10];
-                fArr[0] = 1.0f;
-                view = childAt;
-                iArr = iArr2;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f));
-                d = max;
-                animatorSet.setDuration(140L);
-                animatorSet.setInterpolator(new DecelerateInterpolator());
-            } else {
-                a6Var = a6Var2;
-                iArr = iArr2;
-                d = max;
-                view = childAt;
-                animatorSet = null;
-            }
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            uv7Var.a = animatorSet3;
-            Property property2 = View.SCALE_X;
-            if (i12 == -1) {
-                f2 = 1.0f;
-                f3 = 0.9f;
-            } else {
-                f2 = 1.04f;
-                f3 = 0.6f;
-            }
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, f3, f2);
-            Property property3 = View.SCALE_Y;
-            if (i12 == -1) {
-                f4 = 1.0f;
-                f5 = 0.9f;
-            } else {
-                f4 = 1.04f;
-                f5 = 0.6f;
-            }
-            animatorSet3.playTogether(ofFloat, ObjectAnimator.ofFloat(view, (Property<View, Float>) property3, f5, f4), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f));
-            uv7Var.a.addListener(new v85(animatorSet, (byte) 25));
-            uv7Var.a.setDuration(i12 == -1 ? 232L : 200L);
-            uv7Var.a.setInterpolator(new DecelerateInterpolator());
-            arrayList.add(uv7Var);
-            i12++;
-            a6Var2 = a6Var;
-            iArr2 = iArr;
-            max = d;
-            i10 = 1;
+        int selectionEnd = editText.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
         }
-        final double d2 = max;
-        arrayList2.add(ObjectAnimator.ofFloat(yv7Var.w, (Property<st, Float>) View.ALPHA, 0.0f, 1.0f));
-        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-        arrayList2.add(ofFloat2);
-        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: pv7
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                yv7 yv7Var2 = rv7.this.d;
-                double animatedFraction = d2 * valueAnimator.getAnimatedFraction();
-                int i13 = 0;
-                while (true) {
-                    ArrayList arrayList3 = yv7Var2.a0;
-                    if (i13 >= arrayList3.size()) {
-                        return;
-                    }
-                    uv7 uv7Var2 = (uv7) arrayList3.get(i13);
-                    if (uv7Var2.b <= animatedFraction) {
-                        uv7Var2.a.start();
-                        arrayList3.remove(i13);
-                        i13--;
-                    }
-                    i13++;
+        try {
+            CharSequence m = gw3.m(str, xjbVar.getFontMetricsInt(), false, null, 0);
+            if ((m instanceof Spanned) && (dw3VarArr = (dw3[]) ((Spanned) m).getSpans(0, m.length(), dw3.class)) != null) {
+                for (dw3 dw3Var : dw3VarArr) {
+                    dw3Var.b = 0.85f;
                 }
             }
-        });
-        s33 s33Var = s33.h;
-        animatorSet2.setInterpolator(s33Var);
-        animatorSet2.setDuration(500L);
-        ValueAnimator ofFloat3 = ValueAnimator.ofFloat(yv7Var.b0, 1.0f);
-        ofFloat3.addUpdateListener(new ni4(this, (byte) 29));
-        ofFloat3.addListener(new qv7(this, b));
-        ofFloat3.setDuration(420L);
-        ofFloat3.setInterpolator(s33Var);
-        arrayList2.add(ofFloat3);
-        animatorSet2.playTogether(arrayList2);
-        animatorSet2.addListener(new qv7(this, (byte) 1));
-        animatorSet2.start();
-        AnimatorSet animatorSet4 = new AnimatorSet();
-        yv7Var.S = animatorSet4;
-        animatorSet4.setDuration(332L);
-        if (gl.O1() || yv7Var.getContext().getResources().getConfiguration().orientation != 2) {
-            f = i / 2.0f;
-            L = gl.L(29.0f);
-        } else {
-            f = (gba.q == 0 ? i / 2.0f : i) / 2.0f;
-            L = gl.L(30.0f);
+            editText.setText(editText.getText().insert(selectionEnd, m));
+            int length = selectionEnd + m.length();
+            editText.setSelection(length, length);
+        } catch (Exception e) {
+            fc4.g(e, true);
         }
-        animatorSet4.playTogether(ObjectAnimator.ofFloat(ry8Var, (Property<ry8, Float>) View.TRANSLATION_X, i3 - gl.L(29.0f), f - L), ObjectAnimator.ofFloat(ry8Var, (Property<ry8, Float>) View.TRANSLATION_Y, i6 - gl.L(29.0f), yv7Var.M), ObjectAnimator.ofFloat(ry8Var, (Property<ry8, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(ry8Var, (Property<ry8, Float>) View.SCALE_Y, 0.5f, 1.0f));
-        animatorSet4.setInterpolator(s33.g);
-        animatorSet4.start();
+    }
+
+    @Override // f24
+    public final void n() {
+        xv7 xv7Var = this.a;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, xv7Var.w1, xv7Var.getContext());
+        String M0 = jb6.M0(2131752005, null);
+        he heVar = alertDialog$Builder.a;
+        heVar.S = M0;
+        heVar.U = jb6.M0(2131752006, null);
+        alertDialog$Builder.j(jb6.M0(2131752036, null), new cj6(this, (byte) 25));
+        alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+        alertDialog$Builder.o();
+    }
+
+    @Override // f24
+    public final float o() {
+        return 0.0f;
+    }
+
+    @Override // f24
+    public final void w(long j, TLRPC.Document document, String str, boolean z) {
+        gn gnVar;
+        dv3 editText = ((xjb) this.a.z0).getEditText();
+        if (editText == null) {
+            return;
+        }
+        int selectionEnd = editText.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
+        }
+        try {
+            SpannableString spannableString = new SpannableString(str);
+            if (document != null) {
+                gnVar = new gn(document.id, 1.0f, editText.getPaint().getFontMetricsInt());
+                gnVar.document = document;
+            } else {
+                gnVar = new gn(j, 1.0f, editText.getPaint().getFontMetricsInt());
+            }
+            spannableString.setSpan(gnVar, 0, spannableString.length(), 33);
+            editText.setText(editText.getText().insert(selectionEnd, spannableString));
+            int length = selectionEnd + spannableString.length();
+            editText.setSelection(length, length);
+        } catch (Exception e) {
+            fc4.g(e, true);
+        }
+    }
+
+    @Override // f24
+    public final boolean z() {
+        return false;
+    }
+
+    @Override // f24
+    public final void g(d4c d4cVar) {
+    }
+
+    @Override // f24
+    public final void i(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // f24
+    public final void j(int i) {
+    }
+
+    @Override // f24
+    public final void p() {
+    }
+
+    @Override // f24
+    public final void q(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // f24
+    public final void r(int i) {
+    }
+
+    @Override // f24
+    public final void s(ArrayList arrayList) {
+    }
+
+    @Override // f24
+    public final void t() {
+    }
+
+    @Override // f24
+    public final void v() {
+    }
+
+    @Override // f24
+    public final void y(long j) {
+    }
+
+    @Override // f24
+    public final void e(Object obj, Object obj2) {
+    }
+
+    @Override // f24
+    public final void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z) {
+    }
+
+    @Override // f24
+    public final void u(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+    }
+
+    @Override // f24
+    public final void x(View view, TLRPC.Document document, String str, Object obj, g47 g47Var, boolean z, int i) {
     }
 }

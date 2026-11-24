@@ -1,43 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.os.Bundle;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class e1f {
-    public void a(yze yzeVar, yze yzeVar2) {
-        yzeVar.b = yzeVar2;
-    }
-
-    public void b(yze yzeVar, Thread thread) {
-        yzeVar.a = thread;
-    }
-
-    public boolean c(y4f y4fVar, gce gceVar, gce gceVar2) {
-        synchronized (y4fVar) {
-            if (y4fVar.b != gceVar) {
-                return false;
-            }
-            y4fVar.b = gceVar2;
-            return true;
+    public static Map a(String str, Bundle bundle) {
+        Map map = (Map) bundle.getSerializable(str);
+        if (map == null) {
+            return b9e.n;
         }
-    }
-
-    public boolean d(y4f y4fVar, Object obj, Object obj2) {
-        synchronized (y4fVar) {
-            if (y4fVar.a != obj) {
-                return false;
+        HashMap hashMap = new HashMap();
+        for (Map.Entry entry : map.entrySet()) {
+            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
+                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
             }
-            y4fVar.a = obj2;
-            return true;
         }
-    }
-
-    public boolean e(y4f y4fVar, yze yzeVar, yze yzeVar2) {
-        synchronized (y4fVar) {
-            if (y4fVar.c != yzeVar) {
-                return false;
-            }
-            y4fVar.c = yzeVar2;
-            return true;
-        }
+        return DesugarCollections.unmodifiableMap(hashMap);
     }
 }

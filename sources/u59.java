@@ -1,16 +1,29 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class u59 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public boolean f;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class u59 extends b4 {
-    public static final Parcelable.Creator<u59> CREATOR = new hv6((byte) 16);
+    public final void a(float f, float f2, float f3, float f4) {
+        this.a = f;
+        this.d = f3;
+        this.b = f - Math.max(0.0f, Math.min(f2, Math.max(0.0f, f3 - f4)));
+        this.c = Math.max(f, f3);
+        this.f = this.b <= f4 + 0.5f;
+        this.e = 0.0f;
+    }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        jte.s(parcel, jte.r(parcel, 20293));
+    public final float b() {
+        if (this.f) {
+            return this.c;
+        }
+        float f = this.b;
+        return ((this.c - f) * this.e) + f;
     }
 }

@@ -1,49 +1,38 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.Build;
-import java.lang.ref.WeakReference;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final class bf7 {
-    public final Shader.TileMode a;
-    public final Matrix b = new Matrix();
-    public boolean c;
-    public BitmapShader d;
-    public WeakReference e;
+    public long a;
+    public long b;
 
-    public bf7(Shader.TileMode tileMode) {
-        this.a = tileMode;
+    public static bf7 a(long j, long j2) {
+        bf7 bf7Var = new bf7();
+        bf7Var.a = j;
+        bf7Var.b = j2;
+        return bf7Var;
     }
 
-    public final void a(boolean z) {
-        BitmapShader bitmapShader;
-        if (this.c != z) {
-            this.c = z;
-            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
-                return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && bf7.class == obj.getClass()) {
+            bf7 bf7Var = (bf7) obj;
+            if (this.a == bf7Var.a && this.b == bf7Var.b) {
+                return true;
             }
-            bitmapShader.setFilterMode(z ? 1 : 2);
         }
+        return false;
     }
 
-    public final boolean b(Bitmap bitmap) {
-        WeakReference weakReference = this.e;
-        if (weakReference != null && weakReference.get() == bitmap) {
-            return false;
-        }
-        this.e = new WeakReference(bitmap);
-        Shader.TileMode tileMode = this.a;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.d = bitmapShader;
-        bitmapShader.setLocalMatrix(this.b);
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.d.setFilterMode(this.c ? 1 : 2);
-        }
-        return true;
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b));
+    }
+
+    public final String toString() {
+        return "TopicKey{dialogId=" + this.a + ", topicId=" + this.b + '}';
     }
 }

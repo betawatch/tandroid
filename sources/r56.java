@@ -1,13 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
 public interface r56 {
-    void C(int i, int i2);
+    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    void f2(int i, int i2);
+    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
 
-    void j1(int i, int i2);
-
-    void n0(int i, int i2);
+    void c(TLObject tLObject);
 }

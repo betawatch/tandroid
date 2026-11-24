@@ -1,37 +1,53 @@
 // default package
 
-import android.graphics.Point;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class zlb extends tnd {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gk7 b;
+public final class zlb extends Drawable {
+    public float[] b;
+    public Path a = new Path();
+    public boolean c = true;
 
-    public /* synthetic */ zlb(gk7 gk7Var, byte b) {
-        this.a = b;
-        this.b = gk7Var;
+    public zlb(float f, float f2) {
+        this.b = new float[]{r2, r2, r2, r2, r2, r2, r2, r2};
+        float L = gm.L(f);
+        float L2 = gm.L(f2);
     }
 
-    @Override // tnd
-    public final void a() {
-        switch (this.a) {
-            case 1:
-                ((hgc) this.b).w.invalidate();
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Path path = this.a;
+        if (this.c) {
+            this.c = false;
+            path.reset();
+            RectF rectF = gm.P;
+            rectF.set(getBounds());
+            path.addRoundRect(rectF, this.b, Path.Direction.CW);
         }
+        canvas.drawPath(path, cmb.z);
     }
 
-    @Override // tnd
-    public final void b(int i, int i2) {
-        switch (this.a) {
-            case 0:
-                Point point = gl.q;
-                if ((point.x <= point.y) == (i <= i2)) {
-                    ((qmb) this.b).z0.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.c = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

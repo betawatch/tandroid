@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -30,11 +30,11 @@ public class RadioButton extends View {
 
     public RadioButton(Context context) {
         super(context);
-        this.h = gl.L(16.0f);
+        this.h = gm.L(16.0f);
         if (s == null) {
             Paint paint = new Paint(1);
             s = paint;
-            paint.setStrokeWidth(gl.L(2.0f));
+            paint.setStrokeWidth(gm.L(2.0f));
             s.setStyle(Paint.Style.STROKE);
             x = new Paint(1);
             Paint paint2 = new Paint(1);
@@ -108,20 +108,20 @@ public class RadioButton extends View {
             s.setColor(rgb);
             x.setColor(rgb);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), kk7.d4, 31);
-        float f4 = (this.h / 2) - ((f + 1.0f) * gl.p);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), nm7.d4, 31);
+        float f4 = (this.h / 2) - ((f + 1.0f) * gm.p);
         canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4, s);
         if (this.r == null) {
             if (this.c <= 0.5f) {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4 - gl.L(1.0f), x);
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f) * (f4 - gl.L(1.0f)), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4 - gm.L(1.0f), x);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f) * (f4 - gm.L(1.0f)), w);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, tb4.A(f4 - gl.L(1.0f), this.h / 4, f, this.h / 4), x);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, td4.A(f4 - gm.L(1.0f), this.h / 4, f, this.h / 4), x);
             }
         }
         canvas.restore();
         if (this.r != null) {
-            int f5 = bm2.f(Utilities.i(this.c, 1.0f, 0.0f), this.b, this.a);
+            int f5 = on2.f(Utilities.i(this.c, 1.0f, 0.0f), this.b, this.a);
             if (this.n != f5) {
                 Drawable drawable = this.r;
                 this.n = f5;

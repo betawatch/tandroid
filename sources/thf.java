@@ -1,30 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import java.util.List;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class thf extends f7f {
-    public final transient Object[] h;
-    public final transient boolean n;
-    public final transient boolean r;
+public interface thf extends List {
+    Object b(int i);
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public thf(int i, Object[] objArr) {
-        super((byte) 2);
-        this.h = objArr;
-        this.n = i;
-        this.r = true;
-    }
+    thf zzd();
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        q1f.a(i, this.r ? 1 : 0);
-        Object obj = this.h[(i << 1) + (this.n ? 1 : 0)];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.r ? 1 : 0;
-    }
+    List zzh();
 }

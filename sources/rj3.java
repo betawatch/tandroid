@@ -1,61 +1,34 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rj3 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
+public final class rj3 implements ValueAnimator.AnimatorUpdateListener {
+    public int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ nk3 d;
 
-    public /* synthetic */ rj3(int i, String str, VoIPService voIPService, boolean z) {
-        this.a = (byte) 3;
-        this.e = voIPService;
-        this.b = i;
-        this.d = z;
-        this.c = str;
+    public rj3(nk3 nk3Var, float f, boolean z, float f2) {
+        this.d = nk3Var;
+        this.b = f;
+        this.c = f2;
+        this.a = (int) f;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.c;
-        Object obj2 = this.e;
-        switch (b) {
-            case 0:
-                gl.d3(new pj3((vj3) obj2, this.b, (TLRPC.TL_messages_searchGlobal) obj, this.d, tLObject, (byte) 0));
-                break;
-            case 1:
-                gl.d3(new pj3((xj3) obj2, this.b, (TLRPC.TL_messages_searchGlobal) obj, this.d, tLObject, (byte) 1));
-                break;
-            case 2:
-                gl.d3(new pj3((z3a) obj2, tLObject, (k3a) obj, this.d, this.b));
-                break;
-            default:
-                ((VoIPService) obj2).lambda$startConferenceGroupCall$57(this.b, this.d, (String) obj, tLObject, tL_error);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        ((Float) valueAnimator.getAnimatedValue()).getClass();
+        int R1 = (int) gm.R1(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+        int i = R1 - this.a;
+        this.a = R1;
+        nk3 nk3Var = this.d;
+        nk3Var.f0[0].a.scrollBy(0, i);
+        View view = nk3Var.fragmentView;
+        if (view != null) {
+            view.invalidate();
         }
-    }
-
-    public /* synthetic */ rj3(z3a z3aVar, k3a k3aVar, boolean z, int i) {
-        this.a = (byte) 2;
-        this.e = z3aVar;
-        this.c = k3aVar;
-        this.d = z;
-        this.b = i;
-    }
-
-    public /* synthetic */ rj3(l5c l5cVar, int i, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z, byte b) {
-        this.a = b;
-        this.e = l5cVar;
-        this.b = i;
-        this.c = tL_messages_searchGlobal;
-        this.d = z;
     }
 }

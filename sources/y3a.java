@@ -1,39 +1,39 @@
 // default package
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class y3a {
-    public long A;
-    public int B;
-    public Uri a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public TLRPC.Photo g;
-    public int h;
-    public ArrayList i;
-    public ArrayList j;
-    public oac k;
-    public nm6 l;
-    public TLRPC.BotInlineResult m;
-    public HashMap n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
-    public TLRPC.VideoSize v;
-    public long w;
-    public boolean x;
-    public jm6 y;
-    public long z;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y3a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a6a b;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ int d;
+
+    public /* synthetic */ y3a(a6a a6aVar, TLRPC.Message message, int i, byte b) {
+        this.a = b;
+        this.b = a6aVar;
+        this.c = message;
+        this.d = i;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.d;
+        TLRPC.Message message = this.c;
+        a6a a6aVar = this.b;
+        switch (b) {
+            case 0:
+                message.send_state = 2;
+                a6aVar.getNotificationCenter().k(23, Integer.valueOf(message.id));
+                a6aVar.c0(message.id);
+                a6aVar.h0(message.id, i != 0);
+                break;
+            default:
+                message.send_state = 0;
+                a6aVar.getNotificationCenter().k(20, Integer.valueOf(i));
+                break;
+        }
+    }
 }

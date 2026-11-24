@@ -1,17 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class d70 implements zn7 {
+public final class d70 implements cq7 {
     public static final d70 a = new d70();
-    public static final w84 b = new w84("eventsDroppedCount", b00.m(b00.l(et8.class, new vx(1))));
-    public static final w84 c = new w84("reason", b00.m(b00.l(et8.class, new vx(3))));
+    public static final wa4 b = wa4.c("threads");
+    public static final wa4 c = wa4.c("exception");
+    public static final wa4 d = wa4.c("appExitInfo");
+    public static final wa4 e = wa4.c("profilingManagerInfo");
+    public static final wa4 f = wa4.c("signal");
+    public static final wa4 g = wa4.c("binaries");
 
-    @Override // q24
+    @Override // b44
     public final void a(Object obj, Object obj2) {
-        yb6 yb6Var = (yb6) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.g(b, yb6Var.a);
-        ao7Var.a(c, yb6Var.b);
+        g03 g03Var = (g03) obj;
+        dq7 dq7Var = (dq7) obj2;
+        dq7Var.a(b, ((u90) g03Var).a);
+        u90 u90Var = (u90) g03Var;
+        dq7Var.a(c, u90Var.b);
+        dq7Var.a(d, u90Var.c);
+        dq7Var.a(e, u90Var.d);
+        dq7Var.a(f, u90Var.e);
+        dq7Var.a(g, u90Var.f);
     }
 }

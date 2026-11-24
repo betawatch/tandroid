@@ -1,27 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class bj4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ akb b;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    public /* synthetic */ bj4(akb akbVar, byte b) {
-        this.a = b;
-        this.b = akbVar;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bj4 implements OnSuccessListener, OnFailureListener {
+    public final /* synthetic */ sk3 a;
+
+    public /* synthetic */ bj4(sk3 sk3Var) {
+        this.a = sk3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        akb akbVar = this.b;
-        switch (b) {
-            case 0:
-                kk7.e().k(kk7.v4, akbVar, Boolean.TRUE, null, -1);
-                break;
-            default:
-                akbVar.r();
-                break;
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        fc4.g(exc, true);
+        this.a.a(Collections.EMPTY_LIST);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        ArrayList arrayList = new ArrayList();
+        for (wbc wbcVar : (List) obj) {
+            if (wbcVar.c == 1) {
+                arrayList.add(wbcVar);
+            }
         }
+        this.a.a(arrayList);
     }
 }

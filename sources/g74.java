@@ -1,43 +1,45 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import j$.util.function.IntConsumer$-CC;
+import java.lang.ref.WeakReference;
+import java.util.function.IntConsumer;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class g74 extends cja {
-    public final /* synthetic */ byte m0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class g74 {
+    public final WeakReference a;
+    public final f74 b;
+    public final /* synthetic */ h74 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g74(Context context, ui5 ui5Var, byte b) {
-        super(context, ui5Var);
-        this.m0 = b;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [f74, java.util.function.IntConsumer] */
+    public g74(h74 h74Var, Context context) {
+        this.c = h74Var;
+        this.a = new WeakReference(context);
+        ?? r0 = new IntConsumer() { // from class: f74
+            @Override // java.util.function.IntConsumer
+            public final void accept(int i) {
+                h74 h74Var2 = g74.this.c;
+                if (h74Var2.i0) {
+                    return;
+                }
+                h74Var2.m1(1, 19, Integer.valueOf(i));
+            }
+
+            public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+                return IntConsumer$-CC.$default$andThen(this, intConsumer);
+            }
+        };
+        this.b = r0;
+        context.registerDeviceIdChangeListener(new rf2(h74Var.v.a(h74Var.t, null), (byte) 1), r0);
     }
 
-    @Override // cja
-    public final boolean O() {
-        switch (this.m0) {
-            case 0:
-            case 1:
-                return false;
-            default:
-                return super.O();
+    public final void a() {
+        Context context = (Context) this.a.get();
+        if (context == null) {
+            return;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.m0) {
-            case 2:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
-                break;
-            case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i, i2);
-                break;
-        }
+        context.unregisterDeviceIdChangeListener(this.b);
     }
 }

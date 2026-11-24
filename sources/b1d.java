@@ -1,910 +1,297 @@
 // default package
 
-import android.accounts.Account;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.database.CursorWindow;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.SignInAccount;
-import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.common.data.DataHolder;
-import com.google.android.gms.fido.common.Transport;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import java.util.ArrayList;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class b1d implements Parcelable.Creator {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class b1d extends View {
+    public int E;
+    public float F;
+    public boolean G;
+    public boolean H;
+    public float I;
+    public float J;
+    public float K;
+    public AnimatorSet L;
+    public a1d M;
+    public boolean N;
+    public final v20 O;
+    public final Drawable a;
+    public final Drawable b;
+    public final Drawable c;
+    public final Drawable d;
+    public final Drawable e;
+    public final Drawable f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public int y;
 
-    public /* synthetic */ b1d(byte b) {
-        this.a = b;
+    public b1d(Context context) {
+        super(context);
+        this.N = true;
+        this.O = new v20(this);
+        this.a = context.getResources().getDrawable(R.drawable.zoom_minus);
+        this.b = context.getResources().getDrawable(R.drawable.zoom_plus);
+        this.c = context.getResources().getDrawable(R.drawable.zoom_slide);
+        this.d = context.getResources().getDrawable(R.drawable.zoom_slide_a);
+        this.e = context.getResources().getDrawable(R.drawable.zoom_round);
+        this.f = context.getResources().getDrawable(R.drawable.zoom_round_b);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        int i = 0;
-        boolean z = false;
-        boolean z2 = false;
-        boolean z3 = false;
-        int i2 = 0;
-        int i3 = 0;
-        int i4 = 0;
-        int i5 = 0;
-        boolean z4 = false;
-        int i6 = 0;
-        int i7 = 0;
-        ArrayList arrayList = null;
-        LatLng latLng = null;
-        String str = null;
-        byte[] bArr = null;
-        String str2 = null;
-        PendingIntent pendingIntent = null;
-        GoogleSignInAccount googleSignInAccount = null;
-        Account account = null;
-        ds2 ds2Var = null;
-        j3d j3dVar = null;
-        ArrayList arrayList2 = null;
-        Uri uri = null;
-        ArrayList arrayList3 = null;
-        ArrayList arrayList4 = null;
-        Intent intent = null;
-        PendingIntent pendingIntent2 = null;
-        switch (this.a) {
-            case 0:
-                int z5 = gte.z(parcel);
-                while (parcel.dataPosition() < z5) {
-                    int readInt = parcel.readInt();
-                    char c = (char) readInt;
-                    if (c == 1) {
-                        i = gte.u(parcel, readInt);
-                    } else if (c != 2) {
-                        gte.y(parcel, readInt);
-                    } else {
-                        arrayList = gte.l(parcel, readInt, sd7.CREATOR);
-                    }
-                }
-                gte.m(parcel, z5);
-                return new mgb(i, arrayList);
-            case 1:
-                int z6 = gte.z(parcel);
-                while (parcel.dataPosition() < z6) {
-                    int readInt2 = parcel.readInt();
-                    if (((char) readInt2) != 1) {
-                        gte.y(parcel, readInt2);
-                    } else {
-                        pendingIntent2 = (PendingIntent) gte.g(parcel, readInt2, PendingIntent.CREATOR);
-                    }
-                }
-                gte.m(parcel, z6);
-                return new ne7(pendingIntent2);
-            case 2:
-                int z7 = gte.z(parcel);
-                int i8 = 0;
-                while (parcel.dataPosition() < z7) {
-                    int readInt3 = parcel.readInt();
-                    char c2 = (char) readInt3;
-                    if (c2 == 1) {
-                        i7 = gte.u(parcel, readInt3);
-                    } else if (c2 == 2) {
-                        i8 = gte.u(parcel, readInt3);
-                    } else if (c2 != 3) {
-                        gte.y(parcel, readInt3);
-                    } else {
-                        intent = (Intent) gte.g(parcel, readInt3, Intent.CREATOR);
-                    }
-                }
-                gte.m(parcel, z7);
-                return new a1d(i7, i8, intent);
-            case 3:
-                int z8 = gte.z(parcel);
-                long j = 0;
-                String str3 = null;
-                String str4 = null;
-                String str5 = null;
-                String str6 = null;
-                Uri uri2 = null;
-                String str7 = null;
-                String str8 = null;
-                ArrayList arrayList5 = null;
-                String str9 = null;
-                String str10 = null;
-                while (parcel.dataPosition() < z8) {
-                    int readInt4 = parcel.readInt();
-                    switch ((char) readInt4) {
-                        case 2:
-                            str3 = gte.h(parcel, readInt4);
-                            break;
-                        case 3:
-                            str4 = gte.h(parcel, readInt4);
-                            break;
-                        case 4:
-                            str5 = gte.h(parcel, readInt4);
-                            break;
-                        case 5:
-                            str6 = gte.h(parcel, readInt4);
-                            break;
-                        case 6:
-                            uri2 = (Uri) gte.g(parcel, readInt4, Uri.CREATOR);
-                            break;
-                        case 7:
-                            str7 = gte.h(parcel, readInt4);
-                            break;
-                        case '\b':
-                            j = gte.w(parcel, readInt4);
-                            break;
-                        case '\t':
-                            str8 = gte.h(parcel, readInt4);
-                            break;
-                        case '\n':
-                            arrayList5 = gte.l(parcel, readInt4, Scope.CREATOR);
-                            break;
-                        case 11:
-                            str9 = gte.h(parcel, readInt4);
-                            break;
-                        case '\f':
-                            str10 = gte.h(parcel, readInt4);
-                            break;
-                        default:
-                            gte.y(parcel, readInt4);
-                            break;
-                    }
-                }
-                gte.m(parcel, z8);
-                return new GoogleSignInAccount(str3, str4, str5, str6, uri2, str7, j, str8, arrayList5, str9, str10);
-            case 4:
-                int z9 = gte.z(parcel);
-                long j2 = 0;
-                int i9 = 0;
-                int i10 = 0;
-                boolean z10 = false;
-                String str11 = null;
-                while (parcel.dataPosition() < z9) {
-                    int readInt5 = parcel.readInt();
-                    char c3 = (char) readInt5;
-                    if (c3 == 1) {
-                        i9 = gte.u(parcel, readInt5);
-                    } else if (c3 == 2) {
-                        str11 = gte.h(parcel, readInt5);
-                    } else if (c3 == 3) {
-                        j2 = gte.w(parcel, readInt5);
-                    } else if (c3 == 4) {
-                        i10 = gte.u(parcel, readInt5);
-                    } else if (c3 != 5) {
-                        gte.y(parcel, readInt5);
-                    } else {
-                        z10 = gte.n(parcel, readInt5);
-                    }
-                }
-                gte.m(parcel, z9);
-                return new n1d(i9, i10, j2, str11, z10);
-            case 5:
-                int z11 = gte.z(parcel);
-                boolean z12 = false;
-                while (parcel.dataPosition() < z11) {
-                    int readInt6 = parcel.readInt();
-                    char c4 = (char) readInt6;
-                    if (c4 == 1) {
-                        i6 = gte.u(parcel, readInt6);
-                    } else if (c4 != 2) {
-                        gte.y(parcel, readInt6);
-                    } else {
-                        z12 = gte.n(parcel, readInt6);
-                    }
-                }
-                gte.m(parcel, z11);
-                return new oe7(i6, z12);
-            case 6:
-                int z13 = gte.z(parcel);
-                String str12 = null;
-                String str13 = null;
-                while (parcel.dataPosition() < z13) {
-                    int readInt7 = parcel.readInt();
-                    char c5 = (char) readInt7;
-                    if (c5 == 1) {
-                        arrayList4 = gte.l(parcel, readInt7, f84.CREATOR);
-                    } else if (c5 == 2) {
-                        z4 = gte.n(parcel, readInt7);
-                    } else if (c5 == 3) {
-                        str12 = gte.h(parcel, readInt7);
-                    } else if (c5 != 4) {
-                        gte.y(parcel, readInt7);
-                    } else {
-                        str13 = gte.h(parcel, readInt7);
-                    }
-                }
-                gte.m(parcel, z13);
-                return new eo(arrayList4, z4, str12, str13);
-            case 7:
-                int z14 = gte.z(parcel);
-                int i11 = 0;
-                int i12 = 0;
-                String[] strArr = null;
-                CursorWindow[] cursorWindowArr = null;
-                Bundle bundle = null;
-                while (parcel.dataPosition() < z14) {
-                    int readInt8 = parcel.readInt();
-                    char c6 = (char) readInt8;
-                    if (c6 == 1) {
-                        strArr = gte.i(parcel, readInt8);
-                    } else if (c6 == 2) {
-                        cursorWindowArr = (CursorWindow[]) gte.k(parcel, readInt8, CursorWindow.CREATOR);
-                    } else if (c6 == 3) {
-                        i12 = gte.u(parcel, readInt8);
-                    } else if (c6 == 4) {
-                        bundle = gte.a(parcel, readInt8);
-                    } else if (c6 != 1000) {
-                        gte.y(parcel, readInt8);
-                    } else {
-                        i11 = gte.u(parcel, readInt8);
-                    }
-                }
-                gte.m(parcel, z14);
-                DataHolder dataHolder = new DataHolder(i11, strArr, cursorWindowArr, i12, bundle);
-                dataHolder.c = new Bundle();
-                int i13 = 0;
-                while (true) {
-                    String[] strArr2 = dataHolder.b;
-                    if (i13 >= strArr2.length) {
-                        CursorWindow[] cursorWindowArr2 = dataHolder.d;
-                        dataHolder.h = new int[cursorWindowArr2.length];
-                        int i14 = 0;
-                        for (int i15 = 0; i15 < cursorWindowArr2.length; i15++) {
-                            dataHolder.h[i15] = i14;
-                            i14 += cursorWindowArr2[i15].getNumRows() - (i14 - cursorWindowArr2[i15].getStartPosition());
+    public final boolean a(float f) {
+        if (f < 0.0f || f > 1.0f) {
+            return false;
+        }
+        AnimatorSet animatorSet = this.L;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        this.K = f;
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.L = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.O, f));
+        this.L.setDuration(180L);
+        this.L.addListener(new koc(this, (byte) 6));
+        this.L.start();
+        return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0010, code lost:
+    
+        if (r4 > 1.0f) goto L9;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z, float f) {
+        a1d a1dVar;
+        if (f == this.F) {
+            return;
+        }
+        float f2 = f >= 0.0f ? 1.0f : 0.0f;
+        f = f2;
+        this.F = f;
+        if (z && (a1dVar = this.M) != null) {
+            a1dVar.b(f);
+        }
+        invalidate();
+    }
+
+    public float getZoom() {
+        return this.L != null ? this.K : this.F;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int measuredWidth = getMeasuredWidth() / 2;
+        int measuredHeight = getMeasuredHeight() / 2;
+        boolean z = getMeasuredWidth() > getMeasuredHeight();
+        if (z) {
+            this.h = gm.L(41.0f);
+            this.n = measuredHeight;
+            this.r = getMeasuredWidth() - gm.L(41.0f);
+            this.s = measuredHeight;
+            this.w = gm.L(18.0f) + this.h;
+            this.x = measuredHeight;
+            this.y = this.r - gm.L(18.0f);
+            this.E = measuredHeight;
+        } else {
+            this.h = measuredWidth;
+            this.n = gm.L(41.0f);
+            this.r = measuredWidth;
+            this.s = getMeasuredHeight() - gm.L(41.0f);
+            this.w = measuredWidth;
+            this.x = gm.L(18.0f) + this.n;
+            this.y = measuredWidth;
+            this.E = this.s - gm.L(18.0f);
+        }
+        int L = this.h - gm.L(7.0f);
+        int L2 = this.n - gm.L(7.0f);
+        int L3 = gm.L(7.0f) + this.h;
+        int L4 = gm.L(7.0f) + this.n;
+        Drawable drawable = this.a;
+        drawable.setBounds(L, L2, L3, L4);
+        drawable.draw(canvas);
+        int L5 = this.r - gm.L(7.0f);
+        int L6 = this.s - gm.L(7.0f);
+        int L7 = gm.L(7.0f) + this.r;
+        int L8 = gm.L(7.0f) + this.s;
+        Drawable drawable2 = this.b;
+        drawable2.setBounds(L5, L6, L7, L8);
+        drawable2.draw(canvas);
+        int i = this.y;
+        int i2 = this.w;
+        int i3 = this.E;
+        int i4 = this.x;
+        float f = this.F;
+        int i5 = (int) (((i - i2) * f) + i2);
+        int i6 = (int) (((i3 - i4) * f) + i4);
+        Drawable drawable3 = this.c;
+        Drawable drawable4 = this.d;
+        if (z) {
+            drawable3.setBounds(i2, i4 - gm.L(3.0f), this.y, gm.L(3.0f) + this.x);
+            drawable4.setBounds(this.w, this.x - gm.L(3.0f), i5, gm.L(3.0f) + this.x);
+        } else {
+            drawable3.setBounds(i4, 0, i3, gm.L(6.0f));
+            drawable4.setBounds(this.x, 0, i6, gm.L(6.0f));
+            canvas.save();
+            canvas.rotate(90.0f);
+            canvas.translate(0.0f, (-this.w) - gm.L(3.0f));
+        }
+        drawable3.draw(canvas);
+        drawable4.draw(canvas);
+        if (!z) {
+            canvas.restore();
+        }
+        Drawable drawable5 = this.H ? this.f : this.e;
+        int intrinsicWidth = drawable5.getIntrinsicWidth() / 2;
+        drawable5.setBounds(i5 - intrinsicWidth, i6 - intrinsicWidth, i5 + intrinsicWidth, i6 + intrinsicWidth);
+        drawable5.draw(canvas);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:23:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x01d0  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z;
+        float f;
+        a1d a1dVar;
+        if (!this.N) {
+            return false;
+        }
+        float x = motionEvent.getX();
+        float y = motionEvent.getY();
+        int action = motionEvent.getAction();
+        boolean z2 = getMeasuredWidth() > getMeasuredHeight();
+        int i = this.w;
+        float f2 = i;
+        float f3 = this.y - i;
+        float f4 = this.F;
+        int i2 = (int) ((f3 * f4) + f2);
+        int i3 = this.x;
+        float f5 = i3;
+        float f6 = this.E - i3;
+        int i4 = (int) ((f4 * f6) + f5);
+        if (action == 1 || action == 0) {
+            if (x < i2 - gm.L(20.0f) || x > gm.L(20.0f) + i2 || y < i4 - gm.L(25.0f) || y > gm.L(25.0f) + i4) {
+                try {
+                    if (x >= this.h - gm.L(16.0f)) {
+                        if (x <= gm.L(16.0f) + this.h && y >= this.n - gm.L(16.0f)) {
+                            if (y <= gm.L(16.0f) + this.n) {
+                                if (action == 1 && a((((float) Math.floor(getZoom() / 0.25f)) * 0.25f) - 0.25f)) {
+                                    performHapticFeedback(3);
+                                } else {
+                                    this.G = true;
+                                }
+                            }
                         }
-                        dataHolder.n = i14;
-                        return dataHolder;
                     }
-                    dataHolder.c.putInt(strArr2[i13], i13);
-                    i13++;
-                }
-            case 8:
-                int z15 = gte.z(parcel);
-                int i16 = 0;
-                boolean z16 = false;
-                boolean z17 = false;
-                boolean z18 = false;
-                ArrayList arrayList6 = null;
-                Account account2 = null;
-                String str14 = null;
-                String str15 = null;
-                String str16 = null;
-                while (parcel.dataPosition() < z15) {
-                    int readInt9 = parcel.readInt();
-                    switch ((char) readInt9) {
-                        case 1:
-                            i16 = gte.u(parcel, readInt9);
-                            break;
-                        case 2:
-                            arrayList6 = gte.l(parcel, readInt9, Scope.CREATOR);
-                            break;
-                        case 3:
-                            account2 = (Account) gte.g(parcel, readInt9, Account.CREATOR);
-                            break;
-                        case 4:
-                            z16 = gte.n(parcel, readInt9);
-                            break;
-                        case 5:
-                            z17 = gte.n(parcel, readInt9);
-                            break;
-                        case 6:
-                            z18 = gte.n(parcel, readInt9);
-                            break;
-                        case 7:
-                            str14 = gte.h(parcel, readInt9);
-                            break;
-                        case '\b':
-                            str15 = gte.h(parcel, readInt9);
-                            break;
-                        case '\t':
-                            arrayList3 = gte.l(parcel, readInt9, az4.CREATOR);
-                            break;
-                        case '\n':
-                            str16 = gte.h(parcel, readInt9);
-                            break;
-                        default:
-                            gte.y(parcel, readInt9);
-                            break;
+                    if (x >= this.r - gm.L(16.0f)) {
+                        if (x <= gm.L(16.0f) + this.r && y >= this.s - gm.L(16.0f)) {
+                            if (y <= gm.L(16.0f) + this.s) {
+                                if (action == 1 && a((((float) Math.floor(getZoom() / 0.25f)) * 0.25f) + 0.25f)) {
+                                    performHapticFeedback(3);
+                                } else {
+                                    this.G = true;
+                                }
+                            }
+                        }
                     }
-                }
-                gte.m(parcel, z15);
-                return new GoogleSignInOptions(i16, arrayList6, account2, z16, z17, z18, str14, str15, GoogleSignInOptions.c(arrayList3), str16);
-            case 9:
-                int z19 = gte.z(parcel);
-                int i17 = 0;
-                int i18 = 0;
-                while (parcel.dataPosition() < z19) {
-                    int readInt10 = parcel.readInt();
-                    char c7 = (char) readInt10;
-                    if (c7 == 1) {
-                        i5 = gte.u(parcel, readInt10);
-                    } else if (c7 == 2) {
-                        uri = (Uri) gte.g(parcel, readInt10, Uri.CREATOR);
-                    } else if (c7 == 3) {
-                        i17 = gte.u(parcel, readInt10);
-                    } else if (c7 != 4) {
-                        gte.y(parcel, readInt10);
-                    } else {
-                        i18 = gte.u(parcel, readInt10);
+                    if (z2) {
+                        if (x >= this.w && x <= this.y) {
+                            if (action == 0) {
+                                this.I = x;
+                                this.G = true;
+                            } else if (Math.abs(this.I - x) <= gm.L(10.0f)) {
+                                float f7 = (x - this.w) / (this.y - r2);
+                                this.F = f7;
+                                a1d a1dVar2 = this.M;
+                                if (a1dVar2 != null) {
+                                    a1dVar2.b(f7);
+                                }
+                                invalidate();
+                            }
+                        }
+                    } else if (y >= this.x && y <= this.E) {
+                        if (action == 1) {
+                            this.J = y;
+                            this.G = true;
+                        } else if (Math.abs(this.J - y) <= gm.L(10.0f)) {
+                            float f8 = (y - this.x) / (this.E - r0);
+                            this.F = f8;
+                            a1d a1dVar3 = this.M;
+                            if (a1dVar3 != null) {
+                                a1dVar3.b(f8);
+                            }
+                            invalidate();
+                        }
                     }
+                } catch (Exception unused) {
                 }
-                gte.m(parcel, z19);
-                return new vsc(i5, uri, i17, i18);
-            case 10:
-                int z20 = gte.z(parcel);
-                String str17 = null;
-                while (parcel.dataPosition() < z20) {
-                    int readInt11 = parcel.readInt();
-                    char c8 = (char) readInt11;
-                    if (c8 == 1) {
-                        arrayList2 = gte.j(parcel, readInt11);
-                    } else if (c8 != 2) {
-                        gte.y(parcel, readInt11);
-                    } else {
-                        str17 = gte.h(parcel, readInt11);
-                    }
+            } else if (action == 0) {
+                this.H = true;
+                this.I = x - i2;
+                this.J = y - i4;
+                invalidate();
+            }
+            z = true;
+            if (action == 1) {
+                this.G = false;
+                this.H = false;
+                invalidate();
+            }
+            return !z || this.G || this.H || super.onTouchEvent(motionEvent);
+        }
+        if (action == 2 && this.H) {
+            if (z2) {
+                f = ((x + this.I) - f2) / f3;
+                this.F = f;
+            } else {
+                f = ((y + this.J) - f5) / f6;
+                this.F = f;
+            }
+            float f9 = 0.0f;
+            if (f < 0.0f) {
+                this.F = 0.0f;
+            } else {
+                f9 = 1.0f;
+                if (f > 1.0f) {
+                    this.F = 1.0f;
                 }
-                gte.m(parcel, z20);
-                return new u2d(str17, arrayList2);
-            case 11:
-                int z21 = gte.z(parcel);
-                while (parcel.dataPosition() < z21) {
-                    int readInt12 = parcel.readInt();
-                    char c9 = (char) readInt12;
-                    if (c9 == 1) {
-                        i4 = gte.u(parcel, readInt12);
-                    } else if (c9 != 2) {
-                        gte.y(parcel, readInt12);
-                    } else {
-                        j3dVar = (j3d) gte.g(parcel, readInt12, j3d.CREATOR);
-                    }
+                a1dVar = this.M;
+                if (a1dVar != null) {
+                    a1dVar.b(f);
                 }
-                gte.m(parcel, z21);
-                return new w2d(i4, j3dVar);
-            case 12:
-                int z22 = gte.z(parcel);
-                l3d l3dVar = null;
-                while (parcel.dataPosition() < z22) {
-                    int readInt13 = parcel.readInt();
-                    char c10 = (char) readInt13;
-                    if (c10 == 1) {
-                        i3 = gte.u(parcel, readInt13);
-                    } else if (c10 == 2) {
-                        ds2Var = (ds2) gte.g(parcel, readInt13, ds2.CREATOR);
-                    } else if (c10 != 3) {
-                        gte.y(parcel, readInt13);
-                    } else {
-                        l3dVar = (l3d) gte.g(parcel, readInt13, l3d.CREATOR);
-                    }
-                }
-                gte.m(parcel, z22);
-                return new c3d(i3, ds2Var, l3dVar);
-            case 13:
-                int z23 = gte.z(parcel);
-                long j3 = 0;
-                long j4 = 0;
-                int i19 = -1;
-                int i20 = 0;
-                int i21 = 0;
-                int i22 = 0;
-                int i23 = 0;
-                String str18 = null;
-                String str19 = null;
-                while (parcel.dataPosition() < z23) {
-                    int readInt14 = parcel.readInt();
-                    switch ((char) readInt14) {
-                        case 1:
-                            i20 = gte.u(parcel, readInt14);
-                            break;
-                        case 2:
-                            i21 = gte.u(parcel, readInt14);
-                            break;
-                        case 3:
-                            i22 = gte.u(parcel, readInt14);
-                            break;
-                        case 4:
-                            j3 = gte.w(parcel, readInt14);
-                            break;
-                        case 5:
-                            j4 = gte.w(parcel, readInt14);
-                            break;
-                        case 6:
-                            str18 = gte.h(parcel, readInt14);
-                            break;
-                        case 7:
-                            str19 = gte.h(parcel, readInt14);
-                            break;
-                        case '\b':
-                            i23 = gte.u(parcel, readInt14);
-                            break;
-                        case '\t':
-                            i19 = gte.u(parcel, readInt14);
-                            break;
-                        default:
-                            gte.y(parcel, readInt14);
-                            break;
-                    }
-                }
-                gte.m(parcel, z23);
-                return new sd7(i20, i21, i22, j3, j4, str18, str19, i23, i19);
-            case 14:
-                int z24 = gte.z(parcel);
-                int i24 = 0;
-                GoogleSignInAccount googleSignInAccount2 = null;
-                while (parcel.dataPosition() < z24) {
-                    int readInt15 = parcel.readInt();
-                    char c11 = (char) readInt15;
-                    if (c11 == 1) {
-                        i2 = gte.u(parcel, readInt15);
-                    } else if (c11 == 2) {
-                        account = (Account) gte.g(parcel, readInt15, Account.CREATOR);
-                    } else if (c11 == 3) {
-                        i24 = gte.u(parcel, readInt15);
-                    } else if (c11 != 4) {
-                        gte.y(parcel, readInt15);
-                    } else {
-                        googleSignInAccount2 = (GoogleSignInAccount) gte.g(parcel, readInt15, GoogleSignInAccount.CREATOR);
-                    }
-                }
-                gte.m(parcel, z24);
-                return new j3d(i2, account, i24, googleSignInAccount2);
-            case 15:
-                int z25 = gte.z(parcel);
-                int i25 = 0;
-                boolean z26 = false;
-                boolean z27 = false;
-                IBinder iBinder = null;
-                ds2 ds2Var2 = null;
-                while (parcel.dataPosition() < z25) {
-                    int readInt16 = parcel.readInt();
-                    char c12 = (char) readInt16;
-                    if (c12 == 1) {
-                        i25 = gte.u(parcel, readInt16);
-                    } else if (c12 == 2) {
-                        iBinder = gte.t(parcel, readInt16);
-                    } else if (c12 == 3) {
-                        ds2Var2 = (ds2) gte.g(parcel, readInt16, ds2.CREATOR);
-                    } else if (c12 == 4) {
-                        z26 = gte.n(parcel, readInt16);
-                    } else if (c12 != 5) {
-                        gte.y(parcel, readInt16);
-                    } else {
-                        z27 = gte.n(parcel, readInt16);
-                    }
-                }
-                gte.m(parcel, z25);
-                return new l3d(i25, iBinder, ds2Var2, z26, z27);
-            case 16:
-                int z28 = gte.z(parcel);
-                String str20 = "";
-                String str21 = "";
-                while (parcel.dataPosition() < z28) {
-                    int readInt17 = parcel.readInt();
-                    char c13 = (char) readInt17;
-                    if (c13 == 4) {
-                        str20 = gte.h(parcel, readInt17);
-                    } else if (c13 == 7) {
-                        googleSignInAccount = (GoogleSignInAccount) gte.g(parcel, readInt17, GoogleSignInAccount.CREATOR);
-                    } else if (c13 != '\b') {
-                        gte.y(parcel, readInt17);
-                    } else {
-                        str21 = gte.h(parcel, readInt17);
-                    }
-                }
-                gte.m(parcel, z28);
-                return new SignInAccount(str20, googleSignInAccount, str21);
-            case 17:
-                int z29 = gte.z(parcel);
-                boolean z30 = false;
-                int i26 = 0;
-                boolean z31 = false;
-                gh0 gh0Var = null;
-                dh0 dh0Var = null;
-                String str22 = null;
-                fh0 fh0Var = null;
-                eh0 eh0Var = null;
-                while (parcel.dataPosition() < z29) {
-                    int readInt18 = parcel.readInt();
-                    switch ((char) readInt18) {
-                        case 1:
-                            gh0Var = (gh0) gte.g(parcel, readInt18, gh0.CREATOR);
-                            break;
-                        case 2:
-                            dh0Var = (dh0) gte.g(parcel, readInt18, dh0.CREATOR);
-                            break;
-                        case 3:
-                            str22 = gte.h(parcel, readInt18);
-                            break;
-                        case 4:
-                            z30 = gte.n(parcel, readInt18);
-                            break;
-                        case 5:
-                            i26 = gte.u(parcel, readInt18);
-                            break;
-                        case 6:
-                            fh0Var = (fh0) gte.g(parcel, readInt18, fh0.CREATOR);
-                            break;
-                        case 7:
-                            eh0Var = (eh0) gte.g(parcel, readInt18, eh0.CREATOR);
-                            break;
-                        case '\b':
-                            z31 = gte.n(parcel, readInt18);
-                            break;
-                        default:
-                            gte.y(parcel, readInt18);
-                            break;
-                    }
-                }
-                gte.m(parcel, z29);
-                return new hh0(gh0Var, dh0Var, str22, z30, i26, fh0Var, eh0Var, z31);
-            case 18:
-                int z32 = gte.z(parcel);
-                while (parcel.dataPosition() < z32) {
-                    int readInt19 = parcel.readInt();
-                    if (((char) readInt19) != 1) {
-                        gte.y(parcel, readInt19);
-                    } else {
-                        pendingIntent = (PendingIntent) gte.g(parcel, readInt19, PendingIntent.CREATOR);
-                    }
-                }
-                gte.m(parcel, z32);
-                return new ih0(pendingIntent);
-            case 19:
-                int z33 = gte.z(parcel);
-                boolean z34 = false;
-                boolean z35 = false;
-                boolean z36 = false;
-                String str23 = null;
-                String str24 = null;
-                String str25 = null;
-                ArrayList arrayList7 = null;
-                while (parcel.dataPosition() < z33) {
-                    int readInt20 = parcel.readInt();
-                    switch ((char) readInt20) {
-                        case 1:
-                            z34 = gte.n(parcel, readInt20);
-                            break;
-                        case 2:
-                            str23 = gte.h(parcel, readInt20);
-                            break;
-                        case 3:
-                            str24 = gte.h(parcel, readInt20);
-                            break;
-                        case 4:
-                            z35 = gte.n(parcel, readInt20);
-                            break;
-                        case 5:
-                            str25 = gte.h(parcel, readInt20);
-                            break;
-                        case 6:
-                            arrayList7 = gte.j(parcel, readInt20);
-                            break;
-                        case 7:
-                            z36 = gte.n(parcel, readInt20);
-                            break;
-                        default:
-                            gte.y(parcel, readInt20);
-                            break;
-                    }
-                }
-                gte.m(parcel, z33);
-                return new dh0(z34, str23, str24, z35, str25, arrayList7, z36);
-            case 20:
-                int z37 = gte.z(parcel);
-                while (parcel.dataPosition() < z37) {
-                    int readInt21 = parcel.readInt();
-                    char c14 = (char) readInt21;
-                    if (c14 == 1) {
-                        z3 = gte.n(parcel, readInt21);
-                    } else if (c14 != 2) {
-                        gte.y(parcel, readInt21);
-                    } else {
-                        str2 = gte.h(parcel, readInt21);
-                    }
-                }
-                gte.m(parcel, z37);
-                return new eh0(str2, z3);
-            case 21:
-                int z38 = gte.z(parcel);
-                String str26 = null;
-                while (parcel.dataPosition() < z38) {
-                    int readInt22 = parcel.readInt();
-                    char c15 = (char) readInt22;
-                    if (c15 == 1) {
-                        z2 = gte.n(parcel, readInt22);
-                    } else if (c15 == 2) {
-                        bArr = gte.b(parcel, readInt22);
-                    } else if (c15 != 3) {
-                        gte.y(parcel, readInt22);
-                    } else {
-                        str26 = gte.h(parcel, readInt22);
-                    }
-                }
-                gte.m(parcel, z38);
-                return new fh0(z2, bArr, str26);
-            case 22:
-                int z39 = gte.z(parcel);
-                while (parcel.dataPosition() < z39) {
-                    int readInt23 = parcel.readInt();
-                    if (((char) readInt23) != 1) {
-                        gte.y(parcel, readInt23);
-                    } else {
-                        z = gte.n(parcel, readInt23);
-                    }
-                }
-                gte.m(parcel, z39);
-                return new gh0(z);
-            case 23:
-                int z40 = gte.z(parcel);
-                GoogleSignInOptions googleSignInOptions = null;
-                while (parcel.dataPosition() < z40) {
-                    int readInt24 = parcel.readInt();
-                    char c16 = (char) readInt24;
-                    if (c16 == 2) {
-                        str = gte.h(parcel, readInt24);
-                    } else if (c16 != 5) {
-                        gte.y(parcel, readInt24);
-                    } else {
-                        googleSignInOptions = (GoogleSignInOptions) gte.g(parcel, readInt24, GoogleSignInOptions.CREATOR);
-                    }
-                }
-                gte.m(parcel, z40);
-                return new SignInConfiguration(str, googleSignInOptions);
-            case 24:
-                int z41 = gte.z(parcel);
-                String str27 = null;
-                String str28 = null;
-                String str29 = null;
-                String str30 = null;
-                Uri uri3 = null;
-                String str31 = null;
-                String str32 = null;
-                String str33 = null;
-                ku8 ku8Var = null;
-                while (parcel.dataPosition() < z41) {
-                    int readInt25 = parcel.readInt();
-                    switch ((char) readInt25) {
-                        case 1:
-                            str27 = gte.h(parcel, readInt25);
-                            break;
-                        case 2:
-                            str28 = gte.h(parcel, readInt25);
-                            break;
-                        case 3:
-                            str29 = gte.h(parcel, readInt25);
-                            break;
-                        case 4:
-                            str30 = gte.h(parcel, readInt25);
-                            break;
-                        case 5:
-                            uri3 = (Uri) gte.g(parcel, readInt25, Uri.CREATOR);
-                            break;
-                        case 6:
-                            str31 = gte.h(parcel, readInt25);
-                            break;
-                        case 7:
-                            str32 = gte.h(parcel, readInt25);
-                            break;
-                        case '\b':
-                            str33 = gte.h(parcel, readInt25);
-                            break;
-                        case '\t':
-                            ku8Var = (ku8) gte.g(parcel, readInt25, ku8.CREATOR);
-                            break;
-                        default:
-                            gte.y(parcel, readInt25);
-                            break;
-                    }
-                }
-                gte.m(parcel, z41);
-                return new fha(str27, str28, str29, str30, uri3, str31, str32, str33, ku8Var);
-            case 25:
-                try {
-                    return Transport.a(parcel.readString());
-                } catch (c1c e) {
-                    sdb.b(e);
-                    return null;
-                }
-            case 26:
-                try {
-                    return ay.a(parcel.readString());
-                } catch (zx e2) {
-                    sdb.b(e2);
-                    return null;
-                }
-            case 27:
-                int z42 = gte.z(parcel);
-                long j5 = 0;
-                long j6 = 0;
-                String str34 = null;
-                String str35 = null;
-                String str36 = null;
-                String str37 = null;
-                String str38 = null;
-                String str39 = null;
-                String str40 = null;
-                String str41 = null;
-                String str42 = null;
-                d9c d9cVar = null;
-                while (parcel.dataPosition() < z42) {
-                    int readInt26 = parcel.readInt();
-                    switch ((char) readInt26) {
-                        case 2:
-                            str34 = gte.h(parcel, readInt26);
-                            break;
-                        case 3:
-                            str35 = gte.h(parcel, readInt26);
-                            break;
-                        case 4:
-                            j5 = gte.w(parcel, readInt26);
-                            break;
-                        case 5:
-                            str36 = gte.h(parcel, readInt26);
-                            break;
-                        case 6:
-                            str37 = gte.h(parcel, readInt26);
-                            break;
-                        case 7:
-                            str38 = gte.h(parcel, readInt26);
-                            break;
-                        case '\b':
-                            str39 = gte.h(parcel, readInt26);
-                            break;
-                        case '\t':
-                            str40 = gte.h(parcel, readInt26);
-                            break;
-                        case '\n':
-                            str41 = gte.h(parcel, readInt26);
-                            break;
-                        case 11:
-                            j6 = gte.w(parcel, readInt26);
-                            break;
-                        case '\f':
-                            str42 = gte.h(parcel, readInt26);
-                            break;
-                        case '\r':
-                            d9cVar = (d9c) gte.g(parcel, readInt26, d9c.CREATOR);
-                            break;
-                        default:
-                            gte.y(parcel, readInt26);
-                            break;
-                    }
-                }
-                gte.m(parcel, z42);
-                return new y9(str34, str35, j5, str36, str37, str38, str39, str40, str41, j6, str42, d9cVar);
-            case 28:
-                int z43 = gte.z(parcel);
-                boolean z44 = false;
-                boolean z45 = false;
-                String str43 = null;
-                String str44 = null;
-                IBinder iBinder2 = null;
-                ql7 ql7Var = null;
-                while (parcel.dataPosition() < z43) {
-                    int readInt27 = parcel.readInt();
-                    switch ((char) readInt27) {
-                        case 2:
-                            str43 = gte.h(parcel, readInt27);
-                            break;
-                        case 3:
-                            str44 = gte.h(parcel, readInt27);
-                            break;
-                        case 4:
-                            iBinder2 = gte.t(parcel, readInt27);
-                            break;
-                        case 5:
-                            ql7Var = (ql7) gte.g(parcel, readInt27, ql7.CREATOR);
-                            break;
-                        case 6:
-                            z44 = gte.n(parcel, readInt27);
-                            break;
-                        case 7:
-                            z45 = gte.n(parcel, readInt27);
-                            break;
-                        default:
-                            gte.y(parcel, readInt27);
-                            break;
-                    }
-                }
-                gte.m(parcel, z43);
-                return new bd1(str43, str44, iBinder2, ql7Var, z44, z45);
-            default:
-                int z46 = gte.z(parcel);
-                float f = 0.0f;
-                float f2 = 0.0f;
-                float f3 = 0.0f;
-                while (parcel.dataPosition() < z46) {
-                    int readInt28 = parcel.readInt();
-                    char c17 = (char) readInt28;
-                    if (c17 == 2) {
-                        latLng = (LatLng) gte.g(parcel, readInt28, LatLng.CREATOR);
-                    } else if (c17 == 3) {
-                        f = gte.r(parcel, readInt28);
-                    } else if (c17 == 4) {
-                        f2 = gte.r(parcel, readInt28);
-                    } else if (c17 != 5) {
-                        gte.y(parcel, readInt28);
-                    } else {
-                        f3 = gte.r(parcel, readInt28);
-                    }
-                }
-                gte.m(parcel, z46);
-                return new CameraPosition(latLng, f, f2, f3);
+                invalidate();
+            }
+            f = f9;
+            a1dVar = this.M;
+            if (a1dVar != null) {
+            }
+            invalidate();
+        }
+        z = false;
+        if (action == 1) {
+        }
+        if (z) {
         }
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        switch (this.a) {
-            case 0:
-                return new mgb[i];
-            case 1:
-                return new ne7[i];
-            case 2:
-                return new a1d[i];
-            case 3:
-                return new GoogleSignInAccount[i];
-            case 4:
-                return new n1d[i];
-            case 5:
-                return new oe7[i];
-            case 6:
-                return new eo[i];
-            case 7:
-                return new DataHolder[i];
-            case 8:
-                return new GoogleSignInOptions[i];
-            case 9:
-                return new vsc[i];
-            case 10:
-                return new u2d[i];
-            case 11:
-                return new w2d[i];
-            case 12:
-                return new c3d[i];
-            case 13:
-                return new sd7[i];
-            case 14:
-                return new j3d[i];
-            case 15:
-                return new l3d[i];
-            case 16:
-                return new SignInAccount[i];
-            case 17:
-                return new hh0[i];
-            case 18:
-                return new ih0[i];
-            case 19:
-                return new dh0[i];
-            case 20:
-                return new eh0[i];
-            case 21:
-                return new fh0[i];
-            case 22:
-                return new gh0[i];
-            case 23:
-                return new SignInConfiguration[i];
-            case 24:
-                return new fha[i];
-            case 25:
-                return new Transport[i];
-            case 26:
-                return new ay[i];
-            case 27:
-                return new y9[i];
-            case 28:
-                return new bd1[i];
-            default:
-                return new CameraPosition[i];
-        }
+    public void setDelegate(a1d a1dVar) {
+        this.M = a1dVar;
     }
 }

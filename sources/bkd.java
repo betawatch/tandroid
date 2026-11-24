@@ -1,21 +1,20 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class bkd extends ej5 {
-    public final /* synthetic */ Boolean b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class bkd {
+    public static final bkd a;
+    public static final /* synthetic */ bkd[] b;
 
-    public bkd(Boolean bool, TaskCompletionSource taskCompletionSource) {
-        this.b = bool;
-        this.c = taskCompletionSource;
+    static {
+        bkd bkdVar = new bkd("DEFAULT", 0);
+        a = bkdVar;
+        b = new bkd[]{bkdVar, new bkd("SIGNED", 1), new bkd("FIXED", 2)};
     }
 
-    @Override // ej5
-    public final void T(Status status) {
-        dve.a(status, this.b, this.c);
+    public static bkd[] values() {
+        return (bkd[]) b.clone();
     }
 }

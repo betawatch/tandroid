@@ -1,23 +1,46 @@
 // default package
 
-import android.widget.ImageView;
+import android.app.PendingIntent;
+import android.os.Bundle;
+import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class pm7 extends wgb {
-    public ImageView a0;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class pm7 {
+    public final Bundle a;
+    public IconCompat b;
+    public final i89[] c;
+    public final boolean d;
+    public final boolean e;
+    public final byte f;
+    public final int g;
+    public final CharSequence h;
+    public final PendingIntent i;
 
-    @Override // wgb, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        int L = k96.a0 ? gl.L(17.0f) : (i3 - i) - gl.L(41.0f);
-        int D = ug8.D(24.0f, i4 - i2, 2);
-        this.a0.layout(L, D, gl.L(24.0f) + L, gl.L(24.0f) + D);
+    /* JADX WARN: Multi-variable type inference failed */
+    public pm7(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, i89[] i89VarArr, boolean z, int i, boolean z2) {
+        this.e = true;
+        this.b = iconCompat;
+        if (iconCompat != null && iconCompat.i() == 2) {
+            this.g = iconCompat.g();
+        }
+        this.h = an7.c(charSequence);
+        this.i = pendingIntent;
+        this.a = bundle;
+        this.c = i89VarArr;
+        this.d = z;
+        this.f = i;
+        this.e = z2;
     }
 
-    @Override // wgb, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        this.a0.measure(i, i2);
+    public final IconCompat a() {
+        int i;
+        IconCompat iconCompat = this.b;
+        if (iconCompat != null || (i = this.g) == 0) {
+            return iconCompat;
+        }
+        IconCompat e = IconCompat.e(null, "", i);
+        this.b = e;
+        return e;
     }
 }

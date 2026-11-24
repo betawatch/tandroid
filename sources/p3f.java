@@ -1,30 +1,26 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class p3f {
-    public final m3f a;
-    public final Integer b;
-
-    public /* synthetic */ p3f(aec aecVar) {
-        this.a = (m3f) aecVar.b;
-        this.b = (Integer) aecVar.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+public abstract class p3f {
+    public static String a(String str) {
+        int length = str.length();
+        int i = 0;
+        while (i < length) {
+            char charAt = str.charAt(i);
+            if (charAt >= 'a' && charAt <= 'z') {
+                char[] charArray = str.toCharArray();
+                while (i < length) {
+                    char c = charArray[i];
+                    if (c >= 'a' && c <= 'z') {
+                        charArray[i] = (char) (c ^ ' ');
+                    }
+                    i++;
+                }
+                return String.valueOf(charArray);
+            }
+            i++;
         }
-        if (!(obj instanceof p3f)) {
-            return false;
-        }
-        p3f p3fVar = (p3f) obj;
-        return cqe.a(this.a, p3fVar.a) && cqe.a(this.b, p3fVar.b) && cqe.a(null, null) && cqe.a(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
+        return str;
     }
 }

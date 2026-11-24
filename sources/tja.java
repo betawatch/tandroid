@@ -1,63 +1,27 @@
 // default package
 
-import java.util.ArrayList;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class tja {
+    public static final tja a;
+    public static final tja b;
+    public static final /* synthetic */ tja[] c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class tja implements jd7 {
-    public final ArrayList a;
-
-    public tja(ArrayList arrayList) {
-        this.a = arrayList;
-        boolean z = false;
-        if (!arrayList.isEmpty()) {
-            long j = ((sja) arrayList.get(0)).b;
-            int i = 1;
-            while (true) {
-                if (i >= arrayList.size()) {
-                    break;
-                }
-                if (((sja) arrayList.get(i)).a < j) {
-                    z = true;
-                    break;
-                } else {
-                    j = ((sja) arrayList.get(i)).b;
-                    i++;
-                }
-            }
-        }
-        gre.f(!z);
+    static {
+        tja tjaVar = new tja("GLASS", 0);
+        a = tjaVar;
+        tja tjaVar2 = new tja("ACCENT", 1);
+        b = tjaVar2;
+        c = new tja[]{tjaVar, tjaVar2};
     }
 
-    @Override // jd7
-    public final fm4 a() {
-        return null;
+    public static tja valueOf(String str) {
+        return (tja) Enum.valueOf(tja.class, str);
     }
 
-    @Override // jd7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || tja.class != obj.getClass()) {
-            return false;
-        }
-        return this.a.equals(((tja) obj).a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "SlowMotion: segments=" + this.a;
-    }
-
-    @Override // jd7
-    public final void b(hr6 hr6Var) {
+    public static tja[] values() {
+        return (tja[]) c.clone();
     }
 }

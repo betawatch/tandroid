@@ -1,18 +1,12 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class hec extends Exception {
+    public final go4 a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class hec {
-    public final d a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public float f;
-
-    public hec(d dVar) {
-        this.a = dVar;
+    public hec(Exception exc, go4 go4Var) {
+        super(exc);
+        this.a = go4Var;
     }
 }

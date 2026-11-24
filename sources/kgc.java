@@ -1,95 +1,61 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class kgc implements vt5, ed {
-    public final /* synthetic */ TLRPC.User a;
-    public final /* synthetic */ TLRPC.Chat b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ Activity h;
-    public final /* synthetic */ d n;
-    public final /* synthetic */ j5 r;
+public final /* synthetic */ class kgc implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wgc b;
 
-    public /* synthetic */ kgc(TLRPC.User user, TLRPC.Chat chat, String str, boolean z, boolean z2, boolean z3, Activity activity, d dVar, j5 j5Var) {
-        this.a = user;
-        this.b = chat;
-        this.c = str;
-        this.d = z;
-        this.e = z2;
-        this.f = z3;
-        this.h = activity;
-        this.n = dVar;
-        this.r = j5Var;
+    public /* synthetic */ kgc(wgc wgcVar, byte b) {
+        this.a = b;
+        this.b = wgcVar;
     }
 
-    @Override // vt5
-    public final void a(TLRPC.InputPeer inputPeer, boolean z, boolean z2, boolean z3) {
-        boolean z4 = this.d;
-        Activity activity = this.h;
-        j5 j5Var = this.r;
-        TLRPC.Chat chat = this.b;
-        String str = this.c;
-        if (z4 && z2) {
-            h75.S0((LaunchActivity) activity, j5Var, chat, inputPeer, z, str);
-            return;
-        }
-        TLRPC.User user = this.a;
-        boolean z5 = this.e;
-        boolean z6 = this.f;
-        d dVar = this.n;
-        if (z || str == null) {
-            rgc.b(user, chat, str, inputPeer, z, z5, z6, z4, activity, dVar, j5Var, false, true, z3);
-            return;
-        }
-        qgc qgcVar = new qgc(activity, chat, user, chat, str, inputPeer, z5, z6, z4, activity, dVar, j5Var, z3);
-        if (dVar != null) {
-            dVar.showDialog(qgcVar);
-        }
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        final TLRPC.User user = this.a;
-        final TLRPC.Chat chat = this.b;
-        final String str = this.c;
-        final boolean z = this.d;
-        final boolean z2 = this.e;
-        final boolean z3 = this.f;
-        final Activity activity = this.h;
-        final d dVar = this.n;
-        final j5 j5Var = this.r;
-        if (sharedInstance != null) {
-            VoIPService.getSharedInstance().hangUp(new Runnable() { // from class: mgc
-                @Override // java.lang.Runnable
-                public final void run() {
-                    rgc.a = 0L;
-                    rgc.b(TLRPC.User.this, chat, str, null, false, z, z2, z3, activity, dVar, j5Var, true, true, false);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        wgc wgcVar = this.b;
+        switch (b) {
+            case 0:
+                wgcVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = wgcVar.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (wgcVar.E) {
+                        wgcVar.F(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        wgcVar.F(viewArr[0], (-r0.getMeasuredWidth()) * floatValue);
+                    } else {
+                        wgcVar.F(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        wgcVar.F(viewArr[0], r0.getMeasuredWidth() * floatValue);
+                    }
+                    wgcVar.c = floatValue;
+                    wgcVar.x(true);
+                    mgc mgcVar = wgcVar.N;
+                    if (mgcVar != null) {
+                        mgcVar.w.invalidate();
+                        wgcVar.N.w.h1();
+                        wgcVar.N.invalidate();
+                        break;
+                    }
                 }
-            });
-        } else {
-            rgc.b(user, chat, str, null, false, z, z2, z3, activity, dVar, j5Var, true, true, false);
+                break;
+            case 1:
+                wgcVar.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                wgcVar.O.onAnimationUpdate(valueAnimator);
+                wgcVar.N.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wgcVar.N.w.h1();
+                wgcVar.N.invalidate();
+                break;
+            default:
+                wgcVar.getClass();
+                wgcVar.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
-    }
-
-    public /* synthetic */ kgc(boolean z, Activity activity, j5 j5Var, TLRPC.Chat chat, String str, TLRPC.User user, boolean z2, boolean z3, d dVar) {
-        this.d = z;
-        this.h = activity;
-        this.r = j5Var;
-        this.b = chat;
-        this.c = str;
-        this.a = user;
-        this.e = z2;
-        this.f = z3;
-        this.n = dVar;
     }
 }

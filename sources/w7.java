@@ -29,9 +29,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public abstract class w7 extends FrameLayout implements tjb {
+public abstract class w7 extends FrameLayout implements vlb {
     public final Paint E;
     public final Paint F;
     public final Paint G;
@@ -53,13 +53,13 @@ public abstract class w7 extends FrameLayout implements tjb {
     public boolean W;
     public float a;
     public boolean a0;
-    public i8c b;
+    public jac b;
     public final b1 b0;
     public final s7 c;
     public PorterDuffColorFilter c0;
     public final s7 d;
     public float d0;
-    public final lm e;
+    public final ln e;
     public float e0;
     public Bitmap f;
     public long f0;
@@ -70,13 +70,13 @@ public abstract class w7 extends FrameLayout implements tjb {
     public float s;
     public boolean w;
     public boolean x;
-    public final wjb y;
+    public final ylb y;
 
-    public w7(Context context, wjb wjbVar) {
+    public w7(Context context, ylb ylbVar) {
         super(context);
         this.a = 0.5f;
-        s33 s33Var = s33.h;
-        this.e = new lm(1.0f, this, 0L, 320L, s33Var);
+        d53 d53Var = d53.h;
+        this.e = new ln(1.0f, this, 0L, 320L, d53Var);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -96,45 +96,45 @@ public abstract class w7 extends FrameLayout implements tjb {
         this.O = true;
         this.a0 = false;
         this.b0 = new b1(this, (byte) 5);
-        this.y = wjbVar;
+        this.y = ylbVar;
         setWillNotDraw(false);
         s7 s7Var = new s7(this, (byte) 0);
         this.c = s7Var;
         s7Var.setCallback(this);
-        s7Var.x(gl.o());
-        s7Var.n(0.3f, 165L, s33Var);
-        s7Var.w(gl.N(14.0f));
+        s7Var.x(gm.o());
+        s7Var.n(0.3f, 165L, d53Var);
+        s7Var.w(gm.N(14.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = s7Var.a;
         textPaint.setStyle(style);
-        textPaint.setStrokeWidth(gl.N(0.3f));
-        s7Var.b = k96.a0 ? 5 : 3;
+        textPaint.setStrokeWidth(gm.N(0.3f));
+        s7Var.b = jb6.a0 ? 5 : 3;
         s7 s7Var2 = new s7(this, (byte) 1);
         this.d = s7Var2;
         s7Var2.setCallback(this);
-        s7Var2.x(gl.o());
-        s7Var2.n(0.3f, 165L, s33Var);
-        s7Var2.w(gl.N(14.0f));
+        s7Var2.x(gm.o());
+        s7Var2.n(0.3f, 165L, d53Var);
+        s7Var2.w(gm.N(14.0f));
         TextPaint textPaint2 = s7Var2.a;
         textPaint2.setStyle(style);
-        textPaint2.setStrokeWidth(gl.N(0.3f));
-        s7Var2.b = k96.a0 ? 3 : 5;
+        textPaint2.setStrokeWidth(gm.N(0.3f));
+        s7Var2.b = jb6.a0 ? 3 : 5;
         paint.setColor(0);
-        paint.setShadowLayer(gl.N(1.33f), 0.0f, gl.N(0.33f), 1056964608);
+        paint.setShadowLayer(gm.N(1.33f), 0.0f, gm.N(0.33f), 1056964608);
         ColorMatrix colorMatrix = new ColorMatrix();
-        gl.i(colorMatrix, -0.4f);
-        gl.h(colorMatrix, 0.1f);
+        gm.i(colorMatrix, -0.4f);
+        gm.h(colorMatrix, 0.1f);
         paint5.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        int v0 = bkb.v0(bkb.F8, wjbVar);
+        int v0 = cmb.v0(cmb.F8, ylbVar);
         this.V = v0;
         paint2.setColor(v0);
-        boolean z = gl.B(paint2.getColor()) <= 0.721f;
+        boolean z = gm.B(paint2.getColor()) <= 0.721f;
         this.M = z;
         s7Var.u(z ? -1 : -16777216);
         s7Var2.u(this.M ? -1 : -16777216);
-        paint4.setColor(bkb.p1(0.025f, -16777216));
-        paint3.setColor(bkb.p1(0.35f, -1));
-        paint6.setColor(bkb.p1(0.2f, -1));
+        paint4.setColor(cmb.p1(0.025f, -16777216));
+        paint3.setColor(cmb.p1(0.35f, -1));
+        paint6.setColor(cmb.p1(0.2f, -1));
     }
 
     public final void a(Canvas canvas) {
@@ -148,8 +148,8 @@ public abstract class w7 extends FrameLayout implements tjb {
                 return;
             }
             float f = fArr[i];
-            RectF rectF = gl.P;
-            canvas.drawRect((rectF.width() * f) + rectF.left, rectF.top, (rectF.width() * f) + rectF.left + gl.L(0.66f), rectF.bottom, this.L);
+            RectF rectF = gm.P;
+            canvas.drawRect((rectF.width() * f) + rectF.left, rectF.top, (rectF.width() * f) + rectF.left + gm.L(0.66f), rectF.bottom, this.L);
             i++;
         }
     }
@@ -168,7 +168,7 @@ public abstract class w7 extends FrameLayout implements tjb {
         }
         s7 s7Var = this.c;
         s7Var.setColorFilter(porterDuffColorFilter);
-        s7Var.setBounds(gl.L(20.0f) + getPaddingLeft(), getMeasuredHeight() / 2, (getMeasuredWidth() - getPaddingRight()) - gl.L(20.0f), getMeasuredHeight() / 2);
+        s7Var.setBounds(gm.L(20.0f) + getPaddingLeft(), getMeasuredHeight() / 2, (getMeasuredWidth() - getPaddingRight()) - gm.L(20.0f), getMeasuredHeight() / 2);
         s7Var.draw(canvas);
         if (z && (porterDuffColorFilter2 = this.c0) == null) {
             porterDuffColorFilter2 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
@@ -176,14 +176,14 @@ public abstract class w7 extends FrameLayout implements tjb {
         }
         s7 s7Var2 = this.d;
         s7Var2.setColorFilter(porterDuffColorFilter2);
-        s7Var2.setBounds(gl.L(20.0f) + getPaddingLeft(), getMeasuredHeight() / 2, (getMeasuredWidth() - getPaddingRight()) - gl.L(20.0f), getMeasuredHeight() / 2);
+        s7Var2.setBounds(gm.L(20.0f) + getPaddingLeft(), getMeasuredHeight() / 2, (getMeasuredWidth() - getPaddingRight()) - gm.L(20.0f), getMeasuredHeight() / 2);
         s7Var2.draw(canvas);
     }
 
     public final int c(float f) {
-        int i = bkb.ik;
-        wjb wjbVar = this.y;
-        return bm2.f(moe.a((((f * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), bkb.v0(i, wjbVar), bkb.v0(bkb.jk, wjbVar));
+        int i = cmb.ik;
+        ylb ylbVar = this.y;
+        return on2.f(pqe.a((((f * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), cmb.v0(i, ylbVar), cmb.v0(cmb.jk, ylbVar));
     }
 
     public final void d(boolean z, float f) {
@@ -192,14 +192,14 @@ public abstract class w7 extends FrameLayout implements tjb {
             valueAnimator.cancel();
             this.U = null;
         }
-        float a = moe.a(f, 0.0f, 1.0f);
+        float a = pqe.a(f, 0.0f, 1.0f);
         byte b = 1;
         if (z) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, a);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new f0(this, b));
             this.U.addListener(new t7(this, a, (byte) 0));
-            this.U.setInterpolator(s33.h);
+            this.U.setInterpolator(d53.h);
             this.U.setDuration(220L);
             this.U.start();
         } else {
@@ -209,14 +209,14 @@ public abstract class w7 extends FrameLayout implements tjb {
         v7 v7Var = (v7) this;
         String str = v7Var.i0;
         if (str == null) {
-            str = cla.a((a * 2.8f) + 0.2f).concat("x");
+            str = dna.a((a * 2.8f) + 0.2f).concat("x");
         }
         s7 s7Var = this.c;
         if (!TextUtils.equals(s7Var.i, str)) {
             s7Var.a();
             s7Var.t(str, true, true);
         }
-        String concat = v7Var.i0 != null ? cla.a((2.8f * a) + 0.2f).concat("x") : null;
+        String concat = v7Var.i0 != null ? dna.a((2.8f * a) + 0.2f).concat("x") : null;
         if (concat != null) {
             s7 s7Var2 = this.d;
             if (!TextUtils.equals(s7Var2.i, concat)) {
@@ -234,10 +234,10 @@ public abstract class w7 extends FrameLayout implements tjb {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        RectF rectF = gl.P;
+        RectF rectF = gm.P;
         rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
         if (this.w) {
-            canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), this.E);
+            canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), this.E);
         }
         boolean z = this.x;
         Paint paint = this.K;
@@ -259,18 +259,18 @@ public abstract class w7 extends FrameLayout implements tjb {
                 }
                 Paint paint2 = this.J;
                 paint2.setAlpha((int) ((1.0f - e) * 255.0f));
-                canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), paint2);
+                canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), paint2);
             }
             if (this.f != null && this.a < 1.0f && e > 0.0f) {
                 Paint paint3 = this.G;
                 paint3.setAlpha((int) (e * 255.0f));
-                canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), paint3);
+                canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), paint3);
             }
-            canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), this.H);
-            canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), this.I);
+            canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), this.H);
+            canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), this.I);
             paint.setColor(-1);
         } else {
-            canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), this.F);
+            canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), this.F);
         }
         a(canvas);
         if (!this.M) {
@@ -280,7 +280,7 @@ public abstract class w7 extends FrameLayout implements tjb {
             canvas.save();
             canvas.clipRect(getPaddingLeft(), getPaddingTop(), (((getWidth() - getPaddingLeft()) - getPaddingRight()) * this.a) + getPaddingLeft(), getHeight() - getPaddingBottom());
         }
-        canvas.drawRoundRect(rectF, gl.L(this.s), gl.L(this.s), paint);
+        canvas.drawRoundRect(rectF, gm.L(this.s), gm.L(this.s), paint);
         a(canvas);
         if (!this.M) {
             b(canvas, true);
@@ -317,21 +317,21 @@ public abstract class w7 extends FrameLayout implements tjb {
             }
         }
         boolean z2 = this.O;
-        wjb wjbVar = this.y;
+        ylb ylbVar = this.y;
         if (z2) {
-            Drawable r0 = bkb.r0();
+            Drawable r0 = cmb.r0();
             if (r0 instanceof ColorDrawable) {
                 v0 = ((ColorDrawable) r0).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = r0 instanceof ye7 ? ((ye7) r0).k : r0 instanceof BitmapDrawable ? ((BitmapDrawable) r0).getBitmap() : null;
+                Bitmap bitmap = r0 instanceof ah7 ? ((ah7) r0).k : r0 instanceof BitmapDrawable ? ((BitmapDrawable) r0).getBitmap() : null;
                 if (bitmap != null) {
                     int i6 = iArr[0];
-                    Point point = gl.q;
+                    Point point = gm.q;
                     float f = i6 / point.x;
                     int width = (int) (f * bitmap.getWidth());
                     int measuredWidth = (int) (((getMeasuredWidth() + i6) / point.x) * bitmap.getWidth());
-                    int currentActionBarHeight = (int) ((((iArr[1] - gl.m) - a.getCurrentActionBarHeight()) / point.y) * bitmap.getHeight());
+                    int currentActionBarHeight = (int) ((((iArr[1] - gm.m) - a.getCurrentActionBarHeight()) / point.y) * bitmap.getHeight());
                     if (width >= 0 && width < bitmap.getWidth() && measuredWidth >= 0 && measuredWidth < bitmap.getWidth() && currentActionBarHeight >= 0 && currentActionBarHeight < bitmap.getHeight()) {
                         pair = new Pair(Integer.valueOf(bitmap.getPixel(width, currentActionBarHeight)), Integer.valueOf(bitmap.getPixel(measuredWidth, currentActionBarHeight)));
                     }
@@ -348,12 +348,12 @@ public abstract class w7 extends FrameLayout implements tjb {
                     this.P = linearGradient;
                     this.J.setShader(linearGradient);
                 }
-                v0 = bkb.p1(0.25f, bkb.v0(bkb.c6, wjbVar));
+                v0 = cmb.p1(0.25f, cmb.v0(cmb.c6, ylbVar));
             }
         } else {
-            v0 = bkb.v0(bkb.c6, wjbVar);
-            if (!bkb.I.o()) {
-                v0 = bkb.v(v0, bkb.p1(0.18f, -16777216));
+            v0 = cmb.v0(cmb.c6, ylbVar);
+            if (!cmb.I.o()) {
+                v0 = cmb.v(v0, cmb.p1(0.18f, -16777216));
             }
         }
         i5 = v0;
@@ -371,8 +371,8 @@ public abstract class w7 extends FrameLayout implements tjb {
         if (this.w) {
             i = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + getPaddingRight() + View.MeasureSpec.getSize(i), TLObject.FLAG_30);
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + gl.L(44.0f), TLObject.FLAG_30));
-        boolean z = gba.o() >= 2 && e66.e(256);
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + gm.L(44.0f), TLObject.FLAG_30));
+        boolean z = gda.o() >= 2 && e86.e(256);
         if (this.x && this.f == null && !this.a0 && z) {
             this.b0.run();
         }
@@ -408,9 +408,9 @@ public abstract class w7 extends FrameLayout implements tjb {
                             i++;
                         }
                     }
-                    i8c i8cVar = this.b;
-                    if (i8cVar != null) {
-                        i8cVar.a(Float.valueOf(paddingLeft), Boolean.TRUE);
+                    jac jacVar = this.b;
+                    if (jacVar != null) {
+                        jacVar.a(Float.valueOf(paddingLeft), Boolean.TRUE);
                         return true;
                     }
                 }
@@ -432,9 +432,9 @@ public abstract class w7 extends FrameLayout implements tjb {
             }
             boolean z = !this.g0;
             d(false, max);
-            i8c i8cVar2 = this.b;
-            if (i8cVar2 != null) {
-                i8cVar2.a(Float.valueOf(this.a), Boolean.valueOf(z));
+            jac jacVar2 = this.b;
+            if (jacVar2 != null) {
+                jacVar2.a(Float.valueOf(this.a), Boolean.valueOf(z));
             }
         }
         return true;
@@ -444,7 +444,7 @@ public abstract class w7 extends FrameLayout implements tjb {
     public void setBackgroundColor(int i) {
         Paint paint = this.F;
         paint.setColor(i);
-        boolean z = gl.B(paint.getColor()) <= 0.721f;
+        boolean z = gm.B(paint.getColor()) <= 0.721f;
         this.M = z;
         this.c.u(z ? -1 : -16777216);
         this.d.u(this.M ? -1 : -16777216);
@@ -457,13 +457,13 @@ public abstract class w7 extends FrameLayout implements tjb {
 
     public void setDrawShadow(boolean z) {
         this.w = z;
-        int L = z ? gl.L(8.0f) : 0;
+        int L = z ? gm.L(8.0f) : 0;
         setPadding(L, L, L, L);
         invalidate();
     }
 
-    public void setOnValueChange(i8c i8cVar) {
-        this.b = i8cVar;
+    public void setOnValueChange(jac jacVar) {
+        this.b = jacVar;
     }
 
     public void setRoundRadiusDp(float f) {
@@ -481,16 +481,16 @@ public abstract class w7 extends FrameLayout implements tjb {
         this.d.u(i);
     }
 
-    @Override // tjb
+    @Override // vlb
     public final void updateColors() {
         int v0;
         Paint paint = this.F;
         if (paint != null) {
             try {
-                if (paint.getColor() == this.V && (v0 = bkb.v0(bkb.F8, this.y)) != this.V) {
+                if (paint.getColor() == this.V && (v0 = cmb.v0(cmb.F8, this.y)) != this.V) {
                     this.V = v0;
                     paint.setColor(v0);
-                    boolean z = gl.B(v0) <= 0.721f;
+                    boolean z = gm.B(v0) <= 0.721f;
                     this.M = z;
                     if (!this.W) {
                         s7 s7Var = this.c;
@@ -504,7 +504,7 @@ public abstract class w7 extends FrameLayout implements tjb {
                     }
                 }
             } catch (Exception e) {
-                fa4.g(e, true);
+                fc4.g(e, true);
                 return;
             }
         }
@@ -515,7 +515,7 @@ public abstract class w7 extends FrameLayout implements tjb {
         invalidate();
     }
 
-    @Override // tjb
+    @Override // vlb
     public final void addColorKeys(HashSet hashSet) {
     }
 }

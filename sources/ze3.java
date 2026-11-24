@@ -1,313 +1,95 @@
 // default package
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import org.telegram.messenger.beta.R;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public class ze3 extends bn4 implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
-    public Handler l0;
-    public boolean u0;
-    public Dialog w0;
-    public boolean x0;
-    public boolean y0;
-    public boolean z0;
-    public final o1 m0 = new o1(this, 20);
-    public final we3 n0 = new we3(this);
-    public final xe3 o0 = new xe3(this, 0);
-    public int p0 = 0;
-    public int q0 = 0;
-    public boolean r0 = true;
-    public boolean s0 = true;
-    public int t0 = -1;
-    public final qx4 v0 = new qx4(this);
-    public boolean A0 = false;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ze3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ef3 b;
 
-    @Override // bn4
-    public final void B() {
-        this.V = true;
-        Dialog dialog = this.w0;
-        if (dialog != null) {
-            this.x0 = true;
-            dialog.setOnDismissListener(null);
-            this.w0.dismiss();
-            if (!this.y0) {
-                onDismiss(this.w0);
-            }
-            this.w0 = null;
-            this.A0 = false;
-        }
+    public /* synthetic */ ze3(ef3 ef3Var, byte b) {
+        this.a = b;
+        this.b = ef3Var;
     }
 
-    @Override // bn4
-    public final void C() {
-        this.V = true;
-        if (!this.z0 && !this.y0) {
-            this.y0 = true;
-        }
-        this.f0.h(this.v0);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0042 A[Catch: all -> 0x0067, TryCatch #0 {all -> 0x0067, blocks: (B:10:0x0017, B:12:0x0023, B:17:0x002c, B:19:0x0032, B:20:0x003a, B:22:0x0042, B:23:0x0049, B:25:0x0037, B:26:0x0061), top: B:9:0x0017 }] */
-    @Override // bn4
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final LayoutInflater D(Bundle bundle) {
-        Context n;
-        LayoutInflater D = super.D(bundle);
-        boolean z = this.s0;
-        if (z && !this.u0) {
-            if (z && !this.A0) {
-                try {
-                    this.u0 = true;
-                    Dialog P = P();
-                    this.w0 = P;
-                    if (this.s0) {
-                        int i = this.p0;
-                        if (i != 1 && i != 2) {
-                            if (i == 3) {
-                                Window window = P.getWindow();
-                                if (window != null) {
-                                    window.addFlags(24);
-                                }
-                            }
-                            n = n();
-                            if (n instanceof Activity) {
-                                this.w0.setOwnerActivity((Activity) n);
-                            }
-                            this.w0.setCancelable(this.r0);
-                            this.w0.setOnCancelListener(this.n0);
-                            this.w0.setOnDismissListener(this.o0);
-                            this.A0 = true;
-                        }
-                        P.requestWindowFeature(1);
-                        n = n();
-                        if (n instanceof Activity) {
-                        }
-                        this.w0.setCancelable(this.r0);
-                        this.w0.setOnCancelListener(this.n0);
-                        this.w0.setOnDismissListener(this.o0);
-                        this.A0 = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Context context;
+        boolean z;
+        CharSequence charSequence;
+        byte b = this.a;
+        ef3 ef3Var = this.b;
+        boolean z2 = false;
+        switch (b) {
+            case 0:
+                ef3Var.d1(false);
+                break;
+            default:
+                Context context2 = ef3Var.getContext();
+                ylb ylbVar = ef3Var.J0;
+                int i = ef3Var.a;
+                long j = ef3Var.l2;
+                ArrayList<Long> arrayList = ef3Var.m2.joined_chat_ids;
+                af3 af3Var = new af3(ef3Var, (byte) 5);
+                Pattern pattern = ik.a;
+                LinearLayout i2 = hg9.i(context2, 1);
+                he[] heVarArr = new he[1];
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ylbVar, context2);
+                String M0 = jb6.M0(2131751896, null);
+                he heVar = alertDialog$Builder.a;
+                heVar.S = M0;
+                heVar.U = gm.S2(jb6.G(arrayList.size(), "CommunityBanWillRemoveFromChats", pg3.r(i, j)));
+                alertDialog$Builder.j(jb6.M0(2131747564, null), null);
+                alertDialog$Builder.g(jb6.M0(2131752542, null), null);
+                alertDialog$Builder.n(i2);
+                int size = arrayList.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Long l = arrayList.get(i3);
+                    i3++;
+                    Long l2 = l;
+                    he heVar2 = heVar;
+                    long longValue = l2.longValue();
+                    TLRPC.Chat L0 = oc7.r1(i).L0(l2);
+                    TLRPC.ChatFull M02 = oc7.r1(i).M0(longValue);
+                    if (L0 == null) {
+                        heVar = heVar2;
                     } else {
-                        this.w0 = null;
+                        ec0 ec0Var = new ec0(ylbVar, context2, z2);
+                        int i4 = size;
+                        ((TextView) ec0Var.c).setText(pg3.l(L0));
+                        TextView textView = (TextView) ec0Var.d;
+                        if (M02 != null) {
+                            context = context2;
+                            z = false;
+                            charSequence = jb6.G(M02.participants_count, "Members", new Object[0]);
+                        } else {
+                            context = context2;
+                            z = false;
+                            charSequence = null;
+                        }
+                        textView.setText(charSequence);
+                        ((bf0) ec0Var.b).f(L0, new pc0(L0));
+                        ec0Var.setBackground(cmb.L0(z));
+                        ec0Var.setOnClickListener(new fh(heVarArr, af3Var, longValue, (byte) 1));
+                        i2.addView(ec0Var, qoe.o(-1, -2));
+                        heVar = heVar2;
+                        z2 = z;
+                        context2 = context;
+                        size = i4;
                     }
-                } finally {
-                    this.u0 = false;
                 }
-            }
-            if (go4.K(2)) {
-                Log.d("FragmentManager", "get layout inflater for DialogFragment " + this + " from dialog context");
-            }
-            Dialog dialog = this.w0;
-            if (dialog != null) {
-                return D.cloneInContext(dialog.getContext());
-            }
-        } else if (go4.K(2)) {
-            String str = "getting layout inflater for DialogFragment " + this;
-            if (!this.s0) {
-                Log.d("FragmentManager", "mShowsDialog = false: ".concat(str));
-                return D;
-            }
-            Log.d("FragmentManager", "mCreatingDialog = true: ".concat(str));
+                he heVar3 = heVar;
+                heVarArr[z2 ? 1 : 0] = heVar3;
+                heVar3.show();
+                break;
         }
-        return D;
-    }
-
-    @Override // bn4
-    public final void G(Bundle bundle) {
-        Dialog dialog = this.w0;
-        if (dialog != null) {
-            Bundle onSaveInstanceState = dialog.onSaveInstanceState();
-            onSaveInstanceState.putBoolean("android:dialogShowing", false);
-            bundle.putBundle("android:savedDialogState", onSaveInstanceState);
-        }
-        int i = this.p0;
-        if (i != 0) {
-            bundle.putInt("android:style", i);
-        }
-        int i2 = this.q0;
-        if (i2 != 0) {
-            bundle.putInt("android:theme", i2);
-        }
-        boolean z = this.r0;
-        if (!z) {
-            bundle.putBoolean("android:cancelable", z);
-        }
-        boolean z2 = this.s0;
-        if (!z2) {
-            bundle.putBoolean("android:showsDialog", z2);
-        }
-        int i3 = this.t0;
-        if (i3 != -1) {
-            bundle.putInt("android:backStackId", i3);
-        }
-    }
-
-    @Override // bn4
-    public final void H() {
-        this.V = true;
-        Dialog dialog = this.w0;
-        if (dialog != null) {
-            this.x0 = false;
-            dialog.show();
-            View decorView = this.w0.getWindow().getDecorView();
-            decorView.getClass();
-            decorView.setTag(R.id.view_tree_lifecycle_owner, this);
-            decorView.setTag(R.id.view_tree_view_model_store_owner, this);
-            decorView.setTag(R.id.view_tree_saved_state_registry_owner, this);
-        }
-    }
-
-    @Override // bn4
-    public void I() {
-        this.V = true;
-        Dialog dialog = this.w0;
-        if (dialog != null) {
-            dialog.hide();
-        }
-    }
-
-    @Override // bn4
-    public final void J(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        Bundle bundle2;
-        super.J(layoutInflater, viewGroup, bundle);
-        if (this.w0 == null || bundle == null || (bundle2 = bundle.getBundle("android:savedDialogState")) == null) {
-            return;
-        }
-        this.w0.onRestoreInstanceState(bundle2);
-    }
-
-    public final void O(boolean z) {
-        if (this.y0) {
-            return;
-        }
-        this.y0 = true;
-        this.z0 = false;
-        Dialog dialog = this.w0;
-        if (dialog != null) {
-            dialog.setOnDismissListener(null);
-            this.w0.dismiss();
-            if (!z) {
-                if (Looper.myLooper() == this.l0.getLooper()) {
-                    onDismiss(this.w0);
-                } else {
-                    this.l0.post(this.m0);
-                }
-            }
-        }
-        this.x0 = true;
-        if (this.t0 < 0) {
-            id0 id0Var = new id0(p());
-            id0Var.o = true;
-            id0Var.h(this);
-            id0Var.e(true, true);
-            return;
-        }
-        go4 p = p();
-        int i = this.t0;
-        if (i < 0) {
-            w26.j(de9.k(i, "Bad id: "));
-        } else {
-            p.y(new eo4(p, i), true);
-            this.t0 = -1;
-        }
-    }
-
-    public Dialog P() {
-        if (go4.K(3)) {
-            Log.d("FragmentManager", "onCreateDialog called for DialogFragment " + this);
-        }
-        return new yp2(K(), this.q0);
-    }
-
-    @Override // bn4
-    public final iie h() {
-        return new ye3(this, new ye3(this));
-    }
-
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        if (this.x0) {
-            return;
-        }
-        if (go4.K(3)) {
-            Log.d("FragmentManager", "onDismiss called for DialogFragment " + this);
-        }
-        O(true);
-    }
-
-    @Override // bn4
-    public final void w() {
-        this.V = true;
-    }
-
-    @Override // bn4
-    public final void y(Context context) {
-        Object obj;
-        super.y(context);
-        hh7 hh7Var = this.f0;
-        hh7Var.getClass();
-        hh7.a("observeForever");
-        qx4 qx4Var = this.v0;
-        l76 l76Var = new l76(hh7Var, qx4Var);
-        wo9 wo9Var = hh7Var.b;
-        to9 h = wo9Var.h(qx4Var);
-        if (h != null) {
-            obj = h.b;
-        } else {
-            to9 to9Var = new to9(qx4Var, l76Var);
-            wo9Var.d++;
-            to9 to9Var2 = wo9Var.b;
-            if (to9Var2 == null) {
-                wo9Var.a = to9Var;
-                wo9Var.b = to9Var;
-            } else {
-                to9Var2.c = to9Var;
-                to9Var.d = to9Var2;
-                wo9Var.b = to9Var;
-            }
-            obj = null;
-        }
-        n76 n76Var = (n76) obj;
-        if (n76Var instanceof m76) {
-            w26.j("Cannot add the same observer with different lifecycles");
-            return;
-        }
-        if (n76Var == null) {
-            l76Var.a(true);
-        }
-        if (this.z0) {
-            return;
-        }
-        this.y0 = false;
-    }
-
-    @Override // bn4
-    public void z(Bundle bundle) {
-        super.z(bundle);
-        this.l0 = new Handler();
-        this.s0 = this.P == 0;
-        if (bundle != null) {
-            this.p0 = bundle.getInt("android:style", 0);
-            this.q0 = bundle.getInt("android:theme", 0);
-            this.r0 = bundle.getBoolean("android:cancelable", true);
-            this.s0 = bundle.getBoolean("android:showsDialog", this.s0);
-            this.t0 = bundle.getInt("android:backStackId", -1);
-        }
-    }
-
-    public void onCancel(DialogInterface dialogInterface) {
     }
 }

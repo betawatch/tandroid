@@ -1,28 +1,23 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import org.telegram.tgnet.TLObject;
+import java.io.File;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public abstract class cqd {
-    public static void a(InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
-        inputStream.getClass();
-        byte[] bArr = new byte[TLObject.FLAG_13];
-        int read = inputStream.read(bArr);
-        while (read >= 0) {
-            byteArrayOutputStream.write(bArr, 0, read);
-            read = inputStream.read(bArr);
+    public static boolean a(File file) {
+        if (!file.isDirectory()) {
+            file.delete();
+            return true;
         }
-    }
-
-    public static final byte[] b(InputStream inputStream) {
-        inputStream.getClass();
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(TLObject.FLAG_13, inputStream.available()));
-        a(inputStream, byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
-        byteArray.getClass();
-        return byteArray;
+        File[] listFiles = file.listFiles();
+        if (listFiles == null) {
+            return false;
+        }
+        boolean z = true;
+        for (File file2 : listFiles) {
+            z = a(file2) && z;
+        }
+        return z;
     }
 }

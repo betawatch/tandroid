@@ -1,126 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Looper;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class r1d implements z1d, ey4 {
-    public final ReentrantLock a;
-    public final Condition b;
-    public final Context c;
-    public final dy4 d;
-    public final k1d e;
-    public final ps f;
-    public final HashMap i = new HashMap();
-    public final ntb j;
-    public final ps k;
-    public final op5 l;
-    public volatile p1d m;
-    public int n;
-    public final m1d o;
-    public final y1d p;
+public final class r1d implements v1d {
+    public static final Object c = new Object();
+    public volatile s1d a;
+    public volatile Object b;
 
-    public r1d(Context context, m1d m1dVar, ReentrantLock reentrantLock, Looper looper, dy4 dy4Var, ps psVar, ntb ntbVar, ps psVar2, op5 op5Var, ArrayList arrayList, y1d y1dVar) {
-        this.c = context;
-        this.a = reentrantLock;
-        this.d = dy4Var;
-        this.f = psVar;
-        this.j = ntbVar;
-        this.k = psVar2;
-        this.l = op5Var;
-        this.o = m1dVar;
-        this.p = y1dVar;
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            ((h3d) arrayList.get(i)).c = this;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static r1d b(s1d s1dVar) {
+        if (s1dVar instanceof r1d) {
+            return (r1d) s1dVar;
         }
-        this.e = new k1d(this, looper, (byte) 1);
-        this.b = reentrantLock.newCondition();
-        this.m = new v39(this, (byte) 21);
+        r1d r1dVar = new r1d();
+        r1dVar.b = c;
+        r1dVar.a = s1dVar;
+        return r1dVar;
     }
 
-    @Override // z1d
-    public final void a() {
-        this.m.a();
-    }
-
-    @Override // z1d
-    public final boolean b(v3d v3dVar) {
-        return false;
-    }
-
-    @Override // z1d
-    public final void c() {
-        if (this.m.S0()) {
-            this.i.clear();
+    @Override // w1d
+    public final Object a() {
+        Object obj;
+        Object obj2 = this.b;
+        Object obj3 = c;
+        if (obj2 != obj3) {
+            return obj2;
         }
-    }
-
-    @Override // z1d
-    public final void d(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        printWriter.append((CharSequence) str).append("mState=").println(this.m);
-        Iterator it = ((ns) this.k.keySet()).iterator();
-        while (it.hasNext()) {
-            yn ynVar = (yn) it.next();
-            printWriter.append((CharSequence) str).append((CharSequence) ynVar.c).println(":");
-            xx4 xx4Var = (xx4) this.f.get(ynVar.b);
-            fre.h(xx4Var);
-            xx4Var.e(str.concat("  "), fileDescriptor, printWriter, strArr);
+        synchronized (this) {
+            obj = this.b;
+            if (obj == obj3) {
+                obj = this.a.a();
+                Object obj4 = this.b;
+                if (obj4 != obj3 && obj4 != obj) {
+                    throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
+                }
+                this.b = obj;
+                this.a = null;
+            }
         }
-    }
-
-    @Override // z1d
-    public final ig0 e(ig0 ig0Var) {
-        ig0Var.l();
-        return this.m.e(ig0Var);
-    }
-
-    @Override // z1d
-    public final boolean g() {
-        return this.m instanceof d1d;
-    }
-
-    public final void h() {
-        this.a.lock();
-        try {
-            this.m = new v39(this, (byte) 21);
-            this.m.g1();
-            this.b.signalAll();
-        } finally {
-            this.a.unlock();
-        }
-    }
-
-    @Override // ey4
-    public final void onConnected(Bundle bundle) {
-        this.a.lock();
-        try {
-            this.m.i(bundle);
-        } finally {
-            this.a.unlock();
-        }
-    }
-
-    @Override // ey4
-    public final void onConnectionSuspended(int i) {
-        this.a.lock();
-        try {
-            this.m.t0(i);
-        } finally {
-            this.a.unlock();
-        }
-    }
-
-    @Override // z1d
-    public final void f() {
+        return obj;
     }
 }

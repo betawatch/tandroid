@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class l1 extends TextView {
     public boolean a;
@@ -13,9 +13,9 @@ public final class l1 extends TextView {
     @Override // android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.a) {
-            RectF rectF = gl.P;
+            RectF rectF = gm.P;
             rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), bkb.T1);
+            canvas.drawRoundRect(rectF, gm.L(4.0f), gm.L(4.0f), cmb.T1);
         }
         super.onDraw(canvas);
     }

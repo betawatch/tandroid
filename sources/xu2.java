@@ -1,88 +1,101 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class xu2 extends og0 {
-    public final int F;
-    public final long G;
-    public final f31 H;
-    public long I;
-    public volatile boolean J;
-    public boolean K;
+import android.app.Activity;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ContactsActivity;
 
-    public xu2(o63 o63Var, u63 u63Var, fm4 fm4Var, int i, Object obj, long j, long j2, long j3, long j4, long j5, int i2, long j6, f31 f31Var) {
-        super(o63Var, u63Var, fm4Var, i, obj, j, j2, j3, j4, j5);
-        this.F = i2;
-        this.G = j6;
-        this.H = f31Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class xu2 implements h59, qq7, ee {
+    public final /* synthetic */ ContactsActivity a;
+
+    public /* synthetic */ xu2(ContactsActivity contactsActivity) {
+        this.a = contactsActivity;
     }
 
-    @Override // k86
-    public final void a() {
-        tg2 tg2Var = this.y;
-        tg2Var.getClass();
-        if (this.I == 0) {
-            long j = this.G;
-            for (gp9 gp9Var : (gp9[]) tg2Var.c) {
-                if (gp9Var.I != j) {
-                    gp9Var.I = j;
-                    gp9Var.C = true;
-                }
+    @Override // qq7
+    public final wzc C0(View view, wzc wzcVar) {
+        iq5 H0 = gm.H0(wzcVar, false);
+        int i = H0.d;
+        ContactsActivity contactsActivity = this.a;
+        contactsActivity.l0 = i;
+        eh0.e(contactsActivity.d, H0.b, i, a.getCurrentActionBarHeight(), contactsActivity.i0);
+        contactsActivity.e0();
+        contactsActivity.d0();
+        return wzc.b;
+    }
+
+    @Override // h59
+    public final boolean g(int i, View view) {
+        ContactsActivity contactsActivity = this.a;
+        y59 adapter = contactsActivity.d.getAdapter();
+        zu2 zu2Var = contactsActivity.b;
+        if (adapter == zu2Var) {
+            int S = zu2Var.S(i);
+            int Q = contactsActivity.b.Q(i);
+            u31 u31Var = u31.x;
+            if (u31Var != null) {
+                u31Var.b();
             }
-            f31 f31Var = this.H;
-            long j2 = this.w;
-            long j3 = j2 == -9223372036854775807L ? -9223372036854775807L : j2 - this.G;
-            long j4 = this.x;
-            f31Var.b(tg2Var, j3, j4 != -9223372036854775807L ? j4 - this.G : -9223372036854775807L);
+            if (Q < 0 || S < 0) {
+                return false;
+            }
         }
-        try {
-            u63 b = this.b.b(this.I);
-            zxa zxaVar = this.r;
-            ja3 ja3Var = new ja3(zxaVar, b.e, zxaVar.open(b));
-            while (!this.J) {
-                try {
-                    int b2 = this.H.a.b(ja3Var, f31.s);
-                    gre.p(b2 != 1);
-                    if (!(b2 == 0)) {
-                        break;
-                    }
-                } finally {
-                    this.I = ja3Var.d - this.b.e;
-                }
-            }
-            fm4 fm4Var = this.d;
-            String str = fm4Var.s;
-            int i = fm4Var.V;
-            int i2 = fm4Var.W;
-            if (ud7.k(str) && ((i > 1 || i2 > 1) && i != -1 && i2 != -1)) {
-                wxb b0 = tg2Var.b0(4);
-                int i3 = i * i2;
-                long j5 = (this.n - this.h) / i3;
-                for (int i4 = 1; i4 < i3; i4++) {
-                    b0.e(0, new xu7());
-                    b0.a(i4 * j5, 0, 0, 0, null);
-                }
-            }
-            vbe.a(this.r);
-            this.K = !this.J;
-        } catch (Throwable th) {
-            vbe.a(this.r);
-            throw th;
+        boolean z = contactsActivity.J;
+        if (!z && !contactsActivity.K && (view instanceof w8c)) {
+            contactsActivity.n0((w8c) view);
+            return true;
         }
+        if (z || contactsActivity.K || !(view instanceof ut8)) {
+            return false;
+        }
+        ut8 ut8Var = (ut8) view;
+        if (ut8Var.getUser() != null && ut8Var.getUser().contact) {
+            contactsActivity.n0(ut8Var);
+        }
+        return true;
     }
 
-    @Override // ak6
-    public final long b() {
-        return this.s + this.F;
-    }
-
-    @Override // ak6
-    public final boolean c() {
-        return this.K;
-    }
-
-    @Override // k86
-    public final void d() {
-        this.J = true;
+    @Override // ee
+    public final void r(he heVar, int i) {
+        ContactsActivity contactsActivity = this.a;
+        vh6 vh6Var = contactsActivity.a0;
+        ArrayList arrayList = new ArrayList(vh6Var.m());
+        for (int i2 = 0; i2 < vh6Var.m(); i2++) {
+            arrayList.add((TLRPC.User) vh6Var.f(vh6Var.j(i2)));
+        }
+        bw2 contactsController = contactsActivity.getContactsController();
+        Activity parentActivity = contactsActivity.getParentActivity();
+        contactsController.getClass();
+        if (!arrayList.isEmpty()) {
+            HashMap hashMap = new HashMap();
+            int size = arrayList.size();
+            for (int i3 = 0; i3 < size; i3++) {
+                TLRPC.User user = (TLRPC.User) arrayList.get(i3);
+                TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) contactsController.g0.get(Long.valueOf(user.id));
+                user.contact = false;
+                contactsController.f0.remove(tL_contact);
+                contactsController.g0.remove(Long.valueOf(user.id));
+                hashMap.put(user, tL_contact);
+            }
+            contactsController.d(false);
+            nm7 notificationCenter = contactsController.getNotificationCenter();
+            int i4 = oc7.s5;
+            notificationCenter.k(2, 1);
+            contactsController.getNotificationCenter().k(nm7.N, new Object[0]);
+            m31 m31Var = new m31(parentActivity, contactsActivity.getResourceProvider());
+            m31Var.setTimer();
+            m31Var.b.setText(jb6.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
+            s31 s31Var = new s31(contactsActivity.getResourceProvider(), parentActivity, true, true);
+            s31Var.b = new mv2(contactsController, hashMap, (byte) 0);
+            s31Var.c = new rv2(contactsController, arrayList, (byte) 1);
+            m31Var.setButton(s31Var);
+            u31.g(contactsActivity, m31Var, 5000).j();
+        }
+        contactsActivity.i0();
     }
 }

@@ -1,60 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class k9a extends l9a {
-    public final d9a f;
-    public final float g;
-    public final float h;
-    public final /* synthetic */ m9a i;
+import org.telegram.tgnet.TLObject;
 
-    public k9a(m9a m9aVar, d9a d9aVar, boolean z, boolean z2) {
-        this.i = m9aVar;
-        this.b = false;
-        this.f = d9aVar;
-        this.g = z ? -1.0f : 1.0f;
-        this.h = z2 ? -1.0f : 1.0f;
-        a();
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class k9a extends qx2 {
+    public /* synthetic */ Object a;
+    public final /* synthetic */ l9a b;
+    public int c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k9a(l9a l9aVar, qx2 qx2Var) {
+        super(qx2Var);
+        this.b = l9aVar;
     }
 
-    @Override // l9a
-    public final void a() {
-        d9a d9aVar = this.f;
-        if (d9aVar != null) {
-            float f = (this.g * d9aVar.d) + d9aVar.b;
-            float f2 = (this.h * d9aVar.e) + d9aVar.c;
-            m9a m9aVar = this.i;
-            m9aVar.c(f, f2, true);
-            float[] fArr = m9aVar.p;
-            float f3 = fArr[0];
-            float f4 = fArr[1];
-            this.d = f3;
-            this.e = f4;
-        }
-    }
-
-    @Override // l9a
-    public final void b(float f, float f2) {
-        this.d = f;
-        this.e = f2;
-        d9a d9aVar = this.f;
-        float f3 = ((-this.g) * d9aVar.d) + d9aVar.b;
-        float f4 = ((-this.h) * d9aVar.e) + d9aVar.c;
-        m9a m9aVar = this.i;
-        m9aVar.c(f, f2, false);
-        m9aVar.c(f3, f4, true);
-        float[] fArr = m9aVar.p;
-        float f5 = fArr[0];
-        float f6 = fArr[1];
-        double atan2 = (3.141592653589793d - Math.atan2(f2 - f6, f - f5)) - d9aVar.h;
-        double cos = Math.cos(atan2) * loe.a(f, f2, f5, f6);
-        double sin = Math.sin(atan2) * loe.a(f, f2, f5, f6);
-        d9aVar.d = ((float) Math.abs(cos)) / 2.0f;
-        d9aVar.e = ((float) Math.abs(sin)) / 2.0f;
-        d9aVar.b = (f + f5) / 2.0f;
-        d9aVar.c = (f2 + f6) / 2.0f;
-        for (int i = 0; i < m9aVar.m.size(); i++) {
-            ((l9a) m9aVar.m.get(i)).a();
-        }
+    @Override // og0
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.c |= TLObject.FLAG_31;
+        return this.b.b(this);
     }
 }

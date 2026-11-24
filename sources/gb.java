@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public abstract class gb {
-    public static final s33 w = la2.V;
+    public static final d53 w = wb2.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -32,14 +32,14 @@ public abstract class gb {
     public int i = -1;
     public int j = -1;
     public int k = -1;
-    public final on n = new on(null);
+    public final po n = new po(null);
     public final ArrayList o = new ArrayList();
     public final fb t = new fb(this, 0);
     public final boolean u = true;
 
     public gb(FrameLayout frameLayout) {
         this.a = frameLayout;
-        gl.d3(new b1(this, (byte) 7));
+        gm.c3(new b1(this, (byte) 7));
     }
 
     public static Activity a(Context context) {
@@ -66,7 +66,7 @@ public abstract class gb {
             while (true) {
                 view2 = null;
                 if (view != null) {
-                    if (!(view.getParent() instanceof mq3)) {
+                    if (!(view.getParent() instanceof wr3)) {
                         if (!(view.getParent() instanceof View)) {
                             break;
                         } else {
@@ -135,7 +135,7 @@ public abstract class gb {
         this.d.requestLayout();
         boolean z = this.s;
         e(0.0f, z ? 1.0f : 0.0f, z);
-        if (!(this instanceof y72)) {
+        if (!(this instanceof j92)) {
             this.a.setTranslationY(0.0f);
         }
         f();

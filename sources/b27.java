@@ -1,13 +1,9 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public interface b27 {
+    void B(y17 y17Var, c27 c27Var);
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class b27 extends CharacterStyle {
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(bkb.n2.linkColor);
-    }
+    void g0(y17 y17Var, c27 c27Var);
 }

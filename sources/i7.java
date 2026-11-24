@@ -2,7 +2,7 @@
 
 import android.transition.Transition;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 public final class i7 implements Transition.TransitionListener {
     public final /* synthetic */ byte a;
@@ -22,7 +22,7 @@ public final class i7 implements Transition.TransitionListener {
                 ((r7) obj).j0.e();
                 break;
             case 1:
-                ((no4) obj).F.e();
+                ((oq4) obj).F.e();
                 break;
         }
     }
@@ -36,10 +36,10 @@ public final class i7 implements Transition.TransitionListener {
                 ((r7) obj).j0.e();
                 break;
             case 1:
-                ((no4) obj).F.e();
+                ((oq4) obj).F.e();
                 break;
             default:
-                ((on7) obj).run();
+                ((ge7) obj).run();
                 break;
         }
     }
@@ -63,7 +63,7 @@ public final class i7 implements Transition.TransitionListener {
                 ((r7) obj).j0.d();
                 break;
             case 1:
-                ((no4) obj).F.d();
+                ((oq4) obj).F.d();
                 break;
         }
     }

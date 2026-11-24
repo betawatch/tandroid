@@ -1,81 +1,34 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.RectF;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class zt8 implements gk7 {
-    public static final zt8 c;
-    public static final List d;
-    public boolean a;
-    public sr8 b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zt8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bp8 b;
 
-    static {
-        zt8 zt8Var = new zt8();
-        zt8Var.b = new sr8(zt8Var, (byte) 3);
-        c = zt8Var;
-        d = Arrays.asList(5, 10, 15, 30, 60);
+    public /* synthetic */ zt8(bp8 bp8Var, byte b) {
+        this.a = b;
+        this.b = bp8Var;
     }
 
-    public final void a() {
-        this.a = false;
-        if (gba.X0) {
-            ArrayList arrayList = new ArrayList(gba.w1);
-            Collections.sort(arrayList, new fx7((byte) 8));
-            int size = arrayList.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                fba fbaVar = (fba) obj;
-                if (fbaVar != gba.y1 && !fbaVar.c && fbaVar.d) {
-                    SharedPreferences.Editor edit = na7.c1().edit();
-                    edit.putBoolean("proxy_enabled", true);
-                    fbaVar.a.i(edit);
-                    edit.apply();
-                    gba.y1 = fbaVar;
-                    kk7.e().k(kk7.C4, new Object[0]);
-                    kk7.e().k(kk7.E4, new Object[0]);
-                    ConnectionsManager.setProxySettings(true, gba.y1.a);
-                    return;
-                }
-            }
-        }
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        sr8 sr8Var = this.b;
-        if (i == kk7.D4) {
-            boolean z = gba.a;
-            if (na7.c1().getBoolean("proxy_enabled", false) && gba.y1 != null && gba.X0 && gba.w1.size() > 1 && this.a) {
-                a();
-                return;
-            }
-            return;
-        }
-        if (i == kk7.C4) {
-            gl.r(sr8Var);
-            return;
-        }
-        if (i == kk7.S1 && i2 == y6c.t0) {
-            boolean z2 = gba.a;
-            if (((!na7.c1().getBoolean("proxy_enabled", false) || gba.y1 == null) && !gba.X0) || gba.w1.size() <= 1) {
-                return;
-            }
-            if (ConnectionsManager.getInstance(i2).getConnectionState() != 4) {
-                gl.r(sr8Var);
-            } else {
-                if (this.a) {
-                    return;
-                }
-                gl.e3(sr8Var, ((Integer) d.get(gba.Y0)).intValue() * 1000);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        bp8 bp8Var = this.b;
+        switch (b) {
+            case 0:
+                int i = ProfileStoriesView.t0;
+                ProfileActivity profileActivity = bp8Var.v0;
+                RectF rectF = ProfileActivity.e7;
+                profileActivity.d3(false);
+                break;
+            default:
+                bp8Var.invalidate();
+                break;
         }
     }
 }

@@ -6,16 +6,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class IconCompatParcelizer {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static IconCompat read(y9c y9cVar) {
+    public static IconCompat read(zbc zbcVar) {
         IconCompat iconCompat = new IconCompat();
-        iconCompat.a = y9cVar.f(iconCompat.a, 1);
+        iconCompat.a = zbcVar.f(iconCompat.a, 1);
         byte[] bArr = iconCompat.c;
-        if (y9cVar.e(2)) {
-            Parcel parcel = ((z9c) y9cVar).e;
+        if (zbcVar.e(2)) {
+            Parcel parcel = ((acc) zbcVar).e;
             int readInt = parcel.readInt();
             if (readInt < 0) {
                 bArr = null;
@@ -26,18 +26,18 @@ public class IconCompatParcelizer {
             }
         }
         iconCompat.c = bArr;
-        iconCompat.d = y9cVar.g(iconCompat.d, 3);
-        iconCompat.e = y9cVar.f(iconCompat.e, 4);
-        iconCompat.f = y9cVar.f(iconCompat.f, 5);
-        iconCompat.g = (ColorStateList) y9cVar.g(iconCompat.g, 6);
+        iconCompat.d = zbcVar.g(iconCompat.d, 3);
+        iconCompat.e = zbcVar.f(iconCompat.e, 4);
+        iconCompat.f = zbcVar.f(iconCompat.f, 5);
+        iconCompat.g = (ColorStateList) zbcVar.g(iconCompat.g, 6);
         String str = iconCompat.i;
-        if (y9cVar.e(7)) {
-            str = ((z9c) y9cVar).e.readString();
+        if (zbcVar.e(7)) {
+            str = ((acc) zbcVar).e.readString();
         }
         iconCompat.i = str;
         String str2 = iconCompat.j;
-        if (y9cVar.e(8)) {
-            str2 = ((z9c) y9cVar).e.readString();
+        if (zbcVar.e(8)) {
+            str2 = ((acc) zbcVar).e.readString();
         }
         iconCompat.j = str2;
         iconCompat.h = PorterDuff.Mode.valueOf(iconCompat.i);
@@ -48,7 +48,7 @@ public class IconCompatParcelizer {
                     iconCompat.b = parcelable;
                     return iconCompat;
                 }
-                w26.j("Invalid icon");
+                u36.j("Invalid icon");
                 return null;
             case 0:
             default:
@@ -81,8 +81,8 @@ public class IconCompatParcelizer {
         }
     }
 
-    public static void write(IconCompat iconCompat, y9c y9cVar) {
-        y9cVar.getClass();
+    public static void write(IconCompat iconCompat, zbc zbcVar) {
+        zbcVar.getClass();
         iconCompat.i = iconCompat.h.name();
         switch (iconCompat.a) {
             case -1:
@@ -105,40 +105,40 @@ public class IconCompatParcelizer {
         }
         int i = iconCompat.a;
         if (-1 != i) {
-            y9cVar.j(i, 1);
+            zbcVar.j(i, 1);
         }
         byte[] bArr = iconCompat.c;
         if (bArr != null) {
-            y9cVar.i(2);
-            Parcel parcel = ((z9c) y9cVar).e;
+            zbcVar.i(2);
+            Parcel parcel = ((acc) zbcVar).e;
             parcel.writeInt(bArr.length);
             parcel.writeByteArray(bArr);
         }
         Parcelable parcelable = iconCompat.d;
         if (parcelable != null) {
-            y9cVar.k(parcelable, 3);
+            zbcVar.k(parcelable, 3);
         }
         int i2 = iconCompat.e;
         if (i2 != 0) {
-            y9cVar.j(i2, 4);
+            zbcVar.j(i2, 4);
         }
         int i3 = iconCompat.f;
         if (i3 != 0) {
-            y9cVar.j(i3, 5);
+            zbcVar.j(i3, 5);
         }
         ColorStateList colorStateList = iconCompat.g;
         if (colorStateList != null) {
-            y9cVar.k(colorStateList, 6);
+            zbcVar.k(colorStateList, 6);
         }
         String str = iconCompat.i;
         if (str != null) {
-            y9cVar.i(7);
-            ((z9c) y9cVar).e.writeString(str);
+            zbcVar.i(7);
+            ((acc) zbcVar).e.writeString(str);
         }
         String str2 = iconCompat.j;
         if (str2 != null) {
-            y9cVar.i(8);
-            ((z9c) y9cVar).e.writeString(str2);
+            zbcVar.i(8);
+            ((acc) zbcVar).e.writeString(str2);
         }
     }
 }

@@ -1,54 +1,63 @@
 // default package
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class ug2 extends InputStream {
-    public final o63 a;
-    public final byte[] b = new byte[1];
-    public long c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ug2 implements hj6, au9 {
+    public final /* synthetic */ vg2 a;
 
-    public ug2(o63 o63Var, u63 u63Var) {
-        this.a = o63Var;
-        try {
-            this.c = o63Var.open(u63Var);
-        } catch (IOException e) {
-            sdb.b(e);
-            throw null;
+    public /* synthetic */ ug2(vg2 vg2Var) {
+        this.a = vg2Var;
+    }
+
+    @Override // au9
+    public final boolean F1(int i) {
+        return true;
+    }
+
+    @Override // au9
+    public final vh6 G0() {
+        return null;
+    }
+
+    @Override // hj6
+    public final boolean a(ij6 ij6Var, boolean z) {
+        int intValue = ((Integer) ij6Var.getTag()).intValue();
+        vg2 vg2Var = this.a;
+        TLObject E = vg2Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
+        return vg2Var.E.i0((TLRPC.ChannelParticipant) E, !z, ij6Var);
     }
 
-    @Override // java.io.InputStream
-    public final int available() {
-        return (int) this.c;
+    @Override // au9
+    public final vh6 e1() {
+        return null;
     }
 
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // java.io.InputStream
-    public final int read() {
-        o63 o63Var = this.a;
-        byte[] bArr = this.b;
-        int read = o63Var.read(bArr, 0, 1);
-        this.c--;
-        if (read == -1) {
-            return -1;
+    @Override // au9
+    public final void o(int i) {
+        vg2 vg2Var = this.a;
+        wg2 wg2Var = vg2Var.E;
+        if (vg2Var.h.e()) {
+            return;
         }
-        return bArr[0] & 255;
+        int i2 = vg2Var.r;
+        vg2Var.f();
+        if (vg2Var.r > i2) {
+            wg2Var.C0(i2);
+        }
+        if (vg2Var.s || vg2Var.r != 0 || i == 0) {
+            return;
+        }
+        wg2Var.b.e(false, true);
     }
 
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        if (i2 == 0) {
-            return 0;
-        }
-        int read = this.a.read(bArr, i, i2);
-        this.c -= read;
-        return read;
+    @Override // au9
+    public final void a2(ArrayList arrayList) {
     }
 }

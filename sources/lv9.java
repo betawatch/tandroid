@@ -1,13 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes.dex */
-public final class lv9 {
-    public final long a;
-    public final int b;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class lv9 extends sc3 {
+    public final /* synthetic */ sj3 F;
 
-    public lv9(long j, int i) {
-        this.a = j;
-        this.b = i;
+    public lv9(sj3 sj3Var) {
+        this.F = sj3Var;
+    }
+
+    @Override // sc3
+    public final void P(u69 u69Var) {
+        this.F.invalidate();
     }
 }

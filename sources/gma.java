@@ -1,70 +1,66 @@
 // default package
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import javax.net.SocketFactory;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class gma extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class gma {
+    public final SocketFactory a;
+    public final qa b;
+    public final short c;
+    public final int d;
+    public final short e;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    /* JADX WARN: Multi-variable type inference failed */
+    public gma(SocketFactory socketFactory, qa qaVar, int i, int i2, int i3) {
+        this.a = socketFactory;
+        this.b = qaVar;
+        this.c = i;
+        this.d = i2;
+        this.e = i3;
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
-    }
-
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
-    }
-
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
-    }
-
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: fma
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j, long j2) {
-                int i;
-                gma gmaVar = gma.this;
-                int i2 = gmaVar.a;
-                if (i2 <= 0 || (i = gmaVar.b) <= 0) {
-                    gmaVar.end();
-                    return;
-                }
-                int i3 = i2 - 1;
-                gmaVar.a = i3;
-                if (gmaVar.c != null) {
-                    float[] fArr = gmaVar.e;
-                    if (fArr == null || fArr.length != 2) {
-                        gmaVar.end();
-                        return;
-                    }
-                    float interpolation = gmaVar.getInterpolator().getInterpolation(1.0f - (i3 / i));
-                    float[] fArr2 = gmaVar.e;
-                    float f = fArr2[0];
-                    gmaVar.d = Float.valueOf(((fArr2[1] - f) * interpolation) + f);
-                    gmaVar.c.onAnimationUpdate(gmaVar);
-                }
+    public final Socket a(InetAddress[] inetAddressArr) {
+        e7a e7aVar = new e7a();
+        ArrayList arrayList = new ArrayList(inetAddressArr.length);
+        int i = 0;
+        de deVar = null;
+        int i2 = 0;
+        for (InetAddress inetAddress : inetAddressArr) {
+            int i3 = this.d;
+            if ((i3 != 2 || (inetAddress instanceof Inet4Address)) && (i3 != 3 || (inetAddress instanceof Inet6Address))) {
+                int i4 = i2 + this.e;
+                de deVar2 = new de(i4, (byte) 17);
+                arrayList.add(new fma(e7aVar, this.a, new InetSocketAddress(inetAddress, this.b.b), this.c, deVar, deVar2));
+                deVar = deVar2;
+                i2 = i4;
             }
-        });
-        int duration = (int) (getDuration() / gl.t);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+        }
+        e7aVar.b = arrayList;
+        e7aVar.a = new CountDownLatch(((ArrayList) e7aVar.b).size());
+        ArrayList arrayList2 = (ArrayList) e7aVar.b;
+        int size = arrayList2.size();
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            ((fma) obj).start();
+        }
+        ((CountDownLatch) e7aVar.a).await();
+        Socket socket = (Socket) e7aVar.c;
+        if (socket != null) {
+            return socket;
+        }
+        Exception exc = (Exception) e7aVar.d;
+        if (exc != null) {
+            throw exc;
+        }
+        throw new dwc(44, "No viable interface to connect");
     }
 }

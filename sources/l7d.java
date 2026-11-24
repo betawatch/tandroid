@@ -1,33 +1,38 @@
 // default package
 
 import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.RemoteException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class l7d extends b4 {
-    public static final Parcelable.Creator<l7d> CREATOR = new t4d(20);
-    public final String a;
-    public final String b;
-    public final int c;
-    public final int d;
+public final class l7d {
+    public final /* synthetic */ me1 a;
 
-    public l7d(int i, int i2, String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        this.c = i;
-        this.d = i2;
+    public l7d(me1 me1Var) {
+        this.a = me1Var;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        jte.q(parcel, 5, 4);
-        parcel.writeInt(this.d);
-        jte.s(parcel, r);
+    public final void a() {
+        me1 me1Var = this.a;
+        had hadVar = me1Var.e;
+        if (hadVar != null) {
+            try {
+                k89 k89Var = me1Var.j;
+                if (k89Var != null) {
+                    k89Var.u();
+                }
+                w9d w9dVar = (w9d) hadVar;
+                Parcel R = w9dVar.R();
+                int i = kid.a;
+                R.writeInt(0);
+                w9dVar.V(R, 1);
+            } catch (RemoteException e) {
+                me1.m.a(e, "Unable to call %s on %s.", "onConnected", had.class.getSimpleName());
+            }
+            fkd fkdVar = me1Var.l;
+            if (fkdVar != null) {
+                sm2.R((sm2) fkdVar.b, new yjf(new dd8(3)));
+            }
+        }
     }
 }

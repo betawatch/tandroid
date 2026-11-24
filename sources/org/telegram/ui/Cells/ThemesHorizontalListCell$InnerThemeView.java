@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int c0 = 0;
@@ -62,7 +62,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public long W;
     public final RadioButton a;
     public boolean a0;
-    public akb b;
+    public bmb b;
     public final /* synthetic */ f b0;
     public final RectF c;
     public final Paint d;
@@ -89,17 +89,17 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         this.T = new Matrix();
         setWillNotDraw(false);
         this.h = context.getResources().getDrawable(R.drawable.minibubble_in).mutate();
-        this.n = b00.d(context, R.drawable.minibubble_out);
-        textPaint.setTextSize(gl.L(13.0f));
+        this.n = b10.d(context, R.drawable.minibubble_out);
+        textPaint.setTextSize(gm.L(13.0f));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
-        radioButton.setSize(gl.L(20.0f));
-        addView(radioButton, nme.d(22, 22.0f, 51, 27.0f, 75.0f, 0.0f, 0.0f));
+        radioButton.setSize(gm.L(20.0f));
+        addView(radioButton, qoe.d(22, 22.0f, 51, 27.0f, 75.0f, 0.0f, 0.0f));
     }
 
     public final void a() {
-        akb akbVar = this.b;
-        int i = (akbVar.T && akbVar.Z == bkb.n) ? -1 : akbVar.R;
+        bmb bmbVar = this.b;
+        int i = (bmbVar.T && bmbVar.Z == cmb.n) ? -1 : bmbVar.R;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         this.h.setColorFilter(new PorterDuffColorFilter(i, mode));
         this.n.setColorFilter(new PorterDuffColorFilter(this.b.n(), mode));
@@ -115,37 +115,37 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         }
         this.R = null;
         this.P = null;
-        akb akbVar2 = this.b;
-        if (akbVar2.N != 0) {
-            if (akbVar2.O != 0) {
+        bmb bmbVar2 = this.b;
+        if (bmbVar2.N != 0) {
+            if (bmbVar2.O != 0) {
                 int m2 = this.b.m();
-                akb akbVar3 = this.b;
-                ye7 ye7Var = new ye7(m2, akbVar3.N, akbVar3.O, akbVar3.P, true, false);
-                ye7Var.u(gl.L(6.0f));
-                this.P = ye7Var;
-                dArr = gl.a3(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
+                bmb bmbVar3 = this.b;
+                ah7 ah7Var = new ah7(m2, bmbVar3.N, bmbVar3.O, bmbVar3.P, true, false);
+                ah7Var.u(gm.L(6.0f));
+                this.P = ah7Var;
+                dArr = gm.Z2(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
             } else {
                 GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{this.b.m(), this.b.N});
-                gradientDrawable.setCornerRadius(gl.L(6.0f));
+                gradientDrawable.setCornerRadius(gm.L(6.0f));
                 this.P = gradientDrawable;
-                dArr = gl.a3(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
+                dArr = gm.Z2(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
             }
-        } else if (akbVar2.Q > 0 || akbVar2.c != null) {
-            float L = gl.L(76.0f);
-            float L2 = gl.L(97.0f);
-            akb akbVar4 = this.b;
-            Bitmap d1 = gl.d1(L, L2, akbVar4.c, akbVar4.b, akbVar4.Q);
+        } else if (bmbVar2.Q > 0 || bmbVar2.c != null) {
+            float L = gm.L(76.0f);
+            float L2 = gm.L(97.0f);
+            bmb bmbVar4 = this.b;
+            Bitmap d1 = gm.d1(L, L2, bmbVar4.c, bmbVar4.b, bmbVar4.Q);
             if (d1 != null) {
                 this.P = new BitmapDrawable(d1);
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(d1, tileMode, tileMode);
                 this.R = bitmapShader;
                 this.Q.setShader(bitmapShader);
-                int[] q = gl.q(this.P);
-                dArr = gl.a3(Color.red(q[0]), Color.green(q[0]), Color.blue(q[0]));
+                int[] q = gm.q(this.P);
+                dArr = gm.Z2(Color.red(q[0]), Color.green(q[0]), Color.blue(q[0]));
             }
-        } else if (akbVar2.m() != 0) {
-            dArr = gl.a3(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
+        } else if (bmbVar2.m() != 0) {
+            dArr = gm.Z2(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
         }
         if (dArr == null || dArr[1] > 0.10000000149011612d || dArr[2] < 0.9599999785423279d) {
             this.S = false;
@@ -153,9 +153,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             this.S = true;
         }
         if (this.b.m() == 0 && this.b.U && this.P == null) {
-            ye7 R = bkb.R(100, kk7.d3);
+            ah7 R = cmb.R(100, nm7.d3);
             this.P = R;
-            R.u(gl.L(6.0f));
+            R.u(gm.L(6.0f));
         }
         invalidate();
     }
@@ -173,8 +173,8 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         int intValue;
         String[] split;
         HashMap hashMap = this.b0.i3;
-        akb akbVar = this.b;
-        if (akbVar == null || akbVar.b == null) {
+        bmb bmbVar = this.b;
+        if (bmbVar == null || bmbVar.b == null) {
             return false;
         }
         boolean z = true;
@@ -204,7 +204,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                 String substring = str.substring(4);
                                 Uri parse = Uri.parse(substring);
                                 this.b.e = parse.getQueryParameter("slug");
-                                this.b.c = sqc.d(substring).getAbsolutePath();
+                                this.b.c = usc.d(substring).getAbsolutePath();
                                 String queryParameter = parse.getQueryParameter("mode");
                                 if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
                                     int i7 = 0;
@@ -224,13 +224,13 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                         String queryParameter2 = parse.getQueryParameter("bg_color");
                                         if (!TextUtils.isEmpty(queryParameter2)) {
                                             this.b.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
-                                            if (queryParameter2.length() >= 13 && gl.Q1(queryParameter2.charAt(6))) {
+                                            if (queryParameter2.length() >= 13 && gm.Q1(queryParameter2.charAt(6))) {
                                                 this.b.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
                                             }
-                                            if (queryParameter2.length() >= 20 && gl.Q1(queryParameter2.charAt(13))) {
+                                            if (queryParameter2.length() >= 20 && gm.Q1(queryParameter2.charAt(13))) {
                                                 this.b.w = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
                                             }
-                                            if (queryParameter2.length() == 27 && gl.Q1(queryParameter2.charAt(20))) {
+                                            if (queryParameter2.length() == 27 && gm.Q1(queryParameter2.charAt(20))) {
                                                 this.b.x = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
                                             }
                                         }
@@ -247,9 +247,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                     if (!TextUtils.isEmpty(queryParameter4)) {
                                         this.b.E = Utilities.z(queryParameter4).intValue();
                                     }
-                                    akb akbVar2 = this.b;
-                                    if (akbVar2.E == 0) {
-                                        akbVar2.E = 50;
+                                    bmb bmbVar2 = this.b;
+                                    if (bmbVar2.E == 0) {
+                                        bmbVar2.E = 50;
                                     }
                                 }
                             } else {
@@ -259,7 +259,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                     break;
                                 }
                                 int indexOf = str.indexOf(61);
-                                if (indexOf != -1 && ((d = lve.d(str.substring(0, indexOf))) == bkb.qa || d == bkb.qb || d == bkb.De || d == bkb.Ee || d == bkb.Fe || d == bkb.Ge)) {
+                                if (indexOf != -1 && ((d = nxe.d(str.substring(0, indexOf))) == cmb.qa || d == cmb.qb || d == cmb.De || d == cmb.Ee || d == cmb.Fe || d == cmb.Ge)) {
                                     String substring2 = str.substring(indexOf + 1);
                                     if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                         intValue = Utilities.z(substring2).intValue();
@@ -270,17 +270,17 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                             intValue = Utilities.z(substring2).intValue();
                                         }
                                     }
-                                    if (d == bkb.qa) {
+                                    if (d == cmb.qa) {
                                         this.b.R = intValue;
-                                    } else if (d == bkb.qb) {
+                                    } else if (d == cmb.qb) {
                                         this.b.S = intValue;
-                                    } else if (d == bkb.De) {
+                                    } else if (d == cmb.De) {
                                         this.b.M = intValue;
-                                    } else if (d == bkb.Ee) {
+                                    } else if (d == cmb.Ee) {
                                         this.b.N = intValue;
-                                    } else if (d == bkb.Fe) {
+                                    } else if (d == cmb.Fe) {
                                         this.b.O = intValue;
-                                    } else if (d == bkb.Ge) {
+                                    } else if (d == cmb.Ge) {
                                         this.b.P = intValue;
                                     }
                                 }
@@ -302,29 +302,29 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             }
             fileInputStream.close();
         } catch (Throwable th) {
-            fa4.g(th, true);
+            fc4.g(th, true);
         }
-        akb akbVar3 = this.b;
-        if (akbVar3.c == null || akbVar3.f || new File(this.b.c).exists()) {
+        bmb bmbVar3 = this.b;
+        if (bmbVar3.c == null || bmbVar3.f || new File(this.b.c).exists()) {
             this.b.U = true;
             return true;
         }
         if (hashMap.containsKey(this.b)) {
             return false;
         }
-        akb akbVar4 = this.b;
-        hashMap.put(akbVar4, akbVar4.e);
+        bmb bmbVar4 = this.b;
+        hashMap.put(bmbVar4, bmbVar4.e);
         TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
         TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-        akb akbVar5 = this.b;
-        tL_inputWallPaperSlug.slug = akbVar5.e;
+        bmb bmbVar5 = this.b;
+        tL_inputWallPaperSlug.slug = bmbVar5.e;
         getwallpaper.wallpaper = tL_inputWallPaperSlug;
-        ConnectionsManager.getInstance(akbVar5.F).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.Cells.c
+        ConnectionsManager.getInstance(bmbVar5.F).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.Cells.c
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
                 int i8 = ThemesHorizontalListCell$InnerThemeView.c0;
                 final ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = ThemesHorizontalListCell$InnerThemeView.this;
-                gl.d3(new Runnable() { // from class: org.telegram.ui.Cells.d
+                gm.c3(new Runnable() { // from class: org.telegram.ui.Cells.d
                     @Override // java.lang.Runnable
                     public final void run() {
                         ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView2 = ThemesHorizontalListCell$InnerThemeView.this;
@@ -335,12 +335,12 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                             return;
                         }
                         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject2;
-                        String r = ba4.r(null, wallPaper.document);
+                        String r = bc4.r(null, wallPaper.document);
                         if (hashMap2.containsKey(r)) {
                             return;
                         }
                         hashMap2.put(r, themesHorizontalListCell$InnerThemeView2.b);
-                        ba4.G(themesHorizontalListCell$InnerThemeView2.b.F).X(wallPaper.document, wallPaper, 1, 1);
+                        bc4.G(themesHorizontalListCell$InnerThemeView2.b.F).X(wallPaper.document, wallPaper, 1, 1);
                     }
                 });
             }
@@ -356,7 +356,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         this.J = this.E;
         this.K = this.F;
         int i3 = 0;
-        zjb i4 = this.b.i(false);
+        amb i4 = this.b.i(false);
         if (i4 != null) {
             i3 = i4.c;
             i2 = i4.e;
@@ -371,12 +371,12 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             i = 0;
             i2 = 0;
         }
-        akb akbVar = this.b;
-        this.x = bkb.B(akbVar, i3, (akbVar.T && akbVar.Z == bkb.n) ? -1 : akbVar.R);
-        akb akbVar2 = this.b;
-        this.y = bkb.B(akbVar2, i2, akbVar2.n());
-        akb akbVar3 = this.b;
-        this.E = bkb.B(akbVar3, i, akbVar3.m());
+        bmb bmbVar = this.b;
+        this.x = cmb.B(bmbVar, i3, (bmbVar.T && bmbVar.Z == cmb.n) ? -1 : bmbVar.R);
+        bmb bmbVar2 = this.b;
+        this.y = cmb.B(bmbVar2, i2, bmbVar2.n());
+        bmb bmbVar3 = this.b;
+        this.E = cmb.B(bmbVar3, i, bmbVar3.m());
         this.F = this.y;
         this.G = this.b.Z;
         ObjectAnimator objectAnimator = this.M;
@@ -402,12 +402,12 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         TLRPC.TL_theme tL_theme;
         super.onAttachedToWindow();
         f fVar = this.b0;
-        this.a.a(this.b == (fVar.n3 == 1 ? bkb.J : bkb.B0()), false);
-        akb akbVar = this.b;
-        if (akbVar == null || (tL_theme = akbVar.G) == null || akbVar.V) {
+        this.a.a(this.b == (fVar.n3 == 1 ? cmb.J : cmb.B0()), false);
+        bmb bmbVar = this.b;
+        if (bmbVar == null || (tL_theme = bmbVar.G) == null || bmbVar.V) {
             return;
         }
-        if (fVar.h3.containsKey(ba4.r(null, tL_theme.document)) || fVar.i3.containsKey(this.b)) {
+        if (fVar.h3.containsKey(bc4.r(null, tL_theme.document)) || fVar.i3.containsKey(this.b)) {
             return;
         }
         this.b.V = true;
@@ -430,30 +430,30 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         if (this.G != this.b.Z) {
             d(true);
         }
-        int L = this.s ? gl.L(22.0f) : 0;
-        int L2 = gl.L(11.0f);
+        int L = this.s ? gm.L(22.0f) : 0;
+        int L2 = gm.L(11.0f);
         float f3 = L;
         float f4 = L2;
-        float L3 = gl.L(76.0f) + L;
-        float L4 = gl.L(97.0f) + L2;
+        float L3 = gm.L(76.0f) + L;
+        float L4 = gm.L(97.0f) + L2;
         RectF rectF = this.c;
         rectF.set(f3, f4, L3, L4);
         String l = this.b.l();
         if (l.toLowerCase().endsWith(".attheme")) {
             l = l.substring(0, l.lastIndexOf(46));
         }
-        float measuredWidth = (getMeasuredWidth() - gl.L(this.s ? 10.0f : 15.0f)) - (this.r ? gl.L(7.0f) : 0);
+        float measuredWidth = (getMeasuredWidth() - gm.L(this.s ? 10.0f : 15.0f)) - (this.r ? gm.L(7.0f) : 0);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         TextPaint textPaint = this.f;
         String charSequence = TextUtils.ellipsize(l, textPaint, measuredWidth, truncateAt).toString();
         int ceil = (int) Math.ceil(textPaint.measureText(charSequence));
-        textPaint.setColor(bkb.w0(null, bkb.F6, false));
-        canvas.drawText(charSequence, ((gl.L(76.0f) - ceil) / 2) + L, gl.L(131.0f), textPaint);
-        akb akbVar = this.b;
-        TLRPC.TL_theme tL_theme = akbVar.G;
+        textPaint.setColor(cmb.w0(null, cmb.F6, false));
+        canvas.drawText(charSequence, ((gm.L(76.0f) - ceil) / 2) + L, gm.L(131.0f), textPaint);
+        bmb bmbVar = this.b;
+        TLRPC.TL_theme tL_theme = bmbVar.G;
         Paint paint = this.d;
         RadioButton radioButton = this.a;
-        if (tL_theme == null || (tL_theme.document != null && akbVar.V)) {
+        if (tL_theme == null || (tL_theme.document != null && bmbVar.V)) {
             paint.setColor(b(this.J, this.E));
             boolean z = this.L;
             Drawable drawable = this.n;
@@ -472,7 +472,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             }
             Drawable drawable3 = this.P;
             if (drawable3 == null) {
-                canvas.drawRoundRect(rectF, gl.L(f), gl.L(f), paint);
+                canvas.drawRoundRect(rectF, gm.L(f), gm.L(f), paint);
             } else if (this.R != null) {
                 BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable3;
                 float width = bitmapDrawable.getBitmap().getWidth();
@@ -490,31 +490,31 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                 }
                 matrix.preScale(min, min);
                 this.R.setLocalMatrix(matrix);
-                canvas.drawRoundRect(rectF, gl.L(f), gl.L(f), this.Q);
+                canvas.drawRoundRect(rectF, gm.L(f), gm.L(f), this.Q);
             } else {
                 drawable3.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                 this.P.draw(canvas);
             }
             radioButton.b(1728053247, -1);
-            akb akbVar2 = this.b;
-            if (akbVar2.Y != 0) {
-                if ("Day".equals(akbVar2.a) || "Arctic Blue".equals(this.b.a)) {
+            bmb bmbVar2 = this.b;
+            if (bmbVar2.Y != 0) {
+                if ("Day".equals(bmbVar2.a) || "Arctic Blue".equals(this.b.a)) {
                     radioButton.b(-5000269, b(this.K, this.F));
-                    bkb.W1.setColor(733001146);
-                    canvas.drawRoundRect(rectF, gl.L(f), gl.L(f), bkb.W1);
+                    cmb.W1.setColor(733001146);
+                    canvas.drawRoundRect(rectF, gm.L(f), gm.L(f), cmb.W1);
                 }
             } else if (this.S) {
-                radioButton.b(-5000269, akbVar2.n());
-                bkb.W1.setColor(733001146);
-                canvas.drawRoundRect(rectF, gl.L(f), gl.L(f), bkb.W1);
+                radioButton.b(-5000269, bmbVar2.n());
+                cmb.W1.setColor(733001146);
+                canvas.drawRoundRect(rectF, gm.L(f), gm.L(f), cmb.W1);
             }
-            drawable2.setBounds(gl.L(f) + L, gl.L(22.0f), gl.L(49.0f) + L, gl.L(36.0f));
+            drawable2.setBounds(gm.L(f) + L, gm.L(22.0f), gm.L(49.0f) + L, gm.L(36.0f));
             drawable2.draw(canvas);
-            drawable.setBounds(gl.L(27.0f) + L, gl.L(41.0f), gl.L(70.0f) + L, gl.L(55.0f));
+            drawable.setBounds(gm.L(27.0f) + L, gm.L(41.0f), gm.L(70.0f) + L, gm.L(55.0f));
             drawable.draw(canvas);
             if (this.e != null && this.b0.n3 == 0) {
-                int L5 = ((int) rectF.right) - gl.L(16.0f);
-                int L6 = gl.L(f) + ((int) rectF.top);
+                int L5 = ((int) rectF.right) - gm.L(16.0f);
+                int L6 = gm.L(f) + ((int) rectF.top);
                 Drawable drawable4 = this.e;
                 drawable4.setBounds(L5, L6, drawable4.getIntrinsicWidth() + L5, this.e.getIntrinsicHeight() + L6);
                 this.e.draw(canvas);
@@ -523,19 +523,19 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             f = 6.0f;
             f2 = 1.0f;
         }
-        akb akbVar3 = this.b;
-        TLRPC.TL_theme tL_theme2 = akbVar3.G;
+        bmb bmbVar3 = this.b;
+        TLRPC.TL_theme tL_theme2 = bmbVar3.G;
         if (tL_theme2 != null) {
             if (tL_theme2.document == null) {
                 radioButton.setAlpha(0.0f);
-                bkb.W1.setColor(733001146);
-                canvas.drawRoundRect(rectF, gl.L(f), gl.L(f), bkb.W1);
+                cmb.W1.setColor(733001146);
+                canvas.drawRoundRect(rectF, gm.L(f), gm.L(f), cmb.W1);
                 if (this.U != null) {
-                    int w0 = bkb.w0(null, bkb.D6, false);
+                    int w0 = cmb.w0(null, cmb.D6, false);
                     if (this.V != w0) {
                         Drawable drawable5 = this.U;
                         this.V = w0;
-                        bkb.A1(w0, drawable5);
+                        cmb.A1(w0, drawable5);
                     }
                     int centerX = (int) (rectF.centerX() - (this.U.getIntrinsicWidth() / 2));
                     int centerY = (int) (rectF.centerY() - (this.U.getIntrinsicHeight() / 2));
@@ -555,15 +555,15 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             return;
         }
         radioButton.setAlpha(f2 - this.w);
-        paint.setColor(bkb.w0(null, bkb.Z6, false));
+        paint.setColor(cmb.w0(null, cmb.Z6, false));
         paint.setAlpha((int) (this.w * 255.0f));
-        canvas.drawRoundRect(rectF, gl.L(f), gl.L(f), paint);
+        canvas.drawRoundRect(rectF, gm.L(f), gm.L(f), paint);
         if (this.U != null) {
-            int w02 = bkb.w0(null, bkb.D6, false);
+            int w02 = cmb.w0(null, cmb.D6, false);
             if (this.V != w02) {
                 Drawable drawable7 = this.U;
                 this.V = w02;
-                bkb.A1(w02, drawable7);
+                cmb.A1(w02, drawable7);
             }
             int centerX2 = (int) (rectF.centerX() - (this.U.getIntrinsicWidth() / 2));
             int centerY2 = (int) (rectF.centerY() - (this.U.getIntrinsicHeight() / 2));
@@ -598,18 +598,18 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         accessibilityNodeInfo.setCheckable(true);
         accessibilityNodeInfo.setEnabled(true);
         accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, k96.M0(2131754838, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, jb6.M0(2131754838, null)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.L((this.r ? 22 : 15) + 76 + (this.s ? 22 : 0)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(148.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gm.L((this.r ? 22 : 15) + 76 + (this.s ? 22 : 0)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gm.L(148.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        akb akbVar;
-        if (this.e != null && (akbVar = this.b) != null && (akbVar.G == null || akbVar.V)) {
+        bmb bmbVar;
+        if (this.e != null && (bmbVar = this.b) != null && (bmbVar.G == null || bmbVar.V)) {
             f fVar = this.b0;
             if (fVar.n3 == 0) {
                 int action = motionEvent.getAction();
@@ -617,7 +617,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                     float x = motionEvent.getX();
                     float y = motionEvent.getY();
                     RectF rectF = this.c;
-                    if (x > rectF.centerX() && y < rectF.centerY() - gl.L(10.0f)) {
+                    if (x > rectF.centerX() && y < rectF.centerY() - gm.L(10.0f)) {
                         if (action == 0) {
                             this.a0 = true;
                         } else {

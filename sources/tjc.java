@@ -1,27 +1,31 @@
 // default package
 
-import android.media.VolumeProvider;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class tjc extends VolumeProvider {
-    public final /* synthetic */ tx3 a;
+public final /* synthetic */ class tjc implements jac {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VoIPService b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tjc(tx3 tx3Var, int i, int i2, int i3, String str) {
-        super(i, i2, i3, str);
-        this.a = tx3Var;
+    public /* synthetic */ tjc(VoIPService voIPService, byte b) {
+        this.a = b;
+        this.b = voIPService;
     }
 
-    @Override // android.media.VolumeProvider
-    public final void onAdjustVolume(int i) {
-        tx3 tx3Var = this.a;
-        ((ux4) ((xl3) tx3Var.f).d).a.post(new sx4(tx3Var, i, (byte) 1));
-    }
-
-    @Override // android.media.VolumeProvider
-    public final void onSetVolumeTo(int i) {
-        tx3 tx3Var = this.a;
-        ((ux4) ((xl3) tx3Var.f).d).a.post(new sx4(tx3Var, i, (byte) 0));
+    @Override // jac
+    public final void a(Object obj, Object obj2) {
+        byte b = this.a;
+        VoIPService voIPService = this.b;
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
+        switch (b) {
+            case 0:
+                voIPService.lambda$switchToSpeaker$87(bool, bool2);
+                break;
+            default:
+                voIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$91(bool, bool2);
+                break;
+        }
     }
 }

@@ -1,38 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public enum gsb extends qsb {
+public enum gsb extends rub {
     public gsb() {
-        super("BeforeDoctypeSystemIdentifier", 61);
+        super("RawtextLessthanSign", 13);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
-        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            return;
-        }
-        if (d == '\"') {
-            aqbVar.c = qsb.A0;
-            return;
-        }
-        if (d == '\'') {
-            aqbVar.c = qsb.B0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else if (d != 65535) {
-            aqbVar.m(this);
-            aqbVar.c = qsb.D0;
+    @Override // rub
+    public final void c(bsb bsbVar, hl1 hl1Var) {
+        if (hl1Var.m('/')) {
+            bsbVar.e();
+            bsbVar.a(rub.E);
         } else {
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
+            bsbVar.f('<');
+            bsbVar.c = rub.e;
         }
     }
 }

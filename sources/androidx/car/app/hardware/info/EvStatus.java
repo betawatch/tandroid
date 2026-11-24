@@ -3,14 +3,14 @@ package androidx.car.app.hardware.info;
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class EvStatus {
     private final CarValue<Boolean> mEvChargePortConnected;
     private final CarValue<Boolean> mEvChargePortOpen;
 
-    public EvStatus(a44 a44Var) {
-        a44Var.getClass();
+    public EvStatus(k54 k54Var) {
+        k54Var.getClass();
         this.mEvChargePortConnected = null;
         this.mEvChargePortOpen = null;
     }

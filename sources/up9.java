@@ -1,69 +1,48 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class up9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bq9 b;
+    public final /* synthetic */ Runnable c;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class up9 {
-    public long a;
-    public boolean b;
-    public int c;
-    public k27 d;
-    public int e;
-    public long f;
-    public long g;
-    public long h;
-    public boolean i;
-    public int j;
-    public int k;
-
-    public static up9 a(int i, TLRPC.Message message) {
-        up9 up9Var = new up9();
-        up9Var.a = k27.Q1(y6c.h(i).e(), message);
-        up9Var.b = false;
-        up9Var.c = message.id;
-        up9Var.d = new k27(i, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);
-        return up9Var;
+    public /* synthetic */ up9(bq9 bq9Var, Runnable runnable, byte b) {
+        this.a = b;
+        this.b = bq9Var;
+        this.c = runnable;
     }
 
-    public static up9 b(int i, TLRPC.savedDialog saveddialog, ArrayList arrayList) {
-        TLRPC.Message message;
-        up9 up9Var = new up9();
-        up9Var.a = cf3.n(saveddialog.peer);
-        up9Var.b = saveddialog.pinned;
-        up9Var.c = saveddialog.top_message;
-        up9Var.f = saveddialog.unread_count;
-        up9Var.g = saveddialog.read_inbox_max_id;
-        up9Var.h = saveddialog.read_outbox_max_id;
-        int i2 = 0;
-        while (true) {
-            if (i2 >= arrayList.size()) {
-                message = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Runnable runnable = this.c;
+        bq9 bq9Var = this.b;
+        switch (b) {
+            case 0:
+                if (!bq9Var.h) {
+                    runnable.run();
+                    break;
+                }
                 break;
-            }
-            message = (TLRPC.Message) arrayList.get(i2);
-            if (up9Var.c == message.id) {
+            default:
+                if (!bq9Var.h) {
+                    bq9Var.h = true;
+                    bq9Var.e.C();
+                    bq9Var.b.removeCallbacks(bq9Var.n);
+                    h74 h74Var = bq9Var.f;
+                    if (h74Var != null) {
+                        h74Var.g1();
+                        bq9Var.f = null;
+                    }
+                    bq9Var.g = null;
+                    bq9Var.a.quitSafely();
+                }
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
-            }
-            i2++;
         }
-        TLRPC.Message message2 = message;
-        if (message2 != null) {
-            up9Var.d = new k27(i, message2, null, null, null, null, null, false, false, 0L, false, false, true, 0);
-        }
-        return up9Var;
-    }
-
-    public final int c() {
-        TLRPC.Message message;
-        k27 k27Var = this.d;
-        return (k27Var == null || (message = k27Var.k) == null) ? this.j : (message.flags & 32768) != 0 ? message.edit_date : message.date;
-    }
-
-    public final boolean d() {
-        TLRPC.Message message;
-        k27 k27Var = this.d;
-        return (k27Var == null || (message = k27Var.k) == null || !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) ? false : true;
     }
 }

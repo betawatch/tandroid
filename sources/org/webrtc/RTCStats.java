@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes3.dex */
 public class RTCStats {
     private final String id;
@@ -60,19 +60,19 @@ public class RTCStats {
     }
 
     public String toString() {
-        StringBuilder r = tb4.r("{ timestampUs: ");
-        r.append(this.timestampUs);
-        r.append(", type: ");
-        r.append(this.type);
-        r.append(", id: ");
-        r.append(this.id);
+        StringBuilder s = td4.s("{ timestampUs: ");
+        s.append(this.timestampUs);
+        s.append(", type: ");
+        s.append(this.type);
+        s.append(", id: ");
+        s.append(this.id);
         for (Map.Entry<String, Object> entry : this.members.entrySet()) {
-            r.append(", ");
-            r.append(entry.getKey());
-            r.append(": ");
-            appendValue(r, entry.getValue());
+            s.append(", ");
+            s.append(entry.getKey());
+            s.append(": ");
+            appendValue(s, entry.getValue());
         }
-        r.append(" }");
-        return r.toString();
+        s.append(" }");
+        return s.toString();
     }
 }

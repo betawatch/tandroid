@@ -1,117 +1,59 @@
 // default package
 
-import android.os.Looper;
-import java.util.Locale;
+import java.util.Map;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class u9d {
-    public static final Object i = new Object();
-    public final dc6 a;
-    public final int b;
-    public final String c;
-    public f9d g;
-    public xia h;
-    public long e = -1;
-    public long f = 0;
-    public final o59 d = new o59(Looper.getMainLooper(), (byte) 3);
+public final /* synthetic */ class u9d implements cq7 {
+    public static final /* synthetic */ u9d b = new u9d(0);
+    public static final /* synthetic */ u9d c = new u9d(1);
+    public static final /* synthetic */ u9d d = new u9d(2);
+    public static final /* synthetic */ u9d e = new u9d(3);
+    public static final /* synthetic */ u9d f = new u9d(4);
+    public static final /* synthetic */ u9d g = new u9d(5);
+    public static final /* synthetic */ u9d h = new u9d(6);
+    public static final /* synthetic */ u9d i = new u9d(7);
+    public final /* synthetic */ byte a;
 
-    public u9d(long j, String str) {
-        this.b = (int) j;
-        this.c = str;
-        this.a = new dc6("RequestTracker", str);
+    public /* synthetic */ u9d(byte b2) {
+        this.a = b2;
     }
 
-    public final void a(long j, f9d f9dVar) {
-        f9d f9dVar2;
-        long j2;
-        long j3;
-        long currentTimeMillis = System.currentTimeMillis();
-        Object obj = i;
-        synchronized (obj) {
-            f9dVar2 = this.g;
-            j2 = this.e;
-            j3 = this.f;
-            this.e = j;
-            this.g = f9dVar;
-            this.f = currentTimeMillis;
-        }
-        if (f9dVar2 != null) {
-            f9dVar2.j0(this.c, j2, j3, currentTimeMillis);
-        }
-        synchronized (obj) {
-            xia xiaVar = this.h;
-            if (xiaVar != null) {
-                this.d.removeCallbacks(xiaVar);
-            }
-            xia xiaVar2 = new xia((Object) this, (byte) 27);
-            this.h = xiaVar2;
-            this.d.postDelayed(xiaVar2, this.b);
-        }
-    }
-
-    public final void b(long j, int i2, r8d r8dVar) {
-        synchronized (i) {
-            if (c(j)) {
-                Locale locale = Locale.ROOT;
-                e(i2, r8dVar, "request " + j + " completed");
-            }
-        }
-    }
-
-    public final boolean c(long j) {
-        boolean z;
-        synchronized (i) {
-            long j2 = this.e;
-            z = false;
-            if (j2 != -1 && j2 == j) {
-                z = true;
-            }
-        }
-        return z;
-    }
-
-    public final boolean d() {
-        boolean z;
-        synchronized (i) {
-            z = this.e != -1;
-        }
-        return z;
-    }
-
-    public final void e(int i2, r8d r8dVar, String str) {
-        this.a.b(str, new Object[0]);
-        Object obj = i;
-        synchronized (obj) {
-            if (this.g != null) {
-                long currentTimeMillis = System.currentTimeMillis();
-                f9d f9dVar = this.g;
-                fre.h(f9dVar);
-                f9dVar.R(this.c, this.e, i2, r8dVar, this.f, currentTimeMillis);
-            }
-            this.e = -1L;
-            this.g = null;
-            synchronized (obj) {
-                try {
-                    xia xiaVar = this.h;
-                    if (xiaVar != null) {
-                        this.d.removeCallbacks(xiaVar);
-                        this.h = null;
-                    }
-                } finally {
-                }
-            }
-        }
-    }
-
-    public final boolean f(int i2) {
-        synchronized (i) {
-            if (!d()) {
-                return false;
-            }
-            Locale locale = Locale.ROOT;
-            e(i2, null, "clearing request " + this.e);
-            return true;
+    @Override // b44
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Map.Entry entry = (Map.Entry) obj;
+                dq7 dq7Var = (dq7) obj2;
+                dq7Var.a(aad.f, entry.getKey());
+                dq7Var.a(aad.g, entry.getValue());
+                return;
+            case 1:
+                throw new e44("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
+            case 2:
+                Map.Entry entry2 = (Map.Entry) obj;
+                dq7 dq7Var2 = (dq7) obj2;
+                dq7Var2.a(qad.f, entry2.getKey());
+                dq7Var2.a(qad.g, entry2.getValue());
+                return;
+            case 3:
+                throw new e44("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
+            case 4:
+                Map.Entry entry3 = (Map.Entry) obj;
+                dq7 dq7Var3 = (dq7) obj2;
+                dq7Var3.a(rkd.f, entry3.getKey());
+                dq7Var3.a(rkd.g, entry3.getValue());
+                return;
+            case 5:
+                throw new e44("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
+            case 6:
+                Map.Entry entry4 = (Map.Entry) obj;
+                dq7 dq7Var4 = (dq7) obj2;
+                dq7Var4.a(vmd.f, entry4.getKey());
+                dq7Var4.a(vmd.g, entry4.getValue());
+                return;
+            default:
+                throw new e44("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
         }
     }
 }

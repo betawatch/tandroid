@@ -2,11 +2,11 @@
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class d1 implements dm4 {
+public final class d1 implements eo4 {
     public final Thread c;
-    public final jc d;
+    public final jd d;
     public volatile boolean e;
     public volatile int f;
     public int g;
@@ -15,18 +15,18 @@ public final class d1 implements dm4 {
     public volatile int h = -1;
     public final c1 b = new c1(this, Looper.getMainLooper(), (byte) 0);
 
-    public d1(jc jcVar) {
-        this.d = jcVar;
+    public d1(jd jdVar) {
+        this.d = jdVar;
         byte b = 0;
-        ur urVar = ur.f;
-        this.e = urVar.a > 0;
-        urVar.d.add(this);
+        us usVar = us.f;
+        this.e = usVar.a > 0;
+        usVar.d.add(this);
         Thread thread = new Thread(new b1(this, b), "ANRDetector");
         this.c = thread;
         thread.start();
     }
 
-    @Override // dm4
+    @Override // eo4
     public final void a() {
         synchronized (this.a) {
             this.f++;
@@ -36,7 +36,7 @@ public final class d1 implements dm4 {
         this.c.interrupt();
     }
 
-    @Override // dm4
+    @Override // eo4
     public final void b() {
         synchronized (this.a) {
             this.f++;

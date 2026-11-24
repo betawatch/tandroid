@@ -9,11 +9,11 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public class DynamiteClearcutLogger {
     private static final ExecutorService zza;
-    private ibd zzb = new ibd();
+    private kdd zzb = new kdd();
     private VisionClearcutLogger zzc;
 
     static {
@@ -27,21 +27,21 @@ public class DynamiteClearcutLogger {
         this.zzc = new VisionClearcutLogger(context);
     }
 
-    public final void zza(int i, x1e x1eVar) {
+    public final void zza(int i, a4e a4eVar) {
         if (i == 3) {
-            ibd ibdVar = this.zzb;
-            synchronized (ibdVar.a) {
+            kdd kddVar = this.zzb;
+            synchronized (kddVar.a) {
                 long currentTimeMillis = System.currentTimeMillis();
-                if (ibdVar.b + 30000 > currentTimeMillis) {
+                if (kddVar.b + 30000 > currentTimeMillis) {
                     if (Log.isLoggable("Vision", 2)) {
                         Log.v("Vision", "Skipping image analysis log due to rate limiting");
                         return;
                     }
                     return;
                 }
-                ibdVar.b = currentTimeMillis;
+                kddVar.b = currentTimeMillis;
             }
         }
-        zza.execute(new jq((Object) this, i, (Object) x1eVar, (byte) 5));
+        zza.execute(new jr((Object) this, i, (Object) a4eVar, (byte) 5));
     }
 }

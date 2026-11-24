@@ -2,42 +2,42 @@
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ta implements ed, n8c {
+public final /* synthetic */ class ta implements ee, oac {
     public final /* synthetic */ eb a;
 
     public /* synthetic */ ta(eb ebVar) {
         this.a = ebVar;
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        ws wsVar;
-        c4c c4cVar = (c4c) obj;
-        boolean H = c4cVar.H(wa.class);
+    @Override // oac
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        xt xtVar;
+        c6c c6cVar = (c6c) obj;
+        boolean H = c6cVar.H(wa.class);
         eb ebVar = this.a;
         if (H) {
-            String charSequence = c4cVar.m.toString();
-            ht htVar = ebVar.M;
-            if (htVar != null) {
-                htVar.a(charSequence);
+            String charSequence = c6cVar.m.toString();
+            iu iuVar = ebVar.M;
+            if (iuVar != null) {
+                iuVar.a(charSequence);
                 return;
             }
             return;
         }
-        if (!c4cVar.H(ab.class) || (wsVar = ebVar.O) == null) {
+        if (!c6cVar.H(ab.class) || (xtVar = ebVar.O) == null) {
             return;
         }
         try {
-            wsVar.a(eb.a((k27) c4cVar.I));
+            xtVar.a(eb.a((k47) c6cVar.I));
         } catch (Exception e) {
-            fa4.g(e, true);
+            fc4.g(e, true);
         }
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
+    @Override // ee
+    public final void r(he heVar, int i) {
         eb ebVar = this.a;
         ebVar.getContext().getSharedPreferences("webhistory", 0).edit().remove("queries_json").apply();
         ebVar.x.g3.O(true);

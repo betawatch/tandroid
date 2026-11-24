@@ -6,13 +6,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzbv {
-    public static final Task zza(final zc3 zc3Var) {
+    public static final Task zza(final le3 le3Var) {
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(new CancellationTokenSource().getToken());
-        zc3Var.invokeOnCompletion(new qp4() { // from class: com.google.android.recaptcha.internal.zzbu
-            @Override // qp4
+        le3Var.invokeOnCompletion(new rr4() { // from class: com.google.android.recaptcha.internal.zzbu
+            @Override // rr4
             public final Object invoke(Object obj) {
                 Throwable th = (Throwable) obj;
                 boolean z = th instanceof CancellationException;
@@ -20,10 +20,10 @@ public final class zzbv {
                 if (z) {
                     taskCompletionSource2.setException((Exception) th);
                 } else {
-                    zc3 zc3Var2 = zc3Var;
-                    Throwable completionExceptionOrNull = zc3Var2.getCompletionExceptionOrNull();
+                    le3 le3Var2 = le3Var;
+                    Throwable completionExceptionOrNull = le3Var2.getCompletionExceptionOrNull();
                     if (completionExceptionOrNull == null) {
-                        taskCompletionSource2.setResult(zc3Var2.getCompleted());
+                        taskCompletionSource2.setResult(le3Var2.getCompleted());
                     } else {
                         Exception exc = completionExceptionOrNull instanceof Exception ? (Exception) completionExceptionOrNull : null;
                         if (exc == null) {
@@ -32,7 +32,7 @@ public final class zzbv {
                         taskCompletionSource2.setException(exc);
                     }
                 }
-                return g5c.a;
+                return g7c.a;
             }
         });
         return taskCompletionSource.getTask();

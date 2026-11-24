@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Collection;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class zzjl implements zzjt {
     public static final zzjl zza = new zzjl();
@@ -15,7 +15,7 @@ public final class zzjl implements zzjt {
         String f;
         String str;
         if (zzztVarArr.length != 1) {
-            fvc.c(4, 3, null);
+            i2d.d(4, 3, null);
             return;
         }
         int i2 = 0;
@@ -24,7 +24,7 @@ public final class zzjl implements zzjt {
             zza2 = null;
         }
         if (zza2 == null) {
-            fvc.c(4, 5, null);
+            i2d.d(4, 5, null);
             return;
         }
         if (zza2 instanceof int[]) {
@@ -46,7 +46,7 @@ public final class zzjl implements zzjt {
             f = sb.toString();
         } else {
             if (zza2 instanceof byte[]) {
-                str = new String((byte[]) zza2, bk1.a);
+                str = new String((byte[]) zza2, jl1.a);
             } else if (zza2 instanceof long[]) {
                 long[] jArr = (long[]) zza2;
                 StringBuilder sb2 = new StringBuilder();
@@ -118,13 +118,13 @@ public final class zzjl implements zzjt {
             } else if (zza2 instanceof char[]) {
                 str = new String((char[]) zza2);
             } else if (zza2 instanceof Object[]) {
-                f = ss.f((Object[]) zza2);
+                f = tt.f((Object[]) zza2);
             } else {
                 if (!(zza2 instanceof Collection)) {
-                    fvc.c(4, 5, null);
+                    i2d.d(4, 5, null);
                     return;
                 }
-                f = yk2.f((Iterable) zza2, ",", "[", "]", null, 56);
+                f = km2.f((Iterable) zza2, ",", "[", "]", null, 56);
             }
             f = str;
         }

@@ -1,88 +1,76 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.content.ClipDescription;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.ResultReceiver;
+import android.text.TextUtils;
+import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputConnectionWrapper;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class cq5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ox2 b;
-    public final /* synthetic */ String c;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class cq5 extends InputConnectionWrapper {
+    public final /* synthetic */ dq5 a;
 
-    public /* synthetic */ cq5(ox2 ox2Var, String str, byte b) {
-        this.a = b;
-        this.b = ox2Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cq5(InputConnection inputConnection, dq5 dq5Var) {
+        super(inputConnection, false);
+        this.a = dq5Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v1, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r5v2 */
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = 1;
-        switch (this.a) {
-            case 0:
-                Utilities.g.c(new cq5(this.b, this.c, b));
-                break;
-            default:
-                ox2 ox2Var = this.b;
-                String str = this.c;
-                dq5 dq5Var = (dq5) ox2Var.c;
-                String lowerCase = str.trim().toLowerCase();
-                if (!lowerCase.isEmpty()) {
-                    ?? r5 = 0;
-                    String S0 = k96.D0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.isEmpty()) {
-                        S0 = null;
-                    }
-                    int i = (S0 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i];
-                    strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
-                    }
-                    ArrayList arrayList = new ArrayList();
-                    ArrayList arrayList2 = new ArrayList();
-                    int i2 = 0;
-                    while (i2 < dq5Var.n.w.size()) {
-                        nu2 nu2Var = (nu2) dq5Var.n.w.get(i2);
-                        String lowerCase2 = qu2.m(r5, nu2Var.i, nu2Var.j).toLowerCase();
-                        String S02 = k96.D0().S0(lowerCase2, true, r5);
-                        if (lowerCase2.equals(S02)) {
-                            S02 = null;
+    @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
+    public final boolean performPrivateCommand(String str, Bundle bundle) {
+        Object[] objArr;
+        ResultReceiver resultReceiver;
+        dq5 dq5Var = this.a;
+        boolean z = false;
+        z = false;
+        z = false;
+        z = false;
+        if (bundle != null) {
+            if (TextUtils.equals("androidx.core.view.inputmethod.InputConnectionCompat.COMMIT_CONTENT", str)) {
+                objArr = false;
+            } else if (TextUtils.equals("android.support.v13.view.inputmethod.InputConnectionCompat.COMMIT_CONTENT", str)) {
+                objArr = true;
+            }
+            try {
+                resultReceiver = (ResultReceiver) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_RESULT_RECEIVER" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_RESULT_RECEIVER");
+                try {
+                    Uri uri = (Uri) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_URI" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_URI");
+                    ClipDescription clipDescription = (ClipDescription) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION");
+                    Uri uri2 = (Uri) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_LINK_URI" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_LINK_URI");
+                    int i = bundle.getInt(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS");
+                    Bundle bundle2 = (Bundle) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_OPTS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_OPTS");
+                    if (uri != null && clipDescription != null) {
+                        lj4 lj4Var = new lj4();
+                        if (Build.VERSION.SDK_INT >= 25) {
+                            lj4Var.a = new eq5(uri, clipDescription, uri2);
+                        } else {
+                            lj4Var.a = new in3((Object) uri, (Object) clipDescription, (Object) uri2, (byte) 11);
                         }
-                        int i3 = r5;
-                        int i4 = i3;
-                        while (true) {
-                            if (i3 < i) {
-                                String str2 = strArr[i3];
-                                if (lowerCase2.startsWith(str2) || de9.t(" ", str2, lowerCase2) || (S02 != null && (S02.startsWith(str2) || de9.t(" ", str2, S02)))) {
-                                    i4 = 1;
-                                }
-                                if (i4 != 0) {
-                                    arrayList2.add(gl.r0(nu2Var.i, nu2Var.j, str2));
-                                    arrayList.add(nu2Var);
-                                } else {
-                                    i3++;
-                                }
-                            }
-                        }
-                        i2++;
-                        r5 = 0;
+                        z = dq5Var.a(lj4Var, i, bundle2);
                     }
-                    gl.d3(new jf4(dq5Var, arrayList, arrayList2, (byte) 24));
-                    break;
-                } else {
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    dq5Var.getClass();
-                    gl.d3(new jf4(dq5Var, arrayList3, arrayList4, (byte) 24));
-                    break;
+                    if (resultReceiver != null) {
+                        resultReceiver.send(z ? 1 : 0, null);
+                    }
+                } catch (Throwable th) {
+                    th = th;
+                    if (resultReceiver != null) {
+                        resultReceiver.send(0, null);
+                    }
+                    throw th;
                 }
-                break;
+            } catch (Throwable th2) {
+                th = th2;
+                resultReceiver = null;
+            }
         }
+        if (z) {
+            return true;
+        }
+        return super.performPrivateCommand(str, bundle);
     }
 }

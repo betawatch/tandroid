@@ -1,63 +1,56 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class h4f extends vef {
-    private static final h4f zzb;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private int zzg;
-    private boolean zzh;
-
-    static {
-        h4f h4fVar = new h4f();
-        zzb = h4fVar;
-        vef.e(h4f.class, h4fVar);
-    }
-
-    public static f4f l() {
-        return (f4f) zzb.j();
-    }
-
-    public static /* synthetic */ void m(h4f h4fVar, int i) {
-        h4fVar.zzd |= 2;
-        h4fVar.zzf = i;
-    }
-
-    public static /* synthetic */ void n(h4f h4fVar, int i) {
-        h4fVar.zzd |= 4;
-        h4fVar.zzg = i;
-    }
-
-    public static /* synthetic */ void o(h4f h4fVar, boolean z) {
-        h4fVar.zzd |= 8;
-        h4fVar.zzh = z;
-    }
-
-    public static /* synthetic */ void p(h4f h4fVar, int i) {
-        h4fVar.zze = i - 1;
-        h4fVar.zzd |= 1;
-    }
-
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+public abstract class h4f {
+    public static String a(cxd cxdVar) {
+        StringBuilder sb = new StringBuilder(cxdVar.j());
+        for (int i = 0; i < cxdVar.j(); i++) {
+            byte h = cxdVar.h(i);
+            if (h == 34) {
+                sb.append("\\\"");
+            } else if (h == 39) {
+                sb.append("\\'");
+            } else if (h != 92) {
+                switch (h) {
+                    case 7:
+                        sb.append("\\a");
+                        break;
+                    case 8:
+                        sb.append("\\b");
+                        break;
+                    case 9:
+                        sb.append("\\t");
+                        break;
+                    case 10:
+                        sb.append("\\n");
+                        break;
+                    case 11:
+                        sb.append("\\v");
+                        break;
+                    case 12:
+                        sb.append("\\f");
+                        break;
+                    case 13:
+                        sb.append("\\r");
+                        break;
+                    default:
+                        if (h < 32 || h > 126) {
+                            sb.append('\\');
+                            sb.append((char) (((h >>> 6) & 3) + 48));
+                            sb.append((char) (((h >>> 3) & 7) + 48));
+                            sb.append((char) ((h & 7) + 48));
+                            break;
+                        } else {
+                            sb.append((char) h);
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                sb.append("\\\\");
+            }
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002\u0004ဇ\u0003", new Object[]{"zzd", "zze", vi2.x, "zzf", "zzg", "zzh"});
-        }
-        if (i2 == 3) {
-            return new h4f();
-        }
-        if (i2 == 4) {
-            return new f4f(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        return sb.toString();
     }
 }

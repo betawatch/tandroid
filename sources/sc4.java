@@ -1,26 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
 public final /* synthetic */ class sc4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ pd4 b;
+    public final /* synthetic */ ad4 b;
+    public final /* synthetic */ TLRPC.TL_messages_sendMultiMedia c;
+    public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ sc4(pd4 pd4Var, byte b) {
+    public /* synthetic */ sc4(ad4 ad4Var, TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr, byte b) {
         this.a = b;
-        this.b = pd4Var;
+        this.b = ad4Var;
+        this.c = tL_messages_sendMultiMedia;
+        this.d = objArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        pd4 pd4Var = this.b;
+        Object[] objArr = this.d;
+        ad4 ad4Var = this.b;
         switch (b) {
             case 0:
-                pd4Var.o0();
+                ad4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (m5a) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
             default:
-                pd4Var.n0();
+                ad4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (m5a) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
         }
     }

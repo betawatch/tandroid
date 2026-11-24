@@ -1,39 +1,15 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.app.Notification;
+import android.app.PendingIntent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class rm7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sm7 b;
-    public final /* synthetic */ String c;
-
-    public /* synthetic */ rm7(sm7 sm7Var, String str, byte b) {
-        this.a = b;
-        this.b = sm7Var;
-        this.c = str;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                sm7 sm7Var = this.b;
-                String str = this.c;
-                sm7Var.getClass();
-                gl.d3(new rm7(sm7Var, str, r1));
-                break;
-            default:
-                sm7 sm7Var2 = this.b;
-                String str2 = this.c;
-                zr9 zr9Var = sm7Var2.h;
-                int i = sm7Var2.n.s;
-                zr9Var.g(str2, true, (i == 1 || i == 3) ? (byte) 0 : (byte) 1, true, false, 0L, false, 0, 0);
-                Utilities.g.c(new pc7(sm7Var2, str2, new ArrayList(sm7Var2.n.x)));
-                break;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class rm7 {
+    public static Notification.MediaStyle a(Notification.MediaStyle mediaStyle, CharSequence charSequence, int i, PendingIntent pendingIntent, Boolean bool) {
+        if (bool.booleanValue()) {
+            mediaStyle.setRemotePlaybackInfo(charSequence, i, pendingIntent);
         }
+        return mediaStyle;
     }
 }

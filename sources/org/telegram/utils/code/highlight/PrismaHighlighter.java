@@ -1,21 +1,21 @@
 package org.telegram.utils.code.highlight;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class PrismaHighlighter implements AutoCloseable {
     public long a;
     public final String[] b;
-    public final kj8 c;
+    public final nl8 c;
 
     public PrismaHighlighter(byte[] bArr) {
         if (bArr == null) {
-            fvc.f("grammars");
+            gxc.d("grammars");
             throw null;
         }
         long nativeCreate = nativeCreate(bArr);
         this.a = nativeCreate;
         if (nativeCreate == 0) {
-            sc8.j("Native highlighter was not created");
+            dq9.m("Native highlighter was not created");
             throw null;
         }
         try {
@@ -24,7 +24,7 @@ public final class PrismaHighlighter implements AutoCloseable {
             if (nativeGetTokenNames == null || nativeGetTokenNames.length == 0 || !"".equals(nativeGetTokenNames[0])) {
                 throw new IllegalStateException("Invalid native token name table");
             }
-            this.c = new kj8(nativeGetTokenNames);
+            this.c = new nl8(nativeGetTokenNames);
         } catch (Error | RuntimeException e) {
             close();
             throw e;
@@ -37,7 +37,7 @@ public final class PrismaHighlighter implements AutoCloseable {
 
     public static void d(int[] iArr, String str, int i) {
         if (iArr == null || iArr.length % 5 != 0) {
-            sc8.j("Invalid native token array");
+            dq9.m("Invalid native token array");
             return;
         }
         int i2 = 0;
@@ -49,13 +49,13 @@ public final class PrismaHighlighter implements AutoCloseable {
             int i7 = iArr[i2 + 3];
             int i8 = iArr[i2 + 4];
             if (i4 < i3 || i5 <= i4 || i5 > str.length() || i6 < 0 || i6 >= i || i7 < 0 || i7 >= i || i8 < -1 || i8 >= i2 / 5 || b(i4, str) || b(i5, str)) {
-                sc8.j("Invalid native token range");
+                dq9.m("Invalid native token range");
                 return;
             }
             if (i8 >= 0) {
                 int i9 = i8 * 5;
                 if (i4 < iArr[i9] || i5 > iArr[i9 + 1]) {
-                    sc8.j("Native token is outside its parent");
+                    dq9.m("Native token is outside its parent");
                     return;
                 }
             }
@@ -83,7 +83,7 @@ public final class PrismaHighlighter implements AutoCloseable {
         return nativeGetLanguages(j);
     }
 
-    public final synchronized f06 c(String str, String str2) {
+    public final synchronized f26 c(String str, String str2) {
         int[] nativeHighlight;
         long j = this.a;
         if (j == 0) {
@@ -94,7 +94,7 @@ public final class PrismaHighlighter implements AutoCloseable {
         }
         nativeHighlight = nativeHighlight(j, str, str2);
         d(nativeHighlight, str, this.b.length);
-        return new f06(nativeHighlight, this.c);
+        return new f26(nativeHighlight, this.c);
     }
 
     @Override // java.lang.AutoCloseable

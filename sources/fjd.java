@@ -1,51 +1,43 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
+import android.os.Looper;
+import android.util.SparseArray;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class fjd extends mid {
-    public final /* synthetic */ njd s;
+public final class fjd implements OnCompleteListener, Runnable {
+    public static final q79 d = new q79(Looper.getMainLooper());
+    public static final SparseArray e = new SparseArray(2);
+    public static final AtomicInteger f = new AtomicInteger();
+    public int a;
+    public jpd b;
+    public Task c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fjd(njd njdVar) {
-        super((byte) 4);
-        this.s = njdVar;
-    }
-
-    @Override // mid
-    public final xhd B() {
-        return new zid(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Map.Entry)) {
-            return false;
+    public final void a() {
+        if (this.c == null || this.b == null) {
+            return;
         }
-        Map.Entry entry = (Map.Entry) obj;
-        Object obj2 = this.s.get(entry.getKey());
-        return obj2 != null && obj2.equals(entry.getValue());
+        e.delete(this.a);
+        d.removeCallbacks(this);
+        jpd jpdVar = this.b;
+        if (jpdVar != null) {
+            Task task = this.c;
+            int i = jpd.d;
+            jpdVar.a(task);
+        }
     }
 
-    @Override // mid, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return a1f.a(this.s.entrySet());
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public final void onComplete(Task task) {
+        this.c = task;
+        a();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return A().listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.s.d.size();
-    }
-
-    @Override // kzc
-    public final v5c u() {
-        return A().listIterator(0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        e.delete(this.a);
     }
 }

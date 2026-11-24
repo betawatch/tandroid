@@ -1,16 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class nt9 extends gb3 {
-    public final /* synthetic */ hi3 F;
+import android.widget.AdapterView;
+import android.widget.HorizontalScrollView;
 
-    public nt9(hi3 hi3Var) {
-        this.F = hi3Var;
-    }
-
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        this.F.invalidate();
-    }
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public abstract class nt9 extends HorizontalScrollView implements AdapterView.OnItemSelectedListener {
 }

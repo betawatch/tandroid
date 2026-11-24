@@ -1,66 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class w89 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z99 b;
-    public final /* synthetic */ q5c[] c;
-    public final /* synthetic */ cs5 d;
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-    public /* synthetic */ w89(z99 z99Var, q5c[] q5cVarArr, cs5 cs5Var, byte b) {
-        this.a = b;
-        this.b = z99Var;
-        this.c = q5cVarArr;
-        this.d = cs5Var;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class w89 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
+
+    public final boolean a(PointF pointF, float f, float f2, float f3, int i) {
+        if ((i != -1 && i >= this.i) || this.j.position() == this.j.limit()) {
+            d();
+            return false;
+        }
+        if (i != -1) {
+            this.j.position(i * 20);
+        }
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f);
+        this.j.putFloat(f2);
+        this.j.putFloat(f3);
+        return true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        cs5 cs5Var = this.d;
-        q5c[] q5cVarArr = this.c;
-        z99 z99Var = this.b;
-        switch (b) {
-            case 0:
-                q99 q99Var = z99Var.d;
-                if (!q99Var.l.isEmpty()) {
-                    q99Var.l.clear();
-                    q99Var.m();
-                    q5c q5cVar = q5cVarArr[0];
-                    if (q5cVar != null) {
-                        q5cVar.g3.O(true);
-                    }
-                    cs5Var.q0 = true;
-                    break;
-                }
-                break;
-            case 1:
-                q99 q99Var2 = z99Var.d;
-                if (!q99Var2.k.isEmpty()) {
-                    q99Var2.k.clear();
-                    q99Var2.m();
-                    q5c q5cVar2 = q5cVarArr[0];
-                    if (q5cVar2 != null) {
-                        q5cVar2.g3.O(true);
-                    }
-                    cs5Var.q0 = true;
-                    break;
-                }
-                break;
-            default:
-                q99 q99Var3 = z99Var.d;
-                if (!q99Var3.j.isEmpty()) {
-                    q99Var3.j.clear();
-                    q99Var3.m();
-                    q5c q5cVar3 = q5cVarArr[0];
-                    if (q5cVar3 != null) {
-                        q5cVar3.g3.O(true);
-                    }
-                    cs5Var.q0 = true;
-                    break;
-                }
-                break;
+    public final void b(int i) {
+        int i2 = this.h + i;
+        if (i2 > this.i || this.j == null) {
+            d();
         }
+        this.h = i2;
+    }
+
+    public final void c() {
+        this.h = 0;
+        if (this.j != null) {
+            return;
+        }
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect((5 << 8) << 2);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
+    }
+
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
+        }
+        int max = Math.max(this.i << 1, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

@@ -1,233 +1,61 @@
 // default package
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class pea implements vv2 {
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
-    public final /* synthetic */ TLRPC.PollAnswer b;
-    public final /* synthetic */ gb2 c;
-    public final /* synthetic */ uea d;
+public final class pea extends iga {
+    public final /* synthetic */ nha Q;
 
-    public pea(uea ueaVar, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.PollAnswer pollAnswer, gb2 gb2Var) {
-        this.d = ueaVar;
-        this.a = tL_messageMediaPoll;
-        this.b = pollAnswer;
-        this.c = gb2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pea(nha nhaVar, Context context) {
+        super(context);
+        this.Q = nhaVar;
     }
 
-    @Override // vv2
-    public final boolean A(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final String C(boolean z) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean E() {
-        return false;
-    }
-
-    @Override // vv2
-    public final cs5 F(ViewGroup viewGroup) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean K() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void L() {
-        ArrayList arrayList = new ArrayList(1);
-        arrayList.add(this.b);
-        z3a.B(this.d.a).v0(this.c.getMessageObject(), arrayList, null);
-    }
-
-    @Override // vv2
-    public final void N(TLRPC.InputStickerSet inputStickerSet, boolean z) {
-        uea ueaVar = this.d;
-        wea weaVar = ueaVar.c;
-        if (inputStickerSet == null || weaVar.s.getContext() == null) {
-            return;
+    @Override // android.view.View
+    public final void setTranslationX(float f) {
+        iga igaVar;
+        float translationX = getTranslationX();
+        super.setTranslationX(f);
+        nha nhaVar = this.Q;
+        iga[] igaVarArr = nhaVar.n0;
+        if (igaVarArr[0] == this) {
+            float f2 = translationX - f;
+            sy4 sy4Var = nhaVar.h2;
+            if (sy4Var != null) {
+                float f3 = nhaVar.i2 + f2;
+                nhaVar.i2 = f3;
+                int i = (int) f3;
+                if (i != 0) {
+                    nhaVar.i2 = f3 - i;
+                    sy4Var.h(i, 0);
+                }
+            }
         }
-        TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
-        tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
-        tL_inputStickerSetID.id = inputStickerSet.id;
-        u0b u0bVar = new u0b(weaVar.s.getContext(), weaVar.s.y1, tL_inputStickerSetID, null, null, ueaVar.b);
-        u0bVar.i0 = true;
-        u0bVar.n = true;
-        u0bVar.c2 = z;
-        u0bVar.show();
-    }
-
-    @Override // vv2
-    public final boolean O(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final Boolean R(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean S() {
-        return true;
-    }
-
-    @Override // vv2
-    public final long a() {
-        return this.d.c.s.m1;
-    }
-
-    @Override // vv2
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean c() {
-        return false;
-    }
-
-    @Override // vv2
-    public final TLRPC.TL_messageMediaPoll d() {
-        return this.a;
-    }
-
-    @Override // vv2
-    public final boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // vv2
-    public final TLRPC.PollAnswer g() {
-        return this.b;
-    }
-
-    @Override // vv2
-    public final boolean h() {
-        return true;
-    }
-
-    @Override // vv2
-    public final boolean i() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean j(int i) {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean n() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void p() {
-        z3a.B(this.d.a).v0(this.c.getMessageObject(), null, null);
-    }
-
-    @Override // vv2
-    public final boolean t() {
-        return true;
-    }
-
-    @Override // vv2
-    public final k27 w() {
-        return this.c.getMessageObject();
-    }
-
-    @Override // vv2
-    public final boolean x() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean z() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void M() {
-    }
-
-    @Override // vv2
-    public final void q() {
-    }
-
-    @Override // vv2
-    public final void B(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void D(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void H(s3a s3aVar) {
-    }
-
-    @Override // vv2
-    public final void P(String str) {
-    }
-
-    @Override // vv2
-    public final void l(String str) {
-    }
-
-    @Override // vv2
-    public final void m(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void o(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void r(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void v(String str) {
-    }
-
-    @Override // vv2
-    public final void y(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void I(Object obj, Object obj2) {
-    }
-
-    @Override // vv2
-    public final void s(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // vv2
-    public final void Q(CharSequence charSequence, String str, pz1 pz1Var) {
-    }
-
-    @Override // vv2
-    public final void u(Object obj, Object obj2, boolean z, int i, int i2) {
-    }
-
-    @Override // vv2
-    public final void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
+        if (nhaVar.j1 && (igaVar = igaVarArr[0]) == this) {
+            float abs = Math.abs(igaVar.getTranslationX()) / igaVarArr[0].getMeasuredWidth();
+            nhaVar.g1(abs, igaVarArr[1].F);
+            if (nhaVar.q()) {
+                byte b = nhaVar.A0;
+                if (b == 2) {
+                    nhaVar.r0 = 1.0f - abs;
+                } else if (b == 1) {
+                    nhaVar.r0 = abs;
+                }
+                nhaVar.K1(abs);
+                float U = nhaVar.U(abs);
+                nhaVar.s0 = U;
+                nhaVar.u0.setVisibility((U == 0.0f || !nhaVar.q() || nhaVar.k0()) ? 4 : 0);
+            } else {
+                nhaVar.r0 = 0.0f;
+            }
+            nhaVar.G1(false);
+        }
+        nhaVar.C();
+        qk3 qk3Var = nhaVar.S0;
+        if (qk3Var != null) {
+            qk3Var.setTranslationY(nhaVar.O1);
+        }
     }
 }

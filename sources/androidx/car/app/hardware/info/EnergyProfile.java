@@ -4,7 +4,7 @@ import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
 public final class EnergyProfile {
     public static final int EVCONNECTOR_TYPE_CHADEMO = 3;
@@ -73,8 +73,8 @@ public final class EnergyProfile {
         return "[ evConnectorTypes: " + this.mEvConnectorTypes + ", fuelTypes: " + this.mFuelTypes + "]";
     }
 
-    public EnergyProfile(y24 y24Var) {
-        y24Var.getClass();
+    public EnergyProfile(j44 j44Var) {
+        j44Var.getClass();
         throw null;
     }
 }

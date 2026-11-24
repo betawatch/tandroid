@@ -1,22 +1,19 @@
 // default package
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
+import android.content.Context;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g40 implements Executor {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Handler b;
+public final class g40 implements lt3 {
+    public int a;
 
-    public /* synthetic */ g40(Handler handler, byte b) {
-        this.a = b;
-        this.b = handler;
+    @Override // lt3
+    public final int a(Context context, String str, boolean z) {
+        return 0;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        byte b = this.a;
-        this.b.post(runnable);
+    @Override // lt3
+    public final int b(Context context, String str) {
+        return this.a;
     }
 }

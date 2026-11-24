@@ -1,55 +1,38 @@
 // default package
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class b24 implements ListIterator {
-    public static final b24 a = new b24();
+public final class b24 implements View.OnClickListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ k6d b;
+    public final /* synthetic */ g6 c;
 
-    @Override // java.util.ListIterator
-    public final /* bridge */ /* synthetic */ void add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    public b24(g6 g6Var, boolean[] zArr, k6d k6dVar) {
+        this.c = g6Var;
+        this.a = zArr;
+        this.b = k6dVar;
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final boolean hasNext() {
-        return false;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return false;
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final Object next() {
-        throw new NoSuchElementException();
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return 0;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        throw new NoSuchElementException();
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return -1;
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.ListIterator
-    public final /* bridge */ /* synthetic */ void set(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        e24 e24Var = (e24) this.c.b;
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        he[] heVarArr = {new he(3, null, e24Var.G.getContext())};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        e34 e34Var = e24Var.G;
+        String str = e24Var.x;
+        if (str == null) {
+            str = e34Var.X0[0];
+        }
+        tL_messages_getEmojiURL.lang_code = str;
+        gm.d3(new wc7((Object) this, (Object) heVarArr, ConnectionsManager.getInstance(e34Var.d1).sendRequest(tL_messages_getEmojiURL, new eo0((Object) this, (Object) heVarArr, (Object) this.b, (byte) 23)), (byte) 24), 1000L);
     }
 }

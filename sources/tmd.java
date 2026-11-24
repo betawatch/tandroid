@@ -1,25 +1,19 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.List;
-
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract class tmd {
-    public static final vnd a = new vnd();
-    public static final wnd b = new wnd();
+public final class tmd implements cq7 {
+    public static final tmd a = new tmd();
 
-    public void a(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) uzd.l(obj, j);
-        if (list instanceof omd) {
-            unmodifiableList = ((omd) list).g();
-        } else if (vnd.c.isAssignableFrom(list.getClass())) {
-            return;
-        } else {
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
-        }
-        uzd.d(obj, j, unmodifiableList);
+    static {
+        mlb.z(mlb.p(kad.class, mlb.t(mlb.p(kad.class, mlb.t(mlb.p(kad.class, new d9d(1)), 2)), 3)));
     }
 
-    public abstract void b(vid vidVar, vid vidVar2, long j);
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

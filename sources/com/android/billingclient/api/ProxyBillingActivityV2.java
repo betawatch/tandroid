@@ -5,9 +5,9 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public class ProxyBillingActivityV2 extends wp2 {
+public class ProxyBillingActivityV2 extends hr2 {
     public u9 K;
     public u9 L;
     public u9 M;
@@ -15,12 +15,12 @@ public class ProxyBillingActivityV2 extends wp2 {
     public ResultReceiver O;
     public ResultReceiver P;
 
-    @Override // wp2, vp2, android.app.Activity
+    @Override // hr2, gr2, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.K = s(new sld(this), new s9((byte) 2));
-        this.L = s(new xdd(this), new s9((byte) 2));
-        this.M = s(new g29(this, (byte) 28), new s9((byte) 2));
+        this.K = t(new und(this), new s9((byte) 2));
+        this.L = t(new cf9(this, (byte) 25), new s9((byte) 2));
+        this.M = t(new eod(this, (byte) 0), new s9((byte) 2));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
                 this.N = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
@@ -34,7 +34,7 @@ public class ProxyBillingActivityV2 extends wp2 {
             }
             return;
         }
-        xgd.g("ProxyBillingActivityV2", "Launching Play Store billing dialog");
+        yid.g("ProxyBillingActivityV2", "Launching Play Store billing dialog");
         if (getIntent().hasExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT")) {
             PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT");
             this.N = (ResultReceiver) getIntent().getParcelableExtra("alternative_billing_only_dialog_result_receiver");
@@ -42,7 +42,7 @@ public class ProxyBillingActivityV2 extends wp2 {
             pendingIntent.getClass();
             IntentSender intentSender = pendingIntent.getIntentSender();
             intentSender.getClass();
-            u9Var.a(new jp5(intentSender, null, 0, 0));
+            u9Var.a(new jr5(intentSender, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_payment_dialog_pending_intent")) {
@@ -52,7 +52,7 @@ public class ProxyBillingActivityV2 extends wp2 {
             pendingIntent2.getClass();
             IntentSender intentSender2 = pendingIntent2.getIntentSender();
             intentSender2.getClass();
-            u9Var2.a(new jp5(intentSender2, null, 0, 0));
+            u9Var2.a(new jr5(intentSender2, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_offer_flow_pending_intent")) {
@@ -62,11 +62,11 @@ public class ProxyBillingActivityV2 extends wp2 {
             pendingIntent3.getClass();
             IntentSender intentSender3 = pendingIntent3.getIntentSender();
             intentSender3.getClass();
-            u9Var3.a(new jp5(intentSender3, null, 0, 0));
+            u9Var3.a(new jr5(intentSender3, null, 0, 0));
         }
     }
 
-    @Override // wp2, vp2, android.app.Activity
+    @Override // hr2, gr2, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         ResultReceiver resultReceiver = this.N;

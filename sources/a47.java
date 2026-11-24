@@ -1,44 +1,32 @@
 // default package
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class a47 extends ky1 {
-    public final /* synthetic */ j47 A0;
-    public final /* synthetic */ ky1 y0;
-    public final /* synthetic */ boolean z0;
+public final /* synthetic */ class a47 implements sm {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a47(j47 j47Var, Context context, int i, wjb wjbVar, ky1 ky1Var, boolean z) {
-        super(i, wjbVar, context, false);
-        this.A0 = j47Var;
-        this.y0 = ky1Var;
-        this.z0 = z;
+    public /* synthetic */ a47(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // ky1
-    public final boolean b() {
-        return this.y0.b();
-    }
-
-    @Override // ky1
-    public final boolean c() {
-        return this.y0.c();
-    }
-
-    @Override // ky1
-    public final boolean d() {
-        return (this.z0 && this.A0.u0 && this.w <= 0) ? false : true;
-    }
-
-    @Override // ky1
-    public final int getFillColor() {
-        return this.y0.getFillColor();
-    }
-
-    @Override // ky1
-    public final boolean j() {
-        return this.y0.j();
+    @Override // sm
+    public final void a(TLRPC.Document document) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                gm.c3(new lj6(obj, (Object) document, (byte) 21));
+                break;
+            case 1:
+                gm.c3(new jx8((tx8) obj, document));
+                break;
+            default:
+                gm.c3(new uva((s1b) obj, document, (byte) 4));
+                break;
+        }
     }
 }

@@ -1,33 +1,59 @@
 // default package
 
-import java.util.AbstractMap;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mfd extends ncd {
-    public final /* synthetic */ rfd h;
+public abstract class mfd {
+    public static final Object a = new Object();
+    public static cmc b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mfd(rfd rfdVar) {
-        super((byte) 1);
-        this.h = rfdVar;
+    public static void a(Context context) {
+        if (b == null) {
+            cmc cmcVar = new cmc(context);
+            b = cmcVar;
+            synchronized (cmcVar.a) {
+                cmcVar.g = true;
+            }
+        }
     }
 
-    @Override // java.util.List
-    public final /* synthetic */ Object get(int i) {
-        rfd rfdVar = this.h;
-        i4f.a(i, rfdVar.r ? 1 : 0);
-        int i2 = i << 1;
-        Object[] objArr = rfdVar.n;
-        Object obj = objArr[i2];
-        obj.getClass();
-        Object obj2 = objArr[i2 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    public static void b(Intent intent) {
+        synchronized (a) {
+            if (b != null && intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false)) {
+                intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+                b.c();
+            }
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.h.r ? 1 : 0;
+    public static void c(Context context, p0d p0dVar, Intent intent) {
+        synchronized (a) {
+            a(context);
+            boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+            intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
+            if (!booleanExtra) {
+                b.a();
+            }
+            p0dVar.b(intent).addOnCompleteListener(new lcc(intent, (byte) 4));
+        }
+    }
+
+    public static ComponentName d(Context context, Intent intent) {
+        synchronized (a) {
+            a(context);
+            boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+            intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
+            ComponentName startService = context.startService(intent);
+            if (startService == null) {
+                return null;
+            }
+            if (!booleanExtra) {
+                b.a();
+            }
+            return startService;
+        }
     }
 }

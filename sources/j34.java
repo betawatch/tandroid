@@ -1,33 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public interface j34 {
-    void A(l34 l34Var);
+public final class j34 extends FrameLayout {
+    public int a;
 
-    void B(boolean z);
+    public j34(Context context) {
+        this(context, 8);
+    }
 
-    void C();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    }
 
-    void d(boolean z);
+    public void setHeight(int i) {
+        if (this.a != i) {
+            this.a = i;
+            requestLayout();
+        }
+    }
 
-    void e(boolean z);
-
-    void f();
-
-    void g();
-
-    boolean i(l34 l34Var);
-
-    void j(boolean z);
-
-    boolean o();
-
-    boolean p();
-
-    void u(float f, float f2, float[] fArr);
-
-    int[] v(l34 l34Var);
-
-    void x();
+    public j34(Context context, int i) {
+        super(context);
+        this.a = i;
+    }
 }

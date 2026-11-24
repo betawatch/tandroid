@@ -1,44 +1,49 @@
 // default package
 
-import android.os.Handler;
-import j$.util.Objects;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Region;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qj9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ak9 b;
-    public final /* synthetic */ nl9 c;
-    public final /* synthetic */ long d;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final class qj9 {
+    public float a;
+    public boolean b;
+    public float c;
+    public float d;
+    public float e;
+    public ValueAnimator f;
+    public final Path g = new Path();
 
-    public /* synthetic */ qj9(ak9 ak9Var, nl9 nl9Var, long j, byte b) {
-        this.a = b;
-        this.b = ak9Var;
-        this.c = nl9Var;
-        this.d = j;
+    public final void a(Canvas canvas) {
+        if (this.a > 0.0f) {
+            Path path = this.g;
+            path.rewind();
+            path.addCircle(this.c, this.d, this.e * this.a, Path.Direction.CW);
+            canvas.clipPath(path, Region.Op.DIFFERENCE);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ak9 ak9Var = this.b;
-                ak9Var.c.post(new qj9(ak9Var, this.c, this.d, (byte) 1));
-                break;
-            default:
-                ak9 ak9Var2 = this.b;
-                nl9 nl9Var = this.c;
-                long j = this.d;
-                if (ak9Var2.U && ak9Var2.F == nl9Var) {
-                    ak9Var2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + ak9.x(j));
-                    ul9 ul9Var = (ul9) ak9Var2.k.b;
-                    Handler handler = ul9Var.i;
-                    gi3 gi3Var = ul9Var.d;
-                    Objects.requireNonNull(gi3Var);
-                    handler.post(new zk9(gi3Var, (byte) 1));
-                    break;
-                }
-                break;
+    public final boolean b() {
+        return this.b && this.a >= 1.0f;
+    }
+
+    public final void c(View view, float f, float f2, float f3, float f4) {
+        if (this.b || this.f != null) {
+            return;
         }
+        this.c = f;
+        this.d = f2;
+        this.e = (float) Math.sqrt((f4 * f4) + (f3 * f3));
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.f = ofFloat;
+        ofFloat.setDuration((long) Utilities.i(this.e * 0.3f, 550.0f, 250.0f));
+        this.f.setInterpolator(d53.j);
+        this.f.addUpdateListener(new pl(this, view, (byte) 26));
+        this.f.addListener(new ic8((Object) this, (Object) view, (byte) 10));
+        this.f.start();
     }
 }

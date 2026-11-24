@@ -1,29 +1,55 @@
 // default package
 
-import j$.util.Objects;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public final class mr9 {
-    public static final mr9 b;
-    public final ym5 a;
+public final class mr9 extends g2 {
+    public static final /* synthetic */ ai4 f;
+    public static final /* synthetic */ ai4 h;
+    public static final /* synthetic */ ai4 n;
+    public List e;
 
     static {
-        v39 v39Var = new v39((byte) 6);
-        v39Var.b = ym5.p(2, 1, 5);
-        b = new mr9(v39Var);
+        i94 i94Var = new i94(mr9.class, "SampleToChunkBox.java");
+        f = i94Var.e(i94Var.d("getEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.util.List"));
+        h = i94Var.e(i94Var.d("setEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "java.util.List", "entries", "void"));
+        n = i94Var.e(i94Var.d("toString", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.lang.String"));
+        i94Var.e(i94Var.d("blowup", "com.coremedia.iso.boxes.SampleToChunkBox", "int", "chunkCount", "[J"));
     }
 
-    public mr9(v39 v39Var) {
-        this.a = (ym5) v39Var.b;
+    @Override // g2, y1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a = psd.a(jne.g(byteBuffer));
+        this.e = new ArrayList(a);
+        for (int i = 0; i < a; i++) {
+            this.e.add(new lr9(jne.g(byteBuffer), jne.g(byteBuffer), jne.g(byteBuffer)));
+        }
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof mr9) && this.a.equals(((mr9) obj).a);
+    @Override // g2, y1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.size());
+        for (lr9 lr9Var : this.e) {
+            byteBuffer.putInt((int) lr9Var.a);
+            byteBuffer.putInt((int) lr9Var.b);
+            byteBuffer.putInt((int) lr9Var.c);
+        }
     }
 
-    public final int hashCode() {
-        Boolean bool = Boolean.TRUE;
-        return Objects.hash(this.a, null, null, bool, bool, bool, bool, bool);
+    @Override // y1
+    public final long getContentSize() {
+        return (this.e.size() * 12) + 8;
+    }
+
+    public final String toString() {
+        xvc b = i94.b(n, this, this);
+        pa9.a().getClass();
+        pa9.b(b);
+        return "SampleToChunkBox[entryCount=" + this.e.size() + "]";
     }
 }

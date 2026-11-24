@@ -1,213 +1,201 @@
 // default package
 
-import android.content.Context;
-import android.graphics.BlendMode;
-import android.graphics.BlendModeColorFilter;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.RippleDrawable;
-import android.os.Build;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.util.HashSet;
+import android.animation.ValueAnimator;
+import android.view.View;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class ou1 extends FrameLayout implements x74, tjb {
-    public final fm0 a;
-    public final fm0 b;
-    public ImageView c;
-    public ImageView d;
-    public ih2 e;
-    public wjb f;
-    public float h;
-    public int n;
-    public il0 r;
+public final class ou1 implements mb8 {
+    public final TL_iv.RichMessage a;
+    public final ArrayList b;
+    public final k47 c;
 
-    public ou1(Context context) {
-        super(context);
-        s33 s33Var = s33.h;
-        this.a = new fm0(0, this, s33Var, 320L, false);
-        this.b = new fm0(1, this, s33Var, 320L, true);
-        this.h = 1.0f;
+    public ou1(TL_iv.RichMessage richMessage, ArrayList arrayList, k47 k47Var) {
+        this.a = richMessage;
+        this.b = arrayList;
+        this.c = k47Var;
     }
 
-    public static ou1 c(kl0 kl0Var, wp1 wp1Var, wjb wjbVar, Context context) {
-        int i = bkb.Ml;
-        int v0 = bkb.v0(i, wjbVar);
-        ou1 ou1Var = new ou1(context);
-        ou1Var.f = wjbVar;
-        ou1Var.setBlurredBackgroundDrawable(kl0Var.c(ou1Var, wp1Var, false));
-        ou1Var.setIconColor(v0);
-        int L = gl.L(22.0f);
-        int p1 = bkb.p1(0.15f, v0);
-        int L2 = gl.L(6.0f);
-        ff0 W = bkb.W(L, p1, L2, L2, L2, L2);
-        vkb K = zkb.K(0.15f, i);
-        ou1Var.setBackground(W);
-        zkb.j(ou1Var, W, null, K, wjbVar);
-        return ou1Var;
-    }
-
-    public static ou1 d(Context context, kl0 kl0Var, al0 al0Var, wjb wjbVar, int i, int i2) {
-        int i3 = bkb.Ml;
-        int v0 = bkb.v0(i3, wjbVar);
-        ou1 ou1Var = new ou1(context);
-        ou1Var.f = wjbVar;
-        ou1Var.setBlurredBackgroundDrawable(kl0Var.c(ou1Var, al0Var, false));
-        ou1Var.f(i, i2);
-        ou1Var.setIconColor(v0);
-        int L = gl.L(22.0f);
-        int p1 = bkb.p1(0.15f, v0);
-        int L2 = gl.L(6.0f);
-        ff0 W = bkb.W(L, p1, L2, L2, L2, L2);
-        vkb K = zkb.K(0.15f, i3);
-        ou1Var.setBackground(W);
-        zkb.j(ou1Var, W, null, K, wjbVar);
-        return ou1Var;
-    }
-
-    public final void a() {
-        float f = 1.0f - this.a.e;
-        float R1 = gl.R1(f / 2.0f, f, this.b.e);
-        ImageView imageView = this.c;
-        if (imageView != null) {
-            imageView.setAlpha(R1);
-            this.c.setScaleX(gl.R1(0.4f, 1.0f, f));
-            this.c.setScaleY(gl.R1(0.4f, 1.0f, f) * this.h);
-            this.c.setVisibility(f > 0.0f ? 0 : 8);
+    @Override // mb8
+    public final boolean a(int i) {
+        if (i < 0) {
+            return false;
         }
+        ArrayList arrayList = this.b;
+        if (i >= arrayList.size()) {
+            return false;
+        }
+        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i);
+        if (!(pageBlock instanceof TL_iv.pageBlockVideo)) {
+            return false;
+        }
+        TLRPC.Document b = dy.b(this.a, ((TL_iv.pageBlockVideo) pageBlock).video_id);
+        if (b != null) {
+            return k47.J4(b);
+        }
+        return false;
     }
 
-    public final void b() {
-        float f = this.a.e;
-        float R1 = gl.R1(f / 2.0f, f, this.b.e);
-        ImageView imageView = this.d;
-        if (imageView != null) {
-            imageView.setAlpha(R1);
-            this.d.setScaleX(gl.R1(0.4f, 1.0f, f));
-            this.d.setScaleY(gl.R1(0.4f, 1.0f, f));
-            int i = f > 0.0f ? 0 : 8;
-            if (this.d.getVisibility() != i) {
-                this.d.setVisibility(i);
-                this.e.c = -1L;
+    @Override // mb8
+    public final File b(int i) {
+        TLRPC.Document b;
+        TLRPC.PhotoSize w;
+        if (i >= 0) {
+            ArrayList arrayList = this.b;
+            if (i < arrayList.size()) {
+                TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i);
+                boolean z = pageBlock instanceof TL_iv.pageBlockPhoto;
+                TL_iv.RichMessage richMessage = this.a;
+                if (z) {
+                    TLRPC.Photo f = dy.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
+                    if (f != null && (w = bc4.w(f.sizes, gm.Y0(false), false, null, false)) != null) {
+                        return dy.c(w);
+                    }
+                } else if ((pageBlock instanceof TL_iv.pageBlockVideo) && (b = dy.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) != null) {
+                    return dy.c(b);
+                }
             }
         }
+        return null;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
+    @Override // mb8
+    public final String c(int i) {
+        TLObject d = d(i);
+        if (d instanceof TLRPC.Photo) {
+            d = bc4.w(((TLRPC.Photo) d).sizes, gm.Y0(false), false, null, false);
+        }
+        return bc4.r(null, d);
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        this.r.draw(canvas);
-        super.draw(canvas);
+    @Override // mb8
+    public final TLObject d(int i) {
+        if (i < 0) {
+            return null;
+        }
+        ArrayList arrayList = this.b;
+        if (i >= arrayList.size()) {
+            return null;
+        }
+        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i);
+        boolean z = pageBlock instanceof TL_iv.pageBlockPhoto;
+        TL_iv.RichMessage richMessage = this.a;
+        if (z) {
+            return dy.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
+        }
+        if (pageBlock instanceof TL_iv.pageBlockVideo) {
+            return dy.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
+        }
+        return null;
     }
 
-    public final void e(boolean z, boolean z2) {
-        super.setEnabled(z);
-        this.b.a(z, z2);
+    @Override // mb8
+    public final boolean e(int i) {
+        return false;
     }
 
-    public final void f(int i, int i2) {
-        if (this.c == null) {
+    @Override // mb8
+    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
+        if (tLObject instanceof TLRPC.Photo) {
+            TLRPC.PhotoSize w = bc4.w(((TLRPC.Photo) tLObject).sizes, gm.Y0(false), false, null, false);
+            if (w == null) {
+                iArr[0] = -1;
+                return null;
+            }
+            int i = w.size;
+            iArr[0] = i;
             if (i == 0) {
-                return;
+                iArr[0] = -1;
             }
-            ImageView imageView = new ImageView(getContext());
-            this.c = imageView;
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, nme.e(i2, i2, 17));
-            a();
+            return w;
         }
-        this.c.setImageResource(i);
+        if (tLObject instanceof TLRPC.Document) {
+            TLRPC.Document document = (TLRPC.Document) tLObject;
+            TLRPC.PhotoSize w2 = bc4.w(document.thumbs, nm7.q5, false, null, true);
+            if (w2 == null) {
+                w2 = bc4.w(document.thumbs, 90, false, null, false);
+            }
+            if (w2 != null) {
+                int i2 = w2.size;
+                iArr[0] = i2;
+                if (i2 == 0) {
+                    iArr[0] = -1;
+                }
+                return w2;
+            }
+            iArr[0] = -1;
+        }
+        return null;
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        this.r.setBounds(0, 0, i, i2);
+    @Override // mb8
+    public final Object g() {
+        return this.c;
     }
 
-    @Override // x74
-    public final void p(int i, float f, float f2, y74 y74Var) {
-        if (i == 0) {
-            a();
-            b();
-        }
-        if (i == 1) {
-            a();
-            b();
-        }
+    @Override // mb8
+    public final TL_iv.PageBlock get(int i) {
+        return (TL_iv.PageBlock) this.b.get(i);
     }
 
-    public void setBlurredBackgroundDrawable(il0 il0Var) {
-        this.r = il0Var;
-        il0Var.q(gl.L(6.0f));
-        this.r.r(gl.L(22.0f));
+    @Override // mb8
+    public final List getAll() {
+        return this.b;
     }
 
-    @Override // android.view.View
-    public void setEnabled(boolean z) {
-        e(z, false);
-    }
-
-    public void setIcon(int i) {
-        f(i, 48);
-    }
-
-    public void setIconColor(int i) {
-        BlendMode blendMode;
-        ImageView imageView = this.c;
-        if (imageView == null) {
-            return;
-        }
-        this.n = i;
-        if (Build.VERSION.SDK_INT < 29) {
-            imageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
-            return;
-        }
-        mk1.l();
-        blendMode = BlendMode.SRC_IN;
-        imageView.setColorFilter(new BlendModeColorFilter(i, blendMode));
-    }
-
-    public void setIconPadding(int i) {
-        ImageView imageView = this.c;
-        if (imageView != null) {
-            imageView.setPadding(0, i, 0, 0);
-        }
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        il0 il0Var = this.r;
-        if (il0Var != null) {
-            il0Var.updateColors();
-            invalidate();
-        }
-        int v0 = bkb.v0(bkb.Ml, this.f);
-        if (this.c != null && v0 != this.n) {
-            setIconColor(v0);
-        }
-        int L = gl.L(22.0f);
-        int p1 = bkb.p1(0.15f, v0);
-        if (getBackground() instanceof RippleDrawable) {
-            bkb.F1(getBackground(), p1, true);
-        } else {
-            int L2 = gl.L(6.0f);
-            setBackground(bkb.W(L, p1, L2, L2, L2, L2));
+    @Override // mb8
+    public final void h(TL_iv.PageBlock pageBlock) {
+        uj9 uj9Var = this.c.y2;
+        if (uj9Var != null) {
+            ArrayList arrayList = uj9Var.g;
+            if (pageBlock != null) {
+                for (int i = 0; i < arrayList.size(); i++) {
+                    qi9 qi9Var = (qi9) arrayList.get(i);
+                    if (qi9Var instanceof hj9) {
+                        hj9 hj9Var = (hj9) qi9Var;
+                        ArrayList arrayList2 = hj9Var.Y;
+                        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+                            if (((ki9) arrayList2.get(i2)).b == pageBlock) {
+                                int max = Math.max(0, Math.min(i2, arrayList2.size() - 1));
+                                ValueAnimator valueAnimator = hj9Var.l0;
+                                if (valueAnimator != null) {
+                                    valueAnimator.cancel();
+                                    hj9Var.l0 = null;
+                                }
+                                if (hj9Var.b0 == max && hj9Var.c0 == 0.0f) {
+                                    return;
+                                }
+                                hj9Var.b0 = max;
+                                hj9Var.c0 = 0.0f;
+                                hj9Var.d0 = false;
+                                hj9Var.e0 = false;
+                                View view = hj9Var.W;
+                                if (view != null) {
+                                    view.invalidate();
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // mb8
+    public final CharSequence i(int i) {
+        return null;
     }
 
-    @Override // x74
-    public final void D(float f, int i) {
+    @Override // mb8
+    public final int j() {
+        return this.b.size();
     }
 }

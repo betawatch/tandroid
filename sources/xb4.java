@@ -1,179 +1,35 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes2.dex */
-public final class xb4 extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Path c;
-    public int d;
-    public int e;
-    public tgb[] f;
-    public RectF[] h;
-    public float n;
-    public xz7 r;
-    public int s;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes.dex */
+public final /* synthetic */ class xb4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bc4 b;
+    public final /* synthetic */ TLRPC.Document c;
+    public final /* synthetic */ boolean d;
 
-    public xb4(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
-        this.c = new Path();
-        this.d = -1;
-        this.e = -1;
-        this.s = -1;
+    public /* synthetic */ xb4(bc4 bc4Var, TLRPC.Document document, boolean z, byte b) {
+        this.a = b;
+        this.b = bc4Var;
+        this.c = document;
+        this.d = z;
     }
 
-    public final void a(float f, int i, int i2, Canvas canvas) {
-        tgb[] tgbVarArr = this.f;
-        int length = tgbVarArr.length;
-        int i3 = 0;
-        float f2 = f;
-        while (i3 < length) {
-            tgb tgbVar = tgbVarArr[i3];
-            int i4 = i2;
-            tgbVar.c(f2, i / 2.0f, 1.0f, i4, canvas);
-            f2 += tgbVar.j() + gl.L(24.0f);
-            i3++;
-            i2 = i4;
-        }
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.f == null) {
-            return;
-        }
-        int width = getWidth();
-        int height = getHeight();
-        float f = 4.0f;
-        int L = gl.L(4.0f) + de9.y(24.0f, this.f.length, gl.L(4.0f));
-        int i = 0;
-        while (true) {
-            tgb[] tgbVarArr = this.f;
-            if (i >= tgbVarArr.length) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.d;
+        TLRPC.Document document = this.c;
+        bc4 bc4Var = this.b;
+        switch (b) {
+            case 0:
+                bc4Var.d0(document, z);
                 break;
-            }
-            L = (int) (tgbVarArr[i].j() + L);
-            i++;
-        }
-        float L2 = (height - gl.L(36.0f)) / 2.0f;
-        float L3 = (gl.L(36.0f) + height) / 2.0f;
-        float f2 = (width - L) / 2.0f;
-        float L4 = gl.L(16.0f) + f2;
-        RectF rectF = gl.P;
-        rectF.set(f2, L2, L + f2, L3);
-        canvas.drawRoundRect(rectF, gl.L(18.0f), gl.L(18.0f), this.a);
-        float L5 = f2 + gl.L(16.0f);
-        int i2 = 0;
-        while (i2 < this.f.length) {
-            this.h[i2].set(L5 - gl.L(16.0f), L2, this.f[i2].j() + L5 + gl.L(16.0f), L3);
-            L5 += this.f[i2].j() + gl.L(24.0f);
-            i2++;
-            f = f;
-        }
-        gl.L(f);
-        int j = Utilities.j((int) Math.floor(this.n), this.f.length - 1, 0);
-        int j2 = Utilities.j((int) Math.ceil(this.n), this.f.length - 1, 0);
-        float L6 = this.h[j].left + gl.L(r16);
-        float L7 = this.h[j2].left + gl.L(r16);
-        float f3 = this.n;
-        float R1 = gl.R1(L6, L7, (float) (f3 - Math.floor(f3)));
-        float L8 = this.h[j].right - gl.L(r16);
-        float L9 = this.h[j2].right - gl.L(r16);
-        float f4 = this.n;
-        float R12 = gl.R1(L8, L9, (float) (f4 - Math.floor(f4)));
-        RectF rectF2 = gl.P;
-        rectF2.set(R1, (height - gl.L(28.0f)) / 2.0f, R12, (gl.L(28.0f) + height) / 2.0f);
-        Path path = this.c;
-        path.rewind();
-        path.addRoundRect(rectF2, gl.L(15.0f), gl.L(15.0f), Path.Direction.CW);
-        canvas.drawRoundRect(rectF2, gl.L(15.0f), gl.L(15.0f), this.b);
-        a(L4, height, this.d, canvas);
-        canvas.save();
-        canvas.clipPath(path);
-        a(L4, height, this.e, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        vq1 vq1Var;
-        int i = 0;
-        if (this.f == null || this.h == null) {
-            return false;
-        }
-        while (true) {
-            RectF[] rectFArr = this.h;
-            if (i >= rectFArr.length) {
-                i = -1;
+            default:
+                bc4Var.a0(document, z);
                 break;
-            }
-            if (rectFArr[i].contains(motionEvent.getX(), motionEvent.getY())) {
-                break;
-            }
-            i++;
         }
-        if (i >= 0 && i != this.s) {
-            this.s = i;
-            xz7 xz7Var = this.r;
-            if (xz7Var != null && (vq1Var = xz7Var.b.J) != null) {
-                vq1Var.E(i);
-            }
-        }
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            this.s = -1;
-        }
-        if (motionEvent.getAction() != 0 || i < 0) {
-            return super.onTouchEvent(motionEvent);
-        }
-        return true;
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        this.a.setColor(i);
-        invalidate();
-    }
-
-    public void setSelected(float f) {
-        if (Math.abs(f - this.n) > 0.001f) {
-            invalidate();
-        }
-        this.n = f;
-    }
-
-    public void setSelectedColor(int i) {
-        this.b.setColor(i);
-        invalidate();
-    }
-
-    public void setSelectedTextColor(int i) {
-        this.e = i;
-        invalidate();
-    }
-
-    public void setTabs(CharSequence... charSequenceArr) {
-        this.f = new tgb[charSequenceArr.length];
-        this.h = new RectF[charSequenceArr.length];
-        for (int i = 0; i < charSequenceArr.length; i++) {
-            this.f[i] = new tgb(charSequenceArr[i], 14.0f, gl.o());
-            this.h[i] = new RectF();
-        }
-        invalidate();
-    }
-
-    public void setTextColor(int i) {
-        this.d = i;
-        invalidate();
     }
 }

@@ -1,40 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class l2e {
-    public static final /* synthetic */ int[] a;
+public final class l2e implements cq7 {
+    public static final l2e a = new l2e();
 
     static {
-        int[] iArr = new int[7];
-        a = iArr;
-        try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
+        mlb.z(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, mlb.v(mlb.r(mmd.class, new eld(1)), 2)), 3)));
+    }
+
+    @Override // b44
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        try {
-            a[4] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[2] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        throw null;
     }
 }

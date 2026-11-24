@@ -1,37 +1,23 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final class o99 extends a8 {
-    public final int W;
-    public long a0;
-    public m99 b0;
+public final class o99 {
+    public final float a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public final boolean e;
 
-    public o99(int i, wjb wjbVar, Context context) {
-        super(0, wjbVar, context, false, false);
-        this.W = i;
-        setPadding(gl.L(18.0f), 0, gl.L(18.0f), 0);
-        int i2 = bkb.D8;
-        int i3 = bkb.E8;
-        c(i2, i3);
-        g(bkb.v0(i3, wjbVar), PorterDuff.Mode.SRC_IN);
-        this.c.setTranslationX(gl.L(2.0f));
-        a(2);
-        setBackground(null);
-        this.c.addOnAttachStateChangeListener(new wc(this, (byte) 15));
+    public o99(float f, float f2, float f3, float f4) {
+        this.a = f;
+        this.b = f2;
+        this.c = f3;
+        this.d = f4;
     }
 
-    @Override // a8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-            size = gl.L(250.0f);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
+    public o99(float f, float f2, float f3, float f4, int i) {
+        this(f, f2, f3, f4);
+        this.e = true;
     }
 }

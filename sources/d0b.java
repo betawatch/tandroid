@@ -1,28 +1,71 @@
 // default package
 
 import android.view.View;
-import java.io.Serializable;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class d0b implements n8c, o8c {
-    public final /* synthetic */ StickersActivity a;
+public final class d0b {
+    public final tm a;
+    public sn2 b;
 
-    @Override // o8c
-    public final Boolean d(c4c c4cVar, View view, Integer num, Float f, Float f2) {
-        StickersActivity stickersActivity = this.a;
-        boolean z = false;
-        if (stickersActivity.x.isEmpty() && (c4cVar.H instanceof TLRPC.TL_messages_stickerSet)) {
-            stickersActivity.q0((rza) view);
-            z = true;
-        }
-        return Boolean.valueOf(z);
+    public d0b(int i, View view) {
+        this.a = new tm(gm.L(i), view);
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.k0((c4c) obj, (View) obj2);
+    public final tm a(TLObject tLObject, int i, boolean z) {
+        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i, z) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i, z) : b(null, null, i, z);
+    }
+
+    public final tm b(TLRPC.User user, TLRPC.Chat chat, int i, boolean z) {
+        tm tmVar = this.a;
+        if (chat != null) {
+            if (chat.verified) {
+                sn2 sn2Var = this.b;
+                if (sn2Var == null) {
+                    sn2Var = new sn2(cmb.e1, cmb.h1);
+                }
+                this.b = sn2Var;
+                tmVar.g(sn2Var, z);
+                tmVar.k(null);
+                return tmVar;
+            }
+            if (pg3.f(chat.emoji_status) != 0) {
+                tmVar.j(pg3.f(chat.emoji_status), z);
+                tmVar.k(Integer.valueOf(i));
+                return tmVar;
+            }
+        }
+        if (user != null) {
+            if (user.verified) {
+                sn2 sn2Var2 = this.b;
+                if (sn2Var2 == null) {
+                    sn2Var2 = new sn2(cmb.e1, cmb.h1);
+                }
+                this.b = sn2Var2;
+                tmVar.g(sn2Var2, z);
+                tmVar.k(null);
+                return tmVar;
+            }
+            if (pg3.f(user.emoji_status) != 0) {
+                tmVar.j(pg3.f(user.emoji_status), z);
+                tmVar.k(Integer.valueOf(i));
+                return tmVar;
+            }
+            if (user.premium) {
+                tmVar.g(oj8.d().e, z);
+                tmVar.k(Integer.valueOf(i));
+                return tmVar;
+            }
+        }
+        tmVar.g(null, z);
+        tmVar.k(null);
+        return tmVar;
+    }
+
+    public d0b(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 }

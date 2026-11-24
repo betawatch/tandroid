@@ -1,171 +1,69 @@
 // default package
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
-/* loaded from: classes3.dex */
-public final class w7b implements GestureDetector.OnGestureListener {
-    public final /* synthetic */ m8b a;
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
+/* loaded from: classes2.dex */
+public final class w7b extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ i1a c;
 
-    public w7b(m8b m8bVar) {
-        this.a = m8bVar;
+    public /* synthetic */ w7b(i1a i1aVar, ArrayList arrayList, byte b) {
+        this.a = b;
+        this.c = i1aVar;
+        this.b = arrayList;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        m8b m8bVar = this.a;
-        m8bVar.g1 = false;
-        return !m8bVar.v(m8bVar.s, motionEvent.getX(), motionEvent.getY(), false);
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        m8b m8bVar = this.a;
-        if (m8bVar.a0 != 0.0f && m8bVar.u1 == null && f2 < -1000.0f && !m8bVar.b0) {
-            m8bVar.b0 = true;
-            try {
-                m8bVar.s.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
-            m8bVar.R();
-        }
-        if (m8bVar.f0 != 0.0f) {
-            if (f2 < -1000.0f) {
-                m8bVar.k(true);
-            } else if (f2 > 1000.0f) {
-                m8bVar.k(false);
-            } else {
-                m8bVar.k(m8bVar.x.f > 0.5f);
-            }
-        }
-        m8bVar.g1 = true;
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        float f3;
-        m21 m21Var;
-        m8b m8bVar = this.a;
-        if (!m8bVar.k0) {
-            return false;
-        }
-        if (m8bVar.m0) {
-            m8bVar.a0 += f2;
-            float L = gl.L(200.0f);
-            if (m8bVar.a0 > L && !m8bVar.b0) {
-                m8bVar.b0 = true;
-                m8bVar.R();
-                try {
-                    m8bVar.s.performHapticFeedback(3);
-                } catch (Exception unused) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        i1a i1aVar = this.c;
+        ArrayList arrayList = this.b;
+        switch (b) {
+            case 0:
+                for (int i = 0; i < arrayList.size(); i++) {
+                    i1aVar.removeView((View) arrayList.get(i));
                 }
-            }
-            m8bVar.e0 = Utilities.i(m8bVar.a0 / L, 1.0f, 0.0f);
-            if (m8bVar.o0.getCurrentPeerView() != null) {
-                m8bVar.o0.getCurrentPeerView().invalidate();
-            }
-            if (m8bVar.a0 < 0.0f) {
-                m8bVar.a0 = 0.0f;
-                m8bVar.m0 = false;
-            }
-            return true;
-        }
-        if (m8bVar.d0) {
-            float f4 = m8bVar.f0;
-            if (f4 <= m8bVar.x.c || f2 <= 0.0f) {
-                m8bVar.f0 = f4 + f2;
-            } else {
-                m8bVar.f0 = (0.05f * f2) + f4;
-            }
-            a8b a8bVar = m8bVar.s;
-            m21 m21Var2 = m21.w;
-            if (m21Var2 != null && m21Var2.h == a8bVar) {
-                m21Var2.b();
-            }
-            if (m8bVar.o0.getCurrentPeerView() != null) {
-                m8bVar.o0.getCurrentPeerView().invalidate();
-            }
-            m8bVar.w.invalidate();
-            if (m8bVar.f0 < 0.0f) {
-                m8bVar.f0 = 0.0f;
-                m8bVar.d0 = false;
-            }
-            return true;
-        }
-        if (m8bVar.W > 0.8f) {
-            float f5 = -f2;
-            if ((f5 > 0.0f && m8bVar.X > 0.0f) || (f5 < 0.0f && m8bVar.X < 0.0f)) {
-                f3 = 0.3f;
-                m8bVar.X -= f2 * f3;
-                a8b a8bVar2 = m8bVar.s;
-                m21Var = m21.w;
-                if (m21Var != null && m21Var.h == a8bVar2) {
-                    m21Var.b();
+                i1aVar.getClass();
+                x7b x7bVar = (x7b) i1aVar.n;
+                i1aVar.h.clear();
+                i1aVar.b = null;
+                i1aVar.c = false;
+                x7bVar.b.setAllowDrawCursor(true);
+                m7b m7bVar = x7bVar.h;
+                if (m7bVar != null) {
+                    m7bVar.run();
                 }
-                m8bVar.V();
-                return true;
-            }
-        }
-        f3 = 0.6f;
-        m8bVar.X -= f2 * f3;
-        a8b a8bVar22 = m8bVar.s;
-        m21Var = m21.w;
-        if (m21Var != null) {
-            m21Var.b();
-        }
-        m8bVar.V();
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        y28 currentPeerView;
-        m8b m8bVar = this.a;
-        if (m8bVar.f0 == 0.0f && m8bVar.g0) {
-            if (m8bVar.y || m8bVar.L0 || m8bVar.m1 || m8bVar.i1 || m8bVar.j1) {
-                c8b c8bVar = m8bVar.o0;
-                if (c8bVar != null && (currentPeerView = c8bVar.getCurrentPeerView()) != null) {
-                    currentPeerView.i0();
+                if (x7bVar.M) {
+                    x7bVar.fullScroll(nm7.N1);
+                    x7bVar.M = false;
+                    break;
                 }
-            } else {
-                y28 w = m8bVar.w();
-                if (w == null || !w.E1.f) {
-                    boolean z = motionEvent.getX() > ((float) m8bVar.w.getMeasuredWidth()) * 0.33f;
-                    y28 currentPeerView2 = m8bVar.o0.getCurrentPeerView();
-                    if (currentPeerView2 != null && !currentPeerView2.Z0(z)) {
-                        if (m8bVar.o0.E(z)) {
-                            c8b c8bVar2 = m8bVar.o0;
-                            c8bVar2.M0 = true;
-                            c8bVar2.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                            xia xiaVar = c8bVar2.N0;
-                            gl.r(xiaVar);
-                            gl.e3(xiaVar, 150L);
-                            return false;
-                        }
-                        if (z) {
-                            m8bVar.o(true);
-                            return false;
-                        }
-                        l8b l8bVar = m8bVar.A0;
-                        if (l8bVar != null) {
-                            l8bVar.loopBack();
-                            return false;
-                        }
-                    }
+                break;
+            default:
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    i1aVar.removeView((View) arrayList.get(i2));
                 }
-            }
+                ArrayList arrayList2 = i1aVar.h;
+                x7b x7bVar2 = (x7b) i1aVar.n;
+                arrayList2.clear();
+                i1aVar.b = null;
+                i1aVar.c = false;
+                x7bVar2.b.setAllowDrawCursor(true);
+                m7b m7bVar2 = x7bVar2.h;
+                if (m7bVar2 != null) {
+                    m7bVar2.run();
+                }
+                if (x7bVar2.M) {
+                    x7bVar2.fullScroll(nm7.N1);
+                    x7bVar2.M = false;
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

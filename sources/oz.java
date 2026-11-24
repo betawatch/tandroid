@@ -1,171 +1,289 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import java.util.Collections;
-
-/* compiled from: r8-map-id-951793a810ac989768404cff61e59f80982ec4abf68731718853a39916547cc3 */
+/* compiled from: r8-map-id-6bb0649393f139a89c1ef253affcee855fb4d3290144b28c0a11ada2afdaaead */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class oz implements Runnable {
+public final class oz implements q21 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ oz(Object obj, byte b) {
+    public /* synthetic */ oz(byte b) {
         this.a = b;
-        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q21
+    public final boolean a() {
         byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
+        return true;
+    }
+
+    @Override // q21
+    public final void b(float f) {
+        byte b = this.a;
+    }
+
+    @Override // q21
+    public final void c(u31 u31Var) {
+        byte b = this.a;
+    }
+
+    @Override // q21
+    public final boolean d() {
+        byte b = this.a;
+        return true;
+    }
+
+    @Override // q21
+    public final int e(int i) {
+        int i2;
+        int L;
+        switch (this.a) {
             case 0:
-                pz pzVar = (pz) obj;
-                if (pzVar.c.a) {
-                    pzVar.a.a.v1(3, false);
-                    break;
-                }
-                break;
+                return gm.L(64.0f);
             case 1:
-                ((uz) obj).c();
-                break;
             case 2:
-                ((h20) obj).n.r1.setVisibility(8);
-                break;
             case 3:
-                a66 a66Var = (a66) obj;
-                a66Var.getClass();
-                if (Thread.currentThread() == a66Var.a) {
-                    a66Var.e(-1, new wz((byte) 3));
-                    break;
-                }
-                break;
+            case 7:
+            case 13:
+            case 14:
+            case 15:
+                return 0;
             case 4:
-                ((y60) ((spc) obj).d).F();
-                break;
+                return gm.L(51.0f);
             case 5:
-                bc0 bc0Var = (bc0) obj;
-                if (!bc0Var.x) {
-                    bc0Var.x = true;
-                    tq9.d(new f(bc0Var, (byte) 13));
-                    break;
-                }
+                i2 = gm.n;
+                L = gm.L(64.0f);
                 break;
             case 6:
-                bd0 bd0Var = (bd0) obj;
-                bd0Var.b.g3.O(true);
-                bd0Var.Y(true);
-                break;
-            case 7:
-                ge0 ge0Var = (ge0) obj;
-                new ava(ge0Var.getContext(), ge0Var.b).show();
+                i2 = gm.n;
+                L = gm.L(60.0f);
                 break;
             case 8:
-                try {
-                    ((Bitmap) obj).recycle();
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
+                i2 = gm.n;
+                L = gm.L(16.0f);
+                break;
             case 9:
-                vk0 vk0Var = (vk0) obj;
-                vk0Var.o = true;
-                vk0Var.d.invalidate();
-                break;
+                return gm.L(62.0f);
             case 10:
-                uk0 uk0Var = (uk0) obj;
-                if (!uk0Var.a) {
-                    vk0 vk0Var2 = uk0Var.d;
-                    Bitmap[] bitmapArr = vk0Var2.g;
-                    Canvas[] canvasArr = vk0Var2.h;
-                    vk0Var2.g = vk0Var2.f;
-                    vk0Var2.h = vk0Var2.i;
-                    vk0Var2.f = bitmapArr;
-                    vk0Var2.i = canvasArr;
-                    vk0Var2.k = false;
-                    s71 s71Var = vk0Var2.d;
-                    if (s71Var != null) {
-                        s71Var.invalidate();
-                        break;
-                    }
-                }
-                break;
+                return gm.L(74.0f);
             case 11:
-                sl0 sl0Var = ((xl0) obj).t;
-                if (sl0Var != null) {
-                    sl0Var.d();
-                    break;
-                }
-                break;
+                return gm.L(68.0f);
             case 12:
-                sl0 sl0Var2 = (sl0) obj;
-                sl0Var2.o = (Bitmap) sl0Var2.n.c;
-                sl0Var2.d();
-                break;
-            case 13:
-                cb cbVar = ((dm0) ((cm0) obj).c).f;
-                if (cbVar != null) {
-                    cbVar.d();
-                    break;
-                }
-                break;
-            case 14:
-                ((wn0) obj).a(null);
-                break;
-            case 15:
-                ((x15) obj).a(Collections.EMPTY_LIST);
-                break;
-            case 16:
-                ((tn0) obj).a(null);
-                break;
-            case 17:
-                ((ip0) obj).invalidateSelf();
-                break;
-            case 18:
-                ((jp0) obj).invalidateSelf();
-                break;
-            case 19:
-                ((lp0) obj).d();
-                break;
-            case 20:
-                yp0 yp0Var = (yp0) obj;
-                gl.r(yp0Var.b0);
-                yp0Var.N = false;
-                yp0Var.invalidate();
-                break;
-            case 21:
-                ((xp0) obj).invalidateSelf();
-                break;
-            case 22:
-                gr0 gr0Var = (gr0) obj;
-                kca kcaVar = gr0Var.a0;
-                s1b s1bVar = gr0Var.a;
-                kcaVar.a(s1bVar == null ? "" : s1bVar.E);
-                break;
-            case 23:
-            case 24:
-                ((lr0) obj).c();
-                break;
-            case 25:
-                ((mr0) obj).a();
-                break;
-            case 26:
-                ((nr0) obj).a();
-                break;
-            case 27:
-                rs0 rs0Var = (rs0) obj;
-                if (rs0Var.isAttachedToWindow() && !rs0Var.c.canScrollVertically(1)) {
-                    rs0Var.a();
-                    break;
-                }
-                break;
-            case 28:
-                ((gt3) obj).requestFocus();
-                break;
+                return gm.L(64.0f);
             default:
-                d01.t(((yu0) obj).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
+                return gm.L(80.0f);
         }
+        return L + i2;
+    }
+
+    @Override // q21
+    public final boolean f(int i) {
+        switch (this.a) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            default:
+                return false;
+            case 9:
+            case 14:
+            case 15:
+                return true;
+        }
+    }
+
+    @Override // q21
+    public final void g(u31 u31Var) {
+        byte b = this.a;
+    }
+
+    @Override // q21
+    public final int h(int i) {
+        switch (this.a) {
+            case 0:
+            case 4:
+            case 5:
+            case 6:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 14:
+            default:
+                return 0;
+            case 1:
+                return gm.m;
+            case 2:
+                return gm.m;
+            case 3:
+                return gm.m;
+            case 7:
+                return gm.m;
+            case 13:
+                return gm.m;
+            case 15:
+                return gm.L(56.0f);
+        }
+    }
+
+    private final void A(u31 u31Var) {
+    }
+
+    private final void B(u31 u31Var) {
+    }
+
+    private final void C(u31 u31Var) {
+    }
+
+    private final void D(u31 u31Var) {
+    }
+
+    private final void E(u31 u31Var) {
+    }
+
+    private final void F(u31 u31Var) {
+    }
+
+    private final void G(u31 u31Var) {
+    }
+
+    private final void H(u31 u31Var) {
+    }
+
+    private final void I(u31 u31Var) {
+    }
+
+    private final void J(u31 u31Var) {
+    }
+
+    private final void K(u31 u31Var) {
+    }
+
+    private final void L(u31 u31Var) {
+    }
+
+    private final void M(u31 u31Var) {
+    }
+
+    private final void N(u31 u31Var) {
+    }
+
+    private final void O(u31 u31Var) {
+    }
+
+    private final void P(u31 u31Var) {
+    }
+
+    private final void Q(u31 u31Var) {
+    }
+
+    private final void R(u31 u31Var) {
+    }
+
+    private final void S(u31 u31Var) {
+    }
+
+    private final void T(u31 u31Var) {
+    }
+
+    private final void U(u31 u31Var) {
+    }
+
+    private final void V(u31 u31Var) {
+    }
+
+    private final void W(u31 u31Var) {
+    }
+
+    private final void X(u31 u31Var) {
+    }
+
+    private final void Y(u31 u31Var) {
+    }
+
+    private final void Z(u31 u31Var) {
+    }
+
+    private final void a0(u31 u31Var) {
+    }
+
+    private final void b0(u31 u31Var) {
+    }
+
+    private final void c0(u31 u31Var) {
+    }
+
+    private final void d0(u31 u31Var) {
+    }
+
+    private final void e0(u31 u31Var) {
+    }
+
+    private final void f0(u31 u31Var) {
+    }
+
+    private final void g0(u31 u31Var) {
+    }
+
+    private final void i(float f) {
+    }
+
+    private final void j(float f) {
+    }
+
+    private final void k(float f) {
+    }
+
+    private final void l(float f) {
+    }
+
+    private final void m(float f) {
+    }
+
+    private final void n(float f) {
+    }
+
+    private final void o(float f) {
+    }
+
+    private final void p(float f) {
+    }
+
+    private final void q(float f) {
+    }
+
+    private final void r(float f) {
+    }
+
+    private final void s(float f) {
+    }
+
+    private final void t(float f) {
+    }
+
+    private final void u(float f) {
+    }
+
+    private final void v(float f) {
+    }
+
+    private final void w(float f) {
+    }
+
+    private final void x(float f) {
+    }
+
+    private final void y(float f) {
+    }
+
+    private final void z(u31 u31Var) {
     }
 }
